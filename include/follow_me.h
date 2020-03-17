@@ -12,4 +12,13 @@
 
 #define DEFAULT_FOLLOWER_LOCAL_ID 0xFE
 
+#define MOVEMENT_INVALID 0xFE
+
+// Exported Functions
+void SetUpFollowerSprite(u8 localId, u8 flags);
+void DestroyFollower(void);
+void PlayerFaceFollowerSprite(void);
+void CheckPlayerHasFollower(void);
+
+
 #endif //GUARD_FOLLOW_ME_H

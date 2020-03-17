@@ -42,5 +42,6 @@ void FadeOutOrbEffect(void);
 void sub_80B05B4(void);
 void WriteFlashScanlineEffectBuffer(u8 flashLevel);
 bool8 IsPlayerStandingStill(void);
+void SetPlayerVisibility(bool8 visible);
 
 #endif // GUARD_FIELD_SCREEN_EFFECT_H
