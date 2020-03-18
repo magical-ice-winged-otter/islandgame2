@@ -2309,13 +2309,13 @@ bool8 ScrCmd_warpsootopolislegend(struct ScriptContext *ctx)
     return TRUE;
 }
 
-
 // follow me script commands
 #include "follow_me.h"
 bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
 {
     u8 localId = ScriptReadByte(ctx);
     u8 flags = ScriptReadByte(ctx);
+    
     SetUpFollowerSprite(localId, flags);
     return FALSE;
 }

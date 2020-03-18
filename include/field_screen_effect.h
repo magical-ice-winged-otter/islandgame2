@@ -43,5 +43,6 @@ void sub_80B05B4(void);
 void WriteFlashScanlineEffectBuffer(u8 flashLevel);
 bool8 IsPlayerStandingStill(void);
 void SetPlayerVisibility(bool8 visible);
+void task0A_fade_n_map_maybe(u8 taskId);
 
 #endif // GUARD_FIELD_SCREEN_EFFECT_H

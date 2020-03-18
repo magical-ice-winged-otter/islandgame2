@@ -59,6 +59,7 @@
 #include "scanline_effect.h"
 #include "wild_encounter.h"
 #include "frontier_util.h"
+#include "follow_me.h"
 #include "constants/abilities.h"
 #include "constants/layouts.h"
 #include "constants/map_types.h"
@@ -409,6 +410,8 @@ static void Overworld_ResetStateAfterWhiteOut(void)
         VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 0);
         VarSet(VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_NONE);
     }
+    
+    FollowMe_TryRemoveFollowerOnWhiteOut();
 }
 
 static void sub_8084788(void)
@@ -1519,7 +1522,7 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext1_Init();
     ScriptContext2_Disable();
-    gFieldCallback = ExecuteTruckSequence;
+    gFieldCallback = NULL;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
@@ -1562,6 +1565,9 @@ void CB2_LoadMap(void)
 static void CB2_LoadMap2(void)
 {
     DoMapLoadLoop(&gMain.state);
+    
+    FollowMe_BindToSurbBlobOnReloadScreen();    // to do: find spot
+    
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);
     SetMainCallback2(CB2_Overworld);
@@ -1919,7 +1925,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 10:
-        InitTilesetAnimations();
+        InitTilesetAnimations();        
         (*state)++;
         break;
     case 11:
@@ -2155,6 +2161,8 @@ static void InitObjectEventsLocal(void)
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
     TryRunOnWarpIntoMapScript();
+    
+    FollowMe_HandleSprite();
 }
 
 static void sub_8086A68(void)
