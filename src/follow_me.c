@@ -5,6 +5,7 @@
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
+#include "field_control_avatar.h"
 #include "field_screen_effect.h"
 #include "field_weather.h"
 #include "fieldmap.h"
@@ -23,46 +24,20 @@
 #include "constants/songs.h"
 #include "constants/map_types.h"
 #include "constants/field_effects.h"
-
-/* to do:
+/*
     -FollowMe_StairsMoveHook ?
     -FollowMe_WarpStairsEndHook ?
-    
-    - finish flags
-    
-    bugs:
-        -entering building 
-        -exiting animted door (eg. pokecenter) is a bit buggy
-        
-    tasks:
-        walking                         works
-        running                         works
-        ledges                          works
-        doors                       follower doesn't follow into door
-        surf                        surf blob gone when returning from battle/menu, dismount anim not working
-        bike                        follower hangs with mach bike under max speed, does not follow on acro bike
-        enter battle                    works
-        enter menu                      works
-        saving          just move to saveblock?
-        waterfall
-        dive
-        ladders
-            
-    system fix scripts
-        eg.FollowerIntoPlayerScript
+*/
+
+/*
+Known Issues:
+    -follower gets messed up if you go into a map with a maximum number of event objects
+        -inherits incorrect palette, may get directionally confused
+    -follower retains running frame if you stop moving but keep holding B
 */
 
 // Defines
 #define PLAYER_AVATAR_FLAG_BIKE    PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE
-
-enum FollowerSpriteTypes
-{
-    FOLLOWER_SPRITE_INDEX_NORMAL,
-    FOLLOWER_SPRITE_INDEX_MACH_BIKE,
-    FOLLOWER_SPRITE_INDEX_ACRO_BIKE,
-    FOLLOWER_SPRITE_INDEX_SURF,
-    FOLLOWER_SPRITE_INDEX_UNDERWATER,
-};
 
 struct FollowerSpriteGraphics
 {
@@ -94,7 +69,7 @@ struct Follower
     /*0x0C*/ const u8* script;
     /*0x10*/ u16 flag;
     /*0x12*/ u16 graphicsId;
-    /*0x14*/ u8 flags;
+    /*0x14*/ u16 flags;
     /*0x15*/ u8 locked;
 }; /* size = 0x18 */
 
@@ -122,8 +97,7 @@ static void Task_FollowerHandleEscalator(u8 taskId);
 static void Task_FollowerHandleEscalatorFinish(u8 taskId);
 static void CalculateFollowerEscalatorTrajectoryUp(struct Task *task);
 static void CalculateFollowerEscalatorTrajectoryDown(struct Task *task);
-static void SetFollowerSprite(u8 spriteIndex);
-static void TurnNPCIntoFollower(u8 localId, u8 followerFlags);
+static void TurnNPCIntoFollower(u8 localId, u16 followerFlags);
 
 // Const Data
 static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
@@ -136,7 +110,7 @@ static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
         .machBikeId = OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE,
         .acroBikeId = OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE,
         .surfId = OBJ_EVENT_GFX_RIVAL_MAY_SURFING,
-        .underwaterId = OBJ_EVENT_GFX_RIVAL_MAY_SURFING,
+        .underwaterId = OBJ_EVENT_GFX_MAY_UNDERWATER,
     },
     
 };
@@ -280,16 +254,15 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
 
     if (player != npc) //Only when the player moves
         return;
-
-    if (!sFollowerState.inProgress)
+    else if (!sFollowerState.inProgress)
         return;
-
-    if (ScriptContext2_IsEnabled() && !ignoreScriptActive)
+    else if (ScriptContext2_IsEnabled() && !ignoreScriptActive)
         return; //Don't follow during a script
     
+    // fix post-surf jump
     if ((sFollowerState.currentSprite == FOLLOWER_SPRITE_INDEX_SURF) && !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING) && follower->fieldEffectSpriteId == 0)
         SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
-
+    
     //Check if state would cause hidden follower to reappear
     if (IsStateMovement(state) && sFollowerState.warpEnd)
     {
@@ -419,11 +392,9 @@ static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 dire
     if (IsStateMovement(state) && sFollowerState.delayedState)
         newState = sFollowerState.delayedState + direction;
 
-    //*((u8*) 0x2023D6B) = state; //For Debug
-
     //Clear ice tile stuff
     follower->disableAnim = FALSE; //follower->field1 &= 0xFB;
-
+    
     switch (state) 
     {
     case MOVEMENT_ACTION_WALK_SLOW_DOWN ... MOVEMENT_ACTION_WALK_SLOW_RIGHT:
@@ -453,234 +424,53 @@ static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 dire
             follower->disableAnim = TRUE;
         
         RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);
-    /*
-    case MOVEMENT_ACTION_SLIDE_SLOW_DOWN ... MOVEMENT_ACTION_SLIDE_SLOW_RIGHT:
-        //Slow slide or Bike Speed
-        RETURN_STATE(MOVEMENT_ACTION_SLIDE_SLOW_DOWN, direction);
-    */
+    
+    case MOVEMENT_ACTION_WALK_FASTEST_DOWN ... MOVEMENT_ACTION_WALK_FASTEST_RIGHT:
+        // mach bike
+        if (MetatileBehavior_IsIce(follower->currentMetatileBehavior) || MetatileBehavior_IsTrickHouseSlipperyFloor(follower->currentMetatileBehavior))
+            follower->disableAnim = TRUE;
+        
+        RETURN_STATE(MOVEMENT_ACTION_WALK_FASTEST_DOWN, direction);
+        
+    // acro bike
+    case MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN ... MOVEMENT_ACTION_RIDE_WATER_CURRENT_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN, direction);  //regular movement
+    case MOVEMENT_ACTION_ACRO_WHEELIE_FACE_DOWN ... MOVEMENT_ACTION_ACRO_WHEELIE_FACE_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_WHEELIE_FACE_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_POP_WHEELIE_DOWN ... MOVEMENT_ACTION_ACRO_POP_WHEELIE_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_POP_WHEELIE_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_END_WHEELIE_FACE_DOWN ... MOVEMENT_ACTION_ACRO_END_WHEELIE_FACE_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_END_WHEELIE_FACE_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_WHEELIE_HOP_FACE_DOWN ... MOVEMENT_ACTION_ACRO_WHEELIE_HOP_FACE_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_WHEELIE_HOP_FACE_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_WHEELIE_HOP_DOWN ... MOVEMENT_ACTION_ACRO_WHEELIE_HOP_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_WHEELIE_HOP_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_WHEELIE_JUMP_DOWN ... MOVEMENT_ACTION_ACRO_WHEELIE_JUMP_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_WHEELIE_JUMP_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_WHEELIE_IN_PLACE_DOWN ... MOVEMENT_ACTION_ACRO_WHEELIE_IN_PLACE_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_WHEELIE_IN_PLACE_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_POP_WHEELIE_MOVE_DOWN ... MOVEMENT_ACTION_ACRO_POP_WHEELIE_MOVE_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_POP_WHEELIE_MOVE_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_WHEELIE_MOVE_DOWN ... MOVEMENT_ACTION_ACRO_WHEELIE_MOVE_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_WHEELIE_MOVE_DOWN, direction);
+    case MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_DOWN ... MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_RIGHT:
+        RETURN_STATE(MOVEMENT_ACTION_ACRO_END_WHEELIE_MOVE_DOWN, direction);
+        
+    // Sliding
     case MOVEMENT_ACTION_SLIDE_DOWN ... MOVEMENT_ACTION_SLIDE_RIGHT:
-        //Slide
         RETURN_STATE(MOVEMENT_ACTION_SLIDE_DOWN, direction);
-    /*
-    case MOVEMENT_ACTION_SLIDE_FAST_DOWN ... MOVEMENT_ACTION_SLIDE_FAST_DOWN:
-        //Slide Fast
-        RETURN_STATE(MOVEMENT_ACTION_SLIDE_FAST_DOWN, direction);
-    */
-    
-    
     case MOVEMENT_ACTION_PLAYER_RUN_DOWN ... MOVEMENT_ACTION_PLAYER_RUN_RIGHT:
         //Running frames
         if (sFollowerState.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
             RETURN_STATE(MOVEMENT_ACTION_PLAYER_RUN_DOWN, direction);
 
         RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);
-    
-    /*
-    case MOVEMENT_ACTION_SLIDE_LEFT_FOOT_DOWN ... MOVEMENT_ACTION_SLIDE_LEFT_FOOT_RIGHT:
-        //Stairs (slow walking)
-        if (sFollowerState.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
-        {
-            //Running sideways on stairs does not use the slow
-            //frames, so split this into two.
-            if (direction <= DIR_NORTH)
-            {
-                RETURN_STATE(MOVEMENT_ACTION_SLIDE_LEFT_FOOT_DOWN, direction);
-            }
-            else
-            {
-                RETURN_STATE(MOVEMENT_ACTION_SLIDE_RIGHT_FOOT_DOWN, direction);
-            }
-        }
-        else
-        {
-            RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);
-        }
-    */
-
     case MOVEMENT_ACTION_JUMP_SPECIAL_DOWN ... MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT:
         sFollowerState.delayedState = MOVEMENT_ACTION_JUMP_SPECIAL_DOWN;
         RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction);
-
     case MOVEMENT_ACTION_JUMP_DOWN ... MOVEMENT_ACTION_JUMP_RIGHT:
         sFollowerState.delayedState = MOVEMENT_ACTION_JUMP_DOWN;
         RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction);
-        
-    /*
-    case 0x84 ... 0x87:
-        //Ledge run
-        if (((newState - direction) >= MOVEMENT_ACTION_JUMP_2_DOWN && (newState - direction) <= MOVEMENT_ACTION_JUMP_2_RIGHT)
-        ||  ((newState - direction) >= 0x84 && (newState - direction) <= 0x87)) //Previously jumped
-        {
-            newState = MOVEMENT_INVALID;
-            if (sFollowerState.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
-            {
-                RETURN_STATE(0x84, direction); //Jump right away
-            }
-            else
-            {
-                RETURN_STATE(MOVEMENT_ACTION_JUMP_2_DOWN, direction); //Jump right away
-            }
-        }
-
-        if (sFollowerState.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
-            sFollowerState.delayedState = 0x84;
-        else
-            sFollowerState.delayedState = MOVEMENT_ACTION_JUMP_2_DOWN;
-
-        if (sFollowerState.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
-            RETURN_STATE(MOVEMENT_ACTION_SLIDE_RIGHT_FOOT_DOWN, direction);
-
-        RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);
-    */
-    
-    /*
-    case MOVEMENT_ACTION_SPIN_PAD_DOWN ... MOVEMENT_ACTION_SPIN_PAD_RIGHT:
-        //Warp pad spinning movement
-        if (newState == state + direction)
-        {
-            newState = MOVEMENT_INVALID;
-            RETURN_STATE(MOVEMENT_ACTION_SPIN_PAD_DOWN, direction);
-        }
-
-        sFollowerState.delayedState = MOVEMENT_ACTION_SPIN_PAD_DOWN;
-        RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);
-    */
-    
-    /* From FR expanded movement actions
-    case MOVEMENT_ACTION_WALK_SLOWEST_UP_BACKWARDS ... MOVEMENT_ACTION_WALK_SLOWEST_LEFT_BACKWARDS:
-        RETURN_STATE(MOVEMENT_ACTION_WALK_SLOWEST_UP_BACKWARDS, direction);
-
-    case MOVEMENT_ACTION_WALK_SLOW_UP_BACKWARDS ... MOVEMENT_ACTION_WALK_SLOW_LEFT_BACKWARDS:
-        RETURN_STATE(MOVEMENT_ACTION_WALK_SLOW_UP_BACKWARDS, direction);
-
-    case MOVEMENT_ACTION_WALK_NORMAL_UP_BACKWARDS ... MOVEMENT_ACTION_WALK_NORMAL_LEFT_BACKWARDS:
-        RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_UP_BACKWARDS, direction);
-
-    case MOVEMENT_ACTION_WALK_FAST_UP_BACKWARDS ... MOVEMENT_ACTION_WALK_FAST_LEFT_BACKWARDS:
-        RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_UP_BACKWARDS, direction);
-
-    case MOVEMENT_ACTION_JUMP_2_UP_BACKWARDS ... MOVEMENT_ACTION_JUMP_2_LEFT_BACKWARDS:
-        RETURN_STATE(MOVEMENT_ACTION_JUMP_2_UP_BACKWARDS, direction);
-
-    case MOVEMENT_ACTION_JUMP_UP_BACKWARDS ... MOVEMENT_ACTION_JUMP_LEFT_BACKWARDS:
-        RETURN_STATE(MOVEMENT_ACTION_JUMP_UP_BACKWARDS, direction);
-
-    case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
-        //Walk up/down side stairs
-        if (newState == state + direction) //Still walking up/down stairs same direction
-        {
-            newState = MOVEMENT_INVALID;
-            RETURN_STATE(state, 1); //Each is its own movement
-        }
-        else if (newState - direction >= MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN && newState - direction <= MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT) //Change direction on stairs
-        {
-            sFollowerState.delayedState = state;
-
-            //Get new state but at different speed
-            newState -= direction;
-            u8 simpleState = MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN;
-            switch (newState) {
-                case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
-                    state = (newState - MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN) + simpleState;
-                    break;
-                case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT:
-                    state = (newState - MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN) + simpleState;
-                    break;
-                case MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT:
-                    state = (newState - MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN) + simpleState;
-                    break;
-            }
-
-            newState = MOVEMENT_INVALID;
-            RETURN_STATE(state, 1); //Each is its own movement
-        }
-
-        //Beginning on stairs
-        sFollowerState.delayedState = state;
-        RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction); //Each is its own movement
-
-    case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT:
-    {
-        //Run up/down side stairs
-        u8 delayState;
-        u8 simpleState;
-        u8 action;
-
-        if (sFollowerState.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
-        {
-            delayState = state;
-            simpleState = MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN;
-            action = MOVEMENT_ACTION_SLIDE_RIGHT_FOOT_DOWN;
-        }
-        else
-        {
-            delayState = (state - MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN) + MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN;
-            simpleState = MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN;
-            action = MOVEMENT_ACTION_WALK_FAST_DOWN;
-        }
-
-        if (newState == state + direction)
-        {
-            newState = MOVEMENT_INVALID;
-            RETURN_STATE(delayState, 1); //Each is its own movement
-        }
-        
-        else if (newState - direction >= MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN && newState - direction <= MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT)
-        {
-            newState -= direction;
-            switch (newState)
-            {
-            case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
-                state = (newState - MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN) + simpleState;
-                break;
-            case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT:
-                state = (newState - MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN) + simpleState;
-                break;
-            case MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT:
-                state = (newState - MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN) + simpleState;
-                break;
-            }
-
-            sFollowerState.delayedState = delayState;
-            newState = MOVEMENT_INVALID;
-            RETURN_STATE(state, 1); //Each is its own movement
-        }
-        
-        sFollowerState.delayedState = delayState;
-        RETURN_STATE(action, direction); //Each is its own movement
-    }
-    case MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT: ;
-        //Bike up/down side stairs
-        if (newState == state + direction)
-        {
-            newState = MOVEMENT_INVALID;
-            RETURN_STATE(state, 1); //Each is its own movement
-        }
-        else if (newState - direction >= MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN && newState - direction <= MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT)
-        {
-            u8 simpleState = MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN;
-            sFollowerState.delayedState = state;
-            newState -= direction;
-            switch (newState) 
-            {
-            case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
-                state = (newState - MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN) + simpleState;
-                break;
-            case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT:
-                state = (newState - MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN) + simpleState;
-                break;
-            case MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT:
-                state = (newState - MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN) + simpleState;
-                break;
-            }
-
-            newState = MOVEMENT_INVALID;
-            RETURN_STATE(state, 1); //Each is its own movement
-        }
-
-        sFollowerState.delayedState = state;
-        RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction); //Each is its own movement
-    */
     default:
         return MOVEMENT_INVALID;
     }
@@ -1290,7 +1080,7 @@ void FollowMe_HandleSprite(void)
     }
 }
 
-static void SetFollowerSprite(u8 spriteIndex)
+void SetFollowerSprite(u8 spriteIndex)
 {
     u8 oldSpriteId;
     u8 newSpriteId;
@@ -1397,7 +1187,7 @@ void CreateFollowerAvatar(void)
     gObjectEvents[sFollowerState.objId].invisible = TRUE;
 }
 
-static void TurnNPCIntoFollower(u8 localId, u8 followerFlags)
+static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
 {
     struct ObjectEvent* follower;
     u8 eventObjId;
@@ -1418,7 +1208,11 @@ static void TurnNPCIntoFollower(u8 localId, u8 followerFlags)
             follower->movementType = 0; //Doesn't get to move on its own anymore
             gSprites[follower->spriteId].callback = MovementType_None; //MovementType_None
             Overworld_SetObjEventTemplateMovementType(localId, 0);
-            script = GetObjectEventScriptPointerByObjectEventId(eventObjId);
+            if (CheckFollowerFlag(FOLLOWER_FLAG_CUSTOM_FOLLOW_SCRIPT))
+                script = (const u8 *)ReadWord(0);
+            else
+                script = GetObjectEventScriptPointerByObjectEventId(eventObjId);
+            
             flag = GetObjectEventTemplateByLocalIdAndMap(follower->localId, follower->mapNum, follower->mapGroup)->flagId;
             //gObjectEvents[eventObjId].localId = gObjectEvents[eventObjId].localId;
 
@@ -1441,7 +1235,7 @@ static void TurnNPCIntoFollower(u8 localId, u8 followerFlags)
     }
 }
 
-bool8 CheckFollowerFlag(u8 flag)
+bool8 CheckFollowerFlag(u16 flag)
 {
     if (!sFollowerState.inProgress)
         return TRUE;
@@ -1452,7 +1246,11 @@ bool8 CheckFollowerFlag(u8 flag)
     return FALSE;
 }
 
-/*
+static u8 GetPlayerMapObjId(void)
+{
+	return gPlayerAvatar.objectEventId;
+}
+
 enum
 {
 	GoDown,
@@ -1462,7 +1260,7 @@ enum
 };
 void FollowerPositionFix(u8 offset)
 {
-    u8 playerObjId = GetPlayerMapObjId();   //overworld.c
+    u8 playerObjId = GetPlayerMapObjId();
     u8 followerObjid = sFollowerState.objId;
     u16 playerX = gObjectEvents[playerObjId].currentCoords.x;
     u16 playerY = gObjectEvents[playerObjId].currentCoords.y;
@@ -1531,13 +1329,12 @@ void FollowerIntoPlayer(void)
 {
     FollowerPositionFix(0);
 }
-*/
 
 //////////////////SCRIPTING////////////////////
 //@Details: Sets up the follow me feature.
 //@Input:    local id - NPC to start following player.
 //            flags - Follower flags.
-void SetUpFollowerSprite(u8 localId, u8 flags)
+void SetUpFollowerSprite(u8 localId, u16 flags)
 {
     TurnNPCIntoFollower(localId, flags);
 }

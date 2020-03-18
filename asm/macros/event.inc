@@ -1631,7 +1631,7 @@
     .macro setfollower localId:req, flags:req
     .byte 0xe3
     .byte \localId
-    .byte \flags
+    .2byte \flags
     .endm
     
     @ remove the following NPC (assumes there will only ever be one)

@@ -7,8 +7,17 @@
 
 #define MOVEMENT_INVALID 0xFE
 
+enum FollowerSpriteTypes
+{
+    FOLLOWER_SPRITE_INDEX_NORMAL,
+    FOLLOWER_SPRITE_INDEX_MACH_BIKE,
+    FOLLOWER_SPRITE_INDEX_ACRO_BIKE,
+    FOLLOWER_SPRITE_INDEX_SURF,
+    FOLLOWER_SPRITE_INDEX_UNDERWATER,
+};
+
 // Exported Functions
-void SetUpFollowerSprite(u8 localId, u8 flags);
+void SetUpFollowerSprite(u8 localId, u16 flags);
 void DestroyFollower(void);
 void PlayerFaceFollowerSprite(void);
 void CheckPlayerHasFollower(void);
@@ -36,7 +45,9 @@ void CreateFollowerAvatar(void);
 void EscalatorMoveFollower(u8 movementType);
 void EscalatorMoveFollowerFinish(void);
 bool8 FollowerCanBike(void);
-bool8 CheckFollowerFlag(u8 flag);
+bool8 CheckFollowerFlag(u16 flag);
+void FollowerPositionFix(u8 offset);
+void SetFollowerSprite(u8 spriteIndex);
 
 // moved from field_screen_effect.c
 void Task_DoDoorWarp(u8 taskId);

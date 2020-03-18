@@ -1565,9 +1565,6 @@ void CB2_LoadMap(void)
 static void CB2_LoadMap2(void)
 {
     DoMapLoadLoop(&gMain.state);
-    
-    FollowMe_BindToSurbBlobOnReloadScreen();    // to do: find spot
-    
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);
     SetMainCallback2(CB2_Overworld);
@@ -1876,6 +1873,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
 {
     switch (*state)
     {
+<<<<<<< HEAD
     case 0:
         FieldClearVBlankHBlankCallbacks();
         LoadMapFromWarp(a2);
@@ -1884,6 +1882,16 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
     case 1:
         ResetMirageTowerAndSaveBlockPtrs();
         sub_80867D8();
+=======
+    case 0:       
+        FieldClearVBlankHBlankCallbacks();          
+        mli0_load_map(a2);
+        (*state)++;
+        break;
+    case 1:
+        sub_80867C8();
+        sub_80867D8();        
+>>>>>>> f955f3f60... fix bugs
         (*state)++;
         break;
     case 2:
@@ -1934,7 +1942,11 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 12:
+<<<<<<< HEAD
         if (RunFieldCallback())
+=======
+        if (map_post_load_hook_exec())
+>>>>>>> f955f3f60... fix bugs
             (*state)++;
         break;
     case 13:
@@ -1957,8 +1969,14 @@ static bool32 ReturnToFieldLocal(u8 *state)
         (*state)++;
         break;
     case 1:
+<<<<<<< HEAD
         InitViewGraphics();
         TryLoadTrainerHillEReaderPalette();
+=======
+        sub_8086860();
+        sub_81D64C0();
+        FollowMe_BindToSurbBlobOnReloadScreen();
+>>>>>>> f955f3f60... fix bugs
         (*state)++;
         break;
     case 2:
@@ -1977,9 +1995,15 @@ static bool32 ReturnToFieldLink(u8 *state)
     switch (*state)
     {
     case 0:
+<<<<<<< HEAD
         FieldClearVBlankHBlankCallbacks();
         ResetMirageTowerAndSaveBlockPtrs();
         sub_80867D8();
+=======
+        FieldClearVBlankHBlankCallbacks();        
+        sub_80867C8();
+        sub_80867D8();        
+>>>>>>> f955f3f60... fix bugs
         (*state)++;
         break;
     case 1:
