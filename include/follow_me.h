@@ -48,6 +48,7 @@ bool8 FollowerCanBike(void);
 bool8 CheckFollowerFlag(u16 flag);
 void FollowerPositionFix(u8 offset);
 void SetFollowerSprite(u8 spriteIndex);
+bool8 PlayerHasFollower(void);
 
 // moved from field_screen_effect.c
 void Task_DoDoorWarp(u8 taskId);

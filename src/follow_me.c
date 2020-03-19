@@ -24,6 +24,7 @@
 #include "constants/songs.h"
 #include "constants/map_types.h"
 #include "constants/field_effects.h"
+#include "constants/metatile_behaviors.h"
 /*
     -FollowMe_StairsMoveHook ?
     -FollowMe_WarpStairsEndHook ?
@@ -258,10 +259,15 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
         return;
     else if (ScriptContext2_IsEnabled() && !ignoreScriptActive)
         return; //Don't follow during a script
+                
     
     // fix post-surf jump
     if ((sFollowerState.currentSprite == FOLLOWER_SPRITE_INDEX_SURF) && !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING) && follower->fieldEffectSpriteId == 0)
+    {
         SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
+        sFollowerState.createSurfBlob = 0;
+        return;
+    }
     
     //Check if state would cause hidden follower to reappear
     if (IsStateMovement(state) && sFollowerState.warpEnd)
@@ -402,7 +408,7 @@ static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 dire
         RETURN_STATE(MOVEMENT_ACTION_WALK_SLOW_DOWN, direction);
 
     case MOVEMENT_ACTION_WALK_NORMAL_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT:
-        // Slow slow
+        // normal walk
         RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction);
 
     case MOVEMENT_ACTION_JUMP_2_DOWN ... MOVEMENT_ACTION_JUMP_2_RIGHT:
@@ -418,8 +424,11 @@ static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 dire
         RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction);
 
     case MOVEMENT_ACTION_WALK_FAST_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT:
-         //Handle ice tile (some walking animation)
-         //Set a bit to freeze the follower's animation
+        // Handle player on waterfall
+        if (PlayerIsUnderWaterfall(&gObjectEvents[gPlayerAvatar.objectEventId]) && (state == MOVEMENT_ACTION_WALK_FAST_UP))
+            return MOVEMENT_INVALID;
+        
+        //Handle ice tile (some walking animation) -  Set a bit to freeze the follower's animation
         if (MetatileBehavior_IsIce(follower->currentMetatileBehavior) || MetatileBehavior_IsTrickHouseSlipperyFloor(follower->currentMetatileBehavior))
             follower->disableAnim = TRUE;
         
@@ -434,6 +443,10 @@ static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 dire
         
     // acro bike
     case MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN ... MOVEMENT_ACTION_RIDE_WATER_CURRENT_RIGHT:
+        // Handle player on waterfall
+        if (PlayerIsUnderWaterfall(&gObjectEvents[gPlayerAvatar.objectEventId]) && (state == MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN))
+            return MOVEMENT_INVALID;
+        
         RETURN_STATE(MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN, direction);  //regular movement
     case MOVEMENT_ACTION_ACRO_WHEELIE_FACE_DOWN ... MOVEMENT_ACTION_ACRO_WHEELIE_FACE_RIGHT:
         RETURN_STATE(MOVEMENT_ACTION_ACRO_WHEELIE_FACE_DOWN, direction);
@@ -1328,6 +1341,11 @@ void FollowerTrainerSightingPositionFix(void)
 void FollowerIntoPlayer(void)
 {
     FollowerPositionFix(0);
+}
+
+bool8 PlayerHasFollower(void)
+{
+    return sFollowerState.inProgress;
 }
 
 //////////////////SCRIPTING////////////////////
