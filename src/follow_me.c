@@ -266,7 +266,6 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
     {
         SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
         sFollowerState.createSurfBlob = 0;
-        return;
     }
     
     //Check if state would cause hidden follower to reappear
@@ -1347,6 +1346,16 @@ void FollowerIntoPlayer(void)
 bool8 PlayerHasFollower(void)
 {
     return sFollowerState.inProgress;
+}
+
+bool8 PlayerIsWalking(void)
+{
+    //if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_BIKE | PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER))
+    //    return FALSE;
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
+        return TRUE;
+    else
+        return FALSE;
 }
 
 //////////////////SCRIPTING////////////////////

@@ -52,5 +52,6 @@ bool8 PlayerHasFollower(void);
 
 // moved from field_screen_effect.c
 void Task_DoDoorWarp(u8 taskId);
+bool8 PlayerIsWalking(void);
 
 #endif //GUARD_FOLLOW_ME_H
