@@ -68,6 +68,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/event_object_movement.h"
 
 #define PLAYER_TRADING_STATE_IDLE 0x80
 #define PLAYER_TRADING_STATE_BUSY 0x81
@@ -1418,7 +1419,6 @@ bool32 IsUpdateLinkStateCBActive(void)
         return FALSE;
 }
 
-#include "constants/event_object_movement.h"
 static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
 {
     struct FieldInput inputStruct;
@@ -1440,7 +1440,7 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
     }
     
     // if stop running but keep holding B -> fix follower frame
-    if (PlayerHasFollower() && PlayerIsWalking() && IsPlayerStandingStill())
+    if (PlayerHasFollower() && IsPlayerOnFoot() && IsPlayerStandingStill())
         ObjectEventSetHeldMovement(&gObjectEvents[GetFollowerObjectId()], GetFaceDirectionAnimNum(gObjectEvents[GetFollowerObjectId()].facingDirection));
 }
 
