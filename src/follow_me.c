@@ -34,7 +34,6 @@
 Known Issues:
     -follower gets messed up if you go into a map with a maximum number of event objects
         -inherits incorrect palette, may get directionally confused
-    -follower retains running frame if you stop moving but keep holding B
 */
 
 // Defines
@@ -1348,10 +1347,8 @@ bool8 PlayerHasFollower(void)
     return sFollowerState.inProgress;
 }
 
-bool8 PlayerIsWalking(void)
+bool8 IsPlayerOnFoot(void)
 {
-    //if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_BIKE | PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER))
-    //    return FALSE;
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
         return TRUE;
     else
