@@ -872,6 +872,8 @@ static void Task_FollowerOutOfDoor(u8 taskId)
         {
             follower->invisible = FALSE;
             ObjectEventTurn(follower, DIR_SOUTH); //The follower should be facing down when it comes out the door
+            follower->singleMovementActive = FALSE;
+            follower->heldMovementActive = FALSE;
             ObjectEventSetHeldMovement(follower, MOVEMENT_ACTION_WALK_NORMAL_DOWN); //follower step down
             task->data[0] = 2;
         }
@@ -897,6 +899,47 @@ static void Task_FollowerOutOfDoor(u8 taskId)
         DestroyTask(taskId);
         break;
     }
+
+    /*
+    switch (task->data[0])
+    {
+    case 0:
+        FreezeObjectEvents();
+        PlaySE(GetDoorSoundEffect(*x, *y));
+        gTasks[taskId].data[1] = FieldAnimateDoorOpen(follower->currentCoords.x, follower->currentCoords.y);
+        task->data[0] = 1;
+        break;
+    case 1:
+        if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE) //if Door isn't still opening
+        {
+            follower->invisible = FALSE;
+            ObjectEventTurn(follower, DIR_SOUTH); //The follower should be facing down when it comes out the door
+            ObjectEventSetHeldMovement(follower, MOVEMENT_ACTION_WALK_NORMAL_DOWN); //follower step down
+            task->data[0] = 2;
+        }
+        break;
+    case 2:
+        if (ObjectEventClearHeldMovementIfFinished(follower))
+        {
+            task->data[1] = FieldAnimateDoorClose(*x, *y);
+            task->data[0] = 3;
+        }
+        break;
+    case 3:
+        if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE) //Door is closed
+        {
+            UnfreezeObjectEvents();
+            task->data[0] = 4;
+        }
+        break;
+    case 4:
+        FollowMe_HandleSprite();
+        gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
+        gPlayerAvatar.preventStep = FALSE; //Player can move again
+        DestroyTask(taskId);
+        break;
+    }
+    */
 }
 
 void StairsMoveFollower(void)
