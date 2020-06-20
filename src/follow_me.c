@@ -281,9 +281,8 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
 
     if (dir == DIR_NONE)
         goto RESET;
-
+        
     newState = DetermineFollowerState(follower, state, dir);
-
     if (newState == MOVEMENT_INVALID)
         goto RESET;
 
@@ -306,17 +305,11 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
     ObjectEventSetHeldMovement(follower, newState);
     PlayerLogCoordinates(player);
 
-    //*((u8*) 0x2023D6C) = newState;
-
     switch (newState) 
     {
     case MOVEMENT_ACTION_JUMP_2_DOWN ... MOVEMENT_ACTION_JUMP_2_RIGHT:
-    //case 0x84 ... 0x87:
-    //case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
-    //case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT:
-    //case MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT:
         CreateTask(Task_ReallowPlayerMovement, 1); //Synchronize movements on stairs and ledges
-        gPlayerAvatar.preventStep = TRUE;
+        gPlayerAvatar.preventStep = TRUE;   //allow follower to catch up
     }
 
 RESET:
@@ -367,12 +360,39 @@ static void PlayerLogCoordinates(struct ObjectEvent* player)
 static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 direction)
 {
     u8 newState = MOVEMENT_INVALID;
+    #if SIDEWAYS_STAIRS_IMPLEMENTED == TRUE
+        u8 collision = COLLISION_NONE;
+        s16 followerX = follower->currentCoords.x;
+        s16 followerY = follower->currentCoords.y;
+        u8 currentBehavior = MapGridGetMetatileBehaviorAt(followerX, followerY);
+        u8 nextBehavior;
+        
+        MoveCoords(direction, &followerX, &followerY);
+        nextBehavior = MapGridGetMetatileBehaviorAt(followerX, followerY);
+    #endif
 
     if (IsStateMovement(state) && gSaveBlock2Ptr->follower.delayedState)
         newState = gSaveBlock2Ptr->follower.delayedState + direction;
 
     //Clear ice tile stuff
     follower->disableAnim = FALSE; //follower->field1 &= 0xFB;
+    
+    #if SIDEWAYS_STAIRS_IMPLEMENTED == TRUE
+        // clear overwrite movement
+        follower->directionOverwrite = DIR_NONE;
+        
+        //sideways stairs checks
+        collision = GetSidewaysStairsCollision(follower, direction, currentBehavior, nextBehavior, collision);
+        switch (collision)
+        {
+        case COLLISION_SIDEWAYS_STAIRS_TO_LEFT:
+            follower->directionOverwrite = GetLeftSideStairsDirection(direction);
+            break;
+        case COLLISION_SIDEWAYS_STAIRS_TO_RIGHT:
+            follower->directionOverwrite = GetRightSideStairsDirection(direction);
+            break;
+        }
+    #endif
     
     switch (state) 
     {
@@ -458,6 +478,16 @@ static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 dire
     case MOVEMENT_ACTION_JUMP_DOWN ... MOVEMENT_ACTION_JUMP_RIGHT:
         gSaveBlock2Ptr->follower.delayedState = MOVEMENT_ACTION_JUMP_DOWN;
         RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction);
+    
+    // run slow
+    #ifdef MOVEMENT_ACTION_RUN_DOWN_SLOW
+    case MOVEMENT_ACTION_RUN_DOWN_SLOW ... MOVEMENT_ACTION_RUN_RIGHT_SLOW:
+        if (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
+            RETURN_STATE(MOVEMENT_ACTION_PLAYER_RUN_DOWN, direction);
+
+        RETURN_STATE(MOVEMENT_ACTION_RUN_DOWN_SLOW, direction);
+    #endif
+        
     default:
         return MOVEMENT_INVALID;
     }
@@ -524,15 +554,17 @@ static u8 ReturnFollowerDelayedState(u8 direction)
 {
     u8 newState = gSaveBlock2Ptr->follower.delayedState;
     gSaveBlock2Ptr->follower.delayedState = 0;
-
+    
     /*
+    #ifdef MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_UP_LEFT
     switch (newState) 
     {
-    case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
-    case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT:
-    case MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT:
+    case MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_UP_LEFT ... MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_DOWN_RIGHT:
+    case MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_UP_LEFT_RUNNING ... MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_DOWN_RIGHT_RUNNING:
+    case MOVEMENT_ACTION_RIDE_WATER_CURRENT_UP_LEFT ... MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN_RIGHT:
         return newState; //Each its own movement, so don't modify direction
     }
+    #endif
     */
 
     return newState + direction;
@@ -815,14 +847,13 @@ static u8 GetPlayerFaceToDoorDirection(struct ObjectEvent* player, struct Object
 
 static void Task_FollowerOutOfDoor(u8 taskId)
 {
-    struct ObjectEvent* follower = &gObjectEvents[GetFollowerMapObjId()];
-    struct ObjectEvent* player = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct ObjectEvent *follower = &gObjectEvents[GetFollowerMapObjId()];
+    struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
     struct Task *task = &gTasks[taskId];
-    s16 x = task->data[2];
-    s16 y = task->data[3];
+    s16 *x = &task->data[2];
+    s16 *y = &task->data[3];
 
-    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH)
-    && ObjectEventClearHeldMovementIfFinished(player))
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH) && ObjectEventClearHeldMovementIfFinished(player))
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Temporarily stop running
 
     if (ObjectEventClearHeldMovementIfFinished(player))
@@ -832,23 +863,23 @@ static void Task_FollowerOutOfDoor(u8 taskId)
     {
     case 0:
         FreezeObjectEvents();
-        PlaySE(GetDoorSoundEffect(x, y));
+        PlaySE(GetDoorSoundEffect(*x, *y));
         gTasks[taskId].data[1] = FieldAnimateDoorOpen(follower->currentCoords.x, follower->currentCoords.y);
         task->data[0] = 1;
         break;
     case 1:
-        if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE) //Door isn't still opening
+        if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE) //if Door isn't still opening
         {
             follower->invisible = FALSE;
             ObjectEventTurn(follower, DIR_SOUTH); //The follower should be facing down when it comes out the door
-            ObjectEventSetHeldMovement(follower, MOVEMENT_ACTION_WALK_NORMAL_DOWN);
+            ObjectEventSetHeldMovement(follower, MOVEMENT_ACTION_WALK_NORMAL_DOWN); //follower step down
             task->data[0] = 2;
         }
         break;
     case 2:
         if (ObjectEventClearHeldMovementIfFinished(follower))
         {
-            task->data[1] = FieldAnimateDoorClose(x, y);
+            task->data[1] = FieldAnimateDoorClose(*x, *y);
             task->data[0] = 3;
         }
         break;
@@ -864,7 +895,7 @@ static void Task_FollowerOutOfDoor(u8 taskId)
         gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
         gPlayerAvatar.preventStep = FALSE; //Player can move again
         DestroyTask(taskId);
-    break;
+        break;
     }
 }
 
@@ -1128,7 +1159,7 @@ void FollowMe_WarpSetEnd(void)
 
     toY = gSaveBlock2Ptr->follower.comeOutDoorStairs == 1 ? (player->currentCoords.y - 1) : player->currentCoords.y;
     MoveObjectEventToMapCoords(follower, player->currentCoords.x, toY);
-
+    
     follower->facingDirection = player->facingDirection;
     follower->movementDirection = player->movementDirection;
 }
