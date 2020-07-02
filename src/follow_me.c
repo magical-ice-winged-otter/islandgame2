@@ -107,12 +107,6 @@ u8 GetFollowerLocalId(void)
     return gObjectEvents[gSaveBlock2Ptr->follower.objId].localId;
 }
 
-// scripting special - return follower local Id to VAR_0x8005
-void LoadFollowerLocalId(void)
-{
-    gSpecialVar_0x8005 = GetFollowerLocalId;
-}
-
 const u8* GetFollowerScriptPointer(void)
 {
     if (!gSaveBlock2Ptr->follower.inProgress)
