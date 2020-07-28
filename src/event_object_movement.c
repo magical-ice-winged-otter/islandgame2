@@ -2341,10 +2341,10 @@ void SetObjectEventDirection(struct ObjectEvent *objectEvent, u8 direction)
 
 static const u8 *GetObjectEventScriptPointerByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
 {
-    if (GetFollowerLocalId() == 0 || GetFollowerLocalId() != localId)
-        return GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup)->script;
+    if (GetFollowerLocalId() != 0 && GetFollowerLocalId() == localId)
+        return GetFollowerScriptPointer();
     else
-        return GetFollowerScriptPointer();    
+        return GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup)->script;
 }
 
 const u8 *GetObjectEventScriptPointerByObjectEventId(u8 objectEventId)

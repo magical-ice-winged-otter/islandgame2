@@ -1266,7 +1266,7 @@ static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
         if (gObjectEvents[eventObjId].localId == localId)
         {
             follower = &gObjectEvents[eventObjId];
-            follower->movementType = 0; //Doesn't get to move on its own anymore
+            follower->movementType = MOVEMENT_TYPE_NONE; //Doesn't get to move on its own anymore
             gSprites[follower->spriteId].callback = MovementType_None; //MovementType_None
             Overworld_SetObjEventTemplateMovementType(localId, 0);
             if (CheckFollowerFlag(FOLLOWER_FLAG_CUSTOM_FOLLOW_SCRIPT))
@@ -1275,8 +1275,6 @@ static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
                 script = GetObjectEventScriptPointerByObjectEventId(eventObjId);
             
             flag = GetObjectEventTemplateByLocalIdAndMap(follower->localId, follower->mapNum, follower->mapGroup)->flagId;
-            //gObjectEvents[eventObjId].localId = gObjectEvents[eventObjId].localId;
-
             gSaveBlock2Ptr->follower.inProgress = TRUE;
             gSaveBlock2Ptr->follower.objId = eventObjId;
             gSaveBlock2Ptr->follower.graphicsId = follower->graphicsId;
