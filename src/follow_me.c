@@ -1286,7 +1286,7 @@ static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
             gSaveBlock2Ptr->follower.flags = followerFlags;
             gSaveBlock2Ptr->follower.createSurfBlob = 0;
             gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
-
+            
             if (!(gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CAN_BIKE) //Follower can't bike
             &&  TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE)) //Player on bike
                 SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Dismmount Bike
