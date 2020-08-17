@@ -120,5 +120,6 @@
 #define DIR_NORTHEAST   8
 
 #define SIDEWAYS_STAIRS_IMPLEMENTED         FALSE
+#define POST_BATTLE_FOLLOWER_FIX            FALSE   //if you experience the follower de-syncing with the player after battle, set to TRUE
 
 #endif // GUARD_CONSTANTS_GLOBAL_H
