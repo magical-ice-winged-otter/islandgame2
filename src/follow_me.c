@@ -159,6 +159,8 @@ void FollowMe_TryRemoveFollowerOnWhiteOut(void)
     {
         if (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT)
             gSaveBlock2Ptr->follower.inProgress = FALSE;
+        else
+            FollowMe_WarpSetEnd();
     }
 }
 
