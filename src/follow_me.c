@@ -865,8 +865,10 @@ static void Task_FollowerOutOfDoor(u8 taskId)
     {
     case 0:
         FreezeObjectEvents();
-        PlaySE(GetDoorSoundEffect(*x, *y));
-        gTasks[taskId].data[1] = FieldAnimateDoorOpen(follower->currentCoords.x, follower->currentCoords.y);
+        task->data[1] = FieldAnimateDoorOpen(follower->currentCoords.x, follower->currentCoords.y);
+        if (task->data[1] != -1)
+            PlaySE(GetDoorSoundEffect(*x, *y)); //only play SE for animating doors
+        
         task->data[0] = 1;
         break;
     case 1:
