@@ -485,9 +485,9 @@ static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 dire
     #ifdef MOVEMENT_ACTION_RUN_DOWN_SLOW
     case MOVEMENT_ACTION_RUN_DOWN_SLOW ... MOVEMENT_ACTION_RUN_RIGHT_SLOW:
         if (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
-            RETURN_STATE(MOVEMENT_ACTION_PLAYER_RUN_DOWN, direction);
+            RETURN_STATE(MOVEMENT_ACTION_RUN_DOWN_SLOW, direction);
 
-        RETURN_STATE(MOVEMENT_ACTION_RUN_DOWN_SLOW, direction);
+        RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction);
     #endif
         
     default:
