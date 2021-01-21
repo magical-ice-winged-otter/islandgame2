@@ -333,6 +333,7 @@ SECTIONS {
         src/gym_leader_rematch.o(.text);
         src/battle_transition_frontier.o(.text);
         src/international_string_util.o(.text);
+        src/movement_path_planning.o(.text);
     } =0
 
     script_data :
@@ -692,7 +693,8 @@ SECTIONS {
         data/mystery_event.o(.rodata);
         src/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
-    } =0
+        src/movement_path_planning.o(.rodata);
+        } =0
 
     song_data :
     ALIGN(4)
