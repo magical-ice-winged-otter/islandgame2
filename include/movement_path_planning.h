@@ -17,7 +17,11 @@ static const u32 moves_walk[] =
     MOVEMENT_ACTION_WALK_NORMAL_DOWN, 
     MOVEMENT_ACTION_WALK_NORMAL_UP,
     MOVEMENT_ACTION_WALK_NORMAL_LEFT, 
-    MOVEMENT_ACTION_WALK_NORMAL_RIGHT,  
+    MOVEMENT_ACTION_WALK_NORMAL_RIGHT,
+    MOVEMENT_ACTION_FACE_DOWN,
+    MOVEMENT_ACTION_FACE_UP,
+    MOVEMENT_ACTION_FACE_LEFT,
+    MOVEMENT_ACTION_FACE_RIGHT,
 };
 
 
@@ -25,7 +29,7 @@ static EWRAM_DATA u8 *SolutionPath = NULL;
  
 
 #define MAXPATH 100 // Max final path size
-#define MAXNODES 100 //Max size of the queues
+#define MAXNODES 500 //Max size of the queues
 
 #define HEUR_WEIGHT 1
 //Weight of the Heuristic, 0 for Dijkstra Algoritmin (Uniform Cost Search), 1 for A*, and >>1 for Greedy Best First Search
@@ -44,7 +48,7 @@ typedef struct Set{
 
 typedef struct PriorityQueue{
     unsigned int size;
-    int priority[MAXNODES]; // PODEMOS REEMPLAZAR ESTAS LISTAS USANDO EL HEAP
+    float priority[MAXNODES]; // PODEMOS REEMPLAZAR ESTAS LISTAS USANDO EL HEAP
     struct Node value[MAXNODES]; // PODEMOS REEMPLAZAR ESTAS LISTAS USANDO EL HEAP
 } PriorityQueue;
 
@@ -54,8 +58,8 @@ void swapNode(struct Node *a, struct Node *b) {
   *a = temp;
 }
 
-void swap(int *a, int *b) {
-  int temp = *b;
+void swap(float *a, float *b) {
+  float temp = *b;
   *b = *a;
   *a = temp;
 }
@@ -63,12 +67,14 @@ void swap(int *a, int *b) {
 u32 abs(s32 x){
     return (u32)((x<0)?-x:x);}
 
-u32 L1Distance(s32 x0, s32 y0, s32 xf, s32 yf){ //MAnhatan distance used as heuristic
+u32 L1Distance(s32 x0, s32 y0, s32 xf, s32 yf){ //Manhatan distance used as heuristic
     return abs(x0 - xf) + abs(y0 - yf);}
 
-u32 CalcHeuristic(struct Node *node, s32 xgoal,s32 ygoal)
+float CalcHeuristic(struct Node *node, s32 xgoal,s32 ygoal)
 {
-    return HEUR_WEIGHT*L1Distance(node->coords.x, node->coords.y, xgoal, ygoal);
+    float heuristic = HEUR_WEIGHT*L1Distance(node->coords.x, node->coords.y, xgoal, ygoal);
+    heuristic *= (1.0 + 1/MAXPATH); // For breaking ties
+    return heuristic;
 }
 
 // Function to insert to set

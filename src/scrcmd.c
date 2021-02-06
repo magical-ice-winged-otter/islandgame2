@@ -2304,3 +2304,29 @@ bool8 ScrCmd_warpsootopolislegend(struct ScriptContext *ctx)
     ResetInitialPlayerAvatarState();
     return TRUE;
 }
+
+bool8 ScrCmd_MoveObjectToPos(struct ScriptContext *ctx)
+{
+    u16 localId = VarGet(ScriptReadHalfword(ctx));
+    u16 posX = VarGet(ScriptReadHalfword(ctx));
+    u16 posY = VarGet(ScriptReadHalfword(ctx));
+    u16 facing = VarGet(ScriptReadHalfword(ctx));
+
+    MovementPathPlanning_MoveObjectToPos(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, posX,posY,facing);
+    // sMovingNpcId = localId;
+    return FALSE;
+}
+
+bool8 ScrCmd_MoveObjectToPos_at(struct ScriptContext *ctx)
+{
+    u16 localId = VarGet(ScriptReadHalfword(ctx));
+    u16 posX = VarGet(ScriptReadHalfword(ctx));	
+    u16 posY = VarGet(ScriptReadHalfword(ctx));
+    u16 facing = VarGet(ScriptReadHalfword(ctx));
+    u8 mapGroup = ScriptReadByte(ctx);
+    u8 mapNum = ScriptReadByte(ctx);
+
+    MovementPathPlanning_MoveObjectToPos(localId, mapNum, mapGroup, posX,posY,facing);
+    // sMovingNpcId = localId;
+    return FALSE;
+}
