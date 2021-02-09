@@ -419,5 +419,6 @@ bool32 IsObjectEventSpriteInvisible(u8 var);
 void SetObjectEventSpriteGraphics(u8 var1, u8 graphicsId);
 void SetObjectEventSpriteAnim(u8 var1, u8 var2);
 bool32 IsObjectEventSpriteAnimating(u8 var);
+u8 CheckCollisionAtCoords(struct ObjectEvent *, s16, s16, u32, u8);
 
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

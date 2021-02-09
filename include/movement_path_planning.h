@@ -28,8 +28,8 @@ static const u32 moves_walk[] =
 static EWRAM_DATA u8 *SolutionPath = NULL;
  
 
-#define MAXPATH 100 // Max final path size
-#define MAXNODES 500 //Max size of the queues
+#define MAXPATH 200 // Max final path size
+#define MAXNODES 800 //Max size of the queues
 
 #define HEUR_WEIGHT 1
 //Weight of the Heuristic, 0 for Dijkstra Algoritmin (Uniform Cost Search), 1 for A*, and >>1 for Greedy Best First Search
@@ -38,6 +38,7 @@ typedef struct Node{
     int state;
     struct Coords16 coords;
     int cost;
+    u8 currentElevation;
     int path[MAXPATH];
 } Node;
 
@@ -168,6 +169,15 @@ struct Node pop(struct PriorityQueue *queue, int i) {
   return element;
 }
 
+u8 getElevation(u8 prevZ, s16 x, s16 y){
+  u8 mapZ;
+  mapZ = MapGridGetZCoordAt(x+7, y+7);
+  if (mapZ == 0xF)
+    return prevZ;
+  else
+    return mapZ;
+}
+
 void getChild(struct Node parent, int move, struct Node *child){
     int i;
     child->coords.x = parent.coords.x + moves[move].x;
@@ -176,6 +186,7 @@ void getChild(struct Node parent, int move, struct Node *child){
     for(i =0;i<parent.cost;i++)
         child->path[i] = parent.path[i];
     child->path[parent.cost] = move;
+    child->currentElevation = getElevation(parent.currentElevation,parent.coords.x,parent.coords.y);
 }
 
 void getSolution(struct Node *node)
