@@ -1778,3 +1778,23 @@
 	setfieldeffectargument 2, \priority
 	dofieldeffect FLDEFF_SPARKLE
 	.endm
+
+	@ Perform the pathfinding at movements to the specified (index) Object. Also closes any standard message boxes that are still open.
+	@ If no map is specified, then the current map is used.
+	.macro moveobjecttopos index:req, posx:req, posy:req, facing:req, map
+		.ifb \map
+			.byte 0xe3
+			.2byte \index
+			.2byte \posx
+			.2byte \posy
+			.2byte \facing
+		.else
+			@ Really only useful if the object has followed from one map to another (e.g. Wally during the catching event).
+			.byte 0xe4
+			.2byte \index
+			.2byte \posx
+			.2byte \posy
+			.2byte \facing
+			map \map
+		.endif
+	.endm
