@@ -44,8 +44,6 @@ static void FillPalBufferWhite(void);
 static void Task_ExitDoor(u8);
 static bool32 WaitForWeatherFadeIn(void);
 static void Task_SpinEnterWarp(u8 taskId);
-static void Task_WarpAndLoadMap(u8 taskId);
-//static void Task_DoDoorWarp(u8 taskId);
 static void Task_EnableScriptAfterMusicFade(u8 taskId);
 
 // data[0] is used universally by tasks in this file as a state for switches
@@ -658,7 +656,7 @@ void ReturnFromLinkRoom(void)
     CreateTask(Task_ReturnToWorldFromLinkRoom, 10);
 }
 
-static void Task_WarpAndLoadMap(u8 taskId)
+void Task_WarpAndLoadMap(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
 
@@ -1103,7 +1101,7 @@ static void LoadOrbEffectPalette(bool8 blueOrb)
     }
 }
 
-static bool8 sub_80B02C8(u16 shakeDir)
+static bool8 UpdateOrbEffectBlend(u16 shakeDir)
 {
     u8 lo = REG_BLDALPHA & 0xFF;
     u8 hi = REG_BLDALPHA >> 8;
@@ -1111,21 +1109,17 @@ static bool8 sub_80B02C8(u16 shakeDir)
     if (shakeDir != 0)
     {
         if (lo)
-        {
             lo--;
-        }
     }
     else
     {
-        if (hi < 0x10)
-        {
+        if (hi < 16)
             hi++;
-        }
     }
 
     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(lo, hi));
 
-    if (lo == 0 && hi == 0x10)
+    if (lo == 0 && hi == 16)
         return TRUE;
     else
         return FALSE;
@@ -1209,7 +1203,7 @@ static void Task_OrbEffect(u8 taskId)
         {
             tShakeDelay = 8;
             tShakeDir ^= 1;
-            if (sub_80B02C8(tShakeDir) == TRUE)
+            if (UpdateOrbEffectBlend(tShakeDir) == TRUE)
             {
                 tState = 5;
                 sub_8199DF0(0, PIXEL_FILL(0), 0, 1);

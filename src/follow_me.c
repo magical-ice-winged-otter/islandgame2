@@ -122,7 +122,7 @@ void HideFollower(void)
 
     if (gSaveBlock2Ptr->follower.createSurfBlob == 2 || gSaveBlock2Ptr->follower.createSurfBlob == 3)
     {
-        BindFieldEffectToSprite(gObjectEvents[GetFollowerMapObjId()].fieldEffectSpriteId, 2);
+        SetSurfBlob_BobState(gObjectEvents[GetFollowerMapObjId()].fieldEffectSpriteId, 2);
         DestroySprite(&gSprites[gObjectEvents[GetFollowerMapObjId()].fieldEffectSpriteId]);
         gObjectEvents[GetFollowerMapObjId()].fieldEffectSpriteId = 0; //Unbind
     }
@@ -216,7 +216,7 @@ static void TryUpdateFollowerSpriteUnderwater(void)
         SetFollowerSprite(FOLLOWER_SPRITE_INDEX_UNDERWATER);
 
         follower = &gObjectEvents[GetFollowerMapObjId()]; //Can change on reload sprite
-        follower->fieldEffectSpriteId = DoBobbingFieldEffect(follower->spriteId);
+        follower->fieldEffectSpriteId = StartUnderwaterSurfBlobBobbing(follower->spriteId);
     }
 }
 
@@ -271,7 +271,7 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
         {
             SetUpSurfBlobFieldEffect(follower);
             follower->fieldEffectSpriteId = FieldEffectStart(FLDEFF_SURF_BLOB);
-            BindFieldEffectToSprite(follower->fieldEffectSpriteId, 1);
+            SetSurfBlob_BobState(follower->fieldEffectSpriteId, 1);
         }
         else
         {
@@ -642,7 +642,7 @@ void FollowMe_BindToSurbBlobOnReloadScreen(void)
     //Spawn surfhead under follower
     SetUpSurfBlobFieldEffect(follower);
     follower->fieldEffectSpriteId = FieldEffectStart(FLDEFF_SURF_BLOB);
-    BindFieldEffectToSprite(follower->fieldEffectSpriteId, 1);
+    SetSurfBlob_BobState(follower->fieldEffectSpriteId, 1);
 }
 
 static void SetSurfJump(void)
@@ -692,7 +692,7 @@ static void Task_BindSurfBlobToFollower(u8 taskId)
         return;
 
     //Bind objs
-    BindFieldEffectToSprite(npc->fieldEffectSpriteId, 0x1);
+    SetSurfBlob_BobState(npc->fieldEffectSpriteId, 0x1);
     UnfreezeObjectEvents();
     DestroyTask(taskId);
     gPlayerAvatar.preventStep = FALSE; //Player can move again
@@ -732,7 +732,7 @@ static void SetSurfDismount(void)
     //Unbind and destroy Surf Blob
     task = CreateTask(Task_FinishSurfDismount, 1);
     gTasks[task].data[0] = follower->fieldEffectSpriteId;
-    BindFieldEffectToSprite(follower->fieldEffectSpriteId, 2);
+    SetSurfBlob_BobState(follower->fieldEffectSpriteId, 2);
     follower->fieldEffectSpriteId = 0; //Unbind
     FollowMe_HandleSprite();
 
@@ -824,13 +824,13 @@ void Task_DoDoorWarp(u8 taskId)
         WarpFadeOutScreen();
         PlayRainStoppingSoundEffect();
         task->data[0] = 0;
-        task->func = task0A_fade_n_map_maybe;
+        task->func = Task_WarpAndLoadMap;
         break;
     case 5:
         TryFadeOutOldMapMusic();
         PlayRainStoppingSoundEffect();
         task->data[0] = 0;
-        task->func = task0A_fade_n_map_maybe;
+        task->func = Task_WarpAndLoadMap;
         break;
     }
 }
