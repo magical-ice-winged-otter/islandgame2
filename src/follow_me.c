@@ -429,12 +429,12 @@ static u8 DetermineFollowerState(struct ObjectEvent* follower, u8 state, u8 dire
         
         RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);
     
-    case MOVEMENT_ACTION_WALK_FASTEST_DOWN ... MOVEMENT_ACTION_WALK_FASTEST_RIGHT:
+    case MOVEMENT_ACTION_WALK_FASTER_DOWN ... MOVEMENT_ACTION_WALK_FASTER_RIGHT:
         // mach bike
         if (MetatileBehavior_IsIce(follower->currentMetatileBehavior) || MetatileBehavior_IsTrickHouseSlipperyFloor(follower->currentMetatileBehavior))
             follower->disableAnim = TRUE;
         
-        RETURN_STATE(MOVEMENT_ACTION_WALK_FASTEST_DOWN, direction);
+        RETURN_STATE(MOVEMENT_ACTION_WALK_FASTER_DOWN, direction);
         
     // acro bike
     case MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN ... MOVEMENT_ACTION_RIDE_WATER_CURRENT_RIGHT:
@@ -534,10 +534,10 @@ static bool8 IsStateMovement(u8 state)
     case MOVEMENT_ACTION_WALK_IN_PLACE_FAST_UP:
     case MOVEMENT_ACTION_WALK_IN_PLACE_FAST_LEFT:
     case MOVEMENT_ACTION_WALK_IN_PLACE_FAST_RIGHT:
-    case MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_DOWN:
-    case MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_UP:
-    case MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_LEFT:
-    case MOVEMENT_ACTION_WALK_IN_PLACE_FASTEST_RIGHT:
+    case MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_DOWN:
+    case MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_UP:
+    case MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_LEFT:
+    case MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_RIGHT:
     case MOVEMENT_ACTION_JUMP_IN_PLACE_DOWN:
     case MOVEMENT_ACTION_JUMP_IN_PLACE_UP:
     case MOVEMENT_ACTION_JUMP_IN_PLACE_LEFT:
@@ -1231,7 +1231,7 @@ static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
             follower = &gObjectEvents[eventObjId];
             follower->movementType = MOVEMENT_TYPE_NONE; //Doesn't get to move on its own anymore
             gSprites[follower->spriteId].callback = MovementType_None; //MovementType_None
-            Overworld_SetObjEventTemplateMovementType(localId, 0);
+            SetObjEventTemplateMovementType(localId, 0);
             if (CheckFollowerFlag(FOLLOWER_FLAG_CUSTOM_FOLLOW_SCRIPT))
                 script = (const u8 *)ReadWord(0);
             else
