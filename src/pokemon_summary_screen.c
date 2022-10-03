@@ -2925,7 +2925,7 @@ static void BufferMonTrainerMemo(void)
                 #endif
             }
         }
-        else if (sum->metLevel == 0)
+        else if (sum->metLevel == 0 && sum->species != SPECIES_JIRACHI)
         {
             DynamicPlaceholderTextUtil_SetPlaceholderPtr(4, metLocationString);
             #if CONFIG_TRUST_OUTSIDERS
@@ -2965,7 +2965,7 @@ static void BufferMonTrainerMemo(void)
         if (!DidMonComeFromGBAGames())
             StringCopy(metLocationString, sMapName_DistantLand);
 
-        if (sum->metLevel == 0)
+        if (sum->metLevel == 0 && sum->species != SPECIES_JIRACHI)
         {
             DynamicPlaceholderTextUtil_SetPlaceholderPtr(4, metLocationString);
             #if CONFIG_TRUST_OUTSIDERS
