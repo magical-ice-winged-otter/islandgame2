@@ -1082,7 +1082,7 @@ const u8 sText_HeldItem[] = _("HELD ITEM");
 #endif
 
 #if CONFIG_PHYSICAL_SPECIAL_SPLIT || CONFIG_SHOW_ICONS_FOR_OLD_SPLIT
-static const u16 sSplitIcons_Pal[] = INCBIN_U16("graphics/summary_screen/split_icons.gbapal");
+static const u16 ALIGNED(4) sSplitIcons_Pal[] = INCBIN_U16("graphics/summary_screen/split_icons.gbapal");
 static const u32 sSplitIcons_Gfx[] = INCBIN_U32("graphics/summary_screen/split_icons.4bpp.lz");
 
 static const struct OamData sOamData_SplitIcons =
