@@ -265,8 +265,8 @@
 #define STRINGID_ITAPPEAREDCAUGHT                     264
 #define STRINGID_AARGHALMOSTHADIT                     265
 #define STRINGID_SHOOTSOCLOSE                         266
-#define STRINGID_GOTCHAPKMNCAUGHT                     267
-#define STRINGID_GOTCHAPKMNCAUGHT2                    268
+#define STRINGID_GOTCHAPKMNCAUGHTPLAYER               267
+#define STRINGID_GOTCHAPKMNCAUGHTWALLY                268
 #define STRINGID_GIVENICKNAMECAPTURED                 269
 #define STRINGID_PKMNSENTTOPC                         270
 #define STRINGID_PKMNDATAADDEDTODEX                   271
@@ -379,7 +379,7 @@
 #define STRINGID_PKMNBOXLANETTESPCFULL                378
 #define STRINGID_TRAINER1WINTEXT                      379
 #define STRINGID_TRAINER2WINTEXT                      380
-                                                      
+
 #define STRINGID_ENDUREDSTURDY                        381
 #define STRINGID_POWERHERB                            382
 #define STRINGID_HURTBYITEM                           383
@@ -630,8 +630,26 @@
 #define STRINGID_ATTACKERHEALEDITSBURN                628
 #define STRINGID_ATTACKERMELTEDTHEICE                 629
 #define STRINGID_TARGETTOUGHEDITOUT                   630
+#define STRINGID_ATTACKERLOSTELECTRICTYPE             631
+#define STRINGID_ATTACKERSWITCHEDSTATWITHTARGET       632
+#define STRINGID_BEINGHITCHARGEDPKMNWITHPOWER         633
+#define STRINGID_SUNLIGHTACTIVATEDABILITY             634
+#define STRINGID_STATWASHEIGHTENED                    635
+#define STRINGID_ELECTRICTERRAINACTIVATEDABILITY      636
+#define STRINGID_ABILITYWEAKENEDFSURROUNDINGMONSSTAT  637
+#define STRINGID_ATTACKERGAINEDSTRENGTHFROMTHEFALLEN  638
+#define STRINGID_PKMNSABILITYPREVENTSABILITY          639
+#define STRINGID_PREPARESHELLTRAP                     640
+#define STRINGID_SHELLTRAPDIDNTWORK                   641
+#define STRINGID_SPIKESDISAPPEAREDFROMTEAM            642
+#define STRINGID_TOXICSPIKESDISAPPEAREDFROMTEAM       643
+#define STRINGID_STICKYWEBDISAPPEAREDFROMTEAM         644
+#define STRINGID_STEALTHROCKDISAPPEAREDFROMTEAM       645
+#define STRINGID_COULDNTFULLYPROTECT                  646
+#define STRINGID_STOCKPILEDEFFECTWOREOFF              647
+#define STRINGID_PKMNREVIVEDREADYTOFIGHT              648
 
-#define BATTLESTRINGS_COUNT                           631
+#define BATTLESTRINGS_COUNT                           649
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -732,7 +750,6 @@
 // gUproarAwakeStringIds
 #define B_MSG_CANT_SLEEP_UPROAR  0
 #define B_MSG_UPROAR_KEPT_AWAKE  1
-#define B_MSG_STAYED_AWAKE_USING 2
 
 // gUproarOverTurnStringIds
 #define B_MSG_UPROAR_CONTINUES  0
@@ -889,6 +906,13 @@
 #define B_MSG_TERRAINPREVENTS_ELECTRIC  1
 #define B_MSG_TERRAINPREVENTS_PSYCHIC   2
 
+// gTerrainEndingStringIds
+#define B_MSG_TERRAINENDS_MISTY     0
+#define B_MSG_TERRAINENDS_ELECTRIC  1
+#define B_MSG_TERRAINENDS_PSYCHIC   2
+#define B_MSG_TERRAINENDS_GRASS     3
+#define B_MSG_TERRAINENDS_COUNT     4
+
 // gWrappedStringIds
 #define B_MSG_WRAPPED_BIND        0
 #define B_MSG_WRAPPED_WRAP        1
@@ -909,5 +933,11 @@
 #define B_MSG_Z_RECOVER_HP    4
 #define B_MSG_Z_STAT_UP       5
 #define B_MSG_Z_HP_TRAP       6
+
+// gDmgHazardsStringIds
+#define B_MSG_PKMNHURTBYSPIKES   0
+#define B_MSG_STEALTHROCKDMG     1
+#define B_MSG_POINTEDSTONESFLOAT 2
+#define B_MSG_SPIKESSCATTERED    3
 
 #endif // GUARD_CONSTANTS_BATTLE_STRING_IDS_H

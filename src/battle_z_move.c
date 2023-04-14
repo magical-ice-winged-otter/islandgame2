@@ -31,7 +31,6 @@
 #include "constants/battle_anim.h"
 #include "constants/rgb.h"
 #include "battle_debug.h"
-#include "constants/battle_config.h"
 #include "data.h"
 #include "pokemon_summary_screen.h"
 #include "constants/songs.h"
@@ -51,14 +50,14 @@ static u16 GetSignatureZMove(u16 move, u16 species, u16 item);
 static u16 GetTypeBasedZMove(u16 move, u8 battler);
 static void ZMoveSelectionDisplayPpNumber(void);
 static void ZMoveSelectionDisplayPower(u16 move, u16 zMove);
-static void ShowZMoveTriggerSprite(void);
+static void ShowZMoveTriggerSprite(u8 battleId);
 static bool32 AreStatsMaxed(u8 battlerId, u8 n);
 static u8 GetZMoveScore(u8 battlerAtk, u8 battlerDef, u16 baseMove, u16 zMove);
+static void ZMoveSelectionDisplayMoveType(u16 zMove);
 
 // Const Data
 static const struct SignatureZMove sSignatureZMoves[] =
 {
-//    #ifdef NEW_POKEMON
     {SPECIES_PIKACHU_COSPLAY,       ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
     {SPECIES_PIKACHU_ROCK_STAR,     ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
     {SPECIES_PIKACHU_BELLE,         ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
@@ -95,7 +94,6 @@ static const struct SignatureZMove sSignatureZMoves[] =
     {SPECIES_TAPU_LELE,             ITEM_TAPUNIUM_Z,           MOVE_NATURES_MADNESS,     MOVE_GUARDIAN_OF_ALOLA},
     {SPECIES_TAPU_FINI,             ITEM_TAPUNIUM_Z,           MOVE_NATURES_MADNESS,     MOVE_GUARDIAN_OF_ALOLA},
     {SPECIES_NECROZMA_ULTRA,        ITEM_ULTRANECROZIUM_Z,     MOVE_PHOTON_GEYSER,       MOVE_LIGHT_THAT_BURNS_THE_SKY},
-//    #endif
     {SPECIES_MEW,                   ITEM_MEWNIUM_Z,            MOVE_PSYCHIC,             MOVE_GENESIS_SUPERNOVA},
     {SPECIES_PIKACHU,               ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
     {SPECIES_EEVEE,                 ITEM_EEVIUM_Z,             MOVE_LAST_RESORT,         MOVE_EXTREME_EVOBOOST},
@@ -167,41 +165,46 @@ bool32 IsViableZMove(u8 battlerId, u16 move)
     u32 item;
     u16 holdEffect;
     u16 species;
-    
-    if (gBattleStruct->zmove.used[battlerId])
-        return FALSE;
-    
+    int moveSlotIndex;
+
     species = gBattleMons[battlerId].species;
     item = gBattleMons[battlerId].item;
+
+    for (moveSlotIndex = 0; moveSlotIndex < MAX_MON_MOVES; moveSlotIndex++)
+    {
+        if (gBattleMons[battlerId].moves[moveSlotIndex] == move && gBattleMons[battlerId].pp[moveSlotIndex] == 0)
+            return FALSE;
+    }
+
+    if (gBattleStruct->zmove.used[battlerId])
+        return FALSE;
+
     if (gBattleTypeFlags & (BATTLE_TYPE_SAFARI | BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_FRONTIER))
         return FALSE;
-    
-    #ifdef ITEM_Z_RING
-    if ((GetBattlerPosition(battlerId) == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battlerId) == B_POSITION_PLAYER_RIGHT)) && !CheckBagHasItem(ITEM_Z_RING, 1))
+
+    if ((GetBattlerPosition(battlerId) == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battlerId) == B_POSITION_PLAYER_RIGHT)) && !CheckBagHasItem(ITEM_Z_POWER_RING, 1))
         return FALSE;
-    #endif
-    
+
     if (mega->alreadyEvolved[battlerPosition])
         return FALSE;   // Trainer has mega evolved
-    
+
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
     {
         if (IsPartnerMonFromSameTrainer(battlerId) && (mega->alreadyEvolved[partnerPosition] || (mega->toEvolve & gBitTable[BATTLE_PARTNER(battlerId)])))
             return FALSE;   // Partner has mega evolved or is about to mega evolve
     }
-    
-    if (B_ENABLE_DEBUG && gBattleStruct->debugHoldEffects[battlerId])
+
+#if DEBUG_BATTLE_MENU == TRUE
+    if (gBattleStruct->debugHoldEffects[battlerId])
         holdEffect = gBattleStruct->debugHoldEffects[battlerId];
-    else if (item == ITEM_ENIGMA_BERRY)
-        return FALSE;   // HoldEffect = gEnigmaBerries[battlerId].holdEffect; 
+    else
+#endif
+    if (item == ITEM_ENIGMA_BERRY_E_READER)
+        return FALSE;   // HoldEffect = gEnigmaBerries[battlerId].holdEffect;
     else
         holdEffect = ItemId_GetHoldEffect(item);
-    
-    #ifdef ITEM_ULTRANECROZIUM_Z
-    if (holdEffect == HOLD_EFFECT_Z_CRYSTAL || item == ITEM_ULTRANECROZIUM_Z)
-    #else
+
     if (holdEffect == HOLD_EFFECT_Z_CRYSTAL)
-    #endif
     {
         u16 zMove = GetSignatureZMove(move, gBattleMons[battlerId].species, item);
         if (zMove != MOVE_NONE)
@@ -209,18 +212,18 @@ bool32 IsViableZMove(u8 battlerId, u16 move)
             gBattleStruct->zmove.chosenZMove = zMove;  // Signature z move exists
             return TRUE;
         }
-        
+
         if (move != MOVE_NONE && zMove != MOVE_Z_STATUS && gBattleMoves[move].type == ItemId_GetSecondaryId(item))
         {
             if (IS_MOVE_STATUS(move))
                 gBattleStruct->zmove.chosenZMove = move;
             else
                 gBattleStruct->zmove.chosenZMove = GetTypeBasedZMove(move, battlerId);
-            
+
             return TRUE;
         }
     }
-    
+
     return FALSE;
 }
 
@@ -247,11 +250,11 @@ bool32 IsZMoveUsable(u8 battlerId, u16 moveIndex)
 bool32 TryChangeZIndicator(u8 battlerId, u8 moveIndex)
 {
     bool32 viableZMove = IsZMoveUsable(battlerId, moveIndex);
-    
+
     if (gBattleStruct->zmove.viable && !viableZMove)
         HideZMoveTriggerSprite();   // Was a viable z move, now is not -> slide out
     else if (!gBattleStruct->zmove.viable && viableZMove)
-        ShowZMoveTriggerSprite();   // Was not a viable z move, now is -> slide back in
+        ShowZMoveTriggerSprite(battlerId);   // Was not a viable z move, now is -> slide back in
 }
 
 #define SINGLES_Z_TRIGGER_POS_X_OPTIMAL     (29)
@@ -270,11 +273,11 @@ bool32 TryChangeZIndicator(u8 battlerId, u8 moveIndex)
 void CreateZMoveTriggerSprite(u8 battlerId, bool8 viable)
 {
     s16 x, y;
-    
+
     LoadSpritePalette(&sSpritePalette_ZMoveTrigger);
     if (GetSpriteTileStartByTag(TAG_ZMOVE_TRIGGER_TILE) == 0xFFFF)
         LoadCompressedSpriteSheetUsingHeap(&sSpriteSheet_ZMoveTrigger);
-    
+
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
     {
         x = gSprites[gHealthboxSpriteIds[battlerId]].x - DOUBLES_Z_TRIGGER_POS_X_SLIDE;
@@ -285,10 +288,10 @@ void CreateZMoveTriggerSprite(u8 battlerId, bool8 viable)
         x = gSprites[gHealthboxSpriteIds[battlerId]].x - SINGLES_Z_TRIGGER_POS_X_SLIDE;
         y = gSprites[gHealthboxSpriteIds[battlerId]].y - SINGLES_Z_TRIGGER_POS_Y_DIFF, 0;
     }
-    
+
     if (gBattleStruct->zmove.triggerSpriteId == 0xFF)
         gBattleStruct->zmove.triggerSpriteId = CreateSprite(&sSpriteTemplate_ZMoveTrigger, x, y, 0);
-    
+
     gSprites[gBattleStruct->zmove.triggerSpriteId].tBattler = battlerId;
     gSprites[gBattleStruct->zmove.triggerSpriteId].tHide = (viable == TRUE) ? FALSE : TRUE;
 }
@@ -361,11 +364,11 @@ void HideZMoveTriggerSprite(void)
     gBattleStruct->zmove.viable = FALSE;
 }
 
-static void ShowZMoveTriggerSprite(void)
+static void ShowZMoveTriggerSprite(u8 battlerId)
 {
     struct Sprite *sprite = &gSprites[gBattleStruct->zmove.triggerSpriteId];
     gBattleStruct->zmove.viable = TRUE;
-    CreateZMoveTriggerSprite(sprite->tBattler, TRUE);
+    CreateZMoveTriggerSprite(battlerId, TRUE);
 }
 
 void DestroyZMoveTriggerSprite(void)
@@ -374,14 +377,14 @@ void DestroyZMoveTriggerSprite(void)
     FreeSpriteTilesByTag(TAG_ZMOVE_TRIGGER_TILE);
     if (gBattleStruct->zmove.triggerSpriteId != 0xFF)
         DestroySprite(&gSprites[gBattleStruct->zmove.triggerSpriteId]);
-    
+
     gBattleStruct->zmove.triggerSpriteId = 0xFF;
 }
 
 static u16 GetSignatureZMove(u16 move, u16 species, u16 item)
 {
     u32 i;
-    
+
     // Check signature z move
     for (i = 0; i < ARRAY_COUNT(sSignatureZMoves); ++i)
     {
@@ -395,7 +398,7 @@ static u16 GetSignatureZMove(u16 move, u16 species, u16 item)
 static u16 GetTypeBasedZMove(u16 move, u8 battler)
 {
     u8 moveType = gBattleMoves[move].type;
-    
+
     // Get z move from type
     if (moveType < TYPE_FIRE)
         return MOVE_BREAKNECK_BLITZ + moveType;
@@ -410,7 +413,7 @@ bool32 MoveSelectionDisplayZMove(u16 zmove)
     u32 i;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[gActiveBattler][4]);
     u16 move = moveInfo->moves[gMoveSelectionCursor[gActiveBattler]];
-    
+
     PlaySE(SE_SELECT);
     gBattleStruct->zmove.viewing = TRUE;
     if (zmove != MOVE_NONE)
@@ -420,15 +423,15 @@ bool32 MoveSelectionDisplayZMove(u16 zmove)
         {
             MoveSelectionDestroyCursorAt(i);
             StringCopy(gDisplayedStringBattle, gText_EmptyString2);
-            BattlePutTextOnWindow(gDisplayedStringBattle, i + 3); 
+            BattlePutTextOnWindow(gDisplayedStringBattle, i + 3);
         }
 
         if (IS_MOVE_STATUS(move))
         {
             u8 zEffect = gBattleMoves[move].zMoveEffect;
-            
+
             gDisplayedStringBattle[0] = EOS;
-            
+
             if (zEffect == Z_EFFECT_CURSE)
             {
                 if (moveInfo->monType1 == TYPE_GHOST || moveInfo->monType2 == TYPE_GHOST || moveInfo->monType3 == TYPE_GHOST)
@@ -436,7 +439,7 @@ bool32 MoveSelectionDisplayZMove(u16 zmove)
                 else
                     zEffect = Z_EFFECT_ATK_UP_1;
             }
-                        
+
             switch (zEffect)
             {
             case Z_EFFECT_RESET_STATS:
@@ -500,7 +503,7 @@ bool32 MoveSelectionDisplayZMove(u16 zmove)
                 ExpandBattleTextBuffPlaceholders(gBattleTextBuff1, gDisplayedStringBattle + 4);
                 break;
             }
-            
+
             BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_NAME_3);
             gDisplayedStringBattle[0] = CHAR_Z;
             gDisplayedStringBattle[1] = CHAR_HYPHEN;
@@ -521,6 +524,7 @@ bool32 MoveSelectionDisplayZMove(u16 zmove)
         BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_NAME_1);
 
         ZMoveSelectionDisplayPpNumber();
+        ZMoveSelectionDisplayMoveType(zmove);
         MoveSelectionCreateCursorAt(0, 0);
         return TRUE;
     }
@@ -531,7 +535,7 @@ bool32 MoveSelectionDisplayZMove(u16 zmove)
 static void ZMoveSelectionDisplayPower(u16 move, u16 zMove)
 {
     u8 *txtPtr;
-    u16 power = gBattleMoves[move].zMovePower;
+    u16 power = GetZMovePower(move);
 
     if (zMove >= MOVE_CATASTROPIKA)
         power = gBattleMoves[zMove].power;
@@ -560,6 +564,23 @@ static void ZMoveSelectionDisplayPpNumber(void)
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP_REMAINING);
 }
 
+static void ZMoveSelectionDisplayMoveType(u16 zMove)
+{
+    u8 *txtPtr;
+    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[gActiveBattler][4]);
+    u8 zMoveType;
+
+    GET_MOVE_TYPE(zMove, zMoveType);
+
+    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
+    *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
+    *(txtPtr)++ = EXT_CTRL_CODE_FONT;
+    *(txtPtr)++ = FONT_NORMAL;
+
+    StringCopy(txtPtr, gTypeNames[zMoveType]);
+    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
+}
+
 const u8 *GetZMoveName(u16 move)
 {
     if (IsZMove(move))
@@ -583,11 +604,11 @@ void SetZEffect(void)
         else
             gBattleStruct->zmove.effect = Z_EFFECT_ATK_UP_1;
     }
-    
+
     gBattleScripting.savedStatChanger = gBattleScripting.statChanger;   // Save used move's stat changer (e.g. for Z-Growl)
     gBattleScripting.battler = gBattlerAttacker;
-    
-    switch (gBattleStruct->zmove.effect) 
+
+    switch (gBattleStruct->zmove.effect)
     {
     case Z_EFFECT_RESET_STATS:
         for (i = 0; i < NUM_BATTLE_STATS - 1; i++)
@@ -644,7 +665,7 @@ void SetZEffect(void)
         gBattlescriptCurrInstr = BattleScript_ZEffectPrintString;
         break;
     case Z_EFFECT_ATK_UP_1 ... Z_EFFECT_EVSN_UP_1:
-        SET_STATCHANGER(gBattleStruct->zmove.effect - Z_EFFECT_ATK_UP_1 + 1, 1, FALSE);       
+        SET_STATCHANGER(gBattleStruct->zmove.effect - Z_EFFECT_ATK_UP_1 + 1, 1, FALSE);
         BattleScriptPush(gBattlescriptCurrInstr + Z_EFFECT_BS_LENGTH);
         gBattlescriptCurrInstr = BattleScript_StatUpZMove;
         break;
@@ -662,7 +683,7 @@ void SetZEffect(void)
         gBattlescriptCurrInstr += 3;
         break;
     }
-    
+
     gBattleStruct->zmove.zStatusActive = FALSE;
 }
 
@@ -675,5 +696,47 @@ static bool32 AreStatsMaxed(u8 battlerId, u8 n)
             return FALSE;
     }
     return TRUE;
+}
+
+u16 GetZMovePower(u16 move)
+{
+    if (gBattleMoves[move].split == SPLIT_STATUS)
+        return 0;
+    if (gBattleMoves[move].effect == EFFECT_OHKO)
+        return 180;
+
+    switch (move)
+    {
+        case MOVE_MEGA_DRAIN:    return 120;
+        case MOVE_CORE_ENFORCER: return 140;
+        case MOVE_WEATHER_BALL:  return 160;
+        case MOVE_HEX:           return 160;
+        case MOVE_FLYING_PRESS:  return 170;
+        case MOVE_GEAR_GRIND:    return 180;
+        case MOVE_V_CREATE:      return 220;
+        default:
+        {
+            if (gBattleMoves[move].power >= 140)
+                return 200;
+            else if (gBattleMoves[move].power >= 130)
+                return 195;
+            else if (gBattleMoves[move].power >= 120)
+                return 190;
+            else if (gBattleMoves[move].power >= 110)
+                return 185;
+            else if (gBattleMoves[move].power >= 100)
+                return 180;
+            else if (gBattleMoves[move].power >= 90)
+                return 175;
+            else if (gBattleMoves[move].power >= 80)
+                return 160;
+            else if (gBattleMoves[move].power >= 70)
+                return 140;
+            else if (gBattleMoves[move].power >= 60)
+                return 120;
+            else
+                return 100;
+        }
+    }
 }
 

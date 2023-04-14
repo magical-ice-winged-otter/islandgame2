@@ -191,6 +191,9 @@
 #define FRIENDSHIP_200_TO_254  5
 #define FRIENDSHIP_MAX         6
 
+// Friendship value that the majority of species use. This was changed in Generation 8 to 50.
+#define STANDARD_FRIENDSHIP 70
+
 #define MAX_FRIENDSHIP  255
 #define MAX_SHEEN       255
 #define MAX_CONDITION   255
@@ -235,6 +238,8 @@
 #define FLAG_THAW_USER                            (1 << 25)
 #define FLAG_HIT_IN_SUBSTITUTE                    (1 << 26) // Hyperspace Fury
 #define FLAG_TWO_STRIKES                          (1 << 27) // A move with this flag will strike twice, and may apply its effect on each hit
+#define FLAG_WIND_MOVE                            (1 << 28)
+#define FLAG_SLICING_MOVE                         (1 << 29)
 
 // Split defines.
 #define SPLIT_PHYSICAL  0x0
@@ -305,6 +310,7 @@
 #define EVO_SCRIPT_TRIGGER_DMG            36     // Pokémon has specified HP below max, then player interacts trigger
 #define EVO_DARK_SCROLL                   37     // interacts with Scroll of Darkness
 #define EVO_WATER_SCROLL                  38     // interacts with Scroll of Waters
+#define EVO_ITEM_NIGHT                    39     // specified item is used on Pokémon at night
 
 #define EVOS_PER_MON 10
 
@@ -322,19 +328,25 @@
 #define FORM_ITEM_USE           2
 #define FORM_MOVE               3
 #define FORM_WITHDRAW           4
-#define FORM_ITEM_HOLD_ABILITY  5
-#define FORM_ITEM_USE_TIME      6
-
-#define NUM_MALE_LINK_FACILITY_CLASSES   8
-#define NUM_FEMALE_LINK_FACILITY_CLASSES 8
+#define FORM_BATTLE_BEGIN       5
+#define FORM_BATTLE_END         6
 
 #define MON_PIC_WIDTH 64
 #define MON_PIC_HEIGHT 64
 #define MON_PIC_SIZE (MON_PIC_WIDTH * MON_PIC_HEIGHT / 2)
 
-#define BATTLE_ALIVE_EXCEPT_ACTIVE  0
-#define BATTLE_ALIVE_ATK_SIDE       1
-#define BATTLE_ALIVE_DEF_SIDE       2
+// Most pokemon have 2 frames (a default and an alternate for their animation).
+// There are 4 exceptions:
+// - Castform has 4 frames, 1 for each form
+// - Deoxys has 2 frames, 1 for each form
+// - Spinda has 1 frame, presumably to avoid the work of animating its spots
+// - Unown has 1 frame, presumably to avoid the work of animating all 28 of its forms
+#define MAX_MON_PIC_FRAMES 4
+
+#define BATTLE_ALIVE_EXCEPT_ACTIVE   0
+#define BATTLE_ALIVE_ATK_SIDE        1
+#define BATTLE_ALIVE_DEF_SIDE        2
+#define BATTLE_ALIVE_EXCEPT_ATTACKER 3
 
 #define SKIP_FRONT_ANIM (1 << 7)
 
@@ -343,13 +355,16 @@
 #define NUM_HIDDEN_ABILITY_SLOTS 1
 
 // Species Flags
-#define FLAG_LEGENDARY          (1 << 0)
-#define FLAG_MYTHICAL           (1 << 1)
-#define FLAG_ULTRA_BEAST        (1 << 2)
-#define FLAG_ALOLAN_FORM        (1 << 3)
-#define FLAG_GALARIAN_FORM      (1 << 4)
-#define FLAG_HISUIAN_FORM       (1 << 5)
-#define FLAG_GENDER_DIFFERENCE  (1 << 6)
+#define SPECIES_FLAG_LEGENDARY          (1 << 0)
+#define SPECIES_FLAG_MYTHICAL           (1 << 1)
+#define SPECIES_FLAG_MEGA_EVOLUTION     (1 << 2)
+#define SPECIES_FLAG_ULTRA_BEAST        (1 << 3)
+#define SPECIES_FLAG_ALOLAN_FORM        (1 << 4)
+#define SPECIES_FLAG_GALARIAN_FORM      (1 << 5)
+#define SPECIES_FLAG_HISUIAN_FORM       (1 << 6)
+#define SPECIES_FLAG_GENDER_DIFFERENCE  (1 << 7)
+#define SPECIES_FLAG_ALL_PERFECT_IVS    (1 << 8)
+#define SPECIES_FLAG_CANNOT_BE_TRADED   (1 << 9)
 
 #define LEGENDARY_PERFECT_IV_COUNT 3
 

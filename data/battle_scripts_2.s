@@ -1,8 +1,8 @@
+#include "config/battle.h"
 #include "constants/battle.h"
 #include "constants/battle_script_commands.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_string_ids.h"
-#include "constants/battle_config.h"
 #include "constants/items.h"
 #include "constants/songs.h"
 #include "constants/game_stat.h"
@@ -50,7 +50,7 @@ BattleScript_SuccessBallThrow::
 	setbyte sMON_CAUGHT, TRUE
 	incrementgamestat GAME_STAT_POKEMON_CAPTURES
 BattleScript_PrintCaughtMonInfo::
-	printstring STRINGID_GOTCHAPKMNCAUGHT
+	printstring STRINGID_GOTCHAPKMNCAUGHTPLAYER
 	jumpifbyte CMP_NOT_EQUAL, sEXP_CATCH, TRUE, BattleScript_TryPrintCaughtMonInfo
 	setbyte sGIVEEXP_STATE, 0
 	getexp BS_TARGET
@@ -77,7 +77,7 @@ BattleScript_SuccessBallThrowEnd::
 	finishturn
 
 BattleScript_WallyBallThrow::
-	printstring STRINGID_GOTCHAPKMNCAUGHT2
+	printstring STRINGID_GOTCHAPKMNCAUGHTWALLY
 	setbyte gBattleOutcome, B_OUTCOME_CAUGHT
 	finishturn
 
@@ -192,16 +192,30 @@ BattleScript_ActionWallyThrow:
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
-BattleScript_TrainerSlideMsgRet::
+BattleScript_TrainerASlideMsgRet::
 	handletrainerslidemsg BS_SCRIPTING, 0
-	trainerslidein 1
+	trainerslidein B_POSITION_OPPONENT_LEFT
 	handletrainerslidemsg BS_SCRIPTING, 1
 	waitstate
-	trainerslideout 1
-	handletrainerslidemsg BS_SCRIPTING, 2
+	trainerslideout B_POSITION_OPPONENT_LEFT
 	waitstate
+	handletrainerslidemsg BS_SCRIPTING, 2
 	return
 
-BattleScript_TrainerSlideMsgEnd2::
-	call BattleScript_TrainerSlideMsgRet
+BattleScript_TrainerASlideMsgEnd2::
+	call BattleScript_TrainerASlideMsgRet
+	end2
+	
+BattleScript_TrainerBSlideMsgRet::
+	handletrainerslidemsg BS_SCRIPTING, 0
+	trainerslidein B_POSITION_OPPONENT_RIGHT
+	handletrainerslidemsg BS_SCRIPTING, 1
+	waitstate
+	trainerslideout B_POSITION_OPPONENT_RIGHT
+	waitstate
+	handletrainerslidemsg BS_SCRIPTING, 2
+	return
+
+BattleScript_TrainerBSlideMsgEnd2::
+	call BattleScript_TrainerBSlideMsgRet
 	end2
