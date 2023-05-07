@@ -27,13 +27,15 @@ with open(dpptFile) as file:
         elements = line.split()
         if len(elements) >= 3 and elements[0] == '#define':
             dpptDefines[elements[1]] = elements[2]
-            print(elements[1])
+            #print(elements[1])
 
 with open(expansionFile) as file:
     for line in file:
         elements = line.split()
         if len(elements) >= 3 and elements[0] == '#define':
             expansionDefines[elements[1]] = elements[2]
+            # if elements[1].startswith("MUS_"):
+            #     print("X({}) \\".format(elements[1]))
 
 dpptSet = set(dpptDefines.keys())
 expansionSet = set(expansionDefines.keys())
