@@ -3,6 +3,7 @@
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "characters.h"
+#include "item_menu.h"
 #include "main.h"
 #include "malloc.h"
 #include "random.h"
@@ -133,6 +134,8 @@ static void BattleTest_SetUp(void *data)
         Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE = AllocZerod(%d)", sizeof(*STATE));
     InvokeTestFunction(test);
     STATE->parameters = STATE->parametersCount;
+    if (STATE->parametersCount == 0 && test->resultsSize > 0)
+        Test_ExitWithResult(TEST_RESULT_INVALID, "results without PARAMETRIZE");
     STATE->results = AllocZeroed(test->resultsSize * STATE->parameters);
     if (!STATE->results)
         Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE->results = AllocZerod(%d)", sizeof(test->resultsSize * STATE->parameters));
@@ -399,7 +402,7 @@ const void *RandomElementArray(enum RandomTag tag, const void *array, size_t siz
 
     if (turn && turn->rng.tag == tag)
     {
-        u32 element;
+        u32 element = 0;
         for (index = 0; index < count; index++)
         {
             memcpy(&element, (const u8 *)array + size * index, size);
@@ -892,6 +895,15 @@ static void BattleTest_TearDown(void *data)
 {
     if (STATE)
     {
+        // Free resources that aren't cleaned up when the battle was
+        // aborted unexpectedly.
+        if (STATE->tearDownBattle)
+        {
+            FreeMonSpritesGfx();
+            FreeBattleSpritesData();
+            FreeBattleResources();
+            FreeAllWindowBuffers();
+        }
         FREE_AND_SET_NULL(STATE->results);
         FREE_AND_SET_NULL(STATE);
     }
@@ -922,12 +934,15 @@ static bool32 BattleTest_HandleExitWithResult(void *data, enum TestResult result
     }
     else
     {
+        STATE->tearDownBattle = TRUE;
         return FALSE;
     }
 }
 
 void Randomly(u32 sourceLine, u32 passes, u32 trials, struct RandomlyContext ctx)
 {
+    const struct BattleTest *test = gTestRunnerState.test->data;
+    INVALID_IF(test->resultsSize > 0, "PASSES_RANDOMLY is incompatible with results");
     INVALID_IF(passes > trials, "%d passes specified, but only %d trials", passes, trials);
     STATE->rngTag = ctx.tag;
     STATE->runTrial = 0;
@@ -1081,9 +1096,12 @@ void Ability_(u32 sourceLine, u32 ability)
 void Level_(u32 sourceLine, u32 level)
 {
     // TODO: Preserve any explicitly-set stats.
+    u32 species = GetMonData(DATA.currentMon, MON_DATA_SPECIES);
     INVALID_IF(!DATA.currentMon, "Level outside of PLAYER/OPPONENT");
     INVALID_IF(level == 0 || level > MAX_LEVEL, "Illegal level: %d", level);
     SetMonData(DATA.currentMon, MON_DATA_LEVEL, &level);
+    SetMonData(DATA.currentMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
+    CalculateMonStats(DATA.currentMon);
 }
 
 void MaxHP_(u32 sourceLine, u32 maxHP)
@@ -1160,6 +1178,21 @@ void Moves_(u32 sourceLine, const u16 moves[MAX_MON_MOVES])
     DATA.explicitMoves[DATA.currentSide] |= 1 << DATA.currentPartyIndex;
 }
 
+void MovesWithPP_(u32 sourceLine, struct moveWithPP moveWithPP[MAX_MON_MOVES])
+{
+    s32 i;
+    INVALID_IF(!DATA.currentMon, "Moves outside of PLAYER/OPPONENT");
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moveWithPP[i].moveId == MOVE_NONE)
+            break;
+        INVALID_IF(moveWithPP[i].moveId >= MOVES_COUNT, "Illegal move: %d", &moveWithPP[i].moveId);
+        SetMonData(DATA.currentMon, MON_DATA_MOVE1 + i, &moveWithPP[i].moveId);
+        SetMonData(DATA.currentMon, MON_DATA_PP1 + i, &moveWithPP[i].pp);
+    }
+    DATA.explicitMoves[DATA.currentSide] |= 1 << DATA.currentPartyIndex;
+}
+
 void Friendship_(u32 sourceLine, u32 friendship)
 {
     INVALID_IF(!DATA.currentMon, "Friendship outside of PLAYER/OPPONENT");
@@ -1208,7 +1241,7 @@ static void PushBattlerAction(u32 sourceLine, s32 battlerId, u32 actionType, u32
     DATA.recordedBattle.battleRecord[battlerId][recordIndex] = byte;
 }
 
-void BattleTest_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 actionType)
+void TestRunner_Battle_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 actionType)
 {
     // An illegal move choice will cause the battle to request a new
     // move slot and target. This detects the move slot.
@@ -1250,6 +1283,9 @@ void BattleTest_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 
                     break;
                 case B_ACTION_SWITCH:
                     actualMacro = "SWITCH";
+                    break;
+                case B_ACTION_USE_ITEM:
+                    actualMacro = "USE_ITEM";
                     break;
                 }
                 break;
@@ -1508,6 +1544,42 @@ void SendOut(u32 sourceLine, struct BattlePokemon *battler, u32 partyIndex)
     DATA.currentMonIndexes[battlerId] = partyIndex;
 }
 
+void UseItem(u32 sourceLine, struct BattlePokemon *battler, struct ItemContext ctx)
+{
+    s32 i;
+    s32 battlerId = battler - gBattleMons;
+    bool32 requirePartyIndex = ItemId_GetType(ctx.itemId) == ITEM_USE_PARTY_MENU || ItemId_GetType(ctx.itemId) == ITEM_USE_PARTY_MENU_MOVES;
+    // Check general bad use.
+    INVALID_IF(DATA.turnState == TURN_CLOSED, "USE_ITEM outside TURN");
+    INVALID_IF(DATA.actionBattlers & (1 << battlerId), "Multiple battler actions");
+    INVALID_IF(ctx.itemId >= ITEMS_COUNT, "Illegal item: %d", ctx.itemId);
+    // Check party menu items.
+    INVALID_IF(requirePartyIndex && !ctx.explicitPartyIndex, "%S requires explicit party index", ItemId_GetName(ctx.itemId));
+    INVALID_IF(requirePartyIndex && ctx.partyIndex >= ((battlerId & BIT_SIDE) == B_SIDE_PLAYER ? DATA.playerPartySize : DATA.opponentPartySize), \
+                "USE_ITEM to invalid party index");
+    // Check move slot items.
+    if (ItemId_GetType(ctx.itemId) == ITEM_USE_PARTY_MENU_MOVES)
+    {
+        INVALID_IF(!ctx.explicitMove, "%S requires an explicit move", ItemId_GetName(ctx.itemId));
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (GetMonData(CurrentMon(battlerId), MON_DATA_MOVE1 + i, NULL) == ctx.move)
+                break;
+        }
+        INVALID_IF(i == MAX_MON_MOVES, "USE_ITEM on invalid move: %d", ctx.move);
+    }
+    else
+    {
+        i = 0;
+    }
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ACTION_TYPE, B_ACTION_USE_ITEM);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_ID, (ctx.itemId >> 8) & 0xFF);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_ID, ctx.itemId & 0xFF);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_TARGET, ctx.partyIndex);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_MOVE, i);
+    DATA.actionBattlers |= 1 << battlerId;
+}
+
 static const char *const sQueueGroupTypeMacros[] =
 {
     [QUEUE_GROUP_NONE] = NULL,
@@ -1655,7 +1727,6 @@ void QueueMessage(u32 sourceLine, const u8 *pattern)
     };
 }
 
-
 void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEventContext ctx)
 {
     s32 battlerId = battler - gBattleMons;
@@ -1679,6 +1750,8 @@ void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEve
         mask = STATUS1_PARALYSIS;
     else if (ctx.badPoison)
         mask = STATUS1_TOXIC_POISON;
+    else if (ctx.frostbite)
+        mask = STATUS1_FROSTBITE;
     else
         mask = ctx.status1;
 
@@ -1692,4 +1765,12 @@ void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEve
             .mask = mask,
         }},
     };
+}
+
+void ValidateFinally(u32 sourceLine)
+{
+    // Defer this error until after estimating the cost.
+    if (STATE->results == NULL)
+        return;
+    INVALID_IF(STATE->parametersCount == 0, "FINALLY without PARAMETRIZE");
 }

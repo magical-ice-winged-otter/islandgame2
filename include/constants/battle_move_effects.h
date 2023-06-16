@@ -405,7 +405,9 @@
 #define EFFECT_DIRE_CLAW                    399
 #define EFFECT_BARB_BARRAGE                 400
 #define EFFECT_REVIVAL_BLESSING             401
+#define EFFECT_FROSTBITE_HIT                402
+#define EFFECT_SNOWSCAPE                    403
 
-#define NUM_BATTLE_MOVE_EFFECTS             402
+#define NUM_BATTLE_MOVE_EFFECTS             404
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H
