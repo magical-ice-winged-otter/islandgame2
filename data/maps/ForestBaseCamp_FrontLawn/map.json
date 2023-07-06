@@ -50,7 +50,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ForestBaseCamp_FrontLawn_BlindGuy",
       "flag": "0"
     },
     {
@@ -93,7 +93,7 @@
       "x": 9,
       "y": 7,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_BLACK_GLASSES",
       "flag": "FLAG_TEMP_1"
     },
     {
