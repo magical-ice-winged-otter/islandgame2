@@ -129,10 +129,10 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
     // Inject our custom startup logic, replacing the truck intro.
-    s8 group = ISLANDGAME_STARTING_MAP_GROUP;
-    s8 num = ISLANDGAME_STARTING_MAP_NUM;
-    s8 x = ISLANDGAME_STARTING_X;
-    s8 y = ISLANDGAME_STARTING_Y;
+    s8 group = ISLANDGAME_JUNGLE_ROUTE1_GROUP;
+    s8 num = ISLANDGAME_JUNGLE_ROUTE1_NUM;
+    s8 x = ISLANDGAME_JUNGLE_ROUTE1_X;
+    s8 y = ISLANDGAME_JUNGLE_ROUTE1_Y;
 
     SetWarpDestination(group, num, WARP_ID_NONE, x, y);
     WarpIntoMap();

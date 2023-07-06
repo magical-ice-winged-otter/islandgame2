@@ -1,0 +1,14 @@
+mapscripts IslandJungle_Route1_MapScripts {
+
+}
+
+script IslandJungle_Route1_EntranceSign_Script {
+    lockall
+    msgbox("Hello World")
+    releaseall
+}
+
+
+#text IslandJungle_Route1_EntranceSign_Text {
+#    format("")
+#}

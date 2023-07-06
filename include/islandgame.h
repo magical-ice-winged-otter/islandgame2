@@ -10,6 +10,11 @@
 #define ISLANDGAME_STARTING_X           10
 #define ISLANDGAME_STARTING_Y           15
 
+#define ISLANDGAME_JUNGLE_ROUTE1_GROUP   MAP_GROUP ( ISLAND_JUNGLE_ROUTE1 )
+#define ISLANDGAME_JUNGLE_ROUTE1_NUM     MAP_NUM   ( ISLAND_JUNGLE_ROUTE1 )
+#define ISLANDGAME_JUNGLE_ROUTE1_X       0
+#define ISLANDGAME_JUNGLE_ROUTE1_Y      52
+
 // Custom intro cutscene
 void Task_IslandGameCustomSpeech(u8);
 
