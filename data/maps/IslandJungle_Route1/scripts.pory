@@ -4,11 +4,11 @@ mapscripts IslandJungle_Route1_MapScripts {
 
 script IslandJungle_Route1_EntranceSign_Script {
     lockall
-    msgbox("Hello World")
+    msgbox(IslandJungle_Route1_EntranceSign_Text)
     releaseall
 }
 
 
-#text IslandJungle_Route1_EntranceSign_Text {
-#    format("")
-#}
+text IslandJungle_Route1_EntranceSign_Text {
+    format("Some Forest Name")
+}
