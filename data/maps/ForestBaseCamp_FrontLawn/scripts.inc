@@ -72,4 +72,4 @@ ForestBaseCamp_FrontLawn_BlindGuy_Text_3:
 
 ForestBaseCamp_FrontLawn_BasecampSignText::
 	.string "Welcome to the {COLOR GREEN}Cloudroot{COLOR DARK_GRAY} Basecamp!\n"
-	.string "{COLOR RED}{SHADOW RED}ADVENTURERS WANTED INSIDE$"
+	.string "{COLOR RED}ADVENTURERS WANTED INSIDE$"
