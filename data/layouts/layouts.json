@@ -4424,8 +4424,8 @@
     {
       "id": "LAYOUT_ISLAND_JUNGLE_ROUTE1",
       "name": "IslandJungle_Route1_Layout",
-      "width": 40,
-      "height": 60,
+      "width": 60,
+      "height": 62,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/IslandJungle_Route1/border.bin",
