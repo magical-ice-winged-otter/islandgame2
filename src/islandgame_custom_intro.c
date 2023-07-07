@@ -17,6 +17,7 @@ void IslandGameCustomStartup()
     // usually its set when you pick the starter.
     FlagSet(FLAG_SYS_POKEMON_GET);
 
+    // todo: this actually is a traded mon technically, and won't obey orders
     u16 species = ISLANDGAME_STARTING_MON;
     u8 level = ISLANDGAME_STARTING_MON_LEVEL;
     u16 item = ISLANDGAME_STARTING_MON_ITEM;

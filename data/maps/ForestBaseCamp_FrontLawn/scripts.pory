@@ -1,0 +1,42 @@
+mapscripts ForestBaseCamp_FrontLawn_MapScripts 
+{
+}
+
+script ForestBaseCamp_FrontLawn_BlindGuy 
+{
+    checkitem(ITEM_BLACK_GLASSES, 1)
+    
+    if (var(VAR_RESULT) == 1) 
+    {
+    	msgbox(format("Oh! You found my glasses! Can I have them back?"), MSGBOX_YESNO)
+
+        if (var(VAR_RESULT) == 1) 
+        {
+        	msgbox(format("Thank you so much! I will never forget this moment."), MSGBOX_NPC)
+            removeitem(ITEM_BLACK_GLASSES, 1)
+        }
+        else 
+        {
+        	msgbox(format("How dare you! Thief! I'll make you pay for this!"), MSGBOX_NPC)
+            trainerbattle_single(TRAINER_CALVIN_1, ForestBaseCamp_FrontLawn_BlindGuyIntro, ForestBaseCamp_FrontLawn_BlindGuyDefeated, ForestBaseCamp_FrontLawn_BlindGuyPostBattle)
+        }
+    }
+    else 
+    {
+    	msgbox(format("By any chance, have you seen a pair of glasses around here?"), MSGBOX_NPC)
+    }
+}
+
+text ForestBaseCamp_FrontLawn_BlindGuyIntro 
+{
+	format("Thiefs like you need to be taught a lesson.")
+}
+
+text ForestBaseCamp_FrontLawn_BlindGuyDefeated 
+{
+	"..."
+}
+
+script ForestBaseCamp_FrontLawn_BlindGuyPostBattle 
+{
+}

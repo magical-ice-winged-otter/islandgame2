@@ -24,7 +24,6 @@ ForestBaseCamp_FrontLawn_BlindGuy_4:
 
 
 ForestBaseCamp_FrontLawn_BlindGuyPostBattle::
-	msgbox ForestBaseCamp_FrontLawn_BlindGuyPostBattle_Text_0, MSGBOX_NPC
 	return
 
 
@@ -44,11 +43,9 @@ ForestBaseCamp_FrontLawn_BlindGuy_Text_3:
 	.string "By any chance, have you seen a pair of\n"
 	.string "glasses around here?$"
 
-ForestBaseCamp_FrontLawn_BlindGuyPostBattle_Text_0:
-	.string "...$"
-
 ForestBaseCamp_FrontLawn_BlindGuyIntro::
-	.string "Thiefs like you need to be taught a lesson.$"
+	.string "Thiefs like you need to be taught a\n"
+	.string "lesson.$"
 
 ForestBaseCamp_FrontLawn_BlindGuyDefeated::
 	.string "...$"
