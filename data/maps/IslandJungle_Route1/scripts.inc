@@ -10,4 +10,4 @@ IslandJungle_Route1_EntranceSign_Script::
 
 
 IslandJungle_Route1_EntranceSign_Text::
-+	.string "Some Forest Name$"
+	.string "Some Forest Name$"

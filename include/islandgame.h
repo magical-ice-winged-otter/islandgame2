@@ -17,9 +17,9 @@
 
 void IslandGameCustomStartup();
 
-// Make sure that this string is always exactly 7 characters long, or compile warnings
+// Make sure that this string is always <=7 characters long, or compile warnings
 // will follow!
-#define ISLANDGAME_PLAYER_NAME          "GAMER "
+#define ISLANDGAME_PLAYER_NAME          "Rain"
 
 // This mon definition is kinda basic, we might want more control over exact moveset later
 // but for testing now, its probably fine
