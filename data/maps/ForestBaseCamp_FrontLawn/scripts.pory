@@ -2,41 +2,52 @@ mapscripts ForestBaseCamp_FrontLawn_MapScripts
 {
 }
 
+script ForestBaseCamp_FrontLawn_LocationSign
+{
+    msgbox(format("NATIONAL RESERVE AHEAD\n{COLOR GREEN}Cloudroot Forest"), MSGBOX_SIGN)
+}
+
+script ForestBaseCamp_FrontLawn_BasecampSign
+{
+    msgbox(ForestBaseCamp_FrontLawn_BasecampSignText, MSGBOX_SIGN)
+}
+
+text ForestBaseCamp_FrontLawn_BasecampSignText
+{
+    "Welcome to the {COLOR GREEN}Cloudroot{COLOR DARK_GRAY} Basecamp!\n"
+    "{COLOR RED}ADVENTURERS WANTED INSIDE"
+}
+
+script ForestBaseCamp_FrontLawn_Novice
+{
+    msgbox(format("They won't let me into the basecamp because I'm too young. It's so unfair!"), MSGBOX_NPC)
+}
+
+script ForestBaseCamp_FrontLawn_NervousGuy
+{
+    msgbox(format("I can't believe I let me friend talk me into this..."), MSGBOX_NPC)
+}
+
 script ForestBaseCamp_FrontLawn_BlindGuy 
 {
     checkitem(ITEM_BLACK_GLASSES, 1)
     
-    if (var(VAR_RESULT) == 1) 
+    if (var(VAR_RESULT) == 0) // We haven't found the glasses
+    {
+    	msgbox(format("By any chance, have you seen a pair of glasses around here?"), MSGBOX_NPC)
+    }
+    else  // We have found the glasses
     {
     	msgbox(format("Oh! You found my glasses! Can I have them back?"), MSGBOX_YESNO)
 
-        if (var(VAR_RESULT) == 1) 
+        if (var(VAR_RESULT) == 1) // We agree to return the glasses
         {
         	msgbox(format("Thank you so much! I will never forget this moment."), MSGBOX_NPC)
             removeitem(ITEM_BLACK_GLASSES, 1)
         }
-        else 
+        else  // We refuse to give his glasses back
         {
         	msgbox(format("How dare you! Thief! I'll make you pay for this!"), MSGBOX_NPC)
-            trainerbattle_single(TRAINER_CALVIN_1, ForestBaseCamp_FrontLawn_BlindGuyIntro, ForestBaseCamp_FrontLawn_BlindGuyDefeated, ForestBaseCamp_FrontLawn_BlindGuyPostBattle)
         }
     }
-    else 
-    {
-    	msgbox(format("By any chance, have you seen a pair of glasses around here?"), MSGBOX_NPC)
-    }
-}
-
-text ForestBaseCamp_FrontLawn_BlindGuyIntro 
-{
-	format("Thiefs like you need to be taught a lesson.")
-}
-
-text ForestBaseCamp_FrontLawn_BlindGuyDefeated 
-{
-	"..."
-}
-
-script ForestBaseCamp_FrontLawn_BlindGuyPostBattle 
-{
 }
