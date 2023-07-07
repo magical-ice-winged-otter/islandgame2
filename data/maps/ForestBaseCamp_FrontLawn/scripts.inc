@@ -1,12 +1,5 @@
 ForestBaseCamp_FrontLawn_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, DEBUG_ForestBaseCamp_FrontLawn_AddStarter
 	.byte 0
-
-
-DEBUG_ForestBaseCamp_FrontLawn_AddStarter::
-	setflag FLAG_SYS_POKEMON_GET
-	givemon SPECIES_DRATINI, 5, ITEM_DRAGON_FANG
-	return
 
 
 ForestBaseCamp_FrontLawn_BlindGuy::

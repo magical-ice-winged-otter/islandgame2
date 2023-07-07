@@ -1,15 +1,42 @@
+#include "global.h"
+#include "text.h"
+#include "script_pokemon_util.h"
+#include "event_data.h"
+#include "constants/flags.h"
+#include "constants/items.h"
+#include "constants/species.h"
+#include "strings.h"
 #include "islandgame.h"
-#include "task.h"
 
-// Forward declare from src/main_menu.c
-extern void NewGameBirchSpeech_SetDefaultPlayerName(u8);
-extern void Task_NewGameBirchSpeech_Cleanup(u8);
+static void SetPlayerName(const u8* name);
 
-void Task_IslandGameCustomSpeech(u8 taskId)
+// This gets called after the intro cutscene, right when the new game is started.
+void IslandGameCustomStartup()
 {
-    // todo: this is fully random name, probably just for testing
-    NewGameBirchSpeech_SetDefaultPlayerName(0);
+    // This flag makes sure that we unlock the pokemon selection menu:
+    // usually its set when you pick the starter.
+    FlagSet(FLAG_SYS_POKEMON_GET);
 
-    // After we are done w/ custom logic, skip ahead past the cutscene without leaking memory.
-    gTasks[taskId].func = Task_NewGameBirchSpeech_Cleanup;
+    u16 species = ISLANDGAME_STARTING_MON;
+    u8 level = ISLANDGAME_STARTING_MON_LEVEL;
+    u16 item = ISLANDGAME_STARTING_MON_ITEM;
+    ScriptGiveMon(species, level, item, 0, 0, 0);
+
+    // I'm honestly not sure why you need the weird syntax around string literals,
+    // but it breaks pretty badly w/out it so...
+    const u8 name[] = _(ISLANDGAME_PLAYER_NAME);
+    SetPlayerName(name);
+}
+
+// Almost exactly copied from src/main_menu.c
+static void SetPlayerName(const u8 *name)
+{
+    u8 i;
+
+    for (i = 0; i < PLAYER_NAME_LENGTH; i++)
+    {
+        gSaveBlock2Ptr->playerName[i] = name[i];
+    }
+
+    gSaveBlock2Ptr->playerName[i] = EOS;
 }

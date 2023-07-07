@@ -4,10 +4,10 @@ IslandJungle_Route1_MapScripts::
 
 IslandJungle_Route1_EntranceSign_Script::
 	lockall
-	msgbox IslandJungle_Route1_EntranceSign_Script_Text_0
+	msgbox IslandJungle_Route1_EntranceSign_Text
 	releaseall
 	return
 
 
-IslandJungle_Route1_EntranceSign_Script_Text_0:
-	.string "Hello World$"
+IslandJungle_Route1_EntranceSign_Text::
+	.string "Some Forest Name$"
