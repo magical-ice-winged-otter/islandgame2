@@ -66,6 +66,7 @@
 #define MAP_FOREST_BASE_CAMP_FRONT_LAWN (57 | (0 << 8))
 #define MAP_ISLAND_JUNGLE_ROUTE1        (58 | (0 << 8))
 #define MAP_FOREST_BASE_CAMP_INTERIOR1F (59 | (0 << 8))
+#define MAP_FOREST_BASE_CAMP_INTERIOR2F (60 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
