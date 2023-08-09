@@ -417,7 +417,10 @@
 #define ITEM_MAGMA_EMBLEM 375
 #define ITEM_OLD_SEA_MAP 376
 
-#define ITEMS_COUNT 377
+// Pokevial Branch
+#define ITEM_POKEVIAL 377
+
+#define ITEMS_COUNT 378
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
 // Its icon is defined at ITEMS_COUNT as the "return to field" arrow

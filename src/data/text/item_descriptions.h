@@ -1549,3 +1549,9 @@ static const u8 sOldSeaMapDesc[] = _(
     "A faded sea chart\n"
     "that shows the way\n"
     "to a certain island.");
+
+//Pokevial Branch
+static const u8 sPokevialDesc[] = _(
+    "Fully revives and\n"
+    "restores all\n"
+    "fainted POKéMON.");

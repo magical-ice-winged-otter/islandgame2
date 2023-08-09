@@ -6428,3 +6428,9 @@ void IsLastMonThatKnowsSurf(void)
             gSpecialVar_Result = TRUE;
     }
 }
+
+//Pokevial Branch
+void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task)
+{
+    AddBagItem(ITEM_POTION,1);
+}
