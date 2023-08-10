@@ -41,6 +41,8 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "tv.h"
+#include "pokevial.h"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -70,6 +72,9 @@ static void Task_UseRepel(u8);
 static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
+static void UsePokevialYesNo(u8);
+static void UsePokevialYes(u8);
+void ItemUseOutOfBattle_Pokevial(u8);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1128,10 +1133,40 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
 }
 
 //Pokevial Branch
-void ItemUseOutOfBattle_Pokevial(u8 taskId)
+static const struct YesNoFuncTable sUsePokevialYesNoFuncTable =
+{
+    .yesFunc = UsePokevialYes,
+    .noFunc = CloseItemMessage,
+};
+
+static void UsePokevialYesNo(u8 taskId)
+{
+    BagMenu_YesNo(taskId, ITEMWIN_YESNO_HIGH, &sUsePokevialYesNoFuncTable);
+}
+
+static void UsePokevialYes(u8 taskId)
 {
     gItemUseCB = ItemUseCB_UsePokevial;
     SetUpItemUseCallback(taskId);
+}
+
+void ItemUseOutOfBattle_Pokevial(u8 taskId)
+{
+    u8 num = Pokevial_GetDose();
+    u8 numDigits = CountDigits(num);
+
+    if (num > 0){
+        CopyItemName(ITEM_POKEVIAL, gStringVar1);
+        ConvertIntToDecimalStringN(gStringVar2, num, STR_CONV_MODE_LEFT_ALIGN, numDigits);
+        StringExpandPlaceholders(gStringVar4, gText_PokevialHasDoses);
+        DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, UsePokevialYesNo);
+    }
+    else{
+        CopyItemName(ITEM_POKEVIAL, gStringVar1);
+        StringCopy(gStringVar2, gText_PokemonCenter);
+        StringExpandPlaceholders(gStringVar4, gText_PokevialIsEmpty);
+        DisplayItemMessage(taskId,FONT_NORMAL,gStringVar4,CloseItemMessage);
+    }
 }
 
 #undef tUsingRegisteredKeyItem

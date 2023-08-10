@@ -1,11 +1,7 @@
-- before leaving the bag, ask the player if they want to use it, tell them the number of charges (or tell them its empty and cancel)
-    - load vial name in STR_VAR_1
-    - get number of charges, if 0, load PKMNCENTER into VAR_2, display message, and quit
-    - get number of charges if > 0, load number into VAR_2, display message, show yesno
-    
-- fix status icon
+- update VAR_REPEL_STEP_COUNT to the number of charges remaining 
 - add saveblock member to track current num of charges and total number of charges
 - create macro to refill charges
 - create macro to increase charges
+- create macro to incrrease size by X amount
 - modify heal script to refill charges
 - rip pokevial sprite from inclement emererald
