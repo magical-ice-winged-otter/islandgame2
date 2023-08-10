@@ -1,16 +1,16 @@
 #ifndef GUARD_POKEVIAL_H
 #define GUARD_POKEVIAL_H
 
-#define POKEVIAL_MIN_SIZE 1
-#define POKEVIAL_MAX_SIZE 15
-void Pokevial_Initalize(void);
+#include "constants/pokevial.h"
+
+static void Pokevial_Initalize(u8);
+static u8 Pokevial_GetData(void);
 u8 Pokevial_GetDose(void);
 u8 Pokevial_GetSize(void);
-bool8 Pokevial_IncreaseSize(void);
-bool8 Pokevial_DecreaseSize(void);
-bool8 Pokevial_AddDose(void);
-bool8 Pokevial_ReduceDose(void);
+bool8 Pokevial_SizeUp(u8);
+bool8 Pokevial_DoseUp(u8);
+bool8 Pokevial_SizeDown(u8);
+bool8 Pokevial_DoseDown(u8);
 bool8 Pokevial_Refill(void);
-void Pokevial_SetValues(u8 pokevialDoses);
-
+static bool8 Pokevial_SetValues(u8);
 #endif // GUARD_POKEVIAL_H

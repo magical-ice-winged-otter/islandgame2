@@ -1,0 +1,17 @@
+#ifndef GUARD_CONSTANTS_POKEVIAL_H
+#define GUARD_CONSTANTS_POKEVIAL_H
+
+#define UP 1
+#define DOWN 2
+#define GET 3
+
+#define DOSE 1
+#define SIZE 2
+
+#define NO_DOSE 0
+#define STANDARD_DOSE 1
+
+#define POKEVIAL_DOSE_MASK 0x0F
+#define POKEVIAL_SIZE_MASK 0xF0
+
+#endif // GUARD_CONSTANTS_POKEVIAL_H
