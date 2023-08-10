@@ -48,7 +48,15 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	end
 
 InsideOfTruck_EventScript_MovingBox::
-	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
+    setflag FLAG_SYS_POKEMON_GET
+    additem ITEM_POKEVIAL,1
+    additem ITEM_SACRED_ASH,1
+    givemon SPECIES_MAGIKARP, 5, 0
+    givemon SPECIES_TYRANITAR, 50, 0
+    givemon SPECIES_GENGAR, 50, 0
+    givemon SPECIES_STARMIE, 50, 0
+    trainerbattle_no_intro TRAINER_VITO, InsideOfTruck_Text_BoxPrintedWithMonLogo
+	//msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
 	end
 
 InsideOfTruck_Text_BoxPrintedWithMonLogo:

@@ -1,0 +1,12 @@
+- create new item that works like sacred ash
+- change to key item status
+- add saveblock member to track current num of charges and total number of charges
+- after telling you that party is healed, tells you how many charges remain
+- item does not work if there are no charges
+- item description tells you how many charges
+- create macro to refill charges
+- create macro to increase charges
+- modify heal script to refill charges
+- rip pokevial sprite from inclement emererald
+
+The Pokevial is empty. It can be refilled at a Pokémon Center.

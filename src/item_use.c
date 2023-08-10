@@ -1134,5 +1134,4 @@ void ItemUseOutOfBattle_Pokevial(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
-
 #undef tUsingRegisteredKeyItem
