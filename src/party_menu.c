@@ -6542,7 +6542,7 @@ static void UsePokevial(u8 taskId)
         DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
     AnimatePartySlot(sPartyMenuInternal->tLastSlotUsed, 0);
     AnimatePartySlot(gPartyMenu.slotId, 1);
-    PartyMenuModifyHP(taskId, gPartyMenu.slotId, 1, GetMonData(mon, MON_DATA_HP) - hp, Task_PokevialDisplayHPRestored);
+    PartyMenuModifyHP(taskId, gPartyMenu.slotId, 1, GetMonData(mon, MON_DATA_HP) - hp, Task_PokevialLoop);
     ResetHPTaskData(taskId, 0, hp);
     HealMon();
     sPartyMenuInternal->tUsedOnSlot = TRUE;
@@ -6568,7 +6568,11 @@ static void Task_PokevialLoop(u8 taskId)
             }
             else
             {
-                gPartyMenuUseExitCallback = TRUE;
+                GetMonNickname(&gPlayerParty[gPartyMenu.slotId-1], gStringVar1);
+                StringExpandPlaceholders(gStringVar4, gText_PkmnBecameHealthy);
+                DisplayPartyMenuMessage(gStringVar4, FALSE);
+                ScheduleBgCopyTilemapToVram(2);
+                gPartyMenuUseExitCallback = FALSE;
                 //TODO remove charge
             }
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
