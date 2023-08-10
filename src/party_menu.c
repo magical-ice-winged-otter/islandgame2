@@ -4266,6 +4266,13 @@ void CB2_ShowPartyMenuForItemUse(void)
         task = Task_SetSacredAshCB;
         msgId = PARTY_MSG_NONE;
     }
+    //Pokevial Branch
+    else if (GetItemEffectType(gSpecialVar_ItemId) == ITEM_EFFECT_POKEVIAL)
+    {
+        gPartyMenu.slotId = 0;
+        task = Task_SetSacredAshCB;
+        msgId = PARTY_MSG_NONE;
+    }
     else
     {
         if (GetPocketByItemId(gSpecialVar_ItemId) == POCKET_TM_HM)
@@ -5269,6 +5276,8 @@ u8 GetItemEffectType(u16 item)
         return ITEM_EFFECT_X_ITEM;
     else if (itemEffect[0] & ITEM0_SACRED_ASH)
         return ITEM_EFFECT_SACRED_ASH;
+    else if (itemEffect[0] & ITEM0_POKEVIAL)
+        return ITEM_EFFECT_POKEVIAL;
     else if (itemEffect[3] & ITEM3_LEVEL_UP)
         return ITEM_EFFECT_RAISE_LEVEL;
 
@@ -6502,7 +6511,6 @@ void HealMon(void)
 
 void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task)
 {
-    gPartyMenu.slotId = 0;
     sPartyMenuInternal->tUsedOnSlot = FALSE;
     sPartyMenuInternal->tHadEffect = FALSE;
     sPartyMenuInternal->tLastSlotUsed = gPartyMenu.slotId;
