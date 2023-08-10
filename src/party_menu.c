@@ -485,7 +485,6 @@ static bool8 SetUpFieldMove_Dive(void);
 //Pokevial Branch
 static void UsePokevial(u8);
 static void Task_PokevialLoop(u8);
-static void Task_PokevialDisplayHPRestored(u8);
 
 // static const data
 #include "data/pokemon/tutor_learnsets.h"
@@ -6537,6 +6536,7 @@ static void UsePokevial(u8 taskId)
     hp = GetMonData(mon, MON_DATA_HP);
 
     PlaySE(SE_USE_ITEM);
+    HealMon();
     SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[gPartyMenu.slotId]);
     if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible)
         DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
@@ -6568,11 +6568,11 @@ static void Task_PokevialLoop(u8 taskId)
             }
             else
             {
-                GetMonNickname(&gPlayerParty[gPartyMenu.slotId-1], gStringVar1);
-                StringExpandPlaceholders(gStringVar4, gText_PkmnBecameHealthy);
+                gPartyMenuUseExitCallback = FALSE;
+                StringCopy(gStringVar1, gText_Pokemon);
+                StringExpandPlaceholders(gStringVar4, gText_YourPkmnWereRestored);
                 DisplayPartyMenuMessage(gStringVar4, FALSE);
                 ScheduleBgCopyTilemapToVram(2);
-                gPartyMenuUseExitCallback = FALSE;
                 //TODO remove charge
             }
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
@@ -6583,15 +6583,6 @@ static void Task_PokevialLoop(u8 taskId)
             UsePokevial(taskId);
         }
     }
-}
-
-static void Task_PokevialDisplayHPRestored(u8 taskId)
-{
-    GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
-    StringExpandPlaceholders(gStringVar4, gText_PkmnBecameHealthy);
-    DisplayPartyMenuMessage(gStringVar4, FALSE);
-    ScheduleBgCopyTilemapToVram(2);
-    gTasks[taskId].func = Task_PokevialLoop;
 }
 
 #undef tUsedOnSlot

@@ -1819,3 +1819,8 @@ const u8 gText_Answer[] = _("ANSWER");
 const u8 gText_PokeBalls[] = _("POKé BALLS");
 const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
+
+// Pokevial Branch
+const u8 gText_PokevialHasDoses[] =_("The {STR_VAR_1} has {STR_VAR_2} doses remaining.\nUse the {STR_VAR_1}?");
+const u8 gText_PokevialIsEmpty[] =_("The {STR_VAR_1} is empty!\nRefill it by healing at a {STR_VAR_2}.");
+const u8 gText_YourPkmnWereRestored[] =_("Your {STR_VAR_1} were restored to full health.{PAUSE_UNTIL_PRESS}");

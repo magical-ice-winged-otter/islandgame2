@@ -1552,6 +1552,6 @@ static const u8 sOldSeaMapDesc[] = _(
 
 //Pokevial Branch
 static const u8 sPokevialDesc[] = _(
-    "Fully revives and\n"
-    "restores all\n"
-    "fainted POKéMON.");
+    "Restores all\n"
+    "POKéMON to full\n"
+    "health.");
