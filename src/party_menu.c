@@ -483,7 +483,7 @@ static bool8 SetUpFieldMove_Waterfall(void);
 static bool8 SetUpFieldMove_Dive(void);
 
 //Pokevial Branch
-static void UsePokevial(u8);
+void UsePokevial(u8);
 static void Task_PokevialLoop(u8);
 
 // static const data
@@ -6516,7 +6516,22 @@ void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task)
     UsePokevial(taskId);
 }
 
-static void UsePokevial(u8 taskId)
+typedef void (*TaskFunc)(u8);
+static void Task_UsePokevialFromField(u8 taskId)
+{
+    sPartyMenuInternal->tUsedOnSlot = FALSE;
+    sPartyMenuInternal->tHadEffect = FALSE;
+    sPartyMenuInternal->tLastSlotUsed = gPartyMenu.slotId;
+    UsePokevial(taskId);
+}
+
+void InitPartyMenuForPokevialFromField(u8 taskId)
+{
+    gPartyMenu.slotId = 0;
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_USE_ITEM, TRUE, PARTY_MSG_NONE, Task_UsePokevialFromField, CB2_ReturnToField);
+}
+
+void UsePokevial(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u16 hp = 0;

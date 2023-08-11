@@ -76,6 +76,9 @@ static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
 
 //Pokevial Branch
+static void UsePokevialFieldYes(u8 taskId);
+static void Task_UsePokevialFieldYes(u8 taskId);
+static void UsePokevialFieldNo(u8 taskId);
 static void UsePokevialYesNo(u8);
 static void UsePokevialYes(u8);
 void ItemUseOutOfBattle_Pokevial(u8);
@@ -1143,9 +1146,21 @@ static const struct YesNoFuncTable sUsePokevialYesNoFuncTable =
     .noFunc = CloseItemMessage,
 };
 
+static const struct YesNoFuncTable sYesNoTable_PokevialFieldFuncTable =
+{
+    .yesFunc = UsePokevialFieldYes,
+    .noFunc = UsePokevialFieldNo,
+};
+
 static void UsePokevialYesNo(u8 taskId)
 {
     BagMenu_YesNo(taskId, ITEMWIN_YESNO_HIGH, &sUsePokevialYesNoFuncTable);
+}
+
+static void UsePokevialFieldYesNo(u8 taskId)
+{
+    DisplayYesNoMenuDefaultYes();
+    DoYesNoFuncWithChoice(taskId, &sYesNoTable_PokevialFieldFuncTable);
 }
 
 static void UsePokevialYes(u8 taskId)
@@ -1154,22 +1169,54 @@ static void UsePokevialYes(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+static void UsePokevialFieldYes(u8 taskId)
+{
+    LockPlayerFieldControls();
+    FadeScreen(FADE_TO_BLACK,0);
+    CreateTask(Task_UsePokevialFieldYes, 1);
+}
+
+static void Task_UsePokevialFieldYes(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        InitPartyMenuForPokevialFromField(taskId);
+        DestroyTask(taskId);
+    }
+}
+
+static void UsePokevialFieldNo(u8 taskId)
+{
+    ClearDialogWindowAndFrame(0, FALSE);
+    DestroyTask(taskId);
+    ScriptContext_Enable();
+}
+
 void ItemUseOutOfBattle_Pokevial(u8 taskId)
 {
-    u8 num = Pokevial_GetDose();
-    u8 numDigits = CountDigits(num);
+    u8 currentDoses = Pokevial_GetDose();
+    u8 numDigits = CountDigits(currentDoses);
 
-    if (num > 0){
-        CopyItemName(ITEM_POKEVIAL, gStringVar1);
-        ConvertIntToDecimalStringN(gStringVar2, num, STR_CONV_MODE_LEFT_ALIGN, numDigits);
+    CopyItemName(ITEM_POKEVIAL, gStringVar1);
+
+    if (currentDoses > EMPTY_VIAL){
+        ConvertIntToDecimalStringN(gStringVar2, currentDoses, STR_CONV_MODE_LEFT_ALIGN, numDigits);
         StringExpandPlaceholders(gStringVar4, gText_PokevialHasDoses);
-        DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, UsePokevialYesNo);
+
+        if (!gTasks[taskId].tUsingRegisteredKeyItem)
+            DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, UsePokevialYesNo);
+        else
+            DisplayItemMessageOnField(taskId, gStringVar4, UsePokevialFieldYesNo);
     }
     else{
-        CopyItemName(ITEM_POKEVIAL, gStringVar1);
         StringCopy(gStringVar2, gText_PokemonCenter);
         StringExpandPlaceholders(gStringVar4, gText_PokevialIsEmpty);
-        DisplayItemMessage(taskId,FONT_NORMAL,gStringVar4,CloseItemMessage);
+
+        if (!gTasks[taskId].tUsingRegisteredKeyItem)
+            DisplayItemMessage(taskId,FONT_NORMAL,gStringVar4,CloseItemMessage);
+        else
+            DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
     }
 }
 
