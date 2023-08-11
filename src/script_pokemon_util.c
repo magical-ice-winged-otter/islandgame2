@@ -35,7 +35,6 @@ void HealPlayerParty(void)
     u8 arg[4];
 
     Pokevial_Refill(); //Pokevial Branch
-
     // restore HP.
     for(i = 0; i < gPlayerPartyCount; i++)
     {

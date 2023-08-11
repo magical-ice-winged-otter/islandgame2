@@ -41,6 +41,8 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+
+//Pokevial Branch
 #include "tv.h"
 #include "pokevial.h"
 
@@ -72,6 +74,8 @@ static void Task_UseRepel(u8);
 static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
+
+//Pokevial Branch
 static void UsePokevialYesNo(u8);
 static void UsePokevialYes(u8);
 void ItemUseOutOfBattle_Pokevial(u8);

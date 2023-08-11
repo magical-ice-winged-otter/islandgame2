@@ -1,5 +1,3 @@
-- update VAR_REPEL_STEP_COUNT to the number of charges remaining 
-- add saveblock member to track current num of charges and total number of charges
 - create macro to refill charges
 - create macro to increase charges
 - create macro to incrrease size by X amount

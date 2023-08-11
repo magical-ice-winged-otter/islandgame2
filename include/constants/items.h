@@ -417,8 +417,7 @@
 #define ITEM_MAGMA_EMBLEM 375
 #define ITEM_OLD_SEA_MAP 376
 
-// Pokevial Branch
-#define ITEM_POKEVIAL 377
+#define ITEM_POKEVIAL 377 // Pokevial Branch
 
 #define ITEMS_COUNT 378
 
@@ -481,6 +480,6 @@
 
 // Check if the item is one that can be used on a Pokemon.
 //#define ITEM_HAS_EFFECT(item) ((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX)
-#define ITEM_HAS_EFFECT(item) (((item) == ITEM_POKEVIAL) || ((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX))
+#define ITEM_HAS_EFFECT(item) (((item) == ITEM_POKEVIAL) || ((item) >= ITEM_POTION && (item) <= MAX_BERRY_INDEX)) //Modified by Pokevial Branch
 
 #endif  // GUARD_CONSTANTS_ITEMS_H

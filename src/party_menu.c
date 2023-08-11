@@ -72,8 +72,7 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-#include "script_pokemon_util.h"
-#include "pokevial.h"
+#include "pokevial.h" //Pokevial Branch
 
 enum {
     MENU_SUMMARY,
@@ -5277,8 +5276,8 @@ u8 GetItemEffectType(u16 item)
     else if (itemEffect[0] & ITEM0_SACRED_ASH)
         return ITEM_EFFECT_SACRED_ASH;
     else if (itemEffect[0] & ITEM0_POKEVIAL)
-        return ITEM_EFFECT_POKEVIAL;
-    else if (itemEffect[3] & ITEM3_LEVEL_UP)
+        return ITEM_EFFECT_POKEVIAL; //Pokevial Branch
+    else if (itemEffect[3] & ITEM3_LEVEL_UP) //Pokevial Branch
         return ITEM_EFFECT_RAISE_LEVEL;
 
     statusCure = itemEffect[3] & ITEM3_STATUS_ALL;

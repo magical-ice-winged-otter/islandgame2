@@ -1941,7 +1941,10 @@
 	.endm
 
     @ Pokevial Branch
-	@ Runs Pokevial script command
+
+	@ Checks or manipulates the size or dose of the Pokevial.
+    @ When parameter is empty, it assumes SIZE.
+    @ When amount is empty, it assumes 1.
 	.macro pokevial mode:req, parameter=SIZE, amount=1
 	.byte 0xe3
     .byte \mode
@@ -1949,32 +1952,36 @@
     .byte \amount
 	.endm
 
-    @ Get Pokevial dose
+    @ Gets the current number of doses in the Pokevial and stores it to VAR_0x8006
     .macro pokevialgetdose
     specialvar VAR_0x8006,Pokevial_GetDose
     .endm
 
-    @ Get Pokevial size
+    @ Gets the current size of the Pokevial and stores it to VAR_0x8006
     .macro pokevialgetsize
     specialvar VAR_0x8006,Pokevial_GetSize
     .endm
 
-    @ Increase size of vial by one
+    @ Increases the size of the Pokevial by 1
+    @ If the size of the vial exceeds VIAL_MAX_SIZE, it is set to VIAL_MAX_SIZE
     .macro pokevialincreasesize
     pokevial VIAL_INCREASE VIAL_SIZE 1
     .endm
 
-    @ Add one dose to the vial
+    @ Adds 1 dose to the Pokevial
+    @ If the number of doses exceeds the current size of the Pokevial, it is set to the size of the Pokevial
     .macro pokevialadddose
     pokevial VIAL_ADD VIAL_DOSE 1
     .endm
 
-    @ Decrease size of vial by one
+    @ Decreases the size of the Pokevial by 1
+    @ If the size of the vial is less than VIAL_MIN_SIZE, it is set to VIAL_MIN_SIZE
     .macro pokevialdecreasesize
     pokevial VIAL_DECREASE VIAL_SIZE 1
     .endm
 
-    @ Remove one dose from the vial
+    @ Removes 1 dose to the Pokevial
+    @ If the number of doses is less than EMPTY_VIAL, it is set to EMPTY_VIAL
     .macro pokevialremovedose
     pokevial VIAL_REMOVE VIAL_DOSE 1
     .endm

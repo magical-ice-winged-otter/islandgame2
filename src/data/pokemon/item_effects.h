@@ -156,15 +156,15 @@ const u8 gItemEffect_BerryJuice[7] = {
 
 const u8 gItemEffect_SacredAsh[7] = {
     [0] = ITEM0_SACRED_ASH,
-    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM4_HEAL_PP,
-    [6] = ITEM6_HEAL_HP_FULL | ITEM6_HEAL_PP_FULL,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
+    [6] = ITEM6_HEAL_HP_FULL,
 };
 
 const u8 gItemEffect_Pokevial[7] = {
     [0] = ITEM0_POKEVIAL,
     [3] = ITEM3_STATUS_ALL,
-    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
-    [6] = ITEM6_HEAL_HP_FULL,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM4_HEAL_PP,
+    [6] = ITEM6_HEAL_HP_FULL | ITEM6_HEAL_PP_FULL,
 };
 
 #define VITAMIN_FRIENDSHIP_CHANGE(i)             \
