@@ -74,7 +74,6 @@
 #include "constants/songs.h"
 #include "script_pokemon_util.h"
 #include "pokevial.h"
-#include "constants/pokevial.h"
 
 enum {
     MENU_SUMMARY,
@@ -6575,7 +6574,7 @@ static void Task_PokevialLoop(u8 taskId)
                 StringExpandPlaceholders(gStringVar4, gText_YourPkmnWereRestored);
                 DisplayPartyMenuMessage(gStringVar4, FALSE);
                 ScheduleBgCopyTilemapToVram(2);
-                Pokevial_DoseDown(STANDARD_DOSE);
+                Pokevial_DoseDown(VIAL_STANDARD_DOSE);
             }
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
             gPartyMenu.slotId = 0;

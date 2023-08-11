@@ -262,10 +262,18 @@ LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
 LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
 	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
 	releaseall
-	end
+    return
 
 PlayersHouse_2F_EventScript_Notebook::
+    pokevialincreasesize
+    pokevialadddose
+    call_if_eq VAR_RESULT,TRUE,LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC
+    pokevialrefill
+    call_if_eq VAR_RESULT,TRUE,LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC
+    buffernumberstring STR_VAR_1,VAR_0x8004
 	msgbox PlayersHouse_2F_Text_Notebook, MSGBOX_SIGN
+    closemessage
+
 	end
 
 PlayersHouse_2F_EventScript_GameCube::
@@ -287,12 +295,13 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "everything's all there on your desk.$"
 
 PlayersHouse_2F_Text_Notebook:
-	.string "{PLAYER} flipped open the notebook.\p"
-	.string "ADVENTURE RULE NO. 1\n"
-	.string "Open the MENU with START.\p"
-	.string "ADVENTURE RULE NO. 2\n"
-	.string "Record your progress with SAVE.\p"
-	.string "The remaining pages are blank…$"
+    .string "{STR_VAR_1}\p"
+	//.string "{PLAYER} flipped open the notebook.\p"
+	//.string "ADVENTURE RULE NO. 1\n"
+	//.string "Open the MENU with START.\p"
+	//.string "ADVENTURE RULE NO. 2\n"
+	//.string "Record your progress with SAVE.\p"
+	//.string "The remaining pages are blank…$"
 
 Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"

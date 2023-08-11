@@ -1,6 +1,6 @@
 #include "global.h"
-#include "pokevial.h"
 #include "constants/pokevial.h"
+#include "pokevial.h"
 
 #define POKEVIAL_MIN_SIZE 1
 #define POKEVIAL_MAX_SIZE 15
@@ -39,9 +39,8 @@ bool8 Pokevial_SizeUp(u8 sizeIncrease){
     u8 pokevialData = Pokevial_GetData();
     u8 newSize = Pokevial_GetSize() + sizeIncrease;
 
-    if (newSize > POKEVIAL_MAX_SIZE){
-        return FALSE;
-    }
+    if (newSize > POKEVIAL_MAX_SIZE)
+        newSize = POKEVIAL_MAX_SIZE;
 
     pokevialData = (pokevialData & POKEVIAL_SIZE_MASK) | newSize;
     pokevialData = (pokevialData & POKEVIAL_DOSE_MASK) | (newSize << 4);
@@ -54,7 +53,7 @@ bool8 Pokevial_DoseUp(u8 doseIncrease){
     u8 newDose = Pokevial_GetDose() + doseIncrease;
 
     if (newDose > pokevialSize){
-        return FALSE;
+        newDose = pokevialSize;
     }
 
     pokevialData = (pokevialData & POKEVIAL_DOSE_MASK) | (newDose << 4);
@@ -67,7 +66,7 @@ bool8 Pokevial_SizeDown(u8 sizeDecrease){
     u8 pokevialDose = Pokevial_GetDose();
 
     if (newSize < POKEVIAL_MIN_SIZE)
-        return FALSE;
+        newSize = POKEVIAL_MIN_SIZE;
 
     if (pokevialDose > newSize)
         pokevialDose = newSize;
@@ -79,13 +78,13 @@ bool8 Pokevial_SizeDown(u8 sizeDecrease){
 
 bool8 Pokevial_DoseDown(u8 doseDecrease){
     u8 pokevialData = Pokevial_GetData();
-    u8 newDose = Pokevial_GetDose() - doseDecrease;
+    u8 oldDose = Pokevial_GetDose();
+    u8 newDose = oldDose - doseDecrease;
 
-    if (newDose < NO_DOSE)
-        return FALSE;
+    if (doseDecrease >= oldDose)
+        newDose = VIAL_EMPTY_VIAL;
 
     pokevialData = (pokevialData & POKEVIAL_DOSE_MASK) | (newDose << 4);
-
     return Pokevial_SetValues(pokevialData);
 }
 

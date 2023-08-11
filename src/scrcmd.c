@@ -49,6 +49,7 @@
 #include "tv.h"
 #include "window.h"
 #include "constants/event_objects.h"
+#include "pokevial.h" //Pokevial Branch
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
@@ -2303,5 +2304,53 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
     SetWarpDestination(mapGroup, mapNum, warpId, x, y);
     DoWhiteFadeWarp();
     ResetInitialPlayerAvatarState();
+    return TRUE;
+}
+
+//Pokevial Branch
+bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
+{
+    u8 mode = ScriptReadByte(ctx);
+    u8 parameter = ScriptReadByte(ctx);
+    u8 amount = ScriptReadByte(ctx);
+
+    switch (mode) {
+        case VIAL_GET:
+            switch (parameter) {
+                case VIAL_SIZE:
+                    Pokevial_GetSize();
+                    break;
+                case VIAL_DOSE:
+                    Pokevial_GetDose();
+                    break;
+            }
+            break;
+
+        case VIAL_UP:
+            switch (parameter) {
+                case VIAL_SIZE:
+                    Pokevial_SizeUp(amount);
+                    break;
+                case VIAL_DOSE:
+                    Pokevial_DoseUp(amount);
+                    break;
+            }
+            break;
+
+        case VIAL_DOWN:
+            switch (parameter) {
+                case VIAL_SIZE:
+                    Pokevial_SizeDown(amount);
+                    break;
+                case VIAL_DOSE:
+                    Pokevial_DoseDown(amount);
+                    break;
+            }
+            break;
+
+        case VIAL_REFILL:
+            Pokevial_Refill();
+            break;
+    }
     return TRUE;
 }

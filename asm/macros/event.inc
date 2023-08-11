@@ -1939,3 +1939,47 @@
 	setvar VAR_0x8006, \item
 	special CreateEnemyEventMon
 	.endm
+
+    @ Pokevial Branch
+	@ Runs Pokevial script command
+	.macro pokevial mode:req, parameter=SIZE, amount=1
+	.byte 0xe3
+    .byte \mode
+    .byte \parameter
+    .byte \amount
+	.endm
+
+    @ Get Pokevial dose
+    .macro pokevialgetdose
+    specialvar VAR_0x8006,Pokevial_GetDose
+    .endm
+
+    @ Get Pokevial size
+    .macro pokevialgetsize
+    specialvar VAR_0x8006,Pokevial_GetSize
+    .endm
+
+    @ Increase size of vial by one
+    .macro pokevialincreasesize
+    pokevial VIAL_INCREASE VIAL_SIZE 1
+    .endm
+
+    @ Add one dose to the vial
+    .macro pokevialadddose
+    pokevial VIAL_ADD VIAL_DOSE 1
+    .endm
+
+    @ Decrease size of vial by one
+    .macro pokevialdecreasesize
+    pokevial VIAL_DECREASE VIAL_SIZE 1
+    .endm
+
+    @ Remove one dose from the vial
+    .macro pokevialremovedose
+    pokevial VIAL_REMOVE VIAL_DOSE 1
+    .endm
+
+    @ Refill vial so doses equals size, and outputs the success of the oepration to VAR_RESULT
+    .macro pokevialrefill
+    specialvar VAR_RESULT,Pokevial_Refill
+    .endm

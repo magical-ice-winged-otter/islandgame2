@@ -535,3 +535,7 @@ gSpecials::
 	def_special RemoveRecordsWindow
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
+    //Pokevial Branch
+    def_special Pokevial_GetDose
+    def_special Pokevial_GetSize
+    def_special Pokevial_Refill

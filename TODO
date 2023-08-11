@@ -5,3 +5,9 @@
 - create macro to incrrease size by X amount
 - modify heal script to refill charges
 - rip pokevial sprite from inclement emererald
+
+pokevial up dose 1
+pokevial down size 1
+pokevial get dose
+pokevial get size
+pokevial refill
