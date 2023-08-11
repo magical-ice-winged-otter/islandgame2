@@ -481,10 +481,8 @@ static bool8 SetUpFieldMove_Surf(void);
 static bool8 SetUpFieldMove_Fly(void);
 static bool8 SetUpFieldMove_Waterfall(void);
 static bool8 SetUpFieldMove_Dive(void);
-
-//Pokevial Branch
-void UsePokevial(u8);
-static void Task_PokevialLoop(u8);
+void UsePokevial(u8); //Start Pokevial Branch
+static void Task_PokevialLoop(u8); //End Pokevial Branch
 
 // static const data
 #include "data/pokemon/tutor_learnsets.h"
@@ -4265,13 +4263,14 @@ void CB2_ShowPartyMenuForItemUse(void)
         task = Task_SetSacredAshCB;
         msgId = PARTY_MSG_NONE;
     }
-    //Pokevial Branch
+    //Start Pokevial Branch
     else if (GetItemEffectType(gSpecialVar_ItemId) == ITEM_EFFECT_POKEVIAL)
     {
         gPartyMenu.slotId = 0;
         task = Task_SetSacredAshCB;
         msgId = PARTY_MSG_NONE;
     }
+    //End Pokevial Branch
     else
     {
         if (GetPocketByItemId(gSpecialVar_ItemId) == POCKET_TM_HM)
@@ -5275,9 +5274,11 @@ u8 GetItemEffectType(u16 item)
         return ITEM_EFFECT_X_ITEM;
     else if (itemEffect[0] & ITEM0_SACRED_ASH)
         return ITEM_EFFECT_SACRED_ASH;
+    //Start Pokevial Branch
     else if (itemEffect[0] & ITEM0_POKEVIAL)
-        return ITEM_EFFECT_POKEVIAL; //Pokevial Branch
-    else if (itemEffect[3] & ITEM3_LEVEL_UP) //Pokevial Branch
+        return ITEM_EFFECT_POKEVIAL;
+    //End Pokevial Branch
+    else if (itemEffect[3] & ITEM3_LEVEL_UP)
         return ITEM_EFFECT_RAISE_LEVEL;
 
     statusCure = itemEffect[3] & ITEM3_STATUS_ALL;
@@ -6443,7 +6444,7 @@ void IsLastMonThatKnowsSurf(void)
     }
 }
 
-//Pokevial Branch
+//Start Pokevial Branch
 static bool8 IsMonIsNotFullyHealed(void)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
@@ -6598,6 +6599,7 @@ static void Task_PokevialLoop(u8 taskId)
         }
     }
 }
+//End Pokevial Branch
 
 #undef tUsedOnSlot
 #undef tHadEffect

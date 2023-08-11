@@ -2307,7 +2307,7 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
     return TRUE;
 }
 
-//Pokevial Branch
+//Start Pokevial Branch
 bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
 {
     u8 mode = ScriptReadByte(ctx);
@@ -2354,3 +2354,4 @@ bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
     }
     return TRUE;
 }
+//End Pokevial Branch

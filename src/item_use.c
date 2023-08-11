@@ -41,10 +41,8 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/songs.h"
-
-//Pokevial Branch
-#include "tv.h"
-#include "pokevial.h"
+#include "tv.h" //Pokevial Branch
+#include "pokevial.h" //Pokevial Branch
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -75,13 +73,14 @@ static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
 
-//Pokevial Branch
+//Start Pokevial Branch
 static void UsePokevialFieldYes(u8 taskId);
 static void Task_UsePokevialFieldYes(u8 taskId);
 static void UsePokevialFieldNo(u8 taskId);
 static void UsePokevialYesNo(u8);
 static void UsePokevialYes(u8);
 void ItemUseOutOfBattle_Pokevial(u8);
+//End Pokevial Branch
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1139,7 +1138,7 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
 
-//Pokevial Branch
+//Start Pokevial Branch
 static const struct YesNoFuncTable sUsePokevialYesNoFuncTable =
 {
     .yesFunc = UsePokevialYes,
@@ -1219,5 +1218,6 @@ void ItemUseOutOfBattle_Pokevial(u8 taskId)
             DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
     }
 }
+//End Pokevial Branch
 
 #undef tUsingRegisteredKeyItem

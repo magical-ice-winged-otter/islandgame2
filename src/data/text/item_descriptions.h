@@ -1550,8 +1550,9 @@ static const u8 sOldSeaMapDesc[] = _(
     "that shows the way\n"
     "to a certain island.");
 
-//Pokevial Branch
+//Start Pokevial Branch
 static const u8 sPokevialDesc[] = _(
     "Restores all\n"
     "POKéMON to full\n"
     "health.");
+//End Pokevial Branch

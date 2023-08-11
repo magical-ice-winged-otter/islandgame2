@@ -3026,9 +3026,8 @@ extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
 
-// Pokevial Branch
-extern const u8 gText_PokevialHasDoses[];
-extern const u8 gText_PokevialIsEmpty[];
-extern const u8 gText_YourPkmnWereRestored[];
+extern const u8 gText_PokevialHasDoses[]; // Pokevial Branch
+extern const u8 gText_PokevialIsEmpty[]; // Pokevial Branch
+extern const u8 gText_YourPkmnWereRestored[]; // Pokevial Branch
 
 #endif // GUARD_STRINGS_H

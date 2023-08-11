@@ -1940,7 +1940,7 @@
 	special CreateEnemyEventMon
 	.endm
 
-    @ Pokevial Branch
+    @ Start Pokevial Branch
 
 	@ Checks or manipulates the size or dose of the Pokevial.
     @ When parameter is empty, it assumes VIAL_SIZE.
@@ -1997,3 +1997,4 @@
     specialvar VAR_RESULT,PokevialRefill
     .endm
 
+    @ End Pokevial Branch

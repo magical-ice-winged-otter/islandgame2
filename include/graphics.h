@@ -3851,9 +3851,8 @@ extern const u32 gItemIconPalette_MagmaEmblem[];
 extern const u32 gItemIcon_OldSeaMap[];
 extern const u32 gItemIconPalette_OldSeaMap[];
 
-//Pokevial Branch
-extern const u32 gItemIcon_Pokevial[];
-extern const u32 gItemIconPalette_Pokevial[];
+extern const u32 gItemIcon_Pokevial[]; //Pokevial Branch
+extern const u32 gItemIconPalette_Pokevial[]; //Pokevial Branch
 
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];

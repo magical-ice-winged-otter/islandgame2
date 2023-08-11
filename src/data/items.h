@@ -4538,7 +4538,7 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    //Pokevial Branch
+    //Start Pokevial Branch
     [ITEM_POKEVIAL] =
     {
         .name = _("POKéVIAL"),
@@ -4551,4 +4551,5 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokevial,
     },
+    //End Pokevial Branch
 };
