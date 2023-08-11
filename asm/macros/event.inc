@@ -1971,7 +1971,7 @@
     @ Adds 1 dose to the Pokevial
     @ If the number of doses exceeds the current size of the Pokevial, it is set to the size of the Pokevial
     .macro pokevialadddose
-    pokevial VIAL_ADD VIAL_DOSE 1
+    pokevial VIAL_ADD VIAL_DOSE VIAL_STANDARD_DOSE
     .endm
 
     @ Decreases the size of the Pokevial by 1
@@ -1983,7 +1983,7 @@
     @ Removes 1 dose to the Pokevial
     @ If the number of doses is less than EMPTY_VIAL, it is set to EMPTY_VIAL
     .macro pokevialremovedose
-    pokevial VIAL_REMOVE VIAL_DOSE 1
+    pokevial VIAL_REMOVE VIAL_DOSE VIAL_STANDARD_DOSE
     .endm
 
     @ Refill vial so doses equals size, and outputs the success of the oepration to VAR_RESULT
