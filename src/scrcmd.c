@@ -2318,10 +2318,10 @@ bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
         case VIAL_GET:
             switch (parameter) {
                 case VIAL_SIZE:
-                    Pokevial_GetSize();
+                    PokevialGetSize();
                     break;
                 case VIAL_DOSE:
-                    Pokevial_GetDose();
+                    PokevialGetDose();
                     break;
             }
             break;
@@ -2329,10 +2329,10 @@ bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
         case VIAL_UP:
             switch (parameter) {
                 case VIAL_SIZE:
-                    Pokevial_SizeUp(amount);
+                    PokevialSizeUp(amount);
                     break;
                 case VIAL_DOSE:
-                    Pokevial_DoseUp(amount);
+                    PokevialDoseUp(amount);
                     break;
             }
             break;
@@ -2340,16 +2340,16 @@ bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
         case VIAL_DOWN:
             switch (parameter) {
                 case VIAL_SIZE:
-                    Pokevial_SizeDown(amount);
+                    PokevialSizeDown(amount);
                     break;
                 case VIAL_DOSE:
-                    Pokevial_DoseDown(amount);
+                    PokevialDoseDown(amount);
                     break;
             }
             break;
 
         case VIAL_REFILL:
-            Pokevial_Refill();
+            PokevialRefill();
             break;
     }
     return TRUE;

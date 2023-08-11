@@ -3,19 +3,19 @@
 
 #include "constants/pokevial.h"
 
-static void Pokevial_Initalize(u8);
-static u8 Pokevial_GetData(void);
+static void PokevialInitalize(u8);
+static u8 PokevialGetData(void);
 
-u8 Pokevial_GetSize(void);
-u8 Pokevial_GetDose(void);
+u8 PokevialGetSize(void);
+u8 PokevialGetDose(void);
 
-bool8 Pokevial_SizeUp(u8);
-bool8 Pokevial_DoseUp(u8);
+bool8 PokevialSizeUp(u8);
+bool8 PokevialDoseUp(u8);
 
-bool8 Pokevial_SizeDown(u8);
-bool8 Pokevial_DoseDown(u8);
+bool8 PokevialSizeDown(u8);
+bool8 PokevialDoseDown(u8);
 
-bool8 Pokevial_Refill(void);
+bool8 PokevialRefill(void);
 
-static bool8 Pokevial_SetData(u8);
+static bool8 PokevialSetData(u8);
 #endif // GUARD_POKEVIAL_H

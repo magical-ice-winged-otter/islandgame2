@@ -1195,7 +1195,7 @@ static void UsePokevialFieldNo(u8 taskId)
 
 void ItemUseOutOfBattle_Pokevial(u8 taskId)
 {
-    u8 currentDoses = Pokevial_GetDose();
+    u8 currentDoses = PokevialGetDose();
     u8 numDigits = CountDigits(currentDoses);
 
     CopyItemName(ITEM_POKEVIAL, gStringVar1);

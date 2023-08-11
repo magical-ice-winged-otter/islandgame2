@@ -1,6 +1,7 @@
 #ifndef GUARD_CONSTANTS_VIAL_H
 #define GUARD_CONSTANTS_VIAL_H
 
+// Modes
 #define VIAL_GET 0
 #define VIAL_CHECK VIAL_GET
 
@@ -20,6 +21,7 @@
 #define VIAL_REFRESH VIAL_REFILL
 #define VIAL_RESTORE VIAL_REFILL
 
+// Aspects
 #define VIAL_DOSE 0
 #define VIAL_SIZE 1
 

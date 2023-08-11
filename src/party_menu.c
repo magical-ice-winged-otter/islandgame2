@@ -6516,7 +6516,6 @@ void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task)
     UsePokevial(taskId);
 }
 
-typedef void (*TaskFunc)(u8);
 static void Task_UsePokevialFromField(u8 taskId)
 {
     sPartyMenuInternal->tUsedOnSlot = FALSE;
@@ -6588,7 +6587,7 @@ static void Task_PokevialLoop(u8 taskId)
                 StringExpandPlaceholders(gStringVar4, gText_YourPkmnWereRestored);
                 DisplayPartyMenuMessage(gStringVar4, FALSE);
                 ScheduleBgCopyTilemapToVram(2);
-                Pokevial_DoseDown(VIAL_STANDARD_DOSE);
+                PokevialDoseDown(VIAL_STANDARD_DOSE);
             }
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
             gPartyMenu.slotId = 0;

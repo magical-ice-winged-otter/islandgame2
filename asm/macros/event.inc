@@ -1943,9 +1943,9 @@
     @ Pokevial Branch
 
 	@ Checks or manipulates the size or dose of the Pokevial.
-    @ When parameter is empty, it assumes SIZE.
+    @ When parameter is empty, it assumes VIAL_SIZE.
     @ When amount is empty, it assumes 1.
-	.macro pokevial mode:req, parameter=SIZE, amount=1
+	.macro pokevial mode:req, parameter=VIAL_SIZE, amount=1
 	.byte 0xe3
     .byte \mode
     .byte \parameter
@@ -1954,12 +1954,12 @@
 
     @ Gets the current number of doses in the Pokevial and stores it to VAR_0x8006
     .macro pokevialgetdose
-    specialvar VAR_0x8006,Pokevial_GetDose
+    specialvar VAR_0x8006,PokevialGetDose
     .endm
 
     @ Gets the current size of the Pokevial and stores it to VAR_0x8006
     .macro pokevialgetsize
-    specialvar VAR_0x8006,Pokevial_GetSize
+    specialvar VAR_0x8006,PokevialGetSize
     .endm
 
     @ Increases the size of the Pokevial by 1
@@ -1988,5 +1988,12 @@
 
     @ Refill vial so doses equals size, and outputs the success of the oepration to VAR_RESULT
     .macro pokevialrefill
-    specialvar VAR_RESULT,Pokevial_Refill
+    specialvar VAR_RESULT,PokevialRefill
     .endm
+
+    @ A combination of pokevialincreasesize and pokevialrefill
+    .macro pokevialreward
+    pokevial VIAL_INCREASE VIAL_SIZE 1
+    specialvar VAR_RESULT,PokevialRefill
+    .endm
+
