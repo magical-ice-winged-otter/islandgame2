@@ -48,11 +48,6 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	end
 
 InsideOfTruck_EventScript_MovingBox::
-    giveitem ITEM_POKEVIAL,1
-    pokevial VIAL_INCREASE,VIAL_SIZE,5
-    givemon SPECIES_ELECTRODE,55,0
-    givemon SPECIES_GIRAFARIG,50,0
-    warp MAP_FALLARBOR_TOWN, 0
 	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
 	end
 
