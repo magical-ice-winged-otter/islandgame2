@@ -17,5 +17,5 @@ bool8 Pokevial_DoseDown(u8);
 
 bool8 Pokevial_Refill(void);
 
-static bool8 Pokevial_SetValues(u8);
+static bool8 Pokevial_SetData(u8);
 #endif // GUARD_POKEVIAL_H

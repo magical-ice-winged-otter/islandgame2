@@ -8,7 +8,7 @@ static void Pokevial_Initalize(u8 pokevialData){
     pokevialData |= (VIAL_MIN_SIZE << 4);
     pokevialData |= VIAL_MIN_SIZE;
 
-    Pokevial_SetValues(pokevialData);
+    Pokevial_SetData(pokevialData);
 }
 
 static u8 Pokevial_GetData(void){
@@ -41,7 +41,7 @@ bool8 Pokevial_SizeUp(u8 sizeIncrease){
 
     pokevialData = (pokevialData & VIAL_SIZE_MASK) | newSize;
     pokevialData = (pokevialData & VIAL_DOSE_MASK) | (newSize << 4);
-    return Pokevial_SetValues(pokevialData);
+    return Pokevial_SetData(pokevialData);
 }
 
 bool8 Pokevial_DoseUp(u8 doseIncrease){
@@ -54,7 +54,7 @@ bool8 Pokevial_DoseUp(u8 doseIncrease){
     }
 
     pokevialData = (pokevialData & VIAL_DOSE_MASK) | (newDose << 4);
-    return Pokevial_SetValues(pokevialData);
+    return Pokevial_SetData(pokevialData);
 }
 
 bool8 Pokevial_SizeDown(u8 sizeDecrease){
@@ -70,7 +70,7 @@ bool8 Pokevial_SizeDown(u8 sizeDecrease){
 
     pokevialData = (pokevialData & VIAL_SIZE_MASK) | newSize;
     pokevialData = (pokevialData & VIAL_DOSE_MASK) | (pokevialDose << 4);
-    return Pokevial_SetValues(pokevialData);
+    return Pokevial_SetData(pokevialData);
 }
 
 bool8 Pokevial_DoseDown(u8 doseDecrease){
@@ -82,7 +82,7 @@ bool8 Pokevial_DoseDown(u8 doseDecrease){
         newDose = EMPTY_VIAL;
 
     pokevialData = (pokevialData & VIAL_DOSE_MASK) | (newDose << 4);
-    return Pokevial_SetValues(pokevialData);
+    return Pokevial_SetData(pokevialData);
 }
 
 bool8 Pokevial_Refill(void){
@@ -95,10 +95,10 @@ bool8 Pokevial_Refill(void){
 
     pokevialData = (pokevialData & VIAL_SIZE_MASK) | pokevialSize;
     pokevialData = (pokevialData & VIAL_DOSE_MASK) | (pokevialSize << 4);
-    return Pokevial_SetValues(pokevialData);
+    return Pokevial_SetData(pokevialData);
 }
 
-static bool8 Pokevial_SetValues(u8 pokevialData){
+static bool8 Pokevial_SetData(u8 pokevialData){
     gSaveBlock1Ptr->pokevialData = pokevialData;
     return TRUE;
 }
