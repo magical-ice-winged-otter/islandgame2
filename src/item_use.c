@@ -1199,7 +1199,8 @@ void ItemUseOutOfBattle_Pokevial(u8 taskId)
 
     CopyItemName(ITEM_POKEVIAL, gStringVar1);
 
-    if (currentDoses > EMPTY_VIAL){
+    if (currentDoses > EMPTY_VIAL)
+    {
         ConvertIntToDecimalStringN(gStringVar2, currentDoses, STR_CONV_MODE_LEFT_ALIGN, numDigits);
         StringExpandPlaceholders(gStringVar4, gText_PokevialHasDoses);
 
@@ -1208,7 +1209,8 @@ void ItemUseOutOfBattle_Pokevial(u8 taskId)
         else
             DisplayItemMessageOnField(taskId, gStringVar4, UsePokevialFieldYesNo);
     }
-    else{
+    else
+    {
         StringCopy(gStringVar2, gText_PokemonCenter);
         StringExpandPlaceholders(gStringVar4, gText_PokevialIsEmpty);
 
