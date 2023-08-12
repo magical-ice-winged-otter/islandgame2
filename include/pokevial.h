@@ -7,12 +7,12 @@
 u32 PokevialGetDose(void);
 u32 PokevialGetSize(void);
 
-bool32 PokevialSizeUp(u8 sizeIncrease);
-bool32 PokevialDoseUp(u8 doseIncrease);
+void PokevialSizeUp(u8);
+void PokevialDoseUp(u8);
 
-bool32 PokevialSizeDown(u8 sizeDecrease);
-bool32 PokevialDoseDown(u8 doseDecrease);
+void PokevialSizeDown(u8);
+void PokevialDoseDown(u8);
 
 bool32 PokevialRefill(void);
-static void PokevialPreventOverflow(void);
+static void PokevialFixDoseOverflow(void);
 #endif // GUARD_POKEVIAL_H
