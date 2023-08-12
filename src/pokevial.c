@@ -55,3 +55,17 @@ bool32 PokevialRefill()
     gSaveBlock1Ptr->pokevial.Dose = gSaveBlock1Ptr->pokevial.Size;
     return TRUE;
 }
+
+static u32 PokevialGetDosePercentage(void)
+{
+    return (PokevialGetDose() / PokevialGetSize()) * 100;
+}
+
+u16 PokevialGetSpriteForDosePercentage(u16 itemId)
+{
+    if (itemId != ITEM_POKEVIAL)
+        return itemId;
+
+    return itemId;
+}
+

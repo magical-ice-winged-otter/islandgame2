@@ -15,4 +15,6 @@ void PokevialDoseDown(u8);
 
 bool32 PokevialRefill(void);
 static void PokevialFixDoseOverflow(void);
+u16 PokevialGetSpriteForDosePercentage(u16);
+
 #endif // GUARD_POKEVIAL_H

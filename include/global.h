@@ -967,11 +967,13 @@ struct ExternalEventFlags
 
 } __attribute__((packed));/*size = 0x15*/
 
+//Start Pokevial Branch
 struct Pokevial
 {
     u8 Size : 4;
     u8 Dose : 4;
 };
+//End Pokevial Branch
 
 struct SaveBlock1
 {
@@ -1067,7 +1069,6 @@ struct SaveBlock1
     /*0x3D5A*/ u8 unused_3D5A[10];
     /*0x3D64*/ struct TrainerHillSave trainerHill;
     /*0x3D70*/ struct WaldaPhrase waldaPhrase;
-    ///* ?? */  u8 pokevialData; //Pokevial Branch
     /* ??   */ struct Pokevial pokevial; //Pokevial Branch
     // sizeof: 0x3D88
 };

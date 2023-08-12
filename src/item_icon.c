@@ -5,6 +5,7 @@
 #include "malloc.h"
 #include "sprite.h"
 #include "constants/items.h"
+#include "pokevial.h"
 
 // EWRAM vars
 EWRAM_DATA u8 *gItemIconDecompressionBuffer = NULL;
@@ -96,7 +97,9 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId)
         struct CompressedSpritePalette spritePalette;
         struct SpriteTemplate *spriteTemplate;
 
+        PokevialGetSpriteForDosePercentage(itemId);//Pokevial Branch
         LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+
         CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
         spriteSheet.data = gItemIcon4x4Buffer;
         spriteSheet.size = 0x200;
