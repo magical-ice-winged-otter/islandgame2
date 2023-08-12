@@ -47,43 +47,12 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	releaseall
 	end
 
-CheckVialy::
-    pokevialgetdose
-    buffernumberstring STR_VAR_1,VAR_0x8006
-	msgbox MessageA, MSGBOX_SIGN
-    pokevialgetsize
-    buffernumberstring STR_VAR_1,VAR_0x8006
-	msgbox MessageB, MSGBOX_SIGN
-    return
-
 InsideOfTruck_EventScript_MovingBox::
-    additem ITEM_POKEVIAL, 1
-    //pokevial VIAL_ADD,VIAL_SIZE,5
-    //pokevial VIAL_REFRESH
-    pokevial VIAL_UP,VIAL_SIZE,15
-    call CheckVialy
-    pokevial VIAL_DOWN,VIAL_DOSE,5
-    call CheckVialy
-    pokevial VIAL_ADD,VIAL_DOSE,7
-    call CheckVialy
-    pokevial VIAL_DECREASE,VIAL_SIZE,12
-    call CheckVialy
-    pokevial VIAL_ADD,VIAL_DOSE,20
-    call CheckVialy
-    givemon SPECIES_ELECTRODE, 70,0
-    givemon SPECIES_GIRAFARIG, 50, 0
-    //warp MAP_FALLARBOR_TOWN,0
+	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
 	end
 
-MessageA:
-    .string "{STR_VAR_1} doses$"
-MessageB:
-    .string "{STR_VAR_1} size.$"
-
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
-    .string "{STR_VAR_1} doses\n"
-    .string "{STR_VAR_2} size.$"
-	//.string "The box is printed with a POKéMON logo.\p"
-	//.string "It's a POKéMON brand moving and\n"
-	//.string "delivery service.$"
+	.string "The box is printed with a POKéMON logo.\p"
+	.string "It's a POKéMON brand moving and\n"
+	.string "delivery service.$"
 
