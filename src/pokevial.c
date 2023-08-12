@@ -1,4 +1,5 @@
 #include "pokevial.h"
+#include "constants/items.h"
 
 static void PokevialInit()
 {
