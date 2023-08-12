@@ -4,7 +4,7 @@
 #include "constants/pokevial.h"
 
 static void PokevialInitalize(u8);
-static u8 PokevialGetData(void);
+static u8 PokevialGetOrInitData(void);
 
 u8 PokevialGetSize(void);
 u8 PokevialGetDose(void);
