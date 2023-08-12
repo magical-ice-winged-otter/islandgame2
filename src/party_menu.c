@@ -6566,39 +6566,38 @@ void UsePokevial(u8 taskId)
 
 static void Task_PokevialLoop(u8 taskId)
 {
-    if (IsPartyMenuTextPrinterActive())
-        return;
-
-    if (sPartyMenuInternal->tUsedOnSlot == TRUE)
+    if (IsPartyMenuTextPrinterActive() != TRUE)
     {
-        sPartyMenuInternal->tUsedOnSlot = FALSE;
-        sPartyMenuInternal->tLastSlotUsed = gPartyMenu.slotId;
+        if (sPartyMenuInternal->tUsedOnSlot == TRUE)
+        {
+            sPartyMenuInternal->tUsedOnSlot = FALSE;
+            sPartyMenuInternal->tLastSlotUsed = gPartyMenu.slotId;
+        }
+        if (++(gPartyMenu.slotId) == PARTY_SIZE)
+        {
+            if (sPartyMenuInternal->tHadEffect == FALSE)
+            {
+                gPartyMenuUseExitCallback = FALSE;
+                DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+                ScheduleBgCopyTilemapToVram(2);
+            }
+            else
+            {
+                gPartyMenuUseExitCallback = FALSE;
+                StringCopy(gStringVar1, gText_Pokemon);
+                StringExpandPlaceholders(gStringVar4, gText_YourPkmnWereRestored);
+                DisplayPartyMenuMessage(gStringVar4, FALSE);
+                ScheduleBgCopyTilemapToVram(2);
+                PokevialDoseDown(VIAL_STANDARD_DOSE);
+            }
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            gPartyMenu.slotId = 0;
+        }
+        else
+        {
+            UsePokevial(taskId);
+        }
     }
-
-    gPartyMenu.slotId++;
-    if (gPartyMenu.slotId < PARTY_SIZE)
-    {
-        UsePokevial(taskId);
-        return;
-    }
-
-    if (sPartyMenuInternal->tHadEffect)
-    {
-        gPartyMenuUseExitCallback = FALSE;
-        StringCopy(gStringVar1, gText_Pokemon);
-        StringExpandPlaceholders(gStringVar4, gText_YourPkmnWereRestored);
-        DisplayPartyMenuMessage(gStringVar4, FALSE);
-        ScheduleBgCopyTilemapToVram(2);
-        PokevialDoseDown(VIAL_STANDARD_DOSE);
-    }
-    else
-    {
-        gPartyMenuUseExitCallback = FALSE;
-        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
-        ScheduleBgCopyTilemapToVram(2);
-    }
-    gTasks[taskId].func = Task_ClosePartyMenuAfterText;
-    gPartyMenu.slotId = 0;
 }
 //End Pokevial Branch
 

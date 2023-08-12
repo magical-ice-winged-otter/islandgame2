@@ -1,21 +1,18 @@
 #ifndef GUARD_POKEVIAL_H
 #define GUARD_POKEVIAL_H
 
+#include "global.h"
 #include "constants/pokevial.h"
 
-static void PokevialInitalize(u8);
-static u8 PokevialGetOrInitData(void);
+u32 PokevialGetDose(void);
+u32 PokevialGetSize(void);
 
-u8 PokevialGetSize(void);
-u8 PokevialGetDose(void);
+bool32 PokevialSizeUp(u8 sizeIncrease);
+bool32 PokevialDoseUp(u8 doseIncrease);
 
-bool8 PokevialSizeUp(u8);
-bool8 PokevialDoseUp(u8);
+bool32 PokevialSizeDown(u8 sizeDecrease);
+bool32 PokevialDoseDown(u8 doseDecrease);
 
-bool8 PokevialSizeDown(u8);
-bool8 PokevialDoseDown(u8);
-
-bool8 PokevialRefill(void);
-
-static bool8 PokevialSetData(u8);
+bool32 PokevialRefill(void);
+static void PokevialPreventOverflow(void);
 #endif // GUARD_POKEVIAL_H

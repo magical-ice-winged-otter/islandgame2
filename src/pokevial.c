@@ -1,104 +1,70 @@
-#include "global.h"
-#include "constants/pokevial.h"
 #include "pokevial.h"
 
-static void PokevialInitalize(u8 pokevialData){
-    pokevialData &= VIAL_SIZE_MASK;
-
-    pokevialData |= (VIAL_MIN_SIZE << 4);
-    pokevialData |= VIAL_MIN_SIZE;
-
-    PokevialSetData(pokevialData);
-}
-
-static u8 PokevialGetOrInitData(void){
-    u8 pokevialData = gSaveBlock1Ptr->pokevialData;
-    u8 pokevialSize = pokevialData & VIAL_DOSE_MASK;
-
-    if (pokevialSize < VIAL_MIN_SIZE){
-        PokevialInitalize(pokevialData);
-        return PokevialGetOrInitData();
+static void PokevialInitData(void)
+{
+    if (gSaveBlock1Ptr->pokevial.Size < VIAL_MIN_SIZE)
+    {
+        gSaveBlock1Ptr->pokevial.Size = VIAL_MIN_SIZE;
+        gSaveBlock1Ptr->pokevial.Dose = VIAL_MIN_SIZE;
     }
-    return pokevialData;
 }
 
-u8 PokevialGetDose(void){
-    u8 pokevialData = PokevialGetOrInitData();
-    return (pokevialData >> 4) & VIAL_DOSE_MASK;
+u32 PokevialGetDose(void)
+{
+    PokevialInitData();
+    return gSaveBlock1Ptr->pokevial.Dose;
 }
 
-u8 PokevialGetSize(void){
-    u8 pokevialData = PokevialGetOrInitData();
-    return  pokevialData & VIAL_DOSE_MASK;
+u32 PokevialGetSize(void)
+{
+    PokevialInitData();
+    return gSaveBlock1Ptr->pokevial.Size;
 }
 
-bool8 PokevialSizeUp(u8 sizeIncrease){
-    u8 pokevialData = PokevialGetOrInitData();
-    u8 newSize = PokevialGetSize() + sizeIncrease;
-
-    if (newSize > VIAL_MAX_SIZE)
-        newSize = VIAL_MAX_SIZE;
-
-    pokevialData = (pokevialData & VIAL_SIZE_MASK) | newSize;
-    //pokevialData = (pokevialData & VIAL_DOSE_MASK) | (newSize << 4);
-    return PokevialSetData(pokevialData);
+bool32 PokevialSizeUp(u8 sizeIncrease)
+{
+    s32 vialSize = 0;
+    PokevialInitData();
+    vialSize = ((gSaveBlock1Ptr->pokevial.Size + sizeIncrease) > VIAL_MAX_SIZE ? VIAL_MAX_SIZE : gSaveBlock1Ptr->pokevial.Size + sizeIncrease);
+    gSaveBlock1Ptr->pokevial.Size = vialSize;
 }
 
-bool8 PokevialDoseUp(u8 doseIncrease){
-    u8 pokevialData = PokevialGetOrInitData();
-    u8 pokevialSize = PokevialGetSize();
-    u8 newDose = PokevialGetDose() + doseIncrease;
-
-    if (newDose > pokevialSize){
-        newDose = pokevialSize;
-    }
-
-    pokevialData = (pokevialData & VIAL_DOSE_MASK) | (newDose << 4);
-    return PokevialSetData(pokevialData);
+bool32 PokevialDoseUp(u8 doseIncrease)
+{
+    s32 vialDose = 0;
+    PokevialInitData();
+    vialDose = ((gSaveBlock1Ptr->pokevial.Dose + doseIncrease) > gSaveBlock1Ptr->pokevial.Size ? gSaveBlock1Ptr->pokevial.Size : gSaveBlock1Ptr->pokevial.Dose + doseIncrease);
+    gSaveBlock1Ptr->pokevial.Dose = vialDose;
 }
 
-bool8 PokevialSizeDown(u8 sizeDecrease){
-    u8 pokevialData = PokevialGetOrInitData();
-    u8 newSize = PokevialGetSize() - sizeDecrease;
-    u8 pokevialDose = PokevialGetDose();
-
-    if (newSize < VIAL_MIN_SIZE)
-        newSize = VIAL_MIN_SIZE;
-
-    if (pokevialDose > newSize)
-        pokevialDose = newSize;
-
-    pokevialData = (pokevialData & VIAL_SIZE_MASK) | newSize;
-    pokevialData = (pokevialData & VIAL_DOSE_MASK) | (pokevialDose << 4);
-    return PokevialSetData(pokevialData);
+bool32 PokevialSizeDown(u8 sizeDecrease)
+{
+    s32 vialSize = 0;
+    PokevialInitData();
+    vialSize = ((gSaveBlock1Ptr->pokevial.Size - sizeDecrease) < VIAL_MIN_SIZE ? VIAL_MIN_SIZE : (gSaveBlock1Ptr->pokevial.Size - sizeDecrease));
+    gSaveBlock1Ptr->pokevial.Size = vialSize;
+    PokevialPreventOverflow();
 }
 
-bool8 PokevialDoseDown(u8 doseDecrease){
-    u8 pokevialData = PokevialGetOrInitData();
-    u8 oldDose = PokevialGetDose();
-    u8 newDose = oldDose - doseDecrease;
-
-    if (doseDecrease >= oldDose)
-        newDose = EMPTY_VIAL;
-
-    pokevialData = (pokevialData & VIAL_DOSE_MASK) | (newDose << 4);
-    return PokevialSetData(pokevialData);
+bool32 PokevialDoseDown(u8 doseDecrease)
+{
+    s32 vialDose = 0;
+    PokevialInitData();
+    vialDose = ((gSaveBlock1Ptr->pokevial.Dose - doseDecrease) < EMPTY_VIAL ? EMPTY_VIAL : (gSaveBlock1Ptr->pokevial.Dose - doseDecrease));
+    gSaveBlock1Ptr->pokevial.Dose = vialDose;
 }
 
-bool8 PokevialRefill(void){
-    u8 pokevialData = PokevialGetOrInitData();
-    u8 pokevialDose = PokevialGetDose();
-    u8 pokevialSize = PokevialGetSize();
-
-    if (pokevialDose == pokevialSize)
+bool32 PokevialRefill(void)
+{
+    if (gSaveBlock1Ptr->pokevial.Dose == gSaveBlock1Ptr->pokevial.Size)
         return FALSE;
 
-    pokevialData = (pokevialData & VIAL_SIZE_MASK) | pokevialSize;
-    pokevialData = (pokevialData & VIAL_DOSE_MASK) | (pokevialSize << 4);
-    return PokevialSetData(pokevialData);
+    gSaveBlock1Ptr->pokevial.Dose = PokevialGetSize();
+    return TRUE;
 }
 
-static bool8 PokevialSetData(u8 pokevialData){
-    gSaveBlock1Ptr->pokevialData = pokevialData;
-    return TRUE;
+static void PokevialPreventOverflow(void)
+{
+    if (gSaveBlock1Ptr->pokevial.Dose > gSaveBlock1Ptr->pokevial.Size)
+        PokevialRefill();
 }
