@@ -3852,7 +3852,6 @@ extern const u32 gItemIcon_OldSeaMap[];
 extern const u32 gItemIconPalette_OldSeaMap[];
 
 // Start Pokevial Branch
-extern const u32 gItemIcon_Pokevial[];
 extern const u32 gItemIcon_Pokevial0[];
 extern const u32 gItemIcon_Pokevial1[];
 extern const u32 gItemIcon_Pokevial2[];
@@ -3863,6 +3862,8 @@ extern const u32 gItemIcon_Pokevial6[];
 extern const u32 gItemIcon_Pokevial7[];
 extern const u32 gItemIcon_Pokevial8[];
 extern const u32 gItemIcon_Pokevial9[];
+extern const u32 gItemIcon_Pokevial[];
+
 extern const u32 gItemIconPalette_Pokevial[];
 // End Pokevial Branch
 
