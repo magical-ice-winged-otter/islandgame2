@@ -1,3 +1,4 @@
+#include "global.h"
 #include "pokevial.h"
 #include "constants/items.h"
 #include "graphics.h"
@@ -56,42 +57,14 @@ static void PokevialFixDoseOverflow(void)
 
 bool32 PokevialRefill()
 {
-    if (gSaveBlock1Ptr->pokevial.Dose == gSaveBlock1Ptr->pokevial.Size)
+    if (PokevialGetDose() == PokevialGetSize())
         return FALSE;
 
     gSaveBlock1Ptr->pokevial.Dose = gSaveBlock1Ptr->pokevial.Size;
     return TRUE;
 }
 
-static u32 PokevialGetDosePercentage(void)
-{
-    u32 x = 4, y = 5;
-    u32 percentage = (((x / y) * 100) / 10) + 1;
-
-    if (x == EMPTY_VIAL)
-        return 0;
-
-    if (percentage > VIAL_NUM_STATES)
-        return VIAL_NUM_STATES;
-
-    return percentage;
-    /*
-     *
-     0	storage_key
-1	nest_ball
-2	berry_pouch
-3	grepa_berry
-4	soft_sand
-5	light_ball
-6	aguav_berry
-7	qualot_berry
-8	big_mushroom
-9	dream_mail
-10	pokevial
-     */
-}
-
-const u32 *const pokeVialSpriteIndex[VIAL_NUM_STATES] =
+const u32 *const pokevialIconIndex[VIAL_NUM_STATES] =
 {
     gItemIcon_Pokevial0,
     gItemIcon_Pokevial1,
@@ -106,8 +79,22 @@ const u32 *const pokeVialSpriteIndex[VIAL_NUM_STATES] =
     gItemIcon_Pokevial
 };
 
-const void *PokevialGetSpriteForDosePercentage(void)
+static u32 PokevialGetVialPercent(void)
 {
-    return pokeVialSpriteIndex[PokevialGetDosePercentage()];
+    u32 dose = PokevialGetDose(), size = PokevialGetSize(), vialPercent = 0;
+
+    if (dose == EMPTY_VIAL)
+        return POKEVIAL_ICON_PERCENT_0;
+
+    if (dose == size)
+        return POKEVIAL_ICON_PERCENT_100;
+
+    vialPercent = (dose * 10 / size);
+
+    return (vialPercent == EMPTY_VIAL && dose > EMPTY_VIAL) ? POKEVIAL_ICON_PERCENT_10 : vialPercent;
 }
 
+const void *PokevialGetDoseIcon(void)
+{
+    return pokevialIconIndex[PokevialGetVialPercent()];
+}

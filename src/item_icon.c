@@ -168,7 +168,7 @@ const void *GetItemIconPicOrPalette(u16 itemId, u8 which)
 
     // Start Pokevial Branch
     if (itemId == ITEM_POKEVIAL && which == 0)
-        return PokevialGetSpriteForDosePercentage();
+        return PokevialGetDoseIcon();
     // End Pokevial Branch
 
     return gItemIconTable[itemId][which];
