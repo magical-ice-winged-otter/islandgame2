@@ -1,5 +1,11 @@
 #include "pokevial.h"
 #include "constants/items.h"
+#include "graphics.h"
+#include "math_util.h"
+#include "random.h"
+
+static void PokevialFixDoseOverflow(void);
+static u32 PokevialGetDosePercentage(void);
 
 static void PokevialInit()
 {
@@ -59,14 +65,49 @@ bool32 PokevialRefill()
 
 static u32 PokevialGetDosePercentage(void)
 {
-    return (PokevialGetDose() / PokevialGetSize()) * 100;
+    u32 x = 4, y = 5;
+    u32 percentage = (((x / y) * 100) / 10) + 1;
+
+    if (x == EMPTY_VIAL)
+        return 0;
+
+    if (percentage > VIAL_NUM_STATES)
+        return VIAL_NUM_STATES;
+
+    return percentage;
+    /*
+     *
+     0	storage_key
+1	nest_ball
+2	berry_pouch
+3	grepa_berry
+4	soft_sand
+5	light_ball
+6	aguav_berry
+7	qualot_berry
+8	big_mushroom
+9	dream_mail
+10	pokevial
+     */
 }
 
-u16 PokevialGetSpriteForDosePercentage(u16 itemId)
+const u32 *const pokeVialSpriteIndex[VIAL_NUM_STATES] =
 {
-    if (itemId != ITEM_POKEVIAL)
-        return itemId;
+    gItemIcon_Pokevial0,
+    gItemIcon_Pokevial1,
+    gItemIcon_Pokevial2,
+    gItemIcon_Pokevial3,
+    gItemIcon_Pokevial4,
+    gItemIcon_Pokevial5,
+    gItemIcon_Pokevial6,
+    gItemIcon_Pokevial7,
+    gItemIcon_Pokevial8,
+    gItemIcon_Pokevial9,
+    gItemIcon_Pokevial
+};
 
-    return itemId;
+const void *PokevialGetSpriteForDosePercentage(void)
+{
+    return pokeVialSpriteIndex[PokevialGetDosePercentage()];
 }
 

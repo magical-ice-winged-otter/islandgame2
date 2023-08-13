@@ -97,7 +97,6 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId)
         struct CompressedSpritePalette spritePalette;
         struct SpriteTemplate *spriteTemplate;
 
-        PokevialGetSpriteForDosePercentage(itemId);//Pokevial Branch
         LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
 
         CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
@@ -166,6 +165,11 @@ const void *GetItemIconPicOrPalette(u16 itemId, u8 which)
         itemId = ITEMS_COUNT; // Use last icon, the "return to field" arrow
     else if (itemId >= ITEMS_COUNT)
         itemId = 0;
+
+    // Start Pokevial Branch
+    if (itemId == ITEM_POKEVIAL && which == 0)
+        return PokevialGetSpriteForDosePercentage();
+    // End Pokevial Branch
 
     return gItemIconTable[itemId][which];
 }

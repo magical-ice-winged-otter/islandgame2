@@ -25,12 +25,11 @@
 #define VIAL_DOSE 0
 #define VIAL_SIZE 1
 
-#define VIAL_DOSE_MASK 0x0F
-#define VIAL_SIZE_MASK 0xF0
-
 #define EMPTY_VIAL 0
 #define VIAL_STANDARD_DOSE 1
 #define VIAL_MIN_SIZE 1
 #define VIAL_MAX_SIZE 15
+
+#define VIAL_NUM_STATES 11
 
 #endif // GUARD_CONSTANTS_VIAL_H
