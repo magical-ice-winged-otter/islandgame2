@@ -1192,33 +1192,41 @@ static void UsePokevialFieldNo(u8 taskId)
     ScriptContext_Enable();
 }
 
+void PokevialPrintDosesAndConfirmMessage(u32 currentDoses, bool32 isPlayerUsingRegisteredKeyItem, u8 taskId)
+{
+    u32 numDigits = CountDigits(currentDoses);
+
+    ConvertIntToDecimalStringN(gStringVar2, currentDoses, STR_CONV_MODE_LEFT_ALIGN, numDigits);
+    StringExpandPlaceholders(gStringVar4, gText_PokevialHasDoses);
+
+    if (isPlayerUsingRegisteredKeyItem)
+        DisplayItemMessageOnField(taskId, gStringVar4, UsePokevialFieldYesNo);
+    else
+        DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, UsePokevialYesNo);
+}
+
+void PokevialPrintNoDosesMessage(bool32 isPlayerUsingRegisteredKeyItem, u8 taskId)
+{
+    StringCopy(gStringVar2, gText_PokemonCenter);
+    StringExpandPlaceholders(gStringVar4, gText_PokevialIsEmpty);
+
+    if (isPlayerUsingRegisteredKeyItem)
+        DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
+    else
+        DisplayItemMessage(taskId,FONT_NORMAL,gStringVar4,CloseItemMessage);
+}
+
 void ItemUseOutOfBattle_Pokevial(u8 taskId)
 {
     u32 currentDoses = PokevialGetDose();
-    u32 numDigits = CountDigits(currentDoses);
+    bool32 isPlayerUsingRegisteredKeyItem = gTasks[taskId].tUsingRegisteredKeyItem;
 
     CopyItemName(ITEM_POKEVIAL, gStringVar1);
 
     if (currentDoses > EMPTY_VIAL)
-    {
-        ConvertIntToDecimalStringN(gStringVar2, currentDoses, STR_CONV_MODE_LEFT_ALIGN, numDigits);
-        StringExpandPlaceholders(gStringVar4, gText_PokevialHasDoses);
-
-        if (!gTasks[taskId].tUsingRegisteredKeyItem)
-            DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, UsePokevialYesNo);
-        else
-            DisplayItemMessageOnField(taskId, gStringVar4, UsePokevialFieldYesNo);
-    }
+        PokevialPrintDosesAndConfirmMessage(currentDoses, isPlayerUsingRegisteredKeyItem, taskId);
     else
-    {
-        StringCopy(gStringVar2, gText_PokemonCenter);
-        StringExpandPlaceholders(gStringVar4, gText_PokevialIsEmpty);
-
-        if (!gTasks[taskId].tUsingRegisteredKeyItem)
-            DisplayItemMessage(taskId,FONT_NORMAL,gStringVar4,CloseItemMessage);
-        else
-            DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
-    }
+        PokevialPrintNoDosesMessage(isPlayerUsingRegisteredKeyItem, taskId);
 }
 //End Pokevial Branch
 

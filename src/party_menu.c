@@ -6477,7 +6477,7 @@ static bool8 IsMonIsNotFullyHealed(void)
     return FALSE;
 }
 
-void HealMon(void)
+void HealMonFromSlotId(void)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u32 i = 0, j = 0, ppBonuses = 0;
@@ -6551,7 +6551,7 @@ void UsePokevial(u8 taskId)
     hp = GetMonData(mon, MON_DATA_HP);
 
     PlaySE(SE_USE_ITEM);
-    HealMon();
+    HealMonFromSlotId();
     SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[gPartyMenu.slotId]);
     if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible)
         DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
@@ -6559,7 +6559,7 @@ void UsePokevial(u8 taskId)
     AnimatePartySlot(gPartyMenu.slotId, 1);
     PartyMenuModifyHP(taskId, gPartyMenu.slotId, 1, GetMonData(mon, MON_DATA_HP) - hp, Task_PokevialLoop);
     ResetHPTaskData(taskId, 0, hp);
-    HealMon();
+    HealMonFromSlotId();
     sPartyMenuInternal->tUsedOnSlot = TRUE;
     sPartyMenuInternal->tHadEffect = TRUE;
 }
