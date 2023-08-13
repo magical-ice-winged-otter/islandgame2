@@ -6576,38 +6576,34 @@ void UsePokevial(u8 taskId)
 
 static void Task_PokevialLoop(u8 taskId)
 {
-    if (IsPartyMenuTextPrinterActive() != TRUE)
+    if (IsPartyMenuTextPrinterActive())
+        return;
+
+    if (sPartyMenuInternal->tUsedOnSlot == TRUE)
     {
-        if (sPartyMenuInternal->tUsedOnSlot == TRUE)
-        {
-            sPartyMenuInternal->tUsedOnSlot = FALSE;
-            sPartyMenuInternal->tLastSlotUsed = gPartyMenu.slotId;
-        }
-        if (++(gPartyMenu.slotId) == PARTY_SIZE)
-        {
-            if (sPartyMenuInternal->tHadEffect == FALSE)
-            {
-                gPartyMenuUseExitCallback = FALSE;
-                DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
-                ScheduleBgCopyTilemapToVram(2);
-            }
-            else
-            {
-                gPartyMenuUseExitCallback = FALSE;
-                StringCopy(gStringVar1, gText_Pokemon);
-                StringExpandPlaceholders(gStringVar4, gText_YourPkmnWereRestored);
-                DisplayPartyMenuMessage(gStringVar4, FALSE);
-                ScheduleBgCopyTilemapToVram(2);
-                PokevialDoseDown(VIAL_STANDARD_DOSE);
-            }
-            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
-            gPartyMenu.slotId = 0;
-        }
-        else
-        {
-            UsePokevial(taskId);
-        }
+        sPartyMenuInternal->tUsedOnSlot = FALSE;
+        sPartyMenuInternal->tLastSlotUsed = gPartyMenu.slotId;
     }
+
+    gPartyMenu.slotId++;
+    if (gPartyMenu.slotId < PARTY_SIZE)
+    {
+        UsePokevial(taskId);
+        return;
+    }
+
+    gPartyMenuUseExitCallback = FALSE;
+    if (sPartyMenuInternal->tHadEffect)
+    {
+        PokevialDoseDown(VIAL_STANDARD_DOSE);
+        DisplayPartyMenuMessage(gText_YourPkmnWereRestored, FALSE);
+    }
+    else
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+    gPartyMenu.slotId = 0;
 }
 //End Pokevial Branch
 
