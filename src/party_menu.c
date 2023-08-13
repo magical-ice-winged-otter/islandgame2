@@ -483,6 +483,7 @@ static bool8 SetUpFieldMove_Waterfall(void);
 static bool8 SetUpFieldMove_Dive(void);
 void UsePokevial(u8); //Start Pokevial Branch
 static void Task_PokevialLoop(u8); //End Pokevial Branch
+static void PokevialStartVariablesAndRun(u8 taskId, TaskFunc task);
 
 // static const data
 #include "data/pokemon/tutor_learnsets.h"
@@ -6445,7 +6446,7 @@ void IsLastMonThatKnowsSurf(void)
 }
 
 //Start Pokevial Branch
-static bool8 IsMonIsNotFullyHealed(void)
+static bool8 IsMonNotFullyHealed(void)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     u16 currentHP = GetMonData(mon,MON_DATA_HP);
@@ -6511,13 +6512,15 @@ void HealMonFromSlotId(void)
 
 void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task)
 {
-    sPartyMenuInternal->tUsedOnSlot = FALSE;
-    sPartyMenuInternal->tHadEffect = FALSE;
-    sPartyMenuInternal->tLastSlotUsed = gPartyMenu.slotId;
-    UsePokevial(taskId);
+    PokevialStartVariablesAndRun(taskId, task);
 }
 
 static void Task_UsePokevialFromField(u8 taskId)
+{
+    PokevialStartVariablesAndRun(taskId,NULL);
+}
+
+void PokevialStartVariablesAndRun(u8 taskId, TaskFunc task)
 {
     sPartyMenuInternal->tUsedOnSlot = FALSE;
     sPartyMenuInternal->tHadEffect = FALSE;
@@ -6534,7 +6537,7 @@ void InitPartyMenuForPokevialFromField(u8 taskId)
 void UsePokevial(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    u16 hp = 0;
+    u16 hp = 0, maxHP = 0;
 
     if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
     {
@@ -6542,13 +6545,14 @@ void UsePokevial(u8 taskId)
         return;
     }
 
-    if (!IsMonIsNotFullyHealed())
+    if (!IsMonNotFullyHealed())
     {
         gTasks[taskId].func = Task_PokevialLoop;
         return;
     }
 
     hp = GetMonData(mon, MON_DATA_HP);
+    maxHP = GetMonData(mon, MON_DATA_MAX_HP);
 
     PlaySE(SE_USE_ITEM);
     HealMonFromSlotId();
@@ -6557,11 +6561,15 @@ void UsePokevial(u8 taskId)
         DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
     AnimatePartySlot(sPartyMenuInternal->tLastSlotUsed, 0);
     AnimatePartySlot(gPartyMenu.slotId, 1);
+    if (hp != maxHP)
+    {
     PartyMenuModifyHP(taskId, gPartyMenu.slotId, 1, GetMonData(mon, MON_DATA_HP) - hp, Task_PokevialLoop);
     ResetHPTaskData(taskId, 0, hp);
-    HealMonFromSlotId();
+    }
+
     sPartyMenuInternal->tUsedOnSlot = TRUE;
     sPartyMenuInternal->tHadEffect = TRUE;
+    HealMonFromSlotId();
 }
 
 static void Task_PokevialLoop(u8 taskId)
