@@ -6522,9 +6522,12 @@ static void Task_UsePokevialFromField(u8 taskId)
 
 void PokevialStartVariablesAndRun(u8 taskId, TaskFunc task)
 {
+    if (gPartyMenu.slotId == 1)
+        sPartyMenuInternal->tHadEffect = FALSE;
+
     sPartyMenuInternal->tUsedOnSlot = FALSE;
-    sPartyMenuInternal->tHadEffect = FALSE;
     sPartyMenuInternal->tLastSlotUsed = gPartyMenu.slotId;
+
     UsePokevial(taskId);
 }
 
@@ -6569,7 +6572,6 @@ void UsePokevial(u8 taskId)
 
     sPartyMenuInternal->tUsedOnSlot = TRUE;
     sPartyMenuInternal->tHadEffect = TRUE;
-    HealMonFromSlotId();
 }
 
 static void Task_PokevialLoop(u8 taskId)
