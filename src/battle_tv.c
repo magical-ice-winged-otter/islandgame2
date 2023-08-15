@@ -217,7 +217,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_PURSUIT]                    = 2,
     [EFFECT_RAPID_SPIN]                 = 2,
     [EFFECT_SONICBOOM]                  = 1,
-//    [EFFECT_UNUSED_83]                = 1,
+//  [EFFECT_UNUSED_83]                  = 1,
     [EFFECT_MORNING_SUN]                = 4,
     [EFFECT_SYNTHESIS]                  = 4,
     [EFFECT_MOONLIGHT]                  = 4,
@@ -227,16 +227,16 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_DEFENSE_UP_HIT]             = 1,
     [EFFECT_ATTACK_UP_HIT]              = 1,
     [EFFECT_ALL_STATS_UP_HIT]           = 1,
-//    [EFFECT_UNUSED_8D]                = 1,
+//  [EFFECT_UNUSED_8D]                  = 1,
     [EFFECT_BELLY_DRUM]                 = 7,
     [EFFECT_PSYCH_UP]                   = 7,
     [EFFECT_MIRROR_COAT]                = 6,
     [EFFECT_SKULL_BASH]                 = 3,
-    [EFFECT_TWISTER]                    = 1,
+//  [EFFECT_TWISTER]                    = 1,
     [EFFECT_EARTHQUAKE]                 = 1,
     [EFFECT_FUTURE_SIGHT]               = 1,
     [EFFECT_GUST]                       = 1,
-    [EFFECT_FLINCH_MINIMIZE_HIT]        = 1,
+//  [EFFECT_FLINCH_MINIMIZE_HIT]        = 1,
     [EFFECT_SOLAR_BEAM]                 = 1,
     [EFFECT_THUNDER]                    = 1,
     [EFFECT_TELEPORT]                   = 1,
@@ -251,6 +251,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_SWALLOW]                    = 3,
 //    [EFFECT_UNUSED_A3]                = 1,
     [EFFECT_HAIL]                       = 4,
+    [EFFECT_SNOWSCAPE]                  = 4,
     [EFFECT_TORMENT]                    = 7,
     [EFFECT_FLATTER]                    = 7,
     [EFFECT_WILL_O_WISP]                = 5,
@@ -1770,6 +1771,6 @@ static void AddPointsBasedOnWeather(u16 weatherFlags, u16 moveId, u8 moveSlot)
         AddMovePoints(PTS_SUN, moveId, moveSlot, 0);
     else if (weatherFlags & B_WEATHER_SANDSTORM)
         AddMovePoints(PTS_SANDSTORM, moveId, moveSlot, 0);
-    else if (weatherFlags & B_WEATHER_HAIL)
+    else if (weatherFlags & (B_WEATHER_HAIL | B_WEATHER_SNOW))
         AddMovePoints(PTS_HAIL, moveId, moveSlot, 0);
 }

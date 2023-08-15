@@ -1185,7 +1185,7 @@ static void Task_SetPyramidFloorPalette(u8 taskId)
 {
     if (gPaletteFade.active)
     {
-        CpuCopy16(gBattlePyramidFloor_Pal[gSaveBlock2Ptr->frontier.curChallengeBattleNum], &gPlttBufferUnfaded[96], 32);
+        CpuCopy16(gBattlePyramidFloor_Pal[gSaveBlock2Ptr->frontier.curChallengeBattleNum], &gPlttBufferUnfaded[BG_PLTT_ID(6)], PLTT_SIZE_4BPP);
         DestroyTask(taskId);
     }
 }
@@ -1357,7 +1357,7 @@ void GenerateBattlePyramidWildMon(void)
 
     id = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) - 1;
     SetMonData(&gEnemyParty[0], MON_DATA_SPECIES, &wildMons[id].species);
-    GetSpeciesName(name, wildMons[id].species);
+    StringCopy(name, GetSpeciesName(wildMons[id].species));
     SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, &name);
     if (lvl != FRONTIER_LVL_50)
     {

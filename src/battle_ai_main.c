@@ -8,6 +8,7 @@
 #include "battle_setup.h"
 #include "battle_z_move.h"
 #include "data.h"
+#include "debug.h"
 #include "event_data.h"
 #include "item.h"
 #include "pokemon.h"
@@ -152,6 +153,11 @@ static u32 GetWildAiFlags(void)
 
 void BattleAI_SetupFlags(void)
 {
+#if DEBUG_OVERWORLD_MENU == TRUE
+    if (gIsDebugBattle)
+        AI_THINKING_STRUCT->aiFlags = gDebugAIFlags;
+    else
+#endif
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         AI_THINKING_STRUCT->aiFlags = GetAiScriptsInRecordedBattle();
     else if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
@@ -248,7 +254,7 @@ static void CopyBattlerDataToAIParty(u32 bPosition, u32 side)
     aiMon->species = bMon->species;
     aiMon->level = bMon->level;
     aiMon->status = bMon->status1;
-    aiMon->gender = GetGenderFromSpeciesAndPersonality(bMon->species, bMon->personality);
+    aiMon->gender = GetBattlerGender(battler);
     aiMon->isFainted = FALSE;
     aiMon->wasSentInBattle = TRUE;
     aiMon->switchInCount++;
@@ -280,7 +286,7 @@ void Ai_InitPartyStruct(void)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0)
             AI_PARTY->mons[B_SIDE_PLAYER][i].isFainted = TRUE;
-        
+
         if (isOmniscient)
         {
             u32 j;
@@ -695,7 +701,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     {
         // handle negative checks on non-user target
         // check powder moves
-        if (TestMoveFlags(move, FLAG_POWDER) && !IsAffectedByPowder(battlerDef, AI_DATA->abilities[battlerDef], AI_DATA->holdEffects[battlerDef]))
+        if (gBattleMoves[move].powderMove && !IsAffectedByPowder(battlerDef, AI_DATA->abilities[battlerDef], AI_DATA->holdEffects[battlerDef]))
         {
             RETURN_SCORE_MINUS(20);
         }
@@ -782,11 +788,11 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     RETURN_SCORE_MINUS(10);
                 break;
             case ABILITY_SOUNDPROOF:
-                if (TestMoveFlags(move, FLAG_SOUND))
+                if (gBattleMoves[move].soundMove)
                     RETURN_SCORE_MINUS(10);
                 break;
             case ABILITY_BULLETPROOF:
-                if (TestMoveFlags(move, FLAG_BALLISTIC))
+                if (gBattleMoves[move].ballisticMove)
                     RETURN_SCORE_MINUS(10);
                 break;
             case ABILITY_DAZZLING:
@@ -807,7 +813,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     RETURN_SCORE_MINUS(10);
                 break;
             case ABILITY_MAGIC_BOUNCE:
-                if (TestMoveFlags(move, FLAG_MAGIC_COAT_AFFECTED))
+                if (gBattleMoves[move].magicCoatAffected)
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_CONTRARY:
@@ -868,7 +874,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                         RETURN_SCORE_MINUS(20);
                     break;
                 case ABILITY_MAGIC_BOUNCE:
-                    if (TestMoveFlags(move, FLAG_MAGIC_COAT_AFFECTED) && moveTarget & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY | MOVE_TARGET_OPPONENTS_FIELD))
+                    if (gBattleMoves[move].magicCoatAffected && moveTarget & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY | MOVE_TARGET_OPPONENTS_FIELD))
                         RETURN_SCORE_MINUS(20);
                     break;
                 case ABILITY_SWEET_VEIL:
@@ -921,7 +927,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
 // the following checks apply to any target (including user)
 
     // throat chop check
-    if (gDisableStructs[battlerAtk].throatChopTimer && TestMoveFlags(move, FLAG_SOUND))
+    if (gDisableStructs[battlerAtk].throatChopTimer && gBattleMoves[move].soundMove)
         return 0; // Can't even select move at all
     // heal block check
     if (gStatuses3[battlerAtk] & STATUS3_HEAL_BLOCK && IsHealBlockPreventingMove(battlerAtk, move))
@@ -1287,12 +1293,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 8;
             break;
         case EFFECT_CAPTIVATE:
-            {
-                u8 atkGender = GetGenderFromSpeciesAndPersonality(gBattleMons[battlerAtk].species, gBattleMons[battlerAtk].personality);
-                u8 defGender = GetGenderFromSpeciesAndPersonality(gBattleMons[battlerDef].species, gBattleMons[battlerDef].personality);
-                if (atkGender == MON_GENDERLESS || defGender == MON_GENDERLESS || atkGender == defGender)
-                    score -= 10;
-            }
+            if (!AreBattlersOfOppositeGender(battlerAtk, battlerDef))
+                score -= 10;
             break;
     // other
         case EFFECT_HAZE:
@@ -1372,7 +1374,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_AURORA_VEIL:
             if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_AURORA_VEIL
               || PartnerHasSameMoveEffectWithoutTarget(BATTLE_PARTNER(battlerAtk), move, AI_DATA->partnerMove)
-              || !(gBattleWeather & B_WEATHER_HAIL))
+              || !(gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
                 score -= 10;
             break;
         case EFFECT_OHKO:
@@ -1408,7 +1410,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             else if (AI_DATA->hpPercents[battlerAtk] <= 25)
                 score -= 10;
         #if B_SOUND_SUBSTITUTE >= GEN_6
-            else if (TestMoveFlagsInMoveset(battlerDef, FLAG_SOUND))
+            else if (HasSoundMove(battlerDef))
                 score -= 8;
         #endif
             break;
@@ -1581,11 +1583,18 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             if (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_PRIMAL_ANY)
              || PartnerMoveEffectIsWeather(BATTLE_PARTNER(battlerAtk), AI_DATA->partnerMove))
                 score -= 8;
+            else if (gBattleWeather & B_WEATHER_SNOW)
+                score -= 2; // mainly to prevent looping between hail and snow
+            break;
+        case EFFECT_SNOWSCAPE:
+            if (gBattleWeather & (B_WEATHER_SNOW | B_WEATHER_PRIMAL_ANY)
+             || PartnerMoveEffectIsWeather(BATTLE_PARTNER(battlerAtk), AI_DATA->partnerMove))
+                score -= 8;
+            else if (gBattleWeather & B_WEATHER_HAIL)
+                score -= 2; // mainly to prevent looping between hail and snow
             break;
         case EFFECT_ATTRACT:
-            if (!AI_CanBeInfatuated(battlerAtk, battlerDef, AI_DATA->abilities[battlerDef],
-             GetGenderFromSpeciesAndPersonality(gBattleMons[battlerAtk].species, gBattleMons[battlerAtk].personality),
-             GetGenderFromSpeciesAndPersonality(gBattleMons[battlerDef].species, gBattleMons[battlerDef].personality)))
+            if (!AI_CanBeInfatuated(battlerAtk, battlerDef, AI_DATA->abilities[battlerDef]))
                 score -= 10;
             break;
         case EFFECT_SAFEGUARD:
@@ -1944,7 +1953,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             // TODO
             break;
         case EFFECT_HEAL_BELL:
-            if (!AnyPartyMemberStatused(battlerAtk, TestMoveFlags(move, FLAG_SOUND)) || PartnerHasSameMoveEffectWithoutTarget(BATTLE_PARTNER(battlerAtk), move, AI_DATA->partnerMove))
+            if (!AnyPartyMemberStatused(battlerAtk, gBattleMoves[move].soundMove) || PartnerHasSameMoveEffectWithoutTarget(BATTLE_PARTNER(battlerAtk), move, AI_DATA->partnerMove))
                 score -= 10;
             break;
         case EFFECT_HIT_PREVENT_ESCAPE:
@@ -2143,7 +2152,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;    // no teammates to assist from
             break;
         case EFFECT_MAGIC_COAT:
-            if (!TestMoveFlagsInMoveset(battlerDef, FLAG_MAGIC_COAT_AFFECTED))
+            if (!HasMagicCoatAffectedMove(battlerDef))
                 score -= 10;
             break;
         case EFFECT_BELCH:
@@ -2189,7 +2198,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;
             break;
         case EFFECT_SNATCH:
-            if (!TestMoveFlagsInMoveset(battlerDef, FLAG_SNATCH_AFFECTED)
+            if (!HasSnatchAffectedMove(battlerDef)
               || PartnerHasSameMoveEffectWithoutTarget(BATTLE_PARTNER(battlerAtk), move, AI_DATA->partnerMove))
                 score -= 10;
             break;
@@ -2497,7 +2506,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     instructedMove = gLastMoves[battlerDef];
 
                 if (instructedMove == MOVE_NONE
-                  || IsInstructBannedMove(instructedMove)
+                  || gBattleMoves[instructedMove].instructBanned
                   || MoveRequiresRecharging(instructedMove)
                   || MoveCallsOtherMove(instructedMove)
                   || IsZMove(instructedMove)
@@ -2635,6 +2644,22 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
              && AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_SLOWER)
                 score -= 10;
             break;
+        case EFFECT_JUNGLE_HEALING:
+           if (AtMaxHp(battlerAtk)
+            && AtMaxHp(BATTLE_PARTNER(battlerAtk))
+            && !(gBattleMons[battlerAtk].status1 & STATUS1_ANY)
+            && !(gBattleMons[BATTLE_PARTNER(battlerAtk)].status1 & STATUS1_ANY))
+                score -= 10;
+            break;
+        case EFFECT_TAKE_HEART:
+            if ((!(gBattleMons[battlerAtk].status1 & STATUS1_ANY)
+             || PartnerMoveIs(BATTLE_PARTNER(battlerAtk), AI_DATA->partnerMove, MOVE_JUNGLE_HEALING)
+             || PartnerMoveIs(BATTLE_PARTNER(battlerAtk), AI_DATA->partnerMove, MOVE_HEAL_BELL)
+             || PartnerMoveIs(BATTLE_PARTNER(battlerAtk), AI_DATA->partnerMove, MOVE_AROMATHERAPY))
+             && !BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_SPATK)
+             && !BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_SPDEF))
+                score -= 10;
+            break;
         case EFFECT_PLACEHOLDER:
             return 0;   // cannot even select
     } // move effect checks
@@ -2664,7 +2689,7 @@ static s16 AI_TryToFaint(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     else
     {
         // this move isn't expected to faint the target
-        if (TestMoveFlags(move, FLAG_HIGH_CRIT))
+        if (gBattleMoves[move].highCritRatio)
             score += 2; // crit makes it more likely to make them faint
 
         if (GetMoveDamageResult(move) == MOVE_POWER_OTHER)
@@ -2801,6 +2826,13 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
          && ShouldSetHail(battlerAtkPartner, atkPartnerAbility, atkPartnerHoldEffect))
         {
             RETURN_SCORE_PLUS(2);   // our partner benefits from hail
+        }
+        break;
+    case EFFECT_SNOWSCAPE:
+        if (IsBattlerAlive(battlerAtkPartner)
+         && ShouldSetSnow(battlerAtkPartner, atkPartnerAbility, atkPartnerHoldEffect))
+        {
+            RETURN_SCORE_PLUS(2);   // our partner benefits from snow
         }
         break;
     } // global move effect check
@@ -3092,6 +3124,19 @@ static bool32 IsPinchBerryItemEffect(u16 holdEffect)
     return FALSE;
 }
 
+static u32 GetAIMostDamagingMoveId(u8 battlerAtk, u8 battlerDef)
+{
+    u32 i, id = 0;
+    u32 mostDmg = 0;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (AI_DATA->simulatedDmg[battlerAtk][battlerDef][i] > mostDmg)
+            id = i, mostDmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i];
+    }
+    return id;
+}
+
 // AI_FLAG_CHECK_VIABILITY - a weird mix of increasing and decreasing scores
 static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
 {
@@ -3112,6 +3157,14 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     // check always hits
     if (!IS_MOVE_STATUS(move) && gBattleMoves[move].accuracy == 0)
     {
+        // If 2 moves can KO the target in the same number of turns, but one of them always hits and there is a risk the other move could miss, prioritize the always hits move.
+        if (gBattleMons[battlerDef].statStages[STAT_EVASION] > 6 || gBattleMons[battlerAtk].statStages[STAT_ACC] < 6)
+        {
+            u32 mostDmgMoveId = GetAIMostDamagingMoveId(battlerAtk, battlerDef);
+            u32 *dmgs = AI_DATA->simulatedDmg[battlerAtk][battlerDef];
+            if (GetNoOfHitsToKO(dmgs[mostDmgMoveId], gBattleMons[battlerDef].hp) == GetNoOfHitsToKO(dmgs[AI_THINKING_STRUCT->movesetIndex], gBattleMons[battlerDef].hp))
+                score++;
+        }
         if (gBattleMons[battlerDef].statStages[STAT_EVASION] >= 10 || gBattleMons[battlerAtk].statStages[STAT_ACC] <= 2)
             score++;
         if (AI_RandLessThan(100) && (gBattleMons[battlerDef].statStages[STAT_EVASION] >= 8 || gBattleMons[battlerAtk].statStages[STAT_ACC] <= 4))
@@ -3119,7 +3172,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     }
 
     // check high crit
-    if (TestMoveFlags(move, FLAG_HIGH_CRIT) && effectiveness >= AI_EFFECTIVENESS_x2 && AI_RandLessThan(128))
+    if (gBattleMoves[move].highCritRatio && effectiveness >= AI_EFFECTIVENESS_x2 && AI_RandLessThan(128))
         score++;
 
     // check already dead
@@ -3142,7 +3195,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         score++;
 
     // check thawing moves
-    if ((gBattleMons[battlerAtk].status1 & (STATUS1_FREEZE | STATUS1_FROSTBITE)) && TestMoveFlags(move, FLAG_THAW_USER))
+    if ((gBattleMons[battlerAtk].status1 & (STATUS1_FREEZE | STATUS1_FROSTBITE)) && gBattleMoves[move].thawsUser)
         score += (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) ? 20 : 10;
 
     // check burn
@@ -3518,6 +3571,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_TOXIC:
     case EFFECT_POISON:
     case EFFECT_BARB_BARRAGE:
+    case EFFECT_MORTAL_SPIN:
         IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
         break;
     case EFFECT_LIGHT_SCREEN:
@@ -3578,7 +3632,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         if (AI_DATA->abilities[battlerAtk] == ABILITY_SUPER_LUCK
           || AI_DATA->abilities[battlerAtk] == ABILITY_SNIPER
           || AI_DATA->holdEffects[battlerAtk] == HOLD_EFFECT_SCOPE_LENS
-          || TestMoveFlagsInMoveset(battlerAtk, FLAG_HIGH_CRIT))
+          || HasHighCritRatioMove(battlerAtk))
             score += 2;
         break;
     case EFFECT_CONFUSE_HIT:
@@ -3762,7 +3816,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_WISH:
     case EFFECT_HEAL_BELL:
         if (ShouldUseWishAromatherapy(battlerAtk, battlerDef, move))
-            score += 7;
+            score += 3;
         break;
     case EFFECT_THIEF:
         {
@@ -3951,6 +4005,22 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         break;
     case EFFECT_HAIL:
         if (ShouldSetHail(battlerAtk, AI_DATA->abilities[battlerAtk], AI_DATA->holdEffects[battlerAtk]))
+        {
+            if ((HasMoveEffect(battlerAtk, EFFECT_AURORA_VEIL) || HasMoveEffect(BATTLE_PARTNER(battlerAtk), EFFECT_AURORA_VEIL))
+              && ShouldSetScreen(battlerAtk, battlerDef, EFFECT_AURORA_VEIL))
+                score += 3;
+
+            score++;
+            if (AI_DATA->holdEffects[battlerAtk] == HOLD_EFFECT_ICY_ROCK)
+                score++;
+            if (HasMoveEffect(battlerDef, EFFECT_MORNING_SUN)
+              || HasMoveEffect(battlerDef, EFFECT_SYNTHESIS)
+              || HasMoveEffect(battlerDef, EFFECT_MOONLIGHT))
+                score += 2;
+        }
+        break;
+    case EFFECT_SNOWSCAPE:
+        if (ShouldSetSnow(battlerAtk, AI_DATA->abilities[battlerAtk], AI_DATA->holdEffects[battlerAtk]))
         {
             if ((HasMoveEffect(battlerAtk, EFFECT_AURORA_VEIL) || HasMoveEffect(BATTLE_PARTNER(battlerAtk), EFFECT_AURORA_VEIL))
               && ShouldSetScreen(battlerAtk, battlerDef, EFFECT_AURORA_VEIL))
@@ -4177,6 +4247,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             }
             break;
         case MOVE_RAPID_SPIN:
+        case MOVE_MORTAL_SPIN:
             if (gStatuses3[battlerAtk] & STATUS3_LEECHSEED || gBattleMons[battlerAtk].status2 & STATUS2_WRAPPED)
                 score += 3;
             break;
@@ -4320,8 +4391,9 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         break;
     case EFFECT_SUPERPOWER:
     case EFFECT_OVERHEAT:
+    case EFFECT_MAKE_IT_RAIN:
         if (AI_DATA->abilities[battlerAtk] == ABILITY_CONTRARY)
-            score += 10;
+            score += 3;
         break;
     case EFFECT_MAGIC_COAT:
         if (IS_MOVE_STATUS(predictedMove) && AI_GetBattlerMoveTargetType(battlerDef, predictedMove) & (MOVE_TARGET_SELECTED | MOVE_TARGET_OPPONENTS_FIELD | MOVE_TARGET_BOTH))
@@ -4398,6 +4470,12 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         if (gBattleMons[battlerAtk].status1 & STATUS1_ANY)
             score += 2;
         break;
+    case EFFECT_TAKE_HEART:
+        if (gBattleMons[battlerAtk].status1 & STATUS1_ANY
+         || BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_SPATK)
+         || BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_SPDEF))
+            score += 2;
+        break;
     case EFFECT_PSYCHO_SHIFT:
         if (gBattleMons[battlerAtk].status1 & STATUS1_PSN_ANY)
             IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
@@ -4413,7 +4491,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_GRUDGE:
         break;
     case EFFECT_SNATCH:
-        if (predictedMove != MOVE_NONE && TestMoveFlags(predictedMove, FLAG_SNATCH_AFFECTED))
+        if (predictedMove != MOVE_NONE && gBattleMoves[predictedMove].snatchAffected)
             score += 3; // Steal move
         break;
     case EFFECT_MUD_SPORT:
@@ -4659,9 +4737,9 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score++;
         break;
     case EFFECT_THROAT_CHOP:
-        if (predictedMove != MOVE_NONE && TestMoveFlags(predictedMove, FLAG_SOUND) && AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_FASTER)
+        if (predictedMove != MOVE_NONE && gBattleMoves[predictedMove].soundMove && AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_FASTER)
             score += 3; // Ai goes first and predicts the target will use a sound move
-        else if (TestMoveFlagsInMoveset(battlerDef, FLAG_SOUND))
+        else if (HasSoundMove(battlerDef))
             score += 3;
         break;
     case EFFECT_HEAL_BLOCK:
@@ -4845,6 +4923,13 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         //break;
     //case EFFECT_SKY_DROP
         //break;
+    case EFFECT_JUNGLE_HEALING:
+        if (ShouldRecover(battlerAtk, battlerDef, move, 25)
+         || ShouldRecover(BATTLE_PARTNER(battlerAtk), battlerDef, move, 25)
+         || gBattleMons[battlerAtk].status1 & STATUS1_ANY
+         || gBattleMons[BATTLE_PARTNER(battlerAtk)].status1 & STATUS1_ANY)
+            score += 3;
+        break;
     } // move effect checks
 
     return score;
@@ -4948,6 +5033,7 @@ static s16 AI_SetupFirstTurn(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_SUNNY_DAY:
     case EFFECT_SANDSTORM:
     case EFFECT_HAIL:
+    case EFFECT_SNOWSCAPE:
     case EFFECT_GEOMANCY:
     case EFFECT_VICTORY_DANCE:
     case EFFECT_HIT_SET_ENTRY_HAZARD:
@@ -4966,7 +5052,7 @@ static s16 AI_Risky(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     if (IsTargetingPartner(battlerAtk, battlerDef))
         return score;
 
-    if (TestMoveFlags(move, FLAG_HIGH_CRIT))
+    if (gBattleMoves[move].highCritRatio)
         score += 2;
 
     switch (gBattleMoves[move].effect)
@@ -5114,7 +5200,6 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_ROOST:
             case EFFECT_MEMENTO:
             case EFFECT_GRUDGE:
-            case EFFECT_OVERHEAT:
                 score -= 2;
                 break;
             default:
@@ -5174,6 +5259,7 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_SUNNY_DAY:
             case EFFECT_SANDSTORM:
             case EFFECT_HAIL:
+            case EFFECT_SNOWSCAPE:
             case EFFECT_RAIN_DANCE:
                 score -= 2;
                 break;

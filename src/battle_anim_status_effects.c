@@ -106,7 +106,7 @@ static const union AnimCmd sAnim_SpinningSparkle[] =
     ANIMCMD_END
 };
 
-const union AnimCmd *const sAnims_SpinningSparkle[] =
+const union AnimCmd *const gAnims_SpinningSparkle[] =
 {
     sAnim_SpinningSparkle
 };
@@ -116,7 +116,7 @@ const struct SpriteTemplate gSpinningSparkleSpriteTemplate =
     .tileTag = ANIM_TAG_SPARKLE_4,
     .paletteTag = ANIM_TAG_SPARKLE_4,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
-    .anims = sAnims_SpinningSparkle,
+    .anims = gAnims_SpinningSparkle,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimSpinningSparkle,
@@ -396,6 +396,36 @@ void AnimTask_FrozenIceCubeAttacker(u8 taskId)
     gTasks[taskId].func = AnimTask_FrozenIceCube_Step1;
 }
 
+void AnimTask_CentredFrozenIceCube(u8 taskId)
+{
+    // same as AnimTask_FrozenIceCube but center position on target(s)
+	s16 x, y;
+	u8 spriteId;
+	u8 battler1 = gBattleAnimTarget;
+	u8 battler2 = BATTLE_PARTNER(battler1);
+
+	if (!IsDoubleBattle() || IsAlly(gBattleAnimAttacker, gBattleAnimTarget))
+	{
+		x = GetBattlerSpriteCoord(battler1, BATTLER_COORD_X_2);
+		y = GetBattlerSpriteCoord(battler1, BATTLER_COORD_Y_PIC_OFFSET);
+	}
+	else
+	{
+		x = (GetBattlerSpriteCoord(battler1, BATTLER_COORD_X_2) + GetBattlerSpriteCoord(battler2, BATTLER_COORD_X_2)) / 2;
+		y = (GetBattlerSpriteCoord(battler1, BATTLER_COORD_Y_PIC_OFFSET) + GetBattlerSpriteCoord(battler2, BATTLER_COORD_Y_PIC_OFFSET)) / 2;
+	}
+
+	x -= 32;
+	y -= 36;
+
+	spriteId = CreateSprite(&sFrozenIceCubeSpriteTemplate, x, y, 4);
+	if (GetSpriteTileStartByTag(ANIM_TAG_ICE_CUBE) == 0xFFFF)
+		gSprites[spriteId].invisible = TRUE;
+
+    SetSubspriteTables(&gSprites[spriteId], sFrozenIceCubeSubspriteTable);
+    gTasks[taskId].data[15] = spriteId;
+    gTasks[taskId].func = AnimTask_FrozenIceCube_Step1;
+}
 
 void AnimTask_FrozenIceCube(u8 taskId)
 {
@@ -442,10 +472,10 @@ static void AnimTask_FrozenIceCube_Step2(u8 taskId)
         {
             u16 temp;
 
-            temp = gPlttBufferFaded[0x100 + palIndex * 16 + 13];
-            gPlttBufferFaded[0x100 + palIndex * 16 + 13] = gPlttBufferFaded[0x100 + palIndex * 16 + 14];
-            gPlttBufferFaded[0x100 + palIndex * 16 + 14] = gPlttBufferFaded[0x100 + palIndex * 16 + 15];
-            gPlttBufferFaded[0x100 + palIndex * 16 + 15] = temp;
+            temp = gPlttBufferFaded[OBJ_PLTT_ID(palIndex) + 13];
+            gPlttBufferFaded[OBJ_PLTT_ID(palIndex) + 13] = gPlttBufferFaded[OBJ_PLTT_ID(palIndex) + 14];
+            gPlttBufferFaded[OBJ_PLTT_ID(palIndex) + 14] = gPlttBufferFaded[OBJ_PLTT_ID(palIndex) + 15];
+            gPlttBufferFaded[OBJ_PLTT_ID(palIndex) + 15] = temp;
 
             gTasks[taskId].data[2] = 0;
             gTasks[taskId].data[3]++;

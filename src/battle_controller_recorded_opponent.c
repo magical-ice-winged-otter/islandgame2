@@ -1118,7 +1118,7 @@ static void RecordedOpponentHandleLoadMonSprite(void)
     gSprites[gBattlerSpriteIds[gActiveBattler]].x2 = -DISPLAY_WIDTH;
     gSprites[gBattlerSpriteIds[gActiveBattler]].data[0] = gActiveBattler;
     gSprites[gBattlerSpriteIds[gActiveBattler]].oam.paletteNum = gActiveBattler;
-    StartSpriteAnim(&gSprites[gBattlerSpriteIds[gActiveBattler]], gBattleMonForms[gActiveBattler]);
+    StartSpriteAnim(&gSprites[gBattlerSpriteIds[gActiveBattler]], 0);
 
     SetBattlerShadowSpriteCallback(gActiveBattler, GetMonData(&gEnemyParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPECIES));
 
@@ -1155,7 +1155,7 @@ static void StartSendOutAnim(u8 battlerId, bool8 dontClearSubstituteBit)
     gSprites[gBattlerSpriteIds[battlerId]].data[2] = species;
     gSprites[gBattlerSpriteIds[battlerId]].oam.paletteNum = battlerId;
 
-    StartSpriteAnim(&gSprites[gBattlerSpriteIds[battlerId]], gBattleMonForms[battlerId]);
+    StartSpriteAnim(&gSprites[gBattlerSpriteIds[battlerId]], 0);
 
     gSprites[gBattlerSpriteIds[battlerId]].invisible = TRUE;
     gSprites[gBattlerSpriteIds[battlerId]].callback = SpriteCallbackDummy;
@@ -1442,6 +1442,8 @@ static void RecordedOpponentHandleChooseItem(void)
     u8 byte1 = RecordedBattle_GetBattlerAction(RECORDED_ITEM_ID, gActiveBattler);
     u8 byte2 = RecordedBattle_GetBattlerAction(RECORDED_ITEM_ID, gActiveBattler);
     gBattleStruct->chosenItem[gActiveBattler] = (byte1 << 8) | byte2;
+    gBattleStruct->itemPartyIndex[gActiveBattler] = RecordedBattle_GetBattlerAction(RECORDED_ITEM_TARGET, gActiveBattler);
+    gBattleStruct->itemMoveIndex[gActiveBattler] = RecordedBattle_GetBattlerAction(RECORDED_ITEM_MOVE, gActiveBattler);
     BtlController_EmitOneReturnValue(BUFFER_B, gBattleStruct->chosenItem[gActiveBattler]);
     RecordedOpponentBufferExecCompleted();
 }

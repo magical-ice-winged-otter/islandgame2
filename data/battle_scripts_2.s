@@ -59,9 +59,9 @@ BattleScript_ItemRestoreHP::
     end
 
 BattleScript_ItemRestoreHP_SendOutRevivedBattler:
-    switchinanim BS_ATTACKER, FALSE
+    switchinanim BS_SCRIPTING, FALSE
     waitstate
-    switchineffects BS_ATTACKER
+    switchineffects BS_SCRIPTING
     end
 
 BattleScript_ItemCureStatus::
@@ -75,7 +75,9 @@ BattleScript_ItemCureStatus::
 BattleScript_ItemHealAndCureStatus::
     call BattleScript_UseItemMessage
     itemrestorehp
-    curestatus BS_ATTACKER
+    itemcurestatus
+    printstring STRINGID_ITEMRESTOREDSPECIESHEALTH
+    waitmessage B_WAIT_TIME_LONG
     bichalfword gMoveResultFlags, MOVE_RESULT_NO_EFFECT
     orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
     healthbarupdate BS_ATTACKER

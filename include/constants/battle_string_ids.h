@@ -659,8 +659,14 @@
 #define STRINGID_PKMNFROSTBITEHEALED                  657
 #define STRINGID_PKMNFROSTBITEHEALED2                 658
 #define STRINGID_PKMNFROSTBITEHEALEDBY                659
+#define STRINGID_MIRRORHERBCOPIED                     660
+#define STRINGID_STARTEDSNOW                          661
+#define STRINGID_SNOWCONTINUES                        662
+#define STRINGID_SNOWSTOPPED                          663
+#define STRINGID_SNOWWARNINGSNOW                      664
+#define STRINGID_PKMNITEMMELTED                       665
 
-#define BATTLESTRINGS_COUNT                           660
+#define BATTLESTRINGS_COUNT                           666
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -726,15 +732,17 @@
 #define B_MSG_STARTED_SANDSTORM 3
 #define B_MSG_STARTED_SUNLIGHT  4
 #define B_MSG_STARTED_HAIL      5
+#define B_MSG_STARTED_SNOW      6
 
 // gRainContinuesStringIds
 #define B_MSG_RAIN_CONTINUES     0
 #define B_MSG_DOWNPOUR_CONTINUES 1
 #define B_MSG_RAIN_STOPPED       2
 
-// gSandStormHailContinuesStringIds / gSandStormHailDmgStringIds/ gSandStormHailEndStringIds
+// gSandStormHailSnowContinuesStringIds / gSandStormHailDmgStringIds/ gSandStormHailSnowEndStringIds
 #define B_MSG_SANDSTORM  0
 #define B_MSG_HAIL       1
+#define B_MSG_SNOW       2
 
 // gReflectLightScreenSafeguardStringIds
 #define B_MSG_SIDE_STATUS_FAILED     0
@@ -819,6 +827,10 @@
 #define B_MSG_SENT_LANETTES_PC  1
 #define B_MSG_SOMEONES_BOX_FULL 2
 #define B_MSG_LANETTES_BOX_FULL 3
+
+// gPrimalWeatherBlocksStringIds
+#define B_MSG_PRIMAL_WEATHER_FIZZLED_BY_RAIN    0
+#define B_MSG_PRIMAL_WEATHER_EVAPORATED_IN_SUN  1
 
 // gInobedientStringIds
 #define B_MSG_LOAFING            0

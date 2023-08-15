@@ -7,8 +7,19 @@
 #include "main.h"
 #include "malloc.h"
 #include "random.h"
-#include "test_battle.h"
+#include "test/battle.h"
 #include "window.h"
+
+#if defined(__INTELLISENSE__)
+#undef TestRunner_Battle_RecordAbilityPopUp
+#undef TestRunner_Battle_RecordAnimation
+#undef TestRunner_Battle_RecordHP
+#undef TestRunner_Battle_RecordMessage
+#undef TestRunner_Battle_RecordStatus1
+#undef TestRunner_Battle_AfterLastTurn
+#undef TestRunner_Battle_CheckBattleRecordActionType
+#undef TestRunner_Battle_GetForcedAbility
+#endif
 
 #define INVALID(fmt, ...) Test_ExitWithResult(TEST_RESULT_INVALID, "%s:%d: " fmt, gTestRunnerState.test->filename, sourceLine, ##__VA_ARGS__)
 #define INVALID_IF(c, fmt, ...) do { if (c) Test_ExitWithResult(TEST_RESULT_INVALID, "%s:%d: " fmt, gTestRunnerState.test->filename, sourceLine, ##__VA_ARGS__); } while (0)
@@ -134,6 +145,8 @@ static void BattleTest_SetUp(void *data)
         Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE = AllocZerod(%d)", sizeof(*STATE));
     InvokeTestFunction(test);
     STATE->parameters = STATE->parametersCount;
+    if (STATE->parametersCount == 0 && test->resultsSize > 0)
+        Test_ExitWithResult(TEST_RESULT_INVALID, "results without PARAMETRIZE");
     STATE->results = AllocZeroed(test->resultsSize * STATE->parameters);
     if (!STATE->results)
         Test_ExitWithResult(TEST_RESULT_ERROR, "OOM: STATE->results = AllocZerod(%d)", sizeof(test->resultsSize * STATE->parameters));
@@ -294,17 +307,13 @@ static void BattleTest_Run(void *data)
 u32 RandomUniform(enum RandomTag tag, u32 lo, u32 hi)
 {
     const struct BattlerTurn *turn = NULL;
-    u32 default_ = hi;
 
     if (gCurrentTurnActionNumber < gBattlersCount)
     {
         u32 battlerId = gBattlerByTurnOrder[gCurrentTurnActionNumber];
         turn = &DATA.battleRecordTurns[gBattleResults.battleTurnCounter][battlerId];
-    }
-
-    if (turn && turn->rng.tag == tag)
-    {
-        default_ = turn->rng.value;
+        if (turn && turn->rng.tag == tag)
+            return turn->rng.value;
     }
 
     if (tag == STATE->rngTag)
@@ -319,53 +328,76 @@ u32 RandomUniform(enum RandomTag tag, u32 lo, u32 hi)
         {
             Test_ExitWithResult(TEST_RESULT_ERROR, "RandomUniform called with inconsistent trials %d and %d", STATE->trials, n);
         }
-        STATE->trialRatio = Q_4_12(1) / n;
+        STATE->trialRatio = Q_4_12(1) / STATE->trials;
         return STATE->runTrial + lo;
     }
 
+    return hi;
+}
+
+u32 RandomUniformExcept(enum RandomTag tag, u32 lo, u32 hi, bool32 (*reject)(u32))
+{
+    const struct BattlerTurn *turn = NULL;
+    u32 default_;
+
+    if (gCurrentTurnActionNumber < gBattlersCount)
+    {
+        u32 battlerId = gBattlerByTurnOrder[gCurrentTurnActionNumber];
+        turn = &DATA.battleRecordTurns[gBattleResults.battleTurnCounter][battlerId];
+        if (turn && turn->rng.tag == tag)
+        {
+            if (reject(turn->rng.value))
+                Test_ExitWithResult(TEST_RESULT_INVALID, "WITH_RNG specified a rejected value (%d)", turn->rng.value);
+            return turn->rng.value;
+        }
+    }
+
+    if (tag == STATE->rngTag)
+    {
+        if (STATE->trials == 1)
+        {
+            u32 n = 0, i;
+            for (i = lo; i < hi; i++)
+                if (!reject(i))
+                    n++;
+            STATE->trials = n;
+            PrintTestName();
+        }
+        STATE->trialRatio = Q_4_12(1) / STATE->trials;
+
+        while (reject(STATE->runTrial + lo + STATE->rngTrialOffset))
+        {
+            if (STATE->runTrial + lo + STATE->rngTrialOffset > hi)
+                Test_ExitWithResult(TEST_RESULT_INVALID, "RandomUniformExcept called with inconsistent reject");
+            STATE->rngTrialOffset++;
+        }
+
+        return STATE->runTrial + lo + STATE->rngTrialOffset;
+    }
+
+    default_ = hi;
+    while (reject(default_))
+    {
+        if (default_ == lo)
+            Test_ExitWithResult(TEST_RESULT_INVALID, "RandomUniformExcept rejected all values");
+        default_--;
+    }
     return default_;
 }
 
 u32 RandomWeightedArray(enum RandomTag tag, u32 sum, u32 n, const u8 *weights)
 {
     const struct BattlerTurn *turn = NULL;
-    u32 default_ = n-1;
+
+    if (sum == 0)
+        Test_ExitWithResult(TEST_RESULT_ERROR, "RandomWeightedArray called with zero sum");
 
     if (gCurrentTurnActionNumber < gBattlersCount)
     {
         u32 battlerId = gBattlerByTurnOrder[gCurrentTurnActionNumber];
         turn = &DATA.battleRecordTurns[gBattleResults.battleTurnCounter][battlerId];
-    }
-
-    if (turn && turn->rng.tag == tag)
-    {
-        default_ = turn->rng.value;
-    }
-    else
-    {
-        switch (tag)
-        {
-        case RNG_ACCURACY:
-            ASSUME(n == 2);
-            if (turn && turn->hit)
-                return turn->hit - 1;
-            default_ = TRUE;
-            break;
-
-        case RNG_CRITICAL_HIT:
-            ASSUME(n == 2);
-            if (turn && turn->criticalHit)
-                return turn->criticalHit - 1;
-            default_ = FALSE;
-            break;
-
-        case RNG_SECONDARY_EFFECT:
-            ASSUME(n == 2);
-            if (turn && turn->secondaryEffect)
-                return turn->secondaryEffect - 1;
-            default_ = TRUE;
-            break;
-        }
+        if (turn && turn->rng.tag == tag)
+            return turn->rng.value;
     }
 
     if (tag == STATE->rngTag)
@@ -384,7 +416,38 @@ u32 RandomWeightedArray(enum RandomTag tag, u32 sum, u32 n, const u8 *weights)
         return STATE->runTrial;
     }
 
-    return default_;
+    switch (tag)
+    {
+    case RNG_ACCURACY:
+        ASSUME(n == 2);
+        if (turn && turn->hit)
+            return turn->hit - 1;
+        else
+            return TRUE;
+
+    case RNG_CRITICAL_HIT:
+        ASSUME(n == 2);
+        if (turn && turn->criticalHit)
+            return turn->criticalHit - 1;
+        else
+            return FALSE;
+
+    case RNG_SECONDARY_EFFECT:
+        ASSUME(n == 2);
+        if (turn && turn->secondaryEffect)
+            return turn->secondaryEffect - 1;
+        else
+            return TRUE;
+
+    default:
+        while (weights[n-1] == 0)
+        {
+            if (n == 1)
+                Test_ExitWithResult(TEST_RESULT_ERROR, "RandomWeightedArray called with all zero weights");
+            n--;
+        }
+        return n-1;
+    }
 }
 
 const void *RandomElementArray(enum RandomTag tag, const void *array, size_t size, size_t count)
@@ -396,22 +459,17 @@ const void *RandomElementArray(enum RandomTag tag, const void *array, size_t siz
     {
         u32 battlerId = gBattlerByTurnOrder[gCurrentTurnActionNumber];
         turn = &DATA.battleRecordTurns[gBattleResults.battleTurnCounter][battlerId];
-    }
-
-    if (turn && turn->rng.tag == tag)
-    {
-        u32 element;
-        for (index = 0; index < count; index++)
+        if (turn && turn->rng.tag == tag)
         {
-            memcpy(&element, (const u8 *)array + size * index, size);
-            if (element == turn->rng.value)
-                break;
-        }
-        if (index == count)
-        {
+            u32 element = 0;
+            for (index = 0; index < count; index++)
+            {
+                memcpy(&element, (const u8 *)array + size * index, size);
+                if (element == turn->rng.value)
+                    return (const u8 *)array + size * index;
+            }
             // TODO: Incorporate the line number.
-            const char *filename = gTestRunnerState.test->filename;
-            Test_ExitWithResult(TEST_RESULT_ERROR, "%s: RandomElement illegal value requested: %d", filename, turn->rng.value);
+            Test_ExitWithResult(TEST_RESULT_ERROR, "%s: RandomElement illegal value requested: %d", gTestRunnerState.test->filename, turn->rng.value);
         }
     }
 
@@ -427,10 +485,8 @@ const void *RandomElementArray(enum RandomTag tag, const void *array, size_t siz
             Test_ExitWithResult(TEST_RESULT_ERROR, "RandomElement called with inconsistent trials %d and %d", STATE->trials, count);
         }
         STATE->trialRatio = Q_4_12(1) / count;
-        index = STATE->runTrial;
+        return (const u8 *)array + size * STATE->runTrial;
     }
-
-    return (const u8 *)array + size * index;
 }
 
 static s32 TryAbilityPopUp(s32 i, s32 n, u32 battlerId, u32 ability)
@@ -839,20 +895,30 @@ void TestRunner_Battle_AfterLastTurn(void)
     STATE->runFinally = FALSE;
 }
 
-static void CB2_BattleTest_NextParameter(void)
-{
-    if (++STATE->runParameter >= STATE->parameters)
-        SetMainCallback2(CB2_TestRunner);
-    else
-        BattleTest_Run(gTestRunnerState.test->data);
-}
-
-static void CB2_BattleTest_NextTrial(void)
+static void TearDownBattle(void)
 {
     FreeMonSpritesGfx();
     FreeBattleSpritesData();
     FreeBattleResources();
     FreeAllWindowBuffers();
+}
+
+static void CB2_BattleTest_NextParameter(void)
+{
+    if (++STATE->runParameter >= STATE->parameters)
+    {
+        SetMainCallback2(CB2_TestRunner);
+    }
+    else
+    {
+        STATE->trials = 0;
+        BattleTest_Run(gTestRunnerState.test->data);
+    }
+}
+
+static void CB2_BattleTest_NextTrial(void)
+{
+    TearDownBattle();
 
     SetMainCallback2(CB2_BattleTest_NextParameter);
 
@@ -893,6 +959,10 @@ static void BattleTest_TearDown(void *data)
 {
     if (STATE)
     {
+        // Free resources that aren't cleaned up when the battle was
+        // aborted unexpectedly.
+        if (STATE->tearDownBattle)
+            TearDownBattle();
         FREE_AND_SET_NULL(STATE->results);
         FREE_AND_SET_NULL(STATE);
     }
@@ -923,14 +993,19 @@ static bool32 BattleTest_HandleExitWithResult(void *data, enum TestResult result
     }
     else
     {
+        STATE->tearDownBattle = TRUE;
         return FALSE;
     }
 }
 
 void Randomly(u32 sourceLine, u32 passes, u32 trials, struct RandomlyContext ctx)
 {
+    const struct BattleTest *test = gTestRunnerState.test->data;
+    INVALID_IF(STATE->trials != 0, "PASSES_RANDOMLY can only be used once per test");
+    INVALID_IF(test->resultsSize > 0, "PASSES_RANDOMLY is incompatible with results");
     INVALID_IF(passes > trials, "%d passes specified, but only %d trials", passes, trials);
     STATE->rngTag = ctx.tag;
+    STATE->rngTrialOffset = 0;
     STATE->runTrial = 0;
     STATE->expectedRatio = Q_4_12(passes) / trials;
     STATE->observedRatio = 0;
@@ -1076,7 +1151,11 @@ void Ability_(u32 sourceLine, u32 ability)
             break;
         }
     }
-    INVALID_IF(i == NUM_ABILITY_SLOTS, "%S cannot have %S", gSpeciesNames[species], gAbilityNames[ability]);
+    // Store forced ability to be set when the battle starts if invalid.
+    if (i == NUM_ABILITY_SLOTS)
+    {
+        DATA.forcedAbilities[DATA.currentSide][DATA.currentPartyIndex] = ability;
+    }
 }
 
 void Level_(u32 sourceLine, u32 level)
@@ -1164,6 +1243,21 @@ void Moves_(u32 sourceLine, const u16 moves[MAX_MON_MOVES])
     DATA.explicitMoves[DATA.currentSide] |= 1 << DATA.currentPartyIndex;
 }
 
+void MovesWithPP_(u32 sourceLine, struct moveWithPP moveWithPP[MAX_MON_MOVES])
+{
+    s32 i;
+    INVALID_IF(!DATA.currentMon, "Moves outside of PLAYER/OPPONENT");
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moveWithPP[i].moveId == MOVE_NONE)
+            break;
+        INVALID_IF(moveWithPP[i].moveId >= MOVES_COUNT, "Illegal move: %d", &moveWithPP[i].moveId);
+        SetMonData(DATA.currentMon, MON_DATA_MOVE1 + i, &moveWithPP[i].moveId);
+        SetMonData(DATA.currentMon, MON_DATA_PP1 + i, &moveWithPP[i].pp);
+    }
+    DATA.explicitMoves[DATA.currentSide] |= 1 << DATA.currentPartyIndex;
+}
+
 void Friendship_(u32 sourceLine, u32 friendship)
 {
     INVALID_IF(!DATA.currentMon, "Friendship outside of PLAYER/OPPONENT");
@@ -1212,7 +1306,7 @@ static void PushBattlerAction(u32 sourceLine, s32 battlerId, u32 actionType, u32
     DATA.recordedBattle.battleRecord[battlerId][recordIndex] = byte;
 }
 
-void BattleTest_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 actionType)
+void TestRunner_Battle_CheckBattleRecordActionType(u32 battlerId, u32 recordIndex, u32 actionType)
 {
     // An illegal move choice will cause the battle to request a new
     // move slot and target. This detects the move slot.
@@ -1539,13 +1633,15 @@ void UseItem(u32 sourceLine, struct BattlePokemon *battler, struct ItemContext c
         }
         INVALID_IF(i == MAX_MON_MOVES, "USE_ITEM on invalid move: %d", ctx.move);
     }
+    else
+    {
+        i = 0;
+    }
     PushBattlerAction(sourceLine, battlerId, RECORDED_ACTION_TYPE, B_ACTION_USE_ITEM);
     PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_ID, (ctx.itemId >> 8) & 0xFF);
     PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_ID, ctx.itemId & 0xFF);
-    if (ctx.explicitPartyIndex)
-        gBattleStruct->itemPartyIndex[battlerId] = ctx.partyIndex;
-    if (ctx.explicitMove)
-        gBattleStruct->itemPartyIndex[battlerId] = i;
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_TARGET, ctx.partyIndex);
+    PushBattlerAction(sourceLine, battlerId, RECORDED_ITEM_MOVE, i);
     DATA.actionBattlers |= 1 << battlerId;
 }
 
@@ -1696,7 +1792,6 @@ void QueueMessage(u32 sourceLine, const u8 *pattern)
     };
 }
 
-
 void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEventContext ctx)
 {
     s32 battlerId = battler - gBattleMons;
@@ -1735,4 +1830,17 @@ void QueueStatus(u32 sourceLine, struct BattlePokemon *battler, struct StatusEve
             .mask = mask,
         }},
     };
+}
+
+void ValidateFinally(u32 sourceLine)
+{
+    // Defer this error until after estimating the cost.
+    if (STATE->results == NULL)
+        return;
+    INVALID_IF(STATE->parametersCount == 0, "FINALLY without PARAMETRIZE");
+}
+
+u32 TestRunner_Battle_GetForcedAbility(u32 side, u32 partyIndex)
+{
+    return DATA.forcedAbilities[side][partyIndex];
 }

@@ -1,12 +1,15 @@
-Debug_ShowFieldMessageStringVar4::
-	special ShowFieldMessageStringVar4
+.if DEBUG_OVERWORLD_MENU == TRUE
+Debug_MessageEnd:
 	waitmessage
 	waitbuttonpress
 	releaseall
 	end
 
+Debug_ShowFieldMessageStringVar4::
+	special ShowFieldMessageStringVar4
+	goto Debug_MessageEnd
+
 Debug_CheatStart::
-	lockall
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RESCUED_BIRCH
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
@@ -42,12 +45,8 @@ Debug_CheatStart::
 	end
 
 Debug_FlagsNotSetOverworldConfigMessage::
-	lockall
 	message Debug_FlagsNotSetOverworldConfigMessage_Text
-	waitmessage
-	waitbuttonpress
-	releaseall
-	end
+	goto Debug_MessageEnd
 
 Debug_FlagsNotSetOverworldConfigMessage_Text:
 	.string "Feature unavailable!\n"
@@ -55,17 +54,20 @@ Debug_FlagsNotSetOverworldConfigMessage_Text:
 	.string "'include/config/overworld.h'!$"
 
 Debug_FlagsNotSetBattleConfigMessage::
-	lockall
 	message Debug_FlagsNotSetBattleConfigMessage_Text
-	waitmessage
-	waitbuttonpress
-	releaseall
-	end
+	goto Debug_MessageEnd
 
 Debug_FlagsNotSetBattleConfigMessage_Text:
 	.string "Feature unavailable!\n"
 	.string "Please define a usable flag in:\l"
 	.string "'include/config/battle.h'!$"
+
+Debug_BoxFilledMessage::
+	message Debug_BoxFilledMessage_Text
+	goto Debug_MessageEnd
+
+Debug_BoxFilledMessage_Text:
+	.string "Storage boxes filled!$"
 
 Debug_Script_1::
 	end
@@ -90,3 +92,55 @@ Debug_Script_7::
 
 Debug_Script_8::
 	end
+
+Debug_CheckSaveBlock::
+	callnative CheckSaveBlock1Size
+	msgbox Debug_SaveBlock1Size, MSGBOX_DEFAULT
+	callnative CheckSaveBlock2Size
+	msgbox Debug_SaveBlock2Size, MSGBOX_DEFAULT
+	callnative CheckPokemonStorageSize
+	msgbox Debug_PokemonStorageSize, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_SaveBlock1Size::
+	.string "SaveBlock1 size: {STR_VAR_1}/{STR_VAR_2}.$"
+
+Debug_SaveBlock2Size::
+	.string "SaveBlock2 size: {STR_VAR_1}/{STR_VAR_2}.$"
+
+Debug_PokemonStorageSize::
+	.string "{PKMN}Storage size: {STR_VAR_1}/{STR_VAR_2}.$"
+
+Debug_HatchAnEgg::
+	lockall
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, Debug_HatchAnEgg_NoPokemon
+	special ChoosePartyMon
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_HatchAnEgg_End
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	goto_if_ne VAR_RESULT, SPECIES_EGG, DebugScript_HatchAnEgg_CantForceHatch
+	special EggHatch
+	waitstate
+Debug_HatchAnEgg_End::
+	releaseall
+	end
+
+Debug_HatchAnEgg_NoPokemon::
+	msgbox DebugScript_HatchAnEgg_Text_EmptyParty, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_HatchAnEgg_CantForceHatch::
+	msgbox DebugScript_HatchAnEgg_Text_NotAnEgg, MSGBOX_DEFAULT
+	releaseall
+	end
+
+DebugScript_HatchAnEgg_Text_EmptyParty::
+	.string "You have no Pokémon nor Eggs.$"
+
+DebugScript_HatchAnEgg_Text_NotAnEgg::
+	.string "That's not a Pokémon Egg.$"
+
+.endif

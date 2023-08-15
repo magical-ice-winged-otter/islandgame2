@@ -1,6 +1,8 @@
 #ifndef GUARD_BATTLE_SCRIPTS_H
 #define GUARD_BATTLE_SCRIPTS_H
 
+extern const u8 BattleScript_MirrorHerbCopyStatChange[];
+extern const u8 BattleScript_MirrorHerbCopyStatChangeEnd2[];
 extern const u8 BattleScript_NotAffected[];
 extern const u8 BattleScript_HitFromCritCalc[];
 extern const u8 BattleScript_MoveEnd[];
@@ -43,8 +45,9 @@ extern const u8 BattleScript_ActionSwitch[];
 extern const u8 BattleScript_Pausex20[];
 extern const u8 BattleScript_LevelUp[];
 extern const u8 BattleScript_RainContinuesOrEnds[];
+extern const u8 BattleScript_SnowContinuesOrEnds[];
 extern const u8 BattleScript_DamagingWeatherContinues[];
-extern const u8 BattleScript_SandStormHailEnds[];
+extern const u8 BattleScript_SandStormHailSnowEnds[];
 extern const u8 BattleScript_SunlightContinues[];
 extern const u8 BattleScript_SunlightFaded[];
 extern const u8 BattleScript_OverworldWeatherStarts[];
@@ -165,6 +168,7 @@ extern const u8 BattleScript_MonMadeMoveUseless[];
 extern const u8 BattleScript_FlashFireBoost_PPLoss[];
 extern const u8 BattleScript_FlashFireBoost[];
 extern const u8 BattleScript_AbilityNoStatLoss[];
+extern const u8 BattleScript_ItemNoStatLoss[];
 extern const u8 BattleScript_BRNPrevention[];
 extern const u8 BattleScript_PRLZPrevention[];
 extern const u8 BattleScript_PSNPrevention[];
@@ -272,7 +276,8 @@ extern const u8 BattleScript_CursedBodyActivates[];
 extern const u8 BattleScript_MummyActivates[];
 extern const u8 BattleScript_WeakArmorActivates[];
 extern const u8 BattleScript_FellStingerRaisesStat[];
-extern const u8 BattleScript_SnowWarningActivates[];
+extern const u8 BattleScript_SnowWarningActivatesHail[];
+extern const u8 BattleScript_SnowWarningActivatesSnow[];
 extern const u8 BattleScript_HarvestActivates[];
 extern const u8 BattleScript_ImposterActivates[];
 extern const u8 BattleScript_SelectingNotAllowedMoveAssaultVest[];
@@ -404,15 +409,15 @@ extern const u8 BattleScript_GulpMissileGorging[];
 extern const u8 BattleScript_GulpMissileGulping[];
 extern const u8 BattleScript_BattleBondActivatesOnMoveEndAttacker[];
 extern const u8 BattleScript_DesolateLandActivates[];
-extern const u8 BattleScript_DesolateLandEvaporatesWaterTypeMoves[];
 extern const u8 BattleScript_PrimordialSeaActivates[];
-extern const u8 BattleScript_PrimordialSeaFizzlesOutFireTypeMoves[];
+extern const u8 BattleScript_PrimalWeatherBlocksMove[];
 extern const u8 BattleScript_DeltaStreamActivates[];
 extern const u8 BattleScript_MysteriousAirCurrentBlowsOn[];
 extern const u8 BattleScript_AttackWeakenedByStrongWinds[];
 extern const u8 BattleScript_BlockedByPrimalWeatherEnd3[];
 extern const u8 BattleScript_BlockedByPrimalWeatherRet[];
 extern const u8 BattleScript_PrimalReversion[];
+extern const u8 BattleScript_PrimalReversionRestoreAttacker[];
 extern const u8 BattleScript_HyperspaceFuryRemoveProtect[];
 extern const u8 BattleScript_SelectingNotAllowedMoveGorillaTactics[];
 extern const u8 BattleScript_SelectingNotAllowedMoveGorillaTacticsInPalace[];
@@ -465,6 +470,8 @@ extern const u8 BattleScript_MoveEffectStockpileWoreOff[];
 extern const u8 BattleScript_StealthRockActivates[];
 extern const u8 BattleScript_SpikesActivates[];
 extern const u8 BattleScript_BerserkGeneRet[];
+extern const u8 BattleScript_TargetFormChangeWithStringNoPopup[];
+extern const u8 BattleScript_DefDown[];
 
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];

@@ -740,7 +740,7 @@ static void Task_Hof_ExitOnKeyPressed(u8 taskId)
 
 static void Task_Hof_HandlePaletteOnExit(u8 taskId)
 {
-    CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, 0x400);
+    CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
     BeginNormalPaletteFade(PALETTES_ALL, 8, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_Hof_HandleExit;
 }
@@ -1044,7 +1044,7 @@ static void Task_HofPC_HandlePaletteOnExit(u8 taskId)
 {
     struct HallofFameTeam *fameTeam;
 
-    CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, 0x400);
+    CpuCopy16(gPlttBufferFaded, gPlttBufferUnfaded, PLTT_SIZE);
     fameTeam = (struct HallofFameTeam *)(gDecompressionBuffer);
     fameTeam->mon[0] = sDummyFameMon;
     ComputerScreenCloseEffect(0, 0, 0);
@@ -1163,7 +1163,7 @@ static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u
         AddTextPrinterParameterized3(0, FONT_NORMAL, width, 1, sMonInfoTextColors, TEXT_SKIP_DRAW, text);
 
         text[0] = CHAR_SLASH;
-        stringPtr = StringCopy(text + 1, gSpeciesNames[currMon->species]);
+        stringPtr = StringCopy(text + 1, GetSpeciesName(currMon->species));
 
         if (currMon->species != SPECIES_NIDORAN_M && currMon->species != SPECIES_NIDORAN_F)
         {
@@ -1269,7 +1269,7 @@ static void ClearVramOamPltt_LoadHofPal(void)
     DmaFill16(3, 0, plttOffset, plttSize);
 
     ResetPaletteFade();
-    LoadPalette(sHallOfFame_Pal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+    LoadPalette(sHallOfFame_Pal, BG_PLTT_ID(0), sizeof(sHallOfFame_Pal));
 }
 
 static void LoadHofGfx(void)

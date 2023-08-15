@@ -312,13 +312,10 @@ static void HandleInputChooseAction(void)
          && !(gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(B_POSITION_PLAYER_LEFT)])
          && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
         {
+            // Return item to bag if partner had selected one.
             if (gBattleResources->bufferA[gActiveBattler][1] == B_ACTION_USE_ITEM)
             {
-                // Add item to bag if it is a ball
-                if (itemId <= LAST_BALL)
-                    AddBagItem(itemId, 1);
-                else
-                    return;
+                AddBagItem(itemId, 1);
             }
             PlaySE(SE_SELECT);
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_CANCEL_PARTNER, 0);
@@ -1380,7 +1377,7 @@ static void Task_GiveExpToMon(u8 taskId)
     u8 battlerId = gTasks[taskId].tExpTask_battler;
     s32 gainedExp = GetTaskExpValue(taskId);
 
-    if (IsDoubleBattle() == TRUE || monId != gBattlerPartyIndexes[battlerId]) // Give exp without moving the expbar.
+    if (WhichBattleCoords(battlerId) == 1 || monId != gBattlerPartyIndexes[battlerId]) // Give exp without moving the expbar.
     {
         struct Pokemon *mon = &gPlayerParty[monId];
         u16 species = GetMonData(mon, MON_DATA_SPECIES);
@@ -2439,7 +2436,7 @@ static void StartSendOutAnim(u8 battlerId, bool8 dontClearSubstituteBit)
     gSprites[gBattlerSpriteIds[battlerId]].data[2] = species;
     gSprites[gBattlerSpriteIds[battlerId]].oam.paletteNum = battlerId;
 
-    StartSpriteAnim(&gSprites[gBattlerSpriteIds[battlerId]], gBattleMonForms[battlerId]);
+    StartSpriteAnim(&gSprites[gBattlerSpriteIds[battlerId]], 0);
 
     gSprites[gBattlerSpriteIds[battlerId]].invisible = TRUE;
     gSprites[gBattlerSpriteIds[battlerId]].callback = SpriteCallbackDummy;

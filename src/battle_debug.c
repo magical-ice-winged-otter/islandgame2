@@ -137,7 +137,6 @@ enum
     VAR_IN_LOVE,
     VAR_U16_4_ENTRIES,
     VAL_S8,
-    VAL_ITEM,
     VAL_ALL_STAT_STAGES,
 };
 
@@ -246,7 +245,6 @@ static const u8 sText_InLove[] = _("In Love");
 static const u8 sText_AIMovePts[] = _("AI Pts/Dmg");
 static const u8 sText_AiKnowledge[] = _("AI Info");
 static const u8 sText_AiParty[] = _("AI Party");
-static const u8 sText_EffectOverride[] = _("Effect Override");
 
 static const u8 sText_EmptyString[] = _("");
 
@@ -1015,11 +1013,13 @@ static void Task_ShowAiParty(u8 taskId)
             gSprites[gSprites[data->spriteIds.aiPartyIcons[i]].sConditionSpriteId].oam.priority = 0;
             if (aiMons[i].isFainted)
                 ailment = AILMENT_FNT;
-            else if (aiMons[i].status)
-                ailment = GetAilmentFromStatus(aiMons[i].status);
             else
-                ailment = AILMENT_FNT + 1; // blank
-            StartSpriteAnim(&gSprites[gSprites[data->spriteIds.aiPartyIcons[i]].sConditionSpriteId], ailment - 1);
+                ailment = GetAilmentFromStatus(aiMons[i].status);
+
+            if (ailment != AILMENT_NONE)
+                StartSpriteAnim(&gSprites[gSprites[data->spriteIds.aiPartyIcons[i]].sConditionSpriteId], ailment - 1);
+            else
+                gSprites[gSprites[data->spriteIds.aiPartyIcons[i]].sConditionSpriteId].invisible = TRUE;
         }
         for (; i < PARTY_SIZE; i++)
             data->spriteIds.aiPartyIcons[i] = 0xFF;
@@ -1300,7 +1300,7 @@ static void CreateSecondaryListMenu(struct BattleDebugMenu *data)
         itemsCount = 1;
         break;
     case LIST_ITEM_HELD_ITEM:
-        itemsCount = 2;
+        itemsCount = 1;
         break;
     case LIST_ITEM_TYPES:
         itemsCount = 3;
@@ -1437,11 +1437,6 @@ static void PrintSecondaryEntries(struct BattleDebugMenu *data)
     case LIST_ITEM_HELD_ITEM:
         PadString(ItemId_GetName(gBattleMons[data->battlerId].item), text);
         printer.currentY = printer.y = sSecondaryListTemplate.upText_Y;
-        AddTextPrinter(&printer, 0, NULL);
-
-        PadString(sText_EffectOverride, text);
-        printer.fontId = 0;
-        printer.currentY = printer.y = sSecondaryListTemplate.upText_Y + yMultiplier;
         AddTextPrinter(&printer, 0, NULL);
         break;
     case LIST_ITEM_TYPES:
@@ -1583,12 +1578,6 @@ static void UpdateBattlerValue(struct BattleDebugMenu *data)
         {
             gBattleMons[data->battlerId].status2 &= ~STATUS2_INFATUATION;
         }
-        break;
-    case VAL_ITEM:
-        if (data->currentSecondaryListItemId == 0)
-            *(u16 *)(data->modifyArrows.modifiedValPtr) = data->modifyArrows.currValue;
-        else if (data->currentSecondaryListItemId == 1)
-            gBattleStruct->debugHoldEffects[data->battlerId] = data->modifyArrows.currValue;
         break;
     }
     data->battlerWasChanged[data->battlerId] = TRUE;
@@ -1798,11 +1787,8 @@ static void SetUpModifyArrows(struct BattleDebugMenu *data)
         data->modifyArrows.maxValue = ITEMS_COUNT - 1;
         data->modifyArrows.maxDigits = 3;
         data->modifyArrows.modifiedValPtr = &gBattleMons[data->battlerId].item;
-        data->modifyArrows.typeOfVal = VAL_ITEM;
-        if (data->currentSecondaryListItemId == 0)
-            data->modifyArrows.currValue = gBattleMons[data->battlerId].item;
-        else
-            data->modifyArrows.currValue = gBattleStruct->debugHoldEffects[data->battlerId];
+        data->modifyArrows.typeOfVal = VAL_U16;
+        data->modifyArrows.currValue = gBattleMons[data->battlerId].item;
         break;
     case LIST_ITEM_TYPES:
         data->modifyArrows.minValue = 0;
