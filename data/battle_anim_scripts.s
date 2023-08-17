@@ -856,6 +856,8 @@ gBattleAnims_Moves::
 	.4byte Move_MAGICAL_TORQUE
 	.4byte Move_PSYBLADE
 	.4byte Move_HYDRO_STEAM
+@@@@ CUSTOM MOVES
+	.4byte Move_SHADOW_BLAST 
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -23645,6 +23647,29 @@ Move_DOOM_DESIRE:
 	waitforvisualfinish
 	clearmonbg ANIM_ATK_PARTNER
 	blendoff
+	end
+
+Move_SHADOW_BLAST:
+	loadspritegfx ANIM_TAG_AIR_WAVE_2
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_DEF_PARTNER
+	call SetSkyBg
+	splitbgprio ANIM_TARGET
+	setalpha 12, 8
+	call AeroblastBeam
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 5, 0, 50, 1
+	call AeroblastBeam
+	call AeroblastBeam
+	call AeroblastBeam
+	call AeroblastBeam
+	waitforvisualfinish
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 0
+	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	delay 0
+	call UnsetSkyBg
 	end
 
 Move_SKY_UPPERCUT:

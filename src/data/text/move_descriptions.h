@@ -3259,6 +3259,11 @@ static const u8 sPsybladeDescription[] = _(
 static const u8 sHydroSteamDescription[] = _(
     "This move's power increases\n"
     "under harsh sunlight.");
+//add shadow blast description, source: https://bulbapedia.bulbagarden.net/wiki/Shadow_Blast_(move)
+static const u8 sShadowBlastDescription[] = _(
+    "A wicked blade of air is formed using a shadowy aura.\n"
+    "Ignores protect."
+    );
 
 const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
@@ -4099,4 +4104,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MAGICAL_TORQUE - 1] = sMagicalTorqueDescription,
     [MOVE_PSYBLADE - 1] = sPsybladeDescription,
     [MOVE_HYDRO_STEAM - 1] = sHydroSteamDescription,
+    [MOVE_SHADOW_BLAST - 1] = sShadowBlastDescription,
 };

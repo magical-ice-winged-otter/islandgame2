@@ -13655,7 +13655,21 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
     },
-
+    //add: shadow lugia signature move
+    [MOVE_SHADOW_BLAST] =
+    {
+        .effect = EFFECT_SPECIAL_ATTACK_DOWN,
+        .power = 140,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 1,
+        .flags = 0, //move unaffected by anything
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

@@ -865,6 +865,13 @@
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 
+// Custom Moves (island game-add)
+#define MOVE_SHADOW_BLAST 829
+
+#define MOVES_COUNT_CUSTOM 830
+
+#define MOVES_COUNT         MOVES_COUNT_CUSTOM
+
 // Z Moves
 #define MOVE_BREAKNECK_BLITZ (MOVES_COUNT + 0)
 #define MOVE_ALL_OUT_PUMMELING (MOVES_COUNT + 1)
