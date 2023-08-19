@@ -916,6 +916,9 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(OVERQWIL, gMonFrontPic_Overqwil),
     SPECIES_SPRITE(ENAMORUS, gMonFrontPic_Enamorus),
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    SPECIES_SPRITE(SHADOW_LUGIA, gMonFrontPic_ShadowLugia),
+#endif
     SPECIES_SPRITE(VENUSAUR_MEGA, gMonFrontPic_VenusaurMega),
     SPECIES_SPRITE(CHARIZARD_MEGA_X, gMonFrontPic_CharizardMegaX),
     SPECIES_SPRITE(CHARIZARD_MEGA_Y, gMonFrontPic_CharizardMegaY),

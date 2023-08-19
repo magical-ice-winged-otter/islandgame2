@@ -1439,6 +1439,11 @@ gCryTable::
 	cry Cry_Unown
 	cry Cry_Unown
 .endif
+.if P_GEN_C_POKEMON == TRUE
+	cry Cry_ShadowLugia
+.else
+	cry Cry_Unown
+.endif
 	@ Megas
 	cry Cry_VenusaurMega
 	cry Cry_CharizardMegaX

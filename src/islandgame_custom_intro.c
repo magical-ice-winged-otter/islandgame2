@@ -1,5 +1,6 @@
 #include "global.h"
 #include "text.h"
+#include "script.h"
 #include "script_pokemon_util.h"
 #include "event_data.h"
 #include "constants/flags.h"
@@ -18,7 +19,6 @@ void IslandGameCustomStartup()
     // usually its set when you pick the starter.
     FlagSet(FLAG_SYS_POKEMON_GET);
 
-    // todo: this actually is a traded mon technically, and won't obey orders
     u16 species = ISLANDGAME_STARTING_MON;
     u8 level = ISLANDGAME_STARTING_MON_LEVEL;
     u16 item = ISLANDGAME_STARTING_MON_ITEM;
@@ -27,6 +27,24 @@ void IslandGameCustomStartup()
     // I'm honestly not sure why you need the weird syntax around string literals,
     // but it breaks pretty badly w/out it so...
     SetPlayerName(sName);
+
+    #if ISLANDGAME_DEBUG == TRUE
+        //put all debug tools here
+
+        //debug 1: give all badges to raise our obedienceLevel
+        FlagToggle(FLAG_BADGE01_GET);
+        FlagToggle(FLAG_BADGE02_GET);
+        FlagToggle(FLAG_BADGE03_GET);
+        FlagToggle(FLAG_BADGE04_GET);
+        FlagToggle(FLAG_BADGE05_GET);
+        FlagToggle(FLAG_BADGE06_GET);
+        FlagToggle(FLAG_BADGE07_GET);
+        FlagToggle(FLAG_BADGE08_GET);
+        //See: data/scripts/islandgame_debug[.pory/.inc]
+        ScriptContext_SetupScript(IslandGame_LoadIn_Message);
+
+        //debug 2: ?
+    #endif
 }
 
 // Almost exactly copied from src/main_menu.c

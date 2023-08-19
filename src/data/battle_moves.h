@@ -13658,7 +13658,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     //add: shadow lugia signature move
     [MOVE_SHADOW_BLAST] =
     {
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN,
+        .effect = EFFECT_HIT,
         .power = 140,
         .type = TYPE_DARK,
         .accuracy = 100,

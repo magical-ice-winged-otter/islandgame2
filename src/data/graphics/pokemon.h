@@ -1209,6 +1209,10 @@ const u32 gMonFrontPic_CalyrexShadowRider[] = INCBIN_U32("graphics/pokemon/calyr
 const u32 gMonFrontPic_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/front.4bpp.lz");
 const u32 gMonFrontPic_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/basculegion/female/front.4bpp.lz");
 #endif
+#if P_GEN_C_POKEMON == TRUE
+const u32 gMonFrontPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/front.4bpp.lz");
+#endif
+
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 
 const u32 gMonBackPic_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/back.4bpp.lz");
@@ -2420,6 +2424,9 @@ const u32 gMonBackPic_CalyrexIceRider[] = INCBIN_U32("graphics/pokemon/calyrex/i
 const u32 gMonBackPic_CalyrexShadowRider[] = INCBIN_U32("graphics/pokemon/calyrex/shadow_rider/back.4bpp.lz");
 const u32 gMonBackPic_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/back.4bpp.lz");
 const u32 gMonBackPic_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/basculegion/female/back.4bpp.lz");
+#endif
+#if P_GEN_C_POKEMON == TRUE
+const u32 gMonBackPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/back.4bpp.lz");
 #endif
 
 const u32 gMonPalette_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/normal.gbapal.lz");
@@ -3653,6 +3660,9 @@ const u32 gMonPalette_CalyrexShadowRider[] = INCBIN_U32("graphics/pokemon/calyre
 const u32 gMonPalette_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/normal.gbapal.lz");
 const u32 gMonPalette_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/basculegion/female/normal.gbapal.lz");
 #endif
+#if P_GEN_C_POKEMON == TRUE
+const u32 gMonPalette_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/normal.gbapal.lz");
+#endif
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 
 const u32 gMonShinyPalette_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/shiny.gbapal.lz");
@@ -4880,6 +4890,9 @@ const u32 gMonShinyPalette_CalyrexShadowRider[] = INCBIN_U32("graphics/pokemon/c
 const u32 gMonShinyPalette_EnamorusTherian[] = INCBIN_U32("graphics/pokemon/enamorus/therian/shiny.gbapal.lz");
 const u32 gMonShinyPalette_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/basculegion/female/shiny.gbapal.lz");
 #endif
+#if P_GEN_C_POKEMON == TRUE
+const u32 gMonShinyPalette_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/shiny.gbapal.lz");
+#endif
 
 const u8 gMonIcon_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
 const u8 gMonIcon_Bulbasaur[] = INCBIN_U8("graphics/pokemon/bulbasaur/icon.4bpp");
@@ -6100,6 +6113,9 @@ const u8 gMonIcon_CalyrexShadowRider[] = INCBIN_U8("graphics/pokemon/calyrex/sha
 const u8 gMonIcon_EnamorusTherian[] = INCBIN_U8("graphics/pokemon/enamorus/therian/icon.4bpp");
 const u8 gMonIcon_BasculegionFemale[] = INCBIN_U8("graphics/pokemon/basculegion/female/icon.4bpp");
 #endif
+#if P_GEN_C_POKEMON == TRUE
+const u32 gMonIcon_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/icon.4bpp");
+#endif
 const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
 
 const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/footprint.1bpp");
@@ -7017,4 +7033,7 @@ const u8 gMonFootprint_Calyrex[] = INCBIN_U8("graphics/pokemon/calyrex/footprint
 //const u8 gMonFootprint_Sneasler[] = INCBIN_U8("graphics/pokemon/sneasler/footprint.1bpp");
 //const u8 gMonFootprint_Overqwil[] = INCBIN_U8("graphics/pokemon/overqwil/footprint.1bpp");
 //const u8 gMonFootprint_Enamorus[] = INCBIN_U8("graphics/pokemon/enamorus/footprint.1bpp");
+#endif
+#if P_GEN_C_POKEMON == TRUE
+const u8 gMonFootprint_ShadowLugia[] = INCBIN_U8("graphics/pokemon/shadowlugia/footprint.1bpp");
 #endif

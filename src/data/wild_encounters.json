@@ -11491,6 +11491,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ISLAND_JUNGLE_ROUTE1",
+          "base_label": "gIslandJungle_Route10",
+          "land_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 86,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 100,
+                "species": "SPECIES_SHADOW_LUGIA"
+              }
+            ]
+          }
         }
       ]
     },

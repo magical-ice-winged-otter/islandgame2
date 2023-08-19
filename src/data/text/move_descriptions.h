@@ -3261,8 +3261,8 @@ static const u8 sHydroSteamDescription[] = _(
     "under harsh sunlight.");
 //add shadow blast description, source: https://bulbapedia.bulbagarden.net/wiki/Shadow_Blast_(move)
 static const u8 sShadowBlastDescription[] = _(
-    "A wicked blade of air is formed using a shadowy aura.\n"
-    "Ignores protect."
+    "A wicked blade of air is\n"
+    "formed using a shadowy aura."
     );
 
 const u8 gNotDoneYetDescription[] = _(

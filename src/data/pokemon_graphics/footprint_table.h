@@ -909,5 +909,8 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_SPECTRIER] = gMonFootprint_Spectrier,
     [SPECIES_CALYREX] = gMonFootprint_Calyrex,
 #endif
+#if P_GEN_C_POKEMON
+    [SPECIES_SHADOW_LUGIA] = gMonFootprint_ShadowLugia,
+#endif 
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
 };

@@ -10487,6 +10487,14 @@ static const union AnimCmd sAnim_EnamorusTherian_1[] =
     ANIMCMD_END,
 };
 #endif
+#if P_GEN_C_POKEMON == TRUE
+static const union AnimCmd sAnim_ShadowLugia_1[] =
+{
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END
+};
+#endif
 
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
@@ -11467,6 +11475,9 @@ SINGLE_ANIMATION(Basculegion);
 SINGLE_ANIMATION(Sneasler);
 SINGLE_ANIMATION(Overqwil);
 SINGLE_ANIMATION(Enamorus);
+#endif
+#if P_GEN_C_POKEMON == TRUE
+SINGLE_ANIMATION(ShadowLugia);
 #endif
 SINGLE_ANIMATION(VenusaurMega);
 SINGLE_ANIMATION(CHARIZARD_MEGA_X);
@@ -12554,6 +12565,9 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_SNEASLER] = sAnims_Sneasler,
     [SPECIES_OVERQWIL] = sAnims_Overqwil,
     [SPECIES_ENAMORUS] = sAnims_Enamorus,
+#endif
+#if P_GEN_C_POKEMON == TRUE
+    [SPECIES_SHADOW_LUGIA] = sAnims_ShadowLugia,
 #endif
     [SPECIES_VENUSAUR_MEGA] = sAnims_VenusaurMega,
     [SPECIES_CHARIZARD_MEGA_X] = sAnims_CHARIZARD_MEGA_X,

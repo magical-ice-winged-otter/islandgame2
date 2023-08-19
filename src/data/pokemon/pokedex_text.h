@@ -5399,3 +5399,8 @@ const u8 gEnamorusPokedexText[] = _(
     "Pokémon's love gives rise to the\n"
     "budding of fresh life across the land.");
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    const u8 gShadowLugiaPokedexText[] = _(
+        "TBD, it is shadow lugia."
+    );
+#endif

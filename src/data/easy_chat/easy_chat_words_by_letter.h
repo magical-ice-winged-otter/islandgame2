@@ -1367,6 +1367,7 @@ const u16 gEasyChatWordsByLetter_R[] = {
 };
 
 const u16 gEasyChatWordsByLetter_S[] = {
+    EC_POKEMON(SHADOW_LUGIA), //add easy chat
     EC_POKEMON(SABLEYE),
     EC_MOVE(SACRED_FIRE),
     EC_WORD_SAD,

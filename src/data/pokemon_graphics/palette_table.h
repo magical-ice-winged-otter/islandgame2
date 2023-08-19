@@ -916,6 +916,9 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(OVERQWIL, gMonPalette_Overqwil),
     SPECIES_PAL(ENAMORUS, gMonPalette_Enamorus),
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    SPECIES_PAL(SHADOW_LUGIA, gMonPalette_ShadowLugia),
+#endif
     SPECIES_PAL(VENUSAUR_MEGA, gMonPalette_VenusaurMega),
     SPECIES_PAL(CHARIZARD_MEGA_X, gMonPalette_CharizardMegaX),
     SPECIES_PAL(CHARIZARD_MEGA_Y, gMonPalette_CharizardMegaY),

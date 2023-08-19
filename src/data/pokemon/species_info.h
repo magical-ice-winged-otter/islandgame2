@@ -21046,6 +21046,30 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .flags = SPECIES_FLAG_LEGENDARY,
     },
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    [SPECIES_SHADOW_LUGIA] =
+    {
+        .baseHP        = 106,
+        .baseAttack    = 130,
+        .baseDefense   = 90,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 154,
+        .baseSpDefense = 90,
+        .types = { TYPE_DARK, TYPE_FLYING },
+        .catchRate = 3,
+        .expYield = 306,
+        .evYield_SpAttack = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
+        .abilities = {ABILITY_DARK_AURA, ABILITY_PRESSURE, ABILITY_MULTISCALE},
+        .bodyColor = BODY_COLOR_BLACK,
+        .noFlip = FALSE,
+        .flags = SPECIES_FLAG_LEGENDARY,
+    },
+#endif
 
     [SPECIES_VENUSAUR_MEGA] =
     {

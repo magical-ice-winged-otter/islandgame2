@@ -915,6 +915,9 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_OVERQWIL] = _("Overqwil"),
     [SPECIES_ENAMORUS] = _("Enamorus"),
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    [SPECIES_SHADOW_LUGIA] = _("S. Lugia"),
+#endif
 
     // Megas
     [SPECIES_VENUSAUR_MEGA] = _("Venusaur"),

@@ -930,6 +930,7 @@ const u16 gPokedexOrder_Alphabetical[] =
     NATIONAL_DEX_ZUBAT,
     NATIONAL_DEX_ZWEILOUS,
     NATIONAL_DEX_ZYGARDE,
+    NATIONAL_DEX_SHADOW_LUGIA,
 };
 
 const u16 gPokedexOrder_Weight[] =
@@ -1995,6 +1996,7 @@ const u16 gPokedexOrder_Weight[] =
     //NATIONAL_DEX_GROUDON, // Primal
     NATIONAL_DEX_COSMOEM,
     NATIONAL_DEX_CELESTEELA,
+    NATIONAL_DEX_SHADOW_LUGIA,
 };
 
 const u16 gPokedexOrder_Height[] =
@@ -3120,4 +3122,5 @@ const u16 gPokedexOrder_Height[] =
     NATIONAL_DEX_ETERNATUS,
     // 328'01" / 100m
     //NATIONAL_DEX_ETERNATUS, // Eternamax
+    NATIONAL_DEX_SHADOW_LUGIA,
 };

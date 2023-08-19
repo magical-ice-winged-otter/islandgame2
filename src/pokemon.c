@@ -1253,6 +1253,9 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(OVERQWIL),
     SPECIES_TO_NATIONAL(ENAMORUS),
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    SPECIES_TO_NATIONAL(SHADOW_LUGIA),
+#endif
 
     // Megas
     [SPECIES_VENUSAUR_MEGA - 1] = NATIONAL_DEX_VENUSAUR,
@@ -2881,6 +2884,8 @@ const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_DEOXYS_DEFENSE - 1]         = ANIM_GROW_VIBRATE,
     [SPECIES_DEOXYS_SPEED - 1]           = ANIM_GROW_VIBRATE,
 
+    //Custom mons
+    [SPECIES_SHADOW_LUGIA - 1]           = ANIM_GROW_VIBRATE,
     //Gen 4 Forms
     [SPECIES_BURMY_SANDY_CLOAK - 1]      = ANIM_V_STRETCH,
     [SPECIES_BURMY_TRASH_CLOAK - 1]      = ANIM_V_STRETCH,

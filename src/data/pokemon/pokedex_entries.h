@@ -10881,4 +10881,17 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 1,
     },
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    [NATIONAL_DEX_SHADOW_LUGIA] =
+    {
+        .categoryName = _("Corrupted"),
+        .height = 52,
+        .weight = 2160,
+        .description = gShadowLugiaPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 721,
+        .trainerOffset = 19,
+    },
+#endif
 };

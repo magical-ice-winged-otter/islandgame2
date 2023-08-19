@@ -916,6 +916,9 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
     [SPECIES_OVERQWIL] = sOverqwilTeachableLearnset,
     [SPECIES_ENAMORUS] = sEnamorusTeachableLearnset,
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    [SPECIES_SHADOW_LUGIA] = sShadowLugiaTeachableLearnset,
+#endif
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurTeachableLearnset,
     [SPECIES_CHARIZARD_MEGA_X] = sCharizardTeachableLearnset,

@@ -4016,6 +4016,10 @@ Cry_Enamorus::
 	.incbin "sound/direct_sound_samples/cries/enamorus.bin"
 
 .endif
+.if P_GEN_C_POKEMON == TRUE
+Cry_ShadowLugia::
+	.incbin "sound/direct_sound_samples/cries/lugia.bin"
+.endif
 
 	.align 2
 Cry_VenusaurMega::

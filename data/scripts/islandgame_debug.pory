@@ -1,0 +1,9 @@
+script IslandGame_LoadIn_Message {
+    lockall
+    msgbox(IslandGame_LoadIn_Msg)
+    releaseall
+}
+
+text IslandGame_LoadIn_Msg {
+    format("{COLOR BLUE}Added badges")
+}

@@ -1340,6 +1340,9 @@ const struct MonCoords gMonFrontPicCoords[] =
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE]           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
 #endif
+#if P_GEN_C_POKEMON == TRUE 
+    [SPECIES_SHADOW_LUGIA]                 = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 }, //copied lugia's
+#endif
     // Egg
     [SPECIES_EGG]                          = { .size = MON_COORDS_SIZE(24, 24), .y_offset = 20 },
 

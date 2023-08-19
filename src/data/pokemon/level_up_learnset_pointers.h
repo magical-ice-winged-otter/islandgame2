@@ -916,6 +916,9 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_OVERQWIL] = sOverqwilLevelUpLearnset,
     [SPECIES_ENAMORUS] = sEnamorusLevelUpLearnset,
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    [SPECIES_SHADOW_LUGIA] = sShadowLugiaLevelUpLearnset,
+#endif
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurLevelUpLearnset,
     [SPECIES_CHARIZARD_MEGA_X] = sCharizardLevelUpLearnset,
