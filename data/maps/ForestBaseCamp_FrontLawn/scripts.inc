@@ -14,6 +14,7 @@ ForestBaseCamp_FrontLawn_BasecampSign::
 
 ForestBaseCamp_FrontLawn_Novice::
 	msgbox ForestBaseCamp_FrontLawn_Novice_Text_0, MSGBOX_NPC
+	trainerbattle_single TRAINER_SAWYER_1, ForestBaseCamp_FrontLawn_IntroText, ForestBaseCamp_FrontLawn_DefeatedText
 	return
 
 
@@ -73,3 +74,9 @@ ForestBaseCamp_FrontLawn_BlindGuy_Text_3:
 ForestBaseCamp_FrontLawn_BasecampSignText::
 	.string "Welcome to the {COLOR GREEN}Cloudroot{COLOR DARK_GRAY} Basecamp!\n"
 	.string "{COLOR RED}ADVENTURERS WANTED INSIDE$"
+
+ForestBaseCamp_FrontLawn_IntroText::
+	.string "You are gonna get destroyed!$"
+
+ForestBaseCamp_FrontLawn_DefeatedText::
+	.string "Man, I totally got destroyed.$"

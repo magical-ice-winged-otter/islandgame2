@@ -21,6 +21,17 @@ text ForestBaseCamp_FrontLawn_BasecampSignText
 script ForestBaseCamp_FrontLawn_Novice
 {
     msgbox(format("They won't let me into the basecamp because I'm too young. It's so unfair!"), MSGBOX_NPC)
+    trainerbattle_single(TRAINER_SAWYER_1, ForestBaseCamp_FrontLawn_IntroText, ForestBaseCamp_FrontLawn_DefeatedText)
+}
+
+text ForestBaseCamp_FrontLawn_IntroText
+{
+    "You are gonna get destroyed!"
+}
+
+text ForestBaseCamp_FrontLawn_DefeatedText
+{
+    "Man, I totally got destroyed."
 }
 
 script ForestBaseCamp_FrontLawn_NervousGuy
