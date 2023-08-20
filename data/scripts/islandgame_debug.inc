@@ -6,4 +6,4 @@ IslandGame_LoadIn_Message::
 
 
 IslandGame_LoadIn_Msg::
-	.string "{COLOR BLUE} Added badges$"
+	.string "{COLOR BLUE}Added badges$"

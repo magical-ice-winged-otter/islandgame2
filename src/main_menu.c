@@ -37,7 +37,6 @@
 #include "title_screen.h"
 #include "window.h"
 #include "mystery_gift_menu.h"
-#include "islandgame.h"
 
 /*
  * Main menu state machine
