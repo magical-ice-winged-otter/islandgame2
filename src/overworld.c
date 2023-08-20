@@ -1568,6 +1568,7 @@ void CB2_NewGame(void)
     ScriptContext_Init();
     UnlockPlayerFieldControls();
     // gFieldCallback = ExecuteTruckSequence;
+    gFieldCallback = NULL;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();

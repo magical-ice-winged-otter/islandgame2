@@ -12,7 +12,12 @@
 static void SetPlayerName(const u8* name);
 static const u8 sName[] = _(ISLANDGAME_PLAYER_NAME);
 
+#ifdef ISLANDGAME_DEBUG
+extern u8 IslandGame_LoadIn_Message[]; // Extern variable for our script
+#endif
+
 // This gets called after the intro cutscene, right when the new game is started.
+// See: src/overworld.c 
 void IslandGameCustomStartup()
 {
     // This flag makes sure that we unlock the pokemon selection menu:
@@ -28,7 +33,7 @@ void IslandGameCustomStartup()
     // but it breaks pretty badly w/out it so...
     SetPlayerName(sName);
 
-    #if ISLANDGAME_DEBUG == TRUE
+    #ifdef ISLANDGAME_DEBUG
         //put all debug tools here
 
         //debug 1: give all badges to raise our obedienceLevel
@@ -53,6 +58,14 @@ static void SetPlayerName(const u8 *name)
     for (u8 i = 0; i < PLAYER_NAME_LENGTH; i++)
     {
         gSaveBlock2Ptr->playerName[i] = name[i];
+
+        // Exit early when we reach the player name end.
+        // We don't want to read from undefined memory into the save.
+        // (This also stops a compiler warning)
+        if (name[i] == EOS)
+        {
+            break;
+        }
     }
 
     gSaveBlock2Ptr->playerName[PLAYER_NAME_LENGTH] = EOS;
