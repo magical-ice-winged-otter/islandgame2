@@ -33,27 +33,36 @@
 #define ISLANDGAME_DEBUG
 
 typedef struct Location {
+    u8 *name;
     s8 map_group;
     s8 map_num;
     s8 start_x;
     s8 start_y;
 } Location;
 
-static const Location FRONT_LAWN = {
-    .map_group = MAP_GROUP ( FOREST_BASE_CAMP_FRONT_LAWN ), 
-    .map_num   = MAP_NUM   ( FOREST_BASE_CAMP_FRONT_LAWN ), 
-    .start_x   = 10, 
-    .start_y   = 15
+#define loc_set(n, identifier, x, y)       \
+    .name      = _(n),                     \
+    .map_group = MAP_GROUP ( identifier ), \
+    .map_num   = MAP_NUM   ( identifier ), \
+    .start_x   = x, \
+    .start_y   = y  
+
+
+#define LOCATION_COUNT 2
+static const Location LOCATIONS[LOCATION_COUNT] = {
+    [0] = { //FRONT_LAWN
+        loc_set("Front Lawn", FOREST_BASE_CAMP_FRONT_LAWN, 10, 15)
+    },
+    [1] = { //JUNGLE_ROUTE_1
+        loc_set("Route 1", ISLAND_JUNGLE_ROUTE1, 10, 54)
+    },
 };
 
-static const Location JUNGLE_ROUTE_1 = {
-    .map_group = MAP_GROUP ( ISLAND_JUNGLE_ROUTE1 ), 
-    .map_num   = MAP_NUM   ( ISLAND_JUNGLE_ROUTE1 ), 
-    .start_x   = 10, 
-    .start_y   = 54
-};
+#define FRONT_LAWN LOCATIONS[0]
+#define JUNGLE_ROUTE_1 LOCATIONS[1]
 
 void IslandGameCustomStartup();
+u8** GetLocationNames();
 
 #ifdef ISLANDGAME_DEBUG
 

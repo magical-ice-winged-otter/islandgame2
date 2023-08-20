@@ -70,3 +70,13 @@ static void SetPlayerName(const u8 *name)
 
     gSaveBlock2Ptr->playerName[PLAYER_NAME_LENGTH] = EOS;
 }
+
+u8** GetLocationNames()
+{
+    u8* locs[LOCATION_COUNT];
+    for (int i = 0; i < LOCATION_COUNT; i++) 
+    {
+        locs[i] = LOCATIONS[i].name;
+    }
+    return locs;
+}

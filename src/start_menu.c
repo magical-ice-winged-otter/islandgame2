@@ -48,6 +48,8 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
+#include "islandgame.h"
+
 // Menu actions
 enum
 {
@@ -64,7 +66,8 @@ enum
     MENU_ACTION_REST_FRONTIER,
     MENU_ACTION_RETIRE_FRONTIER,
     MENU_ACTION_PYRAMID_BAG,
-    MENU_ACTION_DEBUG,
+    MENU_ACTION_TELEPORT,
+    MENU_ACTION_DEBUG
 };
 
 // Save status
@@ -105,6 +108,7 @@ static bool8 StartMenuSafariZoneRetireCallback(void);
 static bool8 StartMenuLinkModePlayerNameCallback(void);
 static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
+static bool8 StartMenuTeleportCallback(void);
 static bool8 StartMenuDebugCallback(void);
 
 // Menu callbacks
@@ -161,20 +165,21 @@ static const u8 gText_MenuDebug[] = _("DEBUG");
 
 static const struct MenuAction sStartMenuItems[] =
 {
-    [MENU_ACTION_POKEDEX]         = {gText_MenuPokedex, {.u8_void = StartMenuPokedexCallback}},
-    [MENU_ACTION_POKEMON]         = {gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback}},
-    [MENU_ACTION_BAG]             = {gText_MenuBag,     {.u8_void = StartMenuBagCallback}},
-    [MENU_ACTION_POKENAV]         = {gText_MenuPokenav, {.u8_void = StartMenuPokeNavCallback}},
-    [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,  {.u8_void = StartMenuPlayerNameCallback}},
-    [MENU_ACTION_SAVE]            = {gText_MenuSave,    {.u8_void = StartMenuSaveCallback}},
-    [MENU_ACTION_OPTION]          = {gText_MenuOption,  {.u8_void = StartMenuOptionCallback}},
-    [MENU_ACTION_EXIT]            = {gText_MenuExit,    {.u8_void = StartMenuExitCallback}},
-    [MENU_ACTION_RETIRE_SAFARI]   = {gText_MenuRetire,  {.u8_void = StartMenuSafariZoneRetireCallback}},
-    [MENU_ACTION_PLAYER_LINK]     = {gText_MenuPlayer,  {.u8_void = StartMenuLinkModePlayerNameCallback}},
-    [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,    {.u8_void = StartMenuSaveCallback}},
-    [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,  {.u8_void = StartMenuBattlePyramidRetireCallback}},
-    [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
-    [MENU_ACTION_DEBUG]           = {gText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
+    [MENU_ACTION_POKEDEX]         = {gText_MenuPokedex,  {.u8_void = StartMenuPokedexCallback}},
+    [MENU_ACTION_POKEMON]         = {gText_MenuPokemon,  {.u8_void = StartMenuPokemonCallback}},
+    [MENU_ACTION_BAG]             = {gText_MenuBag,      {.u8_void = StartMenuBagCallback}},
+    [MENU_ACTION_POKENAV]         = {gText_MenuPokenav,  {.u8_void = StartMenuPokeNavCallback}},
+    [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,   {.u8_void = StartMenuPlayerNameCallback}},
+    [MENU_ACTION_SAVE]            = {gText_MenuSave,     {.u8_void = StartMenuSaveCallback}},
+    [MENU_ACTION_OPTION]          = {gText_MenuOption,   {.u8_void = StartMenuOptionCallback}},
+    [MENU_ACTION_EXIT]            = {gText_MenuExit,     {.u8_void = StartMenuExitCallback}},
+    [MENU_ACTION_RETIRE_SAFARI]   = {gText_MenuRetire,   {.u8_void = StartMenuSafariZoneRetireCallback}},
+    [MENU_ACTION_PLAYER_LINK]     = {gText_MenuPlayer,   {.u8_void = StartMenuLinkModePlayerNameCallback}},
+    [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,     {.u8_void = StartMenuSaveCallback}},
+    [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,   {.u8_void = StartMenuBattlePyramidRetireCallback}},
+    [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,      {.u8_void = StartMenuBattlePyramidBagCallback}},
+    [MENU_ACTION_TELEPORT]        = {gText_MenuTeleport, {.u8_void = StartMenuTeleportCallback}},
+    [MENU_ACTION_DEBUG]           = {gText_MenuDebug,    {.u8_void = StartMenuDebugCallback}},
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -217,6 +222,7 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
 // Local functions
 static void BuildStartMenuActions(void);
 static void AddStartMenuAction(u8 action);
+static void BuildIslandStartMenu(void);
 static void BuildNormalStartMenu(void);
 static void BuildDebugStartMenu(void);
 static void BuildSafariZoneStartMenu(void);
@@ -289,7 +295,8 @@ static void BuildStartMenuActions(void)
     #if DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == TRUE
         BuildDebugStartMenu();
     #else
-        BuildNormalStartMenu();
+        //BuildNormalStartMenu();
+        BuildIslandStartMenu();
     #endif
     }
 }
@@ -297,6 +304,38 @@ static void BuildStartMenuActions(void)
 static void AddStartMenuAction(u8 action)
 {
     AppendToList(sCurrentStartMenuActions, &sNumStartMenuActions, action);
+}
+
+//islandgame - start
+/**
+ * Mostly the same, if we want override this to add other things, we should use this method
+*/
+static void BuildIslandStartMenu(void)
+{
+    #ifdef ISLANDGAME_DEBUG
+        AddStartMenuAction(MENU_ACTION_TELEPORT);
+    #endif
+
+    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+    {
+        AddStartMenuAction(MENU_ACTION_POKEDEX);
+    }
+    if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
+    {
+        AddStartMenuAction(MENU_ACTION_POKEMON);
+    }
+
+    AddStartMenuAction(MENU_ACTION_BAG);
+
+    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
+    {
+        AddStartMenuAction(MENU_ACTION_POKENAV);
+    }
+
+    AddStartMenuAction(MENU_ACTION_PLAYER);
+    AddStartMenuAction(MENU_ACTION_SAVE);
+    AddStartMenuAction(MENU_ACTION_OPTION);
+    AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
 static void BuildNormalStartMenu(void)
@@ -621,7 +660,8 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
-            && gMenuCallback != StartMenuBattlePyramidRetireCallback)
+            && gMenuCallback != StartMenuBattlePyramidRetireCallback
+            && gMenuCallback != StartMenuTeleportCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -805,6 +845,8 @@ static bool8 StartMenuBattlePyramidRetireCallback(void)
     return FALSE;
 }
 
+
+
 // Functionally unused
 void ShowBattlePyramidStartMenu(void)
 {
@@ -827,6 +869,14 @@ static bool8 StartMenuBattlePyramidBagCallback(void)
     }
 
     return FALSE;
+}
+
+static bool8 StartMenuTeleportCallback(void) {
+    RemoveExtraStartMenuWindows();
+    HideStartMenu();
+    u8** choices = GetLocationNames();
+    
+    return TRUE;
 }
 
 static bool8 SaveStartCallback(void)
