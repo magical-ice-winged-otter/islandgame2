@@ -20,13 +20,17 @@ extern u8 IslandGame_LoadIn_Message[]; // Extern variable for our script
 // See: src/overworld.c 
 void IslandGameCustomStartup()
 {
+    u16 species;
+    u8 level;
+    u16 item;
+
     // This flag makes sure that we unlock the pokemon selection menu:
     // usually its set when you pick the starter.
     FlagSet(FLAG_SYS_POKEMON_GET);
 
-    u16 species = ISLANDGAME_STARTING_MON;
-    u8 level = ISLANDGAME_STARTING_MON_LEVEL;
-    u16 item = ISLANDGAME_STARTING_MON_ITEM;
+    species = ISLANDGAME_STARTING_MON;
+    level = ISLANDGAME_STARTING_MON_LEVEL;
+    item = ISLANDGAME_STARTING_MON_ITEM;
     ScriptGiveMon(species, level, item, 0, 0, 0);
 
     // I'm honestly not sure why you need the weird syntax around string literals,
@@ -55,7 +59,8 @@ void IslandGameCustomStartup()
 // Almost exactly copied from src/main_menu.c
 static void SetPlayerName(const u8 *name)
 {
-    for (u8 i = 0; i < PLAYER_NAME_LENGTH; i++)
+    int i;
+    for (i = 0; i < PLAYER_NAME_LENGTH; i++)
     {
         gSaveBlock2Ptr->playerName[i] = name[i];
 
