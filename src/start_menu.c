@@ -881,13 +881,14 @@ static bool8 StartMenuTeleportCallback(void)
     RemoveExtraStartMenuWindows();
     HideStartMenu();
 
-    ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, 0, LOCATION_NAMES, LOCATION_COUNT);
+    ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, 0, (u8**) LOCATION_NAMES, LOCATION_COUNT);
     gMenuCallback = TeleportScreenCallback;
     return FALSE;
 }
 
 static bool8 TeleportScreenCallback(void)
 {
+    Location dest;
     DebugPrintf("TELEPORT CALLBACK!");
     //RETAIN ALL THE PREVIOUS CONTROLS
     if (JOY_NEW(DPAD_UP))
@@ -916,11 +917,13 @@ static bool8 TeleportScreenCallback(void)
         FlagClear(FLAG_SYS_SAFARI_MODE);
         FlagClear(FLAG_SYS_USE_STRENGTH);
         FlagClear(FLAG_SYS_USE_FLASH);
-        #if B_RESET_FLAGS_VARS_AFTER_WHITEOUT  == TRUE
-            Overworld_ResetBattleFlagsAndVars();
-        #endif
+        FlagClear(B_FLAG_INVERSE_BATTLE);
+        FlagClear(B_FLAG_FORCE_DOUBLE_WILD);
+        FlagClear(B_SMART_WILD_AI_FLAG);
+        FlagClear(B_FLAG_NO_BAG_USE);
+        FlagClear(B_FLAG_NO_CATCHING);
 
-        Location dest = LOCATIONS[sStartMenuCursorPos];
+        dest = LOCATIONS[sStartMenuCursorPos];
         SetWarpDestination(dest.map_group, dest.map_num, WARP_ID_NONE, dest.start_x, dest.start_y);
         DoWarp();
         ResetInitialPlayerAvatarState();

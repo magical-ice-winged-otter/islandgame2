@@ -6114,7 +6114,7 @@ const u8 gMonIcon_EnamorusTherian[] = INCBIN_U8("graphics/pokemon/enamorus/theri
 const u8 gMonIcon_BasculegionFemale[] = INCBIN_U8("graphics/pokemon/basculegion/female/icon.4bpp");
 #endif
 #if P_GEN_C_POKEMON == TRUE
-const u32 gMonIcon_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/icon.4bpp");
+const u8 gMonIcon_ShadowLugia[] = INCBIN_U8("graphics/pokemon/shadowlugia/icon.4bpp");
 #endif
 const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
 

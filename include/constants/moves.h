@@ -863,8 +863,6 @@
 
 #define MOVES_COUNT_GEN9 829
 
-#define MOVES_COUNT         MOVES_COUNT_GEN9
-
 // Custom Moves (island game-add)
 #define MOVE_SHADOW_BLAST 829
 
