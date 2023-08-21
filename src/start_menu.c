@@ -317,6 +317,7 @@ static void AddStartMenuAction(u8 action)
 static void BuildIslandStartMenu(void)
 {
     #ifdef ISLANDGAME_DEBUG
+        AddStartMenuAction(MENU_ACTION_DEBUG); // really cool debug menu thats built in?
         AddStartMenuAction(MENU_ACTION_TELEPORT);
     #endif
 
@@ -920,7 +921,7 @@ static bool8 TeleportScreenCallback(void)
             Overworld_ResetBattleFlagsAndVars();
         #endif
 
-        Location dest = LOCATIONS[sStartMenuCursorPos];
+        Location dest = LOCATION_DATA[sStartMenuCursorPos];
         SetWarpDestination(dest.map_group, dest.map_num, WARP_ID_NONE, dest.start_x, dest.start_y);
         DoWarp();
         ResetInitialPlayerAvatarState();
