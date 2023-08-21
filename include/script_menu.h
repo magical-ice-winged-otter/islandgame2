@@ -9,6 +9,9 @@ bool8 ScriptMenu_YesNo(u8 left, u8 top);
 bool8 ScriptMenu_MultichoiceGrid(u8 left, u8 top, u8 multichoiceId, bool8 ignoreBPress, u8 columnCount);
 bool8 ScriptMenu_ShowPokemonPic(u16 species, u8 x, u8 y);
 bool8 (*ScriptMenu_HidePokemonPic(void))(void);
+//add
+bool8 ScriptMenu_DrawMultichoiceMenuGeneric(u8 left, u8 top, bool8 ignoreBPress, u8 cursorPos,  u8* text[], int count);
+//
 int ConvertPixelWidthToTileWidth(int width);
 u8 CreateWindowFromRect(u8 x, u8 y, u8 width, u8 height);
 void ClearToTransparentAndRemoveWindow(u8 windowId);
@@ -16,5 +19,4 @@ int DisplayTextAndGetWidth(const u8 *str, int width);
 int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width);
 bool16 ScriptMenu_CreatePCMultichoice(void);
 void ScriptMenu_DisplayPCStartupPrompt(void);
-
 #endif //GUARD_SCRIPT_MENU_H

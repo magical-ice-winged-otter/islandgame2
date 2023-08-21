@@ -97,6 +97,9 @@ static void DrawMultichoiceMenuInternal(u8 left, u8 top, u8 multichoiceId, bool8
     int width = 0;
     u8 newWidth;
 
+    for (i = 0; i < count; i++) {
+        DebugPrintf("%d: %S", i, actions[i].text);
+    }
     for (i = 0; i < count; i++)
     {
         width = DisplayTextAndGetWidth(actions[i].text, width);
@@ -115,6 +118,43 @@ static void DrawMultichoiceMenuInternal(u8 left, u8 top, u8 multichoiceId, bool8
 static void DrawMultichoiceMenu(u8 left, u8 top, u8 multichoiceId, bool8 ignoreBPress, u8 cursorPos)
 {
     DrawMultichoiceMenuInternal(left, top, multichoiceId, ignoreBPress, cursorPos, sMultichoiceLists[multichoiceId].list, sMultichoiceLists[multichoiceId].count);
+}
+
+static void DrawMultichoiceMenuGeneric(u8 left, u8 top, bool8 ignoreBPress, u8 cursorPos, u8* text[], int count)
+{
+    
+    int i;
+    
+    struct MenuAction menuItems[count];
+    memset(menuItems, 0, sizeof(menuItems));
+    
+    for (i = 0; i < count; i++) 
+    {
+        menuItems[i].text = text[i];
+        
+    }
+
+    if (count > 0) {
+        for (i = 0; i < count; i++) {
+            DebugPrintf("%d: %S", i, menuItems[i].text);
+        }
+        DrawMultichoiceMenuInternal(left, top, MULTI_UNUSED_SSTIDAL_1, ignoreBPress, cursorPos, menuItems, count);
+    }
+        
+}
+
+bool8 ScriptMenu_DrawMultichoiceMenuGeneric(u8 left, u8 top, bool8 ignoreBPress, u8 cursorPos, u8* text[], int count)
+{
+    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE)
+    {
+        return FALSE;
+    }
+    else
+    {
+        gSpecialVar_Result = 0xFF;
+        DrawMultichoiceMenuGeneric(left, top, ignoreBPress, cursorPos, text, count);
+        return TRUE;
+    }
 }
 
 #if I_REPEL_LURE_MENU == TRUE

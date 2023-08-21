@@ -49,6 +49,7 @@
 #include "constants/songs.h"
 
 #include "islandgame.h"
+#include "script_menu.h"
 
 // Menu actions
 enum
@@ -874,7 +875,8 @@ static bool8 StartMenuBattlePyramidBagCallback(void)
 static bool8 StartMenuTeleportCallback(void) {
     RemoveExtraStartMenuWindows();
     HideStartMenu();
-    u8** choices = GetLocationNames();
+
+    ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, 0, LOCATION_NAMES, LOCATION_COUNT);
     
     return TRUE;
 }

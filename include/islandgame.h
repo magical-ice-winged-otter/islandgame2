@@ -33,15 +33,13 @@
 #define ISLANDGAME_DEBUG
 
 typedef struct Location {
-    u8 *name;
     s8 map_group;
     s8 map_num;
     s8 start_x;
     s8 start_y;
 } Location;
 
-#define loc_set(n, identifier, x, y)       \
-    .name      = _(n),                     \
+#define loc_set(identifier, x, y)       \
     .map_group = MAP_GROUP ( identifier ), \
     .map_num   = MAP_NUM   ( identifier ), \
     .start_x   = x, \
@@ -51,11 +49,21 @@ typedef struct Location {
 #define LOCATION_COUNT 2
 static const Location LOCATIONS[LOCATION_COUNT] = {
     [0] = { //FRONT_LAWN
-        loc_set("Front Lawn", FOREST_BASE_CAMP_FRONT_LAWN, 10, 15)
+        loc_set(FOREST_BASE_CAMP_FRONT_LAWN, 10, 15)
     },
     [1] = { //JUNGLE_ROUTE_1
-        loc_set("Route 1", ISLAND_JUNGLE_ROUTE1, 10, 54)
+        loc_set(ISLAND_JUNGLE_ROUTE1, 10, 54)
     },
+};
+
+static const u8 LOC0[] = _("Front Lawn");
+static const u8 LOC1[] = _("Route 1");
+static const u8 LOC2[] = _("None");
+
+static const u8* const LOCATION_NAMES[LOCATION_COUNT + 1] = {
+    [0] = LOC0,
+    [1] = LOC1,
+    [2] = LOC2,
 };
 
 #define FRONT_LAWN LOCATIONS[0]

@@ -7,3 +7,28 @@ script IslandGame_LoadIn_Message {
 text IslandGame_LoadIn_Msg {
     format("{COLOR BLUE}Added badges")
 }
+
+
+script TeleportMenu {
+    lockall
+    multichoicedefault(0, 0, MULTI_YESNO, 0, 1)
+    switch(var(VAR_RESULT)) {
+        case 0:
+            goto(TP_Yes)
+        case 1:
+            goto(TP_No)
+    }
+    releaseall
+    end
+    
+}
+
+script TP_Yes {
+    releaseall
+    end
+}
+
+script TP_No {
+    releaseall
+    end
+}
