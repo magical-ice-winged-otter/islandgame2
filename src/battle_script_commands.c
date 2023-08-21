@@ -4061,16 +4061,16 @@ static void Cmd_setgraphicalstatchangevalues(void)
     switch (GET_STAT_BUFF_VALUE2(gBattleScripting.statChanger))
     {
     case SET_STAT_BUFF_VALUE(1): // +1
-        value = STAT_ANIM_PLUS1;
+        value = STAT_ANIM_PLUS1 + 1;
         break;
     case SET_STAT_BUFF_VALUE(2): // +2
-        value = STAT_ANIM_PLUS2;
+        value = STAT_ANIM_PLUS2 + 1;
         break;
     case SET_STAT_BUFF_VALUE(1) | STAT_BUFF_NEGATIVE: // -1
-        value = STAT_ANIM_MINUS1;
+        value = STAT_ANIM_MINUS1 + 1;
         break;
     case SET_STAT_BUFF_VALUE(2) | STAT_BUFF_NEGATIVE: // -2
-        value = STAT_ANIM_MINUS2;
+        value = STAT_ANIM_MINUS2 + 1;
         break;
     }
     gBattleScripting.animArg1 = GET_STAT_BUFF_ID(gBattleScripting.statChanger) + value - 1;
@@ -4092,9 +4092,9 @@ static void Cmd_playstatchangeanimation(void)
     {
         s16 startingStatAnimId;
         if (gBattlescriptCurrInstr[3] & STAT_CHANGE_BY_TWO)
-            startingStatAnimId = STAT_ANIM_MINUS2 - 1;
+            startingStatAnimId = STAT_ANIM_MINUS2;
         else
-            startingStatAnimId = STAT_ANIM_MINUS1 - 1;
+            startingStatAnimId = STAT_ANIM_MINUS1;
 
         while (statsToCheck != 0)
         {
@@ -4136,9 +4136,9 @@ static void Cmd_playstatchangeanimation(void)
     {
         s16 startingStatAnimId;
         if (gBattlescriptCurrInstr[3] & STAT_CHANGE_BY_TWO)
-            startingStatAnimId = STAT_ANIM_PLUS2 - 1;
+            startingStatAnimId = STAT_ANIM_PLUS2;
         else
-            startingStatAnimId = STAT_ANIM_PLUS1 - 1;
+            startingStatAnimId = STAT_ANIM_PLUS1;
 
         while (statsToCheck != 0)
         {
@@ -7812,9 +7812,18 @@ static void Cmd_metronome(void)
     {
         s32 i;
 
+    #if MOVES_COUNT < 512
+        // Original GF method of move selection is to pick a random
+        // number between 1-511. 355-511 are not valid moves, so if it
+        // picks in this range it retries. If MOVES_COUNT exceeds 511 we
+        // instead use a simpler solution.
         gCurrentMove = (Random() & 0x1FF) + 1;
         if (gCurrentMove >= MOVES_COUNT)
             continue;
+    #else
+        // Just pick a valid move value (between 1 and MOVES_COUNT-1)
+        gCurrentMove = (Random() % (MOVES_COUNT - 1)) + 1;
+    #endif
 
         for (i = 0; i < MAX_MON_MOVES; i++); // ?
 
