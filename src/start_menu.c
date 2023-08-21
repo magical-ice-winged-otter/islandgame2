@@ -883,6 +883,12 @@ static bool8 StartMenuTeleportCallback(void)
     HideStartMenu();
 
     ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, 0, (u8**) LOCATION_NAMES, LOCATION_COUNT);
+
+    // Resets the selection back to 0. Since the teleport option
+    // might not be the first item in the list, it might otherwise
+    // get desynced with what the visuals are showing.
+    sStartMenuCursorPos = 0; 
+
     gMenuCallback = TeleportScreenCallback;
     return FALSE;
 }
