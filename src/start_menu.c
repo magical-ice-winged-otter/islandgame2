@@ -50,6 +50,8 @@
 
 #include "islandgame.h"
 #include "script_menu.h"
+#include "script_pokemon_util.h"
+#include "overworld.h"
 
 // Menu actions
 enum
@@ -110,6 +112,7 @@ static bool8 StartMenuLinkModePlayerNameCallback(void);
 static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuTeleportCallback(void);
+static bool8 TeleportScreenCallback(void);
 static bool8 StartMenuDebugCallback(void);
 
 // Menu callbacks
@@ -634,6 +637,7 @@ void ShowStartMenu(void)
 
 static bool8 HandleStartMenuInput(void)
 {
+    DebugPrintf("HANDLE START MENU CALLBACK!");
     if (JOY_NEW(DPAD_UP))
     {
         PlaySE(SE_SELECT);
@@ -665,7 +669,7 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuTeleportCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
-        }
+        } 
 
         return FALSE;
     }
@@ -872,13 +876,68 @@ static bool8 StartMenuBattlePyramidBagCallback(void)
     return FALSE;
 }
 
-static bool8 StartMenuTeleportCallback(void) {
+static bool8 StartMenuTeleportCallback(void) 
+{
     RemoveExtraStartMenuWindows();
     HideStartMenu();
 
     ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, 0, LOCATION_NAMES, LOCATION_COUNT);
+    gMenuCallback = TeleportScreenCallback;
+    return FALSE;
+}
+
+static bool8 TeleportScreenCallback(void)
+{
+    DebugPrintf("TELEPORT CALLBACK!");
+    //RETAIN ALL THE PREVIOUS CONTROLS
+    if (JOY_NEW(DPAD_UP))
+    {
+        PlaySE(SE_SELECT);
+        sStartMenuCursorPos = Menu_MoveCursor(-1);
+    }
+
+    if (JOY_NEW(DPAD_DOWN))
+    {
+        PlaySE(SE_SELECT);
+        sStartMenuCursorPos = Menu_MoveCursor(1);
+    }
+
+    if (JOY_NEW(A_BUTTON))
+    { //HERE WE GO DIFFERENT BEHAVIOR!
+        PlaySE(SE_SELECT);
+        RemoveExtraStartMenuWindows();
+        HideStartMenu();
+        FadeScreen(FADE_TO_BLACK, 0);
+
+        HealPlayerParty();
+        //copied from overworld.c#Overworld_ResetStateAfterWhiteOut
+        FlagClear(FLAG_SYS_CYCLING_ROAD);
+        FlagClear(FLAG_SYS_CRUISE_MODE);
+        FlagClear(FLAG_SYS_SAFARI_MODE);
+        FlagClear(FLAG_SYS_USE_STRENGTH);
+        FlagClear(FLAG_SYS_USE_FLASH);
+        #if B_RESET_FLAGS_VARS_AFTER_WHITEOUT  == TRUE
+            Overworld_ResetBattleFlagsAndVars();
+        #endif
+
+        Location dest = LOCATIONS[sStartMenuCursorPos];
+        SetWarpDestination(dest.map_group, dest.map_num, WARP_ID_NONE, dest.start_x, dest.start_y);
+        DoWarp();
+        ResetInitialPlayerAvatarState();
+        FadeScreen(FADE_FROM_BLACK, 0);
+
+        return TRUE; //im not sure what true does, but it looks like if you cancel the menu for good, it should be true.
+    }
+
+    if (JOY_NEW(START_BUTTON | B_BUTTON))
+    {
+        RemoveExtraStartMenuWindows();
+        HideStartMenu();
+        return TRUE;
+    }
+
+    return FALSE;
     
-    return TRUE;
 }
 
 static bool8 SaveStartCallback(void)

@@ -97,9 +97,6 @@ static void DrawMultichoiceMenuInternal(u8 left, u8 top, u8 multichoiceId, bool8
     int width = 0;
     u8 newWidth;
 
-    for (i = 0; i < count; i++) {
-        DebugPrintf("%d: %S", i, actions[i].text);
-    }
     for (i = 0; i < count; i++)
     {
         width = DisplayTextAndGetWidth(actions[i].text, width);
@@ -135,9 +132,6 @@ static void DrawMultichoiceMenuGeneric(u8 left, u8 top, bool8 ignoreBPress, u8 c
     }
 
     if (count > 0) {
-        for (i = 0; i < count; i++) {
-            DebugPrintf("%d: %S", i, menuItems[i].text);
-        }
         DrawMultichoiceMenuInternal(left, top, MULTI_UNUSED_SSTIDAL_1, ignoreBPress, cursorPos, menuItems, count);
     }
         
