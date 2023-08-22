@@ -885,34 +885,25 @@ static bool8 StartMenuTeleportCallback(void)
 
     ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, sStartMenuCursorPos, (u8**) LOCATION_NAMES, LOCATION_COUNT);
 
-    // Resets the selection back to 0. Since the teleport option
-    // might not be the first item in the list, it might otherwise
-    // get desynced with what the visuals are showing.
-    //sStartMenuCursorPos = 0; 
-
     gMenuCallback = TeleportScreenCallback;
     return FALSE;
 }
 
 static bool8 TeleportScreenCallback(void)
 {
-    u8 old_pos = sStartMenuCursorPos;
     Location dest;
-    DebugPrintf("TELEPORT CALLBACK!");
+    //DebugPrintf("TELEPORT CALLBACK!");
     //RETAIN ALL THE PREVIOUS CONTROLS
     if (JOY_NEW(DPAD_UP))
     {
         PlaySE(SE_SELECT);
-        sStartMenuCursorPos = Menu_MoveCursor(-1);
     }
 
     if (JOY_NEW(DPAD_DOWN))
     {
         PlaySE(SE_SELECT);
-        sStartMenuCursorPos = Menu_MoveCursor(1);
     }
-    DebugPrintf("LOCATION_COUNT: %d", LOCATION_COUNT);
-    DebugPrintf("old: %d new %d", old_pos, sStartMenuCursorPos);
+    u8 cursorPos = Menu_GetCursorPos();
     if (JOY_NEW(A_BUTTON))
     { //HERE WE GO DIFFERENT BEHAVIOR!
         PlaySE(SE_SELECT);
@@ -933,7 +924,7 @@ static bool8 TeleportScreenCallback(void)
         FlagClear(B_FLAG_NO_BAG_USE);
         FlagClear(B_FLAG_NO_CATCHING);
 
-        dest = LOCATION_DATA[sStartMenuCursorPos];
+        dest = LOCATION_DATA[cursorPos];
         SetWarpDestination(dest.map_group, dest.map_num, WARP_ID_NONE, dest.start_x, dest.start_y);
         DoWarp();
         ResetInitialPlayerAvatarState();
