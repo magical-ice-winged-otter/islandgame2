@@ -431,6 +431,9 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
+// gTileset_PorytilesPrimaryTest
+#define METATILE_PorytilesPrimaryTest_Door_PokeCenter  0x025
+
 // gTileset_RSMossdeepGym
 #define METATILE_RSMossdeepGym_RedArrow_Down   0x205
 #define METATILE_RSMossdeepGym_RedArrow_Left   0x20C

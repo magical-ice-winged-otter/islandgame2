@@ -638,7 +638,7 @@ void ShowStartMenu(void)
 
 static bool8 HandleStartMenuInput(void)
 {
-    DebugPrintf("HANDLE START MENU CALLBACK!");
+    DebugPrintf("HANDLE START MENU CALLBACK! %d", sStartMenuCursorPos);
     if (JOY_NEW(DPAD_UP))
     {
         PlaySE(SE_SELECT);
@@ -882,12 +882,13 @@ static bool8 StartMenuTeleportCallback(void)
     RemoveExtraStartMenuWindows();
     HideStartMenu();
 
-    ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, 0, (u8**) LOCATION_NAMES, LOCATION_COUNT);
+
+    ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, sStartMenuCursorPos, (u8**) LOCATION_NAMES, LOCATION_COUNT);
 
     // Resets the selection back to 0. Since the teleport option
     // might not be the first item in the list, it might otherwise
     // get desynced with what the visuals are showing.
-    sStartMenuCursorPos = 0; 
+    //sStartMenuCursorPos = 0; 
 
     gMenuCallback = TeleportScreenCallback;
     return FALSE;
@@ -895,6 +896,7 @@ static bool8 StartMenuTeleportCallback(void)
 
 static bool8 TeleportScreenCallback(void)
 {
+    u8 old_pos = sStartMenuCursorPos;
     Location dest;
     DebugPrintf("TELEPORT CALLBACK!");
     //RETAIN ALL THE PREVIOUS CONTROLS
@@ -909,7 +911,8 @@ static bool8 TeleportScreenCallback(void)
         PlaySE(SE_SELECT);
         sStartMenuCursorPos = Menu_MoveCursor(1);
     }
-
+    DebugPrintf("LOCATION_COUNT: %d", LOCATION_COUNT);
+    DebugPrintf("old: %d new %d", old_pos, sStartMenuCursorPos);
     if (JOY_NEW(A_BUTTON))
     { //HERE WE GO DIFFERENT BEHAVIOR!
         PlaySE(SE_SELECT);

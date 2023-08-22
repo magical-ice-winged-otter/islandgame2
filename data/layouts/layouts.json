@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ForestBaseCamp_Interior2F/border.bin",
       "blockdata_filepath": "data/layouts/ForestBaseCamp_Interior2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORY_TILE_TEST1",
+      "name": "PoryTileTest1_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PorytilesPrimaryTest",
+      "secondary_tileset": "gTileset_PorytilesSecondaryTest",
+      "border_filepath": "data/layouts/PoryTileTest1/border.bin",
+      "blockdata_filepath": "data/layouts/PoryTileTest1/map.bin"
     }
   ]
 }

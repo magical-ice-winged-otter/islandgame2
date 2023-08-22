@@ -1070,3 +1070,5 @@ Common_EventScript_LegendaryFlewAway::
 
 	.include "data/maps/ForestBaseCamp_Interior2F/scripts.inc"
 
+
+	.include "data/maps/PoryTileTest1/scripts.inc"

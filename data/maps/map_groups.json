@@ -96,7 +96,8 @@
     "ForestBaseCamp_FrontLawn",
     "IslandJungle_Route1",
     "ForestBaseCamp_Interior1F",
-    "ForestBaseCamp_Interior2F"
+    "ForestBaseCamp_Interior2F",
+    "PoryTileTest1"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
