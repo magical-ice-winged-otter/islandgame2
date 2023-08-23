@@ -37,7 +37,7 @@ typedef struct Location
 static const Location LOCATION_DATA[] = {
     [FRONT_LAWN] = SET_LOC(FOREST_BASE_CAMP_FRONT_LAWN, 10, 15),
     [JUNGLE_ROUTE_1] = SET_LOC(ISLAND_JUNGLE_ROUTE1, 10, 54),
-    [SS_RAIN] = SET_LOC(PORY_TILE_TEST1, 50, 33) //I can't figure out how to change the name on porymap
+    [SS_RAIN] = SET_LOC(PORY_TILE_TEST1, 16, 4) //I can't figure out how to change the name on porymap
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");

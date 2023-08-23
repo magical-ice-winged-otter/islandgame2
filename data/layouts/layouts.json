@@ -4454,7 +4454,7 @@
     {
       "id": "LAYOUT_PORY_TILE_TEST1",
       "name": "PoryTileTest1_Layout",
-      "width": 24,
+      "width": 32,
       "height": 19,
       "primary_tileset": "gTileset_FireRed_General_Test",
       "secondary_tileset": "gTileset_InsideShip",
