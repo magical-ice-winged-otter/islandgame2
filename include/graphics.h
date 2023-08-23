@@ -6183,7 +6183,7 @@ extern const u8 gMonIcon_EnamorusTherian[];
 extern const u8 gMonIcon_BasculegionFemale[];
 #endif
 #if P_GEN_C_POKEMON == TRUE
-extern const u32 gMonIcon_ShadowLugia[];
+extern const u8 gMonIcon_ShadowLugia[];
 #endif
 
 extern const u8 gMonIcon_Egg[];

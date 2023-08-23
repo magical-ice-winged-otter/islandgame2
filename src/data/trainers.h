@@ -15,7 +15,6 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_SAWYER_1] =
     {
-        .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,

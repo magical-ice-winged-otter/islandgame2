@@ -892,6 +892,7 @@ static bool8 StartMenuTeleportCallback(void)
 static bool8 TeleportScreenCallback(void)
 {
     Location dest;
+    u8 cursorPos;
     //DebugPrintf("TELEPORT CALLBACK!");
     //RETAIN ALL THE PREVIOUS CONTROLS
     if (JOY_NEW(DPAD_UP))
@@ -903,7 +904,7 @@ static bool8 TeleportScreenCallback(void)
     {
         PlaySE(SE_SELECT);
     }
-    u8 cursorPos = Menu_GetCursorPos();
+    cursorPos = Menu_GetCursorPos();
     if (JOY_NEW(A_BUTTON))
     { //HERE WE GO DIFFERENT BEHAVIOR!
         PlaySE(SE_SELECT);
