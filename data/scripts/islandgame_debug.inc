@@ -1,6 +1,10 @@
 IslandGame_LoadIn_Message::
 	lockall
 	msgbox IslandGame_LoadIn_Msg
+	additem 799
+	additem 800
+	additem 801
+	additem 802
 	releaseall
 	return
 
