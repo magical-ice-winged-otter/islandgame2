@@ -3912,3 +3912,20 @@ static const u8 sBerserkGene[] = _(
     "Sharply boosts\n"
     "Attack, but causes\n"
     "lasting confusion.");
+
+// Islandgame Custom Items
+static const u8 sIslandgameMachete[] = _(
+    "TODO: description goes here."
+);
+
+static const u8 sIslandgameLantern[] = _(
+    "TODO: description goes here."
+);
+
+static const u8 sIslandgameWhistle[] = _(
+    "TODO: description goes here."
+);
+
+static const u8 sIslandgameRaft[] = _(
+    "TODO: description goes here."
+);

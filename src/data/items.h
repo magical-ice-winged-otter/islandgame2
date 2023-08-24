@@ -10356,4 +10356,50 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
     },
+
+// Islandgame Custom Items
+    [ITEM_ISLANDGAME_MACHETE] = 
+    {
+        .name = _("Machete"),
+        .itemId = ITEM_ISLANDGAME_MACHETE,
+        .price = 0,
+        .description = sIslandgameMachete,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1, // honestly idk what this does
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_ISLANDGAME_LANTERN] = 
+    {
+        .name = _("Lantern"),
+        .itemId = ITEM_ISLANDGAME_LANTERN,
+        .price = 0,
+        .description = sIslandgameLantern,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1, // honestly idk what this does
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_ISLANDGAME_WHISTLE] = 
+    {
+        .name = _("Whistle"),
+        .itemId = ITEM_ISLANDGAME_WHISTLE,
+        .price = 0,
+        .description = sIslandgameWhistle,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1, // honestly idk what this does
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_ISLANDGAME_RAFT] = 
+    {
+        .name = _("Raft"),
+        .itemId = ITEM_ISLANDGAME_RAFT,
+        .price = 0,
+        .description = sIslandgameRaft,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1, // honestly idk what this does
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
 };
