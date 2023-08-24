@@ -10507,4 +10507,7 @@ extern const u16 gMonMarkingsMenu_Pal[];
 extern const u32 gItemIcon_IslandgameMachete[];
 extern const u32 gItemIconPalette_IslandgameMachete[];
 
+extern const u32 gItemIcon_IslandgameLantern[];
+extern const u32 gItemIconPalette_IslandgameLantern[];
+
 #endif //GUARD_GRAPHICS_H

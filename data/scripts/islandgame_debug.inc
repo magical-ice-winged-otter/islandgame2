@@ -5,6 +5,8 @@ IslandGame_LoadIn_Message::
 	additem 800
 	additem 801
 	additem 802
+	additem ITEM_ISLANDGAME_PICKAXE
+	additem ITEM_ISLANDGAME_POWERGLOVE
 	releaseall
 	return
 

@@ -3915,17 +3915,35 @@ static const u8 sBerserkGene[] = _(
 
 // Islandgame Custom Items
 static const u8 sIslandgameMachete[] = _(
-    "TODO: description goes here."
+    "A sharp blade that\n"
+    "can cut down trees."
 );
 
 static const u8 sIslandgameLantern[] = _(
-    "TODO: description goes here."
+    "A portable light\n"
+    "that can illuminate\n"
+    "dark areas."
 );
 
 static const u8 sIslandgameWhistle[] = _(
-    "TODO: description goes here."
+    "Calls down a bird\n"
+    "Pokémon to fly you\n"
+    "to any known town."
 );
 
 static const u8 sIslandgameRaft[] = _(
-    "TODO: description goes here."
+    "Allows you to surf,\n"
+    "dive, and go up\n"
+    "waterfalls."
+);
+
+static const u8 sIslandgamePickaxe[] = _(
+    "A tool that can\n"
+    "smash rocks."
+);
+
+static const u8 sIslandgamePowerglove[] = _(
+    "A handy gauntlet\n"
+    "that helps you push\n"
+    "large boulders."
 );
