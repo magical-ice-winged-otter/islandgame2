@@ -4454,10 +4454,10 @@
     {
       "id": "LAYOUT_PORY_TILE_TEST1",
       "name": "PoryTileTest1_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_PorytilesPrimaryTest",
-      "secondary_tileset": "gTileset_PorytilesSecondaryTest",
+      "width": 32,
+      "height": 19,
+      "primary_tileset": "gTileset_FireRed_General_Test",
+      "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/PoryTileTest1/border.bin",
       "blockdata_filepath": "data/layouts/PoryTileTest1/map.bin"
     }
