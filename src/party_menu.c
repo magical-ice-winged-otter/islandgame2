@@ -386,7 +386,7 @@ static void SetPartyMonAilmentGfx(struct Pokemon *, struct PartyMenuBox *);
 static void UpdatePartyMonAilmentGfx(u8, struct PartyMenuBox *);
 static u8 GetPartyLayoutFromBattleType(void);
 static void Task_SetSacredAshCB(u8);
-static void CB2_ReturnToBagMenu(void);
+void CB2_ReturnToBagMenu(void);
 static void Task_DisplayHPRestoredMessage(u8);
 static u16 ItemEffectToMonEv(struct Pokemon *, u8);
 static void ItemEffectToStatString(u8, u8 *);
@@ -477,7 +477,7 @@ static void CursorCb_Trade2(u8);
 static void CursorCb_Toss(u8);
 static void CursorCb_FieldMove(u8);
 static bool8 SetUpFieldMove_Surf(void);
-static bool8 SetUpFieldMove_Fly(void);
+bool8 SetUpFieldMove_Fly(void);
 static bool8 SetUpFieldMove_Waterfall(void);
 static bool8 SetUpFieldMove_Dive(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
@@ -3893,7 +3893,7 @@ static void DisplayCantUseSurfMessage(void)
         DisplayPartyMenuStdMessage(PARTY_MSG_CANT_SURF_HERE);
 }
 
-static bool8 SetUpFieldMove_Fly(void)
+bool8 SetUpFieldMove_Fly(void)
 {
     if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
         return TRUE;
@@ -4287,7 +4287,7 @@ void CB2_ShowPartyMenuForItemUse(void)
     InitPartyMenu(menuType, partyLayout, PARTY_ACTION_USE_ITEM, TRUE, msgId, task, callback);
 }
 
-static void CB2_ReturnToBagMenu(void)
+void CB2_ReturnToBagMenu(void)
 {
     if (InBattlePyramid() == FALSE)
         GoToBagMenu(ITEMMENULOCATION_LAST, POCKETS_COUNT, NULL);
