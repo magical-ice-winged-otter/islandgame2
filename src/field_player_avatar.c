@@ -29,6 +29,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
+#include "item.h"
 
 #define NUM_FORCED_MOVEMENTS 18
 #define NUM_ACRO_BIKE_COLLISIONS 5
@@ -1279,6 +1280,8 @@ bool8 PartyHasMonWithSurf(void)
 
     if (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
+        return CheckBagHasItem(ITEM_ISLANDGAME_RAFT, 1);
+        /*
         for (i = 0; i < PARTY_SIZE; i++)
         {
             if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
@@ -1286,6 +1289,7 @@ bool8 PartyHasMonWithSurf(void)
             if (MonKnowsMove(&gPlayerParty[i], MOVE_SURF))
                 return TRUE;
         }
+        */
     }
     return FALSE;
 }

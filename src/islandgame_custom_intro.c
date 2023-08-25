@@ -49,6 +49,15 @@ void IslandGameCustomStartup()
         FlagToggle(FLAG_BADGE06_GET);
         FlagToggle(FLAG_BADGE07_GET);
         FlagToggle(FLAG_BADGE08_GET);
+
+        FlagToggle(FLAG_RECEIVED_HM01);
+        FlagToggle(FLAG_RECEIVED_HM02);
+        FlagToggle(FLAG_RECEIVED_HM03);
+        FlagToggle(FLAG_RECEIVED_HM04);
+        FlagToggle(FLAG_RECEIVED_HM05);
+        FlagToggle(FLAG_RECEIVED_HM06);
+        FlagToggle(FLAG_RECEIVED_HM07);
+        FlagToggle(FLAG_RECEIVED_HM08);
         //See: data/scripts/islandgame_debug[.pory/.inc]
         ScriptContext_SetupScript(IslandGame_LoadIn_Message);
 
