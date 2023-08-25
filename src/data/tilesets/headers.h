@@ -867,5 +867,5 @@ const struct Tileset gTileset_FireRed_General_Test =
     .palettes = gTilesetPalettes_FireRed_General_Test,
     .metatiles = gMetatiles_FireRed_General_Test,
     .metatileAttributes = gMetatileAttributes_FireRed_General_Test,
-    .callback = NULL,
+    .callback = InitTilesetIsland_Anim_Firered_Water,
 };
