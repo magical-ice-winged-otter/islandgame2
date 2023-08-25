@@ -30,8 +30,9 @@ Example:
 7. `./compile.sh`
 
 # For animations
+- Add a anims folder, and inside that folder, add some identifier, and put in your frames.
 - You must go to tileset_anims.{c,h} and add them in. View the files for details.
 - The numbers mean the tileset position, you can go on porymap, look at the specific tiles (not metatiles, which show up on the left)
-- When you add a "key" file, make sure it's the same tile, it will reorganize the tileset in porymap to be in order.
+- When you add a "key" file in your anims/<tag>, make sure it's the same tile, it will reorganize the tileset in porymap to be in order.
 - `...+ TILE_OFFSET_4BPP(1)), 4 * TILE_SIZE_4BPP);`, the 1 is the tile position, 4 is the number of tiles in a row starting from that tile position. View this in porymap to confirm
 - Make sure you go to `data/tilesets/headers` and fill out the proper callback (this took me a long time to find).
