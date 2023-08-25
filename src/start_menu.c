@@ -638,7 +638,7 @@ void ShowStartMenu(void)
 
 static bool8 HandleStartMenuInput(void)
 {
-    DebugPrintf("HANDLE START MENU CALLBACK! %d", sStartMenuCursorPos);
+    //DebugPrintf("HANDLE START MENU CALLBACK! %d", sStartMenuCursorPos);
     if (JOY_NEW(DPAD_UP))
     {
         PlaySE(SE_SELECT);

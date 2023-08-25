@@ -2,7 +2,6 @@ script IslandGame_LoadIn_Message {
     lockall
     msgbox(IslandGame_LoadIn_Msg)
 
-    @ add all of our HM items
     additem(ITEM_ISLANDGAME_RAFT)
     additem(ITEM_ISLANDGAME_WHISTLE)
     additem(ITEM_ISLANDGAME_LANTERN)
