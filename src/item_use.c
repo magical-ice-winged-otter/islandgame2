@@ -1323,4 +1323,17 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
 
+void ItemUseOutOfBattle_Flash(u8 taskId)
+{
+    if (SetUpFieldMove_Flash() == TRUE)
+    {
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        ItemUseOutOfBattle_CannotUse(taskId);
+    }
+}
+
 #undef tUsingRegisteredKeyItem

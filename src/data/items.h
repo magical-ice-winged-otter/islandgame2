@@ -10378,7 +10378,7 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Flash,
     },
     [ITEM_ISLANDGAME_WHISTLE] = 
     {
