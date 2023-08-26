@@ -1361,10 +1361,7 @@ static void Task_UseFly(u8 taskId)
         if (!IsWeatherNotFadingIn())
             return;
 
-        gFieldEffectArguments[0] = GetCursorSelectionMonId();
-        if ((int)gFieldEffectArguments[0] > PARTY_SIZE - 1)
-            gFieldEffectArguments[0] = 0;
-
+        gFieldEffectArguments[0] = ITEM_ISLANDGAME_WHISTLE;
         FieldEffectStart(FLDEFF_USE_FLY);
         task->data[0]++;
     }
@@ -2581,6 +2578,7 @@ bool8 FldEff_FieldMoveShowMon(void)
 bool8 FldEff_FieldMoveShowMonInit(void)
 {
     bool32 noDucking = gFieldEffectArguments[0] & SHOW_MON_CRY_NO_DUCKING;
+    DebugPrintf("early: %d", gFieldEffectArguments[0]);
     gFieldEffectArguments[0] |= noDucking;
     FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON);
     FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
@@ -2926,6 +2924,7 @@ static u8 InitFieldMoveMonSprite(u32 species, u32 otId, u32 personality)
     bool16 noDucking;
     u8 monSprite;
     struct Sprite *sprite;
+    DebugPrintf("item: %d", species);
     noDucking = (species & SHOW_MON_CRY_NO_DUCKING) >> 16;
     species &= ~SHOW_MON_CRY_NO_DUCKING;
     monSprite = AddItemIconSprite(2110, 2110, species);
