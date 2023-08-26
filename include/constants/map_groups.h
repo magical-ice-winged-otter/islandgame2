@@ -597,9 +597,10 @@
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
 // gMapGroup_SS_Rain
-#define MAP_PORY_TILE_TEST1 (0 | (34 << 8))
-#define MAP_SS_RAIN_STAIRS  (1 | (34 << 8))
-#define MAP_SS_RAIN_HALLWAY (2 | (34 << 8))
+#define MAP_PORY_TILE_TEST1          (0 | (34 << 8))
+#define MAP_SS_RAIN_STAIRS           (1 | (34 << 8))
+#define MAP_SS_RAIN_HALLWAY          (2 | (34 << 8))
+#define MAP_ISLANDGAME_SS_RAIN_ROOM2 (3 | (34 << 8))
 
 #define MAP_GROUPS_COUNT 35
 

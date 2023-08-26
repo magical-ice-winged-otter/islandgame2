@@ -9,7 +9,7 @@
   "map_type": "MAP_TYPE_UNKNOWN",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
@@ -35,7 +35,7 @@
       "x": 14,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_SS_RAIN_HALLWAY",
+      "dest_map": "MAP_ISLANDGAME_SS_RAIN_ROOM2",
       "dest_warp_id": "0"
     },
     {
