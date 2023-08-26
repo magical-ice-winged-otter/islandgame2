@@ -97,5 +97,7 @@ void MoveDeleterForgetMove(void);
 void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
+bool8 SetUpFieldMove_Fly(void);
+void CB2_ReturnToBagMenu(void);
 
 #endif // GUARD_PARTY_MENU_H

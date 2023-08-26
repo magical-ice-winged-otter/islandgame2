@@ -1,10 +1,14 @@
 script IslandGame_LoadIn_Message {
     lockall
     msgbox(IslandGame_LoadIn_Msg)
-    additem(799)
-    additem(800)
-    additem(801)
-    additem(802)
+
+    additem(ITEM_ISLANDGAME_RAFT)
+    additem(ITEM_ISLANDGAME_WHISTLE)
+    additem(ITEM_ISLANDGAME_LANTERN)
+    additem(ITEM_ISLANDGAME_MACHETE)
+    additem(ITEM_ISLANDGAME_PICKAXE)
+    additem(ITEM_ISLANDGAME_POWERGLOVE)
+
     releaseall
 }
 

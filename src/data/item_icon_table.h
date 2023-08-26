@@ -844,10 +844,15 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_LINKING_CORD] = {gItemIcon_LinkingCord, gItemIconPalette_LinkingCord},
     [ITEM_PEAT_BLOCK] = {gItemIcon_PeatBlock, gItemIconPalette_PeatBlock},
     [ITEM_BERSERK_GENE] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
-    [ITEM_ISLANDGAME_MACHETE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
-    [ITEM_ISLANDGAME_LANTERN] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
-    [ITEM_ISLANDGAME_WHISTLE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
-    [ITEM_ISLANDGAME_RAFT] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+
+// Islandgame Custom Items
+    [ITEM_ISLANDGAME_MACHETE] = {gItemIcon_IslandgameMachete, gItemIconPalette_IslandgameMachete},
+    [ITEM_ISLANDGAME_LANTERN] = {gItemIcon_IslandgameLantern, gItemIconPalette_IslandgameLantern},
+    [ITEM_ISLANDGAME_WHISTLE] = {gItemIcon_PokeFlute, gItemIconPalette_PokeFlute},
+    [ITEM_ISLANDGAME_RAFT] = {gItemIcon_WailmerPail, gItemIconPalette_WailmerPail},
+    [ITEM_ISLANDGAME_PICKAXE] = {gItemIcon_IslandgamePickaxe, gItemIconPalette_IslandgamePickaxe},
+    [ITEM_ISLANDGAME_POWERGLOVE] = {gItemIcon_PunchingGlove, gItemIconPalette_PunchingGlove},
+
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

@@ -10378,7 +10378,7 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Flash,
     },
     [ITEM_ISLANDGAME_WHISTLE] = 
     {
@@ -10389,14 +10389,36 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Fly,
     },
     [ITEM_ISLANDGAME_RAFT] = 
     {
-        .name = _("Raft"),
+        .name = _("Wailmerine"),
         .itemId = ITEM_ISLANDGAME_RAFT,
         .price = 0,
         .description = sIslandgameRaft,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1, // honestly idk what this does
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_ISLANDGAME_PICKAXE] = 
+    {
+        .name = _("Pickaxe"),
+        .itemId = ITEM_ISLANDGAME_PICKAXE,
+        .price = 0,
+        .description = sIslandgamePickaxe,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1, // honestly idk what this does
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_ISLANDGAME_POWERGLOVE] = 
+    {
+        .name = _("Power Glove"),
+        .itemId = ITEM_ISLANDGAME_POWERGLOVE,
+        .price = 0,
+        .description = sIslandgamePowerglove,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
