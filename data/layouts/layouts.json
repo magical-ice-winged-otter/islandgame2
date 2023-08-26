@@ -4467,9 +4467,29 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_FireRed_General_Test",
-      "secondary_tileset": "gTileset_InsideShip",
+      "secondary_tileset": "gTileset_FireRed_SS_ANNE_Cont",
       "border_filepath": "data/layouts/SS_RAIN_STAIRS/border.bin",
       "blockdata_filepath": "data/layouts/SS_RAIN_STAIRS/map.bin"
+    },
+    {
+      "id": "LAYOUT_SS_RAIN_HALLWAY",
+      "name": "SS_RAIN_Hallway_Layout",
+      "width": 25,
+      "height": 20,
+      "primary_tileset": "gTileset_FireRed_General_Test",
+      "secondary_tileset": "gTileset_FireRed_SS_ANNE_Cont",
+      "border_filepath": "data/layouts/SS_RAIN_Hallway/border.bin",
+      "blockdata_filepath": "data/layouts/SS_RAIN_Hallway/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_SS_RAIN_ROOM1",
+      "name": "ISLANDGAME_SS_RAIN_ROOM1_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_FireRed_General_Test",
+      "secondary_tileset": "gTileset_FireRed_SS_ANNE_Cont",
+      "border_filepath": "data/layouts/ISLANDGAME_SS_RAIN_ROOM1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_SS_RAIN_ROOM1/map.bin"
     }
   ]
 }

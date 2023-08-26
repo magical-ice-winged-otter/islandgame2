@@ -1,0 +1,62 @@
+{
+  "id": "MAP_SS_RAIN_HALLWAY",
+  "name": "SS_RAIN_Hallway",
+  "layout": "LAYOUT_SS_RAIN_HALLWAY",
+  "music": "MUS_SAILING",
+  "region_map_section": "MAPSEC_SS_RAIN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNKNOWN",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SS_RAIN_STAIRS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_SS_RAIN_ROOM1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SS_RAIN_HALLWAY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SS_RAIN_HALLWAY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SS_RAIN_HALLWAY",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

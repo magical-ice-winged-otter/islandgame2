@@ -1,0 +1,2 @@
+ISLANDGAME_SS_RAIN_ROOM1_MapScripts::
+	.byte 0

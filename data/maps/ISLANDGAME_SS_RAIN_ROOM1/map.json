@@ -1,7 +1,7 @@
 {
-  "id": "MAP_SS_RAIN_STAIRS",
-  "name": "SS_RAIN_STAIRS",
-  "layout": "LAYOUT_SS_RAIN_STAIRS",
+  "id": "MAP_ISLANDGAME_SS_RAIN_ROOM1",
+  "name": "ISLANDGAME_SS_RAIN_ROOM1",
+  "layout": "LAYOUT_ISLANDGAME_SS_RAIN_ROOM1",
   "music": "MUS_SAILING",
   "region_map_section": "MAPSEC_SS_RAIN",
   "requires_flash": false,
@@ -10,7 +10,7 @@
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
@@ -18,18 +18,11 @@
   ],
   "warp_events": [
     {
-      "x": 14,
-      "y": 8,
+      "x": 10,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_SS_RAIN_HALLWAY",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 7,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_PORY_TILE_TEST1",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

@@ -67,8 +67,7 @@
 #define MAP_ISLAND_JUNGLE_ROUTE1        (58 | (0 << 8))
 #define MAP_FOREST_BASE_CAMP_INTERIOR1F (59 | (0 << 8))
 #define MAP_FOREST_BASE_CAMP_INTERIOR2F (60 | (0 << 8))
-#define MAP_PORY_TILE_TEST1             (61 | (0 << 8))
-#define MAP_SS_RAIN_STAIRS              (62 | (0 << 8))
+#define MAP_ISLANDGAME_SS_RAIN_ROOM1    (61 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
@@ -597,6 +596,11 @@
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
-#define MAP_GROUPS_COUNT 34
+// gMapGroup_SS_Rain
+#define MAP_PORY_TILE_TEST1 (0 | (34 << 8))
+#define MAP_SS_RAIN_STAIRS  (1 | (34 << 8))
+#define MAP_SS_RAIN_HALLWAY (2 | (34 << 8))
+
+#define MAP_GROUPS_COUNT 35
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

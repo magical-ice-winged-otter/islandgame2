@@ -2,8 +2,8 @@
   "id": "MAP_PORY_TILE_TEST1",
   "name": "PoryTileTest1",
   "layout": "LAYOUT_PORY_TILE_TEST1",
-  "music": "MUS_B_TOWER",
-  "region_map_section": "MAPSEC_OLDALE_TOWN",
+  "music": "MUS_SAILING",
+  "region_map_section": "MAPSEC_SS_RAIN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY_CLOUDS",
   "map_type": "MAP_TYPE_NONE",
@@ -19,7 +19,7 @@
   "warp_events": [
     {
       "x": 17,
-      "y": 4,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SS_RAIN_STAIRS",
       "dest_warp_id": "1"

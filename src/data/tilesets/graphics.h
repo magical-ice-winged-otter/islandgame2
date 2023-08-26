@@ -1710,3 +1710,22 @@ const u16 gTilesetPalettes_FireRed_General_Test[][16] =
 };
 
 const u32 gTilesetTiles_FireRed_General_Test[] = INCBIN_U32("data/tilesets/primary/fire_red_general_test/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_FireRed_SS_ANNE_Cont[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_FireRed_SS_ANNE_Cont[] = INCBIN_U32("data/tilesets/secondary/fire_red_ss_anne_cont/tiles.4bpp.lz");
