@@ -2009,3 +2009,6 @@ const u32 gItemIconPalette_IslandgameMachete[] = INCBIN_U32("graphics/items/icon
 
 const u32 gItemIcon_IslandgameLantern[] = INCBIN_U32("graphics/items/icons/lantern.4bpp.lz");
 const u32 gItemIconPalette_IslandgameLantern[] = INCBIN_U32("graphics/items/icon_palettes/lantern.gbapal.lz");
+
+const u32 gItemIcon_IslandgamePickaxe[] = INCBIN_U32("graphics/items/icons/pickaxe.4bpp.lz");
+const u32 gItemIconPalette_IslandgamePickaxe[] = INCBIN_U32("graphics/items/icon_palettes/pickaxe.gbapal.lz");

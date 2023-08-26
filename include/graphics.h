@@ -10510,4 +10510,7 @@ extern const u32 gItemIconPalette_IslandgameMachete[];
 extern const u32 gItemIcon_IslandgameLantern[];
 extern const u32 gItemIconPalette_IslandgameLantern[];
 
+extern const u32 gItemIcon_IslandgamePickaxe[];
+extern const u32 gItemIconPalette_IslandgamePickaxe[];
+
 #endif //GUARD_GRAPHICS_H
