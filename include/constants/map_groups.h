@@ -68,6 +68,7 @@
 #define MAP_FOREST_BASE_CAMP_INTERIOR1F (59 | (0 << 8))
 #define MAP_FOREST_BASE_CAMP_INTERIOR2F (60 | (0 << 8))
 #define MAP_PORY_TILE_TEST1             (61 | (0 << 8))
+#define MAP_SS_RAIN_STAIRS              (62 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

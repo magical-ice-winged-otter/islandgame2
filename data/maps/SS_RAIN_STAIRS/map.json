@@ -1,11 +1,11 @@
 {
-  "id": "MAP_PORY_TILE_TEST1",
-  "name": "PoryTileTest1",
-  "layout": "LAYOUT_PORY_TILE_TEST1",
-  "music": "MUS_B_TOWER",
+  "id": "MAP_SS_RAIN_STAIRS",
+  "name": "SS_RAIN_STAIRS",
+  "layout": "LAYOUT_SS_RAIN_STAIRS",
+  "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_OLDALE_TOWN",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY_CLOUDS",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,
@@ -18,22 +18,15 @@
   ],
   "warp_events": [
     {
-      "x": 17,
-      "y": 4,
+      "x": 14,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SS_RAIN_STAIRS",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 22,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_PORY_TILE_TEST1",
       "dest_warp_id": "0"
     },
     {
-      "x": 23,
-      "y": 6,
+      "x": 7,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_PORY_TILE_TEST1",
       "dest_warp_id": "0"

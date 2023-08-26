@@ -1072,3 +1072,5 @@ Common_EventScript_LegendaryFlewAway::
 
 
 	.include "data/maps/PoryTileTest1/scripts.inc"
+
+	.include "data/maps/SS_RAIN_STAIRS/scripts.inc"
