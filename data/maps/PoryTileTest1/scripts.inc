@@ -30,9 +30,19 @@ PoryTileTest1_EventScript_BoyTalk_6:
 	goto PoryTileTest1_EventScript_BoyTalk_5
 
 
+PoryTileTest2_EventScript_NPC2Talk::
+	lock
+	msgbox PoryTileTest1_NPC2_Text
+	release
+	return
+
+
 PoryTileTest1_BoyGave_Text::
 	.string "{COLOR DARK_GRAY}Sorry about that :D$"
 
 PoryTileTest1_BoyTalk_Text::
 	.string "{COLOR DARK_GRAY}Give the water to my uncle. I want to\n"
 	.string "admire the sea a bit longer.$"
+
+PoryTileTest1_NPC2_Text::
+	.string "{COLOR DARK_GRAY}Hello! I am npc number2$"

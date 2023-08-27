@@ -1,4 +1,11 @@
-SS_RAIN_Hallway_MapScripts {}
+mapscripts SS_RAIN_Hallway_MapScripts {}
+
+script SS_RAIN_Hallway_GirlTalk {
+    lock
+    msgbox(NPCGirl_Text)
+    waitmessage
+    release
+}
 
 script SS_RAIN_Hallway_ElectricianTalk {
     lock
@@ -7,6 +14,15 @@ script SS_RAIN_Hallway_ElectricianTalk {
     release
 }
 
+text NPCGirl_Text {
+    format("{COLOR DARK_GRAY}HellO! I am npc nyumber 1")
+}
+
 text ElectricianTalk_Text {
-    format("I am the captain's")
+    format("{COLOR DARK_GRAY}I am the captain's second in command, and I'm in charge of the ship's electronics.\p"
+           "{COLOR DARK_GRAY}The basement?\p"
+           "{COLOR DARK_GRAY}Just between you and me, there's something off with the washing machine.\p"
+           "Like a {COLOR LIGHT_BLUE}ghost {COLOR DARK_GRAY}possessed it."
+           "{COLOR DARK_GRAY}Of course, I don't believe in superstitions, but I can't let you down there for now."
+    )
 }

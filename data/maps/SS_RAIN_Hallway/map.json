@@ -14,39 +14,64 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 22,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SS_RAIN_Hallway_ElectricianTalk",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 2,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SS_RAIN_Hallway_GirlTalk",
+      "flag": "0"
+    }
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 2,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_SS_RAIN_STAIRS",
       "dest_warp_id": "0"
     },
     {
-      "x": 8,
+      "x": 7,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_SS_RAIN_ROOM1",
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
+      "x": 13,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_SS_RAIN_ROOM2",
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
+      "x": 19,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_SS_RAIN_ROOM3",
       "dest_warp_id": "0"
     },
     {
-      "x": 18,
+      "x": 17,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_SS_RAIN_HALLWAY",

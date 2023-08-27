@@ -25,7 +25,6 @@ SS_Rain_EventScript_InvadeRoom::
 	case 0, SS_Rain_EventScript_InvadeRoom_3
 	case 1, SS_Rain_EventScript_InvadeRoom_4
 SS_Rain_EventScript_InvadeRoom_1:
-	closemessage
 	releaseall
 	return
 
@@ -66,11 +65,13 @@ SS_Rain_EventScript_HasWater::
 	applymovement 1, WalkToPlayer
 	waitmovement 0
 	msgbox SS_Rain_EventScript_HasWater_Text_1
+	setflag FLAG_ROOM3_GAVE_WATER
 	removeitem ITEM_FRESH_WATER, 1
 	applymovement 1, RunAway
 	waitmovement 0
 	msgbox SS_Rain_CalmGentleman_Text
 	waitbuttonpress
+	closemessage
 	return
 
 

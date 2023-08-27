@@ -25,8 +25,6 @@ script SS_Rain_EventScript_InvadeRoom {
         case 0: goto(SS_Rain_EventScript_HasNoWater) //not found           
         case 1: goto(SS_Rain_EventScript_HasWater) //found
     }
-
-    closemessage
     releaseall
 }
 
@@ -70,6 +68,7 @@ script SS_Rain_EventScript_HasWater {
     waitmovement(0)
     msgbox(SS_Rain_CalmGentleman_Text)
     waitbuttonpress
+    closemessage
 }
 
 script SS_Rain_EventScript_Talk {

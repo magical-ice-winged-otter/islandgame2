@@ -4474,7 +4474,7 @@
     {
       "id": "LAYOUT_SS_RAIN_HALLWAY",
       "name": "SS_RAIN_Hallway_Layout",
-      "width": 25,
+      "width": 27,
       "height": 20,
       "primary_tileset": "gTileset_FireRed_General_Test",
       "secondary_tileset": "gTileset_FireRed_SS_ANNE_Cont",
