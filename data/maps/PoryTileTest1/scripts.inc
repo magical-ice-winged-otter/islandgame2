@@ -16,8 +16,8 @@ PoryTileTest1_EventScript_BoyTalk_1:
 	waitmessage
 	applymovement 1, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	waitbuttonpress
 	closemessage
+	waitbuttonpress
 	release
 	return
 

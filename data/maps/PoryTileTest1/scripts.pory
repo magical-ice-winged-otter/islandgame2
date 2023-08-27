@@ -19,8 +19,8 @@ script PoryTileTest1_EventScript_BoyTalk {
     waitmessage
     applymovement(OBJ_SHIP_BOY, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
-    waitbuttonpress
     closemessage
+    waitbuttonpress
     
     release
 }
