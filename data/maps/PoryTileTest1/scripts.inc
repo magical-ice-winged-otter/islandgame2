@@ -13,11 +13,10 @@ PoryTileTest1_EventScript_BoyTalk::
 PoryTileTest1_EventScript_BoyTalk_5:
 	msgbox PoryTileTest1_BoyTalk_Text
 PoryTileTest1_EventScript_BoyTalk_1:
-	waitmessage
 	applymovement 1, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	waitmessage
 	closemessage
-	waitbuttonpress
 	release
 	return
 

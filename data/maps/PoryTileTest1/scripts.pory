@@ -16,12 +16,11 @@ script PoryTileTest1_EventScript_BoyTalk {
         }
         msgbox(PoryTileTest1_BoyTalk_Text)
     }
-    waitmessage
     applymovement(OBJ_SHIP_BOY, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
+    waitmessage
     closemessage
-    waitbuttonpress
-    
+
     release
 }
 
