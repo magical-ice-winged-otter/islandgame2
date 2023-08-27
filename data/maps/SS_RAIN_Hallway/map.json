@@ -42,7 +42,7 @@
       "x": 20,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_SS_RAIN_HALLWAY",
+      "dest_map": "MAP_ISLANDGAME_SS_RAIN_ROOM3",
       "dest_warp_id": "0"
     },
     {

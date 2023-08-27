@@ -1,4 +1,34 @@
-mapscripts PoryTileTest1_MapScripts 
-{
+const OBJ_SHIP_BOY = 1
 
+mapscripts PoryTileTest1_MapScripts {}
+
+script PoryTileTest1_EventScript_BoyTalk {
+    lock
+    applymovement(OBJ_SHIP_BOY, Common_Movement_FacePlayer)
+    waitmovement(0)
+
+    checkitem(ITEM_FRESH_WATER, 1)
+    if (flag(FLAG_ROOM3_GAVE_WATER)) {
+        msgbox(PoryTileTest1_BoyGave_Text)
+    } else {
+        if (var(VAR_RESULT) == 0) {
+            giveitem(ITEM_FRESH_WATER, 1)
+        }
+        msgbox(PoryTileTest1_BoyTalk_Text)
+    }
+    waitmessage
+    applymovement(OBJ_SHIP_BOY, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    waitbuttonpress
+    closemessage
+    
+    release
+}
+
+text PoryTileTest1_BoyGave_Text {
+    format("{COLOR DARK_GRAY}Sorry about that :D")
+}
+
+text PoryTileTest1_BoyTalk_Text {
+    format("{COLOR DARK_GRAY}Give the water to my uncle. I want to admire the sea a bit longer.")
 }

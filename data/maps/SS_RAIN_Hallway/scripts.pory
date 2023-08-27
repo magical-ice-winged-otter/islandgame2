@@ -1,0 +1,12 @@
+SS_RAIN_Hallway_MapScripts {}
+
+script SS_RAIN_Hallway_ElectricianTalk {
+    lock
+    msgbox(ElectricianTalk_Text)
+    waitmessage
+    release
+}
+
+text ElectricianTalk_Text {
+    format("I am the captain's")
+}
