@@ -1,5 +1,5 @@
 const LOCALID_GENTLEMAN = 1
-const ROOM3_OUT_WARP_X  = 20
+const ROOM3_OUT_WARP_X  = 19
 const ROOM3_OUT_WARP_Y  = 11
 
 mapscripts ISLANDGAME_SS_RAIN_ROOM3_MapScripts {
