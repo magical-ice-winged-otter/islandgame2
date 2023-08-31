@@ -99,7 +99,8 @@
     "ForestBaseCamp_Interior1F",
     "ForestBaseCamp_Interior2F",
     "ISLANDGAME_SS_RAIN_ROOM1",
-    "ISLANDGAME_SS_RAIN_ROOM3"
+    "ISLANDGAME_SS_RAIN_ROOM3",
+    "ISLANDGAME_SS_RAIN_CAPTAIN_ROOM"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
