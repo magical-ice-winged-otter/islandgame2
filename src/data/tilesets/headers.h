@@ -869,3 +869,14 @@ const struct Tileset gTileset_FireRed_General_Test =
     .metatileAttributes = gMetatileAttributes_FireRed_General_Test,
     .callback = InitTilesetIsland_Anim_Firered_Water,
 };
+
+const struct Tileset gTileset_FireRed_SS_ANNE_Cont =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FireRed_SS_ANNE_Cont,
+    .palettes = gTilesetPalettes_FireRed_SS_ANNE_Cont,
+    .metatiles = gMetatiles_FireRed_SS_ANNE_Cont,
+    .metatileAttributes = gMetatileAttributes_FireRed_SS_ANNE_Cont,
+    .callback = NULL,
+};

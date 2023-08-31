@@ -37,12 +37,12 @@ typedef struct Location
 static const Location LOCATION_DATA[] = {
     [FRONT_LAWN] = SET_LOC(FOREST_BASE_CAMP_FRONT_LAWN, 10, 15),
     [JUNGLE_ROUTE_1] = SET_LOC(ISLAND_JUNGLE_ROUTE1, 10, 54),
-    [SS_RAIN] = SET_LOC(PORY_TILE_TEST1, 16, 4) //I can't figure out how to change the name on porymap
+    [SS_RAIN] = SET_LOC(ISLANDGAME_SS_RAIN_ROOM2, 6, 7) //I can't figure out how to change the name on porymap
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
 static const u8 route1Name[]    = _("Route 1");
-static const u8 testMapName[]   = _("SS RAIN");
+static const u8 testMapName[]   = _("SS RAIN"); 
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
@@ -77,7 +77,7 @@ void IslandGameCustomStartup();
 
 #ifdef ISLANDGAME_DEBUG
 
-#define START_LOC_GAME LOCATION_DATA[JUNGLE_ROUTE_1]
+#define START_LOC_GAME LOCATION_DATA[SS_RAIN]
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA
 #define ISLANDGAME_STARTING_MON_LEVEL 100
 #define ISLANDGAME_STARTING_MON_ITEM ITEM_NONE

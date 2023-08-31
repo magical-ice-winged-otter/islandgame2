@@ -1,0 +1,38 @@
+mapscripts ISLANDGAME_SS_RAIN_ROOM2_MapScripts {
+
+}
+script SS_Rain_EventScript_NeedRunningShoes {
+    if (!flag(FLAG_RECEIVED_RUNNING_SHOES)) { # Run trigger script if you have not recieved the running shoes
+        lockall
+        msgbox(NeedRunningShoes_Text)
+        waitmessage
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, NeedRunningShoes_Movement)
+        waitmovement(0)
+    }
+    releaseall
+}
+
+script SS_Rain_EventScript_ItemRunningShoes {
+    lockall
+    setflag(FLAG_RECEIVED_RUNNING_SHOES)
+    msgbox(SwitchedRunningShoes_Text)
+    removeobject(VAR_LAST_TALKED)
+    setflag(FLAG_RECEIVED_RUNNING_SHOES)
+    setflag(FLAG_SYS_B_DASH)
+    releaseall
+}
+
+movement NeedRunningShoes_Movement {
+    walk_down
+    face_down
+}
+
+text NeedRunningShoes_Text {
+    "{COLOR DARK_GRAY}I should get my Running Shoes..."
+}
+
+text SwitchedRunningShoes_Text {
+    "{COLOR DARK_GRAY}You switched your shoes with the\n"
+    "{COLOR DARK_GRAY}Running Shoes!"
+}

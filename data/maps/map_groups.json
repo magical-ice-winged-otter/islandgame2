@@ -33,7 +33,8 @@
     "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124"
+    "gMapGroup_IndoorRoute124",
+    "gMapGroup_SS_Rain"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -97,7 +98,9 @@
     "IslandJungle_Route1",
     "ForestBaseCamp_Interior1F",
     "ForestBaseCamp_Interior2F",
-    "PoryTileTest1"
+    "ISLANDGAME_SS_RAIN_ROOM1",
+    "ISLANDGAME_SS_RAIN_ROOM3",
+    "ISLANDGAME_SS_RAIN_CAPTAIN_ROOM"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -625,5 +628,11 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
+  ],
+  "gMapGroup_SS_Rain": [
+    "PoryTileTest1",
+    "SS_RAIN_STAIRS",
+    "SS_RAIN_Hallway",
+    "ISLANDGAME_SS_RAIN_ROOM2"
   ]
 }

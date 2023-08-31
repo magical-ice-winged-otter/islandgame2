@@ -1,0 +1,13 @@
+mapscripts ISLANDGAME_SS_RAIN_ROOM1_MapScripts {}
+
+
+script ISLANDGAME_SS_RAIN_ROOM1_EventScript_OldWomanTalk {
+    lock
+    faceplayer
+    msgbox(SmallTalk_Text)
+    release
+}
+
+text SmallTalk_Text {
+    format("{COLOR DARK_GRAY}I'm getting too old for this; I have been seasick for the entire trip.")
+}
