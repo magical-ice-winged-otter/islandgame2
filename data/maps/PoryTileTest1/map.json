@@ -51,20 +51,6 @@
     },
     {
       "x": 22,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_PORY_TILE_TEST1",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 23,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_PORY_TILE_TEST1",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 22,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_SS_RAIN_CAPTAIN_ROOM",

@@ -36,6 +36,19 @@
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124"
   ],
+  "gMapGroup_Islandgame1": [
+    "ForestBaseCamp_FrontLawn",
+    "ForestBaseCamp_Interior1F",
+    "ForestBaseCamp_Interior2F",
+    "IslandJungle_Route1",
+    "PoryTileTest1",
+    "SS_RAIN_STAIRS",
+    "SS_RAIN_Hallway",
+    "ISLANDGAME_SS_RAIN_ROOM1",
+    "ISLANDGAME_SS_RAIN_ROOM2",
+    "ISLANDGAME_SS_RAIN_ROOM3",
+    "ISLANDGAME_SS_RAIN_CAPTAIN_ROOM"
+  ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
     "SlateportCity",
@@ -621,20 +634,5 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
-  ],
-  "gMapGroup_Islandgame1": [
-
-    "ForestBaseCamp_FrontLawn",
-    "ForestBaseCamp_Interior1F",
-    "ForestBaseCamp_Interior2F",
-    "IslandJungle_Route1",
-
-    "PoryTileTest1",
-    "SS_RAIN_STAIRS",
-    "SS_RAIN_Hallway",
-    "ISLANDGAME_SS_RAIN_ROOM1",
-    "ISLANDGAME_SS_RAIN_ROOM2",
-    "ISLANDGAME_SS_RAIN_ROOM3",
-    "ISLANDGAME_SS_RAIN_CAPTAIN_ROOM"
   ]
 }
