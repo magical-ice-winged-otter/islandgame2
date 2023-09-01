@@ -1,0 +1,1244 @@
+diff --git a/asm/macros/field_effect_script.inc b/asm/macros/field_effect_script.inc
+index 38f7e31750e..a5a3d2773ff 100644
+--- a/asm/macros/field_effect_script.inc
++++ b/asm/macros/field_effect_script.inc
+@@ -42,3 +42,19 @@
+ 	.4byte \palette_address
+ 	.4byte \function_address
+ 	.endm
++
++	.macro field_eff_loadfadedpaldaynight address:req
++	.byte 8
++	.4byte \address
++	.endm
++
++	.macro field_eff_loadpaldaynight address:req
++	.byte 9
++	.4byte \address
++	.endm
++
++	.macro field_eff_loadfadedpaldaynight_callnative palette_address:req, function_address:req
++	.byte 10
++	.4byte \palette_address
++	.4byte \function_address
++	.endm
+diff --git a/data/event_scripts.s b/data/event_scripts.s
+index 1f3db6aa2b0..83e450de8b5 100644
+--- a/data/event_scripts.s
++++ b/data/event_scripts.s
+@@ -53,6 +53,7 @@
+ #include "constants/union_room.h"
+ #include "constants/vars.h"
+ #include "constants/weather.h"
++#include "constants/day_night.h"
+ 	.include "asm/macros.inc"
+ 	.include "asm/macros/event.inc"
+ 	.include "constants/constants.inc"
+diff --git a/data/field_effect_scripts.s b/data/field_effect_scripts.s
+index 49fcf798b68..9c79cfc5954 100644
+--- a/data/field_effect_scripts.s
++++ b/data/field_effect_scripts.s
+@@ -74,7 +74,7 @@ gFieldEffectScriptPointers::
+ 	.4byte gFieldEffectScript_MoveDeoxysRock            @ FLDEFF_MOVE_DEOXYS_ROCK
+ 
+ gFieldEffectScript_ExclamationMarkIcon1::
+-	field_eff_callnative FldEff_ExclamationMarkIcon
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_ArrowEmotionsFieldEffect, FldEff_ExclamationMarkIcon
+ 	field_eff_end
+ 
+ gFieldEffectScript_UseCutOnTallGrass::
+@@ -90,11 +90,11 @@ gFieldEffectScript_Shadow::
+ 	field_eff_end
+ 
+ gFieldEffectScript_TallGrass::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_TallGrass
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_TallGrass
+ 	field_eff_end
+ 
+ gFieldEffectScript_Ripple::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_Ripple
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_Ripple
+ 	field_eff_end
+ 
+ gFieldEffectScript_FieldMoveShowMon::
+@@ -102,7 +102,7 @@ gFieldEffectScript_FieldMoveShowMon::
+ 	field_eff_end
+ 
+ gFieldEffectScript_Ash::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_Ash
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_Ash
+ 	field_eff_end
+ 
+ gFieldEffectScript_SurfBlob::
+@@ -114,7 +114,7 @@ gFieldEffectScript_UseSurf::
+ 	field_eff_end
+ 
+ gFieldEffectScript_GroundImpactDust::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_Dust
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_Dust
+ 	field_eff_end
+ 
+ gFieldEffectScript_UseSecretPowerCave::
+@@ -122,47 +122,47 @@ gFieldEffectScript_UseSecretPowerCave::
+ 	field_eff_end
+ 
+ gFieldEffectScript_JumpTallGrass::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_JumpTallGrass
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_JumpTallGrass
+ 	field_eff_end
+ 
+ gFieldEffectScript_SandFootprints::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandFootprints
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandFootprints
+ 	field_eff_end
+ 
+ gFieldEffectScript_JumpBigSplash::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_JumpBigSplash
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_JumpBigSplash
+ 	field_eff_end
+ 
+ gFieldEffectScript_Splash::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_Splash
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_Splash
+ 	field_eff_end
+ 
+ gFieldEffectScript_JumpSmallSplash::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_JumpSmallSplash
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_JumpSmallSplash
+ 	field_eff_end
+ 
+ gFieldEffectScript_LongGrass::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_LongGrass
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_LongGrass
+ 	field_eff_end
+ 
+ gFieldEffectScript_JumpLongGrass::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_JumpLongGrass
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_JumpLongGrass
+ 	field_eff_end
+ 
+ gFieldEffectScript_UnusedGrass::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_UnusedGrass
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_UnusedGrass
+ 	field_eff_end
+ 
+ gFieldEffectScript_UnusedGrass2::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_UnusedGrass2
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_UnusedGrass2
+ 	field_eff_end
+ 
+ gFieldEffectScript_UnusedSand::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_UnusedSand
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_UnusedSand
+ 	field_eff_end
+ 
+ gFieldEffectScript_WaterSurfacing::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_WaterSurfacing
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_WaterSurfacing
+ 	field_eff_end
+ 
+ gFieldEffectScript_BerryTreeGrowthSparkle::
+@@ -170,7 +170,7 @@ gFieldEffectScript_BerryTreeGrowthSparkle::
+ 	field_eff_end
+ 
+ gFieldEffectScript_DeepSandFootprints::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_DeepSandFootprints
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_DeepSandFootprints
+ 	field_eff_end
+ 
+ gFieldEffectScript_PokeCenterHeal::
+@@ -207,15 +207,15 @@ gFieldEffectScript_FlyIn::
+ 	field_eff_end
+ 
+ gFieldEffectScript_QuestionMarkIcon::
+-	field_eff_callnative FldEff_QuestionMarkIcon
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_ArrowEmotionsFieldEffect, FldEff_QuestionMarkIcon
+ 	field_eff_end
+ 
+ gFieldEffectScript_FeetInFlowingWater::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_FeetInFlowingWater
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_FeetInFlowingWater
+ 	field_eff_end
+ 
+ gFieldEffectScript_BikeTireTracks::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_BikeTireTracks
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_BikeTireTracks
+ 	field_eff_end
+ 
+ gFieldEffectScript_SandDisguisePlaceholder::
+@@ -239,11 +239,11 @@ gFieldEffectScript_SandPile::
+ 	field_eff_end
+ 
+ gFieldEffectScript_ShortGrass::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_ShortGrass
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_ShortGrass
+ 	field_eff_end
+ 
+ gFieldEffectScript_HotSpringsWater::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect1, FldEff_HotSpringsWater
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_HotSpringsWater
+ 	field_eff_end
+ 
+ gFieldEffectScript_UseWaterfall::
+@@ -255,12 +255,12 @@ gFieldEffectScript_UseDive::
+ 	field_eff_end
+ 
+ gFieldEffectScript_PokeballTrail::
+-	field_eff_loadpal gSpritePalette_Pokeball
++	field_eff_loadpaldaynight gSpritePalette_Pokeball
+ 	field_eff_callnative FldEff_PokeballTrail
+ 	field_eff_end
+ 
+ gFieldEffectScript_HeartIcon::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_HeartIcon
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_HeartIcon
+ 	field_eff_end
+ 
+ gFieldEffectScript_Nop47::
+@@ -272,11 +272,11 @@ gFieldEffectScript_Nop48::
+ 	field_eff_end
+ 
+ gFieldEffectScript_AshPuff::
+-	field_eff_loadfadedpal_callnative gSpritePalette_Ash, FldEff_AshPuff
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_Ash, FldEff_AshPuff
+ 	field_eff_end
+ 
+ gFieldEffectScript_AshLaunch::
+-	field_eff_loadfadedpal_callnative gSpritePalette_Ash, FldEff_AshLaunch
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_Ash, FldEff_AshLaunch
+ 	field_eff_end
+ 
+ gFieldEffectScript_SweetScent::
+@@ -288,27 +288,27 @@ gFieldEffectScript_SandPillar::
+ 	field_eff_end
+ 
+ gFieldEffectScript_Bubbles::
+-	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_Bubbles
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect0, FldEff_Bubbles
+ 	field_eff_end
+ 
+ gFieldEffectScript_Sparkle::
+-	field_eff_loadfadedpal_callnative gSpritePalette_SmallSparkle, FldEff_Sparkle
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_SmallSparkle, FldEff_Sparkle
+ 	field_eff_end
+ 
+ gFieldEffectScript_ShowSecretPowerCave::
+-	field_eff_loadfadedpal_callnative gSpritePalette_SecretPower_Cave, FldEff_SecretPowerCave
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_SecretPower_Cave, FldEff_SecretPowerCave
+ 	field_eff_end
+ 
+ gFieldEffectScript_ShowSecretPowerTree::
+-	field_eff_loadfadedpal_callnative gSpritePalette_SecretPower_Plant, FldEff_SecretPowerTree
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_SecretPower_Plant, FldEff_SecretPowerTree
+ 	field_eff_end
+ 
+ gFieldEffectScript_ShowSecretPowerShrub::
+-	field_eff_loadfadedpal_callnative gSpritePalette_SecretPower_Plant, FldEff_SecretPowerShrub
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_SecretPower_Plant, FldEff_SecretPowerShrub
+ 	field_eff_end
+ 
+ gFieldEffectScript_ShowCutGrass::
+-	field_eff_loadfadedpal_callnative gSpritePalette_CutGrass, FldEff_CutGrass
++	field_eff_loadfadedpaldaynight_callnative gSpritePalette_CutGrass, FldEff_CutGrass
+ 	field_eff_end
+ 
+ gFieldEffectScript_FieldMoveShowMonInit::
+diff --git a/data/tilesets/primary/general/override_palettes/01_05.pal b/data/tilesets/primary/general/override_palettes/01_05.pal
+new file mode 100644
+index 00000000000..121bbf15a78
+--- /dev/null
++++ b/data/tilesets/primary/general/override_palettes/01_05.pal
+@@ -0,0 +1,19 @@
++JASC-PAL
++0100
++16
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++245 245 115
++237 237 97
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
+diff --git a/data/tilesets/secondary/petalburg/override_palettes/06_08.pal b/data/tilesets/secondary/petalburg/override_palettes/06_08.pal
+new file mode 100644
+index 00000000000..97259311601
+--- /dev/null
++++ b/data/tilesets/secondary/petalburg/override_palettes/06_08.pal
+@@ -0,0 +1,19 @@
++JASC-PAL
++0100
++16
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++229 229 163
++196 196 106
++0 0 0
++0 0 0
++0 0 0
++0 0 0
++0 0 0
+diff --git a/gflib/sprite.c b/gflib/sprite.c
+index c489eb6a4c3..10cb111684d 100644
+--- a/gflib/sprite.c
++++ b/gflib/sprite.c
+@@ -2,6 +2,7 @@
+ #include "sprite.h"
+ #include "main.h"
+ #include "palette.h"
++#include "day_night.h"
+ 
+ #define MAX_SPRITE_COPY_REQUESTS 64
+ 
+@@ -93,7 +94,7 @@ static void GetAffineAnimFrame(u8 matrixNum, struct Sprite *sprite, struct Affin
+ static void ApplyAffineAnimFrame(u8 matrixNum, struct AffineAnimFrameCmd *frameCmd);
+ static u8 IndexOfSpriteTileTag(u16 tag);
+ static void AllocSpriteTileRange(u16 tag, u16 start, u16 count);
+-static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset);
++static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset, bool32 isDayNight);
+ static void UpdateSpriteMatrixAnchorPos(struct Sprite *, s32, s32);
+ 
+ typedef void (*AnimFunc)(struct Sprite *);
+@@ -1584,7 +1585,7 @@ void FreeAllSpritePalettes(void)
+         sSpritePaletteTags[i] = TAG_NONE;
+ }
+ 
+-u8 LoadSpritePalette(const struct SpritePalette *palette)
++static u8 LoadSpritePalette_HandleDayNight(const struct SpritePalette *palette, bool32 isDayNight)
+ {
+     u8 index = IndexOfSpritePaletteTag(palette->tag);
+ 
+@@ -1600,11 +1601,16 @@ u8 LoadSpritePalette(const struct SpritePalette *palette)
+     else
+     {
+         sSpritePaletteTags[index] = palette->tag;
+-        DoLoadSpritePalette(palette->data, index * 16);
++        DoLoadSpritePalette(palette->data, index * 16, isDayNight);
+         return index;
+     }
+ }
+ 
++u8 LoadSpritePalette(const struct SpritePalette *palette)
++{
++    return LoadSpritePalette_HandleDayNight(palette, FALSE);
++}
++
+ void LoadSpritePalettes(const struct SpritePalette *palettes)
+ {
+     u8 i;
+@@ -1613,9 +1619,9 @@ void LoadSpritePalettes(const struct SpritePalette *palettes)
+             break;
+ }
+ 
+-void DoLoadSpritePalette(const u16 *src, u16 paletteOffset)
++static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset, bool32 isDayNight)
+ {
+-    LoadPalette(src, OBJ_PLTT_OFFSET + paletteOffset, PLTT_SIZE_4BPP);
++    LoadPalette_HandleDayNight(src, OBJ_PLTT_OFFSET + paletteOffset, PLTT_SIZE_4BPP, isDayNight);
+ }
+ 
+ u8 AllocSpritePalette(u16 tag)
+@@ -1755,3 +1761,8 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, struct OamData *destOam, u
+ 
+     return 0;
+ }
++
++u8 LoadSpritePaletteDayNight(const struct SpritePalette *palette)
++{
++    return LoadSpritePalette_HandleDayNight(palette, TRUE);
++}
+diff --git a/gflib/sprite.h b/gflib/sprite.h
+index 86527bc4c03..64f9db4d73a 100644
+--- a/gflib/sprite.h
++++ b/gflib/sprite.h
+@@ -322,5 +322,6 @@ void CopyFromSprites(u8 *dest);
+ u8 SpriteTileAllocBitmapOp(u16 bit, u8 op);
+ void ClearSpriteCopyRequests(void);
+ void ResetAffineAnimData(void);
++u8 LoadSpritePaletteDayNight(const struct SpritePalette *palette);
+ 
+ #endif //GUARD_SPRITE_H
+diff --git a/include/constants/day_night.h b/include/constants/day_night.h
+new file mode 100644
+index 00000000000..b7dbd345e67
+--- /dev/null
++++ b/include/constants/day_night.h
+@@ -0,0 +1,22 @@
++#ifndef GUARD_CONSTANTS_DAY_NIGHT_H
++#define GUARD_CONSTANTS_DAY_NIGHT_H
++
++#define HOUR_MORNING 4
++#define HOUR_DAY 10
++#define HOUR_NIGHT 20
++
++// not real times of day but useful for specifying override times
++#define HOUR_AFTERNOON 18
++#define HOUR_MIDNIGHT_0 0
++#define HOUR_MIDNIGHT_24 24
++
++#define TIME_MORNING 0
++#define TIME_DAY 1
++#define TIME_NIGHT 2
++#define TIMES_OF_DAY_COUNT 3
++
++#define TINT_PERIODS_PER_HOUR 60
++#define MINUTES_PER_TINT_PERIOD (60 / TINT_PERIODS_PER_HOUR)
++#define TINT_PERIODS_COUNT (24 * TINT_PERIODS_PER_HOUR)
++
++#endif  // GUARD_CONSTANTS_DAY_NIGHT_H
+diff --git a/include/constants/field_effects.h b/include/constants/field_effects.h
+index a620409479a..4b3f3930313 100644
+--- a/include/constants/field_effects.h
++++ b/include/constants/field_effects.h
+@@ -111,6 +111,7 @@
+ #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003
+ #define FLDEFF_PAL_TAG_GENERAL_0          0x1004
+ #define FLDEFF_PAL_TAG_GENERAL_1          0x1005
++#define FLDEFF_PAL_TAG_ARROW              0x1006
+ #define FLDEFF_PAL_TAG_POKEBALL_GLOW      0x1007
+ #define FLDEFF_PAL_TAG_SECRET_POWER_PLANT 0x1008
+ #define FLDEFF_PAL_TAG_POKEBALL_TRAIL     0x1009
+diff --git a/include/day_night.h b/include/day_night.h
+new file mode 100644
+index 00000000000..b5159c48a98
+--- /dev/null
++++ b/include/day_night.h
+@@ -0,0 +1,26 @@
++#ifndef GUARD_DAY_NIGHT_H
++#define GUARD_DAY_NIGHT_H
++
++#define PALOVER_LIST_TERM 0xFF
++
++struct PaletteOverride
++{
++    u8 slot;
++    u8 startHour;
++    u8 endHour;
++    const u16 *palette;
++};
++
++extern EWRAM_DATA u16 gPlttBufferPreDN[];
++extern EWRAM_DATA const struct PaletteOverride *gPaletteOverrides[];
++
++u8 GetCurrentTimeOfDay(void);
++void LoadCompressedPaletteDayNight(const u32 *src, u16 offset, u16 size);
++void LoadPaletteDayNight(const void *src, u16 offset, u16 size);
++void CheckClockForImmediateTimeEvents(void);
++void ProcessImmediateTimeEvents(void);
++
++void LoadCompressedPalette_HandleDayNight(const u32 *src, u16 offset, u16 size, bool32 isDayNight);
++void LoadPalette_HandleDayNight(const void *src, u16 offset, u16 size, bool32 isDayNight);
++
++#endif // GUARD_DAY_NIGHT_H
+diff --git a/include/field_effect.h b/include/field_effect.h
+index 4cde29e8a3a..0cd61bca283 100644
+--- a/include/field_effect.h
++++ b/include/field_effect.h
+@@ -47,4 +47,11 @@ void FreeResourcesAndDestroySprite(struct Sprite *sprite, u8 spriteId);
+ u8 CreateMonSprite_PicBox(u16 species, s16 x, s16 y, u8 subpriority);
+ void StartEscapeRopeFieldEffect(void);
+ 
++void FieldEffectScript_LoadFadedPaletteDayNight(u8 **script);
++void FieldEffectScript_LoadPaletteDayNight(u8 **script);
++
++bool8 FieldEffectCmd_loadfadedpaldaynight(u8 **script, u32 *val);
++bool8 FieldEffectCmd_loadpaldaynight(u8 **script, u32 *val);
++bool8 FieldEffectCmd_loadfadedpaldaynight_callnative(u8 **script, u32 *val);
++
+ #endif // GUARD_FIELD_EFFECTS_H
+diff --git a/include/field_tasks.h b/include/field_tasks.h
+index 400ad054de4..291cb08d638 100644
+--- a/include/field_tasks.h
++++ b/include/field_tasks.h
+@@ -5,5 +5,6 @@ void SetUpFieldTasks(void);
+ void ActivatePerStepCallback(u8 callbackId);
+ void ResetFieldTasksArgs(void);
+ void SetSootopolisGymCrackedIceMetatiles(void);
++void ForceTimeBasedEvents(void);
+ 
+ #endif // GUARD_FIELD_TASKS_H
+diff --git a/include/global.fieldmap.h b/include/global.fieldmap.h
+index d8fea5b23c4..685981f0696 100644
+--- a/include/global.fieldmap.h
++++ b/include/global.fieldmap.h
+@@ -44,6 +44,7 @@ struct Tileset
+     /*0x0C*/ const u16 *metatiles;
+     /*0x10*/ const u16 *metatileAttributes;
+     /*0x14*/ TilesetCB callback;
++    /*0x18*/ const struct PaletteOverride *paletteOverrides;
+ };
+ 
+ struct MapLayout
+diff --git a/include/rtc.h b/include/rtc.h
+index 7a3d3d524ba..4b66fcd5f34 100644
+--- a/include/rtc.h
++++ b/include/rtc.h
+@@ -46,4 +46,7 @@ void CalcTimeDifference(struct Time *result, struct Time *t1, struct Time *t2);
+ u32 RtcGetMinuteCount(void);
+ u32 RtcGetLocalDayCount(void);
+ 
++void RtcGetRawInfoFast(struct SiiRtcInfo *rtc);
++void RtcCalcLocalTimeFast(void);
++
+ #endif // GUARD_RTC_UTIL_H
+diff --git a/ld_script.txt b/ld_script.txt
+index bd9d7c4a352..13ca7245b75 100644
+--- a/ld_script.txt
++++ b/ld_script.txt
+@@ -343,6 +343,7 @@ SECTIONS {
+         src/gym_leader_rematch.o(.text);
+         src/battle_transition_frontier.o(.text);
+         src/international_string_util.o(.text);
++        src/day_night.o(.text);
+     } =0
+ 
+     script_data :
+@@ -705,6 +706,7 @@ SECTIONS {
+         data/mystery_gift.o(.rodata);
+         src/m4a_tables.o(.rodata);
+         data/sound_data.o(.rodata);
++        src/day_night.o(.rodata);
+     } =0
+ 
+     song_data :
+diff --git a/src/data/field_effects/field_effect_objects.h b/src/data/field_effects/field_effect_objects.h
+index d19adf6f0b7..cbae3406238 100755
+--- a/src/data/field_effects/field_effect_objects.h
++++ b/src/data/field_effects/field_effect_objects.h
+@@ -267,7 +267,7 @@ static const union AnimCmd *const sAnimTable_Arrow[] =
+ 
+ const struct SpriteTemplate gFieldEffectObjectTemplate_Arrow = {
+     .tileTag = TAG_NONE,
+-    .paletteTag = TAG_NONE,
++    .paletteTag = FLDEFF_PAL_TAG_ARROW,
+     .oam = &gObjectEventBaseOam_16x16,
+     .anims = sAnimTable_Arrow,
+     .images = sPicTable_Arrow,
+@@ -1287,3 +1287,4 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_Rayquaza = {
+ };
+ 
+ static const struct SpritePalette sSpritePalette_Unused = {gObjectEventPal_Npc3, FLDEFF_PAL_TAG_UNKNOWN};
++const struct SpritePalette gSpritePalette_ArrowEmotionsFieldEffect = {gObjectEventPal_Brendan, FLDEFF_PAL_TAG_ARROW};
+diff --git a/src/data/tilesets/headers.h b/src/data/tilesets/headers.h
+index 2eae1be1ea7..ec515864216 100644
+--- a/src/data/tilesets/headers.h
++++ b/src/data/tilesets/headers.h
+@@ -7,6 +7,7 @@ const struct Tileset gTileset_General =
+     .metatiles = gMetatiles_General,
+     .metatileAttributes = gMetatileAttributes_General,
+     .callback = InitTilesetAnim_General,
++    .paletteOverrides = gTilesetPalOverrides_General,
+ };
+ 
+ const struct Tileset gTileset_Petalburg =
+@@ -18,6 +19,7 @@ const struct Tileset gTileset_Petalburg =
+     .metatiles = gMetatiles_Petalburg,
+     .metatileAttributes = gMetatileAttributes_Petalburg,
+     .callback = InitTilesetAnim_Petalburg,
++    .paletteOverrides = gTilesetPalOverrides_Petalburg,
+ };
+ 
+ const struct Tileset gTileset_Rustboro =
+diff --git a/src/data/tilesets/overrides.h b/src/data/tilesets/overrides.h
+new file mode 100644
+index 00000000000..4ac72d6e94c
+--- /dev/null
++++ b/src/data/tilesets/overrides.h
+@@ -0,0 +1,39 @@
++static const u16 sTilesetPalOverride_General01_05[] = INCBIN_U16("data/tilesets/primary/general/override_palettes/01_05.gbapal");
++
++static const u16 sTilesetPalOverride_Petalburg06_08[] = INCBIN_U16("data/tilesets/secondary/petalburg/override_palettes/06_08.gbapal");
++
++#define OVERRIDES_END { .slot = 0xFF, }
++
++const struct PaletteOverride gTilesetPalOverrides_General[] =
++{
++    {
++        .slot = 1,
++        .startHour = HOUR_NIGHT,
++        .endHour = HOUR_MORNING,
++        .palette = sTilesetPalOverride_General01_05,
++    },
++    {
++        .slot = 5,
++        .startHour = HOUR_NIGHT,
++        .endHour = HOUR_MORNING,
++        .palette = sTilesetPalOverride_General01_05,
++    },
++    OVERRIDES_END
++};
++
++const struct PaletteOverride gTilesetPalOverrides_Petalburg[] =
++{
++    {
++        .slot = 6,
++        .startHour = HOUR_NIGHT,
++        .endHour = HOUR_MORNING,
++        .palette = sTilesetPalOverride_Petalburg06_08,
++    },
++    {
++        .slot = 8,
++        .startHour = HOUR_NIGHT,
++        .endHour = HOUR_MORNING,
++        .palette = sTilesetPalOverride_Petalburg06_08,
++    },
++    OVERRIDES_END
++};
+diff --git a/src/day_night.c b/src/day_night.c
+new file mode 100644
+index 00000000000..c0be19bf7a5
+--- /dev/null
++++ b/src/day_night.c
+@@ -0,0 +1,288 @@
++#include "global.h"
++#include "day_night.h"
++#include "decompress.h"
++#include "event_data.h"
++#include "field_tasks.h"
++#include "field_weather.h"
++#include "overworld.h"
++#include "palette.h"
++#include "rtc.h"
++#include "constants/day_night.h"
++#include "constants/region_map_sections.h"
++#include "constants/rgb.h"
++#include "strings.h"
++#include "string_util.h"
++#include "fieldmap.h"
++
++#define TINT_MORNING Q_8_8(0.7), Q_8_8(0.7), Q_8_8(0.9)
++#define TINT_DAY Q_8_8(1.0), Q_8_8(1.0), Q_8_8(1.0)
++#define TINT_NIGHT Q_8_8(0.6), Q_8_8(0.6), Q_8_8(0.92)
++
++EWRAM_DATA u16 gPlttBufferPreDN[PLTT_BUFFER_SIZE] = {0};
++EWRAM_DATA const struct PaletteOverride *gPaletteOverrides[4] = {NULL};
++
++static EWRAM_DATA struct {
++    bool8 initialized:1;
++    bool8 retintPhase:1;
++    u8 timeOfDay;
++    u16 prevTintPeriod; // tint period associated with currently drawn palettes
++    u16 currTintPeriod; // tint period associated with currRGBTint
++    u16 currRGBTint[3];
++} sDNSystemControl = {0};
++
++static const u16 sTimeOfDayTints[][3] = {
++    [0] =   {TINT_NIGHT},
++    [1] =   {TINT_NIGHT},
++    [2] =   {TINT_NIGHT},
++    [3] =   {TINT_NIGHT},
++    [4] =   {Q_8_8(0.6), Q_8_8(0.65), Q_8_8(1.0)},
++    [5] =   {TINT_MORNING},
++    [6] =   {TINT_MORNING},
++    [7] =   {TINT_MORNING},
++    [8] =   {Q_8_8(0.9), Q_8_8(0.85), Q_8_8(1.0)},
++    [9] =   {Q_8_8(1.0), Q_8_8(0.9), Q_8_8(1.0)},
++    [10] =  {TINT_DAY},
++    [11] =  {TINT_DAY},
++    [12] =  {TINT_DAY},
++    [13] =  {TINT_DAY},
++    [14] =  {TINT_DAY},
++    [15] =  {TINT_DAY},
++    [16] =  {TINT_DAY},
++    [17] =  {Q_8_8(1.0), Q_8_8(0.98), Q_8_8(0.9)},
++    [18] =  {Q_8_8(0.9), Q_8_8(0.7), Q_8_8(0.67)},
++    [19] =  {Q_8_8(0.75), Q_8_8(0.66), Q_8_8(0.77)},
++    [20] =  {Q_8_8(0.7), Q_8_8(0.63), Q_8_8(0.82)},
++    [21] =  {TINT_NIGHT},
++    [22] =  {TINT_NIGHT},
++    [23] =  {TINT_NIGHT},
++};
++
++u8 GetCurrentTimeOfDay(void)
++{
++    if (gLocalTime.hours < HOUR_MORNING)
++        return TIME_NIGHT;
++    else if (gLocalTime.hours < HOUR_DAY)
++        return TIME_MORNING;
++    else if (gLocalTime.hours < HOUR_NIGHT)
++        return TIME_DAY;
++
++    return TIME_NIGHT;
++}
++
++static void LoadPaletteOverrides(void)
++{
++    u32 i, j;
++    const u16* src;
++    u16* dest;
++    s8 hour = gLocalTime.hours;
++
++    for (i = 0; i < ARRAY_COUNT(gPaletteOverrides); i++)
++    {
++        const struct PaletteOverride *curr = gPaletteOverrides[i];
++        if (curr != NULL)
++        {
++            while (curr->slot != PALOVER_LIST_TERM && curr->palette != NULL)
++            {
++                if ((curr->startHour < curr->endHour && hour >= curr->startHour && hour < curr->endHour) ||
++                    (curr->startHour > curr->endHour && (hour >= curr->startHour || hour < curr->endHour)))
++                {
++                    for (j = 0, src = curr->palette, dest = &gPlttBufferUnfaded[curr->slot * 16]; j < 16; j++, src++, dest++)
++                    {
++                        if (*src != RGB_BLACK)
++                            *dest = *src;
++                    }
++                }
++                curr++;
++            }
++        }
++    }
++}
++
++static bool32 LerpColors(u16 *rgbDest, const u16 *rgb1, const u16 *rgb2, u8 coeff)
++{
++    u16 rgbTemp[3];
++
++    memcpy(rgbTemp, rgb1, sizeof(rgbTemp));
++
++    if (rgb1[0] != rgb2[0] ||
++        rgb1[1] != rgb2[1] ||
++        rgb1[2] != rgb2[2])
++    {
++        rgbTemp[0] = (((rgb2[0] - rgb1[0]) * coeff) / TINT_PERIODS_PER_HOUR) + rgb1[0];
++        rgbTemp[1] = (((rgb2[1] - rgb1[1]) * coeff) / TINT_PERIODS_PER_HOUR) + rgb1[1];
++        rgbTemp[2] = (((rgb2[2] - rgb1[2]) * coeff) / TINT_PERIODS_PER_HOUR) + rgb1[2];
++    }
++
++    if (rgbTemp[0] != rgbDest[0] ||
++        rgbTemp[1] != rgbDest[1] ||
++        rgbTemp[2] != rgbDest[2])
++    {
++        memcpy(rgbDest, rgbTemp, sizeof(rgbTemp));
++        return TRUE;
++    }
++
++    return FALSE;
++}
++
++static void TintPalette_CustomToneWithCopy(const u16 *src, u16 *dest, u16 count, u16 rTone, u16 gTone, u16 bTone, bool32 excludeZeroes)
++{
++    s32 r, g, b, i;
++    u32 gray;
++
++    for (i = 0; i < count; i++, src++, dest++)
++    {
++        if (excludeZeroes && *src == RGB_BLACK)
++            continue;
++
++        r = (*src >>  0) & 0x1F;
++        g = (*src >>  5) & 0x1F;
++        b = (*src >> 10) & 0x1F;
++
++        r = (u16)((rTone * r)) >> 8;
++        g = (u16)((gTone * g)) >> 8;
++        b = (u16)((bTone * b)) >> 8;
++
++        if (r > 31)
++            r = 31;
++        if (g > 31)
++            g = 31;
++        if (b > 31)
++            b = 31;
++
++        *dest = (b << 10) | (g << 5) | (r << 0);
++    }
++}
++
++static void TintPaletteForDayNight(u16 offset, u16 size)
++{
++    if (IsMapTypeOutdoors(gMapHeader.mapType))
++    {
++        s8 hour, nextHour;
++        u8 hourPhase;
++        u16 period;
++
++        RtcCalcLocalTimeFast();
++
++        hour = gLocalTime.hours;
++        hourPhase = gLocalTime.minutes / MINUTES_PER_TINT_PERIOD;
++
++        period = (hour * TINT_PERIODS_PER_HOUR) + hourPhase;
++
++        if (!sDNSystemControl.initialized || sDNSystemControl.currTintPeriod != period)
++        {
++            sDNSystemControl.initialized = TRUE;
++            sDNSystemControl.currTintPeriod = period;
++            nextHour = (hour + 1) % 24;
++            LerpColors(sDNSystemControl.currRGBTint, sTimeOfDayTints[hour], sTimeOfDayTints[nextHour], hourPhase);
++        }
++
++        TintPalette_CustomToneWithCopy(&gPlttBufferPreDN[offset], &gPlttBufferUnfaded[offset], size / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], FALSE);
++        LoadPaletteOverrides();
++    }
++    else
++    {
++        CpuCopy16(&gPlttBufferPreDN[offset], &gPlttBufferUnfaded[offset], size);
++    }
++}
++
++void LoadCompressedPaletteDayNight(const u32 *src, u16 offset, u16 size)
++{
++    LoadCompressedPalette_HandleDayNight(src, offset, size, TRUE);
++}
++
++void LoadPaletteDayNight(const void *src, u16 offset, u16 size)
++{
++    LoadPalette_HandleDayNight(src, offset, size, TRUE);
++}
++
++void CheckClockForImmediateTimeEvents(void)
++{
++    if (!sDNSystemControl.retintPhase && IsMapTypeOutdoors(gMapHeader.mapType))
++        RtcCalcLocalTimeFast();
++}
++
++void ProcessImmediateTimeEvents(void)
++{
++    u32 period;
++
++    if (IsMapTypeOutdoors(gMapHeader.mapType))
++    {
++        if (sDNSystemControl.retintPhase)
++        {
++            sDNSystemControl.retintPhase = FALSE;
++            TintPalette_CustomToneWithCopy(&gPlttBufferPreDN[BG_PLTT_SIZE / 2], &gPlttBufferUnfaded[BG_PLTT_SIZE / 2], OBJ_PLTT_SIZE / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], TRUE);
++            LoadPaletteOverrides();
++ 
++            if (gWeatherPtr->palProcessingState != WEATHER_PAL_STATE_SCREEN_FADING_IN &&
++                gWeatherPtr->palProcessingState != WEATHER_PAL_STATE_SCREEN_FADING_OUT)
++            {
++                CpuCopy16(gPlttBufferUnfaded, gPlttBufferFaded, PLTT_SIZE);
++
++                #define paletteIndex period
++                for (paletteIndex = 0; paletteIndex < NUM_PALS_TOTAL; paletteIndex++)
++                    ApplyWeatherColorMapToPal(paletteIndex);
++                #undef paletteIndex
++            }
++        }
++        else
++        {
++            s8 hour, nextHour;
++            u8 hourPhase;
++
++            hour = gLocalTime.hours;
++            hourPhase = gLocalTime.minutes / MINUTES_PER_TINT_PERIOD;
++
++            period = (hour * TINT_PERIODS_PER_HOUR) + hourPhase;
++
++            if (!sDNSystemControl.initialized || sDNSystemControl.prevTintPeriod != period)
++            {
++                sDNSystemControl.initialized = TRUE;
++                sDNSystemControl.prevTintPeriod = sDNSystemControl.currTintPeriod = period;
++                nextHour = (hour + 1) % 24;
++                LerpColors(sDNSystemControl.currRGBTint, sTimeOfDayTints[hour], sTimeOfDayTints[nextHour], hourPhase);
++                TintPalette_CustomToneWithCopy(gPlttBufferPreDN, gPlttBufferUnfaded, BG_PLTT_SIZE / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], TRUE);
++                sDNSystemControl.retintPhase = TRUE;
++            }
++        }
++    }
++
++    #define currentTimeOfDay period
++    currentTimeOfDay = GetCurrentTimeOfDay();
++    if (sDNSystemControl.timeOfDay != currentTimeOfDay)
++    {
++        sDNSystemControl.timeOfDay = currentTimeOfDay;
++        ForceTimeBasedEvents(); // for misc events that should run on time of day boundaries
++    }
++    #undef currentTimeOfDay
++}
++
++void LoadCompressedPalette_HandleDayNight(const u32 *src, u16 offset, u16 size, bool32 isDayNight)
++{
++    LZ77UnCompWram(src, gPaletteDecompressionBuffer);
++    if (isDayNight)
++    {
++        CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferPreDN[offset], size);
++        TintPaletteForDayNight(offset, size);
++        CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], size);
++    }
++    else
++    {
++        CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferUnfaded[offset], size);
++        CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferFaded[offset], size);
++    }
++}
++
++void LoadPalette_HandleDayNight(const void *src, u16 offset, u16 size, bool32 isDayNight)
++{
++    if (isDayNight)
++    {
++        CpuCopy16(src, &gPlttBufferPreDN[offset], size);
++        TintPaletteForDayNight(offset, size);
++        CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], size);
++    }
++    else
++    {
++        CpuCopy16(src, &gPlttBufferUnfaded[offset], size);
++        CpuCopy16(src, &gPlttBufferFaded[offset], size);
++    }
++}
+diff --git a/src/event_object_movement.c b/src/event_object_movement.c
+index be0c4ce26df..9c2c92f1002 100644
+--- a/src/event_object_movement.c
++++ b/src/event_object_movement.c
+@@ -29,6 +29,7 @@
+ #include "constants/mauville_old_man.h"
+ #include "constants/trainer_types.h"
+ #include "constants/union_room.h"
++#include "day_night.h"
+ 
+ // this file was known as evobjmv.c in Game Freak's original source
+ 
+@@ -2016,6 +2017,7 @@ static void LoadObjectEventPaletteSet(u16 *paletteTags)
+         LoadObjectEventPalette(paletteTags[i]);
+ }
+ 
++// NOTE: Does not use LoadSpritePaletteDayNight because of naming screen
+ static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette)
+ {
+     if (IndexOfSpritePaletteTag(spritePalette->tag) != 0xFF)
+@@ -2029,7 +2031,7 @@ void PatchObjectPalette(u16 paletteTag, u8 paletteSlot)
+     // paletteTag is assumed to exist in sObjectEventSpritePalettes
+     u8 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
+ 
+-    LoadPalette(sObjectEventSpritePalettes[paletteIndex].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
++    LoadPaletteDayNight(sObjectEventSpritePalettes[paletteIndex].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
+ }
+ 
+ void PatchObjectPaletteRange(const u16 *paletteTags, u8 minSlot, u8 maxSlot)
+diff --git a/src/field_effect.c b/src/field_effect.c
+index 7cae89d22fc..95e797d2b83 100644
+--- a/src/field_effect.c
++++ b/src/field_effect.c
+@@ -31,6 +31,7 @@
+ #include "constants/metatile_behaviors.h"
+ #include "constants/rgb.h"
+ #include "constants/songs.h"
++#include "day_night.h"
+ 
+ #define subsprite_table(ptr) {.subsprites = ptr, .subspriteCount = (sizeof ptr) / (sizeof(struct Subsprite))}
+ 
+@@ -281,6 +282,10 @@ bool8 (*const gFieldEffectScriptFuncs[])(u8 **, u32 *) =
+     FieldEffectCmd_loadgfx_callnative,
+     FieldEffectCmd_loadtiles_callnative,
+     FieldEffectCmd_loadfadedpal_callnative,
++    // Added for day and night system
++    FieldEffectCmd_loadpaldaynight,
++    FieldEffectCmd_loadfadedpaldaynight,
++    FieldEffectCmd_loadfadedpaldaynight_callnative,
+ };
+ 
+ static const struct OamData sOam_64x64 =
+@@ -3913,3 +3918,40 @@ static void Task_MoveDeoxysRock(u8 taskId)
+ #undef tVelocityY
+ #undef tMoveSteps
+ #undef tObjEventId
++
++bool8 FieldEffectCmd_loadpaldaynight(u8 **script, u32 *val)
++{
++    (*script)++;
++    FieldEffectScript_LoadPaletteDayNight(script);
++    return TRUE;
++}
++
++bool8 FieldEffectCmd_loadfadedpaldaynight(u8 **script, u32 *val)
++{
++    (*script)++;
++    FieldEffectScript_LoadFadedPaletteDayNight(script);
++    return TRUE;
++}
++
++bool8 FieldEffectCmd_loadfadedpaldaynight_callnative(u8 **script, u32 *val)
++{
++    (*script)++;
++    FieldEffectScript_LoadFadedPaletteDayNight(script);
++    FieldEffectScript_CallNative(script, val);
++    return TRUE;
++}
++
++void FieldEffectScript_LoadFadedPaletteDayNight(u8 **script)
++{
++    struct SpritePalette *palette = (struct SpritePalette *)FieldEffectScript_ReadWord(script);
++    LoadSpritePaletteDayNight(palette);
++    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(palette->tag));
++    (*script) += 4;
++}
++
++void FieldEffectScript_LoadPaletteDayNight(u8 **script)
++{
++    struct SpritePalette *palette = (struct SpritePalette *)FieldEffectScript_ReadWord(script);
++    LoadSpritePaletteDayNight(palette);
++    (*script) += 4;
++}
+diff --git a/src/field_effect_helpers.c b/src/field_effect_helpers.c
+index 9421aaf27ac..ad7b1be7e13 100755
+--- a/src/field_effect_helpers.c
++++ b/src/field_effect_helpers.c
+@@ -171,6 +171,7 @@ static void UpdateObjectReflectionSprite(struct Sprite *reflectionSprite)
+ #undef sIsStillReflection
+ 
+ extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
++extern const struct SpritePalette gSpritePalette_ArrowEmotionsFieldEffect;
+ 
+ u8 CreateWarpArrowSprite(void)
+ {
+@@ -188,8 +189,13 @@ u8 CreateWarpArrowSprite(void)
+     return spriteId;
+ }
+ 
++// this function is only used for the warp arrow sprite
+ void SetSpriteInvisible(u8 spriteId)
+ {
++    // needed in order to trick the palette system into thinking that no sprite is using that palette
++    u8 paletteNum = gSprites[spriteId].oam.paletteNum;
++    gSprites[spriteId].oam.paletteNum = 0;
++    FieldEffectFreePaletteIfUnused(paletteNum);
+     gSprites[spriteId].invisible = TRUE;
+ }
+ 
+@@ -209,6 +215,7 @@ void ShowWarpArrowSprite(u8 spriteId, u8 direction, s16 x, s16 y)
+         sprite->invisible = FALSE;
+         sprite->data[0] = x;
+         sprite->data[1] = y;
++        sprite->oam.paletteNum = LoadSpritePalette(&gSpritePalette_ArrowEmotionsFieldEffect);
+         StartSpriteAnim(sprite, direction - 1);
+     }
+ }
+diff --git a/src/field_tasks.c b/src/field_tasks.c
+index dec5cba8002..48e74dd7c19 100644
+--- a/src/field_tasks.c
++++ b/src/field_tasks.c
+@@ -20,6 +20,7 @@
+ #include "constants/items.h"
+ #include "constants/songs.h"
+ #include "constants/metatile_labels.h"
++#include "day_night.h"
+ 
+ /*  This file handles some persistent tasks that run in the overworld.
+  *  - Task_RunTimeBasedEvents: Periodically updates local time and RTC events. Also triggers ambient cries.
+@@ -141,6 +142,7 @@ static void Task_RunPerStepCallback(u8 taskId)
+ #define tState           data[0]
+ #define tAmbientCryState data[1]
+ #define tAmbientCryDelay data[2]
++#define tForceTimeUpdate data[3]
+ 
+ #define TIME_UPDATE_INTERVAL (1 << 12)
+ 
+@@ -166,14 +168,31 @@ static void Task_RunTimeBasedEvents(u8 taskId)
+ {
+     s16 *data = gTasks[taskId].data;
+ 
++    ProcessImmediateTimeEvents();
++
+     if (!ArePlayerFieldControlsLocked())
+     {
+         RunTimeBasedEvents(data);
+         UpdateAmbientCry(&tAmbientCryState, &tAmbientCryDelay);
+     }
++
++    if (tForceTimeUpdate)
++    {
++        tForceTimeUpdate = 0;
++        DoTimeBasedEvents();
++    }
++}
++
++void ForceTimeBasedEvents(void)
++{
++    u8 taskId = FindTaskIdByFunc(Task_RunTimeBasedEvents);
++
++    if (taskId != 0xFF)
++        gTasks[taskId].tForceTimeUpdate = 1;
+ }
+ 
+ #undef tState
++#undef tForceTimeUpdate
+ 
+ void SetUpFieldTasks(void)
+ {
+diff --git a/src/fieldmap.c b/src/fieldmap.c
+index 89d6b602c2e..77ff085987c 100644
+--- a/src/fieldmap.c
++++ b/src/fieldmap.c
+@@ -16,6 +16,7 @@
+ #include "tv.h"
+ #include "constants/rgb.h"
+ #include "constants/metatile_behaviors.h"
++#include "day_night.h"
+ 
+ struct ConnectionFlags
+ {
+@@ -879,18 +880,21 @@ void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size)
+     {
+         if (tileset->isSecondary == FALSE)
+         {
++            gPaletteOverrides[0] = tileset->paletteOverrides;
+             LoadPalette(&black, destOffset, PLTT_SIZEOF(1));
+-            LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
++            LoadPaletteDayNight(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
+             ApplyGlobalTintToPaletteEntries(destOffset + 1, (size - PLTT_SIZEOF(1)) >> 1);
+         }
+         else if (tileset->isSecondary == TRUE)
+         {
+-            LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
++            gPaletteOverrides[1] = tileset->paletteOverrides;
++            LoadPaletteDayNight(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
+         }
+         else
+         {
+-            LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
++            gPaletteOverrides[2] = tileset->paletteOverrides;
++            LoadCompressedPaletteDayNight((const u32 *)tileset->palettes, destOffset, size);
+             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
+         }
+     }
+diff --git a/src/palette.c b/src/palette.c
+index 577257eff32..ccd60f30a7b 100644
+--- a/src/palette.c
++++ b/src/palette.c
+@@ -5,6 +5,8 @@
+ #include "gpu_regs.h"
+ #include "task.h"
+ #include "constants/rgb.h"
++#include "day_night.h"
++#include "constants/day_night.h"
+ 
+ enum
+ {
+@@ -83,15 +85,12 @@ static const u8 sRoundedDownGrayscaleMap[] = {
+ 
+ void LoadCompressedPalette(const u32 *src, u16 offset, u16 size)
+ {
+-    LZDecompressWram(src, gPaletteDecompressionBuffer);
+-    CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferUnfaded[offset], size);
+-    CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferFaded[offset], size);
++    LoadCompressedPalette_HandleDayNight(src, offset, size, FALSE);
+ }
+ 
+ void LoadPalette(const void *src, u16 offset, u16 size)
+ {
+-    CpuCopy16(src, &gPlttBufferUnfaded[offset], size);
+-    CpuCopy16(src, &gPlttBufferFaded[offset], size);
++    LoadPalette_HandleDayNight(src, offset, size, FALSE);
+ }
+ 
+ void FillPalette(u16 value, u16 offset, u16 size)
+diff --git a/src/pokemon.c b/src/pokemon.c
+index e8d334a6ac1..7e2128a55ed 100644
+--- a/src/pokemon.c
++++ b/src/pokemon.c
+@@ -47,6 +47,8 @@
+ #include "constants/songs.h"
+ #include "constants/trainers.h"
+ #include "constants/union_room.h"
++#include "day_night.h"
++#include "constants/day_night.h"
+ 
+ struct SpeciesItem
+ {
+@@ -5487,12 +5489,12 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
+                 break;
+             case EVO_FRIENDSHIP_DAY:
+                 RtcCalcLocalTime();
+-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= 220)
++                if (GetCurrentTimeOfDay() != TIME_NIGHT && friendship >= 220)
+                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                 break;
+             case EVO_FRIENDSHIP_NIGHT:
+                 RtcCalcLocalTime();
+-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= 220)
++                if (GetCurrentTimeOfDay() == TIME_NIGHT && friendship >= 220)
+                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                 break;
+             case EVO_LEVEL:
+diff --git a/src/rtc.c b/src/rtc.c
+index b135a675a84..914de900e86 100644
+--- a/src/rtc.c
++++ b/src/rtc.c
+@@ -344,3 +344,25 @@ u32 RtcGetLocalDayCount(void)
+ {
+     return RtcGetDayCount(&sRtc);
+ }
++
++static void RtcGetInfoFast(struct SiiRtcInfo *rtc)
++{
++    if (sErrorStatus & RTC_ERR_FLAG_MASK)
++        *rtc = sRtcDummy;
++    else
++        RtcGetRawInfoFast(rtc);
++}
++
++void RtcGetRawInfoFast(struct SiiRtcInfo *rtc)
++{
++    RtcGetStatus(rtc);
++    RtcDisableInterrupts();
++    SiiRtcGetTime(rtc);
++    RtcRestoreInterrupts();
++}
++
++void RtcCalcLocalTimeFast(void)
++{
++    RtcGetInfoFast(&sRtc);
++    RtcCalcTimeDifference(&sRtc, &gLocalTime, &gSaveBlock2Ptr->localTimeOffset);
++}
+diff --git a/src/scrcmd.c b/src/scrcmd.c
+index 45cb65afb17..7daea4a63fe 100644
+--- a/src/scrcmd.c
++++ b/src/scrcmd.c
+@@ -49,6 +49,7 @@
+ #include "tv.h"
+ #include "window.h"
+ #include "constants/event_objects.h"
++#include "day_night.h"
+ 
+ typedef u16 (*SpecialFunc)(void);
+ typedef void (*NativeFunc)(void);
+@@ -699,6 +700,7 @@ bool8 ScrCmd_gettime(struct ScriptContext *ctx)
+     gSpecialVar_0x8000 = gLocalTime.hours;
+     gSpecialVar_0x8001 = gLocalTime.minutes;
+     gSpecialVar_0x8002 = gLocalTime.seconds;
++    gSpecialVar_0x8003 = GetCurrentTimeOfDay();
+     return FALSE;
+ }
+ 
+diff --git a/src/tilesets.c b/src/tilesets.c
+index 2cc1da81d38..b70db6c73b2 100644
+--- a/src/tilesets.c
++++ b/src/tilesets.c
+@@ -1,7 +1,10 @@
+ #include "global.h"
+ #include "tilesets.h"
+ #include "tileset_anims.h"
++#include "day_night.h"
++#include "constants/day_night.h"
+ 
+ #include "data/tilesets/graphics.h"
+ #include "data/tilesets/metatiles.h"
++#include "data/tilesets/overrides.h"
+ #include "data/tilesets/headers.h"
+diff --git a/sym_ewram.txt b/sym_ewram.txt
+index 414b7a3b235..bba780e8cf1 100644
+--- a/sym_ewram.txt
++++ b/sym_ewram.txt
+@@ -148,3 +148,4 @@
+ 	.include "src/faraway_island.o"
+ 	.include "src/trainer_hill.o"
+ 	.include "src/rayquaza_scene.o"
++	.include "src/day_night.o"
