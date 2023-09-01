@@ -8,7 +8,6 @@
 #include "palette.h"
 #include "rtc.h"
 #include "constants/day_night.h"
-#include "constants/region_map_sections.h"
 #include "constants/rgb.h"
 #include "strings.h"
 #include "string_util.h"
@@ -18,7 +17,7 @@
 #define TINT_DAY Q_8_8(1.0), Q_8_8(1.0), Q_8_8(1.0)
 #define TINT_NIGHT Q_8_8(0.6), Q_8_8(0.6), Q_8_8(0.92)
 
-EWRAM_DATA u16 gPlttBufferPreDN[PLTT_BUFFER_SIZE] = {0};
+EWRAM_DATA static u16 sPlttBufferPreDN[PLTT_BUFFER_SIZE] = {0};
 EWRAM_DATA const struct PaletteOverride *gPaletteOverrides[4] = {NULL};
 
 static EWRAM_DATA struct {
@@ -72,8 +71,8 @@ u8 GetCurrentTimeOfDay(void)
 static void LoadPaletteOverrides(void)
 {
     u32 i, j;
-    const u16* src;
-    u16* dest;
+    const u16 *src;
+    u16 *dest;
     s8 hour = gLocalTime.hours;
 
     for (i = 0; i < ARRAY_COUNT(gPaletteOverrides); i++)
@@ -98,11 +97,15 @@ static void LoadPaletteOverrides(void)
     }
 }
 
-static bool32 LerpColors(u16 *rgbDest, const u16 *rgb1, const u16 *rgb2, u8 coeff)
+static void LerpColors(u16 *rgbDest, s32 hour, s32 nextHour, u8 coeff)
 {
+    const u16 *rgb1, *rgb2;
     u16 rgbTemp[3];
 
+    rgb1 = sTimeOfDayTints[hour];
     memcpy(rgbTemp, rgb1, sizeof(rgbTemp));
+
+    rgb2 = sTimeOfDayTints[nextHour];
 
     if (rgb1[0] != rgb2[0] ||
         rgb1[1] != rgb2[1] ||
@@ -118,25 +121,21 @@ static bool32 LerpColors(u16 *rgbDest, const u16 *rgb1, const u16 *rgb2, u8 coef
         rgbTemp[2] != rgbDest[2])
     {
         memcpy(rgbDest, rgbTemp, sizeof(rgbTemp));
-        return TRUE;
     }
-
-    return FALSE;
 }
 
 static void TintPalette_CustomToneWithCopy(const u16 *src, u16 *dest, u16 count, u16 rTone, u16 gTone, u16 bTone, bool32 excludeZeroes)
 {
     s32 r, g, b, i;
-    u32 gray;
 
     for (i = 0; i < count; i++, src++, dest++)
     {
         if (excludeZeroes && *src == RGB_BLACK)
             continue;
 
-        r = (*src >>  0) & 0x1F;
-        g = (*src >>  5) & 0x1F;
-        b = (*src >> 10) & 0x1F;
+        r = GET_R(*src);
+        g = GET_G(*src);
+        b = GET_B(*src);
 
         r = (u16)((rTone * r)) >> 8;
         g = (u16)((gTone * g)) >> 8;
@@ -149,7 +148,7 @@ static void TintPalette_CustomToneWithCopy(const u16 *src, u16 *dest, u16 count,
         if (b > 31)
             b = 31;
 
-        *dest = (b << 10) | (g << 5) | (r << 0);
+        *dest = RGB2(r, g, b);
     }
 }
 
@@ -159,7 +158,7 @@ static void TintPaletteForDayNight(u16 offset, u16 size)
     {
         s8 hour, nextHour;
         u8 hourPhase;
-        u16 period;
+        u32 period;
 
         RtcCalcLocalTimeFast();
 
@@ -173,15 +172,15 @@ static void TintPaletteForDayNight(u16 offset, u16 size)
             sDNSystemControl.initialized = TRUE;
             sDNSystemControl.currTintPeriod = period;
             nextHour = (hour + 1) % 24;
-            LerpColors(sDNSystemControl.currRGBTint, sTimeOfDayTints[hour], sTimeOfDayTints[nextHour], hourPhase);
+            LerpColors(sDNSystemControl.currRGBTint, hour, nextHour, hourPhase);
         }
 
-        TintPalette_CustomToneWithCopy(&gPlttBufferPreDN[offset], &gPlttBufferUnfaded[offset], size / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], FALSE);
+        TintPalette_CustomToneWithCopy(&sPlttBufferPreDN[offset], &gPlttBufferUnfaded[offset], size / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], FALSE);
         LoadPaletteOverrides();
     }
     else
     {
-        CpuCopy16(&gPlttBufferPreDN[offset], &gPlttBufferUnfaded[offset], size);
+        CpuCopy16(&sPlttBufferPreDN[offset], &gPlttBufferUnfaded[offset], size);
     }
 }
 
@@ -210,9 +209,9 @@ void ProcessImmediateTimeEvents(void)
         if (sDNSystemControl.retintPhase)
         {
             sDNSystemControl.retintPhase = FALSE;
-            TintPalette_CustomToneWithCopy(&gPlttBufferPreDN[BG_PLTT_SIZE / 2], &gPlttBufferUnfaded[BG_PLTT_SIZE / 2], OBJ_PLTT_SIZE / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], TRUE);
+            TintPalette_CustomToneWithCopy(&sPlttBufferPreDN[BG_PLTT_SIZE / 2], &gPlttBufferUnfaded[BG_PLTT_SIZE / 2], OBJ_PLTT_SIZE / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], TRUE);
             LoadPaletteOverrides();
- 
+
             if (gWeatherPtr->palProcessingState != WEATHER_PAL_STATE_SCREEN_FADING_IN &&
                 gWeatherPtr->palProcessingState != WEATHER_PAL_STATE_SCREEN_FADING_OUT)
             {
@@ -239,8 +238,8 @@ void ProcessImmediateTimeEvents(void)
                 sDNSystemControl.initialized = TRUE;
                 sDNSystemControl.prevTintPeriod = sDNSystemControl.currTintPeriod = period;
                 nextHour = (hour + 1) % 24;
-                LerpColors(sDNSystemControl.currRGBTint, sTimeOfDayTints[hour], sTimeOfDayTints[nextHour], hourPhase);
-                TintPalette_CustomToneWithCopy(gPlttBufferPreDN, gPlttBufferUnfaded, BG_PLTT_SIZE / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], TRUE);
+                LerpColors(sDNSystemControl.currRGBTint, hour, nextHour, hourPhase);
+                TintPalette_CustomToneWithCopy(sPlttBufferPreDN, gPlttBufferUnfaded, BG_PLTT_SIZE / 2, sDNSystemControl.currRGBTint[0], sDNSystemControl.currRGBTint[1], sDNSystemControl.currRGBTint[2], TRUE);
                 sDNSystemControl.retintPhase = TRUE;
             }
         }
@@ -261,7 +260,7 @@ void LoadCompressedPalette_HandleDayNight(const u32 *src, u16 offset, u16 size, 
     LZ77UnCompWram(src, gPaletteDecompressionBuffer);
     if (isDayNight)
     {
-        CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferPreDN[offset], size);
+        CpuCopy16(gPaletteDecompressionBuffer, &sPlttBufferPreDN[offset], size);
         TintPaletteForDayNight(offset, size);
         CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], size);
     }
@@ -276,7 +275,7 @@ void LoadPalette_HandleDayNight(const void *src, u16 offset, u16 size, bool32 is
 {
     if (isDayNight)
     {
-        CpuCopy16(src, &gPlttBufferPreDN[offset], size);
+        CpuCopy16(src, &sPlttBufferPreDN[offset], size);
         TintPaletteForDayNight(offset, size);
         CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], size);
     }
