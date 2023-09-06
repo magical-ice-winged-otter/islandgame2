@@ -4520,6 +4520,16 @@
       "secondary_tileset": "gTileset_FireRed_SS_ANNE_Cont",
       "border_filepath": "data/layouts/ISLANDGAME_SS_RAIN_CAPTAIN_ROOM/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_SS_RAIN_CAPTAIN_ROOM/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CHERIPORT",
+      "name": "ISLANDGAME_CHERIPORT_Layout",
+      "width": 50,
+      "height": 40,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT/map.bin"
     }
   ]
 }
