@@ -880,3 +880,14 @@ const struct Tileset gTileset_FireRed_SS_ANNE_Cont =
     .metatileAttributes = gMetatileAttributes_FireRed_SS_ANNE_Cont,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_IslandgameGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_IslandgameGeneral,
+    .palettes = gTilesetPalettes_IslandgameGeneral,
+    .metatiles = gMetatiles_IslandgameGeneral,
+    .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
+    .callback = NULL,
+};

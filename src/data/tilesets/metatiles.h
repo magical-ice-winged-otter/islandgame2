@@ -222,3 +222,6 @@ const u16 gMetatileAttributes_FireRed_General_Test[] = INCBIN_U16("data/tilesets
 
 const u16 gMetatiles_FireRed_SS_ANNE_Cont[] = INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/metatiles.bin");
 const u16 gMetatileAttributes_FireRed_SS_ANNE_Cont[] = INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/metatile_attributes.bin");
+
+const u16 gMetatiles_IslandgameGeneral[] = INCBIN_U16("data/tilesets/primary/islandgame_general/metatiles.bin");
+const u16 gMetatileAttributes_IslandgameGeneral[] = INCBIN_U16("data/tilesets/primary/islandgame_general/metatile_attributes.bin");
