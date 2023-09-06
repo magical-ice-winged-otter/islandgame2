@@ -4526,7 +4526,7 @@
       "name": "ISLANDGAME_CHERIPORT_Layout",
       "width": 50,
       "height": 40,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT/map.bin"
