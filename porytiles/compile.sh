@@ -1,13 +1,13 @@
 #!/bin/bash
-
+BASE_DIR=$(dirname "$(realpath $0)")
 echo
 echo "=== COMPILING ASEPRITE ==="
 echo
-./step_compile_aseprite.sh
+$BASE_DIR/step_compile_aseprite.sh
 echo
 echo "=== COMPILING PORYTILES ==="
 echo
-./step_compile_porytiles.sh
+$BASE_DIR/step_compile_porytiles.sh
 echo
 echo "=== DONE ==="
 echo

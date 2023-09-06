@@ -1,7 +1,8 @@
 #!/bin/bash
+BASE_DIR=$(dirname "$(realpath $0)")
 
 # We want to process all aseprite files in subdirectories.
-INPUT_FILES=$(find . -iname *.aseprite)
+INPUT_FILES=$(find $BASE_DIR -iname *.aseprite)
 
 for INPUT_FILE in $INPUT_FILES
 do
