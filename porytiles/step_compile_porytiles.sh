@@ -17,10 +17,11 @@ do
 
   if [[ "$type" == "primary" ]]; then
     echo "$pory_dir/$type --> $data_dir"
-    $PORYTILES compile-primary -Wall -assign-algo=bf -transparency-color=255,0,255 -o $ISLAND_DIR/data/tilesets/primary/$data_dir/  $ISLAND_DIR/porytiles/$pory_dir/primary/
+    echo $PORYTILES
+    $PORYTILES compile-primary -Wall -assign-algo=bfs  -o $ISLAND_DIR/data/tilesets/primary/$data_dir/  $ISLAND_DIR/porytiles/$pory_dir/primary/
   elif [[ "$type" == "secondary" ]]; then
     echo "$pory_dir/$type --> $data_dir + $primary_pory_dir/primary"
-    $PORYTILES compile-secondary -Wall -assign-algo=bf -transparency-color=255,0,255 -o $ISLAND_DIR/data/tilesets/secondary/$data_dir/ $ISLAND_DIR/porytiles/$pory_dir/secondary $ISLAND_DIR/porytiles/$primary_pory_dir/primary
+    $PORYTILES compile-secondary -Wall -assign-algo=bfs -o $ISLAND_DIR/data/tilesets/secondary/$data_dir/ $ISLAND_DIR/porytiles/$pory_dir/secondary $ISLAND_DIR/porytiles/$primary_pory_dir/primary
   elif [[ -z "$type" ]]; then # check if empty
     continue
   else
