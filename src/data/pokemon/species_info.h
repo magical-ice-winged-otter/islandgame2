@@ -21069,6 +21069,27 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
+    [SPECIES_SHADOW_MIGHTYENA] =
+    { //todo
+        .baseHP        = 70,
+        .baseAttack    = 90,
+        .baseDefense   = 70,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 60,
+        .types = { TYPE_SHADOW, TYPE_SHADOW },
+        .catchRate = 127,
+        .expYield = 147,
+        .evYield_Attack    = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_QUICK_FEET, ABILITY_MOXIE},
+        .bodyColor = BODY_COLOR_BLACK,
+        .noFlip = FALSE,
+    },
 #endif
 
     [SPECIES_VENUSAUR_MEGA] =

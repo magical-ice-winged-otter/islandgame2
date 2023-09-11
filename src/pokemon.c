@@ -1255,6 +1255,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
 #endif
 #if P_GEN_C_POKEMON == TRUE
     SPECIES_TO_NATIONAL(SHADOW_LUGIA),
+    SPECIES_TO_NATIONAL(SHADOW_MIGHTYENA),
 #endif
 
     // Megas
@@ -2886,6 +2887,7 @@ const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
 
     //Custom mons
     [SPECIES_SHADOW_LUGIA - 1]           = ANIM_GROW_VIBRATE,
+    [SPECIES_SHADOW_MIGHTYENA - 1]       = ANIM_V_SHAKE,
     //Gen 4 Forms
     [SPECIES_BURMY_SANDY_CLOAK - 1]      = ANIM_V_STRETCH,
     [SPECIES_BURMY_TRASH_CLOAK - 1]      = ANIM_V_STRETCH,

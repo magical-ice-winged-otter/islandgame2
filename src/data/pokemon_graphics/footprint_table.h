@@ -911,6 +911,7 @@ const u8 *const gMonFootprintTable[] =
 #endif
 #if P_GEN_C_POKEMON
     [SPECIES_SHADOW_LUGIA] = gMonFootprint_ShadowLugia,
+    [SPECIES_SHADOW_MIGHTYENA] = gMonFootprint_ShadowMightyena,
 #endif 
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
 };

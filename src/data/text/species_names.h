@@ -917,6 +917,7 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
 #endif
 #if P_GEN_C_POKEMON == TRUE
     [SPECIES_SHADOW_LUGIA] = _("S. Lugia"),
+    [SPECIES_SHADOW_MIGHTYENA] = _("Mightyena"), //todo: do we just use normal names and rely on the sprites for recognition?
 #endif
 
     // Megas

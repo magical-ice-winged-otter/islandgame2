@@ -1211,6 +1211,7 @@ const u32 gMonFrontPic_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/bascul
 #endif
 #if P_GEN_C_POKEMON == TRUE
 const u32 gMonFrontPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/front.4bpp.lz");
+const u32 gMonFrontPic_ShadowMightyena[] = INCBIN_U32("graphics/pokemon/shadow_mightyena/anim_front.4bpp.lz");
 #endif
 
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
@@ -2427,6 +2428,7 @@ const u32 gMonBackPic_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/bascule
 #endif
 #if P_GEN_C_POKEMON == TRUE
 const u32 gMonBackPic_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/back.4bpp.lz");
+const u32 gMonBackPic_ShadowMightyena[] = INCBIN_U32("graphics/pokemon/shadow_mightyena/back.4bpp.lz");
 #endif
 
 const u32 gMonPalette_CircledQuestionMark[] = INCBIN_U32("graphics/pokemon/question_mark/circled/normal.gbapal.lz");
@@ -3662,6 +3664,7 @@ const u32 gMonPalette_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/bascule
 #endif
 #if P_GEN_C_POKEMON == TRUE
 const u32 gMonPalette_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/normal.gbapal.lz");
+const u32 gMonPalette_ShadowMightyena[] = INCBIN_U32("graphics/pokemon/shadow_mightyena/normal.gbapal.lz");
 #endif
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 
@@ -4892,6 +4895,7 @@ const u32 gMonShinyPalette_BasculegionFemale[] = INCBIN_U32("graphics/pokemon/ba
 #endif
 #if P_GEN_C_POKEMON == TRUE
 const u32 gMonShinyPalette_ShadowLugia[] = INCBIN_U32("graphics/pokemon/shadowlugia/shiny.gbapal.lz");
+const u32 gMonShinyPalette_ShadowMightyena[] = INCBIN_U32("graphics/pokemon/shadow_mightyena/shiny.gbapal.lz");
 #endif
 
 const u8 gMonIcon_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
@@ -6115,6 +6119,8 @@ const u8 gMonIcon_BasculegionFemale[] = INCBIN_U8("graphics/pokemon/basculegion/
 #endif
 #if P_GEN_C_POKEMON == TRUE
 const u8 gMonIcon_ShadowLugia[] = INCBIN_U8("graphics/pokemon/shadowlugia/icon.4bpp");
+const u8 gMonIcon_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mightyena/icon.4bpp");
+
 #endif
 const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
 
@@ -7036,4 +7042,5 @@ const u8 gMonFootprint_Calyrex[] = INCBIN_U8("graphics/pokemon/calyrex/footprint
 #endif
 #if P_GEN_C_POKEMON == TRUE
 const u8 gMonFootprint_ShadowLugia[] = INCBIN_U8("graphics/pokemon/shadowlugia/footprint.1bpp");
+const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mightyena/footprint.1bpp");
 #endif
