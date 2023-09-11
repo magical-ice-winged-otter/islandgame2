@@ -4514,12 +4514,22 @@
     {
       "id": "LAYOUT_ISLANDGAME_SS_RAIN_CAPTAIN_ROOM",
       "name": "ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 22,
+      "height": 22,
       "primary_tileset": "gTileset_FireRed_General_Test",
       "secondary_tileset": "gTileset_FireRed_SS_ANNE_Cont",
       "border_filepath": "data/layouts/ISLANDGAME_SS_RAIN_CAPTAIN_ROOM/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_SS_RAIN_CAPTAIN_ROOM/map.bin"
+    },
+    {
+      "id": "LAYOUT_SS_RAIN_CAFETERIA",
+      "name": "SS_RAIN_CAFETERIA_Layout",
+      "width": 12,
+      "height": 20,
+      "primary_tileset": "gTileset_FireRed_General_Test",
+      "secondary_tileset": "gTileset_FireRed_SS_ANNE_Cont",
+      "border_filepath": "data/layouts/SS_RAIN_CAFETERIA/border.bin",
+      "blockdata_filepath": "data/layouts/SS_RAIN_CAFETERIA/map.bin"
     }
   ]
 }

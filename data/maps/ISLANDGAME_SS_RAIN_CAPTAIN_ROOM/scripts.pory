@@ -8,5 +8,5 @@ script ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_MapScripts_EventScript_CaptainTalk {
     release
 }
 text CaptainTalk_Text {
-    format("{COLOR DARK_GRAY}Hello mate.")
+    format("{COLOR DARK_GRAY}Ahoy there! I'm the captain of this vessel. Hope you enjoy your stay at the beautiful Isles of Mariyama!")
 }
