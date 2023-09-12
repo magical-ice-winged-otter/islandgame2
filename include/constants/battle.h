@@ -414,8 +414,22 @@
 #define BATTLE_TERRAIN_DISTORTION_WORLD 19
 #define BATTLE_TERRAIN_SPACE            20
 #define BATTLE_TERRAIN_ULTRA_SPACE      21
+//add battle terrain by hard coding
+#define BATTLE_TERRAIN_FRONTIER         22
+#define BATTLE_TERRAIN_GYM              23
+#define BATTLE_TERRAIN_LEADER           24
+#define BATTLE_TERRAIN_MAGMA            25
+#define BATTLE_TERRAIN_AQUA             26
+#define BATTLE_TERRAIN_SIDNEY           27
+#define BATTLE_TERRAIN_PHOEBE           28
+#define BATTLE_TERRAIN_GLACIA           29
+#define BATTLE_TERRAIN_DRAKE            30
+#define BATTLE_TERRAIN_CHAMPION         31
+#define BATTLE_TERRAIN_GROUDON          32
+#define BATTLE_TERRAIN_KYOGRE           33
+#define BATTLE_TERRAIN_RAYQUAZA         34
 
-#define BATTLE_TERRAIN_COUNT            22
+#define BATTLE_TERRAIN_COUNT            35
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)

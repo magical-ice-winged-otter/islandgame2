@@ -29,6 +29,7 @@ void ItemUseOutOfBattle_EnigmaBerry(u8);
 void ItemUseOutOfBattle_FormChange(u8);
 void ItemUseOutOfBattle_FormChange_ConsumedOnUse(u8);
 void ItemUseOutOfBattle_Honey(u8);
+void ItemUseOutOfBattle_TmCase(u8);
 void ItemUseOutOfBattle_CannotUse(u8);
 void ItemUseOutOfBattle_Flash(u8);
 void ItemUseOutOfBattle_Fly(u8);

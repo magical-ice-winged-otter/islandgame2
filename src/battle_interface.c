@@ -2425,6 +2425,7 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
 
 #define B_EXPBAR_PIXELS 64
 #define B_HEALTHBAR_PIXELS 48
+#define B_HEALTHBAR_SPEEDUP 24 // 48 is the default value, lowering it increases the speed of hp drain
 
 s32 MoveBattleBar(u8 battlerId, u8 healthboxSpriteId, u8 whichBar, u8 unused)
 {
@@ -2437,7 +2438,7 @@ s32 MoveBattleBar(u8 battlerId, u8 healthboxSpriteId, u8 whichBar, u8 unused)
                     gBattleSpritesDataPtr->battleBars[battlerId].receivedValue,
                     &gBattleSpritesDataPtr->battleBars[battlerId].currValue,
                 #if B_FAST_HP_DRAIN == TRUE
-                    B_HEALTHBAR_PIXELS / 8, max(gBattleSpritesDataPtr->battleBars[battlerId].maxValue / B_HEALTHBAR_PIXELS, 1));
+                    B_HEALTHBAR_PIXELS / 8, max(gBattleSpritesDataPtr->battleBars[battlerId].maxValue / B_HEALTHBAR_SPEEDUP, 1));
                 #else
                     B_HEALTHBAR_PIXELS / 8, 1);
                 #endif
