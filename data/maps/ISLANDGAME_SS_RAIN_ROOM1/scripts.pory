@@ -10,6 +10,6 @@ script ISLANDGAME_SS_RAIN_ROOM1_EventScript_OldWomanTalk {
 }
 
 text SmallTalk_Text {
-    format("{COLOR DARK_GRAY}It's been almost twenty years since the last time I came here.\n"
+    format("{COLOR DARK_GRAY}It's been almost twenty years since the last time I came here.\p"
            "{COLOR DARK_GRAY}A lot sure has changed since then.")
 }
