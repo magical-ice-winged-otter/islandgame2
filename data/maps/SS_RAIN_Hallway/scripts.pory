@@ -23,8 +23,8 @@ text NPCGirl_Text {
 
 text ElectricianTalk_Text {
     format("{COLOR DARK_GRAY}I'm the captain's second in command and in charge of the ship's electronics.\p"
-           "{COLOR DARK_GRAY}Unfortunately, I can't let you down in the basement for now.\p"
-           "{COLOR DARK_GRAY}I think there's something off with the washing machine...\p"
-           "Like a {COLOR LIGHT_BLUE}ghost{COLOR DARK_GRAY} possessed it or something..."
+           "{COLOR DARK_GRAY}We're doing some maintainence right now, so I can't let you downstairs.\p"
+           "{COLOR DARK_GRAY}Apparently there's something wrong with the washing machine.\p"
+           "{COLOR DARK_GRAY}It's acting as if it was possessed by a {COLOR LIGHT_BLUE}ghost{COLOR DARK_GRAY}..."
     )
 }
