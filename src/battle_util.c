@@ -8016,11 +8016,15 @@ bool32 isMonShadowBerserk(u8 battlerId)
             return FALSE;
     }
 
-    rnd = (Random() & 4);
+    rnd = (Random() % 4); //modulo bias?
     if (rnd == 1)
     {
         DebugPrintf("shadow mon rolled berserk move");
-        return FALSE; //rename to TRUE
+        gCalledMove = MOVE_SHADOW_BLAST;
+        gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesRandomMove;
+        gBattlerTarget = GetMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
+        gHitMarker |= HITMARKER_DISOBEDIENT_MOVE;
+        return TRUE;
     } else 
     {
         DebugPrintf("shadow mon use normal move");

@@ -1588,7 +1588,7 @@ static void Cmd_attackcanceler(void)
     {
         if (isMonShadowBerserk(gBattlerAttacker))
         {
-            //return;
+            return;
         }
         switch (IsMonDisobedient())
         {
