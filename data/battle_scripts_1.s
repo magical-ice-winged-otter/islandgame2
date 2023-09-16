@@ -9477,6 +9477,12 @@ BattleScript_IgnoresAndUsesRandomMove::
 	setbyte sMOVE_EFFECT, 0
 	jumptocalledmove FALSE
 
+BattleScript_IgnoresAndUsesBerserk::
+	printstring STRINGID_USEDBERSERK
+	waitmessage B_WAIT_TIME_LONG
+	setbyte sMOVE_EFFECT, 0
+	jumptocalledmove FALSE
+
 BattleScript_MoveUsedLoafingAround::
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_LOAFING, BattleScript_MoveUsedLoafingAroundMsg
 	@ Skip ahead if not the Battle Palace message

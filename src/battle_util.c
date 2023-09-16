@@ -8021,7 +8021,7 @@ bool32 isMonShadowBerserk(u8 battlerId)
     {
         DebugPrintf("shadow mon rolled berserk move");
         gCalledMove = MOVE_SHADOW_BLAST;
-        gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesRandomMove;
+        gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesBerserk;
         gBattlerTarget = GetMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
         gHitMarker |= HITMARKER_DISOBEDIENT_MOVE;
         return TRUE;

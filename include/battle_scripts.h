@@ -187,6 +187,7 @@ extern const u8 BattleScript_NoItemSteal[];
 extern const u8 BattleScript_AbilityCuredStatus[];
 extern const u8 BattleScript_IgnoresWhileAsleep[];
 extern const u8 BattleScript_IgnoresAndUsesRandomMove[];
+extern const u8 BattleScript_IgnoresAndUsesBerserk[];
 extern const u8 BattleScript_MoveUsedLoafingAround[];
 extern const u8 BattleScript_TruantLoafingAround[];
 extern const u8 BattleScript_IgnoresAndFallsAsleep[];
