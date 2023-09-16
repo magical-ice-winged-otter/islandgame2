@@ -8010,7 +8010,9 @@ bool32 isMonShadowBerserk(u8 battlerId)
     switch (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL)) { //temporary solution, maybe we will have a list somewhere
         case SPECIES_SHADOW_LUGIA:
         case SPECIES_SHADOW_MIGHTYENA:
-            DebugPrintf("is shadow mon");
+            #ifndef NDEBUG
+                DebugPrintf("is shadow mon");
+            #endif
             break;
         default:
             return FALSE;
@@ -8019,15 +8021,19 @@ bool32 isMonShadowBerserk(u8 battlerId)
     rnd = (Random() % 4); //modulo bias?
     if (rnd == 1)
     {
-        DebugPrintf("shadow mon rolled berserk move");
-        gCalledMove = MOVE_SHADOW_BLAST;
+        #ifndef NDEBUG
+            DebugPrintf("shadow mon rolled berserk move");
+        #endif
+        gCalledMove = MOVE_BERSERK;
         gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesBerserk;
         gBattlerTarget = GetMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
         gHitMarker |= HITMARKER_DISOBEDIENT_MOVE;
         return TRUE;
     } else 
     {
-        DebugPrintf("shadow mon use normal move");
+        #ifndef NDEBUG
+            DebugPrintf("shadow mon use normal move");
+        #endif
         return FALSE;
     }
 }

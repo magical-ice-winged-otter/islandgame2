@@ -13670,6 +13670,20 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
     },
+    [MOVE_BERSERK] = //shadow mon random move
+    {
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_SHADOW,
+        .accuracy = 100,
+        .pp = 5, // doesn't matter
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED, 
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
