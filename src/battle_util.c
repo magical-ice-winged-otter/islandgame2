@@ -47,6 +47,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
+#include "debug.h"
 
 extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
 
@@ -7998,6 +7999,33 @@ static bool32 IsBattlerModernFatefulEncounter(u8 battlerId)
         && GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_MEW)
             return TRUE;
     return GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_MODERN_FATEFUL_ENCOUNTER, NULL);
+}
+
+//islandgame-add: 3 is shadow mon and will disobey
+// FALSE means it is a normal mon or it will use a normal move
+bool32 isMonShadowBerserk(u8 battlerId)
+{
+    s32 rnd;
+
+    switch (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL)) { //temporary solution, maybe we will have a list somewhere
+        case SPECIES_SHADOW_LUGIA:
+        case SPECIES_SHADOW_MIGHTYENA:
+            DebugPrintf("is shadow mon");
+            break;
+        default:
+            return FALSE;
+    }
+
+    rnd = (Random() & 4);
+    if (rnd == 1)
+    {
+        DebugPrintf("shadow mon rolled berserk move");
+        return FALSE; //rename to TRUE
+    } else 
+    {
+        DebugPrintf("shadow mon use normal move");
+        return FALSE;
+    }
 }
 
 u8 IsMonDisobedient(void)

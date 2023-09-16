@@ -1586,6 +1586,10 @@ static void Cmd_attackcanceler(void)
 
     if (!(gHitMarker & HITMARKER_OBEYS) && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS))
     {
+        if (isMonShadowBerserk(gBattlerAttacker))
+        {
+            //return;
+        }
         switch (IsMonDisobedient())
         {
         case 0:
