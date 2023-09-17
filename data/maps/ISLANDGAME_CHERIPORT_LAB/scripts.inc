@@ -20,6 +20,14 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2:
 	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
 	msgbox ReceivedEevee_Text
 	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_5
+	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1
+
+ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_5:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
 	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1
 
 

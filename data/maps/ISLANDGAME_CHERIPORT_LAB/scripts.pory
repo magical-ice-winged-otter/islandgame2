@@ -13,6 +13,16 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
         msgbox(ReceivedEevee_Text)
         waitfanfare 
+
+        msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+        if (var(VAR_RESULT)) {
+            //VAR_8004 is the parameter that the game uses to determine which mon is to be nicknamed
+            //the getgiftmonpartyslot script calcs it for us, otherwise, we would have to explicitly set the parameter to 0 (?).
+            call(Common_EventScript_GetGiftMonPartySlot)
+            call(Common_EventScript_NameReceivedPartyMon)
+        }
+
+        
     } else {
         msgbox(ProfTalk_Normal_Text)
     }
