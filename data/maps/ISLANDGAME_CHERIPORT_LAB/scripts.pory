@@ -1,3 +1,6 @@
+//see moves.h
+const I_MOVES_COUNT = 831
+
 mapscripts ISLANDGAME_CHERIPORT_LAB_MapScripts {}
 
 
@@ -8,7 +11,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         msgbox(ProfTalk_First_Text)
         setflag(FLAG_PROF_GAVE_EEVEE)
         setflag(FLAG_SYS_POKEMON_GET)
-        givecustommon(SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32)
+        givecustommon(SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_SAND_ATTACK, MOVE_HELPING_HAND, FALSE)
         playfanfare(MUS_OBTAIN_ITEM)
         bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
         msgbox(ReceivedEevee_Text)
