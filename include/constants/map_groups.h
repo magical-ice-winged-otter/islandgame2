@@ -18,6 +18,7 @@
 #define MAP_ISLANDGAME_SS_RAIN_ROOM3        (9 | (0 << 8))
 #define MAP_ISLANDGAME_SS_RAIN_CAPTAIN_ROOM (10 | (0 << 8))
 #define MAP_ISLANDGAME_CHERIPORT            (11 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT_LAB        (12 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))

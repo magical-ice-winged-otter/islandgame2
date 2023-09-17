@@ -1,0 +1,64 @@
+mapscripts ISLANDGAME_CHERIPORT_LAB_MapScripts {}
+
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
+    lock
+    faceplayer
+    if (!flag(FLAG_PROF_GAVE_EEVEE)) {
+        msgbox(ProfTalk_First_Text)
+        setflag(FLAG_PROF_GAVE_EEVEE)
+        givemon(SPECIES_EEVEE, 5, ITEM_NONE)
+        playfanfare(MUS_OBTAIN_ITEM)
+        bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
+        msgbox(ReceivedEevee_Text)
+        waitfanfare 
+    } else {
+        msgbox(ProfTalk_Normal_Text)
+    }
+    
+    release
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist1Talk {
+    lock
+    faceplayer
+    msgbox(Scientist1Talk_Text)
+    release
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk {
+    lock
+    faceplayer
+    msgbox(Scientist2Talk_Text)
+    release
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist3Talk {
+    lock
+    faceplayer
+    msgbox(Scientist3Talk_Text)
+    release
+}
+text ProfTalk_First_Text {
+    format("{COLOR DARK_GRAY}HelloProfFirst")
+}
+
+text ProfTalk_Normal_Text {
+    format("{COLOR DARK_GRAY}HelloProfNOrmal")
+}
+
+text Scientist1Talk_Text {
+    format("{COLOR DARK_GRAY}Hello1")
+}
+
+text Scientist2Talk_Text {
+    format("{COLOR DARK_GRAY}Hello2")
+}
+
+text Scientist3Talk_Text {
+    format("{COLOR DARK_GRAY}Hello3")
+}
+
+text ReceivedEevee_Text {
+    format("{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!")
+}
