@@ -3,21 +3,39 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
         setvar(VAR_TEMP_0, 0)
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_0, 0: ISLANDGAME_CHERIPORT_ONLOAD
+        VAR_TEMP_0, 0: ISLANDGAME_CHERIPORT_OnLoad
     ]
 }
 
-script ISLANDGAME_CHERIPORT_ONLOAD {
+script ISLANDGAME_CHERIPORT_OnLoad {
     setvar(VAR_TEMP_0, 1)
     if (!flag(FLAG_LEFT_SHIP)) {
         setflag(FLAG_LEFT_SHIP)
     }
+    if (flag(FLAG_PROF_GAVE_EEVEE)) {
+        setvar(VAR_TEMP_1, 1)
+    }
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
+    lock
+    msgbox(NeedPokemon_Text)
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+    waitmovement(0)
+    release
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_MrBriney {
     lock
     msgbox(MrBrineyTalk)
     release
+}
+
+
+
+text NeedPokemon_Text {
+    format("{COLOR RED}Hello I need pokemon first.")
 }
 
 text MrBrineyTalk {
@@ -54,4 +72,9 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC2 {
 
 text NPC2_TALK {
     format("{COLOR DARK_GRAY}Hey! I tagged you!")
+}
+
+movement WalkDown {
+    walk_down
+    step_end
 }
