@@ -65,6 +65,7 @@ void IslandGameCustomStartup()
 
         //See: data/scripts/islandgame_debug[.pory/.inc]
         ScriptContext_SetupScript(IslandGame_LoadIn_Message);
+        //note: this script bugs out if there is an "onload" script on the map
 
         
     #endif
