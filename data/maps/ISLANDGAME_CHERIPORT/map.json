@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_CHERIPORT",
   "layout": "LAYOUT_ISLANDGAME_CHERIPORT",
   "music": "MUS_RG_SEVII_45",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_CHERIPORT",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_NONE",
