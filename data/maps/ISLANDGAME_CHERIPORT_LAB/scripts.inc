@@ -14,6 +14,7 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1:
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2:
 	msgbox ProfTalk_First_Text
 	setflag FLAG_PROF_GAVE_EEVEE
+	setflag FLAG_SYS_POKEMON_GET
 	givecustommon SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32
 	playfanfare MUS_OBTAIN_ITEM
 	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
