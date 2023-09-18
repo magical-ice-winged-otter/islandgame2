@@ -1,0 +1,12 @@
+mapscripts ISLANDGAME_CHERIPORT_HOUSE1_MapScripts {}
+
+script ISLANDGAME_CHERIPORT_TOWN1_EventScript_Guy1Talk {
+    lock
+    faceplayer
+    msgbox(Guy1Talk_Text)
+    release
+}
+
+text Guy1Talk_Text  {
+    format("{COLOR DARK_GRAY}Hello couch is very cool.")
+}

@@ -1089,3 +1089,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_CHERIPORT/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE1/scripts.inc"
