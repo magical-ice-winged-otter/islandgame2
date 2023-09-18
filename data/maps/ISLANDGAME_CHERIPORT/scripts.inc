@@ -45,6 +45,22 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_MrBriney::
 	return
 
 
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Girl3::
+	lock
+	faceplayer
+	msgbox NPCGirl_Talk
+	release
+	return
+
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4::
+	lock
+	faceplayer
+	msgbox NPCBoy_Talk
+	release
+	return
+
+
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko::
 	lock
 	faceplayer
@@ -71,6 +87,19 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC2::
 WalkDown:
 	walk_down
 	step_end
+
+NPCGirl_Talk::
+	.string "{COLOR DARK_GRAY}The islands are known for their tropical\n"
+	.string "weather, though at times there have\l"
+	.string "been bad storms that have even scared\l"
+	.string "POKéMON.$"
+
+NPCBoy_Talk::
+	.string "{COLOR DARK_GRAY}While I was out exploring Southern\n"
+	.string "Oranna Path during dusk, one of the\l"
+	.string "mountain POKéMON attacked me. I've\l"
+	.string "never seen one like it before, but I'm\l"
+	.string "too scared to try to see it again.$"
 
 NeedPokemon_Text::
 	.string "{COLOR RED}Hello I need pokemon first.$"
