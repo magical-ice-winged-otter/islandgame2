@@ -1,0 +1,78 @@
+//see moves.h
+const I_MOVES_COUNT = 831
+
+mapscripts ISLANDGAME_CHERIPORT_LAB_MapScripts {}
+
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
+    lock
+    faceplayer
+    if (!flag(FLAG_PROF_GAVE_EEVEE)) {
+        msgbox(ProfTalk_First_Text)
+        setflag(FLAG_PROF_GAVE_EEVEE)
+        setflag(FLAG_SYS_POKEMON_GET)
+        givecustommon(SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_SAND_ATTACK, MOVE_HELPING_HAND, FALSE)
+        playfanfare(MUS_OBTAIN_ITEM)
+        bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
+        msgbox(ReceivedEevee_Text)
+        waitfanfare 
+
+        msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+        if (var(VAR_RESULT)) {
+            //VAR_8004 is the parameter that the game uses to determine which mon is to be nicknamed
+            //the getgiftmonpartyslot script calcs it for us, otherwise, we would have to explicitly set the parameter to 0 (?).
+            call(Common_EventScript_GetGiftMonPartySlot)
+            call(Common_EventScript_NameReceivedPartyMon)
+        }
+
+        
+    } else {
+        msgbox(ProfTalk_Normal_Text)
+    }
+    
+    release
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist1Talk {
+    lock
+    faceplayer
+    msgbox(Scientist1Talk_Text)
+    release
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk {
+    lock
+    faceplayer
+    msgbox(Scientist2Talk_Text)
+    release
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist3Talk {
+    lock
+    faceplayer
+    msgbox(Scientist3Talk_Text)
+    release
+}
+text ProfTalk_First_Text {
+    format("{COLOR DARK_GRAY}HelloProfFirst")
+}
+
+text ProfTalk_Normal_Text {
+    format("{COLOR DARK_GRAY}HelloProfNOrmal")
+}
+
+text Scientist1Talk_Text {
+    format("{COLOR DARK_GRAY}Hello1")
+}
+
+text Scientist2Talk_Text {
+    format("{COLOR DARK_GRAY}Hello2")
+}
+
+text Scientist3Talk_Text {
+    format("{COLOR DARK_GRAY}Hello3")
+}
+
+text ReceivedEevee_Text {
+    format("{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!")
+}

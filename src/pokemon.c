@@ -52,6 +52,8 @@
 #include "constants/trainers.h"
 #include "constants/union_room.h"
 #include "constants/weather.h"
+#include "day_night.h"
+#include "constants/day_night.h"
 
 struct SpeciesItem
 {
@@ -6430,27 +6432,27 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 break;
             case EVO_FRIENDSHIP_DAY:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= 220)
+                if (GetCurrentTimeOfDay() != TIME_NIGHT && friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL_DAY:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && gEvolutionTable[species][i].param <= level)
+                if (GetCurrentTimeOfDay() != TIME_NIGHT && gEvolutionTable[species][i].param <= level)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_NIGHT:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= 220)
+                if (GetCurrentTimeOfDay() == TIME_NIGHT && friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL_NIGHT:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && gEvolutionTable[species][i].param <= level)
+                if (GetCurrentTimeOfDay() == TIME_NIGHT && gEvolutionTable[species][i].param <= level)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_ITEM_HOLD_NIGHT:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && heldItem == gEvolutionTable[species][i].param)
+                if (GetCurrentTimeOfDay() == TIME_NIGHT && heldItem == gEvolutionTable[species][i].param)
                 {
                     heldItem = 0;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
@@ -6459,7 +6461,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 break;
             case EVO_ITEM_HOLD_DAY:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && heldItem == gEvolutionTable[species][i].param)
+                if (GetCurrentTimeOfDay() != TIME_NIGHT && heldItem == gEvolutionTable[species][i].param)
                 {
                     heldItem = 0;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
@@ -6672,12 +6674,12 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 break;
             case EVO_ITEM_NIGHT:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && gEvolutionTable[species][i].param == evolutionItem)
+                if (GetCurrentTimeOfDay() == TIME_NIGHT && gEvolutionTable[species][i].param == evolutionItem)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_ITEM_DAY:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && gEvolutionTable[species][i].param == evolutionItem)
+                if (GetCurrentTimeOfDay() != TIME_NIGHT && gEvolutionTable[species][i].param == evolutionItem)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             }
@@ -8374,12 +8376,12 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 
                         {
                         case DAY:
                             RtcCalcLocalTime();
-                            if (gLocalTime.hours >= 12 && gLocalTime.hours < 24)
+                            if (GetCurrentTimeOfDay() != TIME_NIGHT)
                                 targetSpecies = formChanges[i].targetSpecies;
                             break;
                         case NIGHT:
                             RtcCalcLocalTime();
-                            if (gLocalTime.hours >= 0 && gLocalTime.hours < 12)
+                            if (GetCurrentTimeOfDay() == TIME_NIGHT)
                                 targetSpecies = formChanges[i].targetSpecies;
                             break;
                         default:
@@ -8615,4 +8617,21 @@ void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
     *new3 = *old3;
     boxMon->checksum = CalculateBoxMonChecksum(boxMon);
     EncryptBoxMon(boxMon);
+}
+
+void CreateShinyMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 nature)
+{
+    u32 personality;
+    u32 otid = gSaveBlock2Ptr->playerTrainerId[0]
+              | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+              | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+              | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+    
+    do
+    {
+        personality = Random32();
+        personality = ((((Random() % 8) ^ (HIHALF(otid) ^ LOHALF(otid))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+    } while (nature != GetNatureFromPersonality(personality));
+
+    CreateMon(mon, species, level, 32, 1, personality, OT_ID_PRESET, otid);
 }

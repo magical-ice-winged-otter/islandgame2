@@ -344,3 +344,19 @@ u32 RtcGetLocalDayCount(void)
 {
     return RtcGetDayCount(&sRtc);
 }
+
+void RtcCalcLocalTimeFast(void)
+{
+    if (sErrorStatus & RTC_ERR_FLAG_MASK)
+    {
+        sRtc = sRtcDummy;
+    }
+    else
+    {
+        RtcGetStatus(&sRtc);
+        RtcDisableInterrupts();
+        SiiRtcGetTime(&sRtc);
+        RtcRestoreInterrupts();
+    }
+    RtcCalcTimeDifference(&sRtc, &gLocalTime, &gSaveBlock2Ptr->localTimeOffset);
+}

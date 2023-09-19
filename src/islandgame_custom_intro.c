@@ -58,10 +58,16 @@ void IslandGameCustomStartup()
         FlagToggle(FLAG_RECEIVED_HM06);
         FlagToggle(FLAG_RECEIVED_HM07);
         FlagToggle(FLAG_RECEIVED_HM08);
+        
+        //debug 2: CHERIPORT LOCATION
+        FlagToggle(FLAG_RECEIVED_RUNNING_SHOES);
+        FlagToggle(FLAG_SYS_B_DASH);
+
         //See: data/scripts/islandgame_debug[.pory/.inc]
         ScriptContext_SetupScript(IslandGame_LoadIn_Message);
+        //note: this script bugs out if there is an "onload" script on the map
 
-        //debug 2: ?
+        
     #endif
 }
 

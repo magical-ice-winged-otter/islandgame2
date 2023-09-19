@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_CHERIPORT_PKMNCENTER",
   "layout": "LAYOUT_ISLANDGAME_CHERIPORT_PKMNCENTER",
   "music": "MUS_POKE_CENTER",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_CHERIPORT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -68,20 +68,7 @@
     }
   ],
   "warp_events": [
-    {
-      "x": 7,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_CHERIPORT",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 6,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_CHERIPORT",
-      "dest_warp_id": "0"
-    }
+
   ],
   "coord_events": [
 

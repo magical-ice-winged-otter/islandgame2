@@ -55,6 +55,7 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/day_night.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1090,3 +1091,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNCENTER/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNMART/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE1/scripts.inc"

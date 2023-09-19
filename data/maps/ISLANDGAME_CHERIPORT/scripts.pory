@@ -1,10 +1,68 @@
-mapscripts ISLANDGAME_CHERIPORT_MapScripts {}
+mapscripts ISLANDGAME_CHERIPORT_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_TEMP_0, 0)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: ISLANDGAME_CHERIPORT_OnLoad
+    ]
+}
 
+script ISLANDGAME_CHERIPORT_OnLoad {
+    setvar(VAR_TEMP_0, 1)
+    if (!flag(FLAG_LEFT_SHIP)) {
+        setflag(FLAG_LEFT_SHIP)
+    }
+    if (flag(FLAG_PROF_GAVE_EEVEE)) {
+        setvar(VAR_TEMP_1, 1)
+    }
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
+    lock
+    msgbox(NeedPokemon_Text)
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
+    waitmovement(0)
+    release
+}
+
+
+text NeedPokemon_Text {
+    format("{COLOR RED}Hello I need pokemon first.")
+}
+
+movement WalkDown {
+    walk_down
+    step_end
+}
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_MrBriney {
     lock
     msgbox(MrBrineyTalk)
     release
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Girl3 {
+    lock
+    faceplayer
+    msgbox(NPCGirl_Talk)
+    release
+}
+
+
+text NPCGirl_Talk {
+    format("{COLOR DARK_GRAY}The islands are known for their tropical weather, though at times there have been bad storms that have even scared POKéMON.")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4 {
+    lock
+    faceplayer
+    msgbox(NPCBoy_Talk)
+    release
+}
+
+text NPCBoy_Talk {
+    format("{COLOR DARK_GRAY}While I was out exploring Southern Oranna Path during dusk, one of the mountain POKéMON attacked me. I've never seen one like it before, but I'm too scared to try to see it again.")
 }
 
 text MrBrineyTalk {

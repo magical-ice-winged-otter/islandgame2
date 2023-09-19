@@ -47,4 +47,11 @@ void FreeResourcesAndDestroySprite(struct Sprite *sprite, u8 spriteId);
 u8 CreateMonSprite_PicBox(u16 species, s16 x, s16 y, u8 subpriority);
 void StartEscapeRopeFieldEffect(void);
 
+void FieldEffectScript_LoadFadedPaletteDayNight(u8 **script);
+void FieldEffectScript_LoadPaletteDayNight(u8 **script);
+
+bool8 FieldEffectCmd_loadfadedpaldaynight(u8 **script, u32 *val);
+bool8 FieldEffectCmd_loadpaldaynight(u8 **script, u32 *val);
+bool8 FieldEffectCmd_loadfadedpaldaynight_callnative(u8 **script, u32 *val);
+
 #endif // GUARD_FIELD_EFFECTS_H

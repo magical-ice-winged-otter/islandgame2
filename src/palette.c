@@ -5,6 +5,8 @@
 #include "gpu_regs.h"
 #include "task.h"
 #include "constants/rgb.h"
+#include "day_night.h"
+#include "constants/day_night.h"
 
 enum
 {
@@ -83,15 +85,12 @@ static const u8 sRoundedDownGrayscaleMap[] = {
 
 void LoadCompressedPalette(const u32 *src, u16 offset, u16 size)
 {
-    LZDecompressWram(src, gPaletteDecompressionBuffer);
-    CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferUnfaded[offset], size);
-    CpuCopy16(gPaletteDecompressionBuffer, &gPlttBufferFaded[offset], size);
+    LoadCompressedPalette_HandleDayNight(src, offset, size, FALSE);
 }
 
 void LoadPalette(const void *src, u16 offset, u16 size)
 {
-    CpuCopy16(src, &gPlttBufferUnfaded[offset], size);
-    CpuCopy16(src, &gPlttBufferFaded[offset], size);
+    LoadPalette_HandleDayNight(src, offset, size, FALSE);
 }
 
 void FillPalette(u16 value, u16 offset, u16 size)

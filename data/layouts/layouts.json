@@ -4550,6 +4550,26 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT_PKMNMART/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT_PKMNMART/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CHERIPORT_LAB",
+      "name": "ISLANDGAME_CHERIPORT_LAB_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT_LAB/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT_LAB/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CHERIPORT_HOUSE1",
+      "name": "ISLANDGAME_CHERIPORT_HOUSE1_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT_HOUSE1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT_HOUSE1/map.bin"
     }
   ]
 }
