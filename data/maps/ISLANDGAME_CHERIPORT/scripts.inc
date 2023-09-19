@@ -32,14 +32,14 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning::
 	lock
 	msgbox NeedPokemon_Text
 	waitmessage
-	applymovement OBJ_EVENT_ID_PLAYER, WalkDown
-	waitmovement 0
 	release
+	applymovement OBJ_EVENT_ID_PLAYER, WalkBack
+	waitmovement 0
 	return
 
 
-WalkDown:
-	walk_down
+WalkBack:
+	walk_left
 	step_end
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_MrBriney::

@@ -21,9 +21,9 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
     lock
     msgbox(NeedPokemon_Text)
     waitmessage
-    applymovement(OBJ_EVENT_ID_PLAYER, WalkDown)
-    waitmovement(0)
     release
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkBack)
+    waitmovement(0)
 }
 
 
@@ -31,8 +31,8 @@ text NeedPokemon_Text {
     format("{COLOR RED}Hello I need pokemon first.")
 }
 
-movement WalkDown {
-    walk_down
+movement WalkBack {
+    walk_left
     step_end
 }
 
@@ -186,6 +186,17 @@ text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK {
     )
 }
 
+
+
+
+
+
+
+
+
+
+// Signs
+
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN1 {
     lock
     msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC)
@@ -195,7 +206,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN1 {
 text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC {
     format(
         "{COLOR DARK_GRAY}WELCOME TO CHERIPORT\n"
-        "{COLOR DARK_GRAY}Take a rest on our soft sand!"
+        "{COLOR DARK_GRAY}Take a rest on our soft and sandy beaches!"
     )
 }
 
@@ -207,8 +218,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN2 {
 
 text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN2_DESC {
     format(
-        "{COLOR DARK_GRAY}PROFESSOR PALM'S LABORATORY \n"
-        "{COLOR DARK_GRAY}Just follow this path!"
+        "{COLOR DARK_GRAY}PROFESSOR PALM'S LABORATORY"
     )
 }
 
@@ -220,7 +230,8 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN3 {
 
 text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN3_DESC {
     format(
-        "{COLOR DARK_GRAY}SEASIDE CHAPEL \n"
-        "{COLOR DARK_GRAY}We also provide beach supplies!"
+        "{COLOR DARK_GRAY}SEASIDE SOUVENIRS \n"
+        "{COLOR DARK_GRAY}Take a piece of us back with you!"
     )
 }
+

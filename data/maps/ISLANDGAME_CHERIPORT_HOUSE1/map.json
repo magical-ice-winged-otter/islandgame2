@@ -29,7 +29,20 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CHERIPORT",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CHERIPORT",
+      "dest_warp_id": "4"
+    }
   ],
   "coord_events": [
 
