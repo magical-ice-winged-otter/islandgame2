@@ -2,7 +2,7 @@
   "id": "MAP_SS_RAIN_HALLWAY",
   "name": "SS_RAIN_Hallway",
   "layout": "LAYOUT_SS_RAIN_HALLWAY",
-  "music": "MUS_SAILING",
+  "music": "MUS_RG_SS_ANNE",
   "region_map_section": "MAPSEC_SS_RAIN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

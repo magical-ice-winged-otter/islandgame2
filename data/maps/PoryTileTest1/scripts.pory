@@ -1,4 +1,6 @@
 const OBJ_SHIP_BOY = 1
+const OBJ_SHIP_MAN = 2
+const OBJ_SHIP_WOMAN = 3
 
 mapscripts PoryTileTest1_MapScripts {}
 
@@ -12,9 +14,10 @@ script PoryTileTest1_EventScript_BoyTalk {
         msgbox(PoryTileTest1_BoyGave_Text)
     } else {
         if (var(VAR_RESULT) == 0) {
+            msgbox(PoryTileTest1_BoyTalk_Text1)   
             giveitem(ITEM_FRESH_WATER, 1)
         }
-        msgbox(PoryTileTest1_BoyTalk_Text)
+        msgbox(PoryTileTest1_BoyTalk_Text2) 
     }
     applymovement(OBJ_SHIP_BOY, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
@@ -25,20 +28,42 @@ script PoryTileTest1_EventScript_BoyTalk {
 }
 
 text PoryTileTest1_BoyGave_Text {
-    format("{COLOR DARK_GRAY}Sorry about that :D")
+    format("{COLOR DARK_GRAY}Sorry for troubling you. I wanted to admire this view for a bit longer.")
 }
 
-text PoryTileTest1_BoyTalk_Text {
-    format("{COLOR DARK_GRAY}Give the water to my uncle. I want to admire the sea a bit longer.")
+text PoryTileTest1_BoyTalk_Text1 {
+    format("{COLOR DARK_GRAY}Excuse me, could you give this to my uncle?")
 }
+
+text PoryTileTest1_BoyTalk_Text2 {
+    format("{COLOR DARK_GRAY}He's in our room downstairs. Just tell him I sent you.")
+}
+
+
+
 
 script PoryTileTest2_EventScript_NPC2Talk {
     lock
+    applymovement(OBJ_SHIP_MAN, Common_Movement_FacePlayer)
+    waitmovement(0)
     msgbox(PoryTileTest1_NPC2_Text)
     release
 }
 
 text PoryTileTest1_NPC2_Text {
-    format("{COLOR DARK_GRAY}Hello! I am npc number2")
+    format("{COLOR DARK_GRAY}Have you tried the food downstairs? It's amazing!")
 }
 
+
+
+script PoryTileTest2_EventScript_NPC3Talk {
+    lock
+    applymovement(OBJ_SHIP_WOMAN, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(PoryTileTest1_NPC3_Text)
+    release
+}
+
+text PoryTileTest1_NPC3_Text {
+    format("{COLOR DARK_GRAY}Aaaah. This vacation was exactly what I needed. Maybe I'll lay here all day.")
+}
