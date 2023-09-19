@@ -5,9 +5,11 @@ script ISLANDGAME_SS_RAIN_ROOM1_EventScript_OldWomanTalk {
     lock
     faceplayer
     msgbox(SmallTalk_Text)
+    waitmessage
     release
 }
 
 text SmallTalk_Text {
-    format("{COLOR DARK_GRAY}I'm getting too old for this; I have been seasick for the entire trip.")
+    format("{COLOR DARK_GRAY}It's been almost twenty years since the last time I came here.\p"
+           "{COLOR DARK_GRAY}A lot sure has changed since then.")
 }

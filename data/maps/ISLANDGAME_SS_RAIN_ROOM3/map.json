@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_SS_RAIN_ROOM3",
   "name": "ISLANDGAME_SS_RAIN_ROOM3",
   "layout": "LAYOUT_ISLANDGAME_SS_RAIN_ROOM3",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RG_SS_ANNE",
   "region_map_section": "MAPSEC_SS_RAIN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

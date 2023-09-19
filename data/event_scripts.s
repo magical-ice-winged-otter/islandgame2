@@ -1085,3 +1085,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_SS_RAIN_ROOM3/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_SS_RAIN_CAPTAIN_ROOM/scripts.inc"
+
+	.include "data/maps/SS_RAIN_CAFETERIA/scripts.inc"
