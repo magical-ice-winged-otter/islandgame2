@@ -11560,6 +11560,40 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ISLANDGAME_CHERIPORT",
+          "base_label": "gISLANDGAME_CHERIPORT",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_LUVDISC"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_WAILMER"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_MANTINE"
+              }
+            ]
+          }
         }
       ]
     },
