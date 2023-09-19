@@ -2014,7 +2014,6 @@ static const u8 sATypeMove_Table[NUMBER_OF_MON_TYPES][17] =
     [TYPE_DRAGON]   = _("a DRAGON move"),
     [TYPE_DARK]     = _("a DARK move"),
     [TYPE_FAIRY]    = _("a FAIRY move"),
-    [TYPE_SHADOW]    = _("a SHADOW move"),
 };
 
 const u8 gText_BattleTourney[] = _("BATTLE TOURNEY");
