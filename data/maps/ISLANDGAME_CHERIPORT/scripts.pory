@@ -50,6 +50,18 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Girl3 {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+// npcs
+
 text NPCGirl_Talk {
     format("{COLOR DARK_GRAY}The islands are known for their tropical weather, though at times there have been bad storms that have even scared POKéMON.")
 }
@@ -206,7 +218,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN1 {
 text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC {
     format(
         "{COLOR DARK_GRAY}WELCOME TO CHERIPORT\n"
-        "{COLOR DARK_GRAY}Take a rest on our soft and sandy beaches!"
+        "{COLOR DARK_GRAY}Take a rest on our soft and sandy beach!"
     )
 }
 
@@ -230,8 +242,20 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN3 {
 
 text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN3_DESC {
     format(
-        "{COLOR DARK_GRAY}SEASIDE SOUVENIRS \n"
-        "{COLOR DARK_GRAY}Take a piece of us back with you!"
+        "{COLOR DARK_GRAY}SEASIDE SERVICES \n"
+        "{COLOR DARK_GRAY}Have a drink, it's on us!"
     )
 }
 
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN4_DESC)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN4_DESC {
+    format(
+        "{COLOR DARK_GRAY}! WARNING ! \n"
+        "{COLOR DARK_GRAY}NO LIFEGUARD; SWIM AT YOUR OWN RISK!"
+    )
+}

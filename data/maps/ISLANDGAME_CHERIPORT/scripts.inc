@@ -161,6 +161,13 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN3::
 	return
 
 
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4::
+	lock
+	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN4_DESC
+	release
+	return
+
+
 NeedPokemon_Text::
 	.string "{COLOR RED}Hello I need pokemon first.$"
 
@@ -225,12 +232,16 @@ ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK::
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC::
 	.string "{COLOR DARK_GRAY}WELCOME TO CHERIPORT\n"
-	.string "{COLOR DARK_GRAY}Take a rest on our soft sand!$"
+	.string "{COLOR DARK_GRAY}Take a rest on our soft and sandy\l"
+	.string "beach!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN2_DESC::
-	.string "{COLOR DARK_GRAY}PROFESSOR PALM'S LABORATORY\n"
-	.string "{COLOR DARK_GRAY}Just follow this path!$"
+	.string "{COLOR DARK_GRAY}PROFESSOR PALM'S LABORATORY$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN3_DESC::
-	.string "{COLOR DARK_GRAY}SEASIDE CHAPEL\n"
-	.string "{COLOR DARK_GRAY}We also provide beach supplies!$"
+	.string "{COLOR DARK_GRAY}SEASIDE SERVICES\n"
+	.string "{COLOR DARK_GRAY}Have a drink, it's on us!$"
+
+ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN4_DESC::
+	.string "{COLOR DARK_GRAY}! WARNING !\n"
+	.string "{COLOR DARK_GRAY}NO LIFEGUARD; SWIM AT YOUR OWN RISK!$"

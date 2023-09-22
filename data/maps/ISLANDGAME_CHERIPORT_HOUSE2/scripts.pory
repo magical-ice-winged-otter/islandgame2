@@ -1,0 +1,44 @@
+mapscripts ISLANDGAME_CHERIPORT_HOUSE2_MapScripts {}
+
+
+script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC1_TALK)
+    release
+}
+
+text ISLANDGAME_CHERIPORT_HOUSE2_NPC1_TALK {
+    format(
+        "{COLOR DARK_GRAY}This building was once a derelict chapel on the brink of collapse. \p"
+        "{COLOR DARK_GRAY}We have since then renovated it and given it a new purpose. \p"
+        "{COLOR DARK_GRAY}To provide beach amenities and complimentary drinks to those in need."
+    )
+}
+
+script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC2 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC2_TALK)
+    release
+}
+
+text ISLANDGAME_CHERIPORT_HOUSE2_NPC2_TALK {
+    format(
+        "{COLOR DARK_GRAY}I wish I was a water Pokémon. Then, I wouldn't have to wear this inner tube! \p"
+        "{COLOR DARK_GRAY}Which water Pokémon would you wanna be? I like Luvdisc!"
+    )
+}
+
+script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK)
+    release
+}
+
+text ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK {
+    format(
+        "{COLOR DARK_GRAY}You look thirsty. Would you like a refreshing beverage?"
+    )
+}
