@@ -4590,6 +4590,16 @@
       "secondary_tileset": "gTileset_SeashoreHouse",
       "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT_HOUSE2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT_HOUSE2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_SOUTHERN_ORANNA_PATH",
+      "name": "ISLANDGAME_Southern_Oranna_Path_Layout",
+      "width": 22,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
     }
   ]
 }
