@@ -24,8 +24,11 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             call(Common_EventScript_GetGiftMonPartySlot)
             call(Common_EventScript_NameReceivedPartyMon)
         }
-
-        
+        msgbox(ProfTalk_Second_Text)
+        // <insert event here that gives Pokedex>
+        msgbox(ProfTalk_Third_Text)
+        // <insert event here that gifts 5 Pokeballs>
+        msgbox(ProfTalk_Fourth_Text)
     } else {
         msgbox(ProfTalk_Normal_Text)
     }
@@ -42,7 +45,6 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist1Talk {
 
 script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk {
     lock
-    faceplayer
     msgbox(Scientist2Talk_Text)
     release
 }
@@ -53,26 +55,88 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist3Talk {
     msgbox(Scientist3Talk_Text)
     release
 }
+
 text ProfTalk_First_Text {
-    format("{COLOR DARK_GRAY}HelloProfFirst")
+    format(
+        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's a pleasure to finally meet you in person! \p"
+        "{COLOR DARK_GRAY}How are you enjoying the isles so far? Hopefully the trip was smooth sailing. \p"
+        "{COLOR DARK_GRAY}The weather will probably take some getting used to though. It's a lot more humid here than what you're used to, isn't it? \p"
+        "{COLOR DARK_GRAY}Anyways, I bet you're itching to begin your adventure, so I'll save the small talk for later and present you with your very first companion! \p"
+    )
+}
+
+text ProfTalk_Second_Text {
+    format(
+        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Haha, I see it's already taken a liking to you! Treat it with care and respect, and it'll do the same for you! \p"
+        "{COLOR DARK_GRAY}Along with your new friend, I'll also be entrusting you with this Pokédex! \p"
+    )
+}
+
+text ProfTalk_Third_Text {
+    format(
+        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}The Pokédex is a highly advanced piece of tech that will automatically record the data of any Pokémon you see or catch, making it an essential piece of tech to have with you while you're conducting fieldwork!"
+        "{COLOR DARK_GRAY}Wahaha, isn't the power of science just amazing? \p"
+        "{COLOR DARK_GRAY}Oh, you'll also need some of these too! \p"
+    )
+}
+
+text ProfTalk_Fourth_Text {
+    format(
+        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs. They're a special tool that you can use to catch wild Pokémon! \p"
+        "{COLOR DARK_GRAY}And with that, {PLAYER}, you're all set to begin your journey! \p"
+        "{COLOR DARK_GRAY}I suggest you meet up with my assistant first though. \p"
+        "{COLOR DARK_GRAY}Her name is Audrey, and she's been helping me out for about a week or two. \p"
+        "{COLOR DARK_GRAY}She knows her way around Oranna better than me, so she can help you navigate the island and give you some pointers! \p"
+        "{COLOR DARK_GRAY}Audrey should be somewhere near her hometown, Maplegrove, right now."
+    )
 }
 
 text ProfTalk_Normal_Text {
-    format("{COLOR DARK_GRAY}HelloProfNOrmal")
+    format("{COLOR DARK_GRAY}Audrey should be somewhere near her hometown, Maplegrove, right now.")
 }
 
 text Scientist1Talk_Text {
-    format("{COLOR DARK_GRAY}Hello1")
+    format(
+        "{COLOR DARK_GRAY}You kids are lucky. While you're outside traveling and exploring, I'm stuck here. \p"
+        "{COLOR DARK_GRAY}Sorting bookshelves, writing research papers, and programming software. \p"
+        "{COLOR DARK_GRAY}If only we had the Starter Program when I was a teen..."
+    )
 }
 
 text Scientist2Talk_Text {
-    format("{COLOR DARK_GRAY}Hello2")
+    format(
+        "{COLOR DARK_GRAY}Heheh.... Yeah... H-Huh? I-It's not what you think! I was just doing research! \p"
+        "{COLOR DARK_GRAY}Huh? You're not the professor... Go away! I'm doing grown-up stuff!")
 }
 
 text Scientist3Talk_Text {
-    format("{COLOR DARK_GRAY}Hello3")
+    format(
+        "{COLOR DARK_GRAY}The professor used to go outside and conduct all his fieldwork himself. \p"
+        "{COLOR DARK_GRAY}That's actually how we met. He was getting chased around by a Zigzagoon. \p"
+        "{COLOR DARK_GRAY}Ah, memories..."
+    )
 }
 
 text ReceivedEevee_Text {
     format("{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!")
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Vigoroth {
+    lock
+    msgbox(ISLANDGAME_CHERIPORT_LAB_VigorothTalk)
+    release
+}
+
+text ISLANDGAME_CHERIPORT_LAB_VigorothTalk {
+    format("{COLOR DARK_GRAY}> It looks like the Pokémon is hard at work.")
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_PikaDoll {
+    lock
+    msgbox(ISLANDGAME_CHERIPORT_LAB_PikaDollTalk)
+    release
+}
+
+text ISLANDGAME_CHERIPORT_LAB_PikaDollTalk {
+    format("{COLOR DARK_GRAY}> Wow! It looks like an actual Pikachu, but it's just a plush!")
 }
