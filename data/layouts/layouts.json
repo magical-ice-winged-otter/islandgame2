@@ -4595,7 +4595,7 @@
       "id": "LAYOUT_ISLANDGAME_SOUTHERN_ORANNA_PATH",
       "name": "ISLANDGAME_Southern_Oranna_Path_Layout",
       "width": 30,
-      "height": 30,
+      "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
