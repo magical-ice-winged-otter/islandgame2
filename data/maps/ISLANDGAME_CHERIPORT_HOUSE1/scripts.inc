@@ -23,11 +23,10 @@ NPC1_Text::
 	.string "legendary Isle Guardians.\p"
 	.string "{COLOR DARK_GRAY}The mythical Pokémon: Articuno!\p"
 	.string "{COLOR DARK_GRAY}I've never seen it in person, but they\n"
-	.string "say its wings can cause a blizzard!\p"
-	.string "$"
+	.string "say its wings can cause a blizzard!$"
 
 NPC2_Text::
-	.string "{COLOR DARK_GRAY}I used to go to the beach every day,\n"
-	.string "but ever since Cheriport became a hot\l"
-	.string "new vacation spot, it's been hard to\l"
-	.string "find space on the sand...$"
+	.string "{COLOR DARK_GRAY}I used to go to the beach every day.\p"
+	.string "{COLOR DARK_GRAY}But ever since Cheriport became a hot\n"
+	.string "vacation spot, it's been hard to find\l"
+	.string "space on the sand...$"

@@ -1,1 +1,22 @@
 mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {}
+
+//Trainer 1 - start
+script ISLANDGAME_Southern_Oranna_Path_TrainerBattle1 {
+    trainerbattle_single(TRAINER_S_ORANNA_PATH_TRAINER_1, TrainerBattle1_Text, TrainerBattle1_Defeated_Text)
+    msgbox(TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text TrainerBattle1_Text {
+    "You look weird and UGLY"
+}
+
+text TrainerBattle1_Defeated_Text
+{
+    "How"
+}
+
+text TrainerBattle1_PostDefeated_Text
+{
+    "What did I just watch"
+}
+//Trainer 1 - end

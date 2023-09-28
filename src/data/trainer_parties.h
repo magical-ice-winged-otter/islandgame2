@@ -10,12 +10,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Sawyer1[] = {
     .species = SPECIES_VOLCARONA,
     }
 };
-
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout1[] = {
+// TRAINER_S_ORANNA_PATH_TRAINER_1
+static const struct TrainerMonNoItemDefaultMoves sParty_SOrannaPathTrainer1[] = {
     {
     .iv = 0,
-    .lvl = 32,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 6,
+    .species = SPECIES_STARLY,
     }
 };
 
