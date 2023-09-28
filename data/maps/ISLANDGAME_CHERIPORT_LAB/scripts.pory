@@ -25,9 +25,17 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             call(Common_EventScript_NameReceivedPartyMon)
         }
         msgbox(ProfTalk_Second_Text)
-        // <insert event here that gives Pokedex>
+        // Give Pokedex
+        playfanfare(MUS_OBTAIN_ITEM)
+        msgbox(Prof_Recieved_Pokedex_Text)
+        waitfanfare
+        setflag(FLAG_SYS_POKEDEX_GET)
+        special(SetUnlockedPokedexFlags)
+        setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+        
         msgbox(ProfTalk_Third_Text)
-        // <insert event here that gifts 5 Pokeballs>
+        // Give Pokeballs
+        giveitem(ITEM_POKE_BALL, 5)
         msgbox(ProfTalk_Fourth_Text)
     } else {
         msgbox(ProfTalk_Normal_Text)
@@ -69,6 +77,12 @@ text ProfTalk_Second_Text {
     format(
         "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Haha, I see it's already taken a liking to you! Treat it with care and respect, and it'll do the same for you! \p"
         "{COLOR DARK_GRAY}Along with your new friend, I'll also be entrusting you with this Pokédex!"
+    )
+}
+
+text Prof_Recieved_Pokedex_Text {
+    format(
+        "{COLOR DARK_GRAY}{PLAYER} recieved the Pokédex!"
     )
 }
 
