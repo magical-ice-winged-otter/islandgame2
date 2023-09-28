@@ -1,5 +1,21 @@
 ISLANDGAME_CHERIPORT_PKMNCENTER_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
+
+
+ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition::
+	setrespawn HEAL_LOCATION_PETALBURG_CITY
+	return
+
+
+ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse::
+	setvar VAR_0x800B, 1
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	return
 
 
 ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1::
