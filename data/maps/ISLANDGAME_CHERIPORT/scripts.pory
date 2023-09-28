@@ -28,7 +28,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
 
 
 text NeedPokemon_Text {
-    format("{COLOR RED}Hello I need pokemon first.")
+    format("{COLOR RED}I should go see Professor Palm before I leave the city...")
 }
 
 movement WalkBack {

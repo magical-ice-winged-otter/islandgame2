@@ -153,9 +153,9 @@ ReceivedEevee_Text::
 	.string "{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!$"
 
 ISLANDGAME_CHERIPORT_LAB_VigorothTalk::
-	.string "{COLOR DARK_GRAY}> It looks like the Pokémon is hard at\n"
+	.string "{COLOR RED}It looks like the Pokémon is hard at\n"
 	.string "work.$"
 
 ISLANDGAME_CHERIPORT_LAB_PikaDollTalk::
-	.string "{COLOR DARK_GRAY}> Wow! It looks like an actual Pikachu,\n"
+	.string "{COLOR RED}Wow! It looks like an actual Pikachu,\n"
 	.string "but it's just a plush!$"

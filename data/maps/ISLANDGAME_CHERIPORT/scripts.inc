@@ -169,7 +169,8 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4::
 
 
 NeedPokemon_Text::
-	.string "{COLOR RED}Hello I need pokemon first.$"
+	.string "{COLOR RED}I should go see Professor Palm before I\n"
+	.string "leave the city...$"
 
 NPCGirl_Talk::
 	.string "{COLOR DARK_GRAY}The islands are known for their tropical\n"

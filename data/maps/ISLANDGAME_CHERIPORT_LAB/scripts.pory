@@ -61,14 +61,14 @@ text ProfTalk_First_Text {
         "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's a pleasure to finally meet you in person! \p"
         "{COLOR DARK_GRAY}How are you enjoying the isles so far? Hopefully the trip was smooth sailing. \p"
         "{COLOR DARK_GRAY}The weather will probably take some getting used to though. It's a lot more humid here than what you're used to, isn't it? \p"
-        "{COLOR DARK_GRAY}Anyways, I bet you're itching to begin your adventure, so I'll save the small talk for later and present you with your very first companion! \p"
+        "{COLOR DARK_GRAY}Anyways, I bet you're itching to begin your adventure, so I'll save the small talk for later and present you with your very first companion!"
     )
 }
 
 text ProfTalk_Second_Text {
     format(
         "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Haha, I see it's already taken a liking to you! Treat it with care and respect, and it'll do the same for you! \p"
-        "{COLOR DARK_GRAY}Along with your new friend, I'll also be entrusting you with this Pokédex! \p"
+        "{COLOR DARK_GRAY}Along with your new friend, I'll also be entrusting you with this Pokédex!"
     )
 }
 
@@ -76,7 +76,7 @@ text ProfTalk_Third_Text {
     format(
         "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}The Pokédex is a highly advanced piece of tech that will automatically record the data of any Pokémon you see or catch, making it an essential piece of tech to have with you while you're conducting fieldwork!"
         "{COLOR DARK_GRAY}Wahaha, isn't the power of science just amazing? \p"
-        "{COLOR DARK_GRAY}Oh, you'll also need some of these too! \p"
+        "{COLOR DARK_GRAY}Oh, you'll also need some of these too!"
     )
 }
 
@@ -128,7 +128,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_Vigoroth {
 }
 
 text ISLANDGAME_CHERIPORT_LAB_VigorothTalk {
-    format("{COLOR DARK_GRAY}> It looks like the Pokémon is hard at work.")
+    format("{COLOR RED}It looks like the Pokémon is hard at work.")
 }
 
 script ISLANDGAME_CHERIPORT_LAB_EventScript_PikaDoll {
@@ -138,5 +138,5 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_PikaDoll {
 }
 
 text ISLANDGAME_CHERIPORT_LAB_PikaDollTalk {
-    format("{COLOR DARK_GRAY}> Wow! It looks like an actual Pikachu, but it's just a plush!")
+    format("{COLOR RED}Wow! It looks like an actual Pikachu, but it's just a plush!")
 }
