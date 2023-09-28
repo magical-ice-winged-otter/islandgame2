@@ -62,6 +62,13 @@ void IslandGameCustomStartup()
         //debug 2: CHERIPORT LOCATION
         FlagToggle(FLAG_RECEIVED_RUNNING_SHOES);
         FlagToggle(FLAG_SYS_B_DASH);
+        FlagToggle(FLAG_LEFT_SHIP);
+        //FlagToggle(FLAG_PROF_GAVE_EEVEE);
+        //FlagToggle(FLAG_SYS_POKEDEX_GET);
+        //FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
+
+        //debug sidequest:
+        //FlagToggle(FLAG_ROOM3_GAVE_WATER);
 
         //See: data/scripts/islandgame_debug[.pory/.inc]
         ScriptContext_SetupScript(IslandGame_LoadIn_Message);

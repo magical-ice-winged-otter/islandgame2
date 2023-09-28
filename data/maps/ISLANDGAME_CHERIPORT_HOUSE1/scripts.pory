@@ -1,12 +1,30 @@
 mapscripts ISLANDGAME_CHERIPORT_HOUSE1_MapScripts {}
 
-script ISLANDGAME_CHERIPORT_TOWN1_EventScript_Guy1Talk {
+script ISLANDGAME_CHERIPORT_TOWN1_EventScript_NPC1Talk {
     lock
     faceplayer
-    msgbox(Guy1Talk_Text)
+    msgbox(NPC1_Text)
     release
 }
 
-text Guy1Talk_Text  {
-    format("{COLOR DARK_GRAY}Hello couch is very cool.")
+text NPC1_Text  {
+    format(
+        "{COLOR DARK_GRAY}Oranna is home to one of Mariyama's legendary Isle Guardians. \p"
+        "{COLOR DARK_GRAY}The mythical Pokémon: Articuno! \p"
+        "{COLOR DARK_GRAY}I've never seen it in person, but they say its wings can cause a blizzard!"
+    )
+}
+
+script ISLANDGAME_CHERIPORT_TOWN1_EventScript_NPC2Talk {
+    lock
+    faceplayer
+    msgbox(NPC2_Text)
+    release
+}
+
+text NPC2_Text  {
+    format(
+        "{COLOR DARK_GRAY}I used to go to the beach every day. \p"
+        "{COLOR DARK_GRAY}But ever since Cheriport became a hot vacation spot, it's been hard to find space on the sand..."
+    )
 }
