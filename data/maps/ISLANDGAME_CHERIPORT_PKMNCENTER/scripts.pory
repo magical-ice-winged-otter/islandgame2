@@ -6,7 +6,7 @@ mapscripts ISLANDGAME_CHERIPORT_PKMNCENTER_MapScripts {
 }
 
 script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition {
-	setrespawn(HEAL_LOCATION_PETALBURG_CITY)
+	setrespawn(HEAL_LOCATION_CHERIPORT)
 }
 
 
