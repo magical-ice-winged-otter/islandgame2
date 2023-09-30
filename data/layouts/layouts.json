@@ -4530,6 +4530,16 @@
       "secondary_tileset": "gTileset_FireRed_SS_ANNE_Cont",
       "border_filepath": "data/layouts/SS_RAIN_CAFETERIA/border.bin",
       "blockdata_filepath": "data/layouts/SS_RAIN_CAFETERIA/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI",
+      "name": "ISLANDGAME_CAMP_PERSI_Layout",
+      "width": 50,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/map.bin"
     }
   ]
 }
