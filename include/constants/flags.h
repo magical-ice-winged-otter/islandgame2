@@ -1506,7 +1506,8 @@
 #define FLAG_LEFT_SHIP                              (SYSTEM_FLAGS + 0x85) 
 //old man in room 3
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
+//set when you talk to the professor for the first time and got the eevee
+#define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87) 
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
 #define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
 #define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag

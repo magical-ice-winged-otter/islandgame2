@@ -1,0 +1,65 @@
+const LOCALID_NURSE = 1
+
+mapscripts ISLANDGAME_CHERIPORT_PKMNCENTER_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+}
+
+script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition {
+	setrespawn(HEAL_LOCATION_CHERIPORT)
+}
+
+
+script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse {
+	setvar(VAR_0x800B, LOCALID_NURSE)
+	call(Common_EventScript_PkmnCenterNurse)
+	waitmessage
+	waitbuttonpress
+	release
+}
+
+
+script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLAND_GAME_CHERIPORT_PKMNCENTER_NPC1_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_PKMNCENTER_NPC1_TALK {
+    format(
+        "{COLOR DARK_GRAY}It's dangerous to wander outside Cheriport without a Pokémon. \p"
+        "{COLOR DARK_GRAY}Even if you don't have one though, there's still lots to do in Cheriport! \p"
+        "{COLOR DARK_GRAY}One of my favorite things to do is take long walks on the beach. \p"
+        "{COLOR DARK_GRAY}Candle-lit dinners aren't half bad either. \p"
+        "{COLOR DARK_GRAY}Perhaps you'd like to take me to one? \p"
+        "{COLOR DARK_GRAY}Aha, I am just kidding."
+    )
+}
+
+script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC2 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_PKMNCENTER_NPC2_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_PKMNCENTER_NPC2_TALK {
+    format(
+        "{COLOR DARK_GRAY}They really need to update their selection of literature here. \p"
+        "{COLOR DARK_GRAY}I've already read 'Skitty & Wailord' like a hundred times!"
+        )
+}
+
+script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC3 {
+    lock
+    faceplayer
+    msgbox(ISLAND_GAME_CHERIPORT_PKMNCENTER_NPC3_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_PKMNCENTER_NPC3_TALK {
+    format(
+        "{COLOR DARK_GRAY}Man, I'm glad there's a Pokémon Center here...\p"
+        "{COLOR DARK_GRAY}Trainers and wild Pokémon here are way tougher than at home!"
+        )
+}

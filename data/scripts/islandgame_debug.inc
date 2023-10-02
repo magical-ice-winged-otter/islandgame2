@@ -7,6 +7,7 @@ IslandGame_LoadIn_Message::
 	additem ITEM_ISLANDGAME_MACHETE
 	additem ITEM_ISLANDGAME_PICKAXE
 	additem ITEM_ISLANDGAME_POWERGLOVE
+	waitbuttonpress
 	releaseall
 	return
 

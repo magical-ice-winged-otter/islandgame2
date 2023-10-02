@@ -23,7 +23,6 @@ SS_Rain_EventScript_ItemRunningShoes::
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	msgbox SwitchedRunningShoes_Text
 	removeobject VAR_LAST_TALKED
-	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
 	releaseall
 	return
