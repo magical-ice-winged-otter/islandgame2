@@ -11654,67 +11654,67 @@
           "map": "MAP_ISLANDGAME_SOUTHERN_ORANNA_PATH",
           "base_label": "gISLANDGAME_Southern_Oranna_Path0",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 3,
-                "max_level": 6,
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_SKIDDO"
               },
               {
                 "min_level": 3,
-                "max_level": 6,
-                "species": "SPECIES_BUNNELBY"
+                "max_level": 4,
+                "species": "SPECIES_JIGGLYPUFF"
               },
               {
                 "min_level": 3,
-                "max_level": 6,
-                "species": "SPECIES_SPEAROW"
+                "max_level": 4,
+                "species": "SPECIES_COTTONEE"
               },
               {
                 "min_level": 3,
-                "max_level": 6,
-                "species": "SPECIES_MANKEY"
+                "max_level": 4,
+                "species": "SPECIES_MINCCINO"
               },
               {
-                "min_level": 12,
-                "max_level": 15,
-                "species": "SPECIES_ROCKRUFF"
+                "min_level": 1,
+                "max_level": 2,
+                "species": "SPECIES_SURSKIT"
               },
               {
                 "min_level": 3,
-                "max_level": 6,
+                "max_level": 4,
                 "species": "SPECIES_STARLY"
               },
               {
-                "min_level": 3,
-                "max_level": 6,
-                "species": "SPECIES_BUNEARY"
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_AZURILL"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_PACHIRISU"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_PACHIRISU"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_PACHIRISU"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_PACHIRISU"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_NONE"
+                "species": "SPECIES_PACHIRISU"
               }
             ]
           }
