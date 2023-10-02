@@ -13,22 +13,22 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Sawyer1[] = {
 // TRAINER_S_ORANNA_PATH_TRAINER_1
 static const struct TrainerMonNoItemDefaultMoves sParty_SOrannaPathTrainer1[] = {
     {
-    .iv = 0,
-    .lvl = 6,
+    .iv = 255,
+    .lvl = 4,
     .species = SPECIES_STARLY,
     }
 };
-
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntAquaHideout2[] = {
+// TRAINER_S_ORANNA_PATH_TRAINER_2
+static const struct TrainerMonNoItemDefaultMoves sParty_SOrannaPathTrainer2[] = {
     {
-    .iv = 0,
-    .lvl = 31,
-    .species = SPECIES_ZUBAT,
+    .iv = 255,
+    .lvl = 4,
+    .species = SPECIES_AZURILL,
     },
     {
-    .iv = 0,
-    .lvl = 31,
-    .species = SPECIES_CARVANHA,
+    .iv = 255,
+    .lvl = 5,
+    .species = SPECIES_PACHIRISU,
     }
 };
 
