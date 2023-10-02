@@ -1,1 +1,9 @@
 mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {}
+
+script ISLANDGAME_CAMP_PERSI_INTRO_SIGN
+{
+    lock
+    msgbox(format("Hello!"))
+    waitmessage
+    release
+}
