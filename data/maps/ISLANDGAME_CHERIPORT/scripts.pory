@@ -36,6 +36,35 @@ movement WalkBack {
     step_end
 }
 
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles {
+    lock
+    msgbox(ISLANDGAME_CHERIPORT_OUTSIDE_StayHere)
+    waitmessage
+    release
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkBack2)
+    waitmovement(0)
+}
+
+
+text ISLANDGAME_CHERIPORT_OUTSIDE_StayHere {
+    format("{COLOR RED}I should make the most of my time here in the isles... ")
+}
+
+movement WalkBack2 {
+    walk_right
+    step_end
+}
+
+
+
+
+
+
+
+
+
+
+// npcs
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_MrBriney {
     lock
     msgbox(MrBrineyTalk)
@@ -49,19 +78,6 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Girl3 {
     release
 }
 
-
-
-
-
-
-
-
-
-
-
-
-// npcs
-
 text NPCGirl_Talk {
     format("{COLOR DARK_GRAY}The islands are known for their tropical weather, though at times there have been bad storms that have even scared POKéMON.")
 }
@@ -74,7 +90,9 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4 {
 }
 
 text NPCBoy_Talk {
-    format("{COLOR DARK_GRAY}While I was out exploring Southern Oranna Path during dusk, one of the mountain POKéMON attacked me. I've never seen one like it before, but I'm too scared to try to see it again.")
+    format("{COLOR DARK_GRAY}While I was exploring the Southern Oranna Path at night, I was attacked by a Pokémon on the mountains. \p"
+           "{COLOR DARK_GRAY}I've never seen anything like it... and I'm too scared to see it again."
+        )
 }
 
 text MrBrineyTalk {
@@ -84,13 +102,13 @@ text MrBrineyTalk {
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko {
     lock
     faceplayer
+    playmoncry(SPECIES_WINGULL,CRY_MODE_NORMAL)
     msgbox(PeekoTalk)
-    face_down
     release
 }
 
 text PeekoTalk {
-    format("{COLOR BLUE}Wrooooar!")
+    format("{COLOR BLUE}Peeko: {COLOR DARK_GRAY}Wrooooar!")
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC1 {
