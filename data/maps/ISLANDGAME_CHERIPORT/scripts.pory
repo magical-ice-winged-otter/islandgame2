@@ -11,6 +11,8 @@ script ISLANDGAME_CHERIPORT_OnLoad {
     setvar(VAR_TEMP_0, 1)
     if (!flag(FLAG_LEFT_SHIP)) {
         setflag(FLAG_LEFT_SHIP)
+        setflag(FLAG_ROOM3_ITEM)
+        //
     }
     if (flag(FLAG_PROF_GAVE_EEVEE)) {
         setvar(VAR_TEMP_1, 1)

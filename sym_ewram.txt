@@ -151,3 +151,4 @@
 	.include "src/debug.o"
 	.include "src/day_night.o"
 	.include "src/tm_case.o"
+	.include "src/battle_controller_player.o"

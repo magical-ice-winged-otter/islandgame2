@@ -15,6 +15,7 @@ ISLANDGAME_SS_RAIN_ROOM3_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 SS_Rain_EventScript_InvadeRoom::
 	lockall
 	setvar VAR_TEMP_0, 1
+	goto_if_set FLAG_LEFT_SHIP, SS_Rain_EventScript_InvadeRoom_2
 	applymovement 1, ExclaimFacePlayer
 	waitmovement 0
 	msgbox SS_Rain_InvadeRoomReaction_Text
@@ -22,19 +23,23 @@ SS_Rain_EventScript_InvadeRoom::
 	closemessage
 	checkitem ITEM_FRESH_WATER, 1
 	switch VAR_RESULT
-	case 0, SS_Rain_EventScript_InvadeRoom_3
-	case 1, SS_Rain_EventScript_InvadeRoom_4
-SS_Rain_EventScript_InvadeRoom_1:
+	case 0, SS_Rain_EventScript_InvadeRoom_6
+	case 1, SS_Rain_EventScript_InvadeRoom_7
+SS_Rain_EventScript_InvadeRoom_4:
 	releaseall
 	return
 
-SS_Rain_EventScript_InvadeRoom_3:
-	goto SS_Rain_EventScript_HasNoWater
-	goto SS_Rain_EventScript_InvadeRoom_1
+SS_Rain_EventScript_InvadeRoom_2:
+	releaseall
+	return
 
-SS_Rain_EventScript_InvadeRoom_4:
+SS_Rain_EventScript_InvadeRoom_6:
+	goto SS_Rain_EventScript_HasNoWater
+	goto SS_Rain_EventScript_InvadeRoom_4
+
+SS_Rain_EventScript_InvadeRoom_7:
 	goto SS_Rain_EventScript_HasWater
-	goto SS_Rain_EventScript_InvadeRoom_1
+	goto SS_Rain_EventScript_InvadeRoom_4
 
 
 ExclaimFacePlayer:

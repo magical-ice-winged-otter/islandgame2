@@ -14,6 +14,10 @@ mapscripts ISLANDGAME_SS_RAIN_ROOM3_MapScripts {
 script SS_Rain_EventScript_InvadeRoom {
     lockall
     setvar(VAR_TEMP_0, 1)
+    if (flag(FLAG_LEFT_SHIP)) {
+        releaseall
+        return
+    }
     applymovement(LOCALID_GENTLEMAN, ExclaimFacePlayer)
     waitmovement(0)
     msgbox(SS_Rain_InvadeRoomReaction_Text)
