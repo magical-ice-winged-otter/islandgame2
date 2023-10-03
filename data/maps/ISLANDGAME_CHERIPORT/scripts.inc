@@ -21,6 +21,7 @@ ISLANDGAME_CHERIPORT_OnLoad_1:
 
 ISLANDGAME_CHERIPORT_OnLoad_2:
 	setflag FLAG_LEFT_SHIP
+	setflag FLAG_ROOM3_ITEM
 	goto ISLANDGAME_CHERIPORT_OnLoad_1
 
 ISLANDGAME_CHERIPORT_OnLoad_4:
@@ -187,7 +188,8 @@ NeedPokemon_Text::
 	.string "leave the city...$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_StayHere::
-	.string "{COLOR RED}I should make the most of my time here...$"
+	.string "{COLOR RED}I should make the most of my time here\n"
+	.string "in the isles...$"
 
 NPCGirl_Talk::
 	.string "{COLOR DARK_GRAY}The islands are known for their tropical\n"
