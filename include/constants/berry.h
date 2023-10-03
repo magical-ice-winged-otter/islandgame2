@@ -129,4 +129,10 @@
 
 #define BERRY_TREES_COUNT 128
 
+//For island game
+//Note: In the future, we will get rid of the vanilla definitions, and just rename the below
+// This is so that we don't have to move things around in the codebase.
+#define BERRY_TREE_CHERIPORT_1 BERRY_TREE_ROUTE_103_CHERI_1
+#define BERRY_TREE_CHERIPORT_2 BERRY_TREE_ROUTE_103_CHERI_2
+#define BERRY_TREE_CHERIPORT_3 BERRY_TREE_ROUTE_104_CHERI_1
 #endif // GUARD_CONSTANTS_BERRY_H

@@ -19,6 +19,12 @@
 #define MAP_ISLANDGAME_SS_RAIN_CAPTAIN_ROOM (10 | (0 << 8))
 #define MAP_SS_RAIN_CAFETERIA               (11 | (0 << 8))
 #define MAP_ISLANDGAME_CAMP_PERSI           (12 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT            (13 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT_PKMNCENTER (14 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT_PKMNMART   (15 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT_LAB        (16 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT_HOUSE1     (17 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT_HOUSE2     (18 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))

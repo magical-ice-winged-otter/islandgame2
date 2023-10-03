@@ -1086,6 +1086,18 @@ Common_EventScript_LegendaryFlewAway::
 
 	.include "data/maps/ISLANDGAME_SS_RAIN_CAPTAIN_ROOM/scripts.inc"
 
-	.include "data/maps/SS_RAIN_CAFETERIA/scripts.inc"
+    .include "data/maps/SS_RAIN_CAFETERIA/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CAMP_PERSI/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNMART/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE1/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE2/scripts.inc"

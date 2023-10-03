@@ -36,6 +36,7 @@ text SS_RAIN_CAFETERIA_NPC3_TEXT {
 
 script SS_RAIN_CAFETERIA_NPC4_TALK {
     lock
+    faceplayer
     msgbox(SS_RAIN_CAFETERIA_NPC4_TEXT)
     waitmessage
     release

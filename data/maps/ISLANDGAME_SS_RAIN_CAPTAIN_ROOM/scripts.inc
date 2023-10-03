@@ -6,6 +6,7 @@ ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_MapScripts_EventScript_CaptainTalk::
 	lock
 	faceplayer
 	msgbox CaptainTalk_Text
+	face_down
 	release
 	return
 

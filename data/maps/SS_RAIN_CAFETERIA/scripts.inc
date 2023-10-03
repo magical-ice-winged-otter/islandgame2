@@ -28,6 +28,7 @@ SS_RAIN_CAFETERIA_NPC3_TALK::
 
 SS_RAIN_CAFETERIA_NPC4_TALK::
 	lock
+	faceplayer
 	msgbox SS_RAIN_CAFETERIA_NPC4_TEXT
 	waitmessage
 	release
