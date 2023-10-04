@@ -1101,3 +1101,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE1/scripts.inc"
 	
 	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS/scripts.inc"
