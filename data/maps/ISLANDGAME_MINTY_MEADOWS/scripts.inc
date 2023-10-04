@@ -1,0 +1,3 @@
+ISLANDGAME_MINTY_MEADOWS_MapScripts::
+	.byte 0
+

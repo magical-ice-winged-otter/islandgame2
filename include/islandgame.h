@@ -33,7 +33,7 @@ typedef struct Location
 #define SS_RAIN 2
 #define CHERIPORT 3
 #define MINTY_MEADOWS 4
-#define CAMP_PERSI 6
+#define CAMP_PERSI 5
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
