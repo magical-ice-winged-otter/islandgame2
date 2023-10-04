@@ -1508,7 +1508,8 @@
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
 //set when you talk to the professor for the first time and got the eevee
 #define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87) 
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
+//npc gives you a potion
+#define FLAG_S_ORANNA_PATH_NPC                      (SYSTEM_FLAGS + 0x88) 
 #define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
 #define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
