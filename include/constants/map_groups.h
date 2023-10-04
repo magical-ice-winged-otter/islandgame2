@@ -24,6 +24,7 @@
 #define MAP_ISLANDGAME_CHERIPORT_LAB        (15 | (0 << 8))
 #define MAP_ISLANDGAME_CHERIPORT_HOUSE1     (16 | (0 << 8))
 #define MAP_ISLANDGAME_CHERIPORT_HOUSE2     (17 | (0 << 8))
+#define MAP_ISLANDGAME_MINTY_MEADOWS        (18 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
