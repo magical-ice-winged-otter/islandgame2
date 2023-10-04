@@ -4592,6 +4592,16 @@
       "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT_HOUSE2/map.bin"
     },
     {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS",
+      "name": "ISLANDGAME_MINTY_MEADOWS_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/map.bin"
+    },
+    {
       "id": "LAYOUT_ISLANDGAME_SOUTHERN_ORANNA_PATH",
       "name": "ISLANDGAME_Southern_Oranna_Path_Layout",
       "width": 40,

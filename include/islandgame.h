@@ -32,6 +32,7 @@ typedef struct Location
 #define JUNGLE_ROUTE_1 1
 #define SS_RAIN 2
 #define CHERIPORT 3
+#define MINTY_MEADOWS 4
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -46,13 +47,15 @@ static const u8 frontLawnName[] = _("Front Lawn");
 static const u8 route1Name[]    = _("Route 1");
 static const u8 testMapName[]   = _("SS RAIN"); 
 static const u8 cheriportName[] = _("CHERIPORT");
+static const u8 mintyMeadowsName[] = _("MINTY MEADOWS");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
     [FRONT_LAWN] = frontLawnName,
     [JUNGLE_ROUTE_1] = route1Name,
     [SS_RAIN] = testMapName,
-    [CHERIPORT] = cheriportName
+    [CHERIPORT] = cheriportName,
+    [MINTY_MEADOWS] = mintyMeadowsName
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 
