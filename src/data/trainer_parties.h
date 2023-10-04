@@ -11,55 +11,41 @@ static const struct TrainerMon sParty_Sawyer1[] = {
     }
 };
 
-
-
-// Southern Oranna Path
-static const struct TrainerMonNoItemDefaultMoves sParty_SOrannaPathTrainer1[] = {
+static const struct TrainerMon sParty_SOrannaPathTrainer1[] = {
     {
-    .iv = 255,
     .lvl = 5,
     .species = SPECIES_STARLY,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_SOrannaPathTrainer2[] = {
+static const struct TrainerMon sParty_SOrannaPathTrainer2[] = {
     {
-    .iv = 255,
     .lvl = 4,
     .species = SPECIES_AZURILL,
     },
     {
-    .iv = 255,
     .lvl = 5,
     .species = SPECIES_PACHIRISU,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_SOrannaPathTrainer3[] = {
+static const struct TrainerMon sParty_SOrannaPathTrainer3[] = {
     {
-    .iv = 255,
     .lvl = 6,
     .species = SPECIES_SURSKIT,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_SOrannaPathTrainer4[] = {
+static const struct TrainerMon sParty_SOrannaPathTrainer4[] = {
     {
-    .iv = 255,
     .lvl = 6,
     .species = SPECIES_SKIDDO,
     }
 };
 
-
-
-
-
-
-
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntSeafloorCavern1[] = {
+static const struct TrainerMon sParty_GruntSeafloorCavern1[] = {
     {
-    .lvl = 36,
+    .lvl = 7,
     .species = SPECIES_POOCHYENA,
     }
 };

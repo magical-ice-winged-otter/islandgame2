@@ -24,9 +24,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Sawyer1),
     },
 
-
-
-    // Southern Oranna Path
     [TRAINER_S_ORANNA_PATH_TRAINER_1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
@@ -36,7 +33,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_SOrannaPathTrainer1),
+        .party = TRAINER_PARTY(sParty_SOrannaPathTrainer1),
     },
 
     [TRAINER_S_ORANNA_PATH_TRAINER_2] =
@@ -48,7 +45,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_SOrannaPathTrainer2),
+        .party = TRAINER_PARTY(sParty_SOrannaPathTrainer2),
     },
 
     [TRAINER_S_ORANNA_PATH_TRAINER_3] =
@@ -60,7 +57,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_SOrannaPathTrainer3),
+        .party = TRAINER_PARTY(sParty_SOrannaPathTrainer3),
     },
 
     [TRAINER_S_ORANNA_PATH_TRAINER_4] =
@@ -72,14 +69,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_SOrannaPathTrainer4),
+        .party = TRAINER_PARTY(sParty_SOrannaPathTrainer4),
     },
-
-
-
-
-
-
 
     [TRAINER_GRUNT_SEAFLOOR_CAVERN_1] =
     {
