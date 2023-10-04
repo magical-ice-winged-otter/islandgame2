@@ -1,11 +1,11 @@
 static const struct TrainerMon sParty_Sawyer1[] = {
     {
-    .iv = 0,
+    .iv = TRAINER_PARTY_IVS(12,12,12,12,12,12),
     .lvl = 100,
     .species = SPECIES_ARTICUNO,
     },
     {
-    .iv = 0,
+    .iv = TRAINER_PARTY_IVS(12,12,12,12,12,12),
     .lvl = 100,
     .species = SPECIES_VOLCARONA,
     }
@@ -310,12 +310,12 @@ static const struct TrainerMon sParty_ShellyWeatherInstitute[] = {
 
 static const struct TrainerMon sParty_ShellySeafloorCavern[] = {
     {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .iv = TRAINER_PARTY_IVS(12,12,12,12,12,12),
     .lvl = 37,
     .species = SPECIES_SHARPEDO,
     },
     {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
+    .iv = TRAINER_PARTY_IVS(12,12,12,12,12,12),
     .lvl = 37,
     .species = SPECIES_MIGHTYENA,
     }
