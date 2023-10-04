@@ -21,6 +21,7 @@ ISLANDGAME_CHERIPORT_OnLoad_1:
 
 ISLANDGAME_CHERIPORT_OnLoad_2:
 	setflag FLAG_LEFT_SHIP
+	setflag FLAG_ROOM3_ITEM
 	goto ISLANDGAME_CHERIPORT_OnLoad_1
 
 ISLANDGAME_CHERIPORT_OnLoad_4:
@@ -40,6 +41,20 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning::
 
 WalkBack:
 	walk_left
+	step_end
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles::
+	lock
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_StayHere
+	waitmessage
+	release
+	applymovement OBJ_EVENT_ID_PLAYER, WalkBack2
+	waitmovement 0
+	return
+
+
+WalkBack2:
+	walk_right
 	step_end
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_MrBriney::
@@ -68,8 +83,8 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4::
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko::
 	lock
 	faceplayer
+	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
 	msgbox PeekoTalk
-	face_down
 	release
 	return
 
@@ -172,6 +187,10 @@ NeedPokemon_Text::
 	.string "{COLOR RED}I should go see Professor Palm before I\n"
 	.string "leave the city...$"
 
+ISLANDGAME_CHERIPORT_OUTSIDE_StayHere::
+	.string "{COLOR RED}I should make the most of my time here\n"
+	.string "in the isles...$"
+
 NPCGirl_Talk::
 	.string "{COLOR DARK_GRAY}The islands are known for their tropical\n"
 	.string "weather, though at times there have\l"
@@ -179,18 +198,18 @@ NPCGirl_Talk::
 	.string "POKéMON.$"
 
 NPCBoy_Talk::
-	.string "{COLOR DARK_GRAY}While I was out exploring Southern\n"
-	.string "Oranna Path during dusk, one of the\l"
-	.string "mountain POKéMON attacked me. I've\l"
-	.string "never seen one like it before, but I'm\l"
-	.string "too scared to try to see it again.$"
+	.string "{COLOR DARK_GRAY}While I was exploring the Southern\n"
+	.string "Oranna Path at night, I was attacked\l"
+	.string "by a Pokémon on the mountains.\p"
+	.string "{COLOR DARK_GRAY}I've never seen anything like it... and\n"
+	.string "I'm too scared to see it again.$"
 
 MrBrineyTalk::
 	.string "{COLOR DARK_GRAY}This beach reminds you a lot of\n"
 	.string "Slateport, doesn't it, {COLOR BLUE}Peeko?$"
 
 PeekoTalk::
-	.string "{COLOR BLUE}Wrooooar!$"
+	.string "{COLOR BLUE}Peeko: {COLOR DARK_GRAY}Wrooooar!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC1_TALK::
 	.string "{COLOR DARK_GRAY}Nuh-uh! Nuh-uh!$"

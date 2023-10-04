@@ -134,7 +134,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC6",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4",
       "flag": "0"
     },
     {
@@ -174,6 +174,45 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC9",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 47,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_CHERIPORT_1",
+      "script": "BerryTreeScript",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 48,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_CHERIPORT_2",
+      "script": "BerryTreeScript",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 49,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_CHERIPORT_3",
+      "script": "BerryTreeScript",
       "flag": "0"
     }
   ],
@@ -300,6 +339,105 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 30,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 31,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles"
     }
   ],
   "bg_events": [

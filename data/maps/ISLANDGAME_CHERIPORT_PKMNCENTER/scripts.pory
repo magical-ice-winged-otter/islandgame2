@@ -1,4 +1,23 @@
-mapscripts ISLANDGAME_CHERIPORT_PKMNCENTER_MapScripts {}
+const LOCALID_NURSE = 1
+
+mapscripts ISLANDGAME_CHERIPORT_PKMNCENTER_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+}
+
+script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition {
+	setrespawn(HEAL_LOCATION_CHERIPORT)
+}
+
+
+script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse {
+	setvar(VAR_0x800B, LOCALID_NURSE)
+	call(Common_EventScript_PkmnCenterNurse)
+	waitmessage
+	waitbuttonpress
+	release
+}
+
 
 script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1 {
     lock

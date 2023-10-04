@@ -50,6 +50,13 @@ ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_2:
 	goto ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_1
 
 
+ISLANDGAME_Southern_Oranna_Path_EventScript_SIGN::
+	lock
+	msgbox ISLANDGAME_Southern_Oranna_Path_SIGN_DESC
+	release
+	return
+
+
 TrainerBattle1_Text::
 	.string "{COLOR DARK_GRAY}Hey, you look like a newbie! You'll be\n"
 	.string "easy pickings for a veteran like me!$"
@@ -106,3 +113,7 @@ ISLANDGAME_Southern_Oranna_Path_NPC2Talk2::
 	.string "Mart in Cheriport, but I got fired.\p"
 	.string "{COLOR DARK_GRAY}I'm fine with it though, my manager was\n"
 	.string "a real jerk anyways.$"
+
+ISLANDGAME_Southern_Oranna_Path_SIGN_DESC::
+	.string "{COLOR DARK_GRAY}<-- CHERIPORT\n"
+	.string "{COLOR DARK_GRAY}CAMP PERSI -->$"
