@@ -4594,8 +4594,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS",
       "name": "ISLANDGAME_MINTY_MEADOWS_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
