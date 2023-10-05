@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_Southern_Oranna_Path",
   "layout": "LAYOUT_ISLANDGAME_SOUTHERN_ORANNA_PATH",
   "music": "MUS_ROUTE104",
-  "region_map_section": "MAPSEC_NONE",
+  "region_map_section": "MAPSEC_SOUTHERN_ORANNA_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
