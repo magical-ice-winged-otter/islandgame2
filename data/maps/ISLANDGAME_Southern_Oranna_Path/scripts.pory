@@ -1,0 +1,146 @@
+mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {}
+
+// Youngster Tyler
+script ISLANDGAME_Southern_Oranna_Path_TrainerBattle1 {
+    trainerbattle_single(TRAINER_S_ORANNA_PATH_TRAINER_1, TrainerBattle1_Text, TrainerBattle1_Defeated_Text)
+    msgbox(TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text TrainerBattle1_Text {
+    format("{COLOR DARK_GRAY}Hey, you look like a newbie! You'll be easy pickings for a veteran like me!")
+}
+
+text TrainerBattle1_Defeated_Text
+{
+    "N-No way... I lost to a newbie!?"
+}
+
+text TrainerBattle1_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}Okay... I lied about being a veteran. I'm also just a newbie too.")
+}
+
+
+// Lass Julia
+script ISLANDGAME_Southern_Oranna_Path_TrainerBattle2 {
+    trainerbattle_single(TRAINER_S_ORANNA_PATH_TRAINER_2, TrainerBattle2_Text, TrainerBattle2_Defeated_Text)
+    msgbox(TrainerBattle2_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text TrainerBattle2_Text {
+    format("{COLOR DARK_GRAY}I caught some cute Pokémon. Wanna see them? They're pretty strong too!")
+}
+
+text TrainerBattle2_Defeated_Text
+{
+    "Well shoot! Your Pokémon are cute and strong too!"
+}
+
+text TrainerBattle2_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}Where'd you get that Eevee? I'd love to have one too!")
+}
+
+
+
+// Bug Catcher Manny
+script ISLANDGAME_Southern_Oranna_Path_TrainerBattle3 {
+    trainerbattle_single(TRAINER_S_ORANNA_PATH_TRAINER_3, TrainerBattle3_Text, TrainerBattle3_Defeated_Text)
+    msgbox(TrainerBattle3_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text TrainerBattle3_Text {
+    format("{COLOR DARK_GRAY}My Pokémon is really rare! You don't stand a chance!")
+}
+
+text TrainerBattle3_Defeated_Text
+{
+    "How did you beat me? Your Pokémon must be even rarer!"
+}
+
+text TrainerBattle3_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}Hmmm, I guess just because a Pokémon is rare, doesn't mean it's strong...")
+}
+
+
+
+// Youngster Logan
+script ISLANDGAME_Southern_Oranna_Path_TrainerBattle4 {
+    trainerbattle_single(TRAINER_S_ORANNA_PATH_TRAINER_4, TrainerBattle4_Text, TrainerBattle4_Defeated_Text)
+    msgbox(TrainerBattle4_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text TrainerBattle4_Text {
+    format("{COLOR DARK_GRAY}I'm on a crazy winning streak right now! How'd you like to be my 10th victory?")
+}
+
+text TrainerBattle4_Defeated_Text
+{
+    "Whelp... Looks like we're back to zero."
+}
+
+text TrainerBattle4_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}You ruined my perfect record today... ):")
+}
+
+
+
+
+
+
+
+
+
+
+script ISLANDGAME_Southern_Oranna_Path_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_Southern_Oranna_Path_NPC1Talk)
+    release
+}
+
+text ISLANDGAME_Southern_Oranna_Path_NPC1Talk {
+    format(
+        "{COLOR DARK_GRAY}Have you seen any Jigglypuff yet? I like that Pokémon."
+    )
+}
+
+script ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2 {
+    lock
+    faceplayer
+    if(!flag(FLAG_S_ORANNA_PATH_NPC)) {
+        msgbox(ISLANDGAME_Southern_Oranna_Path_NPC2Talk1)
+        giveitem(ITEM_POTION)
+        setflag(FLAG_S_ORANNA_PATH_NPC)
+    }
+    msgbox(ISLANDGAME_Southern_Oranna_Path_NPC2Talk2)
+    release
+}
+
+text ISLANDGAME_Southern_Oranna_Path_NPC2Talk1 {
+    format(
+        "{COLOR DARK_GRAY}You're a Pokémon Trainer, right? You could probably use this."
+    )
+}
+
+text ISLANDGAME_Southern_Oranna_Path_NPC2Talk2 {
+    format(
+        "{COLOR DARK_GRAY}I used to work part-time at the Poké Mart in Cheriport, but I got fired. \p"
+        "{COLOR DARK_GRAY}I'm fine with it though, my manager was a real jerk anyways."
+    )
+}
+
+script ISLANDGAME_Southern_Oranna_Path_EventScript_SIGN {
+    lock
+    msgbox(ISLANDGAME_Southern_Oranna_Path_SIGN_DESC)
+    release
+}
+
+text ISLANDGAME_Southern_Oranna_Path_SIGN_DESC {
+    format(
+        "{COLOR DARK_GRAY}<-- CHERIPORT\n"
+        "{COLOR DARK_GRAY}CAMP PERSI -->"
+    )
+}
