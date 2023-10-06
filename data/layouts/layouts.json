@@ -4594,10 +4594,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS",
       "name": "ISLANDGAME_MINTY_MEADOWS_Layout",
-      "width": 40,
-      "height": 34,
+      "width": 42,
+      "height": 36,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/map.bin"
     },
@@ -4610,6 +4610,16 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_2",
+      "name": "ISLANDGAME_MINTY_MEADOWS_2_Layout",
+      "width": 42,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/map.bin"
     }
   ]
 }
