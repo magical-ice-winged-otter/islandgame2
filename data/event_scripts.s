@@ -1103,3 +1103,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE2/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MINTY_MEADOWS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.inc"

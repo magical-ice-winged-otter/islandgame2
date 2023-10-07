@@ -11,43 +11,41 @@ static const struct TrainerMon sParty_Sawyer1[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntAquaHideout1[] = {
+static const struct TrainerMon sParty_SOrannaPathTrainer1[] = {
     {
-    .lvl = 10,
-    .species = SPECIES_SNORUNT,
-    .heldItem = ITEM_ORAN_BERRY,
-    .moves = {MOVE_POWDER_SNOW, MOVE_BITE, MOVE_LEER, MOVE_DOUBLE_TEAM}
+    .lvl = 5,
+    .species = SPECIES_STARLY,
     }
 };
 
-static const struct TrainerMon sParty_GruntAquaHideout2[] = {
+static const struct TrainerMon sParty_SOrannaPathTrainer2[] = {
     {
-    .lvl = 31,
-    .species = SPECIES_ZUBAT,
+    .lvl = 4,
+    .species = SPECIES_AZURILL,
     },
     {
-    .lvl = 31,
-    .species = SPECIES_CARVANHA,
+    .lvl = 5,
+    .species = SPECIES_PACHIRISU,
     }
 };
 
-static const struct TrainerMon sParty_GruntAquaHideout3[] = {
+static const struct TrainerMon sParty_SOrannaPathTrainer3[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_ZUBAT,
+    .lvl = 6,
+    .species = SPECIES_SURSKIT,
     }
 };
 
-static const struct TrainerMon sParty_GruntAquaHideout4[] = {
+static const struct TrainerMon sParty_SOrannaPathTrainer4[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
+    .lvl = 6,
+    .species = SPECIES_SKIDDO,
     }
 };
 
 static const struct TrainerMon sParty_GruntSeafloorCavern1[] = {
     {
-    .lvl = 36,
+    .lvl = 7,
     .species = SPECIES_POOCHYENA,
     }
 };

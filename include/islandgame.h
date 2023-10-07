@@ -33,7 +33,8 @@ typedef struct Location
 #define SS_RAIN 2
 #define CHERIPORT 3
 #define MINTY_MEADOWS 4
-#define CAMP_PERSI 5
+#define TRAVELERS_TUNNEL 5
+#define CAMP_PERSI 6
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -42,6 +43,7 @@ static const Location LOCATION_DATA[] = {
     [JUNGLE_ROUTE_1] = SET_LOC(ISLAND_JUNGLE_ROUTE1, 10, 54),
     [SS_RAIN] = SET_LOC(ISLANDGAME_SS_RAIN_ROOM2, 6, 7), //I can't figure out how to change the name on porymap
     [CHERIPORT] = SET_LOC(ISLANDGAME_CHERIPORT, 10, 26),
+    [TRAVELERS_TUNNEL] = SET_LOC(ISLANDGAME_TRAVELERS_TUNNEL, 10, 10),
     [CAMP_PERSI] = SET_LOC(ISLANDGAME_CAMP_PERSI, 1, 24)
 };
 
@@ -50,6 +52,7 @@ static const u8 route1Name[]    = _("Route 1");
 static const u8 testMapName[]   = _("SS RAIN"); 
 static const u8 cheriportName[] = _("CHERIPORT");
 static const u8 mintyMeadowsName[] = _("MINTY MEADOWS");
+static const u8 travelersTunnelName[] = _("TravelTunnel");
 static const u8 campPersiName[] = _("CAMP PERSI");
 
 /// @brief A human-readable name for each custom location in the game.
@@ -59,6 +62,7 @@ static const u8 *const LOCATION_NAMES[] = {
     [SS_RAIN] = testMapName,
     [CHERIPORT] = cheriportName,
     [MINTY_MEADOWS] = mintyMeadowsName,
+    [TRAVELERS_TUNNEL] = mintyMeadowsName,
     [CAMP_PERSI] = campPersiName
 };
 // The actual string values must be defined outside the array, or crashes will follow.
@@ -88,7 +92,7 @@ void IslandGameCustomStartup();
 
 #ifdef ISLANDGAME_DEBUG
 
-#define START_LOC_GAME LOCATION_DATA[SS_RAIN]
+#define START_LOC_GAME LOCATION_DATA[CHERIPORT]
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA
 #define ISLANDGAME_STARTING_MON_LEVEL 100
 #define ISLANDGAME_STARTING_MON_ITEM ITEM_NONE
