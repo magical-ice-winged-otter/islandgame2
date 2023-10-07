@@ -9,5 +9,8 @@ script ISLANDGAME_CAMP_PERSI_INTRO_SIGN {
 }
 
 script ISLANDGAME_CAMP_PERSI_JONAS_BATTLE {
-	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_1, "I am jonas.", "You beat me.")
+    lock
+    msgbox(format("I am jonas! TODO: battle"))
+    waitmessage
+    release
 }

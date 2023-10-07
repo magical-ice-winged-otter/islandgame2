@@ -4536,8 +4536,8 @@
       "name": "ISLANDGAME_CAMP_PERSI_Layout",
       "width": 50,
       "height": 50,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_IslandgamePersi",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/map.bin"
     },
