@@ -4614,10 +4614,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL",
       "name": "ISLANDGAME_TRAVELERS_TUNNEL_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 36,
+      "height": 24,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/map.bin"
     }
