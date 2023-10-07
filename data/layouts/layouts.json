@@ -4610,6 +4610,16 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL",
+      "name": "ISLANDGAME_TRAVELERS_TUNNEL_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/map.bin"
     }
   ]
 }
