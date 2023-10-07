@@ -1,0 +1,26 @@
+mapscripts ISLANDGAME_CHERIPORT_PKMNMART_MapScripts {}
+
+script ISLANDGAME_CHERIPORT_PKMNMART_EventScript_NPC1 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_PKMNMART_NPC1_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_PKMNMART_NPC1_TALK {
+    format(
+        "{COLOR DARK_GRAY}Man, where's all the energy drinks? How am I supposed to grind without one?"
+    )
+}
+
+script ISLANDGAME_CHERIPORT_PKMNMART_EventScript_NPC2 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_PKMNMART_NPC2_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_PKMNMART_NPC2_TALK {
+    format(
+        "{COLOR DARK_GRAY}Oh dear, everything here is so expensive..."
+    )
+}
+

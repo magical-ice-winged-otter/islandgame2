@@ -55,6 +55,7 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/day_night.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1084,3 +1085,24 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_SS_RAIN_ROOM3/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_SS_RAIN_CAPTAIN_ROOM/scripts.inc"
+
+    .include "data/maps/SS_RAIN_CAFETERIA/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNMART/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE1/scripts.inc"
+	
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.inc"

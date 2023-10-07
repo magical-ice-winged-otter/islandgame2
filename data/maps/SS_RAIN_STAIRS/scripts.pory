@@ -1,0 +1,13 @@
+
+mapscripts SS_RAIN_STAIRS_MapScripts {}
+
+script SS_RAIN_STAIRS_NPC {
+    lock
+    faceplayer
+    msgbox(SS_RAIN_STAIRS_NPC_TALK)
+    release
+}
+
+text SS_RAIN_STAIRS_NPC_TALK {
+    format("{COLOR DARK_GRAY}My mom is taking us to the beach later!")
+}

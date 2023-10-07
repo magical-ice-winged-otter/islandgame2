@@ -1,0 +1,281 @@
+mapscripts ISLANDGAME_CHERIPORT_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_TEMP_0, 0)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: ISLANDGAME_CHERIPORT_OnLoad
+    ]
+}
+
+script ISLANDGAME_CHERIPORT_OnLoad {
+    setvar(VAR_TEMP_0, 1)
+    if (!flag(FLAG_LEFT_SHIP)) {
+        setflag(FLAG_LEFT_SHIP)
+        setflag(FLAG_ROOM3_ITEM)
+        //
+    }
+    if (flag(FLAG_PROF_GAVE_EEVEE)) {
+        setvar(VAR_TEMP_1, 1)
+    }
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
+    lock
+    msgbox(NeedPokemon_Text)
+    waitmessage
+    release
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkBack)
+    waitmovement(0)
+}
+
+
+text NeedPokemon_Text {
+    format("{COLOR RED}I should go see Professor Palm before I leave the city...")
+}
+
+movement WalkBack {
+    walk_left
+    step_end
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles {
+    lock
+    msgbox(ISLANDGAME_CHERIPORT_OUTSIDE_StayHere)
+    waitmessage
+    release
+    applymovement(OBJ_EVENT_ID_PLAYER, WalkBack2)
+    waitmovement(0)
+}
+
+
+text ISLANDGAME_CHERIPORT_OUTSIDE_StayHere {
+    format("{COLOR RED}I should make the most of my time here in the isles... ")
+}
+
+movement WalkBack2 {
+    walk_right
+    step_end
+}
+
+
+
+
+
+
+
+
+
+
+// npcs
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_MrBriney {
+    lock
+    msgbox(MrBrineyTalk)
+    release
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Girl3 {
+    lock
+    faceplayer
+    msgbox(NPCGirl_Talk)
+    release
+}
+
+text NPCGirl_Talk {
+    format("{COLOR DARK_GRAY}The islands are known for their tropical weather, though at times there have been bad storms that have even scared POKéMON.")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4 {
+    lock
+    faceplayer
+    msgbox(NPCBoy_Talk)
+    release
+}
+
+text NPCBoy_Talk {
+    format("{COLOR DARK_GRAY}While I was exploring the Southern Oranna Path at night, I was attacked by a Pokémon on the mountains. \p"
+           "{COLOR DARK_GRAY}I've never seen anything like it... and I'm too scared to see it again."
+        )
+}
+
+text MrBrineyTalk {
+    format("{COLOR DARK_GRAY}This beach reminds you a lot of Slateport, doesn't it, {COLOR BLUE}Peeko?")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko {
+    lock
+    faceplayer
+    playmoncry(SPECIES_WINGULL,CRY_MODE_NORMAL)
+    msgbox(PeekoTalk)
+    release
+}
+
+text PeekoTalk {
+    format("{COLOR BLUE}Peeko: {COLOR DARK_GRAY}Wrooooar!")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC1 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC1_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC1_TALK {
+    format("{COLOR DARK_GRAY}Nuh-uh! Nuh-uh!")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC2 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC2_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC2_TALK {
+    format("{COLOR DARK_GRAY}Hey! I tagged you!")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC3 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC3_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC3_TALK {
+    format("{COLOR DARK_GRAY}Ugh... I can't see anything on my Game Boy because of the sun!")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC4 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC4_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC4_TALK {
+    format("{COLOR DARK_GRAY}Left! Right! Left! Right! Huh? I'm in the middle of my training! Shoo!")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC5 {
+    lock
+    faceplayer
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC5_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC5_TALK {
+    format(
+        "{COLOR DARK_GRAY}Welcome to the island of Oranna, traveler. \p"
+        "{COLOR DARK_GRAY}We, The Silverwing Order, pray you have a pleasant stay."
+    )
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC6 {
+    lock
+    faceplayer
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC6_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC6_TALK {
+    format(
+        "{COLOR DARK_GRAY}Hiya! This is Cheriport. We get a lot of visitors from other regions here. \p"
+        "{COLOR DARK_GRAY}I actually moved here from the Johto region not too long ago."
+    )
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC7 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK {
+    format(
+        "{COLOR DARK_GRAY}Come on... Come on... Argh! Not another Magikarp! I need a Barboach!")
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC8 {
+    lock
+    faceplayer
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC8_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC8_TALK {
+    format(
+        "{COLOR DARK_GRAY}Cheriport is home to the Cheri Berry! \p"
+        "{COLOR DARK_GRAY}They may not taste good to us, but Pokémon sure love them!"
+    )
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC9 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK {
+    format(
+        "{COLOR DARK_GRAY}-sigh- If only you were still here with us..."
+    )
+}
+
+
+
+
+
+
+
+
+
+
+// Signs
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN1 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC {
+    format(
+        "{COLOR DARK_GRAY}WELCOME TO CHERIPORT\n"
+        "{COLOR DARK_GRAY}Take a rest on our soft and sandy beach!"
+    )
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN2 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN2_DESC)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN2_DESC {
+    format(
+        "{COLOR DARK_GRAY}PROFESSOR PALM'S LABORATORY"
+    )
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN3 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN3_DESC)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN3_DESC {
+    format(
+        "{COLOR DARK_GRAY}SEASIDE SERVICES \n"
+        "{COLOR DARK_GRAY}Have a drink, it's on us!"
+    )
+}
+
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4 {
+    lock
+    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN4_DESC)
+    release
+}
+
+text ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN4_DESC {
+    format(
+        "{COLOR DARK_GRAY}! WARNING ! \n"
+        "{COLOR DARK_GRAY}NO LIFEGUARD; SWIM AT YOUR OWN RISK!"
+    )
+}

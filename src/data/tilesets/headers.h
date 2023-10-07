@@ -7,6 +7,7 @@ const struct Tileset gTileset_General =
     .metatiles = gMetatiles_General,
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_General,
+    .paletteOverrides = gTilesetPalOverrides_General,
 };
 
 const struct Tileset gTileset_Petalburg =
@@ -18,6 +19,7 @@ const struct Tileset gTileset_Petalburg =
     .metatiles = gMetatiles_Petalburg,
     .metatileAttributes = gMetatileAttributes_Petalburg,
     .callback = InitTilesetAnim_Petalburg,
+    .paletteOverrides = gTilesetPalOverrides_Petalburg,
 };
 
 const struct Tileset gTileset_Rustboro =
@@ -878,5 +880,16 @@ const struct Tileset gTileset_FireRed_SS_ANNE_Cont =
     .palettes = gTilesetPalettes_FireRed_SS_ANNE_Cont,
     .metatiles = gMetatiles_FireRed_SS_ANNE_Cont,
     .metatileAttributes = gMetatileAttributes_FireRed_SS_ANNE_Cont,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_IslandgameGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_IslandgameGeneral,
+    .palettes = gTilesetPalettes_IslandgameGeneral,
+    .metatiles = gMetatiles_IslandgameGeneral,
+    .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
     .callback = NULL,
 };

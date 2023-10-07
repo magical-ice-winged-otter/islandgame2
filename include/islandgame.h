@@ -31,24 +31,35 @@ typedef struct Location
 #define FRONT_LAWN 0
 #define JUNGLE_ROUTE_1 1
 #define SS_RAIN 2
+#define CHERIPORT 3
+#define MINTY_MEADOWS 4
+#define TRAVELERS_TUNNEL 5
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
 static const Location LOCATION_DATA[] = {
     [FRONT_LAWN] = SET_LOC(FOREST_BASE_CAMP_FRONT_LAWN, 10, 15),
     [JUNGLE_ROUTE_1] = SET_LOC(ISLAND_JUNGLE_ROUTE1, 10, 54),
-    [SS_RAIN] = SET_LOC(ISLANDGAME_SS_RAIN_ROOM2, 6, 7) //I can't figure out how to change the name on porymap
+    [SS_RAIN] = SET_LOC(ISLANDGAME_SS_RAIN_ROOM2, 6, 7), //I can't figure out how to change the name on porymap
+    [CHERIPORT] = SET_LOC(ISLANDGAME_CHERIPORT, 10, 26),
+    [TRAVELERS_TUNNEL] = SET_LOC(ISLANDGAME_TRAVELERS_TUNNEL, 10, 10)
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
 static const u8 route1Name[]    = _("Route 1");
 static const u8 testMapName[]   = _("SS RAIN"); 
+static const u8 cheriportName[] = _("CHERIPORT");
+static const u8 mintyMeadowsName[] = _("MINTY MEADOWS");
+static const u8 travelersTunnelName[] = _("TravelTunnel");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
     [FRONT_LAWN] = frontLawnName,
     [JUNGLE_ROUTE_1] = route1Name,
-    [SS_RAIN] = testMapName
+    [SS_RAIN] = testMapName,
+    [CHERIPORT] = cheriportName,
+    [MINTY_MEADOWS] = mintyMeadowsName,
+    [TRAVELERS_TUNNEL] = mintyMeadowsName
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 
@@ -85,7 +96,7 @@ void IslandGameCustomStartup();
 
 #else // Final Game, Production Build
 
-#define START_LOC_GAME LOCATION_DATA[FRONT_LAWN]
+#define START_LOC_GAME LOCATION_DATA[SS_RAIN]
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA
 #define ISLANDGAME_STARTING_MON_LEVEL 100
 #define ISLANDGAME_STARTING_MON_ITEM ITEM_NONE
