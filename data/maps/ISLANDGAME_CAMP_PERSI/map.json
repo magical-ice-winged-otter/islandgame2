@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 21,
-      "y": 43,
+      "x": 20,
+      "y": 44,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -68,7 +68,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 37,
+      "x": 40,
       "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -81,8 +81,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 36,
-      "y": 17,
+      "x": 37,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -107,8 +107,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 21,
-      "y": 31,
+      "x": 23,
+      "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -120,8 +120,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 21,
-      "y": 17,
+      "x": 19,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -134,7 +134,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 19,
-      "y": 30,
+      "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -147,7 +147,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
       "x": 11,
-      "y": 43,
+      "y": 44,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -160,7 +160,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 30,
-      "y": 11,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -172,8 +172,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 31,
-      "y": 29,
+      "x": 32,
+      "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -248,36 +248,15 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
-      "y": 25,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 29,
-      "y": 28,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 21,
-      "y": 10,
+      "y": 26,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "0"
     },
     {
-      "x": 24,
-      "y": 18,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 17,
-      "y": 17,
+      "x": 31,
+      "y": 28,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "0"
