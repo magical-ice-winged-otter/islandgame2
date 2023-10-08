@@ -4534,7 +4534,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_CAMP_PERSI",
       "name": "ISLANDGAME_CAMP_PERSI_Layout",
-      "width": 55,
+      "width": 80,
       "height": 55,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_IslandgamePersi",
