@@ -4620,6 +4620,16 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_3",
+      "name": "ISLANDGAME_MINTY_MEADOWS_3_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/map.bin"
     }
   ]
 }
