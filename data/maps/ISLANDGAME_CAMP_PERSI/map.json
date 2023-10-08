@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 29,
+      "x": 28,
       "y": 44,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -108,7 +108,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 23,
-      "y": 30,
+      "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -120,7 +120,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 19,
+      "x": 21,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -134,7 +134,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 19,
-      "y": 31,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -159,7 +159,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 30,
+      "x": 27,
       "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -186,7 +186,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
       "x": 43,
-      "y": 20,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -195,33 +195,39 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CAMP_PERSI_JONAS_BATTLE",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 29,
+      "y": 45,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
       "x": 43,
-      "y": 18,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "0"
     },
     {
       "x": 44,
-      "y": 18,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "0"
     },
     {
       "x": 0,
-      "y": 21,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 0,
-      "y": 22,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "0"
@@ -229,6 +235,13 @@
     {
       "x": 0,
       "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 0,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "0"
@@ -248,7 +261,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 21,
+      "x": 20,
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
@@ -269,7 +282,7 @@
     {
       "type": "sign",
       "x": 3,
-      "y": 15,
+      "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
@@ -277,7 +290,7 @@
     {
       "type": "sign",
       "x": 10,
-      "y": 16,
+      "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
@@ -293,14 +306,6 @@
     {
       "type": "sign",
       "x": 3,
-      "y": 16,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
-    },
-    {
-      "type": "sign",
-      "x": 2,
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -308,8 +313,16 @@
     },
     {
       "type": "sign",
+      "x": 2,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
       "x": 11,
-      "y": 16,
+      "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
@@ -349,7 +362,23 @@
     {
       "type": "sign",
       "x": 10,
-      "y": 17,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
