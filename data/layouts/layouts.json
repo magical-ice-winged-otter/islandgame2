@@ -4614,7 +4614,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_2",
       "name": "ISLANDGAME_MINTY_MEADOWS_2_Layout",
-      "width": 52,
+      "width": 70,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
