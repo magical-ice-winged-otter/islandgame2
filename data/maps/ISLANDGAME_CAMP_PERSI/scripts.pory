@@ -1,16 +1,145 @@
 mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
 }
 
-script ISLANDGAME_CAMP_PERSI_INTRO_SIGN {
+
+
+/// scout vendors 
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl {
     lock
-    msgbox(format("Hello!"))
-    waitmessage
+    faceplayer
+    showmoneybox(0,0)
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1, MSGBOX_YESNO)
+    goto_if_eq(VAR_RESULT, NO, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline)
+    checkmoney(250)
+    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBroke)
+    checkitemspace(ITEM_LAVA_COOKIE)
+    goto_if_eq(VAR_RESULT, TRUE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlPay)
+    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBagFull)
+    hidemoneybox
     release
 }
 
-script ISLANDGAME_CAMP_PERSI_JONAS_BATTLE {
-    lock
-    msgbox(format("I am jonas! TODO: battle"))
-    waitmessage
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1 {
+    format(
+        "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava Cookies to support Troop 115. \p"
+        "{COLOR DARK_GRAY}Would you like to buy one for ¥250?"
+        )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline {
+    msgbox(format("{COLOR DARK_GRAY}Eeeh? But I said they were delicious..."))
+    hidemoneybox
     release
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBroke {
+    msgbox(format("{COLOR DARK_GRAY}Eeeh? You don't have enough money? Phooey..."))
+    hidemoneybox
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlPay {
+    msgbox(format("{COLOR DARK_GRAY}Yay! Thank you for your support!"))
+    removemoney(250)
+    updatemoneybox
+    giveitem(ITEM_LAVA_COOKIE)
+    hidemoneybox
+    release 
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBagFull {
+    msgbox(format("{COLOR DARK_GRAY}Eeeh? You don't have enough room for this cookie?"))
+    hidemoneybox
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy {
+    lock
+    faceplayer
+    showmoneybox(0,0)
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1, MSGBOX_YESNO)
+    goto_if_eq(VAR_RESULT, NO, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyDecline)
+    checkmoney(250)
+    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBroke)
+    checkitemspace(ITEM_RAGE_CANDY_BAR)
+    goto_if_eq(VAR_RESULT, TRUE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay)
+    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull)
+    hidemoneybox
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1 {
+    format(
+        "{COLOR DARK_GRAY}Hi there! I'm selling tasty Rage Candy Bars to support Troop 117. \p"
+        "{COLOR DARK_GRAY}Would you like to buy one for ¥250?"
+        )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyDecline {
+    msgbox(format("{COLOR DARK_GRAY}Drats. I need more sales for that skateboard..."))
+    hidemoneybox
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBroke {
+    msgbox(format("{COLOR DARK_GRAY}Huh? You don't have enough money?"))
+    hidemoneybox
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay {
+    msgbox(format("{COLOR DARK_GRAY}Woohoo! Thanks for your support!"))
+    removemoney(250)
+    updatemoneybox
+    giveitem(ITEM_RAGE_CANDY_BAR)
+    hidemoneybox
+    release 
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull {
+    msgbox(format("{COLOR DARK_GRAY}Huh? You don't have room for this candy bar?"))
+    hidemoneybox
+    release
+}
+
+
+
+
+
+/// npcs
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC1 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC1Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC1Talk {
+    format(
+        "{COLOR DARK_GRAY}I'm one of the counselors here at Camp Persi. I tell you man, it is NOT easy. \p"
+        "{COLOR DARK_GRAY}Coming up with new spooky stories to tell during campfire time is tough work. \p"
+        "{COLOR DARK_GRAY}Maybe for tonight's campfire we'll just sing a song."
+    )
+}
+
+
+
+
+
+
+
+
+/// signs
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN1 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC {
+    format(
+        "{COLOR DARK_GRAY}CAMP PERSI\n"
+        "{COLOR DARK_GRAY}The greatest summer camp in Mariyama!"
+    )
 }
