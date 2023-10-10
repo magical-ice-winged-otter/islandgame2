@@ -110,6 +110,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull {
 /// npcs
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC1 {
     lock
+    faceplayer
     msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC1Talk)
     release
 }
@@ -122,6 +123,109 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC1Talk {
     )
 }
 
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC2 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC2Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC2Talk {
+    format(
+        "{COLOR DARK_GRAY}My mom made me come here. I just want to stay inside and play video games... \p"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC3 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC3Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC3Talk {
+    format(
+        "{COLOR DARK_GRAY}I'm taking the campers on a nature hike later today. \p"
+        "{COLOR DARK_GRAY}Hopefully this time we don't come into contact with any Stunky..."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC4 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC4Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC4Talk {
+    format(
+        "{COLOR DARK_GRAY}I'm in time-out for throwing a pancake at a counselor. \p"
+        "{COLOR DARK_GRAY}It was just a prank though... I thought camp was about having fun."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC5 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC5Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC5Talk {
+    format(
+        "{COLOR DARK_GRAY}Um... do you mind? \p"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC6 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC6Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC6Talk {
+    format(
+        "{COLOR DARK_GRAY}Remember kids! Don't feed the wildlife! \p"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC7 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC7Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC7Talk {
+    format(
+        "{COLOR DARK_GRAY}I'm too scared to go deeper... Pokémon are scary. \p"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC8 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk {
+    format(
+        "{COLOR DARK_GRAY}When I'm a Pokémon Trainer, I'm gonna catch a Zigazagoon here! They're cute! \p"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC9 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC9Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC9Talk {
+    format(
+        "{COLOR DARK_GRAY}Hanzo! Hanzo! Ugh... where could that troublemaker have gone? \p"
+        "{COLOR DARK_GRAY}I swear, we need to put a leash on that boy..."
+    )
+}
 
 
 
@@ -141,5 +245,18 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC {
     format(
         "{COLOR DARK_GRAY}CAMP PERSI\n"
         "{COLOR DARK_GRAY}The greatest summer camp in Mariyama!"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN2 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC {
+    format(
+        "{COLOR DARK_GRAY}THE WILD SIDE\n"
+        "{COLOR DARK_GRAY}! SUPERVISION REQUIRED !"
     )
 }
