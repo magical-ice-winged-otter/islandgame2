@@ -24,6 +24,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Sawyer1),
     },
 
+    /// Southern Oranna Path
     [TRAINER_S_ORANNA_PATH_TRAINER_1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
@@ -72,16 +73,27 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_SOrannaPathTrainer4),
     },
 
-    [TRAINER_GRUNT_SEAFLOOR_CAVERN_1] =
+
+
+
+
+
+
+
+
+
+
+    /// Camp Persi
+    [TRAINER_CAMP_PERSI_TRAINER_1] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_NINJA_BOY,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_NINJA_BOY,
+        .trainerName = _("HANZO"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntSeafloorCavern1),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_CampPersiTrainer1),
     },
 
     [TRAINER_GRUNT_SEAFLOOR_CAVERN_2] =

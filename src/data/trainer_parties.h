@@ -11,6 +11,7 @@ static const struct TrainerMon sParty_Sawyer1[] = {
     }
 };
 
+/// Southern Oranna Path
 static const struct TrainerMon sParty_SOrannaPathTrainer1[] = {
     {
     .lvl = 5,
@@ -43,12 +44,22 @@ static const struct TrainerMon sParty_SOrannaPathTrainer4[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntSeafloorCavern1[] = {
+
+
+
+
+
+
+/// Camp Persi
+
+static const struct TrainerMon sParty_CampPersiTrainer1[] = {
     {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 7,
-    .species = SPECIES_POOCHYENA,
+    .species = SPECIES_NINCADA,
     }
 };
+
 
 static const struct TrainerMon sParty_GruntSeafloorCavern2[] = {
     {

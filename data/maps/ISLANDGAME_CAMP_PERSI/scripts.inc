@@ -2,6 +2,12 @@ ISLANDGAME_CAMP_PERSI_MapScripts::
 	.byte 0
 
 
+ISLANDGAME_CAMP_PERSI_TrainerBattle1::
+	trainerbattle_single TRAINER_CAMP_PERSI_TRAINER_1, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl::
 	lock
 	faceplayer
@@ -154,6 +160,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC8::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk
+	face_original_direction
 	release
 	return
 
@@ -161,6 +168,48 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC8::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC9::
 	lock
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC9Talk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC10::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC10Talk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC11::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC11Talk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC12::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC12Talk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC13::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag::
+	lock
+	faceplayer
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk
+	face_original_direction
 	release
 	return
 
@@ -175,6 +224,13 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN1::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN2::
 	lock
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN3::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC
 	release
 	return
 
@@ -207,6 +263,16 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull_Text_0:
 	.string "{COLOR DARK_GRAY}Huh? You don't have room for this candy\n"
 	.string "bar?$"
 
+ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text::
+	.string "{COLOR DARK_GRAY}Heh... You've fallen right into my trap!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text::
+	.string "Darn it... I guess you came prepared!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle1_PostDefeated_Text::
+	.string "{COLOR DARK_GRAY}You may have beaten me now, but I'll get\n"
+	.string "stronger! I WILL become a grandmaster!$"
+
 ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1::
 	.string "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava\n"
 	.string "Cookies to support Troop 115.\p"
@@ -227,8 +293,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC1Talk::
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC2Talk::
 	.string "{COLOR DARK_GRAY}My mom made me come here. I just want to\n"
-	.string "stay inside and play video games...\p"
-	.string "$"
+	.string "stay inside and play video games...$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC3Talk::
 	.string "{COLOR DARK_GRAY}I'm taking the campers on a nature hike\n"
@@ -243,28 +308,51 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC4Talk::
 	.string "camp was about having fun.$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC5Talk::
-	.string "{COLOR DARK_GRAY}Um... do you mind?\p"
-	.string "$"
+	.string "{COLOR DARK_GRAY}Um... do you mind?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC6Talk::
-	.string "{COLOR DARK_GRAY}Remember kids! Don't feed the wildlife!\p"
-	.string "$"
+	.string "{COLOR DARK_GRAY}Remember kids! Don't feed the wildlife!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC7Talk::
 	.string "{COLOR DARK_GRAY}I'm too scared to go deeper... Pokémon\n"
-	.string "are scary.\p"
-	.string "$"
+	.string "are scary.$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk::
 	.string "{COLOR DARK_GRAY}When I'm a Pokémon Trainer, I'm gonna\n"
-	.string "catch a Zigazagoon here! They're cute!\p"
-	.string "$"
+	.string "catch a Zigazagoon here! They're cute!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC9Talk::
 	.string "{COLOR DARK_GRAY}Hanzo! Hanzo! Ugh... where could that\n"
 	.string "troublemaker have gone?\p"
 	.string "{COLOR DARK_GRAY}I swear, we need to put a leash on that\n"
 	.string "boy...$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC10Talk::
+	.string "{COLOR DARK_GRAY}Our campout last week was a complete\n"
+	.string "disaster.\p"
+	.string "{COLOR DARK_GRAY}I got stuck in a group with Hanzo, and\n"
+	.string "he didn't help us at all!\p"
+	.string "{COLOR DARK_GRAY}To make things worse, it was just\n"
+	.string "raining all day too, so we were soaked.\p"
+	.string "{COLOR DARK_GRAY}I don't even know why he's here. All he\n"
+	.string "does is goof off in the forest.$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC11Talk::
+	.string "{COLOR DARK_GRAY}That Hanzo dweeb gives me the creeps.\n"
+	.string "He thinks he's an anime protagonist.$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC12Talk::
+	.string "{COLOR DARK_GRAY}When kindling a flame, it's important to\n"
+	.string "use the right materials.\p"
+	.string "{COLOR DARK_GRAY}One poor kid found out the hard way\n"
+	.string "when he threw poison ivy in his fire.$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk::
+	.string "{COLOR DARK_GRAY}The older boys are so cool... They know\n"
+	.string "how to build a tent with just sticks!$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk::
+	.string "{COLOR RED}It's just staring at me... menacingly?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC::
 	.string "{COLOR DARK_GRAY}CAMP PERSI\n"
@@ -273,3 +361,6 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC::
 	.string "{COLOR DARK_GRAY}THE WILD SIDE\n"
 	.string "{COLOR DARK_GRAY}! SUPERVISION REQUIRED !$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC::
+	.string "{COLOR DARK_GRAY}PERSI LAKE$"
