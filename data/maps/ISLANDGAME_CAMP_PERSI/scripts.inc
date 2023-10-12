@@ -8,6 +8,36 @@ ISLANDGAME_CAMP_PERSI_TrainerBattle1::
 	return
 
 
+ISLANDGAME_CAMP_PERSI_TrainerBattle2::
+	trainerbattle_single TRAINER_CAMP_PERSI_TRAINER_2, ISLANDGAME_CAMP_PERSI_TrainerBattle2_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle2_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_TrainerBattle2_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle3::
+	trainerbattle_single TRAINER_CAMP_PERSI_TRAINER_3, ISLANDGAME_CAMP_PERSI_TrainerBattle3_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle3_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_TrainerBattle3_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle4::
+	trainerbattle_single TRAINER_CAMP_PERSI_TRAINER_4, ISLANDGAME_CAMP_PERSI_TrainerBattle4_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle4_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_TrainerBattle4_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle5::
+	trainerbattle_single TRAINER_CAMP_PERSI_TRAINER_5, ISLANDGAME_CAMP_PERSI_TrainerBattle5_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle5_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_CAMP_PERSI_Jonas::
+	trainerbattle_single TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Text, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl::
 	lock
 	faceplayer
@@ -160,7 +190,6 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC8::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk
-	face_original_direction
 	release
 	return
 
@@ -209,7 +238,6 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag::
 	faceplayer
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk
-	face_original_direction
 	release
 	return
 
@@ -264,14 +292,76 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull_Text_0:
 	.string "bar?$"
 
 ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text::
-	.string "{COLOR DARK_GRAY}Heh... You've fallen right into my trap!$"
+	.string "{COLOR DARK_GRAY}Nani!? You've got sharp senses to find\n"
+	.string "a grandmaster ninja like me...\p"
+	.string "{COLOR DARK_GRAY}But how will you fare in battle against\n"
+	.string "me and my nakama?$"
 
 ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text::
-	.string "Darn it... I guess you came prepared!$"
+	.string "Bakana... I lost!?$"
 
 ISLANDGAME_CAMP_PERSI_TrainerBattle1_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}You may have beaten me now, but I'll get\n"
-	.string "stronger! I WILL become a grandmaster!$"
+	.string "stronger! Believe it!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle2_Text::
+	.string "{COLOR DARK_GRAY}What the heck! I almost caught a\n"
+	.string "Pokémon and you messed me up!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle2_Defeated_Text::
+	.string "If only I had another Pokémon...$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle2_PostDefeated_Text::
+	.string "{COLOR DARK_GRAY}Go bug someone else! Camp's already\n"
+	.string "miserable enough with Hanzo!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle3_Text::
+	.string "{COLOR DARK_GRAY}There's only one thing better than the\n"
+	.string "outdoors: A fiery Pokémon battle!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle3_Defeated_Text::
+	.string "Hoo boy, your Pokémon are hot!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle3_PostDefeated_Text::
+	.string "{COLOR DARK_GRAY}I really like Pokémon battles. It's a\n"
+	.string "great chance to bond with your buds!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle4_Text::
+	.string "{COLOR DARK_GRAY}If I want Lazlo to notice me, I'll have\n"
+	.string "to become a fiery Pokémon trainer!\p"
+	.string "{COLOR DARK_GRAY}So um, get your game on, I guess!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle4_Defeated_Text::
+	.string "Was I fiery enough?$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle4_PostDefeated_Text::
+	.string "{COLOR DARK_GRAY}Pokémon battles aren't really my thing,\n"
+	.string "to be frank. {COLOR DARK_GRAY}Maybe there's something\l"
+	.string "else I can catch Lazlo's eye with...$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle5_Text::
+	.string "{COLOR DARK_GRAY}I'm studying Pokémon, and apparently\n"
+	.string "one of the best ways to study them is\l"
+	.string "to analyze them in battle.\p"
+	.string "{COLOR DARK_GRAY}Please, help me with my research!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle5_Defeated_Text::
+	.string "I learned a lot from our battle!$"
+
+ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text::
+	.string "{COLOR DARK_GRAY}Pokémon can hold items like berries to\n"
+	.string "give them an edge in battle.\p"
+	.string "{COLOR DARK_GRAY}But they can't hold items like potions\n"
+	.string "for some reason. Why is that?$"
+
+ISLANDGAME_CAMP_PERSI_Jonas_Text::
+	.string "{COLOR DARK_GRAY}jonas battle$"
+
+ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text::
+	.string "You are quite the remarkable trainer!$"
+
+ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text::
+	.string "{COLOR DARK_GRAY}post defeat$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1::
 	.string "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava\n"

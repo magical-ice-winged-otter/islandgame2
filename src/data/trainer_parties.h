@@ -11,6 +11,16 @@ static const struct TrainerMon sParty_Sawyer1[] = {
     }
 };
 
+
+
+
+
+
+
+
+
+
+
 /// Southern Oranna Path
 static const struct TrainerMon sParty_SOrannaPathTrainer1[] = {
     {
@@ -51,76 +61,70 @@ static const struct TrainerMon sParty_SOrannaPathTrainer4[] = {
 
 
 /// Camp Persi
-
 static const struct TrainerMon sParty_CampPersiTrainer1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 7,
+    .lvl = 8,
     .species = SPECIES_NINCADA,
     }
 };
 
-
-static const struct TrainerMon sParty_GruntSeafloorCavern2[] = {
+static const struct TrainerMon sParty_CampPersiTrainer2[] = {
     {
-    .lvl = 36,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
-static const struct TrainerMon sParty_GruntSeafloorCavern3[] = {
-    {
-    .lvl = 36,
-    .species = SPECIES_ZUBAT,
-    }
-};
-
-static const struct TrainerMon sParty_Gabrielle1[] = {
-    {
-    .lvl = 26,
-    .species = SPECIES_SKITTY,
-    },
-    {
-    .lvl = 26,
-    .species = SPECIES_POOCHYENA,
-    },
-    {
-    .lvl = 26,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 7,
     .species = SPECIES_ZIGZAGOON,
-    },
-    {
-    .lvl = 26,
-    .species = SPECIES_LOTAD,
-    },
-    {
-    .lvl = 26,
-    .species = SPECIES_SEEDOT,
-    },
-    {
-    .lvl = 26,
-    .species = SPECIES_TAILLOW,
     }
 };
 
-static const struct TrainerMon sParty_GruntPetalburgWoods[] = {
+static const struct TrainerMon sParty_CampPersiTrainer3[] = {
     {
-    .lvl = 9,
-    .species = SPECIES_POOCHYENA,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 7,
+    .species = SPECIES_ODDISH,
     }
 };
 
-static const struct TrainerMon sParty_Marcel[] = {
+static const struct TrainerMon sParty_CampPersiTrainer4[] = {
     {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 29,
-    .species = SPECIES_MANECTRIC,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 6,
+    .species = SPECIES_COTTONEE,
     },
     {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 29,
-    .species = SPECIES_SHIFTRY,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 6,
+    .species = SPECIES_MARILL,
     }
 };
+
+static const struct TrainerMon sParty_CampPersiTrainer5[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 7,
+    .species = SPECIES_JIGGLYPUFF,
+    .heldItem = ITEM_ORAN_BERRY,
+    }
+};
+
+static const struct TrainerMon sParty_CampPersiJonas[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 10,
+    .species = SPECIES_SNORUNT,
+    .heldItem = ITEM_STARF_BERRY,
+    .ability = ABILITY_MOODY,
+    .moves = {MOVE_POWDER_SNOW, MOVE_BITE, MOVE_DOUBLE_TEAM, MOVE_LEER}
+    },
+};
+
+
+
+
+
+
+
+
 
 static const struct TrainerMon sParty_Alberto[] = {
     {

@@ -14,18 +14,145 @@ script ISLANDGAME_CAMP_PERSI_TrainerBattle1 {
 }
 
 text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text {
-    format("{COLOR DARK_GRAY}Heh... You've fallen right into my trap!")
+    format(
+        "{COLOR DARK_GRAY}Nani!? You've got sharp senses to find a grandmaster ninja like me... \p"
+        "{COLOR DARK_GRAY}But how will you fare in battle against me and my nakama?"
+    )
 }
 
 text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text
 {
-    "Darn it... I guess you came prepared!"
+    "Bakana... I lost!?"
 }
 
 text ISLANDGAME_CAMP_PERSI_TrainerBattle1_PostDefeated_Text
 {
-    format("{COLOR DARK_GRAY}You may have beaten me now, but I'll get stronger! I WILL become a grandmaster!")
+    format("{COLOR DARK_GRAY}You may have beaten me now, but I'll get stronger! Believe it!")
 }
+
+// Camper Edward
+script ISLANDGAME_CAMP_PERSI_TrainerBattle2 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_2, ISLANDGAME_CAMP_PERSI_TrainerBattle2_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle2_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle2_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle2_Text {
+    format(
+        "{COLOR DARK_GRAY}What the heck! I almost caught a Pokémon and you messed me up!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle2_Defeated_Text
+{
+    "If only I had another Pokémon..."
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle2_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}Go bug someone else! Camp's already miserable enough with Hanzo!")
+}
+
+// Camper Lazlo
+script ISLANDGAME_CAMP_PERSI_TrainerBattle3 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_3, ISLANDGAME_CAMP_PERSI_TrainerBattle3_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle3_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle3_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle3_Text {
+    format(
+        "{COLOR DARK_GRAY}There's only one thing better than the outdoors: A fiery Pokémon battle!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle3_Defeated_Text
+{
+    "Hoo boy, your Pokémon are hot!"
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle3_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}I really like Pokémon battles. It's a great chance to bond with your buds!")
+}
+
+// Camper Patsy
+script ISLANDGAME_CAMP_PERSI_TrainerBattle4 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_4, ISLANDGAME_CAMP_PERSI_TrainerBattle4_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle4_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle4_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle4_Text {
+    format(
+        "{COLOR DARK_GRAY}If I want Lazlo to notice me, I'll have to become a fiery Pokémon trainer! \p"
+        "{COLOR DARK_GRAY}So um, get your game on, I guess!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle4_Defeated_Text
+{
+    "Was I fiery enough?"
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle4_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}Pokémon battles aren't really my thing, to be frank."
+        "{COLOR DARK_GRAY}Maybe there's something else I can catch Lazlo's eye with..."
+        )
+}
+
+// Camper Nina
+script ISLANDGAME_CAMP_PERSI_TrainerBattle5 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_5, ISLANDGAME_CAMP_PERSI_TrainerBattle5_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle5_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle5_Text {
+    format(
+        "{COLOR DARK_GRAY}I'm studying Pokémon, and apparently one of the best ways to study them is to analyze them in battle. \p"
+        "{COLOR DARK_GRAY}Please, help me with my research!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle5_Defeated_Text
+{
+    "I learned a lot from our battle!"
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}Pokémon can hold items like berries to give them an edge in battle. \p"
+        "{COLOR DARK_GRAY}But they can't hold items like potions for some reason. Why is that?"
+        )
+}
+
+// Merchant Jonas
+script ISLANDGAME_CAMP_PERSI_Jonas {
+    trainerbattle_single(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Text, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_Jonas_Text {
+    format(
+        "{COLOR DARK_GRAY}jonas battle"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
+{
+    "You are quite the remarkable trainer!"
+}
+
+text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}post defeat"
+        )
+}
+
+
+
+
 
 
 /// scout vendors 
@@ -230,7 +357,6 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC8 {
     lock
     faceplayer
     msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk)
-    face_original_direction
     release
 }
 
@@ -314,7 +440,6 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag {
     faceplayer
     playmoncry(SPECIES_ZIGZAGOON,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk)
-    face_original_direction
     release
 }
 
