@@ -324,6 +324,10 @@ extern const u8 gText_FemaleSymbol[];
 extern const u8 gText_SelectorArrow3[];
 extern const u8 gText_YesNo[];
 
+//option start menu clock texts
+extern const u8 gText_AM[];
+extern const u8 gText_PM[];
+
 // main menu/birch speech text
 extern const u8 gText_SaveFileErased[];
 extern const u8 gText_SaveFileCorrupted[];
