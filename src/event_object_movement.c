@@ -171,6 +171,7 @@ static bool8 AreElevationsCompatible(u8, u8);
 static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
 
 static void StartSlowRunningAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction);
+static bool8 DoesObjectCollideWithObjectAtZ(struct ObjectEvent *, s16, s16);
 
 const u8 gReflectionEffectPaletteMap[16] = {
         [PALSLOT_PLAYER]                 = PALSLOT_PLAYER_REFLECTION,
@@ -9297,7 +9298,6 @@ u8 MovementAction_Fly_Finish(struct ObjectEvent *objectEvent, struct Sprite *spr
     return TRUE;
 }
 
-
 // running slow
 static void StartSlowRunningAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction)
 {
@@ -9341,6 +9341,39 @@ bool8 MovementActionFunc_RunSlow_Step1(struct ObjectEvent *objectEvent, struct S
     {
         sprite->sActionFuncId = 2;
         return TRUE;
+    }
+    return FALSE;
+}
+
+u8 CheckCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, u32 dir, u8 currentElevation)
+{
+    u8 direction = dir;
+    if (MapGridGetCollisionAt(x, y) || GetMapBorderIdAt(x, y) == -1 || IsMetatileDirectionallyImpassable(objectEvent, x, y, direction))
+        return COLLISION_IMPASSABLE;
+    else if (objectEvent->trackedByCamera && !CanCameraMoveInDirection(direction))
+        return COLLISION_IMPASSABLE;
+    else if (IsElevationMismatchAt(currentElevation, x, y))
+        return COLLISION_ELEVATION_MISMATCH;
+    else if (DoesObjectCollideWithObjectAtZ(objectEvent, x, y))
+        return COLLISION_OBJECT_EVENT;
+    return COLLISION_NONE;
+}
+
+static bool8 DoesObjectCollideWithObjectAtZ(struct ObjectEvent *objectEvent, s16 x, s16 y)
+{
+    u8 i;
+    struct ObjectEvent *curObject;
+
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        curObject = &gObjectEvents[i];
+        if (curObject->active && curObject != objectEvent)
+        {
+            if ((curObject->currentCoords.x == x && curObject->currentCoords.y == y) || (curObject->previousCoords.x == x && curObject->previousCoords.y == y))
+            {
+                return TRUE;
+            }
+        }
     }
     return FALSE;
 }

@@ -346,6 +346,7 @@ SECTIONS {
         src/expansion_intro.o(.text);
         src/day_night.o(.text);
         src/tm_case.o(.text);
+        src/movement_path_planning.o(.text);
     } =0
 
     script_data :
@@ -715,7 +716,8 @@ SECTIONS {
         src/expansion_intro.o(.rodata);
         src/day_night.o(.rodata);
         src/tm_case.o(.rodata);
-    } =0
+        src/movement_path_planning.o(.rodata);
+        } =0
 
     song_data :
     ALIGN(4)

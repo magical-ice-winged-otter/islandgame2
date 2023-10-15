@@ -119,8 +119,9 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC4::
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC5::
 	lock
-	faceplayer
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC5_TALK
+	moveobjecttopos 8, 26, 22, 1
+	waitmovement 0
 	release
 	return
 
