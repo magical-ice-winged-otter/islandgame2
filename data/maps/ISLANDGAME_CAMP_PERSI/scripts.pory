@@ -1,5 +1,15 @@
+const ZIGZAGOON_OW_ID = 14
+const ZIGZAGGIRL_OW_ID = 10
+const JONAS_OW_ID = 13
+
 mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (flag(FLAG_CAMP_PERSI_JONAS_DEFEATED)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
 }
+
 
 
 
@@ -126,21 +136,225 @@ text ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text
         )
 }
 
-// Merchant Jonas
-script ISLANDGAME_CAMP_PERSI_Jonas {
-    trainerbattle_single(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Text, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
-    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+
+
+
+
+
+// Merchant Jonas Event
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle {
+    lockall
+    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
+    closemessage
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro)
+    waitmovement(0)
+
+    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
+    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
+    closemessage
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro)
+    waitmovement(0)
+    
+    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    releaseall
 }
 
-text ISLANDGAME_CAMP_PERSI_Jonas_Text {
-    format(
-        "{COLOR DARK_GRAY}jonas battle"
-    )
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft {
+    lockall
+    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
+    closemessage
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+
+    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
+    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
+    closemessage
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
+    waitmovement(0)
+    
+    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    releaseall
 }
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft {
+    lockall
+    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
+    closemessage
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+
+    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
+    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
+    closemessage
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
+    waitmovement(0)
+    
+    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    releaseall
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight {
+    lockall
+    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
+    closemessage
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+
+    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
+    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
+    closemessage
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
+    waitmovement(0)
+    
+    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    releaseall
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight {
+    lockall
+    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
+    closemessage
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+
+    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
+    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
+    closemessage
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
+    waitmovement(0)
+    
+    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    releaseall
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+}
+
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro {
+    walk_left
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    face_left
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_left
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    face_right
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_right
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave {
+    delay_16
+    delay_16
+    face_down
+    step_end
+}
+
 
 text ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
 {
-    "You are quite the remarkable trainer!"
+    "Ah... \p"
+    "Your aptitude for battle is... \n"
+    "quite remarkable."
 }
 
 text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
@@ -357,6 +571,8 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC8 {
     lock
     faceplayer
     msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk)
+    applymovement(ZIGZAGGIRL_OW_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
     release
 }
 
@@ -440,6 +656,8 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag {
     faceplayer
     playmoncry(SPECIES_ZIGZAGOON,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk)
+    applymovement(ZIGZAGOON_OW_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
     release
 }
 
@@ -480,6 +698,7 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC {
         "{COLOR DARK_GRAY}! SUPERVISION REQUIRED !"
     )
 }
+
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN3 {
     lock
     msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC)
@@ -489,5 +708,18 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN3 {
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC {
     format(
         "{COLOR DARK_GRAY}PERSI LAKE"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC {
+    format(
+        "{COLOR DARK_GRAY}CAMP GARDEN \n"
+        "{COLOR DARK_GRAY}Feel free to contribute! (Please do.)"
     )
 }

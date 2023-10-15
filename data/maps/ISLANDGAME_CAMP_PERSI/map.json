@@ -178,16 +178,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WALLACE",
-      "x": 56,
-      "y": 12,
+      "x": 59,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "5",
-      "script": "ISLANDGAME_CAMP_PERSI_Jonas",
-      "flag": "0"
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_CAMP_PERSI_JONAS_DEFEATED"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_2",
@@ -309,9 +309,9 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 12,
-      "y": 8,
+      "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -324,7 +324,7 @@
       "x": 13,
       "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -337,7 +337,51 @@
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 59,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight"
+    }
   ],
   "bg_events": [
     {
@@ -363,6 +407,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN3"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 43,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4"
     }
   ]
 }

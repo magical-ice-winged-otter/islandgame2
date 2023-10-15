@@ -1,5 +1,14 @@
 ISLANDGAME_CAMP_PERSI_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	goto_if_set FLAG_CAMP_PERSI_JONAS_DEFEATED, ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setvar VAR_TEMP_1, 1
+	return
 
 
 ISLANDGAME_CAMP_PERSI_TrainerBattle1::
@@ -32,11 +41,193 @@ ISLANDGAME_CAMP_PERSI_TrainerBattle5::
 	return
 
 
-ISLANDGAME_CAMP_PERSI_Jonas::
-	trainerbattle_single TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Text, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
-	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text, MSGBOX_AUTOCLOSE
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle::
+	lockall
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_0
+	closemessage
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro
+	waitmovement 0
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_1
+	trainerbattle_no_intro TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
+	closemessage
+	setvar VAR_TEMP_1, 1
+	setflag FLAG_CAMP_PERSI_JONAS_DEFEATED
+	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro
+	waitmovement 0
+	hideobjectat 13, MAP_ISLANDGAME_CAMP_PERSI
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	releaseall
 	return
 
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft::
+	lockall
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_0
+	closemessage
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_1
+	trainerbattle_no_intro TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
+	closemessage
+	setvar VAR_TEMP_1, 1
+	setflag FLAG_CAMP_PERSI_JONAS_DEFEATED
+	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro
+	waitmovement 0
+	hideobjectat 13, MAP_ISLANDGAME_CAMP_PERSI
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	releaseall
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft::
+	lockall
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_0
+	closemessage
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_1
+	trainerbattle_no_intro TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
+	closemessage
+	setvar VAR_TEMP_1, 1
+	setflag FLAG_CAMP_PERSI_JONAS_DEFEATED
+	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro
+	waitmovement 0
+	hideobjectat 13, MAP_ISLANDGAME_CAMP_PERSI
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	releaseall
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight::
+	lockall
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_0
+	closemessage
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_1
+	trainerbattle_no_intro TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
+	closemessage
+	setvar VAR_TEMP_1, 1
+	setflag FLAG_CAMP_PERSI_JONAS_DEFEATED
+	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro
+	waitmovement 0
+	hideobjectat 13, MAP_ISLANDGAME_CAMP_PERSI
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	releaseall
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight::
+	lockall
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_0
+	closemessage
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_1
+	trainerbattle_no_intro TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
+	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
+	closemessage
+	setvar VAR_TEMP_1, 1
+	setflag FLAG_CAMP_PERSI_JONAS_DEFEATED
+	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
+	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro
+	waitmovement 0
+	hideobjectat 13, MAP_ISLANDGAME_CAMP_PERSI
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	releaseall
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	face_left
+	step_end
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	step_end
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	face_right
+	step_end
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	step_end
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave:
+	delay_16
+	delay_16
+	face_down
+	step_end
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl::
 	lock
@@ -190,6 +381,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC8::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk
+	applymovement 10, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	return
 
@@ -238,6 +431,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag::
 	faceplayer
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk
+	applymovement 14, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	return
 
@@ -262,6 +457,19 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN3::
 	release
 	return
 
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_0:
+	.string "{COLOR DARK_GRAY}Ah, you there!$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle_Text_1:
+	.string "{COLOR DARK_GRAY}Jonas battle intro$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline_Text_0:
 	.string "{COLOR DARK_GRAY}Eeeh? But I said they were delicious...$"
@@ -354,11 +562,10 @@ ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}But they can't hold items like potions\n"
 	.string "for some reason. Why is that?$"
 
-ISLANDGAME_CAMP_PERSI_Jonas_Text::
-	.string "{COLOR DARK_GRAY}jonas battle$"
-
 ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text::
-	.string "You are quite the remarkable trainer!$"
+	.string "Ah... \p"
+	.string "Your aptitude for battle is... \n"
+	.string "quite remarkable.$"
 
 ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}post defeat$"
@@ -454,3 +661,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC::
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC::
 	.string "{COLOR DARK_GRAY}PERSI LAKE$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC::
+	.string "{COLOR DARK_GRAY}CAMP GARDEN\n"
+	.string "{COLOR DARK_GRAY}Feel free to contribute! (Please do.)$"
