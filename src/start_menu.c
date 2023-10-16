@@ -501,7 +501,7 @@ static void ShowSafariBallsWindow(void)
     ConvertIntToDecimalStringN(gStringVar1, gNumSafariBalls, STR_CONV_MODE_RIGHT_ALIGN, 2);
     StringExpandPlaceholders(gStringVar4, gText_SafariBallStock);
     AddTextPrinterParameterized(sSafariBallsWindowId, FONT_NORMAL, gStringVar4, 0, 1, TEXT_SKIP_DRAW, NULL);
-    //CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
+    CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
 }
 
 static void ShowPyramidFloorWindow(void)
@@ -574,7 +574,7 @@ static void RemoveExtraStartMenuWindows(void)
     if (GetSafariZoneFlag())
     {
         ClearStdWindowAndFrameToTransparent(sSafariBallsWindowId, FALSE);
-        CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
+        //CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
         RemoveWindow(sSafariBallsWindowId);
     } else if (InBattlePyramid())
     {
@@ -659,8 +659,6 @@ static bool32 InitStartMenuStep(void)
         return TRUE;
     }
 
-    RemoveExtraStartMenuWindows();
-    ShowTimeWindow();
     return FALSE;
 }
 
@@ -783,7 +781,8 @@ static bool8 HandleStartMenuInput(void)
         HideStartMenu();
         return TRUE;
     }
-
+    RemoveExtraStartMenuWindows();
+    ShowTimeWindow();
     return FALSE;
 }
 
