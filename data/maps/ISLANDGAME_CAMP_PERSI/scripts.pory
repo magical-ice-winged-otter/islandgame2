@@ -142,17 +142,37 @@ text ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text
 
 
 // Merchant Jonas Event
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle {
-    lockall
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage {
     msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
     closemessage
-    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro)
-    waitmovement(0)
+    return
+}
 
+script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage {
     msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
     trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
     msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
     closemessage
+    return
+}
+
+script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup {
+    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    releaseall
+    return
+}
+
+
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle {
+    lockall
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro)
+    waitmovement(0)
+
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
     
     setvar(VAR_TEMP_1, 1)
     setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
@@ -160,24 +180,17 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle {
     applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro)
     waitmovement(0)
     
-    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
-    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
-    waitmovement(0)
-    releaseall
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
 }
 
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft {
     lockall
-    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
-    closemessage
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
     applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 
-    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
-    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
-    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
-    closemessage
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
     
     setvar(VAR_TEMP_1, 1)
     setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
@@ -185,24 +198,17 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft {
     applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
     waitmovement(0)
     
-    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
-    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
-    waitmovement(0)
-    releaseall
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
 }
 
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft {
     lockall
-    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
-    closemessage
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
     applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
 
-    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
-    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
-    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
-    closemessage
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
     
     setvar(VAR_TEMP_1, 1)
     setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
@@ -210,24 +216,17 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft {
     applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
     waitmovement(0)
     
-    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
-    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
-    waitmovement(0)
-    releaseall
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
 }
 
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight {
     lockall
-    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
-    closemessage
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
     applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 
-    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
-    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
-    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
-    closemessage
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
     
     setvar(VAR_TEMP_1, 1)
     setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
@@ -235,24 +234,17 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight {
     applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
     waitmovement(0)
     
-    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
-    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
-    waitmovement(0)
-    releaseall
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
 }
 
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight {
     lockall
-    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
-    closemessage
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
     applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
 
-    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
-    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
-    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
-    closemessage
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
     
     setvar(VAR_TEMP_1, 1)
     setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
@@ -260,10 +252,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight {
     applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
     waitmovement(0)
     
-    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
-    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
-    waitmovement(0)
-    releaseall
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro {
