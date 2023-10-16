@@ -4532,6 +4532,16 @@
       "blockdata_filepath": "data/layouts/SS_RAIN_CAFETERIA/map.bin"
     },
     {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI",
+      "name": "ISLANDGAME_CAMP_PERSI_Layout",
+      "width": 72,
+      "height": 58,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_IslandgamePersi",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/map.bin"
+    },
+    {
       "id": "LAYOUT_ISLANDGAME_CHERIPORT",
       "name": "ISLANDGAME_CHERIPORT_Layout",
       "width": 60,

@@ -893,3 +893,14 @@ const struct Tileset gTileset_IslandgameGeneral =
     .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_IslandgamePersi =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IslandgamePersi,
+    .palettes = gTilesetPalettes_IslandgamePersi,
+    .metatiles = gMetatiles_IslandgamePersi,
+    .metatileAttributes = gMetatileAttributes_IslandgamePersi,
+    .callback = NULL,
+};

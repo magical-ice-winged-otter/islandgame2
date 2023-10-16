@@ -793,4 +793,7 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_IslandgamePersi
+#define METATILE_Persi_Door 0x26C
+
 #endif // GUARD_METATILE_LABELS_H
