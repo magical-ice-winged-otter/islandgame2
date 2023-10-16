@@ -27,6 +27,11 @@
       "map": "MAP_ISLANDGAME_CHERIPORT",
       "offset": 6,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ISLANDGAME_CAMP_PERSI",
+      "offset": -18,
+      "direction": "right"
     }
   ],
   "object_events": [
