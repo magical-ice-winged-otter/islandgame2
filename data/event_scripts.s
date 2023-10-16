@@ -1109,3 +1109,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_2/scripts.inc"

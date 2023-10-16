@@ -4640,6 +4640,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
+      "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/map.bin"
     }
   ]
 }
