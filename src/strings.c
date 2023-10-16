@@ -1464,6 +1464,10 @@ const u8 gText_KOsInARow[] = _("KOs in a row: {STR_VAR_1}");
 const u8 gText_TimesVar1[] = _("Times: {STR_VAR_1}");
 const u8 gText_FloorsCleared[] = _("Floors cleared: {STR_VAR_1}");
 
+//island game start: start-clock
+const u8 gText_AM[] = _("AM");
+const u8 gText_PM[] = _("PM");
+
 ALIGNED(4) const u8 gText_RecordsLv50[] = _("LV. 50");
 ALIGNED(4) const u8 gText_RecordsOpenLevel[] = _("OPEN LEVEL");
 ALIGNED(4) const u8 gText_FrontierFacilityWinStreak[] = _("Win streak: {STR_VAR_2}");
