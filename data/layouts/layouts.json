@@ -4654,10 +4654,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_VERDANT_PATH",
       "name": "ISLANDGAME_VERDANT_PATH_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 70,
       "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Unused1",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/map.bin"
     }
