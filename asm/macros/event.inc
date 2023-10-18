@@ -2025,3 +2025,10 @@
 	callnative CreateTrainerPartyForPlayer
 	trainerbattle_no_intro \trainer2, NULL
 	.endm
+
+	@ Applies the movement at the specified id then executes a msgbox.
+	.macro msgboxEmote localId:req, movements:req, text:req, type=MSGBOX_DEFAULT
+	applymovement \localId , \movements
+	loadword 0, \text
+	callstd \type
+	.endm

@@ -72,6 +72,8 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_RayquazaSpotlight         @ FLDEFF_RAYQUAZA_SPOTLIGHT
 	.4byte gFieldEffectScript_DestroyDeoxysRock         @ FLDEFF_DESTROY_DEOXYS_ROCK
 	.4byte gFieldEffectScript_MoveDeoxysRock            @ FLDEFF_MOVE_DEOXYS_ROCK
+	.4byte gFieldEffectScript_TalkingIcon               @ FLDEFF_TALKING_ICON
+	.4byte gFieldEffectScript_ThinkingIcon              @ FLDEFF_THINKING_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -342,4 +344,12 @@ gFieldEffectScript_DestroyDeoxysRock::
 
 gFieldEffectScript_MoveDeoxysRock::
 	field_eff_callnative FldEff_MoveDeoxysRock
+	field_eff_end
+
+gFieldEffectScript_TalkingIcon::
+	field_eff_callnative FldEff_TalkingIcon
+	field_eff_end
+
+gFieldEffectScript_ThinkingIcon::
+	field_eff_callnative FldEff_ThinkingIcon
 	field_eff_end

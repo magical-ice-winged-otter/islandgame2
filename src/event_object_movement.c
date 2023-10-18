@@ -6501,6 +6501,21 @@ bool8 MovementAction_EmoteHeart_Step0(struct ObjectEvent *objectEvent, struct Sp
     sprite->sActionFuncId = 1;
     return TRUE;
 }
+bool8 MovementAction_EmoteTalking_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_TALKING_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
+
+bool8 MovementAction_EmoteThinking_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_THINKING_ICON);
+    sprite->sActionFuncId = 1;
+    return TRUE;
+}
 
 bool8 MovementAction_RevealTrainer_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
