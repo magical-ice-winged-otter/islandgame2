@@ -125,40 +125,47 @@ static const struct TrainerMon sParty_CampPersiJonas[] = {
 
 
 
-
-static const struct TrainerMon sParty_Alberto[] = {
+/// Verdant Path
+static const struct TrainerMon sParty_VerdantPathTrainer1[] = {
     {
-    .lvl = 30,
-    .species = SPECIES_PELIPPER,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),        
+    .lvl = 7,
+    .species = SPECIES_WINGULL,
     },
     {
-    .lvl = 30,
-    .species = SPECIES_XATU,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),  
+    .lvl = 8,
+    .species = SPECIES_FLETCHLING,
     }
 };
 
-static const struct TrainerMon sParty_Ed[] = {
+static const struct TrainerMon sParty_VerdantPathTrainer2[] = {
     {
-    .lvl = 30,
-    .species = SPECIES_ZANGOOSE,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),        
+    .lvl = 7,
+    .species = SPECIES_ZIGZAGOON,
     },
     {
-    .lvl = 30,
-    .species = SPECIES_SEVIPER,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),        
+    .lvl = 8,
+    .species = SPECIES_STUNKY,
     }
 };
 
-static const struct TrainerMon sParty_GruntSeafloorCavern4[] = {
+static const struct TrainerMon sParty_VerdantPathTrainer3[] = {
     {
-    .lvl = 36,
-    .species = SPECIES_CARVANHA,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),  
+    .lvl = 9,
+    .species = SPECIES_BUIZEL,
     }
 };
 
-static const struct TrainerMon sParty_Declan[] = {
+static const struct TrainerMon sParty_VerdantPathTrainer4[] = {
     {
-    .lvl = 34,
-    .species = SPECIES_GYARADOS,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),  
+    .lvl = 15,
+    .species = SPECIES_MAGIKARP,
+    .isShiny = TRUE,
     }
 };
 

@@ -1,1 +1,159 @@
 mapscripts ISLANDGAME_VERDANT_PATH_MapScripts {}
+
+/// trainers
+// Birdkeeper Felix
+script ISLANDGAME_VERDANT_PATH_TrainerBattle1 {
+    trainerbattle_single(TRAINER_VERDANT_PATH_TRAINER_1, ISLANDGAME_VERDANT_PATH_TrainerBattle1_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle1_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_PATH_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle1_Text {
+    format(
+        "{COLOR DARK_GRAY}Soar, my bird Pokémon!"
+    )
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle1_Defeated_Text
+{
+    "I guess they're still not ready yet..."
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle1_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}There's tons of different flying Pokémon around here. It's awesome!")
+}
+
+// Youngster Steve
+script ISLANDGAME_VERDANT_PATH_TrainerBattle2 {
+    trainerbattle_single(TRAINER_VERDANT_PATH_TRAINER_2, ISLANDGAME_VERDANT_PATH_TrainerBattle2_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle2_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_PATH_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle2_Text {
+    format(
+        "{COLOR DARK_GRAY}Ugh! I still haven't found the Pokémon I want for my team yet! \p"
+        "{COLOR DARK_GRAY}Hey, you! I'm gonna take my frustration out in a battle, okay? Prepare to lose!"
+    )
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle2_Defeated_Text
+{
+    "If only I had the Pokémon I needed..."
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle2_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}The Pokémon I'm looking for is Yanma, but it's so hard to find one!")
+}
+
+// Fisherman Jonathan
+script ISLANDGAME_VERDANT_PATH_TrainerBattle3 {
+    trainerbattle_single(TRAINER_VERDANT_PATH_TRAINER_3, ISLANDGAME_VERDANT_PATH_TrainerBattle3_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle3_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_PATH_TrainerBattle3_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle3_Text {
+    format(
+        "{COLOR DARK_GRAY}I just got this shiny new rod from Arnie's! Check out what it got me!"
+    )
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle3_Defeated_Text
+{
+    "Gah, my line snapped!"
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle3_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}If you want to join in on the fishing hype, you should stop by Arnie's! \p"
+        "{COLOR DARK_GRAY}And before you ask, no, I'm not sponsored or anything."
+        )
+}
+
+// Fisherman Frank
+script ISLANDGAME_VERDANT_PATH_TrainerBattle4 {
+    trainerbattle_single(TRAINER_VERDANT_PATH_TRAINER_4, ISLANDGAME_VERDANT_PATH_TrainerBattle4_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle4_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_PATH_TrainerBattle4_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle4_Text {
+    format(
+        "{COLOR DARK_GRAY}After 10,000 tries and 27 days... I finally struck gold! \p" 
+        "{COLOR DARK_GRAY}Witness the fruits of my labor! Go! Magikarp!" 
+    )
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle4_Defeated_Text
+{
+    "I don't even care that I lost. I just \n"
+    "wanted to show my Magikarp."
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle4_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}The greatest virtue is patience, that's for true."
+        )
+}
+
+
+
+
+
+
+
+
+
+/// signs
+script ISLANDGAME_VERDANT_PATH_EventScript_SIGN1 {
+    lock
+    msgbox(ISLANDGAME_VERDANT_PATH_SIGN1_DESC)
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_SIGN1_DESC {
+    format(
+        "{COLOR DARK_GRAY}VERDANT PATH\n"
+        "{COLOR DARK_GRAY}{DOWN_ARROW} CAMP PERSI"
+    )
+}
+
+script ISLANDGAME_VERDANT_PATH_EventScript_SIGN2 {
+    lock
+    msgbox(ISLANDGAME_VERDANT_PATH_SIGN2_DESC)
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_SIGN2_DESC {
+    format(
+        "{COLOR DARK_GRAY}ARNIE'S BAIT & TACKLE \n"
+        "{COLOR DARK_GRAY}For Fishing Fanatics!"
+    )
+}
+
+script ISLANDGAME_VERDANT_PATH_EventScript_SIGN3 {
+    lock
+    msgbox(ISLANDGAME_VERDANT_PATH_SIGN3_DESC)
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_SIGN3_DESC {
+    format(
+        "{COLOR DARK_GRAY}VERDANT WOODS \n"
+        "{COLOR DARK_GRAY}Repellent is advised! :)"
+    )
+}
+
+script ISLANDGAME_VERDANT_PATH_EventScript_SIGN4 {
+    lock
+    msgbox(ISLANDGAME_VERDANT_PATH_SIGN4_DESC)
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_SIGN4_DESC {
+    format(
+        "{COLOR DARK_GRAY}VERDANT PATH \n"
+        "{COLOR DARK_GRAY}{UP_ARROW} MAPLEGROVE"
+    )
+}
