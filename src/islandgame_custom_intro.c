@@ -24,6 +24,8 @@ void IslandGameCustomStartup()
     u8 level;
     u16 item;
 
+    // This flag makes sure we unlock the quest menu
+    FlagSet(FLAG_SYS_QUEST_MENU_GET);
     // This flag makes sure that we unlock the pokemon selection menu:
     // usually its set when you pick the starter.
     FlagSet(FLAG_SYS_POKEMON_GET);

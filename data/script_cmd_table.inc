@@ -230,6 +230,9 @@ gScriptCmdTable::
 	.4byte ScrCmd_givecustommon						@ 0xe3
 	.4byte ScrCmd_showitemdesc              		@ 0xe4
 	.4byte ScrCmd_hideitemdesc              		@ 0xe5
+	.4byte ScrCmd_questmenu                         @ 0xe6
+    .4byte ScrCmd_subquestmenu                      @ 0xe7
+    .4byte ScrCmd_returnqueststate                  @ 0xe8
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
