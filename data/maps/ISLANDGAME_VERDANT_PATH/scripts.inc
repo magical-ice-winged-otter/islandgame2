@@ -10,7 +10,7 @@ ISLANDGAME_VERDANT_PATH_TrainerBattle1::
 
 ISLANDGAME_VERDANT_PATH_TrainerBattle2::
 	trainerbattle_single TRAINER_VERDANT_PATH_TRAINER_2, ISLANDGAME_VERDANT_PATH_TrainerBattle2_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle2_Defeated_Text
-	msgbox ISLANDGAME_VERDANT_PATH_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	msgbox ISLANDGAME_VERDANT_PATH_TrainerBattle2_PostDefeated_Text, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -23,6 +23,18 @@ ISLANDGAME_VERDANT_PATH_TrainerBattle3::
 ISLANDGAME_VERDANT_PATH_TrainerBattle4::
 	trainerbattle_single TRAINER_VERDANT_PATH_TRAINER_4, ISLANDGAME_VERDANT_PATH_TrainerBattle4_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle4_Defeated_Text
 	msgbox ISLANDGAME_VERDANT_PATH_TrainerBattle4_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle5::
+	trainerbattle_double TRAINER_VERDANT_PATH_TRAINER_5, ISLANDGAME_VERDANT_PATH_TrainerBattle5_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle5_Defeated_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle5_NotEnoughMons
+	msgbox ISLANDGAME_VERDANT_PATH_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle6::
+	trainerbattle_single TRAINER_VERDANT_PATH_TRAINER_6, ISLANDGAME_VERDANT_PATH_TrainerBattle6_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle6_Defeated_Text
+	msgbox ISLANDGAME_VERDANT_PATH_TrainerBattle6_PostDefeated_Text, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -103,6 +115,40 @@ ISLANDGAME_VERDANT_PATH_TrainerBattle4_Defeated_Text::
 ISLANDGAME_VERDANT_PATH_TrainerBattle4_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}The greatest virtue is patience, that's\n"
 	.string "for true.$"
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle5_Text::
+	.string "{COLOR BLUE}Mindy: {COLOR DARK_GRAY}Okay Mandy, this time follow MY\n"
+	.string "lead!\p"
+	.string "{COLOR BLUE}Mandy: {COLOR DARK_GRAY}Whatever...$"
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle5_Defeated_Text::
+	.string "Mindy: Ugh, how did we lose!? This is all \n"
+	.string "your fault! \p"
+	.string "Mandy: MY fault!?$"
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle5_PostDefeated_Text::
+	.string "{COLOR BLUE}Mindy: {COLOR DARK_GRAY}If only Mandy was actually\n"
+	.string "helping me out...\p"
+	.string "{COLOR BLUE}Mandy: {COLOR DARK_GRAY}If only there was two of me\n"
+	.string "instead of Mindy...$"
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle5_NotEnoughMons::
+	.string "{COLOR BLUE}Mindy: {COLOR DARK_GRAY}Eh? You need at least two\n"
+	.string "Pokémon to take us on!$"
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle6_Text::
+	.string "{COLOR DARK_GRAY}As a member of the upper-class, it's\n"
+	.string "only natural I have elite Pokémon.$"
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle6_Defeated_Text::
+	.string "Hmph, perhaps this Pokémon is not as  \n"
+	.string "elite as I thought.$"
+
+ISLANDGAME_VERDANT_PATH_TrainerBattle6_PostDefeated_Text::
+	.string "{COLOR DARK_GRAY}I was told this was one of the most\n"
+	.string "elusive Pokémon in the area.\p"
+	.string "{COLOR DARK_GRAY}Clearly, I was lied to. I suppose I will\n"
+	.string "be disposing of it shortly...$"
 
 ISLANDGAME_VERDANT_PATH_SIGN1_DESC::
 	.string "{COLOR DARK_GRAY}VERDANT PATH\n"

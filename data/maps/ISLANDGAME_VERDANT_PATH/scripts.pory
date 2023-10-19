@@ -26,7 +26,7 @@ text ISLANDGAME_VERDANT_PATH_TrainerBattle1_PostDefeated_Text
 // Youngster Steve
 script ISLANDGAME_VERDANT_PATH_TrainerBattle2 {
     trainerbattle_single(TRAINER_VERDANT_PATH_TRAINER_2, ISLANDGAME_VERDANT_PATH_TrainerBattle2_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle2_Defeated_Text)
-    msgbox(ISLANDGAME_VERDANT_PATH_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+    msgbox(ISLANDGAME_VERDANT_PATH_TrainerBattle2_PostDefeated_Text, MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_VERDANT_PATH_TrainerBattle2_Text {
@@ -97,10 +97,64 @@ text ISLANDGAME_VERDANT_PATH_TrainerBattle4_PostDefeated_Text
         )
 }
 
+// Twins Mindy & Mandy
+script ISLANDGAME_VERDANT_PATH_TrainerBattle5 {
+    trainerbattle_double(TRAINER_VERDANT_PATH_TRAINER_5, ISLANDGAME_VERDANT_PATH_TrainerBattle5_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle5_Defeated_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle5_NotEnoughMons)
+    msgbox(ISLANDGAME_VERDANT_PATH_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
 
+text ISLANDGAME_VERDANT_PATH_TrainerBattle5_Text {
+    format(
+        "{COLOR BLUE}Mindy: {COLOR DARK_GRAY}Okay Mandy, this time follow MY lead! \p"
+        "{COLOR BLUE}Mandy: {COLOR DARK_GRAY}Whatever..."
+    )
+}
 
+text ISLANDGAME_VERDANT_PATH_TrainerBattle5_Defeated_Text
+{
+    "Mindy: Ugh, how did we lose!? This is all \n"
+    "your fault! \p"
+    "Mandy: MY fault!?"
+}
 
+text ISLANDGAME_VERDANT_PATH_TrainerBattle5_PostDefeated_Text
+{
+    format(
+        "{COLOR BLUE}Mindy: {COLOR DARK_GRAY}If only Mandy was actually helping me out... \p"
+        "{COLOR BLUE}Mandy: {COLOR DARK_GRAY}If only there was two of me instead of Mindy..."
+        )
+}
 
+text ISLANDGAME_VERDANT_PATH_TrainerBattle5_NotEnoughMons
+{
+    format("{COLOR BLUE}Mindy: {COLOR DARK_GRAY}Eh? You need at least two Pokémon to take us on!")
+}
+
+// Rich Boy Jaden
+script ISLANDGAME_VERDANT_PATH_TrainerBattle6 {
+    trainerbattle_single(TRAINER_VERDANT_PATH_TRAINER_6, ISLANDGAME_VERDANT_PATH_TrainerBattle6_Text, ISLANDGAME_VERDANT_PATH_TrainerBattle6_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_PATH_TrainerBattle6_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle6_Text {
+    format(
+        "{COLOR DARK_GRAY}As a member of the upper-class, it's only natural I have elite Pokémon." 
+    )
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle6_Defeated_Text
+{
+    "Hmph, perhaps this Pokémon is not as  \n"
+    "elite as I thought."
+}
+
+text ISLANDGAME_VERDANT_PATH_TrainerBattle6_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}I was told this was one of the most elusive Pokémon in the area. \p"
+        "{COLOR DARK_GRAY}Clearly, I was lied to. I suppose I will be disposing of it shortly..."
+        )
+}
 
 
 

@@ -110,7 +110,7 @@ static const struct TrainerMon sParty_CampPersiTrainer5[] = {
 static const struct TrainerMon sParty_CampPersiJonas[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 10,
+    .lvl = 8,
     .species = SPECIES_SNORUNT,
     .heldItem = ITEM_STARF_BERRY,
     .ability = ABILITY_MOODY,
@@ -169,21 +169,24 @@ static const struct TrainerMon sParty_VerdantPathTrainer4[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntRusturfTunnel[] = {
+static const struct TrainerMon sParty_VerdantPathTrainer5[] = {
     {
-    .lvl = 11,
-    .species = SPECIES_POOCHYENA,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),  
+    .lvl = 10,
+    .species = SPECIES_MARILL,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),  
+    .lvl = 10,
+    .species = SPECIES_EMOLGA,
     }
 };
 
-static const struct TrainerMon sParty_GruntWeatherInst1[] = {
+static const struct TrainerMon sParty_VerdantPathTrainer6[] = {
     {
-    .lvl = 27,
-    .species = SPECIES_ZUBAT,
-    },
-    {
-    .lvl = 27,
-    .species = SPECIES_POOCHYENA,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),  
+    .lvl = 10,
+    .species = SPECIES_ROWLET,
     }
 };
 
