@@ -231,3 +231,6 @@ const u16 gMetatileAttributes_IslandgamePersi[] = INCBIN_U16("data/tilesets/seco
 
 const u16 gMetatiles_Forest[] = INCBIN_U16("data/tilesets/secondary/forest/metatiles.bin");
 const u16 gMetatileAttributes_Forest[] = INCBIN_U16("data/tilesets/secondary/forest/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_cheriport[] = INCBIN_U16("data/tilesets/secondary/islandgame_cheriport/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_cheriport[] = INCBIN_U16("data/tilesets/secondary/islandgame_cheriport/metatile_attributes.bin");

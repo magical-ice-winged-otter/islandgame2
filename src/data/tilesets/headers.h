@@ -915,3 +915,14 @@ const struct Tileset gTileset_Forest =
     .metatileAttributes = gMetatileAttributes_Forest,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_cheriport =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_cheriport,
+    .palettes = gTilesetPalettes_islandgame_cheriport,
+    .metatiles = gMetatiles_islandgame_cheriport,
+    .metatileAttributes = gMetatileAttributes_islandgame_cheriport,
+    .callback = NULL,
+};
