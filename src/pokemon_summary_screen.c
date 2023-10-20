@@ -69,6 +69,7 @@
 #define CONFIG_DECAPITALIZE_MOVE_DESCRIPTION_STRINGS    FALSE
 #define CONFIG_FATEFUL_ENCOUNTER_MARK                   TRUE
 #define CONFIG_ITEM_NAME_TEXT_ALIGN                     TEXT_ALIGN_CENTER
+#define CONFIG_MERRP_ICON_SYSTEM                        FALSE // https://github.com/aarant/pokeemerald/tree/icons
 
 // Make sure gBallIconTable in src/data/item_icon_table.h is ordered correctly.  Default does not match RHH
 
@@ -524,6 +525,9 @@ static const u8 sMemoMiscTextColor[] = _("{COLOR 7}{SHADOW 8}");
 #define TAG_SPLIT_ICONS     30004
 #define TAG_HEALTH_BAR      30005
 #define TAG_EXP_BAR         30006
+#if CONFIG_MERRP_ICON_SYSTEM
+#define TAG_MON_ICON        30007
+#endif
 
 static const struct OamData sOamData_MoveTypes =
 {
@@ -1327,11 +1331,18 @@ static bool8 LoadGraphics(void)
         gMain.state++;
         break;
     case 18:
+    #if CONFIG_MERRP_ICON_SYSTEM
+        AllocSpritePalette(TAG_MON_ICON);
+    #else
         LoadMonIconPalette(sMonSummaryScreen->summary.species2);
+    #endif
     #ifdef POKEMON_EXPANSION
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON_ICON] = CreateMonIcon(sMonSummaryScreen->summary.species2, SpriteCB_MonIcon, 20, 47, 1, sMonSummaryScreen->summary.pid);
     #else
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON_ICON] = CreateMonIcon(sMonSummaryScreen->summary.species2, SpriteCB_MonIcon, 20, 47, 1, sMonSummaryScreen->summary.pid, TRUE);
+    #endif
+    #if CONFIG_MERRP_ICON_SYSTEM
+        SetMonIconPalette(&sMonSummaryScreen->currentMon, &gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON_ICON]], IndexOfSpritePaletteTag(TAG_MON_ICON));
     #endif
         gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON_ICON]].hFlip = !IsMonSpriteNotFlipped(sMonSummaryScreen->summary.species2);
         SetSpriteInvisibility(SPRITE_ARR_ID_MON_ICON, TRUE);
@@ -1796,12 +1807,17 @@ static void Task_ChangeSummaryMon(u8 taskId)
         CreateHeldItemSprite(&sMonSummaryScreen->currentMon);
         break;
     case 10:
+    #if !CONFIG_MERRP_ICON_SYSTEM
         FreeMonIconPalettes();
         LoadMonIconPalette(sMonSummaryScreen->summary.species2);
+    #endif
     #ifdef POKEMON_EXPANSION
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON_ICON] = CreateMonIcon(sMonSummaryScreen->summary.species2, SpriteCB_MonIcon, 20, 47, 1, sMonSummaryScreen->summary.pid);
     #else
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON_ICON] = CreateMonIcon(sMonSummaryScreen->summary.species2, SpriteCB_MonIcon, 20, 47, 1, sMonSummaryScreen->summary.pid, TRUE);
+    #endif
+    #if CONFIG_MERRP_ICON_SYSTEM
+        SetMonIconPalette(&sMonSummaryScreen->currentMon, &gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON_ICON]], IndexOfSpritePaletteTag(TAG_MON_ICON));
     #endif
         gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON_ICON]].hFlip = !IsMonSpriteNotFlipped(sMonSummaryScreen->summary.species2);
         SetSpriteInvisibility(SPRITE_ARR_ID_MON_ICON, TRUE);
