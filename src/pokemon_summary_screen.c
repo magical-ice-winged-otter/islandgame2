@@ -2138,9 +2138,7 @@ static void Task_HandleInput_MoveSelect(u8 taskId)
             data[0]++;
             break;
         case 4:
-            if (sMonSummaryScreen->firstMoveIndex == MAX_MON_MOVES)
-                PrintMoveDetails(sMonSummaryScreen->newMove);
-            else
+            if (sMonSummaryScreen->firstMoveIndex != MAX_MON_MOVES)
                 PrintMoveDetails(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]);
             PutWindowTilemap(PSS_LABEL_PANE_LEFT_MOVE);
             data[0]++;
