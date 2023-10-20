@@ -504,9 +504,6 @@ static const u8 sTextColors[][3] =
     [PSS_COLOR_LIGHT_RED]               = {0, 13, 14}
 };
 
-static const u8 sSummaryAButtonBitmap[] = INCBIN_U8("graphics/summary_screen/a_button.4bpp");
-static const u8 sSummaryBButtonBitmap[] = INCBIN_U8("graphics/summary_screen/b_button.4bpp");
-
 static void (*const sTextPrinterFunctions[])(void) =
 {
     [PSS_PAGE_INFO] = PrintInfoPage,
