@@ -246,6 +246,7 @@ static const u8 sDoorAnimPalettes_CampPersi[] = {
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
+    //note: the search does not look for the tileset first, it only looks up via metatiles.
     {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
     {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},
     {METATILE_General_Door_Gym,                             DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Gym, sDoorAnimPalettes_Gym},
