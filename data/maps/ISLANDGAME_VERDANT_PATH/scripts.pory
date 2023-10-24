@@ -60,7 +60,8 @@ text ISLANDGAME_VERDANT_PATH_TrainerBattle3_Text {
 
 text ISLANDGAME_VERDANT_PATH_TrainerBattle3_Defeated_Text
 {
-    "Gah, my line snapped!"
+    "Gah, looks like I couldn't reel in \n"
+    "the win."
 }
 
 text ISLANDGAME_VERDANT_PATH_TrainerBattle3_PostDefeated_Text
@@ -105,8 +106,8 @@ script ISLANDGAME_VERDANT_PATH_TrainerBattle5 {
 
 text ISLANDGAME_VERDANT_PATH_TrainerBattle5_Text {
     format(
-        "{COLOR BLUE}Mindy: {COLOR DARK_GRAY}Okay Mandy, this time follow MY lead! \p"
-        "{COLOR BLUE}Mandy: {COLOR DARK_GRAY}Whatever..."
+        "{COLOR DARK_GRAY}Mindy: Okay Mandy, this time follow MY lead! \p"
+        "{COLOR DARK_GRAY}Mandy: Whatever..."
     )
 }
 
@@ -120,14 +121,14 @@ text ISLANDGAME_VERDANT_PATH_TrainerBattle5_Defeated_Text
 text ISLANDGAME_VERDANT_PATH_TrainerBattle5_PostDefeated_Text
 {
     format(
-        "{COLOR BLUE}Mindy: {COLOR DARK_GRAY}If only Mandy was actually helping me out... \p"
-        "{COLOR BLUE}Mandy: {COLOR DARK_GRAY}If only there was two of me instead of Mindy..."
+        "{COLOR DARK_GRAY}Mindy: If only Mandy was actually helping me out... \p"
+        "{COLOR DARK_GRAY}Mandy: If only there was two of me instead of Mindy..."
         )
 }
 
 text ISLANDGAME_VERDANT_PATH_TrainerBattle5_NotEnoughMons
 {
-    format("{COLOR BLUE}Mindy: {COLOR DARK_GRAY}Eh? You need at least two Pokémon to take us on!")
+    format("{COLOR RED}I can't challenge them to a battle without at least two Pokémon...")
 }
 
 // Rich Boy Jaden
@@ -151,10 +152,66 @@ text ISLANDGAME_VERDANT_PATH_TrainerBattle6_Defeated_Text
 text ISLANDGAME_VERDANT_PATH_TrainerBattle6_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}I was told this was one of the most elusive Pokémon in the area. \p"
-        "{COLOR DARK_GRAY}Clearly, I was lied to. I suppose I will be disposing of it shortly..."
+        "{COLOR DARK_GRAY}The scoutmaster at Camp Persi told me this was the most elusive Pokémon in their forest. \p"
+        "{COLOR DARK_GRAY}Clearly, it is not worthy of its scarcity. I will be disposing of it."
         )
 }
+
+
+
+/// npcs
+script ISLANDGAME_VERDANT_PATH_EventScript_NPC1 {
+    lock
+    faceplayer
+    if(!flag(FLAG_VERDANT_PATH_NPC)) {
+        msgbox(ISLANDGAME_VERDANT_PATH_NPC1Talk1)
+        checkitemspace(ITEM_REPEL)
+        goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_VERDANT_PATH_NPC1Talk3)
+        giveitem(ITEM_REPEL)
+        setflag(FLAG_VERDANT_PATH_NPC)
+    }
+    msgbox(ISLANDGAME_VERDANT_PATH_NPC1Talk2)
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_NPC1Talk1 {
+    format(
+        "{COLOR DARK_GRAY}Up ahead are the Verdant Woods. They're pretty dense, so this might help."
+    )
+}
+
+text ISLANDGAME_VERDANT_PATH_NPC1Talk2 {
+    format(
+        "{COLOR DARK_GRAY}If you use a Repel, wild Pokémon will stay away from you for a while."
+        "{COLOR DARK_GRAY}However, wild Pokémon that are a higher level than yours will still attack."
+    )
+}
+
+text ISLANDGAME_VERDANT_PATH_NPC1Talk3 {
+    format(
+        "{COLOR DARK_GRAY}Oh dear, you don't have enough space for this."
+    )
+}
+
+script ISLANDGAME_VERDANT_PATH_EventScript_NPC2 {
+    lock
+    msgbox(ISLANDGAME_VERDANT_PATH_NPC2Talk)
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_NPC2Talk {
+    format(
+        "{COLOR DARK_GRAY}Have you seen the old abandoned house in the Verdant Woods? \p"
+        "{COLOR DARK_GRAY}Legend has it that long ago, it used to belong to a farmer. \p"
+        "{COLOR DARK_GRAY}One night, the farmer found a strange-looking doll on his chair. \p"
+        "{COLOR DARK_GRAY}Unsure of how it got there, he tried to pick it up and inspect it. \p"
+        "{COLOR DARK_GRAY}But just as he laid his hand on it, a pair of demonic claws emerged from beneath the doll, tearing the farmer apart limb from limb before it devoured him. \p"
+        "{COLOR DARK_GRAY}Ever since, no one's dared to enter the house. It's even been blocked up to stop people from going inside. \p"
+        "{COLOR DARK_GRAY}People say it's just a myth, but I'd rather not find out for myself..."
+    )
+}
+
+
 
 
 
@@ -181,8 +238,8 @@ script ISLANDGAME_VERDANT_PATH_EventScript_SIGN2 {
 
 text ISLANDGAME_VERDANT_PATH_SIGN2_DESC {
     format(
-        "{COLOR DARK_GRAY}ARNIE'S BAIT & TACKLE \n"
-        "{COLOR DARK_GRAY}For Fishing Fanatics!"
+        "{COLOR DARK_GRAY}ARNIE'S \n"
+        "{COLOR DARK_GRAY}Club For Fishing Fanatics!"
     )
 }
 

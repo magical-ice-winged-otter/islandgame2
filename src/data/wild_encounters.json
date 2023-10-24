@@ -11635,17 +11635,17 @@
               {
                 "min_level": 5,
                 "max_level": 8,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 8,
                 "species": "SPECIES_BARBOACH"
               },
               {
                 "min_level": 5,
                 "max_level": 8,
-                "species": "SPECIES_BUIZEL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 8,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_BARBOACH"
               }
             ]
           }

@@ -114,7 +114,9 @@ static const struct TrainerMon sParty_CampPersiJonas[] = {
     .species = SPECIES_SNORUNT,
     .heldItem = ITEM_STARF_BERRY,
     .ability = ABILITY_MOODY,
-    .moves = {MOVE_POWDER_SNOW, MOVE_BITE, MOVE_DOUBLE_TEAM, MOVE_ICE_SHARD}
+    .nature = TRAINER_PARTY_NATURE(NATURE_QUIRKY),
+    .moves = {MOVE_POWDER_SNOW, MOVE_BITE, MOVE_DOUBLE_TEAM, MOVE_ICE_SHARD},
+    .gender = TRAINER_MON_FEMALE,
     },
 };
 

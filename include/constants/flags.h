@@ -1504,20 +1504,31 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
 
+// ISLANDGAME FLAGS
 
 // island-start: set when you leave the ship at the beginning of the game
 #define FLAG_LEFT_SHIP                              (SYSTEM_FLAGS + 0x85) 
+
 // old man in room 3
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
+
 // set when you talk to the professor for the first time and got the eevee
 #define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87) 
+
 // npc gives you a potion on soranna path
 #define FLAG_S_ORANNA_PATH_NPC                      (SYSTEM_FLAGS + 0x88) 
+
 // first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x89) 
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
-#define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
+
+// fishing rod received
+#define FLAG_VERDANT_PATH_ROD_RECEIVED              (SYSTEM_FLAGS + 0x8A)
+
+// npc gives you repel on verdant path
+#define FLAG_VERDANT_PATH_NPC                       (SYSTEM_FLAGS + 0x8B)
+
+// npc trade on verdant path finished
+#define FLAG_VERDANT_PATH_TRADE_DONE                (SYSTEM_FLAGS + 0x8C)
 #define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
 #define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag
 #define FLAG_UNUSED_0x8EF                           (SYSTEM_FLAGS + 0x8F) // Unused Flag

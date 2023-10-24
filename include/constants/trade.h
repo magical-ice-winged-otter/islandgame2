@@ -10,6 +10,9 @@
 #define INGAME_TRADE_HORSEA 2
 #define INGAME_TRADE_MEOWTH 3
 
+// ISLANDGAME TRADES
+#define INGAME_TRADE_STARYU 4
+
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0
 #define CANT_TRADE_LAST_MON        1

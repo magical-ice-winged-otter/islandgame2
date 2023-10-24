@@ -4660,6 +4660,16 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VERDANT_PATH_FISHHOUSE",
+      "name": "ISLANDGAME_VERDANT_PATH_FISHHOUSE_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH_FISHHOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH_FISHHOUSE/map.bin"
     }
   ]
 }
