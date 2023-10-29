@@ -1,0 +1,3 @@
+ISLANDGAME_VERDANT_WOODS_MapScripts::
+	.byte 0
+
