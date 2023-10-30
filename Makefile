@@ -179,7 +179,7 @@ MAKEFLAGS += --no-print-directory
 # Secondary expansion is required for dependency variables in object rules.
 .SECONDEXPANSION:
 
-.PHONY: all rom clean compare tidy tools check-tools mostlyclean clean-tools clean-check-tools $(TOOLDIRS) $(CHECKTOOLDIRS) libagbsyscall modern tidymodern tidynonmodern check
+.PHONY: all rom clean compare tidy tools check-tools mostlyclean clean-tools clean-check-tools porytiles-clean $(TOOLDIRS) $(CHECKTOOLDIRS) libagbsyscall porytiles modern tidymodern tidynonmodern check
 
 infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
 
@@ -268,7 +268,7 @@ endif
 # For contributors to make sure a change didn't affect the contents of the ROM.
 compare: all
 
-clean: mostlyclean clean-tools clean-check-tools
+clean: mostlyclean clean-tools clean-check-tools 
 
 clean-tools:
 	@$(foreach tooldir,$(TOOLDIRS),$(MAKE) clean -C $(tooldir);)
@@ -517,3 +517,36 @@ libagbsyscall:
 
 $(SYM): $(ELF)
 	$(OBJDUMP) -t $< | sort -u | grep -E "^0[2389]" | $(PERL) -p -e 's/^(\w{8}) (\w).{6} \S+\t(\w{8}) (\S+)$$/\1 \2 \3 \4/g' > $@
+
+
+#aseprite stuff
+BASE_PORYTILE_DIR = ./porytiles/
+
+
+define aseprite_step_macro
+$1/top.png: $1/*.aseprite
+	aseprite -b --layer bottom $$< --save-as $1/bottom.png && aseprite -b --layer middle $$< --save-as $1/middle.png && aseprite -b --layer top $$< --save-as $1/top.png
+	 
+endef
+#todo: don't use compile.sh 
+
+define porytilescompile_step_macro
+$1_compile: $1/top.png
+	$1/compile.sh
+.PHONY += 1_compile
+endef
+
+TILESETS := $(shell find $(BASE_PORYTILE_DIR) -maxdepth 1 -type d )
+TILESETS := $(filter-out $(BASE_PORYTILE_DIR), $(TILESETS))
+
+%.aseprite: ;
+
+$(foreach tileset, $(TILESETS), $(eval $(call aseprite_step_macro, $(tileset))))
+$(foreach tileset, $(TILESETS), $(eval $(call porytilescompile_step_macro, $(tileset))))
+
+porytiles-aseprite: $(foreach tileset, $(TILESETS), $(tileset)/top.png)
+
+porytiles: porytiles-aseprite $(foreach tileset, $(TILESETS), $(tileset)_compile)
+
+porytiles-clean:
+	rm -f $(shell find $(BASE_PORYTILE_DIR) -maxdepth 2 -name "*.png")
