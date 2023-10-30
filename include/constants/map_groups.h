@@ -31,6 +31,7 @@
 #define MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_1 (22 | (0 << 8))
 #define MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_2 (23 | (0 << 8))
 #define MAP_ISLANDGAME_VERDANT_PATH          (24 | (0 << 8))
+#define MAP_ISLANDGAME_VERDANT_WOODS         (25 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
