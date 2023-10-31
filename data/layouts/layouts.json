@@ -4532,12 +4532,22 @@
       "blockdata_filepath": "data/layouts/SS_RAIN_CAFETERIA/map.bin"
     },
     {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI",
+      "name": "ISLANDGAME_CAMP_PERSI_Layout",
+      "width": 72,
+      "height": 58,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_IslandgamePersi",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/map.bin"
+    },
+    {
       "id": "LAYOUT_ISLANDGAME_CHERIPORT",
       "name": "ISLANDGAME_CHERIPORT_Layout",
       "width": 60,
       "height": 49,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_islandgame_cheriport",
       "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT/map.bin"
     },
@@ -4596,8 +4606,8 @@
       "name": "ISLANDGAME_MINTY_MEADOWS_Layout",
       "width": 52,
       "height": 36,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/map.bin"
     },
@@ -4606,8 +4616,8 @@
       "name": "ISLANDGAME_Southern_Oranna_Path_Layout",
       "width": 40,
       "height": 45,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_IslandgameSOP",
       "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
     },
@@ -4616,8 +4626,8 @@
       "name": "ISLANDGAME_MINTY_MEADOWS_2_Layout",
       "width": 70,
       "height": 40,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/map.bin"
     },
@@ -4626,10 +4636,60 @@
       "name": "ISLANDGAME_MINTY_MEADOWS_3_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL",
+      "name": "ISLANDGAME_TRAVELERS_TUNNEL_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
+      "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
+      "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VERDANT_PATH",
+      "name": "ISLANDGAME_VERDANT_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VERDANT_WOODS",
+      "name": "ISLANDGAME_VERDANT_WOODS_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/map.bin"
     }
   ]
 }

@@ -33,6 +33,10 @@ typedef struct Location
 #define SS_RAIN 2
 #define CHERIPORT 3
 #define MINTY_MEADOWS 4
+#define TRAVELERS_TUNNEL 5
+#define CAMP_PERSI 6
+#define VERDANT_PATH 7
+#define VERDANT_WOODS 8
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -42,6 +46,10 @@ static const Location LOCATION_DATA[] = {
     [SS_RAIN] = SET_LOC(ISLANDGAME_SS_RAIN_ROOM2, 6, 7), //I can't figure out how to change the name on porymap
     [CHERIPORT] = SET_LOC(ISLANDGAME_CHERIPORT, 10, 26),
     [MINTY_MEADOWS] = SET_LOC(ISLANDGAME_MINTY_MEADOWS, 1, 26)
+    [TRAVELERS_TUNNEL] = SET_LOC(ISLANDGAME_TRAVELERS_TUNNEL, 10, 10),
+    [CAMP_PERSI] = SET_LOC(ISLANDGAME_CAMP_PERSI, 1, 24),
+    [VERDANT_PATH] = SET_LOC(ISLANDGAME_VERDANT_PATH, 10, 10),
+    [VERDANT_WOODS] = SET_LOC(ISLANDGAME_VERDANT_WOODS, 10, 10),
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
@@ -49,6 +57,10 @@ static const u8 route1Name[]    = _("Route 1");
 static const u8 testMapName[]   = _("SS RAIN"); 
 static const u8 cheriportName[] = _("CHERIPORT");
 static const u8 mintyMeadowsName[] = _("MINTY MEADOWS");
+static const u8 travelersTunnelName[] = _("TravelTunnel");
+static const u8 campPersiName[] = _("CAMP PERSI");
+static const u8 verdantPathName[] = _("VerdantPath");
+static const u8 verdantWoodName[] = _("VerdantWood");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
@@ -56,7 +68,11 @@ static const u8 *const LOCATION_NAMES[] = {
     [JUNGLE_ROUTE_1] = route1Name,
     [SS_RAIN] = testMapName,
     [CHERIPORT] = cheriportName,
-    [MINTY_MEADOWS] = mintyMeadowsName
+    [MINTY_MEADOWS] = mintyMeadowsName,
+    [TRAVELERS_TUNNEL] = mintyMeadowsName,
+    [CAMP_PERSI] = campPersiName,
+    [VERDANT_PATH] = verdantPathName,
+    [VERDANT_WOODS] = verdantWoodName,
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 

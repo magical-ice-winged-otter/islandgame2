@@ -1,3 +1,5 @@
-primary fire_red_general_test firered_ss_anne
-secondary fire_red_ss_anne_cont firered_ss_anne firered_ss_anne
-primary islandgame_general islandgame_general
+primary     fire_red_general_test   ss_rain_general
+secondary   fire_red_ss_anne_cont   ss_rain_secondary   ss_rain_general
+
+primary     islandgame_general      general
+secondary   islandgame_persi        persi               general

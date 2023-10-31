@@ -893,3 +893,58 @@ const struct Tileset gTileset_IslandgameGeneral =
     .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_IslandgamePersi =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IslandgamePersi,
+    .palettes = gTilesetPalettes_IslandgamePersi,
+    .metatiles = gMetatiles_IslandgamePersi,
+    .metatileAttributes = gMetatileAttributes_IslandgamePersi,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Forest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Forest,
+    .palettes = gTilesetPalettes_Forest,
+    .metatiles = gMetatiles_Forest,
+    .metatileAttributes = gMetatileAttributes_Forest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_cheriport =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_cheriport,
+    .palettes = gTilesetPalettes_islandgame_cheriport,
+    .metatiles = gMetatiles_islandgame_cheriport,
+    .metatileAttributes = gMetatileAttributes_islandgame_cheriport,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_IslandgameSOP =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IslandgameSOP,
+    .palettes = gTilesetPalettes_IslandgameSOP,
+    .metatiles = gMetatiles_IslandgameSOP,
+    .metatileAttributes = gMetatileAttributes_IslandgameSOP,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_IslandgameVerdant =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IslandgameVerdant,
+    .palettes = gTilesetPalettes_IslandgameVerdant,
+    .metatiles = gMetatiles_IslandgameVerdant,
+    .metatileAttributes = gMetatileAttributes_IslandgameVerdant,
+    .callback = NULL,
+};
