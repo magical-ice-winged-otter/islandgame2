@@ -4635,7 +4635,7 @@
       "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_3",
       "name": "ISLANDGAME_MINTY_MEADOWS_3_Layout",
       "width": 20,
-      "height": 20,
+      "height": 40,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
