@@ -11853,7 +11853,10 @@
                 "min_level": 12,
                 "max_level": 12,
                 "species": "SPECIES_VENIPEDE"
-              },
+              }
+            ]
+          }
+        },
         {
           "map": "MAP_ISLANDGAME_CAMP_PERSI",
           "base_label": "gISLANDGAME_CAMP_PERSI0",
