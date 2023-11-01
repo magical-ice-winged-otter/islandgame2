@@ -63,13 +63,13 @@ void IslandGameCustomStartup()
         FlagToggle(FLAG_RECEIVED_RUNNING_SHOES);
         FlagToggle(FLAG_SYS_B_DASH);
         FlagToggle(FLAG_LEFT_SHIP);
-        //debug sidequest:
-        //FlagToggle(FLAG_ROOM3_GAVE_WATER);
-        
-        //debug 3: CHERIPORT
+        //debug 3: CHERIPORT LOCATION
         FlagToggle(FLAG_PROF_GAVE_EEVEE);
         FlagToggle(FLAG_SYS_POKEDEX_GET);
         FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
+
+        //debug sidequest:
+        //FlagToggle(FLAG_ROOM3_GAVE_WATER);
 
         //debug 4?: Minty Meadows
         
