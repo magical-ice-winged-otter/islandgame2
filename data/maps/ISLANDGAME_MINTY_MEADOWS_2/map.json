@@ -165,7 +165,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_Mareep",
       "flag": "0"
     },
     {
@@ -178,7 +178,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena",
       "flag": "0"
     }
   ],
@@ -194,6 +194,24 @@
       "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "1",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_MINTY_MEADOWS_STATE",
+      "var_value": "2",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_MINTY_MEADOWS_STATE",
+      "var_value": "2",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2"
     }
   ],
   "bg_events": [

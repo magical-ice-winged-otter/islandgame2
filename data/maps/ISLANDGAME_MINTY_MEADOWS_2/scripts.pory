@@ -19,9 +19,14 @@ const CLEARING_M_Y = 16
 const CLEARING_S_X = 46
 const CLEARING_S_Y = 16
 mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
+    MAP_SCRIPT_ON_RESUME: ISLANDGAME_MINTY_MEADOWS_2_OnResume
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_0, 0: ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad
     ]
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_OnResume {
+    call_if_set(FLAG_SYS_CTRL_OBJ_DELETE, ISLANDGAME_MINTY_MEADOWS_2_TryRemoveMightyena)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad {
@@ -36,6 +41,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad {
             break
         case 2:
         case 3:
+            
             call(ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena)
             break
     }
@@ -45,10 +51,12 @@ script ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena {
     addobject(MAREEP_OW_ID)
     addobject(MIGHTYENA_OW_ID)
     setobjectxy(MAREEP_OW_ID, CLEARING_S_X, CLEARING_S_Y)
+    setobjectxyperm(MAREEP_OW_ID, CLEARING_S_X, CLEARING_S_Y)
     setobjectxy(MIGHTYENA_OW_ID, CLEARING_M_X, CLEARING_M_Y)
+    setobjectxyperm(MIGHTYENA_OW_ID, CLEARING_M_X, CLEARING_M_Y)
 
-    turnobject(MAREEP_OW_ID, DIR_EAST)
-    turnobject(MIGHTYENA_OW_ID, DIR_WEST)
+    setobjectmovementtype(MAREEP_OW_ID, MOVEMENT_TYPE_FACE_LEFT)
+    setobjectmovementtype(MIGHTYENA_OW_ID, MOVEMENT_TYPE_FACE_RIGHT)
     return
 }
 
@@ -81,8 +89,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1 {
     applymovement(MIGHTYENA_OW_ID, Phase1_MightyenaChase)
 
     waitmovement(MIGHTYENA_OW_ID)
-    removeobject(MAREEP_OW_ID)
-    removeobject(MIGHTYENA_OW_ID)
+    waitmovement(MAREEP_OW_ID)
     call(ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena)
     release
 }
@@ -92,28 +99,63 @@ script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2 {
     setvar(VAR_MINTY_MEADOWS_STATE, 3)
     applymovement(MIGHTYENA_OW_ID, Phase2_MightyenaWalksForward)
     applymovement(MAREEP_OW_ID, Common_Movement_ExclamationMark)
-    playmoncry(MIGHTYENA_OW_ID, CRY_MODE_HIGH_PITCH)
-    playmoncry(SPECIES_MAREEP, CRY_MODE_ENCOUNTER)
+    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    playmoncry(SPECIES_MAREEP, CRY_MODE_WEAK)
     waitmovement(MIGHTYENA_OW_ID)
+    waitmoncry
 
     release
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     lock 
-    setwildbattle(SPECIES_)
-    setvar(VAR_MINTY_MEADOWS_STATE, 4)
+    faceplayer
+    setwildbattle(SPECIES_SHADOW_MIGHTYENA, 25)
+    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE) 
+    dowildbattle
+    clearflag(FLAG_SYS_CTRL_OBJ_DELETE )
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    switch (var(VAR_RESULT)) {
+        case B_OUTCOME_CAUGHT:
+        case B_OUTCOME_WON:
+            setvar(VAR_MINTY_MEADOWS_STATE, 4)
+            fadescreen(FADE_TO_BLACK)
+            removeobject(MIGHTYENA_OW_ID) 
+            fadescreen(FADE_FROM_BLACK)
+            setobjectxyperm(MIGHTYENA_OW_ID, -3, 1) //shadow realmed
+            msgbox(ConqueredMightyena_Text)
+            waitmessage
+        break
+        case B_OUTCOME_RAN:
+        case B_OUTCOME_PLAYER_TELEPORTED:
+        break
+    }
     release
+}
+
+//copypasted
+script ISLANDGAME_MINTY_MEADOWS_2_TryRemoveMightyena {
+	specialvar(VAR_RESULT, GetBattleOutcome)
+	goto_if_ne(VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn)
+	removeobject(VAR_LAST_TALKED)
+	return
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Mareep {
     lock
-    msgbox()
+    msgbox(MareepHelp_Text)
     release
 }
 
 text MareepHelp_Text {
     format("{COLOR BLUE}bro help me")
+}
+
+text ConqueredMightyena_Text {
+    format("{COLOR DARK_GRAY} gg u won")
 }
 
 //movement spam
