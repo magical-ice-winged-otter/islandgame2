@@ -27,6 +27,11 @@
       "map": "MAP_ISLANDGAME_CHERIPORT",
       "offset": 6,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ISLANDGAME_CAMP_PERSI",
+      "offset": -18,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -133,13 +138,52 @@
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_104_ORAN_2",
       "script": "BerryTreeScript",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_359",
+      "x": 11,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_SEEN_ABSOL"
     }
   ],
   "warp_events": [
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ISLANDGAME_Southern_Oranna_Path_EventScript_TriggerBottom"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ISLANDGAME_Southern_Oranna_Path_EventScript_TriggerMiddle"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "ISLANDGAME_Southern_Oranna_Path_EventScript_TriggerTop"
+    }
   ],
   "bg_events": [
     {
