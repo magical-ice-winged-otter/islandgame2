@@ -1,1 +1,15 @@
-mapscripts ISLANDGAME_MINTY_MEADOWS_MapScripts {}
+//in the other map
+const MAREEP_OW_ID = 11
+const MIGHTYENA_OW_ID = 12
+
+mapscripts ISLANDGAME_MINTY_MEADOWS_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: ISLANDGAME_MINTY_MEADOWS_OnLoad
+    ]
+}
+
+script ISLANDGAME_MINTY_MEADOWS_OnLoad {
+    setvar(VAR_TEMP_0, 1)
+    removeobject(MAREEP_OW_ID, MAP_ISLANDGAME_MINTY_MEADOWS_2)
+    removeobject(MIGHTYENA_OW_ID, MAP_ISLANDGAME_MINTY_MEADOWS_2)
+}

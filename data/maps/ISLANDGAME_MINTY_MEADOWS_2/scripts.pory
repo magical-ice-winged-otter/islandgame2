@@ -1,1 +1,148 @@
-mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {}
+//VAR_MINTY_MEADOWS_STATE:
+//0 - nothing
+//1 - initiate quest
+//2 - saw mareep once
+//3 - final saw mareep
+//4 - defeated battle with mightyena
+
+const MAREEP_OW_ID = 11
+const MIGHTYENA_OW_ID = 12
+
+//phase 1
+const INNER_PATH_X = 32
+const INNER_PATH_Y = 37
+
+//phase 2
+const CLEARING_M_X = 41
+const CLEARING_M_Y = 16
+
+const CLEARING_S_X = 46
+const CLEARING_S_Y = 16
+mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad
+    ]
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad {
+    setvar(VAR_TEMP_0, 1)
+    //set the spawn points
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case 0:
+        case 1:
+        case 4: 
+            removeobject(MAREEP_OW_ID)
+            removeobject(MIGHTYENA_OW_ID)
+            break
+        case 2:
+        case 3:
+            call(ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena)
+            break
+    }
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena {
+    addobject(MAREEP_OW_ID)
+    addobject(MIGHTYENA_OW_ID)
+    setobjectxy(MAREEP_OW_ID, CLEARING_S_X, CLEARING_S_Y)
+    setobjectxy(MIGHTYENA_OW_ID, CLEARING_M_X, CLEARING_M_Y)
+
+    turnobject(MAREEP_OW_ID, DIR_EAST)
+    turnobject(MIGHTYENA_OW_ID, DIR_WEST)
+    return
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1 {
+    lock
+    setvar(VAR_MINTY_MEADOWS_STATE, 2)
+
+    //spawn
+    addobject(MAREEP_OW_ID)
+    addobject(MIGHTYENA_OW_ID)
+    setobjectxy(MAREEP_OW_ID, INNER_PATH_X, INNER_PATH_Y)
+    setobjectxy(MIGHTYENA_OW_ID, INNER_PATH_X, INNER_PATH_Y)
+    //spawn end
+    //do movement
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    addobject(MAREEP_OW_ID)
+    addobject(MIGHTYENA_OW_ID)
+    applymovement(MAREEP_OW_ID, Phase1_MareepRun_1)
+    waitmovement(MAREEP_OW_ID)
+    playmoncry(SPECIES_MAREEP, CRY_MODE_ENCOUNTER)
+
+    applymovement(MAREEP_OW_ID, Common_Movement_Delay48)
+    waitmovement(MAREEP_OW_ID)
+
+    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+    applymovement(MAREEP_OW_ID, Phase1_MareepRun_2)
+    waitmovement(MAREEP_OW_ID)
+    
+    applymovement(MAREEP_OW_ID, Phase1_MareepRun_3)
+    applymovement(MIGHTYENA_OW_ID, Phase1_MightyenaChase)
+
+    waitmovement(MIGHTYENA_OW_ID)
+    removeobject(MAREEP_OW_ID)
+    removeobject(MIGHTYENA_OW_ID)
+    call(ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena)
+    release
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2 {
+    lock
+    setvar(VAR_MINTY_MEADOWS_STATE, 3)
+    applymovement(MIGHTYENA_OW_ID, Phase2_MightyenaWalksForward)
+    applymovement(MAREEP_OW_ID, Common_Movement_ExclamationMark)
+    playmoncry(MIGHTYENA_OW_ID, CRY_MODE_HIGH_PITCH)
+    playmoncry(SPECIES_MAREEP, CRY_MODE_ENCOUNTER)
+    waitmovement(MIGHTYENA_OW_ID)
+
+    release
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
+    lock 
+    setwildbattle(SPECIES_)
+    setvar(VAR_MINTY_MEADOWS_STATE, 4)
+    release
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Mareep {
+    lock
+    msgbox()
+    release
+}
+
+text MareepHelp_Text {
+    format("{COLOR BLUE}bro help me")
+}
+
+//movement spam
+//phase 1
+movement Phase1_MareepRun_1 {
+    walk_up * 4
+    step_end
+}
+
+movement Phase1_MareepRun_2 {
+    face_down
+    emote_exclamation_mark
+    delay_16 * 1
+    step_end
+}
+
+movement Phase1_MareepRun_3 {
+    walk_fast_left * 13
+    step_end
+}
+
+movement Phase1_MightyenaChase {
+    walk_fast_up * 4
+    walk_fast_left * 13
+    step_end
+}
+
+//phase 2
+movement Phase2_MightyenaWalksForward {
+    walk_right
+    step_end
+}
