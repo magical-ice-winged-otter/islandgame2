@@ -918,6 +918,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[NUM_SPECIES + 1] =
 #endif
 #if P_GEN_C_POKEMON == TRUE
     SPECIES_SHINY_PAL(SHADOW_LUGIA, gMonShinyPalette_ShadowLugia),
+    SPECIES_SHINY_PAL(SHADOW_MIGHTYENA, gMonShinyPalette_ShadowMightyena),
 #endif
 
     SPECIES_SHINY_PAL(VENUSAUR_MEGA, gMonShinyPalette_VenusaurMega),

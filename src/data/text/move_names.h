@@ -831,7 +831,8 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_MAGICAL_TORQUE] = _("Magical Torque"),
     [MOVE_PSYBLADE] = _("Psyblade"),
     [MOVE_HYDRO_STEAM] = _("Hydro Steam"),
-    [MOVE_SHADOW_BLAST] = _("ShadowBlast")
+    [MOVE_SHADOW_BLAST] = _("ShadowBlast"),
+    [MOVE_BERSERK] = _("Berserk"),
 };
 #else
 // 12 letters
@@ -1666,7 +1667,8 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_MAGICAL_TORQUE] = _("MagiclTorque"),
     [MOVE_PSYBLADE] = _("Psyblade"),
     [MOVE_HYDRO_STEAM] = _("Hydro Steam"),
-    [MOVE_SHADOW_BLAST] = _("ShadowBlast")
+    [MOVE_SHADOW_BLAST] = _("ShadowBlast"),
+    [MOVE_BERSERK] = _("Berserk"),
 };
 #endif
 
