@@ -13,11 +13,11 @@ const INNER_PATH_X = 32
 const INNER_PATH_Y = 37
 
 //phase 2
-const CLEARING_M_X = 41
-const CLEARING_M_Y = 16
+const CLEARING_M_X = 61
+const CLEARING_M_Y = 15
 
-const CLEARING_S_X = 46
-const CLEARING_S_Y = 16
+const CLEARING_S_X = 61
+const CLEARING_S_Y = 12
 mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
     MAP_SCRIPT_ON_RESUME: ISLANDGAME_MINTY_MEADOWS_2_OnResume
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -55,8 +55,8 @@ script ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena {
     setobjectxy(MIGHTYENA_OW_ID, CLEARING_M_X, CLEARING_M_Y)
     setobjectxyperm(MIGHTYENA_OW_ID, CLEARING_M_X, CLEARING_M_Y)
 
-    setobjectmovementtype(MAREEP_OW_ID, MOVEMENT_TYPE_FACE_LEFT)
-    setobjectmovementtype(MIGHTYENA_OW_ID, MOVEMENT_TYPE_FACE_RIGHT)
+    setobjectmovementtype(MAREEP_OW_ID, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype(MIGHTYENA_OW_ID, MOVEMENT_TYPE_FACE_UP)
     return
 }
 
@@ -185,6 +185,6 @@ movement Phase1_MightyenaChase {
 
 //phase 2
 movement Phase2_MightyenaWalksForward {
-    walk_right
+    walk_up
     step_end
 }

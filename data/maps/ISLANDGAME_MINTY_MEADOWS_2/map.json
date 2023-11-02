@@ -197,8 +197,8 @@
     },
     {
       "type": "trigger",
-      "x": 39,
-      "y": 14,
+      "x": 61,
+      "y": 17,
       "elevation": 0,
       "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "2",
@@ -206,8 +206,17 @@
     },
     {
       "type": "trigger",
-      "x": 40,
-      "y": 14,
+      "x": 62,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_MINTY_MEADOWS_STATE",
+      "var_value": "2",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 17,
       "elevation": 0,
       "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "2",

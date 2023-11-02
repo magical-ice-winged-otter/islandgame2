@@ -36,12 +36,12 @@ ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad_3:
 ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena::
 	addobject 11
 	addobject 12
-	setobjectxy 11, 46, 16
-	setobjectxyperm 11, 46, 16
-	setobjectxy 12, 41, 16
-	setobjectxyperm 12, 41, 16
-	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_LEFT
-	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxy 11, 61, 12
+	setobjectxyperm 11, 61, 12
+	setobjectxy 12, 61, 15
+	setobjectxyperm 12, 61, 15
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_UP
 	return
 
 
@@ -183,7 +183,7 @@ Phase1_MightyenaChase:
 	step_end
 
 Phase2_MightyenaWalksForward:
-	walk_right
+	walk_up
 	step_end
 
 MareepHelp_Text::
