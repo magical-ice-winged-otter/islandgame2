@@ -4670,6 +4670,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_FRESA_FARMS",
+      "name": "ISLANDGAME_FRESA_FARMS_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/map.bin"
     }
   ]
 }
