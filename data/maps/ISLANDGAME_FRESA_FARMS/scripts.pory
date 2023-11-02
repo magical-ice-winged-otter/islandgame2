@@ -1,1 +1,36 @@
+const OLD_MAN_OW_ID = 12
+
 mapscripts ISLANDGAME_FRESA_FARMS_MapScripts {}
+
+
+script ISLANDGAME_FRESA_FARMS_OldMan_Request {
+    lock
+    applymovement(OLD_MAN_OW_ID, Common_Movement_FaceLeft)
+    waitmovement(OLD_MAN_OW_ID)
+    applymovement(OLD_MAN_OW_ID, Common_Movement_ExclamationMark)
+    waitmovement(OLD_MAN_OW_ID)
+    goto(ISLANDGAME_FRESA_FARMS_OldMan_Talk)
+}
+
+ text ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage {
+    format("{COLOR DARK_GRAY}I couldn't help but notice your battle earlier, I was wondering if you could help us with our missing Mareep."
+           "{COLOR DARK_GRAY}She usually goes off by herself to the center of the plains, but we haven't seen her since.")
+ }
+
+  text ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage {
+    format("{COLOR DARK_GRAY}Thank you very much!")
+ }
+
+ script ISLANDGAME_FRESA_FARMS_OldMan_Talk {
+    lock
+    if (var(VAR_UNUSED_0x404E) == 0) {
+        msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+        setvar(VAR_UNUSED_0x404E, 1) //TODO: CHANGE THIS TO MINTY_MEADOWS_STATE
+    } elif (var(VAR_UNUSED_0x404E) == 4) {
+        msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage)
+    } else {
+        msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+    }
+    release
+}
+
