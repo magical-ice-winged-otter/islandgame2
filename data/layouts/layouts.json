@@ -4674,10 +4674,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_FRESA_FARMS",
       "name": "ISLANDGAME_FRESA_FARMS_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 35,
+      "height": 26,
       "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/map.bin"
     }
