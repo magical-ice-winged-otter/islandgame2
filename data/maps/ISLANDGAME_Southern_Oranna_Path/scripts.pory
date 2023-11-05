@@ -1,4 +1,19 @@
-mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {}
+mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_TEMP_1, 0)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: ISLANDGAME_Southern_Oranna_Path_OnLoad
+    ]
+}
+
+script ISLANDGAME_Southern_Oranna_Path_OnLoad {
+    setvar(VAR_TEMP_0, 1)
+    if (flag(FLAG_SEEN_ABSOL)) {
+        setvar(VAR_TEMP_1, 1)
+    }
+}
+
 
 // Youngster Tyler
 script ISLANDGAME_Southern_Oranna_Path_TrainerBattle1 {
@@ -143,4 +158,103 @@ text ISLANDGAME_Southern_Oranna_Path_SIGN_DESC {
         "{COLOR DARK_GRAY}<-- CHERIPORT\n"
         "{COLOR DARK_GRAY}CAMP PERSI -->"
     )
+}
+
+//seen absol event
+const ABSOL_OW_ID = 9
+
+movement SOP_WalkRight {
+    walk_right
+    step_end
+}
+
+movement SOP_MiddleWalkBottom {
+    walk_down
+    step_end
+}
+
+script ISLANDGAME_Southern_Oranna_Path_EventScript_TriggerTop {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, SOP_WalkRight)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, SOP_MiddleWalkBottom)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, SOP_MiddleWalkBottom)
+    waitmovement(0)
+    goto(ISLANDGAME_Southern_Oranna_Path_EventScript_SeenAbsol)
+}
+
+script ISLANDGAME_Southern_Oranna_Path_EventScript_TriggerMiddle {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, SOP_WalkRight)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, SOP_MiddleWalkBottom)
+    waitmovement(0)
+    goto(ISLANDGAME_Southern_Oranna_Path_EventScript_SeenAbsol)
+}
+
+script ISLANDGAME_Southern_Oranna_Path_EventScript_TriggerBottom {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, SOP_WalkRight)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER,  Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    goto(ISLANDGAME_Southern_Oranna_Path_EventScript_SeenAbsol)
+}
+
+movement SOP_Absol_Surprised {
+    emote_exclamation_mark
+    face_player
+    walk_up
+    delay_16 * 6
+    step_end
+}
+
+movement SOP_Absol_Run_1 {
+    walk_fast_right
+    step_end
+}
+
+movement SOP_Absol_Jump {
+    jump_right
+    step_end
+}
+
+movement SOP_Absol_Run_2 {
+    walk_fast_right * 3
+    step_end
+}
+
+movement SOP_Absol_Run_3 {
+    walk_fast_up * 4
+    walk_fast_right * 2
+    step_end
+}
+
+script ISLANDGAME_Southern_Oranna_Path_EventScript_SeenAbsol {
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_SEEN_ABSOL)
+    playmoncry(SPECIES_ABSOL, CRY_MODE_ENCOUNTER)
+    applymovement(ABSOL_OW_ID, SOP_Absol_Surprised)
+    waitmovement(ABSOL_OW_ID)
+    //maybe a message here?
+    applymovement(ABSOL_OW_ID, SOP_Absol_Run_1)
+    waitmovement(ABSOL_OW_ID)
+    playse(SE_LEDGE)
+    applymovement(ABSOL_OW_ID, SOP_Absol_Jump)
+    waitmovement(ABSOL_OW_ID)
+    playse(SE_LEDGE)
+    applymovement(ABSOL_OW_ID, SOP_Absol_Jump)
+    waitmovement(ABSOL_OW_ID)
+    applymovement(ABSOL_OW_ID, SOP_Absol_Run_2)
+    waitmovement(ABSOL_OW_ID)
+
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    applymovement(ABSOL_OW_ID, SOP_Absol_Run_3)
+    waitmovement(ABSOL_OW_ID)
+
+    hideobjectat(ABSOL_OW_ID, MAP_ISLANDGAME_SOUTHERN_ORANNA_PATH)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+    waitmovement(0)
+    releaseall
 }

@@ -4,6 +4,7 @@
 #include "event_object_movement.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
+#include "field_weather.h"
 #include "pokemon.h"
 #include "script.h"
 #include "script_movement.h"
@@ -18,6 +19,9 @@
 #include "constants/event_object_movement.h"
 #include "constants/field_effects.h"
 #include "constants/trainer_types.h"
+
+extern const struct SpritePalette sObjectEventSpritePalettes[];
+extern const struct SpritePalette gObjectEventPal_Npc1;
 
 // this file's functions
 static u8 CheckTrainer(u8 objectEventId);
@@ -45,6 +49,10 @@ static bool8 RevealBuriedTrainer(u8 taskId, struct Task *task, struct ObjectEven
 static bool8 PopOutOfAshBuriedTrainer(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj);
 static bool8 JumpInPlaceBuriedTrainer(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj);
 static bool8 WaitRevealBuriedTrainer(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj);
+static bool8 TrainerSeeFunc_OffscreenAboveTrainerCreateCameraObj(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj);
+static bool8 TrainerSeeFunc_OffscreenAboveTrainerCameraObjMoveUp(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj);
+static bool8 TrainerSeeFunc_OffscreenAboveTrainerCameraObjMoveDown(u8 taskId, struct Task *task, struct ObjectEvent * trainerObj);
+
 
 static void SpriteCB_TrainerIcons(struct Sprite *sprite);
 
@@ -84,22 +92,28 @@ enum {
     TRSEE_BURIED_POP_OUT,
     TRSEE_BURIED_JUMP,
     TRSEE_REVEAL_BURIED_WAIT,
+    TRSEE_OFFSCREEN_CREATE_CAMERA_OBJ,
+    TRSEE_OFFSCREEN_CAMERA_MOVE_UP,
+    TRSEE_OFFSCREEN_CAMERA_MOVE_DOWN
 };
 
 static bool8 (*const sTrainerSeeFuncList[])(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj) =
 {
-    [TRSEE_NONE]                 = TrainerSeeIdle,
-    [TRSEE_EXCLAMATION]          = TrainerExclamationMark,
-    [TRSEE_EXCLAMATION_WAIT]     = WaitTrainerExclamationMark,
-    [TRSEE_MOVE_TO_PLAYER]       = TrainerMoveToPlayer,
-    [TRSEE_PLAYER_FACE]          = PlayerFaceApproachingTrainer,
-    [TRSEE_PLAYER_FACE_WAIT]     = WaitPlayerFaceApproachingTrainer,
-    [TRSEE_REVEAL_DISGUISE]      = RevealDisguisedTrainer,
-    [TRSEE_REVEAL_DISGUISE_WAIT] = WaitRevealDisguisedTrainer,
-    [TRSEE_REVEAL_BURIED]        = RevealBuriedTrainer,
-    [TRSEE_BURIED_POP_OUT]       = PopOutOfAshBuriedTrainer,
-    [TRSEE_BURIED_JUMP]          = JumpInPlaceBuriedTrainer,
-    [TRSEE_REVEAL_BURIED_WAIT]   = WaitRevealBuriedTrainer,
+    [TRSEE_NONE]                        = TrainerSeeIdle,
+    [TRSEE_EXCLAMATION]                 = TrainerExclamationMark,
+    [TRSEE_EXCLAMATION_WAIT]            = WaitTrainerExclamationMark,
+    [TRSEE_MOVE_TO_PLAYER]              = TrainerMoveToPlayer,
+    [TRSEE_PLAYER_FACE]                 = PlayerFaceApproachingTrainer,
+    [TRSEE_PLAYER_FACE_WAIT]            = WaitPlayerFaceApproachingTrainer,
+    [TRSEE_REVEAL_DISGUISE]             = RevealDisguisedTrainer,
+    [TRSEE_REVEAL_DISGUISE_WAIT]        = WaitRevealDisguisedTrainer,
+    [TRSEE_REVEAL_BURIED]               = RevealBuriedTrainer,
+    [TRSEE_BURIED_POP_OUT]              = PopOutOfAshBuriedTrainer,
+    [TRSEE_BURIED_JUMP]                 = JumpInPlaceBuriedTrainer,
+    [TRSEE_REVEAL_BURIED_WAIT]          = WaitRevealBuriedTrainer,
+    [TRSEE_OFFSCREEN_CREATE_CAMERA_OBJ] = TrainerSeeFunc_OffscreenAboveTrainerCreateCameraObj,
+    [TRSEE_OFFSCREEN_CAMERA_MOVE_UP]    = TrainerSeeFunc_OffscreenAboveTrainerCameraObjMoveUp,
+    [TRSEE_OFFSCREEN_CAMERA_MOVE_DOWN]  = TrainerSeeFunc_OffscreenAboveTrainerCameraObjMoveDown
 };
 
 static bool8 (*const sTrainerSeeFuncList2[])(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj) =
@@ -168,7 +182,7 @@ static const union AnimCmd *const sSpriteAnimTable_Icons[] =
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = TAG_NONE,
+    .paletteTag = 0x1100,   ////LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_BRENDAN)
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_ExclamationQuestionMark,
@@ -463,11 +477,17 @@ static bool8 TrainerExclamationMark(u8 taskId, struct Task *task, struct ObjectE
 {
     u8 direction;
 
-    ObjectEventGetLocalIdAndMap(trainerObj, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
-    FieldEffectStart(FLDEFF_EXCLAMATION_MARK_ICON);
-    direction = GetFaceDirectionMovementAction(trainerObj->facingDirection);
-    ObjectEventSetHeldMovement(trainerObj, direction);
-    task->tFuncId++; // TRSEE_EXCLAMATION_WAIT
+    if (trainerObj->facingDirection == DIR_SOUTH && task->tTrainerRange > 2)
+    {
+        task->tFuncId = TRSEE_OFFSCREEN_CREATE_CAMERA_OBJ;
+    } else 
+    {
+        ObjectEventGetLocalIdAndMap(trainerObj, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+        FieldEffectStart(FLDEFF_EXCLAMATION_MARK_ICON);
+        direction = GetFaceDirectionMovementAction(trainerObj->facingDirection);
+        ObjectEventSetHeldMovement(trainerObj, direction);
+        task->tFuncId++; // TRSEE_EXCLAMATION_WAIT
+    }
     return TRUE;
 }
 
@@ -623,6 +643,67 @@ static bool8 WaitRevealBuriedTrainer(u8 taskId, struct Task *task, struct Object
 #undef tOutOfAshSpriteId
 #undef tTrainerObjectEventId
 
+//edit: FRLG trainer out of bounds see
+static bool8 TrainerSeeFunc_OffscreenAboveTrainerCreateCameraObj(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj)
+{
+    int specialObjectId;
+    task->data[5] = 0;
+    specialObjectId = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_YOUNGSTER, 7, OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->pos.x + 7, gSaveBlock1Ptr->pos.y + 7, 3);
+    gObjectEvents[specialObjectId].invisible = TRUE;
+    CameraObjectSetFollowedSpriteId(gObjectEvents[specialObjectId].spriteId);
+    task->tFuncId++;
+    return FALSE;
+}
+
+static bool8 TrainerSeeFunc_OffscreenAboveTrainerCameraObjMoveUp(u8 taskId, struct Task *task, struct ObjectEvent *trainerObj)
+{
+    u8 specialObjectId;
+    TryGetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &specialObjectId);
+
+    if (ObjectEventIsMovementOverridden(&gObjectEvents[specialObjectId]) && !ObjectEventClearHeldMovementIfFinished(&gObjectEvents[specialObjectId]))
+        return FALSE;
+
+    if (task->data[5] != task->data[3] - 1)
+    {
+        ObjectEventSetHeldMovement(&gObjectEvents[specialObjectId], GetWalkFastMovementAction(DIR_NORTH));
+        task->data[5]++;
+    }
+    else
+    {
+        ObjectEventGetLocalIdAndMap(trainerObj, (u8 *)&gFieldEffectArguments[0], (u8 *)&gFieldEffectArguments[1], (u8 *)&gFieldEffectArguments[2]);
+        FieldEffectStart(FLDEFF_EXCLAMATION_MARK_ICON);
+        task->data[5] = 0;
+        task->tFuncId++;
+    }
+    return FALSE;
+}
+
+static bool8 TrainerSeeFunc_OffscreenAboveTrainerCameraObjMoveDown(u8 taskId, struct Task *task, struct ObjectEvent * trainerObj)
+{
+    u8 specialObjectId;
+    TryGetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &specialObjectId);
+
+    if (FieldEffectActiveListContains(FLDEFF_EXCLAMATION_MARK_ICON))
+        return FALSE;
+
+    if (ObjectEventIsMovementOverridden(&gObjectEvents[specialObjectId]) && !ObjectEventClearHeldMovementIfFinished(&gObjectEvents[specialObjectId]))
+        return FALSE;
+
+    if (task->data[5] != task->data[3] - 1)
+    {
+        ObjectEventSetHeldMovement(&gObjectEvents[specialObjectId], GetWalkFastMovementAction(DIR_SOUTH));
+        task->data[5]++;
+    }
+    else
+    {
+        CameraObjectSetFollowedSpriteId(GetPlayerAvatarSpriteId());
+        RemoveObjectEventByLocalIdAndMap(OBJ_EVENT_ID_CAMERA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+        task->data[5] = 0;
+        task->tFuncId = TRSEE_EXCLAMATION_WAIT;
+    }
+    return FALSE;
+}
+
 #define tObjEvent data[1]
 
 static void Task_SetBuriedTrainerMovement(u8 taskId)
@@ -698,7 +779,10 @@ void TryPrepareSecondApproachingTrainer(void)
 
 u8 FldEff_ExclamationMarkIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+    u8 spriteId, paletteNum;
+
+    LoadObjectEventPalette(0x1100); //LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_BRENDAN)
+    spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x52);
 
     if (spriteId != MAX_SPRITES)
         SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 0);
@@ -708,7 +792,10 @@ u8 FldEff_ExclamationMarkIcon(void)
 
 u8 FldEff_QuestionMarkIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x52);
+    u8 spriteId;
+
+    LoadObjectEventPalette(0x1100); //LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_BRENDAN)
+    spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x52);
 
     if (spriteId != MAX_SPRITES)
         SetIconSpriteData(&gSprites[spriteId], FLDEFF_QUESTION_MARK_ICON, 1);
@@ -718,7 +805,10 @@ u8 FldEff_QuestionMarkIcon(void)
 
 u8 FldEff_HeartIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_HeartIcon, 0, 0, 0x52);
+    u8 spriteId;
+
+    LoadSpritePalette(&gObjectEventPal_Npc1);
+    spriteId = CreateSpriteAtEnd(&sSpriteTemplate_HeartIcon, 0, 0, 0x52);
 
     if (spriteId != MAX_SPRITES)
     {

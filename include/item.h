@@ -96,5 +96,14 @@ enum
 };
 #undef ENUM_TM
 #undef ENUM_HM
+void DrawHeaderBox(void);
+void HideHeaderBox(void);
+
+enum ItemObtainFlags
+{
+    FLAG_GET_OBTAINED,
+    FLAG_SET_OBTAINED,
+};
+bool8 GetSetItemObtained(u16 item, u8 caseId);
 
 #endif // GUARD_ITEM_H

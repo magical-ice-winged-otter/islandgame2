@@ -35,6 +35,9 @@ typedef struct Location
 #define MINTY_MEADOWS 4
 #define TRAVELERS_TUNNEL 5
 #define CAMP_PERSI 6
+#define VERDANT_PATH 7
+#define VERDANT_WOODS 8
+#define FRESA_FARMS 9
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -44,7 +47,10 @@ static const Location LOCATION_DATA[] = {
     [SS_RAIN] = SET_LOC(ISLANDGAME_SS_RAIN_ROOM2, 6, 7), //I can't figure out how to change the name on porymap
     [CHERIPORT] = SET_LOC(ISLANDGAME_CHERIPORT, 10, 26),
     [TRAVELERS_TUNNEL] = SET_LOC(ISLANDGAME_TRAVELERS_TUNNEL, 10, 10),
-    [CAMP_PERSI] = SET_LOC(ISLANDGAME_CAMP_PERSI, 1, 24)
+    [CAMP_PERSI] = SET_LOC(ISLANDGAME_CAMP_PERSI, 1, 24),
+    [VERDANT_PATH] = SET_LOC(ISLANDGAME_VERDANT_PATH, 10, 10),
+    [VERDANT_WOODS] = SET_LOC(ISLANDGAME_VERDANT_WOODS, 10, 10),
+    [FRESA_FARMS] = SET_LOC(ISLANDGAME_FRESA_FARMS, 10, 10),
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
@@ -54,6 +60,9 @@ static const u8 cheriportName[] = _("CHERIPORT");
 static const u8 mintyMeadowsName[] = _("MINTY MEADOWS");
 static const u8 travelersTunnelName[] = _("TravelTunnel");
 static const u8 campPersiName[] = _("CAMP PERSI");
+static const u8 verdantPathName[] = _("VerdantPath");
+static const u8 verdantWoodName[] = _("VerdantWood");
+static const u8 fresaFarmName[] = _("FresaFarm");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
@@ -63,7 +72,10 @@ static const u8 *const LOCATION_NAMES[] = {
     [CHERIPORT] = cheriportName,
     [MINTY_MEADOWS] = mintyMeadowsName,
     [TRAVELERS_TUNNEL] = mintyMeadowsName,
-    [CAMP_PERSI] = campPersiName
+    [CAMP_PERSI] = campPersiName,
+    [VERDANT_PATH] = verdantPathName,
+    [VERDANT_WOODS] = verdantWoodName,
+    [FRESA_FARMS] = fresaFarmName
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 
@@ -92,7 +104,7 @@ void IslandGameCustomStartup();
 
 #ifdef ISLANDGAME_DEBUG
 
-#define START_LOC_GAME LOCATION_DATA[CHERIPORT]
+#define START_LOC_GAME LOCATION_DATA[SS_RAIN]
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA
 #define ISLANDGAME_STARTING_MON_LEVEL 100
 #define ISLANDGAME_STARTING_MON_ITEM ITEM_NONE

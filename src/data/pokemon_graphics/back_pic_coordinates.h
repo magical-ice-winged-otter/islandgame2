@@ -1359,5 +1359,9 @@ const struct MonCoords gMonBackPicCoords[NUM_SPECIES + 1] =
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE]           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
 #endif
+#if P_GEN_C_POKEMON == TRUE
+    [SPECIES_SHADOW_LUGIA]                 = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_SHADOW_MIGHTYENA]             = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  3 },
+#endif
     [SPECIES_EGG]                          = { .size = MON_COORDS_SIZE(24, 24), .y_offset = 20 },
 };
