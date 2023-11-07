@@ -8066,19 +8066,9 @@ bool32 isMonShadowBerserk(u8 battlerId)
 {
     s32 rnd;
 
-    if (IS_BATTLER_OF_TYPE(battlerId, TYPE_SHADOW)) 
+    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_SHADOW)) 
     {
         return FALSE;
-    }
-    switch (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL)) { //temporary solution, maybe we will have a list somewhere
-        case SPECIES_SHADOW_LUGIA:
-        case SPECIES_SHADOW_MIGHTYENA:
-            #ifndef NDEBUG
-                DebugPrintf("is shadow mon");
-            #endif
-            break;
-        default:
-            return FALSE;
     }
 
     rnd = (Random() % 4); //modulo bias?
