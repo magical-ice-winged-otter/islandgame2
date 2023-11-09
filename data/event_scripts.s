@@ -1121,3 +1121,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_NORTHERN_ORANNA_PATH/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_ROSEVALE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AURORA_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_AURORA_1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_AURORA_2F/scripts.inc"
