@@ -4646,7 +4646,7 @@
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
       "width": 60,
       "height": 60,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Unused1",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/map.bin"
