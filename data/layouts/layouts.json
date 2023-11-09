@@ -4644,7 +4644,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
-      "width": 60,
+      "width": 100,
       "height": 60,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Unused1",
