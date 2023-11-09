@@ -4680,6 +4680,26 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_NORTHERN_ORANNA_PATH",
+      "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE",
+      "name": "ISLANDGAME_ROSEVALE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE/map.bin"
     }
   ]
 }

@@ -33,6 +33,8 @@
 #define MAP_ISLANDGAME_VERDANT_PATH          (24 | (0 << 8))
 #define MAP_ISLANDGAME_VERDANT_WOODS         (25 | (0 << 8))
 #define MAP_ISLANDGAME_FRESA_FARMS           (26 | (0 << 8))
+#define MAP_ISLANDGAME_NORTHERN_ORANNA_PATH  (27 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE              (28 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
