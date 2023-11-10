@@ -240,3 +240,9 @@ const u16 gMetatileAttributes_IslandgameSOP[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_IslandgameVerdant[] = INCBIN_U16("data/tilesets/secondary/islandgame_verdant/metatiles.bin");
 const u16 gMetatileAttributes_IslandgameVerdant[] = INCBIN_U16("data/tilesets/secondary/islandgame_verdant/metatile_attributes.bin");
+
+const u16 gMetatiles_Islandgame_icecave[] = INCBIN_U16("data/tilesets/secondary/islandgame_icecave/metatiles.bin");
+const u16 gMetatileAttributes_Islandgame_icecave[] = INCBIN_U16("data/tilesets/secondary/islandgame_icecave/metatile_attributes.bin");
+
+const u16 gMetatiles_IslandgameEmpty[] = INCBIN_U16("data/tilesets/primary/islandgame_empty/metatiles.bin");
+const u16 gMetatileAttributes_IslandgameEmpty[] = INCBIN_U16("data/tilesets/primary/islandgame_empty/metatile_attributes.bin");
