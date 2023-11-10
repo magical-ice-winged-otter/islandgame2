@@ -38,6 +38,7 @@
 #define MAP_ISLANDGAME_AURORA_PATH           (29 | (0 << 8))
 #define MAP_ISLANDGAME_MT_AURORA_1F          (30 | (0 << 8))
 #define MAP_ISLANDGAME_MT_AURORA_2F          (31 | (0 << 8))
+#define MAP_ISLANDGAME_MAPLEGROVE            (32 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
