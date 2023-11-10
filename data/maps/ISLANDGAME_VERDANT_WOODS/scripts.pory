@@ -1,5 +1,146 @@
 mapscripts ISLANDGAME_VERDANT_WOODS_MapScripts {}
 
+/// trainers
+// Bug Catcher Owen
+script ISLANDGAME_VERDANT_WOODS_TrainerBattle1 {
+    trainerbattle_double(TRAINER_VERDANT_WOODS_1, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_NotEnoughMons)
+    msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Text {
+    format(
+        "{COLOR DARK_GRAY}Bug Pokémon are the best! They evolve early, so they become powerful fast!"
+    )
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text
+{
+    "I guess bug Pokémon aren't very strong, \n"
+    "so evolving early doesn't matter."
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}Even still, I think bug Pokémon are awesome! \p"
+        "{COLOR DARK_GRAY}I'm the most popular kid at camp thanks to Butterfree and Beedrill!"
+        )
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_NotEnoughMons
+{
+    format(
+        "{COLOR DARK_GRAY}Huh? You need at least two Pokémon to face me!"
+    )
+}
+
+// Bug Catcher Cody
+script ISLANDGAME_VERDANT_WOODS_TrainerBattle2 {
+    trainerbattle_single(TRAINER_VERDANT_WOODS_2, ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle2_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Text {
+    format(
+        "{COLOR DARK_GRAY}Mark my words, I will become the Bug King!"
+    )
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Defeated_Text
+{
+    "I guess I'll just be the Bug Prince for  \n"
+    "now."
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle2_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}To become the Bug King, I have to capture that giant bug Pokémon first. \p"
+        "{COLOR DARK_GRAY}I hear it's the only one of its kind here, which makes it perfect for a king!"
+        )
+}
+
+// Youngster Zach
+script ISLANDGAME_VERDANT_WOODS_TrainerBattle3 {
+    trainerbattle_single(TRAINER_VERDANT_WOODS_3, ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Text {
+    format(
+        "{COLOR DARK_GRAY}I'm tired of battling my brother. It's so boring."
+    )
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text
+{
+    "On second thought, battling him wasn't \n"
+    "THAT bad..."
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}I just wish he would use a Pokémon that wasn't a bug for once. \p"
+        "{COLOR DARK_GRAY}They have an unfair advantage against my Shroomish! \p"
+        "{COLOR DARK_GRAY}Hmm, maybe I'll just get a Pokémon that's good against his."
+        )
+}
+
+// Lass Beth
+script ISLANDGAME_VERDANT_WOODS_TrainerBattle4 {
+    trainerbattle_single(TRAINER_VERDANT_WOODS_4, ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text {
+    format(
+        "{COLOR DARK_GRAY}Ugh... I hate forests. They're dirty and full of icky bugs and poisonous plants."
+    )
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Defeated_Text
+{
+    "The only thing I hate more than forests  \n"
+    "is losing."
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}If you're going to Maplegrove, you should go the other way instead. \p"
+        "{COLOR DARK_GRAY}There's nothing past here except some weird girl talking to herself."
+        )
+}
+
+// Camper Raj
+script ISLANDGAME_VERDANT_WOODS_TrainerBattle5 {
+    trainerbattle_single(TRAINER_VERDANT_WOODS_5, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text)
+    msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text {
+    format(
+        "{COLOR DARK_GRAY}Trying to find this trading card is like looking for a needle in a haystack... \p"
+        "{COLOR DARK_GRAY}I'm taking a break from all this searching! Let's battle!"
+    )
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text
+{
+    "Wow... Maybe you could help me find my \n"
+    "friend's trading card?"
+}
+
+text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}His trading card should be around here somewhere. \p"
+        "{COLOR DARK_GRAY}Me and Poochyena have been looking for an hour!"
+        )
+}
+
+
 
 
 
@@ -30,7 +171,29 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_NPC2 {
 
 text ISLANDGAME_VERDANT_WOODS_NPC2Talk {
     format(
-        "{COLOR DARK_GRAY}Hey... do you hear that spooky sound too, or is it just me?"
+        "{COLOR DARK_GRAY}get out of my head get out of my head get out of my head GeT oUT oF mY hEaD"
+    )
+}
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_NPC3 {
+    lock
+    faceplayer
+    goto_if_set(FLAG_VERDANT_WOODS_SEED_RECEIVED, ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven)
+    msgbox(ISLANDGAME_VERDANT_WOODS_NPC3Talk)
+	giveitem(ITEM_MIRACLE_SEED)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	setflag(FLAG_VERDANT_WOODS_SEED_RECEIVED)
+    release
+}
+
+script ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven {
+    msgbox(format("{COLOR DARK_GRAY}That's a Miracle Seed. It's not good for cooking, but it's great for powering up grass-type Pokémon in a battle!"))
+	release
+}
+
+text ISLANDGAME_VERDANT_WOODS_NPC3Talk {
+    format(
+        "{COLOR DARK_GRAY}Oh, are you a trainer? I found this while foraging for herbs. Take it!"
     )
 }
 

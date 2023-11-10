@@ -37,18 +37,34 @@
 
 
 
-
+// Verdant Path
 #define TRAINER_ALBERTO                      12
 #define TRAINER_ED                           13
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
 #define TRAINER_DECLAN                       15
 #define TRAINER_GRUNT_RUSTURF_TUNNEL         16
 #define TRAINER_GRUNT_WEATHER_INST_1         17
-#define TRAINER_GRUNT_WEATHER_INST_2         18
-#define TRAINER_GRUNT_WEATHER_INST_3         19
-#define TRAINER_GRUNT_MUSEUM_1               20
-#define TRAINER_GRUNT_MUSEUM_2               21
-#define TRAINER_GRUNT_SPACE_CENTER_1         22
+
+
+
+
+
+// Verdant Woods
+#define TRAINER_VERDANT_WOODS_1              18
+//#define TRAINER_GRUNT_WEATHER_INST_2       18
+#define TRAINER_VERDANT_WOODS_2              19
+//#define TRAINER_GRUNT_WEATHER_INST_3       19
+#define TRAINER_VERDANT_WOODS_3              20
+//#define TRAINER_GRUNT_MUSEUM_1             20
+#define TRAINER_VERDANT_WOODS_4              21
+//#define TRAINER_GRUNT_MUSEUM_2             21
+#define TRAINER_VERDANT_WOODS_5              22
+//#define TRAINER_GRUNT_SPACE_CENTER_1       22
+
+
+
+
+
 #define TRAINER_GRUNT_MT_PYRE_1              23
 #define TRAINER_GRUNT_MT_PYRE_2              24
 #define TRAINER_GRUNT_MT_PYRE_3              25
