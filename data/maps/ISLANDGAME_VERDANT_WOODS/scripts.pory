@@ -1,4 +1,47 @@
-mapscripts ISLANDGAME_VERDANT_WOODS_MapScripts {}
+mapscripts ISLANDGAME_VERDANT_WOODS_MapScripts {
+    MAP_SCRIPT_ON_RESUME: ISLANDGAME_VERDANT_WOODS_OnResume
+}
+
+script ISLANDGAME_VERDANT_WOODS_OnResume {
+    call_if_set(FLAG_SYS_CTRL_OBJ_DELETE, ISLANDGAME_VERDANT_WOODS_TryRemoveSudowoodo)
+}
+
+script ISLANDGAME_VERDANT_WOODS_TryRemoveSudowoodo {
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    goto_if_ne(VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn)
+    removeobject(VAR_LAST_TALKED)
+	return
+}
+
+
+script ISLANDGAME_VERDANT_WOODS_Sudowoodo {
+    lock
+    checkitem(ITEM_WAILMER_PAIL, 1)
+    switch (var(VAR_RESULT)) {
+        case FALSE:
+            msgbox(format("{COLOR DARK_GRAY}It's a tree."))
+        case TRUE:
+            msgbox(format("{COLOR DARK_GRAY}It's a tree. Water it?"), MSGBOX_YESNO)
+            switch (var(VAR_RESULT)) {
+                case NO:
+                    break
+                case YES:
+                    setwildbattle(SPECIES_SUDOWOODO, 15)
+                    playmoncry(SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER)
+                    waitmoncry
+                    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+                    dowildbattle
+                    specialvar(VAR_RESULT, GetBattleOutcome)
+                    switch (var(VAR_RESULT)) {
+                        case B_OUTCOME_WON:
+                        case B_OUTCOME_CAUGHT:
+                            setflag(FLAG_VERDANT_WOODS_SUDOWOODO_DEFEATED)
+                            goto(Common_EventScript_RemoveStaticPokemon)
+                    }
+            }
+    }
+    release
+}
 
 /// trainers
 // Bug Catcher Owen

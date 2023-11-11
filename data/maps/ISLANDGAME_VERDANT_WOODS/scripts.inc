@@ -1,5 +1,60 @@
 ISLANDGAME_VERDANT_WOODS_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, ISLANDGAME_VERDANT_WOODS_OnResume
 	.byte 0
+
+
+ISLANDGAME_VERDANT_WOODS_OnResume::
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, ISLANDGAME_VERDANT_WOODS_TryRemoveSudowoodo
+	return
+
+
+ISLANDGAME_VERDANT_WOODS_TryRemoveSudowoodo::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
+
+
+ISLANDGAME_VERDANT_WOODS_Sudowoodo::
+	lock
+	checkitem ITEM_WAILMER_PAIL, 1
+	switch VAR_RESULT
+	case FALSE, ISLANDGAME_VERDANT_WOODS_Sudowoodo_3
+	case TRUE, ISLANDGAME_VERDANT_WOODS_Sudowoodo_4
+ISLANDGAME_VERDANT_WOODS_Sudowoodo_1:
+	release
+	return
+
+ISLANDGAME_VERDANT_WOODS_Sudowoodo_3:
+	msgbox ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_0
+	goto ISLANDGAME_VERDANT_WOODS_Sudowoodo_1
+
+ISLANDGAME_VERDANT_WOODS_Sudowoodo_4:
+	msgbox ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, ISLANDGAME_VERDANT_WOODS_Sudowoodo_6
+	case YES, ISLANDGAME_VERDANT_WOODS_Sudowoodo_7
+	goto ISLANDGAME_VERDANT_WOODS_Sudowoodo_1
+
+ISLANDGAME_VERDANT_WOODS_Sudowoodo_6:
+	goto ISLANDGAME_VERDANT_WOODS_Sudowoodo_1
+
+ISLANDGAME_VERDANT_WOODS_Sudowoodo_7:
+	setwildbattle SPECIES_SUDOWOODO, 15
+	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_Sudowoodo_9
+	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_Sudowoodo_9
+	goto ISLANDGAME_VERDANT_WOODS_Sudowoodo_1
+
+ISLANDGAME_VERDANT_WOODS_Sudowoodo_9:
+	setflag FLAG_VERDANT_WOODS_SUDOWOODO_DEFEATED
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_VERDANT_WOODS_Sudowoodo_1
 
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1::
@@ -83,6 +138,12 @@ ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2::
 	release
 	return
 
+
+ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_0:
+	.string "{COLOR DARK_GRAY}It's a tree.$"
+
+ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1:
+	.string "{COLOR DARK_GRAY}It's a tree. Water it?$"
 
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0:
 	.string "{COLOR DARK_GRAY}That's a Miracle Seed. It's not good for\n"
