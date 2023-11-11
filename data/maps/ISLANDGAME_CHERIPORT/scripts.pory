@@ -1,22 +1,56 @@
 mapscripts ISLANDGAME_CHERIPORT_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-        setvar(VAR_TEMP_0, 0)
+    MAP_SCRIPT_ON_TRANSITION 
+    {
+        if (!flag(FLAG_LEFT_SHIP)) 
+        {
+            setflag(FLAG_LEFT_SHIP)
+            setflag(FLAG_ROOM3_ITEM)
+        }
+
+        if (flag(FLAG_PROF_GAVE_EEVEE)) 
+        {
+            setvar(VAR_TEMP_1, 1) // this controls the triggers that stop you from leaving
+        }
+
+        gettime
+
+        if (var(VAR_0x8000) < 12 + 6) 
+        {
+            setflag(FLAG_TEMP_1) // temp 2 controls visibility of beach guy
+        }
     }
-    MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_0, 0: ISLANDGAME_CHERIPORT_OnLoad
-    ]
 }
 
-script ISLANDGAME_CHERIPORT_OnLoad {
-    setvar(VAR_TEMP_0, 1)
-    if (!flag(FLAG_LEFT_SHIP)) {
-        setflag(FLAG_LEFT_SHIP)
-        setflag(FLAG_ROOM3_ITEM)
-        //
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
+    lock
+    showmoneybox(0, 0)
+    msgbox("Soda pops, only 100!", MSGBOX_YESNO)
+
+    if (var(VAR_RESULT) == YES)
+    {
+        checkmoney(100)
+
+        if (var(VAR_RESULT))
+        {
+            removemoney(100)
+            updatemoneybox
+            msgbox("Take one!")
+            hidemoneybox
+            giveitem(ITEM_SODA_POP)
+        }
+        else
+        {
+            msgbox("Oh, you cant afford this.")
+            hidemoneybox
+        }
     }
-    if (flag(FLAG_PROF_GAVE_EEVEE)) {
-        setvar(VAR_TEMP_1, 1)
+    else
+    {
+        msgbox("Come again later!")
+        hidemoneybox
     }
+
+    release
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
