@@ -32,6 +32,14 @@
 #define MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_2  (23 | (0 << 8))
 #define MAP_ISLANDGAME_VERDANT_PATH           (24 | (0 << 8))
 #define MAP_ISLANDGAME_VERDANT_PATH_FISHHOUSE (25 | (0 << 8))
+#define MAP_ISLANDGAME_VERDANT_WOODS          (26 | (0 << 8))
+#define MAP_ISLANDGAME_FRESA_FARMS            (27 | (0 << 8))
+#define MAP_ISLANDGAME_NORTHERN_ORANNA_PATH   (28 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE               (29 | (0 << 8))
+#define MAP_ISLANDGAME_AURORA_PATH            (30 | (0 << 8))
+#define MAP_ISLANDGAME_MT_AURORA_1F           (31 | (0 << 8))
+#define MAP_ISLANDGAME_MT_AURORA_2F           (32 | (0 << 8))
+#define MAP_ISLANDGAME_MAPLEGROVE             (33 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))

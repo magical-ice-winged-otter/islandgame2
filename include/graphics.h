@@ -1361,6 +1361,7 @@ extern const u32 gMonFrontPic_BasculegionFemale[];
 #endif
 #if P_GEN_C_POKEMON == TRUE
 extern const u32 gMonFrontPic_ShadowLugia[];
+extern const u32 gMonFrontPic_ShadowMightyena[];
 #endif
 extern const u32 gMonFrontPic_Egg[];
 
@@ -2649,6 +2650,7 @@ extern const u32 gMonBackPic_BasculegionFemale[];
 #endif
 #if P_GEN_C_POKEMON == TRUE
 extern const u32 gMonBackPic_ShadowLugia[];
+extern const u32 gMonBackPic_ShadowMightyena[];
 #endif
 
 extern const u32 gMonPalette_CircledQuestionMark[];
@@ -3884,6 +3886,7 @@ extern const u32 gMonPalette_BasculegionFemale[];
 #endif
 #if P_GEN_C_POKEMON == TRUE
 extern const u32 gMonPalette_ShadowLugia[];
+extern const u32 gMonPalette_ShadowMightyena[];
 #endif
 
 extern const u32 gMonPalette_Egg[];
@@ -5115,6 +5118,7 @@ extern const u32 gMonShinyPalette_BasculegionFemale[];
 #endif
 #if P_GEN_C_POKEMON == TRUE
 extern const u32 gMonShinyPalette_ShadowLugia[];
+extern const u32 gMonShinyPalette_ShadowMightyena[];
 #endif
 
 extern const u8 gMonIcon_QuestionMark[];
@@ -6338,6 +6342,7 @@ extern const u8 gMonIcon_BasculegionFemale[];
 #endif
 #if P_GEN_C_POKEMON == TRUE
 extern const u8 gMonIcon_ShadowLugia[];
+extern const u8 gMonIcon_ShadowMightyena[];
 #endif
 
 extern const u8 gMonIcon_Egg[];
@@ -7260,6 +7265,7 @@ extern const u8 gMonFootprint_Calyrex[];
 #endif
 #if P_GEN_C_POKEMON == TRUE
 extern const u8 gMonFootprint_ShadowLugia[];
+extern const u8 gMonFootprint_ShadowMightyena[];
 #endif
 
 // trainer sprites

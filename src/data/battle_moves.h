@@ -13817,7 +13817,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_HIT,
         .power = 140,
-        .type = TYPE_DARK,
+        .type = TYPE_SHADOW,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 10,
@@ -13825,6 +13825,20 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .priority = 1,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
+    },
+    [MOVE_BERSERK] = //shadow mon random move
+    {
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_SHADOW,
+        .accuracy = 100,
+        .pp = 5, // doesn't matter
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = 1,
     },
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
