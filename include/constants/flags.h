@@ -1504,23 +1504,25 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-
-
-// island-start: set when you leave the ship at the beginning of the game
+// island-start
+//ss rain: set when you leave the ship at the beginning of the game
 #define FLAG_LEFT_SHIP                              (SYSTEM_FLAGS + 0x85) 
-// old man in room 3
+//ss rain: old man in room 3
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
-// set when you talk to the professor for the first time and got the eevee
-#define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87) 
-// npc gives you a potion on soranna path
-#define FLAG_S_ORANNA_PATH_NPC                      (SYSTEM_FLAGS + 0x88) 
-// first jonas battle in camp persi
-#define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x89) 
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
+//cheriport: set when you talk to the professor for the first time and got the eevee
+#define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87)
+//southern oranna path: npc gives you a potion
+#define FLAG_S_ORANNA_PATH_NPC                      (SYSTEM_FLAGS + 0x88)
+//southern oranna path: see an absol in the area
+#define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
+//camp persi: first jonas battle in camp persi
+#define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
-#define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
-#define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag
+//verdant-woods: miracle seed
+#define FLAG_VERDANT_WOODS_SEED_RECEIVED            (SYSTEM_FLAGS + 0x8D)
+//verdant-woods: Fight tree
+#define FLAG_VERDANT_WOODS_SUDOWOODO_DEFEATED       (SYSTEM_FLAGS + 0x8E) 
 #define FLAG_UNUSED_0x8EF                           (SYSTEM_FLAGS + 0x8F) // Unused Flag
 #define FLAG_UNUSED_0x8F0                           (SYSTEM_FLAGS + 0x90) // Unused Flag
 #define FLAG_UNUSED_0x8F1                           (SYSTEM_FLAGS + 0x91) // Unused Flag

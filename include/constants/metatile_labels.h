@@ -793,6 +793,9 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_IslandgameGeneral
+#define METATILE_Islandgame_Door                              0x021
+#define METATILE_Islandgame_Door_PokeCenter                   0x061
 // gTileset_IslandgamePersi
 #define METATILE_Persi_Door 0x26C
 

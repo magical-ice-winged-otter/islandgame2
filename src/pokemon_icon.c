@@ -1297,6 +1297,7 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
 #endif
 #if P_GEN_C_POKEMON == TRUE
     [SPECIES_SHADOW_LUGIA] = gMonIcon_ShadowLugia,
+    [SPECIES_SHADOW_MIGHTYENA] = gMonIcon_ShadowMightyena,
 #endif
     [SPECIES_EGG] = gMonIcon_Egg,
 };
@@ -2534,6 +2535,7 @@ const u8 gMonIconPaletteIndices[] =
 #endif
 #if P_GEN_C_POKEMON == TRUE
     [SPECIES_SHADOW_LUGIA] = 2,
+    [SPECIES_SHADOW_MIGHTYENA] = 2, //todo: fix this
 #endif
     [SPECIES_EGG] = 1,
 };

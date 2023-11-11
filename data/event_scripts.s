@@ -1108,3 +1108,25 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_VERDANT_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_FRESA_FARMS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_NORTHERN_ORANNA_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AURORA_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_AURORA_1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_AURORA_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE/scripts.inc"

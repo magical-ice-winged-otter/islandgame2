@@ -1342,6 +1342,7 @@ const struct MonCoords gMonFrontPicCoords[NUM_SPECIES + 1] =
 #endif
 #if P_GEN_C_POKEMON == TRUE 
     [SPECIES_SHADOW_LUGIA]                 = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 }, //copied lugia's
+    [SPECIES_SHADOW_MIGHTYENA]             = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  3 }, //copied vanilla mightyena's
 #endif
     // Egg
     [SPECIES_EGG]                          = { .size = MON_COORDS_SIZE(24, 24), .y_offset = 20 },

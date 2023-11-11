@@ -5403,4 +5403,7 @@ const u8 gEnamorusPokedexText[] = _(
     const u8 gShadowLugiaPokedexText[] = _(
         "TBD, it is shadow lugia."
     );
+    const u8 gShadowMightyenaPokedexText[] = _(
+        "TBD, it is shadow mightyena."
+    );
 #endif

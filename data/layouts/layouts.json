@@ -4546,8 +4546,8 @@
       "name": "ISLANDGAME_CHERIPORT_Layout",
       "width": 60,
       "height": 49,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Slateport",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_islandgame_cheriport",
       "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT/map.bin"
     },
@@ -4616,8 +4616,8 @@
       "name": "ISLANDGAME_Southern_Oranna_Path_Layout",
       "width": 40,
       "height": 45,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_IslandgameSOP",
       "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
     },
@@ -4630,6 +4630,116 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
+      "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
+      "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VERDANT_PATH",
+      "name": "ISLANDGAME_VERDANT_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VERDANT_WOODS",
+      "name": "ISLANDGAME_VERDANT_WOODS_Layout",
+      "width": 50,
+      "height": 50,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
+      "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_FRESA_FARMS",
+      "name": "ISLANDGAME_FRESA_FARMS_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_NORTHERN_ORANNA_PATH",
+      "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE",
+      "name": "ISLANDGAME_ROSEVALE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AURORA_PATH",
+      "name": "ISLANDGAME_AURORA_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/ISLANDGAME_AURORA_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AURORA_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MT_AURORA_1F",
+      "name": "ISLANDGAME_MT_AURORA_1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MT_AURORA_2F",
+      "name": "ISLANDGAME_MT_AURORA_2F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Unused1",
+      "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MAPLEGROVE",
+      "name": "ISLANDGAME_MAPLEGROVE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/map.bin"
     }
   ]
 }

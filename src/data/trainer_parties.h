@@ -125,7 +125,7 @@ static const struct TrainerMon sParty_CampPersiJonas[] = {
 
 
 
-
+// Verdant Path
 static const struct TrainerMon sParty_Alberto[] = {
     {
     .lvl = 30,
@@ -180,54 +180,72 @@ static const struct TrainerMon sParty_GruntWeatherInst1[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntWeatherInst2[] = {
+
+
+
+
+// Verdant Woods
+static const struct TrainerMon sParty_VerdantWoodsTrainer1[] = {
     {
-    .lvl = 27,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 10,
+    .species = SPECIES_BUTTERFREE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 10,
+    .species = SPECIES_BEEDRILL,
+    }
+};
+
+static const struct TrainerMon sParty_VerdantWoodsTrainer2[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 8,
+    .species = SPECIES_SURSKIT,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 8,
+    .species = SPECIES_NINCADA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 8,
+    .species = SPECIES_JOLTIK,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 8,
+    .species = SPECIES_YANMA,
+    }
+};
+
+static const struct TrainerMon sParty_VerdantWoodsTrainer3[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 10,
+    .species = SPECIES_SHROOMISH,
+    }
+};
+
+static const struct TrainerMon sParty_VerdantWoodsTrainer4[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 9,
+    .species = SPECIES_ZIGZAGOON,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 9,
+    .species = SPECIES_MARILL,
+    }
+};
+
+static const struct TrainerMon sParty_VerdantWoodsTrainer5[] = {
+    {
+    .lvl = 10,
     .species = SPECIES_POOCHYENA,
-    },
-    {
-    .lvl = 27,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
-static const struct TrainerMon sParty_GruntWeatherInst3[] = {
-    {
-    .lvl = 26,
-    .species = SPECIES_POOCHYENA,
-    },
-    {
-    .lvl = 26,
-    .species = SPECIES_ZUBAT,
-    },
-    {
-    .lvl = 26,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
-static const struct TrainerMon sParty_GruntMuseum1[] = {
-    {
-    .lvl = 15,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
-static const struct TrainerMon sParty_GruntMuseum2[] = {
-    {
-    .lvl = 14,
-    .species = SPECIES_ZUBAT,
-    },
-    {
-    .lvl = 14,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
-static const struct TrainerMon sParty_GruntSpaceCenter1[] = {
-    {
-    .lvl = 32,
-    .species = SPECIES_NUMEL,
     }
 };
 

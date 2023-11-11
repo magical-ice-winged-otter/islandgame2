@@ -918,6 +918,7 @@ const u16 *const gTeachableLearnsets[NUM_SPECIES] =
 #endif
 #if P_GEN_C_POKEMON == TRUE
     [SPECIES_SHADOW_LUGIA] = sShadowLugiaTeachableLearnset,
+    [SPECIES_SHADOW_MIGHTYENA] = sShadowMightyenaTeachableLearnset,
 #endif
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurTeachableLearnset,
