@@ -1118,3 +1118,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_VERDANT_PATH/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_HOUSE/scripts.inc"

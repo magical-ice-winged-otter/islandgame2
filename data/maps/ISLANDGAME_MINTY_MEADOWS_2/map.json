@@ -222,7 +222,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 11,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_MINTY_MEADOWS_HOUSE",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
     {

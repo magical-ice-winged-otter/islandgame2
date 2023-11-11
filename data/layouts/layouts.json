@@ -4690,6 +4690,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_HOUSE",
+      "name": "ISLANDGAME_MINTY_MEADOWS_HOUSE_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_HOUSE/map.bin"
     }
   ]
 }
