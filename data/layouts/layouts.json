@@ -4684,10 +4684,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_NORTHERN_ORANNA_PATH",
       "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "width": 60,
+      "height": 35,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
       "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/map.bin"
     },
