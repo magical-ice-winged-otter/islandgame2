@@ -10,5 +10,5 @@ script ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1 {
 }
 
 text ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText {
-    format("{DARK_GRAY}How do I pass the time? Well...")
+    format("{COLOR DARK_GRAY}How do I pass the time? Well...")
 }
