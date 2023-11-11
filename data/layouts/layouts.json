@@ -4664,10 +4664,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_VERDANT_WOODS",
       "name": "ISLANDGAME_VERDANT_WOODS_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 50,
+      "height": 50,
       "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/map.bin"
     },
