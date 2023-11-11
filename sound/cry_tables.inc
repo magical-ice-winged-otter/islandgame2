@@ -1441,6 +1441,7 @@ gCryTable::
 .endif
 .if P_GEN_C_POKEMON == TRUE
 	cry Cry_ShadowLugia
+	cry Cry_ShadowMightyena
 .else
 	cry Cry_Unown
 .endif
@@ -3472,6 +3473,8 @@ gCryTable_Reverse::
 	cry_reverse Cry_Sneasler
 	cry_reverse Cry_Overqwil
 	cry_reverse Cry_Enamorus
+	cry_reverse Cry_ShadowLugia
+cry_reverse Cry_ShadowMightyena
 .else
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown

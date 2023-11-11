@@ -10893,5 +10893,16 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 721,
         .trainerOffset = 19,
     },
+    [NATIONAL_DEX_SHADOW_MIGHTYENA] =
+    {
+        .categoryName = _("Corrupted"),
+        .height = 10,
+        .weight = 370,
+        .description = gShadowMightyenaPokedexText,
+        .pokemonScale = 362,
+        .pokemonOffset = 9,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
 #endif
 };
