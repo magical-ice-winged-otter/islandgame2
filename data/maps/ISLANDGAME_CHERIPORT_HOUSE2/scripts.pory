@@ -33,7 +33,41 @@ text ISLANDGAME_CHERIPORT_HOUSE2_NPC2_TALK {
 script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
     lock
     faceplayer
-    msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK)
+
+    if (!flag(FLAG_DAILY_CHERIPORT_RECEIVED_DRINK))
+    {
+        setflag(FLAG_DAILY_CHERIPORT_RECEIVED_DRINK)
+        msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK)
+
+        // Randomly select some item to give the player.
+        random(100)
+
+        if (var(VAR_RESULT) < 30)
+        {
+            giveitem(ITEM_FRESH_WATER)
+        }
+        elif (var(VAR_RESULT) < 30 + 25)
+        {
+            giveitem(ITEM_LEMONADE)
+        }
+        elif (var(VAR_RESULT) < 30 + 25 + 20)
+        {
+            giveitem(ITEM_SODA_POP)
+        }
+        elif (var(VAR_RESULT) < 30 + 25 + 20 + 15)
+        {
+            giveitem(ITEM_MOOMOO_MILK)
+        }
+        else
+        {
+            giveitem(ITEM_BERRY_JUICE)
+        }
+    }
+    else
+    {
+        msgbox("Sorry, our policy is one beverage per day.")
+    }
+
     release
 }
 
