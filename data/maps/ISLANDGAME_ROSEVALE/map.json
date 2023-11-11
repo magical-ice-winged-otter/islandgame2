@@ -17,7 +17,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 38,
-      "y": 35,
+      "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -30,7 +30,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 39,
-      "y": 34,
+      "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -41,9 +41,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
       "x": 35,
-      "y": 20,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
