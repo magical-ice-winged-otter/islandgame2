@@ -3953,3 +3953,9 @@ static const u8 sIslandgamePowerglove[] = _(
     "that helps you push\n"
     "large boulders."
 );
+
+static const u8 sIslandgameTradingCard[] = _(
+    "A rare trading card!\n"
+    "Someone must be sad\n"
+    "to have lost it..."
+);

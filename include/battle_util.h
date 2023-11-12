@@ -162,6 +162,7 @@ void ClearFuryCutterDestinyBondGrudge(u32 battler);
 void HandleAction_RunBattleScript(void);
 u32 SetRandomTarget(u32 battler);
 u32 GetMoveTarget(u16 move, u8 setTarget);
+bool32 isMonShadowBerserk(u8 battlerId);
 u8 IsMonDisobedient(void);
 u32 GetBattlerHoldEffect(u32 battler, bool32 checkNegating);
 u32 GetBattlerHoldEffectParam(u32 battler);
@@ -247,6 +248,8 @@ bool32 ChangeTypeBasedOnTerrain(u32 battler);
 void RemoveConfusionStatus(u32 battler);
 u8 GetBattlerGender(u32 battler);
 bool32 AreBattlersOfOppositeGender(u32 battler1, u32 battler2);
+bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2);
 u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance);
+u8 GetBattlerType(u32 battler, u8 typeIndex);
 
 #endif // GUARD_BATTLE_UTIL_H

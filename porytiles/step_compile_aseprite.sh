@@ -1,22 +1,24 @@
 #!/bin/bash
-BASE_DIR=$(dirname "$(realpath $0)")
 
-# We want to process all aseprite files in subdirectories.
+BASE_DIR=$(dirname "$(realpath $0)")
 INPUT_FILES=$(find $BASE_DIR -iname *.aseprite)
 
-for INPUT_FILE in $INPUT_FILES
+for input_file in $INPUT_FILES
 do
-    DIR=$(dirname $INPUT_FILE)
+    dir=$(dirname $input_file)
 
     # Each one of these layers should be split into its own file.
-    LAYERS="bottom middle top"
+    layers="bottom middle top"
 
-    for LAYER in $LAYERS
+    for layer in $layers
     do
-        OUTPUT_FILE="$DIR/$LAYER.png"
-        echo "from $INPUT_FILE exporting $OUTPUT_FILE"
-        aseprite -b --layer $LAYER $INPUT_FILE --save-as $OUTPUT_FILE
+        output_file="$dir/$layer.png"
+        output_file_rel=$(realpath --relative-to=$BASE_DIR $output_file)
+        input_file_rel=$(realpath --relative-to=$BASE_DIR $input_file)
+        echo "$input_file_rel -> $output_file_rel"
+        aseprite -b --layer $layer $input_file --save-as $output_file
     done
+    echo
 
 done
 

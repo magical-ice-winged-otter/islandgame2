@@ -46,6 +46,7 @@
 #include "union_room_chat.h"
 #include "constants/items.h"
 #include "constants/map_groups.h"
+#include "quests.h"
 #include "islandgame.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
@@ -212,6 +213,9 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+    QuestMenu_ResetMenuSaveData();
+    
+    memset(&gSaveBlock2Ptr->itemFlags, 0, sizeof(gSaveBlock2Ptr->itemFlags));
 }
 
 static void ResetMiniGamesRecords(void)

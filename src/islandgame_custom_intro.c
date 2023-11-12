@@ -24,6 +24,8 @@ void IslandGameCustomStartup()
     u8 level;
     u16 item;
 
+    // This flag makes sure we unlock the quest menu
+    FlagSet(FLAG_SYS_QUEST_MENU_GET);
     // This flag makes sure that we unlock the pokemon selection menu:
     // usually its set when you pick the starter.
     FlagSet(FLAG_SYS_POKEMON_GET);
@@ -60,12 +62,12 @@ void IslandGameCustomStartup()
         FlagToggle(FLAG_RECEIVED_HM_DIVE);
         
         //debug 2: CHERIPORT LOCATION
-        //FlagToggle(FLAG_RECEIVED_RUNNING_SHOES);
-        //FlagToggle(FLAG_SYS_B_DASH);
-        //FlagToggle(FLAG_LEFT_SHIP);
-        //FlagToggle(FLAG_PROF_GAVE_EEVEE);
-        //FlagToggle(FLAG_SYS_POKEDEX_GET);
-        //FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
+        FlagToggle(FLAG_RECEIVED_RUNNING_SHOES);
+        FlagToggle(FLAG_SYS_B_DASH);
+        FlagToggle(FLAG_LEFT_SHIP);
+        FlagToggle(FLAG_PROF_GAVE_EEVEE);
+        FlagToggle(FLAG_SYS_POKEDEX_GET);
+        FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
 
         //debug sidequest:
         //FlagToggle(FLAG_ROOM3_GAVE_WATER);

@@ -1,0 +1,773 @@
+const ZIGZAGOON_OW_ID = 14
+const ZIGZAGGIRL_OW_ID = 10
+const CANDY_BOY_ID = 1
+const COOKIE_GIRL_ID = 2
+const JONAS_OW_ID = 13
+
+mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (flag(FLAG_CAMP_PERSI_JONAS_DEFEATED)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+}
+
+
+
+
+
+
+
+/// trainers
+// Ninja Boy Hanzo
+script ISLANDGAME_CAMP_PERSI_TrainerBattle1 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_1, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text {
+    format(
+        "{COLOR DARK_GRAY}Nani!? You've got sharp senses to find a grandmaster ninja like me... \p"
+        "{COLOR DARK_GRAY}But how will you fare in battle against me and my nakama?"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text
+{
+    "Bakana... I lost!?"
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle1_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}You may have beaten me now, but I'll get stronger! Believe it!")
+}
+
+// Camper Edward
+script ISLANDGAME_CAMP_PERSI_TrainerBattle2 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_2, ISLANDGAME_CAMP_PERSI_TrainerBattle2_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle2_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle2_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle2_Text {
+    format(
+        "{COLOR DARK_GRAY}What the heck! I almost caught a Pokémon and you messed me up!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle2_Defeated_Text
+{
+    "If only I had another Pokémon..."
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle2_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}Go bug someone else! Camp's already miserable enough with Hanzo!")
+}
+
+// Camper Lazlo
+script ISLANDGAME_CAMP_PERSI_TrainerBattle3 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_3, ISLANDGAME_CAMP_PERSI_TrainerBattle3_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle3_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle3_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle3_Text {
+    format(
+        "{COLOR DARK_GRAY}There's only one thing better than the outdoors: A fiery Pokémon battle!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle3_Defeated_Text
+{
+    "Hoo boy, your Pokémon are hot!"
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle3_PostDefeated_Text
+{
+    format("{COLOR DARK_GRAY}I really like Pokémon battles. It's a great chance to bond with your buds!")
+}
+
+// Camper Patsy
+script ISLANDGAME_CAMP_PERSI_TrainerBattle4 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_4, ISLANDGAME_CAMP_PERSI_TrainerBattle4_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle4_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle4_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle4_Text {
+    format(
+        "{COLOR DARK_GRAY}If I want Lazlo to notice me, I'll have to become a fiery Pokémon trainer! \p"
+        "{COLOR DARK_GRAY}So um, get your game on, I guess!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle4_Defeated_Text
+{
+    "Was I fiery enough?"
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle4_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}Pokémon battles aren't really my thing, to be frank."
+        "{COLOR DARK_GRAY}Maybe there's something else I can catch Lazlo's eye with..."
+        )
+}
+
+// Camper Nina
+script ISLANDGAME_CAMP_PERSI_TrainerBattle5 {
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_5, ISLANDGAME_CAMP_PERSI_TrainerBattle5_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle5_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle5_Text {
+    format(
+        "{COLOR DARK_GRAY}I'm studying Pokémon, and apparently one of the best ways to study them is to analyze them in battle. \p"
+        "{COLOR DARK_GRAY}Please, help me with my research!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle5_Defeated_Text
+{
+    "I learned a lot from our battle!"
+}
+
+text ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}Pokémon can hold items like berries to give them an edge in battle. \p"
+        "{COLOR DARK_GRAY}But they can't hold items like potions for some reason. Why is that?"
+        )
+}
+
+
+
+
+
+
+// Merchant Jonas Event
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage {
+    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
+    closemessage
+    return
+}
+
+script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage {
+    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
+    trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
+    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
+    giveitem(ITEM_ENERGY_POWDER)
+    closemessage
+    return
+}
+
+script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup {
+    removeobject(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    releaseall
+    return
+}
+
+
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle {
+    lockall
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro)
+    waitmovement(0)
+
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro)
+    waitmovement(0)
+    
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft {
+    lockall
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
+    waitmovement(0)
+    
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft {
+    lockall
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
+    waitmovement(0)
+    
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight {
+    lockall
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
+    waitmovement(0)
+    
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight {
+    lockall
+    call(ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage)
+    applymovement(JONAS_OW_ID, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage)
+    
+    setvar(VAR_TEMP_1, 1)
+    setflag(FLAG_CAMP_PERSI_JONAS_DEFEATED)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave)
+    applymovement(JONAS_OW_ID,ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro)
+    waitmovement(0)
+    
+    call(ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup)
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+}
+
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro {
+    walk_left
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    face_left
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_left
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    face_right
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_right
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro {
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+}
+
+movement ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave {
+    delay_16
+    delay_16
+    face_down
+    step_end
+}
+
+
+text ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
+{
+    "Ah... \p"
+    "Your aptitude for battle is... \n"
+    "quite remarkable."
+}
+
+text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
+{
+    format(
+        "{COLOR DARK_GRAY}post defeat"
+        )
+}
+
+
+
+
+
+
+/// scout vendors 
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1 {
+    format(
+        "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava Cookies to support Troop 115. \p"
+        "{COLOR DARK_GRAY}Would you like to buy one for ¥250?"
+        )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl {
+    lock
+    faceplayer
+
+    if (flag(FLAG_DAILY_PERSI_COOKIE_GIRL_SALE)) {
+        msgbox(format("{COLOR DARK_GRAY}We can only sell one cookie per day!\pWe don't have many cookies..."))
+        goto(CookieGirl_End)
+    }
+
+    showmoneybox(0,0)
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1, MSGBOX_YESNO)
+
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("{COLOR DARK_GRAY}Eeeh? But I said they were delicious..."))
+        goto(CookieGirl_End)
+    }
+
+    checkmoney(250)
+
+    if (!var(VAR_RESULT)) {
+        msgbox(format("{COLOR DARK_GRAY}Eeeh? You don't have enough money? Phooey..."))
+        goto(CookieGirl_End)
+    }
+
+    checkitemspace(ITEM_LAVA_COOKIE)
+
+    if (!var(VAR_RESULT)) {
+        msgbox(format("{COLOR DARK_GRAY}Eeeh? You don't have enough room for this cookie?"))
+        goto(CookieGirl_End)
+    }
+
+    setflag(FLAG_DAILY_PERSI_COOKIE_GIRL_SALE)
+    removemoney(250)
+    updatemoneybox
+    msgbox(format("{COLOR DARK_GRAY}Yay! Thank you for your support!"))
+    hidemoneybox
+    giveitem(ITEM_LAVA_COOKIE)
+
+CookieGirl_End:
+    applymovement(COOKIE_GIRL_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    hidemoneybox
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1 {
+    format(
+        "{COLOR DARK_GRAY}Hi there! I'm selling tasty Rage Candy Bars to support Troop 117. \p"
+        "{COLOR DARK_GRAY}Would you like to buy one for ¥250?"
+        )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy {
+    lock
+    faceplayer
+
+    if (flag(FLAG_DAILY_PERSI_CANDY_BOY_SALE)) {
+        msgbox(format("{COLOR DARK_GRAY} Um... we might be out of candy bars today.\pCome again tommorrow?"))
+        goto(CandyBoy_End)
+    }
+
+    showmoneybox(0,0)
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1, MSGBOX_YESNO)
+
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("{COLOR DARK_GRAY}Drats. I need more sales for that skateboard..."))
+        goto(CandyBoy_End)
+    }
+
+    checkmoney(250)
+
+    if (!var(VAR_RESULT)) {
+        msgbox(format("{COLOR DARK_GRAY}Huh? You don't have enough money?"))
+        goto(CandyBoy_End)
+    }
+
+    checkitemspace(ITEM_RAGE_CANDY_BAR)
+
+    if (!var(VAR_RESULT)) {
+        msgbox(format("{COLOR DARK_GRAY}Huh? You don't have room for this candy bar?"))
+        goto(CandyBoy_End)
+    }
+
+    setflag(FLAG_DAILY_PERSI_CANDY_BOY_SALE)
+    removemoney(250)
+    updatemoneybox
+    hidemoneybox
+    msgbox(format("{COLOR DARK_GRAY}Woohoo! Thanks for your support!"))
+    giveitem(ITEM_RAGE_CANDY_BAR)
+
+CandyBoy_End:
+    applymovement(CANDY_BOY_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    hidemoneybox
+    release
+}
+
+
+
+
+
+/// npcs
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC1Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC1Talk {
+    format(
+        "{COLOR DARK_GRAY}I'm one of the counselors here at Camp Persi. I tell you man, it is NOT easy. \p"
+        "{COLOR DARK_GRAY}Coming up with new spooky stories to tell during campfire time is tough work. \p"
+        "{COLOR DARK_GRAY}Maybe for tonight's campfire we'll just sing a song."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC2 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC2Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC2Talk {
+    format(
+        "{COLOR DARK_GRAY}My mom made me come here. I just want to stay inside and play video games..."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC3 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC3Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC3Talk {
+    format(
+        "{COLOR DARK_GRAY}I'm taking the campers on a nature hike later today. \p"
+        "{COLOR DARK_GRAY}Hopefully this time we don't come into contact with any Stunky..."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC4 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC4Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC4Talk {
+    format(
+        "{COLOR DARK_GRAY}I'm in time-out for throwing a pancake at a counselor. \p"
+        "{COLOR DARK_GRAY}It was just a prank though... I thought camp was about having fun."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC5 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC5Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC5Talk {
+    format(
+        "{COLOR DARK_GRAY}Um... do you mind?"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC6 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC6Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC6Talk {
+    format(
+        "{COLOR DARK_GRAY}Remember kids! Don't feed the wildlife!"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC7 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC7Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC7Talk {
+    format(
+        "{COLOR DARK_GRAY}I'm too scared to go deeper... Pokémon are scary."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC8 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk)
+    applymovement(ZIGZAGGIRL_OW_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC8Talk {
+    format(
+        "{COLOR DARK_GRAY}When I'm a Pokémon Trainer, I'm gonna catch a Zigazagoon here! They're cute!"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC9 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC9Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC9Talk {
+    format(
+        "{COLOR DARK_GRAY}Hanzo! Hanzo! Ugh... where could that troublemaker have gone? \p"
+        "{COLOR DARK_GRAY}I swear, we need to put a leash on that boy..."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC10 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC10Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC10Talk {
+    format(
+        "{COLOR DARK_GRAY}Our campout last week was a complete disaster. \p"
+        "{COLOR DARK_GRAY}I got stuck in a group with Hanzo, and he didn't help us at all! \p"
+        "{COLOR DARK_GRAY}To make things worse, it was just raining all day too, so we were soaked. \p"
+        "{COLOR DARK_GRAY}I don't even know why he's here. All he does is goof off in the forest."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC11 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC11Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC11Talk {
+    format(
+        "{COLOR DARK_GRAY}That Hanzo dweeb gives me the creeps. He thinks he's an anime protagonist."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC12 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC12Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC12Talk {
+    format(
+        "{COLOR DARK_GRAY}When kindling a flame, it's important to use the right materials. \p"
+        "{COLOR DARK_GRAY}One poor kid found out the hard way when he threw poison ivy in his fire."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC13 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk {
+    format(
+        "{COLOR DARK_GRAY}The older boys are so cool... They know how to build a tent with just sticks!"
+    )
+}
+
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
+    lock
+    faceplayer
+    returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+
+    switch (var(VAR_RESULT)) {
+        case 1: // INACTIVE
+            msgbox(format("I lost my favorite trading card somewhere in Verdant Woods!\pCan you help me get it back?"), MSGBOX_YESNO)
+
+            if (var(VAR_RESULT) == YES) {
+                msgbox(format("Awesome! I dont know much longer I can go on without it..."))
+                startquest(QUEST_PERSI_FAVORITE_CARD)
+            }
+            else {
+                msgbox(format("Aww, seriously?"))
+            }
+        case 2: // ACTIVE
+            checkitem(ITEM_ISLANDGAME_TRADING_CARD)
+
+            if (var(VAR_RESULT)) {
+                removeitem(ITEM_ISLANDGAME_TRADING_CARD)
+                msgbox(format(
+                    "You found my card! Thank you so much!\p"
+                    "I bought this Soothe Bell to help me calm down...\p"
+                    "But now I dont need it, so here!"))
+                giveitem(ITEM_SOOTHE_BELL)
+                completequest(QUEST_PERSI_FAVORITE_CARD)
+            }
+            else {
+                msgbox(format("Have you found it yet?"))
+            }
+        case 4: // COMPLETED
+            msgbox("I'm never taking my card outside again...")
+    }
+
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag {
+    lock
+    faceplayer
+    playmoncry(SPECIES_ZIGZAGOON,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk)
+    applymovement(ZIGZAGOON_OW_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk {
+    format(
+        "{COLOR RED}It's just staring at me... menacingly?"
+    )
+}
+
+
+
+
+
+/// signs
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN1 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC {
+    format(
+        "{COLOR DARK_GRAY}CAMP PERSI\n"
+        "{COLOR DARK_GRAY}The greatest summer camp in Mariyama!"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN2 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC {
+    format(
+        "{COLOR DARK_GRAY}THE WILD SIDE\n"
+        "{COLOR DARK_GRAY}! SUPERVISION REQUIRED !"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN3 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC {
+    format(
+        "{COLOR DARK_GRAY}PERSI LAKE"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC {
+    format(
+        "{COLOR DARK_GRAY}CAMP GARDEN \n"
+        "{COLOR DARK_GRAY}Feel free to contribute! (Please do.)"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance {
+    lock
+    msgbox(format("There's a slight opening in the tree! Want to climb inside?"), MSGBOX_YESNO)
+
+    if (var(VAR_RESULT)) {
+        warp(MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 0)
+    }
+
+    release
+}

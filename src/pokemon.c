@@ -1257,6 +1257,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
 #endif
 #if P_GEN_C_POKEMON == TRUE
     SPECIES_TO_NATIONAL(SHADOW_LUGIA),
+    SPECIES_TO_NATIONAL(SHADOW_MIGHTYENA),
 #endif
 
     // Megas
@@ -2885,6 +2886,7 @@ const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
 
     //Custom mons
     [SPECIES_SHADOW_LUGIA - 1]           = ANIM_GROW_VIBRATE,
+    [SPECIES_SHADOW_MIGHTYENA - 1]       = ANIM_V_SHAKE,
     //Gen 3 Forms
     [SPECIES_CASTFORM_SUNNY - 1]   = ANIM_GROW_VIBRATE,
     [SPECIES_CASTFORM_RAINY - 1]   = ANIM_SWING_CONVEX_FAST,
@@ -5815,7 +5817,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     // Get item hold effect
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
     if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
+        #ifndef FREE_ENIGMA_BERRY
         holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        #else
+        holdEffect = 0;
+        #endif
     else
         holdEffect = ItemId_GetHoldEffect(heldItem);
 
@@ -6360,7 +6366,11 @@ u8 *UseStatIncreaseItem(u16 itemId)
         if (gMain.inBattle)
             itemEffect = gEnigmaBerries[gBattlerInMenuId].itemEffect;
         else
+            #ifndef FREE_ENIGMA_BERRY
             itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
+            #else
+            itemEffect = 0;
+            #endif
     }
     else
     {
@@ -6439,7 +6449,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         partnerHeldItem = GetMonData(tradePartner, MON_DATA_HELD_ITEM, 0);
 
         if (partnerHeldItem == ITEM_ENIGMA_BERRY_E_READER)
+            #ifndef FREE_ENIGMA_BERRY
             partnerHoldEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+            #else
+            partnerHoldEffect = 0;
+            #endif
         else
             partnerHoldEffect = ItemId_GetHoldEffect(partnerHeldItem);
     }
@@ -6451,7 +6465,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     }
 
     if (heldItem == ITEM_ENIGMA_BERRY_E_READER)
+        #ifndef FREE_ENIGMA_BERRY
         holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        #else
+        holdEffect = 0;
+        #endif
     else
         holdEffect = ItemId_GetHoldEffect(heldItem);
 
@@ -7098,7 +7116,11 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
         if (gMain.inBattle)
             holdEffect = gEnigmaBerries[0].holdEffect;
         else
+            #ifndef FREE_ENIGMA_BERRY
             holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+            #else
+            holdEffect = 0;
+            #endif
     }
     else
     {
@@ -7155,7 +7177,11 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         if (gMain.inBattle)
             holdEffect = gEnigmaBerries[0].holdEffect;
         else
+            #ifndef FREE_ENIGMA_BERRY
             holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+            #else
+            holdEffect = 0;
+            #endif
     }
     else
     {

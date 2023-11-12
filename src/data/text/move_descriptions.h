@@ -4105,4 +4105,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PSYBLADE - 1] = sPsybladeDescription,
     [MOVE_HYDRO_STEAM - 1] = sHydroSteamDescription,
     [MOVE_SHADOW_BLAST - 1] = sShadowBlastDescription,
+    [MOVE_BERSERK - 1] = gNotDoneYetDescription,
 };

@@ -1,0 +1,45 @@
+mapscripts ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_MapScripts {
+}
+
+script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_WailmerPailItem {
+    finditem(ITEM_WAILMER_PAIL)
+    setflag(FLAG_RECEIVED_WAILMER_PAIL)
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac {
+    lock
+    faceplayer
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor {
+    lock
+    faceplayer
+
+    if (!flag(FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED)) {
+        setflag(FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED)
+        msgbox(format("Oh, it looks like you're new to planting berries!\pHere, take these to get you started."))
+        giveitem(ITEM_PECHA_BERRY, 2)
+        giveitem(ITEM_ORAN_BERRY, 2)
+        giveitem(ITEM_PERSIM_BERRY, 2)
+    }
+    else {
+        msgbox(format("Planting berries is really fun.\pIt feels like giving gifts to my future self!"))
+    }
+
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep {
+    lock
+    faceplayer
+    msgbox(format("Welcome to Camp Persi! Here, we sell locally-grown berry juice."))
+    pokemart(BerryHouseItems)
+    msgbox(format("Please come again!"))
+    release
+}
+
+mart BerryHouseItems {
+    ITEM_BERRY_JUICE
+}

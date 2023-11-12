@@ -865,8 +865,9 @@
 
 // Custom Moves (island game-add)
 #define MOVE_SHADOW_BLAST 829
+#define MOVE_BERSERK 830
 
-#define MOVES_COUNT_CUSTOM 830
+#define MOVES_COUNT_CUSTOM 831
 
 #define MOVES_COUNT         MOVES_COUNT_CUSTOM
 

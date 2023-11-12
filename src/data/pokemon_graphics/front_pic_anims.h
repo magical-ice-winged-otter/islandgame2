@@ -10515,6 +10515,15 @@ static const union AnimCmd sAnim_ShadowLugia_1[] =
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_END
 };
+static const union AnimCmd sAnim_ShadowMightyena_1[] =
+{ //copied from vanilla mightyena
+    ANIMCMD_FRAME(0, 27),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_FRAME(1, 6),
+    ANIMCMD_FRAME(0, 6),
+    ANIMCMD_END,
+};
 #endif
 
 #define SINGLE_ANIMATION(name)                      \
@@ -11495,6 +11504,7 @@ SINGLE_ANIMATION(Enamorus);
 #endif
 #if P_GEN_C_POKEMON == TRUE
 SINGLE_ANIMATION(ShadowLugia);
+SINGLE_ANIMATION(ShadowMightyena);
 #endif
 SINGLE_ANIMATION(VenusaurMega);
 SINGLE_ANIMATION(CHARIZARD_MEGA_X);
@@ -12585,6 +12595,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
 #endif
 #if P_GEN_C_POKEMON == TRUE
     [SPECIES_SHADOW_LUGIA] = sAnims_ShadowLugia,
+    [SPECIES_SHADOW_MIGHTYENA] = sAnims_ShadowMightyena,
 #endif
     [SPECIES_VENUSAUR_MEGA] = sAnims_VenusaurMega,
     [SPECIES_CHARIZARD_MEGA_X] = sAnims_CHARIZARD_MEGA_X,

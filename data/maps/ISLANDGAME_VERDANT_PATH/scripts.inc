@@ -1,0 +1,3 @@
+ISLANDGAME_VERDANT_PATH_MapScripts::
+	.byte 0
+

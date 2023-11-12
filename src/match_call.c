@@ -676,7 +676,7 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 5),
     },
     {
-        .trainerId = TRAINER_GABRIELLE_1,
+        .trainerId = TRAINER_CAMP_PERSI_TRAINER_4,
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(8),
         .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 2),
@@ -1459,7 +1459,9 @@ static void Task_SpinPokenavIcon(u8 taskId)
 
 static bool32 TrainerIsEligibleForRematch(int matchCallId)
 {
+    #ifndef FREE_MATCH_CALL
     return gSaveBlock1Ptr->trainerRematches[matchCallId] > 0;
+    #endif
 }
 
 static u16 GetRematchTrainerLocation(int matchCallId)
