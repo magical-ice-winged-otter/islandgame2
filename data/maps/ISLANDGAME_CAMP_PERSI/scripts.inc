@@ -219,95 +219,101 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave:
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl::
 	lock
 	faceplayer
+	goto_if_set FLAG_DAILY_PERSI_COOKIE_GIRL_SALE, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_2
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_1:
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_5
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_4:
 	checkmoney 250
-	goto_if_eq VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBroke
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_8
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_7:
 	checkitemspace ITEM_LAVA_COOKIE
-	goto_if_eq VAR_RESULT, TRUE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlPay
-	goto_if_eq VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBagFull
-	hidemoneybox
-	release
-	return
-
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline::
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline_Text_0
-	hidemoneybox
-	release
-	return
-
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBroke::
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBroke_Text_0
-	hidemoneybox
-	release
-	return
-
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlPay::
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlPay_Text_0
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_11
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_10:
+	setflag FLAG_DAILY_PERSI_COOKIE_GIRL_SALE
 	removemoney 250
 	updatemoneybox
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_4
+	hidemoneybox
 	giveitem ITEM_LAVA_COOKIE
+CookieGirl_End:
 	hidemoneybox
 	release
 	return
 
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_2:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_0
+	goto CookieGirl_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_1
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBagFull::
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBagFull_Text_0
-	hidemoneybox
-	release
-	return
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_5:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_1
+	goto CookieGirl_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_4
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_8:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_2
+	goto CookieGirl_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_7
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_11:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_3
+	goto CookieGirl_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_10
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy::
 	lock
 	faceplayer
+	goto_if_set FLAG_DAILY_PERSI_CANDY_BOY_SALE, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_2
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_1:
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyDecline
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_5
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_4:
 	checkmoney 250
-	goto_if_eq VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBroke
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_8
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_7:
 	checkitemspace ITEM_RAGE_CANDY_BAR
-	goto_if_eq VAR_RESULT, TRUE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay
-	goto_if_eq VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull
-	hidemoneybox
-	release
-	return
-
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyDecline::
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyDecline_Text_0
-	hidemoneybox
-	release
-	return
-
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBroke::
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBroke_Text_0
-	hidemoneybox
-	release
-	return
-
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay::
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay_Text_0
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_11
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_10:
+	setflag FLAG_DAILY_PERSI_CANDY_BOY_SALE
 	removemoney 250
 	updatemoneybox
+	hidemoneybox
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_4
 	giveitem ITEM_RAGE_CANDY_BAR
+CandyBoy_End:
 	hidemoneybox
 	release
 	return
 
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_2:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_0
+	goto CandyBoy_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_1
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull::
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull_Text_0
-	hidemoneybox
-	release
-	return
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_5:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_1
+	goto CandyBoy_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_4
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_8:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_2
+	goto CandyBoy_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_7
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_11:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_3
+	goto CandyBoy_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_10
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC1::
@@ -511,33 +517,42 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage_Text_0:
 ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage_Text_0:
 	.string "{COLOR DARK_GRAY}Jonas battle intro$"
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline_Text_0:
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_0:
+	.string "{COLOR DARK_GRAY}We can only sell one cookie per day!\p"
+	.string "We don't have many cookies...$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_1:
 	.string "{COLOR DARK_GRAY}Eeeh? But I said they were delicious...$"
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBroke_Text_0:
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_2:
 	.string "{COLOR DARK_GRAY}Eeeh? You don't have enough money?\n"
 	.string "Phooey...$"
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlPay_Text_0:
-	.string "{COLOR DARK_GRAY}Yay! Thank you for your support!$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBagFull_Text_0:
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_3:
 	.string "{COLOR DARK_GRAY}Eeeh? You don't have enough room for\n"
 	.string "this cookie?$"
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyDecline_Text_0:
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_4:
+	.string "{COLOR DARK_GRAY}Yay! Thank you for your support!$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_0:
+	.string "{COLOR DARK_GRAY} Um... we might be out of candy bars\n"
+	.string "today.\p"
+	.string "Come again tommorrow?$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_1:
 	.string "{COLOR DARK_GRAY}Drats. I need more sales for that\n"
 	.string "skateboard...$"
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBroke_Text_0:
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_2:
 	.string "{COLOR DARK_GRAY}Huh? You don't have enough money?$"
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay_Text_0:
-	.string "{COLOR DARK_GRAY}Woohoo! Thanks for your support!$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull_Text_0:
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_3:
 	.string "{COLOR DARK_GRAY}Huh? You don't have room for this candy\n"
 	.string "bar?$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_4:
+	.string "{COLOR DARK_GRAY}Woohoo! Thanks for your support!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_LostCardItem_Text_0:
 	.string "Its a trading card of extremely high\n"
@@ -708,7 +723,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestActive::
 	.string "{COLOR DARK_GRAY}Have you found it yet?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestReward::
-	.string "{COLOR DARK_GRAY}You found it! Thank you so much!\p"
+	.string "{COLOR DARK_GRAY}You found my card! Thank you so much!\p"
 	.string "{COLOR DARK_GRAY}I bought this Soothe Bell to help me\n"
 	.string "calm down...\p"
 	.string "{COLOR DARK_GRAY}But now I dont need it, so here!$"
