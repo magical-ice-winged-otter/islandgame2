@@ -347,8 +347,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 42,
-      "y": 28,
+      "x": 16,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -356,7 +356,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_LostCardItem",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_CAMP_PERSI_TRADING_CARD_FOUND"
     }
   ],
   "warp_events": [
