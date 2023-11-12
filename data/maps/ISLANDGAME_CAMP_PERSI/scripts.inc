@@ -424,15 +424,6 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC13::
 	return
 
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_LostCardItem::
-	lock
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_LostCardItem_Text_0
-	finditem ITEM_ISLANDGAME_TRADING_CARD
-	setflag FLAG_CAMP_PERSI_TRADING_CARD_ITEM
-	release
-	return
-
-
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14::
 	lock
 	faceplayer
@@ -571,10 +562,6 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_3:
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_4:
 	.string "{COLOR DARK_GRAY}Woohoo! Thanks for your support!$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_LostCardItem_Text_0:
-	.string "Its a trading card of extremely high\n"
-	.string "quality!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_0:
 	.string "I lost my favorite trading card\n"

@@ -157,6 +157,7 @@ text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text
 }
 
 // Camper Raj
+// todo: could be cool to change text after you find the card
 script ISLANDGAME_VERDANT_WOODS_TrainerBattle5 {
     trainerbattle_single(TRAINER_VERDANT_WOODS_5, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text)
     msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
