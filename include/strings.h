@@ -3059,7 +3059,7 @@ extern const u8 gText_QuestComplete[];
 extern const u8 gText_QuestActive[];
 
 //names
-extern const u8 gText_SideQuestName_1[];
+extern const u8 gText_SideQuestName_PersiFavoriteCard[];
 extern const u8 gText_SideQuestName_2[];
 extern const u8 gText_SideQuestName_3[];
 extern const u8 gText_SideQuestName_4[];
@@ -3091,7 +3091,7 @@ extern const u8 gText_SideQuestName_29[];
 extern const u8 gText_SideQuestName_30[];
 
 //descriptions
-extern const u8 gText_SideQuestDesc_1[];
+extern const u8 gText_SideQuestDesc_PersiFavoriteCard[];
 extern const u8 gText_SideQuestDesc_2[];
 extern const u8 gText_SideQuestDesc_3[];
 extern const u8 gText_SideQuestDesc_4[];
@@ -3123,7 +3123,7 @@ extern const u8 gText_SideQuestDesc_29[];
 extern const u8 gText_SideQuestDesc_30[];
 
 //completed quest description
-extern const u8 gText_SideQuestDoneDesc_1[];
+extern const u8 gText_SideQuestDoneDesc_PersiFavoriteCard[];
 extern const u8 gText_SideQuestDoneDesc_2[];
 extern const u8 gText_SideQuestDoneDesc_3[];
 extern const u8 gText_SideQuestDoneDesc_4[];
@@ -3155,6 +3155,7 @@ extern const u8 gText_SideQuestDoneDesc_29[];
 extern const u8 gText_SideQuestDoneDesc_30[];
 
 //map
+extern const u8 gText_SideQuestMap_PersiFavoriteCard[];
 extern const u8 gText_SideQuestMap1[];
 extern const u8 gText_SideQuestMap2[];
 extern const u8 gText_SideQuestMap3[];

@@ -562,12 +562,12 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
 	side_quest(
-	      gText_SideQuestName_1,
-	      gText_SideQuestDesc_1,
-	      gText_SideQuestDoneDesc_1,
-	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_SideQuestName_PersiFavoriteCard,
+	      gText_SideQuestDesc_PersiFavoriteCard,
+	      gText_SideQuestDoneDesc_PersiFavoriteCard,
+	      gText_SideQuestMap_PersiFavoriteCard,
+	      ITEM_ISLANDGAME_TRADING_CARD, 
+	      ITEM,
 	      NULL,
 	      0
 	),
