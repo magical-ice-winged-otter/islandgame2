@@ -152,12 +152,13 @@ script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage {
     msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
     trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
     msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
+    giveitem(ITEM_ENERGY_POWDER)
     closemessage
     return
 }
 
 script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup {
-    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    removeobject(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
     waitmovement(0)
     releaseall

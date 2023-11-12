@@ -51,12 +51,13 @@ ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage::
 	msgbox ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage_Text_0
 	trainerbattle_no_intro TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
 	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
+	giveitem ITEM_ENERGY_POWDER
 	closemessage
 	return
 
 
 ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup::
-	hideobjectat 13, MAP_ISLANDGAME_CAMP_PERSI
+	removeobject 13, MAP_ISLANDGAME_CAMP_PERSI
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
 	waitmovement 0
 	releaseall
