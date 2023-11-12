@@ -431,42 +431,40 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14::
 	lock
 	faceplayer
 	returnqueststate QUEST_PERSI_FAVORITE_CARD
-	compare VAR_RESULT, 1
-	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_2
-	compare VAR_RESULT, 2
-	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_3
-	compare VAR_RESULT, 4
-	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_4
+	switch VAR_RESULT
+	case 1, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_3
+	case 2, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_4
+	case 4, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_5
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1:
 	release
 	return
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_2:
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestInactive, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_8
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestReject
-	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
-
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_3:
-	checkitem ITEM_ISLANDGAME_TRADING_CARD
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_11
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestActive
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_6
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_2
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_4:
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestCompleted
+	checkitem ITEM_ISLANDGAME_TRADING_CARD
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_9
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_4
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_8:
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestAccept
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_5:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_5
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_6:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_1
 	startquest QUEST_PERSI_FAVORITE_CARD
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
 
-ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_11:
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_9:
 	removeitem ITEM_ISLANDGAME_TRADING_CARD
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestReward
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_3
 	giveitem ITEM_SOOTHE_BELL
 	completequest QUEST_PERSI_FAVORITE_CARD
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
@@ -509,6 +507,20 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4::
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC
 	release
 	return
+
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_2
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_1:
+	release
+	return
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_2:
+	warp MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 0
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_1
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage_Text_0:
@@ -557,6 +569,34 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_4:
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_LostCardItem_Text_0:
 	.string "Its a trading card of extremely high\n"
 	.string "quality!$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_0:
+	.string "I lost my favorite trading card\n"
+	.string "somewhere in Verdant Woods!\p"
+	.string "Can you help me get it back?$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_1:
+	.string "Awesome! I dont know much longer I can\n"
+	.string "go on without it...$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_2:
+	.string "Aww, seriously?$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_3:
+	.string "You found my card! Thank you so much!\p"
+	.string "I bought this Soothe Bell to help me\n"
+	.string "calm down...\p"
+	.string "But now I dont need it, so here!$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_4:
+	.string "Have you found it yet?$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_5:
+	.string "I'm never taking my card outside again...$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_Text_0:
+	.string "There's a slight opening in the tree!\n"
+	.string "Want to climb inside?$"
 
 ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text::
 	.string "{COLOR DARK_GRAY}Nani!? You've got sharp senses to find\n"
@@ -706,30 +746,6 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC12Talk::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk::
 	.string "{COLOR DARK_GRAY}The older boys are so cool... They know\n"
 	.string "how to build a tent with just sticks!$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestInactive::
-	.string "{COLOR DARK_GRAY}I lost my favorite trading card\n"
-	.string "somewhere in Verdant Woods!\p"
-	.string "{COLOR DARK_GRAY}Can you help me get it back?$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestAccept::
-	.string "{COLOR DARK_GRAY}Awesome! I dont know much longer I can\n"
-	.string "go on without it...$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestReject::
-	.string "{COLOR DARK_GRAY}Aww, seriously?$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestActive::
-	.string "{COLOR DARK_GRAY}Have you found it yet?$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestReward::
-	.string "{COLOR DARK_GRAY}You found my card! Thank you so much!\p"
-	.string "{COLOR DARK_GRAY}I bought this Soothe Bell to help me\n"
-	.string "calm down...\p"
-	.string "{COLOR DARK_GRAY}But now I dont need it, so here!$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC14Talk_QuestCompleted::
-	.string "{COLOR DARK_GRAY}I'm never taking my card outside again...$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk::
 	.string "{COLOR RED}It's just staring at me... menacingly?$"

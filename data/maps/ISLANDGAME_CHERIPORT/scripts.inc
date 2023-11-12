@@ -30,29 +30,41 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor::
 	lock
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
+	compare VAR_RESULT, NO
 	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_2
-	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3
-	hidemoneybox
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_1:
+	checkmoney 100
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_5
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_4:
+	checkitemspace ITEM_SODA_POP
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_8
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_7:
+	removemoney 100
+	updatemoneybox
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4
+	hidemoneybox
+	giveitem ITEM_SODA_POP
+NightBeachSodaVendor_End:
+	hidemoneybox
 	release
 	return
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_2:
-	checkmoney 100
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_5
-	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_2
-	hidemoneybox
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_1
+	goto NightBeachSodaVendor_End
 	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_1
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_5:
-	removemoney 100
-	updatemoneybox
-	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_1
-	hidemoneybox
-	giveitem ITEM_SODA_POP
-	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_1
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_2
+	goto NightBeachSodaVendor_End
+	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_4
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_8:
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3
+	goto NightBeachSodaVendor_End
+	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_7
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning::
@@ -210,16 +222,19 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4::
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_0:
-	.string "Soda pops, only 100!$"
+	.string "Soda pops, only ¥100!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_1:
-	.string "Take one!$"
+	.string "Come again later!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_2:
-	.string "Oh, you cant afford this.$"
+	.string "Oh, you can't afford this.$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3:
-	.string "Come again later!$"
+	.string "Oh, you don't have enough room.$"
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4:
+	.string "Take one!$"
 
 NeedPokemon_Text::
 	.string "{COLOR RED}I should go see Professor Palm before I\n"

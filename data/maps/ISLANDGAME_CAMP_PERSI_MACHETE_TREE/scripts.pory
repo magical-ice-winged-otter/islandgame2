@@ -1,1 +1,15 @@
-mapscripts ISLANDGAME_CAMP_PERSI_MACHETE_TREE_MapScripts {}
+mapscripts ISLANDGAME_CAMP_PERSI_MACHETE_TREE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        checkitem(ITEM_ISLANDGAME_MACHETE)
+
+        if (var(VAR_RESULT)) {
+            setflag(FLAG_TEMP_1) // removes the machete pokeball if we already have it
+        }
+    }
+}
+
+script ISLANDGAME_CAMP_PERSI_MACHETE_TREE_EventScript_PickupMachete {
+    lock
+    finditem(ITEM_ISLANDGAME_MACHETE)
+    release
+} 

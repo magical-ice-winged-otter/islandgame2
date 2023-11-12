@@ -1,21 +1,18 @@
 mapscripts ISLANDGAME_CHERIPORT_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION 
-    {
-        if (!flag(FLAG_LEFT_SHIP)) 
-        {
+    MAP_SCRIPT_ON_TRANSITION {
+
+        if (!flag(FLAG_LEFT_SHIP)) {
             setflag(FLAG_LEFT_SHIP)
             setflag(FLAG_ROOM3_ITEM)
         }
 
-        if (flag(FLAG_PROF_GAVE_EEVEE)) 
-        {
+        if (flag(FLAG_PROF_GAVE_EEVEE)) {
             setvar(VAR_TEMP_1, 1) // this controls the triggers that stop you from leaving
         }
 
         gettime
 
-        if (var(VAR_0x8000) < 12 + 6) 
-        {
+        if (var(VAR_0x8000) < 12 + 6) {
             setflag(FLAG_TEMP_1) // temp 2 controls visibility of beach guy
         }
     }
@@ -24,32 +21,35 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
     lock
     showmoneybox(0, 0)
-    msgbox("Soda pops, only 100!", MSGBOX_YESNO)
+    msgbox("Soda pops, only ¥100!", MSGBOX_YESNO)
 
-    if (var(VAR_RESULT) == YES)
-    {
-        checkmoney(100)
-
-        if (var(VAR_RESULT))
-        {
-            removemoney(100)
-            updatemoneybox
-            msgbox("Take one!")
-            hidemoneybox
-            giveitem(ITEM_SODA_POP)
-        }
-        else
-        {
-            msgbox("Oh, you cant afford this.")
-            hidemoneybox
-        }
-    }
-    else
-    {
+    if (var(VAR_RESULT) == NO) {
         msgbox("Come again later!")
-        hidemoneybox
+        goto(NightBeachSodaVendor_End)
     }
 
+    checkmoney(100)
+
+    if (!var(VAR_RESULT)) {
+        msgbox("Oh, you can't afford this.")
+        goto(NightBeachSodaVendor_End)
+    }
+
+    checkitemspace(ITEM_SODA_POP)
+
+    if (!var(VAR_RESULT)) {
+        msgbox("Oh, you don't have enough room.")
+        goto(NightBeachSodaVendor_End)
+    }
+
+    removemoney(100)
+    updatemoneybox
+    msgbox("Take one!")
+    hidemoneybox
+    giveitem(ITEM_SODA_POP)
+
+NightBeachSodaVendor_End:
+    hidemoneybox
     release
 }
 

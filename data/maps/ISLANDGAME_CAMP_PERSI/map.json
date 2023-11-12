@@ -373,6 +373,13 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_BERRY_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -454,6 +461,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance"
     }
   ]
 }
