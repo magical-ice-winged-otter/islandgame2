@@ -1220,7 +1220,7 @@
 
 //ISLAND-START: USE THIS AS FLAGS FOR POKEBALL ITEMS
 #define FLAG_ROOM3_ITEM                                             0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
+#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 // Unused Flag
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
@@ -1518,7 +1518,7 @@
 //camp persi: first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
 #define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B) 
-#define FLAG_CAMP_PERSI_TRADING_CARD_FOUND          (SYSTEM_FLAGS + 0x8C) 
+#define FLAG_UNUSED_PERSI                           (SYSTEM_FLAGS + 0x8C) 
 //verdant-woods: miracle seed
 #define FLAG_VERDANT_WOODS_SEED_RECEIVED            (SYSTEM_FLAGS + 0x8D)
 //verdant-woods: Fight tree

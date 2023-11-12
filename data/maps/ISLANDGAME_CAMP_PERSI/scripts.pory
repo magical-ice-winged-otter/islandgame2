@@ -654,7 +654,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_LostCardItem {
     lock
     msgbox(format("Its a trading card of extremely high quality!"))
     finditem(ITEM_ISLANDGAME_TRADING_CARD)
-    setflag(FLAG_CAMP_PERSI_TRADING_CARD_FOUND)
+    setflag(FLAG_CAMP_PERSI_TRADING_CARD_ITEM)
     release
 }
 
