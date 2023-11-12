@@ -1,5 +1,7 @@
 const ZIGZAGOON_OW_ID = 14
 const ZIGZAGGIRL_OW_ID = 10
+const CANDY_BOY_ID = 1
+const COOKIE_GIRL_ID = 2
 const JONAS_OW_ID = 13
 
 mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
@@ -407,6 +409,8 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl {
     giveitem(ITEM_LAVA_COOKIE)
 
 CookieGirl_End:
+    applymovement(COOKIE_GIRL_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
     hidemoneybox
     release
 }
@@ -457,6 +461,8 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy {
     giveitem(ITEM_RAGE_CANDY_BAR)
 
 CandyBoy_End:
+    applymovement(CANDY_BOY_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
     hidemoneybox
     release
 }

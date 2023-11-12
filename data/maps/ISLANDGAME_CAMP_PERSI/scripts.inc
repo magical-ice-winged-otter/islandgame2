@@ -242,6 +242,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_10:
 	hidemoneybox
 	giveitem ITEM_LAVA_COOKIE
 CookieGirl_End:
+	applymovement 2, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	hidemoneybox
 	release
 	return
@@ -292,6 +294,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_10:
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_4
 	giveitem ITEM_RAGE_CANDY_BAR
 CandyBoy_End:
+	applymovement 1, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	hidemoneybox
 	release
 	return
