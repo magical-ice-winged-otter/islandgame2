@@ -4767,7 +4767,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/map.bin"
     },
