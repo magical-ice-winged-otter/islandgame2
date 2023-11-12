@@ -1,0 +1,3 @@
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_MapScripts::
+	.byte 0
+

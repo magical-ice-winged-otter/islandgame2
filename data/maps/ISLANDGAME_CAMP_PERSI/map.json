@@ -360,7 +360,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 17,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_PKMNCENTER",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
     {
