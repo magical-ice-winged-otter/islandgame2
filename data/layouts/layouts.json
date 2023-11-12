@@ -4780,6 +4780,16 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_PKMNCENTER/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_PKMNCENTER/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_MACHETE_TREE",
+      "name": "ISLANDGAME_CAMP_PERSI_MACHETE_TREE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/map.bin"
     }
   ]
 }
