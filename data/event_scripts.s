@@ -1130,3 +1130,11 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_MT_AURORA_2F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MAPLEGROVE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_PKMNCENTER/scripts.inc"

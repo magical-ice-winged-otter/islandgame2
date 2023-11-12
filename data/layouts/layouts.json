@@ -4740,6 +4740,46 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_LODGE_1",
+      "name": "ISLANDGAME_CAMP_PERSI_LODGE_1_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_LODGE_2",
+      "name": "ISLANDGAME_CAMP_PERSI_LODGE_2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_BERRY_HOUSE",
+      "name": "ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_PKMNCENTER",
+      "name": "ISLANDGAME_CAMP_PERSI_PKMNCENTER_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_PKMNCENTER/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_PKMNCENTER/map.bin"
     }
   ]
 }
