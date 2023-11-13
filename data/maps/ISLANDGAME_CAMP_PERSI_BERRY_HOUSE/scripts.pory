@@ -10,6 +10,22 @@ script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_WailmerPailItem {
 script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac {
     lock
     faceplayer
+
+    returnqueststate(QUEST_PERSI_BERRY_MANIAC)
+
+    switch (var(VAR_RESULT)) {
+        case 1: // INACTIVE
+            msgbox(format("I am the berry MANIAC!!!\pGET ME BERRIES NOW!"))
+            startquest(QUEST_PERSI_BERRY_MANIAC)
+            closemessage
+            subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1)
+        case 2: // ACTIVE
+            msgbox(format("DO YOU HAVE MY BERRIES?!"))
+            // todo: check what current subquest you are on, if you have the berry give reward and progress
+        case 4: // COMPLETED
+            msgbox(format("I HAVE ALL THE BERRIES!!!"))
+    }
+
     release
 }
 

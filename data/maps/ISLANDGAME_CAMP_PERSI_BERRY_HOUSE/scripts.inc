@@ -10,7 +10,31 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_WailmerPailItem::
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac::
+	lock
+	faceplayer
+	returnqueststate QUEST_PERSI_BERRY_MANIAC
+	switch VAR_RESULT
+	case 1, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_3
+	case 2, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_4
+	case 4, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_5
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1:
+	release
 	return
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_3:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0
+	startquest QUEST_PERSI_BERRY_MANIAC
+	closemessage
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_4:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_1
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_5:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor::
@@ -45,6 +69,16 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep::
 BerryHouseItems:
 	.2byte ITEM_BERRY_JUICE
 	.2byte ITEM_NONE
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0:
+	.string "I am the berry MANIAC!!!\p"
+	.string "GET ME BERRIES NOW!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_1:
+	.string "DO YOU HAVE MY BERRIES?!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2:
+	.string "I HAVE ALL THE BERRIES!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0:
 	.string "Oh, it looks like you're new to planting\n"
