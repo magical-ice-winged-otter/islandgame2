@@ -482,7 +482,7 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
 
     // Regional Specialties
     [ITEM_PEWTER_CRUNCHIES]   = gItemEffect_FullHeal,
-    [ITEM_RAGE_CANDY_BAR]     = gItemEffect_FullHeal,
+    [ITEM_RAGE_CANDY_BAR]     = gItemEffect_Potion, // island-change
     [ITEM_LAVA_COOKIE]        = gItemEffect_FullHeal,
     [ITEM_OLD_GATEAU]         = gItemEffect_FullHeal,
     [ITEM_CASTELIACONE]       = gItemEffect_FullHeal,
