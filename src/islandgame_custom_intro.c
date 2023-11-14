@@ -26,14 +26,6 @@ void IslandGameCustomStartup()
 
     // This flag makes sure we unlock the quest menu
     FlagSet(FLAG_SYS_QUEST_MENU_GET);
-    // This flag makes sure that we unlock the pokemon selection menu:
-    // usually its set when you pick the starter.
-    FlagSet(FLAG_SYS_POKEMON_GET);
-
-    species = ISLANDGAME_STARTING_MON;
-    level = ISLANDGAME_STARTING_MON_LEVEL;
-    item = ISLANDGAME_STARTING_MON_ITEM;
-    ScriptGiveMon(species, level, item, 0, 0, 0);
 
     // I'm honestly not sure why you need the weird syntax around string literals,
     // but it breaks pretty badly w/out it so...
@@ -41,6 +33,14 @@ void IslandGameCustomStartup()
 
     #ifdef ISLANDGAME_DEBUG
         //put all debug tools here
+
+        // This flag makes sure that we unlock the pokemon selection menu:
+        // usually its set when you pick the starter.
+        FlagSet(FLAG_SYS_POKEMON_GET);
+        species = ISLANDGAME_STARTING_MON;
+        level = ISLANDGAME_STARTING_MON_LEVEL;
+        item = ISLANDGAME_STARTING_MON_ITEM;
+        ScriptGiveMon(species, level, item, 0, 0, 0);
 
         //debug 1: give all badges to raise our obedienceLevel
         FlagToggle(FLAG_BADGE01_GET);
