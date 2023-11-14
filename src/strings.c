@@ -1853,30 +1853,3 @@ const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTI
 const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nis now {STR_VAR_2}.");
 const u8 gText_QuestComplete[] =_("complete");
 const u8 gText_QuestActive[] =_("active");
-
-// Map Locations
-const u8 gText_SideQuestMap_Persi[] = _("Camp Persi");
-
-// Persi Favorite Card Quest
-const u8 gText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
-const u8 gText_SideQuestDesc_PersiFavoriteCard[] = _("A camper from Camp Persi lost their\nfavorite trading card in Verdant Woods!");
-const u8 gText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You found and returned the campers\nfavorite card!");
-
-// Persi Berry Maniac Quest
-const u8 gText_SideQuestName_PersiBerryManiac[] = _("Berry Quest");
-const u8 gText_SideQuestDesc_PersiBerryManiac[] = _("The berry maniac from Camp Persi\nneeds more berries!");
-const u8 gText_SideQuestDoneDesc_PersiBerryManiac[] = _("You found berries from all\nover Mariyama!");
-// - Subquests
-const u8 gText_SubQuest_PersiBerryManiac1_Name[] = _("Cheri Berry");
-const u8 gText_SubQuest_PersiBerryManiac1_Desc[] = _("Find and return a Cheri Berry\nto the Berry Maniac");
-const u8 gText_SubQuest_PersiBerryManiac2_Name[] = _("Aspear Berry");
-const u8 gText_SubQuest_PersiBerryManiac2_Desc[] = _("Find and return an Aspear Berry\nto the Berry Maniac");
-const u8 gText_SubQuest_PersiBerryManiac3_Name[] = _("Leppa Berry");
-const u8 gText_SubQuest_PersiBerryManiac3_Desc[] = _("Find and return a Leppa Berry\nto the Berry Maniac");
-const u8 gText_SubQuest_PersiBerryManiac4_Name[] = _("Sitrus Berry");
-const u8 gText_SubQuest_PersiBerryManiac4_Desc[] = _("Find and return a Sitrus Berry\nto the Berry Maniac");
-const u8 gText_SubQuest_PersiBerryManiac5_Name[] = _("Lum Berry");
-const u8 gText_SubQuest_PersiBerryManiac5_Desc[] = _("Find and return a Lum Berry\nto the Berry Maniac");
-const u8 gText_SubQuest_PersiBerryManiac6_Name[] = _("Liechi Berry");
-const u8 gText_SubQuest_PersiBerryManiac6_Desc[] = _("Find and return a Liechi Berry\nto the Berry Maniac");
-

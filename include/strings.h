@@ -3058,37 +3058,3 @@ extern const u8 gText_ExpShareOff[];
 extern const u8 gText_QuestAnnounce[];
 extern const u8 gText_QuestComplete[];
 extern const u8 gText_QuestActive[];
-
-// Map Locations
-extern const u8 gText_SideQuestMap_Persi[];
-
-// Persi Favorite Card Quest
-extern const u8 gText_SideQuestName_PersiFavoriteCard[];
-extern const u8 gText_SideQuestDesc_PersiFavoriteCard[];
-extern const u8 gText_SideQuestDoneDesc_PersiFavoriteCard[];
-
-// Persi Berry Maniac Quest
-extern const u8 gText_SideQuestName_PersiBerryManiac[];
-extern const u8 gText_SideQuestDesc_PersiBerryManiac[];
-extern const u8 gText_SideQuestDoneDesc_PersiBerryManiac[];
-// - Subquests
-extern const u8 gText_SubQuest_PersiBerryManiac1_Name[];
-extern const u8 gText_SubQuest_PersiBerryManiac1_Desc[];
-extern const u8 gText_SubQuest_PersiBerryManiac2_Name[];
-extern const u8 gText_SubQuest_PersiBerryManiac2_Desc[];
-extern const u8 gText_SubQuest_PersiBerryManiac3_Name[];
-extern const u8 gText_SubQuest_PersiBerryManiac3_Desc[];
-extern const u8 gText_SubQuest_PersiBerryManiac4_Name[];
-extern const u8 gText_SubQuest_PersiBerryManiac4_Desc[];
-extern const u8 gText_SubQuest_PersiBerryManiac5_Name[];
-extern const u8 gText_SubQuest_PersiBerryManiac5_Desc[];
-extern const u8 gText_SubQuest_PersiBerryManiac6_Name[];
-extern const u8 gText_SubQuest_PersiBerryManiac6_Desc[];
-
-
-//completed quest description
-
-
-//subquests
-
-

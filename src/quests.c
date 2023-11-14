@@ -238,103 +238,123 @@ static const u8 sText_Close[] = _("Close");
 static const u8 sText_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_AZ[] = _(" A-Z");
 
-///////////////////////////////////////////////////////////////////////////////
-//////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
-
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
+
+//Declaration of side quest structures. Edits to quests are made here.
+#define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
+
+
+// island-start
+
+
+// Map Locations
+const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
+
+// Persi Favorite Card Quest
+const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
+const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A camper from Camp Persi lost their\nfavorite trading card in Verdant Woods!");
+const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You found and returned the campers\nfavorite card!");
+
+// Berry Maniac Quest
+const u8 sText_SideQuestName_PersiBerryManiac[] = _("Berry Quest");
+const u8 sText_SideQuestDesc_PersiBerryManiac[] = _("The berry maniac from Camp Persi\nneeds more berries!");
+const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You found berries from all\nover Mariyama!");
+// - Subquests
+const u8 sText_SubQuest_PersiBerryManiac1_Name[] = _("Cheri Berry");
+const u8 sText_SubQuest_PersiBerryManiac1_Desc[] = _("Find and return a Cheri Berry\nto the Berry Maniac");
+const u8 sText_SubQuest_PersiBerryManiac2_Name[] = _("Aspear Berry");
+const u8 sText_SubQuest_PersiBerryManiac2_Desc[] = _("Find and return an Aspear Berry\nto the Berry Maniac");
+const u8 sText_SubQuest_PersiBerryManiac3_Name[] = _("Leppa Berry");
+const u8 sText_SubQuest_PersiBerryManiac3_Desc[] = _("Find and return a Leppa Berry\nto the Berry Maniac");
+const u8 sText_SubQuest_PersiBerryManiac4_Name[] = _("Sitrus Berry");
+const u8 sText_SubQuest_PersiBerryManiac4_Desc[] = _("Find and return a Sitrus Berry\nto the Berry Maniac");
+const u8 sText_SubQuest_PersiBerryManiac5_Name[] = _("Lum Berry");
+const u8 sText_SubQuest_PersiBerryManiac5_Desc[] = _("Find and return a Lum Berry\nto the Berry Maniac");
+const u8 sText_SubQuest_PersiBerryManiac6_Name[] = _("Liechi Berry");
+const u8 sText_SubQuest_PersiBerryManiac6_Desc[] = _("Find and return a Liechi Berry\nto the Berry Maniac");
 
 static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_BERRY] =
 {
 	sub_quest(
 	      SUB_QUEST_PERSI_BERRY_1,
-	      gText_SubQuest_PersiBerryManiac1_Name,
-	      gText_SubQuest_PersiBerryManiac1_Desc,
-	      gText_SideQuestMap_Persi,
+	      sText_SubQuest_PersiBerryManiac1_Name,
+	      sText_SubQuest_PersiBerryManiac1_Desc,
+	      sText_SideQuestMap_Persi,
 	      ITEM_CHERI_BERRY,
 	      ITEM,
 	      sText_Active
 	),
 	sub_quest(
 	      SUB_QUEST_PERSI_BERRY_2,
-	      gText_SubQuest_PersiBerryManiac2_Name,
-	      gText_SubQuest_PersiBerryManiac2_Desc,
-	      gText_SideQuestMap_Persi,
+	      sText_SubQuest_PersiBerryManiac2_Name,
+	      sText_SubQuest_PersiBerryManiac2_Desc,
+	      sText_SideQuestMap_Persi,
 	      ITEM_ASPEAR_BERRY,
 	      ITEM,
 	      sText_Active
 	),
 	sub_quest(
 	      SUB_QUEST_PERSI_BERRY_3,
-	      gText_SubQuest_PersiBerryManiac3_Name,
-	      gText_SubQuest_PersiBerryManiac3_Desc,
-	      gText_SideQuestMap_Persi,
+	      sText_SubQuest_PersiBerryManiac3_Name,
+	      sText_SubQuest_PersiBerryManiac3_Desc,
+	      sText_SideQuestMap_Persi,
 	      ITEM_LEPPA_BERRY,
 	      ITEM,
 	      sText_Active
 	),
 	sub_quest(
 	      SUB_QUEST_PERSI_BERRY_4,
-	      gText_SubQuest_PersiBerryManiac4_Name,
-	      gText_SubQuest_PersiBerryManiac4_Desc,
-	      gText_SideQuestMap_Persi,
+	      sText_SubQuest_PersiBerryManiac4_Name,
+	      sText_SubQuest_PersiBerryManiac4_Desc,
+	      sText_SideQuestMap_Persi,
 	      ITEM_SITRUS_BERRY,
 	      ITEM,
 	      sText_Active
 	),
 	sub_quest(
 	      SUB_QUEST_PERSI_BERRY_5,
-	      gText_SubQuest_PersiBerryManiac5_Name,
-	      gText_SubQuest_PersiBerryManiac5_Desc,
-	      gText_SideQuestMap_Persi,
+	      sText_SubQuest_PersiBerryManiac5_Name,
+	      sText_SubQuest_PersiBerryManiac5_Desc,
+	      sText_SideQuestMap_Persi,
 	      ITEM_LUM_BERRY,
 	      ITEM,
 	      sText_Active
 	),
 	sub_quest(
 	      SUB_QUEST_PERSI_BERRY_6,
-	      gText_SubQuest_PersiBerryManiac6_Name,
-	      gText_SubQuest_PersiBerryManiac6_Desc,
-	      gText_SideQuestMap_Persi,
+	      sText_SubQuest_PersiBerryManiac6_Name,
+	      sText_SubQuest_PersiBerryManiac6_Desc,
+	      sText_SideQuestMap_Persi,
 	      ITEM_LIECHI_BERRY,
 	      ITEM,
 	      sText_Active
 	),
 };
 
-////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////
-////////////////////////BEGIN QUEST CUSTOMIZATION//////////////////////////////
-
-//Declaration of side quest structures. Edits to quests are made here.
-#define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
-	side_quest(
-	      gText_SideQuestName_PersiFavoriteCard,
-	      gText_SideQuestDesc_PersiFavoriteCard,
-	      gText_SideQuestDoneDesc_PersiFavoriteCard,
-	      gText_SideQuestMap_Persi,
+	[QUEST_PERSI_FAVORITE_CARD] = side_quest(
+	      sText_SideQuestName_PersiFavoriteCard,
+	      sText_SideQuestDesc_PersiFavoriteCard,
+	      sText_SideQuestDoneDesc_PersiFavoriteCard,
+	      sText_SideQuestMap_Persi,
 	      ITEM_ISLANDGAME_TRADING_CARD, 
 	      ITEM,
 	      NULL,
 	      0
 	),
-	side_quest(
-	      gText_SideQuestName_PersiBerryManiac,
-	      gText_SideQuestDesc_PersiBerryManiac,
-	      gText_SideQuestDoneDesc_PersiBerryManiac,
-	      gText_SideQuestMap_Persi,
+	[QUEST_PERSI_BERRY_MANIAC] = side_quest(
+	      sText_SideQuestName_PersiBerryManiac,
+	      sText_SideQuestDesc_PersiBerryManiac,
+	      sText_SideQuestDoneDesc_PersiBerryManiac,
+	      sText_SideQuestMap_Persi,
 	      ITEM_CHERI_BERRY, 
 	      ITEM,
 	      sSubQuests_PersiBerryManiac,
               SUB_QUEST_COUNT_PERSI_BERRY
 	),
 };
-////////////////////////END QUEST CUSTOMIZATION////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
 
 //BG layer defintions
 static const struct BgTemplate sQuestMenuBgTemplates[2] =

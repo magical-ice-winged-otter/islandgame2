@@ -14,10 +14,11 @@
 #define QUEST_MENU_CHECK_COMPLETE       9   //checks if questId has been completed. Returns result to gSpecialVar_Result
 #define QUEST_MENU_BUFFER_QUEST_NAME    10   //buffers a quest name to gStringVar1
 
+
 // Custom Quests
 #define QUEST_PERSI_FAVORITE_CARD          0
 #define QUEST_PERSI_BERRY_MANIAC           1
-#define QUEST_COUNT                        2
+#define QUEST_COUNT                        2 // This number is literally how many to show in the UI (keep it accurate!)
 
 // Custom Sub-Quests
 #define SUB_QUEST_PERSI_BERRY_1            0
@@ -27,8 +28,12 @@
 #define SUB_QUEST_PERSI_BERRY_5            4
 #define SUB_QUEST_PERSI_BERRY_6            5
 #define SUB_QUEST_COUNT_PERSI_BERRY        6
+#define SUB_QUEST_COUNT                    7 // This number is literally how many to show in the UI (keep it accurate!)
 
-#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_PERSI_BERRY)
+// #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 
-#define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
+// We want to allocate more space in the saveblock for quests than we need,
+// so we don't make breaking changes in the future.
+#define QUEST_ARRAY_COUNT 100
+
 #endif // GUARD_CONSTANTS_QUESTS_H
