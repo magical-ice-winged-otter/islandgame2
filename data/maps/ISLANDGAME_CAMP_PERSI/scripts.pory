@@ -259,86 +259,41 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight {
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    step_end
+    walk_down * 5
 }
-
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro {
     walk_left
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    step_end
+    walk_down * 7
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
+    walk_down * 6
     face_left
-    step_end
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
+    walk_down * 6
     walk_left
-    step_end
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
+    walk_down * 6
     face_right
-    step_end
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
+    walk_down * 6
     walk_right
-    step_end
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    step_end
+    walk_down * 6
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave {
-    delay_16
-    delay_16
+    delay_16 * 2
     face_down
-    step_end
 }
 
 
