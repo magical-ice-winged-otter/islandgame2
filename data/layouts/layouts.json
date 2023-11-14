@@ -4790,6 +4790,26 @@
       "secondary_tileset": "gTileset_SecretBaseTree",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_FRESA_FARMS_DAYCARE",
+      "name": "ISLANDGAME_FRESA_FARMS_DAYCARE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_DAYCARE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_DAYCARE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_FRESA_FARMS_HOUSE",
+      "name": "ISLANDGAME_FRESA_FARMS_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/map.bin"
     }
   ]
 }

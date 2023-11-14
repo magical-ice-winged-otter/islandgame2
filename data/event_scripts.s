@@ -1140,3 +1140,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_CAMP_PERSI_PKMNCENTER/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.inc"

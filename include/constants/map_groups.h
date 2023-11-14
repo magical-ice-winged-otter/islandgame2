@@ -44,6 +44,8 @@
 #define MAP_ISLANDGAME_CAMP_PERSI_BERRY_HOUSE  (35 | (0 << 8))
 #define MAP_ISLANDGAME_CAMP_PERSI_PKMNCENTER   (36 | (0 << 8))
 #define MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE (37 | (0 << 8))
+#define MAP_ISLANDGAME_FRESA_FARMS_DAYCARE     (38 | (0 << 8))
+#define MAP_ISLANDGAME_FRESA_FARMS_HOUSE       (39 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
