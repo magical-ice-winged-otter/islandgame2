@@ -644,16 +644,10 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag {
     lock
     faceplayer
     playmoncry(SPECIES_ZIGZAGOON,CRY_MODE_NORMAL)
-    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk)
-    applymovement(ZIGZAGOON_OW_ID,Common_Movement_FaceOriginalDirection)
+    msgbox(format("{COLOR RED}It's just staring at me... menacingly?"))
+    applymovement(VAR_LAST_TALKED,Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release
-}
-
-text ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk {
-    format(
-        "{COLOR RED}It's just staring at me... menacingly?"
-    )
 }
 
 

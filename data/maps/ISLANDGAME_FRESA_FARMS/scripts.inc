@@ -33,11 +33,63 @@ ISLANDGAME_FRESA_FARMS_OldMan_Talk_3:
 	goto ISLANDGAME_FRESA_FARMS_OldMan_Talk_1
 
 
+ISLANDGAME_FRESA_FARMS_Miltank_Interact::
+	lock
+	faceplayer
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0
+	release
+	return
+
+
+ISLANDGAME_FRESA_FARMS_Chansey_Interact::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHANSEY, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_FRESA_FARMS_Chansey_Interact_Text_0
+	release
+	return
+
+
+ISLANDGAME_FRESA_FARMS_Mareep_Interact::
+	lock
+	faceplayer
+	playmoncry SPECIES_MAREEP, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_FRESA_FARMS_Mareep_Interact_Text_0
+	release
+	return
+
+
+ISLANDGAME_FRESA_FARMS_MareepScared_Interact::
+	lock
+	faceplayer
+	playmoncry SPECIES_MAREEP, CRY_MODE_GROWL_1
+	msgbox ISLANDGAME_FRESA_FARMS_MareepScared_Interact_Text_0
+	release
+	return
+
+
+ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0:
+	.string "The Miltank is lazing around.$"
+
+ISLANDGAME_FRESA_FARMS_Chansey_Interact_Text_0:
+	.string "The Chansey seems happy to just wander\n"
+	.string "around.$"
+
+ISLANDGAME_FRESA_FARMS_Mareep_Interact_Text_0:
+	.string "The Mareep appears to be well fed.$"
+
+ISLANDGAME_FRESA_FARMS_MareepScared_Interact_Text_0:
+	.string "The Mareep keeps glancing up at the\n"
+	.string "nearby Herdier.$"
+
 ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage::
-	.string "{COLOR DARK_GRAY}I couldn't help but notice your battle\n"
-	.string "earlier, I was wondering if you could\l"
-	.string "help us with our missing Mareep. {COLOR DARK_GRAY}She\l"
-	.string "usually goes off by herself to the\l"
+	.string "Oh, its you!\p"
+	.string "I couldn't help but notice your battle\n"
+	.string "earlier.\p"
+	.string "I was wondering if you could help us\n"
+	.string "with our missing Mareep.\p"
+	.string "She usually goes off by herself to the\n"
 	.string "center of the plains, but we haven't\l"
 	.string "seen her since.$"
 

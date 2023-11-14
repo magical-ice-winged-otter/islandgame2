@@ -417,8 +417,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag::
 	lock
 	faceplayer
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk
-	applymovement 14, Common_Movement_FaceOriginalDirection
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag_Text_0
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	return
@@ -485,6 +485,9 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay_Text_0:
 ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull_Text_0:
 	.string "{COLOR DARK_GRAY}Huh? You don't have room for this candy\n"
 	.string "bar?$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag_Text_0:
+	.string "{COLOR RED}It's just staring at me... menacingly?$"
 
 ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text::
 	.string "{COLOR DARK_GRAY}Nani!? You've got sharp senses to find\n"
@@ -634,9 +637,6 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC12Talk::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk::
 	.string "{COLOR DARK_GRAY}The older boys are so cool... They know\n"
 	.string "how to build a tent with just sticks!$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk::
-	.string "{COLOR RED}It's just staring at me... menacingly?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC::
 	.string "{COLOR DARK_GRAY}CAMP PERSI\n"
