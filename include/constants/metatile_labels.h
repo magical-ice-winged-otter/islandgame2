@@ -267,6 +267,15 @@
 #define METATILE_InsideShip_IntactDoor_Bottom_Locked    0x233
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked  0x22B
 
+// gTileset_IslandgameGeneral
+#define METATILE_IslandgameGeneral_Door            0x021
+#define METATILE_IslandgameGeneral_DoorPokeCenter  0x061
+#define METATILE_IslandgameGeneral_DoorPokeMart    0x041
+
+// gTileset_Islandgame
+#define METATILE_Islandgame_Door             0x021
+#define METATILE_Islandgame_Door_PokeCenter  0x061
+
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
 #define METATILE_Lavaridge_CaveEntrance_Bottom  0x25E
@@ -390,6 +399,9 @@
 #define METATILE_Pacifidlog_SubmergedLogs_HorizontalRight      0x255
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalBottom       0x262
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
+
+// gTileset_Persi
+#define METATILE_Persi_Door  0x26C
 
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_Door                0x224
@@ -792,11 +804,5 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
-
-// gTileset_IslandgameGeneral
-#define METATILE_Islandgame_Door                              0x021
-#define METATILE_Islandgame_Door_PokeCenter                   0x061
-// gTileset_IslandgamePersi
-#define METATILE_Persi_Door 0x26C
 
 #endif // GUARD_METATILE_LABELS_H

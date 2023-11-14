@@ -1,0 +1,190 @@
+mapscripts ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_MapScripts {
+}
+
+script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_WailmerPailItem {
+    finditem(ITEM_WAILMER_PAIL)
+    setflag(FLAG_RECEIVED_WAILMER_PAIL)
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac {
+    lock
+    faceplayer
+    returnqueststate(QUEST_PERSI_BERRY_MANIAC)
+
+    switch (var(VAR_RESULT)) {
+        case 1: // INACTIVE
+            msgbox(format("I am the berry MANIAC!!!\pGET ME BERRIES NOW!"))
+            startquest(QUEST_PERSI_BERRY_MANIAC)
+            completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1)
+            goto(BerryManiac_End)
+        case 2: // ACTIVE
+            msgbox(format("DO YOU HAVE MY BERRIES?!"))
+            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2, BerryManiac_CheriStep)
+            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3, BerryManiac_AspearStep)
+            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4, BerryManiac_LeppaStep)
+            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5, BerryManiac_SitrusStep)
+            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6, BerryManiac_LumStep)
+            goto(BerryManiac_LiechiStep)
+        case 4: // COMPLETED
+            msgbox(format("I HAVE ALL THE BERRIES!!!"))
+            goto(BerryManiac_End)
+    }
+
+BerryManiac_CheriStep:
+                checkitem(ITEM_CHERI_BERRY)
+
+                if (!var(VAR_RESULT)) {
+                    msgbox(format("Oh, you don't have any Cheri berries..."))
+                    goto(BerryManiac_End)
+                }
+
+                msgbox(format("You found me a Cheri berry! Have some juice."))
+                checkitemspace(ITEM_BERRY_JUICE)
+
+                if (!var(VAR_RESULT)) {
+                    goto(BerryManiac_NotEnoughRoom)
+                }
+
+                removeitem(ITEM_CHERI_BERRY)
+                giveitem(ITEM_BERRY_JUICE)
+                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2)
+                msgbox(format("Next, can you find me an Aspear berry?"))
+                goto(BerryManiac_End)
+BerryManiac_AspearStep:
+                checkitem(ITEM_ASPEAR_BERRY)
+
+                if (!var(VAR_RESULT)) {
+                    msgbox(format("Oh, you don't have any Aspear berries..."))
+                    goto(BerryManiac_End)
+                }
+
+                msgbox(format("You found me an Aspear berry! Have a Rare Candy."))
+                checkitemspace(ITEM_RARE_CANDY)
+
+                if (!var(VAR_RESULT)) {
+                    goto(BerryManiac_NotEnoughRoom)
+                }
+
+                removeitem(ITEM_ASPEAR_BERRY)
+                giveitem(ITEM_RARE_CANDY)
+                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3)
+                msgbox(format("Next, can you find me a Leppa berry?"))
+                goto(BerryManiac_End)
+BerryManiac_LeppaStep:
+                checkitem(ITEM_LEPPA_BERRY)
+
+                if (!var(VAR_RESULT)) {
+                    msgbox(format("Oh, you don't have any Leppa berries..."))
+                    goto(BerryManiac_End)
+                }
+
+                msgbox(format("You found me a Leppa berry! Have an Exp Share."))
+                checkitemspace(ITEM_EXP_SHARE)
+
+                if (!var(VAR_RESULT)) {
+                    goto(BerryManiac_NotEnoughRoom)
+                }
+
+                removeitem(ITEM_LEPPA_BERRY)
+                giveitem(ITEM_EXP_SHARE)
+                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4)
+                msgbox(format("Next, can you find me a Sitrus berry?"))
+                goto(BerryManiac_End)
+BerryManiac_SitrusStep:
+                checkitem(ITEM_SITRUS_BERRY)
+
+                if (!var(VAR_RESULT)) {
+                    msgbox(format("Oh, you don't have any Sitrus berries..."))
+                    goto(BerryManiac_End)
+                }
+
+                msgbox(format("You found me a Sitrus berry! Have a Full Restore."))
+                checkitemspace(ITEM_FULL_RESTORE)
+
+                if (!var(VAR_RESULT)) {
+                    goto(BerryManiac_NotEnoughRoom)
+                }
+
+                removeitem(ITEM_SITRUS_BERRY)
+                giveitem(ITEM_FULL_RESTORE)
+                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5)
+                msgbox(format("Next, can you find me a Lum berry?"))
+                goto(BerryManiac_End)
+BerryManiac_LumStep:
+                checkitem(ITEM_LUM_BERRY)
+
+                if (!var(VAR_RESULT)) {
+                    msgbox(format("Oh, you don't have any Lum berries..."))
+                    goto(BerryManiac_End)
+                }
+
+                msgbox(format("You found me a Lum berry! Have a PP Max."))
+                checkitemspace(ITEM_PP_MAX)
+
+                if (!var(VAR_RESULT)) {
+                    goto(BerryManiac_NotEnoughRoom)
+                }
+
+                removeitem(ITEM_LUM_BERRY)
+                giveitem(ITEM_PP_MAX)
+                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6)
+                msgbox(format("Next, can you find me a Liechi berry?"))
+                goto(BerryManiac_End)
+BerryManiac_LiechiStep:
+                checkitem(ITEM_LIECHI_BERRY)
+
+                if (!var(VAR_RESULT)) {
+                    msgbox(format("Oh, you don't have any Liechi berries..."))
+                    goto(BerryManiac_End)
+                }
+
+                msgbox(format("You found me a Liechi berry! Have a PP Max."))
+                checkitemspace(ITEM_MAX_REVIVE)
+
+                if (!var(VAR_RESULT)) {
+                    goto(BerryManiac_NotEnoughRoom)
+                }
+
+                removeitem(ITEM_LIECHI_BERRY)
+                giveitem(ITEM_MAX_REVIVE)
+                completequest(QUEST_PERSI_BERRY_MANIAC)
+                msgbox(format("I have more berries than I know what to do with!"))
+                goto(BerryManiac_End)
+BerryManiac_NotEnoughRoom:
+                msgbox(format("Oh, you don't have enough room..."))
+BerryManiac_End:
+
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor {
+    lock
+    faceplayer
+
+    if (!flag(FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED)) {
+        setflag(FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED)
+        msgbox(format("Oh, it looks like you're new to planting berries!\pHere, take these to get you started."))
+        giveitem(ITEM_PECHA_BERRY, 2)
+        giveitem(ITEM_ORAN_BERRY, 2)
+        giveitem(ITEM_PERSIM_BERRY, 2)
+    }
+    else {
+        msgbox(format("Planting berries is really fun.\pIt feels like giving gifts to my future self!"))
+    }
+
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep {
+    lock
+    faceplayer
+    msgbox(format("Welcome to Camp Persi! Here, we sell locally-grown berry juice."))
+    pokemart(BerryHouseItems)
+    msgbox(format("Please come again!"))
+    release
+}
+
+mart BerryHouseItems {
+    ITEM_BERRY_JUICE
+}

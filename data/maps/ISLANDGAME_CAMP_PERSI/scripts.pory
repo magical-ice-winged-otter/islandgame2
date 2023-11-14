@@ -1,5 +1,7 @@
 const ZIGZAGOON_OW_ID = 14
 const ZIGZAGGIRL_OW_ID = 10
+const CANDY_BOY_ID = 1
+const COOKIE_GIRL_ID = 2
 const JONAS_OW_ID = 13
 
 mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
@@ -152,12 +154,13 @@ script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage {
     msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
     trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
     msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
+    giveitem(ITEM_ENERGY_POWDER)
     closemessage
     return
 }
 
 script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup {
-    hideobjectat(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
+    removeobject(JONAS_OW_ID, MAP_ISLANDGAME_CAMP_PERSI)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
     waitmovement(0)
     releaseall
@@ -256,86 +259,41 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight {
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    step_end
+    walk_down * 5
 }
-
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro {
     walk_left
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    step_end
+    walk_down * 7
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
+    walk_down * 6
     face_left
-    step_end
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
+    walk_down * 6
     walk_left
-    step_end
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
+    walk_down * 6
     face_right
-    step_end
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
+    walk_down * 6
     walk_right
-    step_end
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro {
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    walk_down
-    step_end
+    walk_down * 6
 }
 
 movement ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave {
-    delay_16
-    delay_16
+    delay_16 * 2
     face_down
-    step_end
 }
 
 
@@ -360,21 +318,6 @@ text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
 
 /// scout vendors 
 
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl {
-    lock
-    faceplayer
-    showmoneybox(0,0)
-    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1, MSGBOX_YESNO)
-    goto_if_eq(VAR_RESULT, NO, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline)
-    checkmoney(250)
-    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBroke)
-    checkitemspace(ITEM_LAVA_COOKIE)
-    goto_if_eq(VAR_RESULT, TRUE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlPay)
-    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBagFull)
-    hidemoneybox
-    release
-}
-
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1 {
     format(
         "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava Cookies to support Troop 115. \p"
@@ -382,44 +325,47 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1 {
         )
 }
 
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlDecline {
-    msgbox(format("{COLOR DARK_GRAY}Eeeh? But I said they were delicious..."))
-    hidemoneybox
-    release
-}
-
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBroke {
-    msgbox(format("{COLOR DARK_GRAY}Eeeh? You don't have enough money? Phooey..."))
-    hidemoneybox
-    release
-}
-
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlPay {
-    msgbox(format("{COLOR DARK_GRAY}Yay! Thank you for your support!"))
-    removemoney(250)
-    updatemoneybox
-    giveitem(ITEM_LAVA_COOKIE)
-    hidemoneybox
-    release 
-}
-
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlBagFull {
-    msgbox(format("{COLOR DARK_GRAY}Eeeh? You don't have enough room for this cookie?"))
-    hidemoneybox
-    release
-}
-
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy {
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl {
     lock
     faceplayer
+
+    if (flag(FLAG_DAILY_PERSI_COOKIE_GIRL_SALE)) {
+        msgbox(format("{COLOR DARK_GRAY}We can only sell one cookie per day!\pWe don't have many cookies..."))
+        goto(CookieGirl_End)
+    }
+
     showmoneybox(0,0)
-    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1, MSGBOX_YESNO)
-    goto_if_eq(VAR_RESULT, NO, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyDecline)
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1, MSGBOX_YESNO)
+
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("{COLOR DARK_GRAY}Eeeh? But I said they were delicious..."))
+        goto(CookieGirl_End)
+    }
+
     checkmoney(250)
-    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBroke)
-    checkitemspace(ITEM_RAGE_CANDY_BAR)
-    goto_if_eq(VAR_RESULT, TRUE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay)
-    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull)
+
+    if (!var(VAR_RESULT)) {
+        msgbox(format("{COLOR DARK_GRAY}Eeeh? You don't have enough money? Phooey..."))
+        goto(CookieGirl_End)
+    }
+
+    checkitemspace(ITEM_LAVA_COOKIE)
+
+    if (!var(VAR_RESULT)) {
+        msgbox(format("{COLOR DARK_GRAY}Eeeh? You don't have enough room for this cookie?"))
+        goto(CookieGirl_End)
+    }
+
+    setflag(FLAG_DAILY_PERSI_COOKIE_GIRL_SALE)
+    removemoney(250)
+    updatemoneybox
+    msgbox(format("{COLOR DARK_GRAY}Yay! Thank you for your support!"))
+    hidemoneybox
+    giveitem(ITEM_LAVA_COOKIE)
+
+CookieGirl_End:
+    applymovement(COOKIE_GIRL_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
     hidemoneybox
     release
 }
@@ -431,29 +377,47 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1 {
         )
 }
 
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyDecline {
-    msgbox(format("{COLOR DARK_GRAY}Drats. I need more sales for that skateboard..."))
-    hidemoneybox
-    release
-}
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy {
+    lock
+    faceplayer
 
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBroke {
-    msgbox(format("{COLOR DARK_GRAY}Huh? You don't have enough money?"))
-    hidemoneybox
-    release
-}
+    if (flag(FLAG_DAILY_PERSI_CANDY_BOY_SALE)) {
+        msgbox(format("{COLOR DARK_GRAY} Um... we might be out of candy bars today.\pCome again tommorrow?"))
+        goto(CandyBoy_End)
+    }
 
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyPay {
-    msgbox(format("{COLOR DARK_GRAY}Woohoo! Thanks for your support!"))
+    showmoneybox(0,0)
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1, MSGBOX_YESNO)
+
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format("{COLOR DARK_GRAY}Drats. I need more sales for that skateboard..."))
+        goto(CandyBoy_End)
+    }
+
+    checkmoney(250)
+
+    if (!var(VAR_RESULT)) {
+        msgbox(format("{COLOR DARK_GRAY}Huh? You don't have enough money?"))
+        goto(CandyBoy_End)
+    }
+
+    checkitemspace(ITEM_RAGE_CANDY_BAR)
+
+    if (!var(VAR_RESULT)) {
+        msgbox(format("{COLOR DARK_GRAY}Huh? You don't have room for this candy bar?"))
+        goto(CandyBoy_End)
+    }
+
+    setflag(FLAG_DAILY_PERSI_CANDY_BOY_SALE)
     removemoney(250)
     updatemoneybox
-    giveitem(ITEM_RAGE_CANDY_BAR)
     hidemoneybox
-    release 
-}
+    msgbox(format("{COLOR DARK_GRAY}Woohoo! Thanks for your support!"))
+    giveitem(ITEM_RAGE_CANDY_BAR)
 
-script ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyBagFull {
-    msgbox(format("{COLOR DARK_GRAY}Huh? You don't have room for this candy bar?"))
+CandyBoy_End:
+    applymovement(CANDY_BOY_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
     hidemoneybox
     release
 }
@@ -640,6 +604,45 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk {
     )
 }
 
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
+    lock
+    faceplayer
+    returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+
+    switch (var(VAR_RESULT)) {
+        case 1: // INACTIVE
+            msgbox(format("I lost my favorite trading card somewhere in Verdant Woods!\pCan you help me get it back?"), MSGBOX_YESNO)
+
+            if (var(VAR_RESULT) == YES) {
+                msgbox(format("Awesome! I dont know much longer I can go on without it..."))
+                startquest(QUEST_PERSI_FAVORITE_CARD)
+            }
+            else {
+                msgbox(format("Aww, seriously?"))
+            }
+        case 2: // ACTIVE
+            checkitem(ITEM_ISLANDGAME_TRADING_CARD)
+
+            if (var(VAR_RESULT)) {
+                removeitem(ITEM_ISLANDGAME_TRADING_CARD)
+                msgbox(format(
+                    "You found my card! Thank you so much!\p"
+                    "I bought this Soothe Bell to help me calm down...\p"
+                    "But now I dont need it, so here!"))
+                giveitem(ITEM_SOOTHE_BELL)
+                completequest(QUEST_PERSI_FAVORITE_CARD)
+            }
+            else {
+                msgbox(format("Have you found it yet?"))
+            }
+        case 4: // COMPLETED
+            msgbox("I'm never taking my card outside again...")
+    }
+
+    release
+}
+
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag {
     lock
     faceplayer
@@ -711,4 +714,15 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC {
         "{COLOR DARK_GRAY}CAMP GARDEN \n"
         "{COLOR DARK_GRAY}Feel free to contribute! (Please do.)"
     )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance {
+    lock
+    msgbox(format("There's a slight opening in the tree! Want to climb inside?"), MSGBOX_YESNO)
+
+    if (var(VAR_RESULT)) {
+        warp(MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 0)
+    }
+
+    release
 }

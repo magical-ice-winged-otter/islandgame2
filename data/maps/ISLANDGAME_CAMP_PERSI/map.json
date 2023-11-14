@@ -331,10 +331,43 @@
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_104_ORAN_1",
       "script": "BerryTreeScript",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
+      "x": 44,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14",
+      "flag": "0"
     }
   ],
   "warp_events": [
-
+    {
+      "x": 17,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_PKMNCENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_BERRY_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
     {
@@ -415,6 +448,38 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl"
     }
   ]
 }

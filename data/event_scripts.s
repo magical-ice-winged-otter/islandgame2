@@ -56,6 +56,7 @@
 #include "constants/vars.h"
 #include "constants/weather.h"
 #include "constants/day_night.h"
+#include "constants/quests.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1102,13 +1103,16 @@ Common_EventScript_LegendaryFlewAway::
 	
 	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE2/scripts.inc"
 
-	.include "data/maps/ISLANDGAME_MINTY_MEADOWS/scripts.inc"
-
 	.include "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_3/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_HOUSE/scripts.inc"
+
 	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.inc"
@@ -1119,4 +1123,32 @@ Common_EventScript_LegendaryFlewAway::
 
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.inc"
 
-	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_HOUSE/scripts.inc"
+	
+
+	.include "data/maps/ISLANDGAME_FRESA_FARMS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_NORTHERN_ORANNA_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AURORA_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_AURORA_1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_AURORA_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.inc"

@@ -920,8 +920,9 @@
 #define ITEM_ISLANDGAME_RAFT 802
 #define ITEM_ISLANDGAME_PICKAXE 803
 #define ITEM_ISLANDGAME_POWERGLOVE 804
+#define ITEM_ISLANDGAME_TRADING_CARD 805
 
-#define ITEMS_COUNT 805
+#define ITEMS_COUNT 806
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
