@@ -1,0 +1,38 @@
+const LOCALID_NURSE = 1
+
+mapscripts ISLANDGAME_CAMP_PERSI_PKMNCENTER_MapScripts {
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_ISLANDGAME_CAMP_PERSI)
+    }
+}
+
+script ISLANDGAME_PERSI_PKMNCENTER_EventScript_Nurse {
+    setvar(VAR_0x800B, LOCALID_NURSE)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release
+}
+
+script ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerKid {
+    lock
+    msgbox(format("Man, the connection here sucks!"))
+    release
+}
+
+script ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerWatcher {
+    lock
+    faceplayer
+    msgbox(format("My parents didn't let me bring my GameBoy, so I watch other people play..."))
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_PERSI_PKMNCENTER_EventScript_OldPerson {
+    lock
+    faceplayer
+    msgbox(format("This is the only place with internet access in the whole camp.\pThe kids can get loud in here at times..."))
+    release
+}

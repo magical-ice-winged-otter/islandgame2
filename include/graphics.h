@@ -10696,6 +10696,9 @@ extern const u32 gItemIconPalette_IslandgameLantern[];
 
 extern const u32 gItemIcon_IslandgamePickaxe[];
 extern const u32 gItemIconPalette_IslandgamePickaxe[];
+extern const u32 gItemIcon_IslandgameTradingCard[];
+extern const u32 gItemIconPalette_IslandgameTradingCard[];
+
 // frlg_tm_case_port
 extern const u32 gUnknown_8E845D8[];
 extern const u32 gUnknown_8E84A24[];

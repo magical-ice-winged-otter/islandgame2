@@ -3051,3 +3051,10 @@ extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
 #endif // GUARD_STRINGS_H
+
+////side quests
+
+//generic strings
+extern const u8 gText_QuestAnnounce[];
+extern const u8 gText_QuestComplete[];
+extern const u8 gText_QuestActive[];

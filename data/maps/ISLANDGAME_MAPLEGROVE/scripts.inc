@@ -1,0 +1,2 @@
+ISLANDGAME_MAPLEGROVE_MapScripts::
+	.byte 0
