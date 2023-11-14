@@ -250,6 +250,7 @@ static const u8 sText_AZ[] = _(" A-Z");
 
 // Map Locations
 const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
+const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
 
 // Persi Favorite Card Quest
 const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
@@ -273,6 +274,16 @@ const u8 sText_SubQuest_PersiBerryManiac5_Name[] = _("Lum Berry");
 const u8 sText_SubQuest_PersiBerryManiac5_Desc[] = _("Find and return a Lum Berry\nto the Berry Maniac");
 const u8 sText_SubQuest_PersiBerryManiac6_Name[] = _("Liechi Berry");
 const u8 sText_SubQuest_PersiBerryManiac6_Desc[] = _("Find and return a Liechi Berry\nto the Berry Maniac");
+
+// Lost Mareep Quest
+const u8 sText_SideQuestName_FresaFarmsLostMareep[] = _("Missing Mareep");
+const u8 sText_SideQuestDesc_FresaFarmsLostMareep[] = _("A Mareep has gone missing from\nFresa Farms!");
+const u8 sText_SideQuestDoneDesc_FresaFarmsLostMareep[] = _("You found and returned the\nMareep back to Fresa Farms.");
+
+// Torchic Egg Quest
+const u8 sText_SideQuestName_FresaFarmsTorchicEgg[] = _("The Egg");
+const u8 sText_SideQuestDesc_FresaFarmsTorchicEgg[] = _("A farmer from Fresa Farms needs\nyou to hatch an egg.");
+const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg, and raised\na Torchic!");
 
 static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_BERRY] =
 {
@@ -353,6 +364,26 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM,
 	      sSubQuests_PersiBerryManiac,
               SUB_QUEST_COUNT_PERSI_BERRY
+	),
+	[QUEST_FRESA_FARMS_LOST_MAREEP] = side_quest(
+	      sText_SideQuestName_FresaFarmsLostMareep,
+	      sText_SideQuestDesc_FresaFarmsLostMareep,
+	      sText_SideQuestDoneDesc_FresaFarmsLostMareep,
+	      sText_SideQuestMap_FresaFarms,
+	      SPECIES_MAREEP, 
+	      PKMN,
+	      NULL,
+              0 
+	),
+	[QUEST_FRESA_FARMS_TORCHIC_EGG] = side_quest(
+	      sText_SideQuestName_FresaFarmsTorchicEgg,
+	      sText_SideQuestDesc_FresaFarmsTorchicEgg,
+	      sText_SideQuestDoneDesc_FresaFarmsTorchicEgg,
+	      sText_SideQuestMap_FresaFarms,
+	      ITEM_LUCKY_EGG, 
+	      ITEM,
+	      NULL,
+              0 
 	),
 };
 

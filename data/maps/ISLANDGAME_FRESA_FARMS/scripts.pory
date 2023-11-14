@@ -27,6 +27,8 @@ text ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage {
 
 script ISLANDGAME_FRESA_FARMS_OldMan_Talk {
     lock
+    startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
+    startquest(QUEST_FRESA_FARMS_TORCHIC_EGG)
     if (var(VAR_UNUSED_0x404E) == 0) {
         msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
         setvar(VAR_UNUSED_0x404E, 1) //TODO: CHANGE THIS TO MINTY_MEADOWS_STATE
