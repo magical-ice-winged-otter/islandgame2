@@ -4657,7 +4657,7 @@
       "width": 40,
       "height": 70,
       "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_IslandgameVerdant",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/map.bin"
     },
