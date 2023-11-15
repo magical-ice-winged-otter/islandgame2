@@ -1,3 +1,110 @@
+
+mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags
+    MAP_SCRIPT_ON_RESUME: ISLANDGAME_MINTY_MEADOWS_2_OnResume
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad
+    ]
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags {
+    if (flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+        setvar(VAR_TEMP_1, 1)
+    }
+    return
+}
+
+//RIVAL FIGHT
+const RIVAL_OW_ID = 16
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1 {
+    walk_left * 4
+}
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement2 {
+    walk_left * 3
+}
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement3 {
+    walk_left * 2
+}
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement4 {
+    walk_left
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement6 {
+    walk_right
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger1 {
+    lock
+    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1)
+    waitmovement(RIVAL_OW_ID)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger2 {
+    lock
+    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement2)
+    waitmovement(RIVAL_OW_ID)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger3 {
+    lock
+    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement3)
+    waitmovement(RIVAL_OW_ID)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger4 {
+    lock
+    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement4)
+    waitmovement(RIVAL_OW_ID)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger5 {
+    lock
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger6 {
+    lock
+    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement6)
+    waitmovement(RIVAL_OW_ID)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown {
+    walk_down * 4
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
+    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown)
+    waitmovement(RIVAL_OW_ID)
+    call(ISLANDGAME_MINTY_MEADOWS_2_RivalFight)
+    release
+}
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight {
+    msgbox(ISLANDGAME_MINTY_MEADOWS_2_IntroBattle_Text)
+    trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) != B_OUTCOME_WON) {
+        return
+    }
+    setflag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)
+    call(ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text)
+    closemessage
+    return
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_IntroBattle_Text {
+    format("{COLOR DARK_GRAY}Rival battle intro")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text {
+    format("{COLOR DARK_GRAY}post defeat rival")
+}
+
 //VAR_MINTY_MEADOWS_STATE:
 //0 - nothing
 //1 - initiate quest
@@ -18,12 +125,6 @@ const CLEARING_M_Y = 15
 
 const CLEARING_S_X = 61
 const CLEARING_S_Y = 12
-mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
-    MAP_SCRIPT_ON_RESUME: ISLANDGAME_MINTY_MEADOWS_2_OnResume
-    MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_0, 0: ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad
-    ]
-}
 
 script ISLANDGAME_MINTY_MEADOWS_2_OnResume {
     call_if_set(FLAG_SYS_CTRL_OBJ_DELETE, ISLANDGAME_MINTY_MEADOWS_2_TryRemoveMightyena)

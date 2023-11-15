@@ -1,4 +1,5 @@
 ISLANDGAME_MINTY_MEADOWS_2_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags
 	map_script MAP_SCRIPT_ON_RESUME, ISLANDGAME_MINTY_MEADOWS_2_OnResume
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, ISLANDGAME_MINTY_MEADOWS_2_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
@@ -6,6 +7,119 @@ ISLANDGAME_MINTY_MEADOWS_2_MapScripts::
 ISLANDGAME_MINTY_MEADOWS_2_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_TEMP_0, 0, ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad
 	.2byte 0
+
+
+ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags::
+	goto_if_set FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags_2
+ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags_1:
+	return
+
+ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags_2:
+	setvar VAR_TEMP_1, 1
+	goto ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags_1
+
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement2:
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement3:
+	walk_left
+	walk_left
+	step_end
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement4:
+	walk_left
+	step_end
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement6:
+	walk_right
+	step_end
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger1::
+	lock
+	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1
+	waitmovement 16
+	goto ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger2::
+	lock
+	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement2
+	waitmovement 16
+	goto ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger3::
+	lock
+	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement3
+	waitmovement 16
+	goto ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger4::
+	lock
+	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement4
+	waitmovement 16
+	goto ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger5::
+	lock
+	goto ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger6::
+	lock
+	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement6
+	waitmovement 16
+	goto ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
+	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown
+	waitmovement 16
+	call ISLANDGAME_MINTY_MEADOWS_2_RivalFight
+	release
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight::
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_IntroBattle_Text
+	trainerbattle_no_intro TRAINER_MINTY_MEADOWS_RIVAL, ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_ne ISLANDGAME_MINTY_MEADOWS_2_RivalFight_2
+	setflag FLAG_MINTY_MEADOWS_RIVAL_DEFEATED
+	call ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text
+	closemessage
+	return
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_2:
+	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_OnResume::
@@ -185,6 +299,12 @@ Phase1_MightyenaChase:
 Phase2_MightyenaWalksForward:
 	walk_up
 	step_end
+
+ISLANDGAME_MINTY_MEADOWS_2_IntroBattle_Text::
+	.string "{COLOR DARK_GRAY}Rival battle intro$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text::
+	.string "{COLOR DARK_GRAY}post defeat rival$"
 
 MareepHelp_Text::
 	.string "{COLOR BLUE}bro help me$"
