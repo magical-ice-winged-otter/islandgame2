@@ -4035,7 +4035,11 @@ static u32 GetMonHoldEffect(struct Pokemon *mon)
     u32 item = GetMonData(mon, MON_DATA_HELD_ITEM);
 
     if (item == ITEM_ENIGMA_BERRY_E_READER)
+        #ifndef FREE_ENIGMA_BERRY
         holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+        #else
+        holdEffect = 0;
+        #endif
     else
         holdEffect = ItemId_GetHoldEffect(item);
 

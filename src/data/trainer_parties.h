@@ -262,7 +262,7 @@ static const struct TrainerMon sParty_VerdantWoodsTrainer5[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntMtPyre1[] = {
+static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     {
     .lvl = 32,
     .species = SPECIES_ZUBAT,

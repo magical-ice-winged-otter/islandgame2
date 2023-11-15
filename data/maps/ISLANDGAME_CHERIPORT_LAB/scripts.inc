@@ -150,19 +150,20 @@ Scientist2Talk_Text::
 	.string "away! I'm doing grown-up stuff!$"
 
 Scientist3Talk_Text::
-	.string "{COLOR DARK_GRAY}The professor used to go outside and\n"
-	.string "conduct all his fieldwork himself.\p"
-	.string "{COLOR DARK_GRAY}That's actually how we met. He was\n"
-	.string "getting chased around by a Zigzagoon.\p"
-	.string "{COLOR DARK_GRAY}Ah, memories...$"
+	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! The professor\n"
+	.string "has told me a lot about you.\p"
+	.string "{COLOR DARK_GRAY}My name is Coco. I'm the creator of\n"
+	.string "Mariyama's Pokémon Storage System!\p"
+	.string "{COLOR DARK_GRAY}I hope you find it easy and convenient\n"
+	.string "to use.$"
 
 ReceivedEevee_Text::
 	.string "{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!$"
 
 ISLANDGAME_CHERIPORT_LAB_VigorothTalk::
-	.string "{COLOR RED}It looks like the Pokémon is hard at\n"
-	.string "work.$"
+	.string "{COLOR RED}(It looks like the Pokémon is hard at\n"
+	.string "work.)$"
 
 ISLANDGAME_CHERIPORT_LAB_PikaDollTalk::
-	.string "{COLOR RED}Wow! It looks like an actual Pikachu,\n"
-	.string "but it's just a plush!$"
+	.string "{COLOR RED}(Wow! It looks like an actual Pikachu,\n"
+	.string "but it's just a plush!)$"

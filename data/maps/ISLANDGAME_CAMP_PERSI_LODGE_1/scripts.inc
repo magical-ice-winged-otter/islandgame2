@@ -1,0 +1,3 @@
+ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts::
+	.byte 0
+

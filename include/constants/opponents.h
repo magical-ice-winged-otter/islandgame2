@@ -67,9 +67,11 @@
 
 
 
+// Minty Meadows
 
 
-#define TRAINER_GRUNT_MT_PYRE_1              23
+#define TRAINER_MINTY_MEADOWS_RIVAL          23
+#define TRAINER_GRUNT_MT_PYRE_1              TRAINER_MINTY_MEADOWS_RIVAL
 #define TRAINER_GRUNT_MT_PYRE_2              24
 #define TRAINER_GRUNT_MT_PYRE_3              25
 #define TRAINER_GRUNT_WEATHER_INST_4         26
@@ -89,6 +91,9 @@
 #define TRAINER_ROSE_2                       40
 #define TRAINER_ROSE_3                       41
 #define TRAINER_ROSE_4                       42
+//reserved
+
+
 #define TRAINER_ROSE_5                       43
 #define TRAINER_DUSTY_1                      44
 #define TRAINER_CHIP                         45

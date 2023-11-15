@@ -9709,4 +9709,14 @@ const struct Item gItems[] =
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+    [ITEM_ISLANDGAME_TRADING_CARD] =
+    {
+        .name = _("Trading Card"),
+        .price = 0,
+        .description = sIslandgameTradingCard,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
 };

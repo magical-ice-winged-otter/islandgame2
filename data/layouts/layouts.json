@@ -4604,10 +4604,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS",
       "name": "ISLANDGAME_MINTY_MEADOWS_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "width": 52,
+      "height": 36,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/map.bin"
     },
@@ -4622,12 +4622,42 @@
       "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
     },
     {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_2",
+      "name": "ISLANDGAME_MINTY_MEADOWS_2_Layout",
+      "width": 70,
+      "height": 40,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_3",
+      "name": "ISLANDGAME_MINTY_MEADOWS_3_Layout",
+      "width": 20,
+      "height": 40,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_HOUSE",
+      "name": "ISLANDGAME_MINTY_MEADOWS_HOUSE_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_HOUSE/map.bin"
+    },
+    {
       "id": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL",
       "name": "ISLANDGAME_TRAVELERS_TUNNEL_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 36,
+      "height": 24,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/map.bin"
     },
@@ -4750,6 +4780,76 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_LODGE_1",
+      "name": "ISLANDGAME_CAMP_PERSI_LODGE_1_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_LODGE_2",
+      "name": "ISLANDGAME_CAMP_PERSI_LODGE_2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_BERRY_HOUSE",
+      "name": "ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_PKMNCENTER",
+      "name": "ISLANDGAME_CAMP_PERSI_PKMNCENTER_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_PKMNCENTER/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_PKMNCENTER/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_MACHETE_TREE",
+      "name": "ISLANDGAME_CAMP_PERSI_MACHETE_TREE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_SecretBase",
+      "secondary_tileset": "gTileset_SecretBaseTree",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_FRESA_FARMS_DAYCARE",
+      "name": "ISLANDGAME_FRESA_FARMS_DAYCARE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_DAYCARE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_DAYCARE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_FRESA_FARMS_HOUSE",
+      "name": "ISLANDGAME_FRESA_FARMS_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/map.bin"
     }
   ]
 }
