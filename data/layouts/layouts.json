@@ -4704,7 +4704,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_FRESA_FARMS",
       "name": "ISLANDGAME_FRESA_FARMS_Layout",
-      "width": 35,
+      "width": 50,
       "height": 26,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Forest",

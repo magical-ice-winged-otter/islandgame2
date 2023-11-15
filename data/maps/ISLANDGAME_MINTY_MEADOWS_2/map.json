@@ -22,6 +22,16 @@
       "map": "MAP_ISLANDGAME_MINTY_MEADOWS",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ISLANDGAME_MINTY_MEADOWS_3",
+      "offset": 55,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ISLANDGAME_FRESA_FARMS",
+      "offset": -10,
+      "direction": "up"
     }
   ],
   "object_events": [
