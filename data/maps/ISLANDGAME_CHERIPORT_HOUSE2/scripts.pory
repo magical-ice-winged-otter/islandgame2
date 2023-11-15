@@ -37,7 +37,19 @@ script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
     if (!flag(FLAG_DAILY_CHERIPORT_RECEIVED_DRINK))
     {
         setflag(FLAG_DAILY_CHERIPORT_RECEIVED_DRINK)
-        msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK)
+        msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK, MSGBOX_YESNO)
+
+        if (var(VAR_RESULT) == NO) {
+            msgbox("We'll always be here if you need a drink.")
+            goto(PriestessDrinkGiver_End)
+        }
+
+        checkitemspace(ITEM_SODA_POP)
+
+        if (!var(VAR_RESULT)) {
+            msgbox("Oh dear, you don't have enough room for a drink.")
+            goto(PriestessDrinkGiver_End)
+        }
 
         // Randomly select some item to give the player.
         random(100)
@@ -65,10 +77,11 @@ script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
     }
     else
     {
-        msgbox("Sorry, our policy is one beverage per day.")
+        msgbox("Sorry, our policy is one beverage per day. Come back tomorrow.")
     }
 
-    release
+    PriestessDrinkGiver_End:
+        release
 }
 
 text ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK {

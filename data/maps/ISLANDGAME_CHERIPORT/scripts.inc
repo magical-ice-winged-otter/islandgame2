@@ -222,27 +222,27 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4::
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_0:
-	.string "Soda pops, only ¥100!$"
+	.string "Premium Cheri-Cola made with REAL sugar, only ¥600 a pop!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_1:
-	.string "Come again later!$"
+	.string "Huh? You're missin' out, bud!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_2:
-	.string "Oh, you can't afford this.$"
+	.string "Oi, this is PREMIUM soda. If you can't afford it, then beat it!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3:
-	.string "Oh, you don't have enough room.$"
+	.string "Oi, you need to make some space for this PREMIUM soda.$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4:
-	.string "Take one!$"
+	.string "Here ya go, friend!$"
 
 NeedPokemon_Text::
-	.string "{COLOR RED}I should go see Professor Palm before I\n"
-	.string "leave the city...$"
+	.string "{COLOR RED}(I should go see Professor Palm before\n"
+	.string "I leave the city.)$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_StayHere::
-	.string "{COLOR RED}I should make the most of my time here\n"
-	.string "in the isles...$"
+	.string "{COLOR RED}(There's no reason for me to leave the\n"
+	.string "isles.)$"
 
 NPCGirl_Talk::
 	.string "{COLOR DARK_GRAY}The islands are known for their tropical\n"
@@ -259,10 +259,10 @@ NPCBoy_Talk::
 
 MrBrineyTalk::
 	.string "{COLOR DARK_GRAY}This beach reminds you a lot of\n"
-	.string "Slateport, doesn't it, {COLOR BLUE}Peeko?$"
+	.string "Slateport, doesn't it, Peeko?$"
 
 PeekoTalk::
-	.string "{COLOR BLUE}Peeko: {COLOR DARK_GRAY}Wrooooar!$"
+	.string "Peeko: {COLOR DARK_GRAY}Wrooooar!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC1_TALK::
 	.string "{COLOR DARK_GRAY}Nuh-uh! Nuh-uh!$"

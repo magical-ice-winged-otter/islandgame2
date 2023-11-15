@@ -1517,8 +1517,9 @@
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
 //camp persi: first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
-#define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B) 
-#define FLAG_UNUSED_PERSI                           (SYSTEM_FLAGS + 0x8C) 
+#define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B)
+//minty meadows: rival fight
+#define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
 //verdant-woods: miracle seed
 #define FLAG_VERDANT_WOODS_SEED_RECEIVED            (SYSTEM_FLAGS + 0x8D)
 //verdant-woods: Fight tree

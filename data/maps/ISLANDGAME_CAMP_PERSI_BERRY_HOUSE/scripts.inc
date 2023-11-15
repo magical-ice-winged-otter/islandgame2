@@ -53,7 +53,7 @@ BerryManiac_LeppaStep:
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_19
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_18:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7
 	checkitemspace ITEM_EXP_SHARE
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22
@@ -61,14 +61,14 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_21:
 	removeitem ITEM_LEPPA_BERRY
 	giveitem ITEM_EXP_SHARE
 	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10
 	goto BerryManiac_End
 BerryManiac_SitrusStep:
 	checkitem ITEM_SITRUS_BERRY
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_25
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_24:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7
 	checkitemspace ITEM_FULL_RESTORE
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_28
@@ -76,14 +76,14 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_27:
 	removeitem ITEM_SITRUS_BERRY
 	giveitem ITEM_FULL_RESTORE
 	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12
 	goto BerryManiac_End
 BerryManiac_LumStep:
 	checkitem ITEM_LUM_BERRY
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_31
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13
 	checkitemspace ITEM_PP_MAX
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_34
@@ -91,14 +91,14 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_33:
 	removeitem ITEM_LUM_BERRY
 	giveitem ITEM_PP_MAX
 	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14
 	goto BerryManiac_End
 BerryManiac_LiechiStep:
 	checkitem ITEM_LIECHI_BERRY
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_37
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_36:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_19
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16
 	checkitemspace ITEM_MAX_REVIVE
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_40
@@ -106,10 +106,10 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_39:
 	removeitem ITEM_LIECHI_BERRY
 	giveitem ITEM_MAX_REVIVE
 	completequest QUEST_PERSI_BERRY_MANIAC
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_20
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2
 	goto BerryManiac_End
 BerryManiac_NotEnoughRoom:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_21
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
 BerryManiac_End:
 	release
 	return
@@ -164,7 +164,7 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22:
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_21
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_25:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_24
 
@@ -173,7 +173,7 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_28:
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_27
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_31:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30
 
@@ -182,7 +182,7 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_34:
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_33
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_37:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_18
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_36
 
@@ -225,77 +225,76 @@ BerryHouseItems:
 	.2byte ITEM_NONE
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0:
-	.string "I am the berry MANIAC!!!\p"
-	.string "GET ME BERRIES NOW!$"
+	.string "I AM BARRY, THE BERRY MANIAC. I LOVE\n"
+	.string "BERRIES. GET ME A CHERI BERRY NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_1:
-	.string "DO YOU HAVE MY BERRIES?!$"
+	.string "DO YOU POSSESS THE BERRY I YEARN FOR!?$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2:
-	.string "I HAVE ALL THE BERRIES!!!$"
+	.string "FINALLY. IT'S COMPLETE. I HAVE ALL THE\n"
+	.string "BERRIES NEEDED FOR MY COLLECTION!!!\p"
+	.string "AHAHAHAHAHAHA$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3:
-	.string "Oh, you don't have any Cheri berries...$"
+	.string "NO, NO, NO, THAT WON'T DO. I NEED A CHERI\n"
+	.string "BERRY!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_4:
-	.string "You found me a Cheri berry! Have some\n"
-	.string "juice.$"
+	.string "YES! YES! THE CHERI BERRY! IT IS MINE!\n"
+	.string "THANK YOU VERY MUCH. TAKE THIS!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_5:
-	.string "Next, can you find me an Aspear berry?$"
+	.string "NOW GET ME AN ASPEAR BERRY. QUICKLY!\n"
+	.string "TIME IS WASTING AWAY, MY FRIEND!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_6:
-	.string "Oh, you don't have any Aspear berries...$"
+	.string "NO, NO, NO, THAT WON'T DO. I NEED AN\n"
+	.string "ASPEAR BERRY!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7:
-	.string "You found me an Aspear berry! Have a\n"
-	.string "Rare Candy.$"
+	.string "YES! YES! THE ASPEAR BERRY! IT IS MINE!\n"
+	.string "THANK YOU VERY MUCH. TAKE THIS!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_8:
-	.string "Next, can you find me a Leppa berry?$"
+	.string "NOW GET ME A LEPPA BERRY. QUICKLY! TIME\n"
+	.string "IS WASTING AWAY, MY FRIEND!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_9:
-	.string "Oh, you don't have any Leppa berries...$"
+	.string "NO, NO, NO, THAT WON'T DO. I NEED A LEPPA\n"
+	.string "BERRY!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10:
-	.string "You found me a Leppa berry! Have an Exp\n"
-	.string "Share.$"
+	.string "NOW GET ME A SITRUS BERRY. QUICKLY!\n"
+	.string "TIME IS WASTING AWAY, MY FRIEND!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11:
-	.string "Next, can you find me a Sitrus berry?$"
+	.string "NO, NO, NO, THAT WON'T DO. I NEED A\n"
+	.string "SITRUS BERRY!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12:
-	.string "Oh, you don't have any Sitrus berries...$"
+	.string "NOW GET ME A LUM BERRY. QUICKLY! TIME\n"
+	.string "IS WASTING AWAY, MY FRIEND!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13:
-	.string "You found me a Sitrus berry! Have a Full\n"
-	.string "Restore.$"
+	.string "YES! YES! THE LUM BERRY! IT IS MINE!\n"
+	.string "THANK YOU VERY MUCH. TAKE THIS!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14:
-	.string "Next, can you find me a Lum berry?$"
+	.string "FINALLY, I NEED THE LEGENDARY LIECHI\n"
+	.string "BERRY! FIND IT FOR ME. FIND IT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15:
-	.string "Oh, you don't have any Lum berries...$"
+	.string "NO, NO, NO, THAT WON'T DO. I NEED THE\n"
+	.string "LEGENDARY LIECHI BERRY!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16:
-	.string "You found me a Lum berry! Have a PP Max.$"
+	.string "YES... YES!!! YOU FOUND IT! AHAHAHAHA!\n"
+	.string "TAKE THIS TAKE THIS TAKE THIS!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17:
-	.string "Next, can you find me a Liechi berry?$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_18:
-	.string "Oh, you don't have any Liechi berries...$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_19:
-	.string "You found me a Liechi berry! Have a PP\n"
-	.string "Max.$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_20:
-	.string "I have more berries than I know what to\n"
-	.string "do with!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_21:
-	.string "Oh, you don't have enough room...$"
+	.string "YOU DON'T HAVE ENOUGH ROOM FOR YOUR\n"
+	.string "REWARD. MAKE SOME ROOM!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0:
 	.string "Oh, it looks like you're new to planting\n"
@@ -308,8 +307,8 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_1:
 	.string "self!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_0:
-	.string "Welcome to Camp Persi! Here, we sell\n"
-	.string "locally-grown berry juice.$"
+	.string "Welcome to the Berry House. Here, we\n"
+	.string "sell locally grown berries and juice.$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_1:
-	.string "Please come again!$"
+	.string "May the peace be with you.$"

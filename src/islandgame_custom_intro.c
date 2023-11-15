@@ -61,19 +61,24 @@ void IslandGameCustomStartup()
         FlagToggle(FLAG_RECEIVED_HM_WATERFALL);
         FlagToggle(FLAG_RECEIVED_HM_DIVE);
         
-        //debug 2: CHERIPORT LOCATION
+        //debug 2: SS RAIN LOCATION
         FlagToggle(FLAG_RECEIVED_RUNNING_SHOES);
         FlagToggle(FLAG_SYS_B_DASH);
         FlagToggle(FLAG_LEFT_SHIP);
+        //debug 3: CHERIPORT LOCATION
         FlagToggle(FLAG_PROF_GAVE_EEVEE);
         FlagToggle(FLAG_SYS_POKEDEX_GET);
         FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
+        
 
         //debug sidequest:
         //FlagToggle(FLAG_ROOM3_GAVE_WATER);
 
+        //debug 4: Minty Meadows
+        VarSet(VAR_MINTY_MEADOWS_STATE, 1); //1 = quest active, 2 = saw mareep first time, 3 = mightyena corners mareep, 4 = finish
+
         //See: data/scripts/islandgame_debug[.pory/.inc]
-        ScriptContext_SetupScript(IslandGame_LoadIn_Message);
+        //ScriptContext_SetupScript(IslandGame_LoadIn_Message);
         //note: this script bugs out if there is an "onload" script on the map
 
         

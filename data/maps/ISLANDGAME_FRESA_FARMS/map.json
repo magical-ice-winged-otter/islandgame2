@@ -193,7 +193,7 @@
       "x": 16,
       "y": 21,
       "elevation": 0,
-      "var": "VAR_UNUSED_0x404E",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_FRESA_FARMS_OldMan_Request"
     },
@@ -202,7 +202,7 @@
       "x": 17,
       "y": 21,
       "elevation": 0,
-      "var": "VAR_UNUSED_0x404E",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_FRESA_FARMS_OldMan_Request"
     },
@@ -211,7 +211,7 @@
       "x": 19,
       "y": 21,
       "elevation": 0,
-      "var": "VAR_UNUSED_0x404E",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_FRESA_FARMS_OldMan_Request"
     },
@@ -220,7 +220,7 @@
       "x": 20,
       "y": 21,
       "elevation": 0,
-      "var": "VAR_UNUSED_0x404E",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_FRESA_FARMS_OldMan_Request"
     },
@@ -229,7 +229,7 @@
       "x": 18,
       "y": 21,
       "elevation": 0,
-      "var": "VAR_UNUSED_0x404E",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_FRESA_FARMS_OldMan_Request"
     }

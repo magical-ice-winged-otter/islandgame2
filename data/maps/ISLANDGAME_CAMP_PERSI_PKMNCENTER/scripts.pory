@@ -24,7 +24,7 @@ script ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerKid {
 script ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerWatcher {
     lock
     faceplayer
-    msgbox(format("My parents didn't let me bring my GameBoy, so I watch other people play..."))
+    msgbox(format("My parents didn't let me bring my Game Boy, so I watch other people play..."))
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release

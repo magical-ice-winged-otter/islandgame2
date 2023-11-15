@@ -453,7 +453,7 @@ static const u8 sText_SpDefense[] = _("Sp. Def");
 static const u8 sText_Accuracy[] = _("accuracy");
 static const u8 sText_Evasiveness[] = _("evasiveness");
 
-static const u8 sText_PkmnShadowBerserk[] = _("{B_PLAYER_MON1_NAME} went BERSERK!");
+static const u8 sText_PkmnShadowBerserk[] = _("{B_ATK_NAME_WITH_PREFIX} went BERSERK!");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
