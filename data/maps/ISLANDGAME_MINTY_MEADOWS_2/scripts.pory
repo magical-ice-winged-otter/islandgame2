@@ -1,21 +1,79 @@
+//VAR_MINTY_MEADOWS_STATE:
+//0 - nothing
+//1 - initiate quest
+//2 - saw mareep once
+//3 - final saw mareep
+//4 - defeated battle with mightyena
+
+const STATE_INITIAL_RIVAL = 0
+const STATE_STARTED_QUEST = 1
+const STATE_FIRST_MAREEP_SIGHTING = 2
+const STATE_PRE_FIGHT_SIGHTING = 3
+const STATE_POST_FIGHT = 4
+
+const RIVAL_OW_ID = 16
+const OLD_MAN_OW_ID = 17
+const MAREEP_OW_ID = 11
+const MIGHTYENA_OW_ID = 12
+
+const POS_HIDDEN_X = -3
+const POS_HIDDEN_Y = 1
 
 mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags
-    MAP_SCRIPT_ON_RESUME: ISLANDGAME_MINTY_MEADOWS_2_OnResume
-    MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_0, 0: ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad
-    ]
+    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_MINTY_MEADOWS_2_OnTransition
 }
 
-script ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags {
-    if (flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
-        setvar(VAR_TEMP_1, 1)
+script ISLANDGAME_MINTY_MEADOWS_2_OnTransition {
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case STATE_INITIAL_RIVAL:            call(ISLANDGAME_MINTY_MEADOWS_2_InitialRival)
+        case STATE_STARTED_QUEST:            call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
+        case STATE_FIRST_MAREEP_SIGHTING:    call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst)
+        case STATE_PRE_FIGHT_SIGHTING:       call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
+        case STATE_POST_FIGHT:               call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
     }
-    return
+}
+
+// Sets up the Rival fight and old man blocking the side
+script ISLANDGAME_MINTY_MEADOWS_2_InitialRival {
+    setobjectxyperm(RIVAL_OW_ID, 12, 0)
+    setobjectxyperm(OLD_MAN_OW_ID, 31, 10)
+    setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setobjectxyperm(MIGHTYENA_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+}
+
+// After beating the rival, sets up the mareep sighting on the side
+script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
+    setobjectxyperm(RIVAL_OW_ID, 35, 11)
+    setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
+    setobjectxyperm(MAREEP_OW_ID, 32, 37)
+    setobjectxyperm(MIGHTYENA_OW_ID, 32, 37)
+}
+
+// After sighting the mareep chase, sets up the final mareep encounter by the cave
+script ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst {
+    setobjectxyperm(RIVAL_OW_ID, 36, 26)
+    setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
+    setobjectxyperm(MAREEP_OW_ID, 61, 12)
+    setobjectxyperm(MIGHTYENA_OW_ID, 61, 15)
+}
+
+// After watching the pre-fight cutscene, wait for the player to beat the mightyena
+script ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight {
+    setobjectxyperm(RIVAL_OW_ID, 61, 18)
+    setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
+    setobjectxyperm(MAREEP_OW_ID, 61, 12)
+    setobjectxyperm(MIGHTYENA_OW_ID, 61, 14)
+}
+
+// After the player beat the mightyena, remove all mareep-quest related stuff
+script ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena {
+    setobjectxyperm(RIVAL_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
+    setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setobjectxyperm(MIGHTYENA_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
 }
 
 //RIVAL FIGHT
-const RIVAL_OW_ID = 16
 movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1 {
     walk_left * 4
 }
@@ -90,9 +148,9 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight {
     if (var(VAR_RESULT) != B_OUTCOME_WON) {
         return
     }
-    setflag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)
-    call(ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags)
     msgbox(ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text)
+    // todo: old man walks over and starts quest, audrey runs off
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     closemessage
     return
 }
@@ -105,15 +163,6 @@ text ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text {
     format("{COLOR DARK_GRAY}post defeat rival")
 }
 
-//VAR_MINTY_MEADOWS_STATE:
-//0 - nothing
-//1 - initiate quest
-//2 - saw mareep once
-//3 - final saw mareep
-//4 - defeated battle with mightyena
-
-const MAREEP_OW_ID = 11
-const MIGHTYENA_OW_ID = 12
 
 //phase 1
 const INNER_PATH_X = 32
@@ -125,28 +174,6 @@ const CLEARING_M_Y = 15
 
 const CLEARING_S_X = 61
 const CLEARING_S_Y = 12
-
-script ISLANDGAME_MINTY_MEADOWS_2_OnResume {
-    call_if_set(FLAG_SYS_CTRL_OBJ_DELETE, ISLANDGAME_MINTY_MEADOWS_2_TryRemoveMightyena)
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad {
-    setvar(VAR_TEMP_0, 1)
-    //set the spawn points
-    switch (var(VAR_MINTY_MEADOWS_STATE)) {
-        case 0:
-        case 1:
-        case 4: 
-            removeobject(MAREEP_OW_ID)
-            removeobject(MIGHTYENA_OW_ID)
-            break
-        case 2:
-        case 3:
-            
-            call(ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena)
-            break
-    }
-}
 
 script ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena {
     addobject(MAREEP_OW_ID)

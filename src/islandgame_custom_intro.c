@@ -75,7 +75,7 @@ void IslandGameCustomStartup()
         //FlagToggle(FLAG_ROOM3_GAVE_WATER);
 
         //debug 4: Minty Meadows
-        VarSet(VAR_MINTY_MEADOWS_STATE, 1); //1 = quest active, 2 = saw mareep first time, 3 = mightyena corners mareep, 4 = finish
+        //VarSet(VAR_MINTY_MEADOWS_STATE, 1); //1 = quest active, 2 = saw mareep first time, 3 = mightyena corners mareep, 4 = finish
 
         //See: data/scripts/islandgame_debug[.pory/.inc]
         //ScriptContext_SetupScript(IslandGame_LoadIn_Message);

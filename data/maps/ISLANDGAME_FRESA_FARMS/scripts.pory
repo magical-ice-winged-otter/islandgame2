@@ -27,14 +27,14 @@ text ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage {
 
 script ISLANDGAME_FRESA_FARMS_OldMan_Talk {
     lock
-    if (var(VAR_MINTY_MEADOWS_STATE) == 0) {
-        msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
-        startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
-        setvar(VAR_MINTY_MEADOWS_STATE, 1) 
-    } elif (var(VAR_MINTY_MEADOWS_STATE) == 4) {
-        msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage)
-    } else {
-        msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case 0: // initial
+            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+            startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
+        case 4:
+            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage)
+        default:
+            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
     }
     release
 }

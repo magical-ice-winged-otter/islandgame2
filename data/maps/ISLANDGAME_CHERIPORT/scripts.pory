@@ -1,3 +1,6 @@
+const FLAG_NIGHT = FLAG_TEMP_1
+const VAR_CURRENT_HOUR = 0x8000
+
 mapscripts ISLANDGAME_CHERIPORT_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
 
@@ -6,14 +9,11 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
             setflag(FLAG_ROOM3_ITEM)
         }
 
-        if (flag(FLAG_PROF_GAVE_EEVEE)) {
-            setvar(VAR_TEMP_1, 1) // this controls the triggers that stop you from leaving
-        }
-
+        // todo: I want to turn this into a single macro - setnightflag(FLAG_NIGHT)
         gettime
 
-        if (var(VAR_0x8000) < 12 + 6) {
-            setflag(FLAG_TEMP_1) // temp 2 controls visibility of beach guy
+        if (var(VAR_CURRENT_HOUR) < 12 + 6) {
+            setflag(FLAG_NIGHT)
         }
     }
 }
@@ -54,12 +54,14 @@ NightBeachSodaVendor_End:
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
-    lock
-    msgbox(NeedPokemon_Text)
-    waitmessage
-    release
-    applymovement(OBJ_EVENT_ID_PLAYER, WalkBack)
-    waitmovement(0)
+    if (!flag(FLAG_PROF_GAVE_EEVEE)) {
+        lock
+        msgbox(NeedPokemon_Text)
+        waitmessage
+        release
+        applymovement(OBJ_EVENT_ID_PLAYER, WalkBack)
+        waitmovement(0)
+    }
 }
 
 

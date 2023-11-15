@@ -231,7 +231,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAY_FISHING",
+      "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
       "x": 12,
       "y": 0,
       "elevation": 0,
@@ -242,6 +242,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_MINTY_MEADOWS_RIVAL_DEFEATED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 31,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -295,7 +308,7 @@
       "x": 8,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger1"
     },
@@ -304,7 +317,7 @@
       "x": 9,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger2"
     },
@@ -313,7 +326,7 @@
       "x": 10,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger3"
     },
@@ -322,7 +335,7 @@
       "x": 11,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger4"
     },
@@ -331,7 +344,7 @@
       "x": 12,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger5"
     },
@@ -340,7 +353,7 @@
       "x": 13,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_MINTY_MEADOWS_STATE",
       "var_value": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger6"
     }
