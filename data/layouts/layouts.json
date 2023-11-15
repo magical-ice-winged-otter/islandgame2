@@ -4604,10 +4604,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS",
       "name": "ISLANDGAME_MINTY_MEADOWS_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "width": 52,
+      "height": 36,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/map.bin"
     },
@@ -4620,6 +4620,36 @@
       "secondary_tileset": "gTileset_IslandgameSOP",
       "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_2",
+      "name": "ISLANDGAME_MINTY_MEADOWS_2_Layout",
+      "width": 70,
+      "height": 40,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_3",
+      "name": "ISLANDGAME_MINTY_MEADOWS_3_Layout",
+      "width": 20,
+      "height": 40,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_Forest",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_HOUSE",
+      "name": "ISLANDGAME_MINTY_MEADOWS_HOUSE_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_HOUSE/map.bin"
     },
     {
       "id": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL",

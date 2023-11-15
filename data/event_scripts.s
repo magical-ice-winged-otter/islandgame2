@@ -1103,9 +1103,15 @@ Common_EventScript_LegendaryFlewAway::
 	
 	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE2/scripts.inc"
 
+	.include "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.inc"
+
 	.include "data/maps/ISLANDGAME_MINTY_MEADOWS/scripts.inc"
 
-	.include "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.inc"
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_3/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_HOUSE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.inc"
 
@@ -1116,6 +1122,8 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_VERDANT_PATH/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.inc"
+
+	
 
 	.include "data/maps/ISLANDGAME_FRESA_FARMS/scripts.inc"
 
