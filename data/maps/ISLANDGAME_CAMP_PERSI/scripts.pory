@@ -145,16 +145,17 @@ text ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text
 
 // Merchant Jonas Event
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage {
-    msgbox(format("{COLOR DARK_GRAY}Ah, you there!"))
+    msgbox(format("{COLOR GREEN}???: {COLOR DARK_GRAY}Ah, you there!"))
     closemessage
     return
 }
 
 script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage {
-    msgbox(format("{COLOR DARK_GRAY}Jonas battle intro"))
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro)
     trainerbattle_no_intro(TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text)
     msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text)
     giveitem(ITEM_ENERGY_POWDER)
+    msgbox(ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2)
     closemessage
     return
 }
@@ -307,10 +308,35 @@ text ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
 text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}post defeat"
+        "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Thank you for the exciting battle, {PLAYER}. Your Pokémon fought with grace and grit! \p"
+        "{COLOR DARK_GRAY}Here, take this. It will heal your Pokémon from our battle."
         )
 }
 
+text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2
+{
+    format(
+        "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Unfortunately, our conversation must end here. I have a lot of ground to cover today. \p"
+        "{COLOR DARK_GRAY}Oh, but before I go, you should know about the upcoming Silverwing Festival! \p"
+        "{COLOR DARK_GRAY}It's a grand celebration we host each year to remember the day our great savior, Lugia, rescued us from a cataclysmic storm. \p"
+        "{COLOR DARK_GRAY}It's not for another few weeks, but it's the largest event in all of Mariyama, and it would be a shame if you missed it! \p"
+        "{COLOR DARK_GRAY}Anyways, I must get going now. It was great meeting you, {PLAYER}. \p"
+        "{COLOR DARK_GRAY}May our paths cross again."
+        )
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro {
+    format(
+        "{COLOR DARK_GRAY}Are you a new camper by chance? I haven't seen you around here before. \p"
+        "{COLOR DARK_GRAY}Oh? You're a Pokémon trainer visiting the isles from overseas? \p"
+        "{COLOR DARK_GRAY}Pardon my assumption, then. Welcome to the Isles of Mariyama, {PLAYER}! \p"
+        "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling merchant of The Silverwing Order. \p"
+        "{COLOR DARK_GRAY}The Silverwing Order is in charge of governing the isles. It's our job to make sure everyone here is comfortable and safe! \p"
+        "{COLOR DARK_GRAY}My job in particular is traveling around the islands to provide goods and services to those in need! \p"
+        "{COLOR DARK_GRAY}But that's enough about me. You said you were a Pokémon trainer, right? \p"
+        "{COLOR DARK_GRAY}In that case... mind if I trouble you for a little battle?"
+    )
+}
 
 
 
@@ -612,10 +638,10 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
 
     switch (var(VAR_RESULT)) {
         case 1: // INACTIVE
-            msgbox(format("I lost my favorite trading card somewhere in Verdant Woods!\pCan you help me get it back?"), MSGBOX_YESNO)
+            msgbox(format("I lost my favorite trading card somewhere in the Verdant Woods!\pCan you help me get it back?"), MSGBOX_YESNO)
 
             if (var(VAR_RESULT) == YES) {
-                msgbox(format("Awesome! I dont know much longer I can go on without it..."))
+                msgbox(format("Awesome! I don't know much longer I can go on without it..."))
                 startquest(QUEST_PERSI_FAVORITE_CARD)
             }
             else {
@@ -655,10 +681,48 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag {
 
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk {
     format(
-        "{COLOR RED}It's just staring at me... menacingly?"
+        "{COLOR RED}(It's just staring at me... menacingly?)"
     )
 }
 
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl {
+    lock
+    faceplayer
+    if(!flag(FLAG_RECEIVED_WAILMER_PAIL)) {
+        msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk1, MSGBOX_YESNO)    
+        if (var(VAR_RESULT) == NO) {
+            msgbox(format("{COLOR DARK_GRAY}Aww. That's a shame. I was going to share this Wailmer Pail with you."))
+            goto(WaterGirl_End)
+        }
+        msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk2)   
+        giveitem(ITEM_WAILMER_PAIL)
+        setflag(FLAG_RECEIVED_WAILMER_PAIL)
+    }
+    else {
+        msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk3)  
+    }
+
+    WaterGirl_End:
+        release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk1 {
+    format(
+        "{COLOR DARK_GRAY}I really like gardening. Do you like gardening too?"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk2 {
+    format(
+        "{COLOR DARK_GRAY}Hooray! Here, take one of these and we can become gardening buddies!"
+    )
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk3 {
+    format(
+        "{COLOR DARK_GRAY}It's important to give your plants water! Remember to take care of them!"
+    )
+}
 
 
 
@@ -713,6 +777,18 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC {
     format(
         "{COLOR DARK_GRAY}CAMP GARDEN \n"
         "{COLOR DARK_GRAY}Feel free to contribute! (Please do.)"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN5 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN5_DESC)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN5_DESC {
+    format(
+        "{COLOR RED}(What is this music? It sounds like dududududududuDUDUDUDUDU...)"
     )
 }
 

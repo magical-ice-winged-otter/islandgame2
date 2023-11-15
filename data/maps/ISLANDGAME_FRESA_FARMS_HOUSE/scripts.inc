@@ -1,0 +1,3 @@
+ISLANDGAME_FRESA_FARMS_HOUSE_MapScripts::
+	.byte 0
+

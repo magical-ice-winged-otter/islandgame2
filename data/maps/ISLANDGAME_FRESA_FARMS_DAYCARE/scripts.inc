@@ -1,0 +1,3 @@
+ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts::
+	.byte 0
+
