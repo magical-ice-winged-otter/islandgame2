@@ -1,0 +1,96 @@
+mapscripts ISLANDGAME_MAPLEGROVE_MapScripts {}
+
+
+
+// npcs 
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_ODDISH,CRY_MODE_NORMAL)
+    
+    if(!flag(FLAG_UNUSED_0x054)) {
+        msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            goto(PKMN1Event_End)
+        }
+
+        checkitemspace(ITEM_ABSORB_BULB)
+        if (!var(VAR_RESULT)) {
+            msgbox(format("{COLOR RED}(I don't have enough space to carry it.)"))
+            goto(PKMN1Event_End)
+        }
+
+        giveitem(ITEM_ABSORB_BULB)
+        setflag(FLAG_UNUSED_0x054)
+    }
+    else {
+        msgbox(format("{COLOR DARK_GRAY}Oddish!"))
+    }
+    
+    
+    PKMN1Event_End:
+        release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk {
+    format(
+        "{COLOR RED}(Huh? It looks like Oddish is trying to give me something.) \p"
+        "{COLOR RED}(Should I take it?)"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN2 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BUIZEL,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN2Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN2Talk {
+    format(
+        "{COLOR DARK_GRAY}Bui-bui!"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN3 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SURSKIT,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN3Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN3Talk {
+    format(
+        "{COLOR DARK_GRAY}A"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC1Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC1Talk {
+    format(
+        "{COLOR DARK_GRAY}Be kind to Pokémon, and they'll be kind to you."
+        "{COLOR DARK_GRAY}That's what my big sister told me. Now I'm friends with all the Pokémon here!"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC2 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC2Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC2Talk {
+    format(
+        "{COLOR DARK_GRAY}Maplegrove has been one with nature since its construction many centuries ago."
+        "{COLOR DARK_GRAY}Our bond with the Pokémon here is unbreakable."
+    )
+}
