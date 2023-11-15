@@ -1,3 +1,33 @@
 ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts::
 	.byte 0
 
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_0, MSGBOX_YESNO
+	switch VAR_RESULT
+	case TRUE, ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_3
+	case FALSE, ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_4
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1:
+	release
+	return
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_3:
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_1
+	startquest QUEST_FRESA_FARMS_TORCHIC_EGG
+	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_4:
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_2
+	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1
+
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_0:
+	.string "Want an egg?$"
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_1:
+	.string "cool!$"
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_2:
+	.string "aw man$"

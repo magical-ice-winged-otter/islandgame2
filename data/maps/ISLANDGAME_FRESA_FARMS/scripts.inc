@@ -14,8 +14,6 @@ ISLANDGAME_FRESA_FARMS_OldMan_Request::
 
 ISLANDGAME_FRESA_FARMS_OldMan_Talk::
 	lock
-	startquest QUEST_FRESA_FARMS_LOST_MAREEP
-	startquest QUEST_FRESA_FARMS_TORCHIC_EGG
 	compare VAR_MINTY_MEADOWS_STATE, 0
 	goto_if_eq ISLANDGAME_FRESA_FARMS_OldMan_Talk_2
 	compare VAR_MINTY_MEADOWS_STATE, 4
@@ -27,12 +25,23 @@ ISLANDGAME_FRESA_FARMS_OldMan_Talk_1:
 
 ISLANDGAME_FRESA_FARMS_OldMan_Talk_2:
 	msgbox ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage
+	startquest QUEST_FRESA_FARMS_LOST_MAREEP
 	setvar VAR_MINTY_MEADOWS_STATE, 1
 	goto ISLANDGAME_FRESA_FARMS_OldMan_Talk_1
 
 ISLANDGAME_FRESA_FARMS_OldMan_Talk_3:
 	msgbox ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage
 	goto ISLANDGAME_FRESA_FARMS_OldMan_Talk_1
+
+
+ISLANDGAME_FRESA_FARMS_DayCareSign_Interact::
+	msgbox ISLANDGAME_FRESA_FARMS_DayCareSign_Interact_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_FRESA_FARMS_FarmhouseSign_Interact::
+	msgbox ISLANDGAME_FRESA_FARMS_FarmhouseSign_Interact_Text_0, MSGBOX_SIGN
+	return
 
 
 ISLANDGAME_FRESA_FARMS_Miltank_Interact::
@@ -70,6 +79,12 @@ ISLANDGAME_FRESA_FARMS_MareepScared_Interact::
 	release
 	return
 
+
+ISLANDGAME_FRESA_FARMS_DayCareSign_Interact_Text_0:
+	.string "DAY CARE$"
+
+ISLANDGAME_FRESA_FARMS_FarmhouseSign_Interact_Text_0:
+	.string "FARMHOUSE$"
 
 ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0:
 	.string "The Miltank is lazing around.$"

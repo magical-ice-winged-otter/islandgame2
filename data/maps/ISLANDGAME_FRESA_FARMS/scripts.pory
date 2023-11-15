@@ -27,10 +27,9 @@ text ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage {
 
 script ISLANDGAME_FRESA_FARMS_OldMan_Talk {
     lock
-    startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
-    startquest(QUEST_FRESA_FARMS_TORCHIC_EGG)
     if (var(VAR_MINTY_MEADOWS_STATE) == 0) {
         msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+        startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
         setvar(VAR_MINTY_MEADOWS_STATE, 1) 
     } elif (var(VAR_MINTY_MEADOWS_STATE) == 4) {
         msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage)
@@ -38,6 +37,14 @@ script ISLANDGAME_FRESA_FARMS_OldMan_Talk {
         msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
     }
     release
+}
+
+script ISLANDGAME_FRESA_FARMS_DayCareSign_Interact {
+    msgbox(format("DAY CARE"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_FRESA_FARMS_FarmhouseSign_Interact {
+    msgbox(format("FARMHOUSE"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_FRESA_FARMS_Miltank_Interact {

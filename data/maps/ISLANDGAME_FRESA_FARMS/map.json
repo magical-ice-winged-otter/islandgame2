@@ -247,7 +247,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_FRESA_FARMS_DayCareSign_Interact"
     },
     {
       "type": "sign",
@@ -255,7 +255,7 @@
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_FRESA_FARMS_FarmhouseSign_Interact"
     }
   ]
 }

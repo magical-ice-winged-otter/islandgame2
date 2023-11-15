@@ -1,1 +1,20 @@
-mapscripts ISLANDGAME_FRESA_FARMS_HOUSE_MapScripts {}
+mapscripts ISLANDGAME_FRESA_FARMS_HOUSE_MapScripts {
+}
+
+script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1 {
+    msgbox(format("I am NPC 1"), MSGBOX_NPC) // todo: good dialogue
+}
+
+script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2 {
+    msgbox(format("I am NPC 2"), MSGBOX_NPC) // todo: good dialogue
+}
+
+script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_MilkVendor {
+    msgbox(format("Welcome to Fresa Farms!\pOur MooMoo Milk is sourced from the happiest Miltanks around!"), MSGBOX_NPC)
+    pokemart(MilkVendorItems)
+    msgbox(format("Thank you for supporting the farm!"), MSGBOX_NPC)
+}
+
+mart MilkVendorItems {
+    ITEM_MOOMOO_MILK
+}

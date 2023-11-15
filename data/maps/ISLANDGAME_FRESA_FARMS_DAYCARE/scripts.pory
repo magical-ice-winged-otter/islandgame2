@@ -1,1 +1,18 @@
-mapscripts ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts {}
+mapscripts ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts {
+}
+
+script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
+    lock
+    faceplayer
+    msgbox("Want an egg?", MSGBOX_YESNO) // todo: real dialogue
+
+    switch (var(VAR_RESULT)) {
+        case TRUE: // We do want the egg
+            msgbox("cool!")
+            startquest(QUEST_FRESA_FARMS_TORCHIC_EGG)
+        case FALSE: // We don't want the egg
+            msgbox("aw man")
+    }
+
+    release
+}
