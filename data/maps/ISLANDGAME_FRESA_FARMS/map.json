@@ -22,7 +22,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_241",
-      "x": 10,
+      "x": 12,
       "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -35,8 +35,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_241",
-      "x": 12,
-      "y": 8,
+      "x": 15,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -48,7 +48,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_507",
-      "x": 4,
+      "x": 5,
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
@@ -61,58 +61,6 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
-      "x": 8,
-      "y": 19,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_FRESA_FARMS_Mareep_Interact",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
-      "x": 6,
-      "y": 18,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_FRESA_FARMS_MareepScared_Interact",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
-      "x": 6,
-      "y": 21,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_FRESA_FARMS_MareepScared_Interact",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
-      "x": 11,
-      "y": 20,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_FRESA_FARMS_Mareep_Interact",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
       "x": 10,
       "y": 18,
       "elevation": 0,
@@ -125,8 +73,60 @@
       "flag": "0"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
+      "x": 7,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_FRESA_FARMS_MareepScared_Interact",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
+      "x": 9,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_FRESA_FARMS_MareepScared_Interact",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
+      "x": 12,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_FRESA_FARMS_Mareep_Interact",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
+      "x": 13,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_FRESA_FARMS_Mareep_Interact",
+      "flag": "0"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_241",
-      "x": 14,
+      "x": 16,
       "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -139,8 +139,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_113",
-      "x": 20,
-      "y": 15,
+      "x": 24,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 5,
@@ -152,7 +152,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_241",
-      "x": 16,
+      "x": 18,
       "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -165,7 +165,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 21,
+      "x": 23,
       "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -179,33 +179,24 @@
   ],
   "warp_events": [
     {
-      "x": 6,
+      "x": 8,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_FRESA_FARMS",
+      "dest_map": "MAP_ISLANDGAME_FRESA_FARMS_DAYCARE",
       "dest_warp_id": "0"
     },
     {
-      "x": 21,
+      "x": 23,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_FRESA_FARMS",
+      "dest_map": "MAP_ISLANDGAME_FRESA_FARMS_HOUSE",
       "dest_warp_id": "0"
     }
   ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 16,
-      "y": 21,
-      "elevation": 0,
-      "var": "VAR_MINTY_MEADOWS_STATE",
-      "var_value": "0",
-      "script": "ISLANDGAME_FRESA_FARMS_OldMan_Request"
-    },
-    {
-      "type": "trigger",
-      "x": 17,
+      "x": 18,
       "y": 21,
       "elevation": 0,
       "var": "VAR_MINTY_MEADOWS_STATE",
@@ -223,7 +214,7 @@
     },
     {
       "type": "trigger",
-      "x": 20,
+      "x": 21,
       "y": 21,
       "elevation": 0,
       "var": "VAR_MINTY_MEADOWS_STATE",
@@ -232,7 +223,16 @@
     },
     {
       "type": "trigger",
-      "x": 18,
+      "x": 22,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_MINTY_MEADOWS_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_FRESA_FARMS_OldMan_Request"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
       "y": 21,
       "elevation": 0,
       "var": "VAR_MINTY_MEADOWS_STATE",
@@ -243,7 +243,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 4,
+      "x": 6,
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -251,7 +251,7 @@
     },
     {
       "type": "sign",
-      "x": 26,
+      "x": 28,
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
