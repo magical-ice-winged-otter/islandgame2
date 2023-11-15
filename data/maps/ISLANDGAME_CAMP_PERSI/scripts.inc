@@ -48,10 +48,11 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage::
 
 
 ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage::
-	msgbox ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage_Text_0
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro
 	trainerbattle_no_intro TRAINER_CAMP_PERSI_JONAS, ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
 	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
 	giveitem ITEM_ENERGY_POWDER
+	msgbox ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2
 	closemessage
 	return
 
@@ -478,6 +479,32 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag::
 	return
 
 
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl::
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_2
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk3
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_1:
+WaterGirl_End:
+	release
+	return
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_2:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk1, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_6
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_5:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk2
+	giveitem ITEM_WAILMER_PAIL
+	setflag FLAG_RECEIVED_WAILMER_PAIL
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_1
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_6:
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_Text_0
+	goto WaterGirl_End
+	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_5
+
+
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN1::
 	lock
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC
@@ -506,6 +533,13 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4::
 	return
 
 
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN5::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN5_DESC
+	release
+	return
+
+
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance::
 	lock
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_Text_0, MSGBOX_YESNO
@@ -521,10 +555,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_2:
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage_Text_0:
-	.string "{COLOR DARK_GRAY}Ah, you there!$"
-
-ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage_Text_0:
-	.string "{COLOR DARK_GRAY}Jonas battle intro$"
+	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}Ah, you there!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_0:
 	.string "{COLOR DARK_GRAY}We can only sell one cookie per day!\p"
@@ -565,11 +596,11 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_4:
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_0:
 	.string "I lost my favorite trading card\n"
-	.string "somewhere in Verdant Woods!\p"
+	.string "somewhere in the Verdant Woods!\p"
 	.string "Can you help me get it back?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_1:
-	.string "Awesome! I dont know much longer I can\n"
+	.string "Awesome! I don't know much longer I can\n"
 	.string "go on without it...$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_2:
@@ -586,6 +617,10 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_4:
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_5:
 	.string "I'm never taking my card outside again...$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_Text_0:
+	.string "{COLOR DARK_GRAY}Aww. That's a shame. I was going to\n"
+	.string "share this Wailmer Pail with you.$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_Text_0:
 	.string "There's a slight opening in the tree!\n"
@@ -660,7 +695,51 @@ ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text::
 	.string "quite remarkable.$"
 
 ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text::
-	.string "{COLOR DARK_GRAY}post defeat$"
+	.string "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Thank you for the exciting\n"
+	.string "battle, {PLAYER}. Your Pokémon\l"
+	.string "fought with grace and grit!\p"
+	.string "{COLOR DARK_GRAY}Here, take this. It will heal your\n"
+	.string "Pokémon from our battle.$"
+
+ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2::
+	.string "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Unfortunately, our conversation\n"
+	.string "must end here. I have a lot of ground\l"
+	.string "to cover today.\p"
+	.string "{COLOR DARK_GRAY}Oh, but before I go, you should know\n"
+	.string "about the upcoming Silverwing\l"
+	.string "Festival!\p"
+	.string "{COLOR DARK_GRAY}It's a grand celebration we host each\n"
+	.string "year to remember the day our great\l"
+	.string "savior, Lugia, rescued us from a\l"
+	.string "cataclysmic storm.\p"
+	.string "{COLOR DARK_GRAY}It's not for another few weeks, but it's\n"
+	.string "the largest event in all of Mariyama,\l"
+	.string "and it would be a shame if you missed\l"
+	.string "it!\p"
+	.string "{COLOR DARK_GRAY}Anyways, I must get going now. It was\n"
+	.string "great meeting you, {PLAYER}.\p"
+	.string "{COLOR DARK_GRAY}May our paths cross again.$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro::
+	.string "{COLOR DARK_GRAY}Are you a new camper by chance? I\n"
+	.string "haven't seen you around here before.\p"
+	.string "{COLOR DARK_GRAY}Oh? You're a Pokémon trainer visiting\n"
+	.string "the isles from overseas?\p"
+	.string "{COLOR DARK_GRAY}Pardon my assumption, then. Welcome to\n"
+	.string "the Isles of Mariyama, {PLAYER}!\p"
+	.string "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling\n"
+	.string "merchant of The Silverwing Order.\p"
+	.string "{COLOR DARK_GRAY}The Silverwing Order is in charge of\n"
+	.string "governing the isles. It's our job to\l"
+	.string "make sure everyone here is comfortable\l"
+	.string "and safe!\p"
+	.string "{COLOR DARK_GRAY}My job in particular is traveling around\n"
+	.string "the islands to provide goods and\l"
+	.string "services to those in need!\p"
+	.string "{COLOR DARK_GRAY}But that's enough about me. You said\n"
+	.string "you were a Pokémon trainer, right?\p"
+	.string "{COLOR DARK_GRAY}In that case... mind if I trouble you for\n"
+	.string "a little battle?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1::
 	.string "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava\n"
@@ -741,7 +820,19 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk::
 	.string "how to build a tent with just sticks!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk::
-	.string "{COLOR RED}It's just staring at me... menacingly?$"
+	.string "{COLOR RED}(It's just staring at me... menacingly?)$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk1::
+	.string "{COLOR DARK_GRAY}I really like gardening. Do you like\n"
+	.string "gardening too?$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk2::
+	.string "{COLOR DARK_GRAY}Hooray! Here, take one of these and we\n"
+	.string "can become gardening buddies!$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk3::
+	.string "{COLOR DARK_GRAY}It's important to give your plants\n"
+	.string "water! Remember to take care of them!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC::
 	.string "{COLOR DARK_GRAY}CAMP PERSI\n"
@@ -757,3 +848,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC::
 	.string "{COLOR DARK_GRAY}CAMP GARDEN\n"
 	.string "{COLOR DARK_GRAY}Feel free to contribute! (Please do.)$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN5_DESC::
+	.string "{COLOR RED}(What is this music? It sounds like\n"
+	.string "dududududududuDUDUDUDUDU...)$"

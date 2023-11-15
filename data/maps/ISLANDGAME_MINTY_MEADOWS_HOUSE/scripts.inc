@@ -11,4 +11,4 @@ ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1::
 
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText::
-	.string "{DARK_GRAY}How do I pass the time? Well...$"
+	.string "{COLOR DARK_GRAY}How do I pass the time? Well...$"

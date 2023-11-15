@@ -125,9 +125,9 @@ text Scientist2Talk_Text {
 
 text Scientist3Talk_Text {
     format(
-        "{COLOR DARK_GRAY}The professor used to go outside and conduct all his fieldwork himself. \p"
-        "{COLOR DARK_GRAY}That's actually how we met. He was getting chased around by a Zigzagoon. \p"
-        "{COLOR DARK_GRAY}Ah, memories..."
+        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! The professor has told me a lot about you. \p"
+        "{COLOR DARK_GRAY}My name is Coco. I'm the creator of Mariyama's Pokémon Storage System! \p"
+        "{COLOR DARK_GRAY}I hope you find it easy and convenient to use."
     )
 }
 
@@ -142,7 +142,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_Vigoroth {
 }
 
 text ISLANDGAME_CHERIPORT_LAB_VigorothTalk {
-    format("{COLOR RED}It looks like the Pokémon is hard at work.")
+    format("{COLOR RED}(It looks like the Pokémon is hard at work.)")
 }
 
 script ISLANDGAME_CHERIPORT_LAB_EventScript_PikaDoll {
@@ -152,5 +152,5 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_PikaDoll {
 }
 
 text ISLANDGAME_CHERIPORT_LAB_PikaDollTalk {
-    format("{COLOR RED}Wow! It looks like an actual Pikachu, but it's just a plush!")
+    format("{COLOR RED}(Wow! It looks like an actual Pikachu, but it's just a plush!)")
 }
