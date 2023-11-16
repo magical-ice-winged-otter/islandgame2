@@ -1,0 +1,124 @@
+mapscripts ISLANDGAME_VERDANT_PATH_FISHHOUSE_MapScripts {}
+
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Arnie {
+    lock
+    faceplayer
+    goto_if_set(FLAG_VERDANT_PATH_ROD_RECEIVED, ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived)
+    showmoneybox(0,0)
+    msgbox(ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieIntro, MSGBOX_YESNO)
+    goto_if_eq(VAR_RESULT, NO, ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieDecline)
+    checkmoney(2500)
+    goto_if_eq(VAR_RESULT, FALSE, ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieBroke)
+    removemoney(2500)
+    updatemoneybox
+    msgbox(ISLANDGAME_VERDANT_PATH_FISHHOUSE_JoinClub)
+    hidemoneybox
+    giveitem(ITEM_SUPER_ROD)
+    setflag(FLAG_VERDANT_PATH_ROD_RECEIVED)
+    msgbox(ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieOutro)
+    release
+}
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived {
+    msgbox(format("{COLOR DARK_GRAY}Be sure to spread word about us on your journey! We could use more members!"))
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieIntro {
+    format(
+        "{COLOR DARK_GRAY}Howdy there, trainer! I'm Arnie, renowned fishing guru and president of the Fishing Fanatics! \p"
+        "{COLOR DARK_GRAY}Would you like to join us? It's only 2500¥ for a membership!"
+    )
+}
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieDecline {
+    msgbox(format("{COLOR DARK_GRAY}Well, if you ever change your mind, I'll always be here!"))
+    hidemoneybox
+    release
+}
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieBroke {
+    msgbox(format("{COLOR DARK_GRAY}Sorry, I can't sell them for any less than 2500¥."))
+    hidemoneybox
+    release
+}
+
+
+text ISLANDGAME_VERDANT_PATH_FISHHOUSE_JoinClub {
+    format(
+        "{COLOR DARK_GRAY}Congrats! You're a Fishing Fanatic now! Here's a little welcome gift from me."
+    )
+}
+
+text ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieOutro {
+    format(
+        "{COLOR DARK_GRAY}That right there is a custom-made fishing rod built by yours truly. \p"
+        "{COLOR DARK_GRAY}It's proof of your admission to our wonderful club!"
+    )
+}
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade {
+    lock
+    faceplayer
+    goto_if_set(FLAG_VERDANT_PATH_TRADE_DONE, ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeFinished)
+    setvar(VAR_0x8008, INGAME_TRADE_STARYU)
+	copyvar(VAR_0x8004, VAR_0x8008)
+	specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
+	copyvar(VAR_0x8009, VAR_RESULT)
+    msgbox(ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeTalk, MSGBOX_YESNO)
+    goto_if_eq(VAR_RESULT, NO, ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeDecline)
+	special(ChoosePartyMon)
+	waitstate
+	copyvar(VAR_0x800A, VAR_0x8004)
+    goto_if_eq(VAR_0x8004, PARTY_NOTHING_CHOSEN, ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeDecline)
+	copyvar(VAR_0x8005, VAR_0x800A)
+	specialvar(VAR_RESULT, GetTradeSpecies)
+	copyvar(VAR_0x800B, VAR_RESULT)
+    goto_if_ne(VAR_RESULT, VAR_0x8009, ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeWrong)
+	copyvar(VAR_0x8004, VAR_0x8008)
+	copyvar(VAR_0x8005, VAR_0x800A)
+	special(CreateInGameTradePokemon)
+	special(DoInGameTradeScene)
+	waitstate
+	bufferspeciesname(STR_VAR_1, VAR_0x8009)
+	msgbox(format("{COLOR DARK_GRAY}Thanks for the swap, friend! Let's both take care of our Pokémon!"))
+	setflag(FLAG_VERDANT_PATH_TRADE_DONE)
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeTalk {
+    format(
+        "{COLOR DARK_GRAY}Hey there, do you happen to have a Barboach by chance? \p"
+        "{COLOR DARK_GRAY}I've been looking everywhere for one, but I can't seem to find any. \p"
+        "{COLOR DARK_GRAY}Will you find me one? I'll trade you this super rare Staryu for it!"
+        )
+}
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeFinished {
+    msgbox(format("{COLOR DARK_GRAY}Thanks for the swap, friend! Let's both take care of our Pokémon!"))
+    release
+}
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeDecline {
+    msgbox(format("{COLOR DARK_GRAY}Are you sure? This Staryu belonged to a very famous man. You're missing out!"))
+    release
+}
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeWrong {
+    msgbox(format("{COLOR DARK_GRAY}Huh? That's not a Barboach. Don't try and scam me with that!"))
+    release
+}
+
+script ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_NPC {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_VERDANT_PATH_FISHHOUSE_NPCTalk)
+    release
+}
+
+text ISLANDGAME_VERDANT_PATH_FISHHOUSE_NPCTalk {
+    format(
+        "{COLOR DARK_GRAY}Nothing beats Arnie's custom-made rods. They're positively remarkable."
+        )
+}
