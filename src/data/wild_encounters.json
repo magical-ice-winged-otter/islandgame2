@@ -11726,64 +11726,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 11,
-                "max_level": 11,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_BUNEARY"
               },
               {
-                "min_level": 8,
-                "max_level": 10,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_PIDGEY"
               },
               {
-                "min_level": 8,
-                "max_level": 10,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_HOPPIP"
               },
               {
-                "min_level": 8,
-                "max_level": 10,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_DEERLING"
               },
               {
-                "min_level": 13,
-                "max_level": 13,
+                "min_level": 8,
+                "max_level": 8,
                 "species": "SPECIES_YANMA"
               },
               {
-                "min_level": 8,
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_MAREEP"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_RATTATA_ALOLAN"
+              },
+              {
+                "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_LOTAD"
+                "species": "SPECIES_FLABEBE"
               },
               {
-                "min_level": 8,
+                "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_VULPIX"
+                "species": "SPECIES_FLABEBE_ORANGE_FLOWER"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_BUTTERFREE"
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_FLABEBE_BLUE_FLOWER"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_BUTTERFREE"
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_FLABEBE_WHITE_FLOWER"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_BUTTERFREE"
-              },
-              {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_BUTTERFREE"
-              },
-              {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_BUTTERFREE"
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_FLABEBE_YELLOW_FLOWER"
               }
             ]
           }
@@ -11792,67 +11792,67 @@
           "map": "MAP_ISLANDGAME_MINTY_MEADOWS_2",
           "base_label": "gISLANDGAME_MINTY_MEADOWS_20",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 12,
-                "max_level": 12,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_SHROOMISH"
               },
               {
-                "min_level": 8,
-                "max_level": 10,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_PIDGEY"
               },
               {
-                "min_level": 8,
-                "max_level": 10,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_FOONGUS"
               },
               {
-                "min_level": 8,
-                "max_level": 10,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_DEERLING"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_VENIPEDE"
+                "min_level": 9,
+                "max_level": 9,
+                "species": "SPECIES_RIOLU"
               },
               {
-                "min_level": 8,
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_MEOWTH_ALOLAN"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_POOCHYENA"
+              },
+              {
+                "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_LOTAD"
+                "species": "SPECIES_AUDINO"
               },
               {
-                "min_level": 8,
+                "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_VULPIX"
+                "species": "SPECIES_AUDINO"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_VENIPEDE"
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_AUDINO"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_VENIPEDE"
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_AUDINO"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_VENIPEDE"
-              },
-              {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_VENIPEDE"
-              },
-              {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_VENIPEDE"
+                "min_level": 10,
+                "max_level": 10,
+                "species": "SPECIES_AUDINO"
               }
             ]
           }
