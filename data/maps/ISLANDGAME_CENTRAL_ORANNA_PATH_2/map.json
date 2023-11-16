@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
-      "offset": 64,
+      "offset": 44,
       "direction": "down"
     }
   ],
@@ -54,6 +54,21 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 95,
+      "y": 38,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }
