@@ -1,5 +1,12 @@
 ISLANDGAME_FRESA_FARMS_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_FRESA_FARMS_HandleDaycareState
 	.byte 0
+
+
+ISLANDGAME_FRESA_FARMS_HandleDaycareState::
+	setflag FLAG_TEMP_A
+	setflag FLAG_TEMP_B
+	return
 
 
 ISLANDGAME_FRESA_FARMS_OldMan_Request::

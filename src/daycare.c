@@ -1185,15 +1185,39 @@ void GetDaycareMonNicknames(void)
     _GetDaycareMonNicknames(&gSaveBlock1Ptr->daycare);
 }
 
+//this function needs to be updated if more than 2, maybe a for loop across vars is better implementation
+void updateDaycareGfxVars(u8 numMons)
+{
+    u16 species;
+    struct BoxPokemon* mon;
+
+    DebugPrintf("TEST: %d", numMons);
+    switch (numMons) {
+        case 2:
+            DebugPrintf("2 TEST: %d", numMons);
+            mon = &gSaveBlock1Ptr->daycare.mons[1].mon;
+            species = GetBoxMonData(mon, MON_DATA_SPECIES);
+            gSpecialVar_0x800B = species_gfx(species);
+            VarSet(VAR_OBJ_GFX_ID_B, gSpecialVar_0x800B);
+        case 1:
+            mon = &gSaveBlock1Ptr->daycare.mons[0].mon;
+            species = GetBoxMonData(mon, MON_DATA_SPECIES);
+            DebugPrintf("1 SPECIES: %d", species);
+            gSpecialVar_0x800A = species_gfx(species);
+            VarSet(VAR_OBJ_GFX_ID_A, gSpecialVar_0x800A);
+    }
+}
+
 u8 GetDaycareState(void)
 {
-    u8 numMons;
+    u8 numMons = CountPokemonInDaycare(&gSaveBlock1Ptr->daycare);
+
+    updateDaycareGfxVars(numMons); //listener
     if (IsEggPending(&gSaveBlock1Ptr->daycare))
     {
         return DAYCARE_EGG_WAITING;
     }
 
-    numMons = CountPokemonInDaycare(&gSaveBlock1Ptr->daycare);
     if (numMons != 0)
     {
         return numMons + 1; // DAYCARE_ONE_MON or DAYCARE_TWO_MONS

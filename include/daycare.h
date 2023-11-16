@@ -2,6 +2,7 @@
 #define GUARD_DAYCARE_H
 
 #include "constants/daycare.h"
+#include "constants/event_objects.h"
 
 struct RecordMixingDaycareMail
 {
