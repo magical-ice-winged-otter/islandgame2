@@ -224,6 +224,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     applymovement(OLD_MAN_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp)
     waitmovement(OLD_MAN_OW_ID)
     msgbox(format("Old Man: Excuse me, I lost a Mareep!\pPlease help find it?"))
+    startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
 
     // audrey runs off to look for mareep
     msgbox(format("Audrey: I'm gonna go look for it!"))

@@ -11,3 +11,27 @@ void TeleportCamera(void)
     s16 deltaY = y - gSaveBlock1Ptr->pos.y;
     MoveCameraAndRedrawMap(deltaX,deltaY);
 }
+
+void CheckPartyMon(void) 
+{
+    u16 speciesLook = gSpecialVar_0x8000;
+    u8 i;
+    
+    gSpecialVar_Result = FALSE;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            u16 speciesFor = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+            if (!speciesFor)
+                break;
+            if (speciesFor == speciesLook)
+            {
+                gSpecialVar_Result = TRUE;
+                break;
+            }
+        }
+    }
+}

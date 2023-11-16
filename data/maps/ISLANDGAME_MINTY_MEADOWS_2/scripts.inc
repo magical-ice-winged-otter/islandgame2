@@ -264,6 +264,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	applymovement 17, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
 	waitmovement 17
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3
+	startquest QUEST_FRESA_FARMS_LOST_MAREEP
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4
 	closemessage
 	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown
