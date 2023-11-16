@@ -1,22 +1,56 @@
 mapscripts ISLANDGAME_CHERIPORT_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        setvar(VAR_TEMP_0, 0)
+
+        if (!flag(FLAG_LEFT_SHIP)) {
+            setflag(FLAG_LEFT_SHIP)
+            setflag(FLAG_ROOM3_ITEM)
+        }
+
+        if (flag(FLAG_PROF_GAVE_EEVEE)) {
+            setvar(VAR_TEMP_1, 1) // this controls the triggers that stop you from leaving
+        }
+
+        gettime
+
+        if (var(VAR_0x8000) < 12 + 6) {
+            setflag(FLAG_TEMP_1) // temp 2 controls visibility of beach guy
+        }
     }
-    MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_0, 0: ISLANDGAME_CHERIPORT_OnLoad
-    ]
 }
 
-script ISLANDGAME_CHERIPORT_OnLoad {
-    setvar(VAR_TEMP_0, 1)
-    if (!flag(FLAG_LEFT_SHIP)) {
-        setflag(FLAG_LEFT_SHIP)
-        setflag(FLAG_ROOM3_ITEM)
-        //
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
+    lock
+    showmoneybox(0, 0)
+    msgbox("Premium Cheri-Cola made with REAL sugar, only ¥600 a pop!", MSGBOX_YESNO)
+
+    if (var(VAR_RESULT) == NO) {
+        msgbox("Huh? You're missin' out, bud!")
+        goto(NightBeachSodaVendor_End)
     }
-    if (flag(FLAG_PROF_GAVE_EEVEE)) {
-        setvar(VAR_TEMP_1, 1)
+
+    checkmoney(100)
+
+    if (!var(VAR_RESULT)) {
+        msgbox("Oi, this is PREMIUM soda. If you can't afford it, then beat it!")
+        goto(NightBeachSodaVendor_End)
     }
+
+    checkitemspace(ITEM_SODA_POP)
+
+    if (!var(VAR_RESULT)) {
+        msgbox("Oi, you need to make some space for this PREMIUM soda.")
+        goto(NightBeachSodaVendor_End)
+    }
+
+    removemoney(100)
+    updatemoneybox
+    msgbox("Here ya go, friend!")
+    hidemoneybox
+    giveitem(ITEM_SODA_POP)
+
+NightBeachSodaVendor_End:
+    hidemoneybox
+    release
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
@@ -30,7 +64,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning {
 
 
 text NeedPokemon_Text {
-    format("{COLOR RED}I should go see Professor Palm before I leave the city...")
+    format("{COLOR RED}(I should go see Professor Palm before I leave the city.)")
 }
 
 movement WalkBack {
@@ -49,7 +83,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles {
 
 
 text ISLANDGAME_CHERIPORT_OUTSIDE_StayHere {
-    format("{COLOR RED}I should make the most of my time here in the isles... ")
+    format("{COLOR RED}(There's no reason for me to leave the isles.)")
 }
 
 movement WalkBack2 {
@@ -98,7 +132,7 @@ text NPCBoy_Talk {
 }
 
 text MrBrineyTalk {
-    format("{COLOR DARK_GRAY}This beach reminds you a lot of Slateport, doesn't it, {COLOR BLUE}Peeko?")
+    format("{COLOR DARK_GRAY}This beach reminds you a lot of Slateport, doesn't it, Peeko?")
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko {
@@ -110,7 +144,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko {
 }
 
 text PeekoTalk {
-    format("{COLOR BLUE}Peeko: {COLOR DARK_GRAY}Wrooooar!")
+    format("Peeko: {COLOR DARK_GRAY}Wrooooar!")
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC1 {

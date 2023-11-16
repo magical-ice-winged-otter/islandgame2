@@ -1,32 +1,70 @@
 ISLANDGAME_CHERIPORT_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	setvar VAR_TEMP_0, 0
+	goto_if_unset FLAG_LEFT_SHIP, ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	goto_if_set FLAG_PROF_GAVE_EEVEE, ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+	gettime
+	compare VAR_0x8000, 12 + 6
+	goto_if_lt ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 	return
 
-ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_TEMP_0, 0, ISLANDGAME_CHERIPORT_OnLoad
-	.2byte 0
-
-
-ISLANDGAME_CHERIPORT_OnLoad::
-	setvar VAR_TEMP_0, 1
-	goto_if_unset FLAG_LEFT_SHIP, ISLANDGAME_CHERIPORT_OnLoad_2
-ISLANDGAME_CHERIPORT_OnLoad_1:
-	goto_if_set FLAG_PROF_GAVE_EEVEE, ISLANDGAME_CHERIPORT_OnLoad_4
-	return
-
-ISLANDGAME_CHERIPORT_OnLoad_2:
+ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	setflag FLAG_LEFT_SHIP
 	setflag FLAG_ROOM3_ITEM
-	goto ISLANDGAME_CHERIPORT_OnLoad_1
+	goto ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
-ISLANDGAME_CHERIPORT_OnLoad_4:
+ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 	setvar VAR_TEMP_1, 1
+	goto ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+
+ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+	setflag FLAG_TEMP_1
 	return
+
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor::
+	lock
+	showmoneybox 0, 0
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_2
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_1:
+	checkmoney 100
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_5
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_4:
+	checkitemspace ITEM_SODA_POP
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_8
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_7:
+	removemoney 100
+	updatemoneybox
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4
+	hidemoneybox
+	giveitem ITEM_SODA_POP
+NightBeachSodaVendor_End:
+	hidemoneybox
+	release
+	return
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_2:
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_1
+	goto NightBeachSodaVendor_End
+	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_1
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_5:
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_2
+	goto NightBeachSodaVendor_End
+	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_4
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_8:
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3
+	goto NightBeachSodaVendor_End
+	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_7
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning::
@@ -183,13 +221,28 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4::
 	return
 
 
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_0:
+	.string "Premium Cheri-Cola made with REAL sugar, only ¥600 a pop!$"
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_1:
+	.string "Huh? You're missin' out, bud!$"
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_2:
+	.string "Oi, this is PREMIUM soda. If you can't afford it, then beat it!$"
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3:
+	.string "Oi, you need to make some space for this PREMIUM soda.$"
+
+ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4:
+	.string "Here ya go, friend!$"
+
 NeedPokemon_Text::
-	.string "{COLOR RED}I should go see Professor Palm before I\n"
-	.string "leave the city...$"
+	.string "{COLOR RED}(I should go see Professor Palm before\n"
+	.string "I leave the city.)$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_StayHere::
-	.string "{COLOR RED}I should make the most of my time here\n"
-	.string "in the isles...$"
+	.string "{COLOR RED}(There's no reason for me to leave the\n"
+	.string "isles.)$"
 
 NPCGirl_Talk::
 	.string "{COLOR DARK_GRAY}The islands are known for their tropical\n"
@@ -206,10 +259,10 @@ NPCBoy_Talk::
 
 MrBrineyTalk::
 	.string "{COLOR DARK_GRAY}This beach reminds you a lot of\n"
-	.string "Slateport, doesn't it, {COLOR BLUE}Peeko?$"
+	.string "Slateport, doesn't it, Peeko?$"
 
 PeekoTalk::
-	.string "{COLOR BLUE}Peeko: {COLOR DARK_GRAY}Wrooooar!$"
+	.string "Peeko: {COLOR DARK_GRAY}Wrooooar!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC1_TALK::
 	.string "{COLOR DARK_GRAY}Nuh-uh! Nuh-uh!$"

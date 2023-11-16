@@ -36,20 +36,42 @@
 
 
 
+// Verdant Path
+#define TRAINER_VERDANT_PATH_TRAINER_1       12
+//#define TRAINER_ALBERTO                    12
+#define TRAINER_VERDANT_PATH_TRAINER_2       13
+//#define TRAINER_ED                         13
+#define TRAINER_VERDANT_PATH_TRAINER_3       14
+//#define TRAINER_GRUNT_SEAFLOOR_CAVERN_4    14
+#define TRAINER_VERDANT_PATH_TRAINER_4       15
+//#define TRAINER_DECLAN                     15
+#define TRAINER_VERDANT_PATH_TRAINER_5       16
+//#define TRAINER_GRUNT_RUSTURF_TUNNEL       16
+#define TRAINER_VERDANT_PATH_TRAINER_6       17
+//#define TRAINER_GRUNT_WEATHER_INST_1       17
 
 
-#define TRAINER_ALBERTO                      12
-#define TRAINER_ED                           13
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
-#define TRAINER_DECLAN                       15
-#define TRAINER_GRUNT_RUSTURF_TUNNEL         16
-#define TRAINER_GRUNT_WEATHER_INST_1         17
-#define TRAINER_GRUNT_WEATHER_INST_2         18
-#define TRAINER_GRUNT_WEATHER_INST_3         19
-#define TRAINER_GRUNT_MUSEUM_1               20
-#define TRAINER_GRUNT_MUSEUM_2               21
-#define TRAINER_GRUNT_SPACE_CENTER_1         22
-#define TRAINER_GRUNT_MT_PYRE_1              23
+
+
+// Verdant Woods
+#define TRAINER_VERDANT_WOODS_1              18
+//#define TRAINER_GRUNT_WEATHER_INST_2       18
+#define TRAINER_VERDANT_WOODS_2              19
+//#define TRAINER_GRUNT_WEATHER_INST_3       19
+#define TRAINER_VERDANT_WOODS_3              20
+//#define TRAINER_GRUNT_MUSEUM_1             20
+#define TRAINER_VERDANT_WOODS_4              21
+//#define TRAINER_GRUNT_MUSEUM_2             21
+#define TRAINER_VERDANT_WOODS_5              22
+//#define TRAINER_GRUNT_SPACE_CENTER_1       22
+
+
+
+// Minty Meadows
+
+
+#define TRAINER_MINTY_MEADOWS_RIVAL          23
+#define TRAINER_GRUNT_MT_PYRE_1              TRAINER_MINTY_MEADOWS_RIVAL
 #define TRAINER_GRUNT_MT_PYRE_2              24
 #define TRAINER_GRUNT_MT_PYRE_3              25
 #define TRAINER_GRUNT_WEATHER_INST_4         26
@@ -69,6 +91,9 @@
 #define TRAINER_ROSE_2                       40
 #define TRAINER_ROSE_3                       41
 #define TRAINER_ROSE_4                       42
+//reserved
+
+
 #define TRAINER_ROSE_5                       43
 #define TRAINER_DUSTY_1                      44
 #define TRAINER_CHIP                         45

@@ -60,14 +60,24 @@ ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2::
 	goto_if_unset FLAG_S_ORANNA_PATH_NPC, ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_2
 ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_1:
 	msgbox ISLANDGAME_Southern_Oranna_Path_NPC2Talk2
+FiredEmployee_End:
 	release
 	return
 
 ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_2:
 	msgbox ISLANDGAME_Southern_Oranna_Path_NPC2Talk1
+	checkitemspace ITEM_POTION
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_5
+ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_4:
 	giveitem ITEM_POTION
 	setflag FLAG_S_ORANNA_PATH_NPC
 	goto ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_1
+
+ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_5:
+	msgbox ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_Text_0
+	goto FiredEmployee_End
+	goto ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_4
 
 
 ISLANDGAME_Southern_Oranna_Path_EventScript_SIGN::
@@ -178,6 +188,9 @@ ISLANDGAME_Southern_Oranna_Path_EventScript_SeenAbsol::
 	return
 
 
+ISLANDGAME_Southern_Oranna_Path_EventScript_NPC2_Text_0:
+	.string "Oh... you don't have enough room for my gift.$"
+
 TrainerBattle1_Text::
 	.string "{COLOR DARK_GRAY}Hey, you look like a newbie! You'll be\n"
 	.string "easy pickings for a veteran like me!$"
@@ -197,15 +210,16 @@ TrainerBattle2_Defeated_Text::
 	.string "Well shoot! Your Pokémon are cute and strong too!$"
 
 TrainerBattle2_PostDefeated_Text::
-	.string "{COLOR DARK_GRAY}Where'd you get that Eevee? I'd love to\n"
-	.string "have one too!$"
+	.string "{COLOR DARK_GRAY}Where'd you get your Pokémon? I'd love\n"
+	.string "to have them too!$"
 
 TrainerBattle3_Text::
 	.string "{COLOR DARK_GRAY}My Pokémon is really rare! You don't\n"
 	.string "stand a chance!$"
 
 TrainerBattle3_Defeated_Text::
-	.string "How did you beat me? Your Pokémon must be even rarer!$"
+	.string "How did you beat me? Your Pokémon must \n"
+	.string "be even rarer!$"
 
 TrainerBattle3_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}Hmmm, I guess just because a Pokémon is\n"
