@@ -1361,6 +1361,7 @@ static void Cmd_attackcanceler(void)
     {
         if (isMonShadowBerserk(gBattlerAttacker))
         {
+            gHitMarker |= HITMARKER_OBEYS;
             return;
         }
         switch (IsMonDisobedient())
