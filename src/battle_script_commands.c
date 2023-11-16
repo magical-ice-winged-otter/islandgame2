@@ -62,6 +62,7 @@
 #include "battle_util.h"
 #include "constants/pokemon.h"
 #include "config/battle.h"
+#include "islandgame.h"
 
 // Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
 //
@@ -1360,6 +1361,7 @@ static void Cmd_attackcanceler(void)
     {
         if (isMonShadowBerserk(gBattlerAttacker))
         {
+            gHitMarker |= HITMARKER_OBEYS;
             return;
         }
         switch (IsMonDisobedient())
@@ -4145,7 +4147,8 @@ static void Cmd_getexp(void)
                 }
             #else
                 *exp = calculatedExp;
-                gBattleStruct->expShareExpValue = calculatedExp / 2;
+                //edit:
+                gBattleStruct->expShareExpValue = calculatedExp / EXP_MULTIPLIER;
                 if (gBattleStruct->expShareExpValue == 0)
                     gBattleStruct->expShareExpValue = 1;
             #endif
@@ -4198,14 +4201,21 @@ static void Cmd_getexp(void)
                     else
                         gBattleMoveDamage = 0;
 
-                    if ((holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled())
+                    if (IsGen6ExpShareEnabled()
 #if B_SPLIT_EXP >= GEN_6
                             // only give exp share bonus in later gens if the mon wasn't sent out
                             && gBattleMoveDamage == 0
 #endif
                        )
                     {
-                        gBattleMoveDamage += gBattleStruct->expShareExpValue;
+                        if (holdEffect == HOLD_EFFECT_EXP_SHARE) 
+                        {
+                            //remove the 25% multiplier
+                            gBattleMoveDamage += EXP_MULTIPLIER * gBattleStruct->expShareExpValue;
+                        } else 
+                        {
+                            gBattleMoveDamage += gBattleStruct->expShareExpValue;
+                        }
                     }
 
                     ApplyExperienceMultipliers(&gBattleMoveDamage, *expMonId, gBattlerFainted);

@@ -8,6 +8,9 @@
 // Comment out this line to strip debugging tools from the build.
 #define ISLANDGAME_DEBUG
 
+//Settings
+#define EXP_MULTIPLIER 4 //By default, pokemon will gain only 1/4 of the experience if they did not participate in battle.
+
 /// @brief Different starting points, associating spawn positions with data needed to load a map.
 /// Used to generate a teleportation debug menu.
 /// @note For usage, see src/new_game.c, src/start_menu.c

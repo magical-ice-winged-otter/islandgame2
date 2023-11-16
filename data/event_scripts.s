@@ -1122,6 +1122,7 @@ Common_EventScript_LegendaryFlewAway::
 
 	.include "data/maps/ISLANDGAME_VERDANT_PATH/scripts.inc"
 
+	.include "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.inc"
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.inc"
 
 	
@@ -1153,3 +1154,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE/scripts.inc"
