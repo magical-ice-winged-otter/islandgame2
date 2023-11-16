@@ -1129,3 +1129,15 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_MT_AURORA_2F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MAPLEGROVE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_PKMNMART/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_HOUSE1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_HOUSE2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_AudreysHouse_1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_AudreysHouse_2F/scripts.inc"

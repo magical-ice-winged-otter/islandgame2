@@ -1,0 +1,60 @@
+const KID_OW_ID = 2
+
+mapscripts ISLANDGAME_MAPLEGROVE_PKMNCENTER_MapScripts {}
+
+script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN1 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_HOPPIP,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN1Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN1Talk {
+    format(
+        "{COLOR DARK_GRAY}Pip-pip!"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN2 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SKIDDO,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN2Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN2Talk {
+    format(
+        "{COLOR DARK_GRAY}Baah."
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk)
+    applymovement(KID_OW_ID,Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk {
+    format(
+        "{COLOR DARK_GRAY}Waaah! Those Mightyena are a bunch of mean bullies! \p"
+        "{COLOR DARK_GRAY}They beat my precious Pokémon up! \p"
+        "{COLOR DARK_GRAY}Our butts would've been toast if it wasn't for Mr. Pokémon Ranger!"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_Ball {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_BallText)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_PKMNCENTER_BallText {
+    format(
+        "{COLOR DARK_GRAY}A Pokémon seems to be resting inside the Pokéball. It seems hurt."
+    )
+}
