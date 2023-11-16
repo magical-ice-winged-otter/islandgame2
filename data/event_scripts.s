@@ -1153,3 +1153,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE/scripts.inc"

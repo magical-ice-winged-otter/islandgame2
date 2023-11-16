@@ -4850,6 +4850,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE",
+      "name": "ISLANDGAME_TIDALCOVE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE/map.bin"
     }
   ]
 }

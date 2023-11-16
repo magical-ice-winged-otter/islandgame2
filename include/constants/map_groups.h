@@ -50,6 +50,7 @@
 #define MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE (41 | (0 << 8))
 #define MAP_ISLANDGAME_FRESA_FARMS_DAYCARE     (42 | (0 << 8))
 #define MAP_ISLANDGAME_FRESA_FARMS_HOUSE       (43 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE               (44 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
