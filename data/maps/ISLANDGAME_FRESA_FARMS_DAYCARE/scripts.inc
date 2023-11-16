@@ -52,7 +52,7 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_5:
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_7:
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_1
-	giveegg SPECIES_TORCHIC
+	giveegg SPECIES_TORCHIC, NUM_NATURES, 2, 18, 18, 18, 18, 18, 18
 	startquest QUEST_FRESA_FARMS_TORCHIC_EGG
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1
 

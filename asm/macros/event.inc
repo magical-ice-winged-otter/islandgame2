@@ -1015,9 +1015,49 @@
 
 	@ Gives the player an Egg of the specified species.
 	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_GIVEN_TO_PC, or MON_CANT_GIVE depending on the outcome.
-	.macro giveegg species:req
+	.macro giveegg species:req, nature, abilityNum, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv
 	.byte 0x7a
 	.2byte \species
+	.ifb \nature
+        .byte NUM_NATURES
+    .else
+        .byte \nature
+	.endif
+	.ifb \abilityNum
+        .byte 3
+    .else
+        .byte \abilityNum
+	.endif
+	.ifb \hpIv
+        .byte 32
+    .else
+        .byte \hpIv
+    .endif
+    .ifb \atkIv
+        .byte 32
+    .else
+        .byte \atkIv
+    .endif
+    .ifb \defIv
+        .byte 32
+    .else
+        .byte \defIv
+    .endif
+    .ifb \speedIv
+        .byte 32
+    .else
+        .byte \speedIv
+    .endif
+    .ifb \spAtkIv
+        .byte 32
+    .else
+        .byte \spAtkIv
+    .endif
+    .ifb \spDefIv
+        .byte 32
+    .else
+        .byte \spDefIv
+    .endif
 	.endm
 
 	@ Replaces the move at 'slot' of the Pokémon in the player's party at 'partyIndex' with the specified move.

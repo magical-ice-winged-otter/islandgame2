@@ -13,7 +13,7 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
             switch (var(VAR_RESULT)) {
                 case TRUE: // We do want the egg
                     msgbox("cool!")
-                    giveegg(SPECIES_TORCHIC)
+                    giveegg(SPECIES_TORCHIC, NUM_NATURES, 2, 18, 18, 18, 18, 18, 18)
                     startquest(QUEST_FRESA_FARMS_TORCHIC_EGG)
                 case FALSE: // We don't want the egg
                     msgbox("aw man")

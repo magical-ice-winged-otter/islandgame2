@@ -1697,11 +1697,22 @@ bool8 ScrCmd_givemon(struct ScriptContext *ctx)
     return FALSE;
 }
 
+//.macro giveegg species:req, nature, abilityNum, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv
 bool8 ScrCmd_giveegg(struct ScriptContext *ctx)
 {
     u16 species = VarGet(ScriptReadHalfword(ctx));
+    u8 nature = ScriptReadByte(ctx);
+    u8 abilityNum = ScriptReadByte(ctx);
+    u8 hpIv = ScriptReadByte(ctx);
+    u8 atkIv = ScriptReadByte(ctx);
+    u8 defIv = ScriptReadByte(ctx);
+    u8 speedIv = ScriptReadByte(ctx);
+    u8 spAtkIv = ScriptReadByte(ctx);
+    u8 spDefIv = ScriptReadByte(ctx);
 
-    gSpecialVar_Result = ScriptGiveEgg(species);
+    u8 ivs[NUM_STATS] = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
+
+    gSpecialVar_Result = ScriptGiveEgg(species, nature, abilityNum, ivs);
     return FALSE;
 }
 
