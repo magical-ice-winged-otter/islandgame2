@@ -4704,10 +4704,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_AURORA_PATH",
       "name": "ISLANDGAME_AURORA_PATH_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 55,
       "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Unused1",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_AURORA_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_AURORA_PATH/map.bin"
     },
