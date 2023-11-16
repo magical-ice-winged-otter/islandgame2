@@ -258,12 +258,14 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_ne ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_2
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2
+	closemessage
 	addobject 17
 	setobjectxy 17, 11, 11
 	applymovement 17, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
 	waitmovement 17
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4
+	closemessage
 	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown
 	waitmovement 16
 	removeobject 16
@@ -433,6 +435,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setobjectxyperm 12, -3, 1
 	fadescreen FADE_FROM_BLACK
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0
+	closemessage
 	fadescreen FADE_TO_BLACK
 	setvar VAR_0x8000, 11
 	setvar VAR_0x8001, 5
@@ -445,14 +448,17 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setobjectxy 17, 11, 3
 	fadescreen FADE_FROM_BLACK
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1
+	closemessage
 	applymovement 17, Phase3_OldManGivesItem_Part1
 	waitmovement 17
 	giveitem ITEM_LUCKY_EGG
 	applymovement 17, Phase3_OldManGivesItem_Part2
 	waitmovement 17
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2
+	closemessage
 	applymovement 16, Phase3_RivalRunsOff
 	waitmovement 16
+	removeobject 16
 	release
 	return
 

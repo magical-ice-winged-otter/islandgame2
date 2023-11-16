@@ -216,6 +216,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
 
     //post-fight audrey dialogue
     msgbox(format("Audrey: Man, you beat me!"))
+    closemessage
 
     // old man walks over and starts quest
     addobject(OLD_MAN_OW_ID)
@@ -226,6 +227,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
 
     // audrey runs off to look for mareep
     msgbox(format("Audrey: I'm gonna go look for it!"))
+    closemessage
     applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown)
     waitmovement(RIVAL_OW_ID)
     removeobject(RIVAL_OW_ID)
@@ -379,12 +381,13 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
 
     // rival comments on stuff
     msgbox(format("Audrey: What a weird encounter. At least the Mareep is safe!"))
+    closemessage
 
     // tp back to old man
     fadescreen(FADE_TO_BLACK)
     setvar(VAR_0x8000, 11)
     setvar(VAR_0x8001, 5)
-    callnative(TeleportCamera)
+    callnative(TeleportCamera) // this is some magic, shoutout to the pret discord (and see src/islandgame_scrcmd.c)
     addobject(OBJ_EVENT_ID_PLAYER)
     addobject(OLD_MAN_OW_ID)
     addobject(RIVAL_OW_ID)
@@ -395,6 +398,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
 
     // old man thanks them, gives lucky egg
     msgbox(format("Old Man: Thank you so much! I was so scared for Mareep.\pHere, as a token of my graditude:"))
+    closemessage
     applymovement(OLD_MAN_OW_ID, Phase3_OldManGivesItem_Part1)
     waitmovement(OLD_MAN_OW_ID)
     giveitem(ITEM_LUCKY_EGG)
@@ -403,8 +407,10 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     
     // rival runs off
     msgbox(format("Audrey: Well, it was nice hanging out! I've got stuff to do!"))
+    closemessage
     applymovement(RIVAL_OW_ID, Phase3_RivalRunsOff)
     waitmovement(RIVAL_OW_ID)
+    removeobject(RIVAL_OW_ID)
 
     release
 }
