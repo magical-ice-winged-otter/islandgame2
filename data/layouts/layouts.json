@@ -4854,10 +4854,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_TIDALCOVE",
       "name": "ISLANDGAME_TIDALCOVE_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 50,
+      "height": 50,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE/map.bin"
     }
