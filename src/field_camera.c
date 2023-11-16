@@ -408,7 +408,7 @@ void CameraUpdate(void)
     gTotalCameraPixelOffsetY -= movementSpeedY;
 }
 
-void MoveCameraAndRedrawMap(int deltaX, int deltaY) //unused
+void MoveCameraAndRedrawMap(int deltaX, int deltaY)
 {
     CameraMove(deltaX, deltaY);
     UpdateObjectEventsForCameraUpdate(deltaX, deltaY);

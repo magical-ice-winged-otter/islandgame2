@@ -52,7 +52,7 @@ ISLANDGAME_MINTY_MEADOWS_2_StartedQuest::
 ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst::
 	setobjectxyperm 16, 36, 26
 	setobjectxyperm 17, 11, 6
-	setobjectxyperm 11, 61, 12
+	setobjectxyperm 11, 61, 13
 	setobjectxyperm 12, 61, 15
 	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_DOWN
 	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_UP
@@ -62,7 +62,7 @@ ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst::
 ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
 	setobjectxyperm 16, 61, 18
 	setobjectxyperm 17, 11, 6
-	setobjectxyperm 11, 61, 12
+	setobjectxyperm 11, 61, 13
 	setobjectxyperm 12, 61, 14
 	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_DOWN
 	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_UP
@@ -71,7 +71,7 @@ ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
 
 ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena::
 	setobjectxyperm 16, -3, 1
-	setobjectxyperm 17, 11, 6
+	setobjectxyperm 17, 11, 3
 	setobjectxyperm 11, -3, 1
 	setobjectxyperm 12, -3, 1
 	return
@@ -291,11 +291,34 @@ ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1::
 	applymovement 12, Phase1_MightyenaChase
 	waitmovement 12
 	waitmovement 11
+	addobject 16
+	setobjectxy 16, 32, 23
+	applymovement 16, Phase1_RivalEnter
+	waitmovement 16
 	setvar VAR_MINTY_MEADOWS_STATE, 2
 	call ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst
 	release
 	return
 
+
+Phase1_RivalEnter:
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	emote_exclamation_mark
+	delay_16
+	face_down
+	delay_16
+	face_left
+	delay_16
+	face_up
+	delay_16
+	face_right
+	step_end
 
 Phase1_MareepRun_1:
 	walk_up
@@ -348,8 +371,6 @@ Phase1_MightyenaChase:
 
 ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2::
 	lock
-	setvar VAR_MINTY_MEADOWS_STATE, 3
-	call ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight
 	applymovement 12, Phase2_MightyenaWalksForward
 	applymovement 11, Common_Movement_ExclamationMark
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
@@ -357,9 +378,29 @@ ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2::
 	playmoncry SPECIES_MAREEP, CRY_MODE_WEAK
 	waitmovement 12
 	waitmoncry
+	addobject 16
+	setobjectxy 16, 67, 22
+	applymovement 16, Phase2_RivalCatchUp
+	waitmovement 16
+	setvar VAR_MINTY_MEADOWS_STATE, 3
+	call ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight
 	release
 	return
 
+
+Phase2_RivalCatchUp:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	emote_exclamation_mark
+	step_end
 
 Phase2_MightyenaWalksForward:
 	walk_up
@@ -371,9 +412,7 @@ ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 	setwildbattle SPECIES_SHADOW_MIGHTYENA, 25
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_LOST
 	goto_if_ne ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_2
@@ -393,11 +432,54 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	removeobject 12
 	setobjectxyperm 12, -3, 1
 	fadescreen FADE_FROM_BLACK
-	msgbox ConqueredMightyena_Text
-	waitmessage
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0
+	fadescreen FADE_TO_BLACK
+	setvar VAR_0x8000, 11
+	setvar VAR_0x8001, 5
+	callnative TeleportCamera
+	addobject OBJ_EVENT_ID_PLAYER
+	addobject 17
+	addobject 16
+	setobjectxy OBJ_EVENT_ID_PLAYER, 11, 5
+	setobjectxy 16, 10, 5
+	setobjectxy 17, 11, 3
+	fadescreen FADE_FROM_BLACK
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1
+	applymovement 17, Phase3_OldManGivesItem_Part1
+	waitmovement 17
+	giveitem ITEM_LUCKY_EGG
+	applymovement 17, Phase3_OldManGivesItem_Part2
+	waitmovement 17
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2
+	applymovement 16, Phase3_RivalRunsOff
+	waitmovement 16
 	release
 	return
 
+
+Phase3_OldManGivesItem_Part1:
+	walk_down
+	step_end
+
+Phase3_OldManGivesItem_Part2:
+	walk_left
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	walk_up
+	walk_right
+	face_down
+	step_end
+
+Phase3_RivalRunsOff:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
 
 ISLANDGAME_MINTY_MEADOWS_2_Mareep::
 	lock
@@ -454,6 +536,19 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3:
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4:
 	.string "Audrey: I'm gonna go look for it!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0:
+	.string "Audrey: What a weird encounter. At\n"
+	.string "least the Mareep is safe!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1:
+	.string "Old Man: Thank you so much! I was so\n"
+	.string "scared for Mareep.\p"
+	.string "Here, as a token of my graditude:$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2:
+	.string "Audrey: Well, it was nice hanging out!\n"
+	.string "I've got stuff to do!$"
 
 ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"
