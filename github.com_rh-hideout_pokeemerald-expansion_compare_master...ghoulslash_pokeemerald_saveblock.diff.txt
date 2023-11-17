@@ -1,0 +1,2165 @@
+diff --git a/include/global.h b/include/global.h
+index 184abdbe4c4..489d7279361 100644
+--- a/include/global.h
++++ b/include/global.h
+@@ -16,6 +16,24 @@
+ #include "constants/easy_chat.h"
+ #include "constants/trainer_hill.h"
+ 
++// free saveblock 1 defines
++#define FREE_EXTRA_SEEN_FLAGS           //free up extra pokedex seen flags. Frees up 104 bytes
++#define FREE_FIELD_3598                 //frees up unused saveblock data. 384 bytes
++//#define FREE_TRAINER_HILL             //frees up trainer hill data. 28 bytes.                          WARNING THIS HAS BEEN SHOWN TO BREAK MULTI BATTLES
++//#define FREE_MYSTERY_EVENT_BUFFERS    //frees up mystery event and ramScript. roughly 1880 bytes       Needed by FREE_BATTLE_TOWER_E_READER
++#define FREE_MATCH_CALL                 //frees up match call data. 104 bytes
++#define FREE_UNION_ROOM_CHAT            //frees up field unk3C88. 210 bytes
++#define FREE_ENIGMA_BERRY               //frees up enigma berry. 52 bytes
++#define FREE_LINK_BATTLE_RECORDS        //frees link battle record data. 88 bytes
++                                        // saveblock1 total: 1846 bytes
++//free saveblock 2 defines
++//#define FREE_BATTLE_TOWER_E_READER    //frees up battle tower e reader trainer data. 188 bytes.        WARNING THIS HAS BEEN SHOWN TO BREAK THE POKÉ MARTS' QUESTIONNAIRE
++#define FREE_POKEMON_JUMP               //frees up pokemon jump data. 16 bytes
++#define FREE_RECORD_MIXING_HALL_RECORDS //frees up hall records for record mixing. 1032 bytes
++                                        // saveblock2 total: 1236 bytes
++                                        
++                                        //grand total: 3082
++
+ // Prevent cross-jump optimization.
+ #define BLOCK_CROSS_JUMP asm("");
+ 
+@@ -360,7 +378,9 @@ struct BattleFrontier
+     /*0x64C*/ struct EmeraldBattleTowerRecord towerPlayer;
+     /*0x738*/ struct EmeraldBattleTowerRecord towerRecords[BATTLE_TOWER_RECORD_COUNT]; // From record mixing.
+     /*0xBEB*/ struct BattleTowerInterview towerInterview;
+-    /*0xBEC*/ struct BattleTowerEReaderTrainer ereaderTrainer;
++    #ifndef FREE_BATTLE_TOWER_E_READER
++    /*0xBEC*/ struct BattleTowerEReaderTrainer ereaderTrainer;  //188 bytes
++    #endif
+     /*0xCA8*/ u8 challengeStatus;
+     /*0xCA9*/ u8 lvlMode:2;
+               u8 challengePaused:1;
+@@ -511,12 +531,16 @@ struct SaveBlock2
+     /*0xA8*/ u32 gcnLinkFlags; // Read by Pokemon Colosseum/XD
+     /*0xAC*/ u32 encryptionKey;
+     /*0xB0*/ struct PlayersApprentice playerApprentice;
+-    /*0xDC*/ struct Apprentice apprentices[APPRENTICE_COUNT];
++    /*0xDC*/ struct Apprentice apprentices[APPRENTICE_COUNT];   //272 bytes
+     /*0x1EC*/ struct BerryCrush berryCrush;
+-    /*0x1FC*/ struct PokemonJumpRecords pokeJump;
++    #ifndef FREE_POKEMON_JUMP
++    /*0x1FC*/ struct PokemonJumpRecords pokeJump;   //16 bytes
++    #endif
+     /*0x20C*/ struct BerryPickingResults berryPick;
++    #ifndef FREE_RECORD_MIXING_HALL_RECORDS
+     /*0x21C*/ struct RankingHall1P hallRecords1P[HALL_FACILITIES_COUNT][FRONTIER_LVL_MODE_COUNT][HALL_RECORDS_COUNT]; // From record mixing.
+     /*0x57C*/ struct RankingHall2P hallRecords2P[FRONTIER_LVL_MODE_COUNT][HALL_RECORDS_COUNT]; // From record mixing.
++    #endif
+     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
+     /*0x64C*/ struct BattleFrontier frontier;
+ }; // sizeof=0xF2C
+@@ -989,11 +1013,15 @@ struct SaveBlock1
+     /*0x690*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
+     /*0x790*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
+     /*0x848*/ struct Pokeblock pokeblocks[POKEBLOCKS_COUNT];
+-    /*0x988*/ u8 seen1[NUM_DEX_FLAG_BYTES];
++    #ifndef FREE_EXTRA_SEEN_FLAGS
++    /*0x988*/ u8 seen1[NUM_DEX_FLAG_BYTES];   //52 bytes
++    #endif
+     /*0x9BC*/ u16 berryBlenderRecords[3];
+     /*0x9C2*/ u8 unused_9C2[6];
+-    /*0x9C8*/ u16 trainerRematchStepCounter;
++    #ifndef FREE_MATCH_CALL
++    /*0x9C8*/ u16 trainerRematchStepCounter;    //104 bytes
+     /*0x9CA*/ u8 trainerRematches[MAX_REMATCH_ENTRIES];
++    #endif
+     /*0xA2E*/ //u8 padding3[2];
+     /*0xA30*/ struct ObjectEvent objectEvents[OBJECT_EVENTS_COUNT];
+     /*0xC70*/ struct ObjectEventTemplate objectEventTemplates[OBJECT_EVENT_TEMPLATES_COUNT];
+@@ -1012,8 +1040,8 @@ struct SaveBlock1
+     /*0x278E*/ u8 decorationPosters[10];
+     /*0x2798*/ u8 decorationDolls[40];
+     /*0x27C0*/ u8 decorationCushions[10];
++    /*0x27CC*/ TVShow tvShows[TV_SHOWS_COUNT];  //900 bytes
+     /*0x27CA*/ //u8 padding4[2];
+-    /*0x27CC*/ TVShow tvShows[TV_SHOWS_COUNT];
+     /*0x2B50*/ PokeNews pokeNews[POKE_NEWS_COUNT];
+     /*0x2B90*/ u16 outbreakPokemonSpecies;
+     /*0x2B92*/ u8 outbreakLocationMapNum;
+@@ -1037,23 +1065,41 @@ struct SaveBlock1
+     /*0x2e64*/ struct DewfordTrend dewfordTrends[SAVED_TRENDS_COUNT];
+     /*0x2e90*/ struct ContestWinner contestWinners[NUM_CONTEST_WINNERS]; // see CONTEST_WINNER_*
+     /*0x3030*/ struct DayCare daycare;
++    #ifndef FREE_LINK_BATTLE_RECORDS
+     /*0x3150*/ struct LinkBattleRecords linkBattleRecords;
++    #endif
+     /*0x31A8*/ u8 giftRibbons[GIFT_RIBBONS_COUNT];
+     /*0x31B3*/ struct ExternalEventData externalEventData;
+     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
+     /*0x31DC*/ struct Roamer roamer;
+-    /*0x31F8*/ struct EnigmaBerry enigmaBerry;
+-    /*0x322C*/ struct MysteryGiftSave mysteryGift;
+-    /*0x3598*/ u8 unused_3598[0x180];
+-    /*0x3718*/ u32 trainerHillTimes[NUM_TRAINER_HILL_MODES];
++    #ifndef FREE_ENIGMA_BERRY
++    /*0x31F8*/ struct EnigmaBerry enigmaBerry;  //52 bytes
++    #endif
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
++    /*0x322C*/ struct MysteryGiftSave mysteryGift;   //876 bytes
++    #endif
++    #ifndef FREE_FIELD_3598
++    /*0x3598*/ u8 unused_3598[0x180];    //384 bytes
++    #endif
++    #ifndef FREE_TRAINER_HILL
++    /*0x3718*/ u32 trainerHillTimes[NUM_TRAINER_HILL_MODES]; //16 bytes
++    #endif
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
+     /*0x3728*/ struct RamScript ramScript;
++    #endif
+     /*0x3B14*/ struct RecordMixingGift recordMixingGift;
+-    /*0x3B24*/ u8 seen2[NUM_DEX_FLAG_BYTES];
++    #ifndef FREE_EXTRA_SEEN_FLAGS
++    /*0x3B24*/ u8 seen2[NUM_DEX_FLAG_BYTES];  //52 bytes
++    #endif
+     /*0x3B58*/ LilycoveLady lilycoveLady;
+     /*0x3B98*/ struct TrainerNameRecord trainerNameRecords[20];
+-    /*0x3C88*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
++    #ifndef FREE_UNION_ROOM_CHAT
++    /*0x3C88*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21]; //210 bytes
++    #endif
+     /*0x3D5A*/ u8 unused_3D5A[10];
+-    /*0x3D64*/ struct TrainerHillSave trainerHill;
++    #ifndef FREE_TRAINER_HILL
++    /*0x3D64*/ struct TrainerHillSave trainerHill;  //12 bytes
++    #endif
+     /*0x3D70*/ struct WaldaPhrase waldaPhrase;
+     // sizeof: 0x3D88
+ };
+diff --git a/src/battle_ai_switch_items.c b/src/battle_ai_switch_items.c
+index 5789a3ff6f3..49c7eb6de53 100644
+--- a/src/battle_ai_switch_items.c
++++ b/src/battle_ai_switch_items.c
+@@ -846,7 +846,11 @@ static bool8 ShouldUseItem(void)
+             continue;
+ 
+         if (item == ITEM_ENIGMA_BERRY)
++            #ifndef FREE_ENIGMA_BERRY
+             itemEffects = gSaveBlock1Ptr->enigmaBerry.itemEffect;
++            #else
++            itemEffects = 0;
++            #endif
+         else
+             itemEffects = gItemEffectTable[item - ITEM_POTION];
+ 
+diff --git a/src/battle_main.c b/src/battle_main.c
+index b8fea024ee6..5fbb89d1f70 100644
+--- a/src/battle_main.c
++++ b/src/battle_main.c
+@@ -761,6 +761,7 @@ static void SetPlayerBerryDataInBattleStruct(void)
+ 
+     if (IsEnigmaBerryValid() == TRUE)
+     {
++        #ifndef FREE_ENIGMA_BERRY
+         for (i = 0; i < BERRY_NAME_LENGTH; i++)
+             battleBerry->name[i] = gSaveBlock1Ptr->enigmaBerry.berry.name[i];
+         battleBerry->name[i] = EOS;
+@@ -770,6 +771,7 @@ static void SetPlayerBerryDataInBattleStruct(void)
+ 
+         battleBerry->holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+         battleBerry->holdEffectParam = gSaveBlock1Ptr->enigmaBerry.holdEffectParam;
++        #endif
+     }
+     else
+     {
+@@ -795,6 +797,7 @@ static void SetAllPlayersBerryData(void)
+     {
+         if (IsEnigmaBerryValid() == TRUE)
+         {
++            #ifndef FREE_ENIGMA_BERRY
+             for (i = 0; i < BERRY_NAME_LENGTH; i++)
+             {
+                 gEnigmaBerries[0].name[i] = gSaveBlock1Ptr->enigmaBerry.berry.name[i];
+@@ -813,6 +816,7 @@ static void SetAllPlayersBerryData(void)
+             gEnigmaBerries[2].holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
+             gEnigmaBerries[0].holdEffectParam = gSaveBlock1Ptr->enigmaBerry.holdEffectParam;
+             gEnigmaBerries[2].holdEffectParam = gSaveBlock1Ptr->enigmaBerry.holdEffectParam;
++            #endif
+         }
+         else
+         {
+diff --git a/src/battle_records.c b/src/battle_records.c
+index 4463a9ebfc7..82ba8563723 100644
+--- a/src/battle_records.c
++++ b/src/battle_records.c
+@@ -222,7 +222,9 @@ static void UpdateLinkBattleRecords(struct LinkBattleRecords *records, const u8
+ 
+ void ClearPlayerLinkBattleRecords(void)
+ {
++    #ifndef FREE_LINK_BATTLE_RECORDS
+     ClearLinkBattleRecords(gSaveBlock1Ptr->linkBattleRecords.entries);
++    #endif
+ }
+ 
+ static void IncTrainerCardWins(s32 battlerId)
+@@ -258,6 +260,7 @@ static void UpdateTrainerCardWinsLosses(s32 battlerId)
+ 
+ void UpdatePlayerLinkBattleRecords(s32 battlerId)
+ {
++    #ifndef FREE_LINK_BATTLE_RECORDS
+     if (InUnionRoom() != TRUE)
+     {
+         UpdateTrainerCardWinsLosses(battlerId);
+@@ -268,6 +271,7 @@ void UpdatePlayerLinkBattleRecords(s32 battlerId)
+             gBattleOutcome,
+             battlerId);
+     }
++    #endif
+ }
+ 
+ static void PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
+@@ -323,6 +327,7 @@ void ShowLinkBattleRecords(void)
+ 
+     x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 208);
+     AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar4, x, 1, 0, NULL);
++    #ifndef FREE_LINK_BATTLE_RECORDS
+     PrintLinkBattleWinsLossesDraws(gSaveBlock1Ptr->linkBattleRecords.entries);
+ 
+     StringExpandPlaceholders(gStringVar4, gText_WinLoseDraw);
+@@ -332,7 +337,7 @@ void ShowLinkBattleRecords(void)
+     {
+         PrintLinkBattleRecord(&gSaveBlock1Ptr->linkBattleRecords.entries[i], 7 + (i * 2), gSaveBlock1Ptr->linkBattleRecords.languages[i]);
+     }
+-
++    #endif
+     PutWindowTilemap(gRecordsWindowId);
+     CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
+ }
+diff --git a/src/battle_script_commands.c b/src/battle_script_commands.c
+index d12477bea8a..9e9ad2b6373 100644
+--- a/src/battle_script_commands.c
++++ b/src/battle_script_commands.c
+@@ -3266,7 +3266,11 @@ static void Cmd_getexp(void)
+                 item = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
+ 
+                 if (item == ITEM_ENIGMA_BERRY)
++                    #ifndef FREE_ENIGMA_BERRY
+                     holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
++                    #else
++                    holdEffect = 0;
++                    #endif
+                 else
+                     holdEffect = ItemId_GetHoldEffect(item);
+ 
+@@ -3305,7 +3309,11 @@ static void Cmd_getexp(void)
+             item = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_HELD_ITEM);
+ 
+             if (item == ITEM_ENIGMA_BERRY)
++                #ifndef FREE_ENIGMA_BERRY
+                 holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
++                #else
++                holdEffect = 0;
++                #endif
+             else
+                 holdEffect = ItemId_GetHoldEffect(item);
+ 
+diff --git a/src/battle_setup.c b/src/battle_setup.c
+index cc1ad70fed3..0bfab056f72 100644
+--- a/src/battle_setup.c
++++ b/src/battle_setup.c
+@@ -1133,6 +1133,7 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
+         TrainerBattleLoadArgs(sContinueScriptDoubleBattleParams, data);
+         SetMapVarsToTrainer();
+         return EventScript_TryDoDoubleTrainerBattle;
++#ifndef FREE_MATCH_CALL
+     case TRAINER_BATTLE_REMATCH_DOUBLE:
+         TrainerBattleLoadArgs(sDoubleBattleParams, data);
+         SetMapVarsToTrainer();
+@@ -1143,6 +1144,7 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
+         SetMapVarsToTrainer();
+         gTrainerBattleOpponent_A = GetRematchTrainerId(gTrainerBattleOpponent_A);
+         return EventScript_TryDoRematchBattle;
++#endif
+     case TRAINER_BATTLE_PYRAMID:
+         if (gApproachingTrainerId == 0)
+         {
+@@ -1587,7 +1589,8 @@ static bool32 IsRematchForbidden(s32 rematchTableId)
+ static void SetRematchIdForTrainer(const struct RematchTrainer *table, u32 tableId)
+ {
+     s32 i;
+-
++    
++    #ifndef FREE_MATCH_CALL
+     for (i = 1; i < REMATCHES_COUNT; i++)
+     {
+         u16 trainerId = table[tableId].trainerIds[i];
+@@ -1599,13 +1602,14 @@ static void SetRematchIdForTrainer(const struct RematchTrainer *table, u32 table
+     }
+ 
+     gSaveBlock1Ptr->trainerRematches[tableId] = i;
++    #endif
+ }
+ 
+ static bool32 UpdateRandomTrainerRematches(const struct RematchTrainer *table, u16 mapGroup, u16 mapNum)
+ {
+     s32 i;
+     bool32 ret = FALSE;
+-
++    #ifndef FREE_MATCH_CALL
+     for (i = 0; i <= REMATCH_SPECIAL_TRAINER_START; i++)
+     {
+         if (table[i].mapGroup == mapGroup && table[i].mapNum == mapNum && !IsRematchForbidden(i))
+@@ -1623,7 +1627,7 @@ static bool32 UpdateRandomTrainerRematches(const struct RematchTrainer *table, u
+             }
+         }
+     }
+-
++    #endif
+     return ret;
+ }
+ 
+@@ -1636,13 +1640,14 @@ void UpdateRematchIfDefeated(s32 rematchTableId)
+ static bool32 DoesSomeoneWantRematchIn_(const struct RematchTrainer *table, u16 mapGroup, u16 mapNum)
+ {
+     s32 i;
+-
++    
++    #ifndef FREE_MATCH_CALL
+     for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
+     {
+         if (table[i].mapGroup == mapGroup && table[i].mapNum == mapNum && gSaveBlock1Ptr->trainerRematches[i] != 0)
+             return TRUE;
+     }
+-
++    #endif
+     return FALSE;
+ }
+ 
+@@ -1667,9 +1672,10 @@ static bool8 IsFirstTrainerIdReadyForRematch(const struct RematchTrainer *table,
+         return FALSE;
+     if (tableId >= MAX_REMATCH_ENTRIES)
+         return FALSE;
++    #ifndef FREE_MATCH_CALL
+     if (gSaveBlock1Ptr->trainerRematches[tableId] == 0)
+         return FALSE;
+-
++    #endif
+     return TRUE;
+ }
+ 
+@@ -1681,9 +1687,10 @@ static bool8 IsTrainerReadyForRematch_(const struct RematchTrainer *table, u16 t
+         return FALSE;
+     if (tableId >= MAX_REMATCH_ENTRIES)
+         return FALSE;
++    #ifndef FREE_MATCH_CALL
+     if (gSaveBlock1Ptr->trainerRematches[tableId] == 0)
+         return FALSE;
+-
++    #endif
+     return TRUE;
+ }
+ 
+@@ -1731,10 +1738,12 @@ static u16 GetLastBeatenRematchTrainerIdFromTable(const struct RematchTrainer *t
+ 
+ static void ClearTrainerWantRematchState(const struct RematchTrainer *table, u16 firstBattleTrainerId)
+ {
++    #ifndef FREE_MATCH_CALL
+     s32 tableId = TrainerIdToRematchTableId(table, firstBattleTrainerId);
+ 
+     if (tableId != -1)
+         gSaveBlock1Ptr->trainerRematches[tableId] = 0;
++    #endif
+ }
+ 
+ static u32 GetTrainerMatchCallFlag(u32 trainerId)
+@@ -1792,6 +1801,7 @@ static bool32 HasAtLeastFiveBadges(void)
+ 
+ void IncrementRematchStepCounter(void)
+ {
++    #ifndef FREE_MATCH_CALL
+     if (HasAtLeastFiveBadges())
+     {
+         if (gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
+@@ -1799,20 +1809,27 @@ void IncrementRematchStepCounter(void)
+         else
+             gSaveBlock1Ptr->trainerRematchStepCounter++;
+     }
++    #endif
+ }
+ 
+ static bool32 IsRematchStepCounterMaxed(void)
+ {
++    #ifndef FREE_MATCH_CALL
+     if (HasAtLeastFiveBadges() && gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
+         return TRUE;
+     else
+         return FALSE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ void TryUpdateRandomTrainerRematches(u16 mapGroup, u16 mapNum)
+ {
++    #ifndef FREE_MATCH_CALL
+     if (IsRematchStepCounterMaxed() && UpdateRandomTrainerRematches(gRematchTable, mapGroup, mapNum) == TRUE)
+         gSaveBlock1Ptr->trainerRematchStepCounter = 0;
++    #endif
+ }
+ 
+ bool32 DoesSomeoneWantRematchIn(u16 mapGroup, u16 mapNum)
+diff --git a/src/battle_tower.c b/src/battle_tower.c
+index 8838b5f2d27..804daf73628 100644
+--- a/src/battle_tower.c
++++ b/src/battle_tower.c
+@@ -968,9 +968,11 @@ static void SetTowerData(void)
+ 
+ static void SetTowerBattleWon(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (gTrainerBattleOpponent_A == TRAINER_EREADER)
+         ClearEReaderTrainer(&gSaveBlock2Ptr->frontier.ereaderTrainer);
+-
++    #endif
++    
+     // towerNumWins is never read outside this conditional
+     if (gSaveBlock2Ptr->frontier.towerNumWins < MAX_STREAK)
+         gSaveBlock2Ptr->frontier.towerNumWins++;
+@@ -1166,11 +1168,15 @@ void SetBattleFacilityTrainerGfxId(u16 trainerId, u8 tempVarId)
+     u8 trainerObjectGfxId;
+ 
+     SetFacilityPtrsGetLevel();
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (trainerId == TRAINER_EREADER)
+     {
+         facilityClass = gSaveBlock2Ptr->frontier.ereaderTrainer.facilityClass;
+     }
+     else if (trainerId == TRAINER_FRONTIER_BRAIN)
++    #else
++    if (trainerId == TRAINER_FRONTIER_BRAIN)
++    #endif
+     {
+         SetFrontierBrainObjEventGfx_2();
+         return;
+@@ -1263,11 +1269,15 @@ u8 GetBattleFacilityTrainerGfxId(u16 trainerId)
+     u8 trainerObjectGfxId;
+ 
+     SetFacilityPtrsGetLevel();
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (trainerId == TRAINER_EREADER)
+     {
+         facilityClass = gSaveBlock2Ptr->frontier.ereaderTrainer.facilityClass;
+     }
+     else if (trainerId < FRONTIER_TRAINERS_COUNT)
++    #else
++    if (trainerId < FRONTIER_TRAINERS_COUNT)
++    #endif
+     {
+         facilityClass = gFacilityTrainers[trainerId].facilityClass;
+     }
+@@ -1406,11 +1416,15 @@ u8 GetFrontierTrainerFrontSpriteId(u16 trainerId)
+ {
+     SetFacilityPtrsGetLevel();
+ 
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (trainerId == TRAINER_EREADER)
+     {
+         return gFacilityClassToPicIndex[gSaveBlock2Ptr->frontier.ereaderTrainer.facilityClass];
+     }
+     else if (trainerId == TRAINER_FRONTIER_BRAIN)
++    #else
++    if (trainerId == TRAINER_FRONTIER_BRAIN)
++    #endif
+     {
+         return GetFrontierBrainTrainerPicIndex();
+     }
+@@ -1439,11 +1453,15 @@ u8 GetFrontierOpponentClass(u16 trainerId)
+     u8 trainerClass = 0;
+     SetFacilityPtrsGetLevel();
+ 
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (trainerId == TRAINER_EREADER)
+     {
+         trainerClass = gFacilityClassToTrainerClass[gSaveBlock2Ptr->frontier.ereaderTrainer.facilityClass];
+     }
+     else if (trainerId == TRAINER_FRONTIER_BRAIN)
++    #else
++    if (trainerId == TRAINER_FRONTIER_BRAIN)
++    #endif
+     {
+         return GetFrontierBrainTrainerClass();
+     }
+@@ -1488,7 +1506,11 @@ static u8 GetFrontierTrainerFacilityClass(u16 trainerId)
+ 
+     if (trainerId == TRAINER_EREADER)
+     {
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         facilityClass = gSaveBlock2Ptr->frontier.ereaderTrainer.facilityClass;
++        #else
++        facilityClass = 0;
++        #endif
+     }
+     else if (trainerId < FRONTIER_TRAINERS_COUNT)
+     {
+@@ -1519,8 +1541,10 @@ void GetFrontierTrainerName(u8 *dst, u16 trainerId)
+ 
+     if (trainerId == TRAINER_EREADER)
+     {
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         for (i = 0; i < PLAYER_NAME_LENGTH; i++)
+             dst[i] = gSaveBlock2Ptr->frontier.ereaderTrainer.name[i];
++        #endif
+     }
+     else if (trainerId == TRAINER_FRONTIER_BRAIN)
+     {
+@@ -1581,7 +1605,11 @@ static bool8 IsFrontierTrainerFemale(u16 trainerId)
+     SetFacilityPtrsGetLevel();
+     if (trainerId == TRAINER_EREADER)
+     {
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         facilityClass = gSaveBlock2Ptr->frontier.ereaderTrainer.facilityClass;
++        #else
++        facilityClass = 0;
++        #endif
+     }
+     else if (trainerId == TRAINER_FRONTIER_BRAIN)
+     {
+@@ -1650,8 +1678,10 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
+     }
+     else if (trainerId == TRAINER_EREADER)
+     {
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE; i++)
+             CreateBattleTowerMon(&gEnemyParty[i], &gSaveBlock2Ptr->frontier.ereaderTrainer.party[i - firstMonId]);
++        #endif
+         return;
+     }
+     else if (trainerId == TRAINER_FRONTIER_BRAIN)
+@@ -1847,8 +1877,10 @@ static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId)
+     }
+     else if (trainerId == TRAINER_EREADER)
+     {
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         for (i = firstMonId; i < firstMonId + FRONTIER_PARTY_SIZE; i++)
+             CreateBattleTowerMon(&gEnemyParty[i], &gSaveBlock2Ptr->frontier.ereaderTrainer.party[i - firstMonId]);
++        #endif
+         return;
+     }
+     else if (trainerId == TRAINER_FRONTIER_BRAIN)
+@@ -1942,9 +1974,13 @@ static void GetOpponentIntroSpeech(void)
+     else
+         trainerId = gTrainerBattleOpponent_A;
+ 
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (trainerId == TRAINER_EREADER)
+         FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.greeting);
+     else if (trainerId < FRONTIER_TRAINERS_COUNT)
++    #else
++    if (trainerId < FRONTIER_TRAINERS_COUNT)
++    #endif
+         FrontierSpeechToString(gFacilityTrainers[trainerId].speechBefore);
+     else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
+         FrontierSpeechToString(gSaveBlock2Ptr->frontier.towerRecords[trainerId - TRAINER_RECORD_MIXING_FRIEND].greeting);
+@@ -2047,6 +2083,7 @@ void DoSpecialTrainerBattle(void)
+         BattleTransition_StartOnField(GetSpecialBattleTransition(B_TRANSITION_GROUP_SECRET_BASE));
+         break;
+     case SPECIAL_BATTLE_EREADER:
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         ZeroEnemyPartyMons();
+         for (i = 0; i < (int)ARRAY_COUNT(gSaveBlock2Ptr->frontier.ereaderTrainer.party); i++)
+             CreateBattleTowerMon(&gEnemyParty[i], &gSaveBlock2Ptr->frontier.ereaderTrainer.party[i]);
+@@ -2055,6 +2092,7 @@ void DoSpecialTrainerBattle(void)
+         CreateTask(Task_StartBattleAfterTransition, 1);
+         PlayMapChosenOrBattleBGM(0);
+         BattleTransition_StartOnField(GetSpecialBattleTransition(B_TRANSITION_GROUP_E_READER));
++        #endif
+         break;
+     case SPECIAL_BATTLE_DOME:
+         gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOME;
+@@ -2825,6 +2863,7 @@ static void AwardBattleTowerRibbons(void)
+ // trainer with the player's current data.
+ static void FillEReaderTrainerWithPlayerData(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     struct BattleTowerEReaderTrainer *ereaderTrainer = &gSaveBlock2Ptr->frontier.ereaderTrainer;
+     s32 i, j;
+ 
+@@ -2857,31 +2896,44 @@ static void FillEReaderTrainerWithPlayerData(void)
+         ConvertPokemonToBattleTowerPokemon(&gPlayerParty[i], &ereaderTrainer->party[i]);
+ 
+     SetEReaderTrainerChecksum(ereaderTrainer);
++    #endif
+ }
+ 
+ u8 GetEreaderTrainerFrontSpriteId(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     return gFacilityClassToPicIndex[gSaveBlock2Ptr->frontier.ereaderTrainer.facilityClass];
++    #else
++    return 0;
++    #endif
+ }
+ 
+ u8 GetEreaderTrainerClassId(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     return gFacilityClassToTrainerClass[gSaveBlock2Ptr->frontier.ereaderTrainer.facilityClass];
++    #else
++    return 0;
++    #endif
+ }
+ 
+ void GetEreaderTrainerName(u8 *dst)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     s32 i;
+ 
+     for (i = 0; i < 5; i++)
+         dst[i] = gSaveBlock2Ptr->frontier.ereaderTrainer.name[i];
+-
+     dst[i] = EOS;
++    #else
++    dst[0] = EOS;
++    #endif
+ }
+ 
+ // Checks if the saved E-Reader trainer is valid.
+ void ValidateEReaderTrainer(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     u32 i;
+     u32 checksum;
+     struct BattleTowerEReaderTrainer *ereaderTrainer;
+@@ -2908,38 +2960,49 @@ void ValidateEReaderTrainer(void)
+         ClearEReaderTrainer(&gSaveBlock2Ptr->frontier.ereaderTrainer);
+         gSpecialVar_Result = TRUE;
+     }
++    #else
++    gSpecialVar_Result = FALSE;
++    #endif
+ }
+ 
+ static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     s32 i;
+ 
+     ereaderTrainer->checksum = 0;
+     for (i = 0; i < (sizeof(struct BattleTowerEReaderTrainer) - 4) / 4; i++) // - 4, because of the last field being the checksum itself.
+         ereaderTrainer->checksum += ((u32 *)ereaderTrainer)[i];
++    #endif
+ }
+ 
+ void ClearEReaderTrainer(struct BattleTowerEReaderTrainer *ereaderTrainer)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     u32 i;
+ 
+     for (i = 0; i < (sizeof(struct BattleTowerEReaderTrainer)) / 4; i++)
+         ((u32 *)ereaderTrainer)[i] = 0;
++    #endif
+ }
+ 
+ void CopyEReaderTrainerGreeting(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.greeting);
++    #endif
+ }
+ 
+ static void CopyEReaderTrainerFarewellMessage(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (gBattleOutcome == B_OUTCOME_DREW)
+         gStringVar4[0] = EOS;
+     else if (gBattleOutcome == B_OUTCOME_WON)
+         FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.farewellPlayerWon);
+     else
+         FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.farewellPlayerLost);
++    #endif
+ }
+ 
+ void TryHideBattleTowerReporter(void)
+diff --git a/src/berry.c b/src/berry.c
+index 389a09a1064..e04c387eef0 100644
+--- a/src/berry.c
++++ b/src/berry.c
+@@ -940,20 +940,25 @@ const struct BerryTree gBlankBerryTree = {};
+ // unused
+ void ClearEnigmaBerries(void)
+ {
++    #ifndef FREE_ENIGMA_BERRY
+     CpuFill16(0, &gSaveBlock1Ptr->enigmaBerry, sizeof(gSaveBlock1Ptr->enigmaBerry));
++    #endif
+ }
+ 
+ void SetEnigmaBerry(u8 *src)
+ {
++    #ifndef FREE_ENIGMA_BERRY
+     u32 i;
+     u8 *dest = (u8 *)&gSaveBlock1Ptr->enigmaBerry;
+ 
+     for (i = 0; i < sizeof(gSaveBlock1Ptr->enigmaBerry); i++)
+         dest[i] = src[i];
++    #endif
+ }
+ 
+ static u32 GetEnigmaBerryChecksum(struct EnigmaBerry *enigmaBerry)
+ {
++    #ifndef FREE_ENIGMA_BERRY
+     u32 i;
+     u32 checksum;
+     u8 *dest;
+@@ -964,10 +969,14 @@ static u32 GetEnigmaBerryChecksum(struct EnigmaBerry *enigmaBerry)
+         checksum += dest[i];
+ 
+     return checksum;
++    #else
++    return 0;
++    #endif
+ }
+ 
+ bool32 IsEnigmaBerryValid(void)
+ {
++    #ifndef FREE_ENIGMA_BERRY
+     if (!gSaveBlock1Ptr->enigmaBerry.berry.stageDuration)
+         return FALSE;
+     if (!gSaveBlock1Ptr->enigmaBerry.berry.maxYield)
+@@ -975,12 +984,19 @@ bool32 IsEnigmaBerryValid(void)
+     if (GetEnigmaBerryChecksum(&gSaveBlock1Ptr->enigmaBerry) != gSaveBlock1Ptr->enigmaBerry.checksum)
+         return FALSE;
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ const struct Berry *GetBerryInfo(u8 berry)
+ {
+     if (berry == ITEM_TO_BERRY(ITEM_ENIGMA_BERRY) && IsEnigmaBerryValid())
++        #ifndef FREE_ENIGMA_BERRY
+         return (struct Berry *)(&gSaveBlock1Ptr->enigmaBerry.berry);
++        #else
++        return &gBerries[0];    //never reached, but will appease the compiler gods
++        #endif
+     else
+     {
+         if (berry == BERRY_NONE || berry > ITEM_TO_BERRY(LAST_BERRY_INDEX))
+diff --git a/src/ereader_helpers.c b/src/ereader_helpers.c
+index 894ad00123c..41472b373f9 100755
+--- a/src/ereader_helpers.c
++++ b/src/ereader_helpers.c
+@@ -375,7 +375,9 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
+ 
+ static u8 GetTrainerHillUnkVal(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     return (gSaveBlock1Ptr->trainerHill.unused + 1) % 256;
++    #endif
+ }
+ 
+ static bool32 ValidateTrainerChecksum(struct EReaderTrainerHillTrainer * hillTrainer)
+diff --git a/src/field_specials.c b/src/field_specials.c
+index 38746c97a48..1eb9a1728d4 100644
+--- a/src/field_specials.c
++++ b/src/field_specials.c
+@@ -137,7 +137,11 @@ static void Task_CloseBattlePikeCurtain(u8);
+ static u8 DidPlayerGetFirstFans(void);
+ static void SetInitialFansOfPlayer(void);
+ static u16 PlayerGainRandomTrainerFan(void);
++#ifndef FREE_LINK_BATTLE_RECORDS
+ static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
++#else
++static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
++#endif
+ 
+ void Special_ShowDiploma(void)
+ {
+@@ -4202,9 +4206,14 @@ void BufferFanClubTrainerName(void)
+     case FANCLUB_MEMBER8:
+         break;
+     }
++    #ifndef FREE_LINK_BATTLE_RECORDS
+     BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
++    #else
++    BufferFanClubTrainerName_(whichLinkTrainer, whichNPCTrainer);
++    #endif
+ }
+ 
++#ifndef FREE_LINK_BATTLE_RECORDS
+ static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 whichLinkTrainer, u8 whichNPCTrainer)
+ {
+     struct LinkBattleRecord *record = &linkRecords->entries[whichLinkTrainer];
+@@ -4242,6 +4251,35 @@ static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8
+         ConvertInternationalString(gStringVar1, linkRecords->languages[whichLinkTrainer]);
+     }
+ }
++#else
++static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer)
++{
++    switch (whichNPCTrainer)
++    {
++        case 0:
++            StringCopy(gStringVar1, gText_Wallace);
++            break;
++        case 1:
++            StringCopy(gStringVar1, gText_Steven);
++            break;
++        case 2:
++            StringCopy(gStringVar1, gText_Brawly);
++            break;
++        case 3:
++            StringCopy(gStringVar1, gText_Winona);
++            break;
++        case 4:
++            StringCopy(gStringVar1, gText_Phoebe);
++            break;
++        case 5:
++            StringCopy(gStringVar1, gText_Glacia);
++            break;
++        default:
++            StringCopy(gStringVar1, gText_Wallace);
++            break;
++    }
++}
++#endif
+ 
+ void UpdateTrainerFansAfterLinkBattle(void)
+ {
+diff --git a/src/frontier_util.c b/src/frontier_util.c
+index 8cd385e6539..4193927ad21 100644
+--- a/src/frontier_util.c
++++ b/src/frontier_util.c
+@@ -1697,9 +1697,13 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
+     switch (whichText)
+     {
+     case FRONTIER_BEFORE_TEXT:
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         if (trainerId == TRAINER_EREADER)
+             FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.greeting);
+         else if (trainerId == TRAINER_FRONTIER_BRAIN)
++        #else
++        if (trainerId == TRAINER_FRONTIER_BRAIN)
++        #endif
+             CopyFrontierBrainText(FALSE);
+         else if (trainerId < FRONTIER_TRAINERS_COUNT)
+             FrontierSpeechToString(gFacilityTrainers[trainerId].speechBefore);
+@@ -1709,11 +1713,15 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
+             BufferApprenticeChallengeText(trainerId - TRAINER_RECORD_MIXING_APPRENTICE);
+         break;
+     case FRONTIER_PLAYER_LOST_TEXT:
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         if (trainerId == TRAINER_EREADER)
+         {
+             FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.farewellPlayerLost);
+         }
+         else if (trainerId == TRAINER_FRONTIER_BRAIN)
++        #else
++        if (trainerId == TRAINER_FRONTIER_BRAIN)
++        #endif
+         {
+             CopyFrontierBrainText(FALSE);
+         }
+@@ -1739,7 +1747,9 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
+     case FRONTIER_PLAYER_WON_TEXT:
+         if (trainerId == TRAINER_EREADER)
+         {
++            #ifndef FREE_BATTLE_TOWER_E_READER
+             FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.farewellPlayerWon);
++            #endif
+         }
+         else if (trainerId == TRAINER_FRONTIER_BRAIN)
+         {
+@@ -2269,6 +2279,7 @@ static void Print2PRecord(s32 position, s32 x, s32 y, struct RankingHall2P *hall
+ 
+ static void Fill1PRecords(struct RankingHall1P *dst, s32 hallFacilityId, s32 lvlMode)
+ {
++    #ifndef FREE_RECORD_MIXING_HALL_RECORDS
+     s32 i, j;
+     struct RankingHall1P record1P[HALL_RECORDS_COUNT + 1];
+     struct PlayerHallRecords *playerHallRecords = AllocZeroed(sizeof(struct PlayerHallRecords));
+@@ -2299,10 +2310,12 @@ static void Fill1PRecords(struct RankingHall1P *dst, s32 hallFacilityId, s32 lvl
+     }
+ 
+     Free(playerHallRecords);
++    #endif
+ }
+ 
+ static void Fill2PRecords(struct RankingHall2P *dst, s32 lvlMode)
+ {
++    #ifndef FREE_RECORD_MIXING_HALL_RECORDS
+     s32 i, j;
+     struct RankingHall2P record2P[HALL_RECORDS_COUNT + 1];
+     struct PlayerHallRecords *playerHallRecords = AllocZeroed(sizeof(struct PlayerHallRecords));
+@@ -2333,6 +2346,7 @@ static void Fill2PRecords(struct RankingHall2P *dst, s32 lvlMode)
+     }
+ 
+     Free(playerHallRecords);
++    #endif
+ }
+ 
+ static void PrintHallRecords(s32 hallFacilityId, s32 lvlMode)
+@@ -2382,6 +2396,7 @@ void ScrollRankingHallRecordsWindow(void)
+ 
+ void ClearRankingHallRecords(void)
+ {
++    #ifndef FREE_RECORD_MIXING_HALL_RECORDS
+     s32 i, j, k;
+ 
+     // UB: Passing 0 as a pointer instead of a pointer holding a value of 0.
+@@ -2416,6 +2431,7 @@ void ClearRankingHallRecords(void)
+             gSaveBlock2Ptr->hallRecords2P[j][k].winStreak = 0;
+         }
+     }
++    #endif
+ }
+ 
+ void SaveGameFrontier(void)
+diff --git a/src/gym_leader_rematch.c b/src/gym_leader_rematch.c
+index efe874894c0..611a157e8f3 100644
+--- a/src/gym_leader_rematch.c
++++ b/src/gym_leader_rematch.c
+@@ -46,6 +46,7 @@ static void UpdateGymLeaderRematchFromArray(const u16 *data, size_t size, u32 ma
+     s32 lowestRematchIndex = 5;
+     u32 i;
+     s32 rematchIndex;
++    #ifndef FREE_MATCH_CALL
+     for (i = 0; i < size; i++)
+     {
+         if (!gSaveBlock1Ptr->trainerRematches[data[i]])
+@@ -89,6 +90,7 @@ static void UpdateGymLeaderRematchFromArray(const u16 *data, size_t size, u32 ma
+             }
+         }
+     }
++    #endif
+ }
+ 
+ static s32 GetRematchIndex(u32 trainerIdx)
+diff --git a/src/match_call.c b/src/match_call.c
+index a9d18b3477a..241ec175e5e 100644
+--- a/src/match_call.c
++++ b/src/match_call.c
+@@ -1459,7 +1459,9 @@ static void Task_SpinPokenavIcon(u8 taskId)
+ 
+ static bool32 TrainerIsEligibleForRematch(int matchCallId)
+ {
++    #ifndef FREE_MATCH_CALL
+     return gSaveBlock1Ptr->trainerRematches[matchCallId] > 0;
++    #endif
+ }
+ 
+ static u16 GetRematchTrainerLocation(int matchCallId)
+diff --git a/src/mystery_event_script.c b/src/mystery_event_script.c
+index b146bbab398..a97d6cf04f4 100644
+--- a/src/mystery_event_script.c
++++ b/src/mystery_event_script.c
+@@ -226,6 +226,7 @@ bool8 MEScrCmd_runscript(struct ScriptContext *ctx)
+ 
+ bool8 MEScrCmd_setenigmaberry(struct ScriptContext *ctx)
+ {
++    #ifndef FREE_ENIGMA_BERRY
+     u8 *str;
+     const u8 *message;
+     bool32 haveBerry = IsEnigmaBerryValid();
+@@ -258,7 +259,7 @@ bool8 MEScrCmd_setenigmaberry(struct ScriptContext *ctx)
+         VarSet(VAR_ENIGMA_BERRY_AVAILABLE, 1);
+     else
+         ctx->mStatus = MEVENT_STATUS_LOAD_ERROR;
+-
++    #endif
+     return FALSE;
+ }
+ 
+@@ -357,11 +358,13 @@ bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
+ 
+ bool8 MEScrCmd_addtrainer(struct ScriptContext *ctx)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     u32 data = ScriptReadWord(ctx) - ctx->mOffset + ctx->mScriptBase;
+     memcpy(&gSaveBlock2Ptr->frontier.ereaderTrainer, (void *)data, sizeof(gSaveBlock2Ptr->frontier.ereaderTrainer));
+     ValidateEReaderTrainer();
+     StringExpandPlaceholders(gStringVar4, gText_MysteryEventNewTrainer);
+     ctx->mStatus = MEVENT_STATUS_SUCCESS;
++    #endif
+     return FALSE;
+ }
+ 
+diff --git a/src/mystery_gift.c b/src/mystery_gift.c
+index ee601059f8a..b0cc2f4423e 100755
+--- a/src/mystery_gift.c
++++ b/src/mystery_gift.c
+@@ -26,34 +26,46 @@ static void IncrementCardStatForNewTrainer(u32, u32, u32 *, int);
+ 
+ void ClearMysteryGift(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     CpuFill32(0, &gSaveBlock1Ptr->mysteryGift, sizeof(gSaveBlock1Ptr->mysteryGift));
+     ClearSavedWonderNewsMetadata(); // Clear is redundant, WonderNews_Reset would be sufficient
++    #endif
+     InitQuestionnaireWords();
+ }
+ 
+ struct WonderNews *GetSavedWonderNews(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     return &gSaveBlock1Ptr->mysteryGift.news;
++    #endif
+ }
+ 
+ struct WonderCard *GetSavedWonderCard(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     return &gSaveBlock1Ptr->mysteryGift.card;
++    #endif
+ }
+ 
+ struct WonderCardMetadata *GetSavedWonderCardMetadata(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     return &gSaveBlock1Ptr->mysteryGift.cardMetadata;
++    #endif
+ }
+ 
+ struct WonderNewsMetadata *GetSavedWonderNewsMetadata(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     return &gSaveBlock1Ptr->mysteryGift.newsMetadata;
++    #endif
+ }
+ 
+ u16 *GetQuestionnaireWordsPtr(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     return gSaveBlock1Ptr->mysteryGift.questionnaireWords;
++    #endif
+ }
+ 
+ // Equivalent to ClearSavedWonderCardAndRelated, but nothing else to clear
+@@ -64,6 +76,7 @@ void ClearSavedWonderNewsAndRelated(void)
+ 
+ bool32 SaveWonderNews(const struct WonderNews *news)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (!ValidateWonderNews(news))
+         return FALSE;
+ 
+@@ -71,16 +84,23 @@ bool32 SaveWonderNews(const struct WonderNews *news)
+     gSaveBlock1Ptr->mysteryGift.news = *news;
+     gSaveBlock1Ptr->mysteryGift.newsCrc = CALC_CRC(gSaveBlock1Ptr->mysteryGift.news);
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ bool32 ValidateSavedWonderNews(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (CALC_CRC(gSaveBlock1Ptr->mysteryGift.news) != gSaveBlock1Ptr->mysteryGift.newsCrc)
+         return FALSE;
+     if (!ValidateWonderNews(&gSaveBlock1Ptr->mysteryGift.news))
+         return FALSE;
+ 
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ static bool32 ValidateWonderNews(const struct WonderNews *news)
+@@ -93,27 +113,36 @@ static bool32 ValidateWonderNews(const struct WonderNews *news)
+ 
+ bool32 IsSendingSavedWonderNewsAllowed(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     const struct WonderNews *news = &gSaveBlock1Ptr->mysteryGift.news;
+     if (news->sendType == SEND_TYPE_DISALLOWED)
+         return FALSE;
+ 
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ static void ClearSavedWonderNews(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     CpuFill32(0, GetSavedWonderNews(), sizeof(gSaveBlock1Ptr->mysteryGift.news));
+     gSaveBlock1Ptr->mysteryGift.newsCrc = 0;
++    #endif
+ }
+ 
+ static void ClearSavedWonderNewsMetadata(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     CpuFill32(0, GetSavedWonderNewsMetadata(), sizeof(gSaveBlock1Ptr->mysteryGift.newsMetadata));
+     WonderNews_Reset();
++    #endif
+ }
+ 
+ bool32 IsWonderNewsSameAsSaved(const u8 *news)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     const u8 *savedNews = (const u8 *)&gSaveBlock1Ptr->mysteryGift.news;
+     u32 i;
+     if (!ValidateSavedWonderNews())
+@@ -126,10 +155,14 @@ bool32 IsWonderNewsSameAsSaved(const u8 *news)
+     }
+ 
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ void ClearSavedWonderCardAndRelated(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     ClearSavedWonderCard();
+     ClearSavedWonderCardMetadata();
+     ClearSavedTrainerIds();
+@@ -137,10 +170,12 @@ void ClearSavedWonderCardAndRelated(void)
+     ClearMysteryGiftFlags();
+     ClearMysteryGiftVars();
+     ClearEReaderTrainer(&gSaveBlock2Ptr->frontier.ereaderTrainer);
++    #endif
+ }
+ 
+ bool32 SaveWonderCard(const struct WonderCard *card)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     struct WonderCardMetadata *metadata;
+     if (!ValidateWonderCard(card))
+         return FALSE;
+@@ -151,10 +186,14 @@ bool32 SaveWonderCard(const struct WonderCard *card)
+     metadata = &gSaveBlock1Ptr->mysteryGift.cardMetadata;
+     metadata->iconSpecies = (&gSaveBlock1Ptr->mysteryGift.card)->iconSpecies;
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ bool32 ValidateSavedWonderCard(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (gSaveBlock1Ptr->mysteryGift.cardCrc != CALC_CRC(gSaveBlock1Ptr->mysteryGift.card))
+         return FALSE;
+     if (!ValidateWonderCard(&gSaveBlock1Ptr->mysteryGift.card))
+@@ -163,6 +202,9 @@ bool32 ValidateSavedWonderCard(void)
+         return FALSE;
+ 
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ static bool32 ValidateWonderCard(const struct WonderCard *card)
+@@ -185,30 +227,40 @@ static bool32 ValidateWonderCard(const struct WonderCard *card)
+ 
+ bool32 IsSendingSavedWonderCardAllowed(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     const struct WonderCard *card = &gSaveBlock1Ptr->mysteryGift.card;
+     if (card->sendType == SEND_TYPE_DISALLOWED)
+         return FALSE;
+ 
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ static void ClearSavedWonderCard(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     CpuFill32(0, &gSaveBlock1Ptr->mysteryGift.card, sizeof(gSaveBlock1Ptr->mysteryGift.card));
+     gSaveBlock1Ptr->mysteryGift.cardCrc = 0;
++    #endif
+ }
+ 
+ static void ClearSavedWonderCardMetadata(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     CpuFill32(0, GetSavedWonderCardMetadata(), sizeof(gSaveBlock1Ptr->mysteryGift.cardMetadata));
+     gSaveBlock1Ptr->mysteryGift.cardMetadataCrc = 0;
++    #endif
+ }
+ 
+ u16 GetWonderCardFlagID(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (ValidateSavedWonderCard())
+         return gSaveBlock1Ptr->mysteryGift.card.flagId;
+-
++    #endif
++    
+     return 0;
+ }
+ 
+@@ -307,15 +359,20 @@ static int GetNumStampsInSavedCard(void)
+     if (!ValidateSavedWonderCard())
+         return 0;
+ 
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     card = &gSaveBlock1Ptr->mysteryGift.card;
+     if (card->type != CARD_TYPE_STAMP)
+         return 0;
+ 
+     return GetNumStampsInMetadata(&gSaveBlock1Ptr->mysteryGift.cardMetadata, card->maxStamps);
++    #else
++    return 0;
++    #endif
+ }
+ 
+ bool32 MysteryGift_TrySaveStamp(const u16 *stamp)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     struct WonderCard *card = &gSaveBlock1Ptr->mysteryGift.card;
+     int maxStamps = card->maxStamps;
+     int i;
+@@ -335,7 +392,7 @@ bool32 MysteryGift_TrySaveStamp(const u16 *stamp)
+             return TRUE;
+         }
+     }
+-
++    #endif
+     return FALSE;
+ }
+ 
+@@ -345,6 +402,7 @@ bool32 MysteryGift_TrySaveStamp(const u16 *stamp)
+ 
+ void MysteryGift_LoadLinkGameData(struct MysteryGiftLinkGameData *data, bool32 isWonderNews)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     int i;
+     CpuFill32(0, data, sizeof(*data));
+     data->validationVar = GAME_DATA_VALID_VAR;
+@@ -385,6 +443,7 @@ void MysteryGift_LoadLinkGameData(struct MysteryGiftLinkGameData *data, bool32 i
+ 
+     memcpy(data->romHeaderGameCode, RomHeaderGameCode, GAME_CODE_LENGTH);
+     data->romHeaderSoftwareVersion = RomHeaderSoftwareVersion;
++    #endif
+ }
+ 
+ bool32 MysteryGift_ValidateLinkGameData(const struct MysteryGiftLinkGameData *data, bool32 isWonderNews)
+@@ -485,6 +544,7 @@ u16 MysteryGift_GetCardStatFromLinkData(const struct MysteryGiftLinkGameData *da
+ 
+ static void IncrementCardStat(u32 statType)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     struct WonderCard *card = &gSaveBlock1Ptr->mysteryGift.card;
+     if (card->type == CARD_TYPE_LINK_STAT)
+     {
+@@ -514,10 +574,12 @@ static void IncrementCardStat(u32 statType)
+             *stat = MAX_WONDER_CARD_STAT;
+         }
+     }
++    #endif
+ }
+ 
+ u16 MysteryGift_GetCardStat(u32 stat)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     switch (stat)
+     {
+     case CARD_STAT_BATTLES_WON:
+@@ -565,7 +627,7 @@ u16 MysteryGift_GetCardStat(u32 stat)
+         break;
+     }
+     }
+-
++    #endif
+     AGB_ASSERT(0);
+     return 0;
+ }
+@@ -584,8 +646,10 @@ bool32 MysteryGift_TryEnableStatsByFlagId(u16 flagId)
+     if (!ValidateSavedWonderCard())
+         return FALSE;
+ 
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (gSaveBlock1Ptr->mysteryGift.card.flagId != flagId)
+         return FALSE;
++    #endif
+ 
+     sStatsEnabled = TRUE;
+     return TRUE;
+@@ -593,6 +657,7 @@ bool32 MysteryGift_TryEnableStatsByFlagId(u16 flagId)
+ 
+ void MysteryGift_TryIncrementStat(u32 stat, u32 trainerId)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     if (sStatsEnabled)
+     {
+         switch (stat)
+@@ -620,11 +685,14 @@ void MysteryGift_TryIncrementStat(u32 stat, u32 trainerId)
+             break;
+         }
+     }
++    #endif
+ }
+ 
+ static void ClearSavedTrainerIds(void)
+ {
++    #ifndef FREE_BATTLE_TOWER_E_READER
+     CpuFill32(0, gSaveBlock1Ptr->mysteryGift.trainerIds, sizeof(gSaveBlock1Ptr->mysteryGift.trainerIds));
++    #endif
+ }
+ 
+ // Returns TRUE if it's a new trainer id, FALSE if an existing one.
+diff --git a/src/mystery_gift_client.c b/src/mystery_gift_client.c
+index 567751bad37..762b7f02d29 100644
+--- a/src/mystery_gift_client.c
++++ b/src/mystery_gift_client.c
+@@ -232,8 +232,10 @@ static u32 Client_Run(struct MysteryGiftClient * client)
+         InitRamScript_NoObjectEvent(client->recvBuffer, sizeof(struct RamScriptData));
+         break;
+     case CLI_RECV_EREADER_TRAINER:
++        #ifndef FREE_BATTLE_TOWER_E_READER
+         memcpy(&gSaveBlock2Ptr->frontier.ereaderTrainer, client->recvBuffer, sizeof(gSaveBlock2Ptr->frontier.ereaderTrainer));
+         ValidateEReaderTrainer();
++        #endif
+         break;
+     case CLI_RUN_BUFFER_SCRIPT:
+         memcpy(gDecompressionBuffer, client->recvBuffer, MG_LINK_BUFFER_SIZE);
+diff --git a/src/party_menu.c b/src/party_menu.c
+index 61b694753c3..261f206b255 100755
+--- a/src/party_menu.c
++++ b/src/party_menu.c
+@@ -4296,7 +4296,11 @@ static bool8 IsHPRecoveryItem(u16 item)
+     const u8 *effect;
+ 
+     if (item == ITEM_ENIGMA_BERRY)
++        #ifndef FREE_ENIGMA_BERRY
+         effect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
++        #else
++        effect = 0;
++        #endif
+     else
+         effect = gItemEffectTable[item - ITEM_POTION];
+ 
+@@ -4613,7 +4617,11 @@ void ItemUseCB_PPRecovery(u8 taskId, TaskFunc task)
+     u16 item = gSpecialVar_ItemId;
+ 
+     if (item == ITEM_ENIGMA_BERRY)
++        #ifndef FREE_ENIGMA_BERRY
+         effect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
++        #else
++        effect = 0;
++        #endif
+     else
+         effect = gItemEffectTable[item - ITEM_POTION];
+ 
+@@ -5255,7 +5263,11 @@ u8 GetItemEffectType(u16 item)
+ 
+     // Read the item's effect properties.
+     if (item == ITEM_ENIGMA_BERRY)
++        #ifndef FREE_ENIGMA_BERRY
+         itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
++        #else
++        itemEffect = 0;
++        #endif
+     else
+         itemEffect = gItemEffectTable[item - ITEM_POTION];
+ 
+diff --git a/src/pokedex.c b/src/pokedex.c
+index 88558d6f2cf..3ba9427b572 100644
+--- a/src/pokedex.c
++++ b/src/pokedex.c
+@@ -1517,8 +1517,10 @@ void ResetPokedex(void)
+     {
+         gSaveBlock2Ptr->pokedex.owned[i] = 0;
+         gSaveBlock2Ptr->pokedex.seen[i] = 0;
++        #ifndef FREE_EXTRA_SEEN_FLAGS
+         gSaveBlock1Ptr->seen1[i] = 0;
+         gSaveBlock1Ptr->seen2[i] = 0;
++        #endif
+     }
+ }
+ 
+@@ -4269,6 +4271,7 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
+     case FLAG_GET_SEEN:
+         if (gSaveBlock2Ptr->pokedex.seen[index] & mask)
+         {
++            #ifndef FREE_EXTRA_SEEN_FLAGS
+             if ((gSaveBlock2Ptr->pokedex.seen[index] & mask) == (gSaveBlock1Ptr->seen1[index] & mask)
+              && (gSaveBlock2Ptr->pokedex.seen[index] & mask) == (gSaveBlock1Ptr->seen2[index] & mask))
+                 retVal = 1;
+@@ -4279,11 +4282,15 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
+                 gSaveBlock1Ptr->seen2[index] &= ~mask;
+                 retVal = 0;
+             }
++            #else
++                retVal = 1;
++            #endif
+         }
+         break;
+     case FLAG_GET_CAUGHT:
+         if (gSaveBlock2Ptr->pokedex.owned[index] & mask)
+         {
++            #ifndef FREE_EXTRA_SEEN_FLAGS
+             if ((gSaveBlock2Ptr->pokedex.owned[index] & mask) == (gSaveBlock2Ptr->pokedex.seen[index] & mask)
+              && (gSaveBlock2Ptr->pokedex.owned[index] & mask) == (gSaveBlock1Ptr->seen1[index] & mask)
+              && (gSaveBlock2Ptr->pokedex.owned[index] & mask) == (gSaveBlock1Ptr->seen2[index] & mask))
+@@ -4296,12 +4303,17 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
+                 gSaveBlock1Ptr->seen2[index] &= ~mask;
+                 retVal = 0;
+             }
++            #else
++                retVal = 1;
++            #endif
+         }
+         break;
+     case FLAG_SET_SEEN:
+         gSaveBlock2Ptr->pokedex.seen[index] |= mask;
++        #ifndef FREE_EXTRA_SEEN_FLAGS
+         gSaveBlock1Ptr->seen1[index] |= mask;
+         gSaveBlock1Ptr->seen2[index] |= mask;
++        #endif
+         break;
+     case FLAG_SET_CAUGHT:
+         gSaveBlock2Ptr->pokedex.owned[index] |= mask;
+diff --git a/src/pokemon.c b/src/pokemon.c
+index bebed465bfc..16494630402 100644
+--- a/src/pokemon.c
++++ b/src/pokemon.c
+@@ -4726,7 +4726,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
+         if (gMain.inBattle)
+             holdEffect = gEnigmaBerries[gBattlerInMenuId].holdEffect;
+         else
++            #ifndef FREE_ENIGMA_BERRY
+             holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
++            #else
++            holdEffect = 0;
++            #endif
+     }
+     else
+     {
+@@ -4767,7 +4771,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
+         if (gMain.inBattle)
+             itemEffect = gEnigmaBerries[gActiveBattler].itemEffect;
+         else
++            #ifndef FREE_ENIGMA_BERRY
+             itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
++            #else
++            itemEffect = 0;
++            #endif
+     }
+     else
+     {
+@@ -5401,7 +5409,11 @@ u8 *UseStatIncreaseItem(u16 itemId)
+         if (gMain.inBattle)
+             itemEffect = gEnigmaBerries[gBattlerInMenuId].itemEffect;
+         else
++            #ifndef FREE_ENIGMA_BERRY
+             itemEffect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
++            #else
++            itemEffect = 0;
++            #endif
+     }
+     else
+     {
+@@ -5462,7 +5474,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem)
+     u8 holdEffect;
+ 
+     if (heldItem == ITEM_ENIGMA_BERRY)
++        #ifndef FREE_ENIGMA_BERRY
+         holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
++        #else
++        holdEffect = 0;
++        #endif
+     else
+         holdEffect = ItemId_GetHoldEffect(heldItem);
+ 
+@@ -5879,7 +5895,11 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
+         if (gMain.inBattle)
+             holdEffect = gEnigmaBerries[0].holdEffect;
+         else
++            #ifndef FREE_ENIGMA_BERRY
+             holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
++            #else
++            holdEffect = 0;
++            #endif
+     }
+     else
+     {
+@@ -5972,7 +5992,11 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
+             if (gMain.inBattle)
+                 holdEffect = gEnigmaBerries[0].holdEffect;
+             else
++                #ifndef FREE_ENIGMA_BERRY
+                 holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
++                #else
++                holdEffect = 0;
++                #endif
+         }
+         else
+         {
+diff --git a/src/pokemon_jump.c b/src/pokemon_jump.c
+index 4461d8ad2ab..b95700c6ebe 100755
+--- a/src/pokemon_jump.c
++++ b/src/pokemon_jump.c
+@@ -4093,11 +4093,14 @@ static bool32 RecvPacket_MemberStateToMember(struct PokemonJump_Player *player,
+ 
+ static struct PokemonJumpRecords *GetPokeJumpRecords(void)
+ {
++    #ifndef FREE_POKEMON_JUMP
+     return &gSaveBlock2Ptr->pokeJump;
++    #endif
+ }
+ 
+ void ResetPokemonJumpRecords(void)
+ {
++    #ifndef FREE_POKEMON_JUMP
+     struct PokemonJumpRecords *records = GetPokeJumpRecords();
+     records->jumpsInRow = 0;
+     records->bestJumpScore = 0;
+@@ -4105,10 +4108,12 @@ void ResetPokemonJumpRecords(void)
+     records->gamesWithMaxPlayers = 0;
+     records->unused2 = 0;
+     records->unused1 = 0;
++    #endif
+ }
+ 
+ static bool32 TryUpdateRecords(u32 jumpScore, u16 jumpsInRow, u16 excellentsInRow)
+ {
++    #ifndef FREE_POKEMON_JUMP
+     struct PokemonJumpRecords *records = GetPokeJumpRecords();
+     bool32 newRecord = FALSE;
+ 
+@@ -4120,13 +4125,18 @@ static bool32 TryUpdateRecords(u32 jumpScore, u16 jumpsInRow, u16 excellentsInRo
+         records->excellentsInRow = excellentsInRow, newRecord = TRUE;
+ 
+     return newRecord;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ static void IncrementGamesWithMaxPlayers(void)
+ {
++    #ifndef FREE_POKEMON_JUMP
+     struct PokemonJumpRecords *records = GetPokeJumpRecords();
+     if (records->gamesWithMaxPlayers < 9999)
+         records->gamesWithMaxPlayers++;
++    #endif
+ }
+ 
+ void ShowPokemonJumpRecords(void)
+@@ -4206,6 +4216,7 @@ static void Task_ShowPokemonJumpRecords(u8 taskId)
+ 
+ static void PrintRecordsText(u16 windowId, int width)
+ {
++    #ifndef FREE_POKEMON_JUMP
+     int i, x;
+     int recordNums[3];
+     struct PokemonJumpRecords *records = GetPokeJumpRecords();
+@@ -4226,6 +4237,7 @@ static void PrintRecordsText(u16 windowId, int width)
+         AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar1, x, 25 + (i * 16), TEXT_SKIP_DRAW, NULL);
+     }
+     PutWindowTilemap(windowId);
++    #endif
+ }
+ 
+ static void TruncateToFirstWordOnly(u8 *str)
+diff --git a/src/pokenav_match_call_data.c b/src/pokenav_match_call_data.c
+index 2e8cc40b5cb..dff67437e5c 100644
+--- a/src/pokenav_match_call_data.c
++++ b/src/pokenav_match_call_data.c
+@@ -842,14 +842,22 @@ static bool32 MatchCall_IsRematchable_NPC(match_call_t matchCall)
+ 
+ static bool32 MatchCall_IsRematchable_Trainer(match_call_t matchCall)
+ {
++    #ifndef FREE_MATCH_CALL
+     if (matchCall.trainer->rematchTableIdx >= REMATCH_ELITE_FOUR_ENTRIES)
+         return FALSE;
+     return gSaveBlock1Ptr->trainerRematches[matchCall.trainer->rematchTableIdx] ? TRUE : FALSE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ static bool32 MatchCall_IsRematchable_Wally(match_call_t matchCall)
+ {
++    #ifndef FREE_MATCH_CALL
+     return gSaveBlock1Ptr->trainerRematches[matchCall.wally->rematchTableIdx] ? TRUE : FALSE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ static bool32 MatchCall_IsRematchable_Rival(match_call_t matchCall)
+@@ -1004,6 +1012,7 @@ static void MatchCall_BufferCallMessageText(const match_call_text_data_t *textDa
+ 
+ static void MatchCall_BufferCallMessageTextByRematchTeam(const match_call_text_data_t *textData, u16 idx, u8 *dest)
+ {
++    #ifndef FREE_MATCH_CALL
+     u32 i;
+     for (i = 0; textData[i].text != NULL; i++)
+     {
+@@ -1037,6 +1046,7 @@ static void MatchCall_BufferCallMessageTextByRematchTeam(const match_call_text_d
+ 
+         StringExpandPlaceholders(dest, textData[i].text);
+     }
++    #endif
+ }
+ 
+ void MatchCall_GetNameAndDesc(u32 idx, const u8 **desc, const u8 **name)
+diff --git a/src/pokenav_match_call_list.c b/src/pokenav_match_call_list.c
+index b00c76b48af..20b4f4dd45c 100755
+--- a/src/pokenav_match_call_list.c
++++ b/src/pokenav_match_call_list.c
+@@ -317,6 +317,7 @@ u16 GetMatchCallMapSec(int index)
+ 
+ bool32 ShouldDrawRematchPokeballIcon(int index)
+ {
++    #ifndef FREE_MATCH_CALL
+     struct Pokenav_MatchCallMenu *state = GetSubstructPtr(POKENAV_SUBSTRUCT_MATCH_CALL_MAIN);
+     if (!state->matchCallEntries[index].isSpecialTrainer)
+         index = state->matchCallEntries[index].headerId;
+@@ -327,6 +328,9 @@ bool32 ShouldDrawRematchPokeballIcon(int index)
+         return FALSE;
+ 
+     return gSaveBlock1Ptr->trainerRematches[index] != 0;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ int GetMatchCallTrainerPic(int index)
+@@ -471,6 +475,7 @@ int GetIndexDeltaOfNextCheckPageUp(int index)
+ // Unused
+ static bool32 HasRematchEntry(void)
+ {
++    #ifndef FREE_MATCH_CALL
+     int i;
+ 
+     for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
+@@ -488,12 +493,13 @@ static bool32 HasRematchEntry(void)
+                 return TRUE;
+         }
+     }
+-
++    #endif
+     return FALSE;
+ }
+ 
+ static bool32 ShouldDoNearbyMessage(void)
+ {
++    #ifndef FREE_MATCH_CALL
+     struct Pokenav_MatchCallMenu *state = GetSubstructPtr(POKENAV_SUBSTRUCT_MATCH_CALL_MAIN);
+     int selection = PokenavList_GetSelectedIndex();
+     if (!state->matchCallEntries[selection].isSpecialTrainer)
+@@ -516,6 +522,6 @@ static bool32 ShouldDoNearbyMessage(void)
+             }
+         }
+     }
+-
++    #endif
+     return FALSE;
+ }
+diff --git a/src/pokenav_menu_handler_gfx.c b/src/pokenav_menu_handler_gfx.c
+index 33674423622..4da8d6c003c 100644
+--- a/src/pokenav_menu_handler_gfx.c
++++ b/src/pokenav_menu_handler_gfx.c
+@@ -367,6 +367,7 @@ static bool32 AreAnyTrainerRematchesNearby(void)
+ {
+     s32 i;
+ 
++    #ifndef FREE_MATCH_CALL
+     for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
+     {
+         if (GetMatchTableMapSectionId(i) == gMapHeader.regionMapSectionId
+@@ -374,6 +375,7 @@ static bool32 AreAnyTrainerRematchesNearby(void)
+             && gSaveBlock1Ptr->trainerRematches[i])
+             return TRUE;
+     }
++    #endif
+ 
+     return FALSE;
+ }
+diff --git a/src/record_mixing.c b/src/record_mixing.c
+index d6edd078b70..d6afad8647b 100644
+--- a/src/record_mixing.c
++++ b/src/record_mixing.c
+@@ -1206,6 +1206,7 @@ static void ReceiveApprenticeData(struct Apprentice *records, size_t recordSize,
+ 
+ static void GetNewHallRecords(struct RecordMixingHallRecords *dst, void *records, size_t recordSize, u32 multiplayerId, s32 linkPlayerCount)
+ {
++    #ifndef FREE_RECORD_MIXING_HALL_RECORDS
+     s32 i, j, k, l;
+     s32 repeatTrainers;
+ 
+@@ -1281,6 +1282,7 @@ static void GetNewHallRecords(struct RecordMixingHallRecords *dst, void *records
+                 dst->hallRecords2P[j][k + HALL_RECORDS_COUNT] = sPartnerHallRecords[k]->twoPlayers[j];
+         }
+     }
++    #endif
+ }
+ 
+ static void FillWinStreakRecords1P(struct RankingHall1P *playerRecords, struct RankingHall1P *mixRecords)
+@@ -1341,6 +1343,7 @@ static void FillWinStreakRecords2P(struct RankingHall2P *playerRecords, struct R
+ 
+ static void SaveHighestWinStreakRecords(struct RecordMixingHallRecords *mixHallRecords)
+ {
++    #ifndef FREE_RECORD_MIXING_HALL_RECORDS
+     s32 i, j;
+ 
+     for (i = 0; i < HALL_FACILITIES_COUNT; i++)
+@@ -1348,12 +1351,15 @@ static void SaveHighestWinStreakRecords(struct RecordMixingHallRecords *mixHallR
+         for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
+             FillWinStreakRecords1P(gSaveBlock2Ptr->hallRecords1P[i][j], mixHallRecords->hallRecords1P[i][j]);
+     }
++
+     for (j = 0; j < FRONTIER_LVL_MODE_COUNT; j++)
+         FillWinStreakRecords2P(gSaveBlock2Ptr->hallRecords2P[j], mixHallRecords->hallRecords2P[j]);
++    #endif
+ }
+ 
+ static void ReceiveRankingHallRecords(struct PlayerHallRecords *records, size_t recordSize, u32 multiplayerId)
+ {
++    #ifndef FREE_RECORD_MIXING_HALL_RECORDS
+     u8 linkPlayerCount = GetLinkPlayerCount();
+     struct RecordMixingHallRecords *mixHallRecords = AllocZeroed(sizeof(*mixHallRecords));
+ 
+@@ -1361,6 +1367,7 @@ static void ReceiveRankingHallRecords(struct PlayerHallRecords *records, size_t
+     SaveHighestWinStreakRecords(mixHallRecords);
+ 
+     Free(mixHallRecords);
++    #endif
+ }
+ 
+ static void GetRecordMixingDaycareMail(struct RecordMixingDaycareMail *dst)
+diff --git a/src/rom_header_gf.c b/src/rom_header_gf.c
+index 465c0cf4109..0271885becc 100644
+--- a/src/rom_header_gf.c
++++ b/src/rom_header_gf.c
+@@ -33,7 +33,9 @@ struct GFRomHeader
+     u32 flagsOffset;
+     u32 varsOffset;
+     u32 pokedexOffset;
++    #ifndef FREE_EXTRA_SEEN_FLAGS
+     u32 seen1Offset;
++    #endif
+     u32 seen2Offset;
+     u32 pokedexVar;
+     u32 pokedexFlag;
+@@ -87,8 +89,10 @@ struct GFRomHeader
+     u8 pcItemsCount;
+     u32 pcItemsOffset;
+     u32 giftRibbonsOffset;
++    #ifndef FREE_ENIGMA_BERRY
+     u32 enigmaBerryOffset;
+     u32 enigmaBerrySize;
++    #endif
+     const u8 * moveDescriptions;
+     u32 unk20;
+ };
+@@ -113,8 +117,9 @@ static const struct GFRomHeader sGFRomHeader = {
+     .flagsOffset = offsetof(struct SaveBlock1, flags),
+     .varsOffset = offsetof(struct SaveBlock1, vars),
+     .pokedexOffset = offsetof(struct SaveBlock2, pokedex),
++    #ifndef FREE_EXTRA_SEEN_FLAGS
+     .seen1Offset = offsetof(struct SaveBlock1, seen1),
+-    .seen2Offset = offsetof(struct SaveBlock1, seen2),
++    #endif
+     .pokedexVar = VAR_NATIONAL_DEX - VARS_START,
+     .pokedexFlag = FLAG_RECEIVED_POKEDEX_FROM_BIRCH,
+     .mysteryEventFlag = FLAG_SYS_MYSTERY_EVENT_ENABLE,
+@@ -168,8 +173,10 @@ static const struct GFRomHeader sGFRomHeader = {
+     .pcItemsCount = PC_ITEMS_COUNT,
+     .pcItemsOffset = offsetof(struct SaveBlock1, pcItems),
+     .giftRibbonsOffset = offsetof(struct SaveBlock1, giftRibbons),
++    #ifndef FREE_ENIGMA_BERRY
+     .enigmaBerryOffset = offsetof(struct SaveBlock1, enigmaBerry),
+     .enigmaBerrySize = sizeof(struct EnigmaBerry),
++    #endif
+     .moveDescriptions = NULL,
+     .unk20 = 0x00000000, // 0xFFFFFFFF in FRLG
+ };
+diff --git a/src/script.c b/src/script.c
+index c252c95f044..877143e06fe 100644
+--- a/src/script.c
++++ b/src/script.c
+@@ -370,16 +370,23 @@ void TryRunOnWarpIntoMapScript(void)
+ 
+ u32 CalculateRamScriptChecksum(void)
+ {
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
+     return CalcCRC16WithTable((u8 *)(&gSaveBlock1Ptr->ramScript.data), sizeof(gSaveBlock1Ptr->ramScript.data));
++    #else
++    return 0;
++    #endif
+ }
+ 
+ void ClearRamScript(void)
+ {
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
+     CpuFill32(0, &gSaveBlock1Ptr->ramScript, sizeof(struct RamScript));
++    #endif
+ }
+ 
+ bool8 InitRamScript(const u8 *script, u16 scriptSize, u8 mapGroup, u8 mapNum, u8 objectId)
+ {
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
+     struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
+ 
+     ClearRamScript();
+@@ -394,10 +401,14 @@ bool8 InitRamScript(const u8 *script, u16 scriptSize, u8 mapGroup, u8 mapNum, u8
+     memcpy(scriptData->script, script, scriptSize);
+     gSaveBlock1Ptr->ramScript.checksum = CalculateRamScriptChecksum();
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ const u8 *GetRamScript(u8 objectId, const u8 *script)
+ {
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
+     struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
+     gRamScriptRetAddr = NULL;
+     if (scriptData->magic != RAM_SCRIPT_MAGIC)
+@@ -418,12 +429,16 @@ const u8 *GetRamScript(u8 objectId, const u8 *script)
+         gRamScriptRetAddr = script;
+         return scriptData->script;
+     }
++    #else
++    return script;
++    #endif
+ }
+ 
+ #define NO_OBJECT OBJ_EVENT_ID_PLAYER
+ 
+ bool32 ValidateSavedRamScript(void)
+ {
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
+     struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
+     if (scriptData->magic != RAM_SCRIPT_MAGIC)
+         return FALSE;
+@@ -436,10 +451,14 @@ bool32 ValidateSavedRamScript(void)
+     if (CalculateRamScriptChecksum() != gSaveBlock1Ptr->ramScript.checksum)
+         return FALSE;
+     return TRUE;
++    #else
++    return FALSE;
++    #endif
+ }
+ 
+ u8 *GetSavedRamScriptIfValid(void)
+ {
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
+     struct RamScriptData *scriptData = &gSaveBlock1Ptr->ramScript.data;
+     if (!ValidateSavedWonderCard())
+         return NULL;
+@@ -460,11 +479,16 @@ u8 *GetSavedRamScriptIfValid(void)
+     {
+         return scriptData->script;
+     }
++    #else
++    return NULL;
++    #endif
+ }
+ 
+ void InitRamScript_NoObjectEvent(u8 *script, u16 scriptSize)
+ {
++    #ifndef FREE_MYSTERY_EVENT_BUFFERS
+     if (scriptSize > sizeof(gSaveBlock1Ptr->ramScript.data.script))
+         scriptSize = sizeof(gSaveBlock1Ptr->ramScript.data.script);
+     InitRamScript(script, scriptSize, MAP_GROUP(UNDEFINED), MAP_NUM(UNDEFINED), NO_OBJECT);
++    #endif
+ }
+diff --git a/src/trainer_hill.c b/src/trainer_hill.c
+index a74270ec777..2459782abd2 100644
+--- a/src/trainer_hill.c
++++ b/src/trainer_hill.c
+@@ -283,9 +283,11 @@ void ResetTrainerHillResults(void)
+ 
+     gSaveBlock2Ptr->frontier.savedGame = 0;
+     gSaveBlock2Ptr->frontier.unk_EF9 = 0;
++    #ifndef FREE_TRAINER_HILL
+     gSaveBlock1Ptr->trainerHill.bestTime = 0;
+     for (i = 0; i < NUM_TRAINER_HILL_MODES; i++)
+         SetTimerValue(&gSaveBlock1Ptr->trainerHillTimes[i], HILL_MAX_TIME);
++    #endif
+ }
+ 
+ static u8 GetFloorId(void)
+@@ -335,7 +337,9 @@ void InitTrainerHillBattleStruct(void)
+ 
+         sFloorTrainers->facilityClass[i] = sHillData->floors[sHillData->floorId].trainers[i].facilityClass;
+     }
++    #ifndef FREE_TRAINER_HILL
+     SetTrainerHillVBlankCounter(&gSaveBlock1Ptr->trainerHill.timer);
++    #endif
+     FreeDataStruct();
+ }
+ 
+@@ -346,6 +350,7 @@ void FreeTrainerHillBattleStruct(void)
+ 
+ static void SetUpDataStruct(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     if (sHillData == NULL)
+     {
+         sHillData = AllocZeroed(sizeof(*sHillData));
+@@ -359,6 +364,7 @@ static void SetUpDataStruct(void)
+         CpuCopy32(sChallengeData[gSaveBlock1Ptr->trainerHill.mode], &sHillData->challenge, sizeof(sHillData->challenge) + sizeof(sHillData->floors));
+         TrainerHillDummy();
+     }
++    #endif
+ }
+ 
+ static void FreeDataStruct(void)
+@@ -396,6 +402,7 @@ void CopyTrainerHillTrainerText(u8 which, u16 trainerId)
+ static void TrainerHillStartChallenge(void)
+ {
+     TrainerHillDummy();
++    #ifndef FREE_TRAINER_HILL
+     if (!ReadTrainerHillAndValidate())
+         gSaveBlock1Ptr->trainerHill.field_3D6E_0f = 1;
+     else
+@@ -410,10 +417,12 @@ static void TrainerHillStartChallenge(void)
+     gSaveBlock2Ptr->frontier.trainerFlags = 0;
+     gBattleOutcome = 0;
+     gSaveBlock1Ptr->trainerHill.receivedPrize = 0;
++    #endif
+ }
+ 
+ static void GetOwnerState(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     ClearTrainerHillVBlankCounter();
+     gSpecialVar_Result = 0;
+     if (gSaveBlock1Ptr->trainerHill.spokeToOwner)
+@@ -422,10 +431,12 @@ static void GetOwnerState(void)
+         gSpecialVar_Result++;
+ 
+     gSaveBlock1Ptr->trainerHill.spokeToOwner = TRUE;
++    #endif
+ }
+ 
+ static void GiveChallengePrize(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     u16 itemId = GetPrizeItemId();
+ 
+     if (sHillData->challenge.numFloors != NUM_TRAINER_HILL_FLOORS || gSaveBlock1Ptr->trainerHill.receivedPrize)
+@@ -443,12 +454,14 @@ static void GiveChallengePrize(void)
+     {
+         gSpecialVar_Result = 1;
+     }
++    #endif
+ }
+ 
+ // If bestTime > timer, the challenge was completed faster and its a new record
+ // Otherwise the owner says it was a slow time and to complete it faster next time
+ static void CheckFinalTime(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     if (gSaveBlock1Ptr->trainerHill.checkedFinalTime)
+     {
+         gSpecialVar_Result = 2;
+@@ -465,10 +478,12 @@ static void CheckFinalTime(void)
+     }
+ 
+     gSaveBlock1Ptr->trainerHill.checkedFinalTime = TRUE;
++    #endif
+ }
+ 
+ static void TrainerHillResumeTimer(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     if (!gSaveBlock1Ptr->trainerHill.spokeToOwner)
+     {
+         if (gSaveBlock1Ptr->trainerHill.timer >= HILL_MAX_TIME)
+@@ -476,15 +491,19 @@ static void TrainerHillResumeTimer(void)
+         else
+             SetTrainerHillVBlankCounter(&gSaveBlock1Ptr->trainerHill.timer);
+     }
++    #endif
+ }
+ 
+ static void TrainerHillSetPlayerLost(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     gSaveBlock1Ptr->trainerHill.hasLost = TRUE;
++    #endif
+ }
+ 
+ static void TrainerHillGetChallengeStatus(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     if (gSaveBlock1Ptr->trainerHill.hasLost)
+     {
+         // The player lost their last match.
+@@ -502,12 +521,13 @@ static void TrainerHillGetChallengeStatus(void)
+         // Continue playing.
+         gSpecialVar_Result = TRAINER_HILL_PLAYER_STATUS_NORMAL;
+     }
++    #endif
+ }
+ 
+ static void BufferChallengeTime(void)
+ {
+     s32 total, minutes, secondsWhole, secondsFraction;
+-
++    #ifndef FREE_TRAINER_HILL
+     total = gSaveBlock1Ptr->trainerHill.timer;
+     if (total >= HILL_MAX_TIME)
+         total = HILL_MAX_TIME;
+@@ -521,6 +541,7 @@ static void BufferChallengeTime(void)
+     ConvertIntToDecimalStringN(gStringVar1, minutes, STR_CONV_MODE_RIGHT_ALIGN, 2);
+     ConvertIntToDecimalStringN(gStringVar2, secondsWhole, STR_CONV_MODE_RIGHT_ALIGN, 2);
+     ConvertIntToDecimalStringN(gStringVar3, secondsFraction, STR_CONV_MODE_LEADING_ZEROS, 2);
++    #endif
+ }
+ 
+ // Returns TRUE if all 4 floors are used
+@@ -553,6 +574,7 @@ static void GetInEReaderMode(void)
+ 
+ bool8 InTrainerHillChallenge(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     if (VarGet(VAR_TRAINER_HILL_IS_ACTIVE) == 0)
+         return FALSE;
+     else if (gSaveBlock1Ptr->trainerHill.spokeToOwner)
+@@ -561,6 +583,7 @@ bool8 InTrainerHillChallenge(void)
+         return TRUE;
+     else
+         return FALSE;
++    #endif
+ }
+ 
+ static void IsTrainerHillChallengeActive(void)
+@@ -585,7 +608,7 @@ void PrintOnTrainerHillRecordsWindow(void)
+ {
+     s32 i, x, y;
+     u32 total, minutes, secondsWhole, secondsFraction;
+-
++    #ifndef FREE_TRAINER_HILL
+     SetUpDataStruct();
+     FillWindowPixelBuffer(0, PIXEL_FILL(0));
+     x = GetStringCenterAlignXOffset(FONT_NORMAL, gText_TimeBoard, 0xD0);
+@@ -614,6 +637,7 @@ void PrintOnTrainerHillRecordsWindow(void)
+     PutWindowTilemap(0);
+     CopyWindowToVram(0, COPYWIN_FULL);
+     FreeDataStruct();
++    #endif
+ }
+ 
+ // Leftover from Fire Red / Leaf Green as in these games,
+@@ -985,16 +1009,20 @@ bool32 OnTrainerHillEReaderChallengeFloor(void)
+ 
+ static void GetChallengeWon(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     if (gSaveBlock1Ptr->trainerHill.hasLost)
+         gSpecialVar_Result = FALSE;
+     else
+         gSpecialVar_Result = TRUE;
++    #endif
+ }
+ 
+ static void TrainerHillSetMode(void)
+ {
++    #ifndef FREE_TRAINER_HILL
+     gSaveBlock1Ptr->trainerHill.mode = gSpecialVar_0x8005;
+     gSaveBlock1Ptr->trainerHill.bestTime = gSaveBlock1Ptr->trainerHillTimes[gSpecialVar_0x8005];
++    #endif
+ }
+ 
+ // Determines which prize list to use from the set of prize lists.
+@@ -1052,6 +1080,7 @@ static u16 GetPrizeItemId(void)
+     else
+         i = GetPrizeListId(FALSE);
+ 
++    #ifndef FREE_TRAINER_HILL
+     // 1 is added to Expert mode's prize list selection because otherwise it has the same prizes as Variety
+     if (gSaveBlock1Ptr->trainerHill.mode == HILL_MODE_EXPERT)
+         i = (i + 1) % NUM_TRAINER_HILL_PRIZE_LISTS;
+@@ -1086,6 +1115,7 @@ static u16 GetPrizeItemId(void)
+         id = 4; // ITEM_FLUFFY_TAIL
+     else
+         id = 5; // ITEM_GREAT_BALL
++    #endif
+ 
+     return prizeList[id];
+ }
+diff --git a/src/tv.c b/src/tv.c
+index b32881d0906..7e45e9eb764 100644
+--- a/src/tv.c
++++ b/src/tv.c
+@@ -1356,10 +1356,18 @@ void PutFanClubSpecialOnTheAir(void)
+     StringCopy(show->fanClubSpecial.idolName, name);
+     StorePlayerIdInNormalShow(show);
+     show->fanClubSpecial.language = gGameLanguage;
++    #ifndef FREE_LINK_BATTLE_RECORDS
+     if (show->fanClubSpecial.language == LANGUAGE_JAPANESE || gSaveBlock1Ptr->linkBattleRecords.languages[0] == LANGUAGE_JAPANESE)
+         show->fanClubSpecial.idolNameLanguage = LANGUAGE_JAPANESE;
+     else
+         show->fanClubSpecial.idolNameLanguage = gSaveBlock1Ptr->linkBattleRecords.languages[0];
++    }
++    #else
++    if (show->fanClubSpecial.language == LANGUAGE_JAPANESE)
++    {
++        show->fanClubSpecial.idolNameLanguage = LANGUAGE_JAPANESE;
++    }
++    #endif
+ }
+ 
+ void ContestLiveUpdates_Init(u8 round1Placing)
+@@ -2351,8 +2359,10 @@ bool8 ShouldHideFanClubInterviewer(void)
+     if (gSpecialVar_Result == TRUE)
+         return TRUE;
+ 
++    #ifndef FREE_LINK_BATTLE_RECORDS
+     if (gSaveBlock1Ptr->linkBattleRecords.entries[0].name[0] == EOS)
+         return TRUE;
++    #endif
+ 
+     return FALSE;
+ }
+diff --git a/src/union_room_chat.c b/src/union_room_chat.c
+index 253e025689b..e4c0f345430 100644
+--- a/src/union_room_chat.c
++++ b/src/union_room_chat.c
+@@ -929,8 +929,10 @@ static void InitUnionRoomChat(struct UnionRoomChat *chat)
+     chat->exitType = CHAT_EXIT_NONE;
+     chat->changedRegisteredTexts = FALSE;
+     PrepareSendBuffer_Null(chat->sendMessageBuffer);
++    #ifndef FREE_UNION_ROOM_CHAT
+     for (i = 0; i < UNION_ROOM_KB_ROW_COUNT; i++)
+         StringCopy(chat->registeredTexts[i], gSaveBlock1Ptr->registeredTexts[i]);
++    #endif
+ }
+ 
+ static void FreeUnionRoomChat(void)
+@@ -1764,9 +1766,11 @@ static void ResetMessageEntryBuffer(void)
+ 
+ static void SaveRegisteredTexts(void)
+ {
++    #ifndef FREE_UNION_ROOM_CHAT
+     int i;
+     for (i = 0; i < UNION_ROOM_KB_ROW_COUNT; i++)
+         StringCopy(gSaveBlock1Ptr->registeredTexts[i], sChat->registeredTexts[i]);
++    #endif
+ }
+ 
+ static u8 *GetRegisteredTextByRow(int row)
+@@ -2010,6 +2014,7 @@ static u8 *GetChatHostName(void)
+ 
+ void InitUnionRoomChatRegisteredTexts(void)
+ {
++    #ifndef FREE_UNION_ROOM_CHAT
+     StringCopy(gSaveBlock1Ptr->registeredTexts[0], gText_Hello);
+     StringCopy(gSaveBlock1Ptr->registeredTexts[1], gText_Pokemon2);
+     StringCopy(gSaveBlock1Ptr->registeredTexts[2], gText_Trade);
+@@ -2020,6 +2025,7 @@ void InitUnionRoomChatRegisteredTexts(void)
+     StringCopy(gSaveBlock1Ptr->registeredTexts[7], gText_YaySmileEmoji);
+     StringCopy(gSaveBlock1Ptr->registeredTexts[8], gText_ThankYou);
+     StringCopy(gSaveBlock1Ptr->registeredTexts[9], gText_ByeBye);
++    #endif
+ }
+ 
+ #define tState               data[0]

@@ -1,0 +1,2 @@
+ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts::
+	.byte 0

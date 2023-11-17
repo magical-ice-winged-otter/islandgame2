@@ -34,7 +34,7 @@ movement Movement_PrimWalkAway {
 movement Movement_LuxrayWalkAway {
     walk_down
     face_right
-    delay_16 * 4
+    delay_16 * 7
     walk_right * 5
 }
 
@@ -45,7 +45,7 @@ movement Movement_Fan1WalkAway {
 }
 
 movement Movement_Fan2WalkAway {
-    delay_16 * 7
+    delay_16 * 10
     walk_up * 2
     walk_right * 3
 }
