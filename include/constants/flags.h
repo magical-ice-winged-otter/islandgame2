@@ -1516,7 +1516,7 @@
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
 //camp persi: first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
+#define FLAG_NORANNA_PRIM_CUTSCENE_FINISHED         (SYSTEM_FLAGS + 0x8B) 
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
 #define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
 #define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag
