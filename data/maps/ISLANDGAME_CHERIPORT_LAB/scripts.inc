@@ -140,7 +140,7 @@ Scientist1Talk_Text::
 	.string "traveling and exploring, I'm stuck here.\p"
 	.string "{COLOR DARK_GRAY}Sorting bookshelves, writing research\n"
 	.string "papers, and programming software.\p"
-	.string "{COLOR DARK_GRAY}If only we had the Starter Program when\n"
+	.string "{COLOR DARK_GRAY}If only we had the Trainer Program when\n"
 	.string "I was a teen...$"
 
 Scientist2Talk_Text::

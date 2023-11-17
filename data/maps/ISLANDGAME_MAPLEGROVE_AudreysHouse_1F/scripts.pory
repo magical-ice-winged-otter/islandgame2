@@ -1,1 +1,34 @@
 mapscripts ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts {}
+
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyDad {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk {
+    format(
+        "{COLOR DARK_GRAY}Feels like just yesterday, I was taking Audrey to her first day of school. \p"
+        "{COLOR DARK_GRAY}Now she's exploring the vast wilderness of Mariyama all on her own. \p"
+        "{COLOR DARK_GRAY}Kids grow up so fast, don't they? Blink and you'll miss it!"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomTalk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomTalk {
+    format(
+        "{COLOR DARK_GRAY}Hello dearie! You must be {PLAYER}, right? My daughter told me about you. \p"
+        "{COLOR DARK_GRAY}She was very excited to finally have a colleague in the Trainer Program! \p"
+        "{COLOR DARK_GRAY}I hope you two get along well. She can be a little ditzy and too bubbly at times, but she's a warm and caring girl. \p"
+        "{COLOR DARK_GRAY}Oh, where is she right now? She should be in the Minty Meadows doing research. \p"
+        "{COLOR DARK_GRAY}I'm sure she'd be more than happy to show you around Oranna."
+    )
+}
