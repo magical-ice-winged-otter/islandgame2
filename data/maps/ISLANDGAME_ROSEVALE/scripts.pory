@@ -1,0 +1,104 @@
+const STATE_INITIAL = 0
+const STATE_STARTED_QUEST = 1
+const STATE_DEFEATED_BANDIT = 2
+const STATE_FINAL = 3
+
+const LOCALID_ARTHUR_SISTER = 3
+const LOCALID_ARTHUR_DAD = 0
+const LOCALID_ARTHUR_MOM = 0
+const LOCALID_ARTHUR = 0
+
+mapscripts ISLANDGAME_ROSEVALE_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
+            // everyone is standing around the inn
+            addobject(LOCALID_ARTHUR)
+            addobject(LOCALID_ARTHUR_DAD)
+            addobject(LOCALID_ARTHUR_MOM)
+            addobject(LOCALID_ARTHUR_SISTER)
+            // 29, 23 (PLAYER WARP POS)
+            setobjectxy(LOCALID_ARTHUR, 31, 23)
+            setobjectxy(LOCALID_ARTHUR_DAD, 31, 22)
+            setobjectxy(LOCALID_ARTHUR_MOM, 30, 22)
+            setobjectxy(LOCALID_ARTHUR_SISTER, 31, 24)
+            turnobject(LOCALID_ARTHUR, DIR_WEST)
+            turnobject(LOCALID_ARTHUR_SISTER, DIR_WEST)
+
+            // everyone thanks you for helping
+            msgbox(format("Arthurs Dad: Thanks so helping!"), MSGBOX_NPC)
+            msgbox(format("Arthurs Mom: We are so thankful!"), MSGBOX_NPC)
+            msgbox(format("Arthurs Sister: You are the best!"), MSGBOX_NPC)
+
+            // you are invited to stay the night
+            msgbox(format("Arthurs Dad: Please - stay the night, free of charge."), MSGBOX_NPC)
+
+            // screen fades
+            fadescreen(FADE_TO_BLACK)
+            delay(120)
+
+            // you warp to the bedroom
+            // todo: impl
+
+            // party is healed
+            special(HealPlayerParty)
+
+            // temp
+            fadescreen(FADE_FROM_BLACK)
+        }
+    ]
+}
+
+script ISLANDGAME_ROSEVALE_Interact_EntranceSign {
+    msgbox(format("Welcome to Rosevale!"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_ROSEVALE_Interact_InnSign {
+    msgbox(format("ROSEVALE INN"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_ROSEVALE_Interact_AuroraPathSign {
+    msgbox(format("Mt. Aurora Path"), MSGBOX_SIGN)
+}
+
+text Text_ArthurSister_PleaseHelp {
+    format(
+        "Please, you have to help!"
+        "Someone stole my Marill and my brother chased them!"
+        "I don't want anyone to get hurt..."
+    )
+}
+
+script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
+    switch (var(VAR_ROSEVALE_STATE)) {
+        case STATE_INITIAL:
+            msgbox(Text_ArthurSister_PleaseHelp, MSGBOX_NPC)
+            setvar(VAR_ROSEVALE_STATE, STATE_STARTED_QUEST)
+        case STATE_STARTED_QUEST:
+            msgbox(format("I'm scared. Is everything going to be ok?"), MSGBOX_NPC)
+        default:
+            msgbox(format("Thanks for saving the day!"), MSGBOX_NPC)
+            closemessage
+    }
+}
+
+movement Movement_ArthurSister_RunUpToPath {
+    walk_fast_left * 6
+}
+
+script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
+    lock
+
+    // the sister runs up
+    addobject(LOCALID_ARTHUR_SISTER)
+    setobjectxy(LOCALID_ARTHUR_SISTER, 30, 13)
+    applymovement(LOCALID_ARTHUR_SISTER, Movement_ArthurSister_RunUpToPath)
+    waitmovement(LOCALID_ARTHUR_SISTER)
+
+    // she asks if you can help
+    msgbox(Text_ArthurSister_PleaseHelp, MSGBOX_NPC)
+
+    // quest starts
+    setvar(VAR_ROSEVALE_STATE, STATE_STARTED_QUEST)
+
+    release
+}
