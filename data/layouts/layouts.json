@@ -4784,8 +4784,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_LODGE_1",
       "name": "ISLANDGAME_CAMP_PERSI_LODGE_1_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 18,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_1/border.bin",
