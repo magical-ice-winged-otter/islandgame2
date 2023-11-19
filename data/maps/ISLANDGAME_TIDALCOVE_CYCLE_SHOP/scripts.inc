@@ -1,0 +1,3 @@
+ISLANDGAME_TIDALCOVE_CYCLE_SHOP_MapScripts::
+	.byte 0
+

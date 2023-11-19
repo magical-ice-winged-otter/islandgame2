@@ -1,0 +1,3 @@
+ISLANDGAME_ROSEVALE_RALTS_HOUSE_MapScripts::
+	.byte 0
+
