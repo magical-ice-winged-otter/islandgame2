@@ -21,16 +21,16 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
             setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
             setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
-            setobjectxyperm(LOCALID_ARTHUR_SISTER, 24, 14)
+            setobjectxyperm(LOCALID_ARTHUR_SISTER, 12, 14)
             addobject(LOCALID_ARTHUR_SISTER)
             setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
         }
         VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
             // everyone is standing around the inn
-            setobjectxyperm(LOCALID_ARTHUR, 31, 25)
-            setobjectxyperm(LOCALID_ARTHUR_DAD, 31, 24)
-            setobjectxyperm(LOCALID_ARTHUR_MOM, 30, 24)
-            setobjectxyperm(LOCALID_ARTHUR_SISTER, 31, 26)
+            setobjectxyperm(LOCALID_ARTHUR, 20, 25)
+            setobjectxyperm(LOCALID_ARTHUR_DAD, 18, 24)
+            setobjectxyperm(LOCALID_ARTHUR_MOM, 19, 24)
+            setobjectxyperm(LOCALID_ARTHUR_SISTER, 20, 26)
             addobject(LOCALID_ARTHUR)
             addobject(LOCALID_ARTHUR_DAD)
             addobject(LOCALID_ARTHUR_MOM)
@@ -108,10 +108,6 @@ script ISLANDGAME_ROSEVALE_Interact_InnSign {
     msgbox(format("ROSEVALE INN"), MSGBOX_SIGN)
 }
 
-script ISLANDGAME_ROSEVALE_Interact_AuroraPathSign {
-    msgbox(format("Mt. Aurora Path"), MSGBOX_SIGN)
-}
-
 script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
     msgbox(format("I'm scared. Is everything going to be ok?"), MSGBOX_NPC)
 }
@@ -134,7 +130,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
 
     // the sister runs up
     addobject(LOCALID_ARTHUR_SISTER)
-    setobjectxy(LOCALID_ARTHUR_SISTER, 30, 14)
+    setobjectxy(LOCALID_ARTHUR_SISTER, 18, 14)
     applymovement(LOCALID_ARTHUR_SISTER, Movement_ArthurSister_RunUpToPath)
     waitmovement(LOCALID_ARTHUR_SISTER)
 
@@ -156,7 +152,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
     lock
     // arthur walks up
     addobject(LOCALID_ARTHUR)
-    setobjectxy(LOCALID_ARTHUR, 38, 12)
+    setobjectxy(LOCALID_ARTHUR, 25, 12)
     applymovement(LOCALID_ARTHUR, Movement_Arthur_WalkUpToExit)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
     waitmovement(0)
@@ -194,7 +190,7 @@ script(local) ArthurDefeated {
 
     // dad walks up
     addobject(LOCALID_ARTHUR_DAD)
-    setobjectxy(LOCALID_ARTHUR_DAD, 38, 12)
+    setobjectxy(LOCALID_ARTHUR_DAD, 25, 12)
     applymovement(LOCALID_ARTHUR_DAD, Movement_ArthurDad_WalkUpToArthur)
     applymovement(LOCALID_ARTHUR, Movement_Arthur_SeesDad)
     waitmovement(LOCALID_ARTHUR_DAD)
