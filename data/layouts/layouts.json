@@ -4714,10 +4714,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_FRESA_FARMS",
       "name": "ISLANDGAME_FRESA_FARMS_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 50,
+      "height": 26,
       "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/map.bin"
     },
@@ -4894,10 +4894,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_FRESA_FARMS_DAYCARE",
       "name": "ISLANDGAME_FRESA_FARMS_DAYCARE_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonDayCare",
       "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_DAYCARE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_DAYCARE/map.bin"
     },
@@ -4906,8 +4906,8 @@
       "name": "ISLANDGAME_FRESA_FARMS_HOUSE_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/map.bin"
     },

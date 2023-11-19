@@ -15,6 +15,7 @@ extern struct CameraObject gFieldCamera;
 extern u16 gTotalCameraPixelOffsetX;
 extern u16 gTotalCameraPixelOffsetY;
 
+void MoveCameraAndRedrawMap(int deltaX, int deltaY);
 void DrawWholeMapView(void);
 void CurrentMapDrawMetatileAt(int x, int y);
 void GetCameraOffsetWithPan(s16 *x, s16 *y);
