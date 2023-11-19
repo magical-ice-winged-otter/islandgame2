@@ -113,7 +113,7 @@ text Scientist1Talk_Text {
     format(
         "{COLOR DARK_GRAY}You kids are lucky. While you're outside traveling and exploring, I'm stuck here. \p"
         "{COLOR DARK_GRAY}Sorting bookshelves, writing research papers, and programming software. \p"
-        "{COLOR DARK_GRAY}If only we had the Starter Program when I was a teen..."
+        "{COLOR DARK_GRAY}If only we had the Trainer Program when I was a teen..."
     )
 }
 

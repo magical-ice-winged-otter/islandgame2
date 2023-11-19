@@ -1,0 +1,122 @@
+const TRAINER_NORANNA_ENTRANCE_NPC = TRAINER_GRUNT_MT_PYRE_1
+const TRAINER_NORANNA_FENCE_PARTNER_NPCS = TRAINER_GRUNT_MT_PYRE_2
+const TRAINER_NORANNA_UPPER_NPC_EAST = TRAINER_GRUNT_MT_PYRE_3
+const TRAINER_NORANNA_UPPER_NPC_MIDDLE = TRAINER_GRUNT_WEATHER_INST_4
+const TRAINER_NORANNA_UPPER_NPC_WEST = TRAINER_GRUNT_AQUA_HIDEOUT_5
+const TRAINER_NORANNA_LOWER_NPC_EAST = TRAINER_GRUNT_AQUA_HIDEOUT_6
+const TRAINER_NORANNA_LOWER_NPC_MIDDLE = TRAINER_FREDRICK 
+const TRAINER_NORANNA_LOWER_NPC_WEST = TRAINER_MATT
+
+mapscripts ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts {
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_EntranceSign {
+    msgbox(format("NORTHERN ORANNA PATH"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast {
+    msgbox(format(
+        "My buddy is across the lake - he thinks he can catch more than me!\p"
+        "I've been fishing this lake my whole life. He's definitely going to lose."
+    ), MSGBOX_NPC)
+
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest {
+    lock
+    msgbox(format(
+        "I challenged my friend to a fishing contenst today.\p"
+        "Can you keep a secret?"
+    ), MSGBOX_YESNO)
+
+    if (var(VAR_RESULT)) {
+        msgbox(format(
+            "My custom-order fishing rod just got shipped from Arnie's!\p"
+            "There's no way I can lose to somebody using an Old Rod..."
+        ), MSGBOX_NPC)
+    }
+    else {
+        msgbox(format(
+            "Well, thanks for being honest!"
+        ), MSGBOX_NPC)
+    }
+
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_ItemBallTop {
+    finditem(ITEM_DAMP_ROCK)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_ItemBallBottom {
+    finditem(ITEM_HYPER_POTION)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC {
+    trainerbattle_single(TRAINER_NORANNA_ENTRANCE_NPC, 
+        format("Forget camping - let's battle!"), 
+        format("Today's just not my day...")
+    )
+    msgbox(format("I was looking for a nice place to pitch a tent, but it's all rained out!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs {
+    trainerbattle_double(TRAINER_NORANNA_FENCE_PARTNER_NPCS,
+        format("Isn't it a nice day for a battle?"),
+        format("Thanks for the battle!"),
+        format("A nice day is better with more Pokemon!")
+    )
+    msgbox(format("Y'know, I don't really feel like battling anymore."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast {
+    trainerbattle_single(TRAINER_NORANNA_UPPER_NPC_EAST, 
+        format("I feel like I can battle batter when moving around. Watch!"), 
+        format("Phew, I need to rest for a bit!")
+    )
+    msgbox(format("You should try running while battling sometime!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle {
+    trainerbattle_single(TRAINER_NORANNA_UPPER_NPC_MIDDLE, 
+        format("Hey you! Me and my team have been training here, let's see how far we've come!"), 
+        format("Looks like we still have some more training to do.")
+    )
+    msgbox(format("Lot's of people train to defeat Ruka. I train for myself of course!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCWest {
+    trainerbattle_single(TRAINER_NORANNA_UPPER_NPC_WEST, 
+        format("The only path to strength is through practice! No shortcuts!"), 
+        format("I can tell you put in the work!")
+    )
+    msgbox(format("That 'Fitness Freak' fellow thinks he can become stronger just by taking vitamins..."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast {
+    trainerbattle_single(TRAINER_NORANNA_LOWER_NPC_EAST, 
+        format("Hey, did you get rejected from the Tidalcove Gym too? Let's train together!"), 
+        format("Man, I'm so far away from beating Ruka...")
+    )
+    msgbox(format("Let me know how your challenge goes! I'm rooting for you!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle {
+    trainerbattle_single(TRAINER_NORANNA_LOWER_NPC_MIDDLE, 
+        format("I wanted to hike over to Rosevale today, but I also don't want my shoes to get wet...\pI think I'm gonna battle you instead!"), 
+        format("Ah...")
+    )
+    msgbox(format("Let me know how deep the water is over there."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCWest {
+    trainerbattle_single(TRAINER_NORANNA_LOWER_NPC_WEST, 
+        format("STAY AWAY FROM MY PUDDLE!!!"), 
+        format("NOT MY PUDDLE!")
+    )
+    msgbox(format("...I'm still not gonna share it with you."), MSGBOX_NPC)
+}

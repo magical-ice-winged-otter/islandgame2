@@ -12,15 +12,168 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": [
+    {
+      "map": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
+      "offset": 50,
+      "direction": "down"
+    }
+  ],
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LUCY",
+      "x": 41,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
+      "x": 46,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser",
+      "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TATE",
+      "x": 44,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1",
+      "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIZA",
+      "x": 45,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2",
+      "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 45,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "x": 43,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3",
+      "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 42,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_301",
+      "x": 43,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    }
   ],
   "warp_events": [
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene"
+    }
   ],
   "bg_events": [
 

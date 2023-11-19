@@ -1,0 +1,162 @@
+mapscripts ISLANDGAME_MAPLEGROVE_MapScripts {}
+
+
+
+// pkmn npcs
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_ODDISH,CRY_MODE_NORMAL)
+    
+    if(!flag(FLAG_UNUSED_0x054)) {
+        msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            goto(PKMN1Event_End)
+        }
+
+        checkitemspace(ITEM_ABSORB_BULB)
+        if (!var(VAR_RESULT)) {
+            msgbox(format("{COLOR RED}(I don't have enough space to carry it.)"))
+            goto(PKMN1Event_End)
+        }
+
+        giveitem(ITEM_ABSORB_BULB)
+        setflag(FLAG_UNUSED_0x054)
+    }
+    else {
+        msgbox(format("{COLOR DARK_GRAY}Oddish!"))
+    }
+    
+    
+    PKMN1Event_End:
+        release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk {
+    format(
+        "{COLOR RED}(Huh? It looks like Oddish is trying to give me something.) \p"
+        "{COLOR RED}(Should I take it?)"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN2 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BUIZEL,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN2Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN2Talk {
+    format(
+        "{COLOR DARK_GRAY}Bui-bui!"
+    )
+}
+
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN3 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SURSKIT,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN3Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN3Talk {
+    format(
+        "{COLOR DARK_GRAY}A"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN4 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_PACHIRISU,CRY_MODE_WEAK)
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk {
+    format(
+        "{COLOR DARK_GRAY}Chitter chitter... \p"
+        "{COLOR RED}(Pachirisu seems kind of disappointed with the crumbs it's being fed.)"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN5 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_FLETCHLING,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN5Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN5Talk {
+    format(
+        "{COLOR DARK_GRAY}Chirp chirp! \p"
+        "{COLOR RED}(It seems like Fletchling is trying to tell me something.) \p"
+        "{COLOR RED}(She says her name is Margaret, and that Pachirisu over there is her friend Eileen.)"
+    )
+}
+
+
+
+
+// npcs
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC1Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC1Talk {
+    format(
+        "{COLOR DARK_GRAY}Be kind to Pokémon, and they'll be kind to you. \p"
+        "{COLOR DARK_GRAY}That's what my big sister told me. Now I'm friends with all the Pokémon here!"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC2 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC2Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC2Talk {
+    format(
+        "{COLOR DARK_GRAY}Maplegrove has been one with nature since its construction many years ago. \p"
+        "{COLOR DARK_GRAY}Our bond with the Pokémon here is unbreakable."
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3 {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk {
+    format(
+        "{COLOR DARK_GRAY}Hrm... Only two of you little ones here today? \p"
+        "{COLOR DARK_GRAY}That pack of savage Mightyena must be frightening the little critters... \p"
+        "{COLOR DARK_GRAY}I do hope something gets done about them. Those feral beasts have been terrorizing this place for long enough!"
+    )
+}
+
+
+// signs
+script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_SIGN {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_SIGNText)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_OUTSIDE_SIGNText {
+    format(
+        "{COLOR DARK_GRAY}MAPLEGROVE \n"
+        "{COLOR DARK_GRAY}The Sylvan Sanctuary"
+    )
+}
