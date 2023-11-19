@@ -1,1 +1,52 @@
 mapscripts ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts {}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk {
+    format(
+        "{COLOR DARK_GRAY}I sent Hanzo to clean up the camp tree house hours ago. \p"
+        "{COLOR DARK_GRAY}What could be taking him so long!? He better not be horsing around with that machete in there like last time... \p"
+        "{COLOR DARK_GRAY}-sigh- I don't get paid enough for this. This is a CAMP, not a DAYCARE! \p"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk {
+    format(
+        "{COLOR DARK_GRAY}Give me the controller! The scoutmaster said it's MY turn now! \p"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk {
+    format(
+        "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense game right now! \p"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3 {
+    lock
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk {
+    format(
+        "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.- \p"
+    )
+}
