@@ -52,6 +52,9 @@
 #define MAP_ISLANDGAME_FRESA_FARMS_HOUSE                  (43 | (0 << 8))
 #define MAP_ISLANDGAME_TIDALCOVE                          (44 | (0 << 8))
 #define MAP_ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE (45 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_INN                       (46 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_PKMNCENTER                (47 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_RALTS_HOUSE               (48 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))

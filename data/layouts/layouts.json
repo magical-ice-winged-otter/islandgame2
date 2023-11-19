@@ -4870,6 +4870,36 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_INN",
+      "name": "ISLANDGAME_ROSEVALE_INN_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_PKMNCENTER",
+      "name": "ISLANDGAME_ROSEVALE_PKMNCENTER_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_RALTS_HOUSE",
+      "name": "ISLANDGAME_ROSEVALE_RALTS_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_RALTS_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_RALTS_HOUSE/map.bin"
     }
   ]
 }

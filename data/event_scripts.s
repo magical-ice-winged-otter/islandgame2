@@ -1157,3 +1157,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_TIDALCOVE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_INN/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_RALTS_HOUSE/scripts.inc"
