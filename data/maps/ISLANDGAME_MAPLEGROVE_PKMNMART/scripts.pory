@@ -1,0 +1,30 @@
+mapscripts ISLANDGAME_MAPLEGROVE_PKMNMART_MapScripts {}
+
+
+
+
+script ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_PKMNMART_NPC1Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_PKMNMART_NPC1Talk {
+    format(
+        "{COLOR DARK_GRAY}Achoooo! -sniff- Oops, sorry. I didn't mean to sneeze all over you."
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_NPC2 {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_PKMNMART_NPC2Talk)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_PKMNMART_NPC2Talk {
+    format(
+        "{COLOR RED}(It seems like this Audino is actually an employee at the shop.) \p"
+        "{COLOR RED}(It's diligently restocking the shelves. I should just let it do its job.)"
+    )
+}
