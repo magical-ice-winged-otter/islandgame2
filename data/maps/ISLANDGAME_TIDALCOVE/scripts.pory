@@ -1,1 +1,62 @@
-mapscripts ISLANDGAME_TIDALCOVE_MapScripts {}
+const FLAG_GYM_OPEN = FLAG_TEMP_1
+
+mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_EntranceSign {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_BikeShopSign {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_RarePkmnSign {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_GymSign {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_PrimFan1 {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_PrimFan2 {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_Bike {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_BeachParent {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer {
+    // gives yache berry
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_BeachFisher {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_BeachGazer {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle {
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
+}
