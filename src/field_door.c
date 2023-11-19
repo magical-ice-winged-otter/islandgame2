@@ -227,22 +227,22 @@ static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
 //island game start:
 static const u8 sDoorAnimPalettes_IslandGameGeneral[] = {
-    3, 3,
-    3, 3,
-    3, 3,
-    3, 3
+    4, 4,
+    4, 4,
+    4, 4,
+    4, 4
 };
 static const u8 sDoorAnimPalettes_IslandGamePokecenter[] = {
-    3, 3,
-    3, 3,
-    3, 3,
-    3, 3
+    4, 4,
+    4, 4,
+    4, 4,
+    4, 4
 };
 static const u8 sDoorAnimPalettes_IslandGamePokemart[] = {
-    3, 3,
-    3, 3,
-    3, 3,
-    3, 3
+    4, 4,
+    4, 4,
+    4, 4,
+    4, 4
 };
 static const u8 sDoorAnimPalettes_CampPersi[] = {
     7, 7, 
