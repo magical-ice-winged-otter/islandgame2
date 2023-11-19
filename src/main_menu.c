@@ -38,6 +38,7 @@
 #include "title_screen.h"
 #include "window.h"
 #include "mystery_gift_menu.h"
+#include "islandgame.h"
 
 /*
  * Main menu state machine
@@ -1060,7 +1061,11 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
             default:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
                 gPlttBufferFaded[0] = RGB_BLACK;
+#ifdef ISLANDGAME_DEBUG
                 gTasks[taskId].func = Task_NewGameBirchSpeech_Cleanup;
+#else
+                gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
+#endif
                 break;
             case ACTION_CONTINUE:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
