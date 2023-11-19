@@ -261,7 +261,7 @@ script ISLANDGAME_Southern_Oranna_Path_EventScript_SeenAbsol {
     applymovement(ABSOL_OW_ID, SOP_Absol_Run_3)
     waitmovement(ABSOL_OW_ID)
 
-    hideobjectat(ABSOL_OW_ID, MAP_ISLANDGAME_SOUTHERN_ORANNA_PATH)
+    removeobject(ABSOL_OW_ID)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
     waitmovement(0)
     releaseall
