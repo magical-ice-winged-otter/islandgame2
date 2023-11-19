@@ -56,6 +56,13 @@
 #define MAP_ISLANDGAME_ROSEVALE_PKMNCENTER                (47 | (0 << 8))
 #define MAP_ISLANDGAME_ROSEVALE_RALTS_HOUSE               (48 | (0 << 8))
 #define MAP_ISLANDGAME_AURORA_WEATHER_INSTITUTE           (49 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_GYM                      (50 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_PKMNCENTER               (51 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_PKMNMART                 (52 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING       (53 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_CYCLE_SHOP               (54 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_RARE_HOUSE               (55 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_GENERAL_HOUSE            (56 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
