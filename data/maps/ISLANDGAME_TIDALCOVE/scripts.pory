@@ -150,8 +150,8 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop {
 
 script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle {
     msgbox(format(
-        "The guy who lives in this house is a nut for rare Pokemon...\p"
-        "I bet if I could show him some cool ones he'd give me some kind of reward!"
+        "The guy who lives in this house is a nut for rare Pokemon from Oranna...\p"
+        "I heard he also collects stones that can make your Pokemon evolve!"
     ), MSGBOX_NPC)
 }
 
