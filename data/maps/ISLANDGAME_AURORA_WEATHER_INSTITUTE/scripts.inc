@@ -1,0 +1,3 @@
+ISLANDGAME_AURORA_WEATHER_INSTITUTE_MapScripts::
+	.byte 0
+

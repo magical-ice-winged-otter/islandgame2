@@ -655,7 +655,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
                 msgbox(format(
                     "You found my card! Thank you so much!\p"
                     "I bought this Soothe Bell to help me calm down...\p"
-                    "But now I dont need it, so here!"))
+                    "But now I don't need it, so here!"))
                 giveitem(ITEM_SOOTHE_BELL)
                 completequest(QUEST_PERSI_FAVORITE_CARD)
             }

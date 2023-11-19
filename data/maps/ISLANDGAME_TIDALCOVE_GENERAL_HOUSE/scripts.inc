@@ -1,0 +1,3 @@
+ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_MapScripts::
+	.byte 0
+

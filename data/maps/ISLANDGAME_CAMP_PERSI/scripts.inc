@@ -610,7 +610,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_3:
 	.string "You found my card! Thank you so much!\p"
 	.string "I bought this Soothe Bell to help me\n"
 	.string "calm down...\p"
-	.string "But now I dont need it, so here!$"
+	.string "But now I don't need it, so here!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_4:
 	.string "Have you found it yet?$"

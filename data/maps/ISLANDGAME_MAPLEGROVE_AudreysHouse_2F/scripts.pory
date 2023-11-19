@@ -1,0 +1,82 @@
+mapscripts ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_MapScripts {}
+
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_WailmerDoll {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_WailmerInspect)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_WailmerInspect {
+    format(
+        "{COLOR RED}(It's jumbo-sized Wailmer plush. It's very squishy.) \p"
+        "{COLOR RED}(Squish squish.)"
+    )
+}
+
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_WooperDoll {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_WooperInspect, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        playmoncry(SPECIES_WOOPER,CRY_MODE_NORMAL)
+        msgbox(format("Woopa!"))
+    }
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_WooperInspect {
+    format(
+        "{COLOR RED}(It's a Wooper doll. There's a button on it. Should I press it?)"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Drawer {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_DrawerInspect)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_DrawerInspect {
+    format(
+        "{COLOR RED}(It's a drawer full of Audrey's clothes.) \p"
+        "{COLOR RED}(I should probably stop looking through it.)"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Computer {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_ComputerInspect)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_ComputerInspect {
+    format(
+        "{COLOR RED}(It looks like Audrey left her computer on.) \p"
+        "{COLOR RED}(Seems like she was watching “Poké-Idol Summer Splash Highlights”.)"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Book {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_BookInspect)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_BookInspect {
+    format(
+        "{COLOR RED}(It's the latest issue of “Attack on Galar”.)"
+    )
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Gamecube {
+    lock
+    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_GamecubeInspect)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_GamecubeInspect {
+    format(
+        "{COLOR RED}(It's Audrey's GameCube.)"
+    )
+}
