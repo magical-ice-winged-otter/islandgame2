@@ -34,7 +34,7 @@
       "x": 32,
       "y": 24,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_AURORA_PATH",
+      "dest_map": "MAP_ISLANDGAME_AURORA_WEATHER_INSTITUTE",
       "dest_warp_id": "0"
     }
   ],

@@ -12,22 +12,24 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
 	setobjectxyperm 6, 0, 0
 	setobjectxyperm 7, 0, 0
 	setobjectxyperm 8, 0, 0
-	setobjectxyperm 3, 24, 14
+	setobjectxyperm 3, 12, 14
 	addobject 3
 	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1:
-	setobjectxyperm 6, 31, 25
-	setobjectxyperm 7, 31, 24
-	setobjectxyperm 8, 30, 24
-	setobjectxyperm 3, 31, 26
+	setobjectxyperm 6, 20, 25
+	setobjectxyperm 7, 18, 24
+	setobjectxyperm 8, 19, 24
+	setobjectxyperm 3, 20, 26
 	addobject 6
 	addobject 7
 	addobject 8
 	addobject 3
 	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_LEFT
 	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
+	turnobject 6, DIR_WEST
+	turnobject 3, DIR_WEST
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
@@ -96,11 +98,6 @@ ISLANDGAME_ROSEVALE_Interact_InnSign::
 	return
 
 
-ISLANDGAME_ROSEVALE_Interact_AuroraPathSign::
-	msgbox ISLANDGAME_ROSEVALE_Interact_AuroraPathSign_Text_0, MSGBOX_SIGN
-	return
-
-
 ISLANDGAME_ROSEVALE_Interact_ArthurSister::
 	msgbox ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0, MSGBOX_NPC
 	return
@@ -118,7 +115,7 @@ Movement_ArthurSister_RunUpToPath:
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest::
 	lock
 	addobject 3
-	setobjectxy 3, 30, 14
+	setobjectxy 3, 18, 14
 	applymovement 3, Movement_ArthurSister_RunUpToPath
 	waitmovement 3
 	msgbox Text_ArthurSister_PleaseHelp, MSGBOX_NPC
@@ -140,7 +137,7 @@ Movement_Arthur_WalkUpToExit:
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
 	lock
 	addobject 6
-	setobjectxy 6, 38, 12
+	setobjectxy 6, 25, 12
 	applymovement 6, Movement_Arthur_WalkUpToExit
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	waitmovement 0
@@ -196,7 +193,7 @@ Movement_Arthur_WalkAway:
 ArthurDefeated:
 	msgbox ArthurDefeated_Text_0, MSGBOX_NPC
 	addobject 7
-	setobjectxy 7, 38, 12
+	setobjectxy 7, 25, 12
 	applymovement 7, Movement_ArthurDad_WalkUpToArthur
 	applymovement 6, Movement_Arthur_SeesDad
 	waitmovement 7
@@ -240,9 +237,6 @@ ISLANDGAME_ROSEVALE_Interact_EntranceSign_Text_0:
 
 ISLANDGAME_ROSEVALE_Interact_InnSign_Text_0:
 	.string "ROSEVALE INN$"
-
-ISLANDGAME_ROSEVALE_Interact_AuroraPathSign_Text_0:
-	.string "Mt. Aurora Path$"
 
 ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0:
 	.string "I'm scared. Is everything going to be\n"

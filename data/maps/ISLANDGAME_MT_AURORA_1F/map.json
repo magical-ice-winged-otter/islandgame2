@@ -38,25 +38,25 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 14,
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "x": 15,
       "y": 33,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_TEMP_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_144",
-      "x": 15,
-      "y": 28,
+      "x": 10,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -91,7 +91,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "1",
+      "script": "ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene"
+    }
   ],
   "bg_events": [
     {
