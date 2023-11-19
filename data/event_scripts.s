@@ -59,6 +59,7 @@
 #include "constants/day_night.h"
 #include "constants/quests.h"
 #include "constants/follow_me.h"
+#include "constants/duo_parties.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"

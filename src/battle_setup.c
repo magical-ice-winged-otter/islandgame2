@@ -46,6 +46,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "follow_me.h"
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -444,8 +445,15 @@ static void DoStandardWildBattle(bool32 isDouble)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = 0;
-    if (isDouble)
+    if (isDouble) {
         gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
+        /*
+        if (PlayerHasFollower()) {
+            gBattleTypeFlags |= BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+            FillDuoParty(gSaveBlock2Ptr->follower.party);
+        }
+        */
+    }
     if (InBattlePyramid())
     {
         VarSet(VAR_TEMP_E, 0);

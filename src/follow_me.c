@@ -72,7 +72,7 @@ static void Task_FollowerHandleEscalator(u8 taskId);
 static void Task_FollowerHandleEscalatorFinish(u8 taskId);
 static void CalculateFollowerEscalatorTrajectoryUp(struct Task *task);
 static void CalculateFollowerEscalatorTrajectoryDown(struct Task *task);
-static void TurnNPCIntoFollower(u8 localId, u16 followerFlags);
+static void TurnNPCIntoFollower(u8 localId, u16 followerFlags, u16 partyID);
 
 // Const Data
 static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
@@ -1211,7 +1211,7 @@ void CreateFollowerAvatar(void)
     gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible = TRUE;
 }
 
-static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
+static void TurnNPCIntoFollower(u8 localId, u16 followerFlags, u16 partyID)
 {
     struct ObjectEvent* follower;
     u8 eventObjId;
@@ -1249,6 +1249,7 @@ static void TurnNPCIntoFollower(u8 localId, u16 followerFlags)
             gSaveBlock2Ptr->follower.flags = followerFlags;
             gSaveBlock2Ptr->follower.createSurfBlob = 0;
             gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
+            gSaveBlock2Ptr->follower.party = partyID;
             
             if (!(gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CAN_BIKE) //Follower can't bike
             &&  TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE)) //Player on bike
@@ -1380,9 +1381,9 @@ bool8 FollowerComingThroughDoor(void)
 //@Details: Sets up the follow me feature.
 //@Input:    local id - NPC to start following player.
 //            flags - Follower flags.
-void SetUpFollowerSprite(u8 localId, u16 flags)
+void SetUpFollowerSprite(u8 localId, u16 flags, u16 partyID)
 {
-    TurnNPCIntoFollower(localId, flags);
+    TurnNPCIntoFollower(localId, flags, partyID);
 }
 
 //@Details: Ends the follow me feature.

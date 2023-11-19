@@ -2080,10 +2080,15 @@
     .endm
 	
 @ sets an NPC up to follow the player
-	.macro setfollower localId:req, flags:req
+	.macro setfollower localId:req, flags:req, party
 	.byte 0xe9
 	.byte \localId
 	.2byte \flags
+	.ifb \party
+        .2byte 0
+    .else
+        .2byte \party
+    .endif
     .endm
     
     @ remove the following NPC (assumes there will only ever be one)

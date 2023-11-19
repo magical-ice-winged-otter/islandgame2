@@ -312,31 +312,31 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MintyMeadowsRival),
     },
 
-    [TRAINER_GRUNT_MT_PYRE_2] =
+    [TRAINER_MINTY_MEADOWS_TRAINER1] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerName = _("Joe"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_GruntMtPyre2),
     },
 
-    [TRAINER_GRUNT_MT_PYRE_3] =
+    [TRAINER_MINTY_MEADOWS_TRAINER2] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_LASS,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = _("Sally"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_GruntMtPyre3),
     },
 
-    [TRAINER_GRUNT_WEATHER_INST_4] =
+    [TRAINER_MINTY_MEADOWS_TRAINER3] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -348,7 +348,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GruntWeatherInst4),
     },
 
-    [TRAINER_GRUNT_AQUA_HIDEOUT_5] =
+    [TRAINER_MINTY_MEADOWS_TRAINER4] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -360,7 +360,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GruntAquaHideout5),
     },
 
-    [TRAINER_GRUNT_AQUA_HIDEOUT_6] =
+    [TRAINER_MINTY_MEADOWS_TRAINER5] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -372,7 +372,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_GruntAquaHideout6),
     },
 
-    [TRAINER_FREDRICK] =
+    [TRAINER_MINTY_MEADOWS_TRAINER6] =
     {
         .trainerClass = TRAINER_CLASS_EXPERT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -384,7 +384,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Fredrick),
     },
 
-    [TRAINER_MATT] =
+    [TRAINER_MINTY_MEADOWS_TRAINER7] =
     {
         .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -396,7 +396,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Matt),
     },
 
-    [TRAINER_ZANDER] =
+    [TRAINER_MINTY_MEADOWS_TRAINER8] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,

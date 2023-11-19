@@ -23,6 +23,7 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/weather.h"
+#include "follow_me.h"
 
 extern const u8 EventScript_RepelWoreOff[];
 extern const u8 EventScript_LureWoreOff[];
@@ -1128,6 +1129,11 @@ bool8 TryDoDoubleWildBattle(void)
     else if ((Random() % 100) + 1 <= B_DOUBLE_WILD_CHANCE)
         return TRUE;
 #endif
+    /*
+    if (PlayerHasFollower()) {
+        return TRUE;
+    } 
+    */
     return FALSE;
 }
 

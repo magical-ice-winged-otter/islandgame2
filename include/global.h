@@ -534,6 +534,7 @@ struct Follower
     /*0x12*/ u16 graphicsId;
     /*0x14*/ u16 flags;
     /*0x15*/ u8 locked;
+    /*0x17*/ u16 party;
 }; /* size = 0x18 */
 
 struct SaveBlock2

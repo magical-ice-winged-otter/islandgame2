@@ -26,7 +26,7 @@ mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
 script ISLANDGAME_MINTY_MEADOWS_2_OnTransition {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
         case STATE_INITIAL_RIVAL:            call(ISLANDGAME_MINTY_MEADOWS_2_InitialRival)
-        case STATE_STARTED_QUEST:            call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
+        case STATE_STARTED_QUEST:            break //we want to set it when we enter the trigger
         case STATE_FIRST_MAREEP_SIGHTING:    call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst)
         case STATE_PRE_FIGHT_SIGHTING:       call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
         case STATE_POST_FIGHT:               call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
@@ -47,7 +47,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_InitialRival {
 }
 
 // After beating the rival, sets up the mareep sighting on the side
-script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
+script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest_1 {
     setobjectxyperm(RIVAL_OW_ID, 35, 11)
     setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
     setobjectxyperm(MAREEP_OW_ID, 32, 37)
@@ -208,11 +208,11 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     msgbox(format("Audrey: I'm bored! Let's fight!"))
 
     // battle
-    trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, "Audrey: Wow, you're strong!")
-    specialvar(VAR_RESULT, GetBattleOutcome)
-    if (var(VAR_RESULT) != B_OUTCOME_WON) {
-        return
-    }
+    //trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, "Audrey: Wow, you're strong!")
+    //specialvar(VAR_RESULT, GetBattleOutcome)
+    //if (var(VAR_RESULT) != B_OUTCOME_WON) {
+    //    return
+    //}
 
     //post-fight audrey dialogue
     msgbox(format("Audrey: Man, you beat me!"))
@@ -229,12 +229,11 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     // audrey runs off to look for mareep
     msgbox(format("Audrey: I'm gonna go look for it!"))
     closemessage
-    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown)
-    waitmovement(RIVAL_OW_ID)
-    removeobject(RIVAL_OW_ID)
-
+    
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
-    call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
+    //follow me
+    loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+    setfollower(RIVAL_OW_ID, 100, 0)
 
     release
 }
@@ -243,6 +242,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
 
 script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1 {
     lock
+    call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest_1)
 
     // player looks down
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
@@ -267,11 +267,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1 {
     waitmovement(MIGHTYENA_OW_ID)
     waitmovement(MAREEP_OW_ID)
 
-    // rival runs in below
-    addobject(RIVAL_OW_ID)
-    setobjectxy(RIVAL_OW_ID, 32, 23)
-    applymovement(RIVAL_OW_ID, Phase1_RivalEnter)
-    waitmovement(RIVAL_OW_ID)
 
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_FIRST_MAREEP_SIGHTING)
     call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst)
@@ -331,10 +326,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2 {
     waitmoncry
 
     // rival catches up
-    addobject(RIVAL_OW_ID)
-    setobjectxy(RIVAL_OW_ID, 67, 22)
-    applymovement(RIVAL_OW_ID, Phase2_RivalCatchUp)
-    waitmovement(RIVAL_OW_ID)
 
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PRE_FIGHT_SIGHTING)
     call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
@@ -445,4 +436,77 @@ script ISLANDGAME_MINTY_MEADOWS_2_Mareep {
 
 text MareepHelp_Text {
     format("{COLOR BLUE}bro help me")
+}
+
+
+///TRAINERS
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER1, format("{COLOR DARK_GRAY}sup1"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss)
+	msgbox(format("{COLOR DARK_GRAY}YO"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER2, format("{COLOR DARK_GRAY}sup2"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss)
+	msgbox(format("{COLOR DARK_GRAY}YO2"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER3, format("{COLOR DARK_GRAY}sup1"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss)
+	msgbox(format("{COLOR DARK_GRAY}YO"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER4, format("{COLOR DARK_GRAY}sup2"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss)
+	msgbox(format("{COLOR DARK_GRAY}YO2"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER5, format("{COLOR DARK_GRAY}sup1"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss)
+	msgbox(format("{COLOR DARK_GRAY}YO"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER6, format("{COLOR DARK_GRAY}sup2"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss)
+	msgbox(format("{COLOR DARK_GRAY}YO2"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER7, format("{COLOR DARK_GRAY}sup1"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss)
+	msgbox(format("{COLOR DARK_GRAY}YO"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER8, format("{COLOR DARK_GRAY}sup2"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
+	msgbox(format("{COLOR DARK_GRAY}YO2"), MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss {
+    format("{COLOR DARK_GRAY}bye")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss {
+    format("{COLOR DARK_GRAY}bye")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss {
+    format("{COLOR DARK_GRAY}bye")
+}
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss {
+    format("{COLOR DARK_GRAY}bye")
+}
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss {
+    format("{COLOR DARK_GRAY}bye")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss {
+    format("{COLOR DARK_GRAY}bye")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss {
+    format("{COLOR DARK_GRAY}bye")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss {
+    format("{COLOR DARK_GRAY}bye")
 }
