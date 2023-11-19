@@ -20,6 +20,7 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck::
 	specialvar VAR_RESULT, GetPlayerAvatarBike
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_2
+	msgbox ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_1, MSGBOX_NPC
 	setflag FLAG_SYS_CYCLING_ROAD
 	setvar VAR_TEMP_1, 1
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_1:
@@ -46,3 +47,6 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_0:
 	.string "Oh, you can't enter the Bike Path\n"
 	.string "without a bike!\p"
 	.string "It's too dangerous.$"
+
+ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_1:
+	.string "Welcome to the bike road!$"

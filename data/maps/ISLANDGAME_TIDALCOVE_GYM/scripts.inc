@@ -34,7 +34,7 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor::
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka::
 	checktrainerflag TRAINER_JUAN_1
 	goto_if 0, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_1
-	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_3
+	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_3, MSGBOX_NPC
 	return
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_1:
@@ -45,6 +45,10 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_1:
 
 Movement_Surprised:
 	emote_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	step_end
 
 RukaDefeated:
@@ -60,6 +64,7 @@ RukaDefeated:
 	waitmovement 0
 	msgbox RukaDefeated_Text_4, MSGBOX_NPC
 	giveitem ITEM_BIKE_VOUCHER
+	closemessage
 	return
 
 

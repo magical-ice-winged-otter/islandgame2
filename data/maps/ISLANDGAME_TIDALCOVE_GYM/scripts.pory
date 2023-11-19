@@ -77,6 +77,7 @@ script(local) RukaDefeated {
         "Yeah, I won it from a raffle a while ago, but never had a use for it..."
     ), MSGBOX_NPC)
     giveitem(ITEM_BIKE_VOUCHER)
+    closemessage
 }
 
 
