@@ -1,1 +1,66 @@
 mapscripts ISLANDGAME_TIDALCOVE_RARE_HOUSE_MapScripts {}
+
+script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
+    lock
+    msgbox(format(
+        "I have traveled all of the Isles of Mariyama in search of exotic Pokemon.\p"
+        "If you can show me some rare Pokemon from this island, I could offer you some rare stones in return!"
+    ))
+
+    // todo: once fresa farms gets merged, we can implement the rare pokemon checking.
+    // fresa farms has some custom native code for checking the player party - used for the torchic event there.
+
+//     checkmon(SPECIES_SQUIRTLE)
+//     if (var(VAR_RESULT)) {
+//         goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//     }
+
+//     checkmon(SPECIES_ROWLET)
+//     if (var(VAR_RESULT)) {
+//         goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//     }
+
+//     checkmon(SPECIES_TEPIG)
+//     if (var(VAR_RESULT)) {
+//         goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//     }
+
+//     checkmon(SPECIES_DELIBIRD)
+//     if (var(VAR_RESULT)) {
+//         goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_DELIBIRD, FoundDelibird)
+//     }
+
+//     checkmon(SPECIES_PIKACHU)
+//     if (var(VAR_RESULT)) {
+//         goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
+//     }
+
+// FoundSquirtle:
+//     msgbox("Oh! I have never seen a Squirtle before!")
+//     completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE)
+//     giveitem(ITEM_WATER_STONE)
+//     goto(end)
+// FoundRowlet:
+//     msgbox("Oh! I have never seen a Rowlet before!")
+//     completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_ROWLET)
+//     giveitem(ITEM_LEAF_STONE)
+//     goto(end)
+// FoundTepig:
+//     msgbox("Oh! I have never seen a Tepig before!")
+//     completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_TEPIG)
+//     giveitem(ITEM_FIRE_STONE)
+//     goto(end)
+// FoundDelibird:
+//     msgbox("Oh! I have never seen a Delibird before!")
+//     completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_DELIBIRD)
+//     giveitem(ITEM_ICE_STONE)
+//     goto(end)
+// FoundPikachu:
+//     msgbox("Oh! I have never seen a Pikachu before!\p(He really must be from a distant land...)")
+//     completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUBQUEST_TIDALCOVE_RARE_PKMN_PIKACHU)
+//     giveitem(ITEM_THUNDER_STONE)
+//     goto(end)
+End:
+    closemessage
+    release
+}

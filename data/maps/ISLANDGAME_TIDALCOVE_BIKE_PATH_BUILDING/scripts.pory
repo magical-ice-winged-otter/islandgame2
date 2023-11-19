@@ -1,1 +1,41 @@
-mapscripts ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_MapScripts {}
+mapscripts ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_MapScripts {
+}
+
+script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee {
+    msgbox(format(
+        "On the Bike Path, you can go really fast!\p"
+        "Try to not hit other bikers."
+    ), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_Clear {
+    lock
+    clearflag(FLAG_SYS_CYCLING_ROAD)
+    setvar(VAR_TEMP_1, 0)
+    release
+}
+
+script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck {
+    lock
+    specialvar(VAR_RESULT, GetPlayerAvatarBike)
+
+    if (var(VAR_RESULT) == 0) {
+        msgbox(format(
+            "Oh, you can't enter the Bike Path without a bike!\p"
+            "It's too dangerous."
+        ), MSGBOX_NPC)
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_PushPlayerFromCounter)
+        waitmovement(0)
+    }
+    else {
+        msgbox("Welcome to the bike road!", MSGBOX_NPC)
+        setflag(FLAG_SYS_CYCLING_ROAD)
+        setvar(VAR_TEMP_1, 1)
+    }
+
+    release
+}
+
+movement Movement_PushPlayerFromCounter {
+    walk_left
+}

@@ -1,1 +1,121 @@
-mapscripts ISLANDGAME_TIDALCOVE_GYM_MapScripts {}
+const STEP_COUNT_PUZZLE1 = 8
+const STEP_COUNT_PUZZLE2 = 28
+const STEP_COUNT_PUZZLE3 = 67
+const LOCALID_RUKA = 0
+
+mapscripts ISLANDGAME_TIDALCOVE_GYM_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ICE_STEP_COUNT, STEP_COUNT_PUZZLE1: UnlockNextStairs
+        VAR_ICE_STEP_COUNT, STEP_COUNT_PUZZLE2: UnlockNextStairs
+        VAR_ICE_STEP_COUNT, STEP_COUNT_PUZZLE3: UnlockNextStairs
+        VAR_ICE_STEP_COUNT, 0: FallThroughIce
+    ]
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_ICE_STEP_COUNT, 1)
+    }
+    MAP_SCRIPT_ON_RESUME {
+        setstepcallback(STEP_CB_SOOTOPOLIS_ICE)
+    }
+    MAP_SCRIPT_ON_LOAD {
+        call(CheckSetStairMetatiles)
+        special(SetSootopolisGymCrackedIceMetatiles)
+    }
+}
+
+script ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor {
+    msgbox(format(
+        "Welcome, Challenger! You must climb the slope to fight Ruka.\p"
+        "If you step on ice too much, it'll break!\p"
+        "But don't worry, there is a chute underneath that will carry you safely to the back."
+    ), MSGBOX_NPC)
+}
+
+
+script ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka {
+    // todo: start real battle w/ ruka, not juan
+
+    if (!defeated(TRAINER_JUAN_1)) {
+        msgbox(format(
+            "Hi there! You made it all the way past that ice, good job!\p" 
+            "Now, let's see what you can do in battle."
+        ), MSGBOX_NPC)
+
+        trainerbattle_single(TRAINER_JUAN_1, format("Let's go!"), format("Nice, that was fun!"), RukaDefeated, NO_MUSIC)
+    }
+    else { // we already won
+        msgbox(format(
+            "Lumine really is a wonderful island.\p"
+            "I'm sure you'll find lots of cool stuff to do over there!"
+        ), MSGBOX_NPC)
+    }
+}
+
+movement Movement_Surprised {
+    emote_exclamation_mark
+    delay_16 * 4
+}
+
+script(local) RukaDefeated {
+    msgbox(format(
+        "Wow, that doesn't happen very often!\nCongrats on beating me!\p"
+        "To remember your victory: take this!"
+    ), MSGBOX_NPC)
+    message(format("You received the Tidalcove Badge!"))
+    waitmessage
+    call(Common_EventScript_PlayGymBadgeFanfare)
+    setflag(FLAG_BADGE01_GET)
+    msgbox(format("Also, take this with you:"), MSGBOX_NPC)
+    giveitem(ITEM_TM07)
+    msgbox(format("It's my favorite move HAIL! \nPeople look down on it, but it can do some cool stuff!"), MSGBOX_NPC)
+    applymovement(LOCALID_RUKA, Movement_Surprised)
+    waitmovement(0)
+    msgbox(format(
+        "What's that?\nYou're trying to travel to Lumine Island?\p"
+        "I personally love the swim over there, but it is pretty hard without a Pokemon...\p"
+        "I guess a bike the second best way!\nLuckily, we have an amazing bike shop here in Tidalcove.\p"
+        "Here, take a voucher!\nThis gets you a free bike.\p"
+        "Yeah, I won it from a raffle a while ago, but never had a use for it..."
+    ), MSGBOX_NPC)
+    giveitem(ITEM_BIKE_VOUCHER)
+    closemessage
+}
+
+
+script(local) CheckSetStairMetatiles {
+    if (var(VAR_ICE_STEP_COUNT) >= STEP_COUNT_PUZZLE1) {
+        setmetatile(8, 15, METATILE_SootopolisGym_Stairs, FALSE)
+        setmetatile(8, 16, METATILE_SootopolisGym_Stairs, FALSE)
+    }
+    if (var(VAR_ICE_STEP_COUNT) >= STEP_COUNT_PUZZLE2) {
+        setmetatile(8, 10, METATILE_SootopolisGym_Stairs, FALSE)
+        setmetatile(8, 11, METATILE_SootopolisGym_Stairs, FALSE)
+    }
+    if (var(VAR_ICE_STEP_COUNT) >= STEP_COUNT_PUZZLE3) {
+        setmetatile(8, 4, METATILE_SootopolisGym_Stairs, FALSE)
+        setmetatile(8, 5, METATILE_SootopolisGym_Stairs, FALSE)
+    }
+}
+
+movement Movement_PlayerFall {
+    set_invisible
+}
+
+script(local) FallThroughIce {
+    lock
+    delay(20)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerFall)
+    waitmovement(0)
+    playse(SE_FALL)
+    delay(60)
+    warp(MAP_ISLANDGAME_TIDALCOVE, 25, 13)
+    waitstate
+    release
+}
+
+script(local) UnlockNextStairs {
+    addvar(VAR_ICE_STEP_COUNT, 1)
+    delay(40)
+    playse(SE_ICE_STAIRS)
+    call(CheckSetStairMetatiles)
+    special(DrawWholeMapView)
+}
