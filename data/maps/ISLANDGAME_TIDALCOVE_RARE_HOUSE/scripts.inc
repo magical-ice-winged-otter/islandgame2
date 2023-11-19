@@ -1,0 +1,3 @@
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_MapScripts::
+	.byte 0
+
