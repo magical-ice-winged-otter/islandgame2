@@ -12,11 +12,22 @@
   "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": [
+    {
+      "map": "MAP_ISLANDGAME_TIDALCOVE",
+      "offset": -2,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ISLANDGAME_ROSEVALE",
+      "offset": 16,
+      "direction": "left"
+    }
+  ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 17,
+      "x": 18,
       "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -29,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 32,
+      "x": 33,
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -42,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 28,
+      "x": 29,
       "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -55,7 +66,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 26,
+      "x": 27,
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
@@ -68,7 +79,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 15,
+      "x": 16,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -81,7 +92,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 29,
+      "x": 30,
       "y": 34,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_DOWN_LEFT",
@@ -94,7 +105,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 48,
+      "x": 49,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
@@ -107,7 +118,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 42,
+      "x": 43,
       "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -120,7 +131,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 19,
+      "x": 20,
       "y": 33,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -133,7 +144,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 42,
+      "x": 43,
       "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -146,7 +157,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 7,
+      "x": 8,
       "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -159,7 +170,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 27,
+      "x": 28,
       "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -172,7 +183,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 11,
+      "x": 12,
       "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
@@ -185,7 +196,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 7,
+      "x": 8,
       "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
@@ -198,7 +209,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 14,
+      "x": 15,
       "y": 39,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -212,7 +223,7 @@
   ],
   "warp_events": [
     {
-      "x": 5,
+      "x": 6,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE",
@@ -225,7 +236,7 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 26,
+      "x": 27,
       "y": 38,
       "elevation": 0,
       "item": "ITEM_ELIXIR",
@@ -233,7 +244,7 @@
     },
     {
       "type": "sign",
-      "x": 54,
+      "x": 55,
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
