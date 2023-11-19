@@ -1,0 +1,14 @@
+mapscripts ISLANDGAME_MINTY_MEADOWS_HOUSE_MapScripts {}
+
+
+
+script ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1 {
+    lock
+    msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText)
+    waitmessage
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText {
+    format("{COLOR DARK_GRAY}How do I pass the time? Well...")
+}

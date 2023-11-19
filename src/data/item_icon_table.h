@@ -852,6 +852,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_ISLANDGAME_RAFT] = {gItemIcon_WailmerPail, gItemIconPalette_WailmerPail},
     [ITEM_ISLANDGAME_PICKAXE] = {gItemIcon_IslandgamePickaxe, gItemIconPalette_IslandgamePickaxe},
     [ITEM_ISLANDGAME_POWERGLOVE] = {gItemIcon_PunchingGlove, gItemIconPalette_PunchingGlove},
+    [ITEM_ISLANDGAME_TRADING_CARD] = {gItemIcon_IslandgameTradingCard, gItemIconPalette_IslandgameTradingCard},
 
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},

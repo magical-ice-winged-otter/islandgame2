@@ -12,7 +12,7 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
 	setobjectxyperm 6, 0, 0
 	setobjectxyperm 7, 0, 0
 	setobjectxyperm 8, 0, 0
-	setobjectxyperm 3, 30, 14
+	setobjectxyperm 3, 24, 14
 	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
 	return
 
@@ -37,7 +37,6 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	fadescreen FADE_TO_BLACK
 	delay 120
 	special HealPlayerParty
-	fadescreen FADE_FROM_BLACK
 	return
 
 

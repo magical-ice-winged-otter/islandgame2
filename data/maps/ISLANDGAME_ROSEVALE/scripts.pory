@@ -110,17 +110,8 @@ script ISLANDGAME_ROSEVALE_Interact_AuroraPathSign {
     msgbox(format("Mt. Aurora Path"), MSGBOX_SIGN)
 }
 
-
 script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
-    lock
-    switch (var(VAR_ROSEVALE_STATE)) {
-        case STATE_STARTED_QUEST:
-            msgbox(format("I'm scared. Is everything going to be ok?"), MSGBOX_NPC)
-        default:
-            msgbox(format("Thanks for saving the day!"), MSGBOX_NPC)
-    }
-    closemessage
-    release
+    msgbox(format("I'm scared. Is everything going to be ok?"), MSGBOX_NPC)
 }
 
 // section: sister cutscene pre-aurora
@@ -157,12 +148,6 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
 // section: arthur fight
 movement Movement_Arthur_WalkUpToExit {
     walk_right * 7
-    face_player
-}
-
-movement Movement_Player_SeesArthur {
-    delay_16 * 4
-    face_left
 }
 
 script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
@@ -171,7 +156,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
     addobject(LOCALID_ARTHUR)
     setobjectxy(LOCALID_ARTHUR, 38, 12)
     applymovement(LOCALID_ARTHUR, Movement_Arthur_WalkUpToExit)
-    applymovement(OBJ_EVENT_ID_PLAYER, Movement_Player_SeesArthur)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
     waitmovement(0)
 
     // arthur explains situation

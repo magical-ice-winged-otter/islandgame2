@@ -1,0 +1,3 @@
+ISLANDGAME_ROSEVALE_INN_MapScripts::
+	.byte 0
+
