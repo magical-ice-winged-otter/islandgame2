@@ -302,7 +302,48 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 34,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 35,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 32,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 33,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
+      "dest_warp_id": "6"
+    }
   ],
   "coord_events": [
 
@@ -331,6 +372,38 @@
       "elevation": 0,
       "item": "ITEM_ISLANDGAME_TRADING_CARD",
       "flag": "FLAG_CAMP_PERSI_TRADING_CARD_ITEM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 45,
+      "y": 42,
+      "elevation": 0,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_TEMP_SKIP_GABBY_INTERVIEW"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 48,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
     }
   ]
 }

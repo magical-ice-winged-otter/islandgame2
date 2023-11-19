@@ -19,14 +19,14 @@ script ISLANDGAME_VERDANT_WOODS_Sudowoodo {
     checkitem(ITEM_WAILMER_PAIL, 1)
     switch (var(VAR_RESULT)) {
         case FALSE:
-            msgbox(format("{COLOR DARK_GRAY}It's a tree."))
+            msgbox(format("{COLOR RED}(It's a strange-looking tree. Its trunk doesn't feel like wood at all...)"))
         case TRUE:
-            msgbox(format("{COLOR DARK_GRAY}It's a tree. Water it?"), MSGBOX_YESNO)
+            msgbox(format("{COLOR DARK_GRAY}It's a strange-looking tree. Its trunk doesn't feel like wood at all... \p{COLOR DARK_GRAY}Water the strange-looking tree?"), MSGBOX_YESNO)
             switch (var(VAR_RESULT)) {
                 case NO:
                     break
                 case YES:
-                    setwildbattle(SPECIES_SUDOWOODO, 15)
+                    setwildbattle(SPECIES_SUDOWOODO, 10)
                     playmoncry(SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER)
                     waitmoncry
                     setflag(FLAG_SYS_CTRL_OBJ_DELETE)

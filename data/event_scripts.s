@@ -1157,3 +1157,25 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_TIDALCOVE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_INN/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_RALTS_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AURORA_WEATHER_INSTITUTE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_PKMNMART/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_CYCLE_SHOP/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/scripts.inc"
