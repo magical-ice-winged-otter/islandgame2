@@ -22,6 +22,11 @@
       "map": "MAP_ISLANDGAME_MAPLEGROVE",
       "offset": 28,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ISLANDGAME_MAPLEGROVE",
+      "offset": 28,
+      "direction": "right"
     }
   ],
   "object_events": [

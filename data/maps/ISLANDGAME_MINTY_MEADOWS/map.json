@@ -17,6 +17,11 @@
       "map": "MAP_ISLANDGAME_MINTY_MEADOWS_2",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ISLANDGAME_MAPLEGROVE",
+      "offset": 1,
+      "direction": "left"
     }
   ],
   "object_events": [

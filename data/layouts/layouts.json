@@ -4775,7 +4775,7 @@
       "id": "LAYOUT_ISLANDGAME_MAPLEGROVE",
       "name": "ISLANDGAME_MAPLEGROVE_Layout",
       "width": 40,
-      "height": 28,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/border.bin",
