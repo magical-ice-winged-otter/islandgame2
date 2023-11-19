@@ -159,8 +159,8 @@ ISLANDGAME_VERDANT_PATH_TrainerBattle5_PostDefeated_Text::
 	.string "instead of Mindy...$"
 
 ISLANDGAME_VERDANT_PATH_TrainerBattle5_NotEnoughMons::
-	.string "{COLOR RED}I can't challenge them to a battle\n"
-	.string "without at least two Pokémon...$"
+	.string "{COLOR RED}(I can't challenge them to a battle\n"
+	.string "without at least two Pokémon...)$"
 
 ISLANDGAME_VERDANT_PATH_TrainerBattle6_Text::
 	.string "{COLOR DARK_GRAY}As a member of the upper-class, it's\n"
