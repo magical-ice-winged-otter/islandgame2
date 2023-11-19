@@ -3,6 +3,8 @@ const FLAG_DAYTIME = FLAG_TEMP_2
 
 mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        // todo: set FLAG_GYM_OPEN based on result of the rosevale quest
+
         gettime
 
         if (var(VAR_0x8000) > 12 + 6) {

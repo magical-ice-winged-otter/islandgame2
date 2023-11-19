@@ -4926,8 +4926,8 @@
       "name": "ISLANDGAME_TIDALCOVE_PKMNCENTER_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNCENTER/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNCENTER/map.bin"
     },
