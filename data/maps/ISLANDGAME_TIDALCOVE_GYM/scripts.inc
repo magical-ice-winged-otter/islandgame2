@@ -1,0 +1,3 @@
+ISLANDGAME_TIDALCOVE_GYM_MapScripts::
+	.byte 0
+

@@ -20,11 +20,11 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom::
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk::
 	.string "{COLOR DARK_GRAY}Feels like just yesterday, I was taking\n"
-	.string "Audrey to her first day of school. {COLOR DARK_GRAY}Now\l"
-	.string "she's exploring the vast wilderness of\l"
-	.string "Mariyama all on her own. {COLOR DARK_GRAY}Kids grow up so\l"
-	.string "fast, don't they? Blink and you'll miss\l"
-	.string "it!$"
+	.string "Audrey to her first day of school.\p"
+	.string "{COLOR DARK_GRAY}Now she's exploring the vast wilderness\n"
+	.string "of Mariyama all on her own.\p"
+	.string "{COLOR DARK_GRAY}Kids grow up so fast, don't they? Blink\n"
+	.string "and you'll miss it!$"
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomTalk::
 	.string "{COLOR DARK_GRAY}Hello dearie! You must be {PLAYER},\n"

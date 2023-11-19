@@ -56,6 +56,7 @@
 #include "constants/vars.h"
 #include "constants/weather.h"
 #include "constants/day_night.h"
+#include "constants/quests.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1102,9 +1103,15 @@ Common_EventScript_LegendaryFlewAway::
 	
 	.include "data/maps/ISLANDGAME_CHERIPORT_HOUSE2/scripts.inc"
 
+	.include "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.inc"
+
 	.include "data/maps/ISLANDGAME_MINTY_MEADOWS/scripts.inc"
 
-	.include "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.inc"
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_3/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_MINTY_MEADOWS_HOUSE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.inc"
 
@@ -1114,7 +1121,10 @@ Common_EventScript_LegendaryFlewAway::
 
 	.include "data/maps/ISLANDGAME_VERDANT_PATH/scripts.inc"
 
+	.include "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.inc"
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.inc"
+
+	
 
 	.include "data/maps/ISLANDGAME_FRESA_FARMS/scripts.inc"
 
@@ -1141,3 +1151,42 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_MAPLEGROVE_AudreysHouse_1F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MAPLEGROVE_AudreysHouse_2F/scripts.inc"
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_INN/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_RALTS_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AURORA_WEATHER_INSTITUTE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_PKMNMART/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_CYCLE_SHOP/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/scripts.inc"

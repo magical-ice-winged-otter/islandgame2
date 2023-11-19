@@ -5645,7 +5645,8 @@ const struct Item gItems[] =
         .price = 3000,
         .holdEffect = HOLD_EFFECT_EXP_SHARE,
         .description = sExpShareDesc,
-        .pocket = I_EXP_SHARE_ITEM >= GEN_6 ? POCKET_KEY_ITEMS : POCKET_ITEMS,
+        //.pocket = I_EXP_SHARE_ITEM >= GEN_6 ? POCKET_KEY_ITEMS : POCKET_ITEMS,
+        .pocket = POCKET_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_ExpShare,
         .flingPower = 30,
@@ -9707,6 +9708,16 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_ISLANDGAME_TRADING_CARD] =
+    {
+        .name = _("Trading Card"),
+        .price = 0,
+        .description = sIslandgameTradingCard,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 };

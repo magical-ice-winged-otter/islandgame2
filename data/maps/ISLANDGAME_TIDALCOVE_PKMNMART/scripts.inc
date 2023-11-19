@@ -1,0 +1,3 @@
+ISLANDGAME_TIDALCOVE_PKMNMART_MapScripts::
+	.byte 0
+

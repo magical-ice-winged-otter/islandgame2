@@ -1047,7 +1047,23 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
-    }
+    },
+
+    // ISLANDGAME TRADES
+    [INGAME_TRADE_STARYU] =
+    {
+        .nickname = _("Suisei"),
+        .species = SPECIES_STARYU,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 1,
+        .otId = 32218,
+        .conditions = {5, 5, 30, 5, 5},
+        .personality = NATURE_TIMID,
+        .heldItem = ITEM_STAR_PIECE,
+        .otName = _("Yomi"),
+        .sheen = 10,
+        .requestedSpecies = SPECIES_BARBOACH
+    },
 };
 
 static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =

@@ -1,0 +1,56 @@
+ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts::
+	.byte 0
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk::
+	.string "{COLOR DARK_GRAY}I sent Hanzo to clean up the camp tree\n"
+	.string "house hours ago.\p"
+	.string "{COLOR DARK_GRAY}What could be taking him so long!? He\n"
+	.string "better not be horsing around with that\l"
+	.string "machete in there like last time...\p"
+	.string "{COLOR DARK_GRAY}-sigh- I don't get paid enough for this.\n"
+	.string "This is a CAMP, not a DAYCARE!\p"
+	.string "$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk::
+	.string "{COLOR DARK_GRAY}Give me the controller! The scoutmaster\n"
+	.string "said it's MY turn now!\p"
+	.string "$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk::
+	.string "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense\n"
+	.string "game right now!\p"
+	.string "$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk::
+	.string "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-\p"
+	.string "$"
