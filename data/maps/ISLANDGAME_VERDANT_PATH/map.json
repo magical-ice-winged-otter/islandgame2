@@ -17,6 +17,11 @@
       "map": "MAP_ISLANDGAME_CAMP_PERSI",
       "offset": -41,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ISLANDGAME_MAPLEGROVE",
+      "offset": 26,
+      "direction": "up"
     }
   ],
   "object_events": [

@@ -4665,7 +4665,7 @@
       "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Layout",
       "width": 50,
-      "height": 55,
+      "height": 56,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/border.bin",
