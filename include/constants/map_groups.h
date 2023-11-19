@@ -55,6 +55,7 @@
 #define MAP_ISLANDGAME_ROSEVALE_INN                       (46 | (0 << 8))
 #define MAP_ISLANDGAME_ROSEVALE_PKMNCENTER                (47 | (0 << 8))
 #define MAP_ISLANDGAME_ROSEVALE_RALTS_HOUSE               (48 | (0 << 8))
+#define MAP_ISLANDGAME_AURORA_WEATHER_INSTITUTE           (49 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))
