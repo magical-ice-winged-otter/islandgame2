@@ -2417,7 +2417,7 @@
       "width": 58,
       "height": 26,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "0",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/UnusedOutdoorArea/border.bin",
       "blockdata_filepath": "data/layouts/UnusedOutdoorArea/map.bin"
     },
@@ -4784,8 +4784,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_LODGE_1",
       "name": "ISLANDGAME_CAMP_PERSI_LODGE_1_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 18,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_1/border.bin",
@@ -4860,6 +4860,126 @@
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE",
+      "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_INN",
+      "name": "ISLANDGAME_ROSEVALE_INN_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_PKMNCENTER",
+      "name": "ISLANDGAME_ROSEVALE_PKMNCENTER_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_RALTS_HOUSE",
+      "name": "ISLANDGAME_ROSEVALE_RALTS_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_RALTS_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_RALTS_HOUSE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AURORA_WEATHER_INSTITUTE",
+      "name": "ISLANDGAME_AURORA_WEATHER_INSTITUTE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_AURORA_WEATHER_INSTITUTE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AURORA_WEATHER_INSTITUTE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE_GYM",
+      "name": "ISLANDGAME_TIDALCOVE_GYM_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_GYM/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_GYM/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE_PKMNCENTER",
+      "name": "ISLANDGAME_TIDALCOVE_PKMNCENTER_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNCENTER/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNCENTER/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE_PKMNMART",
+      "name": "ISLANDGAME_TIDALCOVE_PKMNMART_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNMART/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNMART/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING",
+      "name": "ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE_CYCLE_SHOP",
+      "name": "ISLANDGAME_TIDALCOVE_CYCLE_SHOP_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_CYCLE_SHOP/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_CYCLE_SHOP/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE_RARE_HOUSE",
+      "name": "ISLANDGAME_TIDALCOVE_RARE_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_RARE_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_RARE_HOUSE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE_GENERAL_HOUSE",
+      "name": "ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/map.bin"
     }
   ]
 }
