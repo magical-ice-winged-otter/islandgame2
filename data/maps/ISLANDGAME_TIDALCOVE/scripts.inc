@@ -18,6 +18,11 @@ ISLANDGAME_TIDALCOVE_Interact_EntranceSign::
 	return
 
 
+ISLANDGAME_TIDALCOVE_Interact_BehindGymSign::
+	msgbox ISLANDGAME_TIDALCOVE_Interact_BehindGymSign_Text_0, MSGBOX_SIGN
+	return
+
+
 ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign::
 	msgbox ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign_Text_0, MSGBOX_SIGN
 	return
@@ -163,6 +168,9 @@ ISLANDGAME_TIDALCOVE_Interact_EntranceSign_Text_0:
 	.string "Welcome to Tidalcove!\p"
 	.string "Check out the beach while you're here!$"
 
+ISLANDGAME_TIDALCOVE_Interact_BehindGymSign_Text_0:
+	.string "LOSER LANDING$"
+
 ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign_Text_0:
 	.string "BIKE PATH - TO LUMINE ISLAND$"
 
@@ -251,9 +259,9 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop_Text_0:
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle_Text_0:
 	.string "The guy who lives in this house is a nut\n"
-	.string "for rare Pokemon...\p"
-	.string "I bet if I could show him some cool ones\n"
-	.string "he'd give me some kind of reward!$"
+	.string "for rare Pokemon from Oranna...\p"
+	.string "I heard he also collects stones that\n"
+	.string "can make your Pokemon evolve!$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top_Text_0:
 	.string "I've lived in Tidalcove for a long time...\p"

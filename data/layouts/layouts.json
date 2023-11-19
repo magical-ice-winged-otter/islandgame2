@@ -4914,10 +4914,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_TIDALCOVE_GYM",
       "name": "ISLANDGAME_TIDALCOVE_GYM_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "width": 17,
+      "height": 26,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SootopolisGym",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_GYM/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_GYM/map.bin"
     },

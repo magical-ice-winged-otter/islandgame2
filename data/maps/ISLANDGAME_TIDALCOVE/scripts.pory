@@ -17,6 +17,10 @@ script ISLANDGAME_TIDALCOVE_Interact_EntranceSign {
     msgbox(format("Welcome to Tidalcove!\pCheck out the beach while you're here!"), MSGBOX_SIGN)
 }
 
+script ISLANDGAME_TIDALCOVE_Interact_BehindGymSign {
+    msgbox(format("LOSER LANDING"), MSGBOX_SIGN)
+}
+
 script ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign {
     msgbox(format("BIKE PATH - TO LUMINE ISLAND"), MSGBOX_SIGN)
 }
