@@ -9,6 +9,10 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
             setflag(FLAG_ROOM3_ITEM)
         }
 
+        if (flag(FLAG_PROF_GAVE_EEVEE)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+
         // todo: I want to turn this into a single macro - setnightflag(FLAG_NIGHT)
         gettime
 

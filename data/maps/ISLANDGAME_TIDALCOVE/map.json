@@ -17,6 +17,11 @@
       "map": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
       "offset": -39,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ISLANDGAME_NORTHERN_ORANNA_PATH",
+      "offset": 2,
+      "direction": "left"
     }
   ],
   "object_events": [

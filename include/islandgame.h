@@ -6,7 +6,7 @@
 #include "gba/types.h"
 
 // Comment out this line to strip debugging tools from the build.
-#define ISLANDGAME_DEBUG
+//#define ISLANDGAME_DEBUG
 
 //Settings
 #define EXP_MULTIPLIER 4 //By default, pokemon will gain only 1/4 of the experience if they did not participate in battle.

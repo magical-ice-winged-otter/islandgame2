@@ -11,7 +11,7 @@ text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk {
     format(
         "{COLOR DARK_GRAY}I sent Hanzo to clean up the camp tree house hours ago. \p"
         "{COLOR DARK_GRAY}What could be taking him so long!? He better not be horsing around with that machete in there like last time... \p"
-        "{COLOR DARK_GRAY}-sigh- I don't get paid enough for this. This is a CAMP, not a DAYCARE! \p"
+        "{COLOR DARK_GRAY}-sigh- I don't get paid enough for this. This is a CAMP, not a DAYCARE!"
     )
 }
 
@@ -23,7 +23,7 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1 {
 
 text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk {
     format(
-        "{COLOR DARK_GRAY}Give me the controller! The scoutmaster said it's MY turn now! \p"
+        "{COLOR DARK_GRAY}Give me the controller! The scoutmaster said it's MY turn now!"
     )
 }
 
@@ -35,7 +35,7 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2 {
 
 text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk {
     format(
-        "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense game right now! \p"
+        "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense game right now!"
     )
 }
 
@@ -47,6 +47,16 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3 {
 
 text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk {
     format(
-        "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.- \p"
+        "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4 {
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk, MSGBOX_NPC)
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk {
+    format(
+        "{COLOR DARK_GRAY}We only brought 3 controllers...\pSo I get to take over for whoever loses!"
     )
 }
