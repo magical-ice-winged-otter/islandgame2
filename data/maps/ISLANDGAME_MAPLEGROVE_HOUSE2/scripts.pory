@@ -1,0 +1,15 @@
+mapscripts ISLANDGAME_MAPLEGROVE_HOUSE2_MapScripts {}
+
+
+script ISLANDGAME_MAPLEGROVE_HOUSE2_EventScript_Doll {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_MAPLEGROVE_HOUSE2_DollText)
+    release
+}
+
+text ISLANDGAME_MAPLEGROVE_HOUSE2_DollText {
+    format(
+        "{COLOR RED}(It's a Jigglypuff plush. It's very soft.)"
+    )
+}

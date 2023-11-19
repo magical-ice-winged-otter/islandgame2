@@ -1,1 +1,28 @@
 mapscripts ISLANDGAME_TIDALCOVE_CYCLE_SHOP_MapScripts {}
+
+script ISLANDGAME_TIDALCOVE_CYCLE_SHOP_Interact_Owner {
+    lock
+
+    if (flag(FLAG_RECEIVED_BIKE)) {
+        msgbox(format("I hope you've enjoyed your bike!"), MSGBOX_NPC)
+    }
+    else {
+        checkitem(ITEM_BIKE_VOUCHER)
+
+        if (var(VAR_RESULT)) {
+            msgbox(format("Oh, that voucher you have!\nLet me cache it in for a free bike!"), MSGBOX_NPC)
+            giveitem(ITEM_MACH_BIKE) // todo: choose between bikes?
+            removeitem(ITEM_BIKE_VOUCHER)
+            setflag(FLAG_RECEIVED_BIKE)
+        }
+        else {
+            msgbox(format(
+                "Welcome to my cycling shop!\nAll the bikes here are custom-made!\p"
+                "However, we're only giving them away to people with vouchers due to high demand..."
+            ), MSGBOX_NPC)
+        }
+    }
+
+    closemessage
+    release
+}

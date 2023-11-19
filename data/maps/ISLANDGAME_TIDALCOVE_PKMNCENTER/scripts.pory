@@ -1,1 +1,30 @@
-mapscripts ISLANDGAME_TIDALCOVE_PKMNCENTER_MapScripts {}
+const LOCALID_NURSE = 1
+
+mapscripts ISLANDGAME_TIDALCOVE_PKMNCENTER_MapScripts {
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_ISLANDGAME_CAMP_PERSI)
+    }
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_Nurse {
+    setvar(VAR_0x800B, LOCALID_NURSE)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_NPC1 {
+    msgbox(format(
+        "I spend a lot of time in the Pokemon Center.\p"
+        "I think the Nurse knows me by name!"
+    ), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_NPC2 {
+    msgbox(format(
+        "This Pokemon center gets a lot more traffic than other ones.\p"
+        "We have our gym leader, Ruka, to thank for that."
+    ), MSGBOX_NPC)
+}
