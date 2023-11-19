@@ -4956,8 +4956,8 @@
       "name": "ISLANDGAME_TIDALCOVE_CYCLE_SHOP_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_CYCLE_SHOP/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_CYCLE_SHOP/map.bin"
     },
