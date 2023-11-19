@@ -1,1 +1,107 @@
-mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts {}
+const VAR_CUTSCENE_FINISHED = VAR_TEMP_0
+
+const LOCALID_LUXRAY = 8
+const LOCALID_PRIM = 1
+const LOCALID_FAN_1 = 7
+const LOCALID_FAN_2 = 5
+
+mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (flag(FLAG_NORANNA_PRIM_CUTSCENE_FINISHED)) {
+            setvar(VAR_CUTSCENE_FINISHED, 1)
+        }
+    }
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_RestHouseSign {
+    msgbox(format("REST HOUSE"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_TidalCoveApproachSign {
+    msgbox(format("PATH TO TIDALCOVE"), MSGBOX_SIGN)
+}
+ 
+movement Movement_LuxrayAttack {
+    walk_right
+}
+
+movement Movement_PrimWalkAway {
+    walk_right * 3
+    walk_down
+    walk_right * 4
+}
+
+movement Movement_LuxrayWalkAway {
+    walk_down
+    face_right
+    delay_16 * 7
+    walk_right * 5
+}
+
+movement Movement_Fan1WalkAway {
+    delay_16 * 3
+    walk_down * 2
+    walk_right * 6
+}
+
+movement Movement_Fan2WalkAway {
+    delay_16 * 10
+    walk_up * 2
+    walk_right * 3
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
+    lock
+
+    // prim commands luxray to finish it
+    msgbox(format("Prim: Luxray, finish things up here."))
+    closemessage
+
+    // luxray attacks
+    applymovement(LOCALID_LUXRAY, Movement_LuxrayAttack)
+    waitmovement(LOCALID_LUXRAY)
+    playmoncry(SPECIES_LUXRAY, CRY_MODE_NORMAL)
+    waitmoncry
+
+    // prim roasts the opponent for losing
+    msgbox(format("Prim: Man, that was a waste of time! You should have just given me the spot..."))
+    closemessage
+
+    // prim and 2 spectators walk away
+    applymovement(LOCALID_PRIM, Movement_PrimWalkAway)
+    applymovement(LOCALID_LUXRAY, Movement_LuxrayWalkAway)
+    applymovement(LOCALID_FAN_1, Movement_Fan1WalkAway)
+    applymovement(LOCALID_FAN_2, Movement_Fan2WalkAway)
+    waitmovement(LOCALID_PRIM)
+    waitmovement(LOCALID_LUXRAY)
+    waitmovement(LOCALID_FAN_1)
+    waitmovement(LOCALID_FAN_2)
+    removeobject(LOCALID_PRIM)
+    removeobject(LOCALID_LUXRAY)
+    removeobject(LOCALID_FAN_1)
+    removeobject(LOCALID_FAN_2)
+
+    setflag(FLAG_NORANNA_PRIM_CUTSCENE_FINISHED)
+    setvar(VAR_CUTSCENE_FINISHED, 1)
+    release
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser {
+    msgbox(format("Man, I lost so bad..."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1 {
+    msgbox(format("Prim is really good... if only she could wake up earlier."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2 {
+    msgbox(format("It doesn't matter how good Prim is; she still has no chance against Ruka."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3 {
+    msgbox(format(
+        "Since so many people come by to challenge Ruka,"
+        "she can only accept a limited amount of people each day."
+        "Prim was just fighting for the last spot."
+    ), MSGBOX_NPC)
+}

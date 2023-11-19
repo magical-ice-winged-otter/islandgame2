@@ -1,1 +1,17 @@
-mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts {}
+mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts {
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger {
+    // todo: check state from noranna to clear this
+    msgbox(format("These Mightyena are blocking the path!\pI'm trying my best to clear them out, come back later."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_MightyenaBlocker {
+    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_NORMAL)
+    msgbox(format("The Mightyena looks very agitated."))
+    closemessage
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign {
+    msgbox(format("CENTRAL ORANNA PATH\pWarning: wildlife out of control"), MSGBOX_SIGN)
+}
