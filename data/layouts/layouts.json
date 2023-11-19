@@ -4695,7 +4695,7 @@
       "id": "LAYOUT_ISLANDGAME_ROSEVALE",
       "name": "ISLANDGAME_ROSEVALE_Layout",
       "width": 50,
-      "height": 40,
+      "height": 45,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE/border.bin",
