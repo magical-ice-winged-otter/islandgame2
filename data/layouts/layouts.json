@@ -4774,12 +4774,72 @@
     {
       "id": "LAYOUT_ISLANDGAME_MAPLEGROVE",
       "name": "ISLANDGAME_MAPLEGROVE_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 28,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MAPLEGROVE_PKMNCENTER",
+      "name": "ISLANDGAME_MAPLEGROVE_PKMNCENTER_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_PKMNCENTER/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_PKMNCENTER/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MAPLEGROVE_PKMNMART",
+      "name": "ISLANDGAME_MAPLEGROVE_PKMNMART_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_PKMNMART/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_PKMNMART/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MAPLEGROVE_HOUSE1",
+      "name": "ISLANDGAME_MAPLEGROVE_HOUSE1_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_HOUSE1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_HOUSE1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MAPLEGROVE_HOUSE2",
+      "name": "ISLANDGAME_MAPLEGROVE_HOUSE2_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_HOUSE2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_HOUSE2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MAPLEGROVE_AUDREYS_HOUSE_1F",
+      "name": "ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_AudreysHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_AudreysHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MAPLEGROVE_AUDREYS_HOUSE_2F",
+      "name": "ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_AudreysHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_AudreysHouse_2F/map.bin"
     },
     {
       "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_LODGE_1",
