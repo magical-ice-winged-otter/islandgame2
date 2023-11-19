@@ -22,21 +22,29 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
             setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
             setobjectxyperm(LOCALID_ARTHUR_SISTER, 24, 14)
+            addobject(LOCALID_ARTHUR_SISTER)
             setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
         }
         VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
             // everyone is standing around the inn
-            setobjectxyperm(LOCALID_ARTHUR, 31, 23)
-            setobjectxyperm(LOCALID_ARTHUR_DAD, 31, 22)
-            setobjectxyperm(LOCALID_ARTHUR_MOM, 30, 22)
-            setobjectxyperm(LOCALID_ARTHUR_SISTER, 31, 24)
+            setobjectxyperm(LOCALID_ARTHUR, 31, 25)
+            setobjectxyperm(LOCALID_ARTHUR_DAD, 31, 24)
+            setobjectxyperm(LOCALID_ARTHUR_MOM, 30, 24)
+            setobjectxyperm(LOCALID_ARTHUR_SISTER, 31, 26)
+            addobject(LOCALID_ARTHUR)
+            addobject(LOCALID_ARTHUR_DAD)
+            addobject(LOCALID_ARTHUR_MOM)
+            addobject(LOCALID_ARTHUR_SISTER)
             setobjectmovementtype(LOCALID_ARTHUR, MOVEMENT_TYPE_FACE_LEFT)
             setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
+            turnobject(LOCALID_ARTHUR, DIR_WEST)
+            turnobject(LOCALID_ARTHUR_SISTER, DIR_WEST)
         }
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
-            // todo: warp here from mt aurora 29, 23 (PLAYER WARP POS)
+            // todo: warp here from mt aurora 29, 25 (PLAYER WARP POS)
+            setvar(VAR_ROSEVALE_STATE, STATE_ARTHUR_FIGHT)
 
             // everyone thanks you for helping
             msgbox(format("Arthurs Dad: Thanks so helping!"), MSGBOX_NPC)
@@ -46,14 +54,8 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             // you are invited to stay the night
             msgbox(format("Arthurs Dad: Please - stay the night, free of charge."), MSGBOX_NPC)
 
-            // screen fades
-            fadescreen(FADE_TO_BLACK)
-            delay(120)
-
-            // party is healed
-            special(HealPlayerParty)
-
-            // you warp to the bedroom
+            //warp
+            warp(MAP_ISLANDGAME_ROSEVALE_INN, 5, 3)
         }
     ]
 }

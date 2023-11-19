@@ -13,14 +13,19 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
 	setobjectxyperm 7, 0, 0
 	setobjectxyperm 8, 0, 0
 	setobjectxyperm 3, 24, 14
+	addobject 3
 	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1:
-	setobjectxyperm 6, 31, 23
-	setobjectxyperm 7, 31, 22
-	setobjectxyperm 8, 30, 22
-	setobjectxyperm 3, 31, 24
+	setobjectxyperm 6, 31, 25
+	setobjectxyperm 7, 31, 24
+	setobjectxyperm 8, 30, 24
+	setobjectxyperm 3, 31, 26
+	addobject 6
+	addobject 7
+	addobject 8
+	addobject 3
 	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_LEFT
 	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
 	return
@@ -30,13 +35,12 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
+	setvar VAR_ROSEVALE_STATE, 3
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3, MSGBOX_NPC
-	fadescreen FADE_TO_BLACK
-	delay 120
-	special HealPlayerParty
+	warp MAP_ISLANDGAME_ROSEVALE_INN, 5, 3
 	return
 
 
@@ -98,18 +102,8 @@ ISLANDGAME_ROSEVALE_Interact_AuroraPathSign::
 
 
 ISLANDGAME_ROSEVALE_Interact_ArthurSister::
-	lock
-	switch VAR_ROSEVALE_STATE
-	case 1, ISLANDGAME_ROSEVALE_Interact_ArthurSister_3
-	msgbox ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_1, MSGBOX_NPC
-ISLANDGAME_ROSEVALE_Interact_ArthurSister_1:
-	closemessage
-	release
-	return
-
-ISLANDGAME_ROSEVALE_Interact_ArthurSister_3:
 	msgbox ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0, MSGBOX_NPC
-	goto ISLANDGAME_ROSEVALE_Interact_ArthurSister_1
+	return
 
 
 Movement_ArthurSister_RunUpToPath:
@@ -141,15 +135,6 @@ Movement_Arthur_WalkUpToExit:
 	walk_right
 	walk_right
 	walk_right
-	face_player
-	step_end
-
-Movement_Player_SeesArthur:
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	face_left
 	step_end
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
@@ -157,7 +142,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
 	addobject 6
 	setobjectxy 6, 38, 12
 	applymovement 6, Movement_Arthur_WalkUpToExit
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_Player_SeesArthur
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	waitmovement 0
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0, MSGBOX_NPC
 	trainerbattle_single TRAINER_BRANDON, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2, ArthurDefeated
@@ -262,9 +247,6 @@ ISLANDGAME_ROSEVALE_Interact_AuroraPathSign_Text_0:
 ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0:
 	.string "I'm scared. Is everything going to be\n"
 	.string "ok?$"
-
-ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_1:
-	.string "Thanks for saving the day!$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0:
 	.string "arthur explains situation$"

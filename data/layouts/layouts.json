@@ -4876,8 +4876,8 @@
       "name": "ISLANDGAME_ROSEVALE_INN_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN/map.bin"
     },
