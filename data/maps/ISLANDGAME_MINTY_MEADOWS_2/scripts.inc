@@ -41,15 +41,15 @@ ISLANDGAME_MINTY_MEADOWS_2_InitialRival::
 
 
 ISLANDGAME_MINTY_MEADOWS_2_StartedQuest_1::
-	setobjectxyperm 16, 35, 11
 	setobjectxyperm 17, 11, 6
 	setobjectxyperm 11, 32, 37
 	setobjectxyperm 12, 32, 37
+	addobject 11
+	addobject 12
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst::
-	setobjectxyperm 16, 36, 26
 	setobjectxyperm 17, 11, 6
 	setobjectxyperm 11, 61, 13
 	setobjectxyperm 12, 61, 15
@@ -59,7 +59,6 @@ ISLANDGAME_MINTY_MEADOWS_2_SawMareepFirst::
 
 
 ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
-	setobjectxyperm 16, 61, 18
 	setobjectxyperm 17, 11, 6
 	setobjectxyperm 11, 61, 13
 	setobjectxyperm 12, 61, 14
@@ -491,38 +490,43 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2::
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER3, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_1, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER3, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER4, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_1, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER4, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER5, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_1, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER5, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER6, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_1, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER6, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER7, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_1, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER7, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER8, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_1, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_MINTY_MEADOWS_TRAINER8, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_ItemZapPlate::
+	finditem ITEM_ZAP_PLATE
 	return
 
 
@@ -586,16 +590,62 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2:
 	.string "I've got stuff to do!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_0:
-	.string "{COLOR DARK_GRAY}sup1$"
+	.string "{COLOR DARK_GRAY}Where are the Bug POKEMON in these\n"
+	.string "plains?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_1:
-	.string "{COLOR DARK_GRAY}YO$"
+	.string "{COLOR DARK_GRAY}I heard some bug exists in the cave.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_0:
-	.string "{COLOR DARK_GRAY}sup2$"
+	.string "{COLOR DARK_GRAY}I like coming here on my days off.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_1:
-	.string "{COLOR DARK_GRAY}YO2$"
+	.string "{COLOR DARK_GRAY}I need to go get milk from the nearby\n"
+	.string "farms.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_0:
+	.string "{COLOR DARK_GRAY}I come here to practice my psychic\n"
+	.string "powers.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_1:
+	.string "{COLOR DARK_GRAY}The nearby mountains make it easier to\n"
+	.string "concentrate.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_0:
+	.string "{COLOR DARK_GRAY}That guy over there is so creepy.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_1:
+	.string "{COLOR DARK_GRAY}I heard Pokemon running around. Is\n"
+	.string "there something happening?$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_0:
+	.string "{COLOR DARK_GRAY}My brother told me that there would be\n"
+	.string "strong Bug POKEMONS here.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_1:
+	.string "{COLOR DARK_GRAY}I will look for them until midnight if\n"
+	.string "needed.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_0:
+	.string "{COLOR DARK_GRAY}I found a Mareep, but a Mightyena\n"
+	.string "chased it away!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_1:
+	.string "{COLOR DARK_GRAY}Maybe you are stronger than the\n"
+	.string "Mightyena$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_0:
+	.string "{COLOR DARK_GRAY}I am the strongest Bug Trainer around\n"
+	.string "these parts.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_1:
+	.string "{COLOR DARK_GRAY}$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0:
+	.string "{COLOR DARK_GRAY}Shorts are comfy and easy to wear!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1:
+	.string "{COLOR DARK_GRAY}If only I had a Rattata$"
 
 ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"
@@ -604,25 +654,27 @@ MareepHelp_Text::
 	.string "{COLOR BLUE}bro help me$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss::
-	.string "{COLOR DARK_GRAY}bye$"
+	.string "{COLOR DARK_GRAY}I will keep looking for some bugs.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss::
-	.string "{COLOR DARK_GRAY}bye$"
+	.string "{COLOR DARK_GRAY}Wow, you are strong!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss::
-	.string "{COLOR DARK_GRAY}bye$"
+	.string "{COLOR DARK_GRAY}Looks like I still need more practice.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss::
-	.string "{COLOR DARK_GRAY}bye$"
+	.string "{COLOR DARK_GRAY}I lost? My day is not going well.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss::
-	.string "{COLOR DARK_GRAY}bye$"
+	.string "{COLOR DARK_GRAY}The ones I currently have are not that\n"
+	.string "strong.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss::
-	.string "{COLOR DARK_GRAY}bye$"
+	.string "{COLOR DARK_GRAY}I guess I will look for another Mareep.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss::
-	.string "{COLOR DARK_GRAY}bye$"
+	.string "{COLOR DARK_GRAY}It seems that you have bested the\n"
+	.string "three of us.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss::
-	.string "{COLOR DARK_GRAY}bye$"
+	.string "{COLOR DARK_GRAY}No fair!$"
