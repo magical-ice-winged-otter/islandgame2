@@ -1,1 +1,24 @@
 mapscripts ISLANDGAME_TIDALCOVE_PKMNMART_MapScripts {}
+
+script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_NPC1 {
+    msgbox(format("Hmm... yes I've heard good things about these ones."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Goods {
+    msgbox(format("It's rows upon rows of vitamins.\pFairly expenseive, too."), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Employee {
+    lock
+    msgbox(format("Welcome to the Tidalcove Mart!\nWhat can I get for you?"))
+    pokemart(MartItems)
+    msgbox(format("Enjoy your stay in the sun!"))
+    closemessage
+    release
+}
+
+mart MartItems {
+    ITEM_SODA_POP
+    ITEM_POKE_BALL
+    ITEM_GREAT_BALL
+}

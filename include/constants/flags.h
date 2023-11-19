@@ -1608,9 +1608,9 @@
 
 // ISLANDGAME DAILY FLAGS
 #define FLAG_DAILY_CHERIPORT_RECEIVED_DRINK         (DAILY_FLAGS_START + 0x15) 
-#define FLAG_DAILY_PERSI_CANDY_BOY_SALE             (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define FLAG_DAILY_PERSI_COOKIE_GIRL_SALE           (DAILY_FLAGS_START + 0x17) // Unused Flag
-#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
+#define FLAG_DAILY_PERSI_CANDY_BOY_SALE             (DAILY_FLAGS_START + 0x16) 
+#define FLAG_DAILY_PERSI_COOKIE_GIRL_SALE           (DAILY_FLAGS_START + 0x17) 
+#define FLAG_DAILY_TIDALCOVE_YACHE_GIRL             (DAILY_FLAGS_START + 0x18) 
 #define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
 #define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
