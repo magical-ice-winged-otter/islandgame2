@@ -233,6 +233,11 @@ gScriptCmdTable::
 	.4byte ScrCmd_questmenu                         @ 0xe6
     .4byte ScrCmd_subquestmenu                      @ 0xe7
     .4byte ScrCmd_returnqueststate                  @ 0xe8
+@@@ new follower commands go here
+    .4byte ScrCmd_setfollower					    @ 0xe9
+    .4byte ScrCmd_destroyfollower					@ 0xea
+    .4byte ScrCmd_facefollower						@ 0xeb
+    .4byte ScrCmd_checkfollower						@ 0xec
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

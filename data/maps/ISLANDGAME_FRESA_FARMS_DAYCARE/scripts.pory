@@ -1,1 +1,56 @@
-mapscripts ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts {}
+mapscripts ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts {
+}
+
+script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
+    lock
+    faceplayer
+    returnqueststate(QUEST_FRESA_FARMS_TORCHIC_EGG)
+
+    switch (var(VAR_RESULT)) {
+        case 1: // INACTIVE
+            msgbox("Want an egg?", MSGBOX_YESNO) 
+
+            switch (var(VAR_RESULT)) {
+                case TRUE: // We do want the egg
+                    msgbox("cool!")
+                    giveegg(SPECIES_TORCHIC, NUM_NATURES, 2, 18, 18, 18, 18, 18, 18)
+                    startquest(QUEST_FRESA_FARMS_TORCHIC_EGG)
+                case FALSE: // We don't want the egg
+                    msgbox("aw man")
+            }
+        case 2: // ACTIVE
+            setvar(VAR_0x8000, SPECIES_TORCHIC)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto(Torchic_Reward)
+            }
+
+            setvar(VAR_0x8000, SPECIES_COMBUSKEN)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto(Torchic_Reward)
+            }
+
+            setvar(VAR_0x8000, SPECIES_BLAZIKEN)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto(Torchic_Reward)
+            }
+
+            msgbox(format("Come back when its hatched!"))
+            goto(Torchic_End)
+
+Torchic_Reward:
+            msgbox(format("Oh it hatched!"))
+            giveitem(ITEM_BLAZIKENITE)
+            completequest(QUEST_FRESA_FARMS_TORCHIC_EGG)
+
+Torchic_End:
+        // no cleanup needed
+
+        case 4: // COMPLETED
+            msgbox("Hope your torchic is doin well!")
+    }
+
+    release
+}

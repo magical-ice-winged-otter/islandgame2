@@ -3061,6 +3061,36 @@ void TryHideBattleTowerReporter(void)
     }
 }
 
+
+#define RANDOM_OTID 72716
+
+void FillDuoParty(u16 partyID)
+{
+    s32 i, j;
+    #define party sParty_Duos[partyID]
+
+    DebugPrintf("MAKE PARTY! %d", partyID);
+    for (i = 0; i < MULTI_PARTY_SIZE; i++)
+    {
+        CreateMon(&gPlayerParty[MULTI_PARTY_SIZE + i],
+                  party[i].species,
+                  party[i].lvl,
+                  party[i].iv,
+                  TRUE,
+                  party[i].nature,
+                  OT_ID_PRESET, RANDOM_OTID);
+        for (j = 0; j < PARTY_SIZE; j++)
+            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &party[i].ev[j]);
+        for (j = 0; j < MAX_MON_MOVES; j++)
+            SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sStevenMons[i].moves[j], j);
+        SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
+        j = party[i].gender;
+        SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+        CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
+    }
+
+    #undef party
+}
 #define STEVEN_OTID 61226
 
 static void FillPartnerParty(u16 trainerId)

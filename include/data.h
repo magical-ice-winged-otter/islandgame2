@@ -120,4 +120,6 @@ extern const u8 gSpeciesNames[NUM_SPECIES][POKEMON_NAME_LENGTH + 1];
 extern const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1];
 extern const u8 *const gZMoveNames[];
 
+extern const struct TrainerMon sParty_Duos[][MULTI_PARTY_SIZE];
+
 #endif // GUARD_DATA_H

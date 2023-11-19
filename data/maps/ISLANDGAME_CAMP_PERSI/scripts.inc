@@ -472,8 +472,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag::
 	lock
 	faceplayer
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk
-	applymovement 14, Common_Movement_FaceOriginalDirection
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag_Text_0
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	return
@@ -617,6 +617,9 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_4:
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_5:
 	.string "I'm never taking my card outside again...$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag_Text_0:
+	.string "{COLOR RED}It's just staring at me... menacingly?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_Text_0:
 	.string "{COLOR DARK_GRAY}Aww. That's a shame. I was going to\n"
@@ -818,9 +821,6 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC12Talk::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk::
 	.string "{COLOR DARK_GRAY}The older boys are so cool... They know\n"
 	.string "how to build a tent with just sticks!$"
-
-ISLANDGAME_CAMP_PERSI_OUTSIDE_ZigzagTalk::
-	.string "{COLOR RED}(It's just staring at me... menacingly?)$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk1::
 	.string "{COLOR DARK_GRAY}I really like gardening. Do you like\n"

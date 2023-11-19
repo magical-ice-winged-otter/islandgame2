@@ -313,9 +313,9 @@ static const u8 sPewterCrunchiesDesc[] = _(
     "one Pokémon.");
 
 static const u8 sRageCandyBarDesc[] = _(
-    "Heals all the\n"
-    "status problems of\n"
-    "one Pokémon.");
+    "Restores the HP of\n"
+    "a Pokémon by\n"
+    "20 points.");
 
 static const u8 sLavaCookieDesc[] = _(
     "A local specialty\n"

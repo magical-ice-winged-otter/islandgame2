@@ -1697,11 +1697,22 @@ bool8 ScrCmd_givemon(struct ScriptContext *ctx)
     return FALSE;
 }
 
+//.macro giveegg species:req, nature, abilityNum, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv
 bool8 ScrCmd_giveegg(struct ScriptContext *ctx)
 {
     u16 species = VarGet(ScriptReadHalfword(ctx));
+    u8 nature = ScriptReadByte(ctx);
+    u8 abilityNum = ScriptReadByte(ctx);
+    u8 hpIv = ScriptReadByte(ctx);
+    u8 atkIv = ScriptReadByte(ctx);
+    u8 defIv = ScriptReadByte(ctx);
+    u8 speedIv = ScriptReadByte(ctx);
+    u8 spAtkIv = ScriptReadByte(ctx);
+    u8 spDefIv = ScriptReadByte(ctx);
 
-    gSpecialVar_Result = ScriptGiveEgg(species);
+    u8 ivs[NUM_STATS] = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
+
+    gSpecialVar_Result = ScriptGiveEgg(species, nature, abilityNum, ivs);
     return FALSE;
 }
 
@@ -2485,3 +2496,34 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
 
     return TRUE;
 }
+// follow me script commands
+#include "follow_me.h"
+bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
+{
+    u8 localId = ScriptReadByte(ctx);
+    u16 flags = ScriptReadHalfword(ctx);
+    u16 partyID = VarGet(ScriptReadHalfword(ctx));
+    
+    DebugPrintf("setfollower: %d", partyID);
+    SetUpFollowerSprite(localId, flags, partyID);
+    return FALSE;
+}
+
+bool8 ScrCmd_destroyfollower(struct ScriptContext *ctx)
+{
+    DestroyFollower();
+    return FALSE;
+}
+
+bool8 ScrCmd_facefollower(struct ScriptContext *ctx)
+{
+    PlayerFaceFollowerSprite();
+    return FALSE;
+}
+
+bool8 ScrCmd_checkfollower(struct ScriptContext *ctx)
+{
+    CheckPlayerHasFollower();
+    return FALSE;
+}
+

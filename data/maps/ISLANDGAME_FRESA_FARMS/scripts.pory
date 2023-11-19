@@ -1,1 +1,105 @@
-mapscripts ISLANDGAME_FRESA_FARMS_MapScripts {}
+const OLD_MAN_OW_ID = 12
+
+mapscripts ISLANDGAME_FRESA_FARMS_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_FRESA_FARMS_HandleDaycareState
+}
+
+//daycare stuff:
+script ISLANDGAME_FRESA_FARMS_HandleDaycareState {
+    setflag(FLAG_TEMP_A)
+    setflag(FLAG_TEMP_B)
+    //specialvar(VAR_RESULT, GetDaycareState)
+    //switch (var(VAR_RESULT)) {
+    //    case DAYCARE_NO_MONS:
+    //        setflag(FLAG_TEMP_A)
+    //        setflag(FLAG_TEMP_B)
+    //        return
+    //    case DAYCARE_TWO_MONS:
+    //        //setvar(VAR_OBJ_GFX_ID_B, VAR_0x800B)
+    //        //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
+    //        clearflag(FLAG_TEMP_B)
+    //        clearflag(FLAG_TEMP_A)
+    //        return
+    //    case DAYCARE_ONE_MON:
+    //        //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
+    //        setflag(FLAG_TEMP_B)
+    //        clearflag(FLAG_TEMP_A)
+    //        return
+    //}   
+}
+
+script ISLANDGAME_FRESA_FARMS_OldMan_Request {
+    lock
+    applymovement(OLD_MAN_OW_ID, Common_Movement_FaceLeft)
+    waitmovement(OLD_MAN_OW_ID)
+    applymovement(OLD_MAN_OW_ID, Common_Movement_ExclamationMark)
+    waitmovement(OLD_MAN_OW_ID)
+    goto(ISLANDGAME_FRESA_FARMS_OldMan_Talk)
+}
+
+text ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage {
+    format(
+        "Oh, its you!\p"
+        "I couldn't help but notice your battle earlier.\p"
+        "I was wondering if you could help us with our missing Mareep.\p"
+        "She usually goes off by herself to the center of the plains, but we haven't seen her since."
+    )
+}
+
+text ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage {
+    format("{COLOR DARK_GRAY}Thank you very much!")
+}
+
+script ISLANDGAME_FRESA_FARMS_OldMan_Talk {
+    lock
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case 0: // initial
+            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+            startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
+        case 4:
+            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage)
+        default:
+            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+    }
+    release
+}
+
+script ISLANDGAME_FRESA_FARMS_DayCareSign_Interact {
+    msgbox(format("DAY CARE"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_FRESA_FARMS_FarmhouseSign_Interact {
+    msgbox(format("FARMHOUSE"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_FRESA_FARMS_Miltank_Interact {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MILTANK, CRY_MODE_NORMAL)
+    msgbox(format("The Miltank is lazing around."))
+    release
+}
+
+script ISLANDGAME_FRESA_FARMS_Chansey_Interact {
+    lock
+    faceplayer
+    playmoncry(SPECIES_CHANSEY, CRY_MODE_NORMAL)
+    msgbox(format("The Chansey seems happy to just wander around."))
+    release
+}
+
+script ISLANDGAME_FRESA_FARMS_Mareep_Interact {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
+    msgbox(format("The Mareep appears to be well fed."))
+    release
+}
+
+script ISLANDGAME_FRESA_FARMS_MareepScared_Interact {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MAREEP, CRY_MODE_GROWL_1)
+    msgbox(format("The Mareep keeps glancing up at the nearby Herdier."))
+    release
+}

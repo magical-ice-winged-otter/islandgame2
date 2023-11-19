@@ -18,8 +18,10 @@
 // Custom Quests
 #define QUEST_PERSI_FAVORITE_CARD          0
 #define QUEST_PERSI_BERRY_MANIAC           1
-#define QUEST_NORANNA_FITNESS_FREAK        2
-#define QUEST_COUNT                        3 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_FRESA_FARMS_LOST_MAREEP      2
+#define QUEST_FRESA_FARMS_TORCHIC_EGG      3
+#define QUEST_NORANNA_FITNESS_FREAK        4
+#define QUEST_COUNT                        5 // This number is literally how many to show in the UI (keep it accurate!)
 
 // Custom Sub-Quests
 #define SUB_QUEST_PERSI_BERRY_1            0
@@ -43,7 +45,6 @@
 
 #define SUB_QUEST_COUNT SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK
 
-// #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 
 // We want to allocate more space in the saveblock for quests than we need,
 // so we don't make breaking changes in the future.

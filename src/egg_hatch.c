@@ -313,7 +313,7 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
 {
     u16 species;
     u32 personality, pokerus;
-    u8 i, friendship, language, gameMet, markings, isModernFatefulEncounter;
+    u8 i, friendship, language, gameMet, markings, isModernFatefulEncounter, ability;
     u16 moves[MAX_MON_MOVES];
     u32 ivs[NUM_STATS];
 
@@ -326,6 +326,8 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
 
     for (i = 0; i < NUM_STATS; i++)
         ivs[i] = GetMonData(egg, MON_DATA_HP_IV + i);
+    
+    ability = GetMonData(egg, MON_DATA_ABILITY_NUM);
 
     // The language is initially read from the Egg but is later overwritten below
     language = GetMonData(egg, MON_DATA_LANGUAGE);
@@ -341,6 +343,8 @@ static void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)
 
     for (i = 0; i < NUM_STATS; i++)
         SetMonData(temp, MON_DATA_HP_IV + i,  &ivs[i]);
+
+    SetMonData(temp, MON_DATA_ABILITY_NUM, &ability);
 
     language = GAME_LANGUAGE;
     SetMonData(temp, MON_DATA_LANGUAGE, &language);

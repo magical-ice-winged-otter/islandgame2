@@ -1,110 +1,3 @@
-
-mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags
-    MAP_SCRIPT_ON_RESUME: ISLANDGAME_MINTY_MEADOWS_2_OnResume
-    MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_0, 0: ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad
-    ]
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags {
-    if (flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
-        setvar(VAR_TEMP_1, 1)
-    }
-    return
-}
-
-//RIVAL FIGHT
-const RIVAL_OW_ID = 16
-movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1 {
-    walk_left * 4
-}
-movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement2 {
-    walk_left * 3
-}
-movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement3 {
-    walk_left * 2
-}
-movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement4 {
-    walk_left
-}
-
-movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement6 {
-    walk_right
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger1 {
-    lock
-    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1)
-    waitmovement(RIVAL_OW_ID)
-    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger2 {
-    lock
-    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement2)
-    waitmovement(RIVAL_OW_ID)
-    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger3 {
-    lock
-    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement3)
-    waitmovement(RIVAL_OW_ID)
-    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger4 {
-    lock
-    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement4)
-    waitmovement(RIVAL_OW_ID)
-    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger5 {
-    lock
-    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger6 {
-    lock
-    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement6)
-    waitmovement(RIVAL_OW_ID)
-    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
-}
-
-movement ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown {
-    walk_down * 4
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
-    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown)
-    waitmovement(RIVAL_OW_ID)
-    call(ISLANDGAME_MINTY_MEADOWS_2_RivalFight)
-    release
-}
-script ISLANDGAME_MINTY_MEADOWS_2_RivalFight {
-    msgbox(ISLANDGAME_MINTY_MEADOWS_2_IntroBattle_Text)
-    trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text)
-    specialvar(VAR_RESULT, GetBattleOutcome)
-    if (var(VAR_RESULT) != B_OUTCOME_WON) {
-        return
-    }
-    setflag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)
-    call(ISLANDGAME_MINTY_MEADOWS_2_UpdateFlags)
-    msgbox(ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text)
-    closemessage
-    return
-}
-
-text ISLANDGAME_MINTY_MEADOWS_2_IntroBattle_Text {
-    format("{COLOR DARK_GRAY}Rival battle intro")
-}
-
-text ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text {
-    format("{COLOR DARK_GRAY}post defeat rival")
-}
-
 //VAR_MINTY_MEADOWS_STATE:
 //0 - nothing
 //1 - initiate quest
@@ -112,155 +5,297 @@ text ISLANDGAME_MINTY_MEADOWS_2_PostDefeated_Text {
 //3 - final saw mareep
 //4 - defeated battle with mightyena
 
+const STATE_INITIAL_RIVAL = 0
+const STATE_STARTED_QUEST = 1
+const STATE_PRE_FIGHT_SIGHTING = 3
+const STATE_POST_FIGHT = 4
+
+const VAR_SEEN_CHASE_CUTSCENE = VAR_TEMP_0
+
+const RIVAL_OW_ID = 16
+const OLD_MAN_OW_ID = 17
 const MAREEP_OW_ID = 11
 const MIGHTYENA_OW_ID = 12
 
-//phase 1
-const INNER_PATH_X = 32
-const INNER_PATH_Y = 37
+const POS_HIDDEN_X = -3
+const POS_HIDDEN_Y = 1
 
-//phase 2
-const CLEARING_M_X = 61
-const CLEARING_M_Y = 15
-
-const CLEARING_S_X = 61
-const CLEARING_S_Y = 12
-
-script ISLANDGAME_MINTY_MEADOWS_2_OnResume {
-    call_if_set(FLAG_SYS_CTRL_OBJ_DELETE, ISLANDGAME_MINTY_MEADOWS_2_TryRemoveMightyena)
+mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_MINTY_MEADOWS_2_OnTransition
 }
 
-script ISLANDGAME_MINTY_MEADOWS_2_Mareep_OnLoad {
-    setvar(VAR_TEMP_0, 1)
-    //set the spawn points
+script ISLANDGAME_MINTY_MEADOWS_2_OnTransition {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
-        case 0:
-        case 1:
-        case 4: 
-            removeobject(MAREEP_OW_ID)
-            removeobject(MIGHTYENA_OW_ID)
-            break
-        case 2:
-        case 3:
-            
-            call(ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena)
-            break
+        case STATE_INITIAL_RIVAL:            call(ISLANDGAME_MINTY_MEADOWS_2_InitialRival)
+        case STATE_STARTED_QUEST:            call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
+        case STATE_PRE_FIGHT_SIGHTING:       call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
+        case STATE_POST_FIGHT:               call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
     }
 }
 
-script ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena {
-    addobject(MAREEP_OW_ID)
-    addobject(MIGHTYENA_OW_ID)
-    setobjectxy(MAREEP_OW_ID, CLEARING_S_X, CLEARING_S_Y)
-    setobjectxyperm(MAREEP_OW_ID, CLEARING_S_X, CLEARING_S_Y)
-    setobjectxy(MIGHTYENA_OW_ID, CLEARING_M_X, CLEARING_M_Y)
-    setobjectxyperm(MIGHTYENA_OW_ID, CLEARING_M_X, CLEARING_M_Y)
+// section: object positions
 
+// The following scripts set up the object positions depending on the state
+// It gets around needing a bunch of hide flags by just moving things offscreen when unneeded
+
+// Sets up the Rival fight and old man blocking the side
+script ISLANDGAME_MINTY_MEADOWS_2_InitialRival {
+    setobjectxyperm(RIVAL_OW_ID, 12, 0)
+    setobjectxyperm(OLD_MAN_OW_ID, 32, 10)
+    setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setobjectxyperm(MIGHTYENA_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+}
+
+// After beating the rival, sets up the mareep sighting on the side
+script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
+    setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
+    setobjectxyperm(MAREEP_OW_ID, 61, 13)
+    setobjectxyperm(MIGHTYENA_OW_ID, 61, 15)
     setobjectmovementtype(MAREEP_OW_ID, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype(MIGHTYENA_OW_ID, MOVEMENT_TYPE_FACE_UP)
     return
 }
 
-script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1 {
-    lock
-    setvar(VAR_MINTY_MEADOWS_STATE, 2)
-
-    //spawn
-    addobject(MAREEP_OW_ID)
-    addobject(MIGHTYENA_OW_ID)
-    setobjectxy(MAREEP_OW_ID, INNER_PATH_X, INNER_PATH_Y)
-    setobjectxy(MIGHTYENA_OW_ID, INNER_PATH_X, INNER_PATH_Y)
-    //spawn end
-    //do movement
-    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
-    addobject(MAREEP_OW_ID)
-    addobject(MIGHTYENA_OW_ID)
-    applymovement(MAREEP_OW_ID, Phase1_MareepRun_1)
-    waitmovement(MAREEP_OW_ID)
-    playmoncry(SPECIES_MAREEP, CRY_MODE_ENCOUNTER)
-
-    applymovement(MAREEP_OW_ID, Common_Movement_Delay48)
-    waitmovement(MAREEP_OW_ID)
-
-    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
-    applymovement(MAREEP_OW_ID, Phase1_MareepRun_2)
-    waitmovement(MAREEP_OW_ID)
-    
-    applymovement(MAREEP_OW_ID, Phase1_MareepRun_3)
-    applymovement(MIGHTYENA_OW_ID, Phase1_MightyenaChase)
-
-    waitmovement(MIGHTYENA_OW_ID)
-    waitmovement(MAREEP_OW_ID)
-    call(ISLANDGAME_MINTY_MEADOWS_2_PrepareEncounter_Mightyena)
-    release
+// After watching the pre-fight cutscene, wait for the player to beat the mightyena
+script ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight {
+    setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
+    setobjectxyperm(MAREEP_OW_ID, 61, 13)
+    setobjectxyperm(MIGHTYENA_OW_ID, 61, 14)
+    setobjectmovementtype(MAREEP_OW_ID, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype(MIGHTYENA_OW_ID, MOVEMENT_TYPE_FACE_UP)
 }
 
-script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2 {
-    lock
-    setvar(VAR_MINTY_MEADOWS_STATE, 3)
-    applymovement(MIGHTYENA_OW_ID, Phase2_MightyenaWalksForward)
-    applymovement(MAREEP_OW_ID, Common_Movement_ExclamationMark)
-    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
-    waitmoncry
-    playmoncry(SPECIES_MAREEP, CRY_MODE_WEAK)
-    waitmovement(MIGHTYENA_OW_ID)
-    waitmoncry
-
-    release
+// After the player beat the mightyena, remove all mareep-quest related stuff
+script ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena {
+    setobjectxyperm(RIVAL_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setobjectxyperm(OLD_MAN_OW_ID, 11, 3)
+    setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setobjectxyperm(MIGHTYENA_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
 }
 
-script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
-    lock 
-    faceplayer
-    setwildbattle(SPECIES_SHADOW_MIGHTYENA, 25)
-    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
-    waitmoncry
-    setflag(FLAG_SYS_CTRL_OBJ_DELETE) 
-    dowildbattle
-    clearflag(FLAG_SYS_CTRL_OBJ_DELETE )
-    specialvar(VAR_RESULT, GetBattleOutcome)
-    switch (var(VAR_RESULT)) {
-        case B_OUTCOME_CAUGHT:
-        case B_OUTCOME_WON:
-            setvar(VAR_MINTY_MEADOWS_STATE, 4)
-            fadescreen(FADE_TO_BLACK)
-            removeobject(MIGHTYENA_OW_ID) 
-            fadescreen(FADE_FROM_BLACK)
-            setobjectxyperm(MIGHTYENA_OW_ID, -3, 1) //shadow realmed
-            msgbox(ConqueredMightyena_Text)
-            waitmessage
-        break
-        case B_OUTCOME_RAN:
-        case B_OUTCOME_PLAYER_TELEPORTED:
-        break
+// section: interactions
+
+script ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact {
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case STATE_INITIAL_RIVAL:            
+        case STATE_STARTED_QUEST:            msgbox(format("I think Mareep might be near the forest..."), MSGBOX_NPC)
+        case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("A Mightyena chasing my Mareep?\pThis is far more than I can handle."), MSGBOX_NPC)
+        case STATE_POST_FIGHT:               msgbox(format("Thank you so much for helping save my Mareep!"), MSGBOX_NPC)
     }
-    release
 }
 
-//copypasted
-script ISLANDGAME_MINTY_MEADOWS_2_TryRemoveMightyena {
-	specialvar(VAR_RESULT, GetBattleOutcome)
-	goto_if_ne(VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn)
-	removeobject(VAR_LAST_TALKED)
-	return
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact {
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case STATE_INITIAL_RIVAL:            
+        case STATE_STARTED_QUEST:            
+            if (var(VAR_SEEN_CHASE_CUTSCENE) == 1) {
+                msgbox(format("That must be the lost Mareep! I heard it run over to the far end of this forest."), MSGBOX_NPC)
+            } else {
+                msgbox(format("Hmm... where could it be?"), MSGBOX_NPC)
+            }
+        case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("That Mightyena looks... off. We need to save that Mareep!"), MSGBOX_NPC)
+        case STATE_POST_FIGHT:               msgbox(format("That was exciting! I need a rest after all that running..."), MSGBOX_NPC)
+        default:
+    }
 }
 
-script ISLANDGAME_MINTY_MEADOWS_2_Mareep {
+script ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact {
+    msgbox(format("Hello there."), MSGBOX_NPC) // todo: real jonas dialogue or remove
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact {
+    msgbox(format(""), MSGBOX_SIGN) // todo: real sign text or remove
+}
+
+
+// section: rival fight
+
+movement ISLANDGAME_MINTY_MEADOWS_2_Player_StepBack {
+    walk_left
+    face_left
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival {
     lock
-    msgbox(MareepHelp_Text)
+    msgbox("Old Man: Oh...\pWhat am I going to do...\p(Probably best to leave him alone)")
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_Player_StepBack)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
     release
 }
 
-text MareepHelp_Text {
-    format("{COLOR BLUE}bro help me")
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1 {
+    walk_right * 2
+    face_up
 }
 
-text ConqueredMightyena_Text {
-    format("{COLOR DARK_GRAY} gg u won")
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger1 {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement1)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
 }
 
-//movement spam
-//phase 1
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement2 {
+    walk_right
+    face_up
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger2 {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement2)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger3 {
+    lock
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement4 {
+    walk_left
+    face_up
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger4 {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement4)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement5 {
+    walk_left * 2
+    face_up
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger5 {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement5)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement6 {
+    walk_left * 3
+    face_up
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Trigger6 {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Movement6)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    goto(ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main)
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown {
+    walk_left * 2
+    walk_down * 4
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp {
+    walk_up * 5
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown {
+    walk_left
+    walk_fast_down * 10
+}
+
+// todo: port rival name to {RIVAL}?
+script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
+    // audrey walks down towards you
+    applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown)
+    waitmovement(RIVAL_OW_ID)
+
+    // pre-fight dialogue
+    msgbox(format("Audrey: I'm bored! Let's fight!"))
+
+    // battle
+    trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, "Audrey: Wow, you're strong!")
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) != B_OUTCOME_WON) {
+        return
+    }
+
+    //post-fight audrey dialogue
+    msgbox(format("Audrey: Man, you beat me!"))
+    closemessage
+
+    // old man walks over and starts quest
+    addobject(OLD_MAN_OW_ID)
+    setobjectxy(OLD_MAN_OW_ID, 11, 11)
+    applymovement(OLD_MAN_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp)
+    waitmovement(OLD_MAN_OW_ID)
+    msgbox(format("Old Man: Excuse me, I lost a Mareep!\pPlease help find it?"))
+    startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
+
+    // audrey runs off to look for mareep
+    msgbox(format("Audrey: I'm gonna go look for it!"))
+    closemessage
+
+    //follow me
+    loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+    setfollower(RIVAL_OW_ID, 100, 0)
+
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
+    call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
+    release
+}
+
+// section: first mareep sighting
+
+script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1 {
+    if (var(VAR_MINTY_MEADOWS_STATE) == STATE_STARTED_QUEST) {
+        lock
+        // player looks down
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+
+        // mareep runs in
+        addobject(MAREEP_OW_ID)
+        setobjectxy(MAREEP_OW_ID, 32, 37)
+        applymovement(MAREEP_OW_ID, Phase1_MareepRun_1)
+        waitmovement(MAREEP_OW_ID)
+        playmoncry(SPECIES_MAREEP, CRY_MODE_ENCOUNTER)
+
+        // mareep pauses for a second
+        applymovement(MAREEP_OW_ID, Common_Movement_Delay48)
+        waitmovement(MAREEP_OW_ID)
+
+        // Mareep is startled
+        playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+        applymovement(MAREEP_OW_ID, Phase1_MareepRun_2)
+        waitmovement(MAREEP_OW_ID)
+        
+        // The mightyena and mareep run off at the same time
+        addobject(MIGHTYENA_OW_ID)
+        setobjectxy(MIGHTYENA_OW_ID, 32, 37)
+        applymovement(MAREEP_OW_ID, Phase1_MareepRun_3)
+        applymovement(MIGHTYENA_OW_ID, Phase1_MightyenaChase)
+        waitmovement(MIGHTYENA_OW_ID)
+        waitmovement(MAREEP_OW_ID)
+        removeobject(MAREEP_OW_ID)
+        removeobject(MIGHTYENA_OW_ID)
+
+        setvar(VAR_SEEN_CHASE_CUTSCENE, 1)
+        release
+    }
+}
+
+movement Phase1_RivalEnter {
+    walk_down * 3
+    walk_right * 4
+    emote_exclamation_mark
+    delay_16
+    face_down
+    delay_16
+    face_left
+    delay_16
+    face_up
+    delay_16
+    face_right
+}
+
 movement Phase1_MareepRun_1 {
     walk_up * 4
     step_end
@@ -284,8 +319,207 @@ movement Phase1_MightyenaChase {
     step_end
 }
 
-//phase 2
+// section: pre-fight cutscene
+
+script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2 {
+    lock
+
+    // mightyena walks forward and scares the mareep
+    applymovement(MIGHTYENA_OW_ID, Phase2_MightyenaWalksForward)
+    applymovement(MAREEP_OW_ID, Common_Movement_ExclamationMark)
+    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    playmoncry(SPECIES_MAREEP, CRY_MODE_WEAK)
+    waitmovement(MIGHTYENA_OW_ID)
+    waitmoncry
+
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_PRE_FIGHT_SIGHTING)
+    call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
+    release
+}
+
+movement Phase2_RivalCatchUp {
+    walk_fast_up * 3
+    walk_fast_left * 6
+    walk_fast_up
+    emote_exclamation_mark
+}
+
 movement Phase2_MightyenaWalksForward {
     walk_up
     step_end
+}
+
+// section: fight
+
+script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
+    lock 
+    faceplayer
+    setwildbattle(SPECIES_SHADOW_MIGHTYENA, 25)
+    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    destroyfollower
+    if (var(VAR_RESULT) != B_OUTCOME_LOST) {
+        goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
+    }
+    release
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_POST_FIGHT)
+    call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
+
+    // remove the mightyena sprite
+    fadescreen(FADE_TO_BLACK)
+    removeobject(MIGHTYENA_OW_ID) 
+    setobjectxyperm(MIGHTYENA_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+    fadescreen(FADE_FROM_BLACK)
+
+    // rival comments on stuff
+    msgbox(format("Audrey: What a weird encounter. At least the Mareep is safe!"))
+    closemessage
+
+    // tp back to old man
+    fadescreen(FADE_TO_BLACK)
+    setvar(VAR_0x8000, 11)
+    setvar(VAR_0x8001, 5)
+    callnative(TeleportCamera) // this is some magic, shoutout to the pret discord (and see src/islandgame_scrcmd.c)
+    addobject(OBJ_EVENT_ID_PLAYER)
+    addobject(OLD_MAN_OW_ID)
+    addobject(RIVAL_OW_ID)
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 11, 5)
+    setobjectxy(RIVAL_OW_ID, 10, 5)
+    setobjectxy(OLD_MAN_OW_ID, 11, 3)
+    setobjectmovementtype(RIVAL_OW_ID, MOVEMENT_TYPE_FACE_UP)
+    setobjectmovementtype(OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP)
+    fadescreen(FADE_FROM_BLACK)
+
+    // old man thanks them, gives lucky egg
+    msgbox(format("Old Man: Thank you so much! I was so scared for Mareep.\pHere, as a token of my graditude:"))
+    closemessage
+    applymovement(OLD_MAN_OW_ID, Phase3_OldManGivesItem_Part1)
+    waitmovement(OLD_MAN_OW_ID)
+    giveitem(ITEM_LUCKY_EGG)
+    applymovement(OLD_MAN_OW_ID, Phase3_OldManGivesItem_Part2)
+    waitmovement(OLD_MAN_OW_ID)
+    
+    // rival runs off
+    msgbox(format("Audrey: Well, it was nice hanging out! I've got stuff to do!"))
+    closemessage
+    applymovement(RIVAL_OW_ID, Phase3_RivalRunsOff)
+    waitmovement(RIVAL_OW_ID)
+    removeobject(RIVAL_OW_ID)
+
+    release
+}
+
+movement Phase3_OldManGivesItem_Part1 {
+    walk_down
+}
+
+movement Phase3_OldManGivesItem_Part2 {
+    walk_left
+    face_down
+    delay_16 * 3
+    walk_up
+    walk_right
+    face_down
+}
+
+movement Phase3_RivalRunsOff {
+    walk_down * 6
+}
+
+text ConqueredMightyena_Text {
+    format("{COLOR DARK_GRAY} gg u won")
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Mareep {
+    lock
+    msgbox(MareepHelp_Text)
+    release
+}
+
+text MareepHelp_Text {
+    format("{COLOR BLUE}bro help me")
+}
+
+
+///TRAINERS
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER1, format("{COLOR DARK_GRAY}Where are the Bug POKEMON in these plains?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss)
+	msgbox(format("{COLOR DARK_GRAY}I heard some bug exists in the cave."), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER2, format("{COLOR DARK_GRAY}I like coming here on my days off."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss)
+	msgbox(format("{COLOR DARK_GRAY}I need to go get milk from the nearby farms."), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER3, format("{COLOR DARK_GRAY}I come here to practice my psychic powers."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss)
+	msgbox(format("{COLOR DARK_GRAY}The nearby mountains make it easier to concentrate."), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER4, format("{COLOR DARK_GRAY}That guy over there is so creepy."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss)
+	msgbox(format("{COLOR DARK_GRAY}I heard Pokemon running around. Is there something happening?"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER5, format("{COLOR DARK_GRAY}My brother told me that there would be strong Bug POKEMONS here."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss)
+	msgbox(format("{COLOR DARK_GRAY}I will look for them until midnight if needed."), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER6, format("{COLOR DARK_GRAY}I found a Mareep, but a Mightyena chased it away!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss)
+	msgbox(format("{COLOR DARK_GRAY}Maybe you are stronger than the Mightyena"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER7, format("{COLOR DARK_GRAY}I am the strongest Bug Trainer around these parts."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss)
+	msgbox(format("{COLOR DARK_GRAY}"), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER8, format("{COLOR DARK_GRAY}Shorts are comfy and easy to wear!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
+	msgbox(format("{COLOR DARK_GRAY}If only I had a Rattata"), MSGBOX_AUTOCLOSE)
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss {
+    format("{COLOR DARK_GRAY}I will keep looking for some bugs.")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss {
+    format("{COLOR DARK_GRAY}Wow, you are strong!")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss {
+    format("{COLOR DARK_GRAY}Looks like I still need more practice.")
+}
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss {
+    format("{COLOR DARK_GRAY}I lost? My day is not going well.")
+}
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss {
+    format("{COLOR DARK_GRAY}The ones I currently have are not that strong.")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss {
+    format("{COLOR DARK_GRAY}I guess I will look for another Mareep.")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss {
+    format("{COLOR DARK_GRAY}It seems that you have bested the three of us.")
+}
+
+text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss {
+    format("{COLOR DARK_GRAY}No fair!")
+}
+
+//ITEMS
+script ISLANDGAME_MINTY_MEADOWS_2_ItemZapPlate {
+	finditem(ITEM_ZAP_PLATE)
 }
