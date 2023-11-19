@@ -4664,8 +4664,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Layout",
-      "width": 70,
-      "height": 60,
+      "width": 50,
+      "height": 55,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/border.bin",
@@ -4674,10 +4674,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
-      "width": 100,
-      "height": 60,
-      "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Forest",
+      "width": 90,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/map.bin"
     },
