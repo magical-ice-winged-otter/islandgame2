@@ -40,7 +40,7 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_6:
 	goto ISLANDGAME_VERDANT_WOODS_Sudowoodo_1
 
 ISLANDGAME_VERDANT_WOODS_Sudowoodo_7:
-	setwildbattle SPECIES_SUDOWOODO, 15
+	setwildbattle SPECIES_SUDOWOODO, 10
 	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -140,10 +140,13 @@ ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2::
 
 
 ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_0:
-	.string "{COLOR DARK_GRAY}It's a tree.$"
+	.string "{COLOR RED}(It's a strange-looking tree. Its trunk\n"
+	.string "doesn't feel like wood at all...)$"
 
 ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1:
-	.string "{COLOR DARK_GRAY}It's a tree. Water it?$"
+	.string "{COLOR DARK_GRAY}It's a strange-looking tree. Its trunk\n"
+	.string "doesn't feel like wood at all...\p"
+	.string "{COLOR DARK_GRAY}Water the strange-looking tree?$"
 
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0:
 	.string "{COLOR DARK_GRAY}That's a Miracle Seed. It's not good for\n"

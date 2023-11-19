@@ -1,6 +1,14 @@
 const FLAG_GYM_OPEN = FLAG_TEMP_1
+const FLAG_DAYTIME = FLAG_TEMP_2
 
 mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) > 12 + 6) {
+            setflag(FLAG_DAYTIME) // controls visibilty of Yache Beach Girl
+        }
+    }
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_EntranceSign {
@@ -20,26 +28,26 @@ script ISLANDGAME_TIDALCOVE_Interact_RarePkmnSign {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSign {
-    msgbox(format("TIDALCOVE GYM\pLeader: Ruka\pSpecialty: Hail"), MSGBOX_SIGN)
+    msgbox(format("TIDALCOVE GYM\pLeader: Ruka\nSpecialty: Hail"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking {
     lock
-    msgbox(format("I'm very sorry, but we cannot accept any more challengers! We are closed for the day."))
+    msgbox(format("I'm very sorry, but we cannot accept any more challengers!\pWe are closed for the day."))
     closemessage
     release
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_PrimFan1 {
     lock
-    msgbox(format("No! We HAVE to see Prim fight! She's totally gonna win!"))
+    msgbox(format("No! We HAVE to see Prim fight!\nShe's totally gonna win!"))
     closemessage
     release
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_PrimFan2 {
     lock
-    msgbox(format("I demand that you let us in right now. We're going to miss the fight at this rate!"))
+    msgbox(format("I demand that you let us in right now.\pWe're going to miss the fight at this rate!"))
     closemessage
     release
 }
@@ -54,13 +62,15 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl {
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard {
     msgbox(format(
-        "We don't really have a proper lifeguard tower, so I watch from up here instead."
-        "With the amount of tourists we get, ocean safety is our priority!"
+        "We don't really have a proper lifeguard tower, so I watch from up here instead.\p"
+        "With the amount of tourists we get, ocean safety is our priority!\p"
         "If someone is in trouble, me and my Floatzel swim out there to save them!"
     ), MSGBOX_NPC)
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
 }
 
-script ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard {
+script ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Floatzel {
     faceplayer
     playmoncry(SPECIES_FLOATZEL, CRY_MODE_NORMAL)
     waitmoncry
@@ -75,15 +85,40 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachParent {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer {
-    // todo: gives yache berry
+    lock
+    if (flag(FLAG_DAILY_TIDALCOVE_YACHE_GIRL)) {
+        msgbox(format(
+            "I usually pick my berries right after I wake up!\p"
+            "If you want, I can give you another one tommorrow.")
+        MSGBOX_NPC)
+    }
+    else {
+        msgbox(format("Yache Berries are the best on a hot day."), MSGBOX_NPC)
+
+        checkitemspace(ITEM_YACHE_BERRY)
+
+        if (var(VAR_RESULT)) {
+            msgbox(format("Try one!"), MSGBOX_NPC)
+            giveitem(ITEM_YACHE_BERRY)
+            setflag(FLAG_DAILY_TIDALCOVE_YACHE_GIRL)
+        }
+        else {
+            msgbox(format("I'd give you one if you had more room!"), MSGBOX_NPC)
+        }
+    }
+    closemessage
+    release
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachFisher {
-    msgbox(format("My pals went off to the Central Oranna Lake to fish without me..."), MSGBOX_NPC)
+    msgbox(format("My pals went off to the Northern Oranna Lake to fish without me..."), MSGBOX_NPC)
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachGazer {
     msgbox(format("Do you ever wonder what's out there, just over the horizon?") MSGBOX_NPC)
+    closemessage
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
 }
@@ -92,7 +127,7 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad {
     msgbox(format(
         "I'm getting ready for the Festival Trialthalon!\p"
         "I can swim, I can run...\p"
-        "Now I just need to afford a bike..."
+        "If only I could afford a bike..."
     ), MSGBOX_NPC)
 }
 
@@ -104,8 +139,24 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance {
     ), MSGBOX_NPC)
 }
 
+script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop {
+    msgbox(format(
+        "Man, cycling looks so fun!\p"
+        "It's a shame the bikes are so expensive..."
+    ), MSGBOX_NPC)
+}
+
 script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle {
+    msgbox(format(
+        "The guy who lives in this house is a nut for rare Pokemon...\p"
+        "I bet if I could show him some cool ones he'd give me some kind of reward!"
+    ), MSGBOX_NPC)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
+    msgbox(format(
+        "I've lived in Tidalcove for a long time...\p"
+        "Only two things are consistent:\p"
+        "The popularity of the beach, and the popularity of Ruka!"
+    ), MSGBOX_NPC)
 }

@@ -41,6 +41,7 @@ typedef struct Location
 #define VERDANT_PATH 7
 #define VERDANT_WOODS 8
 #define FRESA_FARMS 9
+#define TIDALCOVE 10
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -55,6 +56,7 @@ static const Location LOCATION_DATA[] = {
     [VERDANT_PATH] = SET_LOC(ISLANDGAME_VERDANT_PATH, 10, 10),
     [VERDANT_WOODS] = SET_LOC(ISLANDGAME_VERDANT_WOODS, 10, 10),
     [FRESA_FARMS] = SET_LOC(ISLANDGAME_FRESA_FARMS, 10, 10),
+    [TIDALCOVE] = SET_LOC(ISLANDGAME_TIDALCOVE, 22, 45),
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
@@ -67,6 +69,7 @@ static const u8 campPersiName[] = _("CAMP PERSI");
 static const u8 verdantPathName[] = _("VerdantPath");
 static const u8 verdantWoodName[] = _("VerdantWood");
 static const u8 fresaFarmName[] = _("FresaFarm");
+static const u8 tidalcoveName[] = _("Tidalcove");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
@@ -79,7 +82,8 @@ static const u8 *const LOCATION_NAMES[] = {
     [CAMP_PERSI] = campPersiName,
     [VERDANT_PATH] = verdantPathName,
     [VERDANT_WOODS] = verdantWoodName,
-    [FRESA_FARMS] = fresaFarmName
+    [FRESA_FARMS] = fresaFarmName,
+    [TIDALCOVE] = tidalcoveName,
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 
