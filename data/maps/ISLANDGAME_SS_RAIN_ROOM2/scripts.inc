@@ -42,6 +42,7 @@ SS_Rain_EventScript_SetClock::
 	waitstate
 	delay 30
 	setflag FLAG_SET_WALL_CLOCK
+	closemessage
 	releaseall
 	return
 
@@ -62,7 +63,8 @@ NeedRunningShoes_Movement:
 	step_end
 
 NeedRunningShoes_Text::
-	.string "{COLOR DARK_GRAY}I should change into my Running Shoes first.$"
+	.string "{COLOR DARK_GRAY}I should change into my Running Shoes\n"
+	.string "first.$"
 
 SwitchedRunningShoes_Text::
 	.string "{COLOR DARK_GRAY}You switched your shoes with the\n"

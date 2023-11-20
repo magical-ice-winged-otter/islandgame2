@@ -40,14 +40,14 @@ script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
         msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK, MSGBOX_YESNO)
 
         if (var(VAR_RESULT) == NO) {
-            msgbox("We'll always be here if you need a drink.")
+            msgbox(format("We'll always be here if you need a drink."))
             goto(PriestessDrinkGiver_End)
         }
 
         checkitemspace(ITEM_SODA_POP)
 
         if (!var(VAR_RESULT)) {
-            msgbox("Oh dear, you don't have enough room for a drink.")
+            msgbox(format("Oh dear, you don't have enough room for a drink."))
             goto(PriestessDrinkGiver_End)
         }
 
@@ -77,10 +77,11 @@ script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
     }
     else
     {
-        msgbox("Sorry, our policy is one beverage per day. Come back tomorrow.")
+        msgbox(format("Sorry, our policy is one beverage per day. Come back tomorrow."))
     }
 
     PriestessDrinkGiver_End:
+        closemessage
         release
 }
 

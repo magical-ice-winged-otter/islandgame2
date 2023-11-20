@@ -30,6 +30,7 @@ script SS_Rain_EventScript_SetClock {
 	waitstate
     delay(30)
     setflag(FLAG_SET_WALL_CLOCK)
+    closemessage
     releaseall
 }
 
@@ -48,12 +49,16 @@ movement NeedRunningShoes_Movement {
 }
 
 text NeedRunningShoes_Text {
-    "{COLOR DARK_GRAY}I should change into my Running Shoes first."
+    format(
+        "{COLOR DARK_GRAY}I should change into my Running Shoes first."
+    )
 }
 
 text SwitchedRunningShoes_Text {
-    "{COLOR DARK_GRAY}You switched your shoes with the\n"
-    "{COLOR DARK_GRAY}Running Shoes!"
+    format(
+        "{COLOR DARK_GRAY}You switched your shoes with the\n"
+        "{COLOR DARK_GRAY}Running Shoes!"
+    )
 }
 
 text ArrivedAtCheriport_Text {
