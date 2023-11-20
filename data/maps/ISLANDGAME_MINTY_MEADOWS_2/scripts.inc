@@ -596,8 +596,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1:
 	.string "{COLOR DARK_GRAY}It's good to meet you! I'm Audrey, a\n"
 	.string "rising trainer just like you!\p"
 	.string "{COLOR DARK_GRAY}I was trying to fill out my Pokédex\n"
-	.string "here, but I just couldn't find a Riolu...\p"
-	.string "$"
+	.string "here, but I just couldn't find a Riolu...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2:
 	.string "Wow, you're pretty good!$"

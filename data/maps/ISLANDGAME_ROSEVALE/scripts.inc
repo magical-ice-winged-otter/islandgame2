@@ -42,6 +42,8 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3, MSGBOX_NPC
+	special HealPlayerParty
+	setrespawn HEAL_LOCATION_ISLANDGAME_ROSEVALE
 	warp MAP_ISLANDGAME_ROSEVALE_INN, 5, 3
 	return
 
@@ -266,6 +268,9 @@ ArthurDefeated_Text_1:
 	.string "conversation between all$"
 
 Text_ArthurSister_PleaseHelp::
-	.string "Please, you have to help! Someone stole\n"
-	.string "my Marill and my brother chased them! I\l"
-	.string "don't want anyone to get hurt...$"
+	.string "Excuse me, I need your help!\p"
+	.string "A thief stole my Marill and down this\n"
+	.string "path towards Mt. Aurora!\p"
+	.string "My brother chased after them, but I\n"
+	.string "don't think he can fight...\p"
+	.string "Can you bring them back safely?$"

@@ -55,6 +55,8 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             msgbox(format("Arthurs Dad: Please - stay the night, free of charge."), MSGBOX_NPC)
 
             //warp
+            special(HealPlayerParty)
+            setrespawn(HEAL_LOCATION_ISLANDGAME_ROSEVALE) // so you can't skip arthur if you lose
             warp(MAP_ISLANDGAME_ROSEVALE_INN, 5, 3)
         }
     ]
@@ -119,9 +121,10 @@ script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
 // section: sister cutscene pre-aurora
 text Text_ArthurSister_PleaseHelp {
     format(
-        "Please, you have to help!"
-        "Someone stole my Marill and my brother chased them!"
-        "I don't want anyone to get hurt..."
+        "Excuse me, I need your help!\p"
+        "A thief stole my Marill and down this path towards Mt. Aurora!\p"
+        "My brother chased after them, but I don't think he can fight...\p"
+        "Can you bring them back safely?"
     )
 }
 
