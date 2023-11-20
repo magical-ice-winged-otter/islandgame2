@@ -46,6 +46,11 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	return
 
 
+ISLANDGAME_ROSEVALE_Interact_LockedDoor::
+	msgbox ISLANDGAME_ROSEVALE_Interact_LockedDoor_Text_0, MSGBOX_SIGN
+	return
+
+
 ISLANDGAME_ROSEVALE_Interact_PuddleMon::
 	lock
 	faceplayer
@@ -222,6 +227,9 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
 	.string "Arthurs Dad: Please - stay the night,\n"
 	.string "free of charge.$"
+
+ISLANDGAME_ROSEVALE_Interact_LockedDoor_Text_0:
+	.string "The door is locked$"
 
 ISLANDGAME_ROSEVALE_Interact_PuddleTrainer_Text_0:
 	.string "It's ok! The water isn't going to hurt\n"

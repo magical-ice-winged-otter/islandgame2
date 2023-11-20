@@ -88,13 +88,13 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
     lock
 
     // prim commands luxray to finish it
-    msgbox(format("Prim: Luxray, finish things up here."))
+    msgbox(format("Prim: Time to finish things up here."))
     closemessage
 
     // luxray attacks
     applymovement(LOCALID_LUXRAY, Movement_LuxrayAttack)
     waitmovement(LOCALID_LUXRAY)
-    playmoncry(SPECIES_LUXRAY, CRY_MODE_NORMAL)
+    playmoncry(SPECIES_DELCATTY, CRY_MODE_NORMAL)
     waitmoncry
 
     // prim roasts the opponent for losing

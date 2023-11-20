@@ -117,7 +117,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 	closemessage
 	applymovement 8, Movement_LuxrayAttack
 	waitmovement 8
-	playmoncry SPECIES_LUXRAY, CRY_MODE_NORMAL
+	playmoncry SPECIES_DELCATTY, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_1
 	closemessage
@@ -184,16 +184,15 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_2:
 	.string "sounds of nature and fishing!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_0:
-	.string "Isn't it nice for someone to put a\n"
-	.string "resting-house in the middle of the\l"
-	.string "woods?$"
+	.string "Isn't it nice for someone to build a\n"
+	.string "house in the middle of the woods?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_1:
-	.string "Good thing for the resting house!$"
+	.string "Wow, you beat me!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_2:
 	.string "Camping is nice and all, but nothing\n"
-	.string "beats a warm bed.$"
+	.string "beats a warm bed...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_0:
 	.string "Hehe... let's battle!$"
@@ -219,7 +218,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_2:
 	.string "guy in Tidalcove is the best!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_0:
-	.string "Prim: Luxray, finish things up here.$"
+	.string "Prim: Time to finish things up here.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_1:
 	.string "Prim: Man, that was a waste of time! You\n"
