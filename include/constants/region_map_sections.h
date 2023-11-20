@@ -217,7 +217,20 @@
 #define MAPSEC_SS_RAIN                      0xD5
 #define MAPSEC_CHERIPORT                    0xD6
 #define MAPSEC_SOUTHERN_ORANNA_PATH         0xD7
-#define MAPSEC_NONE                         0xD8
+#define MAPSEC_MINTY_MEADOWS                0xD8
+#define MAPSEC_TRAVELERS_TUNNEL             0xD9
+#define MAPSEC_CENTRAL_ORANNA_PATH          0xDA
+#define MAPSEC_VERDANT_PATH                 0xDB
+#define MAPSEC_VERDANT_WOODS                0xDC
+#define MAPSEC_FRESA_FARMS                  0xDD
+#define MAPSEC_NORTHERN_ORANNA_PATH         0xDE
+#define MAPSEC_ROSEVALE                     0xDF
+#define MAPSEC_AURORA_PATH                  0xE0
+#define MAPSEC_MT_AURORA                    0xE1
+#define MAPSEC_MAPLEGROVE                   0xE2
+#define MAPSEC_PERSI                        0xE3
+#define MAPSEC_TIDALCOVE                    0xE4
+#define MAPSEC_NONE                         0xE5
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

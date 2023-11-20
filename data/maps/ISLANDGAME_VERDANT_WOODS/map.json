@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_VERDANT_WOODS",
   "layout": "LAYOUT_ISLANDGAME_VERDANT_WOODS",
   "music": "MUS_RG_VIRIDIAN_FOREST",
-  "region_map_section": "MAPSEC_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_VERDANT_WOODS",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_ROUTE",

@@ -31,9 +31,9 @@ void IslandGameCustomStartup()
 
     // I'm honestly not sure why you need the weird syntax around string literals,
     // but it breaks pretty badly w/out it so...
-    SetPlayerName(sName);
 
     #ifdef ISLANDGAME_DEBUG
+        SetPlayerName(sName);
         //put all debug tools here
 
         // This flag makes sure that we unlock the pokemon selection menu:

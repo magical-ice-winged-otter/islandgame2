@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_AURORA_PATH",
   "layout": "LAYOUT_ISLANDGAME_AURORA_PATH",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_AURORA_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ISLANDGAME_ROSEVALE",
-      "offset": 0,
+      "offset": 26,
       "direction": "right"
     }
   ],
@@ -23,12 +23,48 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 16,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_MT_AURORA_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 32,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_AURORA_WEATHER_INSTITUTE",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 38,
+      "y": 42,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }

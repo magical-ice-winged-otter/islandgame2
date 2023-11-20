@@ -37,3 +37,19 @@ const struct PaletteOverride gTilesetPalOverrides_Petalburg[] =
     },
     OVERRIDES_END
 };
+
+
+static const u16 sTilesetPalOverride_Island_General04[] = INCBIN_U16("data/tilesets/primary/islandgame_general/override_palettes/04.gbapal");
+
+
+//island-start
+const struct PaletteOverride gTilesetPalOverrides_Island_General[] =
+{
+    {
+        .slot = 4,
+        .startHour = HOUR_NIGHT,
+        .endHour = HOUR_MORNING,
+        .palette = sTilesetPalOverride_Island_General04,
+    },
+    OVERRIDES_END
+};

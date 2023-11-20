@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_MAPLEGROVE_HOUSE2",
   "layout": "LAYOUT_ISLANDGAME_MAPLEGROVE_HOUSE2",
   "music": "MUS_LITTLEROOT",
-  "region_map_section": "MAPSEC_OLDALE_TOWN",
+  "region_map_section": "MAPSEC_MAPLEGROVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

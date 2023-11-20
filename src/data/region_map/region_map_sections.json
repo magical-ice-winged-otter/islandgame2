@@ -1734,6 +1734,110 @@
       "y": 0,
       "width": 1,
       "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MINTY_MEADOWS",
+      "name": "Minty Meadows",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_TRAVELERS_TUNNEL",
+      "name": "Traveler's Tunnel",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_CENTRAL_ORANNA_PATH",
+      "name": "C. Oranna Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_VERDANT_PATH",
+      "name": "Verdant Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_VERDANT_WOODS",
+      "name": "Verdant Woods",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_FRESA_FARMS",
+      "name": "Fresa Farms",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_NORTHERN_ORANNA_PATH",
+      "name": "N. Oranna Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ROSEVALE",
+      "name": "Rosevale",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_AURORA_PATH",
+      "name": "Aurora Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MT_AURORA",
+      "name": "Mt. Aurora",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MAPLEGROVE",
+      "name": "Maplegrove",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_PERSI",
+      "name": "Camp Persi",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_TIDALCOVE",
+      "name": "Tidalcove",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     }
   ]
 }

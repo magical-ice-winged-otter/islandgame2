@@ -1,1 +1,90 @@
-mapscripts ISLANDGAME_MT_AURORA_1F_MapScripts {}
+const FLAG_HIDE_THIEF = FLAG_TEMP_1
+
+const LOCALID_THIEF = 2
+const LOCALID_ARTHUR = 3
+const LOCALID_ARTICUNO = 4
+
+mapscripts ISLANDGAME_MT_AURORA_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        // see ISLANDGAME_ROSEVALE scripts.pory for state info
+        if (var(VAR_ROSEVALE_STATE) != 1 && var(VAR_ROSEVALE_STATE) != 5) {
+            setflag(FLAG_HIDE_THIEF)
+        }
+    }
+}
+
+movement Movement_PlayerApproach {
+    walk_right * 3
+    walk_up * 2
+    walk_right
+}
+
+movement Movement_Surprise {
+    emote_exclamation_mark
+}
+
+script ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene {
+    lock
+
+    // thief trash talks w/ arthur
+    msgbox(format("thief trash talk"))
+    closemessage
+
+    // player approaches
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerApproach)
+    waitmovement(0)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+
+    // thief talks to player
+    applymovement(LOCALID_THIEF, Movement_Surprise)
+    waitmovement(0)
+    msgbox(format("thief player convo"))
+    closemessage
+
+    // battle with thief
+    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_1, "intro", "loss", ThiefDefeated)
+}
+
+movement Movement_ThiefRunAway {
+    walk_fast_left
+    walk_fast_down * 3
+    walk_fast_left * 5
+    walk_fast_down * 4
+}
+
+script(local) ThiefDefeated {
+    // thief refuses to surrender mon
+    msgbox(format("refusal to surrender"))
+    closemessage
+
+    // articuno swoops down
+    fadescreen(FADE_TO_WHITE)
+    addobject(LOCALID_ARTICUNO)
+    setobjectxy(LOCALID_ARTICUNO, 15, 29)
+    fadescreen(FADE_FROM_WHITE)
+
+    // articuno scares thief and they run
+    playmoncry(SPECIES_ARTICUNO, CRY_MODE_NORMAL)
+    msgbox(format("thief is scard"))
+    closemessage
+    applymovement(LOCALID_THIEF, Movement_ThiefRunAway)
+    waitmovement(0)
+    removeobject(LOCALID_THIEF)
+
+    // dialogue between arthur, player, articuno
+    msgbox(format("wow, thanks articuno!"))
+    closemessage
+
+    // articuno leaves
+    fadescreen(FADE_TO_WHITE)
+    removeobject(LOCALID_ARTICUNO)
+    fadescreen(FADE_FROM_WHITE)
+
+    // final dialogue, want to go to rosevale
+    msgbox(format("can you believe what happened? lets go home!"))
+
+    setvar(VAR_ROSEVALE_STATE, 2) // see ISLANDGAME_ROSEVALE scripts.pory for state info
+
+    // warp back to rosevale
+    warp(MAP_ISLANDGAME_ROSEVALE, 17, 24)
+}

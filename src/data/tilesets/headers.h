@@ -891,6 +891,7 @@ const struct Tileset gTileset_IslandgameGeneral =
     .palettes = gTilesetPalettes_IslandgameGeneral,
     .metatiles = gMetatiles_IslandgameGeneral,
     .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
+    .paletteOverrides = gTilesetPalOverrides_Island_General,
     .callback = InitTilesetIsland_Anim_General,
 };
 
@@ -946,5 +947,27 @@ const struct Tileset gTileset_IslandgameVerdant =
     .palettes = gTilesetPalettes_IslandgameVerdant,
     .metatiles = gMetatiles_IslandgameVerdant,
     .metatileAttributes = gMetatileAttributes_IslandgameVerdant,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Islandgame_icecave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Islandgame_icecave,
+    .palettes = gTilesetPalettes_Islandgame_icecave,
+    .metatiles = gMetatiles_Islandgame_icecave,
+    .metatileAttributes = gMetatileAttributes_Islandgame_icecave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_IslandgameEmpty =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_IslandgameEmpty,
+    .palettes = gTilesetPalettes_IslandgameEmpty,
+    .metatiles = gMetatiles_IslandgameEmpty,
+    .metatileAttributes = gMetatileAttributes_IslandgameEmpty,
     .callback = NULL,
 };

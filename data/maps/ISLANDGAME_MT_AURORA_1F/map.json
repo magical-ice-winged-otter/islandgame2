@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_MT_AURORA_1F",
   "layout": "LAYOUT_ISLANDGAME_MT_AURORA_1F",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_MT_AURORA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -14,15 +14,101 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 9,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "x": 15,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "x": 15,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_144",
+      "x": 10,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
   ],
   "warp_events": [
-
+    {
+      "x": 9,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_AURORA_PATH",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_MT_AURORA_2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_MT_AURORA_1F",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "1",
+      "script": "ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }

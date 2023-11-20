@@ -2,8 +2,8 @@
   "id": "MAP_ISLANDGAME_ROSEVALE",
   "name": "ISLANDGAME_ROSEVALE",
   "layout": "LAYOUT_ISLANDGAME_ROSEVALE",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "music": "MUS_VERDANTURF",
+  "region_map_section": "MAPSEC_ROSEVALE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -20,20 +20,211 @@
     },
     {
       "map": "MAP_ISLANDGAME_AURORA_PATH",
-      "offset": 0,
+      "offset": -26,
       "direction": "left"
     }
   ],
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 26,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 27,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "x": -12,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_ROSEVALE_Interact_ArthurSister",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "x": 17,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_ROSEVALE_Interact_PuddleTrainer",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_004",
+      "x": 15,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_ROSEVALE_Interact_PuddleMon",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "x": -9,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+      "x": -10,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": -11,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
   ],
   "warp_events": [
-
+    {
+      "x": 23,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_ROSEVALE_RALTS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 27,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_ROSEVALE_PKMNCENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_ROSEVALE_INN",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "3",
+      "script": "ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "3",
+      "script": "ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "3",
+      "script": "ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "3",
+      "script": "ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_ROSEVALE_Interact_EntranceSign"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_ROSEVALE_Interact_InnSign"
+    }
   ]
 }

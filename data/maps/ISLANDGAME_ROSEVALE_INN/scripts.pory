@@ -1,1 +1,20 @@
-mapscripts ISLANDGAME_ROSEVALE_INN_MapScripts {}
+// todo: dialogue, update positions based on state
+
+mapscripts ISLANDGAME_ROSEVALE_INN_MapScripts {
+}
+
+script ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom {
+    msgbox(format(""), MSGBOX_NPC)
+}
+
+script ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad {
+    msgbox(format(""), MSGBOX_NPC)
+}
+
+script ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister {
+    msgbox(format(""), MSGBOX_NPC)
+}
+
+script ISLANDGAME_ROSEVALE_INN_Interact_Arthur {
+    msgbox(format(""), MSGBOX_NPC)
+}

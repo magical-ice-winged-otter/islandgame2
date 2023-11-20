@@ -181,7 +181,7 @@ ISLANDGAME_Southern_Oranna_Path_EventScript_SeenAbsol::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	applymovement 9, SOP_Absol_Run_3
 	waitmovement 9
-	hideobjectat 9, MAP_ISLANDGAME_SOUTHERN_ORANNA_PATH
+	removeobject 9
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
 	releaseall

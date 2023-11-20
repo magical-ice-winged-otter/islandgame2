@@ -1,0 +1,212 @@
+const STATE_INITIAL = 0
+const STATE_STARTED_QUEST = 1
+const STATE_FOUND_BANDIT = 5
+const STATE_DEFEATED_BANDIT = 2
+const STATE_ARTHUR_FIGHT = 3
+const STATE_FINAL = 4
+
+const POS_HIDDEN_X = 0
+const POS_HIDDEN_Y = 0
+
+const LOCALID_ARTHUR_SISTER = 3
+const LOCALID_ARTHUR_DAD = 7
+const LOCALID_ARTHUR_MOM = 8
+const LOCALID_ARTHUR = 6
+const LOCALID_PUDDLETRAINER = 4
+const LOCALID_PUDDLEMON = 5
+
+mapscripts ISLANDGAME_ROSEVALE_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_ROSEVALE_STATE, STATE_STARTED_QUEST {
+            // only sister is visible
+            setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
+            setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
+            setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
+            setobjectxyperm(LOCALID_ARTHUR_SISTER, 12, 14)
+            addobject(LOCALID_ARTHUR_SISTER)
+            setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
+        }
+        VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
+            // everyone is standing around the inn
+            setobjectxyperm(LOCALID_ARTHUR, 20, 25)
+            setobjectxyperm(LOCALID_ARTHUR_DAD, 18, 24)
+            setobjectxyperm(LOCALID_ARTHUR_MOM, 19, 24)
+            setobjectxyperm(LOCALID_ARTHUR_SISTER, 20, 26)
+            addobject(LOCALID_ARTHUR)
+            addobject(LOCALID_ARTHUR_DAD)
+            addobject(LOCALID_ARTHUR_MOM)
+            addobject(LOCALID_ARTHUR_SISTER)
+            setobjectmovementtype(LOCALID_ARTHUR, MOVEMENT_TYPE_FACE_LEFT)
+            setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
+            turnobject(LOCALID_ARTHUR, DIR_WEST)
+            turnobject(LOCALID_ARTHUR_SISTER, DIR_WEST)
+        }
+    ]
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
+            setvar(VAR_ROSEVALE_STATE, STATE_ARTHUR_FIGHT)
+
+            // everyone thanks you for helping
+            msgbox(format("Arthurs Dad: Thanks so helping!"), MSGBOX_NPC)
+            msgbox(format("Arthurs Mom: We are so thankful!"), MSGBOX_NPC)
+            msgbox(format("Arthurs Sister: You are the best!"), MSGBOX_NPC)
+
+            // you are invited to stay the night
+            msgbox(format("Arthurs Dad: Please - stay the night, free of charge."), MSGBOX_NPC)
+
+            //warp
+            warp(MAP_ISLANDGAME_ROSEVALE_INN, 5, 3)
+        }
+    ]
+}
+
+script ISLANDGAME_ROSEVALE_Interact_PuddleMon {
+    lock
+    faceplayer
+    playmoncry(SPECIES_CHARMANDER, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    release
+}
+
+movement Movement_TrainerJump {
+    jump_in_place_left
+    jump_in_place_up
+    jump_in_place_right
+    jump_in_place_down
+    jump_in_place_left
+}
+
+movement Movement_MonWatch {
+    face_right
+}
+
+movement Movement_MonJump {
+    jump_in_place_right
+}
+
+script ISLANDGAME_ROSEVALE_Interact_PuddleTrainer {
+    lock
+    msgbox(format("It's ok! The water isn't going to hurt you...\nWatch!"))
+    closemessage
+    applymovement(LOCALID_PUDDLEMON, Movement_MonWatch)
+    applymovement(LOCALID_PUDDLETRAINER, Movement_TrainerJump)
+    waitmovement(0)
+    msgbox(format("See?\nIt's shallow!"))
+    closemessage
+    applymovement(LOCALID_PUDDLEMON, Movement_MonJump)
+    playmoncry(SPECIES_CHARMANDER, CRY_MODE_NORMAL)
+    waitmoncry
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_ROSEVALE_Interact_EntranceSign {
+    msgbox(format("Welcome to Rosevale!"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_ROSEVALE_Interact_InnSign {
+    msgbox(format("ROSEVALE INN"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
+    msgbox(format("I'm scared. Is everything going to be ok?"), MSGBOX_NPC)
+}
+
+// section: sister cutscene pre-aurora
+text Text_ArthurSister_PleaseHelp {
+    format(
+        "Please, you have to help!"
+        "Someone stole my Marill and my brother chased them!"
+        "I don't want anyone to get hurt..."
+    )
+}
+
+movement Movement_ArthurSister_RunUpToPath {
+    walk_fast_left * 6
+}
+
+script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
+    lock
+
+    // the sister runs up
+    addobject(LOCALID_ARTHUR_SISTER)
+    setobjectxy(LOCALID_ARTHUR_SISTER, 18, 14)
+    applymovement(LOCALID_ARTHUR_SISTER, Movement_ArthurSister_RunUpToPath)
+    waitmovement(LOCALID_ARTHUR_SISTER)
+
+    // she asks if you can help
+    msgbox(Text_ArthurSister_PleaseHelp, MSGBOX_NPC)
+
+    // quest starts
+    setvar(VAR_ROSEVALE_STATE, STATE_STARTED_QUEST)
+
+    release
+}
+
+// section: arthur fight
+movement Movement_Arthur_WalkUpToExit {
+    walk_right * 7
+}
+
+script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
+    lock
+    // arthur walks up
+    addobject(LOCALID_ARTHUR)
+    setobjectxy(LOCALID_ARTHUR, 25, 12)
+    applymovement(LOCALID_ARTHUR, Movement_Arthur_WalkUpToExit)
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
+    waitmovement(0)
+
+    // arthur explains situation
+    msgbox(format("arthur explains situation"), MSGBOX_NPC)
+
+    // battle starts
+    trainerbattle_single(TRAINER_BRANDON, format("intro"), format("lose"), ArthurDefeated)
+    release
+}
+
+movement Movement_ArthurDad_WalkUpToArthur {
+    walk_right * 6
+}
+
+movement Movement_Arthur_SeesDad {
+    delay_16 * 4
+    face_left
+    emote_exclamation_mark
+}
+
+movement Movement_ArthurDad_WalkAway {
+    walk_left * 7
+}
+
+movement Movement_Arthur_WalkAway {
+    delay_16 * 4
+    walk_left * 8
+}
+
+script(local) ArthurDefeated {
+    // arthur talks about fight
+    msgbox(format("arthur talks about fight"), MSGBOX_NPC)
+
+    // dad walks up
+    addobject(LOCALID_ARTHUR_DAD)
+    setobjectxy(LOCALID_ARTHUR_DAD, 25, 12)
+    applymovement(LOCALID_ARTHUR_DAD, Movement_ArthurDad_WalkUpToArthur)
+    applymovement(LOCALID_ARTHUR, Movement_Arthur_SeesDad)
+    waitmovement(LOCALID_ARTHUR_DAD)
+    waitmovement(LOCALID_ARTHUR)
+
+    // messages between dad, arthur, player
+    msgbox(format("conversation between all"), MSGBOX_NPC)
+
+    // dad and arthur walk away
+    applymovement(LOCALID_ARTHUR_DAD, Movement_ArthurDad_WalkAway)
+    applymovement(LOCALID_ARTHUR, Movement_Arthur_WalkAway)
+    waitmovement(LOCALID_ARTHUR)
+    waitmovement(LOCALID_ARTHUR_DAD)
+    removeobject(LOCALID_ARTHUR)
+    removeobject(LOCALID_ARTHUR_DAD)
+
+    setvar(VAR_ROSEVALE_STATE, STATE_FINAL)
+    release
+}
