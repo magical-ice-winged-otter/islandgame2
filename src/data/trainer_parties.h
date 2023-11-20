@@ -257,7 +257,6 @@ static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     .lvl = 13,
     .species = SPECIES_LARVITAR,
     .heldItem = ITEM_NONE,
-    .ability = ABILITY_GUTS,
     .moves = {MOVE_BITE, MOVE_ROCK_TOMB, MOVE_SANDSTORM, MOVE_DIG}
     },
     {
@@ -265,7 +264,6 @@ static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     .lvl = 13,
     .species = SPECIES_DRILBUR,
     .heldItem = ITEM_NONE,
-    .ability = ABILITY_SAND_RUSH,
     .moves = {MOVE_FURY_SWIPES, MOVE_MUD_SLAP, MOVE_ROCK_TOMB, MOVE_METAL_CLAW}
     },
     {
@@ -273,181 +271,196 @@ static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     .lvl = 15,
     .species = SPECIES_GIBLE,
     .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_SAND_VEIL,
     .moves = {MOVE_SAND_TOMB, MOVE_DRAGON_RAGE, MOVE_SAND_ATTACK, MOVE_METAL_CLAW}
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows1[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
+    .lvl = 10,
+    .species = SPECIES_BUNEARY,
+    },
+    {
+    .iv = 0,
+    .lvl = 11,
+    .species = SPECIES_IGGLYBUFF,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows2[] = {
     {
-    .lvl = 30,
-    .species = SPECIES_POOCHYENA,
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_ODDISH,
     },
     {
-    .lvl = 30,
-    .species = SPECIES_CARVANHA,
+    .iv = 0,
+    .lvl = 11,
+    .species = SPECIES_DRIFLOON,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows3[] = {
     {
-    .lvl = 28,
-    .species = SPECIES_CARVANHA,
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_PIDGEY,
+    },
+    {
+    .lvl = 11,
+    .species = SPECIES_MACHOP,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows4[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_CARVANHA,
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_HOPPIP,
+    },
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_HOPPIP,
+    },
+    {
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_FLABEBE,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows5[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_ZUBAT,
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_MARILL,
+    },
+    {
+    .lvl = 11,
+    .species = SPECIES_DEERLING,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows6[] = {
     {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 30,
-    .species = SPECIES_MAKUHITA,
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_NINCADA,
     },
     {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 30,
-    .species = SPECIES_MACHOKE,
+    .lvl = 11,
+    .species = SPECIES_YANMA,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows7[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 34,
-    .species = SPECIES_MIGHTYENA,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 34,
-    .species = SPECIES_GOLBAT,
+    .lvl = 12,
+    .species = SPECIES_RATTATA_ALOLAN,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows8[] = {
     {
-    .lvl = 31,
-    .species = SPECIES_HARIYAMA,
+    .lvl = 9,
+    .species = SPECIES_POOCHYENA,
+    },
+    {
+    .iv = 0,
+    .lvl = 11,
+    .species = SPECIES_MAREEP,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows9[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 28,
-    .species = SPECIES_CARVANHA,
+    .lvl = 9,
+    .species = SPECIES_CATERPIE,
     },
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 28,
-    .species = SPECIES_MIGHTYENA,
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_WEEDLE,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows10[] = {
     {
-    .iv = TRAINER_PARTY_IVS(12,12,12,12,12,12),
-    .lvl = 37,
-    .species = SPECIES_SHARPEDO,
+    .lvl = 10,
+    .species = SPECIES_PIDGEY,
     },
     {
-    .iv = TRAINER_PARTY_IVS(12,12,12,12,12,12),
-    .lvl = 37,
-    .species = SPECIES_MIGHTYENA,
+    .lvl = 11,
+    .species = SPECIES_DEERLING,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows11[] = {
     {
-    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
-    .lvl = 41,
-    .species = SPECIES_MIGHTYENA,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
-    .lvl = 41,
-    .species = SPECIES_CROBAT,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
-    .lvl = 43,
-    .species = SPECIES_SHARPEDO,
+    .iv = TRAINER_PARTY_IVS(18,18,18,18,18,18),
+    .lvl = 12,
+    .species = SPECIES_AUDINO,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows12[] = {
     {
-    .lvl = 31,
-    .species = SPECIES_SPOINK,
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_POOCHYENA,
+    },
+    {
+    .lvl = 11,
+    .species = SPECIES_MEOWTH_ALOLAN,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows13[] = {
     {
-    .lvl = 14,
-    .species = SPECIES_SHROOMISH,
+    .iv = 0,
+    .lvl = 6,
+    .species = SPECIES_WEEDLE,
     },
     {
-    .lvl = 14,
-    .species = SPECIES_ROSELIA,
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_KAKUNA,
+    },
+    {
+    .lvl = 12,
+    .species = SPECIES_BEEDRILL,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows14[] = {
     {
-    .lvl = 14,
-    .species = SPECIES_ROSELIA,
-    },
-    {
-    .lvl = 14,
-    .species = SPECIES_SHROOMISH,
-    },
-    {
-    .lvl = 14,
-    .species = SPECIES_ROSELIA,
+    .lvl = 12,
+    .species = SPECIES_RIOLU,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows15[] = {
     {
-    .lvl = 43,
-    .species = SPECIES_MEDICHAM,
-    .moves = {MOVE_PSYCHIC, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .lvl = 11,
+    .species = SPECIES_FOONGUS,
     },
     {
-    .lvl = 43,
-    .species = SPECIES_CLAYDOL,
-    .moves = {MOVE_SKILL_SWAP, MOVE_EARTHQUAKE, MOVE_NONE, MOVE_NONE}
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_BUTTERFREE,
     }
 };
 
 static const struct TrainerMon sParty_MintyMeadows16[] = {
     {
-    .lvl = 26,
-    .species = SPECIES_ROSELIA,
+    .lvl = 11,
+    .species = SPECIES_POOCHYENA,
     },
     {
-    .lvl = 26,
-    .species = SPECIES_GLOOM,
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_GROWLITHE,
     }
 };
 
