@@ -891,6 +891,7 @@ const struct Tileset gTileset_IslandgameGeneral =
     .palettes = gTilesetPalettes_IslandgameGeneral,
     .metatiles = gMetatiles_IslandgameGeneral,
     .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
+    .paletteOverrides = gTilesetPalOverrides_Island_General,
     .callback = InitTilesetIsland_Anim_General,
 };
 
