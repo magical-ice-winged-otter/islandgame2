@@ -332,14 +332,14 @@
     },
     {
       "x": 4,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
       "dest_warp_id": "5"
     },
     {
       "x": 5,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
       "dest_warp_id": "6"
