@@ -11,17 +11,6 @@ static const struct TrainerMon sParty_Sawyer1[] = {
     }
 };
 
-
-
-
-
-
-
-
-
-
-
-/// Southern Oranna Path
 static const struct TrainerMon sParty_SOrannaPathTrainer1[] = {
     {
     .lvl = 5,
@@ -264,8 +253,28 @@ static const struct TrainerMon sParty_VerdantWoodsTrainer5[] = {
 
 static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     {
-    .lvl = 32,
-    .species = SPECIES_ZUBAT,
+    .iv = 0,
+    .lvl = 13,
+    .species = SPECIES_LARVITAR,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_GUTS,
+    .moves = {MOVE_BITE, MOVE_ROCK_TOMB, MOVE_SANDSTORM, MOVE_DIG}
+    },
+    {
+    .iv = 0,
+    .lvl = 13,
+    .species = SPECIES_DRILBUR,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_SAND_RUSH,
+    .moves = {MOVE_FURY_SWIPES, MOVE_MUD_SLAP, MOVE_ROCK_TOMB, MOVE_METAL_CLAW}
+    },
+    {
+    .iv = 0,
+    .lvl = 15,
+    .species = SPECIES_GIBLE,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_SAND_VEIL,
+    .moves = {MOVE_SAND_TOMB, MOVE_DRAGON_RAGE, MOVE_SAND_ATTACK, MOVE_METAL_CLAW}
     }
 };
 
