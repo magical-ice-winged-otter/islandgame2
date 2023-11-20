@@ -509,7 +509,7 @@ static const struct TrainerMon sParty_Rose5[] = {
     }
 };
 
-static const struct TrainerMon sParty_Dusty1[] = {
+static const struct TrainerMon sParty_NOrannaEntrance[] = {
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 23,
@@ -518,7 +518,7 @@ static const struct TrainerMon sParty_Dusty1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Chip[] = {
+static const struct TrainerMon sParty_NOrannaFence[] = {
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 27,
@@ -539,7 +539,7 @@ static const struct TrainerMon sParty_Chip[] = {
     }
 };
 
-static const struct TrainerMon sParty_Foster[] = {
+static const struct TrainerMon sParty_NORannaUpperEast[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 25,
@@ -554,7 +554,7 @@ static const struct TrainerMon sParty_Foster[] = {
     }
 };
 
-static const struct TrainerMon sParty_Dusty2[] = {
+static const struct TrainerMon sParty_NOrannaUpperMiddle[] = {
     {
     .iv = TRAINER_PARTY_IVS(7, 7, 7, 7, 7, 7),
     .lvl = 27,
@@ -563,7 +563,7 @@ static const struct TrainerMon sParty_Dusty2[] = {
     }
 };
 
-static const struct TrainerMon sParty_Dusty3[] = {
+static const struct TrainerMon sParty_NOrannaUpperWest[] = {
     {
     .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
     .lvl = 30,
@@ -572,7 +572,7 @@ static const struct TrainerMon sParty_Dusty3[] = {
     }
 };
 
-static const struct TrainerMon sParty_Dusty4[] = {
+static const struct TrainerMon sParty_NOrannaLowerEast[] = {
     {
     .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
     .lvl = 33,
@@ -581,7 +581,7 @@ static const struct TrainerMon sParty_Dusty4[] = {
     }
 };
 
-static const struct TrainerMon sParty_Dusty5[] = {
+static const struct TrainerMon sParty_NOrannaLowerMiddle[] = {
     {
     .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
     .lvl = 36,
@@ -590,7 +590,7 @@ static const struct TrainerMon sParty_Dusty5[] = {
     }
 };
 
-static const struct TrainerMon sParty_GabbyAndTy1[] = {
+static const struct TrainerMon sParty_NOrannaLowerWest[] = {
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 17,
