@@ -147,7 +147,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	waitmovement 0
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0, MSGBOX_NPC
-	trainerbattle_single TRAINER_BRANDON, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2, ArthurDefeated
+	trainerbattle_single TRAINER_SPECIAL_ARTHUR_1, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2, ArthurDefeated
 	release
 	return
 

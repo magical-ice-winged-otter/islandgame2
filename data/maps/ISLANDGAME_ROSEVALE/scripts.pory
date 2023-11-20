@@ -165,7 +165,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
     msgbox(format("arthur explains situation"), MSGBOX_NPC)
 
     // battle starts
-    trainerbattle_single(TRAINER_BRANDON, format("intro"), format("lose"), ArthurDefeated)
+    trainerbattle_single(TRAINER_SPECIAL_ARTHUR_1, format("intro"), format("lose"), ArthurDefeated)
     release
 }
 

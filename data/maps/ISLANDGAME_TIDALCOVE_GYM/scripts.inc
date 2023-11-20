@@ -32,14 +32,14 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor::
 
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka::
-	checktrainerflag TRAINER_JUAN_1
+	checktrainerflag TRAINER_LEADER_RUKA
 	goto_if 0, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_1
 	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_3, MSGBOX_NPC
 	return
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_1:
 	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_0, MSGBOX_NPC
-	trainerbattle_single TRAINER_JUAN_1, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_1, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_2, RukaDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_LEADER_RUKA, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_1, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_2, RukaDefeated, NO_MUSIC
 	return
 
 

@@ -41,7 +41,7 @@ ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene::
 	waitmovement 0
 	msgbox ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_1
 	closemessage
-	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_1, ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_2, ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_3, ThiefDefeated
+	trainerbattle_single TRAINER_SPECIAL_THIEF_EDEA, ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_2, ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_3, ThiefDefeated
 	return
 
 

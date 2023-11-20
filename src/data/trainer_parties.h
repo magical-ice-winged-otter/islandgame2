@@ -735,40 +735,82 @@ static const struct TrainerMon sParty_Gwen[] = {
 
 static const struct TrainerMon sParty_Lola2[] = {
     {
-    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
-    .lvl = 26,
-    .species = SPECIES_MARILL,
+    .lvl = 18,
+    .species = SPECIES_SNOVER,
+    .heldItem = ITEM_ICY_ROCK,
+    .ability = ABILITY_SNOW_WARNING,
+    .moves = {MOVE_LEECH_SEED, MOVE_ICY_WIND, MOVE_RAZOR_LEAF, MOVE_GRASS_WHISTLE}
     },
     {
-    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
-    .lvl = 26,
-    .species = SPECIES_MARILL,
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_SWINUB,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_SNOW_CLOAK,
+    .moves = {MOVE_MUD_BOMB, MOVE_ICICLE_SPEAR, MOVE_HAIL, MOVE_MUD_SPORT}
+    },
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_SPHEAL,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_ICE_BODY,
+    .moves = {MOVE_WATER_PULSE, MOVE_AURORA_BEAM, MOVE_ROLLOUT, MOVE_DEFENSE_CURL}
+    },
+    {
+    .iv = 0,
+    .lvl = 20,
+    .species = SPECIES_CLOYSTER,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_SKILL_LINK,
+    .moves = {MOVE_ICICLE_SPEAR, MOVE_RAZOR_SHELL, MOVE_SPIKE_CANNON, MOVE_SUPERSONIC}
     }
 };
 
 static const struct TrainerMon sParty_Lola3[] = {
     {
-    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
-    .lvl = 29,
-    .species = SPECIES_MARILL,
+    .lvl = 15,
+    .species = SPECIES_SOLOSIS,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_MAGIC_GUARD,
+    .moves = {MOVE_PSYWAVE, MOVE_CONFUSE_RAY, MOVE_ACID_ARMOR, MOVE_SNATCH}
     },
     {
-    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
-    .lvl = 29,
+    .lvl = 15,
+    .species = SPECIES_KECLEON,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_PROTEAN,
+    .moves = {MOVE_DIZZY_PUNCH, MOVE_SHADOW_SNEAK, MOVE_THIEF, MOVE_FAKE_OUT}
+    },
+    {
+    .iv = 0,
+    .lvl = 17,
     .species = SPECIES_MARILL,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_HUGE_POWER,
+    .moves = {MOVE_ROLLOUT, MOVE_AQUA_JET, MOVE_DEFENSE_CURL, MOVE_AQUA_RING}
     }
 };
 
 static const struct TrainerMon sParty_Lola4[] = {
     {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 32,
-    .species = SPECIES_MARILL,
+    .lvl = 16,
+    .species = SPECIES_SABLEYE,
+    .ability = ABILITY_PRANKSTER,
+    .moves = {MOVE_SHADOW_SNEAK, MOVE_THIEF, MOVE_FAKE_OUT, MOVE_WILL_O_WISP}
     },
     {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 32,
-    .species = SPECIES_MARILL,
+    .lvl = 16,
+    .species = SPECIES_SNEASEL,
+    .ability = ABILITY_PRESSURE,
+    .moves = {MOVE_METAL_CLAW, MOVE_ICE_SHARD, MOVE_THIEF, MOVE_FAKE_OUT}
+    },
+    {
+    .iv = 0,
+    .lvl = 18,
+    .species = SPECIES_PERSIAN_ALOLAN,
+    .ability = ABILITY_FUR_COAT,
+    .moves = {MOVE_AERIAL_ACE, MOVE_THIEF, MOVE_SNARL, MOVE_HYPNOSIS}
     }
 };
 

@@ -42,7 +42,7 @@ script ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene {
     closemessage
 
     // battle with thief
-    trainerbattle_single(TRAINER_GRUNT_MAGMA_HIDEOUT_1, "intro", "loss", ThiefDefeated)
+    trainerbattle_single(TRAINER_SPECIAL_THIEF_EDEA, "intro", "loss", ThiefDefeated)
 }
 
 movement Movement_ThiefRunAway {

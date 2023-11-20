@@ -129,9 +129,14 @@
 #define TRAINER_AUSTINA                      TRAINER_CORANNA_2_BIKER
 #define TRAINER_GWEN                         TRAINER_CORANNA_2_FISHERMAN
 
-#define TRAINER_LOLA_2                       60
-#define TRAINER_LOLA_3                       61
-#define TRAINER_LOLA_4                       62
+// Important Trainers
+#define TRAINER_LEADER_RUKA                  60
+#define TRAINER_SPECIAL_ARTHUR_1             61
+#define TRAINER_SPECIAL_THIEF_EDEA           62
+#define TRAINER_LOLA_2                       TRAINER_LEADER_RUKA
+#define TRAINER_LOLA_3                       TRAINER_SPECIAL_ARTHUR_1
+#define TRAINER_LOLA_4                       TRAINER_SPECIAL_THIEF_EDEA
+
 #define TRAINER_LOLA_5                       63
 #define TRAINER_RICKY_1                      64
 #define TRAINER_SIMON                        65
