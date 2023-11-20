@@ -1,5 +1,12 @@
 mapscripts ISLANDGAME_SS_RAIN_ROOM2_MapScripts {
-
+    MAP_SCRIPT_ON_TRANSITION {
+        if (!flag(FLAG_SET_WALL_CLOCK)) {
+            setvar(VAR_TEMP_1, 7)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 7: SS_Rain_EventScript_SetClock
+    ]
 }
 script SS_Rain_EventScript_NeedRunningShoes {
     if (!flag(FLAG_RECEIVED_RUNNING_SHOES)) { # Run trigger script if you have not recieved the running shoes
@@ -10,6 +17,19 @@ script SS_Rain_EventScript_NeedRunningShoes {
         applymovement(OBJ_EVENT_ID_PLAYER, NeedRunningShoes_Movement)
         waitmovement(0)
     }
+    releaseall
+}
+
+script SS_Rain_EventScript_SetClock {
+    lockall
+    setvar(VAR_TEMP_1, 3)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(ArrivedAtCheriport_Text)
+    waitmessage
+	special(StartWallClock)
+	waitstate
+    delay(30)
+    setflag(FLAG_SET_WALL_CLOCK)
     releaseall
 }
 
@@ -34,4 +54,8 @@ text NeedRunningShoes_Text {
 text SwitchedRunningShoes_Text {
     "{COLOR DARK_GRAY}You switched your shoes with the\n"
     "{COLOR DARK_GRAY}Running Shoes!"
+}
+
+text ArrivedAtCheriport_Text {
+    format("{COLOR DARK_GRAY}This is the captain of SS Rain, and we have arrived at Cheriport earlier than our expected time of...?")
 }
