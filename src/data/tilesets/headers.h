@@ -982,3 +982,14 @@ const struct Tileset gTileset_islandgame_maplegrove =
     .metatileAttributes = gMetatileAttributes_islandgame_maplegrove,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_rosevale =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_rosevale,
+    .palettes = gTilesetPalettes_islandgame_rosevale,
+    .metatiles = gMetatiles_islandgame_rosevale,
+    .metatileAttributes = gMetatileAttributes_islandgame_rosevale,
+    .callback = NULL,
+};
