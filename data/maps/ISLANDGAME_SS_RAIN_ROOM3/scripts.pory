@@ -14,7 +14,7 @@ mapscripts ISLANDGAME_SS_RAIN_ROOM3_MapScripts {
 script SS_Rain_EventScript_InvadeRoom {
     lockall
     setvar(VAR_TEMP_0, 1)
-    if (flag(FLAG_LEFT_SHIP)) {
+    if (flag(FLAG_ROOM3_GAVE_WATER)) {
         releaseall
         return
     }
@@ -50,7 +50,7 @@ movement RunAway {
 }
 
 text SS_Rain_InvadeRoomReaction_Text {
-    format("{COLOR RED}What are you doing in my room? Get out!")
+    format("{COLOR DARK_GRAY}What are you doing in my room? Get out!")
 }
 
 script SS_Rain_EventScript_HasNoWater {
@@ -60,11 +60,11 @@ script SS_Rain_EventScript_HasNoWater {
 }
 
 script SS_Rain_EventScript_HasWater {
-    msgbox(format("{COLOR RED}Huh?"))
+    msgbox(format("{COLOR DARK_GRAY}Huh?"))
     waitmessage
     applymovement(LOCALID_GENTLEMAN, WalkToPlayer)
     waitmovement(0)
-    msgbox(format("{COLOR RED}He sent you to give me water?"))
+    msgbox(format("{COLOR DARK_GRAY}He sent you to give me water?"))
     
     setflag(FLAG_ROOM3_GAVE_WATER)
     removeitem(ITEM_FRESH_WATER, 1)

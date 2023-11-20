@@ -57,6 +57,6 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk::
 	.string "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-$"
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk::
-	.string "{COLOR DARK_GRAY}We only brought 3 controllers...\p"
+	.string "{COLOR DARK_GRAY}We only brought 2 controllers...\p"
 	.string "So I get to take over for whoever\n"
 	.string "loses!$"

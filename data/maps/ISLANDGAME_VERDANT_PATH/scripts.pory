@@ -195,6 +195,7 @@ text ISLANDGAME_VERDANT_PATH_NPC1Talk3 {
 
 script ISLANDGAME_VERDANT_PATH_EventScript_NPC2 {
     lock
+    faceplayer
     msgbox(ISLANDGAME_VERDANT_PATH_NPC2Talk)
     release
 }

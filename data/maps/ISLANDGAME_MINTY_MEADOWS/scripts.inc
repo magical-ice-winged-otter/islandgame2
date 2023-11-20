@@ -70,13 +70,13 @@ ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_1:
 	.string "us.$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_2:
-	.string "{COLOR DARK_GRAY}Oh no, we lost!$"
+	.string "Oh no, we lost!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_0:
 	.string "{COLOR DARK_GRAY}Battling feels heavy today...$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_1:
-	.string "{COLOR DARK_GRAY}I couldn't overcome the weight. It's a\n"
+	.string "I couldn't overcome the weight. It's a\n"
 	.string "struggle, isn't it?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_0:
@@ -84,7 +84,7 @@ ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_0:
 	.string "begin!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_1:
-	.string "{COLOR DARK_GRAY}Wow, you're strong! That was a blast of\n"
+	.string "Wow, you're strong! That was a blast of\n"
 	.string "a battle!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_0:
@@ -92,7 +92,7 @@ ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_0:
 	.string "Pokémon bloom in battle!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_1:
-	.string "{COLOR DARK_GRAY}Alas, my Pokémon couldn't bloom to\n"
+	.string "Alas, my Pokémon couldn't bloom to\n"
 	.string "victory this time. Your team flourished\l"
 	.string "beautifully!$"
 
@@ -101,7 +101,7 @@ ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_0:
 	.string "lovely meadow together!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_1:
-	.string "{COLOR DARK_GRAY}Oh, our meadow journey had its\n"
+	.string "Oh, our meadow journey had its\n"
 	.string "challenges. Nature's charm is truly\l"
 	.string "enchanting, isn't it?$"
 
@@ -111,7 +111,7 @@ ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_0:
 	.string "setting!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_1:
-	.string "{COLOR DARK_GRAY}Ah, my enthusiasm didn't secure\n"
+	.string "Ah, my enthusiasm didn't secure\n"
 	.string "success! Your Pokémon shine like rare\l"
 	.string "gems!$"
 
@@ -120,7 +120,7 @@ ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_0:
 	.string "nature's wonders?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_1:
-	.string "{COLOR DARK_GRAY}Whoops! Things didn't quite go as\n"
+	.string "Whoops! Things didn't quite go as\n"
 	.string "planned, but hey, that's life, right?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_0:
@@ -128,13 +128,13 @@ ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_0:
 	.string "outdoors?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_1:
-	.string "{COLOR DARK_GRAY}Your easygoing spirit is refreshing!$"
+	.string "Your easygoing spirit is refreshing!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss::
 	.string "{COLOR DARK_GRAY}We'll get you next time!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer2_Loss::
-	.string "{COLOR DARK_GRAY}Your strength is a beacon. I'll find my\n"
+	.string "Your strength is a beacon. I'll find my\n"
 	.string "own light in this darkness.$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss::

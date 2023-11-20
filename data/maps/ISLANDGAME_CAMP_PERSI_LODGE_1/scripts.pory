@@ -57,6 +57,6 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4 {
 
 text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk {
     format(
-        "{COLOR DARK_GRAY}We only brought 3 controllers...\pSo I get to take over for whoever loses!"
+        "{COLOR DARK_GRAY}We only brought 2 controllers...\pSo I get to take over for whoever loses!"
     )
 }

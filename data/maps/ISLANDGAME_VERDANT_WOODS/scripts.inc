@@ -144,8 +144,8 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_0:
 	.string "doesn't feel like wood at all...)$"
 
 ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1:
-	.string "{COLOR DARK_GRAY}It's a strange-looking tree. Its trunk\n"
-	.string "doesn't feel like wood at all...\p"
+	.string "{COLOR RED}(It's a strange-looking tree. Its trunk\n"
+	.string "doesn't feel like wood at all...)\p"
 	.string "{COLOR DARK_GRAY}Water the strange-looking tree?$"
 
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0:

@@ -29,14 +29,15 @@ ISLANDGAME_CHERIPORT_PKMNMART_EventScript_NPC2::
 Cheriport_MartItems:
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
+	.2byte ITEM_REPEL
 	.2byte ITEM_NONE
 
 ISLANDGAME_CHERIPORT_PKMNMART_EventScript_Employee_Text_0:
-	.string "Welcome to Cheriport PokeMart! How may\n"
-	.string "I help you?$"
+	.string "Welcome to CheriMart! How may I help\n"
+	.string "you?$"
 
 ISLANDGAME_CHERIPORT_PKMNMART_EventScript_Employee_Text_1:
-	.string "Thank you for shopping from us!$"
+	.string "Thank you for shopping with us!$"
 
 ISLAND_GAME_CHERIPORT_PKMNMART_NPC1_TALK::
 	.string "{COLOR DARK_GRAY}Man, where's all the energy drinks? How\n"

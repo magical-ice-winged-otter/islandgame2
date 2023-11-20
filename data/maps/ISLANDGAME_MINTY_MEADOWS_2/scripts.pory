@@ -12,10 +12,10 @@ const STATE_POST_FIGHT = 4
 
 const VAR_SEEN_CHASE_CUTSCENE = VAR_TEMP_0
 
-const RIVAL_OW_ID = 16
-const OLD_MAN_OW_ID = 17
-const MAREEP_OW_ID = 11
-const MIGHTYENA_OW_ID = 12
+const RIVAL_OW_ID = 15
+const OLD_MAN_OW_ID = 16
+const MAREEP_OW_ID = 10
+const MIGHTYENA_OW_ID = 11
 
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
@@ -204,15 +204,31 @@ movement ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown {
 
 // todo: port rival name to {RIVAL}?
 script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
+
+    msgbox(
+        format(
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Ugg... I'm only missing one more Pokémon on the list, and I can't find it! \p"
+            "{COLOR DARK_GRAY}Waah! I give up! I'm convinced it doesn't even exist! \p"
+            "{COLOR DARK_GRAY}Eh?"
+            )
+        )
     // audrey walks down towards you
     applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown)
     waitmovement(RIVAL_OW_ID)
 
     // pre-fight dialogue
-    msgbox(format("Audrey: I'm bored! Let's fight!"))
+    msgbox(
+        format(
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Umm, hi! Do I know you? \p"
+            "{COLOR DARK_GRAY}...! \p"
+            "{COLOR DARK_GRAY}You're {PLAYER}? The one who the professor said I'd be working with? \p"
+            "{COLOR DARK_GRAY}It's good to meet you! I'm Audrey, a rising trainer just like you! \p"
+            "{COLOR DARK_GRAY}I was trying to fill out my Pokédex here, but I just couldn't find a Riolu... \p"
+            )
+        )
 
     // battle
-    trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, "Audrey: Wow, you're strong!")
+    trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, "Wow, you're pretty good!")
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) != B_OUTCOME_WON) {
         return
@@ -355,7 +371,7 @@ movement Phase2_MightyenaWalksForward {
 script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     lock 
     faceplayer
-    setwildbattle(SPECIES_SHADOW_MIGHTYENA, 25)
+    setwildbattle(SPECIES_SHADOW_MIGHTYENA, 18)
     playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
     waitmoncry
     dowildbattle
@@ -443,7 +459,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_Mareep {
 }
 
 text MareepHelp_Text {
-    format("{COLOR BLUE}bro help me")
+    format("{COLOR DARK_GRAY}bro help me")
 }
 
 

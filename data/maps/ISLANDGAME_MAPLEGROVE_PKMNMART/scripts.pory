@@ -1,6 +1,12 @@
 mapscripts ISLANDGAME_MAPLEGROVE_PKMNMART_MapScripts {}
 
-
+script ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_Employee {
+    msgbox(format("Welcome! How may I help you?"))
+    closemessage
+    pokemart(MartItems)
+    msgbox(format("Thank you for shopping with us!"))
+    closemessage
+}
 
 
 script ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_NPC1 {
@@ -27,4 +33,13 @@ text ISLANDGAME_MAPLEGROVE_PKMNMART_NPC2Talk {
         "{COLOR RED}(It seems like this Audino is actually an employee at the shop.) \p"
         "{COLOR RED}(It's diligently restocking the shelves. I should just let it do its job.)"
     )
+}
+
+mart Maplegrove_MartItems {
+    ITEM_POKE_BALL
+    ITEM_POTION
+    ITEM_PARALYZE_HEAL
+    ITEM_ANTIDOTE
+    ITEM_AWAKENING
+    ITEM_REPEL
 }

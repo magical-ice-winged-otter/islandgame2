@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_MINTY_MEADOWS_2",
   "name": "ISLANDGAME_MINTY_MEADOWS_2",
   "layout": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_2",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_ROUTE120",
   "region_map_section": "MAPSEC_MINTY_MEADOWS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -10,7 +10,7 @@
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
@@ -153,19 +153,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WALLACE",
-      "x": 19,
-      "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
       "x": -3,
       "y": 3,
@@ -231,7 +218,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
+      "graphics_id": "OBJ_EVENT_GFX_LEAF",
       "x": -2,
       "y": 4,
       "elevation": 0,
@@ -268,6 +255,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_ItemZapPlate",
       "flag": "FLAG_ITEM_MINTY_MEADOWS_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 60,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 46,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route116_EventScript_ItemPotion",
+      "flag": "FLAG_ITEM_ROUTE_116_POTION"
     }
   ],
   "warp_events": [

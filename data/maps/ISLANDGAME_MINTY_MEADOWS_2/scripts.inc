@@ -29,36 +29,36 @@ ISLANDGAME_MINTY_MEADOWS_2_OnTransition_5:
 
 
 ISLANDGAME_MINTY_MEADOWS_2_InitialRival::
-	setobjectxyperm 16, 12, 0
-	setobjectxyperm 17, 32, 10
+	setobjectxyperm 15, 12, 0
+	setobjectxyperm 16, 32, 10
+	setobjectxyperm 10, -3, 1
 	setobjectxyperm 11, -3, 1
-	setobjectxyperm 12, -3, 1
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_StartedQuest::
-	setobjectxyperm 17, 11, 6
-	setobjectxyperm 11, 61, 13
-	setobjectxyperm 12, 61, 15
-	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_DOWN
-	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm 16, 11, 6
+	setobjectxyperm 10, 61, 13
+	setobjectxyperm 11, 61, 15
+	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
-	setobjectxyperm 17, 11, 6
-	setobjectxyperm 11, 61, 13
-	setobjectxyperm 12, 61, 14
-	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_DOWN
-	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm 16, 11, 6
+	setobjectxyperm 10, 61, 13
+	setobjectxyperm 11, 61, 14
+	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena::
-	setobjectxyperm 16, -3, 1
-	setobjectxyperm 17, 11, 3
+	setobjectxyperm 15, -3, 1
+	setobjectxyperm 16, 11, 3
+	setobjectxyperm 10, -3, 1
 	setobjectxyperm 11, -3, 1
-	setobjectxyperm 12, -3, 1
 	return
 
 
@@ -241,8 +241,8 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown:
 	step_end
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
-	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown
-	waitmovement 16
+	applymovement 15, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown
+	waitmovement 15
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_0
 	trainerbattle_no_intro TRAINER_MINTY_MEADOWS_RIVAL, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -250,16 +250,16 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	goto_if_ne ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_2
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2
 	closemessage
-	addobject 17
-	setobjectxy 17, 11, 11
-	applymovement 17, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
-	waitmovement 17
+	addobject 16
+	setobjectxy 16, 11, 11
+	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
+	waitmovement 16
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3
 	startquest QUEST_FRESA_FARMS_LOST_MAREEP
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4
 	closemessage
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
-	setfollower 16, 100, 0
+	setfollower 15, 100, 0
 	setvar VAR_MINTY_MEADOWS_STATE, 1
 	call ISLANDGAME_MINTY_MEADOWS_2_StartedQuest
 	release
@@ -277,24 +277,24 @@ ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1::
 ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_1_1:
 	lock
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	addobject 10
+	setobjectxy 10, 32, 37
+	applymovement 10, Phase1_MareepRun_1
+	waitmovement 10
+	playmoncry SPECIES_MAREEP, CRY_MODE_ENCOUNTER
+	applymovement 10, Common_Movement_Delay48
+	waitmovement 10
+	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
+	applymovement 10, Phase1_MareepRun_2
+	waitmovement 10
 	addobject 11
 	setobjectxy 11, 32, 37
-	applymovement 11, Phase1_MareepRun_1
+	applymovement 10, Phase1_MareepRun_3
+	applymovement 11, Phase1_MightyenaChase
 	waitmovement 11
-	playmoncry SPECIES_MAREEP, CRY_MODE_ENCOUNTER
-	applymovement 11, Common_Movement_Delay48
-	waitmovement 11
-	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
-	applymovement 11, Phase1_MareepRun_2
-	waitmovement 11
-	addobject 12
-	setobjectxy 12, 32, 37
-	applymovement 11, Phase1_MareepRun_3
-	applymovement 12, Phase1_MightyenaChase
-	waitmovement 12
-	waitmovement 11
+	waitmovement 10
+	removeobject 10
 	removeobject 11
-	removeobject 12
 	setvar VAR_TEMP_0, 1
 	release
 	return
@@ -370,12 +370,12 @@ Phase1_MightyenaChase:
 
 ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2::
 	lock
-	applymovement 12, Phase2_MightyenaWalksForward
-	applymovement 11, Common_Movement_ExclamationMark
+	applymovement 11, Phase2_MightyenaWalksForward
+	applymovement 10, Common_Movement_ExclamationMark
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
 	waitmoncry
 	playmoncry SPECIES_MAREEP, CRY_MODE_WEAK
-	waitmovement 12
+	waitmovement 11
 	waitmoncry
 	setvar VAR_MINTY_MEADOWS_STATE, 3
 	call ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight
@@ -404,7 +404,7 @@ Phase2_MightyenaWalksForward:
 ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 	lock
 	faceplayer
-	setwildbattle SPECIES_SHADOW_MIGHTYENA, 25
+	setwildbattle SPECIES_SHADOW_MIGHTYENA, 18
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
 	waitmoncry
 	dowildbattle
@@ -425,8 +425,8 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setvar VAR_MINTY_MEADOWS_STATE, 4
 	call ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena
 	fadescreen FADE_TO_BLACK
-	removeobject 12
-	setobjectxyperm 12, -3, 1
+	removeobject 11
+	setobjectxyperm 11, -3, 1
 	fadescreen FADE_FROM_BLACK
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0
 	closemessage
@@ -435,26 +435,26 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setvar VAR_0x8001, 5
 	callnative TeleportCamera
 	addobject OBJ_EVENT_ID_PLAYER
-	addobject 17
 	addobject 16
+	addobject 15
 	setobjectxy OBJ_EVENT_ID_PLAYER, 11, 5
-	setobjectxy 16, 10, 5
-	setobjectxy 17, 11, 3
-	setobjectmovementtype 16, MOVEMENT_TYPE_FACE_UP
+	setobjectxy 15, 10, 5
+	setobjectxy 16, 11, 3
+	setobjectmovementtype 15, MOVEMENT_TYPE_FACE_UP
 	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
 	fadescreen FADE_FROM_BLACK
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1
 	closemessage
-	applymovement 17, Phase3_OldManGivesItem_Part1
-	waitmovement 17
+	applymovement 16, Phase3_OldManGivesItem_Part1
+	waitmovement 16
 	giveitem ITEM_LUCKY_EGG
-	applymovement 17, Phase3_OldManGivesItem_Part2
-	waitmovement 17
+	applymovement 16, Phase3_OldManGivesItem_Part2
+	waitmovement 16
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2
 	closemessage
-	applymovement 16, Phase3_RivalRunsOff
-	waitmovement 16
-	removeobject 16
+	applymovement 15, Phase3_RivalRunsOff
+	waitmovement 15
+	removeobject 15
 	release
 	return
 

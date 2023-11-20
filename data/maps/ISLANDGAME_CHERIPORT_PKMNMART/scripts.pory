@@ -1,10 +1,10 @@
 mapscripts ISLANDGAME_CHERIPORT_PKMNMART_MapScripts {}
 
 script ISLANDGAME_CHERIPORT_PKMNMART_EventScript_Employee {
-    msgbox(format("Welcome to Cheriport PokeMart! How may I help you?"))
+    msgbox(format("Welcome to CheriMart! How may I help you?"))
     closemessage
     pokemart(MartItems)
-    msgbox(format("Thank you for shopping from us!"))
+    msgbox(format("Thank you for shopping with us!"))
     closemessage
 }
 
@@ -35,5 +35,6 @@ text ISLAND_GAME_CHERIPORT_PKMNMART_NPC2_TALK {
 mart Cheriport_MartItems {
     ITEM_POKE_BALL
     ITEM_POTION
+    ITEM_REPEL
 }
 

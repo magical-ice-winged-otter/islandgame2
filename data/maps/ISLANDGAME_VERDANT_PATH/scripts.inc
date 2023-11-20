@@ -58,6 +58,7 @@ ISLANDGAME_VERDANT_PATH_EventScript_NPC1_2:
 
 ISLANDGAME_VERDANT_PATH_EventScript_NPC2::
 	lock
+	faceplayer
 	msgbox ISLANDGAME_VERDANT_PATH_NPC2Talk
 	release
 	return
