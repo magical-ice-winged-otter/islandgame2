@@ -549,21 +549,21 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_NORANNA_FENCE_PARTNER_NPCS] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
-        .trainerName = _("Lucas"),
+        .trainerClass = TRAINER_CLASS_SR_AND_JR,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_SR_AND_JR,
+        .trainerName = _("May & Rue"),
         .items = {},
-        .doubleBattle = FALSE,
+        .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_NOrannaFence),
     },
 
     [TRAINER_NORANNA_UPPER_NPC_EAST] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
+        .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerPic = TRAINER_PIC_HIKER,
         .trainerName = _("Luke"),
         .items = {},
         .doubleBattle = FALSE,
@@ -573,9 +573,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_NORANNA_UPPER_NPC_MIDDLE] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
+        .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerPic = TRAINER_PIC_HIKER,
         .trainerName = _("Matthew"),
         .items = {},
         .doubleBattle = FALSE,
@@ -585,9 +585,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_NORANNA_UPPER_NPC_WEST] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerClass = TRAINER_CLASS_BLACK_BELT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
         .trainerName = _("John"),
         .items = {},
         .doubleBattle = FALSE,
@@ -597,9 +597,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_NORANNA_LOWER_NPC_EAST] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerClass = TRAINER_CLASS_CAMPER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CAMPER,
         .trainerName = _("Jesus"),
         .items = {},
         .doubleBattle = FALSE,
@@ -609,9 +609,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_NORANNA_LOWER_NPC_MIDDLE] =
     {
-        .trainerClass = TRAINER_CLASS_RUIN_MANIAC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerClass = TRAINER_CLASS_PICNICKER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
         .trainerName = _("DUSTY"),
         .items = {},
         .doubleBattle = FALSE,
@@ -621,9 +621,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_NORANNA_LOWER_NPC_WEST] =
     {
-        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .trainerClass = TRAINER_CLASS_TUBER_M,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerPic = TRAINER_PIC_TUBER_M,
         .trainerName = _("Gabbie"),
         .items = {},
         .doubleBattle = FALSE,

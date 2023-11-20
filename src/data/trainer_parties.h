@@ -533,93 +533,94 @@ static const struct TrainerMon sParty_Rose5[] = {
 
 static const struct TrainerMon sParty_NOrannaEntrance[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 23,
-    .species = SPECIES_SANDSLASH,
-    .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
+    .lvl = 16,
+    .species = SPECIES_SANDSHREW,
     }
 };
 
 static const struct TrainerMon sParty_NOrannaFence[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 27,
-    .species = SPECIES_BALTOY,
-    .moves = {MOVE_PSYBEAM, MOVE_SELF_DESTRUCT, MOVE_SANDSTORM, MOVE_ANCIENT_POWER}
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_NIDORINA,
     },
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 27,
-    .species = SPECIES_SANDSHREW,
-    .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 27,
-    .species = SPECIES_SANDSLASH,
-    .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
+    .iv = 0,
+    .lvl = 13,
+    .species = SPECIES_NIDORAN_F,
     }
 };
 
 static const struct TrainerMon sParty_NORannaUpperEast[] = {
     {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 25,
-    .species = SPECIES_SANDSHREW,
+    .lvl = 15,
+    .species = SPECIES_GEODUDE,
     .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
     },
     {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 25,
-    .species = SPECIES_SANDSLASH,
-    .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_ROGGENROLA,
+    .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 
 static const struct TrainerMon sParty_NOrannaUpperMiddle[] = {
     {
-    .iv = TRAINER_PARTY_IVS(7, 7, 7, 7, 7, 7),
-    .lvl = 27,
-    .species = SPECIES_SANDSLASH,
-    .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
+    .lvl = 14,
+    .species = SPECIES_DIGLETT,
+    },
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_STARLY,
+    },
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_ELECTRIKE,
     }
 };
 
 static const struct TrainerMon sParty_NOrannaUpperWest[] = {
     {
-    .iv = TRAINER_PARTY_IVS(8, 8, 8, 8, 8, 8),
-    .lvl = 30,
-    .species = SPECIES_SANDSLASH,
-    .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
+    .lvl = 17,
+    .species = SPECIES_MANKEY,
     }
 };
 
 static const struct TrainerMon sParty_NOrannaLowerEast[] = {
     {
-    .iv = TRAINER_PARTY_IVS(9, 9, 9, 9, 9, 9),
-    .lvl = 33,
-    .species = SPECIES_SANDSLASH,
-    .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
+    .lvl = 13,
+    .species = SPECIES_TYMPOLE,
+    },
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_SHELLOS,
     }
 };
 
 static const struct TrainerMon sParty_NOrannaLowerMiddle[] = {
     {
-    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
-    .lvl = 36,
-    .species = SPECIES_SANDSLASH,
-    .moves = {MOVE_DIG, MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_POISON_STING}
+    .lvl = 15,
+    .species = SPECIES_PANSEAR,
+    },
+    {
+    .iv = 0,
+    .lvl = 15,
+    .species = SPECIES_PANSAGE,
+    },
+    {
+    .iv = 0,
+    .lvl = 15,
+    .species = SPECIES_PANPOUR,
     }
 };
 
 static const struct TrainerMon sParty_NOrannaLowerWest[] = {
     {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
-    .lvl = 17,
-    .species = SPECIES_MAGNEMITE,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
+    .iv = TRAINER_PARTY_IVS(6,6,6,6,6,6),
     .lvl = 17,
     .species = SPECIES_WHISMUR,
     }

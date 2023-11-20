@@ -12233,6 +12233,130 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ISLANDGAME_NORTHERN_ORANNA_PATH",
+          "base_label": "gISLANDGAME_NORTHERN_ORANNA_PATH0",
+          "land_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PIDOVE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_ABRA"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PINECO"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PURRLOIN"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PANPOUR"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PANSAGE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_PANSEAR"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_MOTHIM"
+              },
+              {
+                "min_level": 13,
+                "max_level": 15,
+                "species": "SPECIES_DUSTOX"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_WISHIWASHI"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TYMPOLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SHELLDER"
+              }
+            ]
+          }
         }
       ]
     },
