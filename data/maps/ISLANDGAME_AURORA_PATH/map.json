@@ -41,7 +41,7 @@
       "y": 42,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_AURORA_PATH_Interact_EntranceSign"
     },
     {
       "type": "sign",
@@ -49,7 +49,7 @@
       "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_AURORA_PATH_Interact_MtSign"
     },
     {
       "type": "sign",
@@ -57,7 +57,7 @@
       "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_AURORA_PATH_Interact_WeatherInstitute"
     },
     {
       "type": "sign",

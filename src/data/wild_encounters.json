@@ -12495,6 +12495,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ISLANDGAME_AURORA_PATH",
+          "base_label": "gISLANDGAME_AURORA_PATH0",
+          "land_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_WEEDLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_KAKUNA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CATERPIE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_METAPOD"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CUBONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NOSEPASS"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SNOVER"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_BEEDRILL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_BUTTERFREE"
+              }
+            ]
+          }
         }
       ]
     },
