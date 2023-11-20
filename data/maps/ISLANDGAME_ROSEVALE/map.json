@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_ROSEVALE",
   "layout": "LAYOUT_ISLANDGAME_ROSEVALE",
   "music": "MUS_VERDANTURF",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_ROSEVALE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
