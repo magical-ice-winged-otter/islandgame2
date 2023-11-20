@@ -296,9 +296,9 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_MAY,
+        .trainerPic = TRAINER_PIC_LEAF,
         .trainerName = _("Audrey"),
-        .items = {},
+        .items = {ITEM_POTION},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_SMART_SWITCHING,
         .party = TRAINER_PARTY(sParty_MintyMeadowsRival),

@@ -4774,7 +4774,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_MAPLEGROVE",
       "name": "ISLANDGAME_MAPLEGROVE_Layout",
-      "width": 40,
+      "width": 44,
       "height": 40,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_islandgame_maplegrove",

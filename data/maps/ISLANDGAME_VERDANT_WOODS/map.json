@@ -167,8 +167,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route103_EventScript_ItemPPUp",
+      "flag": "FLAG_ITEM_ROUTE_103_PP_UP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -180,8 +180,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgWoods_EventScript_ItemParalyzeHeal",
+      "flag": "FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -193,8 +193,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgWoods_EventScript_ItemEther",
+      "flag": "FLAG_ITEM_PETALBURG_WOODS_ETHER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -206,8 +206,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgWoods_EventScript_ItemGreatBall",
+      "flag": "FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",

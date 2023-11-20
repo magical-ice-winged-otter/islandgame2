@@ -48,7 +48,7 @@ movement NeedRunningShoes_Movement {
 }
 
 text NeedRunningShoes_Text {
-    "{COLOR DARK_GRAY}I should get my Running Shoes..."
+    "{COLOR DARK_GRAY}I should change into my Running Shoes first."
 }
 
 text SwitchedRunningShoes_Text {
@@ -57,5 +57,11 @@ text SwitchedRunningShoes_Text {
 }
 
 text ArrivedAtCheriport_Text {
-    format("{COLOR DARK_GRAY}This is the captain of SS Rain, and we have arrived at Cheriport earlier than our expected time of...?")
+    format(
+        "{COLOR DARK_GRAY}Ladies and gentleman, this is your captain speaking! \p"
+        "{COLOR DARK_GRAY}I'm happy to announce to you that we've finally reached our destination! \p"
+        "{COLOR DARK_GRAY}On behalf of the entire crew, I'd like to thank you for choosing to sail with us! \p"
+        "{COLOR DARK_GRAY}Now, set forth and explore the isles of Mariyama! Until next time. Buh-bye! \p"
+        "{COLOR RED}(I've finally arrived. I should set my watch to the correct time first...)"
+    )
 }

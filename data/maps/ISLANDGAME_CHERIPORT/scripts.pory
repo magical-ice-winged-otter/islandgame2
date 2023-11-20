@@ -4,10 +4,10 @@ const VAR_CURRENT_HOUR = VAR_0x8000
 mapscripts ISLANDGAME_CHERIPORT_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
 
-        if (!flag(FLAG_LEFT_SHIP)) {
-            setflag(FLAG_LEFT_SHIP)
-            setflag(FLAG_ROOM3_ITEM)
-        }
+        // if (!flag(FLAG_LEFT_SHIP)) {
+        //     setflag(FLAG_LEFT_SHIP)
+        //     setflag(FLAG_ROOM3_ITEM)
+        // }
 
         if (flag(FLAG_PROF_GAVE_EEVEE)) {
             setvar(VAR_TEMP_1, 1)
@@ -25,7 +25,7 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
     lock
     showmoneybox(0, 0)
-    msgbox("Premium Cheri-Cola made with REAL sugar, only ¥600 a pop!", MSGBOX_YESNO)
+    msgbox(format("{COLOR DARK_GRAY}Premium Cheri-Cola made with REAL sugar, only ¥600 a pop!"), MSGBOX_YESNO)
 
     if (var(VAR_RESULT) == NO) {
         msgbox("Huh? You're missin' out, bud!")
@@ -35,14 +35,14 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
     checkmoney(100)
 
     if (!var(VAR_RESULT)) {
-        msgbox("Oi, this is PREMIUM soda. If you can't afford it, then beat it!")
+        msgbox(format("{COLOR DARK_GRAY}Oi, this is PREMIUM soda. If you can't afford it, then beat it!"))
         goto(NightBeachSodaVendor_End)
     }
 
     checkitemspace(ITEM_SODA_POP)
 
     if (!var(VAR_RESULT)) {
-        msgbox("Oi, you need to make some space for this PREMIUM soda.")
+        msgbox(format("{COLOR DARK_GRAY}Oi, you need to make some space for this PREMIUM soda."))
         goto(NightBeachSodaVendor_End)
     }
 
