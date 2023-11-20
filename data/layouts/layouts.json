@@ -4736,8 +4736,8 @@
       "name": "ISLANDGAME_ROSEVALE_Layout",
       "width": 50,
       "height": 45,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_islandgame_rosevale",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE/map.bin"
     },
