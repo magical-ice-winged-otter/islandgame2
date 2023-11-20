@@ -87,6 +87,6 @@ script ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_NPC {
 
 text ISLANDGAME_MAPLEGROVE_HOUSE1_NPCTalk {
     format(
-        "{COLOR DARK_GRAY}My Togepi is very talkative. I wish I could understand what he was saying... \p"
+        "{COLOR DARK_GRAY}My Togepi is very talkative. I wish I could understand what he was saying..."
     )
 }

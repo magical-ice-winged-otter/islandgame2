@@ -223,7 +223,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
             "{COLOR DARK_GRAY}...! \p"
             "{COLOR DARK_GRAY}You're {PLAYER}? The one who the professor said I'd be working with? \p"
             "{COLOR DARK_GRAY}It's good to meet you! I'm Audrey, a rising trainer just like you! \p"
-            "{COLOR DARK_GRAY}I was trying to fill out my Pokédex here, but I just couldn't find a Riolu... \p"
+            "{COLOR DARK_GRAY}I was trying to fill out my Pokédex here, but I just couldn't find a Riolu..."
             )
         )
 

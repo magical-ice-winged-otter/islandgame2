@@ -241,22 +241,23 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown:
 	step_end
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_0
 	applymovement 15, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown
 	waitmovement 15
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_0
-	trainerbattle_no_intro TRAINER_MINTY_MEADOWS_RIVAL, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1
+	trainerbattle_no_intro TRAINER_MINTY_MEADOWS_RIVAL, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_ne ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_2
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3
 	closemessage
 	addobject 16
 	setobjectxy 16, 11, 11
 	applymovement 16, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
 	waitmovement 16
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3
-	startquest QUEST_FRESA_FARMS_LOST_MAREEP
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4
+	startquest QUEST_FRESA_FARMS_LOST_MAREEP
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_5
 	closemessage
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 	setfollower 15, 100, 0
@@ -580,19 +581,35 @@ ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival_Text_0:
 	.string "Old Man: Oh...\pWhat am I going to do...\p(Probably best to leave him alone)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_0:
-	.string "Audrey: I'm bored! Let's fight!$"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Ugg... I'm only missing one more\n"
+	.string "Pokémon on the list, and I can't find\l"
+	.string "it!\p"
+	.string "{COLOR DARK_GRAY}Waah! I give up! I'm convinced it\n"
+	.string "doesn't even exist!\p"
+	.string "{COLOR DARK_GRAY}Eh?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1:
-	.string "Audrey: Wow, you're strong!$"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Umm, hi! Do I know you?\p"
+	.string "{COLOR DARK_GRAY}...!\p"
+	.string "{COLOR DARK_GRAY}You're {PLAYER}? The one who the\n"
+	.string "professor said I'd be working with?\p"
+	.string "{COLOR DARK_GRAY}It's good to meet you! I'm Audrey, a\n"
+	.string "rising trainer just like you!\p"
+	.string "{COLOR DARK_GRAY}I was trying to fill out my Pokédex\n"
+	.string "here, but I just couldn't find a Riolu...\p"
+	.string "$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2:
-	.string "Audrey: Man, you beat me!$"
+	.string "Wow, you're pretty good!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3:
+	.string "Audrey: Man, you beat me!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4:
 	.string "Old Man: Excuse me, I lost a Mareep!\p"
 	.string "Please help find it?$"
 
-ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4:
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_5:
 	.string "Audrey: I'm gonna go look for it!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0:
@@ -670,7 +687,7 @@ ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"
 
 MareepHelp_Text::
-	.string "{COLOR BLUE}bro help me$"
+	.string "{COLOR DARK_GRAY}bro help me$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss::
 	.string "{COLOR DARK_GRAY}I will keep looking for some bugs.$"

@@ -99,5 +99,4 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_PKMNTalk::
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_NPCTalk::
 	.string "{COLOR DARK_GRAY}My Togepi is very talkative. I wish I\n"
-	.string "could understand what he was saying...\p"
-	.string "$"
+	.string "could understand what he was saying...$"

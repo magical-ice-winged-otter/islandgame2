@@ -5,7 +5,7 @@ ISLANDGAME_MAPLEGROVE_PKMNMART_MapScripts::
 ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_Employee::
 	msgbox ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_Employee_Text_0
 	closemessage
-	pokemart MartItems
+	pokemart Maplegrove_MartItems
 	msgbox ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_Employee_Text_1
 	closemessage
 	return
