@@ -77,7 +77,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3 {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4 {
-    trainerbattle_single(TRAINER_CORANNA_1_NPC3,
+    trainerbattle_single(TRAINER_CORANNA_1_NPC4,
         format("I don't know if I'm ready for this wildness yet, but I want to grow stronger! Let's train!"),
         format("Thanks for the battle!")
     )

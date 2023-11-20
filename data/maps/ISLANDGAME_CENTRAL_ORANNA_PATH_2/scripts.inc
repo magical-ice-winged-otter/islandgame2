@@ -11,13 +11,39 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	return
 
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_RestHouseSign::
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_RestHouseSign_Text_0, MSGBOX_SIGN
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid::
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0, MSGBOX_NPC
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	return
 
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_TidalCoveApproachSign::
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_TidalCoveApproachSign_Text_0, MSGBOX_SIGN
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper::
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper_Text_0, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman::
+	trainerbattle_single TRAINER_LOLA_4, ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_0, ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_1
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_2, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1::
+	trainerbattle_single TRAINER_LOLA_1, ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_0, ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_1
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_2, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac::
+	trainerbattle_single TRAINER_LOLA_2, ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_0, ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_1
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_2, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker::
+	trainerbattle_single TRAINER_LOLA_4, ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_0, ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_1
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_2, MSGBOX_NPC
 	return
 
 
@@ -133,11 +159,64 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3::
 	return
 
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_RestHouseSign_Text_0:
-	.string "REST HOUSE$"
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0:
+	.string "Man, swimming looks so fun!$"
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_TidalCoveApproachSign_Text_0:
-	.string "PATH TO TIDALCOVE$"
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper_Text_0:
+	.string "Hey traveler! Nice job on making it this\n"
+	.string "far.\p"
+	.string "We're at about halfway to Tidalcove.\n"
+	.string "This is a great place to hone your\l"
+	.string "skills, especially before meeting\l"
+	.string "Oranna's Gym Leader, Ruka!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_0:
+	.string "Oh, are you interesting in seeing some\n"
+	.string "of my catches?$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_1:
+	.string "Back to fishing.$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_2:
+	.string "This is a nice place to fish since it's so\n"
+	.string "remote.\p"
+	.string "Nothing like waking up early to the\n"
+	.string "sounds of nature and fishing!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_0:
+	.string "Isn't it nice for someone to put a\n"
+	.string "resting-house in the middle of the\l"
+	.string "woods?$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_1:
+	.string "Good thing for the resting house!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_2:
+	.string "Camping is nice and all, but nothing\n"
+	.string "beats a warm bed.$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_0:
+	.string "Hehe... let's battle!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_1:
+	.string "Impossible!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_2:
+	.string "Listen: wild routes like this attract a\n"
+	.string "lot of bug catchers and grass-type\l"
+	.string "enthusiasts. Is it so wrong to bring a\l"
+	.string "little heat?$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_0:
+	.string "Hey, check out my new ride! I love going\n"
+	.string "fast!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_1:
+	.string "How did you outspeed me?$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_2:
+	.string "Like, you should totally get a bike! The\n"
+	.string "guy in Tidalcove is the best!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_0:
 	.string "Prim: Luxray, finish things up here.$"

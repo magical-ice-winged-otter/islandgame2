@@ -1,5 +1,10 @@
 const VAR_CUTSCENE_FINISHED = VAR_TEMP_0
 
+const TRAINER_CORANNA_2_CAMPER1 = TRAINER_LOLA_1
+const TRAINER_CORANNA_2_MANIAC = TRAINER_LOLA_2
+const TRAINER_CORANNA_2_BIKER = TRAINER_LOLA_3
+const TRAINER_CORANNA_2_FISHERMAN = TRAINER_LOLA_4
+
 const LOCALID_LUXRAY = 8
 const LOCALID_PRIM = 1
 const LOCALID_FAN_1 = 7
@@ -13,12 +18,46 @@ mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts {
     }
 }
 
-script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_RestHouseSign {
-    msgbox(format("REST HOUSE"), MSGBOX_SIGN)
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid {
+    msgbox(format("Man, swimming looks so fun!"), MSGBOX_NPC)
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
 }
 
-script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_TidalCoveApproachSign {
-    msgbox(format("PATH TO TIDALCOVE"), MSGBOX_SIGN)
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper {
+    msgbox(format("Hey traveler! Nice job on making it this far.\pWe're at about halfway to Tidalcove.\nThis is a great place to hone your skills, especially before meeting Oranna's Gym Leader, Ruka!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman {
+    trainerbattle_single(TRAINER_CORANNA_2_FISHERMAN, 
+        format("Oh, are you interesting in seeing some of my catches?"), 
+        format("Back to fishing.")
+    )
+    msgbox(format("This is a nice place to fish since it's so remote.\pNothing like waking up early to the sounds of nature and fishing!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1 {
+    trainerbattle_single(TRAINER_CORANNA_2_CAMPER1, 
+        format("Isn't it nice for someone to put a resting-house in the middle of the woods?"), 
+        format("Good thing for the resting house!")
+    )
+    msgbox(format("Camping is nice and all, but nothing beats a warm bed."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac {
+    trainerbattle_single(TRAINER_CORANNA_2_MANIAC, 
+        format("Hehe... let's battle!"), 
+        format("Impossible!")
+    )
+    msgbox(format("Listen: wild routes like this attract a lot of bug catchers and grass-type enthusiasts. Is it so wrong to bring a little heat?"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker {
+    trainerbattle_single(TRAINER_CORANNA_2_BIKER, 
+        format("Hey, check out my new ride! I love going fast!"), 
+        format("How did you outspeed me?")
+    )
+    msgbox(format("Like, you should totally get a bike! The guy in Tidalcove is the best!"), MSGBOX_NPC)
 }
  
 movement Movement_LuxrayAttack {

@@ -34,6 +34,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous::
 	waitmovement 0
 	waitmoncry
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous_Text_0
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerPushBack
 	waitmovement 0
 	release
@@ -66,13 +67,15 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4::
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger::
 	switch VAR_MINTY_MEADOWS_STATE
-	case 4, ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_2
+	case 4, ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_3
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_1, MSGBOX_NPC
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_1:
+	closemessage
 	return
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_2:
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_3:
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_0
-	return
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_1
 
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign::
