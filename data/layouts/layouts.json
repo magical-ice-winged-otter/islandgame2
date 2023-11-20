@@ -4676,8 +4676,8 @@
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
       "width": 90,
       "height": 50,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_IslandgameTidalcove",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/map.bin"
     },
