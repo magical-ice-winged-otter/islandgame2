@@ -27,7 +27,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 26,
+      "x": 25,
       "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",

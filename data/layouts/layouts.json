@@ -4774,7 +4774,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_MAPLEGROVE",
       "name": "ISLANDGAME_MAPLEGROVE_Layout",
-      "width": 40,
+      "width": 46,
       "height": 40,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_islandgame_maplegrove",
@@ -4946,8 +4946,8 @@
       "name": "ISLANDGAME_ROSEVALE_PKMNCENTER_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER/map.bin"
     },

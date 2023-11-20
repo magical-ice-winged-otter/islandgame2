@@ -60,6 +60,10 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
     ]
 }
 
+script ISLANDGAME_ROSEVALE_Interact_LockedDoor {
+    msgbox(format("The door is locked"), MSGBOX_SIGN)
+}
+
 script ISLANDGAME_ROSEVALE_Interact_PuddleMon {
     lock
     faceplayer

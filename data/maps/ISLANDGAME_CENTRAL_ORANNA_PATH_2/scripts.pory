@@ -33,10 +33,10 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1 {
     trainerbattle_single(TRAINER_CORANNA_2_CAMPER, 
-        format("Isn't it nice for someone to put a resting-house in the middle of the woods?"), 
-        format("Good thing for the resting house!")
+        format("Isn't it nice for someone to build a house in the middle of the woods?"), 
+        format("Wow, you beat me!")
     )
-    msgbox(format("Camping is nice and all, but nothing beats a warm bed."), MSGBOX_NPC)
+    msgbox(format("Camping is nice and all, but nothing beats a warm bed..."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac {
