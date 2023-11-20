@@ -1,10 +1,5 @@
 const VAR_CUTSCENE_FINISHED = VAR_TEMP_0
 
-const TRAINER_CORANNA_2_CAMPER1 = TRAINER_LOLA_1
-const TRAINER_CORANNA_2_MANIAC = TRAINER_LOLA_2
-const TRAINER_CORANNA_2_BIKER = TRAINER_LOLA_3
-const TRAINER_CORANNA_2_FISHERMAN = TRAINER_LOLA_4
-
 const LOCALID_LUXRAY = 8
 const LOCALID_PRIM = 1
 const LOCALID_FAN_1 = 7
@@ -37,7 +32,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1 {
-    trainerbattle_single(TRAINER_CORANNA_2_CAMPER1, 
+    trainerbattle_single(TRAINER_CORANNA_2_CAMPER, 
         format("Isn't it nice for someone to put a resting-house in the middle of the woods?"), 
         format("Good thing for the resting house!")
     )

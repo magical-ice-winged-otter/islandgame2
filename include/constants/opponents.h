@@ -109,15 +109,26 @@
 #define TRAINER_NORANNA_LOWER_NPC_EAST       48
 #define TRAINER_NORANNA_LOWER_NPC_MIDDLE     49
 #define TRAINER_NORANNA_LOWER_NPC_WEST       50
-#define TRAINER_GABBY_AND_TY_1               51
-#define TRAINER_GABBY_AND_TY_2               52
-#define TRAINER_GABBY_AND_TY_3               53
-#define TRAINER_GABBY_AND_TY_4               54
-#define TRAINER_GABBY_AND_TY_5               55
-#define TRAINER_GABBY_AND_TY_6               56
-#define TRAINER_LOLA_1                       57
-#define TRAINER_AUSTINA                      58
-#define TRAINER_GWEN                         59
+#define TRAINER_GABBY_AND_TY_1               TRAINER_NORANNA_LOWER_NPC_WEST
+
+//CENTRAL ORANNA PATH
+#define TRAINER_CORANNA_1_NPC1               51
+#define TRAINER_CORANNA_1_NPC2               52
+#define TRAINER_CORANNA_1_NPC3               53
+#define TRAINER_CORANNA_1_NPC4               54
+#define TRAINER_GABBY_AND_TY_2               TRAINER_CORANNA_1_NPC1
+#define TRAINER_GABBY_AND_TY_3               TRAINER_CORANNA_1_NPC2
+#define TRAINER_GABBY_AND_TY_4               TRAINER_CORANNA_1_NPC3
+#define TRAINER_GABBY_AND_TY_5               TRAINER_CORANNA_1_NPC4
+#define TRAINER_CORANNA_2_CAMPER             55
+#define TRAINER_CORANNA_2_MANIAC             56
+#define TRAINER_CORANNA_2_BIKER              57
+#define TRAINER_CORANNA_2_FISHERMAN          58
+#define TRAINER_GABBY_AND_TY_6               TRAINER_CORANNA_2_CAMPER
+#define TRAINER_LOLA_1                       TRAINER_CORANNA_2_MANIAC
+#define TRAINER_AUSTINA                      TRAINER_CORANNA_2_BIKER
+#define TRAINER_GWEN                         TRAINER_CORANNA_2_FISHERMAN
+
 #define TRAINER_LOLA_2                       60
 #define TRAINER_LOLA_3                       61
 #define TRAINER_LOLA_4                       62
