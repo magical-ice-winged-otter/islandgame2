@@ -450,42 +450,42 @@ text MareepHelp_Text {
 ///TRAINERS
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER1, format("{COLOR DARK_GRAY}Where are the Bug POKEMON in these plains?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_1, format("{COLOR DARK_GRAY}Where are the Bug POKEMON in these plains?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss)
 	msgbox(format("{COLOR DARK_GRAY}I heard some bug exists in the cave."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER2, format("{COLOR DARK_GRAY}I like coming here on my days off."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_2, format("{COLOR DARK_GRAY}I like coming here on my days off."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss)
 	msgbox(format("{COLOR DARK_GRAY}I need to go get milk from the nearby farms."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER3, format("{COLOR DARK_GRAY}I come here to practice my psychic powers."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_3, format("{COLOR DARK_GRAY}I come here to practice my psychic powers."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss)
 	msgbox(format("{COLOR DARK_GRAY}The nearby mountains make it easier to concentrate."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER4, format("{COLOR DARK_GRAY}That guy over there is so creepy."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_4, format("{COLOR DARK_GRAY}That guy over there is so creepy."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss)
 	msgbox(format("{COLOR DARK_GRAY}I heard Pokemon running around. Is there something happening?"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER5, format("{COLOR DARK_GRAY}My brother told me that there would be strong Bug POKEMONS here."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_5, format("{COLOR DARK_GRAY}My brother told me that there would be strong Bug POKEMONS here."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss)
 	msgbox(format("{COLOR DARK_GRAY}I will look for them until midnight if needed."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER6, format("{COLOR DARK_GRAY}I found a Mareep, but a Mightyena chased it away!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_6, format("{COLOR DARK_GRAY}I found a Mareep, but a Mightyena chased it away!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss)
 	msgbox(format("{COLOR DARK_GRAY}Maybe you are stronger than the Mightyena"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER7, format("{COLOR DARK_GRAY}I am the strongest Bug Trainer around these parts."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_7, format("{COLOR DARK_GRAY}I am the strongest Bug Trainer around these parts."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss)
 	msgbox(format("{COLOR DARK_GRAY}"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_TRAINER8, format("{COLOR DARK_GRAY}Shorts are comfy and easy to wear!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_8, format("{COLOR DARK_GRAY}Shorts are comfy and easy to wear!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
 	msgbox(format("{COLOR DARK_GRAY}If only I had a Rattata"), MSGBOX_AUTOCLOSE)
 }
 

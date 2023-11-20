@@ -41,6 +41,11 @@ Movement_LuxrayWalkAway:
 	face_right
 	delay_16
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	walk_right
 	walk_right
 	walk_right
@@ -63,6 +68,12 @@ Movement_Fan1WalkAway:
 	step_end
 
 Movement_Fan2WalkAway:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
