@@ -137,28 +137,24 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 	waitmovement 8
 	playmoncry SPECIES_DELCATTY, CRY_MODE_NORMAL
 	waitmoncry
+	playmoncry SPECIES_LOMBRE, CRY_MODE_WEAK
+	waitmoncry
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_1
 	closemessage
 	applymovement 1, Movement_PrimWalkAway
 	applymovement 8, Movement_LuxrayWalkAway
-	applymovement 3, Movement_Fan1WalkAway
-	applymovement 4, Movement_Fan2WalkAway
 	waitmovement 1
 	waitmovement 8
-	waitmovement 3
-	waitmovement 4
 	removeobject 1
 	removeobject 8
-	removeobject 3
-	removeobject 4
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_2
 	closemessage
-	applymovement 5, Movement_Fan3WalkAway
-	applymovement 7, Movement_Fan4WalkAway
+	applymovement 3, Movement_Fan3WalkAway
+	applymovement 5, Movement_Fan4WalkAway
+	waitmovement 3
 	waitmovement 5
-	waitmovement 7
+	removeobject 3
 	removeobject 5
-	removeobject 7
 	setflag FLAG_NORANNA_PRIM_CUTSCENE_FINISHED
 	setvar VAR_TEMP_0, 1
 	release
@@ -166,7 +162,15 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser::
+	lock
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser_Text_0, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre::
+	lock
+	playmoncry SPECIES_LOMBRE, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre_Text_0, MSGBOX_NPC
 	return
 
 
@@ -176,25 +180,29 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1::
 
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2_Text_0, MSGBOX_NPC
 	return
 
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3_Text_0, MSGBOX_NPC
 	return
 
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0:
-	.string "Man, swimming looks so fun!$"
+	.string "Swimming looks so fun!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper_Text_0:
-	.string "Hey traveler! Nice job on making it this\n"
-	.string "far.\p"
-	.string "We're at about halfway to Tidalcove.\n"
-	.string "This is a great place to hone your\l"
-	.string "skills, especially before meeting\l"
-	.string "Oranna's Gym Leader, Ruka!$"
+	.string "Howdy trainer! Nice job on making it\n"
+	.string "this far.\p"
+	.string "You're 'bout halfway to Tidalcove!\p"
+	.string "I'll let you in on a little secret...\n"
+	.string "Oranna's gym leader, Ruka, specializes\l"
+	.string "in ice-type Pokémon!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_0:
 	.string "Oh, are you interesting in seeing some\n"
@@ -227,7 +235,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_1:
 	.string "Impossible!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_2:
-	.string "Listen: wild routes like this attract a\n"
+	.string "Listen. Wild routes like this attract a\n"
 	.string "lot of bug catchers and grass-type\l"
 	.string "enthusiasts. Is it so wrong to bring a\l"
 	.string "little heat?$"
@@ -244,28 +252,52 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_2:
 	.string "guy in Tidalcove is the best!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_0:
-	.string "Prim: Time to finish things up here.$"
+	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}Time to end this, Delcatty!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_1:
-	.string "Prim: Man, that was a waste of time! You\n"
-	.string "should have just given me the spot...$"
+	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}-sigh- What a waste of time. You\n"
+	.string "should've just given me the spot.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_2:
-	.string "{COLOR DARK_GRAY}Wait for us!$"
+	.string "{COLOR DARK_GRAY}Yeah! You should've just let her have\n"
+	.string "it! She has better things to do than\l"
+	.string "waste her time with scrubs like you!\p"
+	.string "{COLOR DARK_GRAY}Yeah! She's Prim, the greatest idol to\n"
+	.string "ever exist! She and Delcatty are gonna\l"
+	.string "take the world by storm!\p"
+	.string "{COLOR DARK_GRAY}You better believe she is! We stand with\n"
+	.string "Her Majesty!\p"
+	.string "{COLOR DARK_GRAY}E-Eh? W-Wait for us, Prim! C'mon\n"
+	.string "Katelyn, let's leave these goobers!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser_Text_0:
-	.string "Man, I lost so bad...$"
+	.string "N-No way... She beat me without taking a\n"
+	.string "scratch...$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre_Text_0:
+	.string "L-Lom...\p"
+	.string "{COLOR RED}(Looks like Lombre took a thrashing.)$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1_Text_0:
-	.string "Prim is really good... if only she could\n"
-	.string "wake up earlier.$"
+	.string "Prim is so pretty and confident. Her\n"
+	.string "Pokémon fight so elegantly too.\p"
+	.string "She could be a Pokémon Coordinator!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2_Text_0:
-	.string "It doesn't matter how good Prim is; she\n"
-	.string "still has no chance against Ruka.$"
+	.string "That Prim sure is incredible... She only\n"
+	.string "just became an idol a few months ago,\l"
+	.string "and now she's already become the most\l"
+	.string "popular celebrity in all of Mariyama.\p"
+	.string "Now, she's on her way to completing the\n"
+	.string "Isle Gym Challenge so she can enter in\l"
+	.string "the upcoming Silverwing Festival\l"
+	.string "Tournament!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3_Text_0:
-	.string "Since so many people come by to\n"
-	.string "challenge Ruka, she can only accept a\l"
-	.string "limited amount of people each day. Prim\l"
-	.string "was just fighting for the last spot.$"
+	.string "Ruka gets so many challenge requests\n"
+	.string "that she can only take a limited number\l"
+	.string "of them per day.\p"
+	.string "These two were having a battle to\n"
+	.string "decide who would get the last spot.\p"
+	.string "Poor kid... He never stood a chance\n"
+	.string "against Prim.$"

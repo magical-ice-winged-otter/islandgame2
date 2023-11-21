@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
   "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2",
   "layout": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
-  "music": "MUS_ROUTE118",
+  "music": "MUS_RG_SEVII_ROUTE",
   "region_map_section": "MAPSEC_CENTRAL_ORANNA_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -40,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
-      "x": 48,
+      "x": 47,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -113,7 +113,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1",
       "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
     },
     {
@@ -131,12 +131,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 70,
-      "y": 47,
+      "x": 75,
+      "y": 45,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper",
@@ -212,7 +212,7 @@
       "x": 32,
       "y": 21,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -269,7 +269,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre",
       "flag": "0"
     }
   ],

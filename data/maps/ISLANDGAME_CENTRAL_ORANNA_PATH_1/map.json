@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
   "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_1",
   "layout": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
-  "music": "MUS_ROUTE122",
+  "music": "MUS_RG_SEVII_ROUTE",
   "region_map_section": "MAPSEC_CENTRAL_ORANNA_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
