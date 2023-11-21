@@ -565,6 +565,21 @@ movement ISLANDGAME_MINTY_MEADOWS_2_WalkUp {
     walk_up
 }
 
+script ISLANDGAME_MINTY_MEADOWS_2_CantLeave2 {
+    lock
+    facefollower
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    release
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_WalkDown {
+    walk_down
+}
+
+
+
 ///TRAINERS
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1 {
