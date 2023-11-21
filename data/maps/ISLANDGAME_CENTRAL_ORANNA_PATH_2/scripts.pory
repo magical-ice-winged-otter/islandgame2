@@ -3,7 +3,9 @@ const VAR_CUTSCENE_FINISHED = VAR_TEMP_0
 const LOCALID_LUXRAY = 8
 const LOCALID_PRIM = 1
 const LOCALID_FAN_1 = 7
-const LOCALID_FAN_2 = 5
+const LOCALID_FAN_2 = 4
+const LOCALID_FAN_3 = 3
+const LOCALID_FAN_4 = 5
 
 mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -13,20 +15,54 @@ mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts {
     }
 }
 
-script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_RestHouseSign {
-    msgbox(format("REST HOUSE"), MSGBOX_SIGN)
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid {
+    msgbox(format("Swimming looks so fun!"), MSGBOX_NPC)
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
 }
 
-script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_TidalCoveApproachSign {
-    msgbox(format("PATH TO TIDALCOVE"), MSGBOX_SIGN)
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper {
+    msgbox(format("Howdy trainer! Nice job on making it this far.\pYou're 'bout halfway to Tidalcove!\pI'll let you in on a little secret... Oranna's gym leader, Ruka, specializes in ice-type Pokémon!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman {
+    trainerbattle_single(TRAINER_CORANNA_2_FISHERMAN, 
+        format("Oh, are you interesting in seeing some of my catches?"), 
+        "Back to fishing."
+    )
+    msgbox(format("This is a nice place to fish since it's so remote.\pNothing like waking up early to the sounds of nature and fishing!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1 {
+    trainerbattle_single(TRAINER_CORANNA_2_CAMPER, 
+        format("Isn't it nice for someone to build a house in the middle of the woods?"), 
+        "Wow, you beat me!"
+    )
+    msgbox(format("Camping is nice and all, but nothing beats a warm bed..."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac {
+    trainerbattle_single(TRAINER_CORANNA_2_MANIAC, 
+        format("Hehe... let's battle!"), 
+        "Impossible!"
+    )
+    msgbox(format("Listen. Wild routes like this attract a lot of bug catchers and grass-type enthusiasts. Is it so wrong to bring a little heat?"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker {
+    trainerbattle_single(TRAINER_CORANNA_2_BIKER, 
+        format("Hey, check out my new ride! I love going fast!"), 
+        "How did you outspeed me?"
+    )
+    msgbox(format("Like, you should totally get a bike! The guy in Tidalcove is the best!"), MSGBOX_NPC)
 }
  
 movement Movement_LuxrayAttack {
-    walk_right
+    jump_right
 }
 
 movement Movement_PrimWalkAway {
-    walk_right * 3
+    walk_right * 4
     walk_down
     walk_right * 4
 }
@@ -50,36 +86,69 @@ movement Movement_Fan2WalkAway {
     walk_right * 3
 }
 
+movement Movement_Fan3WalkAway {
+    walk_fast_down
+    walk_fast_right * 4
+}
+
+movement Movement_Fan4WalkAway {
+    walk_fast_down * 2
+    walk_fast_right * 4
+}
+
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
     lock
 
     // prim commands luxray to finish it
-    msgbox(format("Prim: Luxray, finish things up here."))
+    msgbox(
+        format(
+            "{COLOR GREEN}???: {COLOR DARK_GRAY}Time to end this, Delcatty!"
+            )
+        )
     closemessage
 
     // luxray attacks
     applymovement(LOCALID_LUXRAY, Movement_LuxrayAttack)
     waitmovement(LOCALID_LUXRAY)
-    playmoncry(SPECIES_LUXRAY, CRY_MODE_NORMAL)
+    playmoncry(SPECIES_DELCATTY, CRY_MODE_NORMAL)
+    waitmoncry
+    playmoncry(SPECIES_LOMBRE, CRY_MODE_WEAK)
     waitmoncry
 
     // prim roasts the opponent for losing
-    msgbox(format("Prim: Man, that was a waste of time! You should have just given me the spot..."))
+    msgbox(
+        format("{COLOR GREEN}???: {COLOR DARK_GRAY}-sigh- What a waste of time. You should've just given me the spot.")
+        )
     closemessage
 
     // prim and 2 spectators walk away
     applymovement(LOCALID_PRIM, Movement_PrimWalkAway)
     applymovement(LOCALID_LUXRAY, Movement_LuxrayWalkAway)
-    applymovement(LOCALID_FAN_1, Movement_Fan1WalkAway)
-    applymovement(LOCALID_FAN_2, Movement_Fan2WalkAway)
+    // applymovement(LOCALID_FAN_1, Movement_Fan1WalkAway)
+    // applymovement(LOCALID_FAN_2, Movement_Fan2WalkAway)
     waitmovement(LOCALID_PRIM)
     waitmovement(LOCALID_LUXRAY)
-    waitmovement(LOCALID_FAN_1)
-    waitmovement(LOCALID_FAN_2)
+    // waitmovement(LOCALID_FAN_1)
+    // waitmovement(LOCALID_FAN_2)
     removeobject(LOCALID_PRIM)
     removeobject(LOCALID_LUXRAY)
-    removeobject(LOCALID_FAN_1)
-    removeobject(LOCALID_FAN_2)
+    // removeobject(LOCALID_FAN_1)
+    // removeobject(LOCALID_FAN_2)
+
+    msgbox(format(
+        "{COLOR DARK_GRAY}Yeah! You should've just let her have it! She has better things to do than waste her time with scrubs like you! \p"
+        "{COLOR DARK_GRAY}Yeah! She's Prim, the greatest idol to ever exist! She and Delcatty are gonna take the world by storm! \p"
+        "{COLOR DARK_GRAY}You better believe she is! We stand with Her Majesty! \p"
+        "{COLOR DARK_GRAY}E-Eh? W-Wait for us, Prim! C'mon Katelyn, let's leave these goobers!"
+        ))
+    closemessage
+    applymovement(LOCALID_FAN_3, Movement_Fan3WalkAway)
+    applymovement(LOCALID_FAN_4, Movement_Fan4WalkAway)
+
+    waitmovement(LOCALID_FAN_3)
+    waitmovement(LOCALID_FAN_4)
+    removeobject(LOCALID_FAN_3)
+    removeobject(LOCALID_FAN_4)
 
     setflag(FLAG_NORANNA_PRIM_CUTSCENE_FINISHED)
     setvar(VAR_CUTSCENE_FINISHED, 1)
@@ -87,21 +156,32 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser {
-    msgbox(format("Man, I lost so bad..."), MSGBOX_NPC)
+    lock
+    msgbox(format("N-No way... She beat me without taking a scratch..."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre {
+    lock
+    playmoncry(SPECIES_LOMBRE,CRY_MODE_NORMAL)
+    msgbox(format("L-Lom...\p{COLOR RED}(Looks like Lombre took a thrashing.)"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1 {
-    msgbox(format("Prim is really good... if only she could wake up earlier."), MSGBOX_NPC)
+    msgbox(format("Prim is so pretty and confident. Her Pokémon fight so elegantly too.\pShe could be a Pokémon Coordinator!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2 {
-    msgbox(format("It doesn't matter how good Prim is; she still has no chance against Ruka."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format("That Prim sure is incredible... She only just became an idol a few months ago, and now she's already become the most popular celebrity in all of Mariyama.\pNow, she's on her way to completing the Mariyama Gym Challenge so she can enter in the upcoming Silverwing Festival Tournament!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3 {
+    lock
+    faceplayer
     msgbox(format(
-        "Since so many people come by to challenge Ruka,"
-        "she can only accept a limited amount of people each day."
-        "Prim was just fighting for the last spot."
+        "Ruka gets so many challenge requests that she can only take a limited number of them per day.\p"
+        "These two were having a battle to decide who would get the last spot.\p"
+        "Poor kid... He never stood a chance against Prim."
     ), MSGBOX_NPC)
 }

@@ -3,7 +3,7 @@ ISLANDGAME_CHERIPORT_MapScripts::
 	.byte 0
 
 ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	goto_if_unset FLAG_LEFT_SHIP, ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto_if_set FLAG_PROF_GAVE_EEVEE, ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	gettime
 	compare VAR_0x8000, 12 + 6
@@ -11,8 +11,7 @@ ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	return
 
 ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
-	setflag FLAG_LEFT_SHIP
-	setflag FLAG_ROOM3_ITEM
+	setvar VAR_TEMP_1, 1
 	goto ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
@@ -22,6 +21,7 @@ ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor::
 	lock
+	faceplayer
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, NO
@@ -220,16 +220,19 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4::
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_0:
-	.string "Premium Cheri-Cola made with REAL sugar, only ¥600 a pop!$"
+	.string "{COLOR DARK_GRAY}Premium Cheri-Cola made with REAL\n"
+	.string "sugar, only ¥600 a pop!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_1:
 	.string "Huh? You're missin' out, bud!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_2:
-	.string "Oi, this is PREMIUM soda. If you can't afford it, then beat it!$"
+	.string "{COLOR DARK_GRAY}Oi, this is PREMIUM soda. If you can't\n"
+	.string "afford it, then beat it!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3:
-	.string "Oi, you need to make some space for this PREMIUM soda.$"
+	.string "{COLOR DARK_GRAY}Oi, you need to make some space for this\n"
+	.string "PREMIUM soda.$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4:
 	.string "Here ya go, friend!$"

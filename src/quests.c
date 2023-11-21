@@ -252,6 +252,11 @@ static const u8 sText_AZ[] = _(" A-Z");
 const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
 const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
 const u8 sText_SideQuestMap_NorthernOrannaPath[] = _("N. Oranna Path");
+const u8 sText_SideQuestMap_CentralOrannaPath[] = _("C. Oranna Path");
+const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
+const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
+const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
+const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
 
 // Persi Favorite Card Quest
 const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
@@ -285,6 +290,7 @@ const u8 sText_SideQuestDoneDesc_FresaFarmsLostMareep[] = _("You found and retur
 const u8 sText_SideQuestName_FresaFarmsTorchicEgg[] = _("The Egg");
 const u8 sText_SideQuestDesc_FresaFarmsTorchicEgg[] = _("A farmer from Fresa Farms needs\nyou to hatch an egg.");
 const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg, and raised\na Torchic!");
+
 // Fitness Freak Quest
 const u8 sText_SideQuestName_FitnessFreak[] = _("Vitamin Search");
 const u8 sText_SideQuestDesc_FitnessFreak[] = _("The Fitness Freak can't afford\nvitamins! Bring him some\nfor fitness-related rewards!");
@@ -306,6 +312,71 @@ const u8 sText_SubQuest_FitnessFreak_PpUp_Name[] = _("PP Up");
 const u8 sText_SubQuest_FitnessFreak_PpUp_Desc[] = _("Find and return a PP Up\nto the Fitness Freak.");
 const u8 sText_SubQuest_FitnessFreak_PpMax_Name[] = _("PP Max");
 const u8 sText_SubQuest_FitnessFreak_PpMax_Desc[] = _("Find and return a PP Max\nto the Fitness Freak.");
+
+// Tidalcove Rare Pokemon Quest
+const u8 sText_SideQuestName_TidalcoveRarePkmn[] = _("Rare Pokemon");
+const u8 sText_SideQuestDesc_TidalcoveRarePkmn[] = _("A collector from Tidalcove\nwant's to see rare Pokemon\nfrom Oranna!");
+const u8 sText_SideQuestDoneDesc_TidalcoveRarePkmn[] = _("You discovered and caught\nrare Pokemon from all over\nOranna.");
+// - Subquests
+const u8 sText_SubQuest_TidalcoveRarePkmn_Pikachu_Name[] = _("Pikachu");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Pikachu_Desc[] = _("Capture and show a Pikachu to the collector.");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Squirtle_Name[] = _("Squirtle");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Squirtle_Desc[] = _("Capture and show a Squirtle to the collector.");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Rowlet_Name[] = _("Rowlet");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Rowlet_Desc[] = _("Capture and show a Rowlet to the collector.");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Tepig_Name[] = _("Tepig");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Tepig_Desc[] = _("Capture and show a Tepig to the collector.");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Delibird_Name[] = _("Delibird");
+const u8 sText_SubQuest_TidalcoveRarePkmn_Delibird_Desc[] = _("Capture and show a Delibird to the collector.");
+
+static const struct SubQuest sSubQuests_TidalcoveRarePkmn[SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN] =
+{
+    sub_quest(
+          SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU,
+          sText_SubQuest_TidalcoveRarePkmn_Pikachu_Name,
+          sText_SubQuest_TidalcoveRarePkmn_Pikachu_Desc,
+          sText_SideQuestMap_TravelersTunnel,
+          SPECIES_PIKACHU,
+          PKMN,
+          sText_Found
+    ),
+    sub_quest(
+          SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE,
+          sText_SubQuest_TidalcoveRarePkmn_Squirtle_Name,
+          sText_SubQuest_TidalcoveRarePkmn_Squirtle_Desc,
+          sText_SideQuestMap_CentralOrannaPath,
+          SPECIES_SQUIRTLE,
+          PKMN,
+          sText_Found
+    ),
+    sub_quest(
+          SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET,
+          sText_SubQuest_TidalcoveRarePkmn_Rowlet_Name,
+          sText_SubQuest_TidalcoveRarePkmn_Rowlet_Desc,
+          sText_SideQuestMap_Persi,
+          SPECIES_ROWLET,
+          PKMN,
+          sText_Found
+    ),
+    sub_quest(
+          SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG,
+          sText_SubQuest_TidalcoveRarePkmn_Tepig_Name,
+          sText_SubQuest_TidalcoveRarePkmn_Tepig_Desc,
+          sText_SideQuestMap_VerdantWoods,
+          SPECIES_TEPIG,
+          PKMN,
+          sText_Found
+    ),
+    sub_quest(
+          SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD,
+          sText_SubQuest_TidalcoveRarePkmn_Delibird_Name,
+          sText_SubQuest_TidalcoveRarePkmn_Delibird_Desc,
+          sText_SideQuestMap_MtAurora,
+          SPECIES_DELIBIRD,
+          PKMN,
+          sText_Found
+    ),
+};
 
 
 static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_BERRY] =
@@ -494,6 +565,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
               0 
 	),
+        [QUEST_TIDALCOVE_RARE_PKMN] = side_quest(
+              sText_SideQuestName_TidalcoveRarePkmn,
+              sText_SideQuestDesc_TidalcoveRarePkmn,
+              sText_SideQuestDoneDesc_TidalcoveRarePkmn,
+              sText_SideQuestMap_FresaFarms,
+              OBJ_EVENT_GFX_GENTLEMAN,
+              OBJECT,
+              sSubQuests_TidalcoveRarePkmn,
+              SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN
+        )
 };
 
 //BG layer defintions

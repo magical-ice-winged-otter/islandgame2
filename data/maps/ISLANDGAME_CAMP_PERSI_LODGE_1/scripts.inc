@@ -31,6 +31,11 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3::
 	return
 
 
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4::
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk, MSGBOX_NPC
+	return
+
+
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk::
 	.string "{COLOR DARK_GRAY}I sent Hanzo to clean up the camp tree\n"
 	.string "house hours ago.\p"
@@ -38,19 +43,20 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk::
 	.string "better not be horsing around with that\l"
 	.string "machete in there like last time...\p"
 	.string "{COLOR DARK_GRAY}-sigh- I don't get paid enough for this.\n"
-	.string "This is a CAMP, not a DAYCARE!\p"
-	.string "$"
+	.string "This is a CAMP, not a DAYCARE!$"
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk::
 	.string "{COLOR DARK_GRAY}Give me the controller! The scoutmaster\n"
-	.string "said it's MY turn now!\p"
-	.string "$"
+	.string "said it's MY turn now!$"
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk::
 	.string "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense\n"
-	.string "game right now!\p"
-	.string "$"
+	.string "game right now!$"
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk::
-	.string "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-\p"
-	.string "$"
+	.string "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk::
+	.string "{COLOR DARK_GRAY}We only brought 2 controllers...\p"
+	.string "So I get to take over for whoever\n"
+	.string "loses!$"

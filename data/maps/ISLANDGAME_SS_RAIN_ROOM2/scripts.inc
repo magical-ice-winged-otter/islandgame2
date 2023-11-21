@@ -42,6 +42,7 @@ SS_Rain_EventScript_SetClock::
 	waitstate
 	delay 30
 	setflag FLAG_SET_WALL_CLOCK
+	closemessage
 	releaseall
 	return
 
@@ -62,13 +63,21 @@ NeedRunningShoes_Movement:
 	step_end
 
 NeedRunningShoes_Text::
-	.string "{COLOR DARK_GRAY}I should get my Running Shoes...$"
+	.string "{COLOR DARK_GRAY}I should change into my Running Shoes\n"
+	.string "first.$"
 
 SwitchedRunningShoes_Text::
 	.string "{COLOR DARK_GRAY}You switched your shoes with the\n"
 	.string "{COLOR DARK_GRAY}Running Shoes!$"
 
 ArrivedAtCheriport_Text::
-	.string "{COLOR DARK_GRAY}This is the captain of SS Rain, and we\n"
-	.string "have arrived at Cheriport earlier than\l"
-	.string "our expected time of...?$"
+	.string "{COLOR DARK_GRAY}Ladies and gentleman, this is your\n"
+	.string "captain speaking!\p"
+	.string "{COLOR DARK_GRAY}I'm happy to announce to you that we've\n"
+	.string "finally reached our destination!\p"
+	.string "{COLOR DARK_GRAY}On behalf of the entire crew, I'd like to\n"
+	.string "thank you for choosing to sail with us!\p"
+	.string "{COLOR DARK_GRAY}Now, set forth and explore the isles of\n"
+	.string "Mariyama! Until next time. Buh-bye!\p"
+	.string "{COLOR RED}(I've finally arrived. I should set my\n"
+	.string "watch to the correct time first...)$"

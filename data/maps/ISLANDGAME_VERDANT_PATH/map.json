@@ -17,6 +17,16 @@
       "map": "MAP_ISLANDGAME_CAMP_PERSI",
       "offset": -41,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ISLANDGAME_MAPLEGROVE",
+      "offset": 26,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ISLANDGAME_MAPLEGROVE",
+      "offset": 26,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -134,8 +144,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "RustboroCity_EventScript_ItemXDefend",
+      "flag": "FLAG_ITEM_RUSTBORO_CITY_X_DEFEND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -147,8 +157,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route103_EventScript_ItemGuardSpec",
+      "flag": "FLAG_ITEM_ROUTE_103_GUARD_SPEC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -186,8 +196,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route102_EventScript_ItemPotion",
+      "flag": "FLAG_ITEM_ROUTE_102_POTION"
     }
   ],
   "warp_events": [

@@ -10,6 +10,14 @@ ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition::
 
 
 ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse::
+	goto_if_set FLAG_PROF_GAVE_EEVEE, ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse_1
+	lock
+	msgbox ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse_Text_0
+	closemessage
+	release
+	return
+
+ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse_1:
 	setvar VAR_0x800B, 1
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
@@ -40,6 +48,11 @@ ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC3::
 	release
 	return
 
+
+ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse_Text_0:
+	.string "I'm sorry, you don't have any Pokemon!\p"
+	.string "If you visit Professor Palm, he might be\n"
+	.string "able to give you one.$"
 
 ISLAND_GAME_CHERIPORT_PKMNCENTER_NPC1_TALK::
 	.string "{COLOR DARK_GRAY}It's dangerous to wander outside\n"

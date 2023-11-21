@@ -1,1 +1,18 @@
 mapscripts ISLANDGAME_AURORA_WEATHER_INSTITUTE_MapScripts {}
+
+script ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist {
+    if (!flag(FLAG_RECEIVED_CASTFORM)) {
+        msgbox(format("Hello there!\pI am one of Professor Palm's aides, studying Mt. Aurora from this facility.\pIf you can catch 20 different Pokemon, I can give you a reward!"), MSGBOX_NPC)
+
+        callnative(CheckDexCount)
+
+        if (var(VAR_0x8000) >= 20) {
+            msgbox(format("Wow, you've caught over 20 Pokemon!\pHere, take this Castform!"), MSGBOX_NPC)
+            givemon(SPECIES_CASTFORM, 18)
+            setflag(FLAG_RECEIVED_CASTFORM)
+        }
+    }
+    else {
+        msgbox(format("Mt. Aurora is a fascinating place to study.\pThe effects of it on the ecosystem is unmatched on Oranna."), MSGBOX_NPC)
+    }
+}

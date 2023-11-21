@@ -657,3 +657,51 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
+
+MINTY_MEADOWS_3_ItemTMReturn::
+	finditem ITEM_TM_RETURN
+	end
+
+CAMP_PERSI_ItemTMDig::
+	finditem ITEM_TM_DIG
+	end
+
+CAMP_PERSI_ItemPotion::
+	finditem ITEM_POTION
+	end
+
+MINTY_MEADOWS_2_ItemMysticWater::
+	finditem ITEM_MYSTIC_WATER
+	end
+
+MINTY_MEADOWS_HOUSE_ItemHyperPotion::
+	finditem ITEM_HYPER_POTION
+	end
+
+COP_1_ItemNugget::
+	finditem ITEM_NUGGET
+	end
+
+COP_1_ItemBlackGlasses::
+	finditem ITEM_BLACK_GLASSES
+	end
+
+COP_2_ItemTMShockWave::
+	finditem ITEM_TM_SHOCK_WAVE
+	end
+
+COP_2_ItemPixiePlate::
+	finditem ITEM_PIXIE_PLATE
+	end
+
+Tidalcove_ItemHpUp::
+	finditem ITEM_HP_UP
+	end
+
+Tidalcove_ItemFullHeal::
+	finditem ITEM_FULL_HEAL
+	end
+
+AuroraPath_ItemNeverMeltIce::
+	finditem ITEM_NEVER_MELT_ICE
+	end

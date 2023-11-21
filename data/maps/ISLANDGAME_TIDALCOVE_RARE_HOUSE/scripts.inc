@@ -3,12 +3,159 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_MapScripts::
 
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector::
-	lock
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0
-End:
+	returnqueststate QUEST_TIDALCOVE_RARE_PKMN
+	switch VAR_RESULT
+	case 1, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_3
+	case 2, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_4
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1:
 	closemessage
 	release
 	return
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_3:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0, MSGBOX_NPC
+	startquest QUEST_TIDALCOVE_RARE_PKMN
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_4:
+	lock
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_1, MSGBOX_NPC
+	setvar VAR_0x8000, SPECIES_SQUIRTLE
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_6
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_5:
+	setvar VAR_0x8000, SPECIES_WARTORTLE
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_8:
+	setvar VAR_0x8000, SPECIES_BLASTOISE
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_12
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11:
+	setvar VAR_0x8000, SPECIES_ROWLET
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_15
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14:
+	setvar VAR_0x8000, SPECIES_DARTRIX
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_17:
+	setvar VAR_0x8000, SPECIES_DECIDUEYE
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_21
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_20:
+	setvar VAR_0x8000, SPECIES_DECIDUEYE_HISUIAN
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_24
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23:
+	setvar VAR_0x8000, SPECIES_TEPIG
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_27
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_26:
+	setvar VAR_0x8000, SPECIES_PIGNITE
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_30
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_29:
+	setvar VAR_0x8000, SPECIES_EMBOAR
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_33
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_32:
+	setvar VAR_0x8000, SPECIES_DELIBIRD
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_36
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_35:
+	setvar VAR_0x8000, SPECIES_PIKACHU
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_39
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_38:
+	goto End
+FoundSquirtle:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2
+	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE
+	giveitem ITEM_WATER_STONE
+	goto end
+FoundRowlet:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3
+	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET
+	giveitem ITEM_LEAF_STONE
+	goto end
+FoundTepig:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4
+	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG
+	giveitem ITEM_FIRE_STONE
+	goto end
+FoundDelibird:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5
+	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD
+	giveitem ITEM_ICE_STONE
+	goto end
+FoundPikachu:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6
+	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU
+	giveitem ITEM_THUNDER_STONE
+	goto end
+End:
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_6:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_5
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_8
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_12:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_15:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_17
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_21:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_20
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_24:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_27:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_26
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_30:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_29
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_33:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_32
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_36:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD, FoundDelibird
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_35
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_39:
+	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_38
 
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0:
@@ -17,3 +164,22 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0:
 	.string "If you can show me some rare Pokemon\n"
 	.string "from this island, I could offer you\l"
 	.string "some rare stones in return!$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_1:
+	.string "Do you have any rare Pokemon to show\n"
+	.string "me?$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2:
+	.string "Oh! I have never seen a Squirtle before!$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3:
+	.string "Oh! I have never seen a Rowlet before!$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4:
+	.string "Oh! I have never seen a Tepig before!$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5:
+	.string "Oh! I have never seen a Delibird before!$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6:
+	.string "Oh! I have never seen a Pikachu before!\p(He really must be from a distant land...)$"

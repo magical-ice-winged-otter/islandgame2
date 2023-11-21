@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_TIDALCOVE_PKMNCENTER",
   "name": "ISLANDGAME_TIDALCOVE_PKMNCENTER",
   "layout": "LAYOUT_ISLANDGAME_TIDALCOVE_PKMNCENTER",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_POKE_CENTER",
   "region_map_section": "MAPSEC_TIDALCOVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_Nurse",
       "flag": "0"
     },
     {

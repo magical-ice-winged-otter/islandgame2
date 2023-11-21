@@ -42,12 +42,12 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
+#define FLAG_NO_ENCOUNTER    0x20 
+#define FLAG_NO_COLLISION    0x21 
+#define FLAG_NO_TRAINER_SEE  0x22 
+#define FLAG_FORCE_DOUBLE_WILD 0x23 
+#define FLAG_SMART_WILD_AI    0x24 
+#define FLAG_NO_CATCHING    0x25 
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
@@ -1226,18 +1226,18 @@
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 //minty meadows
 #define FLAG_ITEM_MINTY_MEADOWS_1                                   0x498
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
+#define FLAG_ITEM_TM_RETURN                                         0x499 
+#define FLAG_ITEM_TM_DIG                                            0x49A 
+#define FLAG_ITEM_PERSI_POTION                                      0x49B
+#define FLAG_ITEM_MYSTIC_WATER                                      0x49C 
+#define FLAG_ITEM_MINTY_MEADOWS_HOUSE_HYPER_POTION                  0x49D
+#define FLAG_ITEM_COP_1_NUGGET                                      0x49E
+#define FLAG_ITEM_COP_1_BLACKGLASSES                                0x49F
+#define FLAG_ITEM_COP_2_TM_SHOCKWAVE                                0x4A0 
+#define FLAG_ITEM_COP_2_PIXIE_PLATE                                 0x4A1 
+#define FLAG_ITEM_TIDALCOVE_HP_UP                                   0x4A2
+#define FLAG_ITEM_TIDALCOVE_FULL_HEAL                               0x4A3
+#define FLAG_ITEM_AP_NEVER_MELT_ICE                                 0x4A4 
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
@@ -1535,7 +1535,7 @@
 //verdant-path: repel
 #define FLAG_VERDANT_PATH_NPC                       (SYSTEM_FLAGS + 0x91) 
 #define FLAG_NORANNA_PRIM_CUTSCENE_FINISHED         (SYSTEM_FLAGS + 0x92)
-#define FLAG_UNUSED_0x8F3                           (SYSTEM_FLAGS + 0x93) // Unused Flag
+#define FLAG_UNUSED_0x8F3                           (SYSTEM_FLAGS + 0x93) 
 #define FLAG_UNUSED_0x8F4                           (SYSTEM_FLAGS + 0x94) // Unused Flag
 #define FLAG_UNUSED_0x8F5                           (SYSTEM_FLAGS + 0x95) // Unused Flag
 #define FLAG_UNUSED_0x8F6                           (SYSTEM_FLAGS + 0x96) // Unused Flag

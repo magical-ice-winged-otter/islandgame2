@@ -167,8 +167,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Route103_EventScript_ItemPPUp",
+      "flag": "FLAG_ITEM_ROUTE_103_PP_UP"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -180,8 +180,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgWoods_EventScript_ItemParalyzeHeal",
+      "flag": "FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -193,8 +193,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgWoods_EventScript_ItemEther",
+      "flag": "FLAG_ITEM_PETALBURG_WOODS_ETHER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -206,8 +206,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgWoods_EventScript_ItemGreatBall",
+      "flag": "FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -299,6 +299,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_17"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 47,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PetalburgWoods_EventScript_ItemXAttack",
+      "flag": "FLAG_ITEM_PETALBURG_WOODS_X_ATTACK"
     }
   ],
   "warp_events": [
@@ -318,28 +331,28 @@
     },
     {
       "x": 32,
-      "y": 6,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
       "dest_warp_id": "3"
     },
     {
       "x": 33,
-      "y": 6,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
       "dest_warp_id": "4"
     },
     {
       "x": 4,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
       "dest_warp_id": "5"
     },
     {
       "x": 5,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_PATH",
       "dest_warp_id": "6"
@@ -367,8 +380,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 13,
-      "y": 19,
+      "x": 10,
+      "y": 15,
       "elevation": 0,
       "item": "ITEM_ISLANDGAME_TRADING_CARD",
       "flag": "FLAG_CAMP_PERSI_TRADING_CARD_ITEM"

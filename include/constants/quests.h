@@ -14,14 +14,14 @@
 #define QUEST_MENU_CHECK_COMPLETE       9   //checks if questId has been completed. Returns result to gSpecialVar_Result
 #define QUEST_MENU_BUFFER_QUEST_NAME    10   //buffers a quest name to gStringVar1
 
-
 // Custom Quests
 #define QUEST_PERSI_FAVORITE_CARD          0
 #define QUEST_PERSI_BERRY_MANIAC           1
 #define QUEST_FRESA_FARMS_LOST_MAREEP      2
 #define QUEST_FRESA_FARMS_TORCHIC_EGG      3
 #define QUEST_NORANNA_FITNESS_FREAK        4
-#define QUEST_COUNT                        5 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_TIDALCOVE_RARE_PKMN          5
+#define QUEST_COUNT                        6 // This number is literally how many to show in the UI (keep it accurate!)
 
 // Custom Sub-Quests
 #define SUB_QUEST_PERSI_BERRY_1            0
@@ -40,10 +40,17 @@
 #define SUB_QUEST_NORANNA_FITNESS_FREAK_PPUP    12
 #define SUB_QUEST_NORANNA_FITNESS_FREAK_PPMAX   13
 
+#define SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU   14
+#define SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE  15
+#define SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET    16
+#define SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG     17
+#define SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD  18
+
 #define SUB_QUEST_COUNT_PERSI_BERRY 6
 #define SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK 8
+#define SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN 5
 
-#define SUB_QUEST_COUNT SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK
+#define SUB_QUEST_COUNT SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK + SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN
 
 
 // We want to allocate more space in the saveblock for quests than we need,

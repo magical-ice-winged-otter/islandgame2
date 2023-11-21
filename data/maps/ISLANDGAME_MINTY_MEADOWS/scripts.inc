@@ -14,53 +14,62 @@ ISLANDGAME_MINTY_MEADOWS_OnLoad::
 	return
 
 
+ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign::
+	msgbox ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign_Text_0, MSGBOX_SIGN
+	return
+
+
 ISLANDGAME_MINTY_MEADOWS_Trainer1::
-	trainerbattle_double TRAINER_MINTY_MEADOWS_9, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_1, ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss
+	trainerbattle_double TRAINER_MINTY_MEADOWS_1, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_1
 	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_Trainer2::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_10, ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer2_Loss
+	trainerbattle_single TRAINER_MINTY_MEADOWS_2, ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer2_Loss
 	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_11, ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss
+	trainerbattle_single TRAINER_MINTY_MEADOWS_3, ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss
 	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_Trainer4::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_12, ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer4_Loss
+	trainerbattle_single TRAINER_MINTY_MEADOWS_4, ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer4_Loss
 	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_Trainer5::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_13, ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer5_Loss
+	trainerbattle_single TRAINER_MINTY_MEADOWS_5, ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer5_Loss
 	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_Trainer6::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_14, ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer6_Loss
+	trainerbattle_single TRAINER_MINTY_MEADOWS_6, ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer6_Loss
 	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_Trainer7::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_15, ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer7_Loss
+	trainerbattle_single TRAINER_MINTY_MEADOWS_7, ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer7_Loss
 	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_Trainer8::
-	trainerbattle_single TRAINER_MINTY_MEADOWS_16, ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer8_Loss
+	trainerbattle_single TRAINER_MINTY_MEADOWS_8, ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer8_Loss
 	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_1, MSGBOX_AUTOCLOSE
 	return
 
+
+ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign_Text_0:
+	.string "<-- MAPLEGROVE\n"
+	.string "--> MINTY MEADOWS$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_0:
 	.string "{COLOR DARK_GRAY}Hey, let's battle together!$"
@@ -70,40 +79,34 @@ ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_1:
 	.string "us.$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_2:
-	.string "{COLOR DARK_GRAY}Oh no, we lost!$"
+	.string "Oh no, we lost!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_0:
 	.string "{COLOR DARK_GRAY}Battling feels heavy today...$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_1:
-	.string "{COLOR DARK_GRAY}I couldn't overcome the weight. It's a\n"
-	.string "struggle, isn't it?$"
+	.string "I couldn't overcome the weight.\n It's a struggle, isn't it?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_0:
 	.string "{COLOR DARK_GRAY}Ready for a match? Let the excitement\n"
 	.string "begin!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_1:
-	.string "{COLOR DARK_GRAY}Wow, you're strong! That was a blast of\n"
-	.string "a battle!$"
+	.string "Wow, you're strong! That was a blast of \n a battle!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_0:
 	.string "{COLOR DARK_GRAY}In the meadow's embrace, let our\n"
 	.string "Pokémon bloom in battle!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_1:
-	.string "{COLOR DARK_GRAY}Alas, my Pokémon couldn't bloom to\n"
-	.string "victory this time. Your team flourished\l"
-	.string "beautifully!$"
+	.string "Alas, my Pokémon couldn't bloom to \nvictory this time.\p Your team flourished beautifully!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_0:
 	.string "{COLOR DARK_GRAY}Hello! Let's explore the wonders of this\n"
 	.string "lovely meadow together!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_1:
-	.string "{COLOR DARK_GRAY}Oh, our meadow journey had its\n"
-	.string "challenges. Nature's charm is truly\l"
-	.string "enchanting, isn't it?$"
+	.string "Oh, our meadow journey had its \nchallenges. \pNature's charm is truly enchanting,\nisn't it?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_0:
 	.string "{COLOR DARK_GRAY}Greetings! Let's revel in the marvels of\n"
@@ -111,30 +114,27 @@ ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_0:
 	.string "setting!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_1:
-	.string "{COLOR DARK_GRAY}Ah, my enthusiasm didn't secure\n"
-	.string "success! Your Pokémon shine like rare\l"
-	.string "gems!$"
+	.string "Ah, my enthusiasm didn't secure \nsuccess!\pYour Pokémon shine like rare gems!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_0:
 	.string "{COLOR DARK_GRAY}Hey there! Ready for a stroll through\n"
 	.string "nature's wonders?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_1:
-	.string "{COLOR DARK_GRAY}Whoops! Things didn't quite go as\n"
-	.string "planned, but hey, that's life, right?$"
+	.string "Whoops! Things didn't quite go as \nplanned, but hey, that's life, right?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_0:
 	.string "{COLOR DARK_GRAY}Hey! Ready for a laid-back time\n"
 	.string "outdoors?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_1:
-	.string "{COLOR DARK_GRAY}Your easygoing spirit is refreshing!$"
+	.string "Your easygoing spirit is refreshing!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss::
 	.string "{COLOR DARK_GRAY}We'll get you next time!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer2_Loss::
-	.string "{COLOR DARK_GRAY}Your strength is a beacon. I'll find my\n"
+	.string "Your strength is a beacon. I'll find my\n"
 	.string "own light in this darkness.$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss::

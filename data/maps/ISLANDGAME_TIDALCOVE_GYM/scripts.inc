@@ -21,7 +21,7 @@ ISLANDGAME_TIDALCOVE_GYM_MapScripts_MAP_SCRIPT_ON_LOAD:
 ISLANDGAME_TIDALCOVE_GYM_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_ICE_STEP_COUNT, 8, UnlockNextStairs
 	map_script_2 VAR_ICE_STEP_COUNT, 28, UnlockNextStairs
-	map_script_2 VAR_ICE_STEP_COUNT, 67, UnlockNextStairs
+	map_script_2 VAR_ICE_STEP_COUNT, 66, UnlockNextStairs
 	map_script_2 VAR_ICE_STEP_COUNT, 0, FallThroughIce
 	.2byte 0
 
@@ -32,14 +32,14 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor::
 
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka::
-	checktrainerflag TRAINER_JUAN_1
+	checktrainerflag TRAINER_LEADER_RUKA
 	goto_if 0, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_1
 	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_3, MSGBOX_NPC
 	return
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_1:
 	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_0, MSGBOX_NPC
-	trainerbattle_single TRAINER_JUAN_1, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_1, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_2, RukaDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_LEADER_RUKA, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_1, ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_2, RukaDefeated, NO_MUSIC
 	return
 
 
@@ -75,7 +75,7 @@ CheckSetStairMetatiles_1:
 	compare VAR_ICE_STEP_COUNT, 28
 	goto_if_ge CheckSetStairMetatiles_5
 CheckSetStairMetatiles_4:
-	compare VAR_ICE_STEP_COUNT, 67
+	compare VAR_ICE_STEP_COUNT, 66
 	goto_if_ge CheckSetStairMetatiles_7
 	return
 
@@ -138,10 +138,10 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_1:
 	.string "Let's go!$"
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_2:
-	.string "Nice, that was fun!$"
+	.string "That was fun!$"
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_3:
-	.string "Lumine really is a wonderful island.\p"
+	.string "Lumine is a wonderful island.\p"
 	.string "I'm sure you'll find lots of cool stuff\n"
 	.string "to do over there!$"
 

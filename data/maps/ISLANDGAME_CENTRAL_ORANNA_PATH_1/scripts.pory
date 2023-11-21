@@ -1,17 +1,92 @@
+const LOCALID_ENTRANCE_RANGER_1 = 1
+const LOCALID_ENTRANCE_RANGER_2 = 2
+const LOCALID_ENTRANCE_RANGER_3 = 3
+const LOCALID_MIGHTYENA_1 = 4
+const LOCALID_MIGHTYENA_2 = 5
+const LOCALID_MIGHTYENA_3 = 6
+
+const POS_HIDDEN_X = 0
+const POS_HIDDEN_Y = 0
+
+const VAR_MIGHTYENA_HIDDEN = VAR_TEMP_0
+
 mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        switch (var(VAR_MINTY_MEADOWS_STATE)) {
+            case 4:
+                setvar(VAR_MIGHTYENA_HIDDEN, 1)
+                setobjectxyperm(LOCALID_MIGHTYENA_1, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_MIGHTYENA_2, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_MIGHTYENA_3, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ENTRANCE_RANGER_1, 46, 35)
+                setobjectxyperm(LOCALID_ENTRANCE_RANGER_3, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ENTRANCE_RANGER_2, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectmovementtype(LOCALID_ENTRANCE_RANGER_1, MOVEMENT_TYPE_FACE_LEFT)
+        }
+    }
+}
+
+movement Movement_PlayerPushBack {
+    walk_down
+}
+
+movement Movement_MightyenaGrowl {
+    jump_in_place_down
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous {
+    lock
+    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_NORMAL)
+    applymovement(LOCALID_MIGHTYENA_1, Movement_MightyenaGrowl)
+    waitmovement(0)
+    waitmoncry
+    msgbox(format("Hey, its too dangerous to go any further! Come back later, we can handle this!"))
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerPushBack)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1 {
+    trainerbattle_single(TRAINER_CORANNA_1_NPC1,
+        format("It's a lot of walking to get to Tidalcove. Let's battle instead!"),
+        format("Well, good luck with the rest of your trip!")
+    )
+    msgbox(format("I heard that the trip is easier with a bike.\pBut the bike shop is in Tidalcove!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC2 {
+    trainerbattle_single(TRAINER_CORANNA_1_NPC2,
+        format("There's no mountain that my team and I can't climb!"),
+        format("Climb higher through failure!")
+    )
+    msgbox(format("One day, I'm going to climb Mt. Aurora!\pIt'll be hard... but it's the only way to know if the rumors are true..."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3 {
+    trainerbattle_single(TRAINER_CORANNA_1_NPC3,
+        format("Hey! There's only room for one bug catcher around here!"),
+        format("What's that? You don't care about bugs?")
+    )
+    msgbox(format("I bet there are all sorts of cool bugs here in Central Oranna..."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4 {
+    trainerbattle_single(TRAINER_CORANNA_1_NPC4,
+        format("I don't know if I'm ready for this wildness yet, but I want to grow stronger! Let's train!"),
+        format("Thanks for the battle!")
+    )
+    msgbox(format("It's ok to lose a couple times. Life is more of a marathon than a sprint!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger {
-    // todo: check state from noranna to clear this
-    msgbox(format("These Mightyena are blocking the path!\pI'm trying my best to clear them out, come back later."), MSGBOX_NPC)
-}
-
-script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_MightyenaBlocker {
-    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_NORMAL)
-    msgbox(format("The Mightyena looks very agitated."))
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case 4: msgbox(format("We finally managed to subdue the Mightyena from earlier! Be extra careful on central path today..."))
+        default: msgbox(format("These Mightyena are blocking the path!\pI'm trying my best to clear them out, come back later."), MSGBOX_NPC)
+    }
     closemessage
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign {
-    msgbox(format("CENTRAL ORANNA PATH\pWarning: wildlife out of control"), MSGBOX_SIGN)
+    msgbox(format("CENTRAL ORANNA PATH\nMAPLEGROVE -->"), MSGBOX_SIGN)
 }

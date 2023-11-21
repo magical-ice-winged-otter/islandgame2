@@ -971,3 +971,36 @@ const struct Tileset gTileset_IslandgameEmpty =
     .metatileAttributes = gMetatileAttributes_IslandgameEmpty,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_maplegrove =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_maplegrove,
+    .palettes = gTilesetPalettes_islandgame_maplegrove,
+    .metatiles = gMetatiles_islandgame_maplegrove,
+    .metatileAttributes = gMetatileAttributes_islandgame_maplegrove,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_rosevale =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_rosevale,
+    .palettes = gTilesetPalettes_islandgame_rosevale,
+    .metatiles = gMetatiles_islandgame_rosevale,
+    .metatileAttributes = gMetatileAttributes_islandgame_rosevale,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_IslandgameTidalcove =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IslandgameTidalcove,
+    .palettes = gTilesetPalettes_IslandgameTidalcove,
+    .metatiles = gMetatiles_IslandgameTidalcove,
+    .metatileAttributes = gMetatileAttributes_IslandgameTidalcove,
+    .callback = NULL,
+};

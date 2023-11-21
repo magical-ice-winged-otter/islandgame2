@@ -9,31 +9,32 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor::
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorOffer, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_2
-ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1:
+	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1
 	checkmoney 1000
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_5
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_4:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorWhichMon
 	setvar VAR_0x8005, MOVE_HIDDEN_POWER
-	call MoveTutor_EventScript_OpenPartyMenu
+	special ChooseMonForMoveTutor
+	waitstate
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_8
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_7:
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorMoveLearned
+	closemessage
 	removemoney 1000
 	updatemoneybox
-HPTutor_End:
-	hidemoneybox
-	release
+	playse SE_SHOP
+	waitse
+	goto HPTutor_End
 	return
 
-ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_2:
+ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_Text_0
 	goto HPTutor_End
-	goto ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1
+	return
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_5:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_Text_1
@@ -44,6 +45,12 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_8:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_Text_0
 	goto HPTutor_End
 	goto ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_7
+
+
+HPTutor_End::
+	hidemoneybox
+	release
+	return
 
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_PKMN::
@@ -99,5 +106,4 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_PKMNTalk::
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_NPCTalk::
 	.string "{COLOR DARK_GRAY}My Togepi is very talkative. I wish I\n"
-	.string "could understand what he was saying...\p"
-	.string "$"
+	.string "could understand what he was saying...$"

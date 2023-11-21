@@ -6,7 +6,7 @@
 #include "gba/types.h"
 
 // Comment out this line to strip debugging tools from the build.
-#define ISLANDGAME_DEBUG
+//#define ISLANDGAME_DEBUG
 
 //Settings
 #define EXP_MULTIPLIER 4 //By default, pokemon will gain only 1/4 of the experience if they did not participate in battle.
@@ -124,7 +124,7 @@ void IslandGameCustomStartup();
 
 #ifdef ISLANDGAME_DEBUG
 
-#define START_LOC_GAME LOCATION_DATA[SS_RAIN]
+#define START_LOC_GAME LOCATION_DATA[FRESA_FARMS]
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA
 #define ISLANDGAME_STARTING_MON_LEVEL 100
 #define ISLANDGAME_STARTING_MON_ITEM ITEM_NONE

@@ -25,6 +25,7 @@ ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3::
 	msgbox ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_Text_2
 ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_1:
 PriestessDrinkGiver_End:
+	closemessage
 	release
 	return
 
@@ -81,10 +82,12 @@ ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_Text_0:
 	.string "We'll always be here if you need a drink.$"
 
 ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_Text_1:
-	.string "Oh dear, you don't have enough room for a drink.$"
+	.string "Oh dear, you don't have enough room for\n"
+	.string "a drink.$"
 
 ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_Text_2:
-	.string "Sorry, our policy is one beverage per day. Come back tomorrow.$"
+	.string "Sorry, our policy is one beverage per\n"
+	.string "day. Come back tomorrow.$"
 
 ISLANDGAME_CHERIPORT_HOUSE2_NPC1_TALK::
 	.string "{COLOR DARK_GRAY}This building was once a derelict chapel\n"

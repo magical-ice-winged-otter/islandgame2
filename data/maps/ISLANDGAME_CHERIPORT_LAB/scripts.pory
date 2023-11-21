@@ -37,6 +37,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         // Give Pokeballs
         giveitem(ITEM_POKE_BALL, 5)
         msgbox(ProfTalk_Fourth_Text)
+        setrespawn(HEAL_LOCATION_CHERIPORT)
     } else {
         msgbox(ProfTalk_Normal_Text)
     }

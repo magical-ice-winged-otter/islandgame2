@@ -15,7 +15,7 @@ ISLANDGAME_SS_RAIN_ROOM3_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 SS_Rain_EventScript_InvadeRoom::
 	lockall
 	setvar VAR_TEMP_0, 1
-	goto_if_set FLAG_LEFT_SHIP, SS_Rain_EventScript_InvadeRoom_2
+	goto_if_set FLAG_ROOM3_GAVE_WATER, SS_Rain_EventScript_InvadeRoom_2
 	applymovement 1, ExclaimFacePlayer
 	waitmovement 0
 	msgbox SS_Rain_InvadeRoomReaction_Text
@@ -94,13 +94,13 @@ SS_Rain_EventScript_Item::
 
 
 SS_Rain_EventScript_HasWater_Text_0:
-	.string "{COLOR RED}Huh?$"
+	.string "{COLOR DARK_GRAY}Huh?$"
 
 SS_Rain_EventScript_HasWater_Text_1:
-	.string "{COLOR RED}He sent you to give me water?$"
+	.string "{COLOR DARK_GRAY}He sent you to give me water?$"
 
 SS_Rain_InvadeRoomReaction_Text::
-	.string "{COLOR RED}What are you doing in my room? Get out!$"
+	.string "{COLOR DARK_GRAY}What are you doing in my room? Get out!$"
 
 SS_Rain_CalmGentleman_Text::
 	.string "{COLOR DARK_GRAY}I apologize for my rudeness. I don't\n"

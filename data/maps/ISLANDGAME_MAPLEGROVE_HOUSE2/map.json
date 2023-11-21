@@ -47,14 +47,14 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MAPLEGROVE",
-      "dest_warp_id": "4"
+      "dest_warp_id": "3"
     },
     {
       "x": 3,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MAPLEGROVE",
-      "dest_warp_id": "4"
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [

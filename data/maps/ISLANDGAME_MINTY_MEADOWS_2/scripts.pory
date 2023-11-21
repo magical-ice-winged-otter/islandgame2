@@ -12,10 +12,10 @@ const STATE_POST_FIGHT = 4
 
 const VAR_SEEN_CHASE_CUTSCENE = VAR_TEMP_0
 
-const RIVAL_OW_ID = 16
-const OLD_MAN_OW_ID = 17
-const MAREEP_OW_ID = 11
-const MIGHTYENA_OW_ID = 12
+const RIVAL_OW_ID = 11
+const OLD_MAN_OW_ID = 12
+const MAREEP_OW_ID = 6
+const MIGHTYENA_OW_ID = 7
 
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
@@ -48,6 +48,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_InitialRival {
 
 // After beating the rival, sets up the mareep sighting on the side
 script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
+    setvar(VAR_TEMP_4, 1)
     setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
     setobjectxyperm(MAREEP_OW_ID, 61, 13)
     setobjectxyperm(MIGHTYENA_OW_ID, 61, 15)
@@ -58,6 +59,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
 
 // After watching the pre-fight cutscene, wait for the player to beat the mightyena
 script ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight {
+    setvar(VAR_TEMP_4, 1)
     setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
     setobjectxyperm(MAREEP_OW_ID, 61, 13)
     setobjectxyperm(MIGHTYENA_OW_ID, 61, 14)
@@ -67,6 +69,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight {
 
 // After the player beat the mightyena, remove all mareep-quest related stuff
 script ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena {
+    setvar(VAR_TEMP_4, 0)
     setobjectxyperm(RIVAL_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     setobjectxyperm(OLD_MAN_OW_ID, 11, 3)
     setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
@@ -78,9 +81,9 @@ script ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena {
 script ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
         case STATE_INITIAL_RIVAL:            
-        case STATE_STARTED_QUEST:            msgbox(format("I think Mareep might be near the forest..."), MSGBOX_NPC)
-        case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("A Mightyena chasing my Mareep?\pThis is far more than I can handle."), MSGBOX_NPC)
-        case STATE_POST_FIGHT:               msgbox(format("Thank you so much for helping save my Mareep!"), MSGBOX_NPC)
+        case STATE_STARTED_QUEST:            msgbox(format("I think it may have wandered east into the forest..."), MSGBOX_NPC)
+        case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("What? A wild Mightyena was chasing my precious Mareep?\pThis is far more than I can handle."), MSGBOX_NPC)
+        case STATE_POST_FIGHT:               msgbox(format("Thank you so much for saving my precious Mareep!"), MSGBOX_NPC)
     }
 }
 
@@ -89,22 +92,25 @@ script ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact {
         case STATE_INITIAL_RIVAL:            
         case STATE_STARTED_QUEST:            
             if (var(VAR_SEEN_CHASE_CUTSCENE) == 1) {
-                msgbox(format("That must be the lost Mareep! I heard it run over to the far end of this forest."), MSGBOX_NPC)
+                msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}That must be the lost Mareep! I think it ran off to the end of the forest!"), MSGBOX_NPC)
             } else {
-                msgbox(format("Hmm... where could it be?"), MSGBOX_NPC)
+                msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Hmm... where could it be?"), MSGBOX_NPC)
             }
-        case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("That Mightyena looks... off. We need to save that Mareep!"), MSGBOX_NPC)
-        case STATE_POST_FIGHT:               msgbox(format("That was exciting! I need a rest after all that running..."), MSGBOX_NPC)
+        case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("We need to save that Mareep!"), MSGBOX_NPC)
+        case STATE_POST_FIGHT:               msgbox(format("Phew... I need to take a break after all that running..."), MSGBOX_NPC)
         default:
     }
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact {
-    msgbox(format("Hello there."), MSGBOX_NPC) // todo: real jonas dialogue or remove
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Oh! Are your Pokémon hurt, {PLAYER}? Let me patch them up!"), MSGBOX_AUTOCLOSE)
+    playfanfare(MUS_HEAL)
+    special(HealPlayerParty)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact {
-    msgbox(format(""), MSGBOX_SIGN) // todo: real sign text or remove
+    msgbox(format("{COLOR DARK_GRAY}MINTY MEADOWS\nPlease don't trample the flowers!"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_TunnelSign_Interact {
+    msgbox(format("{COLOR DARK_GRAY}TRAVELER'S TUNNEL\nPlease watch your step!"), MSGBOX_SIGN)
 }
 
 
@@ -117,7 +123,7 @@ movement ISLANDGAME_MINTY_MEADOWS_2_Player_StepBack {
 
 script ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival {
     lock
-    msgbox("Old Man: Oh...\pWhat am I going to do...\p(Probably best to leave him alone)")
+    msgbox(format("{COLOR DARK_GRAY}Ah, young trainer! Please give me a moment. I am preoccupied."))
     applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_Player_StepBack)
     waitmovement(OBJ_EVENT_ID_PLAYER)
     release
@@ -204,34 +210,71 @@ movement ISLANDGAME_MINTY_MEADOWS_2_RivalRunDown {
 
 // todo: port rival name to {RIVAL}?
 script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
+
+    msgbox(
+        format(
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Ugg... I'm only missing one more Pokémon! Where in the world is it?\p"
+            "{COLOR DARK_GRAY}Waah! I give up! I'm convinced it doesn't even exist! \p"
+            "{COLOR DARK_GRAY}Eh?"
+            )
+        )
     // audrey walks down towards you
     applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown)
     waitmovement(RIVAL_OW_ID)
 
     // pre-fight dialogue
-    msgbox(format("Audrey: I'm bored! Let's fight!"))
+    msgbox(
+        format(
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Umm, hi! Do I know you? \p"
+            "{COLOR DARK_GRAY}...Mhm...Okay...Oh! \p"
+            "{COLOR DARK_GRAY}You're {PLAYER}? The professor told me about you earlier today! \p"
+            "{COLOR DARK_GRAY}It's good to meet you! I'm Audrey, a rising trainer, just like you! \p"
+            "{COLOR DARK_GRAY}I was trying to fill out my Pokédex here, but I just couldn't find a Riolu... \p"
+            "{COLOR DARK_GRAY}How are you enjoying the isles so far? Isn't it awesome here? \p"
+            "{COLOR DARK_GRAY}Eh? It's too hot and humid? You'll get used to it eventually! \p"
+            "{COLOR DARK_GRAY}Oh! Now that you're here, let's have a Pokémon battle! \p"
+            "{COLOR DARK_GRAY}I'm warning you though... I'm pretty good!"
+            )
+        )
 
     // battle
-    trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, "Audrey: Wow, you're strong!")
+    trainerbattle_no_intro(TRAINER_MINTY_MEADOWS_RIVAL, "Eep! You're pretty strong too!")
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) != B_OUTCOME_WON) {
         return
     }
 
     //post-fight audrey dialogue
-    msgbox(format("Audrey: Man, you beat me!"))
+    msgbox(
+        format(
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Drats, I wasn't expecting to lose to you, {PLAYER}. \p"
+            "{COLOR DARK_GRAY}W-Wait, I didn't mean it like that! I was just surprised at how skilled you are! \p"
+            "{COLOR DARK_GRAY}Sorry... sometimes I say things before I think."
+            )
+        )
     closemessage
 
     // old man walks over and starts quest
     addobject(OLD_MAN_OW_ID)
     setobjectxy(OLD_MAN_OW_ID, 11, 11)
+    msgbox(format("{COLOR DARK_GRAY}E-Excuse me! Young trainers!"))
     applymovement(OLD_MAN_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp)
     waitmovement(OLD_MAN_OW_ID)
-    msgbox(format("Old Man: Excuse me, I lost a Mareep!\pPlease help find it?"))
+    msgbox(
+        format(
+            "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}I'm one of the owners of the nearby Fresa Farms. \p"
+            "{COLOR DARK_GRAY}Have you two seen a Mareep with a blue collar wandering around by chance? \p"
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}I haven't... Did you lose one? \p"
+            "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}I'm afraid so... When I was counting my Mareep after taking them out to graze, I noticed one was missing. \p"
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Oh my... that's terrible! We'll help you look, right {PLAYER}? \p"
+            "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Really? Oh, I can't thank you two enough! \p"
+            "{COLOR DARK_GRAY}The last place I saw my precious Mareep was in the forest to the east."
+            )
+        )
     startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
 
     // audrey runs off to look for mareep
-    msgbox(format("Audrey: I'm gonna go look for it!"))
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Sounds good! {PLAYER}! Let's head over there immediately!"))
     closemessage
 
     //follow me
@@ -325,6 +368,11 @@ script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2 {
     lock
 
     // mightyena walks forward and scares the mareep
+    msgbox(
+        format(
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}We finally found it!"
+        )
+    )
     applymovement(MIGHTYENA_OW_ID, Phase2_MightyenaWalksForward)
     applymovement(MAREEP_OW_ID, Common_Movement_ExclamationMark)
     playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
@@ -332,6 +380,14 @@ script ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2 {
     playmoncry(SPECIES_MAREEP, CRY_MODE_WEAK)
     waitmovement(MIGHTYENA_OW_ID)
     waitmoncry
+
+    msgbox(
+        format(
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Oh no! Quick, {PLAYER}! We need to save that Mareep! \p"
+            "{COLOR RED}(...That Mightyena... Something seems... off about it.) \p"
+            "{COLOR RED}(There seems to be a dark aura radiating from it.)"
+        )
+    )
 
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PRE_FIGHT_SIGHTING)
     call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
@@ -355,14 +411,25 @@ movement Phase2_MightyenaWalksForward {
 script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     lock 
     faceplayer
-    setwildbattle(SPECIES_SHADOW_MIGHTYENA, 25)
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setcwildbattle(0, SPECIES_SHADOW_MIGHTYENA, 20, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER)
+    setwilddoublebattle(TRUE)
     playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
     waitmoncry
     dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
     specialvar(VAR_RESULT, GetBattleOutcome)
-    destroyfollower
-    if (var(VAR_RESULT) != B_OUTCOME_LOST) {
-        goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
+    
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            destroyfollower
+        case B_OUTCOME_RAN:
+            break
+        default:
+            destroyfollower
+            goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release
 }
@@ -378,7 +445,23 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     fadescreen(FADE_FROM_BLACK)
 
     // rival comments on stuff
-    msgbox(format("Audrey: What a weird encounter. At least the Mareep is safe!"))
+    msgbox(
+        format(
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Phew... That was an intense fight. Thank goodness we came in time! \p"
+            "{COLOR DARK_GRAY}It looks like Mareep isn't hurt at all. That's a relief... \p"
+            )
+        )
+    playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
+    msgbox(
+        format(
+            "{COLOR DARK_GRAY}Reeeep... \p"
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Awh. It's okay Mareep. You're safe with us now! \p"
+            "{COLOR DARK_GRAY}Heh... We make a pretty solid team, don't we, {PLAYER}? \p"
+            "{COLOR DARK_GRAY}...Huh? Something was off about the Pokémon? What do you mean? \p"
+            "{COLOR DARK_GRAY}Red eyes? A wicked dark aura? I'm confused... I didn't see any of that. \p"
+            "{COLOR DARK_GRAY}Hmm. Well anyways, we should probably get Mareep back to its owner."
+            )
+        )
     closemessage
 
     // tp back to old man
@@ -397,7 +480,13 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     fadescreen(FADE_FROM_BLACK)
 
     // old man thanks them, gives lucky egg
-    msgbox(format("Old Man: Thank you so much! I was so scared for Mareep.\pHere, as a token of my graditude:"))
+    msgbox(
+        format(
+            "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, my precious baby is safe and sound! I am in your debt, trainers!"
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Heheh. It was nothing, really! \p"
+            "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Please, take one of these as a token of my gratitude, please! \p"
+            )
+        )
     closemessage
     applymovement(OLD_MAN_OW_ID, Phase3_OldManGivesItem_Part1)
     waitmovement(OLD_MAN_OW_ID)
@@ -406,12 +495,32 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     waitmovement(OLD_MAN_OW_ID)
     
     // rival runs off
-    msgbox(format("Audrey: Well, it was nice hanging out! I've got stuff to do!"))
+    msgbox(
+        format(
+            "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}If you ever feel like visiting, we're just up north from here. \p"
+            "{COLOR DARK_GRAY}Feel free to visit anytime! \p"
+            "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}The way you handled that vicious Mightyena with your Pokémon... \p"
+            "{COLOR DARK_GRAY}{PLAYER}! You should enter the Silverwing Festival Tournament! \p"
+            "{COLOR DARK_GRAY}Eeeh!? You don't know what that is? \p"
+            "{COLOR DARK_GRAY}It's a tournament hosted during the Silverwing Festival where only the best trainers of Mariyama assemble to compete for the Silverwing Cup! \p"
+            "{COLOR DARK_GRAY}I'm taking part in it, and I think you should to! You'd be a great competitor! \p"
+            "{COLOR DARK_GRAY}To qualify for the tournament, you'll have to travel across the three main islands of Oranna, Lumine, and Ignea... \p"
+            "{COLOR DARK_GRAY}...and challenge their respective gym leaders in a Pokémon battle! \p"
+            "{COLOR DARK_GRAY}Ooh... I just can't wait! I just want the festival to begin tomorrow! \p"
+            "{COLOR DARK_GRAY}Huh? Oh, you're right. Neither of us would qualify if it started tomorrow... \p"
+            "{COLOR DARK_GRAY}Well, I have to report back to the professor with my findings. \p"
+            "{COLOR DARK_GRAY}But {PLAYER}, you should head west of Maplegrove and head up to Tidalcove! \p"
+            "{COLOR DARK_GRAY}That's where you'll find the first gym leader: Ruka! \p"
+            "{COLOR DARK_GRAY}Bye-bye for now! It was nice to meet you. Hopefully I see you again soon!"
+            )
+        )
     closemessage
     applymovement(RIVAL_OW_ID, Phase3_RivalRunsOff)
     waitmovement(RIVAL_OW_ID)
     removeobject(RIVAL_OW_ID)
 
+    special(HealPlayerParty)
+    completequest(QUEST_FRESA_FARMS_LOST_MAREEP)
     release
 }
 
@@ -443,80 +552,108 @@ script ISLANDGAME_MINTY_MEADOWS_2_Mareep {
 }
 
 text MareepHelp_Text {
-    format("{COLOR BLUE}bro help me")
+    format("{COLOR DARK_GRAY}Reep! Reep! (BRO HELP ME PLZ)")
 }
+
+
+script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
+    lock
+    facefollower
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    release
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_WalkUp {
+    walk_up
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_CantLeave2 {
+    lock
+    facefollower
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    release
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_WalkDown {
+    walk_down
+}
+
 
 
 ///TRAINERS
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_1, format("{COLOR DARK_GRAY}Where are the Bug POKEMON in these plains?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss)
-	msgbox(format("{COLOR DARK_GRAY}I heard some bug exists in the cave."), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_9, format("{COLOR DARK_GRAY}Where are the Bug POKEMON in these plains?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss)
+	msgbox("I heard some bug exists \nin the cave.", MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_2, format("{COLOR DARK_GRAY}I like coming here on my days off."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss)
-	msgbox(format("{COLOR DARK_GRAY}I need to go get milk from the nearby farms."), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_10, format("{COLOR DARK_GRAY}I like coming here on my days off."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss)
+	msgbox("I need to go get milk \nfrom the nearby farms.", MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_3, format("{COLOR DARK_GRAY}I come here to practice my psychic powers."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss)
-	msgbox(format("{COLOR DARK_GRAY}The nearby mountains make it easier to concentrate."), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_11, format("{COLOR DARK_GRAY}I come here to practice my psychic powers."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss)
+	msgbox("The nearby mountains make it \neasier to concentrate.", MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_4, format("{COLOR DARK_GRAY}That guy over there is so creepy."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss)
-	msgbox(format("{COLOR DARK_GRAY}I heard Pokemon running around. Is there something happening?"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_12, format("{COLOR DARK_GRAY}That guy over there is so creepy."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss)
+	msgbox("I heard Pokemon running around. \nIs there something happening?", MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_5, format("{COLOR DARK_GRAY}My brother told me that there would be strong Bug POKEMONS here."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss)
-	msgbox(format("{COLOR DARK_GRAY}I will look for them until midnight if needed."), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_13, format("{COLOR DARK_GRAY}My brother told me that there would be strong Bug POKEMONS here."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss)
+	msgbox("I will look for them until \nmidnight if needed.", MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_6, format("{COLOR DARK_GRAY}I found a Mareep, but a Mightyena chased it away!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss)
-	msgbox(format("{COLOR DARK_GRAY}Maybe you are stronger than the Mightyena"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_14, format("{COLOR DARK_GRAY}I found a Mareep, but a Mightyena chased it away!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss)
+	msgbox("Maybe you are stronger than\n the Mightyena...", MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_7, format("{COLOR DARK_GRAY}I am the strongest Bug Trainer around these parts."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss)
-	msgbox(format("{COLOR DARK_GRAY}"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_15, format("{COLOR DARK_GRAY}I am the strongest Bug Trainer around these parts."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss)
+	msgbox("Darn. I guess I was wrong.", MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_8, format("{COLOR DARK_GRAY}Shorts are comfy and easy to wear!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
-	msgbox(format("{COLOR DARK_GRAY}If only I had a Rattata"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_16, format("{COLOR DARK_GRAY}Shorts are comfy and easy to wear!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
+	msgbox("If only I had a Rattata...", MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss {
-    format("{COLOR DARK_GRAY}I will keep looking for some bugs.")
+    "I will keep looking for some bugs."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss {
-    format("{COLOR DARK_GRAY}Wow, you are strong!")
+    "Wow, you are strong!"
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss {
-    format("{COLOR DARK_GRAY}Looks like I still need more practice.")
+    "Looks like I still need more practice."
 }
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss {
-    format("{COLOR DARK_GRAY}I lost? My day is not going well.")
+    "I lost? My day is not going well."
 }
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss {
-    format("{COLOR DARK_GRAY}The ones I currently have are not that strong.")
+    "The ones I currently have are \nnot that strong."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss {
-    format("{COLOR DARK_GRAY}I guess I will look for another Mareep.")
+    "I guess I will look for another \nMareep."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss {
-    format("{COLOR DARK_GRAY}It seems that you have bested the three of us.")
+    "It seems that you have \n bested the three of us."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss {
-    format("{COLOR DARK_GRAY}No fair!")
+    "No fair!"
 }
 
 //ITEMS

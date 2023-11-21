@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_TRAVELERS_TUNNEL",
   "name": "ISLANDGAME_TRAVELERS_TUNNEL",
   "layout": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_RG_MT_MOON",
   "region_map_section": "MAPSEC_TRAVELERS_TUNNEL",
   "requires_flash": true,
   "weather": "WEATHER_FOG_HORIZONTAL",
@@ -104,6 +104,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_5"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 11,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_TRAVELERS_TUNNEL_Hiker",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 6,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RusturfTunnel_EventScript_ItemPokeBall",
+      "flag": "FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL"
     }
   ],
   "warp_events": [
@@ -111,15 +137,15 @@
       "x": 10,
       "y": 18,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_MINTY_MEADOWS",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ISLANDGAME_MINTY_MEADOWS_2",
+      "dest_warp_id": "1"
     },
     {
       "x": 23,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_MINTY_MEADOWS",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_ISLANDGAME_MINTY_MEADOWS_3",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

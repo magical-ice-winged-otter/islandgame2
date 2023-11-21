@@ -12,12 +12,28 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": [
+    {
+      "map": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
+      "offset": -16,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ISLANDGAME_VERDANT_PATH",
+      "offset": -26,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ISLANDGAME_MINTY_MEADOWS",
+      "offset": -1,
+      "direction": "right"
+    }
+  ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 19,
-      "y": 27,
+      "y": 39,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -30,20 +46,20 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 25,
-      "y": 21,
+      "y": 33,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PetalburgCity_EventScript_ItemEther",
+      "flag": "FLAG_ITEM_PETALBURG_CITY_ETHER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_418",
       "x": 33,
-      "y": 25,
+      "y": 37,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 3,
@@ -56,7 +72,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_043",
       "x": 27,
-      "y": 24,
+      "y": 36,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
@@ -69,7 +85,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_661",
       "x": 11,
-      "y": 4,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
@@ -82,7 +98,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_417",
       "x": 4,
-      "y": 5,
+      "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
@@ -95,7 +111,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_283",
       "x": 14,
-      "y": 25,
+      "y": 37,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 0,
@@ -108,7 +124,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 18,
-      "y": 16,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -119,22 +135,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 0,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 7,
-      "y": 2,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -147,7 +150,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 34,
-      "y": 21,
+      "y": 33,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -160,43 +163,36 @@
   ],
   "warp_events": [
     {
-      "x": 13,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_MAPLEGROVE",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 5,
-      "y": 19,
+      "x": 6,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MAPLEGROVE_PKMNCENTER",
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
-      "y": 10,
+      "x": 5,
+      "y": 31,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MAPLEGROVE_PKMNMART",
       "dest_warp_id": "0"
     },
     {
       "x": 16,
-      "y": 5,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MAPLEGROVE_HOUSE1",
       "dest_warp_id": "0"
     },
     {
       "x": 21,
-      "y": 5,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MAPLEGROVE_HOUSE2",
       "dest_warp_id": "0"
     },
     {
       "x": 28,
-      "y": 7,
+      "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MAPLEGROVE_AUDREYS_HOUSE_1F",
       "dest_warp_id": "0"
@@ -209,7 +205,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 10,
+      "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_SIGN"
