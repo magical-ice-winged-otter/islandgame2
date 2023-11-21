@@ -7,7 +7,7 @@ script ISLANDGAME_MINTY_MEADOWS_3_Ressy {
     release
 }
 
-text ISLANDGAME_MINTY_MEADOWS_3_Ressy {
+text ISLANDGAME_MINTY_MEADOWS_3_RessyTalk {
     format(
         "{COLOR RED}(He seems to be pondering in thoughts.)"
         )
@@ -34,7 +34,7 @@ script ISLANDGAME_MINTY_MEADOWS_3_Aegislash {
     release
 }
 
-text ISLANDGAME_MINTY_MEADOWS_3_Aegislash {
+text ISLANDGAME_MINTY_MEADOWS_3_AegislashTalk {
     format(
         "{COLOR DARK_GRAY}Shwing! (THOU SHALL NOT PASSETH)"
         )
