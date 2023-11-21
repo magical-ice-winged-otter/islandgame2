@@ -186,15 +186,15 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3::
 
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0:
-	.string "Man, swimming looks so fun!$"
+	.string "Swimming looks so fun!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper_Text_0:
-	.string "Hey traveler! Nice job on making it this\n"
-	.string "far.\p"
-	.string "We're at about halfway to Tidalcove.\n"
-	.string "This is a great place to hone your\l"
-	.string "skills, especially before meeting\l"
-	.string "Oranna's Gym Leader, Ruka!$"
+	.string "Howdy trainer! Nice job on making it\n"
+	.string "this far.\p"
+	.string "You're 'bout halfway to Tidalcove!\p"
+	.string "I'll let you in on a little secret...\n"
+	.string "Oranna's gym leader, Ruka, specializes\l"
+	.string "in ice-type Pokémon!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_0:
 	.string "Oh, are you interesting in seeing some\n"
@@ -227,7 +227,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_1:
 	.string "Impossible!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_2:
-	.string "Listen: wild routes like this attract a\n"
+	.string "Listen. Wild routes like this attract a\n"
 	.string "lot of bug catchers and grass-type\l"
 	.string "enthusiasts. Is it so wrong to bring a\l"
 	.string "little heat?$"
@@ -244,7 +244,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_2:
 	.string "guy in Tidalcove is the best!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_0:
-	.string "Prim: Time to finish things up here.$"
+	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}Time to end this, Delcatty!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_1:
 	.string "Prim: Man, that was a waste of time! You\n"

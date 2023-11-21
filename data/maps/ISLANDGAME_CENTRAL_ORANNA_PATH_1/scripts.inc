@@ -85,8 +85,8 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign::
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous_Text_0:
 	.string "Hey, its too dangerous to go any\n"
-	.string "further! Come back later - we can\l"
-	.string "handle this.$"
+	.string "further! Come back later, we can handle\l"
+	.string "this!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1_Text_0:
 	.string "It's a lot of walking to get to\n"
@@ -138,9 +138,9 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_2:
 	.string "more of a marathon than a sprint!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_0:
-	.string "We finally managed to clear out the\n"
+	.string "We finally managed to subdue the\n"
 	.string "Mightyena from earlier! Be extra\l"
-	.string "careful on Central Oranna Path today...$"
+	.string "careful on central path today...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_1:
 	.string "These Mightyena are blocking the path!\p"
@@ -148,5 +148,5 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_1:
 	.string "come back later.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign_Text_0:
-	.string "CENTRAL ORANNA PATH\p"
-	.string "Warning: wildlife out of control$"
+	.string "CENTRAL ORANNA PATH\n"
+	.string "MAPLEGROVE -->$"

@@ -415,11 +415,15 @@ Phase2_MightyenaWalksForward:
 ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 	lock
 	faceplayer
+	setflag FLAG_SMART_WILD_AI
+	setflag FLAG_NO_CATCHING
 	setcwildbattle 0, SPECIES_SHADOW_MIGHTYENA, 20, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER
 	setwilddoublebattle TRUE
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
 	waitmoncry
 	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_CATCHING
 	specialvar VAR_RESULT, GetBattleOutcome
 	switch VAR_RESULT
 	case B_OUTCOME_LOST, ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_3
@@ -818,27 +822,25 @@ MareepHelp_Text::
 	.string "{COLOR DARK_GRAY}Reep! Reep! (BRO HELP ME PLZ)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss::
-	.string "{COLOR DARK_GRAY}I will keep looking for some bugs.$"
+	.string "I will keep looking for some bugs.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss::
-	.string "{COLOR DARK_GRAY}Wow, you are strong!$"
+	.string "Wow, you are strong!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss::
-	.string "{COLOR DARK_GRAY}Looks like I still need more practice.$"
+	.string "Looks like I still need more practice.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss::
-	.string "{COLOR DARK_GRAY}I lost? My day is not going well.$"
+	.string "I lost? My day is not going well.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss::
-	.string "{COLOR DARK_GRAY}The ones I currently have are not that\n"
-	.string "strong.$"
+	.string "The ones I currently have are \nnot that strong.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss::
-	.string "{COLOR DARK_GRAY}I guess I will look for another Mareep.$"
+	.string "I guess I will look for another \nMareep.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss::
-	.string "{COLOR DARK_GRAY}It seems that you have bested the\n"
-	.string "three of us.$"
+	.string "It seems that you have \n bested the three of us.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss::
-	.string "{COLOR DARK_GRAY}No fair!$"
+	.string "No fair!$"
