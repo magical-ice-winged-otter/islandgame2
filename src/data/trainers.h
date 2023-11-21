@@ -24,6 +24,10 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Sawyer1),
     },
 
+
+
+
+    /// Southern Oranna Path
     [TRAINER_S_ORANNA_PATH_TRAINER_1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
@@ -154,6 +158,12 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_CampPersiJonas),
     },
+
+
+
+
+
+
     // Verdant Path
     [TRAINER_VERDANT_PATH_TRAINER_1] =
     {
@@ -292,6 +302,13 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_VerdantWoodsTrainer5),
     },
 
+
+
+
+
+
+
+    /// Minty Meadows
     [TRAINER_MINTY_MEADOWS_RIVAL] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
@@ -306,7 +323,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MINTY_MEADOWS_1] =
     {
-        .trainerClass = TRAINER_CLASS_YOUNGSTER,
+        .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
         .trainerPic = TRAINER_PIC_TWINS,
         .trainerName = _("Amy & Anna"),
@@ -367,7 +384,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_MINTY_MEADOWS_6] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_COLLECTOR,
         .trainerName = _("Dale"),
         .items = {},
@@ -427,7 +444,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_MINTY_MEADOWS_11] =
     {
         .trainerClass = TRAINER_CLASS_PSYCHIC,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
         .trainerName = _("Alex"),
         .items = {},
@@ -438,9 +455,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MINTY_MEADOWS_12] =
     {
-        .trainerClass = TRAINER_CLASS_LASS,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerClass = TRAINER_CLASS_PSYCHIC,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
         .trainerName = _("Bella"),
         .items = {},
         .doubleBattle = FALSE,
@@ -495,6 +512,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_MintyMeadows16),
     },
+
+
+
+
+
+
+
+
+
+
+
+
 
     [TRAINER_ROSE_2] =
     {

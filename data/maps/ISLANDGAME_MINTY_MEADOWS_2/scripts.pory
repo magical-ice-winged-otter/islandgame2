@@ -12,10 +12,10 @@ const STATE_POST_FIGHT = 4
 
 const VAR_SEEN_CHASE_CUTSCENE = VAR_TEMP_0
 
-const RIVAL_OW_ID = 15
-const OLD_MAN_OW_ID = 16
-const MAREEP_OW_ID = 10
-const MIGHTYENA_OW_ID = 11
+const RIVAL_OW_ID = 11
+const OLD_MAN_OW_ID = 12
+const MAREEP_OW_ID = 6
+const MIGHTYENA_OW_ID = 7
 
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
