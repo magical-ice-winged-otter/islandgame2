@@ -45,10 +45,11 @@ gText_Birch_MainSpeech::
 	.string "younger, so I've decided to pass my \l"
 	.string "dreams and aspirations onto young \l"
 	.string "and ambitious trainers like you! \p"
+	.string "Speaking of which, that's\nenough about me.\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "Speaking of which, that's enough about me. I want to hear more \n"
+	.string "I want to hear more\n"
 	.string "about you!$"
 
 gText_Birch_BoyOrGirl::
@@ -71,7 +72,7 @@ gText_Birch_YourePlayer::
 	.string "research along with another bright \l"
 	.string "young trainer! \p"
 	.string "But don't stress too much about the \n"
-	.string "work. I want you to have fun as well!"
+	.string "work. I want you to have fun as well!\p"
 	.string "$"
 
 gText_Birch_AreYouReady::
@@ -83,5 +84,5 @@ gText_Birch_AreYouReady::
 	.string "It's amazing! \p"
 	.string "I look forward to seeing you in-person, \n"
 	.string "{PLAYER}. \p"
-	.string "May your voyage be safe and sound."
+	.string "May your voyage be safe and sound.\p"
 	.string "$"
