@@ -64,6 +64,8 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_NPC
+	giveitem ITEM_AMULET_COIN
+	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3, MSGBOX_NPC
 	special HealPlayerParty
 	setrespawn HEAL_LOCATION_ISLANDGAME_ROSEVALE
 	warp MAP_ISLANDGAME_ROSEVALE_INN, 5, 3
@@ -255,6 +257,10 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
 	.string "This means a lot to us.$"
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
+	.string "Arthurs Sister: Hey, take this for\n"
+	.string "helping us out!$"
+
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
 	.string "Arthurs Dad: Please, stay the night to\n"
 	.string "rest and recover.\n"
 	.string "I'm sure you both have had a long day.$"

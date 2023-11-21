@@ -1,3 +1,7 @@
 ISLANDGAME_AURORA_WEATHER_INSTITUTE_MapScripts::
 	.byte 0
 
+
+ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist::
+	return
+
