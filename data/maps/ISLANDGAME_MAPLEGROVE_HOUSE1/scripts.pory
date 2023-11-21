@@ -21,12 +21,11 @@ script ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor {
         msgbox(ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorWhichMon)
         setvar(VAR_0x8005, MOVE_HIDDEN_POWER)
         special(ChooseMonForMoveTutor)
+        waitstate
         if (var(VAR_RESULT) == 0) {
-            waitstate
             msgbox(format("{COLOR DARK_GRAY}What a shame... All that hidden potential gone to waste."))
             goto(HPTutor_End)
         }
-        waitstate
         showmoneybox(0,0)
         msgbox(ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorMoveLearned)
         closemessage

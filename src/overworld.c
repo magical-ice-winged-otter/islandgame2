@@ -2007,6 +2007,11 @@ static bool32 ReturnToFieldLocal(u8 *state)
         break;
     case 1:
         InitViewGraphics();
+        DebugPrintf("weird fix - see overworld.c 2010"); // i am beyond confused
+        // for some reason, move tutor breaks if you delete this printf line
+        // or if you enable NDEBUG and strip it. 
+        // I have no clue why. Moving it inside of InitViewGraphics breaks again.
+        // It literally has to be right here for things to not break.
         TryLoadTrainerHillEReaderPalette();
         FollowMe_BindToSurbBlobOnReloadScreen();
         (*state)++;
