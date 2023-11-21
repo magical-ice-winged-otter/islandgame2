@@ -100,7 +100,7 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast_Text_0:
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest_Text_0:
 	.string "I challenged my friend to a fishing\n"
-	.string "contenst today.\p"
+	.string "contest today.\p"
 	.string "Can you keep a secret?$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest_Text_1:

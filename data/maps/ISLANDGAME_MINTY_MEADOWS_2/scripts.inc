@@ -529,6 +529,20 @@ ISLANDGAME_MINTY_MEADOWS_2_WalkUp:
 	walk_up
 	step_end
 
+ISLANDGAME_MINTY_MEADOWS_2_CantLeave2::
+	lock
+	facefollower
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown
+	waitmovement OBJ_EVENT_ID_PLAYER
+	release
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_WalkDown:
+	walk_down
+	step_end
+
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1::
 	trainerbattle_single TRAINER_MINTY_MEADOWS_9, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_1, MSGBOX_AUTOCLOSE

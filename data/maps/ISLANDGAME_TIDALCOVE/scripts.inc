@@ -80,11 +80,15 @@ ISLANDGAME_TIDALCOVE_Interact_Bike::
 
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0, MSGBOX_NPC
 	return
 
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Text_0, MSGBOX_NPC
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -92,6 +96,7 @@ ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard::
 
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Floatzel::
+	lock
 	faceplayer
 	playmoncry SPECIES_FLOATZEL, CRY_MODE_NORMAL
 	waitmoncry
@@ -101,6 +106,8 @@ ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Floatzel::
 
 
 ISLANDGAME_TIDALCOVE_Interact_BeachParent::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachParent_Text_0, MSGBOX_NPC
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -109,6 +116,7 @@ ISLANDGAME_TIDALCOVE_Interact_BeachParent::
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer::
 	lock
+	faceplayer
 	goto_if_set FLAG_DAILY_TIDALCOVE_YACHE_GIRL, ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_2
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_1, MSGBOX_NPC
 	checkitemspace ITEM_YACHE_BERRY
@@ -132,6 +140,8 @@ ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_5:
 
 
 ISLANDGAME_TIDALCOVE_Interact_BeachFisher::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachFisher_Text_0, MSGBOX_NPC
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -139,6 +149,8 @@ ISLANDGAME_TIDALCOVE_Interact_BeachFisher::
 
 
 ISLANDGAME_TIDALCOVE_Interact_BeachGazer::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachGazer_Text_0
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
@@ -147,27 +159,44 @@ ISLANDGAME_TIDALCOVE_Interact_BeachGazer::
 
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad_Text_0, MSGBOX_NPC
 	return
 
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance_Text_0, MSGBOX_NPC
 	return
 
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop_Text_0, MSGBOX_NPC
 	return
 
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle_Text_0, MSGBOX_NPC
 	return
 
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top_Text_0, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO_Text_0, MSGBOX_NPC
 	return
 
 
@@ -193,18 +222,16 @@ ISLANDGAME_TIDALCOVE_Interact_GymSign_Text_0:
 	.string "Specialty: Hail$"
 
 ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking_Text_0:
-	.string "I'm very sorry, but we cannot accept\n"
-	.string "any more challengers!\p"
-	.string "We are closed for the day.$"
+	.string "I'm sorry, but we cannot allow anyone\n"
+	.string "else inside for the day.$"
 
 ISLANDGAME_TIDALCOVE_Interact_PrimFan1_Text_0:
-	.string "No! We HAVE to see Prim fight!\n"
-	.string "She's totally gonna win!$"
+	.string "Let us in, old geezer! As the owners of\n"
+	.string "Prim's Fan Club, we DEMAND entry!$"
 
 ISLANDGAME_TIDALCOVE_Interact_PrimFan2_Text_0:
-	.string "I demand that you let us in right now.\p"
-	.string "We're going to miss the fight at this\n"
-	.string "rate!$"
+	.string "Yeah! We gotta be cheering her on the\n"
+	.string "front lines!$"
 
 ISLANDGAME_TIDALCOVE_Interact_Bike_Text_0:
 	.string "It's a bike - brand new, polished to a\n"
@@ -275,3 +302,9 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top_Text_0:
 	.string "Only two things are consistent:\p"
 	.string "The popularity of the beach, and the\n"
 	.string "popularity of Ruka!$"
+
+ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO_Text_0:
+	.string "Hello player! Thank you for playing the\n"
+	.string "demo of Pokémon: Isles of Mariyama!\p"
+	.string "We hope you enjoyed playing through.\n"
+	.string "Stay tuned for future updates! :D$"
