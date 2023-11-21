@@ -4,6 +4,8 @@ const LOCALID_LUXRAY = 8
 const LOCALID_PRIM = 1
 const LOCALID_FAN_1 = 7
 const LOCALID_FAN_2 = 5
+const LOCALID_FAN_3 = 4
+const LOCALID_FAN_4 = 3
 
 mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -56,11 +58,11 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker {
 }
  
 movement Movement_LuxrayAttack {
-    walk_right
+    jump_right
 }
 
 movement Movement_PrimWalkAway {
-    walk_right * 3
+    walk_right * 4
     walk_down
     walk_right * 4
 }
@@ -82,6 +84,16 @@ movement Movement_Fan2WalkAway {
     delay_16 * 10
     walk_up * 2
     walk_right * 3
+}
+
+movement Movement_Fan3WalkAway {
+    walk_fast_down
+    walk_fast_right * 4
+}
+
+movement Movement_Fan4WalkAway {
+    walk_fast_down * 2
+    walk_fast_right * 4
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
@@ -114,6 +126,16 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
     removeobject(LOCALID_LUXRAY)
     removeobject(LOCALID_FAN_1)
     removeobject(LOCALID_FAN_2)
+
+    msgbox(format("{COLOR DARK_GRAY}Wait for us!"))
+    closemessage
+    applymovement(LOCALID_FAN_3, Movement_Fan3WalkAway)
+    applymovement(LOCALID_FAN_4, Movement_Fan4WalkAway)
+
+    waitmovement(LOCALID_FAN_3)
+    waitmovement(LOCALID_FAN_4)
+    removeobject(LOCALID_FAN_3)
+    removeobject(LOCALID_FAN_4)
 
     setflag(FLAG_NORANNA_PRIM_CUTSCENE_FINISHED)
     setvar(VAR_CUTSCENE_FINISHED, 1)
