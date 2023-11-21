@@ -13829,7 +13829,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_BERSERK] = //shadow mon random move
     {
         .effect = EFFECT_HIT,
-        .power = 50,
+        .power = 30,
         .type = TYPE_SHADOW,
         .accuracy = 100,
         .pp = 5, // doesn't matter

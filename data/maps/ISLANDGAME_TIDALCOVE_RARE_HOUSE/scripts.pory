@@ -26,12 +26,24 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
             }
 
+            // tepig checks
             setvar(VAR_0x8000, SPECIES_TEPIG)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
             }
+            setvar(VAR_0x8000, SPECIES_PIGNITE)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+            }
+            setvar(VAR_0x8000, SPECIES_EMBOAR)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+            }
 
+            // delibird checks
             setvar(VAR_0x8000, SPECIES_DELIBIRD)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
