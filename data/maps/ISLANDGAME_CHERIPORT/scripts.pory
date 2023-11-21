@@ -24,6 +24,7 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
     lock
+    faceplayer
     showmoneybox(0, 0)
     msgbox(format("{COLOR DARK_GRAY}Premium Cheri-Cola made with REAL sugar, only ¥600 a pop!"), MSGBOX_YESNO)
 

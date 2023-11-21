@@ -21,6 +21,7 @@ ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor::
 	lock
+	faceplayer
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, NO

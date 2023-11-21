@@ -177,6 +177,70 @@ bool8 DoesPartyHaveEnigmaBerry(void)
     return hasItem;
 }
 
+void CreateScriptedWildMonCustom(u8 spot, u16 species, u8 level, u16 item, u8 nature, u8 abilityNum, u8* evs, u8* ivs, u16* moves, bool8 isShiny) 
+{
+    u8 i;
+    u8 heldItem[2];
+    u8 evTotal = 0;
+
+    if (spot == 0) 
+    { //this assumes that you will call this script at 0, then 1 right after each other. (not 1, then 0)
+        ZeroEnemyPartyMons();
+    }
+
+    if (nature == NUM_NATURES || nature == 0xFF)
+        nature = Random() % NUM_NATURES;
+
+    if (isShiny)
+        CreateShinyMonWithNature(&gEnemyParty[spot], species, level, nature);
+    else 
+        CreateMonWithNature(&gEnemyParty[spot], species, level, 32, nature);
+
+
+    //item
+    heldItem[0] = item;
+    heldItem[1] = item >> 8;
+    SetMonData(&gEnemyParty[spot], MON_DATA_HELD_ITEM, heldItem);
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        // ev
+        if (evs[i] != 0xFF && evTotal < 510)
+        {
+            // only up to 510 evs
+            if ((evTotal + evs[i]) > 510)
+                evs[i] = (510 - evTotal);
+            
+            evTotal += evs[i];
+            SetMonData(&gEnemyParty[spot], MON_DATA_HP_EV + i, &evs[i]);
+        }
+        
+        // iv
+        if (ivs[i] != 32 && ivs[i] != 0xFF)
+            SetMonData(&gEnemyParty[spot], MON_DATA_HP_IV + i, &ivs[i]);
+    }
+    CalculateMonStats(&gEnemyParty[spot]);
+    
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (moves[i] == 0 || moves[i] == 0xFF || moves[i] > MOVES_COUNT)
+            continue;
+        
+        SetMonMoveSlot(&gEnemyParty[spot], moves[i], i);
+    }
+    
+    //ability
+    if (abilityNum == 0xFF || GetAbilityBySpecies(species, abilityNum) == 0)
+    {
+        do {
+            abilityNum = Random() % 3;  // includes hidden abilities
+        } while (GetAbilityBySpecies(species, abilityNum) == 0);
+    }
+    
+    SetMonData(&gEnemyParty[spot], MON_DATA_ABILITY_NUM, &abilityNum);
+
+}
+
 void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 {
     u8 heldItem[2];

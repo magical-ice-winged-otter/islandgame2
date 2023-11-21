@@ -12,10 +12,10 @@ const STATE_POST_FIGHT = 4
 
 const VAR_SEEN_CHASE_CUTSCENE = VAR_TEMP_0
 
-const RIVAL_OW_ID = 15
-const OLD_MAN_OW_ID = 16
-const MAREEP_OW_ID = 10
-const MIGHTYENA_OW_ID = 11
+const RIVAL_OW_ID = 11
+const OLD_MAN_OW_ID = 12
+const MAREEP_OW_ID = 6
+const MIGHTYENA_OW_ID = 7
 
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
@@ -48,6 +48,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_InitialRival {
 
 // After beating the rival, sets up the mareep sighting on the side
 script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
+    setvar(VAR_TEMP_4, 1)
     setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
     setobjectxyperm(MAREEP_OW_ID, 61, 13)
     setobjectxyperm(MIGHTYENA_OW_ID, 61, 15)
@@ -58,6 +59,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
 
 // After watching the pre-fight cutscene, wait for the player to beat the mightyena
 script ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight {
+    setvar(VAR_TEMP_4, 1)
     setobjectxyperm(OLD_MAN_OW_ID, 11, 6)
     setobjectxyperm(MAREEP_OW_ID, 61, 13)
     setobjectxyperm(MIGHTYENA_OW_ID, 61, 14)
@@ -67,6 +69,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight {
 
 // After the player beat the mightyena, remove all mareep-quest related stuff
 script ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena {
+    setvar(VAR_TEMP_4, 0)
     setobjectxyperm(RIVAL_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     setobjectxyperm(OLD_MAN_OW_ID, 11, 3)
     setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
@@ -97,6 +100,9 @@ script ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact {
         case STATE_POST_FIGHT:               msgbox(format("That was exciting! I need a rest after all that running..."), MSGBOX_NPC)
         default:
     }
+    msgbox(format("{COLOR DARK_GRAY}I will heal your Pokemon for you."), MSGBOX_AUTOCLOSE)
+    playfanfare(MUS_HEAL)
+    special(HealPlayerParty)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact {
@@ -371,14 +377,21 @@ movement Phase2_MightyenaWalksForward {
 script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     lock 
     faceplayer
-    setwildbattle(SPECIES_SHADOW_MIGHTYENA, 18)
+    setcwildbattle(0, SPECIES_SHADOW_MIGHTYENA, 20, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER)
+    setwilddoublebattle(TRUE)
     playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
     waitmoncry
     dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
-    destroyfollower
-    if (var(VAR_RESULT) != B_OUTCOME_LOST) {
-        goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
+    
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            destroyfollower
+        case B_OUTCOME_RAN:
+            break
+        default:
+            destroyfollower
+            goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release
 }
@@ -462,6 +475,19 @@ text MareepHelp_Text {
     format("{COLOR DARK_GRAY}bro help me")
 }
 
+
+script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
+    lock
+    facefollower
+    msgbox(format("{COLOR DARK_GRAY}You can't leave without helping the old man find his Mareep!"))
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    release
+}
+
+movement ISLANDGAME_MINTY_MEADOWS_2_WalkUp {
+    walk_up
+}
 
 ///TRAINERS
 
