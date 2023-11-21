@@ -27,10 +27,17 @@ script ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene {
     lock
 
     // thief trash talks w/ arthur
-    msgbox(format("thief trash talk"))
-    closemessage
+    msgbox(format(
+        "Arthur: You thief! I won't let you leave with that Marill!"
+    ))
+    msgbox(format(
+        "Edea: Kid, you already lost. Give it up already.\p"
+        "Edea: Besides, this Marill is going to make me rich!\p"
+        "Edea: There's a collector in Tidalcove who would pay good money for this..."
+    ))
 
     // player approaches
+    closemessage
     applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerApproach)
     waitmovement(0)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
@@ -38,14 +45,21 @@ script ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene {
     // thief talks to player
     applymovement(LOCALID_THIEF, Movement_Surprise)
     waitmovement(0)
-    msgbox(format("thief player convo"))
-    closemessage
+    msgbox(format(
+        "Edea: And who is this?\p"
+        "Edea: Listen, I got to this Marill first. If you want it, you'll have to take it from me."
+    ))
+    msgbox(format(
+        "Arthur: Please, you have to stop her! I tried my best, but she's really strong..."
+    ))
 
     // battle with thief
-    trainerbattle_single(TRAINER_SPECIAL_THIEF_EDEA, "intro", "loss", ThiefDefeated)
+    closemessage
+    trainerbattle_single(TRAINER_SPECIAL_THIEF_EDEA, format("Edea: Whatever. If you're anything like the kid, this should be quick."), "...", ThiefDefeated)
 }
 
 movement Movement_ThiefRunAway {
+    emote_exclamation_mark
     walk_fast_left
     walk_fast_down * 3
     walk_fast_left * 5
@@ -54,37 +68,50 @@ movement Movement_ThiefRunAway {
 
 script(local) ThiefDefeated {
     // thief refuses to surrender mon
-    msgbox(format("refusal to surrender"))
-    closemessage
+    msgbox(format(
+        "Arthur: Ha! You lost! Give us back the Marill!"
+    ))
+    msgbox(format(
+        "Edea: I don't think so. There's no chance of that happening."
+    ))
+    msgbox(format(
+        "Arthur: What are we gonna do?\p"
+        "Arthur: Wait, did you hear something?"
+    ))
 
     // articuno swoops down
+    closemessage
     fadescreen(FADE_TO_WHITE)
     addobject(LOCALID_ARTICUNO)
     setobjectxy(LOCALID_ARTICUNO, 15, 29)
     fadescreen(FADE_FROM_WHITE)
+    delay(30)
 
     // articuno scares thief and they run
     playmoncry(SPECIES_ARTICUNO, CRY_MODE_NORMAL)
-    msgbox(format("thief is scard"))
-    closemessage
     applymovement(LOCALID_THIEF, Movement_ThiefRunAway)
     waitmovement(0)
     removeobject(LOCALID_THIEF)
 
-    // dialogue between arthur, player, articuno
-    msgbox(format("wow, thanks articuno!"))
-    closemessage
-
     // articuno leaves
+    delay(30)
     fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_ARTICUNO)
     fadescreen(FADE_FROM_WHITE)
 
     // final dialogue, want to go to rosevale
-    msgbox(format("can you believe what happened? lets go home!"))
+    msgbox(format(
+        "Arthur: Woah, what just happened?\p"
+        "Arthur: Oh, the thief left behind Marill when running away!"
+    ))
+    msgbox(format(
+        "Arthur: I'm Arthur by the way!\p"
+        "Arthur: Thanks for helping us deal with that thief...\p"
+        "Arthur: It's pretty late - we should probably head back to Rosevale."
+    ))
 
     setvar(VAR_ROSEVALE_STATE, 2) // see ISLANDGAME_ROSEVALE scripts.pory for state info
 
     // warp back to rosevale
-    warp(MAP_ISLANDGAME_ROSEVALE, 17, 24)
+    warp(MAP_ISLANDGAME_ROSEVALE, 17, 25)
 }

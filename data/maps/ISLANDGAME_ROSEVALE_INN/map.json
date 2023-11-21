@@ -24,11 +24,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 11,
       "y": 5,
       "elevation": 0,
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister",
       "flag": "0"
     },
     {
@@ -50,11 +50,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 14,
       "y": 5,
       "elevation": 0,
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_ROSEVALE_INN_Interact_Arthur",
       "flag": "0"
     }
   ],
@@ -73,14 +73,14 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_ROSEVALE",
-      "dest_warp_id": "2"
+      "dest_warp_id": "1"
     },
     {
       "x": 13,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_ROSEVALE",
-      "dest_warp_id": "2"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
