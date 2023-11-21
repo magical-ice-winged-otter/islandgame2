@@ -1,23 +1,28 @@
 ISLANDGAME_ROSEVALE_MapScripts::
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
-ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-	map_script_2 VAR_ROSEVALE_STATE, 1, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0
-	map_script_2 VAR_ROSEVALE_STATE, 2, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1
-	.2byte 0
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	switch VAR_ROSEVALE_STATE
+	case 1, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
+	case 2, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	case 4, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	compare VAR_ROSEVALE_STATE, 3
+	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+	return
 
-ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_0:
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
 	setobjectxyperm 6, 0, 0
-	setobjectxyperm 7, 0, 0
 	setobjectxyperm 8, 0, 0
+	setobjectxyperm 7, 0, 0
 	setobjectxyperm 3, 12, 14
 	addobject 3
 	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
-	return
+	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
-ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1:
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 	setobjectxyperm 6, 20, 25
 	setobjectxyperm 7, 18, 24
 	setobjectxyperm 8, 19, 24
@@ -30,6 +35,24 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE_1:
 	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
 	turnobject 6, DIR_WEST
 	turnobject 3, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
+	setobjectxyperm 6, 0, 0
+	setobjectxyperm 7, 0, 0
+	setobjectxyperm 8, 0, 0
+	setobjectxyperm 3, 0, 0
+	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
+	setobjectxyperm 7, 17, 24
+	addobject 7
+	return
+
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+	compare VAR_ROSEVALE_STATE, 4
+	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
@@ -41,7 +64,6 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1, MSGBOX_NPC
 	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_NPC
-	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3, MSGBOX_NPC
 	special HealPlayerParty
 	setrespawn HEAL_LOCATION_ISLANDGAME_ROSEVALE
 	warp MAP_ISLANDGAME_ROSEVALE_INN, 5, 3
@@ -107,6 +129,11 @@ ISLANDGAME_ROSEVALE_Interact_InnSign::
 
 ISLANDGAME_ROSEVALE_Interact_ArthurSister::
 	msgbox ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_ROSEVALE_Interact_ArthurDad::
+	msgbox ISLANDGAME_ROSEVALE_Interact_ArthurDad_Text_0, MSGBOX_NPC
 	return
 
 
@@ -206,6 +233,8 @@ ArthurDefeated:
 	waitmovement 7
 	waitmovement 6
 	msgbox ArthurDefeated_Text_1, MSGBOX_NPC
+	turnobject 6, DIR_EAST
+	msgbox ArthurDefeated_Text_2, MSGBOX_NPC
 	applymovement 7, Movement_ArthurDad_WalkAway
 	applymovement 6, Movement_Arthur_WalkAway
 	waitmovement 6
@@ -218,17 +247,17 @@ ArthurDefeated:
 
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
-	.string "Arthurs Dad: Thanks so helping!$"
+	.string "Arthurs Sister: You did it! My Marill!$"
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
-	.string "Arthurs Mom: We are so thankful!$"
+	.string "Arthurs Mom: Thank you for helping like\n"
+	.string "you did today.\n"
+	.string "This means a lot to us.$"
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
-	.string "Arthurs Sister: You are the best!$"
-
-ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
-	.string "Arthurs Dad: Please - stay the night,\n"
-	.string "free of charge.$"
+	.string "Arthurs Dad: Please, stay the night to\n"
+	.string "rest and recover.\n"
+	.string "I'm sure you both have had a long day.$"
 
 ISLANDGAME_ROSEVALE_Interact_LockedDoor_Text_0:
 	.string "The door is locked$"
@@ -252,20 +281,39 @@ ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0:
 	.string "I'm scared. Is everything going to be\n"
 	.string "ok?$"
 
+ISLANDGAME_ROSEVALE_Interact_ArthurDad_Text_0:
+	.string "Sorry, the Inn is closed right now...$"
+
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0:
-	.string "arthur explains situation$"
+	.string "My dad won't let me join you in the\n"
+	.string "festival tournament.\p"
+	.string "He doesn't think I'm ready yet...\p"
+	.string "But he's wrong! I am ready!$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1:
-	.string "intro$"
+	.string "Let me prove it, right now!$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2:
-	.string "lose$"
+	.string "Am I not good enough?$"
 
 ArthurDefeated_Text_0:
-	.string "arthur talks about fight$"
+	.string "I think my dad was right...\p"
+	.string "Maybe I'm just not cut out for battling.$"
 
 ArthurDefeated_Text_1:
-	.string "conversation between all$"
+	.string "Arthurs Dad: No, Arthur, that's not\n"
+	.string "true.\p"
+	.string "Arthurs Dad: Even though you weren't\n"
+	.string "ready yet, you have a lot of potential.\p"
+	.string "Arthurs Dad: Keep training! If you can\n"
+	.string "beat Ruka at Tidalcove, I'll let you go.$"
+
+ArthurDefeated_Text_2:
+	.string "Arthur: Did you hear that? I definitely\n"
+	.string "meet you again for the tournament!\p"
+	.string "Arthur: Ruka might be really tough, but\n"
+	.string "I know I can do it.\p"
+	.string "Arthur: Good luck with your challenge!$"
 
 Text_ArthurSister_PleaseHelp::
 	.string "Excuse me, I need your help!\p"

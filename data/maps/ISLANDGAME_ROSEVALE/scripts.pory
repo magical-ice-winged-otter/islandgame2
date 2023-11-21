@@ -16,43 +16,54 @@ const LOCALID_PUDDLETRAINER = 4
 const LOCALID_PUDDLEMON = 5
 
 mapscripts ISLANDGAME_ROSEVALE_MapScripts {
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_ROSEVALE_STATE, STATE_STARTED_QUEST {
-            // only sister is visible
-            setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
-            setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
-            setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
-            setobjectxyperm(LOCALID_ARTHUR_SISTER, 12, 14)
-            addobject(LOCALID_ARTHUR_SISTER)
-            setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
+    MAP_SCRIPT_ON_TRANSITION {
+        switch (var(VAR_ROSEVALE_STATE)) {
+            case STATE_STARTED_QUEST:
+                // only sister and dad blocking inn are visible
+                setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_SISTER, 12, 14)
+                addobject(LOCALID_ARTHUR_SISTER)
+                setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
+            case STATE_DEFEATED_BANDIT:
+                // everyone is standing around the inn
+                setobjectxyperm(LOCALID_ARTHUR, 20, 25)
+                setobjectxyperm(LOCALID_ARTHUR_DAD, 18, 24)
+                setobjectxyperm(LOCALID_ARTHUR_MOM, 19, 24)
+                setobjectxyperm(LOCALID_ARTHUR_SISTER, 20, 26)
+                addobject(LOCALID_ARTHUR)
+                addobject(LOCALID_ARTHUR_DAD)
+                addobject(LOCALID_ARTHUR_MOM)
+                addobject(LOCALID_ARTHUR_SISTER)
+                setobjectmovementtype(LOCALID_ARTHUR, MOVEMENT_TYPE_FACE_LEFT)
+                setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
+                turnobject(LOCALID_ARTHUR, DIR_WEST)
+                turnobject(LOCALID_ARTHUR_SISTER, DIR_WEST)
+                turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+            case STATE_FINAL:
+                // everyone is hidden, inn is open
+                setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_SISTER, POS_HIDDEN_X, POS_HIDDEN_Y)
+            default:
+
         }
-        VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
-            // everyone is standing around the inn
-            setobjectxyperm(LOCALID_ARTHUR, 20, 25)
-            setobjectxyperm(LOCALID_ARTHUR_DAD, 18, 24)
-            setobjectxyperm(LOCALID_ARTHUR_MOM, 19, 24)
-            setobjectxyperm(LOCALID_ARTHUR_SISTER, 20, 26)
-            addobject(LOCALID_ARTHUR)
-            addobject(LOCALID_ARTHUR_DAD)
-            addobject(LOCALID_ARTHUR_MOM)
-            addobject(LOCALID_ARTHUR_SISTER)
-            setobjectmovementtype(LOCALID_ARTHUR, MOVEMENT_TYPE_FACE_LEFT)
-            setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
-            turnobject(LOCALID_ARTHUR, DIR_WEST)
-            turnobject(LOCALID_ARTHUR_SISTER, DIR_WEST)
+
+        if (var(VAR_ROSEVALE_STATE) != STATE_ARTHUR_FIGHT && var(VAR_ROSEVALE_STATE) != STATE_FINAL) {
+                setobjectxyperm(LOCALID_ARTHUR_DAD, 17, 24)
+                addobject(LOCALID_ARTHUR_DAD)
         }
-    ]
+    }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
             setvar(VAR_ROSEVALE_STATE, STATE_ARTHUR_FIGHT)
 
             // everyone thanks you for helping
-            msgbox(format("Arthurs Dad: Thanks so helping!"), MSGBOX_NPC)
-            msgbox(format("Arthurs Mom: We are so thankful!"), MSGBOX_NPC)
-            msgbox(format("Arthurs Sister: You are the best!"), MSGBOX_NPC)
-
-            // you are invited to stay the night
-            msgbox(format("Arthurs Dad: Please - stay the night, free of charge."), MSGBOX_NPC)
+            msgbox(format("Arthurs Sister: You did it! My Marill!"), MSGBOX_NPC)
+            msgbox(format("Arthurs Mom: Thank you for helping like you did today.\nThis means a lot to us."), MSGBOX_NPC)
+            msgbox(format("Arthurs Dad: Please, stay the night to rest and recover.\nI'm sure you both have had a long day."), MSGBOX_NPC)
 
             //warp
             special(HealPlayerParty)
@@ -118,6 +129,10 @@ script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
     msgbox(format("I'm scared. Is everything going to be ok?"), MSGBOX_NPC)
 }
 
+script ISLANDGAME_ROSEVALE_Interact_ArthurDad {
+    msgbox(format("Sorry, the Inn is closed right now..."), MSGBOX_NPC)
+}
+
 // section: sister cutscene pre-aurora
 text Text_ArthurSister_PleaseHelp {
     format(
@@ -165,10 +180,14 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
     waitmovement(0)
 
     // arthur explains situation
-    msgbox(format("arthur explains situation"), MSGBOX_NPC)
+    msgbox(format(
+        "My dad won't let me join you in the festival tournament.\p"
+        "He doesn't think I'm ready yet...\p"
+        "But he's wrong! I am ready!"
+    ), MSGBOX_NPC)
 
     // battle starts
-    trainerbattle_single(TRAINER_SPECIAL_ARTHUR_1, format("intro"), format("lose"), ArthurDefeated)
+    trainerbattle_single(TRAINER_SPECIAL_ARTHUR_1, format("Let me prove it, right now!"), "Am I not good enough?", ArthurDefeated)
     release
 }
 
@@ -193,7 +212,10 @@ movement Movement_Arthur_WalkAway {
 
 script(local) ArthurDefeated {
     // arthur talks about fight
-    msgbox(format("arthur talks about fight"), MSGBOX_NPC)
+    msgbox(format(
+        "I think my dad was right...\p"
+        "Maybe I'm just not cut out for battling."
+    ), MSGBOX_NPC)
 
     // dad walks up
     addobject(LOCALID_ARTHUR_DAD)
@@ -204,7 +226,17 @@ script(local) ArthurDefeated {
     waitmovement(LOCALID_ARTHUR)
 
     // messages between dad, arthur, player
-    msgbox(format("conversation between all"), MSGBOX_NPC)
+    msgbox(format(
+        "Arthurs Dad: No, Arthur, that's not true.\p"
+        "Arthurs Dad: Even though you weren't ready yet, you have a lot of potential.\p"
+        "Arthurs Dad: Keep training! If you can beat Ruka at Tidalcove, I'll let you go."
+    ), MSGBOX_NPC)
+    turnobject(LOCALID_ARTHUR, DIR_EAST)
+    msgbox(format(
+        "Arthur: Did you hear that? I definitely meet you again for the tournament!\p"
+        "Arthur: Ruka might be really tough, but I know I can do it.\p"
+        "Arthur: Good luck with your challenge!"
+    ), MSGBOX_NPC)
 
     // dad and arthur walk away
     applymovement(LOCALID_ARTHUR_DAD, Movement_ArthurDad_WalkAway)

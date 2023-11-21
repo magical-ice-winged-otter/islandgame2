@@ -1,20 +1,62 @@
-// todo: dialogue, update positions based on state
+const LOCALID_ARTHUR_SISTER = 2
+const LOCALID_ARTHUR_DAD = 3
+const LOCALID_ARTHUR_MOM = 1
+const LOCALID_ARTHUR = 4
 
 mapscripts ISLANDGAME_ROSEVALE_INN_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        switch (var(VAR_ROSEVALE_STATE)) {
+            case 3:
+                // do nothing
+            default: 
+                // post arthur fight
+                setobjectxy(LOCALID_ARTHUR_SISTER, 18, 6)
+                setobjectxy(LOCALID_ARTHUR_DAD, 11, 2)
+                setobjectxy(LOCALID_ARTHUR_MOM, 14, 5)
+                setobjectxy(LOCALID_ARTHUR, 3, 4)
+                setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
+                setobjectmovementtype(LOCALID_ARTHUR_MOM, MOVEMENT_TYPE_FACE_RIGHT)
+                setobjectmovementtype(LOCALID_ARTHUR_DAD, MOVEMENT_TYPE_FACE_UP)
+                setobjectmovementtype(LOCALID_ARTHUR, MOVEMENT_TYPE_FACE_DOWN)
+        }
+    }
 }
 
 script ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom {
-    msgbox(format(""), MSGBOX_NPC)
-}
-
-script ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad {
-    msgbox(format(""), MSGBOX_NPC)
+    msgbox(format(
+        "Thanks for helping our family out earlier.\p"
+        "If there's ever a way we can help you, let us know."
+    ), MSGBOX_NPC)
 }
 
 script ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister {
-    msgbox(format(""), MSGBOX_NPC)
+    msgbox(format("My Marill is the best Pokemon ever!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_ROSEVALE_INN_Interact_Arthur {
-    msgbox(format(""), MSGBOX_NPC)
+    lock
+    switch (var(VAR_ROSEVALE_STATE)) {
+        case 3: // pre arthur fight
+            msgbox(format(
+                "Why can't I go to the festival tournament?\p"
+                "It's not fair!"
+            ))
+            closemessage
+        default: // post arthur fight
+            msgbox(format("Hey! I'm getting way stronger, you know."), MSGBOX_NPC)
+    }
+    release
+}
+
+script ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad {
+    switch (var(VAR_ROSEVALE_STATE)) {
+        case 3: // pre arthur fight
+            msgbox(format(
+                "Arthur, you know why you can't go to the festival.\p"
+                "You were too reckless yesterday, running into Mt. Aurora like that."
+            ))
+            closemessage
+        default: // post arthur fight
+            msgbox(format("Arthur has been working really hard lately.\pThanks for motivating him."), MSGBOX_NPC)
+    }
 }
