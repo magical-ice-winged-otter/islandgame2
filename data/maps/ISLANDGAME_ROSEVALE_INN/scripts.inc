@@ -5,15 +5,13 @@ ISLANDGAME_ROSEVALE_INN_MapScripts::
 ISLANDGAME_ROSEVALE_INN_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	switch VAR_ROSEVALE_STATE
 	case 3, ISLANDGAME_ROSEVALE_INN_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
-ISLANDGAME_ROSEVALE_INN_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	setobjectxy 2, 18, 6
 	setobjectxy 3, 11, 2
 	setobjectxy 1, 14, 5
 	setobjectxy 4, 3, 4
-	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_LEFT
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+ISLANDGAME_ROSEVALE_INN_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	return
 
 

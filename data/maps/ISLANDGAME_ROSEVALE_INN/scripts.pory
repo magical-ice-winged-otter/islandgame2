@@ -9,16 +9,13 @@ mapscripts ISLANDGAME_ROSEVALE_INN_MapScripts {
         switch (var(VAR_ROSEVALE_STATE)) {
             case 3:
                 // do nothing
+                break
             default: 
                 // post arthur fight
                 setobjectxy(LOCALID_ARTHUR_SISTER, 18, 6)
                 setobjectxy(LOCALID_ARTHUR_DAD, 11, 2)
                 setobjectxy(LOCALID_ARTHUR_MOM, 14, 5)
                 setobjectxy(LOCALID_ARTHUR, 3, 4)
-                setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
-                setobjectmovementtype(LOCALID_ARTHUR_MOM, MOVEMENT_TYPE_FACE_RIGHT)
-                setobjectmovementtype(LOCALID_ARTHUR_DAD, MOVEMENT_TYPE_FACE_UP)
-                setobjectmovementtype(LOCALID_ARTHUR, MOVEMENT_TYPE_FACE_DOWN)
         }
     }
 }
