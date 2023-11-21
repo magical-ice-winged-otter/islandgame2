@@ -1,8 +1,8 @@
 const FLAG_HIDE_THIEF = FLAG_TEMP_1
 
-const LOCALID_THIEF = 2
-const LOCALID_ARTHUR = 3
-const LOCALID_ARTICUNO = 4
+const LOCALID_THIEF = 1
+const LOCALID_ARTHUR = 2
+const LOCALID_ARTICUNO = 3
 
 mapscripts ISLANDGAME_MT_AURORA_1F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -28,12 +28,14 @@ script ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene {
 
     // thief trash talks w/ arthur
     msgbox(format(
-        "Arthur: You thief! I won't let you leave with that Marill!"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}D-Darn it. I lost..."
     ))
     msgbox(format(
-        "Edea: Kid, you already lost. Give it up already.\p"
-        "Edea: Besides, this Marill is going to make me rich!\p"
-        "Edea: There's a collector in Tidalcove who would pay good money for this..."
+        "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Pffft. That was it? You didn't even damage a single one of my Pokémon! \p"
+        "{COLOR DARK_GRAY}And you came all this way just to stop me too. How sad. How pathetic. Ahaha! \p"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY} Grr... \p"
+        "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Do you have any idea how much this Marill will sell for on the black market? Not only green, but blessed with a case of Pokérus? Just get your sister a new one, bub. She'll hardly notice the difference! \p"
+        "{COLOR DARK_GRAY}Your Pokémon though? You can keep them. I don't bother with trash."
     ))
 
     // player approaches
@@ -46,16 +48,16 @@ script ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene {
     applymovement(LOCALID_THIEF, Movement_Surprise)
     waitmovement(0)
     msgbox(format(
-        "Edea: And who is this?\p"
-        "Edea: Listen, I got to this Marill first. If you want it, you'll have to take it from me."
+        "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Hm? And just who are you? A friend of his? \p"
+        "{COLOR DARK_GRAY}Beat it, kid. I stole this Marill fair and square! Go get your own! \p"
     ))
     msgbox(format(
-        "Arthur: Please, you have to stop her! I tried my best, but she's really strong..."
+        "Arthur: Please, you have to stop her! I tried my very best, but..."
     ))
 
     // battle with thief
     closemessage
-    trainerbattle_single(TRAINER_SPECIAL_THIEF_EDEA, format("Edea: Whatever. If you're anything like the kid, this should be quick."), "...", ThiefDefeated)
+    trainerbattle_single(TRAINER_SPECIAL_THIEF_EDEA, format("{COLOR GREEN}Thief: {COLOR DARK_GRAY}Tch. If you're anything like this pushover, this should be quick."), "I-Impossible! Just who are you, kid!?", ThiefDefeated)
 }
 
 movement Movement_ThiefRunAway {
@@ -69,14 +71,16 @@ movement Movement_ThiefRunAway {
 script(local) ThiefDefeated {
     // thief refuses to surrender mon
     msgbox(format(
-        "Arthur: Ha! You lost! Give us back the Marill!"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}You lost! Now, give us back Marill!"
     ))
     msgbox(format(
-        "Edea: I don't think so. There's no chance of that happening."
+        "{COLOR GREEN}Edea: {COLOR DARK_GRAY}In your dreams! Just because I lost doesn't mean I have to return it! \p"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Huh? B-But you have to! \p"
+        "{COLOR GREEN}Edea: {COLOR DARK_GRAY}What are you gonna do, tell on me to your mommy? I'm taking this with me!"
     ))
     msgbox(format(
-        "Arthur: What are we gonna do?\p"
-        "Arthur: Wait, did you hear something?"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Nggh... What are we gonna do?\p"
+        "Wait... do you hear that?"
     ))
 
     // articuno swoops down
@@ -89,6 +93,13 @@ script(local) ThiefDefeated {
 
     // articuno scares thief and they run
     playmoncry(SPECIES_ARTICUNO, CRY_MODE_NORMAL)
+    
+    msgbox(format(
+        "{COLOR GREEN}Edea: {COLOR DARK_GRAY}W-What? Articuno!? \p"
+        "Tch... F-Fine! I'll give them back their stupid Marill! \p"
+        "You punks got lucky this time... Next time I see you, you won't be!"
+    ))
+
     applymovement(LOCALID_THIEF, Movement_ThiefRunAway)
     waitmovement(0)
     removeobject(LOCALID_THIEF)
@@ -101,13 +112,13 @@ script(local) ThiefDefeated {
 
     // final dialogue, want to go to rosevale
     msgbox(format(
-        "Arthur: Woah, what just happened?\p"
-        "Arthur: Oh, the thief left behind Marill when running away!"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Holy heck... was that Articuno just now? \p"
+        "T-Thank you Articuno! We owe you one!"
     ))
     msgbox(format(
-        "Arthur: I'm Arthur by the way!\p"
-        "Arthur: Thanks for helping us deal with that thief...\p"
-        "Arthur: It's pretty late - we should probably head back to Rosevale."
+        "Oh, and thank you too! Err... Sorry, what's your name? \p"
+        "{PLAYER}? Well, thank you for stepping in and dealing with that thief too. \p"
+        "We should head back. My family is probably worried sick about me..."
     ))
 
     setvar(VAR_ROSEVALE_STATE, 2) // see ISLANDGAME_ROSEVALE scripts.pory for state info

@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_ROSEVALE_PKMNCENTER",
   "name": "ISLANDGAME_ROSEVALE_PKMNCENTER",
   "layout": "LAYOUT_ISLANDGAME_ROSEVALE_PKMNCENTER",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_POKE_CENTER",
   "region_map_section": "MAPSEC_ROSEVALE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
