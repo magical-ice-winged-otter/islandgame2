@@ -38,11 +38,11 @@ script ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka {
             "Now, let's see what you can do in battle."
         ), MSGBOX_NPC)
 
-        trainerbattle_single(TRAINER_LEADER_RUKA, format("Let's go!"), format("Nice, that was fun!"), RukaDefeated, NO_MUSIC)
+        trainerbattle_single(TRAINER_LEADER_RUKA, format("Let's go!"), format("That was fun!"), RukaDefeated, NO_MUSIC)
     }
     else { // we already won
         msgbox(format(
-            "Lumine really is a wonderful island.\p"
+            "Lumine is a wonderful island.\p"
             "I'm sure you'll find lots of cool stuff to do over there!"
         ), MSGBOX_NPC)
     }

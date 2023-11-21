@@ -319,7 +319,7 @@ text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2
         "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Unfortunately, our conversation must end here. I have a lot of ground to cover today. \p"
         "{COLOR DARK_GRAY}Oh, but before I go, you should know about the upcoming Silverwing Festival! \p"
         "{COLOR DARK_GRAY}It's a grand celebration we host each year to remember the day our great savior, Lugia, rescued us from a cataclysmic storm. \p"
-        "{COLOR DARK_GRAY}It's not for another few weeks, but it's the largest event in all of Mariyama, and it would be a shame if you missed it! \p"
+        "{COLOR DARK_GRAY}It's not for another month, but it's the largest event in all of Mariyama, and it would be a shame if you missed it! \p"
         "{COLOR DARK_GRAY}Anyways, I must get going now. It was great meeting you, {PLAYER}. \p"
         "{COLOR DARK_GRAY}May our paths cross again."
         )

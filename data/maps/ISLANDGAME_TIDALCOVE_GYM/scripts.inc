@@ -138,10 +138,10 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_1:
 	.string "Let's go!$"
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_2:
-	.string "Nice, that was fun!$"
+	.string "That was fun!$"
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_3:
-	.string "Lumine really is a wonderful island.\p"
+	.string "Lumine is a wonderful island.\p"
 	.string "I'm sure you'll find lots of cool stuff\n"
 	.string "to do over there!$"
 

@@ -137,15 +137,15 @@
       "x": 10,
       "y": 18,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_MINTY_MEADOWS",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ISLANDGAME_MINTY_MEADOWS_2",
+      "dest_warp_id": "1"
     },
     {
       "x": 23,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MINTY_MEADOWS_3",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

@@ -39,7 +39,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 33,
       "y": 20,
       "elevation": 0,
@@ -48,17 +48,17 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_RockSmash",
-      "flag": "0"
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 27,
+      "x": 29,
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_x": 1,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast",
@@ -67,24 +67,24 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 16,
-      "y": 18,
+      "y": 17,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "5",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 30,
+      "x": 28,
       "y": 34,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_DOWN_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast",
@@ -96,15 +96,15 @@
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
       "script": "ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 43,
       "y": 25,
       "elevation": 0,
@@ -112,25 +112,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 20,
-      "y": 33,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
-      "script": "ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 42,
       "y": 25,
       "elevation": 0,
@@ -138,7 +125,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs",
       "flag": "0"
     },
@@ -196,8 +183,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 15,
-      "y": 39,
+      "x": 5,
+      "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -217,8 +204,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemElixir2",
-      "flag": "FLAG_ITEM_ROUTE_119_ELIXIR_2"
+      "script": "Route117_EventScript_ItemGreatBall",
+      "flag": "FLAG_ITEM_ROUTE_117_GREAT_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 42,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route117_EventScript_ItemRevive",
+      "flag": "FLAG_ITEM_ROUTE_117_REVIVE"
     }
   ],
   "warp_events": [
@@ -234,14 +234,6 @@
 
   ],
   "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 27,
-      "y": 38,
-      "elevation": 0,
-      "item": "ITEM_ELIXIR",
-      "flag": "FLAG_TEMP_SKIP_GABBY_INTERVIEW"
-    },
     {
       "type": "sign",
       "x": 55,

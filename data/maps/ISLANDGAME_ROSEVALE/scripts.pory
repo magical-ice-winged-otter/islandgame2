@@ -61,11 +61,11 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             setvar(VAR_ROSEVALE_STATE, STATE_ARTHUR_FIGHT)
 
             // everyone thanks you for helping
-            msgbox(format("Arthurs Sister: You did it! My Marill!"), MSGBOX_NPC)
-            msgbox(format("Arthurs Mom: Thank you for helping like you did today.\nThis means a lot to us."), MSGBOX_NPC)
-            msgbox(format("Arthurs Sister: Hey, take this for helping us out!"), MSGBOX_NPC)
+            msgbox(format("{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Yay! Fank you for getting Marill back!"), MSGBOX_NPC)
+            msgbox(format("{COLOR DARK_GRAY}Here! You can have this."), MSGBOX_NPC)
             giveitem(ITEM_AMULET_COIN)
-            msgbox(format("Arthurs Dad: Please, stay the night to rest and recover.\nI'm sure you both have had a long day."), MSGBOX_NPC)
+            msgbox(format("{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}How can we ever repay you, {PLAYER}?"), MSGBOX_NPC)
+            msgbox(format("{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}Please, stay the night at our inn. It's the least we can do."), MSGBOX_NPC)
 
             //warp
             special(HealPlayerParty)
@@ -128,20 +128,20 @@ script ISLANDGAME_ROSEVALE_Interact_InnSign {
 }
 
 script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
-    msgbox(format("I'm scared. Is everything going to be ok?"), MSGBOX_NPC)
+    msgbox(format("I'm scawwed... Is everyfing going to be alwight?"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_ROSEVALE_Interact_ArthurDad {
-    msgbox(format("Sorry, the Inn is closed right now..."), MSGBOX_NPC)
+    msgbox(format("Apologies, we're doing some renovations right now. Come back later."), MSGBOX_NPC)
 }
 
 // section: sister cutscene pre-aurora
 text Text_ArthurSister_PleaseHelp {
     format(
-        "Excuse me, I need your help!\p"
-        "A thief stole my Marill and down this path towards Mt. Aurora!\p"
-        "My brother chased after them, but I don't think he can fight...\p"
-        "Can you bring them back safely?"
+        "Hewwo! I need your help! \p"
+        "You're a twainer, right? Someone stole my Marill! \p"
+        "My brother ran after the thief, but he hasn't returned in a while! \p"
+        "Can you help me find him pwease? They went that-a-way!"
     )
 }
 
@@ -175,6 +175,7 @@ movement Movement_Arthur_WalkUpToExit {
 script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
     lock
     // arthur walks up
+    msgbox(format("{COLOR GREEN}Arthur: {COLOR DARK_GRAY}{PLAYER}!"))
     addobject(LOCALID_ARTHUR)
     setobjectxy(LOCALID_ARTHUR, 25, 12)
     applymovement(LOCALID_ARTHUR, Movement_Arthur_WalkUpToExit)
@@ -183,13 +184,16 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
 
     // arthur explains situation
     msgbox(format(
-        "My dad won't let me join you in the festival tournament.\p"
-        "He doesn't think I'm ready yet...\p"
-        "But he's wrong! I am ready!"
+        "Before you go, I... I... \p"
+        "I want to challenge you to a Pokémon battle! \p" 
+        "I-I couldn't do anything against that thief... If it wasn't for you and Articuno... My little sister's Pokémon would've been lost forever! \p"
+        "I need to get stronger, so when the time comes, I'll be able to protect her!\p"
+        "I wanna be just like you, and take on the Mariyama Gym Challenge to hone my skills!\p"
+        "But Dad says I'm not ready yet... \p"
     ), MSGBOX_NPC)
 
     // battle starts
-    trainerbattle_single(TRAINER_SPECIAL_ARTHUR_1, format("Let me prove it, right now!"), "Am I not good enough?", ArthurDefeated)
+    trainerbattle_single(TRAINER_SPECIAL_ARTHUR_1, format("So I'll prove it to him! Right here and now! Prepare yourself, {PLAYER}!"), "...\pI lost again...\pWhy do I keep losing?", ArthurDefeated)
     release
 }
 
@@ -215,8 +219,11 @@ movement Movement_Arthur_WalkAway {
 script(local) ArthurDefeated {
     // arthur talks about fight
     msgbox(format(
-        "I think my dad was right...\p"
-        "Maybe I'm just not cut out for battling."
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}...\p"
+        "{COLOR DARK_GRAY}Heh... You're a great trainer, {PLAYER}. You can definitely take on Ruka. \p"
+        "{COLOR DARK_GRAY}Me on the other hand? I should just give up.\p"
+        "{COLOR DARK_GRAY}I'm not cut out to be a Pokémon trainer. I'm a failure. \p"
+        "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}No, Arthur, that's not true.\p"
     ), MSGBOX_NPC)
 
     // dad walks up
@@ -229,17 +236,15 @@ script(local) ArthurDefeated {
 
     // messages between dad, arthur, player
     msgbox(format(
-        "Arthurs Dad: No, Arthur, that's not true.\p"
-        "Arthurs Dad: Even though you weren't ready yet, you have a lot of potential.\p"
-        "Arthurs Dad: Keep training! If you can beat Ruka at Tidalcove, I'll let you go."
+        "Just because you haven't been successful with your first few battles, doesn't mean you're a failure. \p"
+        "I watched your battle with {PLAYER}. The bond you share with your Pokémon is strong, and shows me that do you have potential. \p"
+        "But you need more time. You can't expect to be a good trainer without putting in the effort. \p"
+        "Listen, if you spend the next week training hard with your Pokémon, I'll let you challenge Ruka, alright?\p"
+        "{COLOR GREEN}Arthur: -sniff- Okay."
+        "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}Good luck on the rest of your journey, {PLAYER}."
+        "{COLOR DARK_GRAY}Our door will always be open to you."
     ), MSGBOX_NPC)
-    turnobject(LOCALID_ARTHUR, DIR_EAST)
-    msgbox(format(
-        "Arthur: Did you hear that? I definitely meet you again for the tournament!\p"
-        "Arthur: Ruka might be really tough, but I know I can do it.\p"
-        "Arthur: Good luck with your challenge!"
-    ), MSGBOX_NPC)
-
+    
     // dad and arthur walk away
     applymovement(LOCALID_ARTHUR_DAD, Movement_ArthurDad_WalkAway)
     applymovement(LOCALID_ARTHUR, Movement_Arthur_WalkAway)

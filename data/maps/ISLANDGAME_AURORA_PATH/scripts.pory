@@ -5,7 +5,7 @@ script ISLANDGAME_AURORA_PATH_Interact_EntranceSign {
 }
 
 script ISLANDGAME_AURORA_PATH_Interact_MtSign {
-    msgbox(format("MT. AURORA\pPeak elevation: very high."), MSGBOX_SIGN)
+    msgbox(format("MT. AURORA\pPeak Elevation: Very High"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_AURORA_PATH_Interact_WeatherInstitute {

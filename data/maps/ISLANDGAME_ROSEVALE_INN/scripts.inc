@@ -18,12 +18,28 @@ ISLANDGAME_ROSEVALE_INN_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom_Text_0, MSGBOX_NPC
 	return
 
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_0, MSGBOX_NPC
+	applymovement 2, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	return
+
+
+ISLANDGAME_ROSEVALE_INN_Interact_Marill::
+	lock
+	faceplayer
+	playmoncry SPECIES_MARILL, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_ROSEVALE_INN_Interact_Marill_Text_0, MSGBOX_NPC
+	applymovement 5, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	return
 
 
@@ -55,29 +71,30 @@ ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad_2:
 
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom_Text_0:
-	.string "Thanks for helping our family out\n"
-	.string "earlier.\p"
-	.string "If there's ever a way we can help you,\n"
-	.string "let us know.$"
+	.string "{COLOR GREEN}Arthur's Mom: If you ever need\n"
+	.string "anything, just let us know!$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_0:
-	.string "My Marill is the best Pokemon ever!$"
+	.string "{COLOR GREEN}Arthur's Sister: My Marill is the\n"
+	.string "bestest Pokémon ever!$"
+
+ISLANDGAME_ROSEVALE_INN_Interact_Marill_Text_0:
+	.string "Marill! (Thanks for saving me!)$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_Arthur_Text_0:
-	.string "Why can't I go to the festival\n"
-	.string "tournament?\p"
-	.string "It's not fair!$"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Why can't I take on the\n"
+	.string "Mariyama Gym Challenge? It's not fair!$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_Arthur_Text_1:
-	.string "Hey! I'm getting way stronger, you know.$"
+	.string "{COLOR GREEN}Arthur: Hey! I'm getting way stronger.\n"
+	.string "We'll battle again soon!$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad_Text_0:
-	.string "Arthur, you know why you can't go to the\n"
-	.string "festival.\p"
-	.string "You were too reckless yesterday,\n"
-	.string "running into Mt. Aurora like that.$"
+	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}After recklessly running\n"
+	.string "off to Mt. Aurora like that? How can I\l"
+	.string "trust you to travel across the isles?$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad_Text_1:
-	.string "Arthur has been working really hard\n"
-	.string "lately.\p"
-	.string "Thanks for motivating him.$"
+	.string "{COLOR GREEN}Arthur's Dad: Arthur has been working\n"
+	.string "really hard lately.\p"
+	.string "You're a great influence, {PLAYER}.$"

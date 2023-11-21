@@ -289,9 +289,9 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2_Text_0:
 	.string "and now she's already become the most\l"
 	.string "popular celebrity in all of Mariyama.\p"
 	.string "Now, she's on her way to completing the\n"
-	.string "Isle Gym Challenge so she can enter in\l"
-	.string "the upcoming Silverwing Festival\l"
-	.string "Tournament!$"
+	.string "Mariyama Gym Challenge so she can\l"
+	.string "enter in the upcoming Silverwing\l"
+	.string "Festival Tournament!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3_Text_0:
 	.string "Ruka gets so many challenge requests\n"

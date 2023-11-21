@@ -173,7 +173,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1 {
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2 {
     lock
     faceplayer
-    msgbox(format("That Prim sure is incredible... She only just became an idol a few months ago, and now she's already become the most popular celebrity in all of Mariyama.\pNow, she's on her way to completing the Isle Gym Challenge so she can enter in the upcoming Silverwing Festival Tournament!"), MSGBOX_NPC)
+    msgbox(format("That Prim sure is incredible... She only just became an idol a few months ago, and now she's already become the most popular celebrity in all of Mariyama.\pNow, she's on her way to completing the Mariyama Gym Challenge so she can enter in the upcoming Silverwing Festival Tournament!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3 {

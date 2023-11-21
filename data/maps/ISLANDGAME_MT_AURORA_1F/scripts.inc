@@ -38,7 +38,7 @@ ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerApproach
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-	applymovement 2, Movement_Surprise
+	applymovement 1, Movement_Surprise
 	waitmovement 0
 	msgbox ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_2
 	msgbox ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_3
@@ -70,74 +70,95 @@ ThiefDefeated:
 	msgbox ThiefDefeated_Text_2
 	closemessage
 	fadescreen FADE_TO_WHITE
-	addobject 4
-	setobjectxy 4, 15, 29
+	addobject 3
+	setobjectxy 3, 15, 29
 	fadescreen FADE_FROM_WHITE
 	delay 30
 	playmoncry SPECIES_ARTICUNO, CRY_MODE_NORMAL
-	applymovement 2, Movement_ThiefRunAway
+	msgbox ThiefDefeated_Text_3
+	applymovement 1, Movement_ThiefRunAway
 	waitmovement 0
-	removeobject 2
+	removeobject 1
 	delay 30
 	fadescreen FADE_TO_WHITE
-	removeobject 4
+	removeobject 3
 	fadescreen FADE_FROM_WHITE
-	msgbox ThiefDefeated_Text_3
 	msgbox ThiefDefeated_Text_4
+	msgbox ThiefDefeated_Text_5
 	setvar VAR_ROSEVALE_STATE, 2
 	warp MAP_ISLANDGAME_ROSEVALE, 17, 25
 	return
 
 
 ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_0:
-	.string "Arthur: You thief! I won't let you leave\n"
-	.string "with that Marill!$"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}D-Darn it. I lost...$"
 
 ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_1:
-	.string "Edea: Kid, you already lost. Give it up\n"
-	.string "already.\p"
-	.string "Edea: Besides, this Marill is going to\n"
-	.string "make me rich!\p"
-	.string "Edea: There's a collector in Tidalcove\n"
-	.string "who would pay good money for this...$"
+	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Pffft. That was it? You didn't\n"
+	.string "even damage a single one of my\l"
+	.string "Pokémon!\p"
+	.string "{COLOR DARK_GRAY}And you came all this way just to stop\n"
+	.string "me too. How sad. How pathetic. Ahaha!\p"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY} Grr...\p"
+	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Do you have any idea how much\n"
+	.string "this Marill will sell for on the black\l"
+	.string "market? Not only green, but blessed\l"
+	.string "with a case of Pokérus? Just get your\l"
+	.string "sister a new one, bub. She'll hardly\l"
+	.string "notice the difference!\p"
+	.string "{COLOR DARK_GRAY}Your Pokémon though? You can keep\n"
+	.string "them. I don't bother with trash.$"
 
 ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_2:
-	.string "Edea: And who is this?\p"
-	.string "Edea: Listen, I got to this Marill first.\n"
-	.string "If you want it, you'll have to take it\l"
-	.string "from me.$"
+	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Hm? And just who are you? A\n"
+	.string "friend of his?\p"
+	.string "{COLOR DARK_GRAY}Beat it, kid. I stole this Marill fair and\n"
+	.string "square! Go get your own!\p"
+	.string "$"
 
 ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_3:
 	.string "Arthur: Please, you have to stop her! I\n"
-	.string "tried my best, but she's really strong...$"
+	.string "tried my very best, but...$"
 
 ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_4:
-	.string "Edea: Whatever. If you're anything like\n"
-	.string "the kid, this should be quick.$"
+	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Tch. If you're anything like this\n"
+	.string "pushover, this should be quick.$"
 
 ISLANDGAME_MT_AURORA_Trigger_ThiefCutscene_Text_5:
-	.string "...$"
+	.string "I-Impossible! Just who are you, kid!?$"
 
 ThiefDefeated_Text_0:
-	.string "Arthur: Ha! You lost! Give us back the\n"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}You lost! Now, give us back\n"
 	.string "Marill!$"
 
 ThiefDefeated_Text_1:
-	.string "Edea: I don't think so. There's no\n"
-	.string "chance of that happening.$"
+	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}In your dreams! Just because I\n"
+	.string "lost doesn't mean I have to return it!\p"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Huh? B-But you have to!\p"
+	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}What are you gonna do, tell on me\n"
+	.string "to your mommy? I'm taking this with me!$"
 
 ThiefDefeated_Text_2:
-	.string "Arthur: What are we gonna do?\p"
-	.string "Arthur: Wait, did you hear something?$"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Nggh... What are we gonna do?\p"
+	.string "Wait... do you hear that?$"
 
 ThiefDefeated_Text_3:
-	.string "Arthur: Woah, what just happened?\p"
-	.string "Arthur: Oh, the thief left behind Marill\n"
-	.string "when running away!$"
+	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}W-What? Articuno!?\p"
+	.string "Tch... F-Fine! I'll give them back their\n"
+	.string "stupid Marill!\p"
+	.string "You punks got lucky this time... Next\n"
+	.string "time I see you, you won't be!$"
 
 ThiefDefeated_Text_4:
-	.string "Arthur: I'm Arthur by the way!\p"
-	.string "Arthur: Thanks for helping us deal with\n"
-	.string "that thief...\p"
-	.string "Arthur: It's pretty late - we should\n"
-	.string "probably head back to Rosevale.$"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Holy heck... was that Articuno\n"
+	.string "just now?\p"
+	.string "T-Thank you Articuno! We owe you one!$"
+
+ThiefDefeated_Text_5:
+	.string "Oh, and thank you too! Err... Sorry,\n"
+	.string "what's your name?\p"
+	.string "{PLAYER}? Well, thank you for\n"
+	.string "stepping in and dealing with that thief\l"
+	.string "too.\p"
+	.string "We should head back. My family is\n"
+	.string "probably worried sick about me...$"

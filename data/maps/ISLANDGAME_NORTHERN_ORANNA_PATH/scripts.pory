@@ -18,7 +18,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast {
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest {
     lock
     msgbox(format(
-        "I challenged my friend to a fishing contenst today.\p"
+        "I challenged my friend to a fishing contest today.\p"
         "Can you keep a secret?"
     ), MSGBOX_YESNO)
 
