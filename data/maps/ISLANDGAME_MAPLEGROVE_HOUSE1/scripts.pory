@@ -11,29 +11,30 @@ script ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor {
     if (var(VAR_RESULT) == NO) {
         msgbox(format("{COLOR DARK_GRAY}What a shame... All that hidden potential gone to waste."))
         goto(HPTutor_End)
-    }
-    
-    checkmoney(1000)
-    if (!var(VAR_RESULT)) {
-        msgbox(format("{COLOR DARK_GRAY}My services do not come cheap... Come back when you have sufficient funds."))
-        goto(HPTutor_End)
-    }
+    } else {
+        checkmoney(1000)
+        if (!var(VAR_RESULT)) {
+            msgbox(format("{COLOR DARK_GRAY}My services do not come cheap... Come back when you have sufficient funds."))
+            goto(HPTutor_End)
+        }
 
-    msgbox(ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorWhichMon)
-    setvar(VAR_0x8005, MOVE_HIDDEN_POWER)
-    call(MoveTutor_EventScript_OpenPartyMenu)
-    if (var(VAR_RESULT) == 0) {
-        msgbox(format("{COLOR DARK_GRAY}What a shame... All that hidden potential gone to waste."))
-        goto(HPTutor_End)
+        msgbox(ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorWhichMon)
+        setvar(VAR_0x8005, MOVE_HIDDEN_POWER)
+        call(MoveTutor_EventScript_OpenPartyMenu)
+        if (var(VAR_RESULT) == 0) {
+            msgbox(format("{COLOR DARK_GRAY}What a shame... All that hidden potential gone to waste."))
+            goto(HPTutor_End)
+        }
+        showmoneybox(0,0)
+        msgbox(ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorMoveLearned)
+        removemoney(1000)
+        updatemoneybox
     }
-    showmoneybox(0,0)
-    msgbox(ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorMoveLearned)
-    removemoney(1000)
-    updatemoneybox
+}
 
-    HPTutor_End:
-        hidemoneybox
-        release
+script HPTutor_End {
+    hidemoneybox
+    release
 }
 
 text ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorIntro {

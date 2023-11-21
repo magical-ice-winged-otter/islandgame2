@@ -9,8 +9,7 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor::
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorOffer, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_2
-ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1:
+	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1
 	checkmoney 1000
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_5
@@ -25,15 +24,12 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_7:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorMoveLearned
 	removemoney 1000
 	updatemoneybox
-HPTutor_End:
-	hidemoneybox
-	release
 	return
 
-ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_2:
+ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_Text_0
 	goto HPTutor_End
-	goto ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1
+	return
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_5:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_Text_1
@@ -44,6 +40,12 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_8:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_Text_0
 	goto HPTutor_End
 	goto ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_7
+
+
+HPTutor_End::
+	hidemoneybox
+	release
+	return
 
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_PKMN::
