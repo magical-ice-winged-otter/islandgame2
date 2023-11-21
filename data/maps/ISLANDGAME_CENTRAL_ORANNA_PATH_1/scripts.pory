@@ -40,7 +40,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous {
     applymovement(LOCALID_MIGHTYENA_1, Movement_MightyenaGrowl)
     waitmovement(0)
     waitmoncry
-    msgbox(format("Hey, its too dangerous to go any further! Come back later - we can handle this."))
+    msgbox(format("Hey, its too dangerous to go any further! Come back later, we can handle this!"))
     closemessage
     applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerPushBack)
     waitmovement(0)
@@ -81,12 +81,12 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4 {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
-        case 4: msgbox(format("We finally managed to clear out the Mightyena from earlier! Be extra careful on Central Oranna Path today..."))
+        case 4: msgbox(format("We finally managed to subdue the Mightyena from earlier! Be extra careful on central path today..."))
         default: msgbox(format("These Mightyena are blocking the path!\pI'm trying my best to clear them out, come back later."), MSGBOX_NPC)
     }
     closemessage
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign {
-    msgbox(format("CENTRAL ORANNA PATH\pWarning: wildlife out of control"), MSGBOX_SIGN)
+    msgbox(format("CENTRAL ORANNA PATH\nMAPLEGROVE -->"), MSGBOX_SIGN)
 }

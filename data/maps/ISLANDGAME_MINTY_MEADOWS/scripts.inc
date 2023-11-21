@@ -68,7 +68,8 @@ ISLANDGAME_MINTY_MEADOWS_Trainer8::
 
 
 ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign_Text_0:
-	.string "-> MINTY MEADOWS$"
+	.string "<-- MAPLEGROVE\n"
+	.string "--> MINTY MEADOWS$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_0:
 	.string "{COLOR DARK_GRAY}Hey, let's battle together!$"
@@ -84,34 +85,28 @@ ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_0:
 	.string "{COLOR DARK_GRAY}Battling feels heavy today...$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer2_Text_1:
-	.string "I couldn't overcome the weight. It's a\n"
-	.string "struggle, isn't it?$"
+	.string "I couldn't overcome the weight.\n It's a struggle, isn't it?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_0:
 	.string "{COLOR DARK_GRAY}Ready for a match? Let the excitement\n"
 	.string "begin!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_1:
-	.string "Wow, you're strong! That was a blast of\n"
-	.string "a battle!$"
+	.string "Wow, you're strong! That was a blast of \n a battle!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_0:
 	.string "{COLOR DARK_GRAY}In the meadow's embrace, let our\n"
 	.string "Pokémon bloom in battle!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_1:
-	.string "Alas, my Pokémon couldn't bloom to\n"
-	.string "victory this time. Your team flourished\l"
-	.string "beautifully!$"
+	.string "Alas, my Pokémon couldn't bloom to \nvictory this time.\p Your team flourished beautifully!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_0:
 	.string "{COLOR DARK_GRAY}Hello! Let's explore the wonders of this\n"
 	.string "lovely meadow together!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer5_Text_1:
-	.string "Oh, our meadow journey had its\n"
-	.string "challenges. Nature's charm is truly\l"
-	.string "enchanting, isn't it?$"
+	.string "Oh, our meadow journey had its \nchallenges. \pNature's charm is truly enchanting,\nisn't it?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_0:
 	.string "{COLOR DARK_GRAY}Greetings! Let's revel in the marvels of\n"
@@ -119,17 +114,14 @@ ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_0:
 	.string "setting!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_1:
-	.string "Ah, my enthusiasm didn't secure\n"
-	.string "success! Your Pokémon shine like rare\l"
-	.string "gems!$"
+	.string "Ah, my enthusiasm didn't secure \nsuccess!\pYour Pokémon shine like rare gems!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_0:
 	.string "{COLOR DARK_GRAY}Hey there! Ready for a stroll through\n"
 	.string "nature's wonders?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_1:
-	.string "Whoops! Things didn't quite go as\n"
-	.string "planned, but hey, that's life, right?$"
+	.string "Whoops! Things didn't quite go as \nplanned, but hey, that's life, right?$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_0:
 	.string "{COLOR DARK_GRAY}Hey! Ready for a laid-back time\n"

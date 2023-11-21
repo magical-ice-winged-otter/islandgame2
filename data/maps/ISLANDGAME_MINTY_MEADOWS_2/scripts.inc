@@ -117,13 +117,13 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_6:
 	goto ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1
 
 
-ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact::
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact_Text_0, MSGBOX_NPC
+ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact::
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact_Text_0, MSGBOX_SIGN
 	return
 
 
-ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact::
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact_Text_0, MSGBOX_SIGN
+ISLANDGAME_MINTY_MEADOWS_2_TunnelSign_Interact::
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_TunnelSign_Interact_Text_0, MSGBOX_SIGN
 	return
 
 
@@ -260,11 +260,12 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	closemessage
 	addobject 12
 	setobjectxy 12, 11, 11
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4
 	applymovement 12, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
 	waitmovement 12
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4
-	startquest QUEST_FRESA_FARMS_LOST_MAREEP
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_5
+	startquest QUEST_FRESA_FARMS_LOST_MAREEP
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_6
 	closemessage
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 	setfollower 11, 100, 0
@@ -378,6 +379,7 @@ Phase1_MightyenaChase:
 
 ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2::
 	lock
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2_Text_0
 	applymovement 7, Phase2_MightyenaWalksForward
 	applymovement 6, Common_Movement_ExclamationMark
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
@@ -385,6 +387,7 @@ ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2::
 	playmoncry SPECIES_MAREEP, CRY_MODE_WEAK
 	waitmovement 7
 	waitmoncry
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2_Text_1
 	setvar VAR_MINTY_MEADOWS_STATE, 3
 	call ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight
 	release
@@ -443,6 +446,8 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setobjectxyperm 7, -3, 1
 	fadescreen FADE_FROM_BLACK
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0
+	playmoncry SPECIES_MAREEP, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1
 	closemessage
 	fadescreen FADE_TO_BLACK
 	setvar VAR_0x8000, 11
@@ -457,14 +462,14 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
 	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
 	fadescreen FADE_FROM_BLACK
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2
 	closemessage
 	applymovement 12, Phase3_OldManGivesItem_Part1
 	waitmovement 12
 	giveitem ITEM_LUCKY_EGG
 	applymovement 12, Phase3_OldManGivesItem_Part2
 	waitmovement 12
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_3
 	closemessage
 	applymovement 11, Phase3_RivalRunsOff
 	waitmovement 11
@@ -574,155 +579,243 @@ ISLANDGAME_MINTY_MEADOWS_2_ItemZapPlate::
 
 
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_0:
-	.string "I think Mareep might be near the\n"
-	.string "forest...$"
+	.string "I think it may have wandered east into\n"
+	.string "the forest...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_1:
-	.string "A Mightyena chasing my Mareep?\p"
+	.string "What? A wild Mightyena was chasing my\n"
+	.string "precious Mareep?\p"
 	.string "This is far more than I can handle.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_2:
-	.string "Thank you so much for helping save my\n"
-	.string "Mareep!$"
+	.string "Thank you so much for saving my\n"
+	.string "precious Mareep!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_0:
-	.string "That must be the lost Mareep! I heard it\n"
-	.string "run over to the far end of this forest.$"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}That must be the lost Mareep! I\n"
+	.string "think it ran off to the end of the\l"
+	.string "forest!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_1:
-	.string "Hmm... where could it be?$"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Hmm... where could it be?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_2:
-	.string "That Mightyena looks... off. We need to\n"
-	.string "save that Mareep!$"
+	.string "We need to save that Mareep!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_3:
-	.string "That was exciting! I need a rest after\n"
-	.string "all that running...$"
+	.string "Phew... I need to take a break after all\n"
+	.string "that running...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_4:
-	.string "{COLOR DARK_GRAY}I will heal your Pokemon for you.$"
-
-ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact_Text_0:
-	.string "Hello there.$"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Oh! Are your Pokémon hurt,\n"
+	.string "{PLAYER}? Let me patch them up!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact_Text_0:
-	.string "$"
+	.string "{COLOR DARK_GRAY}MINTY MEADOWS\n"
+	.string "Please don't trample the flowers!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_TunnelSign_Interact_Text_0:
+	.string "{COLOR DARK_GRAY}TRAVELER'S TUNNEL\n"
+	.string "Please watch your step!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival_Text_0:
-	.string "Old Man: Oh...\pWhat am I going to do...\p(Probably best to leave him alone)$"
+	.string "{COLOR DARK_GRAY}Ah, young trainer! Please give me a\n"
+	.string "moment. I am preoccupied.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_0:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Ugg... I'm only missing one more\n"
-	.string "Pokémon on the list, and I can't find\l"
-	.string "it!\p"
+	.string "Pokémon! Where in the world is it?\p"
 	.string "{COLOR DARK_GRAY}Waah! I give up! I'm convinced it\n"
 	.string "doesn't even exist!\p"
 	.string "{COLOR DARK_GRAY}Eh?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Umm, hi! Do I know you?\p"
-	.string "{COLOR DARK_GRAY}...!\p"
-	.string "{COLOR DARK_GRAY}You're {PLAYER}? The one who the\n"
-	.string "professor said I'd be working with?\p"
+	.string "{COLOR DARK_GRAY}...Mhm...Okay...Oh!\p"
+	.string "{COLOR DARK_GRAY}You're {PLAYER}? The professor told\n"
+	.string "me about you earlier today!\p"
 	.string "{COLOR DARK_GRAY}It's good to meet you! I'm Audrey, a\n"
-	.string "rising trainer just like you!\p"
+	.string "rising trainer, just like you!\p"
 	.string "{COLOR DARK_GRAY}I was trying to fill out my Pokédex\n"
-	.string "here, but I just couldn't find a Riolu...$"
+	.string "here, but I just couldn't find a Riolu...\p"
+	.string "{COLOR DARK_GRAY}How are you enjoying the isles so far?\n"
+	.string "Isn't it awesome here?\p"
+	.string "{COLOR DARK_GRAY}Eh? It's too hot and humid? You'll get\n"
+	.string "used to it eventually!\p"
+	.string "{COLOR DARK_GRAY}Oh! Now that you're here, let's have a\n"
+	.string "Pokémon battle!\p"
+	.string "{COLOR DARK_GRAY}I'm warning you though... I'm pretty\n"
+	.string "good!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2:
-	.string "Wow, you're pretty good!$"
+	.string "Eep! You're pretty strong too!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3:
-	.string "Audrey: Man, you beat me!$"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Drats, I wasn't expecting to\n"
+	.string "lose to you, {PLAYER}.\p"
+	.string "{COLOR DARK_GRAY}W-Wait, I didn't mean it like that! I was\n"
+	.string "just surprised at how skilled you are!\p"
+	.string "{COLOR DARK_GRAY}Sorry... sometimes I say things before I\n"
+	.string "think.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4:
-	.string "Old Man: Excuse me, I lost a Mareep!\p"
-	.string "Please help find it?$"
+	.string "{COLOR DARK_GRAY}E-Excuse me! Young trainers!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_5:
-	.string "Audrey: I'm gonna go look for it!$"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}I'm one of the owners of\n"
+	.string "the nearby Fresa Farms.\p"
+	.string "{COLOR DARK_GRAY}Have you two seen a Mareep with a blue\n"
+	.string "collar wandering around by chance?\p"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}I haven't... Did you lose one?\p"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}I'm afraid so... When I was\n"
+	.string "counting my Mareep after taking them\l"
+	.string "out to graze, I noticed one was\l"
+	.string "missing.\p"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Oh my... that's terrible! We'll\n"
+	.string "help you look, right {PLAYER}?\p"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Really? Oh, I can't thank\n"
+	.string "you two enough!\p"
+	.string "{COLOR DARK_GRAY}The last place I saw my precious Mareep\n"
+	.string "was in the forest to the east.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_6:
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Sounds good! {PLAYER}! Let's\n"
+	.string "head over there immediately!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2_Text_0:
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}We finally found it!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2_Text_1:
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Oh no! Quick, {PLAYER}! We\n"
+	.string "need to save that Mareep!\p"
+	.string "{COLOR RED}(...That Mightyena... Something seems...\n"
+	.string "off about it.)\p"
+	.string "{COLOR RED}(There seems to be a dark aura\n"
+	.string "radiating from it.)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0:
-	.string "Audrey: What a weird encounter. At\n"
-	.string "least the Mareep is safe!$"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Phew... That was an intense\n"
+	.string "fight. Thank goodness we came in time!\p"
+	.string "{COLOR DARK_GRAY}It looks like Mareep isn't hurt at all.\n"
+	.string "That's a relief...\p"
+	.string "$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1:
-	.string "Old Man: Thank you so much! I was so\n"
-	.string "scared for Mareep.\p"
-	.string "Here, as a token of my graditude:$"
+	.string "{COLOR DARK_GRAY}Reeeep...\p"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Awh. It's okay Mareep. You're\n"
+	.string "safe with us now!\p"
+	.string "{COLOR DARK_GRAY}Heh... We make a pretty solid team, don't\n"
+	.string "we, {PLAYER}?\p"
+	.string "{COLOR DARK_GRAY}...Huh? Something was off about the\n"
+	.string "Pokémon? What do you mean?\p"
+	.string "{COLOR DARK_GRAY}Red eyes? A wicked dark aura? I'm\n"
+	.string "confused... I didn't see any of that.\p"
+	.string "{COLOR DARK_GRAY}Hmm. Well anyways, we should probably\n"
+	.string "get Mareep back to its owner.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2:
-	.string "Audrey: Well, it was nice hanging out!\n"
-	.string "I've got stuff to do!$"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, my precious baby is safe\n"
+	.string "and sound! I am in your debt, trainers!\l"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Heheh. It was nothing, really!\p"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Please, take one of these\n"
+	.string "as a token of my gratitude, please!\p"
+	.string "$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_3:
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}If you ever feel like\n"
+	.string "visiting, we're just up north from here.\p"
+	.string "{COLOR DARK_GRAY}Feel free to visit anytime!\p"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}The way you handled that\n"
+	.string "vicious Mightyena with your Pokémon...\p"
+	.string "{COLOR DARK_GRAY}{PLAYER}! You should enter the\n"
+	.string "Silverwing Festival Tournament!\p"
+	.string "{COLOR DARK_GRAY}Eeeh!? You don't know what that is?\p"
+	.string "{COLOR DARK_GRAY}It's a tournament hosted during the\n"
+	.string "Silverwing Festival where only the best\l"
+	.string "trainers of Mariyama assemble to\l"
+	.string "compete for the Silverwing Cup!\p"
+	.string "{COLOR DARK_GRAY}I'm taking part in it, and I think you\n"
+	.string "should to! You'd be a great competitor!\p"
+	.string "{COLOR DARK_GRAY}To qualify for the tournament, you'll\n"
+	.string "have to travel across the three main\l"
+	.string "islands of Oranna, Lumine, and Ignea...\p"
+	.string "{COLOR DARK_GRAY}...and challenge their respective gym\n"
+	.string "leaders in a Pokémon battle!\p"
+	.string "{COLOR DARK_GRAY}Ooh... I just can't wait! I just want the\n"
+	.string "festival to begin tomorrow!\p"
+	.string "{COLOR DARK_GRAY}Huh? Oh, you're right. Neither of us\n"
+	.string "would qualify if it started tomorrow...\p"
+	.string "{COLOR DARK_GRAY}Well, I have to report back to the\n"
+	.string "professor with my findings.\p"
+	.string "{COLOR DARK_GRAY}But {PLAYER}, you should head west of\n"
+	.string "Maplegrove and head up to Tidalcove!\p"
+	.string "{COLOR DARK_GRAY}That's where you'll find the first gym\n"
+	.string "leader: Ruka!\p"
+	.string "{COLOR DARK_GRAY}Bye-bye for now! It was nice to meet\n"
+	.string "you. Hopefully I see you again soon!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0:
-	.string "{COLOR DARK_GRAY}You can't leave without helping the old\n"
-	.string "man find his Mareep!$"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we\n"
+	.string "would help find his Mareep!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_0:
 	.string "{COLOR DARK_GRAY}Where are the Bug POKEMON in these\n"
 	.string "plains?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_1:
-	.string "{COLOR DARK_GRAY}I heard some bug exists in the cave.$"
+	.string "I heard some bug exists \nin the cave.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_0:
 	.string "{COLOR DARK_GRAY}I like coming here on my days off.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Text_1:
-	.string "{COLOR DARK_GRAY}I need to go get milk from the nearby\n"
-	.string "farms.$"
+	.string "I need to go get milk \nfrom the nearby farms.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_0:
 	.string "{COLOR DARK_GRAY}I come here to practice my psychic\n"
 	.string "powers.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_1:
-	.string "{COLOR DARK_GRAY}The nearby mountains make it easier to\n"
-	.string "concentrate.$"
+	.string "The nearby mountains make it \neasier to concentrate.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_0:
 	.string "{COLOR DARK_GRAY}That guy over there is so creepy.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_1:
-	.string "{COLOR DARK_GRAY}I heard Pokemon running around. Is\n"
-	.string "there something happening?$"
+	.string "I heard Pokemon running around. \nIs there something happening?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_0:
 	.string "{COLOR DARK_GRAY}My brother told me that there would be\n"
 	.string "strong Bug POKEMONS here.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_1:
-	.string "{COLOR DARK_GRAY}I will look for them until midnight if\n"
-	.string "needed.$"
+	.string "I will look for them until \nmidnight if needed.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_0:
 	.string "{COLOR DARK_GRAY}I found a Mareep, but a Mightyena\n"
 	.string "chased it away!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_1:
-	.string "{COLOR DARK_GRAY}Maybe you are stronger than the\n"
-	.string "Mightyena$"
+	.string "Maybe you are stronger than\n the Mightyena...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_0:
 	.string "{COLOR DARK_GRAY}I am the strongest Bug Trainer around\n"
 	.string "these parts.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_1:
-	.string "{COLOR DARK_GRAY}$"
+	.string "Darn. I guess I was wrong.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0:
 	.string "{COLOR DARK_GRAY}Shorts are comfy and easy to wear!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1:
-	.string "{COLOR DARK_GRAY}If only I had a Rattata$"
+	.string "If only I had a Rattata...$"
 
 ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"
 
 MareepHelp_Text::
-	.string "{COLOR DARK_GRAY}bro help me$"
+	.string "{COLOR DARK_GRAY}Reep! Reep! (BRO HELP ME PLZ)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss::
 	.string "{COLOR DARK_GRAY}I will keep looking for some bugs.$"

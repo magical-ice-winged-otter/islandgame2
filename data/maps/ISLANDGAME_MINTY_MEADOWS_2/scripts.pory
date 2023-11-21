@@ -608,33 +608,33 @@ script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss {
-    format("{COLOR DARK_GRAY}I will keep looking for some bugs.")
+    "I will keep looking for some bugs."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer2_Loss {
-    format("{COLOR DARK_GRAY}Wow, you are strong!")
+    "Wow, you are strong!"
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss {
-    format("{COLOR DARK_GRAY}Looks like I still need more practice.")
+    "Looks like I still need more practice."
 }
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss {
-    format("{COLOR DARK_GRAY}I lost? My day is not going well.")
+    "I lost? My day is not going well."
 }
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss {
-    format("{COLOR DARK_GRAY}The ones I currently have are not that strong.")
+    "The ones I currently have are \nnot that strong."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss {
-    format("{COLOR DARK_GRAY}I guess I will look for another Mareep.")
+    "I guess I will look for another \nMareep."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss {
-    format("{COLOR DARK_GRAY}It seems that you have bested the three of us.")
+    "It seems that you have \n bested the three of us."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss {
-    format("{COLOR DARK_GRAY}No fair!")
+    "No fair!"
 }
 
 //ITEMS

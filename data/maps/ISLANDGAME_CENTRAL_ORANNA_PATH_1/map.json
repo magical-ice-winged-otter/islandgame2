@@ -269,6 +269,24 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous"
     }
   ],
   "bg_events": [
