@@ -3936,22 +3936,23 @@ static void SetMoveTypeIcons(void)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (summary->moves[i] != MOVE_NONE) {
-            if (summary->moves[i] == MOVE_HIDDEN_POWER) {
-                u8 typeBits  = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
-                     | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
-                     | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
-                     | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
-                     | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
-                     | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
+            // if (summary->moves[i] == MOVE_HIDDEN_POWER) {
+            //     u8 typeBits  = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
+            //          | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
+            //          | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
+            //          | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
+            //          | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
+            //          | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
 
-                u8 type = (15 * typeBits) / 63 + 1;
-                if (type >= TYPE_MYSTERY)
-                    type++;
-                type |= 0xC0;
-                SetTypeSpritePosAndPal(type & 0x3F, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
-            } else {
-                SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
-            }
+            //     u8 type = (15 * typeBits) / 63 + 1;
+            //     if (type >= TYPE_MYSTERY)
+            //         type++;
+            //     type |= 0xC0;
+            //     SetTypeSpritePosAndPal(type & 0x3F, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+            // } else {
+            //     SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+            // }
+            SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
         }
         else
             SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
@@ -3983,24 +3984,29 @@ static void SetNewMoveTypeIcon(void)
     else
     {
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
-            if (sMonSummaryScreen->newMove == MOVE_HIDDEN_POWER) {
-                u8 typeBits  = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
-                     | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
-                     | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
-                     | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
-                     | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
-                     | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
+        {
+            // if (sMonSummaryScreen->newMove == MOVE_HIDDEN_POWER) {
+            //     u8 typeBits  = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
+            //          | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
+            //          | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
+            //          | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
+            //          | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
+            //          | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
 
-                u8 type = (15 * typeBits) / 63 + 1;
-                if (type >= TYPE_MYSTERY)
-                    type++;
-                type |= 0xC0;
-                SetTypeSpritePosAndPal(type & 0x3F, 85, 96, SPRITE_ARR_ID_TYPE + 4);
-            } else {
-                SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
-            }
+            //     u8 type = (15 * typeBits) / 63 + 1;
+            //     if (type >= TYPE_MYSTERY)
+            //         type++;
+            //     type |= 0xC0;
+            //     SetTypeSpritePosAndPal(type & 0x3F, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+            // } else {
+            //     SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+            // }
+            SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+        }
         else
+        {
             SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + gContestMoves[sMonSummaryScreen->newMove].contestCategory, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+        }
     }
 }
 
