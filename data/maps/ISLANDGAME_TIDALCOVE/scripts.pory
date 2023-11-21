@@ -191,7 +191,7 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
     ), MSGBOX_NPC)
 }
 
-script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
+script ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO {
     lock
     faceplayer
     msgbox(format(
