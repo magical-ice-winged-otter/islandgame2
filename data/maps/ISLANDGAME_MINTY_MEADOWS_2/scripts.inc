@@ -415,11 +415,15 @@ Phase2_MightyenaWalksForward:
 ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 	lock
 	faceplayer
+	setflag FLAG_SMART_WILD_AI
+	setflag FLAG_NO_CATCHING
 	setcwildbattle 0, SPECIES_SHADOW_MIGHTYENA, 20, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER
 	setwilddoublebattle TRUE
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
 	waitmoncry
 	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_CATCHING
 	specialvar VAR_RESULT, GetBattleOutcome
 	switch VAR_RESULT
 	case B_OUTCOME_LOST, ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_3

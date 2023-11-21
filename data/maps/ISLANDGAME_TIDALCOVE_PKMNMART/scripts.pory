@@ -11,14 +11,17 @@ script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Goods {
 script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Employee {
     lock
     msgbox(format("Welcome to the Tidalcove Mart!\nWhat can I get for you?"))
-    pokemart(MartItems)
+    pokemart(Tidalcove_MartItems)
     msgbox(format("Enjoy your stay in the sun!"))
     closemessage
     release
 }
 
-mart MartItems {
+mart Tidalcove_MartItems {
     ITEM_SODA_POP
     ITEM_POKE_BALL
     ITEM_GREAT_BALL
+    ITEM_ANTIDOTE
+    ITEM_PARALYZE_HEAL
+    ITEM_REPEL
 }

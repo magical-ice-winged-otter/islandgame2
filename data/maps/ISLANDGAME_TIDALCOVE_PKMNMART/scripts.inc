@@ -15,7 +15,7 @@ ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Goods::
 ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Employee::
 	lock
 	msgbox ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Employee_Text_0
-	pokemart MartItems
+	pokemart Tidalcove_MartItems
 	msgbox ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Employee_Text_1
 	closemessage
 	release
@@ -23,10 +23,13 @@ ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Employee::
 
 
 	.align 2
-MartItems:
+Tidalcove_MartItems:
 	.2byte ITEM_SODA_POP
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_REPEL
 	.2byte ITEM_NONE
 
 ISLANDGAME_TIDALCOVE_PKMNMART_Interact_NPC1_Text_0:
