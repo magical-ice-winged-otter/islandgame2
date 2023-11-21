@@ -7,12 +7,10 @@ static const struct TrainerMon sParty_Sawyer1[] = {
     {
     .iv = TRAINER_PARTY_IVS(12,12,12,12,12,12),
     .lvl = 100,
-    .species = SPECIES_VOLCARONA,
+    .species = SPECIES_VOLCARONA,}};///SouthernOrannaP,
     }
 };
 
-
-/// Southern Oranna Path
 static const struct TrainerMon sParty_SOrannaPathTrainer1[] = {
     {
     .lvl = 5,
@@ -785,14 +783,12 @@ static const struct TrainerMon sParty_Lola3[] = {
     .lvl = 15,
     .species = SPECIES_SOLOSIS,
     .heldItem = ITEM_NONE,
-    .ability = ABILITY_MAGIC_GUARD,
     .moves = {MOVE_PSYWAVE, MOVE_CONFUSE_RAY, MOVE_ACID_ARMOR, MOVE_SNATCH}
     },
     {
     .lvl = 15,
     .species = SPECIES_KECLEON,
     .heldItem = ITEM_NONE,
-    .ability = ABILITY_PROTEAN,
     .moves = {MOVE_DIZZY_PUNCH, MOVE_SHADOW_SNEAK, MOVE_THIEF, MOVE_FAKE_OUT}
     },
     {
@@ -800,7 +796,6 @@ static const struct TrainerMon sParty_Lola3[] = {
     .lvl = 17,
     .species = SPECIES_MARILL,
     .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_HUGE_POWER,
     .moves = {MOVE_ROLLOUT, MOVE_AQUA_JET, MOVE_DEFENSE_CURL, MOVE_AQUA_RING}
     }
 };

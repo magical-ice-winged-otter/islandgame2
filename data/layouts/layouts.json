@@ -4966,8 +4966,8 @@
       "name": "ISLANDGAME_AURORA_WEATHER_INSTITUTE_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_AURORA_WEATHER_INSTITUTE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_AURORA_WEATHER_INSTITUTE/map.bin"
     },

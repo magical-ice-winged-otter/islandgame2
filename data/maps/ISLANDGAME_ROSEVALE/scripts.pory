@@ -63,6 +63,8 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             // everyone thanks you for helping
             msgbox(format("Arthurs Sister: You did it! My Marill!"), MSGBOX_NPC)
             msgbox(format("Arthurs Mom: Thank you for helping like you did today.\nThis means a lot to us."), MSGBOX_NPC)
+            msgbox(format("Arthurs Sister: Hey, take this for helping us out!"), MSGBOX_NPC)
+            giveitem(ITEM_AMULET_COIN)
             msgbox(format("Arthurs Dad: Please, stay the night to rest and recover.\nI'm sure you both have had a long day."), MSGBOX_NPC)
 
             //warp

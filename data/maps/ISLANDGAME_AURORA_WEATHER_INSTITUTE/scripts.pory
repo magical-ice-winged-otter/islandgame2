@@ -1,1 +1,5 @@
 mapscripts ISLANDGAME_AURORA_WEATHER_INSTITUTE_MapScripts {}
+
+script ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist {
+    // todo: look at saveblock1 dexCount
+}

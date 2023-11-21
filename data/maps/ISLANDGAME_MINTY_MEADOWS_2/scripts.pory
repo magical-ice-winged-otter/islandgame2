@@ -441,6 +441,8 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     waitmovement(RIVAL_OW_ID)
     removeobject(RIVAL_OW_ID)
 
+    special(HealPlayerParty)
+    completequest(QUEST_FRESA_FARMS_LOST_MAREEP)
     release
 }
 
