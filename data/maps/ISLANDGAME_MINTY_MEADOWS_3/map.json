@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_MINTY_MEADOWS_3",
   "name": "ISLANDGAME_MINTY_MEADOWS_3",
   "layout": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_3",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_ROUTE120",
   "region_map_section": "MAPSEC_MINTY_MEADOWS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -20,10 +20,67 @@
     }
   ],
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
+      "x": 24,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_3_Ressy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_358",
+      "x": 24,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_681",
+      "x": 20,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MINTY_MEADOWS_3_ItemTMReturn",
+      "flag": "FLAG_ITEM_TM_RETURN"
+    }
   ],
   "warp_events": [
-
+    {
+      "x": 15,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_TRAVELERS_TUNNEL",
+      "dest_warp_id": "1"
+    }
   ],
   "coord_events": [
 

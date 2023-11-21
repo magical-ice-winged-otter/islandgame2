@@ -1226,18 +1226,18 @@
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 //minty meadows
 #define FLAG_ITEM_MINTY_MEADOWS_1                                   0x498
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
+#define FLAG_ITEM_TM_RETURN                                         0x499 
+#define FLAG_ITEM_TM_DIG                                            0x49A 
+#define FLAG_ITEM_PERSI_POTION                                      0x49B
+#define FLAG_ITEM_MYSTIC_WATER                                      0x49C 
+#define FLAG_ITEM_MINTY_MEADOWS_HOUSE_HYPER_POTION                  0x49D
+#define FLAG_ITEM_COP_1_NUGGET                                      0x49E
+#define FLAG_ITEM_COP_1_BLACKGLASSES                                0x49F
+#define FLAG_ITEM_COP_2_TM_SHOCKWAVE                                0x4A0 
+#define FLAG_ITEM_COP_2_PIXIE_PLATE                                 0x4A1 
+#define FLAG_ITEM_TIDALCOVE_HP_UP                                   0x4A2
+#define FLAG_ITEM_TIDALCOVE_FULL_HEAL                               0x4A3
+#define FLAG_ITEM_AP_NEVER_MELT_ICE                                 0x4A4 
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag

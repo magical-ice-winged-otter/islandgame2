@@ -1,1 +1,41 @@
 mapscripts ISLANDGAME_MINTY_MEADOWS_3_MapScripts {}
+
+
+script ISLANDGAME_MINTY_MEADOWS_3_Ressy {
+    lock
+    msgbox(ISLANDGAME_MINTY_MEADOWS_3_RessyTalk)
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_3_RessyTalk {
+    format(
+        "{COLOR RED}(He seems to be pondering in thoughts.)"
+        )
+}
+
+script ISLANDGAME_MINTY_MEADOWS_3_Chimecho {
+    lock
+    faceplayer
+    playmoncry(SPECIES_CHIMECHO,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk)
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk {
+    format(
+        "{COLOR DARK_GRAY}Ding dong!"
+        )
+}
+
+script ISLANDGAME_MINTY_MEADOWS_3_Aegislash {
+    lock
+    playmoncry(SPECIES_AEGISLASH,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_3_AegislashTalk)
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_3_AegislashTalk {
+    format(
+        "{COLOR DARK_GRAY}Shwing! (THOU SHALL NOT PASSETH)"
+        )
+}

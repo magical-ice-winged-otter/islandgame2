@@ -14,3 +14,18 @@ script ISLANDGAME_TRAVELERS_TUNNEL_Lantern {
     finditem(ITEM_ISLANDGAME_LANTERN)
     release
 }
+
+script ISLANDGAME_TRAVELERS_TUNNEL_Hiker {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk)
+    release
+}
+
+text ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk {
+    format(
+        "{COLOR DARK_GRAY}Phew... I've been wandering in this tunnel for hours! \p"
+        "{COLOR DARK_GRAY}I thought I'd never see light again, but I managed to feel my way over here. \p"
+        "{COLOR DARK_GRAY}If only I hadn't tripped and lost my lantern along the way..."
+        )
+}
