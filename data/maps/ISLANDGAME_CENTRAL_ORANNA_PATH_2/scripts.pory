@@ -2,10 +2,10 @@ const VAR_CUTSCENE_FINISHED = VAR_TEMP_0
 
 const LOCALID_LUXRAY = 8
 const LOCALID_PRIM = 1
-const LOCALID_FAN_1 = 3
+const LOCALID_FAN_1 = 7
 const LOCALID_FAN_2 = 4
-const LOCALID_FAN_3 = 5
-const LOCALID_FAN_4 = 7
+const LOCALID_FAN_3 = 3
+const LOCALID_FAN_4 = 5
 
 mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -112,26 +112,35 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
     waitmovement(LOCALID_LUXRAY)
     playmoncry(SPECIES_DELCATTY, CRY_MODE_NORMAL)
     waitmoncry
+    playmoncry(SPECIES_LOMBRE, CRY_MODE_WEAK)
+    waitmoncry
 
     // prim roasts the opponent for losing
-    msgbox(format("Prim: Man, that was a waste of time! You should have just given me the spot..."))
+    msgbox(
+        format("{COLOR GREEN}???: {COLOR DARK_GRAY}-sigh- What a waste of time. You should've just given me the spot.")
+        )
     closemessage
 
     // prim and 2 spectators walk away
     applymovement(LOCALID_PRIM, Movement_PrimWalkAway)
     applymovement(LOCALID_LUXRAY, Movement_LuxrayWalkAway)
-    applymovement(LOCALID_FAN_1, Movement_Fan1WalkAway)
-    applymovement(LOCALID_FAN_2, Movement_Fan2WalkAway)
+    // applymovement(LOCALID_FAN_1, Movement_Fan1WalkAway)
+    // applymovement(LOCALID_FAN_2, Movement_Fan2WalkAway)
     waitmovement(LOCALID_PRIM)
     waitmovement(LOCALID_LUXRAY)
-    waitmovement(LOCALID_FAN_1)
-    waitmovement(LOCALID_FAN_2)
+    // waitmovement(LOCALID_FAN_1)
+    // waitmovement(LOCALID_FAN_2)
     removeobject(LOCALID_PRIM)
     removeobject(LOCALID_LUXRAY)
-    removeobject(LOCALID_FAN_1)
-    removeobject(LOCALID_FAN_2)
+    // removeobject(LOCALID_FAN_1)
+    // removeobject(LOCALID_FAN_2)
 
-    msgbox(format("{COLOR DARK_GRAY}Wait for us!"))
+    msgbox(format(
+        "{COLOR DARK_GRAY}Yeah! You should've just let her have it! She has better things to do than waste her time with scrubs like you! \p"
+        "{COLOR DARK_GRAY}Yeah! She's Prim, the greatest idol to ever exist! She and Delcatty are gonna take the world by storm! \p"
+        "{COLOR DARK_GRAY}You better believe she is! We stand with Her Majesty! \p"
+        "{COLOR DARK_GRAY}E-Eh? W-Wait for us, Prim! C'mon Katelyn, let's leave these goobers!"
+        ))
     closemessage
     applymovement(LOCALID_FAN_3, Movement_Fan3WalkAway)
     applymovement(LOCALID_FAN_4, Movement_Fan4WalkAway)
@@ -147,21 +156,32 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser {
-    msgbox(format("Man, I lost so bad..."), MSGBOX_NPC)
+    lock
+    msgbox(format("N-No way... She beat me without taking a scratch..."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre {
+    lock
+    playmoncry(SPECIES_LOMBRE,CRY_MODE_NORMAL)
+    msgbox(format("L-Lom...\p{COLOR RED}(Looks like Lombre took a thrashing.)"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1 {
-    msgbox(format("Prim is really good... if only she could wake up earlier."), MSGBOX_NPC)
+    msgbox(format("Prim is so pretty and confident. Her Pokémon fight so elegantly too.\pShe could be a Pokémon Coordinator!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2 {
-    msgbox(format("It doesn't matter how good Prim is; she still has no chance against Ruka."), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format("That Prim sure is incredible... She only just became an idol a few months ago, and now she's already become the most popular celebrity in all of Mariyama.\pNow, she's on her way to completing the Isle Gym Challenge so she can enter in the upcoming Silverwing Festival Tournament!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3 {
+    lock
+    faceplayer
     msgbox(format(
-        "Since so many people come by to challenge Ruka,"
-        "she can only accept a limited amount of people each day."
-        "Prim was just fighting for the last spot."
+        "Ruka gets so many challenge requests that she can only take a limited number of them per day.\p"
+        "These two were having a battle to decide who would get the last spot.\p"
+        "Poor kid... He never stood a chance against Prim."
     ), MSGBOX_NPC)
 }
