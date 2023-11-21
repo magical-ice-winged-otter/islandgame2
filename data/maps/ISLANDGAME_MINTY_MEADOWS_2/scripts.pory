@@ -377,19 +377,20 @@ movement Phase2_MightyenaWalksForward {
 script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     lock 
     faceplayer
-    setwildbattle(SPECIES_SHADOW_MIGHTYENA, 18)
+    setcwildbattle(0, SPECIES_SHADOW_MIGHTYENA, 20, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER)
     setwilddoublebattle(TRUE)
     playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
     waitmoncry
     dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
-    destroyfollower
+    
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
             destroyfollower
         case B_OUTCOME_RAN:
             break
         default:
+            destroyfollower
             goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release

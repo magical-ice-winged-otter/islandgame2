@@ -16,7 +16,7 @@ text ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText {
 
 script ISLANDGAME_MINTY_MEADOWS_HOUSE_Mordecai {
     lock
-    playmoncry(SPECIES_STARLEY,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_STARLY,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_MordecaiText)
     waitmessage
     release
@@ -66,7 +66,7 @@ text ISLANDGAME_MINTY_MEADOWS_HOUSE_FivesText {
 
 script ISLANDGAME_MINTY_MEADOWS_HOUSE_Skips {
     lock
-    playmoncry(SPECIES_SLACKOTH,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_SLAKOTH,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_SkipsTalk)
     waitmessage
     release
