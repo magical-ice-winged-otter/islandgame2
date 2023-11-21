@@ -14,13 +14,40 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
             lock
             msgbox(format("Do you have any rare Pokemon to show me?"), MSGBOX_NPC)
 
+            // squirtle checks
             setvar(VAR_0x8000, SPECIES_SQUIRTLE)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
             }
+            setvar(VAR_0x8000, SPECIES_WARTORTLE)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+            }
+            setvar(VAR_0x8000, SPECIES_BLASTOISE)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+            }
 
+            // rowlet checks
             setvar(VAR_0x8000, SPECIES_ROWLET)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+            setvar(VAR_0x8000, SPECIES_DARTRIX)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+            setvar(VAR_0x8000, SPECIES_DECIDUEYE)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+            setvar(VAR_0x8000, SPECIES_DECIDUEYE_HISUIAN)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
@@ -50,6 +77,7 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD, FoundDelibird)
             }
 
+            // pikachu check
             setvar(VAR_0x8000, SPECIES_PIKACHU)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
