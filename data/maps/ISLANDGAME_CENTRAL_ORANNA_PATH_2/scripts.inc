@@ -48,10 +48,11 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker::
 
 
 Movement_LuxrayAttack:
-	walk_right
+	jump_right
 	step_end
 
 Movement_PrimWalkAway:
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -111,6 +112,23 @@ Movement_Fan2WalkAway:
 	walk_right
 	step_end
 
+Movement_Fan3WalkAway:
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+Movement_Fan4WalkAway:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 	lock
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_0
@@ -133,6 +151,14 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 	removeobject 8
 	removeobject 7
 	removeobject 5
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_2
+	closemessage
+	applymovement 4, Movement_Fan3WalkAway
+	applymovement 3, Movement_Fan4WalkAway
+	waitmovement 4
+	waitmovement 3
+	removeobject 4
+	removeobject 3
 	setflag FLAG_NORANNA_PRIM_CUTSCENE_FINISHED
 	setvar VAR_TEMP_0, 1
 	release
@@ -223,6 +249,9 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_0:
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_1:
 	.string "Prim: Man, that was a waste of time! You\n"
 	.string "should have just given me the spot...$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_2:
+	.string "{COLOR DARK_GRAY}Wait for us!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser_Text_0:
 	.string "Man, I lost so bad...$"
