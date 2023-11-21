@@ -469,6 +469,8 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	applymovement 11, Phase3_RivalRunsOff
 	waitmovement 11
 	removeobject 11
+	special HealPlayerParty
+	completequest QUEST_FRESA_FARMS_LOST_MAREEP
 	release
 	return
 

@@ -7,7 +7,7 @@ static const struct TrainerMon sParty_Sawyer1[] = {
     {
     .iv = TRAINER_PARTY_IVS(12,12,12,12,12,12),
     .lvl = 100,
-    .species = SPECIES_VOLCARONA,}};///SouthernOrannaP,
+    .species = SPECIES_VOLCARONA,
     }
 };
 
