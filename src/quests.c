@@ -252,6 +252,7 @@ static const u8 sText_AZ[] = _(" A-Z");
 const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
 const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
 const u8 sText_SideQuestMap_NorthernOrannaPath[] = _("N. Oranna Path");
+const u8 sText_SideQuestMap_CentralOrannaPath[] = _("C. Oranna Path");
 const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
 const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
@@ -343,7 +344,7 @@ static const struct SubQuest sSubQuests_TidalcoveRarePkmn[SUB_QUEST_COUNT_TIDALC
           SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE,
           sText_SubQuest_TidalcoveRarePkmn_Squirtle_Name,
           sText_SubQuest_TidalcoveRarePkmn_Squirtle_Desc,
-          sText_SideQuestMap_Tidalcove,
+          sText_SideQuestMap_CentralOrannaPath,
           SPECIES_SQUIRTLE,
           PKMN,
           sText_Found
