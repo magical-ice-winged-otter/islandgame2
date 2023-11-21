@@ -1,6 +1,12 @@
 #include "global.h"
+#include "pokedex.h"
 #include "event_data.h" // for gSpecialVar
 #include "field_camera.h" // for MoveCameraAndRedrawMap
+
+void CheckDexCount(void)
+{
+    gSpecialVar_0x8000 = GetNationalPokedexCount(FLAG_GET_CAUGHT);
+}
 
 void TeleportCamera(void)
 {
