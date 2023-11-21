@@ -4,11 +4,86 @@ mapscripts ISLANDGAME_MINTY_MEADOWS_HOUSE_MapScripts {}
 
 script ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1 {
     lock
+    faceplayer
     msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText)
     waitmessage
     release
 }
 
 text ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText {
-    format("{COLOR DARK_GRAY}How do I pass the time? Well...")
+    format("{COLOR DARK_GRAY}Salutations! My name is Pops. I'm the owner of Minty Meadows.")
+}
+
+script ISLANDGAME_MINTY_MEADOWS_HOUSE_Mordecai {
+    lock
+    playmoncry(SPECIES_STARLEY,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_MordecaiText)
+    waitmessage
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_HOUSE_MordecaiText {
+    format("{COLOR DARK_GRAY}hueheuhuehuehue melk")
+}
+
+script ISLANDGAME_MINTY_MEADOWS_HOUSE_Rigby {
+    lock
+    playmoncry(SPECIES_ZIGZAGOON,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_RigbyText)
+    waitmessage
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_HOUSE_RigbyText {
+    format("{COLOR DARK_GRAY}hueheuhuehuehue cereal")
+}
+
+script ISLANDGAME_MINTY_MEADOWS_HOUSE_MMan {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MACHOP,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_MManText)
+    waitmessage
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_HOUSE_MManText {
+    format("{COLOR DARK_GRAY}WOOOOHOOOOO!")
+}
+
+script ISLANDGAME_MINTY_MEADOWS_HOUSE_Fives {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SHUPPET,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_FivesText)
+    waitmessage
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_HOUSE_FivesText {
+    format("{COLOR DARK_GRAY}Wasshup?")
+}
+
+script ISLANDGAME_MINTY_MEADOWS_HOUSE_Skips {
+    lock
+    playmoncry(SPECIES_SLACKOTH,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_SkipsTalk)
+    waitmessage
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_HOUSE_SkipsTalk {
+    format("{COLOR RED}(It looks like Slackoth is fast asleep.)")
+}
+
+script ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson {
+    lock
+    playmoncry(SPECIES_BLACEPHALON,CRY_MODE_NORMAL)
+    msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_BensonTalk)
+    waitmessage
+    release
+}
+
+text ISLANDGAME_MINTY_MEADOWS_HOUSE_BensonTalk {
+    format("{COLOR RED}(What kind of Pokémon is this? It looks so alien...)")
 }

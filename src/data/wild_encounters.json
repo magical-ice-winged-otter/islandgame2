@@ -11758,7 +11758,7 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_RATTATA_ALOLAN"
+                "species": "SPECIES_COMBEE"
               },
               {
                 "min_level": 8,
@@ -11822,7 +11822,7 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_MEOWTH_ALOLAN"
+                "species": "SPECIES_VENIPEDE"
               },
               {
                 "min_level": 6,
@@ -11832,27 +11832,27 @@
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_AUDINO"
+                "species": "SPECIES_DRIFLOON"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_AUDINO"
+                "species": "SPECIES_DRIFLOON"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_AUDINO"
+                "species": "SPECIES_DRIFLOON"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_AUDINO"
+                "species": "SPECIES_DRIFLOON"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_AUDINO"
+                "species": "SPECIES_DRIFLOON"
               }
             ]
           }
