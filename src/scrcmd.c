@@ -2527,3 +2527,10 @@ bool8 ScrCmd_checkfollower(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_setwilddoublebattle(struct ScriptContext *ctx)
+{
+    bool8 isDouble = ScriptReadByte(ctx);
+    gIsScriptedWildDouble = isDouble ? TRUE : FALSE;
+
+    return FALSE;
+}

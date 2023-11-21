@@ -2105,6 +2105,13 @@
     .macro checkfollower
 	.byte 0xec
 	.endm
+	
+	@sets the flag AFTER you declare the wildbattle.
+	.macro setwilddoublebattle setDouble:req
+	.byte 0xed
+	.byte \setDouble
+	.endm
+	
 
 @ Supplementary
 

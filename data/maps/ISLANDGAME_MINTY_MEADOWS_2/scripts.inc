@@ -37,6 +37,7 @@ ISLANDGAME_MINTY_MEADOWS_2_InitialRival::
 
 
 ISLANDGAME_MINTY_MEADOWS_2_StartedQuest::
+	setvar VAR_TEMP_4, 1
 	setobjectxyperm 16, 11, 6
 	setobjectxyperm 10, 61, 13
 	setobjectxyperm 11, 61, 15
@@ -46,6 +47,7 @@ ISLANDGAME_MINTY_MEADOWS_2_StartedQuest::
 
 
 ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
+	setvar VAR_TEMP_4, 1
 	setobjectxyperm 16, 11, 6
 	setobjectxyperm 10, 61, 13
 	setobjectxyperm 11, 61, 14
@@ -55,6 +57,7 @@ ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
 
 
 ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena::
+	setvar VAR_TEMP_4, 0
 	setobjectxyperm 15, -3, 1
 	setobjectxyperm 16, 11, 3
 	setobjectxyperm 10, -3, 1
@@ -85,29 +88,33 @@ ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_4:
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact::
 	switch VAR_MINTY_MEADOWS_STATE
-	case 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_2
-	case 1, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_2
-	case 3, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_3
-	case 4, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_4
-	return
-
-ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_2:
-	compare VAR_TEMP_0, 1
-	goto_if_eq ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_5
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_1, MSGBOX_NPC
+	case 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_3
+	case 1, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_3
+	case 3, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_4
+	case 4, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_5
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1:
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_4, MSGBOX_AUTOCLOSE
+	playfanfare MUS_HEAL
+	special HealPlayerParty
 	return
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_3:
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_2, MSGBOX_NPC
-	return
+	compare VAR_TEMP_0, 1
+	goto_if_eq ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_6
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_1, MSGBOX_NPC
+	goto ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_4:
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_3, MSGBOX_NPC
-	return
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_2, MSGBOX_NPC
+	goto ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_5:
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_3, MSGBOX_NPC
+	goto ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1
+
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_6:
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_0, MSGBOX_NPC
-	return
+	goto ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact::
@@ -406,19 +413,25 @@ ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 	lock
 	faceplayer
 	setwildbattle SPECIES_SHADOW_MIGHTYENA, 18
+	setwilddoublebattle TRUE
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
 	waitmoncry
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	destroyfollower
-	compare VAR_RESULT, B_OUTCOME_LOST
-	goto_if_ne ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_2
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_3
+	case B_OUTCOME_RAN, ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_4
+	goto ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene
 ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_1:
 	release
 	return
 
-ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_2:
-	goto ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene
+ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_3:
+	destroyfollower
+	goto ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_1
+
+ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_4:
 	goto ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_1
 
 
@@ -490,6 +503,20 @@ ISLANDGAME_MINTY_MEADOWS_2_Mareep::
 	release
 	return
 
+
+ISLANDGAME_MINTY_MEADOWS_2_CantLeave::
+	lock
+	facefollower
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp
+	waitmovement OBJ_EVENT_ID_PLAYER
+	release
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_2_WalkUp:
+	walk_up
+	step_end
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1::
 	trainerbattle_single TRAINER_MINTY_MEADOWS_9, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss
@@ -571,6 +598,9 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_3:
 	.string "That was exciting! I need a rest after\n"
 	.string "all that running...$"
 
+ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_4:
+	.string "{COLOR DARK_GRAY}I will heal your Pokemon for you.$"
+
 ISLANDGAME_MINTY_MEADOWS_2_Jonas_Interact_Text_0:
 	.string "Hello there.$"
 
@@ -623,6 +653,10 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1:
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2:
 	.string "Audrey: Well, it was nice hanging out!\n"
 	.string "I've got stuff to do!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0:
+	.string "{COLOR DARK_GRAY}You can't leave without helping the old\n"
+	.string "man find his Mareep!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Text_0:
 	.string "{COLOR DARK_GRAY}Where are the Bug POKEMON in these\n"

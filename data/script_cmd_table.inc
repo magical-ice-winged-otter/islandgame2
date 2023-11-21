@@ -238,6 +238,7 @@ gScriptCmdTable::
     .4byte ScrCmd_destroyfollower					@ 0xea
     .4byte ScrCmd_facefollower						@ 0xeb
     .4byte ScrCmd_checkfollower						@ 0xec
-
+    .4byte ScrCmd_setwilddoublebattle               @ 0xed
+	
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
