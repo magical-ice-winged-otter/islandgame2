@@ -21,7 +21,7 @@ ISLANDGAME_TIDALCOVE_GYM_MapScripts_MAP_SCRIPT_ON_LOAD:
 ISLANDGAME_TIDALCOVE_GYM_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_ICE_STEP_COUNT, 8, UnlockNextStairs
 	map_script_2 VAR_ICE_STEP_COUNT, 28, UnlockNextStairs
-	map_script_2 VAR_ICE_STEP_COUNT, 67, UnlockNextStairs
+	map_script_2 VAR_ICE_STEP_COUNT, 66, UnlockNextStairs
 	map_script_2 VAR_ICE_STEP_COUNT, 0, FallThroughIce
 	.2byte 0
 
@@ -75,7 +75,7 @@ CheckSetStairMetatiles_1:
 	compare VAR_ICE_STEP_COUNT, 28
 	goto_if_ge CheckSetStairMetatiles_5
 CheckSetStairMetatiles_4:
-	compare VAR_ICE_STEP_COUNT, 67
+	compare VAR_ICE_STEP_COUNT, 66
 	goto_if_ge CheckSetStairMetatiles_7
 	return
 

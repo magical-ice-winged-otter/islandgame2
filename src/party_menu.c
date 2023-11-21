@@ -5952,6 +5952,7 @@ static void TryTutorSelectedMon(u8 taskId)
         default:
             if (GiveMoveToMon(mon, gPartyMenu.data1) != MON_HAS_MAX_MOVES)
             {
+                gSpecialVar_Result = TRUE;
                 Task_LearnedMove(taskId);
                 return;
             }

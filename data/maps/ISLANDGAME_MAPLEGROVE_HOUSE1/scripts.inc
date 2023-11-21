@@ -16,14 +16,19 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor::
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_4:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorWhichMon
 	setvar VAR_0x8005, MOVE_HIDDEN_POWER
-	call MoveTutor_EventScript_OpenPartyMenu
+	special ChooseMonForMoveTutor
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_8
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_7:
+	waitstate
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorMoveLearned
+	closemessage
 	removemoney 1000
 	updatemoneybox
+	playse SE_SHOP
+	waitse
+	goto HPTutor_End
 	return
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1:
@@ -37,6 +42,7 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_5:
 	goto ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_4
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_8:
+	waitstate
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_Text_0
 	goto HPTutor_End
 	goto ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_7
