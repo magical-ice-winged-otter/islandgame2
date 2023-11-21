@@ -141,24 +141,24 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 	closemessage
 	applymovement 1, Movement_PrimWalkAway
 	applymovement 8, Movement_LuxrayWalkAway
-	applymovement 7, Movement_Fan1WalkAway
-	applymovement 5, Movement_Fan2WalkAway
+	applymovement 3, Movement_Fan1WalkAway
+	applymovement 4, Movement_Fan2WalkAway
 	waitmovement 1
 	waitmovement 8
-	waitmovement 7
-	waitmovement 5
+	waitmovement 3
+	waitmovement 4
 	removeobject 1
 	removeobject 8
-	removeobject 7
-	removeobject 5
+	removeobject 3
+	removeobject 4
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_2
 	closemessage
-	applymovement 4, Movement_Fan3WalkAway
-	applymovement 3, Movement_Fan4WalkAway
-	waitmovement 4
-	waitmovement 3
-	removeobject 4
-	removeobject 3
+	applymovement 5, Movement_Fan3WalkAway
+	applymovement 7, Movement_Fan4WalkAway
+	waitmovement 5
+	waitmovement 7
+	removeobject 5
+	removeobject 7
 	setflag FLAG_NORANNA_PRIM_CUTSCENE_FINISHED
 	setvar VAR_TEMP_0, 1
 	release
