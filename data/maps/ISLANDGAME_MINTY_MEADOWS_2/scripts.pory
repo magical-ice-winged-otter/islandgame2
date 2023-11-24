@@ -31,6 +31,10 @@ script ISLANDGAME_MINTY_MEADOWS_2_OnTransition {
         case STATE_PRE_FIGHT_SIGHTING:       call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
         case STATE_POST_FIGHT:               call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
     }
+
+    if (var(VAR_MINTY_MEADOWS_STATE) != STATE_STARTED_QUEST) {
+        setvar(VAR_MINTY_MEADOWS_STATE, 1)
+    }
 }
 
 // section: object positions
