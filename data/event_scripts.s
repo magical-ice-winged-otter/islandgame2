@@ -1193,3 +1193,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_Southern_Oranna_Path_Cave/scripts.inc"

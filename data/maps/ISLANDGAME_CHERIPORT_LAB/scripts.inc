@@ -6,7 +6,8 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk::
 	lock
 	faceplayer
 	goto_if_unset FLAG_PROF_GAVE_EEVEE, ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2
-	msgbox ProfTalk_Normal_Text
+	goto_if_unset FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_3
+	msgbox ProfTalk_CheckPokedex
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1:
 	release
 	return
@@ -22,8 +23,8 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2:
 	waitfanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_6
-ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_5:
+	goto_if_ne ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_8
+ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_7:
 	msgbox ProfTalk_Second_Text
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Prof_Recieved_Pokedex_Text
@@ -37,10 +38,14 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_5:
 	setrespawn HEAL_LOCATION_CHERIPORT
 	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1
 
-ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_6:
+ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_3:
+	msgbox ProfTalk_AudreyNotDefeated
+	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1
+
+ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_8:
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
-	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_5
+	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_7
 
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist1Talk::
@@ -53,15 +58,23 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist1Talk::
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk::
 	lock
-	msgbox Scientist2Talk_Text
+	msgbox ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_0
+	applymovement 3, ExclaimFacePlayer
+	waitmovement 0
+	msgbox ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_1
+	applymovement 3, Common_Movement_QuestionMark
+	waitmovement 0
+	msgbox ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_2
+	applymovement 3, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	return
 
 
-ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist3Talk::
+ISLANDGAME_CHERIPORT_LAB_EventScript_CocoTalk::
 	lock
 	faceplayer
-	msgbox Scientist3Talk_Text
+	msgbox CocoTalk_Text
 	release
 	return
 
@@ -79,6 +92,17 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_PikaDoll::
 	release
 	return
 
+
+ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_0:
+	.string "Heheh... Yeah... H-Huh?$"
+
+ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_1:
+	.string "I-It's not what you think! I was just\n"
+	.string "doing research!$"
+
+ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_2:
+	.string "Huh? You're not the professor... Go\n"
+	.string "away! I'm doing grown-up stuff!$"
 
 ProfTalk_First_Text::
 	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's a pleasure\n"
@@ -122,8 +146,8 @@ ProfTalk_Fourth_Text::
 	.string "catch wild Pokémon!\p"
 	.string "{COLOR DARK_GRAY}And with that, {PLAYER}, you're all set\n"
 	.string "to begin your journey!\p"
-	.string "{COLOR DARK_GRAY}I suggest you meet up with my\n"
-	.string "assistant first though.\p"
+	.string "{COLOR DARK_GRAY}I suggest you meet up with my other\n"
+	.string "student first, though.\p"
 	.string "{COLOR DARK_GRAY}Her name is Audrey, and she's been\n"
 	.string "helping me out for about a week or two.\p"
 	.string "{COLOR DARK_GRAY}She knows her way around Oranna better\n"
@@ -132,31 +156,35 @@ ProfTalk_Fourth_Text::
 	.string "{COLOR DARK_GRAY}Audrey should be somewhere near her\n"
 	.string "hometown, Maplegrove, right now.$"
 
-ProfTalk_Normal_Text::
+ProfTalk_AudreyNotDefeated::
 	.string "{COLOR DARK_GRAY}Audrey should be somewhere near her\n"
 	.string "hometown, Maplegrove, right now.$"
+
+ProfTalk_CheckPokedex::
+	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see\n"
+	.string "you again. How have you been?\p"
+	.string "Let's see the progress you've made on\n"
+	.string "completing your Pokédex...\p"
+	.string "You've seen a total of {COLOR RED}(X) Pokémon... and\n"
+	.string "caught a total of {COLOR RED}(Y) of them!\p"
+	.string "Not too shabby at all, {PLAYER}! Keep\n"
+	.string "up the good work!$"
 
 Scientist1Talk_Text::
 	.string "{COLOR DARK_GRAY}You kids are lucky. While you're outside\n"
 	.string "traveling and exploring, I'm stuck here.\p"
 	.string "{COLOR DARK_GRAY}Sorting bookshelves, writing research\n"
-	.string "papers, and programming software.\p"
-	.string "{COLOR DARK_GRAY}If only we had the Trainer Program when\n"
-	.string "I was a teen...$"
+	.string "papers, and programming software.$"
 
-Scientist2Talk_Text::
-	.string "{COLOR DARK_GRAY}Heheh.... Yeah... H-Huh? I-It's not what\n"
-	.string "you think! I was just doing research!\p"
-	.string "{COLOR DARK_GRAY}Huh? You're not the professor... Go\n"
-	.string "away! I'm doing grown-up stuff!$"
-
-Scientist3Talk_Text::
-	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! The professor\n"
-	.string "has told me a lot about you.\p"
-	.string "{COLOR DARK_GRAY}My name is Coco. I'm the creator of\n"
+CocoTalk_Text::
+	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! Welcome to the\n"
+	.string "isles of Mariyama.\p"
+	.string "{COLOR DARK_GRAY}My name is Coco. I'm a close friend of\n"
+	.string "Professor Palm's and the creator of\l"
 	.string "Mariyama's Pokémon Storage System!\p"
 	.string "{COLOR DARK_GRAY}I hope you find it easy and convenient\n"
-	.string "to use.$"
+	.string "to use. Let me know if you have any\l"
+	.string "problems with it!$"
 
 ReceivedEevee_Text::
 	.string "{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!$"
@@ -166,5 +194,5 @@ ISLANDGAME_CHERIPORT_LAB_VigorothTalk::
 	.string "work.)$"
 
 ISLANDGAME_CHERIPORT_LAB_PikaDollTalk::
-	.string "{COLOR RED}(Wow! It looks like an actual Pikachu,\n"
-	.string "but it's just a plush!)$"
+	.string "{COLOR RED}(Wow! This stuffed Pikachu is a lot\n"
+	.string "bigger than mine.)$"

@@ -5,9 +5,31 @@ script ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_MapScripts_EventScript_CaptainTalk {
     lock
     faceplayer
     msgbox(CaptainTalk_Text)
-    face_down
     release
 }
 text CaptainTalk_Text {
-    format("{COLOR DARK_GRAY}Ahoy there! I'm the captain of this vessel. Hope you enjoy your stay at the beautiful Isles of Mariyama!")
+    format("{COLOR DARK_GRAY}Ahoy there! I'm the captain of this vessel. Hope you enjoy your stay at the beautiful isles of Mariyama!")
+}
+
+script ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_Book {
+    lock
+    msgbox(ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_BookInspect)
+    release
+}
+text ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_BookInspect {
+    format(
+        "{COLOR RED}(It's a light novel titled “The Rising of The Aegislash Hero”.)"
+        )
+}
+
+script ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_Shelf {
+    lock
+    msgbox(ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_ShelfInspect)
+    release
+}
+text ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_ShelfInspect {
+    format(
+        "{COLOR RED}(There's a large assortment of books on this shelf.) \p"
+        "{COLOR RED}(The captain seems to be really into Pokécraft.)"
+        )
 }

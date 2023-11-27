@@ -50,14 +50,13 @@ movement NeedRunningShoes_Movement {
 
 text NeedRunningShoes_Text {
     format(
-        "{COLOR DARK_GRAY}I should change into my Running Shoes first."
+        "{COLOR RED}(I should also change into my Running Shoes before I leave.)"
     )
 }
 
 text SwitchedRunningShoes_Text {
     format(
-        "{COLOR DARK_GRAY}You switched your shoes with the\n"
-        "{COLOR DARK_GRAY}Running Shoes!"
+        "{COLOR DARK_GRAY}You switched into your Running Shoes!"
     )
 }
 
@@ -65,8 +64,20 @@ text ArrivedAtCheriport_Text {
     format(
         "{COLOR DARK_GRAY}Ladies and gentleman, this is your captain speaking! \p"
         "{COLOR DARK_GRAY}I'm happy to announce to you that we've finally reached our destination! \p"
-        "{COLOR DARK_GRAY}On behalf of the entire crew, I'd like to thank you for choosing to sail with us! \p"
+        "{COLOR DARK_GRAY}On behalf of the entire crew, I'd like to thank you for choosing to sail with us. \p"
         "{COLOR DARK_GRAY}Now, set forth and explore the isles of Mariyama! Until next time. Buh-bye! \p"
-        "{COLOR RED}(I've finally arrived. I should set my watch to the correct time first...)"
+        "{COLOR RED}(I've finally arrived. I should set my watch to the correct time.)"
     )
+}
+
+script ISLANDGAME_SS_RAIN_PLAYER_ROOM_Plush {
+    lock
+    msgbox(ISLANDGAME_SS_RAIN_PLAYER_ROOM_PlushInspect)
+    release
+}
+text ISLANDGAME_SS_RAIN_PLAYER_ROOM_PlushInspect {
+    format(
+        "{COLOR RED}(Farewell, stuffed Pikachu. My Pokémon adventure starts today!) \p"
+        "{COLOR RED}(Don't worry though, I'll be back. Look after my room in the meantime.)"
+        )
 }
