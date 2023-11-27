@@ -1,0 +1,55 @@
+mapscripts ISLANDGAME_CAMP_PERSI_LODGE_1_2F_MapScripts {}
+
+const THIEF_ID = 1
+
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
+    lock
+    if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)) {
+        msgbox(format("I can't believe those kids didn't see me swipe those cookies and candy bars!"))
+        applymovement(THIEF_ID, ExclaimFacePlayer)
+        msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_NPCTalk)
+    }
+    else {
+        faceplayer
+        msgbox(format("I'm sorry... My mommy don't let me have sweets, so I couldn't help myself.\pPlease don't tell on me!"))
+    }
+    release
+
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_NPCTalk {
+    format(
+        "W-Where did you come from? I was just kidding! I don't have anything on me! \p"
+        "There's nothing in this room either, so go away!"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_GulpinDoll {
+    lock
+    if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)) {
+        msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect, MSGBOX_YESNO)
+        if(var(VAR_RESULT) == NO) {
+            msgbox(format("Wow. Really? You're gonna let him get away with it?"))
+            goto(GulpinDollInspect_End)
+        }
+        
+        giveitem(ITEM_LAVA_COOKIE, 3)
+        giveitem(ITEM_RAGE_CANDY_BAR, 3)
+        setflag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)
+    }
+    else {
+        msgbox(format("{COLOR RED}(It looks like a regular old Guplin doll.)"))
+    }
+
+    GulpinDollInspect_End:
+        release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect {
+    format(
+        "{COLOR RED}(It looks like a regular old Guplin doll.) \p"
+        "{COLOR RED}(Huh? Instead of stuffing, there's a bunch of smuggled goods inside of it.) \p"
+        "{COLOR DARK_GRAY}Take them?"
+    )
+}

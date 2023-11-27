@@ -1219,8 +1219,8 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
 //ISLAND-START: USE THIS AS FLAGS FOR POKEBALL ITEMS
-#define FLAG_ROOM3_ITEM                                             0x493 // Unused Flag
-#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 // Unused Flag
+#define FLAG_ROOM3_ITEM                                             0x493 // Rare Candy
+#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
@@ -1534,10 +1534,14 @@
 #define FLAG_VERDANT_PATH_ROD_RECEIVED              (SYSTEM_FLAGS + 0x90) 
 //verdant-path: repel
 #define FLAG_VERDANT_PATH_NPC                       (SYSTEM_FLAGS + 0x91) 
+//central oranna path: prim cutscene finish
 #define FLAG_NORANNA_PRIM_CUTSCENE_FINISHED         (SYSTEM_FLAGS + 0x92)
-#define FLAG_UNUSED_0x8F3                           (SYSTEM_FLAGS + 0x93) 
-#define FLAG_UNUSED_0x8F4                           (SYSTEM_FLAGS + 0x94) // Unused Flag
-#define FLAG_UNUSED_0x8F5                           (SYSTEM_FLAGS + 0x95) // Unused Flag
+//ss rain: little girl in cafeteria
+#define FLAG_SSRAIN_ICECREAM_RECEIVED               (SYSTEM_FLAGS + 0x93) 
+//southern oranna path: defeat absol
+#define FLAG_S_ORANNA_PATH_ABSOL_DEFEATED           (SYSTEM_FLAGS + 0x94) 
+//camp persi: free food
+#define FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED          (SYSTEM_FLAGS + 0x95)
 #define FLAG_UNUSED_0x8F6                           (SYSTEM_FLAGS + 0x96) // Unused Flag
 #define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag
 #define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag

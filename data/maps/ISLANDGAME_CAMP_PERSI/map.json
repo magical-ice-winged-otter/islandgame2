@@ -157,8 +157,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
-      "x": 17,
-      "y": 28,
+      "x": 13,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -223,7 +223,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 31,
-      "y": 25,
+      "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -365,8 +365,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 9,
-      "y": 52,
+      "x": 58,
+      "y": 49,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -388,6 +388,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CAMP_PERSI_ItemPotion",
       "flag": "FLAG_ITEM_PERSI_POTION"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 65,
+      "y": 48,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route120_EventScript_ItemRevive",
+      "flag": "FLAG_ITEM_ROUTE_120_REVIVE"
     }
   ],
   "warp_events": [
@@ -417,6 +430,13 @@
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_LODGE_1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_LODGE_2",
       "dest_warp_id": "0"
     }
   ],
@@ -539,14 +559,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN5"
-    },
-    {
-      "type": "sign",
-      "x": 17,
-      "y": 27,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ISLANDGAME_ROSEVALE_Interact_LockedDoor"
     }
   ]
 }

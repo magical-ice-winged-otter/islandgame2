@@ -11630,12 +11630,12 @@
               {
                 "min_level": 5,
                 "max_level": 8,
-                "species": "SPECIES_REMORAID"
+                "species": "SPECIES_TENTACOOL"
               },
               {
                 "min_level": 5,
                 "max_level": 8,
-                "species": "SPECIES_TENTACOOL"
+                "species": "SPECIES_BARBOACH"
               },
               {
                 "min_level": 5,
@@ -11891,7 +11891,7 @@
               {
                 "min_level": 3,
                 "max_level": 4,
-                "species": "SPECIES_POOCHYENA"
+                "species": "SPECIES_MANKEY"
               },
               {
                 "min_level": 2,
