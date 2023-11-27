@@ -559,7 +559,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage_Text_0:
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_0:
 	.string "{COLOR DARK_GRAY}We can only sell one cookie per day!\p"
-	.string "We don't have many cookies...$"
+	.string "We don't have many cookies left...$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_1:
 	.string "{COLOR DARK_GRAY}Eeeh? But I said they were delicious...$"
@@ -576,9 +576,9 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl_Text_4:
 	.string "{COLOR DARK_GRAY}Yay! Thank you for your support!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_0:
-	.string "{COLOR DARK_GRAY} Um... we might be out of candy bars\n"
-	.string "today.\p"
-	.string "Come again tommorrow?$"
+	.string "{COLOR DARK_GRAY}Sorry, we're running low on candy bars,\n"
+	.string "so we can only give one per person.\p"
+	.string "Come again tomorrow!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_1:
 	.string "{COLOR DARK_GRAY}Drats. I need more sales for that\n"

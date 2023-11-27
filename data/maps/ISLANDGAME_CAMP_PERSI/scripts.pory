@@ -356,7 +356,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CookieGirl {
     faceplayer
 
     if (flag(FLAG_DAILY_PERSI_COOKIE_GIRL_SALE)) {
-        msgbox(format("{COLOR DARK_GRAY}We can only sell one cookie per day!\pWe don't have many cookies..."))
+        msgbox(format("{COLOR DARK_GRAY}We can only sell one cookie per day!\pWe don't have many cookies left..."))
         goto(CookieGirl_End)
     }
 
@@ -408,7 +408,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy {
     faceplayer
 
     if (flag(FLAG_DAILY_PERSI_CANDY_BOY_SALE)) {
-        msgbox(format("{COLOR DARK_GRAY} Um... we might be out of candy bars today.\pCome again tommorrow?"))
+        msgbox(format("{COLOR DARK_GRAY}Sorry, we're running low on candy bars, so we can only give one per person.\pCome again tomorrow!"))
         goto(CandyBoy_End)
     }
 

@@ -100,7 +100,8 @@
     "ISLANDGAME_TIDALCOVE_CYCLE_SHOP",
     "ISLANDGAME_TIDALCOVE_RARE_HOUSE",
     "ISLANDGAME_TIDALCOVE_GENERAL_HOUSE",
-    "ISLANDGAME_Southern_Oranna_Path_Cave"
+    "ISLANDGAME_Southern_Oranna_Path_Cave",
+    "ISLANDGAME_CAMP_PERSI_LODGE_1_2F"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
