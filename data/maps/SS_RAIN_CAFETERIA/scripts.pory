@@ -9,7 +9,7 @@ script SS_RAIN_CAFETERIA_NPC1_TALK {
 }
 
 text SS_RAIN_CAFETERIA_NPC1_TEXT {
-    format("{COLOR DARK_GRAY}Today's menu choices are great! I love the burgers here!")
+    format("Today's menu choices are great! I love the burgers here!")
 }
 
 script SS_RAIN_CAFETERIA_NPC2_TALK {
@@ -20,7 +20,7 @@ script SS_RAIN_CAFETERIA_NPC2_TALK {
 }
 
 text SS_RAIN_CAFETERIA_NPC2_TEXT {
-    format("{COLOR DARK_GRAY}An extra large pinap... Who puts PINAP BERRIES on a PIZZA?")
+    format("An extra large pinap... Who puts pinap berries on a PIZZA?\pWhat has this world come to?")
 }
 
 script SS_RAIN_CAFETERIA_NPC3_TALK {
@@ -31,17 +31,28 @@ script SS_RAIN_CAFETERIA_NPC3_TALK {
 }
 
 text SS_RAIN_CAFETERIA_NPC3_TEXT {
-    format("{COLOR DARK_GRAY}He probably won't notice if I just take a couple of these fries for myself...")
+    format("I swear to Arceus, if I get another room service request on the top floor...")
 }
 
-script SS_RAIN_CAFETERIA_NPC4_TALK {
+script SS_RAIN_CAFETERIA_IceCreamGirl {
     lock
     faceplayer
-    msgbox(SS_RAIN_CAFETERIA_NPC4_TEXT)
-    waitmessage
-    release
-}
+    if(!flag(FLAG_SSRAIN_ICECREAM_RECEIVED)) {
+        msgbox(format("I don't like how this ice cream tastes... Do you want it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            msgbox(format("But I don't wanna throw it away..."))
+            goto(IceCreamGirl_End)
+        }
+        checkitemspace(ITEM_CASTELIACONE)
+        if (!var(VAR_RESULT)) {
+            msgbox(format("Eeh? You're holding too many items."))
+            goto(IceCreamGirl_End)
+        }
+        giveitem(ITEM_CASTELIACONE)
+        setflag(FLAG_SSRAIN_ICECREAM_RECEIVED)
+    }
+    msgbox(format("I wanted orange sher-bet, but they don't have it here..."))
 
-text SS_RAIN_CAFETERIA_NPC4_TEXT {
-    format("{COLOR DARK_GRAY}What's your favorite flavor of ice cream? I like orange sherbet.")
+    IceCreamGirl_End:
+    release
 }

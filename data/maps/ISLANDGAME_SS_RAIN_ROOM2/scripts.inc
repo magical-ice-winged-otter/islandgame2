@@ -62,13 +62,19 @@ NeedRunningShoes_Movement:
 	face_down
 	step_end
 
+ISLANDGAME_SS_RAIN_PLAYER_ROOM_Plush::
+	lock
+	msgbox ISLANDGAME_SS_RAIN_PLAYER_ROOM_PlushInspect
+	release
+	return
+
+
 NeedRunningShoes_Text::
-	.string "{COLOR DARK_GRAY}I should change into my Running Shoes\n"
-	.string "first.$"
+	.string "{COLOR RED}(I should also change into my Running\n"
+	.string "Shoes before I leave.)$"
 
 SwitchedRunningShoes_Text::
-	.string "{COLOR DARK_GRAY}You switched your shoes with the\n"
-	.string "{COLOR DARK_GRAY}Running Shoes!$"
+	.string "{COLOR DARK_GRAY}You switched into your Running Shoes!$"
 
 ArrivedAtCheriport_Text::
 	.string "{COLOR DARK_GRAY}Ladies and gentleman, this is your\n"
@@ -76,8 +82,14 @@ ArrivedAtCheriport_Text::
 	.string "{COLOR DARK_GRAY}I'm happy to announce to you that we've\n"
 	.string "finally reached our destination!\p"
 	.string "{COLOR DARK_GRAY}On behalf of the entire crew, I'd like to\n"
-	.string "thank you for choosing to sail with us!\p"
+	.string "thank you for choosing to sail with us.\p"
 	.string "{COLOR DARK_GRAY}Now, set forth and explore the isles of\n"
 	.string "Mariyama! Until next time. Buh-bye!\p"
 	.string "{COLOR RED}(I've finally arrived. I should set my\n"
-	.string "watch to the correct time first...)$"
+	.string "watch to the correct time.)$"
+
+ISLANDGAME_SS_RAIN_PLAYER_ROOM_PlushInspect::
+	.string "{COLOR RED}(Farewell, stuffed Pikachu. My Pokémon\n"
+	.string "adventure starts today!)\p"
+	.string "{COLOR RED}(Don't worry though, I'll be back. Look\n"
+	.string "after my room in the meantime.)$"

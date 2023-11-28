@@ -37,7 +37,7 @@ const struct Item gItems[] =
     [ITEM_POKE_BALL] =
     {
         .name = _("Poké Ball"),
-        .price = 200,
+        .price = 200, 
         .description = sPokeBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -336,7 +336,7 @@ const struct Item gItems[] =
     [ITEM_POTION] =
     {
         .name = _("Potion"),
-        .price = 200,
+        .price = 400, // og price 200
         .holdEffectParam = 20,
         .description = sPotionDesc,
         .pocket = POCKET_ITEMS,
@@ -349,7 +349,7 @@ const struct Item gItems[] =
     [ITEM_SUPER_POTION] =
     {
         .name = _("Super Potion"),
-        .price = 700,
+        .price = 1400, // og price 700
         .holdEffectParam = 60,
         .description = sSuperPotionDesc,
         .pocket = POCKET_ITEMS,
@@ -362,7 +362,7 @@ const struct Item gItems[] =
     [ITEM_HYPER_POTION] =
     {
         .name = _("Hyper Potion"),
-        .price = 1500,
+        .price = 3000, // og price 1500
         .holdEffectParam = 120,
         .description = sHyperPotionDesc,
         .pocket = POCKET_ITEMS,
@@ -375,7 +375,7 @@ const struct Item gItems[] =
     [ITEM_MAX_POTION] =
     {
         .name = _("Max Potion"),
-        .price = 2500,
+        .price = 5000, // og price 2500
         .holdEffectParam = 255,
         .description = sMaxPotionDesc,
         .pocket = POCKET_ITEMS,
@@ -388,7 +388,7 @@ const struct Item gItems[] =
     [ITEM_FULL_RESTORE] =
     {
         .name = _("Full Restore"),
-        .price = 3000,
+        .price = 6000, // og price 3000
         .holdEffectParam = 255,
         .description = sFullRestoreDesc,
         .pocket = POCKET_ITEMS,
@@ -401,7 +401,7 @@ const struct Item gItems[] =
     [ITEM_REVIVE] =
     {
         .name = _("Revive"),
-        .price = 2000,
+        .price = 4000, // og price 2000
         .description = sReviveDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -413,7 +413,7 @@ const struct Item gItems[] =
     [ITEM_MAX_REVIVE] =
     {
         .name = _("Max Revive"),
-        .price = 4000,
+        .price = 8000, // og price 4000
         .description = sMaxReviveDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -425,7 +425,7 @@ const struct Item gItems[] =
     [ITEM_FRESH_WATER] =
     {
         .name = _("Fresh Water"),
-        .price = 200,
+        .price = 400, // og price 200
         .holdEffectParam = 30,
         .description = sFreshWaterDesc,
         .pocket = POCKET_ITEMS,
@@ -438,7 +438,7 @@ const struct Item gItems[] =
     [ITEM_SODA_POP] =
     {
         .name = _("Soda Pop"),
-        .price = 300,
+        .price = 600, // og price 300
         .holdEffectParam = 50,
         .description = sSodaPopDesc,
         .pocket = POCKET_ITEMS,
@@ -451,7 +451,7 @@ const struct Item gItems[] =
     [ITEM_LEMONADE] =
     {
         .name = _("Lemonade"),
-        .price = 400,
+        .price = 800, // og price 400
         .holdEffectParam = 70,
         .description = sLemonadeDesc,
         .pocket = POCKET_ITEMS,
@@ -464,7 +464,7 @@ const struct Item gItems[] =
     [ITEM_MOOMOO_MILK] =
     {
         .name = _("Moomoo Milk"),
-        .price = 600,
+        .price = 1200, // og price 600
         .holdEffectParam = 100,
         .description = sMoomooMilkDesc,
         .pocket = POCKET_ITEMS,
@@ -649,7 +649,7 @@ const struct Item gItems[] =
     [ITEM_BERRY_JUICE] =
     {
         .name = _("Berry Juice"),
-        .price = 200,
+        .price = 1000, // og price 200
         .holdEffect = HOLD_EFFECT_RESTORE_HP,
         .holdEffectParam = 20,
         .description = sBerryJuiceDesc,

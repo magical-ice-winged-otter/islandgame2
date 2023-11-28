@@ -50,7 +50,7 @@ movement RunAway {
 }
 
 text SS_Rain_InvadeRoomReaction_Text {
-    format("{COLOR DARK_GRAY}What are you doing in my room? Get out!")
+    format("{COLOR DARK_GRAY}Hey! What are you doing in my room? Get out!")
 }
 
 script SS_Rain_EventScript_HasNoWater {
@@ -64,7 +64,7 @@ script SS_Rain_EventScript_HasWater {
     waitmessage
     applymovement(LOCALID_GENTLEMAN, WalkToPlayer)
     waitmovement(0)
-    msgbox(format("{COLOR DARK_GRAY}He sent you to give me water?"))
+    msgbox(format("{COLOR DARK_GRAY}My nephew sent you to give me water?"))
     
     setflag(FLAG_ROOM3_GAVE_WATER)
     removeitem(ITEM_FRESH_WATER, 1)
@@ -83,7 +83,7 @@ script SS_Rain_EventScript_Talk {
 }
 
 text SS_Rain_CalmGentleman_Text {
-    format("{COLOR DARK_GRAY}I apologize for my rudeness. I don't take kindly to strangers entering my room without notice.")
+    format("{COLOR DARK_GRAY}I apologize for my rudeness. Please, make yourself at home.")
 }
 
 script SS_Rain_EventScript_Item {

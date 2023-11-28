@@ -19,3 +19,29 @@ ISLANDGAME_CAMP_PERSI_MACHETE_TREE_EventScript_PickupMachete::
 	release
 	return
 
+
+ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_Laptop::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_TREEHOUSE_LaptopInspect
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_TV::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_TREEHOUSE_TVInspect
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_TREEHOUSE_LaptopInspect::
+	.string "{COLOR RED}(It's a dusty old laptop. It looks like\n"
+	.string "it's been here for years.)\p"
+	.string "You tried to turn it on, but there was\n"
+	.string "no power.$"
+
+ISLANDGAME_CAMP_PERSI_TREEHOUSE_TVInspect::
+	.string "{COLOR RED}(It's a really old television set riddled\n"
+	.string "with cobwebs.)\p"
+	.string "You tried to turn it on, but there was\n"
+	.string "no power.$"

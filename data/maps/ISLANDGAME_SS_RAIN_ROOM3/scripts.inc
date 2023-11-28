@@ -97,12 +97,12 @@ SS_Rain_EventScript_HasWater_Text_0:
 	.string "{COLOR DARK_GRAY}Huh?$"
 
 SS_Rain_EventScript_HasWater_Text_1:
-	.string "{COLOR DARK_GRAY}He sent you to give me water?$"
+	.string "{COLOR DARK_GRAY}My nephew sent you to give me water?$"
 
 SS_Rain_InvadeRoomReaction_Text::
-	.string "{COLOR DARK_GRAY}What are you doing in my room? Get out!$"
+	.string "{COLOR DARK_GRAY}Hey! What are you doing in my room? Get\n"
+	.string "out!$"
 
 SS_Rain_CalmGentleman_Text::
-	.string "{COLOR DARK_GRAY}I apologize for my rudeness. I don't\n"
-	.string "take kindly to strangers entering my\l"
-	.string "room without notice.$"
+	.string "{COLOR DARK_GRAY}I apologize for my rudeness. Please,\n"
+	.string "make yourself at home.$"

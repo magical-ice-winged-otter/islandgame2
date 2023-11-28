@@ -1,0 +1,6 @@
+include/constants/flags.h,      "The scripting flags for the game",             MAP | SCRIPT
+include/constants/vars.h,       "The scripting variables for the game",         MAP | SCRIPT
+
+include/constants/opponents.h,  "The enemy trainer definitions",                BATTLE | SCRIPT
+src/data/trainer_parties.h,     "The enemy team data (Pokémon, moves, ect.)",   BATTLE
+src/data/trainers.h,            "The enemy data (music, picture, flags, ect.)", BATTLE

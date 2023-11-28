@@ -1,1 +1,56 @@
 mapscripts ISLANDGAME_CAMP_PERSI_LODGE_2_MapScripts {}
+
+
+script ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_2_NPC1Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_2_NPC1Talk {
+    format(
+        "I hope Scoutmaster Lumpus is doing alright. Those boys can be so rowdy."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_NPC2 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_2_NPC2Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_2_NPC2Talk {
+    format(
+        "Camp is lame, nature is gross, and we don't even have air conditioning here! \p"
+        "They took away my phone too! How am I going to stay up to date on my shows!?"
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_NPC3 {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_2_NPC3Talk)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_2_NPC3Talk {
+    format(
+        "The boys are so lucky to have a game console. I wanted to get one for our cabin too, but I got outvoted by everyone else. \p"
+        "So now we just have a stupid kitchen in here."
+    )
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_Doll {
+    lock
+    faceplayer
+    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_2_DollInteract)
+    release
+}
+
+text ISLANDGAME_CAMP_PERSI_LODGE_2_DollInteract {
+    format(
+        "{COLOR RED}(It's a doll of an Azurill. It looks neglected.)"
+    )
+}

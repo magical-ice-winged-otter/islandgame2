@@ -69,6 +69,9 @@
 #define MAP_ISLANDGAME_TIDALCOVE_CYCLE_SHOP               (60 | (0 << 8))
 #define MAP_ISLANDGAME_TIDALCOVE_RARE_HOUSE               (61 | (0 << 8))
 #define MAP_ISLANDGAME_TIDALCOVE_GENERAL_HOUSE            (62 | (0 << 8))
+#define MAP_ISLANDGAME_SOUTHERN_ORANNA_PATH_CAVE          (63 | (0 << 8))
+#define MAP_ISLANDGAME_CAMP_PERSI_LODGE_1_2F              (64 | (0 << 8))
+#define MAP_ISLANDGAME_CAMP_PERSI_LODGE_2_2F              (65 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))

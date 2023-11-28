@@ -36,7 +36,6 @@ script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
 
     if (!flag(FLAG_DAILY_CHERIPORT_RECEIVED_DRINK))
     {
-        setflag(FLAG_DAILY_CHERIPORT_RECEIVED_DRINK)
         msgbox(ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK, MSGBOX_YESNO)
 
         if (var(VAR_RESULT) == NO) {
@@ -50,7 +49,7 @@ script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
             msgbox(format("Oh dear, you don't have enough room for a drink."))
             goto(PriestessDrinkGiver_End)
         }
-
+        setflag(FLAG_DAILY_CHERIPORT_RECEIVED_DRINK)
         // Randomly select some item to give the player.
         random(100)
 

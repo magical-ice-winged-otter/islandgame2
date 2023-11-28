@@ -15,7 +15,7 @@ script ISLANDGAME_MINTY_MEADOWS_OnLoad {
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign {
-	msgbox(format("<-- MAPLEGROVE \n--> MINTY MEADOWS"), MSGBOX_SIGN)
+	msgbox(format("{LEFT_ARROW} MAPLEGROVE \n{RIGHT_ARROW} MINTY MEADOWS"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer1 {
@@ -27,65 +27,65 @@ text ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss {
 	format("{COLOR DARK_GRAY}We'll get you next time!")
 }
 
-script ISLANDGAME_MINTY_MEADOWS_Trainer2 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_2, format("{COLOR DARK_GRAY}Battling feels heavy today..."), ISLANDGAME_MINTY_MEADOWS_Trainer2_Loss)
-	msgbox("I couldn't overcome the weight.\n It's a struggle, isn't it?", MSGBOX_AUTOCLOSE)
-}
+// script ISLANDGAME_MINTY_MEADOWS_Trainer2 {
+//     trainerbattle_single(TRAINER_MINTY_MEADOWS_2, format("{COLOR DARK_GRAY}Battling feels heavy today..."), ISLANDGAME_MINTY_MEADOWS_Trainer2_Loss)
+// 	msgbox("I couldn't overcome the weight.\n It's a struggle, isn't it?", MSGBOX_AUTOCLOSE)
+// }
 
-text ISLANDGAME_MINTY_MEADOWS_Trainer2_Loss {
-	format("Your strength is a beacon. I'll find my own light in this darkness.")
-}
+// text ISLANDGAME_MINTY_MEADOWS_Trainer2_Loss {
+// 	format("Your strength is a beacon. I'll find my own light in this darkness.")
+// }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer3 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_3, format("{COLOR DARK_GRAY}Ready for a match? Let the excitement begin!"), ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss)
-	msgbox("Wow, you're strong! That was a blast of \n a battle!", MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_3, format("Oi! Get out of my way! I'm trying to keep up my pace here!"), ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss)
+	msgbox("I couldn't keep up the momentum...", MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss {
-	format("{COLOR DARK_GRAY}You're a powerhouse! Let's battle again sometime!")
+	format("I need to get stronger... Fight, Jack... Fight!")
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer4 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_4, format("{COLOR DARK_GRAY}In the meadow's embrace, let our Pokémon bloom in battle!"), ISLANDGAME_MINTY_MEADOWS_Trainer4_Loss)
-	msgbox("Alas, my Pokémon couldn't bloom to \nvictory this time.\p Your team flourished beautifully!", MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_4, format("{COLOR DARK_GRAY}Let our Pokémon bloom in the meadow's embrace!"), ISLANDGAME_MINTY_MEADOWS_Trainer4_Loss)
+	msgbox("Your Pokémon flourished beautifully!", MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_MINTY_MEADOWS_Trainer4_Loss {
-	format("{COLOR DARK_GRAY}Even in defeat, the meadow whispers tales of growth and renewal.")
+	format("{COLOR DARK_GRAY}I suppose it is still too early for me to bloom.")
 }
 
-script ISLANDGAME_MINTY_MEADOWS_Trainer5 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_5, format("{COLOR DARK_GRAY}Hello! Let's explore the wonders of this lovely meadow together!"), ISLANDGAME_MINTY_MEADOWS_Trainer5_Loss)
-	msgbox("Oh, our meadow journey had its \nchallenges. \pNature's charm is truly enchanting,\nisn't it?", MSGBOX_AUTOCLOSE)
-}
+// script ISLANDGAME_MINTY_MEADOWS_Trainer5 {
+//     trainerbattle_single(TRAINER_MINTY_MEADOWS_5, format("{COLOR DARK_GRAY}Hello! Let's explore the wonders of this lovely meadow together!"), ISLANDGAME_MINTY_MEADOWS_Trainer5_Loss)
+// 	msgbox("Oh, our meadow journey had its \nchallenges. \pNature's charm is truly enchanting,\nisn't it?", MSGBOX_AUTOCLOSE)
+// }
 
-text ISLANDGAME_MINTY_MEADOWS_Trainer5_Loss {
-	format("{COLOR DARK_GRAY}I will see you again!")
-}
+// text ISLANDGAME_MINTY_MEADOWS_Trainer5_Loss {
+// 	format("{COLOR DARK_GRAY}I will see you again!")
+//}
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer6 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_6, format("{COLOR DARK_GRAY}Greetings! Let's revel in the marvels of bug Pokémon amidst this incredible setting!"), ISLANDGAME_MINTY_MEADOWS_Trainer6_Loss)
-	msgbox("Ah, my enthusiasm didn't secure \nsuccess!\pYour Pokémon shine like rare gems!", MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_6, format("I will find you my queen... I'll stop at nothing to see your beauty!"), ISLANDGAME_MINTY_MEADOWS_Trainer6_Loss)
+	msgbox("How dare you come between me and Her\nMajesty!", MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_MINTY_MEADOWS_Trainer6_Loss {
-	format("{COLOR DARK_GRAY}The problem is that I can't find any Bug Pokémon here.")
+	format("You'll pay for this... Delaying my search for my lovely Queen Combee!")
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer7 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_7, format("{COLOR DARK_GRAY}Hey there! Ready for a stroll through nature's wonders?"), ISLANDGAME_MINTY_MEADOWS_Trainer7_Loss)
-	msgbox("Whoops! Things didn't quite go as \nplanned, but hey, that's life, right?", MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_7, format("Go Go Go! My awesome Pokémon!"), ISLANDGAME_MINTY_MEADOWS_Trainer7_Loss)
+	msgbox("No No No! My awesome Pokémon!", MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_MINTY_MEADOWS_Trainer7_Loss {
-	format("{COLOR DARK_GRAY}Whoops! Things didn't quite go as planned, but hey, that's life, right?")
+	format("My Pokémon are awesome, so yours must be awesomer!")
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer8 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_8, format("{COLOR DARK_GRAY}Hey! Ready for a laid-back time outdoors?"), ISLANDGAME_MINTY_MEADOWS_Trainer8_Loss)
-	msgbox("Your easygoing spirit is refreshing!", MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_8, format("This was the worst place for a picnic... I'm allergic to the flowers here."), ISLANDGAME_MINTY_MEADOWS_Trainer8_Loss)
+	msgbox("It's hard to concentrate in battle when\nyou're sneezing constantly!", MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_MINTY_MEADOWS_Trainer8_Loss {
-	format("{COLOR DARK_GRAY}I couldn't wait to go on this camping trip that I didn't sleep.")
+	format("{COLOR DARK_GRAY}Do you have any tissues? I'm not sure how much more of this I can take.")
 }

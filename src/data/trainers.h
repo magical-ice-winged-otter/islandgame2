@@ -313,7 +313,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Audrey"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_MintyMeadowsRival),
     },
 
@@ -329,17 +329,17 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MintyMeadows1),
     },
 
-    [TRAINER_MINTY_MEADOWS_2] =
-    {
-        .trainerClass = TRAINER_CLASS_YOUNGSTER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .trainerName = _("Tom"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_MintyMeadows2),
-    },
+    // [TRAINER_MINTY_MEADOWS_2] =
+    // {
+    //     .trainerClass = TRAINER_CLASS_YOUNGSTER,
+    //     .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
+    //     .trainerPic = TRAINER_PIC_YOUNGSTER,
+    //     .trainerName = _("Tom"),
+    //     .items = {},
+    //     .doubleBattle = FALSE,
+    //     .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+    //     .party = TRAINER_PARTY(sParty_MintyMeadows2),
+    // },
 
     [TRAINER_MINTY_MEADOWS_3] =
     {
@@ -365,21 +365,21 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MintyMeadows4),
     },
 
-    [TRAINER_MINTY_MEADOWS_5] =
-    {
-        .trainerClass = TRAINER_CLASS_LASS,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LASS,
-        .trainerName = _("Crystal"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_MintyMeadows5),
-    },
+    // [TRAINER_MINTY_MEADOWS_5] =
+    // {
+    //     .trainerClass = TRAINER_CLASS_LASS,
+    //     .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+    //     .trainerPic = TRAINER_PIC_LASS,
+    //     .trainerName = _("Crystal"),
+    //     .items = {},
+    //     .doubleBattle = FALSE,
+    //     .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+    //     .party = TRAINER_PARTY(sParty_MintyMeadows5),
+    // },
 
     [TRAINER_MINTY_MEADOWS_6] =
     {
-        .trainerClass = TRAINER_CLASS_COLLECTOR,
+        .trainerClass = TRAINER_CLASS_BUG_MANIAC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_BUG_MANIAC,
         .trainerName = _("Dale"),
@@ -391,10 +391,10 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MINTY_MEADOWS_7] =
     {
-        .trainerClass = TRAINER_CLASS_PICNICKER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_PICNICKER,
-        .trainerName = _("Alice"),
+        .trainerClass = TRAINER_CLASS_CAMPER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerName = _("Alex"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
@@ -403,10 +403,11 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MINTY_MEADOWS_8] =
     {
-        .trainerClass = TRAINER_CLASS_CAMPER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CAMPER,
-        .trainerName = _("Alex"),
+        .trainerClass = TRAINER_CLASS_PICNICKER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = _("Alice"),
+
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,

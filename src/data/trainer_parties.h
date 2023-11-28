@@ -53,8 +53,8 @@ static const struct TrainerMon sParty_SOrannaPathTrainer4[] = {
 static const struct TrainerMon sParty_CampPersiTrainer1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 9,
-    .species = SPECIES_SHEDINJA,
+    .lvl = 8,
+    .species = SPECIES_NINCADA,
     }
 };
 
@@ -203,22 +203,22 @@ static const struct TrainerMon sParty_VerdantWoodsTrainer1[] = {
 static const struct TrainerMon sParty_VerdantWoodsTrainer2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 8,
-    .species = SPECIES_SURSKIT,
+    .lvl = 9,
+    .species = SPECIES_KRICKETOT,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 8,
-    .species = SPECIES_NINCADA,
+    .lvl = 9,
+    .species = SPECIES_SPEWPA,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 8,
+    .lvl = 9,
     .species = SPECIES_JOLTIK,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 8,
+    .lvl = 9,
     .species = SPECIES_YANMA,
     }
 };
@@ -239,7 +239,7 @@ static const struct TrainerMon sParty_VerdantWoodsTrainer4[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 9,
+    .lvl = 10,
     .species = SPECIES_MARILL,
     }
 };
@@ -247,7 +247,7 @@ static const struct TrainerMon sParty_VerdantWoodsTrainer4[] = {
 static const struct TrainerMon sParty_VerdantWoodsTrainer5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 10,
+    .lvl = 11,
     .species = SPECIES_POOCHYENA,
     }
 };
@@ -277,7 +277,7 @@ static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 14,
+    .lvl = 15,
     .species = SPECIES_GIBLE,
     .heldItem = ITEM_BERRY_JUICE,
     .ability = ABILITY_SAND_VEIL,
@@ -298,28 +298,28 @@ static const struct TrainerMon sParty_MintyMeadows1[] = {
     }
 };
 
-static const struct TrainerMon sParty_MintyMeadows2[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 11,
-    .species = SPECIES_ODDISH,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 11,
-    .species = SPECIES_DRIFLOON,
-    }
-};
+// static const struct TrainerMon sParty_MintyMeadows2[] = {
+//     {
+//     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+//     .lvl = 11,
+//     .species = SPECIES_ODDISH,
+//     },
+//     {
+//     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+//     .lvl = 11,
+//     .species = SPECIES_DRIFLOON,
+//     }
+// };
 
 static const struct TrainerMon sParty_MintyMeadows3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 11,
-    .species = SPECIES_PIDGEY,
+    .species = SPECIES_STARLY,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 11,
+    .lvl = 12,
     .species = SPECIES_MACHOP,
     }
 };
@@ -332,25 +332,31 @@ static const struct TrainerMon sParty_MintyMeadows4[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 11,
+    .lvl = 12,
     .species = SPECIES_FLABEBE,
     }
 };
 
-static const struct TrainerMon sParty_MintyMeadows5[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 12,
-    .species = SPECIES_MARILL,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 12,
-    .species = SPECIES_DEERLING,
-    }
-};
+// static const struct TrainerMon sParty_MintyMeadows5[] = {
+//     {
+//     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+//     .lvl = 12,
+//     .species = SPECIES_MARILL,
+//     },
+//     {
+//     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+//     .lvl = 12,
+//     .species = SPECIES_DEERLING,
+//     }
+// };
 
 static const struct TrainerMon sParty_MintyMeadows6[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 13,
+    .species = SPECIES_COMBEE,
+    .gender = TRAINER_MON_MALE
+    },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 14,
@@ -362,7 +368,12 @@ static const struct TrainerMon sParty_MintyMeadows7[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 13,
-    .species = SPECIES_MEOWTH_ALOLAN,
+    .species = SPECIES_POOCHYENA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 13,
+    .species = SPECIES_DRIFLOON,
     }
 };
 
@@ -370,7 +381,7 @@ static const struct TrainerMon sParty_MintyMeadows8[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 13,
-    .species = SPECIES_POOCHYENA,
+    .species = SPECIES_DEERLING,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
