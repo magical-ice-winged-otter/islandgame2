@@ -250,5 +250,5 @@ ISLANDGAME_Southern_Oranna_Path_NPC2Talk2::
 	.string "a real jerk anyways.$"
 
 ISLANDGAME_Southern_Oranna_Path_SIGN_DESC::
-	.string "{COLOR DARK_GRAY}<-- CHERIPORT\n"
-	.string "{COLOR DARK_GRAY}CAMP PERSI -->$"
+	.string "{COLOR DARK_GRAY}{LEFT_ARROW} CHERIPORT\n"
+	.string "{COLOR DARK_GRAY}CAMP PERSI {RIGHT_ARROW}$"

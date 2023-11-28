@@ -13,9 +13,15 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyDad::
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom::
 	lock
 	faceplayer
-	msgbox ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomTalk
+	goto_if_unset FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom_2
+	msgbox ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomSecondTalk
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom_1:
 	release
 	return
+
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom_2:
+	msgbox ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomFirstTalk
+	goto ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom_1
 
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk::
@@ -26,7 +32,7 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk::
 	.string "{COLOR DARK_GRAY}Kids grow up so fast, don't they? Blink\n"
 	.string "and you'll miss it!$"
 
-ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomTalk::
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomFirstTalk::
 	.string "{COLOR DARK_GRAY}Hello dearie! You must be {PLAYER},\n"
 	.string "right? My daughter told me about you.\p"
 	.string "{COLOR DARK_GRAY}She was very excited to finally have a\n"
@@ -38,3 +44,15 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomTalk::
 	.string "be in the Minty Meadows doing research.\p"
 	.string "{COLOR DARK_GRAY}I'm sure she'd be more than happy to\n"
 	.string "show you around Oranna.$"
+
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomSecondTalk::
+	.string "It's good to see you again, dearie!\n"
+	.string "Audrey just stopped by earlier.\p"
+	.string "She told me all about how you two helped\n"
+	.string "the owner of Fresa Farms find his\l"
+	.string "missing Mareep!\p"
+	.string "You were both very kind and brave to\n"
+	.string "stand up to that wild Mightyena.\p"
+	.string "Thank you for being with my daughter.\n"
+	.string "She gets ahead of herself a lot, so I'm\l"
+	.string "glad neither of you were hurt.$"
