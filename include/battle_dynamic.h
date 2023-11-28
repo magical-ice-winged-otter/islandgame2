@@ -3,7 +3,7 @@
 //#include "global.h"
 #include "pokemon.h"
 
-#define HIDDEN_POWER_OFFSET 4 //modify this offset if you have added another type. Vanilla: 4
+#define HIDDEN_POWER_OFFSET 5 //modify this offset if you have added another type. Vanilla: 4
 
 u8 displayTypeSummary(struct Pokemon* mon, u16 move);
 u8 displayTypeInBattle(u32 battlerAtk, u16 move, bool8 modify);
