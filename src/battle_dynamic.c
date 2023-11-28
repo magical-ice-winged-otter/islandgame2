@@ -20,11 +20,11 @@ static u8 calculateRevelationDanceType(u8 type1, u8 type2, u8 type3); //EFFECT_R
 static u8 calculateNaturalGiftType(u16 item); //EFFECT_NATURAL_GIFT
 static u8 calculateTerrainPulseType(u32 battlerAtk); //EFFECT_TERRAIN_PULSE
 
-static void handleFieldMoves(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
-static void handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
-static void handleSpecificAbility(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
-static void handleSpecificMove(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
-static void handleSpecificSpecies(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
+static bool8 handleFieldMoves(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
+static bool8 handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility, bool8 modify);
+static bool8 handleSpecificAbility(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
+static bool8 handleSpecificMove(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
+static bool8 handleSpecificSpecies(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility);
 
 
 u8 displayTypeSummary(struct Pokemon* mon, u16 move)
@@ -94,28 +94,14 @@ u8 displayTypeInBattle(u32 battlerAtk, u16 move, bool8 modify)
     }
     attackerAbility = GetBattlerAbility(battlerAtk);
     moveType = type ? type & DYNAMIC_TYPE_MASK : gBattleMoves[move].type;
-     
-    handleFieldMoves(&type, battlerAtk, moveType, move, attackerAbility);
-    switch (attackerAbility)
-    {
-        case ABILITY_PIXILATE:
-        case ABILITY_REFRIGERATE:
-        case ABILITY_AERILATE:
-        case ABILITY_GALVANIZE:
-        case ABILITY_NORMALIZE:
-            handleAteAbilty(&type, battlerAtk, moveType, move, attackerAbility);
-            if (modify)
-                gBattleStruct->ateBoost[battlerAtk] = 1;
-            break;
-        case ABILITY_LIQUID_VOICE:
-            handleSpecificAbility(&type, battlerAtk, moveType, move, attackerAbility);
-            break;
-        default:
-            break;
-    }
     
-    handleSpecificMove(&type, battlerAtk, moveType, move, attackerAbility);
+    //the || mirrors the if else statement vanilla behavior 
+    handleFieldMoves(&type, battlerAtk, moveType, move, attackerAbility) || 
+    handleAteAbilty(&type, battlerAtk, moveType, move, attackerAbility, modify) ||
+    handleSpecificAbility(&type, battlerAtk, moveType, move, attackerAbility) ||
+    handleSpecificMove(&type, battlerAtk, moveType, move, attackerAbility) || 
     handleSpecificSpecies(&type, battlerAtk, moveType, move, attackerAbility);
+
     return type;
 }
 
@@ -183,60 +169,75 @@ static u8 calculateTerrainPulseType(u32 battlerAtk)
     }
 }
 
-static void handleFieldMoves(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
+static bool8 handleFieldMoves(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
 {
     if ((gFieldStatuses & STATUS_FIELD_ION_DELUGE && moveType == TYPE_NORMAL)
         || gStatuses4[battlerAtk] & STATUS4_ELECTRIFIED)
     {
         *type = TYPE_ELECTRIC | F_DYNAMIC_TYPE_2;
+        return TRUE;
     }
+    return FALSE;
 }
 
-static void handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
+static bool8 handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility, bool8 modify)
 {
     u32 ateType;
     if (gBattleMoves[move].type == TYPE_NORMAL
-             && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
-             && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
-             && gBattleMoves[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
-             && gBattleMoves[move].effect != EFFECT_NATURAL_GIFT
-             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_FAIRY))
-                 || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
-                 || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
-                 || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_ELECTRIC))
-                )
-             )
+        && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
+        && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
+        && gBattleMoves[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
+        && gBattleMoves[move].effect != EFFECT_NATURAL_GIFT
+        && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_FAIRY))
+            || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
+            || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
+            || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_ELECTRIC))
+        )
+        )
     {
+        if (modify)
+            gBattleStruct->ateBoost[battlerAtk] = 1;
         *type = ateType | F_DYNAMIC_TYPE_2;
+        return TRUE;
     } else if (gBattleMoves[move].type != TYPE_NORMAL
-             && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
-             && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
-             && attackerAbility == ABILITY_NORMALIZE)
+        && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
+        && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
+        && attackerAbility == ABILITY_NORMALIZE)
     {
+        if (modify)
+            gBattleStruct->ateBoost[battlerAtk] = 1;
         *type = TYPE_NORMAL | F_DYNAMIC_TYPE_2;
+        return TRUE;
     }
+    return FALSE;
 }
 
-static void handleSpecificAbility(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
+static bool8 handleSpecificAbility(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
 {
     if (gBattleMoves[move].soundMove && attackerAbility == ABILITY_LIQUID_VOICE)
     {
         *type = TYPE_WATER | F_DYNAMIC_TYPE_2;
+        return TRUE;
     }
+    return FALSE;
 }
 
-static void handleSpecificMove(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
+static bool8 handleSpecificMove(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
 {
     if (gStatuses4[battlerAtk] & STATUS4_PLASMA_FISTS && moveType == TYPE_NORMAL)
     {
         *type = TYPE_ELECTRIC | F_DYNAMIC_TYPE_2;
+        return TRUE;
     }
+    return FALSE;
 }
 
-static void handleSpecificSpecies(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
+static bool8 handleSpecificSpecies(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
 {
     if (move == MOVE_AURA_WHEEL && gBattleMons[battlerAtk].species == SPECIES_MORPEKO_HANGRY)
     {
         *type = TYPE_DARK | F_DYNAMIC_TYPE_2;
+        return TRUE;
     }
+    return FALSE;
 }
