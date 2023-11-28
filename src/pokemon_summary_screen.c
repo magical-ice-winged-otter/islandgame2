@@ -2,6 +2,7 @@
 #include "main.h"
 #include "battle.h"
 #include "battle_anim.h"
+#include "battle_dynamic.h"
 #include "frontier_util.h"
 #include "battle_message.h"
 #include "battle_tent.h"
@@ -3923,12 +3924,13 @@ static void SetMonTypeIcons(void)
 
 static void SetMoveTypeIcons(void)
 {
+    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     u8 i;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (summary->moves[i] != MOVE_NONE)
-            SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+            SetTypeSpritePosAndPal(displayTypeSummary(mon, summary->moves[i]), 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
         else
             SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
     }
@@ -3949,6 +3951,7 @@ static void SetContestMoveTypeIcons(void)
 
 static void SetNewMoveTypeIcon(void)
 {
+    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     if (sMonSummaryScreen->newMove == MOVE_NONE)
     {
         SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 4, TRUE);
@@ -3956,8 +3959,9 @@ static void SetNewMoveTypeIcon(void)
     else
     {
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
-            SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
-        else
+        {
+            SetTypeSpritePosAndPal(displayTypeSummary(mon, sMonSummaryScreen->newMove), 85, 96, SPRITE_ARR_ID_TYPE + 4);
+        } else
             SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + gContestMoves[sMonSummaryScreen->newMove].contestCategory, 85, 96, SPRITE_ARR_ID_TYPE + 4);
     }
 }
