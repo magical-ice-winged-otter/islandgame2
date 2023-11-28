@@ -19,12 +19,12 @@
       "x": 13,
       "y": 4,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 2,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_NPC1",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_NPC3",
       "flag": "0"
     },
     {
@@ -50,7 +50,20 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_NPC2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AZURILL_DOLL",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_Doll",
       "flag": "0"
     }
   ],
@@ -68,6 +81,13 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "4"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

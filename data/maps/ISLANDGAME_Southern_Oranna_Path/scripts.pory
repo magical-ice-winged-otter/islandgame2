@@ -163,8 +163,8 @@ script ISLANDGAME_Southern_Oranna_Path_EventScript_SIGN {
 
 text ISLANDGAME_Southern_Oranna_Path_SIGN_DESC {
     format(
-        "{COLOR DARK_GRAY}<-- CHERIPORT\n"
-        "{COLOR DARK_GRAY}CAMP PERSI -->"
+        "{COLOR DARK_GRAY}{LEFT_ARROW} CHERIPORT\n"
+        "{COLOR DARK_GRAY}CAMP PERSI {RIGHT_ARROW}"
     )
 }
 

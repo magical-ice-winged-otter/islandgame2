@@ -8,20 +8,20 @@ script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1 {
     faceplayer
     playmoncry(SPECIES_ODDISH,CRY_MODE_NORMAL)
     
-    if(!flag(FLAG_UNUSED_0x054)) {
+    if(!flag(FLAG_MAPLEGROVE_ODDISH_GIFT)) {
         msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk, MSGBOX_YESNO)
         if (var(VAR_RESULT) == NO) {
             goto(PKMN1Event_End)
         }
 
-        checkitemspace(ITEM_ABSORB_BULB)
+        checkitemspace(ITEM_GRASS_GEM)
         if (!var(VAR_RESULT)) {
             msgbox(format("{COLOR RED}(I don't have enough space to carry it.)"))
             goto(PKMN1Event_End)
         }
 
-        giveitem(ITEM_ABSORB_BULB)
-        setflag(FLAG_UNUSED_0x054)
+        giveitem(ITEM_GRASS_GEM)
+        setflag(FLAG_MAPLEGROVE_ODDISH_GIFT)
     }
     else {
         msgbox(format("{COLOR DARK_GRAY}Oddish!"))

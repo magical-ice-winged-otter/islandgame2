@@ -19,16 +19,30 @@ text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk {
 script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom {
     lock
     faceplayer
-    msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomTalk)
+    if(!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+        msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomFirstTalk)
+    }
+    else {
+        msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomSecondTalk)
+    }
     release
 }
 
-text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomTalk {
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomFirstTalk {
     format(
         "{COLOR DARK_GRAY}Hello dearie! You must be {PLAYER}, right? My daughter told me about you. \p"
         "{COLOR DARK_GRAY}She was very excited to finally have a colleague in the Trainer Program! \p"
         "{COLOR DARK_GRAY}I hope you two get along well. She can be a little ditzy and too bubbly at times, but she's a warm and caring girl. \p"
         "{COLOR DARK_GRAY}Oh, where is she right now? She should be in the Minty Meadows doing research. \p"
         "{COLOR DARK_GRAY}I'm sure she'd be more than happy to show you around Oranna."
+    )
+}
+
+text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomSecondTalk {
+    format(
+        "It's good to see you again, dearie! Audrey just stopped by earlier. \p"
+        "She told me all about how you two helped the owner of Fresa Farms find his missing Mareep! \p"
+        "You were both very kind and brave to stand up to that wild Mightyena. \p"
+        "Thank you for being with my daughter. She gets ahead of herself a lot, so I'm glad neither of you were hurt."
     )
 }

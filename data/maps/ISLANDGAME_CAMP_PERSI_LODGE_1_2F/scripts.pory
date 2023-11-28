@@ -12,7 +12,7 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
     }
     else {
         faceplayer
-        msgbox(format("I'm sorry... My mommy don't let me have sweets, so I couldn't help myself.\pPlease don't tell on me!"))
+        msgbox(format("I'm sorry... My mommy doesn't let me have sweets, so I couldn't help myself.\pPlease don't tell on me!"))
     }
     release
 

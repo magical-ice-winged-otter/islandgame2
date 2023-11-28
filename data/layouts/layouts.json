@@ -4775,7 +4775,7 @@
       "id": "LAYOUT_ISLANDGAME_MAPLEGROVE",
       "name": "ISLANDGAME_MAPLEGROVE_Layout",
       "width": 44,
-      "height": 40,
+      "height": 28,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_islandgame_maplegrove",
       "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/border.bin",
@@ -5060,6 +5060,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CAMP_PERSI_LODGE_2_2F",
+      "name": "ISLANDGAME_CAMP_PERSI_LODGE_2_2F_Layout",
+      "width": 9,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_2_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_2_2F/map.bin"
     }
   ]
 }

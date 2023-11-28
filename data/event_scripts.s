@@ -1197,3 +1197,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_Southern_Oranna_Path_Cave/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_2_2F/scripts.inc"
