@@ -1194,17 +1194,16 @@ void updateDaycareGfxVars(u8 numMons)
     DebugPrintf("TEST: %d", numMons);
     switch (numMons) {
         case 2:
-            DebugPrintf("2 TEST: %d", numMons);
             mon = &gSaveBlock1Ptr->daycare.mons[1].mon;
-            species = GetBoxMonData(mon, MON_DATA_SPECIES);
-            gSpecialVar_0x800B = species_gfx(species);
-            VarSet(VAR_OBJ_GFX_ID_B, gSpecialVar_0x800B);
+            species = GET_BASE_SPECIES_ID(GetBoxMonData(mon, MON_DATA_SPECIES));
+            
+            VarSet(VAR_OBJ_GFX_ID_B, species_gfx(species));
         case 1:
             mon = &gSaveBlock1Ptr->daycare.mons[0].mon;
-            species = GetBoxMonData(mon, MON_DATA_SPECIES);
-            DebugPrintf("1 SPECIES: %d", species);
-            gSpecialVar_0x800A = species_gfx(species);
-            VarSet(VAR_OBJ_GFX_ID_A, gSpecialVar_0x800A);
+            species = GET_BASE_SPECIES_ID(GetBoxMonData(mon, MON_DATA_SPECIES));
+            
+            VarSet(VAR_OBJ_GFX_ID_A, species_gfx(species));
+            GetDaycareMonNicknames();
     }
 }
 

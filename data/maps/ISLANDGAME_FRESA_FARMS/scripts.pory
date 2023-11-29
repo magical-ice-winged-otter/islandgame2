@@ -6,26 +6,45 @@ mapscripts ISLANDGAME_FRESA_FARMS_MapScripts {
 
 //daycare stuff:
 script ISLANDGAME_FRESA_FARMS_HandleDaycareState {
-    setflag(FLAG_TEMP_A)
-    setflag(FLAG_TEMP_B)
-    //specialvar(VAR_RESULT, GetDaycareState)
-    //switch (var(VAR_RESULT)) {
-    //    case DAYCARE_NO_MONS:
-    //        setflag(FLAG_TEMP_A)
-    //        setflag(FLAG_TEMP_B)
-    //        return
-    //    case DAYCARE_TWO_MONS:
-    //        //setvar(VAR_OBJ_GFX_ID_B, VAR_0x800B)
-    //        //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
-    //        clearflag(FLAG_TEMP_B)
-    //        clearflag(FLAG_TEMP_A)
-    //        return
-    //    case DAYCARE_ONE_MON:
-    //        //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
-    //        setflag(FLAG_TEMP_B)
-    //        clearflag(FLAG_TEMP_A)
-    //        return
-    //}   
+    specialvar(VAR_RESULT, GetDaycareState)
+    switch (var(VAR_RESULT)) {
+       case DAYCARE_NO_MONS:
+           setflag(FLAG_TEMP_A)
+           setflag(FLAG_TEMP_B)
+           return
+       case DAYCARE_TWO_MONS:
+           //setvar(VAR_OBJ_GFX_ID_B, VAR_0x800B)
+           //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
+           clearflag(FLAG_TEMP_B)
+           clearflag(FLAG_TEMP_A)
+           return
+       case DAYCARE_ONE_MON:
+           //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
+           setflag(FLAG_TEMP_B)
+           clearflag(FLAG_TEMP_A)
+           return
+    }   
+}
+
+//see daycare.c#updateDaycareGfxVars
+script ISLANDGAME_FRESA_FARMS_Daycare_Mon1 {
+    lock
+    msgbox(ISLANDGAME_FRESA_FARMS_Daycare_Mon1_Text, MSGBOX_NPC)
+    release
+}
+
+text ISLANDGAME_FRESA_FARMS_Daycare_Mon1_Text {
+    format("{STR_VAR_1} looks happy!")
+}
+
+script ISLANDGAME_FRESA_FARMS_Daycare_Mon2 {
+    lock
+    msgbox(ISLANDGAME_FRESA_FARMS_Daycare_Mon2_Text, MSGBOX_NPC)
+    release
+}
+
+text ISLANDGAME_FRESA_FARMS_Daycare_Mon2_Text {
+    format("{STR_VAR_2} stares at you intently.")
 }
 
 script ISLANDGAME_FRESA_FARMS_OldMan_Request {

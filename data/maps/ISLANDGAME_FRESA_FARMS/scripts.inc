@@ -4,8 +4,40 @@ ISLANDGAME_FRESA_FARMS_MapScripts::
 
 
 ISLANDGAME_FRESA_FARMS_HandleDaycareState::
+	specialvar VAR_RESULT, GetDaycareState
+	switch VAR_RESULT
+	case DAYCARE_NO_MONS, ISLANDGAME_FRESA_FARMS_HandleDaycareState_2
+	case DAYCARE_TWO_MONS, ISLANDGAME_FRESA_FARMS_HandleDaycareState_3
+	case DAYCARE_ONE_MON, ISLANDGAME_FRESA_FARMS_HandleDaycareState_4
+	return
+
+ISLANDGAME_FRESA_FARMS_HandleDaycareState_2:
 	setflag FLAG_TEMP_A
 	setflag FLAG_TEMP_B
+	return
+
+ISLANDGAME_FRESA_FARMS_HandleDaycareState_3:
+	clearflag FLAG_TEMP_B
+	clearflag FLAG_TEMP_A
+	return
+
+ISLANDGAME_FRESA_FARMS_HandleDaycareState_4:
+	setflag FLAG_TEMP_B
+	clearflag FLAG_TEMP_A
+	return
+
+
+ISLANDGAME_FRESA_FARMS_Daycare_Mon1::
+	lock
+	msgbox ISLANDGAME_FRESA_FARMS_Daycare_Mon1_Text, MSGBOX_NPC
+	release
+	return
+
+
+ISLANDGAME_FRESA_FARMS_Daycare_Mon2::
+	lock
+	msgbox ISLANDGAME_FRESA_FARMS_Daycare_Mon2_Text, MSGBOX_NPC
+	release
 	return
 
 
@@ -104,6 +136,12 @@ ISLANDGAME_FRESA_FARMS_Mareep_Interact_Text_0:
 ISLANDGAME_FRESA_FARMS_MareepScared_Interact_Text_0:
 	.string "The Mareep keeps glancing up at the\n"
 	.string "nearby Herdier.$"
+
+ISLANDGAME_FRESA_FARMS_Daycare_Mon1_Text::
+	.string "{STR_VAR_1} looks happy!$"
+
+ISLANDGAME_FRESA_FARMS_Daycare_Mon2_Text::
+	.string "{STR_VAR_2} stares at you intently.$"
 
 ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage::
 	.string "Oh, its you!\p"
