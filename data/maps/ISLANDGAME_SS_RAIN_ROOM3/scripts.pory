@@ -18,6 +18,7 @@ script SS_Rain_EventScript_InvadeRoom {
         releaseall
         return
     }
+    playse(SE_PIN)
     applymovement(LOCALID_GENTLEMAN, ExclaimFacePlayer)
     waitmovement(0)
     msgbox(SS_Rain_InvadeRoomReaction_Text)

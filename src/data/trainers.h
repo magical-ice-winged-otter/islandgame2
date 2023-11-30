@@ -414,29 +414,29 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MintyMeadows8),
     },
 
-    [TRAINER_MINTY_MEADOWS_9] =
-    {
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .trainerName = _("Tim"),
-        .items = {},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_MintyMeadows9),
-    },
+    // [TRAINER_MINTY_MEADOWS_9] =
+    // {
+    //     .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+    //     .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+    //     .trainerPic = TRAINER_PIC_BUG_CATCHER,
+    //     .trainerName = _("Tim"),
+    //     .items = {},
+    //     .doubleBattle = TRUE,
+    //     .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+    //     .party = TRAINER_PARTY(sParty_MintyMeadows9),
+    // },
 
-    [TRAINER_MINTY_MEADOWS_10] =
-    {
-        .trainerClass = TRAINER_CLASS_LASS,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LASS,
-        .trainerName = _("Trish"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_MintyMeadows10),
-    },
+    // [TRAINER_MINTY_MEADOWS_10] =
+    // {
+    //     .trainerClass = TRAINER_CLASS_LASS,
+    //     .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+    //     .trainerPic = TRAINER_PIC_LASS,
+    //     .trainerName = _("Trish"),
+    //     .items = {},
+    //     .doubleBattle = FALSE,
+    //     .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+    //     .party = TRAINER_PARTY(sParty_MintyMeadows10),
+    // },
 
     [TRAINER_MINTY_MEADOWS_11] =
     {
@@ -464,9 +464,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MINTY_MEADOWS_13] =
     {
-        .trainerClass = TRAINER_CLASS_BUG_MANIAC,
+        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BUG_MANIAC,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .trainerName = _("Josh"),
         .items = {},
         .doubleBattle = FALSE,
@@ -488,9 +488,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MINTY_MEADOWS_15] =
     {
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+        .trainerClass = TRAINER_CLASS_CAMPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerPic = TRAINER_PIC_CAMPER,
         .trainerName = _("Inigo"),
         .items = {},
         .doubleBattle = FALSE,

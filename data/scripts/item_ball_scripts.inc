@@ -674,8 +674,8 @@ MINTY_MEADOWS_2_ItemMysticWater::
 	finditem ITEM_MYSTIC_WATER
 	end
 
-MINTY_MEADOWS_HOUSE_ItemHyperPotion::
-	finditem ITEM_HYPER_POTION
+MINTY_MEADOWS_HOUSE_ItemAbilityCapsule::
+	finditem ITEM_ABILITY_CAPSULE
 	end
 
 COP_1_ItemNugget::

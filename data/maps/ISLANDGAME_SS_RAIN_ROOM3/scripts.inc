@@ -16,6 +16,7 @@ SS_Rain_EventScript_InvadeRoom::
 	lockall
 	setvar VAR_TEMP_0, 1
 	goto_if_set FLAG_ROOM3_GAVE_WATER, SS_Rain_EventScript_InvadeRoom_2
+	playse SE_PIN
 	applymovement 1, ExclaimFacePlayer
 	waitmovement 0
 	msgbox SS_Rain_InvadeRoomReaction_Text

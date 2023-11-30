@@ -68,8 +68,8 @@ ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson::
 
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText::
-	.string "{COLOR DARK_GRAY}Salutations! My name is Pops. I'm the\n"
-	.string "owner of Minty Meadows.$"
+	.string "{COLOR DARK_GRAY}Salutations! My name is Pops. Me and my\n"
+	.string "Pokémon manage the meadows.$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_MordecaiText::
 	.string "{COLOR DARK_GRAY}hueheuhuehuehue melk$"
@@ -84,8 +84,7 @@ ISLANDGAME_MINTY_MEADOWS_HOUSE_FivesText::
 	.string "{COLOR DARK_GRAY}Wasshup?$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_SkipsTalk::
-	.string "{COLOR RED}(It looks like Slackoth is fast asleep.)$"
+	.string "{COLOR RED}(It looks like Slakoth is fast asleep.)$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_BensonTalk::
-	.string "{COLOR RED}(What kind of Pokémon is this? It looks\n"
-	.string "so alien...)$"
+	.string "{COLOR RED}(Is this a Pokémon? It looks so alien...)$"

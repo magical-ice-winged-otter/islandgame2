@@ -1230,7 +1230,7 @@
 #define FLAG_ITEM_TM_DIG                                            0x49A 
 #define FLAG_ITEM_PERSI_POTION                                      0x49B
 #define FLAG_ITEM_MYSTIC_WATER                                      0x49C 
-#define FLAG_ITEM_MINTY_MEADOWS_HOUSE_HYPER_POTION                  0x49D
+#define FLAG_ITEM_MINTY_MEADOWS_HOUSE_ITEM                          0x49D
 #define FLAG_ITEM_COP_1_NUGGET                                      0x49E
 #define FLAG_ITEM_COP_1_BLACKGLASSES                                0x49F
 #define FLAG_ITEM_COP_2_TM_SHOCKWAVE                                0x4A0 

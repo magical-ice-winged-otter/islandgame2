@@ -13,6 +13,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_1:
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_2:
 	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_0
+	playse SE_PIN
 	applymovement 1, ExclaimFacePlayer
 	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_NPCTalk
 	goto ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_1
@@ -48,7 +49,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_0:
 	.string "swipe those cookies and candy bars!$"
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_1:
-	.string "I'm sorry... My mommy don't let me have\n"
+	.string "I'm sorry... My mommy doesn't let me have\n"
 	.string "sweets, so I couldn't help myself.\p"
 	.string "Please don't tell on me!$"
 
@@ -69,4 +70,4 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect::
 	.string "{COLOR RED}(It looks like a regular old Guplin doll.)\p"
 	.string "{COLOR RED}(Huh? Instead of stuffing, there's a\n"
 	.string "bunch of smuggled goods inside of it.)\p"
-	.string "Take them?$"
+	.string "{COLOR DARK_GRAY}Take them?$"

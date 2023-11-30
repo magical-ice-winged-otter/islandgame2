@@ -11,7 +11,7 @@ script ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1 {
 }
 
 text ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText {
-    format("{COLOR DARK_GRAY}Salutations! My name is Pops. I'm the owner of Minty Meadows.")
+    format("{COLOR DARK_GRAY}Salutations! My name is Pops. Me and my Pokémon manage the meadows.")
 }
 
 script ISLANDGAME_MINTY_MEADOWS_HOUSE_Mordecai {
@@ -73,7 +73,7 @@ script ISLANDGAME_MINTY_MEADOWS_HOUSE_Skips {
 }
 
 text ISLANDGAME_MINTY_MEADOWS_HOUSE_SkipsTalk {
-    format("{COLOR RED}(It looks like Slackoth is fast asleep.)")
+    format("{COLOR RED}(It looks like Slakoth is fast asleep.)")
 }
 
 script ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson {
@@ -85,5 +85,5 @@ script ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson {
 }
 
 text ISLANDGAME_MINTY_MEADOWS_HOUSE_BensonTalk {
-    format("{COLOR RED}(What kind of Pokémon is this? It looks so alien...)")
+    format("{COLOR RED}(Is this a Pokémon? It looks so alien...)")
 }

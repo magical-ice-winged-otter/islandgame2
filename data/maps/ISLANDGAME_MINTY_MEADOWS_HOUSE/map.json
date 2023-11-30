@@ -107,7 +107,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 9,
+      "x": 1,
       "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -115,8 +115,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MINTY_MEADOWS_HOUSE_ItemHyperPotion",
-      "flag": "FLAG_ITEM_MINTY_MEADOWS_HOUSE_HYPER_POTION"
+      "script": "MINTY_MEADOWS_HOUSE_ItemAbilityCapsule",
+      "flag": "FLAG_ITEM_MINTY_MEADOWS_HOUSE_ITEM"
     }
   ],
   "warp_events": [
