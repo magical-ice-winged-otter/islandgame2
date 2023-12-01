@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_MINTY_MEADOWS_3",
   "name": "ISLANDGAME_MINTY_MEADOWS_3",
   "layout": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_3",
-  "music": "MUS_ROUTE120",
+  "music": "MUS_NONE",
   "region_map_section": "MAPSEC_MINTY_MEADOWS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -78,7 +78,7 @@
       "x": 15,
       "y": 28,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_TRAVELERS_TUNNEL",
+      "dest_map": "MAP_ISLANDGAME_TRAVELERS_TUNNEL_2",
       "dest_warp_id": "1"
     }
   ],

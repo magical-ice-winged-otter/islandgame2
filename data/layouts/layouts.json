@@ -4654,8 +4654,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL",
       "name": "ISLANDGAME_TRAVELERS_TUNNEL_Layout",
-      "width": 36,
-      "height": 24,
+      "width": 40,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL/border.bin",
@@ -5070,6 +5070,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_2_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI_LODGE_2_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL_2",
+      "name": "ISLANDGAME_TRAVELERS_TUNNEL_2_Layout",
+      "width": 25,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL_2/map.bin"
     }
   ]
 }

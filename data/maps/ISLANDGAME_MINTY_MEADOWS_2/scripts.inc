@@ -5,41 +5,34 @@ ISLANDGAME_MINTY_MEADOWS_2_MapScripts::
 
 ISLANDGAME_MINTY_MEADOWS_2_OnTransition::
 	switch VAR_MINTY_MEADOWS_STATE
-	case 0, ISLANDGAME_MINTY_MEADOWS_2_OnTransition_3
-	case 1, ISLANDGAME_MINTY_MEADOWS_2_OnTransition_4
-	case 3, ISLANDGAME_MINTY_MEADOWS_2_OnTransition_5
-	case 4, ISLANDGAME_MINTY_MEADOWS_2_OnTransition_6
-ISLANDGAME_MINTY_MEADOWS_2_OnTransition_1:
-	compare VAR_MINTY_MEADOWS_STATE, 1
-	goto_if_ne ISLANDGAME_MINTY_MEADOWS_2_OnTransition_7
+	case 0, ISLANDGAME_MINTY_MEADOWS_2_OnTransition_2
+	case 1, ISLANDGAME_MINTY_MEADOWS_2_OnTransition_3
+	case 3, ISLANDGAME_MINTY_MEADOWS_2_OnTransition_4
+	case 4, ISLANDGAME_MINTY_MEADOWS_2_OnTransition_5
+	return
+
+ISLANDGAME_MINTY_MEADOWS_2_OnTransition_2:
+	call ISLANDGAME_MINTY_MEADOWS_2_InitialRival
 	return
 
 ISLANDGAME_MINTY_MEADOWS_2_OnTransition_3:
-	call ISLANDGAME_MINTY_MEADOWS_2_InitialRival
-	goto ISLANDGAME_MINTY_MEADOWS_2_OnTransition_1
+	call ISLANDGAME_MINTY_MEADOWS_2_StartedQuest
+	return
 
 ISLANDGAME_MINTY_MEADOWS_2_OnTransition_4:
-	call ISLANDGAME_MINTY_MEADOWS_2_StartedQuest
-	goto ISLANDGAME_MINTY_MEADOWS_2_OnTransition_1
+	call ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight
+	return
 
 ISLANDGAME_MINTY_MEADOWS_2_OnTransition_5:
-	call ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight
-	goto ISLANDGAME_MINTY_MEADOWS_2_OnTransition_1
-
-ISLANDGAME_MINTY_MEADOWS_2_OnTransition_6:
 	call ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena
-	goto ISLANDGAME_MINTY_MEADOWS_2_OnTransition_1
-
-ISLANDGAME_MINTY_MEADOWS_2_OnTransition_7:
-	setvar VAR_MINTY_MEADOWS_STATE, 1
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_InitialRival::
-	setobjectxyperm 11, 12, 4
+	setobjectxyperm 11, 12, 5
 	setobjectxyperm 12, 32, 10
 	setobjectxyperm 18, 35, 8
-	setobjectxyperm 19, 33, 10
+	setobjectxyperm 19, 34, 10
 	setobjectxyperm 20, 33, 12
 	setobjectxyperm 6, -3, 1
 	setobjectxyperm 7, -3, 1
@@ -48,7 +41,7 @@ ISLANDGAME_MINTY_MEADOWS_2_InitialRival::
 
 ISLANDGAME_MINTY_MEADOWS_2_StartedQuest::
 	setvar VAR_TEMP_4, 1
-	setobjectxyperm 12, 11, 6
+	setobjectxyperm 12, 10, 9
 	setobjectxyperm 6, 61, 13
 	setobjectxyperm 7, 61, 15
 	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
@@ -58,7 +51,7 @@ ISLANDGAME_MINTY_MEADOWS_2_StartedQuest::
 
 ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
 	setvar VAR_TEMP_4, 1
-	setobjectxyperm 12, 11, 6
+	setobjectxyperm 12, 10, 9
 	setobjectxyperm 6, 61, 13
 	setobjectxyperm 7, 61, 14
 	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
@@ -147,6 +140,11 @@ ISLANDGAME_MINTY_MEADOWS_2_Player_StepBack:
 
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival::
 	lock
+	playse SE_PIN
+	applymovement 11, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 11, Common_Movement_Delay48
+	waitmovement 0
 	faceplayer
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival_Text_0
 	applymovement 12, Common_Movement_FaceOriginalDirection
@@ -236,7 +234,6 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown:
 	walk_left
 	walk_down
 	walk_down
-	walk_down
 	step_end
 
 ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp:
@@ -290,15 +287,22 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	applymovement 11, ISLANDGAME_MINTY_MEADOWS_2_RivalLookAround
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_0
+	closemessage
 	applymovement 11, Common_Movement_QuestionMark
 	waitmovement 0
-	applymovement 11, Common_Movement_FacePlayer
+	applymovement 11, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement 11, Common_Movement_Delay48
 	waitmovement 0
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	applymovement 11, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown
 	waitmovement 11
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1
+	closemessage
+	playse SE_PIN
 	applymovement 11, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 11, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2
 	trainerbattle_no_intro TRAINER_MINTY_MEADOWS_RIVAL, ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3
@@ -306,19 +310,48 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_ne ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_2
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4
-	closemessage
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	addobject 12
 	setobjectxyperm 18, -3, 1
 	setobjectxyperm 19, -3, 1
 	setobjectxyperm 20, -3, 1
 	setobjectxy 12, 18, 12
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_5
+	closemessage
 	applymovement 12, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
 	waitmovement 12
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_6
-	startquest QUEST_FRESA_FARMS_LOST_MAREEP
+	closemessage
+	playse SE_PIN
+	applymovement 11, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 11, Common_Movement_Delay48
+	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_7
 	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_8
+	startquest QUEST_FRESA_FARMS_LOST_MAREEP
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_9
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 	setfollower 11, 100, 0
 	setvar VAR_MINTY_MEADOWS_STATE, 1
@@ -432,6 +465,7 @@ Phase1_MightyenaChase:
 ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2::
 	lock
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2_Text_0
+	closemessage
 	applymovement 7, Phase2_MightyenaWalksForward
 	applymovement 6, Common_Movement_ExclamationMark
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
@@ -439,6 +473,13 @@ ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2::
 	playmoncry SPECIES_MAREEP, CRY_MODE_WEAK
 	waitmovement 7
 	waitmoncry
+	playse SE_PIN
+	applymovement 11, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 11, Common_Movement_Delay48
+	waitmovement 0
+	applymovement 11, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2_Text_1
 	setvar VAR_MINTY_MEADOWS_STATE, 3
 	call ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight
@@ -508,6 +549,12 @@ MareepHappy:
 	jump_in_place_left
 	step_end
 
+MareepGoodbye:
+	jump_in_place_down
+	jump_in_place_down
+	jump_in_place_down
+	step_end
+
 TalkToAudrey:
 	walk_in_place_slow_up
 	step_end
@@ -524,6 +571,12 @@ LookBackAtMareep:
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setvar VAR_MINTY_MEADOWS_STATE, 4
 	call ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena
+	setvar VAR_0x8000, 61
+	setvar VAR_0x8001, 16
+	callnative TeleportCamera
+	addobject 11
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
 	setobjectxy OBJ_EVENT_ID_PLAYER, 61, 16
 	setobjectxy 11, 60, 16
 	fadescreen FADE_TO_BLACK
@@ -531,61 +584,79 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setobjectxyperm 7, -3, 1
 	fadescreen FADE_FROM_BLACK
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0
+	closemessage
 	applymovement 11, RivalChecksMareep
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1
+	closemessage
 	playmoncry SPECIES_MAREEP, CRY_MODE_NORMAL
 	applymovement 6, MareepHappy
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2
+	applymovement 11, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_3
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, TalkToAudrey
 	waitmovement 0
 	applymovement 11, AudreyConfused
 	waitmovement 0
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_3
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_4
 	applymovement 11, LookBackAtMareep
 	waitmovement 0
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_4
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_5
 	closemessage
 	fadescreen FADE_TO_BLACK
 	setvar VAR_0x8000, 11
 	setvar VAR_0x8001, 8
 	callnative TeleportCamera
-	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_DOWN
-	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
 	addobject OBJ_EVENT_ID_PLAYER
 	addobject 12
 	addobject 11
 	addobject 6
+	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
 	setobjectxy OBJ_EVENT_ID_PLAYER, 11, 8
 	setobjectxy 11, 10, 8
 	setobjectxy 12, 11, 6
 	setobjectxy 6, 10, 6
 	fadescreen FADE_FROM_BLACK
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_5
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_6
 	closemessage
 	applymovement 12, Phase3_OldManGivesItem_Part1
 	waitmovement 12
 	giveitem ITEM_LUCKY_EGG
 	applymovement 12, Phase3_OldManGivesItem_Part2
 	waitmovement 12
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_6
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_7
+	closemessage
 	applymovement 12, WalkBackToFarm
+	waitmovement 0
+	playmoncry SPECIES_MAREEP, CRY_MODE_NORMAL
+	applymovement 6, MareepGoodbye
+	waitmoncry
 	waitmovement 0
 	applymovement 6, WalkBackToFarm
 	waitmovement 0
 	applymovement 11, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_7
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_8
 	playse SE_PIN
 	applymovement 11, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_8
+	applymovement 11, Common_Movement_Delay48
+	waitmovement 0
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9
 	closemessage
 	applymovement 11, Phase3_RivalRunsOff
+	applymovement 11, Common_Movement_Delay48
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 11
 	removeobject 11
+	setobjectxyperm 11, -3, 1
+	setobjectxyperm 12, -3, 1
 	special HealPlayerParty
 	completequest QUEST_FRESA_FARMS_LOST_MAREEP
 	release
@@ -602,8 +673,8 @@ Phase3_OldManGivesItem_Part2:
 	delay_16
 	delay_16
 	delay_16
-	walk_up
 	walk_right
+	walk_up
 	face_down
 	step_end
 
@@ -635,6 +706,7 @@ Phase3_RivalRunsOff:
 
 ISLANDGAME_MINTY_MEADOWS_2_Mareep::
 	lock
+	playmoncry SPECIES_MAREEP, CRY_MODE_WEAK
 	msgbox MareepHelp_Text
 	release
 	return
@@ -766,8 +838,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_0:
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Umm, hi! Do I know you?\p"
-	.string "{COLOR DARK_GRAY}...Mhm...Okay...Oh!\p"
-	.string "$"
+	.string "{COLOR DARK_GRAY}...Mhm...Okay...Oh!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2:
 	.string "{COLOR DARK_GRAY}You're {PLAYER}? The professor told\n"
@@ -801,22 +872,26 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_5:
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_6:
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}I'm one of the owners of\n"
-	.string "the nearby Fresa Farms.\p"
+	.string "the nearby farm.\p"
 	.string "{COLOR DARK_GRAY}Have you two seen a Mareep with a blue\n"
 	.string "collar wandering around by chance?\p"
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}I haven't... Did you lose one?\p"
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}I'm afraid so... When I was\n"
 	.string "counting my Mareep after taking them\l"
 	.string "out to graze, I noticed one was\l"
-	.string "missing.\p"
+	.string "missing.$"
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_7:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Oh my... that's terrible! We'll\n"
-	.string "help you look, right {PLAYER}?\p"
+	.string "help you look, right {PLAYER}?$"
+
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_8:
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Really? Oh, I can't thank\n"
 	.string "you two enough!\p"
 	.string "{COLOR DARK_GRAY}The last place I saw my precious Mareep\n"
 	.string "was in the forest to the east.$"
 
-ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_7:
+ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_9:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Sounds good! {PLAYER}! Let's\n"
 	.string "head over there immediately!\p"
 	.string "If your Pokémon need healing, just let\n"
@@ -835,55 +910,50 @@ ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2_Text_1:
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_0:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Phew... That was an intense\n"
-	.string "fight. Thank goodness we came in time!\p"
-	.string "$"
+	.string "fight. Thank goodness we came in time!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_1:
 	.string "{COLOR DARK_GRAY}It looks like Mareep isn't hurt at all.\n"
-	.string "That's a relief...\p"
-	.string "$"
+	.string "That's a relief...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2:
 	.string "{COLOR DARK_GRAY}Reeeep...\p"
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Awh. It's okay Mareep. You're\n"
-	.string "safe with us now!\p"
-	.string "{COLOR DARK_GRAY}Heh... We make a pretty solid team, don't\n"
-	.string "we, {PLAYER}?\p"
-	.string "$"
+	.string "safe with us now!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_3:
+	.string "{COLOR DARK_GRAY}Heh... We make a pretty solid team, don't\n"
+	.string "we, {PLAYER}?$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_4:
 	.string "{COLOR DARK_GRAY}...Huh? Something was off about the\n"
 	.string "Pokémon? What do you mean?\p"
 	.string "{COLOR DARK_GRAY}Red eyes? A wicked dark aura? I'm\n"
-	.string "confused... I didn't see any of that.\p"
-	.string "$"
+	.string "confused... I didn't see any of that.$"
 
-ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_4:
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_5:
 	.string "{COLOR DARK_GRAY}Hmm. Well either way, we should probably\n"
 	.string "get Mareep back to its owner.$"
 
-ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_5:
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_6:
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, my precious baby is safe\n"
-	.string "and sound! I am in your debt, trainers!\l"
+	.string "and sound! I am in your debt, trainers!\p"
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Heheh. It was nothing, really!\p"
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Please, take one of these\n"
-	.string "as a token of my gratitude!\p"
-	.string "$"
-
-ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_6:
-	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}If you want to check out\n"
-	.string "our farm, we're right up here.\p"
-	.string "{COLOR DARK_GRAY}Feel free to visit anytime!\p"
-	.string "$"
+	.string "as a token of my gratitude!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_7:
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}If you want to check out\n"
+	.string "our farm, we're right up here.\p"
+	.string "{COLOR DARK_GRAY}Feel free to visit anytime!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_8:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}The way you handled that\n"
 	.string "vicious Mightyena with your Pokémon...\p"
 	.string "{COLOR DARK_GRAY}{PLAYER}! You should enter the\n"
-	.string "Silverwing Festival Tournament!\p"
-	.string "$"
+	.string "Silverwing Festival Tournament!$"
 
-ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_8:
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9:
 	.string "{COLOR DARK_GRAY}Eeeh!? You don't know about the\n"
 	.string "tournament!?\p"
 	.string "{COLOR DARK_GRAY}It's a tournament hosted during the\n"
@@ -945,35 +1015,42 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_0:
 	.string "Sabrina in the Kanto region!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_1:
-	.string "I only lost because a sudden Pokémon cry broke my concentration!$"
+	.string "I only lost because a sudden Pokémon\n"
+	.string "cry broke my concentration!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_0:
 	.string "{COLOR DARK_GRAY}I'm looking for some cool bug Pokémon\n"
 	.string "here. Have you found any?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_1:
-	.string "I really want to find the cool bug Pokémon here. \pI'll stay here until midnight if I have to!$"
+	.string "I really want to find the cool bug\n"
+	.string "Pokémon here.\p"
+	.string "I'll stay here until midnight if I have\n"
+	.string "to!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_0:
 	.string "{COLOR DARK_GRAY}I've been wandering around here for a\n"
 	.string "while. I'm beginning to think I'm lost...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_1:
-	.string "You just came from the entrance, right? I'll be able to find my way back then!$"
+	.string "You just came from the entrance, right?\n"
+	.string "I'll be able to find my way back then!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_0:
 	.string "{COLOR DARK_GRAY}I saw a scary Pokémon chasing a Mareep\n"
 	.string "this way. Are you going after it?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_1:
-	.string "I feel bad for that Mareep, but there's not much I can do to help.$"
+	.string "I feel bad for that Mareep, but there's\n"
+	.string "not much I can do to help.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0:
 	.string "{COLOR DARK_GRAY}I like shorts! Shorts are comfy and\n"
 	.string "easy to wear! Don't you agree?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1:
-	.string "Shorts are in the top percentage of clothes! They're easily S tier!$"
+	.string "Shorts are in the top percentage of\n"
+	.string "clothes! They're easily S tier!$"
 
 ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"
