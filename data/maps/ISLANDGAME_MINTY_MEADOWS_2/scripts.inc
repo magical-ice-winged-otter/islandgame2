@@ -61,7 +61,6 @@ ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
 
 ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena::
 	setvar VAR_TEMP_4, 0
-	setobjectxyperm 12, 11, 3
 	setobjectxyperm 7, -3, 1
 	return
 
@@ -614,9 +613,12 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	addobject 12
 	addobject 11
 	addobject 6
-	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_DOWN
-	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
+	applymovement 12, Common_Movement_FaceDown
+	waitmovement 12
+	applymovement 11, Common_Movement_FaceUp
+	waitmovement 11
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement OBJ_EVENT_ID_PLAYER
 	setobjectxy OBJ_EVENT_ID_PLAYER, 11, 8
 	setobjectxy 11, 10, 8
 	setobjectxy 12, 11, 6
