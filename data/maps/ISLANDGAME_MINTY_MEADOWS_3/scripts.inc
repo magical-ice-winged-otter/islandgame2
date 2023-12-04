@@ -27,7 +27,15 @@ ISLANDGAME_MINTY_MEADOWS_3_Aegislash::
 
 
 ISLANDGAME_MINTY_MEADOWS_3_RessyTalk::
-	.string "{COLOR RED}(He seems to be pondering in thoughts.)$"
+	.string "The mysterious man stares blankly into\n"
+	.string "the vast horizon.\p"
+	.string "He points, as if he was attempting to\n"
+	.string "reenact an iconic scene from a show.\p"
+	.string "What a loser. You should like, just\n"
+	.string "forget he exists and stuff.\p"
+	.string "Definitely don't come back here later.\n"
+	.string "It would be a huge waste of time.\p"
+	.string "Yup.$"
 
 ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk::
 	.string "{COLOR DARK_GRAY}Ding dong!$"

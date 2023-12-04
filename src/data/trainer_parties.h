@@ -298,19 +298,6 @@ static const struct TrainerMon sParty_MintyMeadows1[] = {
     }
 };
 
-// static const struct TrainerMon sParty_MintyMeadows2[] = {
-//     {
-//     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-//     .lvl = 11,
-//     .species = SPECIES_ODDISH,
-//     },
-//     {
-//     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-//     .lvl = 11,
-//     .species = SPECIES_DRIFLOON,
-//     }
-// };
-
 static const struct TrainerMon sParty_MintyMeadows3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -487,6 +474,24 @@ static const struct TrainerMon sParty_MintyMeadows16[] = {
 
 
 
+
+
+
+
+
+/// Traveler's Tunnel
+static const struct TrainerMon sParty_TravelersTunnel1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 15,
+    .species = SPECIES_GEODUDE_ALOLAN,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 17,
+    .species = SPECIES_ONIX,
+    }
+};
 
 
 

@@ -9,7 +9,11 @@ script ISLANDGAME_MINTY_MEADOWS_3_Ressy {
 
 text ISLANDGAME_MINTY_MEADOWS_3_RessyTalk {
     format(
-        "{COLOR RED}(He seems to be pondering in thoughts.)"
+        "The mysterious man stares blankly into the vast horizon. \p"
+        "He points, as if he was attempting to reenact an iconic scene from a show.\p"
+        "What a loser. You should like, just forget he exists and stuff. \p"
+        "Definitely don't come back here later. It would be a huge waste of time. \p"
+        "Yup."
         )
 }
 
@@ -18,6 +22,7 @@ script ISLANDGAME_MINTY_MEADOWS_3_Chimecho {
     faceplayer
     playmoncry(SPECIES_CHIMECHO,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk)
+    applymovement(2, Common_Movement_FaceOriginalDirection)
     release
 }
 

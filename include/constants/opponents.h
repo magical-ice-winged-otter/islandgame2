@@ -68,11 +68,8 @@
 
 
 // Minty Meadows
-
-
 #define TRAINER_MINTY_MEADOWS_RIVAL          23
 #define TRAINER_MINTY_MEADOWS_1              24
-#define TRAINER_MINTY_MEADOWS_2              25
 #define TRAINER_MINTY_MEADOWS_3              26
 #define TRAINER_MINTY_MEADOWS_4              27
 #define TRAINER_MINTY_MEADOWS_5              28
@@ -100,6 +97,16 @@
 #define TRAINER_ROSE_3                       41
 #define TRAINER_ROSE_4                       42
 
+
+
+
+
+// Traveler's Tunnel
+#define TRAINER_TRAVELERS_TUNNEL_1           25
+
+
+
+
 //NORTH ORANNA PATH
 #define TRAINER_NORANNA_ENTRANCE_NPC         43
 #define TRAINER_NORANNA_FENCE_PARTNER_NPCS   44
@@ -110,6 +117,10 @@
 #define TRAINER_NORANNA_LOWER_NPC_MIDDLE     49
 #define TRAINER_NORANNA_LOWER_NPC_WEST       50
 #define TRAINER_GABBY_AND_TY_1               TRAINER_NORANNA_LOWER_NPC_WEST
+
+
+
+
 
 //CENTRAL ORANNA PATH
 #define TRAINER_CORANNA_1_NPC1               51
@@ -129,6 +140,10 @@
 #define TRAINER_AUSTINA                      TRAINER_CORANNA_2_BIKER
 #define TRAINER_GWEN                         TRAINER_CORANNA_2_FISHERMAN
 
+
+
+
+
 // Important Trainers
 #define TRAINER_LEADER_RUKA                  60
 #define TRAINER_SPECIAL_ARTHUR_1             61
@@ -136,6 +151,10 @@
 #define TRAINER_LOLA_2                       TRAINER_LEADER_RUKA
 #define TRAINER_LOLA_3                       TRAINER_SPECIAL_ARTHUR_1
 #define TRAINER_LOLA_4                       TRAINER_SPECIAL_THIEF_EDEA
+
+
+
+
 
 #define TRAINER_LOLA_5                       63
 #define TRAINER_RICKY_1                      64

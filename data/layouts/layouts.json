@@ -4635,7 +4635,7 @@
       "id": "LAYOUT_ISLANDGAME_MINTY_MEADOWS_3",
       "name": "ISLANDGAME_MINTY_MEADOWS_3_Layout",
       "width": 30,
-      "height": 36,
+      "height": 31,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
@@ -4714,7 +4714,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_FRESA_FARMS",
       "name": "ISLANDGAME_FRESA_FARMS_Layout",
-      "width": 50,
+      "width": 40,
       "height": 26,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_Forest",

@@ -329,18 +329,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MintyMeadows1),
     },
 
-    // [TRAINER_MINTY_MEADOWS_2] =
-    // {
-    //     .trainerClass = TRAINER_CLASS_YOUNGSTER,
-    //     .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MALE,
-    //     .trainerPic = TRAINER_PIC_YOUNGSTER,
-    //     .trainerName = _("Tom"),
-    //     .items = {},
-    //     .doubleBattle = FALSE,
-    //     .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-    //     .party = TRAINER_PARTY(sParty_MintyMeadows2),
-    // },
-
     [TRAINER_MINTY_MEADOWS_3] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
@@ -513,6 +501,21 @@ const struct Trainer gTrainers[] = {
 
 
 
+
+
+
+    /// Traveler's Tunnel
+    [TRAINER_TRAVELERS_TUNNEL_1] =
+    {
+        .trainerClass = TRAINER_CLASS_HIKER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = _("Tom"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_TravelersTunnel1),
+    },
 
 
 

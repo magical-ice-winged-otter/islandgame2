@@ -107,18 +107,17 @@ script ISLANDGAME_FRESA_FARMS_Chansey_Interact {
     release
 }
 
-script ISLANDGAME_FRESA_FARMS_Mareep_Interact {
+script ISLANDGAME_FRESA_FARMS_Mareep1 {
     lock
-    faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
-    msgbox(format("The Mareep appears to be well fed."))
+    msgbox(format("Reeep. (That dumb dog's snoozing on his job again! Time to sneak out...)"))
     release
 }
 
-script ISLANDGAME_FRESA_FARMS_MareepScared_Interact {
+script ISLANDGAME_FRESA_FARMS_Mareep2 {
     lock
     faceplayer
-    playmoncry(SPECIES_MAREEP, CRY_MODE_GROWL_1)
-    msgbox(format("The Mareep keeps glancing up at the nearby Herdier."))
+    playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
+    msgbox(format(""))
     release
 }
