@@ -8,27 +8,46 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
 
     switch (var(VAR_RESULT)) {
         case 1: // INACTIVE
-            msgbox("Want an egg?", MSGBOX_YESNO) 
+            msgbox(
+                format(
+                    "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Ah, young trainer! It's good to see you again! \p"
+                    "I actually have another favor I wish to ask of you. Fret not, it is a relatively simple and easy one! \p"
+                    "I have a very special egg that I'd like you to take along on your journey! \p"
+                    "All I ask is for you to help me hatch and show it to me later. Is that alright?"
+                )
+            ,MSGBOX_YESNO) 
 
             switch (var(VAR_RESULT)) {
                 case TRUE: // We do want the egg
-                    msgbox("cool!")
+                    msgbox("Excellent! The Pokémon will be yours to keep, of course!")
                     giveegg(SPECIES_TORCHIC, NUM_NATURES, 2, 18, 18, 18, 18, 18, 18)
                     startquest(QUEST_FRESA_FARMS_TORCHIC_EGG)
                 case FALSE: // We don't want the egg
-                    msgbox("aw man")
+                    msgbox("Ah, I understand. If you ever change your mind though, I'll always be here!")
             }
         case 2: // ACTIVE
             setvar(VAR_0x8000, SPECIES_TORCHIC)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
-                goto(Torchic_Reward)
+                msgbox(
+                    format(
+                        "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh! It finally hatched? Let me take a closer look at it... \p"
+                        "Ah, so it hatched into a Torchic? Welcome to parenthood, young trainer! \p"
+                        "That Torchic you have is no ordinary one either. It has a hidden ability! \p"
+                        "Take good care of Torchic! If you come back to me when it's fully evolved, I'll give you a little something special! \p"
+                        )
+                    )
             }
 
             setvar(VAR_0x8000, SPECIES_COMBUSKEN)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
-                goto(Torchic_Reward)
+                msgbox(
+                    format(
+                        "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Waha, that little Torchic has grown up into a Combusken already?\p"
+                        "Childhood really just zooms right by, doesn't it? I'm looking forward to seeing it fully evolved!"
+                    )
+                )
             }
 
             setvar(VAR_0x8000, SPECIES_BLAZIKEN)
@@ -37,19 +56,32 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
                 goto(Torchic_Reward)
             }
 
-            msgbox(format("Come back when its hatched!"))
+            msgbox(format("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Let me know what the egg hatches into later, young trainer!"))
             goto(Torchic_End)
 
 Torchic_Reward:
-            msgbox(format("Oh it hatched!"))
+            msgbox(
+                format(
+                    "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Young trainer! It's been quite a while! Since you're here, I assume your Torchic has matured into a fully-fledged Blaziken now, hm? \p"
+                    "Wow... Magnificent. Simply magnificent. Quite the majestic Pokémon, isn't it? \p"
+                    "Well, a promise is a promise! Here is something I've been holding onto for a few years, just waiting for the right trainer to give it to, and I see no better recipient than you!"
+                )
+            )
             giveitem(ITEM_BLAZIKENITE)
+            msgbox(
+                format(
+                    "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}You certainly are something special, young trainer. It hadn't even occurred to me that I never even learned your name.\p"
+                    "Ah... {PLAYER} is it? Well, you have my sincerest of gratitudes, {PLAYER}.\p"
+                    "I wish you the best of luck on the rest of your adventure. If you ever need a place to stay, our gate is always open."
+                )
+            )
             completequest(QUEST_FRESA_FARMS_TORCHIC_EGG)
 
 Torchic_End:
         // no cleanup needed
 
         case 4: // COMPLETED
-            msgbox("Hope your torchic is doin well!")
+            msgbox("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still don't even know my name! It's Paulie.")
     }
 
     release

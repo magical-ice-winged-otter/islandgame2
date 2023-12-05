@@ -1544,8 +1544,9 @@
 #define FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED          (SYSTEM_FLAGS + 0x95)
 //maplegrove: oddish gift
 #define FLAG_MAPLEGROVE_ODDISH_GIFT                 (SYSTEM_FLAGS + 0x96)
+//fresa farms: mareep gift
+#define FLAG_FRESA_FARMS_MAREEP_GIFT                (SYSTEM_FLAGS + 0x97) 
 
-#define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag
 #define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag
 #define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
 #define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
