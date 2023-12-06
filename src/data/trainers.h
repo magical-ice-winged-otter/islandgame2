@@ -680,7 +680,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_GabbyAndTy2),
+        .party = TRAINER_PARTY(sParty_COrannaPathTrainer1),
     },
 
     [TRAINER_CORANNA_1_NPC2] =
@@ -692,7 +692,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_GabbyAndTy3),
+        .party = TRAINER_PARTY(sParty_COrannaPathTrainer2),
     },
 
     [TRAINER_CORANNA_1_NPC3] =
@@ -704,7 +704,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_GabbyAndTy4),
+        .party = TRAINER_PARTY(sParty_COrannaPathTrainer3),
     },
 
     [TRAINER_CORANNA_1_NPC4] =
@@ -716,7 +716,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_GabbyAndTy5),
+        .party = TRAINER_PARTY(sParty_COrannaPathTrainer4),
     },
 
     [TRAINER_CORANNA_2_CAMPER] =
@@ -728,7 +728,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_GabbyAndTy6),
+        .party = TRAINER_PARTY(sParty_COrannaPathTrainer5),
     },
 
     [TRAINER_CORANNA_2_BIKER] =
@@ -740,7 +740,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Lola1),
+        .party = TRAINER_PARTY(sParty_COrannaPathTrainer6),
     },
 
     [TRAINER_CORANNA_2_FISHERMAN] =
@@ -752,7 +752,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Austina),
+        .party = TRAINER_PARTY(sParty_COrannaPathTrainer7),
     },
 
     [TRAINER_CORANNA_2_MANIAC] =
@@ -764,7 +764,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Gwen),
+        .party = TRAINER_PARTY(sParty_COrannaPathTrainer8),
     },
 
 

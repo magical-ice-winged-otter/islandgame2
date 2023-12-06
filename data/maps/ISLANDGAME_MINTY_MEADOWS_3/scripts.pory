@@ -41,6 +41,6 @@ script ISLANDGAME_MINTY_MEADOWS_3_Aegislash {
 
 text ISLANDGAME_MINTY_MEADOWS_3_AegislashTalk {
     format(
-        "{COLOR DARK_GRAY}Shwing! (THOU SHALL NOT PASSETH)"
+        "{COLOR DARK_GRAY}Shwing! {COLOR BLUE}(THOU SHALL NOT PASSETH)"
         )
 }

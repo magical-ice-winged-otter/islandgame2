@@ -658,6 +658,22 @@ MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 MINTY_MEADOWS_3_ItemTMReturn::
 	finditem ITEM_TM_RETURN
 	end
@@ -670,20 +686,24 @@ CAMP_PERSI_ItemPotion::
 	finditem ITEM_POTION
 	end
 
-MINTY_MEADOWS_2_ItemMysticWater::
+FRESA_FARMS_ItemMysticWater::
 	finditem ITEM_MYSTIC_WATER
+	end
+
+FRESA_FARMS_ItemBalmMushroom::
+	finditem ITEM_BALM_MUSHROOM
 	end
 
 MINTY_MEADOWS_HOUSE_ItemAbilityCapsule::
 	finditem ITEM_ABILITY_CAPSULE
 	end
 
-COP_1_ItemNugget::
-	finditem ITEM_NUGGET
+COP_1_ItemRareCandy::
+	finditem ITEM_RARE_CANDY
 	end
 
-COP_1_ItemBlackGlasses::
-	finditem ITEM_BLACK_GLASSES
+COP_1_ItemCharcoal::
+	finditem ITEM_CHARCOAL
 	end
 
 COP_2_ItemTMShockWave::

@@ -1219,20 +1219,19 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
 //ISLAND-START: USE THIS AS FLAGS FOR POKEBALL ITEMS
-#define FLAG_ROOM3_ITEM                                             0x493 // Rare Candy
-#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
+#define FLAG_ROOM3_ITEM                                             0x493 // SS Rain: Rare Candy
+#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 // Verdant Woods
+#define FLAG_FRESA_FARMS_SHROOM                                     0x495 // Fresa Farms
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-//minty meadows
+#define FLAG_ITEM_COP_2_MOON_STONE                                  0x497
 #define FLAG_ITEM_MINTY_MEADOWS_1                                   0x498
 #define FLAG_ITEM_TM_RETURN                                         0x499 
 #define FLAG_ITEM_TM_DIG                                            0x49A 
 #define FLAG_ITEM_PERSI_POTION                                      0x49B
 #define FLAG_ITEM_MYSTIC_WATER                                      0x49C 
 #define FLAG_ITEM_MINTY_MEADOWS_HOUSE_ITEM                          0x49D
-#define FLAG_ITEM_COP_1_NUGGET                                      0x49E
-#define FLAG_ITEM_COP_1_BLACKGLASSES                                0x49F
+#define FLAG_ITEM_COP_1_RARE_CANDY                                  0x49E
+#define FLAG_ITEM_COP_1_CHARCOAL                                    0x49F
 #define FLAG_ITEM_COP_2_TM_SHOCKWAVE                                0x4A0 
 #define FLAG_ITEM_COP_2_PIXIE_PLATE                                 0x4A1 
 #define FLAG_ITEM_TIDALCOVE_HP_UP                                   0x4A2

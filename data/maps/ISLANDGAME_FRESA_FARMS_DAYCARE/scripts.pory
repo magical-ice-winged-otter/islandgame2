@@ -19,11 +19,11 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
 
             switch (var(VAR_RESULT)) {
                 case TRUE: // We do want the egg
-                    msgbox("Excellent! The Pokémon will be yours to keep, of course!")
+                    msgbox(format("Excellent! The Pokémon will be yours to keep, of course!"))
                     giveegg(SPECIES_TORCHIC, NUM_NATURES, 2, 18, 18, 18, 18, 18, 18)
                     startquest(QUEST_FRESA_FARMS_TORCHIC_EGG)
                 case FALSE: // We don't want the egg
-                    msgbox("Ah, I understand. If you ever change your mind though, I'll always be here!")
+                    msgbox(format("Ah, I understand. If you ever change your mind though, I'll always be here!"))
             }
         case 2: // ACTIVE
             setvar(VAR_0x8000, SPECIES_TORCHIC)
@@ -34,7 +34,7 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
                         "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh! It finally hatched? Let me take a closer look at it... \p"
                         "Ah, so it hatched into a Torchic? Welcome to parenthood, young trainer! \p"
                         "That Torchic you have is no ordinary one either. It has a hidden ability! \p"
-                        "Take good care of Torchic! If you come back to me when it's fully evolved, I'll give you a little something special! \p"
+                        "Take good care of Torchic! If you come back to me when it's fully evolved, I'll give you a little something special!"
                         )
                     )
             }
@@ -55,8 +55,9 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
             if (var(VAR_RESULT)) {
                 goto(Torchic_Reward)
             }
-
-            msgbox(format("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Let me know what the egg hatches into later, young trainer!"))
+            else {
+                msgbox(format("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Let me know what the egg hatches into later, young trainer!"))
+            }
             goto(Torchic_End)
 
 Torchic_Reward:
@@ -81,7 +82,7 @@ Torchic_End:
         // no cleanup needed
 
         case 4: // COMPLETED
-            msgbox("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still don't even know my name! It's Paulie.")
+            msgbox(format("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still don't even know my name! It's Paulie."))
     }
 
     release

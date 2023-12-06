@@ -131,12 +131,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 75,
-      "y": 45,
+      "x": 77,
+      "y": 44,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper",
@@ -158,13 +158,13 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 75,
-      "y": 29,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1",
       "flag": "0"
     },
@@ -271,6 +271,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre",
       "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 82,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "COP_1_ItemMoonStone",
+      "flag": "FLAG_ITEM_COP_2_MOON_STONE"
     }
   ],
   "warp_events": [
@@ -324,13 +337,6 @@
     }
   ],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 83,
-      "y": 25,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ISLANDGAME_ROSEVALE_Interact_LockedDoor"
-    }
+
   ]
 }

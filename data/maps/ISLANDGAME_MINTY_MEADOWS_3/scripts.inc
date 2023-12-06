@@ -14,6 +14,7 @@ ISLANDGAME_MINTY_MEADOWS_3_Chimecho::
 	faceplayer
 	playmoncry SPECIES_CHIMECHO, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk
+	applymovement 2, Common_Movement_FaceOriginalDirection
 	release
 	return
 

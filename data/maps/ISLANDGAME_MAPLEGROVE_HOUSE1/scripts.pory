@@ -78,9 +78,9 @@ script ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_PKMN {
 
 text ISLANDGAME_MAPLEGROVE_HOUSE1_PKMNTalk {
     format(
-        "{COLOR DARK_GRAY}Togepi! (Hello hooman!) \p"
-        "{COLOR DARK_GRAY}Togi-togi! (Wow! You can understand me? That's amazing!) \p"
-        "{COLOR DARK_GRAY}Pi-pi. (You must be really special.)"
+        "{COLOR DARK_GRAY}Togepi! {COLOR BLUE}(Hello hooman!) \p"
+        "{COLOR DARK_GRAY}Togi-togi! {COLOR BLUE}(Wow! You can understand me? That's amazing!) \p"
+        "{COLOR DARK_GRAY}Pi-pi. {COLOR BLUE}(You must be really special.)"
     )
 }
 

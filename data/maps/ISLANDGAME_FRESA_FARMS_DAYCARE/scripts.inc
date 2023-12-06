@@ -37,17 +37,18 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_12:
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_16
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_15:
-	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_3
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_5
 	goto Torchic_End
 Torchic_Reward:
-	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_4
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_6
 	giveitem ITEM_BLAZIKENITE
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_7
 	completequest QUEST_FRESA_FARMS_TORCHIC_EGG
 Torchic_End:
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_5:
-	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_5
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_8
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_7:
@@ -61,11 +62,11 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_8:
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_10:
-	goto Torchic_Reward
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_3
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_9
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_13:
-	goto Torchic_Reward
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_4
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_12
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_16:
@@ -74,19 +75,68 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_16:
 
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_0:
-	.string "Want an egg?$"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Ah, young trainer! It's good\n"
+	.string "to see you again!\p"
+	.string "I actually have another favor I wish to\n"
+	.string "ask of you. Fret not, it is a relatively\l"
+	.string "simple and easy one!\p"
+	.string "I have a very special egg that I'd like\n"
+	.string "you to take along on your journey!\p"
+	.string "All I ask is for you to help me hatch and\n"
+	.string "show it to me later. Is that alright?$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_1:
-	.string "cool!$"
+	.string "Excellent! The Pokémon will be yours to keep, of course!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_2:
-	.string "aw man$"
+	.string "Ah, I understand. If you ever change your mind though, I'll always be here!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_3:
-	.string "Come back when its hatched!$"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh! It finally hatched? Let\n"
+	.string "me take a closer look at it...\p"
+	.string "Ah, so it hatched into a Torchic?\n"
+	.string "Welcome to parenthood, young trainer!\p"
+	.string "That Torchic you have is no ordinary\n"
+	.string "one either. It has a hidden ability!\p"
+	.string "Take good care of Torchic! If you come\n"
+	.string "back to me when it's fully evolved, I'll\l"
+	.string "give you a little something special!\p"
+	.string "$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_4:
-	.string "Oh it hatched!$"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Waha, that little Torchic\n"
+	.string "has grown up into a Combusken already?\p"
+	.string "Childhood really just zooms right by,\n"
+	.string "doesn't it? I'm looking forward to\l"
+	.string "seeing it fully evolved!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_5:
-	.string "Hope your torchic is doin well!$"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Let me know what the egg\n"
+	.string "hatches into later, young trainer!$"
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_6:
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Young trainer! It's been\n"
+	.string "quite a while! Since you're here, I\l"
+	.string "assume your Torchic has matured into a\l"
+	.string "fully-fledged Blaziken now, hm?\p"
+	.string "Wow... Magnificent. Simply magnificent.\n"
+	.string "Quite the majestic Pokémon, isn't it?\p"
+	.string "Well, a promise is a promise! Here is\n"
+	.string "something I've been holding onto for a\l"
+	.string "few years, just waiting for the right\l"
+	.string "trainer to give it to, and I see no\l"
+	.string "better recipient than you!$"
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_7:
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}You certainly are something\n"
+	.string "special, young trainer. It hadn't even\l"
+	.string "occurred to me that I never even\l"
+	.string "learned your name.\p"
+	.string "Ah... {PLAYER} is it? Well, you have my\n"
+	.string "sincerest of gratitudes, {PLAYER}.\p"
+	.string "I wish you the best of luck on the rest\n"
+	.string "of your adventure. If you ever need a\l"
+	.string "place to stay, our gate is always open.$"
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_8:
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still don't even know my name! It's Paulie.$"

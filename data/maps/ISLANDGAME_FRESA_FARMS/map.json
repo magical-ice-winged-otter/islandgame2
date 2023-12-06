@@ -101,11 +101,11 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_113",
       "x": 14,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_FRESA_FARMS_Chansey_Interact",
@@ -116,7 +116,7 @@
       "x": 11,
       "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFTeee",
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 2,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -147,7 +147,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MINTY_MEADOWS_2_ItemMysticWater",
+      "script": "FRESA_FARMS_ItemMysticWater",
       "flag": "FLAG_ITEM_MYSTIC_WATER"
     },
     {
@@ -160,7 +160,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_FRESA_FARMS_Man",
       "flag": "0"
     },
     {
@@ -175,6 +175,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FRESA_FARMS_ItemBalmMushroom",
+      "flag": "FLAG_FRESA_FARMS_SHROOM"
     }
   ],
   "warp_events": [
@@ -197,14 +210,6 @@
 
   ],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 6,
-      "y": 8,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ISLANDGAME_FRESA_FARMS_DayCareSign_Interact"
-    },
     {
       "type": "sign",
       "x": 21,

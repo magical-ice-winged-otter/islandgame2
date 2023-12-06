@@ -3,37 +3,39 @@ ISLANDGAME_FRESA_FARMS_HOUSE_MapScripts::
 
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1::
-	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1_Text_0, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1_Text_0
+	release
 	return
 
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2::
-	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2_Text_0, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2_Text_0
+	release
 	return
 
 
-ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_MilkVendor::
-	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_MilkVendor_Text_0, MSGBOX_NPC
-	pokemart MilkVendorItems
-	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_MilkVendor_Text_1, MSGBOX_NPC
+ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC3::
+	lock
+	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC3_Text_0
+	release
 	return
 
-
-	.align 2
-MilkVendorItems:
-	.2byte ITEM_MOOMOO_MILK
-	.2byte ITEM_NONE
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1_Text_0:
-	.string "I am NPC 1$"
+	.string "Life on a farm is soooooo boring. I hope\n"
+	.string "something exciting happens soon.\p"
+	.string "I don't care what. It could even be like,\n"
+	.string "some sorta world-ending event.\p"
+	.string "Just SOMETHING!$"
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2_Text_0:
-	.string "I am NPC 2$"
+	.string "I wish we got the good channels. I'm\n"
+	.string "tired of no shows after dark.$"
 
-ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_MilkVendor_Text_0:
-	.string "Welcome to Fresa Farms!\p"
-	.string "Our MooMoo Milk is sourced from the\n"
-	.string "happiest Miltanks around!$"
-
-ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_MilkVendor_Text_1:
-	.string "Thank you for supporting the farm!$"
+ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC3_Text_0:
+	.string "{COLOR RED}(Looks like he's admiring his Torchic\n"
+	.string "plush.)$"

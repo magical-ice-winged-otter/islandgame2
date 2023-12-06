@@ -16,9 +16,9 @@ const RIVAL_OW_ID = 11
 const OLD_MAN_OW_ID = 12
 const MAREEP_OW_ID = 6
 const MIGHTYENA_OW_ID = 7
-const MAREEP_EXTRA1 = 18
-const MAREEP_EXTRA2 = 19
-const MAREEP_EXTRA3 = 20
+const MAREEP_EXTRA1 = 17
+const MAREEP_EXTRA2 = 18
+const MAREEP_EXTRA3 = 19
 
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
@@ -577,8 +577,8 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     setvar(VAR_0x8001, 16)
     callnative(TeleportCamera) // this is some magic, shoutout to the pret discord (and see src/islandgame_scrcmd.c)
     addobject(RIVAL_OW_ID)
-    setobjectmovementtype(RIVAL_OW_ID, MOVEMENT_TYPE_FACE_UP)
-    setobjectmovementtype(OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP)
+    applymovement(RIVAL_OW_ID, Common_Movement_FaceUp)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     setobjectxy(OBJ_EVENT_ID_PLAYER, 61, 16)
     setobjectxy(RIVAL_OW_ID, 60, 16)
     fadescreen(FADE_TO_BLACK)
@@ -769,7 +769,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_Mareep {
 }
 
 text MareepHelp_Text {
-    format("{COLOR DARK_GRAY}Reep! Reep! (BRO HELP ME PLZ)")
+    format("{COLOR DARK_GRAY}Reep! Reep! {COLOR BLUE}(BRO HELP ME PLZ)")
 }
 
 

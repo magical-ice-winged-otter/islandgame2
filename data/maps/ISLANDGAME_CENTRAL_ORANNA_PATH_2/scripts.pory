@@ -22,12 +22,24 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper {
-    msgbox(format("Howdy trainer! Nice job on making it this far.\pYou're 'bout halfway to Tidalcove!\pI'll let you in on a little secret... Oranna's gym leader, Ruka, specializes in ice-type Pokémon!"), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(
+        format(
+            "Howdy trainer! Nice job on making it this far. You're 'bout halfway there!\p"
+            "For getting this far, I'll let you in on some insider knowledge...\p"
+            "Ruka, the leader of Tidalcove's Gym, specializes in ice-type Pokémon!\p"
+            "So fighting, fire, steel, and rock moves will be super useful in the fight!\p"
+            "Bet you're glad I filled you in on the secrets, huh?\p"
+            "Eh? What do you mean, that was all public information?\p"
+        ), 
+    MSGBOX_NPC)
+    release
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman {
     trainerbattle_single(TRAINER_CORANNA_2_FISHERMAN, 
-        format("Oh, are you interesting in seeing some of my catches?"), 
+        format("Interested in seeing some of my catches?"), 
         "Back to fishing."
     )
     msgbox(format("This is a nice place to fish since it's so remote.\pNothing like waking up early to the sounds of nature and fishing!"), MSGBOX_NPC)
@@ -35,8 +47,8 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1 {
     trainerbattle_single(TRAINER_CORANNA_2_CAMPER, 
-        format("Isn't it nice for someone to build a house in the middle of the woods?"), 
-        "Wow, you beat me!"
+        format("I sure am glad there's a rest stop in the middle of this path!\pI'm all rested up now, so let's battle!"), 
+        "Darn it, you still beat me."
     )
     msgbox(format("Camping is nice and all, but nothing beats a warm bed..."), MSGBOX_NPC)
 }
