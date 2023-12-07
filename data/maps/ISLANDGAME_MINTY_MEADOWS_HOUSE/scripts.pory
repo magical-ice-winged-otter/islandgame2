@@ -80,7 +80,7 @@ script ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson {
     lock
     playmoncry(SPECIES_BLACEPHALON,CRY_MODE_NORMAL)
     msgbox(format("Do you like gumballs?"), MSGBOX_YESNO)
-    if(var(VAR_RESULT == YES)) {
+    if(var(VAR_RESULT) == YES) {
         msgbox(format("Me too. They are yummy. I especially like blue raspberry."))
     }
     else {

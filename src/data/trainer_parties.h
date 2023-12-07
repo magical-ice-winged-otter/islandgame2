@@ -721,7 +721,7 @@ static const struct TrainerMon sParty_COrannaPathTrainer3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 17,
-    .species = SPECIES_WHIRLPEDE,
+    .species = SPECIES_WHIRLIPEDE,
     }
 };
 

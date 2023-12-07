@@ -19,7 +19,10 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid::
 
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper::
+	lock
+	faceplayer
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper_Text_0, MSGBOX_NPC
+	release
 	return
 
 
@@ -198,15 +201,22 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0:
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayCamper_Text_0:
 	.string "Howdy trainer! Nice job on making it\n"
-	.string "this far.\p"
-	.string "You're 'bout halfway to Tidalcove!\p"
-	.string "I'll let you in on a little secret...\n"
-	.string "Oranna's gym leader, Ruka, specializes\l"
-	.string "in ice-type Pokémon!$"
+	.string "this far. You're 'bout halfway there!\p"
+	.string "For getting this far, I'll let you in on\n"
+	.string "some insider knowledge...\p"
+	.string "Ruka, the leader of Tidalcove's Gym,\n"
+	.string "specializes in ice-type Pokémon!\p"
+	.string "So fighting, fire, steel, and rock moves\n"
+	.string "will be super useful in the fight!\p"
+	.string "Bet you're glad I filled you in on the\n"
+	.string "secrets, huh?\p"
+	.string "Eh? What do you mean, that was all\n"
+	.string "public information?\p"
+	.string "$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_0:
-	.string "Oh, are you interesting in seeing some\n"
-	.string "of my catches?$"
+	.string "Interested in seeing some of my\n"
+	.string "catches?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_1:
 	.string "Back to fishing.$"
@@ -218,11 +228,12 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_2:
 	.string "sounds of nature and fishing!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_0:
-	.string "Isn't it nice for someone to build a\n"
-	.string "house in the middle of the woods?$"
+	.string "I sure am glad there's a rest stop in\n"
+	.string "the middle of this path!\p"
+	.string "I'm all rested up now, so let's battle!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_1:
-	.string "Wow, you beat me!$"
+	.string "Darn it, you still beat me.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper1_Text_2:
 	.string "Camping is nice and all, but nothing\n"

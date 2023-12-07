@@ -31,9 +31,9 @@ ISLANDGAME_MINTY_MEADOWS_2_OnTransition_5:
 ISLANDGAME_MINTY_MEADOWS_2_InitialRival::
 	setobjectxyperm 11, 12, 5
 	setobjectxyperm 12, 32, 10
-	setobjectxyperm 18, 35, 8
-	setobjectxyperm 19, 34, 10
-	setobjectxyperm 20, 33, 12
+	setobjectxyperm 17, 35, 8
+	setobjectxyperm 18, 34, 10
+	setobjectxyperm 19, 33, 12
 	setobjectxyperm 6, -3, 1
 	setobjectxyperm 7, -3, 1
 	return
@@ -312,9 +312,9 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	addobject 12
+	setobjectxyperm 17, -3, 1
 	setobjectxyperm 18, -3, 1
 	setobjectxyperm 19, -3, 1
-	setobjectxyperm 20, -3, 1
 	setobjectxy 12, 18, 12
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_5
 	closemessage
@@ -574,8 +574,8 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setvar VAR_0x8001, 16
 	callnative TeleportCamera
 	addobject 11
-	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
+	applymovement 11, Common_Movement_FaceUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	setobjectxy OBJ_EVENT_ID_PLAYER, 61, 16
 	setobjectxy 11, 60, 16
 	fadescreen FADE_TO_BLACK
@@ -1058,7 +1058,7 @@ ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"
 
 MareepHelp_Text::
-	.string "{COLOR DARK_GRAY}Reep! Reep! (BRO HELP ME PLZ)$"
+	.string "{COLOR DARK_GRAY}Reep! Reep! {COLOR BLUE}(BRO HELP ME PLZ)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss::
 	.string "I lost focus. I'm sorry, my Pokémon.$"

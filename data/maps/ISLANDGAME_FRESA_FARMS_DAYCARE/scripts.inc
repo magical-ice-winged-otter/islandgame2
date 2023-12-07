@@ -36,8 +36,8 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_12:
 	callnative CheckPartyMon
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_16
-ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_15:
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_5
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_15:
 	goto Torchic_End
 Torchic_Reward:
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_6
@@ -86,10 +86,12 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_0:
 	.string "show it to me later. Is that alright?$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_1:
-	.string "Excellent! The Pokémon will be yours to keep, of course!$"
+	.string "Excellent! The Pokémon will be yours to\n"
+	.string "keep, of course!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_2:
-	.string "Ah, I understand. If you ever change your mind though, I'll always be here!$"
+	.string "Ah, I understand. If you ever change\n"
+	.string "your mind though, I'll always be here!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_3:
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh! It finally hatched? Let\n"
@@ -100,8 +102,7 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_3:
 	.string "one either. It has a hidden ability!\p"
 	.string "Take good care of Torchic! If you come\n"
 	.string "back to me when it's fully evolved, I'll\l"
-	.string "give you a little something special!\p"
-	.string "$"
+	.string "give you a little something special!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_4:
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Waha, that little Torchic\n"
@@ -139,4 +140,5 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_7:
 	.string "place to stay, our gate is always open.$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_8:
-	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still don't even know my name! It's Paulie.$"
+	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still\n"
+	.string "don't even know my name! It's Paulie.$"

@@ -61,30 +61,43 @@ ISLANDGAME_MINTY_MEADOWS_HOUSE_Skips::
 ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson::
 	lock
 	playmoncry SPECIES_BLACEPHALON, CRY_MODE_NORMAL
-	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_BensonTalk
-	waitmessage
-	release
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_1
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_2
 	return
 
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_1:
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_1
+	return
+
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_0:
+	.string "Do you like gumballs?$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_1:
+	.string "Me too. They are yummy. I especially like\n"
+	.string "blue raspberry.$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_2:
+	.string "Huh? Why are you looking at me like\n"
+	.string "that?$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText::
 	.string "{COLOR DARK_GRAY}Salutations! My name is Pops. Me and my\n"
 	.string "Pokémon manage the meadows.$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_MordecaiText::
-	.string "{COLOR DARK_GRAY}hueheuhuehuehue melk$"
+	.string "hueheuhuehuehue melk$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_RigbyText::
-	.string "{COLOR DARK_GRAY}hueheuhuehuehue cereal$"
+	.string "hueheuhuehuehue cereal$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_MManText::
-	.string "{COLOR DARK_GRAY}WOOOOHOOOOO!$"
+	.string "WOOOOHOOOOO!$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_FivesText::
-	.string "{COLOR DARK_GRAY}Wasshup?$"
+	.string "Wasshup?$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_SkipsTalk::
 	.string "{COLOR RED}(It looks like Slakoth is fast asleep.)$"
-
-ISLANDGAME_MINTY_MEADOWS_HOUSE_BensonTalk::
-	.string "{COLOR RED}(Is this a Pokémon? It looks so alien...)$"

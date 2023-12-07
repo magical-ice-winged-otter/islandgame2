@@ -714,6 +714,10 @@ COP_2_ItemPixiePlate::
 	finditem ITEM_PIXIE_PLATE
 	end
 
+COP_1_ItemMoonStone::
+	finditem ITEM_MOON_STONE
+	end
+
 Tidalcove_ItemHpUp::
 	finditem ITEM_HP_UP
 	end

@@ -99,10 +99,10 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorMoveLearned::
 	.string "unlocked... I will take my payment now.$"
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_PKMNTalk::
-	.string "{COLOR DARK_GRAY}Togepi! (Hello hooman!)\p"
-	.string "{COLOR DARK_GRAY}Togi-togi! (Wow! You can understand me?\n"
+	.string "{COLOR DARK_GRAY}Togepi! {COLOR BLUE}(Hello hooman!)\p"
+	.string "{COLOR DARK_GRAY}Togi-togi! {COLOR BLUE}(Wow! You can understand me?\n"
 	.string "That's amazing!)\p"
-	.string "{COLOR DARK_GRAY}Pi-pi. (You must be really special.)$"
+	.string "{COLOR DARK_GRAY}Pi-pi. {COLOR BLUE}(You must be really special.)$"
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_NPCTalk::
 	.string "{COLOR DARK_GRAY}My Togepi is very talkative. I wish I\n"

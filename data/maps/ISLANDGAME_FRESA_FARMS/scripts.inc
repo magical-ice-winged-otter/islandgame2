@@ -110,6 +110,7 @@ ISLANDGAME_FRESA_FARMS_Mareep1::
 	playse SE_PIN
 	applymovement 2, Common_Movement_ExclamationMark
 	waitmovement 0
+	applymovement 2, Common_Movement_Delay32
 	msgbox ISLANDGAME_FRESA_FARMS_Mareep1_Text_1
 	applymovement 2, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -182,10 +183,10 @@ ISLANDGAME_FRESA_FARMS_Man_Text_0:
 	.string "as they do.$"
 
 ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0:
-	.string "Moo. (Moo.)$"
+	.string "Moo. {COLOR BLUE}(Moo.)$"
 
 ISLANDGAME_FRESA_FARMS_Chansey_Interact_Text_0:
-	.string "Chansey. (Most humans can't understand\n"
+	.string "Chansey. {COLOR BLUE}(Most humans can't understand\n"
 	.string "us, but some are born with a special\l"
 	.string "ability to comprehend what Pokémon are\l"
 	.string "saying.)\p"
@@ -193,45 +194,45 @@ ISLANDGAME_FRESA_FARMS_Chansey_Interact_Text_0:
 	.string "you?)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep1_Text_0:
-	.string "Reeep. (Heh. That dumb dog's snoozing\n"
+	.string "Reeep. {COLOR BLUE}(Heh. That dumb dog's snoozing\n"
 	.string "on his job again!)\p"
-	.string "Reep reep. (Time to sneak out and have\n"
+	.string "Reep reep. {COLOR BLUE}(Time to sneak out and have\n"
 	.string "some fun with Chansey...)\p"
-	.string "Reep? (Huh?)$"
+	.string "Reep? {COLOR BLUE}(Huh?)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep1_Text_1:
-	.string "Reep... (Oh, it's just a random kid. Good\n"
+	.string "Reep... {COLOR BLUE}(Oh, it's just a random kid. Good\n"
 	.string "thing they can't understand me.)\p"
-	.string "Reep! (Go away! I've got big plans for\n"
+	.string "Reep! {COLOR BLUE}(Go away! I've got big plans for\n"
 	.string "tonight!)\p"
-	.string "Reep. (Oh wait... They don't understand\n"
+	.string "Reep. {COLOR BLUE}(Oh wait... They don't understand\n"
 	.string "me.)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep2_Text_0:
-	.string "Reep. (I'm just saying man, if it was me\n"
+	.string "Reep. {COLOR BLUE}(I'm just saying man, if it was me\n"
 	.string "against that Mightyena, hoo boy.)\p"
-	.string "Reep! (I would'a messed that Mightyena\n"
+	.string "Reep! {COLOR BLUE}(I would'a messed that Mightyena\n"
 	.string "up real good, ya feel me?)\p"
-	.string "Reep? (Huh? Why are you looking me like\n"
+	.string "Reep? {COLOR BLUE}(Huh? Why are you looking me like\n"
 	.string "that? I'm fo' realzies!)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep3_Text_0:
-	.string "Reep! (Hey there! Thanks for saving my\n"
+	.string "Reep! {COLOR BLUE}(Hey there! Thanks for saving my\n"
 	.string "butt from that scary Mightyena.)\p"
-	.string "Reep. (Please take this as a gift.)$"
+	.string "Reep. {COLOR BLUE}(Please take this as a gift.)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep3_Text_1:
-	.string "Reep. (Oh, you don't have enough space\n"
+	.string "Reep. {COLOR BLUE}(Oh, you don't have enough space\n"
 	.string "for this.)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep3_Text_2:
-	.string "Reep. (I found it wandering around\n"
+	.string "Reep. {COLOR BLUE}(I found it wandering around\n"
 	.string "today. Hope it helps you out!)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep4_Text_0:
-	.string "Reep. (My little brother always strays\n"
+	.string "Reep. {COLOR BLUE}(My little brother always strays\n"
 	.string "away from the herd to explore.)\p"
-	.string "Reep. (Hopefully he's finally learned his\n"
+	.string "Reep. {COLOR BLUE}(Hopefully he's finally learned his\n"
 	.string "lesson.)$"
 
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_0:

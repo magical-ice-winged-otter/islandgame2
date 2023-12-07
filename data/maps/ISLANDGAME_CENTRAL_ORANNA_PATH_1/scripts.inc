@@ -15,7 +15,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	setobjectxyperm 1, 46, 35
 	setobjectxyperm 3, 0, 0
 	setobjectxyperm 2, 0, 0
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 
@@ -33,8 +33,16 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous::
 	applymovement 4, Movement_MightyenaGrowl
 	waitmovement 0
 	waitmoncry
+	playse SE_PIN
+	applymovement 1, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 1, Common_Movement_FacePlayer
+	waitmovement 0
+	applymovement 1, Common_Movement_Delay32
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous_Text_0
 	closemessage
+	applymovement 1, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerPushBack
 	waitmovement 0
 	release
@@ -68,12 +76,16 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4::
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger::
 	switch VAR_MINTY_MEADOWS_STATE
 	case 4, ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_3
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_1, MSGBOX_NPC
+	faceplayer
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous_Text_0
+	applymovement 1, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_1:
 	closemessage
 	return
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_3:
+	faceplayer
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_0
 	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_1
 
@@ -83,18 +95,30 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign::
 	return
 
 
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1::
+	lock
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1_Text_0
+	release
+	return
+
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger2::
+	lock
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger2_Text_0
+	release
+	return
+
+
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous_Text_0:
-	.string "Hey, its too dangerous to go any\n"
-	.string "further! Come back later, we can handle\l"
-	.string "this!$"
+	.string "Hey! It's too dangerous to go any\n"
+	.string "further! Please let us deal with this!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1_Text_0:
 	.string "It's a lot of walking to get to\n"
 	.string "Tidalcove. Let's battle instead!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1_Text_1:
-	.string "Well, good luck with the rest of your\n"
-	.string "trip!$"
+	.string "Well, good luck with the rest of your\ntrip!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1_Text_2:
 	.string "I heard that the trip is easier with a\n"
@@ -118,35 +142,41 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3_Text_0:
 	.string "catcher around here!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3_Text_1:
-	.string "What's that? You don't care about\n"
-	.string "bugs?$"
+	.string "What's that? You don't care about\nbugs?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3_Text_2:
-	.string "I bet there are all sorts of cool bugs\n"
-	.string "here in Central Oranna...$"
+	.string "I'm looking for a cool bug around here.\n"
+	.string "Have you found it yet?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_0:
-	.string "I don't know if I'm ready for this\n"
-	.string "wildness yet, but I want to grow\l"
-	.string "stronger! Let's train!$"
+	.string "I don't think I'm ready for the\n"
+	.string "Tidalcove Gym yet, so let's train!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_1:
 	.string "Thanks for the battle!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_2:
-	.string "It's ok to lose a couple times. Life is\n"
-	.string "more of a marathon than a sprint!$"
+	.string "It's okay to lose a couple of times. Life\n"
+	.string "is a marathon, not a sprint!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_0:
-	.string "We finally managed to subdue the\n"
-	.string "Mightyena from earlier! Be extra\l"
-	.string "careful on central path today...$"
-
-ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_1:
-	.string "These Mightyena are blocking the path!\p"
-	.string "I'm trying my best to clear them out,\n"
-	.string "come back later.$"
+	.string "Phew, we finally managed to get rid of\n"
+	.string "that pack of wild Mightyena...\p"
+	.string "The leader of the pack was especially\n"
+	.string "vicious and aggressive.\p"
+	.string "I've never seen anything like it,\n"
+	.string "especially around these parts.\p"
+	.string "When it ran off, the other members of\n"
+	.string "its pack followed suit.\p"
+	.string "I hope no one is in danger. Please be\n"
+	.string "extra careful when traveling!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign_Text_0:
 	.string "CENTRAL ORANNA PATH\n"
-	.string "MAPLEGROVE -->$"
+	.string "MAPLEGROVE{RIGHT_ARROW}$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1_Text_0:
+	.string "Linoone! Use slash!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger2_Text_0:
+	.string "Watch out, Raticate!$"
