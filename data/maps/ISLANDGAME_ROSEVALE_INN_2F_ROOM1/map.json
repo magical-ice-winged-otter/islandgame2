@@ -1,0 +1,41 @@
+{
+  "id": "MAP_ISLANDGAME_ROSEVALE_INN_2F_ROOM1",
+  "name": "ISLANDGAME_ROSEVALE_INN_2F_ROOM1",
+  "layout": "LAYOUT_ISLANDGAME_ROSEVALE_INN_2F_ROOM1",
+  "music": "MUS_VERDANTURF",
+  "region_map_section": "MAPSEC_ROSEVALE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_ROSEVALE_INN_2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_ROSEVALE_INN_2F",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

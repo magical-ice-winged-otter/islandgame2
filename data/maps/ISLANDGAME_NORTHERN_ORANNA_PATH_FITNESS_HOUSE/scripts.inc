@@ -30,27 +30,27 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_6:
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_9:
 	checkitem ITEM_IRON
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_15
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_14:
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_16
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_15:
 	checkitem ITEM_CALCIUM
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_20
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_19:
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_22
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_21:
 	checkitem ITEM_ZINC
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_25
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_24:
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_28
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_27:
 	checkitem ITEM_CARBOS
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_30
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_29:
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_34
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_33:
 	checkitem ITEM_PP_UP
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_35
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_34:
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_40
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_39:
 	checkitem ITEM_PP_MAX
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_39
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_45
 	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_1
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_5:
@@ -61,12 +61,14 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_7:
 	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_12
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline
 	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_6
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_10:
 	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_17
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_18
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline
 	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_9
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_12:
@@ -75,79 +77,85 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_12:
 	completesubquest QUEST_NORANNA_FITNESS_FREAK, SUB_QUEST_NORANNA_FITNESS_FREAK_HPUP
 	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_6
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_15:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_16:
 	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_22
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_14
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_24
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_15
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_17:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_18:
 	removeitem ITEM_PROTEIN
 	giveitem ITEM_POWER_BRACER
 	completesubquest QUEST_NORANNA_FITNESS_FREAK, SUB_QUEST_NORANNA_FITNESS_FREAK_PROTEIN
 	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_9
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_20:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_22:
 	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_4, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_27
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_19
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_30
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_21
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_22:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_24:
 	removeitem ITEM_IRON
 	giveitem ITEM_POWER_BELT
 	completesubquest QUEST_NORANNA_FITNESS_FREAK, SUB_QUEST_NORANNA_FITNESS_FREAK_IRON
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_14
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_15
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_25:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_28:
 	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_5, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_32
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_24
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_36
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_27
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_27:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_30:
 	removeitem ITEM_CALCIUM
 	giveitem ITEM_POWER_LENS
 	completesubquest QUEST_NORANNA_FITNESS_FREAK, SUB_QUEST_NORANNA_FITNESS_FREAK_CALCIUM
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_19
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_21
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_30:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_34:
 	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_6, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_37
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_29
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_42
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_33
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_32:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_36:
 	removeitem ITEM_ZINC
 	giveitem ITEM_POWER_BAND
 	completesubquest QUEST_NORANNA_FITNESS_FREAK, SUB_QUEST_NORANNA_FITNESS_FREAK_ZINC
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_24
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_27
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_35:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_40:
 	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_7, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_41
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_34
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_47
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_39
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_37:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_42:
 	removeitem ITEM_CARBOS
 	giveitem ITEM_POWER_ANKLET
 	completesubquest QUEST_NORANNA_FITNESS_FREAK, SUB_QUEST_NORANNA_FITNESS_FREAK_CARBOS
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_29
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_33
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_39:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_45:
 	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_8, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_43
+	goto_if_ne ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_50
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline
 	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_1
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_41:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_47:
 	removeitem ITEM_PP_UP
 	giveitem ITEM_RARE_CANDY
 	completesubquest QUEST_NORANNA_FITNESS_FREAK, SUB_QUEST_NORANNA_FITNESS_FREAK_PPUP
-	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_34
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_39
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_43:
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_50:
 	removeitem ITEM_PP_MAX
 	giveitem ITEM_EXP_CANDY_XL
 	completesubquest QUEST_NORANNA_FITNESS_FREAK, SUB_QUEST_NORANNA_FITNESS_FREAK_PPMAX
@@ -155,47 +163,53 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_43:
 
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_0:
-	.string "Well? Do you have any vitamins?$"
+	.string "Hello again, trainer... Do you have the\n"
+	.string "goods?$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_1:
-	.string "Ah, an HP Up! Can I have it? I can tell\n"
-	.string "this will be helpful!$"
+	.string "O-Oh! An HP Up? C-Can I have it? I NEED\n"
+	.string "it for my training regimen!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_2:
-	.string "Ah, a Protien! Can I have it? I can tell\n"
-	.string "this will be helpful!$"
+	.string "O-Oh! A Protein? C-Can I have it? I\n"
+	.string "NEED it for my training regimen!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_3:
-	.string "Ah, an Iron! Can I have it? I can tell\n"
-	.string "this will be helpful!$"
+	.string "O-Oh! An Iron? C-Can I have it? I NEED\n"
+	.string "it for my training regimen!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_4:
-	.string "Ah, a Calcium! Can I have it? I can tell\n"
-	.string "this will be helpful!$"
+	.string "O-Oh! A Calcium? C-Can I have it? I NEED\n"
+	.string "it for my training regimen!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_5:
-	.string "Ah, a Zinc! Can I have it? I can tell this\n"
-	.string "will be helpful!$"
+	.string "O-Oh! A Zinc? C-Can I have it? I NEED it\n"
+	.string "for my training regimen!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_6:
-	.string "Ah, a Carbos! Can I have it? I can tell\n"
-	.string "this will be helpful!$"
+	.string "O-Oh! A Carbos? C-Can I have it? I NEED\n"
+	.string "it for my training regimen!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_7:
-	.string "Ah, a PP Up! Can I have it? I can tell\n"
-	.string "this will be helpful!$"
+	.string "O-Oh! A PP Up? C-Can I have it? I NEED\n"
+	.string "it for my training regimen!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_8:
-	.string "Ah, a PP Max! Can I have it? I can tell\n"
-	.string "this will be helpful!$"
+	.string "HOLY MOLY A PP MAX!? I NEED THAT RIGHT\n"
+	.string "NOW PLEASE GIVE ME IT!!!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Interact_FitnessGuy_Text_9:
-	.string "With all these vitamins, I feel stronger\n"
-	.string "than ever!$"
+	.string "With all these vitamins in my hand... I\n"
+	.string "will be unstoppable!$"
 
 Text_FitnessGuy_Inactive::
-	.string "Hello fighter! Welcome to the Den of\n"
-	.string "Fitness!\p"
-	.string "I am trying to step up my fitness game,\n"
-	.string "but vitamins are so expensive!\p"
-	.string "Would you mind helping me get vitamins?$"
+	.string "Welcome to the Fitness Den, trainer! I\n"
+	.string "am none other than the Fitness Freak!\p"
+	.string "I am trying to step up my game, but\n"
+	.string "vitamins are so expensive here...\p"
+	.string "Could you be a pal and sauce me some\n"
+	.string "vitamins? I'll make it worth your\l"
+	.string "while...$"
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_FitnessGuy_Decline::
+	.string "C-C'mon man, don't be like that!$"

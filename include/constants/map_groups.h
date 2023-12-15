@@ -73,6 +73,12 @@
 #define MAP_ISLANDGAME_CAMP_PERSI_LODGE_1_2F              (64 | (0 << 8))
 #define MAP_ISLANDGAME_CAMP_PERSI_LODGE_2_2F              (65 | (0 << 8))
 #define MAP_ISLANDGAME_TRAVELERS_TUNNEL_2                 (66 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_HOUSE2                    (67 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_INN_2F                    (68 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_INN_2F_ROOM1              (69 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_INN_2F_ROOM2              (70 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_INN_1F_ROOM1              (71 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_INN_1F_ROOM2              (72 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))

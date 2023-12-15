@@ -24,7 +24,7 @@ ISLANDGAME_MAPLEGROVE_HOUSE2_DollText::
 ISLANDGAME_MAPLEGROVE_HOUSE2_eDaterText::
 	.string "Oh Katie, my dear Katie! Why has fate\n"
 	.string "whisked you away from me?\p"
-	.string "It has been but only a month since you\n"
+	.string "Tis been but only a month since you\n"
 	.string "departed from Oranna, the origin of our\l"
 	.string "love...\p"
 	.string "...and yet, it feels you have been\n"

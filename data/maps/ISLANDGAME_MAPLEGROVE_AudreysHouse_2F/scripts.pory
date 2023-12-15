@@ -53,7 +53,7 @@ script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Computer {
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_ComputerInspect {
     format(
         "{COLOR RED}(It looks like Audrey left her computer on.) \p"
-        "{COLOR RED}(Seems like she was watching “Poké-Idol Summer Splash Highlights”.)"
+        "{COLOR RED}(Seems like she was watching “PokéLive Summer Splash Highlights”.)"
     )
 }
 

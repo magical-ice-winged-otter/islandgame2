@@ -14,40 +14,41 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
+	setobjectxyperm 4, 0, 0
 	setobjectxyperm 6, 0, 0
-	setobjectxyperm 8, 0, 0
-	setobjectxyperm 7, 0, 0
-	setobjectxyperm 3, 12, 14
-	addobject 3
-	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm 5, 0, 0
+	setobjectxyperm 1, 14, 14
+	addobject 1
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-	setobjectxyperm 6, 20, 25
-	setobjectxyperm 7, 18, 24
-	setobjectxyperm 8, 19, 24
-	setobjectxyperm 3, 20, 26
+	setobjectxyperm 4, 20, 25
+	setobjectxyperm 5, 18, 24
+	setobjectxyperm 6, 19, 24
+	setobjectxyperm 1, 20, 26
+	addobject 4
+	addobject 5
 	addobject 6
-	addobject 7
-	addobject 8
-	addobject 3
-	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_LEFT
-	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
-	turnobject 6, DIR_WEST
-	turnobject 3, DIR_WEST
+	addobject 1
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
+	turnobject 4, DIR_WEST
+	turnobject 1, DIR_WEST
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
+	setobjectxyperm 4, 0, 0
+	setobjectxyperm 5, 0, 0
 	setobjectxyperm 6, 0, 0
-	setobjectxyperm 7, 0, 0
-	setobjectxyperm 8, 0, 0
-	setobjectxyperm 3, 0, 0
+	setobjectxyperm 1, 0, 0
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
-	setobjectxyperm 7, 17, 24
-	addobject 7
+	setobjectxyperm 5, 19, 24
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
+	addobject 5
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
@@ -72,16 +73,11 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	return
 
 
-ISLANDGAME_ROSEVALE_Interact_LockedDoor::
-	msgbox ISLANDGAME_ROSEVALE_Interact_LockedDoor_Text_0, MSGBOX_SIGN
-	return
-
-
 ISLANDGAME_ROSEVALE_Interact_PuddleMon::
 	lock
 	faceplayer
 	playmoncry SPECIES_CHARMANDER, CRY_MODE_ENCOUNTER
-	waitmoncry
+	msgbox ISLANDGAME_ROSEVALE_Interact_PuddleMon_Text_0
 	release
 	return
 
@@ -106,15 +102,58 @@ ISLANDGAME_ROSEVALE_Interact_PuddleTrainer::
 	lock
 	msgbox ISLANDGAME_ROSEVALE_Interact_PuddleTrainer_Text_0
 	closemessage
-	applymovement 5, Movement_MonWatch
-	applymovement 4, Movement_TrainerJump
+	applymovement 3, Movement_MonWatch
+	applymovement 2, Movement_TrainerJump
 	waitmovement 0
 	msgbox ISLANDGAME_ROSEVALE_Interact_PuddleTrainer_Text_1
 	closemessage
-	applymovement 5, Movement_MonJump
-	playmoncry SPECIES_CHARMANDER, CRY_MODE_NORMAL
+	applymovement 3, Movement_MonJump
+	playmoncry SPECIES_CHARMANDER, CRY_MODE_WEAK
 	waitmoncry
 	waitmovement 0
+	release
+	return
+
+
+ISLANDGAME_ROSEVALE_Interact_NPC1::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_ROSEVALE_Interact_NPC1_Text_0
+	return
+
+
+ISLANDGAME_ROSEVALE_Interact_NPC2::
+	lock
+	msgbox ISLANDGAME_ROSEVALE_Interact_NPC2_Text_0
+	release
+	return
+
+
+ISLANDGAME_ROSEVALE_Interact_Talonflame::
+	lock
+	faceplayer
+	playmoncry SPECIES_TALONFLAME, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_ROSEVALE_Interact_Talonflame_Text_0
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	return
+
+
+ISLANDGAME_ROSEVALE_Interact_NPC3::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_ROSEVALE_Interact_NPC3_Text_0
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	return
+
+
+ISLANDGAME_ROSEVALE_Interact_NPC4::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_ROSEVALE_Interact_NPC4_Text_0
 	release
 	return
 
@@ -150,10 +189,10 @@ Movement_ArthurSister_RunUpToPath:
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest::
 	lock
-	addobject 3
-	setobjectxy 3, 18, 14
-	applymovement 3, Movement_ArthurSister_RunUpToPath
-	waitmovement 3
+	addobject 1
+	setobjectxy 1, 18, 14
+	applymovement 1, Movement_ArthurSister_RunUpToPath
+	waitmovement 1
 	msgbox Text_ArthurSister_PleaseHelp, MSGBOX_NPC
 	setvar VAR_ROSEVALE_STATE, 1
 	release
@@ -173,9 +212,9 @@ Movement_Arthur_WalkUpToExit:
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
 	lock
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0
-	addobject 6
-	setobjectxy 6, 25, 12
-	applymovement 6, Movement_Arthur_WalkUpToExit
+	addobject 4
+	setobjectxy 4, 25, 12
+	applymovement 4, Movement_Arthur_WalkUpToExit
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	waitmovement 0
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1, MSGBOX_NPC
@@ -229,19 +268,19 @@ Movement_Arthur_WalkAway:
 
 ArthurDefeated:
 	msgbox ArthurDefeated_Text_0, MSGBOX_NPC
-	addobject 7
-	setobjectxy 7, 25, 12
-	applymovement 7, Movement_ArthurDad_WalkUpToArthur
-	applymovement 6, Movement_Arthur_SeesDad
-	waitmovement 7
-	waitmovement 6
+	addobject 5
+	setobjectxy 5, 25, 12
+	applymovement 5, Movement_ArthurDad_WalkUpToArthur
+	applymovement 4, Movement_Arthur_SeesDad
+	waitmovement 5
+	waitmovement 4
 	msgbox ArthurDefeated_Text_1, MSGBOX_NPC
-	applymovement 7, Movement_ArthurDad_WalkAway
-	applymovement 6, Movement_Arthur_WalkAway
-	waitmovement 6
-	waitmovement 7
-	removeobject 6
-	removeobject 7
+	applymovement 5, Movement_ArthurDad_WalkAway
+	applymovement 4, Movement_Arthur_WalkAway
+	waitmovement 4
+	waitmovement 5
+	removeobject 4
+	removeobject 5
 	setvar VAR_ROSEVALE_STATE, 4
 	release
 	return
@@ -262,8 +301,8 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
 	.string "{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}Please, stay the night at\n"
 	.string "our inn. It's the least we can do.$"
 
-ISLANDGAME_ROSEVALE_Interact_LockedDoor_Text_0:
-	.string "The door is locked$"
+ISLANDGAME_ROSEVALE_Interact_PuddleMon_Text_0:
+	.string "Char... {COLOR BLUE}(save me from this purgatory)$"
 
 ISLANDGAME_ROSEVALE_Interact_PuddleTrainer_Text_0:
 	.string "It's ok! The water isn't going to hurt\n"
@@ -274,19 +313,45 @@ ISLANDGAME_ROSEVALE_Interact_PuddleTrainer_Text_1:
 	.string "See?\n"
 	.string "It's shallow!$"
 
+ISLANDGAME_ROSEVALE_Interact_NPC1_Text_0:
+	.string "The air here is nice and fresh thanks to\n"
+	.string "our Isle Guardian, Articuno.\p"
+	.string "I'm glad I moved here from Tidalcove.\n"
+	.string "The city life just isn't for me.$"
+
+ISLANDGAME_ROSEVALE_Interact_NPC2_Text_0:
+	.string "Brrr... The winds are always so chilly\n"
+	.string "here.\p"
+	.string "Talonflame! Warm up my hands, will ya? I\n"
+	.string "hate being on watch duty...$"
+
+ISLANDGAME_ROSEVALE_Interact_Talonflame_Text_0:
+	.string "Talooon!$"
+
+ISLANDGAME_ROSEVALE_Interact_NPC3_Text_0:
+	.string "La dee dum... I love the sweet fragrance\n"
+	.string "of flowers!$"
+
+ISLANDGAME_ROSEVALE_Interact_NPC4_Text_0:
+	.string "My gramma said I needed to “touch\n"
+	.string "grass” more, so here I am.$"
+
 ISLANDGAME_ROSEVALE_Interact_EntranceSign_Text_0:
-	.string "Welcome to Rosevale!$"
+	.string "ROSEVALE\n"
+	.string "The village under the alps$"
 
 ISLANDGAME_ROSEVALE_Interact_InnSign_Text_0:
-	.string "ROSEVALE INN$"
+	.string "PEACHY SWEET INN\n"
+	.string "We're positively peachy keen!\n"
+	.string "$"
 
 ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0:
-	.string "I'm scawwed... Is everyfing going to be\n"
-	.string "alwight?$"
+	.string "My bwother went that-a-way. I think he\n"
+	.string "went into the mountain!\p"
+	.string "$"
 
 ISLANDGAME_ROSEVALE_Interact_ArthurDad_Text_0:
-	.string "Apologies, we're doing some renovations\n"
-	.string "right now. Come back later.$"
+	.string "Where in the world could that boy be...?$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}{PLAYER}!$"
@@ -347,10 +412,14 @@ ArthurDefeated_Text_1:
 	.string "to you.$"
 
 Text_ArthurSister_PleaseHelp::
-	.string "Hewwo! I need your help!\p"
-	.string "You're a twainer, right? Someone stole\n"
+	.string "Hewwo, I need your help!\p"
+	.string "You're a trainer, right? Someone stole\n"
 	.string "my Marill!\p"
-	.string "My brother ran after the thief, but he\n"
-	.string "hasn't returned in a while!\p"
-	.string "Can you help me find him pwease? They\n"
-	.string "went that-a-way!$"
+	.string "My bwother ran after the thief, but he\n"
+	.string "still hasn't come back!\p"
+	.string "He told me not to worry or tell Mom or\n"
+	.string "Dad... but I'm getting worried!\p"
+	.string "I don't wanna tell Mom and Dad. They'll\n"
+	.string "be weally mad at him if they find out...\p"
+	.string "Pwease help me find him and get my\n"
+	.string "Marill back!$"

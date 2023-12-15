@@ -353,18 +353,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MintyMeadows4),
     },
 
-    // [TRAINER_MINTY_MEADOWS_5] =
-    // {
-    //     .trainerClass = TRAINER_CLASS_LASS,
-    //     .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-    //     .trainerPic = TRAINER_PIC_LASS,
-    //     .trainerName = _("Crystal"),
-    //     .items = {},
-    //     .doubleBattle = FALSE,
-    //     .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-    //     .party = TRAINER_PARTY(sParty_MintyMeadows5),
-    // },
-
     [TRAINER_MINTY_MEADOWS_6] =
     {
         .trainerClass = TRAINER_CLASS_BUG_MANIAC,
@@ -568,20 +556,20 @@ const struct Trainer gTrainers[] = {
 
 
 
-    //NORTHERN ORANNA PATH ROSTERS
-    [TRAINER_NORANNA_ENTRANCE_NPC] =
+    // Northern Oranna Path
+    [TRAINER_NORANNA_1] =
     {
-        .trainerClass = TRAINER_CLASS_CAMPER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerClass = TRAINER_CLASS_PKMN_RANGER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_POKEMON_RANGER_M,
         .trainerName = _("Mark"),
-        .items = {},
+        .items = {ITEM_POTION},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_NOrannaEntrance),
+        .party = TRAINER_PARTY(sParty_NOrannaPathTrainer1),
     },
 
-    [TRAINER_NORANNA_FENCE_PARTNER_NPCS] =
+    [TRAINER_NORANNA_2] =
     {
         .trainerClass = TRAINER_CLASS_SR_AND_JR,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -590,67 +578,67 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_NOrannaFence),
+        .party = TRAINER_PARTY(sParty_NOrannaPathTrainer2),
     },
 
-    [TRAINER_NORANNA_UPPER_NPC_EAST] =
+    [TRAINER_NORANNA_3] =
     {
-        .trainerClass = TRAINER_CLASS_KINDLER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_KINDLER,
+        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
         .trainerName = _("Luke"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_NORannaUpperEast),
+        .party = TRAINER_PARTY(sParty_NOrannaPathTrainer3),
     },
 
-    [TRAINER_NORANNA_UPPER_NPC_MIDDLE] =
+    [TRAINER_NORANNA_4] =
     {
-        .trainerClass = TRAINER_CLASS_HIKER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_HIKER,
-        .trainerName = _("Matthew"),
+        .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BATTLE_GIRL,
+        .trainerName = _("Joyce"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_NOrannaUpperMiddle),
+        .party = TRAINER_PARTY(sParty_NOrannaPathTrainer4),
     },
 
-    [TRAINER_NORANNA_UPPER_NPC_WEST] =
+    [TRAINER_NORANNA_5] =
     {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("John"),
+        .trainerClass = TRAINER_CLASS_TRIATHLETE,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
+        .trainerName = _("Amelia"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_NOrannaUpperWest),
+        .party = TRAINER_PARTY(sParty_NOrannaPathTrainer5),
     },
 
-    [TRAINER_NORANNA_LOWER_NPC_EAST] =
+    [TRAINER_NORANNA_6] =
     {
-        .trainerClass = TRAINER_CLASS_CAMPER,
+        .trainerClass = TRAINER_CLASS_TRIATHLETE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
         .trainerName = _("Jesus"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_NOrannaLowerEast),
+        .party = TRAINER_PARTY(sParty_NOrannaPathTrainer6),
     },
 
-    [TRAINER_NORANNA_LOWER_NPC_MIDDLE] =
+    [TRAINER_NORANNA_7] =
     {
-        .trainerClass = TRAINER_CLASS_PICNICKER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_PICNICKER,
-        .trainerName = _("Dusty"),
+        .trainerClass = TRAINER_CLASS_PSYCHIC,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = _("Dustin"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_NOrannaLowerMiddle),
+        .party = TRAINER_PARTY(sParty_NOrannaPathTrainer7),
     },
 
     [TRAINER_NORANNA_LOWER_NPC_WEST] =
@@ -766,6 +754,19 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_COrannaPathTrainer8),
     },
+    
+    // Trainer Central Oranna 2
+    [TRAINER_MINTY_MEADOWS_5] =
+    {
+        .trainerClass = TRAINER_CLASS_PKMN_RANGER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_POKEMON_RANGER_F,
+        .trainerName = _("Crystal"),
+        .items = {ITEM_POTION},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_MintyMeadows5),
+    },
 
 
 
@@ -774,9 +775,7 @@ const struct Trainer gTrainers[] = {
 
 
 
-
-
-
+    // Tidalcove Gym
     [TRAINER_LEADER_RUKA] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -786,8 +785,12 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_ACE_POKEMON,
-        .party = TRAINER_PARTY(sParty_Lola2),
+        .party = TRAINER_PARTY(sParty_TidalcoveGymRuka),
     },
+
+
+
+
 
     [TRAINER_SPECIAL_ARTHUR_1] =
     {

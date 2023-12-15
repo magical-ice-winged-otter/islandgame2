@@ -722,8 +722,16 @@ Tidalcove_ItemHpUp::
 	finditem ITEM_HP_UP
 	end
 
-Tidalcove_ItemFullHeal::
-	finditem ITEM_FULL_HEAL
+Tidalcove_ItemBlackGlasses::
+	finditem ITEM_BLACK_GLASSES
+	end
+
+NOR_ItemTwistedSpoon::
+	finditem ITEM_TWISTED_SPOON
+	end
+
+NOR_ItemToxic::
+	finditem ITEM_TM_TOXIC
 	end
 
 AuroraPath_ItemNeverMeltIce::

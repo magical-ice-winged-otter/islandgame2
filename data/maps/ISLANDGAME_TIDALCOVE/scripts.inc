@@ -40,11 +40,6 @@ ISLANDGAME_TIDALCOVE_Interact_BikeShopSign::
 	return
 
 
-ISLANDGAME_TIDALCOVE_Interact_RarePkmnSign::
-	msgbox ISLANDGAME_TIDALCOVE_Interact_RarePkmnSign_Text_0, MSGBOX_SIGN
-	return
-
-
 ISLANDGAME_TIDALCOVE_Interact_GymSign::
 	msgbox ISLANDGAME_TIDALCOVE_Interact_GymSign_Text_0, MSGBOX_SIGN
 	return
@@ -99,19 +94,30 @@ ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Floatzel::
 	lock
 	faceplayer
 	playmoncry SPECIES_FLOATZEL, CRY_MODE_NORMAL
-	waitmoncry
+	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Floatzel_Text_0, MSGBOX_NPC
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	return
 
 
-ISLANDGAME_TIDALCOVE_Interact_BeachParent::
+ISLANDGAME_TIDALCOVE_Interact_BeachDude::
 	lock
 	faceplayer
-	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachParent_Text_0, MSGBOX_NPC
+	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachDude_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_TIDALCOVE_Interact_BeachDude_2
+	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachDude_Text_2
+ISLANDGAME_TIDALCOVE_Interact_BeachDude_1:
+	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	return
+
+ISLANDGAME_TIDALCOVE_Interact_BeachDude_2:
+	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachDude_Text_1
+	playmoncry SPECIES_WAILORD, CRY_MODE_NORMAL
+	waitmoncry
+	goto ISLANDGAME_TIDALCOVE_Interact_BeachDude_1
 
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer::
@@ -200,38 +206,44 @@ ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO::
 	return
 
 
+ISLANDGAME_TIDALCOVE_jujalos::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_TIDALCOVE_jujalos_Text_0, MSGBOX_NPC
+	return
+
+
 ISLANDGAME_TIDALCOVE_Interact_EntranceSign_Text_0:
-	.string "Welcome to Tidalcove!\p"
-	.string "Check out the beach while you're here!$"
+	.string "TIDALCOVE\n"
+	.string "Crack open a cold one on our beach!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BehindGymSign_Text_0:
-	.string "LOSER LANDING$"
+	.string "LOSER LANDING\n"
+	.string "u r noob$"
 
 ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign_Text_0:
-	.string "BIKE PATH - TO LUMINE ISLAND$"
+	.string "SEASIDE BIKE PATH\n"
+	.string "Your express way to Lumine!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BikeShopSign_Text_0:
-	.string "TIDALCOVE BIKE SHOP$"
-
-ISLANDGAME_TIDALCOVE_Interact_RarePkmnSign_Text_0:
-	.string "THE POKEMON COLLECTOR$"
+	.string "RANDIEZ HOT WHEELZ\n"
+	.string "“ZOOM ZOOM MOTHER TRUCKERS”$"
 
 ISLANDGAME_TIDALCOVE_Interact_GymSign_Text_0:
-	.string "TIDALCOVE GYM\p"
-	.string "Leader: Ruka\n"
-	.string "Specialty: Hail$"
+	.string "TIDALCOVE GYM\n"
+	.string "Home of Tidalcove's Precious Pearl$"
 
 ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking_Text_0:
-	.string "I'm sorry, but we cannot allow anyone\n"
-	.string "else inside for the day.$"
+	.string "I am sorry, but I cannot let anyone else\n"
+	.string "inside the gym for the day.$"
 
 ISLANDGAME_TIDALCOVE_Interact_PrimFan1_Text_0:
-	.string "Let us in, old geezer! As the owners of\n"
-	.string "Prim's Fan Club, we DEMAND entry!$"
+	.string "Let us in, old geezer! As Prim's two\n"
+	.string "biggest fans, we DEMAND entry!$"
 
 ISLANDGAME_TIDALCOVE_Interact_PrimFan2_Text_0:
-	.string "Yeah! We gotta be cheering her on the\n"
-	.string "front lines!$"
+	.string "We need to be cheering our queen on the\n"
+	.string "front lines! Move aside, loser!$"
 
 ISLANDGAME_TIDALCOVE_Interact_Bike_Text_0:
 	.string "It's a bike - brand new, polished to a\n"
@@ -241,15 +253,25 @@ ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0:
 	.string "Yayyy, sand!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Text_0:
-	.string "We don't really have a proper lifeguard\n"
-	.string "tower, so I watch from up here instead.\p"
+	.string "We don't have a lifeguard tower yet, so\n"
+	.string "I watch from up here instead.\p"
 	.string "With the amount of tourists we get,\n"
-	.string "ocean safety is our priority!\p"
+	.string "beach safety is our priority!\p"
 	.string "If someone is in trouble, me and my\n"
-	.string "Floatzel swim out there to save them!$"
+	.string "Floatzel will swim out to save them!$"
 
-ISLANDGAME_TIDALCOVE_Interact_BeachParent_Text_0:
-	.string "Beach days are the best.$"
+ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Floatzel_Text_0:
+	.string "{COLOR RED}(Floatzel is wearing a lifeguard shirt.)$"
+
+ISLANDGAME_TIDALCOVE_Interact_BeachDude_Text_0:
+	.string "If I lose it all, slip and fall, will you\n"
+	.string "laugh at me?$"
+
+ISLANDGAME_TIDALCOVE_Interact_BeachDude_Text_1:
+	.string "I will remember that.$"
+
+ISLANDGAME_TIDALCOVE_Interact_BeachDude_Text_2:
+	.string "If I lose it all, lose it all, lose it all...$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_0:
 	.string "I usually pick my berries right after I\n"
@@ -275,36 +297,42 @@ ISLANDGAME_TIDALCOVE_Interact_BeachGazer_Text_0:
 	.string "just over the horizon?$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad_Text_0:
-	.string "I'm getting ready for the Festival\n"
-	.string "Trialthalon!\p"
-	.string "I can swim, I can run...\p"
-	.string "If only I could afford a bike...$"
+	.string "I'm training for the festival\n"
+	.string "trialthalon!\p"
+	.string "I got swimming down, just about got\n"
+	.string "running down too, all that's left is...\p"
+	.string "Cycling! But I wasn't able to snag a\n"
+	.string "bike at the bike shop.\p"
+	.string "I hope they get some in stock soon. I'm\n"
+	.string "going to fall behind otherwise!$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance_Text_0:
-	.string "Tidalcove is the best.\p"
-	.string "No bugs, no angry Pokemon...\p"
-	.string "I don't think I'm traveling back through\n"
-	.string "Central Oranna anytime soon.$"
+	.string "Ruka is the face of Tidalcove. Without\n"
+	.string "her, we'd still be a fishing village!$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop_Text_0:
-	.string "Man, cycling looks so fun!\p"
-	.string "It's a shame the bikes are so\n"
-	.string "expensive...$"
+	.string "Man, cycling looks fun. It's a shame the\n"
+	.string "store ran out of rentals for the week.$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle_Text_0:
-	.string "The guy who lives in this house is a nut\n"
-	.string "for rare Pokemon from Oranna...\p"
-	.string "I heard he also collects stones that\n"
-	.string "can make your Pokemon evolve!$"
+	.string "Would be weird if I asked Ruka to sign\n"
+	.string "my body pillow of her?\p"
+	.string "Its value would skyrocket on the\n"
+	.string "second-hand market!$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top_Text_0:
-	.string "I've lived in Tidalcove for a long time...\p"
-	.string "Only two things are consistent:\p"
-	.string "The popularity of the beach, and the\n"
-	.string "popularity of Ruka!$"
+	.string "We get so many visitors here in\n"
+	.string "Tidalcove.\p"
+	.string "Whether they're here for Ruka, the gym\n"
+	.string "challenge, or our beautiful beaches.\p"
+	.string "I'm all for it. I'm glad to see so many\n"
+	.string "people enthusiastic about our city!$"
 
 ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO_Text_0:
 	.string "Hello player! Thank you for playing the\n"
-	.string "demo of Pokémon: Isles of Mariyama!\p"
-	.string "We hope you enjoyed playing through.\n"
-	.string "Stay tuned for future updates! :D$"
+	.string "demo of Pokémon: Wings of Chaos!\p"
+	.string "We hope you enjoyed it. Stay tuned for\n"
+	.string "future updates! :D$"
+
+ISLANDGAME_TIDALCOVE_jujalos_Text_0:
+	.string "jujalos$"

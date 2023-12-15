@@ -72,8 +72,8 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_DrawerInspect::
 ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_ComputerInspect::
 	.string "{COLOR RED}(It looks like Audrey left her computer\n"
 	.string "on.)\p"
-	.string "{COLOR RED}(Seems like she was watching\n"
-	.string "“Poké-Idol Summer Splash Highlights”.)$"
+	.string "{COLOR RED}(Seems like she was watching “PokéLive\n"
+	.string "Summer Splash Highlights”.)$"
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_BookInspect::
 	.string "{COLOR RED}(It's the latest issue of “Attack on\n"

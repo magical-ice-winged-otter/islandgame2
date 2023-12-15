@@ -9,8 +9,8 @@
   "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
-  "show_map_name": true,
+  "allow_running": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
@@ -19,7 +19,7 @@
       "x": 7,
       "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -30,14 +30,14 @@
   ],
   "warp_events": [
     {
-      "x": 6,
+      "x": 5,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_TIDALCOVE",
       "dest_warp_id": "5"
     },
     {
-      "x": 5,
+      "x": 4,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_TIDALCOVE",

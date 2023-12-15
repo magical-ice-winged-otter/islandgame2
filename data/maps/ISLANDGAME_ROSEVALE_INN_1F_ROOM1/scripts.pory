@@ -1,0 +1,12 @@
+mapscripts ISLANDGAME_ROSEVALE_INN_1F_ROOM1_MapScripts {}
+
+
+script ISLANDGAME_ROSEVALE_INN_1F_ROOM1_NPC {
+    lock
+    faceplayer
+    msgbox(format(
+        "This place is a complete dump. Where is the room service? The free wifi?\p"
+        "Absolutely unacceptable. These peasants will be hearing from my lawyer!"
+    ))
+    release
+}

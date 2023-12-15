@@ -16,15 +16,54 @@ script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_Nurse {
 }
 
 script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_NPC1 {
-    msgbox(format(
-        "I spend a lot of time in the Pokemon Center.\p"
-        "I think the Nurse knows me by name!"
-    ), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format("Yo, tell it to me straight. You think I got a chance with the nurse?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(format("Awesome, that's step one complete! Now I just need the courage to confess...\p...\p...\p...\pI can't do it. I'm too scared. What if she says no?\pOr even worse, what if she laughs? Or says “Ew, Gross”?\p...I'll just stay here in the meantime. Thank you for your input though."))
+    }
+    else {
+        msgbox(format("Oh... I see. Thank you for being honest. I almost made a fool out of myself.\pY-Yeah, cause if you said yes, I would've definitely walked right up!"))
+    }
+    release
 }
 
 script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_NPC2 {
+    lock
     msgbox(format(
-        "This Pokemon center gets a lot more traffic than other ones.\p"
-        "We have our gym leader, Ruka, to thank for that."
-    ), MSGBOX_NPC)
+        "Hohoho... The magazines here are great! Ruka is on the cover of all of them."
+    ))
+    release
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Books {
+    lock
+    msgbox(format("{COLOR RED}(Wow. Ruka even made a cameo in one of these comic books.)"), MSGBOX_SIGN)
+    release
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_BallBoy {
+    lock
+    faceplayer
+    if(!flag(FLAG_TIDALCOVE_LUXBALL_GIFT)) {
+        msgbox(format(
+            "My papa works at Strix Industries, the biggest company in Mariyama!\p"
+            "They make lots of cool stuff. One of the things they make are Pokéballs!\p"
+            "They gave a bunch of them to my papa, and he gave some to me!\p"
+            "You can have one of them. My papa says sharing is caring."
+            )
+        )
+        checkitemspace(ITEM_LUXURY_BALL)
+        if(!var(VAR_RESULT)) {
+            msgbox(format("Aw. Your bag is full. I can't be caring."))
+        }
+        else {
+            giveitem(ITEM_LUXURY_BALL,1)
+            setflag(FLAG_TIDALCOVE_LUXBALL_GIFT)
+        }
+    }
+    else {
+        msgbox(format("When I grow up, I wanna work at Strix Industries too."))
+        closemessage
+    }
 }

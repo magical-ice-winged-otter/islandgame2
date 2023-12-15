@@ -1,0 +1,13 @@
+mapscripts ISLANDGAME_ROSEVALE_HOUSE2_MapScripts {}
+
+
+script ISLANDGAME_ROSEVALE_HOUSE2_NPC {
+    lock
+    faceplayer
+    msgbox(format(
+        "The Silverwing Festival is Mariyama's most anticipated celebration.\p"
+        "Dancing, singing, good food, Pokémon battles and performances...\p"
+        "I'm happy to be attending my 80th festival this year!"
+    ))
+    release
+}

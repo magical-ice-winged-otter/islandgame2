@@ -106,20 +106,20 @@ script ISLANDGAME_FRESA_FARMS_Chansey_Interact {
     lock
     faceplayer
     playmoncry(SPECIES_CHANSEY, CRY_MODE_NORMAL)
-    msgbox(format("Chansey. {COLOR BLUE}(Most humans can't understand us, but some are born with a special ability to comprehend what Pokémon are saying.)\pChansey. (You're one of them, aren't you?)"))
+    msgbox(format("Chansey. {COLOR BLUE}(Most humans can't understand us, but some are born with a special ability to comprehend what Pokémon are saying.)\p""Chansey. {COLOR BLUE}(You're one of them, aren't you?)"))
     release
 }
 
 script ISLANDGAME_FRESA_FARMS_Mareep1 {
     lock
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
-    msgbox(format("Reeep. {COLOR BLUE}(Heh. That dumb dog's snoozing on his job again!)\pReep reep. {COLOR BLUE}(Time to sneak out and have some fun with Chansey...)\pReep? {COLOR BLUE}(Huh?)"))
+    msgbox(format("Reeep. {COLOR BLUE}(Heh. That dumb dog's snoozing on his job again!)\p""Reep reep. {COLOR BLUE}(Time to sneak out and have some fun with Chansey...)\p""Reep? {COLOR BLUE}(Huh?)"))
     faceplayer
     playse(SE_PIN)
     applymovement(2, Common_Movement_ExclamationMark)
     waitmovement(0)
     applymovement(2, Common_Movement_Delay32)
-    msgbox(format("Reep... {COLOR BLUE}(Oh, it's just a random kid. Good thing they can't understand me.)\pReep! {COLOR BLUE}(Go away! I've got big plans for tonight!)\pReep. {COLOR BLUE}(Oh wait... They don't understand me.)"))
+    msgbox(format("Reep... {COLOR BLUE}(Oh, it's just a random kid. Good thing they can't understand me.)\p""Reep! {COLOR BLUE}(Go away! I've got big plans for tonight!)\p""Reep. {COLOR BLUE}(Oh wait... They don't understand me.)"))
     applymovement(2, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release
@@ -129,7 +129,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep2 {
     lock
     faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
-    msgbox(format("Reep. {COLOR BLUE}(I'm just saying man, if it was me against that Mightyena, hoo boy.)\pReep! {COLOR BLUE}(I would'a messed that Mightyena up real good, ya feel me?)\pReep? {COLOR BLUE}(Huh? Why are you looking me like that? I'm fo' realzies!)"))
+    msgbox(format("Reep. {COLOR BLUE}(I'm just saying man, if it was me against that Mightyena, hoo boy.)\p""Reep! {COLOR BLUE}(I would'a messed that Mightyena up real good, ya feel me?)\p""Reep? {COLOR BLUE}(Huh? Why are you looking me like that? I'm fo' realzies!)"))
     release
 }
 
@@ -138,7 +138,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep3 {
     faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
     if(!flag(FLAG_FRESA_FARMS_MAREEP_GIFT)) {
-        msgbox(format("Reep! {COLOR BLUE}(Hey there! Thanks for saving my butt from that scary Mightyena.)\pReep. {COLOR BLUE}(Please take this as a gift.)"))
+        msgbox(format("Reep! {COLOR BLUE}(Hey there! Thanks for saving my butt from that scary Mightyena.)\p""Reep. {COLOR BLUE}(Please take this as a gift.)"))
         checkitemspace(ITEM_ELECTRIC_GEM)
         if(!var(VAR_RESULT)) {
             msgbox(format("Reep. {COLOR BLUE}(Oh, you don't have enough space for this.)"))
@@ -159,7 +159,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep4 {
     lock
     faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
-    msgbox(format("Reep. {COLOR BLUE}(My little brother always strays away from the herd to explore.)\pReep. {COLOR BLUE}(Hopefully he's finally learned his lesson.)"))
+    msgbox(format("Reep. {COLOR BLUE}(My little brother always strays away from the herd to explore.)\p""Reep. {COLOR BLUE}(Hopefully he's finally learned his lesson.)"))
     release
 }
 

@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_AURORA_PATH",
   "name": "ISLANDGAME_AURORA_PATH",
   "layout": "LAYOUT_ISLANDGAME_AURORA_PATH",
-  "music": "MUS_MT_PYRE_EXTERIOR",
+  "music": "MUS_ROUTE101",
   "region_map_section": "MAPSEC_AURORA_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ISLANDGAME_ROSEVALE",
-      "offset": 26,
+      "offset": 30,
       "direction": "right"
     }
   ],
@@ -58,6 +58,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "AuroraPath_ItemNeverMeltIce",
       "flag": "FLAG_ITEM_AP_NEVER_MELT_ICE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 36,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 1,
+      "y": 46,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 25,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -90,8 +129,8 @@
     },
     {
       "type": "sign",
-      "x": 21,
-      "y": 25,
+      "x": 15,
+      "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_AURORA_PATH_Interact_MtSign"

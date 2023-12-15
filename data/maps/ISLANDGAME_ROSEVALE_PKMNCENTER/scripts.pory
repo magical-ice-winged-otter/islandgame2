@@ -14,3 +14,34 @@ script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Nurse {
     waitbuttonpress
     release
 }
+
+script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I've lived here my entire life, and I've still never seen Articuno in person.\p"
+        "All I have this is picture of it. Wanna see?"
+        )
+    )
+    showmonpic(SPECIES_ARTICUNO, 10, 3)
+    hidemonpic
+    msgbox(format("It mostly roosts at the top of Mt. Aurora, so unless you want to climb thousands of feet in a blizzard, the best you'll have are pictures."))
+    release
+}
+
+
+script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC2 {
+    lock
+    faceplayer
+    msgbox(format("Howdy there, partner! Oop, I mean, greetings, traveler!\pSorry, I just joined the Silverwing Order yesterday. I'm still learning."))
+    release
+}
+
+script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee {
+    lock
+    faceplayer
+    playmoncry(SPECIES_COTTONEE,CRY_MODE_NORMAL)
+    msgbox(format("Howdy there, partner!\pOop, I mean, Neeeee! {COLOR BLUE}(Howdy there, partner!)"))
+    release
+}
+

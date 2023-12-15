@@ -68,6 +68,13 @@ ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad_2:
 	return
 
 
+ISLANDGAME_ROSEVALE_INN_Interact_LockedDoor::
+	lock
+	msgbox ISLANDGAME_ROSEVALE_INN_Interact_LockedDoor_Text_0
+	release
+	return
+
+
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom_Text_0:
 	.string "{COLOR GREEN}Arthur's Mom: If you ever need\n"
 	.string "anything, just let us know!$"
@@ -96,3 +103,7 @@ ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad_Text_1:
 	.string "{COLOR GREEN}Arthur's Dad: Arthur has been working\n"
 	.string "really hard lately.\p"
 	.string "You're a great influence, {PLAYER}.$"
+
+ISLANDGAME_ROSEVALE_INN_Interact_LockedDoor_Text_0:
+	.string "Oi, the sign says “DO NOT DISTURB”.\n"
+	.string "What part of that do you not get!?$"

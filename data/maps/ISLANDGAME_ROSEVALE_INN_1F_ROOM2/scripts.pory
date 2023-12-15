@@ -1,0 +1,20 @@
+mapscripts ISLANDGAME_ROSEVALE_INN_1F_ROOM2_MapScripts {}
+
+script ISLANDGAME_ROSEVALE_INN_1F_ROOM1_RED {
+    lock
+    faceplayer
+    msgbox(format(
+        "..."
+    ))
+    release
+}
+
+script ISLANDGAME_ROSEVALE_INN_1F_ROOM1_Pikachu {
+    lock
+    faceplayer
+    playmoncry(SPECIES_PIKACHU, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Pika!"
+    ))
+    release
+}

@@ -16,3 +16,52 @@ ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Nurse::
 	release
 	return
 
+
+ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_0
+	showmonpic SPECIES_ARTICUNO, 10, 3
+	hidemonpic
+	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_1
+	release
+	return
+
+
+ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC2::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC2_Text_0
+	release
+	return
+
+
+ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee_Text_0
+	release
+	return
+
+
+ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_0:
+	.string "I've lived here my entire life, and I've\n"
+	.string "still never seen Articuno in person.\p"
+	.string "All I have this is picture of it. Wanna\n"
+	.string "see?$"
+
+ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_1:
+	.string "It mostly roosts at the top of Mt.\n"
+	.string "Aurora, so unless you want to climb\l"
+	.string "thousands of feet in a blizzard, the\l"
+	.string "best you'll have are pictures.$"
+
+ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC2_Text_0:
+	.string "Howdy there, partner! Oop, I mean,\n"
+	.string "greetings, traveler!\p"
+	.string "Sorry, I just joined the Silverwing\n"
+	.string "Order yesterday. I'm still learning.$"
+
+ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee_Text_0:
+	.string "Howdy there, partner! Oop, I mean,\n"
+	.string "Neeeee! {COLOR BLUE}(Howdy there, partner!)$"

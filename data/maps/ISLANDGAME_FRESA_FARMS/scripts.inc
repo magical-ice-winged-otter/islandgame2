@@ -190,7 +190,7 @@ ISLANDGAME_FRESA_FARMS_Chansey_Interact_Text_0:
 	.string "us, but some are born with a special\l"
 	.string "ability to comprehend what Pokémon are\l"
 	.string "saying.)\p"
-	.string "Chansey. (You're one of them, aren't\n"
+	.string "Chansey. {COLOR BLUE}(You're one of them, aren't\n"
 	.string "you?)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep1_Text_0:

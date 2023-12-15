@@ -72,7 +72,6 @@
 #define TRAINER_MINTY_MEADOWS_1              24
 #define TRAINER_MINTY_MEADOWS_3              26
 #define TRAINER_MINTY_MEADOWS_4              27
-#define TRAINER_MINTY_MEADOWS_5              28
 #define TRAINER_MINTY_MEADOWS_6              29
 #define TRAINER_MINTY_MEADOWS_7              30
 #define TRAINER_MINTY_MEADOWS_8              31
@@ -108,13 +107,13 @@
 
 
 //NORTH ORANNA PATH
-#define TRAINER_NORANNA_ENTRANCE_NPC         43
-#define TRAINER_NORANNA_FENCE_PARTNER_NPCS   44
-#define TRAINER_NORANNA_UPPER_NPC_EAST       45
-#define TRAINER_NORANNA_UPPER_NPC_MIDDLE     46
-#define TRAINER_NORANNA_UPPER_NPC_WEST       47
-#define TRAINER_NORANNA_LOWER_NPC_EAST       48
-#define TRAINER_NORANNA_LOWER_NPC_MIDDLE     49
+#define TRAINER_NORANNA_1                    43
+#define TRAINER_NORANNA_2                    44
+#define TRAINER_NORANNA_3                    45
+#define TRAINER_NORANNA_4                    46
+#define TRAINER_NORANNA_5                    47
+#define TRAINER_NORANNA_6                    48
+#define TRAINER_NORANNA_7                    49
 #define TRAINER_NORANNA_LOWER_NPC_WEST       50
 #define TRAINER_GABBY_AND_TY_1               TRAINER_NORANNA_LOWER_NPC_WEST
 
@@ -139,16 +138,19 @@
 #define TRAINER_LOLA_1                       TRAINER_CORANNA_2_MANIAC
 #define TRAINER_AUSTINA                      TRAINER_CORANNA_2_BIKER
 #define TRAINER_GWEN                         TRAINER_CORANNA_2_FISHERMAN
+#define TRAINER_MINTY_MEADOWS_5              28 // Central Oranna Path Ranger Crystal
 
 
 
 
 
-// Important Trainers
+// Tidalcove Gym
 #define TRAINER_LEADER_RUKA                  60
+#define TRAINER_LOLA_2                       TRAINER_LEADER_RUKA
+
+
 #define TRAINER_SPECIAL_ARTHUR_1             61
 #define TRAINER_SPECIAL_THIEF_EDEA           62
-#define TRAINER_LOLA_2                       TRAINER_LEADER_RUKA
 #define TRAINER_LOLA_3                       TRAINER_SPECIAL_ARTHUR_1
 #define TRAINER_LOLA_4                       TRAINER_SPECIAL_THIEF_EDEA
 

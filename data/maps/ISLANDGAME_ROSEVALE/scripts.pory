@@ -8,12 +8,12 @@ const STATE_FINAL = 4
 const POS_HIDDEN_X = 0
 const POS_HIDDEN_Y = 0
 
-const LOCALID_ARTHUR_SISTER = 3
-const LOCALID_ARTHUR_DAD = 7
-const LOCALID_ARTHUR_MOM = 8
-const LOCALID_ARTHUR = 6
-const LOCALID_PUDDLETRAINER = 4
-const LOCALID_PUDDLEMON = 5
+const LOCALID_ARTHUR_SISTER = 1
+const LOCALID_ARTHUR_DAD = 5
+const LOCALID_ARTHUR_MOM = 6
+const LOCALID_ARTHUR = 4
+const LOCALID_PUDDLETRAINER = 2
+const LOCALID_PUDDLEMON = 3
 
 mapscripts ISLANDGAME_ROSEVALE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -23,7 +23,7 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
                 setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
-                setobjectxyperm(LOCALID_ARTHUR_SISTER, 12, 14)
+                setobjectxyperm(LOCALID_ARTHUR_SISTER, 14, 14)
                 addobject(LOCALID_ARTHUR_SISTER)
                 setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
             case STATE_DEFEATED_BANDIT:
@@ -52,7 +52,8 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
         }
 
         if (var(VAR_ROSEVALE_STATE) != STATE_ARTHUR_FIGHT && var(VAR_ROSEVALE_STATE) != STATE_FINAL) {
-                setobjectxyperm(LOCALID_ARTHUR_DAD, 17, 24)
+                setobjectxyperm(LOCALID_ARTHUR_DAD, 19, 24)
+                setobjectmovementtype(LOCALID_ARTHUR_DAD, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
                 addobject(LOCALID_ARTHUR_DAD)
         }
     }
@@ -75,15 +76,12 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
     ]
 }
 
-script ISLANDGAME_ROSEVALE_Interact_LockedDoor {
-    msgbox(format("The door is locked"), MSGBOX_SIGN)
-}
 
 script ISLANDGAME_ROSEVALE_Interact_PuddleMon {
     lock
     faceplayer
     playmoncry(SPECIES_CHARMANDER, CRY_MODE_ENCOUNTER)
-    waitmoncry
+    msgbox(format("Char... {COLOR BLUE}(save me from this purgatory)"))
     release
 }
 
@@ -113,35 +111,89 @@ script ISLANDGAME_ROSEVALE_Interact_PuddleTrainer {
     msgbox(format("See?\nIt's shallow!"))
     closemessage
     applymovement(LOCALID_PUDDLEMON, Movement_MonJump)
-    playmoncry(SPECIES_CHARMANDER, CRY_MODE_NORMAL)
+    playmoncry(SPECIES_CHARMANDER, CRY_MODE_WEAK)
     waitmoncry
     waitmovement(0)
     release
 }
 
+script ISLANDGAME_ROSEVALE_Interact_NPC1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "The air here is nice and fresh thanks to our Isle Guardian, Articuno.\p"
+        "I'm glad I moved here from Tidalcove. The city life just isn't for me."
+        )
+    )
+    release
+}
+
+script ISLANDGAME_ROSEVALE_Interact_NPC2 {
+    lock
+    msgbox(format(
+        "Brrr... The winds are always so chilly here.\p"
+        "Talonflame! Warm up my hands, will ya? I hate being on watch duty..."
+        )
+    )
+    release
+}
+
+script ISLANDGAME_ROSEVALE_Interact_Talonflame {
+    lock
+    faceplayer
+    playmoncry(SPECIES_TALONFLAME, CRY_MODE_NORMAL)
+    msgbox(format("Talooon!"))
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_ROSEVALE_Interact_NPC3 {
+    lock
+    faceplayer
+    msgbox(format(
+        "La dee dum... I love the sweet fragrance of flowers!"
+        )
+    )
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_ROSEVALE_Interact_NPC4 {
+    lock
+    faceplayer
+    msgbox(format("My gramma said I needed to “touch grass” more, so here I am."))
+    release
+}
+
 script ISLANDGAME_ROSEVALE_Interact_EntranceSign {
-    msgbox(format("Welcome to Rosevale!"), MSGBOX_SIGN)
+    msgbox(format("ROSEVALE\nThe village under the alps"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_ROSEVALE_Interact_InnSign {
-    msgbox(format("ROSEVALE INN"), MSGBOX_SIGN)
+    msgbox(format("PEACHY SWEET INN\nWe're positively peachy keen!\n"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
-    msgbox(format("I'm scawwed... Is everyfing going to be alwight?"), MSGBOX_NPC)
+    msgbox(format("My bwother went that-a-way. I think he went into the mountain!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_ROSEVALE_Interact_ArthurDad {
-    msgbox(format("Apologies, we're doing some renovations right now. Come back later."), MSGBOX_NPC)
+    msgbox(format("Where in the world could that boy be...?"), MSGBOX_NPC)
 }
+
+
 
 // section: sister cutscene pre-aurora
 text Text_ArthurSister_PleaseHelp {
     format(
-        "Hewwo! I need your help! \p"
-        "You're a twainer, right? Someone stole my Marill! \p"
-        "My brother ran after the thief, but he hasn't returned in a while! \p"
-        "Can you help me find him pwease? They went that-a-way!"
+        "Hewwo, I need your help! \p"
+        "You're a trainer, right? Someone stole my A-zoo-ril! \p"
+        "My bwother ran after the thief, but he still hasn't come back!\p"
+        "He told me not to worry or tell Mom or Dad... but I'm getting worried!\p"
+        "I don't wanna tell Mom and Dad. They'll be weally mad at him if they find out...\p"
+        "Pwease help me find him and get my A-zoo-ril back!"
     )
 }
 
@@ -154,7 +206,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
 
     // the sister runs up
     addobject(LOCALID_ARTHUR_SISTER)
-    setobjectxy(LOCALID_ARTHUR_SISTER, 18, 14)
+    setobjectxy(LOCALID_ARTHUR_SISTER, 20, 14)
     applymovement(LOCALID_ARTHUR_SISTER, Movement_ArthurSister_RunUpToPath)
     waitmovement(LOCALID_ARTHUR_SISTER)
 

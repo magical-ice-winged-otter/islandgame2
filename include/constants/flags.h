@@ -653,8 +653,12 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
 #define I_EXP_SHARE_FLAG   0x264 // see include/config/item.h 
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
+
+
+
+// island-game : Hidden Items
+#define FLAG_HIDDEN_ITEM_TIDALCOVE_PEARL  0x265 
+#define FLAG_HIDDEN_ITEM_ROSEVALE_REPEL   0x266
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
@@ -1218,7 +1222,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-//ISLAND-START: USE THIS AS FLAGS FOR POKEBALL ITEMS
+//island-game : Pokeball Items
 #define FLAG_ROOM3_ITEM                                             0x493 // SS Rain: Rare Candy
 #define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 // Verdant Woods
 #define FLAG_FRESA_FARMS_SHROOM                                     0x495 // Fresa Farms
@@ -1235,10 +1239,10 @@
 #define FLAG_ITEM_COP_2_TM_SHOCKWAVE                                0x4A0 
 #define FLAG_ITEM_COP_2_PIXIE_PLATE                                 0x4A1 
 #define FLAG_ITEM_TIDALCOVE_HP_UP                                   0x4A2
-#define FLAG_ITEM_TIDALCOVE_FULL_HEAL                               0x4A3
+#define FLAG_ITEM_TIDALCOVE_BLACKGLASSES                            0x4A3
 #define FLAG_ITEM_AP_NEVER_MELT_ICE                                 0x4A4 
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
+#define FLAG_ITEM_NOR_TWISTEDSPOON                                  0x4A5
+#define FLAG_ITEM_NOR_TM_TOXIC                                      0x4A6
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
@@ -1505,9 +1509,10 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
 
-// ISLANDGAME FLAGS
 
-// island-start
+
+
+// island-game flags
 //ss rain: set when you leave the ship at the beginning of the game
 #define FLAG_LEFT_SHIP                              (SYSTEM_FLAGS + 0x85) 
 //ss rain: old man in room 3
@@ -1545,9 +1550,9 @@
 #define FLAG_MAPLEGROVE_ODDISH_GIFT                 (SYSTEM_FLAGS + 0x96)
 //fresa farms: mareep gift
 #define FLAG_FRESA_FARMS_MAREEP_GIFT                (SYSTEM_FLAGS + 0x97) 
-
-#define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag
-#define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
+//tidalcove: luxury ball gift
+#define FLAG_TIDALCOVE_LUXBALL_GIFT                 (SYSTEM_FLAGS + 0x98)
+#define FLAG_ROSEVALE_TM_GIFT                       (SYSTEM_FLAGS + 0x99)
 #define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
 #define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
 #define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag

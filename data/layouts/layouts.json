@@ -4725,7 +4725,7 @@
       "id": "LAYOUT_ISLANDGAME_NORTHERN_ORANNA_PATH",
       "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_Layout",
       "width": 60,
-      "height": 50,
+      "height": 36,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_test",
       "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/border.bin",
@@ -4734,8 +4734,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROSEVALE",
       "name": "ISLANDGAME_ROSEVALE_Layout",
-      "width": 50,
-      "height": 45,
+      "width": 48,
+      "height": 37,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_islandgame_rosevale",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE/border.bin",
@@ -4924,8 +4924,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE",
       "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 10,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE/border.bin",
@@ -4934,8 +4934,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROSEVALE_INN",
       "name": "ISLANDGAME_ROSEVALE_INN_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 32,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN/border.bin",
@@ -4954,10 +4954,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROSEVALE_RALTS_HOUSE",
       "name": "ISLANDGAME_ROSEVALE_RALTS_HOUSE_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_RALTS_HOUSE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_RALTS_HOUSE/map.bin"
     },
@@ -5024,8 +5024,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_TIDALCOVE_RARE_HOUSE",
       "name": "ISLANDGAME_TIDALCOVE_RARE_HOUSE_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 10,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_RARE_HOUSE/border.bin",
@@ -5080,6 +5080,66 @@
       "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_HOUSE2",
+      "name": "ISLANDGAME_ROSEVALE_HOUSE2_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_HOUSE2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_HOUSE2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_INN_2F",
+      "name": "ISLANDGAME_ROSEVALE_INN_2F_Layout",
+      "width": 15,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_INN_2F_ROOM1",
+      "name": "ISLANDGAME_ROSEVALE_INN_2F_ROOM1_Layout",
+      "width": 6,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_2F_ROOM1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_2F_ROOM1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_INN_2F_ROOM2",
+      "name": "ISLANDGAME_ROSEVALE_INN_2F_ROOM2_Layout",
+      "width": 6,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_2F_ROOM2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_2F_ROOM2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_INN_1F_ROOM1",
+      "name": "ISLANDGAME_ROSEVALE_INN_1F_ROOM1_Layout",
+      "width": 6,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_1F_ROOM1/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_1F_ROOM1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_INN_1F_ROOM2",
+      "name": "ISLANDGAME_ROSEVALE_INN_1F_ROOM2_Layout",
+      "width": 6,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_1F_ROOM2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_INN_1F_ROOM2/map.bin"
     }
   ]
 }

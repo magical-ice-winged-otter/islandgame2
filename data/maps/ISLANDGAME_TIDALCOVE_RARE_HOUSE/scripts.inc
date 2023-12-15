@@ -80,33 +80,35 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_35:
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_39
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_38:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2
 	goto End
 FoundSquirtle:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
 	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE
 	giveitem ITEM_WATER_STONE
-	goto end
+	goto End
 FoundRowlet:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
 	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET
 	giveitem ITEM_LEAF_STONE
-	goto end
+	goto End
 FoundTepig:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
 	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG
 	giveitem ITEM_FIRE_STONE
-	goto end
+	goto End
 FoundDelibird:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
 	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD
 	giveitem ITEM_ICE_STONE
-	goto end
+	goto End
 FoundPikachu:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
 	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU
 	giveitem ITEM_THUNDER_STONE
-	goto end
+	goto End
 End:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_6:
@@ -159,27 +161,30 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_39:
 
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0:
-	.string "I have traveled all of the Isles of\n"
-	.string "Mariyama in search of exotic Pokemon.\p"
-	.string "If you can show me some rare Pokemon\n"
-	.string "from this island, I could offer you\l"
-	.string "some rare stones in return!$"
+	.string "Years ago, I came to the isles of\n"
+	.string "Mariyama in search of rare Pokémon.\p"
+	.string "But alas, all I could find during my\n"
+	.string "ventures were these rare stones.\p"
+	.string "If you've any rare Pokémon, could you\n"
+	.string "show them to me? I'd be more than\l"
+	.string "happy to share with you the stones I\l"
+	.string "found.$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_1:
-	.string "Do you have any rare Pokemon to show\n"
-	.string "me?$"
+	.string "I'm looking for five rare Pokémon on\n"
+	.string "this island in particular.\p"
+	.string "Did you find any of them?$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2:
-	.string "Oh! I have never seen a Squirtle before!$"
+	.string "Hmm, unfortunately you don't have any\n"
+	.string "of the Pokémon I'm looking for.$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3:
-	.string "Oh! I have never seen a Rowlet before!$"
+	.string "If you find a Pokémon you think is rare,\n"
+	.string "please do not hesitate to show me.$"
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4:
-	.string "Oh! I have never seen a Tepig before!$"
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5:
-	.string "Oh! I have never seen a Delibird before!$"
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6:
-	.string "Oh! I have never seen a Pikachu before!\p(He really must be from a distant land...)$"
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon::
+	.string "Oh! That is one of the Pokémon I am\n"
+	.string "looking for! May I have a closer look?\p"
+	.string "Exquisite... A majestic Pokémon, indeed!\n"
+	.string "Well, a deal's a deal! Here you are!$"

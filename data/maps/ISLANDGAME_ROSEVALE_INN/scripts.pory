@@ -70,3 +70,13 @@ script ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad {
             msgbox(format("{COLOR GREEN}Arthur's Dad: Arthur has been working really hard lately.\pYou're a great influence, {PLAYER}."), MSGBOX_NPC)
     }
 }
+
+
+
+script ISLANDGAME_ROSEVALE_INN_Interact_LockedDoor {
+    lock
+    msgbox(format(
+        "Oi, the sign says “DO NOT DISTURB”. What part of that do you not get!?"
+    ))
+    release
+}

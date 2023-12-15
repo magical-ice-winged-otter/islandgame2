@@ -16,46 +16,42 @@ mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_EntranceSign {
-    msgbox(format("Welcome to Tidalcove!\pCheck out the beach while you're here!"), MSGBOX_SIGN)
+    msgbox(format("TIDALCOVE\nCrack open a cold one on our beach!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BehindGymSign {
-    msgbox(format("LOSER LANDING"), MSGBOX_SIGN)
+    msgbox(format("LOSER LANDING\nu r noob"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign {
-    msgbox(format("BIKE PATH - TO LUMINE ISLAND"), MSGBOX_SIGN)
+    msgbox(format("SEASIDE BIKE PATH\nYour express way to Lumine!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BikeShopSign {
-    msgbox(format("TIDALCOVE BIKE SHOP"), MSGBOX_SIGN)
-}
-
-script ISLANDGAME_TIDALCOVE_Interact_RarePkmnSign {
-    msgbox(format("THE POKEMON COLLECTOR"), MSGBOX_SIGN)
+    msgbox(format("RANDIEZ HOT WHEELZ\n“ZOOM ZOOM MOTHER TRUCKERS”"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSign {
-    msgbox(format("TIDALCOVE GYM\pLeader: Ruka\nSpecialty: Hail"), MSGBOX_SIGN)
+    msgbox(format("TIDALCOVE GYM\nHome of Tidalcove's Precious Pearl"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking {
     lock
-    msgbox(format("I'm sorry, but we cannot allow anyone else inside for the day."))
+    msgbox(format("I am sorry, but I cannot let anyone else inside the gym for the day."))
     closemessage
     release
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_PrimFan1 {
     lock
-    msgbox(format("Let us in, old geezer! As the owners of Prim's Fan Club, we DEMAND entry!"))
+    msgbox(format("Let us in, old geezer! As Prim's two biggest fans, we DEMAND entry!"))
     closemessage
     release
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_PrimFan2 {
     lock
-    msgbox(format("Yeah! We gotta be cheering her on the front lines! "))
+    msgbox(format("We need to be cheering our queen on the front lines! Move aside, loser!"))
     closemessage
     release
 }
@@ -74,9 +70,9 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard {
     lock
     faceplayer
     msgbox(format(
-        "We don't really have a proper lifeguard tower, so I watch from up here instead.\p"
-        "With the amount of tourists we get, ocean safety is our priority!\p"
-        "If someone is in trouble, me and my Floatzel swim out there to save them!"
+        "We don't have a lifeguard tower yet, so I watch from up here instead.\p"
+        "With the amount of tourists we get, beach safety is our priority!\p"
+        "If someone is in trouble, me and my Floatzel will swim out to save them!"
     ), MSGBOX_NPC)
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
@@ -86,15 +82,27 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Floatzel {
     lock
     faceplayer
     playmoncry(SPECIES_FLOATZEL, CRY_MODE_NORMAL)
-    waitmoncry
+    msgbox(format("{COLOR RED}(Floatzel is wearing a lifeguard shirt.)"), MSGBOX_NPC)
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
 }
 
-script ISLANDGAME_TIDALCOVE_Interact_BeachParent {
+script ISLANDGAME_TIDALCOVE_Interact_BeachDude {
     lock
     faceplayer
-    msgbox(format("Beach days are the best."), MSGBOX_NPC)
+    msgbox(format(
+        "If I lose it all, slip and fall, will you laugh at me?"
+        )
+    , MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("I will remember that."))
+        playmoncry(SPECIES_WAILORD, CRY_MODE_NORMAL)
+        waitmoncry
+    }
+    else {
+        msgbox(format("If I lose it all, lose it all, lose it all..."))
+    }
+    closemessage
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
 }
@@ -147,19 +155,19 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad {
     lock
     faceplayer
     msgbox(format(
-        "I'm getting ready for the Festival Trialthalon!\p"
-        "I can swim, I can run...\p"
-        "If only I could afford a bike..."
+        "I'm training for the festival trialthalon!\p"
+        "I got swimming down, just about got running down too, all that's left is...\p"
+        "Cycling! But I wasn't able to snag a bike at the bike shop.\p"
+        "I hope they get some in stock soon. I'm going to fall behind otherwise!"
     ), MSGBOX_NPC)
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance {
     lock
     faceplayer
     msgbox(format(
-        "Tidalcove is the best.\p"
-        "No bugs, no angry Pokemon...\p"
-        "I don't think I'm traveling back through Central Oranna anytime soon."
+        "Ruka is the face of Tidalcove. Without her, we'd still be a fishing village!"
     ), MSGBOX_NPC)
 }
 
@@ -167,8 +175,7 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop {
     lock
     faceplayer
     msgbox(format(
-        "Man, cycling looks so fun!\p"
-        "It's a shame the bikes are so expensive..."
+        "Man, cycling looks fun. It's a shame the store ran out of rentals for the week."
     ), MSGBOX_NPC)
 }
 
@@ -176,8 +183,8 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle {
     lock
     faceplayer
     msgbox(format(
-        "The guy who lives in this house is a nut for rare Pokemon from Oranna...\p"
-        "I heard he also collects stones that can make your Pokemon evolve!"
+        "Would be weird if I asked Ruka to sign my body pillow of her? \p"
+        "Its value would skyrocket on the second-hand market!"
     ), MSGBOX_NPC)
 }
 
@@ -185,9 +192,9 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
     lock
     faceplayer
     msgbox(format(
-        "I've lived in Tidalcove for a long time...\p"
-        "Only two things are consistent:\p"
-        "The popularity of the beach, and the popularity of Ruka!"
+        "We get so many visitors here in Tidalcove.\p"
+        "Whether they're here for Ruka, the gym challenge, or our beautiful beaches.\p"
+        "I'm all for it. I'm glad to see so many people enthusiastic about our city!"
     ), MSGBOX_NPC)
 }
 
@@ -195,7 +202,15 @@ script ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO {
     lock
     faceplayer
     msgbox(format(
-        "Hello player! Thank you for playing the demo of Pokémon: Isles of Mariyama! \p"
-        "We hope you enjoyed playing through. Stay tuned for future updates! :D"
+        "Hello player! Thank you for playing the demo of Pokémon: Wings of Chaos! \p"
+        "We hope you enjoyed it. Stay tuned for future updates! :D"
+    ), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_jujalos {
+    lock
+    faceplayer
+    msgbox(format(
+        "jujalos"
     ), MSGBOX_NPC)
 }

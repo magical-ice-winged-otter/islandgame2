@@ -31,55 +31,45 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest_2:
 	goto ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest_1
 
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_ItemBallTop::
-	finditem ITEM_DAMP_ROCK
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1::
+	trainerbattle_single TRAINER_NORANNA_1, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1_Text_1
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1_Text_2, MSGBOX_NPC
 	return
 
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_ItemBallBottom::
-	finditem ITEM_HYPER_POTION
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2::
+	trainerbattle_double TRAINER_NORANNA_2, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_1, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_2
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_3, MSGBOX_NPC
 	return
 
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC::
-	trainerbattle_single TRAINER_NORANNA_ENTRANCE_NPC, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC_Text_1
-	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC_Text_2, MSGBOX_NPC
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3::
+	trainerbattle_single TRAINER_NORANNA_3, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3_Text_1
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3_Text_2, MSGBOX_NPC
 	return
 
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs::
-	trainerbattle_double TRAINER_NORANNA_FENCE_PARTNER_NPCS, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs_Text_1, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs_Text_2
-	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs_Text_3, MSGBOX_NPC
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4::
+	trainerbattle_single TRAINER_NORANNA_4, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4_Text_1
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4_Text_2, MSGBOX_NPC
 	return
 
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast::
-	trainerbattle_single TRAINER_NORANNA_UPPER_NPC_EAST, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast_Text_1
-	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast_Text_2, MSGBOX_NPC
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5::
+	trainerbattle_single TRAINER_NORANNA_5, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5_Text_1
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5_Text_2, MSGBOX_NPC
 	return
 
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle::
-	trainerbattle_single TRAINER_NORANNA_UPPER_NPC_MIDDLE, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle_Text_1
-	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle_Text_2, MSGBOX_NPC
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer6::
+	trainerbattle_single TRAINER_NORANNA_6, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer6_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer6_Text_1
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer6_Text_2, MSGBOX_NPC
 	return
 
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCWest::
-	trainerbattle_single TRAINER_NORANNA_UPPER_NPC_WEST, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCWest_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCWest_Text_1
-	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCWest_Text_2, MSGBOX_NPC
-	return
-
-
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast::
-	trainerbattle_single TRAINER_NORANNA_LOWER_NPC_EAST, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast_Text_1
-	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast_Text_2, MSGBOX_NPC
-	return
-
-
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle::
-	trainerbattle_single TRAINER_NORANNA_LOWER_NPC_MIDDLE, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle_Text_1
-	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle_Text_2, MSGBOX_NPC
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer7::
+	trainerbattle_single TRAINER_NORANNA_7, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer7_Text_0, ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer7_Text_1
+	msgbox ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer7_Text_2, MSGBOX_NPC
 	return
 
 
@@ -90,117 +80,117 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCWest::
 
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_EntranceSign_Text_0:
-	.string "NORTHERN ORANNA PATH$"
+	.string "NORTHERN ORANNA PATH\n"
+	.string "TIDALCOVE{RIGHT_ARROW}$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast_Text_0:
-	.string "My buddy is across the lake - he thinks\n"
-	.string "he can catch more than me!\p"
-	.string "I've been fishing this lake my whole\n"
-	.string "life. He's definitely going to lose.$"
+	.string "My buddy across the lake thinks he can\n"
+	.string "catch more than me!\p"
+	.string "Heh... I've been fishing in this lake my\n"
+	.string "entire life. He's going down!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest_Text_0:
-	.string "I challenged my friend to a fishing\n"
-	.string "contest today.\p"
-	.string "Can you keep a secret?$"
+	.string "I challenged my mate to a fishing\n"
+	.string "contest today. Can I tell you a secret?$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest_Text_1:
-	.string "My custom-order fishing rod just got\n"
-	.string "shipped from Arnie's!\p"
-	.string "There's no way I can lose to somebody\n"
-	.string "using an Old Rod...$"
+	.string "Well... I just got my custom-built\n"
+	.string "fishing rod from Arnie's today...\p"
+	.string "My mate over there still uses his crusty\n"
+	.string "Old Rod. He's done for!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest_Text_2:
-	.string "Well, thanks for being honest!$"
+	.string "Appreciate the honesty.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC_Text_0:
-	.string "Forget camping - let's battle!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1_Text_0:
+	.string "My girlfriend just broke up with me, so\n"
+	.string "I'm sulking in here.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC_Text_1:
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1_Text_1:
 	.string "Today's just not my day...$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_EntranceNPC_Text_2:
-	.string "I was looking for a nice place to pitch a\n"
-	.string "tent, but it's all rained out!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1_Text_2:
+	.string "Whelp... Time to head back home. Some\n"
+	.string "PokéLive videos oughta cheer me up.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs_Text_0:
-	.string "Isn't it a nice day for a battle?$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_0:
+	.string "May: Ruka is mid at best. I don't see the\n"
+	.string "appeal about her.\p"
+	.string "Rue: I know right? She's so overrated.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs_Text_1:
-	.string "Thanks for the battle!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_1:
+	.string "May: Ugh, I can't even with this right\nnow.\pRue: For real, battling is such an\neffort.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs_Text_2:
-	.string "A nice day is better with more Pokemon!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_2:
+	.string "May: We aren't fighting you unless you\n"
+	.string "got two Pokémon, dork.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_FencePartnerNPCs_Text_3:
-	.string "Y'know, I don't really feel like battling\n"
-	.string "anymore.$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_3:
+	.string "May: Leave us alone.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast_Text_0:
-	.string "I feel like I can battle batter when\n"
-	.string "moving around. Watch!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3_Text_0:
+	.string "The same species of Pokémon can have\n"
+	.string "different forms in different regions.\p"
+	.string "I can show you some of them right now!$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast_Text_1:
-	.string "Phew, I need to rest for a bit!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3_Text_1:
+	.string "Did you enjoy seeing them?$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCEast_Text_2:
-	.string "You should try running while battling\n"
-	.string "sometime!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3_Text_2:
+	.string "Historians believe that Mariyama was\n"
+	.string "once a part of the Alola Region.\p"
+	.string "That's supposedly why our island has so\n"
+	.string "many of their regional variants.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle_Text_0:
-	.string "Hey you! Me and my team have been\n"
-	.string "training here, let's see how far we've\l"
-	.string "come!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4_Text_0:
+	.string "Hiiiiya! You won't stand a chance\n"
+	.string "against me and my Pokémon!$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle_Text_1:
-	.string "Looks like we still have some more\n"
-	.string "training to do.$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4_Text_1:
+	.string "Noooo! Lucario!$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCMiddle_Text_2:
-	.string "Lot's of people train to defeat Ruka. I\n"
-	.string "train for myself of course!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4_Text_2:
+	.string "Looks like we still have a lot to learn.$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCWest_Text_0:
-	.string "The only path to strength is through\n"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5_Text_0:
+	.string "I feel it... I'm about to hit my runner's\n"
+	.string "high! I won't let you stop me!$"
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5_Text_1:
+	.string "But I was so close...$"
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5_Text_2:
+	.string "Now I'm going to have to start all over.\n"
+	.string "Thanks a lot.$"
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer6_Text_0:
+	.string "The only path to success is through\n"
 	.string "practice! No shortcuts!$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCWest_Text_1:
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer6_Text_1:
 	.string "I can tell you put in the work!$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_UpperNPCWest_Text_2:
-	.string "That 'Fitness Freak' fellow thinks he\n"
-	.string "can become stronger just by taking\l"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer6_Text_2:
+	.string "There's a dude called the “Fitness\n"
+	.string "Freak” over there in that house.\p"
+	.string "He thinks he can get stronger by taking\n"
 	.string "vitamins...$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast_Text_0:
-	.string "Hey, did you get rejected from the\n"
-	.string "Tidalcove Gym too? Let's train\l"
-	.string "together!$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer7_Text_0:
+	.string "My victory is near... I am manifesting it!$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast_Text_1:
-	.string "Man, I'm so far away from beating Ruka...$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer7_Text_1:
+	.string "The power of the cosmos have failed me\nonce more...$"
 
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCEast_Text_2:
-	.string "Let me know how your challenge goes!\n"
-	.string "I'm rooting for you!$"
-
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle_Text_0:
-	.string "I wanted to hike over to Rosevale\n"
-	.string "today, but I also don't want my shoes\l"
-	.string "to get wet...\p"
-	.string "I think I'm gonna battle you instead!$"
-
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle_Text_1:
-	.string "Ah...$"
-
-ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCMiddle_Text_2:
-	.string "Let me know how deep the water is over\n"
-	.string "there.$"
+ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer7_Text_2:
+	.string "I will need to purchase some more\n"
+	.string "psychic stones.$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCWest_Text_0:
 	.string "STAY AWAY FROM MY PUDDLE!!!$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCWest_Text_1:
-	.string "NOT MY PUDDLE!$"
+	.string "NOOOOO MY PUDDLE$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCWest_Text_2:
 	.string "...I'm still not gonna share it with you.$"

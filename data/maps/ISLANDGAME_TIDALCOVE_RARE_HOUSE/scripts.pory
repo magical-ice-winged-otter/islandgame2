@@ -6,13 +6,14 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
     switch (var(VAR_RESULT)) {
         case 1: // inactive
             msgbox(format(
-                "I have traveled all of the Isles of Mariyama in search of exotic Pokemon.\p"
-                "If you can show me some rare Pokemon from this island, I could offer you some rare stones in return!"
+                "Years ago, I came to the isles of Mariyama in search of rare Pokémon.\p"
+                "But alas, all I could find during my ventures were these rare stones.\p"
+                "If you've any rare Pokémon, could you show them to me? I'd be more than happy to share with you the stones I found."
             ), MSGBOX_NPC)
             startquest(QUEST_TIDALCOVE_RARE_PKMN)
         case 2: // active
             lock
-            msgbox(format("Do you have any rare Pokemon to show me?"), MSGBOX_NPC)
+            msgbox(format("I'm looking for five rare Pokémon on this island in particular.\pDid you find any of them?"), MSGBOX_NPC)
 
             // squirtle checks
             setvar(VAR_0x8000, SPECIES_SQUIRTLE)
@@ -83,35 +84,41 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
             if (var(VAR_RESULT)) {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
             }
+            msgbox(format("Hmm, unfortunately you don't have any of the Pokémon I'm looking for."))
             goto(End)
 
         FoundSquirtle:
-            msgbox("Oh! I have never seen a Squirtle before!")
+            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE)
             giveitem(ITEM_WATER_STONE)
-            goto(end)
+            goto(End)
         FoundRowlet:
-            msgbox("Oh! I have never seen a Rowlet before!")
+            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET)
             giveitem(ITEM_LEAF_STONE)
-            goto(end)
+            goto(End)
         FoundTepig:
-            msgbox("Oh! I have never seen a Tepig before!")
+            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG)
             giveitem(ITEM_FIRE_STONE)
-            goto(end)
+            goto(End)
         FoundDelibird:
-            msgbox("Oh! I have never seen a Delibird before!")
+            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD)
             giveitem(ITEM_ICE_STONE)
-            goto(end)
+            goto(End)
         FoundPikachu:
-            msgbox("Oh! I have never seen a Pikachu before!\p(He really must be from a distant land...)")
+            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU)
             giveitem(ITEM_THUNDER_STONE)
-            goto(end)
+            goto(End)
         End:
+            msgbox(format("If you find a Pokémon you think is rare, please do not hesitate to show me."))
     }
     closemessage
     release
+}
+
+text ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon {
+    format("Oh! That is one of the Pokémon I am looking for! May I have a closer look?\pExquisite... A majestic Pokémon, indeed! Well, a deal's a deal! Here you are!")
 }

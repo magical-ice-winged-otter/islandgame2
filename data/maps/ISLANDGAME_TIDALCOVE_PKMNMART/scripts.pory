@@ -1,27 +1,52 @@
 mapscripts ISLANDGAME_TIDALCOVE_PKMNMART_MapScripts {}
 
 script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_NPC1 {
-    msgbox(format("Hmm... yes I've heard good things about these ones."), MSGBOX_NPC)
+    lock
+    msgbox(format("Hmm... I've heard good things about these ones."))
+    release
 }
 
-script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Goods {
-    msgbox(format("It's rows upon rows of vitamins.\pFairly expenseive, too."), MSGBOX_SIGN)
+script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Vitamins {
+    lock
+    msgbox(format("{COLOR RED}(There's rows upon rows of exorbitantly priced vitamins.)\p(They all have pictures of Ruka on them too.)"), MSGBOX_SIGN)
+    release
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Drinks {
+    lock
+    msgbox(format("{COLOR RED}(Half of the drinks here have a photo of Ruka on them in a swimsuit.)"), MSGBOX_SIGN)
+    release
+}
+
+script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_General {
+    lock
+    msgbox(format("{COLOR RED}(Almost all of these goods have Ruka on them.)"), MSGBOX_SIGN)
+    release
 }
 
 script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Employee {
     lock
-    msgbox(format("Welcome to the Tidalcove Mart!\nWhat can I get for you?"))
+    faceplayer
+    msgbox(format("Welcome to Rukalicious, the official shop for all your Ruka-related goods!"))
     pokemart(Tidalcove_MartItems)
-    msgbox(format("Enjoy your stay in the sun!"))
+    msgbox(format("Have a Rukalicious rest of your day!"))
     closemessage
     release
 }
 
 mart Tidalcove_MartItems {
-    ITEM_SODA_POP
     ITEM_POKE_BALL
     ITEM_GREAT_BALL
-    ITEM_ANTIDOTE
-    ITEM_PARALYZE_HEAL
+    ITEM_NEST_BALL
+    ITEM_FRESH_WATER
+    ITEM_SODA_POP
+    ITEM_CASTELIACONE
     ITEM_REPEL
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_CARBOS
+    ITEM_PP_UP
 }

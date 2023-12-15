@@ -1,0 +1,22 @@
+mapscripts ISLANDGAME_ROSEVALE_INN_2F_ROOM2_MapScripts {}
+
+script ISLANDGAME_ROSEVALE_INN_2F_ROOM2_NPC {
+    lock
+    faceplayer
+    if(!flag(FLAG_ROSEVALE_TM_GIFT)) {
+        msgbox(format(
+            "Am I attractive?"
+        ), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES) {
+            msgbox(format("Aww, thank you! For being so thoughtful, I'll give you this TM!"))
+            giveitem(ITEM_TM_ATTRACT)
+        }
+        else {
+            msgbox(format("How rude! -smack- That'll teach you to say that to a cute girl like me!"))
+        }
+    }
+    else {
+        msgbox(format("Don't try and use that move on me, you're not my type. -giggle-"))
+    }
+    release
+}

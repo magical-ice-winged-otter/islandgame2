@@ -1,1 +1,49 @@
 mapscripts ISLANDGAME_ROSEVALE_RALTS_HOUSE_MapScripts {}
+
+script ISLANDGAME_ROSEVALE_RALTS_HOUSE_FriendshipChecker {
+    lock
+    faceplayer
+    msgbox(format(
+        "Ohmmmm... I am the Pokemon Fortune Teller! With my mystical powers, I can tell you how strong your bond is with your Pokémon!\p"
+        "Would you like to see how strong your friendship is?"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(format(
+            "Ohmmm... Let's see your bond with your lead Pokémon..."
+        ))
+        specialvar(VAR_RESULT, GetLeadMonFriendshipScore)
+        switch(var(VAR_RESULT)) {
+            case FRIENDSHIP_NONE: msgbox(format("Oh dear... Your lead Pokémon absolutely despises you. That is very worrying!\pYou must treat it with better care, or else it will be consumed with hatred..."))
+            case FRIENDSHIP_1_TO_49: msgbox(format("Oh... your lead Pokémon doesn't seem to like you at all.\pYou really need to show it more care. It is straying towards a dark path..."))
+            case FRIENDSHIP_50_TO_99: msgbox(format("Hm... your lead Pokémon seems indifferent towards you.\pYou should spend more time with it."))
+            case FRIENDSHIP_100_TO_149: msgbox(format("Ah... your lead Pokémon appears to be getting used to you.\pYou're making good progress with your friendship!"))
+            case FRIENDSHIP_150_TO_199: msgbox(format("Ah... your lead Pokémon seems to like you quite a lot.\pYour bond is quite strong. Keep at it!"))
+            case FRIENDSHIP_200_TO_254: msgbox(format("Ah... your lead Pokémon is very close with you!\pIt seems very happy to be with you."))
+            case FRIENDSHIP_MAX: msgbox(format("Amazing... the bond between you and your lead Pokémon is unbreakable!\pIt trusts you with all its heart. It very clearly loves being with you!"))
+        }
+    }
+    else {
+        msgbox(format("Ooooohm... Let me know if you have a change of heart!"))
+    }
+    release
+}
+
+script ISLANDGAME_ROSEVALE_RALTS_HOUSE_Ralts {
+    lock
+    faceplayer
+    playmoncry(SPECIES_GARDEVOIR, CRY_MODE_NORMAL)
+    msgbox(format("Garde! {COLOR BLUE}(I know your deepest, darkest secret trainer!)\p""{COLOR DARK_GRAY}Garde... {COLOR BLUE}(It's that you can understand what Pokémon are saying, right?)\p""{COLOR DARK_GRAY}Garde? {COLOR BLUE}(Huh? You have even darker ones? What are they? Can you tell me?)\p""{COLOR DARK_GRAY}G-Garde!? {COLOR BLUE}(E-Eh!? Some humans think WHAT about me!? H-How frightening...)"))
+    release
+}
+
+script ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl {
+    lock
+    faceplayer
+    msgbox(
+        format(
+            "I thought my Kirlia was going to evolve into a Gallade, but I didn't realize that I'd need a Dawn Stone for that to happen...\p"
+            "Now I just have this Galladite rolling around in my drawer doing nothing...\p"
+            "Honestly, if you have a Gallade of your own, I wouldn't mind giving it to you."
+        )
+    )
+}

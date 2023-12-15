@@ -2,14 +2,14 @@ mapscripts ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_MapScripts {}
 
 script ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_NPCMom {
     msgbox(format(
-        "Life in Tidalcove is very relaxed.\p"
-        "It's always sunny, and if we need to cool down Ruka can bring down some hail!"
+        "Life in Tidalcove is great. It's always a beautiful sunny day outside.\p"
+        "And if it ever gets too hot, Ruka's gym is here to cool us down!"
     ), MSGBOX_NPC)
 }
 
 script ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_NPCKid {
     lock
-    msgbox(format("Mom... I want to go play on the beach!"))
+    msgbox(format("Mooooom... I want to go play on the beach!"))
     closemessage
     release
 }
