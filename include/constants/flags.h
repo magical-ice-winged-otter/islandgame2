@@ -657,12 +657,12 @@
 
 
 // island-game : Hidden Items
-#define FLAG_HIDDEN_ITEM_TIDALCOVE_PEARL  0x265 
-#define FLAG_HIDDEN_ITEM_ROSEVALE_REPEL   0x266
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
+#define FLAG_HIDDEN_ITEM_TIDALCOVE_PEARL            0x265 
+#define FLAG_HIDDEN_ITEM_ROSEVALE_REPEL             0x266
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_BLUESHARD      0x267 
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_SHINYSTONE     0x268
+#define FLAG_HIDDEN_ITEM_MT_AURORA_NEVERMELTICE     0x269
+#define FLAG_HIDDEN_ITEM_MT_AURORA_DIVEBALL         0x26A 
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
 #define FLAG_UNUSED_0x26D  0x26D // Unused Flag
@@ -1240,7 +1240,7 @@
 #define FLAG_ITEM_COP_2_PIXIE_PLATE                                 0x4A1 
 #define FLAG_ITEM_TIDALCOVE_HP_UP                                   0x4A2
 #define FLAG_ITEM_TIDALCOVE_BLACKGLASSES                            0x4A3
-#define FLAG_ITEM_AP_NEVER_MELT_ICE                                 0x4A4 
+#define FLAG_ITEM_AP_KINGS_ROCK                                     0x4A4 
 #define FLAG_ITEM_NOR_TWISTEDSPOON                                  0x4A5
 #define FLAG_ITEM_NOR_TM_TOXIC                                      0x4A6
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag

@@ -273,8 +273,10 @@
 #define METATILE_IslandgameGeneral_DoorPokeMart    0x041
 
 // gTileset_Islandgame
-#define METATILE_Islandgame_Door             0x021
-#define METATILE_Islandgame_Door_PokeCenter  0x061
+#define METATILE_Islandgame_Door                 0x021
+#define METATILE_Islandgame_Door_PokeCenter      0x061
+#define METATILE_Islandgame_icecave_Ice_Broken   0x2DB
+#define METATILE_Islandgame_icecave_Ice_Cracked  0x2DA
 
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207

@@ -734,6 +734,6 @@ NOR_ItemToxic::
 	finditem ITEM_TM_TOXIC
 	end
 
-AuroraPath_ItemNeverMeltIce::
-	finditem ITEM_NEVER_MELT_ICE
+AuroraPath_ItemKingsRock::
+	finditem ITEM_KINGS_ROCK
 	end

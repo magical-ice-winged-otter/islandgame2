@@ -1,13 +1,13 @@
 mapscripts ISLANDGAME_AURORA_PATH_MapScripts {}
 
 script ISLANDGAME_AURORA_PATH_Interact_EntranceSign {
-    msgbox(format("AURORA PATH"), MSGBOX_SIGN)
+    msgbox(format("AURORA PATH\nMT. AURORA{UP_ARROW}"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_AURORA_PATH_Interact_MtSign {
-    msgbox(format("MT. AURORA\pPeak Elevation: Very High"), MSGBOX_SIGN)
+    msgbox(format("MT. AURORA\nBEWARE OF SUBZERO TEMPERATURES"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_AURORA_PATH_Interact_WeatherInstitute {
-    msgbox(format("Weather Institute"), MSGBOX_SIGN)
+    msgbox(format("MT. AURORA WEATHER INSTITUTE\nPlease visit, I'm very lonely"), MSGBOX_SIGN)
 }

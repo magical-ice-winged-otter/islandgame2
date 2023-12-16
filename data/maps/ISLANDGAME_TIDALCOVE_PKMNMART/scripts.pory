@@ -41,6 +41,7 @@ mart Tidalcove_MartItems {
     ITEM_FRESH_WATER
     ITEM_SODA_POP
     ITEM_CASTELIACONE
+    ITEM_ICE_HEAL
     ITEM_REPEL
     ITEM_HP_UP
     ITEM_PROTEIN

@@ -168,6 +168,7 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad_Text_0, MSGBOX_NPC
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	return
 
 

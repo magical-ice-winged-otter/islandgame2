@@ -58,7 +58,7 @@ ISLANDGAME_ROSEVALE_RALTS_HOUSE_FriendshipChecker_12:
 ISLANDGAME_ROSEVALE_RALTS_HOUSE_Ralts::
 	lock
 	faceplayer
-	playmoncry SPECIES_RALTS, CRY_MODE_NORMAL
+	playmoncry SPECIES_GARDEVOIR, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_ROSEVALE_RALTS_HOUSE_Ralts_Text_0
 	release
 	return
@@ -129,11 +129,11 @@ ISLANDGAME_ROSEVALE_RALTS_HOUSE_FriendshipChecker_Text_9:
 ISLANDGAME_ROSEVALE_RALTS_HOUSE_Ralts_Text_0:
 	.string "Garde! {COLOR BLUE}(I know your deepest, darkest\n"
 	.string "secret trainer!)\p"
-	.string "Garde... {COLOR BLUE}(It's that you can understand\n"
+	.string "{COLOR DARK_GRAY}Garde... {COLOR BLUE}(It's that you can understand\n"
 	.string "what Pokémon are saying, right?)\p"
-	.string "Garde? {COLOR BLUE}(Huh? You have even darker\n"
+	.string "{COLOR DARK_GRAY}Garde? {COLOR BLUE}(Huh? You have even darker\n"
 	.string "ones? What are they? Can you tell me?)\p"
-	.string "G-Garde!? {COLOR BLUE}(E-Eh!? Some humans think\n"
+	.string "{COLOR DARK_GRAY}G-Garde!? {COLOR BLUE}(E-Eh!? Some humans think\n"
 	.string "WHAT about me!? H-How frightening...)$"
 
 ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_Text_0:

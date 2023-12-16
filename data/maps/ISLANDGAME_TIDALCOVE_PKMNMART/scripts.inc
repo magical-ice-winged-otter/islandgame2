@@ -49,6 +49,7 @@ Tidalcove_MartItems:
 	.2byte ITEM_FRESH_WATER
 	.2byte ITEM_SODA_POP
 	.2byte ITEM_CASTELIACONE
+	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_REPEL
 	.2byte ITEM_HP_UP
 	.2byte ITEM_PROTEIN

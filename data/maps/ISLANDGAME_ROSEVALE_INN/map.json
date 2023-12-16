@@ -127,7 +127,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_ROSEVALE_INN_Interact_LockedDoor"
     }
   ]
 }

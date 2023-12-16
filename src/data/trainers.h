@@ -804,7 +804,8 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Lola3),
     },
 
-    [TRAINER_SPECIAL_THIEF_EDEA] =
+    // Mt. Aurora
+    [TRAINER_MT_AURORA_EDEA] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -812,8 +813,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Edea"),
         .items = {ITEM_SUPER_POTION},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_ACE_POKEMON,
-        .party = TRAINER_PARTY(sParty_Lola4),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN,
+        .party = TRAINER_PARTY(sParty_MtAuroraEdea),
     },
 
 

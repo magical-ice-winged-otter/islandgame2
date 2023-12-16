@@ -868,13 +868,15 @@ static const struct TrainerMon sParty_Lola3[] = {
     }
 };
 
-static const struct TrainerMon sParty_Lola4[] = {
-     {
-    .lvl = 21,
-    .species = SPECIES_SNEASEL,
+/// Mt. Aurora - Edea Fight
+static const struct TrainerMon sParty_MtAuroraEdea[] = {
+    {
+    .lvl = 23,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .ability = ABILITY_PRESSURE,
-    .moves = {MOVE_METAL_CLAW, MOVE_ICE_SHARD, MOVE_THIEF, MOVE_FAKE_OUT}
+    .species = SPECIES_PERSIAN_ALOLAN,
+    .ability = ABILITY_FUR_COAT,
+    .heldItem = ITEM_DARK_GEM,
+    .moves = {MOVE_AERIAL_ACE, MOVE_THIEF, MOVE_SNARL, MOVE_PARTING_SHOT}
     },
     {
     .lvl = 21,
@@ -884,13 +886,19 @@ static const struct TrainerMon sParty_Lola4[] = {
     .moves = {MOVE_SHADOW_SNEAK, MOVE_THIEF, MOVE_FAKE_OUT, MOVE_WILL_O_WISP}
     },
     {
-    .lvl = 23,
+    .lvl = 21,
+    .species = SPECIES_SNEASEL,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .species = SPECIES_PERSIAN_ALOLAN,
-    .ability = ABILITY_FUR_COAT,
-    .heldItem = ITEM_DARK_GEM,
-    .moves = {MOVE_AERIAL_ACE, MOVE_THIEF, MOVE_SNARL, MOVE_HYPNOSIS}
-    }
+    .ability = ABILITY_PICKPOCKET,
+    .moves = {MOVE_METAL_CLAW, MOVE_ICE_SHARD, MOVE_THIEF, MOVE_FAKE_OUT}
+    },
+    {
+    .lvl = 21,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .species = SPECIES_LIEPARD,
+    .ability = ABILITY_PRANKSTER,
+    .moves = {MOVE_FAKE_OUT, MOVE_YAWN, MOVE_PAY_DAY, MOVE_THIEF}
+    },
 };
 
 

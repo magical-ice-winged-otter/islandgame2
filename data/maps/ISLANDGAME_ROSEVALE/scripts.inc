@@ -119,6 +119,7 @@ ISLANDGAME_ROSEVALE_Interact_NPC1::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_ROSEVALE_Interact_NPC1_Text_0
+	release
 	return
 
 
@@ -190,7 +191,7 @@ Movement_ArthurSister_RunUpToPath:
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest::
 	lock
 	addobject 1
-	setobjectxy 1, 18, 14
+	setobjectxy 1, 20, 14
 	applymovement 1, Movement_ArthurSister_RunUpToPath
 	waitmovement 1
 	msgbox Text_ArthurSister_PleaseHelp, MSGBOX_NPC
@@ -347,8 +348,7 @@ ISLANDGAME_ROSEVALE_Interact_InnSign_Text_0:
 
 ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0:
 	.string "My bwother went that-a-way. I think he\n"
-	.string "went into the mountain!\p"
-	.string "$"
+	.string "went into the mountain!$"
 
 ISLANDGAME_ROSEVALE_Interact_ArthurDad_Text_0:
 	.string "Where in the world could that boy be...?$"
@@ -414,7 +414,7 @@ ArthurDefeated_Text_1:
 Text_ArthurSister_PleaseHelp::
 	.string "Hewwo, I need your help!\p"
 	.string "You're a trainer, right? Someone stole\n"
-	.string "my Marill!\p"
+	.string "my A-zoo-ril!\p"
 	.string "My bwother ran after the thief, but he\n"
 	.string "still hasn't come back!\p"
 	.string "He told me not to worry or tell Mom or\n"
@@ -422,4 +422,4 @@ Text_ArthurSister_PleaseHelp::
 	.string "I don't wanna tell Mom and Dad. They'll\n"
 	.string "be weally mad at him if they find out...\p"
 	.string "Pwease help me find him and get my\n"
-	.string "Marill back!$"
+	.string "A-zoo-ril back!$"

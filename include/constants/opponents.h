@@ -148,11 +148,15 @@
 #define TRAINER_LEADER_RUKA                  60
 #define TRAINER_LOLA_2                       TRAINER_LEADER_RUKA
 
+// Mt. Aurora
+#define TRAINER_MT_AURORA_EDEA               62
+#define TRAINER_LOLA_4                       TRAINER_MT_AURORA_EDEA
 
+
+// Rosevale
 #define TRAINER_SPECIAL_ARTHUR_1             61
-#define TRAINER_SPECIAL_THIEF_EDEA           62
 #define TRAINER_LOLA_3                       TRAINER_SPECIAL_ARTHUR_1
-#define TRAINER_LOLA_4                       TRAINER_SPECIAL_THIEF_EDEA
+
 
 
 

@@ -2,17 +2,34 @@ mapscripts ISLANDGAME_AURORA_WEATHER_INSTITUTE_MapScripts {}
 
 script ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist {
     if (!flag(FLAG_RECEIVED_CASTFORM)) {
-        msgbox(format("Hello there!\pI am one of Professor Palm's aides, studying Mt. Aurora from this facility.\pIf you can catch 20 different Pokemon, I can give you a reward!"), MSGBOX_NPC)
+        msgbox(format(
+            "Hello there! You must be {PLAYER}. I am one of Professor Palm's aides.\p
+            I came here to study the weather and ecosystem surrounding Mt. Aurora...\p
+            ...Buuuut I didn't realize how gosh darn cold it'd be here, so I just stay cooped up in here for most of my time.\p
+            Say... you've got your Pokédex on you, right? Wanna help a poor guy out?\p
+            If you can catch 20 different Pokémon and show me their Pokédex entries, I'll make it worth your while! How's that sound?"
+        ), MSGBOX_YESNO)
 
-        callnative(CheckDexCount)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format("Awesome! Let's see how many Pokémon you've caught so far..."))
+            callnative(CheckDexCount)
 
-        if (var(VAR_0x8000) >= 20) {
-            msgbox(format("Wow, you've caught over 20 Pokemon!\pHere, take this Castform!"), MSGBOX_NPC)
-            givemon(SPECIES_CASTFORM, 18)
-            setflag(FLAG_RECEIVED_CASTFORM)
+            if (var(VAR_0x8000) >= 20) {
+                msgbox(format(
+                    "Wowie... that's at least 20 Pokémon, alright! Well, a deal's a deal!\p"
+                    "This right here is a Pokémon that we received from the Hoenn region to help predict the crazy weather here in the isles!\p"
+                    "...Buuuut it's probably better in your hands. Not much it can do inside here."
+                    )
+                )
+                givemon(SPECIES_CASTFORM, 18)
+                setflag(FLAG_RECEIVED_CASTFORM)
+            }
         }
+
+
     }
     else {
-        msgbox(format("Mt. Aurora is a fascinating place to study.\pThe effects of it on the ecosystem is unmatched on Oranna."), MSGBOX_NPC)
+        msgbox(format("I'll be fine here by myself. My new high-tech earmuffs will be in the mail soon!\pT-That being said, it wouldn't hurt to come visit once or twice...\pI um, don't get much human interaction living up right by the mountain..."), MSGBOX_NPC)
     }
+    release
 }

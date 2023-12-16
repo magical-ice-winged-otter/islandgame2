@@ -16,10 +16,10 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 5,
-      "y": 4,
+      "x": 4,
+      "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -30,14 +30,14 @@
   ],
   "warp_events": [
     {
-      "x": 6,
+      "x": 3,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_AURORA_PATH",
       "dest_warp_id": "1"
     },
     {
-      "x": 5,
+      "x": 2,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_AURORA_PATH",
