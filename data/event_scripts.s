@@ -1215,3 +1215,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/ISLANDGAME_ROSEVALE_INN_1F_ROOM2/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MT_AURORA_3F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_AURORA_2F_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_AURORA_2F_3/scripts.inc"

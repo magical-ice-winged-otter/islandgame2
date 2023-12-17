@@ -47,6 +47,14 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
                 setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ARTHUR_SISTER, POS_HIDDEN_X, POS_HIDDEN_Y)
+            case STATE_FOUND_BANDIT:
+                // only sister and dad blocking inn are visible
+                setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
+                setobjectxyperm(LOCALID_ARTHUR_SISTER, 14, 14)
+                addobject(LOCALID_ARTHUR_SISTER)
+                setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
             default:
 
         }
@@ -188,9 +196,8 @@ script ISLANDGAME_ROSEVALE_Interact_ArthurDad {
 // section: sister cutscene pre-aurora
 text Text_ArthurSister_PleaseHelp {
     format(
-        "Hewwo, I need your help! \p"
-        "You're a trainer, right? Someone stole my A-zoo-ril! \p"
-        "My bwother ran after the thief, but he still hasn't come back!\p"
+        "You're a twainer, right? Someone stole my A-zoo-ril! \p"
+        "My bwother Arfur ran after the thief, but he still hasn't come back!\p"
         "He told me not to worry or tell Mom or Dad... but I'm getting worried!\p"
         "I don't wanna tell Mom and Dad. They'll be weally mad at him if they find out...\p"
         "Pwease help me find him and get my A-zoo-ril back!"
@@ -203,7 +210,9 @@ movement Movement_ArthurSister_RunUpToPath {
 
 script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
     lock
-
+    msgbox(format("Hewwo, I need your help!"))
+    closemessage
+    turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
     // the sister runs up
     addobject(LOCALID_ARTHUR_SISTER)
     setobjectxy(LOCALID_ARTHUR_SISTER, 20, 14)
@@ -211,7 +220,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
     waitmovement(LOCALID_ARTHUR_SISTER)
 
     // she asks if you can help
-    msgbox(Text_ArthurSister_PleaseHelp, MSGBOX_NPC)
+    msgbox(Text_ArthurSister_PleaseHelp)
 
     // quest starts
     setvar(VAR_ROSEVALE_STATE, STATE_STARTED_QUEST)

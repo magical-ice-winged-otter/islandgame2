@@ -55,6 +55,20 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MT_AURORA_1F",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 16,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_MT_AURORA_3F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_MT_AURORA_2F_2",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

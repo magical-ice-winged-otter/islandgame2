@@ -5150,6 +5150,26 @@
       "secondary_tileset": "gTileset_Islandgame_icecave",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_3F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MT_AURORA_2F_2",
+      "name": "ISLANDGAME_MT_AURORA_2F_2_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Islandgame_icecave",
+      "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MT_AURORA_2F_3",
+      "name": "ISLANDGAME_MT_AURORA_2F_3_Layout",
+      "width": 25,
+      "height": 29,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Islandgame_icecave",
+      "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/map.bin"
     }
   ]
 }

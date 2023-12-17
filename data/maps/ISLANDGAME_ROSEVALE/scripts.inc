@@ -8,9 +8,10 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	case 1, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
 	case 2, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 	case 4, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+	case 5, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	compare VAR_ROSEVALE_STATE, 3
-	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
@@ -46,14 +47,23 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
+	setobjectxyperm 4, 0, 0
+	setobjectxyperm 6, 0, 0
+	setobjectxyperm 5, 0, 0
+	setobjectxyperm 1, 14, 14
+	addobject 1
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
+	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 	setobjectxyperm 5, 19, 24
 	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
 	addobject 5
 	return
 
-ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
 	compare VAR_ROSEVALE_STATE, 4
-	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
+	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
@@ -190,11 +200,14 @@ Movement_ArthurSister_RunUpToPath:
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest::
 	lock
+	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest_Text_0
+	closemessage
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	addobject 1
 	setobjectxy 1, 20, 14
 	applymovement 1, Movement_ArthurSister_RunUpToPath
 	waitmovement 1
-	msgbox Text_ArthurSister_PleaseHelp, MSGBOX_NPC
+	msgbox Text_ArthurSister_PleaseHelp
 	setvar VAR_ROSEVALE_STATE, 1
 	release
 	return
@@ -353,6 +366,9 @@ ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0:
 ISLANDGAME_ROSEVALE_Interact_ArthurDad_Text_0:
 	.string "Where in the world could that boy be...?$"
 
+ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest_Text_0:
+	.string "Hewwo, I need your help!$"
+
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}{PLAYER}!$"
 
@@ -412,11 +428,10 @@ ArthurDefeated_Text_1:
 	.string "to you.$"
 
 Text_ArthurSister_PleaseHelp::
-	.string "Hewwo, I need your help!\p"
-	.string "You're a trainer, right? Someone stole\n"
+	.string "You're a twainer, right? Someone stole\n"
 	.string "my A-zoo-ril!\p"
-	.string "My bwother ran after the thief, but he\n"
-	.string "still hasn't come back!\p"
+	.string "My bwother Arfur ran after the thief,\n"
+	.string "but he still hasn't come back!\p"
 	.string "He told me not to worry or tell Mom or\n"
 	.string "Dad... but I'm getting worried!\p"
 	.string "I don't wanna tell Mom and Dad. They'll\n"

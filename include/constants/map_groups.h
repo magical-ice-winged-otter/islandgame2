@@ -80,6 +80,8 @@
 #define MAP_ISLANDGAME_ROSEVALE_INN_1F_ROOM1              (71 | (0 << 8))
 #define MAP_ISLANDGAME_ROSEVALE_INN_1F_ROOM2              (72 | (0 << 8))
 #define MAP_ISLANDGAME_MT_AURORA_3F                       (73 | (0 << 8))
+#define MAP_ISLANDGAME_MT_AURORA_2F_2                     (74 | (0 << 8))
+#define MAP_ISLANDGAME_MT_AURORA_2F_3                     (75 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))

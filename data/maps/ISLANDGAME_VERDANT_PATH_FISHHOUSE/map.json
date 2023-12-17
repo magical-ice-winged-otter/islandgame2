@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_VERDANT_PATH_FISHHOUSE",
   "name": "ISLANDGAME_VERDANT_PATH_FISHHOUSE",
   "layout": "LAYOUT_ISLANDGAME_VERDANT_PATH_FISHHOUSE",
-  "music": "MUS_PETALBURG",
+  "music": "MUS_FORTREE",
   "region_map_section": "MAPSEC_VERDANT_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
