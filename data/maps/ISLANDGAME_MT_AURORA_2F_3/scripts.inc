@@ -51,8 +51,15 @@ ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene::
 	waitmovement 0
 	msgbox ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_3
 	closemessage
+	applymovement 5, Common_Movement_WalkInPlaceDown
+	applymovement 5, Common_Movement_Delay32
+	waitmovement 0
+	msgbox ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_4
+	closemessage
 	fadedefaultbgm
 	setvar VAR_ROSEVALE_STATE, 5
+	applymovement 5, Common_Movement_Delay48
+	waitmovement 0
 	release
 	return
 
@@ -60,7 +67,7 @@ ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene::
 ISLANDGAME_MT_AURORA_2F_3_Arthur_Interact::
 	lock
 	faceplayer
-	msgbox ISLANDGAME_MT_AURORA_2F_3_Arthur_Interact_Text_0
+	msgbox ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_4
 	release
 	return
 
@@ -82,19 +89,20 @@ ISLANDGAME_MT_AURORA_2F_3_EdeaInteract::
 
 
 Movement_AzurillOutOfWay:
-	walk_fast_left
+	walk_faster_left
 	face_right
 	step_end
 
 Movement_ThiefRunAway:
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	delay_16
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 Movement_AzurillHappy:
@@ -143,6 +151,7 @@ ThiefDefeated:
 	playse SE_PIN
 	applymovement 3, Common_Movement_ExclamationMark
 	applymovement 5, Common_Movement_ExclamationMark
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
 	applymovement 3, Common_Movement_WalkInPlaceFasterUp
@@ -152,6 +161,7 @@ ThiefDefeated:
 	closemessage
 	applymovement 4, Movement_AzurillOutOfWay
 	applymovement 3, Movement_ThiefRunAway
+	waitmovement 0
 	applymovement 5, Common_Movement_FaceDown
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	applymovement 4, Common_Movement_FaceDown
@@ -182,11 +192,12 @@ ThiefDefeated:
 	msgbox ThiefDefeated_Text_8
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ThiefDefeated_Text_9
 	setvar VAR_ROSEVALE_STATE, 2
-	warp MAP_ISLANDGAME_ROSEVALE, 17, 25
+	warp MAP_ISLANDGAME_ROSEVALE, 19, 26
 	return
 
 
@@ -216,7 +227,7 @@ ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_3:
 	.string "{COLOR DARK_GRAY}Beat it, kid! Unless you want to get\n"
 	.string "demolished like this loser!$"
 
-ISLANDGAME_MT_AURORA_2F_3_Arthur_Interact_Text_0:
+ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_4:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Please! You have to stop her!\n"
 	.string "That Azurill means everything to my\l"
 	.string "little sister!\p"
@@ -241,8 +252,8 @@ ThiefDefeated_Text_1:
 	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}In your dreams, squirt! I'm not\n"
 	.string "giving this Pokémon up! It's worth more\l"
 	.string "than your dinky little inn!\p"
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Arthur: H-Huh? But you have to!\n"
-	.string "We beat you, fair and square!\p"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}H-Huh? But you have to! We beat\n"
+	.string "you, fair and square!\p"
 	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}And? What are you gonna do, tell\n"
 	.string "on me to the Pokémon gods? I'm taking\l"
 	.string "this Azurill with me! Peace out, losers!\p"
@@ -255,8 +266,8 @@ ThiefDefeated_Text_3:
 	.string "Cuuuuun!$"
 
 ThiefDefeated_Text_4:
-	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}Edea: W-What!? Articuno!? Where\n"
-	.string "in the blazes did you come from!?\p"
+	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}W-What!? Articuno!? Where in the\n"
+	.string "blazes did you come from!?\p"
 	.string "Ngggh... F-Fine! I'll give back their\n"
 	.string "stupid Azurill!\p"
 	.string "You punks got lucky this time! Now... if\n"
@@ -282,9 +293,8 @@ ThiefDefeated_Text_8:
 ThiefDefeated_Text_9:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}{PLAYER}? Well, I owe you big\n"
 	.string "and Articuno big time for helping me.\p"
-	.string "I couldn't do anything. If it weren't for\n"
-	.string "you two, Azurill would've been lost\l"
-	.string "forever!\p"
+	.string "I couldn't do anything... If it weren't\n"
+	.string "for you and Articuno, Azurill would've\l"
+	.string "been lost forever!\p"
 	.string "Ah... Ah... Achoo! Brrr... It's freezing in\n"
-	.string "here. We should head back to Rosevale.\p"
-	.string "$"
+	.string "here. Let's head back to Rosevale.$"

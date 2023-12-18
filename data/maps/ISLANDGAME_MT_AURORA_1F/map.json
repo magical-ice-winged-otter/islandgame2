@@ -58,6 +58,14 @@
       "elevation": 0,
       "item": "ITEM_DIVE_BALL",
       "flag": "FLAG_HIDDEN_ITEM_MT_AURORA_DIVEBALL"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_MT_AURORA_1F_SignInteract"
     }
   ]
 }

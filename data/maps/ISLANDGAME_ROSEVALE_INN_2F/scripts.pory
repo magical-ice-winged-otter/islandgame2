@@ -1,1 +1,66 @@
-mapscripts ISLANDGAME_ROSEVALE_INN_2F_MapScripts {}
+const FLAG_HIDE_SISTER_AND_AZURILL = FLAG_TEMP_1
+
+const LOCALID_ARTHUR_SISTER = 1
+const LOCALID_AZURILL = 2
+
+mapscripts ISLANDGAME_ROSEVALE_INN_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_ROSEVALE_STATE) != 6) {
+            setflag(FLAG_HIDE_SISTER_AND_AZURILL)
+        }
+    }
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ROSEVALE_STATE, 6 {
+            lock
+            applymovement(LOCALID_ARTHUR_SISTER, WalkInPlaceUp) 
+            waitmovement(0)
+            applymovement(LOCALID_ARTHUR_SISTER, Common_Movement_Delay48)
+            waitmovement(0)
+
+            msgbox(format(
+                "Hewwo, {PLAYER}! Did you sleep good? I made sure your pillow was extra fwuffi!\p"
+                "I also made this for you last night! It's a gift from me and A-zoo-wil!"
+            ))
+            
+            giveitem(ITEM_AMULET_COIN)
+
+            msgbox(format(
+                "Arfur told me you're leaving alweady... I wanted to pway with you more!\p"
+                "Pwease come back to visit us when you finish with your twainer stuff!"
+            ))
+            closemessage
+
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            applymovement(LOCALID_ARTHUR_SISTER, Movement_GoAway)
+            waitmovement(0)
+            applymovement(LOCALID_ARTHUR_SISTER, Common_Movement_Delay48)
+            waitmovement(0)
+            removeobject(LOCALID_ARTHUR_SISTER)
+            
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            applymovement(LOCALID_AZURILL, Movement_AzurillThanks)
+            waitmovement(0)
+            playmoncry(SPECIES_AZURILL, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(LOCALID_AZURILL, Movement_GoAway)
+            waitmovement(0)
+            applymovement(LOCALID_AZURILL, Common_Movement_Delay48)
+            waitmovement(0)
+            removeobject(LOCALID_AZURILL)
+            setvar(VAR_ROSEVALE_STATE, 7)
+        }
+    ]
+}
+
+movement Movement_GoAway {
+    walk_fast_left * 8
+    walk_fast_up * 3
+}
+
+movement Movement_AzurillThanks {
+    walk_left
+    face_up
+    jump_in_place_up * 2
+}
+

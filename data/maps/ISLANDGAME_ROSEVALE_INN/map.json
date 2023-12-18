@@ -32,7 +32,7 @@
       "x": 29,
       "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_183",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_298",
       "x": 29,
       "y": 5,
       "elevation": 0,
@@ -118,7 +118,33 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "7",
+      "script": "ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "7",
+      "script": "ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "7",
+      "script": "ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene"
+    }
   ],
   "bg_events": [
     {

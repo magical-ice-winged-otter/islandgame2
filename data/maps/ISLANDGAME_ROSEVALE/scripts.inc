@@ -24,19 +24,23 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-	setobjectxyperm 4, 20, 25
-	setobjectxyperm 5, 18, 24
-	setobjectxyperm 6, 19, 24
-	setobjectxyperm 1, 20, 26
+	setobjectxyperm 4, 18, 26
+	setobjectxyperm 5, 19, 24
+	setobjectxyperm 6, 18, 24
+	setobjectxyperm 1, 20, 24
+	setobjectxyperm 13, 20, 26
 	addobject 4
 	addobject 5
 	addobject 6
 	addobject 1
-	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_LEFT
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
-	turnobject 4, DIR_WEST
-	turnobject 1, DIR_WEST
+	addobject 13
+	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_DOWN
+	turnobject 4, DIR_NORTH
+	turnobject 13, DIR_NORTH
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
@@ -71,17 +75,71 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
-	setvar VAR_ROSEVALE_STATE, 3
-	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0, MSGBOX_NPC
-	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1, MSGBOX_NPC
-	giveitem ITEM_AMULET_COIN
-	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2, MSGBOX_NPC
-	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3, MSGBOX_NPC
+	setvar VAR_ROSEVALE_STATE, 6
+	applymovement 1, Common_Movement_ExclamationMark
+	applymovement 13, Common_Movement_ExclamationMark
+	waitmovement 0
+	playmoncry SPECIES_AZURILL, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement 13, Movement_AzurillRunsToSister
+	waitmovement 0
+	applymovement 1, Movement_SisterHappyToSee
+	waitmovement 0
+	applymovement 1, Common_Movement_FaceDown
+	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0
+	applymovement 6, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	applymovement 6, Common_Movement_Delay48
+	waitmovement 0
+	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1
+	closemessage
+	applymovement 5, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	applymovement 5, Common_Movement_Delay48
+	waitmovement 0
+	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2
+	closemessage
+	applymovement 4, Common_Movement_FaceRight
+	applymovement 4, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	applymovement 4, Common_Movement_Delay48
+	waitmovement 0
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
+	waitmovement 0
+	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_4
+	closemessage
+	fadescreen FADE_TO_BLACK
+	msgbox ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_5
+	closemessage
+	playfanfare MUS_HEAL
+	waitfanfare
 	special HealPlayerParty
 	setrespawn HEAL_LOCATION_ISLANDGAME_ROSEVALE
-	warp MAP_ISLANDGAME_ROSEVALE_INN, 5, 3
+	warp MAP_ISLANDGAME_ROSEVALE_INN_2F_ROOM1, 2, 2
 	return
 
+
+Movement_AzurillRunsToSister:
+	jump_in_place_up
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	face_left
+	step_end
+
+Movement_SisterHappyToSee:
+	face_right
+	jump_in_place_up
+	jump_in_place_up
+	delay_16
+	delay_16
+	delay_16
+	step_end
 
 ISLANDGAME_ROSEVALE_Interact_PuddleMon::
 	lock
@@ -232,7 +290,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	waitmovement 0
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1, MSGBOX_NPC
-	trainerbattle_single TRAINER_SPECIAL_ARTHUR_1, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_3, ArthurDefeated
+	trainerbattle_single TRAINER_ROSEVALE_ARTHUR, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_3, ArthurDefeated
 	release
 	return
 
@@ -301,22 +359,47 @@ ArthurDefeated:
 
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
-	.string "{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Yay! Fank you for\n"
-	.string "getting Marill back!$"
+	.string "{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Hooway!! You did it!\n"
+	.string "You saved A-zoo-will and Arfur!$"
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
-	.string "{COLOR DARK_GRAY}Here! You can have this.$"
+	.string "{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}Thank you so much for\n"
+	.string "helping our son and rescuing our\l"
+	.string "daughter's Pokémon, dear. How can we\l"
+	.string "ever repay you?$"
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
-	.string "{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}How can we ever repay you,\n"
-	.string "{PLAYER}?$"
+	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}Please, come stay the\n"
+	.string "night at our inn, free of charge! It's\l"
+	.string "the least we can do for your kindness.$"
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
-	.string "{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}Please, stay the night at\n"
-	.string "our inn. It's the least we can do.$"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Watching your Pokémon battle...\n"
+	.string "it was incredible.\p"
+	.string "They knew exactly what to do in the\n"
+	.string "fight, even in the heat of the moment.\p"
+	.string "You must be a pretty seasoned Pokémon\n"
+	.string "trainer, right? What brings you here to\l"
+	.string "Rosevale of all places?$"
+
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_4:
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Oh... you were training up your\n"
+	.string "Pokemon to battle against Tidalcove's\l"
+	.string "Gym Leader, Ruka?\p"
+	.string "I see... that means you're taking part in\n"
+	.string "the Festival Tournament then, right?\p"
+	.string "Hm... So Pokémon trainers can get\n"
+	.string "stronger by battling Gym Leaders...\p"
+	.string "Oh, sorry! We should probably head\n"
+	.string "inside. Let's continue this\l"
+	.string "conversation after dinner!$"
+
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_5:
+	.string "{COLOR RED}(I spent the rest of the night talking\n"
+	.string "to Arthur about my journey thus far...)$"
 
 ISLANDGAME_ROSEVALE_Interact_PuddleMon_Text_0:
-	.string "Char... {COLOR BLUE}(save me from this purgatory)$"
+	.string "Char... {COLOR BLUE}(water scary :c)$"
 
 ISLANDGAME_ROSEVALE_Interact_PuddleTrainer_Text_0:
 	.string "It's ok! The water isn't going to hurt\n"
@@ -360,8 +443,8 @@ ISLANDGAME_ROSEVALE_Interact_InnSign_Text_0:
 	.string "$"
 
 ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0:
-	.string "My bwother went that-a-way. I think he\n"
-	.string "went into the mountain!$"
+	.string "My bwother went that-a-way! I think he\n"
+	.string "wan into the mountain!$"
 
 ISLANDGAME_ROSEVALE_Interact_ArthurDad_Text_0:
 	.string "Where in the world could that boy be...?$"
@@ -373,19 +456,23 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}{PLAYER}!$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1:
-	.string "Before you go, I... I...\p"
-	.string "I want to challenge you to a Pokémon\n"
-	.string "battle!\p"
-	.string "I-I couldn't do anything against that\n"
-	.string "thief... If it wasn't for you and\l"
-	.string "Articuno... My little sister's Pokémon\l"
-	.string "would've been lost forever!\p"
-	.string "I need to get stronger, so when the\n"
-	.string "time comes, I'll be able to protect her!\p"
-	.string "I wanna be just like you, and take on\n"
-	.string "the Mariyama Gym Challenge to hone my\l"
-	.string "skills!\p"
-	.string "But Dad says I'm not ready yet...\p"
+	.string "Before you go...\p"
+	.string "Please...\p"
+	.string "Face me in a Pokémon battle! I couldn't\n"
+	.string "do anything against that thief... I\l"
+	.string "failed my little sister...\p"
+	.string "If it wasn't for you and Articuno... My\n"
+	.string "sister's Pokémon would've been lost\l"
+	.string "forever!\p"
+	.string "I can't something like that happen\n"
+	.string "again... I need to get stronger, so when\l"
+	.string "the time comes... I'll be able to protect\l"
+	.string "her myself!\p"
+	.string "And there's no better way than for me\n"
+	.string "to take on Mariyama Gym Challenge and\l"
+	.string "enter the Festival Tournament, just\l"
+	.string "like you!\p"
+	.string "My dad says I'm not ready yet...\p"
 	.string "$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2:
@@ -393,48 +480,66 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2:
 	.string "now! Prepare yourself, {PLAYER}!$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_3:
-	.string "...\pI lost again...\pWhy do I keep losing?$"
+	.string "...\pI lost again...$"
 
 ArthurDefeated_Text_0:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}...\p"
-	.string "{COLOR DARK_GRAY}Heh... You're a great trainer,\n"
-	.string "{PLAYER}. You can definitely take on\l"
-	.string "Ruka.\p"
+	.string "{COLOR DARK_GRAY}Heh... You're truly an amazing trainer,\n"
+	.string "{PLAYER}.\p"
+	.string "I have no doubt that you'll be able to\n"
+	.string "beat Ruka.\p"
 	.string "{COLOR DARK_GRAY}Me on the other hand? I should just\n"
 	.string "give up.\p"
-	.string "{COLOR DARK_GRAY}I'm not cut out to be a Pokémon trainer.\n"
-	.string "I'm a failure.\p"
+	.string "{COLOR DARK_GRAY}Maybe I'm just not cut out to be a\n"
+	.string "Pokémon trainer.\p"
+	.string "I never win... Why can't I ever win? That\n"
+	.string "thief was right... I am just a loser.\p"
+	.string "...a failure.\p"
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}No, Arthur, that's not\n"
 	.string "true.\p"
 	.string "$"
 
 ArthurDefeated_Text_1:
-	.string "Just because you haven't been\n"
-	.string "successful with your first few\l"
-	.string "battles, doesn't mean you're a failure.\p"
+	.string "Losing just means you have more to\n"
+	.string "learn. It doesn't mean you're a failure.\p"
+	.string "Failure only comes when you give up.\n"
+	.string "When you stop believing.\p"
 	.string "I watched your battle with {PLAYER}.\n"
-	.string "The bond you share with your Pokémon\l"
-	.string "is strong, and shows me that do you\l"
-	.string "have potential.\p"
-	.string "But you need more time. You can't\n"
-	.string "expect to be a good trainer without\l"
-	.string "putting in the effort.\p"
-	.string "Listen, if you spend the next week\n"
-	.string "training hard with your Pokémon, I'll\l"
-	.string "let you challenge Ruka, alright?\p"
-	.string "{COLOR GREEN}Arthur: -sniff- Okay. {COLOR GREEN}Arthur's Dad:\n"
-	.string "{COLOR DARK_GRAY}Good luck on the rest of your journey,\l"
-	.string "{PLAYER}. {COLOR DARK_GRAY}Our door will always be open\l"
-	.string "to you.$"
+	.string "I can tell you still don't trust in your\l"
+	.string "Pokémon, or even yourself.\p"
+	.string "And if you don't trust in yourself, how\n"
+	.string "can you expect your Pokémon to?\p"
+	.string "That's why you need more time. You have\n"
+	.string "to build that trust with your Pokémon.\l"
+	.string "Build that trust with yourself. Do you\l"
+	.string "understand?\p"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm. {COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}I\n"
+	.string "know I may have been a little harsh on\l"
+	.string "you earlier, but it's only because I\l"
+	.string "want the best for you.\p"
+	.string "Pokémon are a big responsibility, and I\n"
+	.string "want to make sure that you can take\l"
+	.string "care of both yourself and your Pokémon\l"
+	.string "before you enter the Gym Challenge.\p"
+	.string "In the next week, if you show me that\n"
+	.string "the bond between you and your Pokemon\l"
+	.string "has strengthened, I will let you\l"
+	.string "challenge Ruka.\p"
+	.string "And if you win, I will let you resume the\n"
+	.string "rest of the gym challenge on your own.\l"
+	.string "Does that sound fair?\p"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Okay. I'll train really really\n"
+	.string "hard.\p"
+	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}It has been a pleasure,\n"
+	.string "{PLAYER}.\p"
+	.string "I wish you all the best in your travels.$"
 
 Text_ArthurSister_PleaseHelp::
 	.string "You're a twainer, right? Someone stole\n"
-	.string "my A-zoo-ril!\p"
-	.string "My bwother Arfur ran after the thief,\n"
+	.string "my A-zoo-wil!\p"
+	.string "My bwother Arfur wan after the thief,\n"
 	.string "but he still hasn't come back!\p"
-	.string "He told me not to worry or tell Mom or\n"
-	.string "Dad... but I'm getting worried!\p"
-	.string "I don't wanna tell Mom and Dad. They'll\n"
-	.string "be weally mad at him if they find out...\p"
-	.string "Pwease help me find him and get my\n"
-	.string "A-zoo-ril back!$"
+	.string "He told me not to wowwy, but I'm getting\n"
+	.string "weally wowwied now!\p"
+	.string "Pwease help me find him! And my\n"
+	.string "A-zoo-wil!$"

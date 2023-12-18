@@ -154,8 +154,8 @@
 
 
 // Rosevale
-#define TRAINER_SPECIAL_ARTHUR_1             61
-#define TRAINER_LOLA_3                       TRAINER_SPECIAL_ARTHUR_1
+#define TRAINER_ROSEVALE_ARTHUR              61
+#define TRAINER_LOLA_3                       TRAINER_ROSEVALE_ARTHUR
 
 
 

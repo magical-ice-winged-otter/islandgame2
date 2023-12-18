@@ -846,27 +846,43 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     }
 };
 
-static const struct TrainerMon sParty_Lola3[] = {
+
+
+/// Rosevale - Arthur Fight
+static const struct TrainerMon sParty_RosevaleArthur[] = {
     {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 20,
     .species = SPECIES_SOLOSIS,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PSYWAVE, MOVE_CONFUSE_RAY, MOVE_ACID_ARMOR, MOVE_SNATCH}
+    .ability = ABILITY_MAGIC_GUARD,
+    .moves = {MOVE_PSYBEAM, MOVE_CONFUSE_RAY, MOVE_HIDDEN_POWER, MOVE_RECOVER}
     },
     {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 20,
+    .species = SPECIES_FLAAFFY,
+    .ability = ABILITY_STATIC,
+    .moves = {MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_SIGNAL_BEAM, MOVE_CHARGE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 20,
     .species = SPECIES_KECLEON,
-    .heldItem = ITEM_NONE,
+    .ability = ABILITY_PROTEAN,
     .moves = {MOVE_DIZZY_PUNCH, MOVE_SHADOW_SNEAK, MOVE_THIEF, MOVE_FAKE_OUT}
     },
     {
-    .iv = 0,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 22,
     .species = SPECIES_AZUMARILL,
+    .ability = ABILITY_HUGE_POWER,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_ROLLOUT, MOVE_AQUA_JET, MOVE_DEFENSE_CURL, MOVE_AQUA_RING}
+    .moves = {MOVE_PLAY_ROUGH, MOVE_AQUA_JET, MOVE_AQUA_TAIL, MOVE_AQUA_RING}
     }
 };
+
+
+
 
 /// Mt. Aurora - Edea Fight
 static const struct TrainerMon sParty_MtAuroraEdea[] = {
@@ -876,7 +892,7 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
     .species = SPECIES_PERSIAN_ALOLAN,
     .ability = ABILITY_FUR_COAT,
     .heldItem = ITEM_DARK_GEM,
-    .moves = {MOVE_AERIAL_ACE, MOVE_THIEF, MOVE_SNARL, MOVE_PARTING_SHOT}
+    .moves = {MOVE_FAKE_OUT, MOVE_THIEF, MOVE_SNARL, MOVE_PARTING_SHOT}
     },
     {
     .lvl = 21,
@@ -890,14 +906,14 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
     .species = SPECIES_SNEASEL,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .ability = ABILITY_PICKPOCKET,
-    .moves = {MOVE_METAL_CLAW, MOVE_ICE_SHARD, MOVE_THIEF, MOVE_FAKE_OUT}
+    .moves = {MOVE_METAL_CLAW, MOVE_ICE_SHARD, MOVE_PURSUIT, MOVE_FAKE_OUT}
     },
     {
     .lvl = 21,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .species = SPECIES_LIEPARD,
     .ability = ABILITY_PRANKSTER,
-    .moves = {MOVE_FAKE_OUT, MOVE_YAWN, MOVE_PAY_DAY, MOVE_THIEF}
+    .moves = {MOVE_FAKE_OUT, MOVE_SWAGGER, MOVE_THUNDER_WAVE, MOVE_THIEF}
     },
 };
 

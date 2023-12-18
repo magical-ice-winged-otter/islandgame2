@@ -7,11 +7,6 @@ ISLANDGAME_AURORA_PATH_Interact_EntranceSign::
 	return
 
 
-ISLANDGAME_AURORA_PATH_Interact_MtSign::
-	msgbox ISLANDGAME_AURORA_PATH_Interact_MtSign_Text_0, MSGBOX_SIGN
-	return
-
-
 ISLANDGAME_AURORA_PATH_Interact_WeatherInstitute::
 	msgbox ISLANDGAME_AURORA_PATH_Interact_WeatherInstitute_Text_0, MSGBOX_SIGN
 	return
@@ -19,11 +14,7 @@ ISLANDGAME_AURORA_PATH_Interact_WeatherInstitute::
 
 ISLANDGAME_AURORA_PATH_Interact_EntranceSign_Text_0:
 	.string "AURORA PATH\n"
-	.string "MT. AURORA{UP_ARROW}$"
-
-ISLANDGAME_AURORA_PATH_Interact_MtSign_Text_0:
-	.string "MT. AURORA\n"
-	.string "BEWARE OF SUBZERO TEMPERATURES$"
+	.string "{UP_ARROW}MT. AURORA$"
 
 ISLANDGAME_AURORA_PATH_Interact_WeatherInstitute_Text_0:
 	.string "MT. AURORA WEATHER INSTITUTE\n"

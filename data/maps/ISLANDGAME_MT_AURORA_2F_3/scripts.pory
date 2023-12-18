@@ -68,8 +68,16 @@ script ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene {
         "{COLOR DARK_GRAY}Beat it, kid! Unless you want to get demolished like this loser!"
     ))
     closemessage
+
+    applymovement(LOCALID_ARTHUR, Common_Movement_WalkInPlaceDown)
+    applymovement(LOCALID_ARTHUR, Common_Movement_Delay32)
+    waitmovement(0)
+    msgbox(format("{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Please! You have to stop her! That Azurill means everything to my little sister!\pI-I tried my best... but it just wasn't enough..."))
+    closemessage
     fadedefaultbgm
     setvar(VAR_ROSEVALE_STATE, 5)
+    applymovement(LOCALID_ARTHUR, Common_Movement_Delay48)
+    waitmovement(0)
     release
 }
 
@@ -97,13 +105,14 @@ script ISLANDGAME_MT_AURORA_2F_3_EdeaInteract {
 }
 
 movement Movement_AzurillOutOfWay {
-    walk_fast_left
+    walk_faster_left
     face_right
 }
 
 movement Movement_ThiefRunAway {
-    walk_fast_left
-    walk_fast_down * 7
+    delay_16
+    walk_faster_left
+    walk_faster_down * 7
 }
 
 movement Movement_AzurillHappy {
@@ -128,7 +137,7 @@ script(local) ThiefDefeated {
     applymovement(LOCALID_THIEF, Common_Movement_FaceDown)
     msgbox(format(
         "{COLOR GREEN}Edea: {COLOR DARK_GRAY}In your dreams, squirt! I'm not giving this Pokémon up! It's worth more than your dinky little inn!\p"
-        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Arthur: H-Huh? But you have to! We beat you, fair and square!\p"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}H-Huh? But you have to! We beat you, fair and square!\p"
         "{COLOR GREEN}Edea: {COLOR DARK_GRAY}And? What are you gonna do, tell on me to the Pokémon gods? I'm taking this Azurill with me! Peace out, losers!\p"
         "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}W-Wait!"
     ))
@@ -164,6 +173,7 @@ script(local) ThiefDefeated {
     playse(SE_PIN)
     applymovement(LOCALID_THIEF, Common_Movement_ExclamationMark)
     applymovement(LOCALID_ARTHUR, Common_Movement_ExclamationMark)
+    waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
     waitmovement(0)
     applymovement(LOCALID_THIEF, Common_Movement_WalkInPlaceFasterUp)    
@@ -171,7 +181,7 @@ script(local) ThiefDefeated {
     waitmovement(0)
 
     msgbox(format(
-        "{COLOR GREEN}Edea: {COLOR DARK_GRAY}Edea: W-What!? Articuno!? Where in the blazes did you come from!?\p"
+        "{COLOR GREEN}Edea: {COLOR DARK_GRAY}W-What!? Articuno!? Where in the blazes did you come from!?\p"
         "Ngggh... F-Fine! I'll give back their stupid Azurill!\p"
         "You punks got lucky this time! Now... if you don't mind me... I'm outta here!"
     ))
@@ -221,16 +231,17 @@ script(local) ThiefDefeated {
     ))
     closemessage
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
     waitmovement(0)
 
     msgbox(format(
         "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}{PLAYER}? Well, I owe you big and Articuno big time for helping me.\p"
-        "I couldn't do anything. If it weren't for you two, Azurill would've been lost forever!\p"
-        "Ah... Ah... Achoo! Brrr... It's freezing in here. We should head back to Rosevale.\p"
+        "I couldn't do anything... If it weren't for you and Articuno, Azurill would've been lost forever!\p"
+        "Ah... Ah... Achoo! Brrr... It's freezing in here. Let's head back to Rosevale."
     ))
     setvar(VAR_ROSEVALE_STATE, 2) // see ISLANDGAME_ROSEVALE scripts.pory for state info
 
     // warp back to rosevale
-    warp(MAP_ISLANDGAME_ROSEVALE, 17, 25)
+    warp(MAP_ISLANDGAME_ROSEVALE, 19, 26)
 }

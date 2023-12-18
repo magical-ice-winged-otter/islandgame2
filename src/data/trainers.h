@@ -791,8 +791,8 @@ const struct Trainer gTrainers[] = {
 
 
 
-
-    [TRAINER_SPECIAL_ARTHUR_1] =
+    // Rosevale
+    [TRAINER_ROSEVALE_ARTHUR] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -801,7 +801,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Lola3),
+        .party = TRAINER_PARTY(sParty_RosevaleArthur),
     },
 
     // Mt. Aurora
@@ -809,11 +809,11 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_F,
         .trainerName = _("Edea"),
         .items = {ITEM_SUPER_POTION},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING,
         .party = TRAINER_PARTY(sParty_MtAuroraEdea),
     },
 
