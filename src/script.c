@@ -269,6 +269,14 @@ void RunScriptImmediately(const u8 *ptr)
     while (RunScriptCommand(&sImmediateScriptContext) == TRUE);
 }
 
+//islandgame-start:
+//naative function to store trainerRange_berryTreeId in VAR_RESULT
+//used for easier ow pokeball items
+void GetObjectEventTrainerRangeFromTemplate(void)
+{
+    gSpecialVar_Result = gMapHeader.events->objectEvents[gSpecialVar_LastTalked - 1].trainerRange_berryTreeId;
+}
+
 u8 *MapHeaderGetScriptTable(u8 tag)
 {
     const u8 *mapScripts = gMapHeader.mapScripts;

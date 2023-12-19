@@ -164,8 +164,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "COP_1_ItemRareCandy",
+      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_COP_1_RARE_CANDY"
     },
     {
@@ -177,8 +177,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route120_EventScript_ItemNestBall",
+      "trainer_sight_or_berry_tree_id": "ITEM_NEST_BALL",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_120_NEST_BALL"
     },
     {
@@ -203,8 +203,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgCity_EventScript_ItemMaxRevive",
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE"
     },
     {
@@ -216,8 +216,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "COP_1_ItemCharcoal",
+      "trainer_sight_or_berry_tree_id": "ITEM_CHARCOAL",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_COP_1_CHARCOAL"
     },
     {
@@ -268,8 +268,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route119_EventScript_ItemZinc",
+      "trainer_sight_or_berry_tree_id": "ITEM_ZINC",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_119_ZINC"
     }
   ],
