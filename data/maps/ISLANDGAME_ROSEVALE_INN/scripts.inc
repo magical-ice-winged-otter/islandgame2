@@ -28,6 +28,7 @@ ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene::
 	msgbox ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene_Text_1
 	applymovement 4, Common_Movement_WalkInPlaceRight
 	msgbox ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene_Text_2
+	closemessage
 	applymovement 4, Common_Movement_Delay48
 	waitmovement 0
 	setvar VAR_ROSEVALE_STATE, 3
@@ -71,6 +72,7 @@ ISLANDGAME_ROSEVALE_INN_Interact_Arthur::
 	lock
 	switch VAR_ROSEVALE_STATE
 	case 3, ISLANDGAME_ROSEVALE_INN_Interact_Arthur_3
+	faceplayer
 	msgbox ISLANDGAME_ROSEVALE_INN_Interact_Arthur_Text_1, MSGBOX_NPC
 ISLANDGAME_ROSEVALE_INN_Interact_Arthur_1:
 	release
@@ -85,6 +87,7 @@ ISLANDGAME_ROSEVALE_INN_Interact_Arthur_3:
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad::
 	switch VAR_ROSEVALE_STATE
 	case 3, ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad_2
+	faceplayer
 	msgbox ISLANDGAME_ROSEVALE_INN_Interact_ArthurDad_Text_1, MSGBOX_NPC
 	return
 
@@ -112,8 +115,7 @@ ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene_Text_1:
 	.string "Taking part in the Gym Challenge means\n"
 	.string "you'll be traveling around the isles by\l"
 	.string "yourself, and I don't trust you to not\l"
-	.string "get into trouble.\p"
-	.string "$"
+	.string "get into trouble.$"
 
 ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene_Text_2:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Why not? I'm not a kid anymore!\n"

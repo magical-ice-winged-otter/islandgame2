@@ -340,6 +340,7 @@ Movement_Arthur_WalkAway:
 
 ArthurDefeated:
 	msgbox ArthurDefeated_Text_0, MSGBOX_NPC
+	closemessage
 	addobject 5
 	setobjectxy 5, 25, 12
 	applymovement 5, Movement_ArthurDad_WalkUpToArthur
@@ -472,8 +473,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1:
 	.string "to take on Mariyama Gym Challenge and\l"
 	.string "enter the Festival Tournament, just\l"
 	.string "like you!\p"
-	.string "My dad says I'm not ready yet...\p"
-	.string "$"
+	.string "My dad says I'm not ready yet...$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2:
 	.string "So I'll prove it to him! Right here and\n"
@@ -496,8 +496,7 @@ ArthurDefeated_Text_0:
 	.string "thief was right... I am just a loser.\p"
 	.string "...a failure.\p"
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}No, Arthur, that's not\n"
-	.string "true.\p"
-	.string "$"
+	.string "true.$"
 
 ArthurDefeated_Text_1:
 	.string "Losing just means you have more to\n"
@@ -513,10 +512,10 @@ ArthurDefeated_Text_1:
 	.string "to build that trust with your Pokémon.\l"
 	.string "Build that trust with yourself. Do you\l"
 	.string "understand?\p"
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm. {COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}I\n"
-	.string "know I may have been a little harsh on\l"
-	.string "you earlier, but it's only because I\l"
-	.string "want the best for you.\p"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm.\p"
+	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}I know I may have been a\n"
+	.string "little harsh on you earlier, but it's\l"
+	.string "only because I want the best for you.\p"
 	.string "Pokémon are a big responsibility, and I\n"
 	.string "want to make sure that you can take\l"
 	.string "care of both yourself and your Pokémon\l"
