@@ -1,6 +1,6 @@
 const STEP_COUNT_PUZZLE1 = 8
 const STEP_COUNT_PUZZLE2 = 28
-const STEP_COUNT_PUZZLE3 = 66
+const STEP_COUNT_PUZZLE3 = 67
 const LOCALID_RUKA = 0
 
 mapscripts ISLANDGAME_TIDALCOVE_GYM_MapScripts {
@@ -23,27 +23,93 @@ mapscripts ISLANDGAME_TIDALCOVE_GYM_MapScripts {
 }
 
 script ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor {
-    msgbox(format(
-        "Welcome, Challenger! You must climb the slope to fight Ruka.\p"
-        "If you step on ice too much, it'll break!\p"
-        "But don't worry, there is a chute underneath that will carry you safely to the back."
-    ), MSGBOX_NPC)
+    lock
+    faceplayer
+    if(!flag(FLAG_TIDALCOVE_GYM_SPONSOR_TALK)) {
+        msgbox(format(
+            "Welcome, challenger! Sorry we couldn't get to your request yesterday.\p"
+            "Ruka gets so many of them since she's the first of the three gym leaders.\p"
+            "Before you can face her though, you'll have to prove your worthy...\p"
+            "...by ascending to the top of the gym! Or as I like to refer to it as, climbing Mt. Aurora! Quite fitting, isn't it?\p"
+            "In order to climb each floor, you'll have to step on each of the ice tiles once!\p"
+            "Be careful though... the ice is very thin, and stepping on the same one again will result in...\p"
+            "Certain demise!\p"
+            "Haha, I'm just kidding. You'll simply fall down a chute that'll transport you out of the gym safely, like a fun slide!\p"
+            "Anyways, good luck, and remember to have fun!\p"
+            "Oh, and take one of these too! Everyone gets one for participating!"
+        ))
+        giveitem(ITEM_FRESH_WATER)
+        setflag(FLAG_TIDALCOVE_GYM_SPONSOR_TALK)
+    }
+    else {
+        msgbox(format("Good luck, and remember to have fun!"))
+    }
+    release
 }
 
+script ISLANDGAME_TIDALCOVE_GYM_Trainer1 {
+    trainerbattle_single(TRAINER_TIDALCOVE_GYM_1, 
+        format("This is your first gym challenge, huh? If you're expecting to breeze right through, you're in for a rude awakening!"), 
+        "You're not half-bad!"
+    )
+    msgbox(format("You've made it past the first level, trainer!\p""But do you have what it takes to stand before Tidalcove's Precious Pearl?\p""Only one way to find out..."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_GYM_Trainer2 {
+    trainerbattle_single(TRAINER_TIDALCOVE_GYM_2, 
+        format("Freeze! Get it? 'Cause like, I stopped you, and we're in an ice-themed gym?"), 
+        "Not a fan of puns, I see..."
+    )
+    msgbox(format("I hate being in the sweltering sun, so being a gym trainer at Tidalcove was definitely the right play for me!"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_GYM_Trainer3 {
+    trainerbattle_single(TRAINER_TIDALCOVE_GYM_3, 
+        format("You're almost at the peak, but I have to stop you here. My apologies."), 
+        "Your Pokémon fight with elegance."
+    )
+    msgbox(format("Ruka is my close friend, so I offer to help her out at her gym time to time.\p"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_GYM_Trainer4 {
+    trainerbattle_single(TRAINER_TIDALCOVE_GYM_4, 
+        format("I see you staring at me with a confused look on your face!\pYou're wondering why an older woman such as myself is here, aren't you!?\pI'll have you know, I used to be a fashion model in my prime!"), 
+        "I used to rule the world..."
+    )
+    msgbox(format("Oh.. how I long for the days where I was on the cover of every magazine..."), MSGBOX_NPC)
+}
 
 script ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka {
-    if (!defeated(TRAINER_LEADER_RUKA)) {
+    if (!defeated(TRAINER_TIDALCOVE_GYM_RUKA)) {
+        lock
+        faceplayer
         msgbox(format(
-            "Hi there! You made it all the way past that ice, good job!\p" 
-            "Now, let's see what you can do in battle."
+            "You've finally reached the top, challenger! Congrats on getting this far!\p"
+            "I'm Ruka, Tidalcove's Gym Leader! But I'm sure you knew that already. My face is on everything here after all, aha.\p"
+            "Here, your Pokémon must be tired from venturing up here. Let me heal them up."
         ), MSGBOX_NPC)
+        closemessage
 
-        trainerbattle_single(TRAINER_LEADER_RUKA, format("Let's go!"), format("That was fun!"), RukaDefeated, NO_MUSIC)
+        playfanfare(MUS_HEAL)
+        waitfanfare
+        special(HealPlayerParty)
+
+        msgbox(format(
+            "You know, it's kind of surreal. For your reputation to precede you.\p"
+            "For everyone to know everything about you.\p"
+            "I've met so many trainers who knew every single little detail about me.\p"
+            "My favorite Pokémon, my battle style, what commercials and billboards I've been on, what competitions I've been a part of.\p"
+            "Some even know exact my height, weight, and body measurements by heart...\p"
+            "Meanwhile, I haven't even learned what their name is yet. Isn't that crazy?\p"
+            "Personally, the best way for me to get to know a trainer is through a battle."
+        ))
+
+        trainerbattle_single(TRAINER_TIDALCOVE_GYM_RUKA, format("So please, challenger. Show me everything about you, right here!"), format("Ah... It seems that I've learned more\nthan enough about you.\pYour ability to communicate with your\nPokémon... It's almost telepathic!\pYou're quite the special trainer, aren't\nyou, {PLAYER}?\pFor your victory over me, I reward you\nwith the Tidalcove Badge!"), RukaDefeated, NO_MUSIC)
     }
     else { // we already won
         msgbox(format(
-            "Lumine is a wonderful island.\p"
-            "I'm sure you'll find lots of cool stuff to do over there!"
+            "{COLOR GREEN}Ruka: {COLOR DARK_GRAY}-yawn- Being a gym leader really drains all the energy away from me.\p"
+            "I think I'll go for a relaxing swim over to Applevine after work."
         ), MSGBOX_NPC)
     }
 }
@@ -54,27 +120,30 @@ movement Movement_Surprised {
 }
 
 script(local) RukaDefeated {
-    msgbox(format(
-        "Wow, that doesn't happen very often!\nCongrats on beating me!\p"
-        "To remember your victory: take this!"
-    ), MSGBOX_NPC)
     message(format("You received the Tidalcove Badge!"))
     waitmessage
     call(Common_EventScript_PlayGymBadgeFanfare)
-    setflag(FLAG_BADGE01_GET)
-    msgbox(format("Also, take this with you:"), MSGBOX_NPC)
-    giveitem(ITEM_TM07)
-    msgbox(format("It's my favorite move HAIL! \nPeople look down on it, but it can do some cool stuff!"), MSGBOX_NPC)
-    applymovement(LOCALID_RUKA, Movement_Surprised)
-    waitmovement(0)
     msgbox(format(
-        "What's that?\nYou're trying to travel to Lumine Island?\p"
-        "I personally love the swim over there, but it is pretty hard without a Pokemon...\p"
-        "I guess a bike the second best way!\nLuckily, we have an amazing bike shop here in Tidalcove.\p"
-        "Here, take a voucher!\nThis gets you a free bike.\p"
-        "Yeah, I won it from a raffle a while ago, but never had a use for it..."
-    ), MSGBOX_NPC)
+        "{COLOR GREEN}Ruka: {COLOR DARK_GRAY}That was an amazing match, {PLAYER}!\p"
+        "It was enough to make me sweat in this refrigerator of a gym! Haha.\p"
+        "Oh, on top of your shiny new badge, take this TM as well! It's got the Ruka seal of approval autographed on it!"
+        )
+    , MSGBOX_NPC)
+    giveitem(ITEM_TM07)
+    msgbox(format(
+        "Inside that TM is my signature move, Hail! With it, you can unleash the true beauty of ice Pokemon!\p"
+        "Now that you've completed the first step towards the Mariyama Gym Challenge, I present you with this!"
+        )
+    )
     giveitem(ITEM_BIKE_VOUCHER)
+
+    msgbox(format(
+        "That right there will get you a free bike over at Randy's bike shop!\p"
+        "You'll need one in order to ride on the Seaside Bike Path to get to Lumine Island, where your next challenge awaits!\p"
+        "Ah... The end of a gym challenge is always so bittersweet.\p"
+        "Right as I've just begun to get to know you, I have to bid you farewell.\p"
+        "But such is the life of a gym leader..."
+    ))
     closemessage
 }
 

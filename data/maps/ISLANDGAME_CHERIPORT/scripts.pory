@@ -33,7 +33,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
         goto(NightBeachSodaVendor_End)
     }
 
-    checkmoney(100)
+    checkmoney(600)
 
     if (!var(VAR_RESULT)) {
         msgbox(format("{COLOR DARK_GRAY}Oi, this is PREMIUM soda. If you can't afford it, then beat it!"))
@@ -47,7 +47,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
         goto(NightBeachSodaVendor_End)
     }
 
-    removemoney(100)
+    removemoney(600)
     updatemoneybox
     msgbox("Here ya go, friend!")
     hidemoneybox

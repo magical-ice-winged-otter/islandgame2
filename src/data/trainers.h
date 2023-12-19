@@ -12,18 +12,6 @@ const struct Trainer gTrainers[] = {
         .party = NULL,
     },
 
-    [TRAINER_SAWYER_1] =
-    {
-        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .trainerName = _("RAIN"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Sawyer1),
-    },
-
     [TRAINER_S_ORANNA_PATH_TRAINER_1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
@@ -380,7 +368,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_MINTY_MEADOWS_8] =
     {
         .trainerClass = TRAINER_CLASS_PICNICKER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
         .trainerPic = TRAINER_PIC_PICNICKER,
         .trainerName = _("Alice"),
 
@@ -389,30 +377,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_MintyMeadows8),
     },
-
-    // [TRAINER_MINTY_MEADOWS_9] =
-    // {
-    //     .trainerClass = TRAINER_CLASS_BUG_CATCHER,
-    //     .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-    //     .trainerPic = TRAINER_PIC_BUG_CATCHER,
-    //     .trainerName = _("Tim"),
-    //     .items = {},
-    //     .doubleBattle = TRUE,
-    //     .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-    //     .party = TRAINER_PARTY(sParty_MintyMeadows9),
-    // },
-
-    // [TRAINER_MINTY_MEADOWS_10] =
-    // {
-    //     .trainerClass = TRAINER_CLASS_LASS,
-    //     .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-    //     .trainerPic = TRAINER_PIC_LASS,
-    //     .trainerName = _("Trish"),
-    //     .items = {},
-    //     .doubleBattle = FALSE,
-    //     .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-    //     .party = TRAINER_PARTY(sParty_MintyMeadows10),
-    // },
 
     [TRAINER_MINTY_MEADOWS_11] =
     {
@@ -734,7 +698,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_CORANNA_2_FISHERMAN] =
     {
         .trainerClass = TRAINER_CLASS_FISHERMAN,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_FISHERMAN,
         .trainerName = _("Scott"),
         .items = {},
@@ -746,7 +710,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_CORANNA_2_MANIAC] =
     {
         .trainerClass = TRAINER_CLASS_COLLECTOR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_COLLECTOR,
         .trainerName = _("Preston"),
         .items = {},
@@ -776,15 +740,63 @@ const struct Trainer gTrainers[] = {
 
 
     // Tidalcove Gym
-    [TRAINER_LEADER_RUKA] =
+    [TRAINER_TIDALCOVE_GYM_1] =
+    {
+        .trainerClass = TRAINER_CLASS_BEAUTY,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = _("Sumire"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_TidalcoveGym1),
+    },
+
+    [TRAINER_TIDALCOVE_GYM_2] =
+    {
+        .trainerClass = TRAINER_CLASS_LASS,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = _("Trish"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_TidalcoveGym2),
+    },
+
+    [TRAINER_TIDALCOVE_GYM_3] =
+    {
+        .trainerClass = TRAINER_CLASS_LADY,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LADY,
+        .trainerName = _("Mina"),
+        .items = {ITEM_FULL_RESTORE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_TidalcoveGym3),
+    },
+
+    [TRAINER_TIDALCOVE_GYM_4] =
+    {
+        .trainerClass = TRAINER_CLASS_WINSTRATE,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_POKEFAN_F,
+        .trainerName = _("Heather"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_TidalcoveGym4),
+    },
+
+    [TRAINER_TIDALCOVE_GYM_RUKA] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_ELITE_FOUR_PHOEBE,
         .trainerName = _("Ruka"),
-        .items = {},
+        .items = {ITEM_LEMONADE, ITEM_SODA_POP, ITEM_FRESH_WATER, ITEM_FULL_HEAL},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_ACE_POKEMON,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_SETUP_FIRST_TURN | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_TidalcoveGymRuka),
     },
 
@@ -824,17 +836,7 @@ const struct Trainer gTrainers[] = {
 
 
 
-    [TRAINER_LOLA_5] =
-    {
-        .trainerClass = TRAINER_CLASS_TUBER_F,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_F,
-        .trainerName = _("LOLA"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Lola5),
-    },
+
 
     [TRAINER_RICKY_1] =
     {

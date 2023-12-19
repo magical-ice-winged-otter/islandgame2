@@ -2,9 +2,6 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #define TRAINER_NONE                          0
-#define TRAINER_SAWYER_1                      1
-
-
 
 /// Southern Oranna Path
 #define TRAINER_S_ORANNA_PATH_TRAINER_1       2
@@ -76,10 +73,6 @@
 #define TRAINER_MINTY_MEADOWS_7              30
 #define TRAINER_MINTY_MEADOWS_8              31
 #define TRAINER_ZANDER                       TRAINER_MINTY_MEADOWS_8
-#define TRAINER_MINTY_MEADOWS_9              32
-#define TRAINER_SHELLY_WEATHER_INSTITUTE     TRAINER_MINTY_MEADOWS_9
-#define TRAINER_MINTY_MEADOWS_10             33
-#define TRAINER_SHELLY_SEAFLOOR_CAVERN       TRAINER_MINTY_MEADOWS_10
 #define TRAINER_MINTY_MEADOWS_11             34
 #define TRAINER_ARCHIE                       TRAINER_MINTY_MEADOWS_11
 #define TRAINER_MINTY_MEADOWS_12             35
@@ -145,8 +138,16 @@
 
 
 // Tidalcove Gym
-#define TRAINER_LEADER_RUKA                  60
-#define TRAINER_LOLA_2                       TRAINER_LEADER_RUKA
+#define TRAINER_TIDALCOVE_GYM_1              1
+#define TRAINER_SAWYER_1                     TRAINER_TIDALCOVE_GYM_1
+#define TRAINER_TIDALCOVE_GYM_2              32
+#define TRAINER_SHELLY_WEATHER_INSTITUTE     TRAINER_TIDALCOVE_GYM_2
+#define TRAINER_TIDALCOVE_GYM_3              33
+#define TRAINER_SHELLY_SEAFLOOR_CAVERN       TRAINER_TIDALCOVE_GYM_3
+#define TRAINER_TIDALCOVE_GYM_4              63
+#define TRAINER_LOLA_5                       TRAINER_TIDALCOVE_GYM_4
+#define TRAINER_TIDALCOVE_GYM_RUKA           60
+#define TRAINER_LOLA_2                       TRAINER_TIDALCOVE_GYM_RUKA
 
 // Mt. Aurora
 #define TRAINER_MT_AURORA_EDEA               62
@@ -162,7 +163,7 @@
 
 
 
-#define TRAINER_LOLA_5                       63
+
 #define TRAINER_RICKY_1                      64
 #define TRAINER_SIMON                        65
 #define TRAINER_CHARLIE                      66

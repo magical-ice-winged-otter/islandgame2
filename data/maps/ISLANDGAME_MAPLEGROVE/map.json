@@ -215,7 +215,7 @@
       "x": 24,
       "y": 27,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_REVIVE"
     }
   ]

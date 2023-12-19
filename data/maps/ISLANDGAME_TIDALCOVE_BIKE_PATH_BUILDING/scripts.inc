@@ -7,6 +7,11 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee::
 	return
 
 
+ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker::
+	msgbox ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker_Text_0, MSGBOX_NPC
+	return
+
+
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_Clear::
 	lock
 	clearflag FLAG_SYS_CYCLING_ROAD
@@ -39,14 +44,17 @@ Movement_PushPlayerFromCounter:
 	step_end
 
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee_Text_0:
-	.string "On the Bike Path, you can go really\n"
-	.string "fast!\p"
-	.string "Try to not hit other bikers.$"
+	.string "Welcome to the Seaside Bike Path!\n"
+	.string "Please be aware of other bikers.$"
+
+ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker_Text_0:
+	.string "POKÉMON BATTLES ON BICYCLES!!!\p"
+	.string "Sorry. I've been watching a lot of\n"
+	.string "Pokémon Abridged lately.$"
 
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_0:
-	.string "Oh, you can't enter the Bike Path\n"
-	.string "without a bike!\p"
-	.string "It's too dangerous.$"
+	.string "Hey! It's too dangerous to go on the\n"
+	.string "bike path without a bike!$"
 
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_1:
-	.string "Welcome to the bike road!$"
+	.string "Welcome to the Seaside Bike Path! Please be aware of other bikers.$"

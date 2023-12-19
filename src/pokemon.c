@@ -7643,9 +7643,9 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
-            return MUS_VS_AQUA_MAGMA;
+            return MUS_DP_VS_GALACTIC_COMMANDER;
         case TRAINER_CLASS_LEADER:
-            return MUS_VS_GYM_LEADER;
+            return MUS_HG_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
@@ -7653,7 +7653,7 @@ u16 GetBattleBGM(void)
                 return MUS_VS_RIVAL;
             if (!StringCompare(gTrainers[gTrainerBattleOpponent_A].trainerName, gText_BattleWallyName))
                 return MUS_VS_TRAINER;
-            return MUS_VS_RIVAL;
+            return MUS_HG_VS_TRAINER_KANTO;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
         case TRAINER_CLASS_SALON_MAIDEN:
@@ -7665,13 +7665,15 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            return MUS_DP_VS_TRAINER;
         }
     }
     else
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
+        case SPECIES_SHADOW_MIGHTYENA:
+            return MUS_HG_VS_ENTEI;
         case SPECIES_ARTICUNO:
         case SPECIES_ZAPDOS:
         case SPECIES_MOLTRES:
@@ -7782,7 +7784,7 @@ u16 GetBattleBGM(void)
             return MUS_DP_VS_ARCEUS;
         #endif
         default:
-            return MUS_VS_WILD;
+            return MUS_DP_VS_WILD;
         }
     }
 }

@@ -67,12 +67,18 @@ ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade::
 	waitstate
 	bufferspeciesname STR_VAR_1, VAR_0x8009
 	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade_Text_0
+	setflag FLAG_BADGE01_GET
+	setflag FLAG_BADGE02_GET
+	setflag FLAG_BADGE03_GET
 	setflag FLAG_VERDANT_PATH_TRADE_DONE
 	release
 	return
 
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeFinished::
+	setflag FLAG_BADGE01_GET
+	setflag FLAG_BADGE02_GET
+	setflag FLAG_BADGE03_GET
 	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade_Text_0
 	release
 	return

@@ -11595,7 +11595,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 5,

@@ -14,7 +14,6 @@ ForestBaseCamp_FrontLawn_BasecampSign::
 
 ForestBaseCamp_FrontLawn_Novice::
 	msgbox ForestBaseCamp_FrontLawn_Novice_Text_0, MSGBOX_NPC
-	trainerbattle_single TRAINER_SAWYER_1, ForestBaseCamp_FrontLawn_IntroText, ForestBaseCamp_FrontLawn_DefeatedText
 	return
 
 

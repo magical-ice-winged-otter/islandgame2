@@ -657,6 +657,8 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 11
 	removeobject 11
+	removeobject 6
+	removeobject 12
 	setobjectxyperm 11, -3, 1
 	setobjectxyperm 12, -3, 1
 	special HealPlayerParty
@@ -983,12 +985,11 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9:
 	.string "{COLOR DARK_GRAY}That's where you'll find the first gym\n"
 	.string "leader: Ruka!\p"
 	.string "{COLOR DARK_GRAY}Ruka is really famous around here. On\n"
-	.string "top of being a gym leader, she's also a\l"
-	.string "professional swimmer and model!\p"
-	.string "{COLOR DARK_GRAY}She was runner-up for last year's Miss\n"
-	.string "Pokémon beauty pageant too!\p"
+	.string "top of being a gym leader, she's used to\l"
+	.string "be a professional swimmer and swimsuit\l"
+	.string "model!\p"
 	.string "{COLOR DARK_GRAY}-sigh- I wish I could be as confident as\n"
-	.string "she is in the outfits she wears...\p"
+	.string "her...\p"
 	.string "{COLOR DARK_GRAY}Oops, there I go rambling again...\n"
 	.string "Anyways! Bye-bye for now, {PLAYER}!\p"
 	.string "{COLOR DARK_GRAY}Oh! I almost forgot! Let's exchange\n"

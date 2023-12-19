@@ -3,8 +3,14 @@ mapscripts ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_MapScripts {
 
 script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee {
     msgbox(format(
-        "On the Bike Path, you can go really fast!\p"
-        "Try to not hit other bikers."
+        "Welcome to the Seaside Bike Path! Please be aware of other bikers."
+    ), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker {
+    msgbox(format(
+        "POKÉMON BATTLES ON BICYCLES!!!\p"
+        "Sorry. I've been watching a lot of Pokémon Abridged lately."
     ), MSGBOX_NPC)
 }
 
@@ -21,14 +27,13 @@ script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck {
 
     if (var(VAR_RESULT) == 0) {
         msgbox(format(
-            "Oh, you can't enter the Bike Path without a bike!\p"
-            "It's too dangerous."
+            "Hey! It's too dangerous to go on the bike path without a bike!"
         ), MSGBOX_NPC)
         applymovement(OBJ_EVENT_ID_PLAYER, Movement_PushPlayerFromCounter)
         waitmovement(0)
     }
     else {
-        msgbox("Welcome to the bike road!", MSGBOX_NPC)
+        msgbox("Welcome to the Seaside Bike Path! Please be aware of other bikers.", MSGBOX_NPC)
         setflag(FLAG_SYS_CYCLING_ROAD)
         setvar(VAR_TEMP_1, 1)
     }

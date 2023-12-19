@@ -83,6 +83,9 @@ script ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade {
 	waitstate
 	bufferspeciesname(STR_VAR_1, VAR_0x8009)
 	msgbox(format("{COLOR DARK_GRAY}Thanks for the swap, friend! Let's both take care of our Pokémon!"))
+    setflag(FLAG_BADGE01_GET) // demo purposes so staryu does not disobey (remove later)
+    setflag(FLAG_BADGE02_GET) // demo purposes so staryu does not disobey (remove later)
+    setflag(FLAG_BADGE03_GET) // demo purposes so staryu does not disobey (remove later)
 	setflag(FLAG_VERDANT_PATH_TRADE_DONE)
     release
 }
@@ -96,6 +99,9 @@ text ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeTalk {
 }
 
 script ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeFinished {
+    setflag(FLAG_BADGE01_GET) // demo purposes so staryu does not disobey (remove later)
+    setflag(FLAG_BADGE02_GET) // demo purposes so staryu does not disobey (remove later)
+    setflag(FLAG_BADGE03_GET) // demo purposes so staryu does not disobey (remove later)
     msgbox(format("{COLOR DARK_GRAY}Thanks for the swap, friend! Let's both take care of our Pokémon!"))
     release
 }

@@ -1552,8 +1552,10 @@
 #define FLAG_FRESA_FARMS_MAREEP_GIFT                (SYSTEM_FLAGS + 0x97) 
 //tidalcove: luxury ball gift
 #define FLAG_TIDALCOVE_LUXBALL_GIFT                 (SYSTEM_FLAGS + 0x98)
+//rosevale: tm attract gift
 #define FLAG_ROSEVALE_TM_GIFT                       (SYSTEM_FLAGS + 0x99)
-#define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
+//tidalcove: talked to sponsor
+#define FLAG_TIDALCOVE_GYM_SPONSOR_TALK             (SYSTEM_FLAGS + 0x9A)
 #define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
 #define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
 #define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
@@ -1618,7 +1620,7 @@
 #define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 
-// ISLANDGAME DAILY FLAGS
+// island-game DAILY FLAGS
 #define FLAG_DAILY_CHERIPORT_RECEIVED_DRINK         (DAILY_FLAGS_START + 0x15) 
 #define FLAG_DAILY_PERSI_CANDY_BOY_SALE             (DAILY_FLAGS_START + 0x16) 
 #define FLAG_DAILY_PERSI_COOKIE_GIRL_SALE           (DAILY_FLAGS_START + 0x17) 

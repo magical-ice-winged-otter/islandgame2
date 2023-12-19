@@ -10,7 +10,7 @@ script ISLANDGAME_CAMP_PERSI_LODGE_2_2F_Girl {
 
 text ISLANDGAME_CAMP_PERSI_LODGE_2_2F_GirlTalk {
     format(
-        "Weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee! \p"
-        "Sorry, I had a lot of sugar today."
+        "Weeeeeeeeeeeeeeeeeeeeeeeeeeee!!\p"
+        "Sowwy, I had a lot of sugar today."
     )
 }

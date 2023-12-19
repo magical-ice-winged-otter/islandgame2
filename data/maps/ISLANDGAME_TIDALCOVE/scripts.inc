@@ -232,7 +232,8 @@ ISLANDGAME_TIDALCOVE_Interact_BikeShopSign_Text_0:
 
 ISLANDGAME_TIDALCOVE_Interact_GymSign_Text_0:
 	.string "TIDALCOVE GYM\n"
-	.string "Home of Tidalcove's Precious Pearl$"
+	.string "LEADER: RUKA\p"
+	.string "Home of Tidalcove's Precious Pearl!$"
 
 ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking_Text_0:
 	.string "I am sorry, but I cannot let anyone else\n"
@@ -336,4 +337,4 @@ ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO_Text_0:
 	.string "future updates! :D$"
 
 ISLANDGAME_TIDALCOVE_jujalos_Text_0:
-	.string "jujalos$"
+	.string "janx 4 plein$"

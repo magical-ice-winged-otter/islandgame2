@@ -37,22 +37,16 @@ text ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss {
 // }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer3 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_3, format("Oi! Get out of my way! I'm trying to keep up my pace here!"), ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss)
-	msgbox("I couldn't keep up the momentum...", MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_3, format("Oi! Get out of my way! I'm trying to keep up my pace here!"), "I couldn't keep up the momentum...")
+	msgbox(format("I need to get stronger... Fight, Jack... Fight!"), MSGBOX_AUTOCLOSE)
 }
 
-text ISLANDGAME_MINTY_MEADOWS_Trainer3_Loss {
-	format("I need to get stronger... Fight, Jack... Fight!")
-}
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer4 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_4, format("{COLOR DARK_GRAY}Let our Pokémon bloom in the meadow's embrace!"), ISLANDGAME_MINTY_MEADOWS_Trainer4_Loss)
-	msgbox("Your Pokémon flourished beautifully!", MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_4, format("{COLOR DARK_GRAY}Let our Pokémon bloom in the meadow's embrace!"), "Your Pokémon flourished beautifully!")
+	msgbox(format("{COLOR DARK_GRAY}I suppose it is still too early for me to bloom."), MSGBOX_AUTOCLOSE)
 }
 
-text ISLANDGAME_MINTY_MEADOWS_Trainer4_Loss {
-	format("{COLOR DARK_GRAY}I suppose it is still too early for me to bloom.")
-}
 
 // script ISLANDGAME_MINTY_MEADOWS_Trainer5 {
 //     trainerbattle_single(TRAINER_MINTY_MEADOWS_5, format("{COLOR DARK_GRAY}Hello! Let's explore the wonders of this lovely meadow together!"), ISLANDGAME_MINTY_MEADOWS_Trainer5_Loss)
@@ -64,28 +58,17 @@ text ISLANDGAME_MINTY_MEADOWS_Trainer4_Loss {
 //}
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer6 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_6, format("I will find you my queen... I'll stop at nothing to see your beauty!"), ISLANDGAME_MINTY_MEADOWS_Trainer6_Loss)
-	msgbox("How dare you come between me and Her\nMajesty!", MSGBOX_AUTOCLOSE)
-}
-
-text ISLANDGAME_MINTY_MEADOWS_Trainer6_Loss {
-	format("You'll pay for this... Delaying my search for my lovely Queen Combee!")
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_6, format("I will find you my queen... I'll stop at nothing to see your beauty!"), "How dare you come between me and Her\nMajesty!")
+	msgbox(format("You'll pay for this... Delaying my search for my lovely Queen Combee!"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer7 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_7, format("Go Go Go! My awesome Pokémon!"), ISLANDGAME_MINTY_MEADOWS_Trainer7_Loss)
-	msgbox("No No No! My awesome Pokémon!", MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_7, format("Go Go Go! My awesome Pokémon!"), "No No No! My awesome Pokémon!")
+	msgbox(format("My Pokémon are awesome, so yours must be awesomer!"), MSGBOX_AUTOCLOSE)
 }
 
-text ISLANDGAME_MINTY_MEADOWS_Trainer7_Loss {
-	format("My Pokémon are awesome, so yours must be awesomer!")
-}
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer8 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_8, format("This was the worst place for a picnic... I'm allergic to the flowers here."), ISLANDGAME_MINTY_MEADOWS_Trainer8_Loss)
-	msgbox("It's hard to concentrate in battle when\nyou're sneezing constantly!", MSGBOX_AUTOCLOSE)
-}
-
-text ISLANDGAME_MINTY_MEADOWS_Trainer8_Loss {
-	format("{COLOR DARK_GRAY}Do you have any tissues? I'm not sure how much more of this I can take.")
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_8, format("This was the worst place for a picnic... I'm allergic to the flowers here."), "It's hard to concentrate in battle when\nyou're sneezing constantly!")
+	msgbox(format("{COLOR DARK_GRAY}Do you have any tissues? I'm not sure how much more of this I can take."), MSGBOX_AUTOCLOSE)
 }

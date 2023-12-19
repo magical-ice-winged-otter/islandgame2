@@ -11,5 +11,5 @@ ISLANDGAME_CAMP_PERSI_LODGE_2_2F_Girl::
 
 
 ISLANDGAME_CAMP_PERSI_LODGE_2_2F_GirlTalk::
-	.string "Weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!\p"
-	.string "Sorry, I had a lot of sugar today.$"
+	.string "Weeeeeeeeeeeeeeeeeeeeeeeeeeee!!\p"
+	.string "Sowwy, I had a lot of sugar today.$"

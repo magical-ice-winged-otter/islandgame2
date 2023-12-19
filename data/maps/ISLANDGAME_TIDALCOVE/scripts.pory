@@ -32,7 +32,7 @@ script ISLANDGAME_TIDALCOVE_Interact_BikeShopSign {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSign {
-    msgbox(format("TIDALCOVE GYM\nHome of Tidalcove's Precious Pearl"), MSGBOX_SIGN)
+    msgbox(format("TIDALCOVE GYM\nLEADER: RUKA\pHome of Tidalcove's Precious Pearl!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking {
@@ -211,6 +211,6 @@ script ISLANDGAME_TIDALCOVE_jujalos {
     lock
     faceplayer
     msgbox(format(
-        "jujalos"
+        "janx 4 plein"
     ), MSGBOX_NPC)
 }

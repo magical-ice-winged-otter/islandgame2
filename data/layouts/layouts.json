@@ -896,7 +896,7 @@
       "name": "MauvilleCity_BikeShop_Layout",
       "width": 12,
       "height": 9,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/MauvilleCity_BikeShop/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_BikeShop/map.bin"
@@ -5014,8 +5014,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_TIDALCOVE_CYCLE_SHOP",
       "name": "ISLANDGAME_TIDALCOVE_CYCLE_SHOP_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 12,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_CYCLE_SHOP/border.bin",

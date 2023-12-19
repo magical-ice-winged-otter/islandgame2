@@ -2,27 +2,41 @@ mapscripts ISLANDGAME_TIDALCOVE_CYCLE_SHOP_MapScripts {}
 
 script ISLANDGAME_TIDALCOVE_CYCLE_SHOP_Interact_Owner {
     lock
-
+    faceplayer
     if (flag(FLAG_RECEIVED_BIKE)) {
-        msgbox(format("I hope you've enjoyed your bike!"), MSGBOX_NPC)
+        msgbox(format("With my bike, you'll be riding through the winds, faster than a Ninjask!"), MSGBOX_NPC)
     }
     else {
+        msgbox(format(
+            "Wazzzzzup! I'm Randy, welcome to my bike shop!\p"
+            "My bikes are the fastest, most comfortable and high-tech in the isles!\p"
+            "Unfortunately due to high demand, I can only give 'em out to trainers who've got vouchers for beating Ruka."
+        ), MSGBOX_NPC)
+
         checkitem(ITEM_BIKE_VOUCHER)
 
         if (var(VAR_RESULT)) {
-            msgbox(format("Oh, that voucher you have!\nLet me cache it in for a free bike!"), MSGBOX_NPC)
+            msgbox(format("Yooo, you got a voucher? That means you got your first badge! Grats, brah!\pIght, here's your ELITE bike, carefully crafted by yours truly!"), MSGBOX_NPC)
             giveitem(ITEM_MACH_BIKE) // todo: choose between bikes?
             removeitem(ITEM_BIKE_VOUCHER)
             setflag(FLAG_RECEIVED_BIKE)
         }
-        else {
-            msgbox(format(
-                "Welcome to my cycling shop!\nAll the bikes here are custom-made!\p"
-                "However, we're only giving them away to people with vouchers due to high demand..."
-            ), MSGBOX_NPC)
-        }
     }
+    closemessage
+    release
+}
 
+
+script ISLANDGAME_TIDALCOVE_CYCLE_SHOP_InteractNPC1 {
+    lock
+    msgbox(format("Woooah... Woooooah!"))
+    closemessage
+    release
+}
+
+script ISLANDGAME_TIDALCOVE_CYCLE_SHOP_InteractNPC2 {
+    lock
+    msgbox(format("That's right... maintain your balance!"))
     closemessage
     release
 }

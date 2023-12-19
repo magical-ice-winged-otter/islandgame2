@@ -86,4 +86,6 @@ script ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson {
     else {
         msgbox(format("Huh? Why are you looking at me like that?"))
     }
+    closemessage
+    release
 }

@@ -27,7 +27,7 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor::
 	compare VAR_RESULT, NO
 	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_2
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_1:
-	checkmoney 100
+	checkmoney 600
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_5
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_4:
@@ -35,7 +35,7 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_4:
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_8
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_7:
-	removemoney 100
+	removemoney 600
 	updatemoneybox
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4
 	hidemoneybox

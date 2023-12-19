@@ -711,9 +711,8 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
             "{COLOR DARK_GRAY}Well, I have to report back to the professor with my findings. \p"
             "{COLOR DARK_GRAY}But {PLAYER}, you should go west of Maplegrove and head up to Tidalcove! \p"
             "{COLOR DARK_GRAY}That's where you'll find the first gym leader: Ruka! \p"
-            "{COLOR DARK_GRAY}Ruka is really famous around here. On top of being a gym leader, she's also a professional swimmer and model! \p"
-            "{COLOR DARK_GRAY}She was runner-up for last year's Miss Pokémon beauty pageant too! \p"
-            "{COLOR DARK_GRAY}-sigh- I wish I could be as confident as she is in the outfits she wears... \p"
+            "{COLOR DARK_GRAY}Ruka is really famous around here. On top of being a gym leader, she's used to be a professional swimmer and swimsuit model! \p"
+            "{COLOR DARK_GRAY}-sigh- I wish I could be as confident as her...\p"
             "{COLOR DARK_GRAY}Oops, there I go rambling again... Anyways! Bye-bye for now, {PLAYER}! \p"
             "{COLOR DARK_GRAY}Oh! I almost forgot! Let's exchange phone numbers so we can keep in touch! \p"
             "{COLOR DARK_GRAY}Mhm... alright... and there we go! All set! \p"
@@ -727,6 +726,8 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
     waitmovement(RIVAL_OW_ID)
     removeobject(RIVAL_OW_ID)
+    removeobject(MAREEP_OW_ID)
+    removeobject(OLD_MAN_OW_ID)
     setobjectxyperm(RIVAL_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     setobjectxyperm(OLD_MAN_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     special(HealPlayerParty)
