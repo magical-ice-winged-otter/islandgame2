@@ -24,6 +24,9 @@ script ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist {
                 givecustommon(SPECIES_CASTFORM, 20, ITEM_MACHO_BRACE, ITEM_POKE_BALL, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_SAND_ATTACK, MOVE_HELPING_HAND, FALSE)
                 setflag(FLAG_RECEIVED_CASTFORM)
             }
+            else {
+                msgbox(format("Hm... You still don't have 20... Let me know when you do!"))
+            }
         }
 
 

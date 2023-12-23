@@ -19,12 +19,8 @@ script ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign {
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer1 {
-    trainerbattle_double(TRAINER_MINTY_MEADOWS_1, format("{COLOR DARK_GRAY}Hey, let's battle together!"), ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss, format("{COLOR DARK_GRAY}You don't have enough Pokemon to fight us."))
-	msgbox("Oh no, we lost!", MSGBOX_AUTOCLOSE)
-}
-
-text ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss {
-	format("{COLOR DARK_GRAY}We'll get you next time!")
+    trainerbattle_double(TRAINER_MINTY_MEADOWS_1, format("{COLOR DARK_GRAY}Hey, let's battle together!"), "Oh no, we lost!", format("{COLOR DARK_GRAY}You don't have enough Pokemon to fight us."))
+	msgbox(format("{COLOR DARK_GRAY}We'll get you next time!"), MSGBOX_AUTOCLOSE)
 }
 
 // script ISLANDGAME_MINTY_MEADOWS_Trainer2 {

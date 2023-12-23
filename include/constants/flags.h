@@ -1226,12 +1226,12 @@
 #define FLAG_ROOM3_ITEM                                             0x493 // SS Rain: Rare Candy
 #define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 // Verdant Woods
 #define FLAG_FRESA_FARMS_SHROOM                                     0x495 // Fresa Farms
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
+#define FLAG_VERDANT_PATH_TIMER_BALL                                0x496 
 #define FLAG_ITEM_COP_2_MOON_STONE                                  0x497
 #define FLAG_ITEM_MINTY_MEADOWS_1                                   0x498
 #define FLAG_ITEM_TM_RETURN                                         0x499 
 #define FLAG_ITEM_TM_DIG                                            0x49A 
-#define FLAG_ITEM_PERSI_POTION                                      0x49B
+#define FLAG_ITEM_PERSI_NEST_BALL                                   0x49B
 #define FLAG_ITEM_MYSTIC_WATER                                      0x49C 
 #define FLAG_ITEM_MINTY_MEADOWS_HOUSE_ITEM                          0x49D
 #define FLAG_ITEM_COP_1_RARE_CANDY                                  0x49E
@@ -1243,11 +1243,11 @@
 #define FLAG_ITEM_AP_KINGS_ROCK                                     0x4A4 
 #define FLAG_ITEM_NOR_TWISTEDSPOON                                  0x4A5
 #define FLAG_ITEM_NOR_TM_TOXIC                                      0x4A6
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
+#define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
+#define FLAG_MINTY_MEADOWS_FOCUS_BAND                               0x4A8 
+#define FLAG_MINTY_MEADOWS_X_ATTACK                                 0x4A9
+#define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
+#define FLAG_COP_1_CARBOS                                           0x4AB 
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
 #define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
 #define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
@@ -1556,7 +1556,8 @@
 #define FLAG_ROSEVALE_TM_GIFT                       (SYSTEM_FLAGS + 0x99)
 //tidalcove: talked to sponsor
 #define FLAG_TIDALCOVE_GYM_SPONSOR_TALK             (SYSTEM_FLAGS + 0x9A)
-#define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
+//rosevale: arthur's sister gives you amulet coin
+#define FLAG_ROSEVALE_AMULET_COIN_GIFT              (SYSTEM_FLAGS + 0x9B)
 #define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
 #define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
 #define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag

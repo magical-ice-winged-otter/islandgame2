@@ -255,9 +255,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_DIRE_HIT",
+      "trainer_sight_or_berry_tree_id": "ITEM_SUPER_POTION",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_110_DIRE_HIT"
+      "flag": "FLAG_ITEM_ROUTE_115_SUPER_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_271",
@@ -390,7 +390,7 @@
       "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked"
     },
     {
       "type": "hidden_item",

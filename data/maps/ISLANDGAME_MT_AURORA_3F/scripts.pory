@@ -1,5 +1,8 @@
 mapscripts ISLANDGAME_MT_AURORA_3F_MapScripts {}
 
 script ISLANDGAME_MT_AURORA_3F_SignInteract {
+        lock
         msgbox(format("LADDER CLOSED FOR RENOVATIONS\n(Come back at a later patch :D)"))
+        closemessage
+        release
 }

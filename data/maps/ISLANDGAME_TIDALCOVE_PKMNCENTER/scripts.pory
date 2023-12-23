@@ -64,6 +64,7 @@ script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_BallBoy {
     }
     else {
         msgbox(format("When I grow up, I wanna work at Strix Industries too."))
-        closemessage
     }
+    closemessage
+    release
 }

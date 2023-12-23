@@ -3,7 +3,10 @@ ISLANDGAME_MT_AURORA_3F_MapScripts::
 
 
 ISLANDGAME_MT_AURORA_3F_SignInteract::
+	lock
 	msgbox ISLANDGAME_MT_AURORA_3F_SignInteract_Text_0
+	closemessage
+	release
 	return
 
 

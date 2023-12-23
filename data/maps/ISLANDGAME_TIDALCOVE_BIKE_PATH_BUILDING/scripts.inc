@@ -2,11 +2,6 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_MapScripts::
 	.byte 0
 
 
-ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee::
-	msgbox ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee_Text_0, MSGBOX_NPC
-	return
-
-
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker::
 	msgbox ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker_Text_0, MSGBOX_NPC
 	return
@@ -42,10 +37,6 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_2:
 Movement_PushPlayerFromCounter:
 	walk_left
 	step_end
-
-ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee_Text_0:
-	.string "Welcome to the Seaside Bike Path!\n"
-	.string "Please be aware of other bikers.$"
 
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker_Text_0:
 	.string "POKÉMON BATTLES ON BICYCLES!!!\p"

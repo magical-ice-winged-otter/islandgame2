@@ -78,6 +78,7 @@ ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0, MSGBOX_NPC
+	release
 	return
 
 
@@ -111,6 +112,7 @@ ISLANDGAME_TIDALCOVE_Interact_BeachDude_1:
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	release
 	return
 
 ISLANDGAME_TIDALCOVE_Interact_BeachDude_2:
@@ -237,7 +239,13 @@ ISLANDGAME_TIDALCOVE_Interact_GymSign_Text_0:
 
 ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking_Text_0:
 	.string "I am sorry, but I cannot let anyone else\n"
-	.string "inside the gym for the day.$"
+	.string "inside the gym for the day.\p"
+	.string "{COLOR RED}(Hmm. It seems like the gym has reached\n"
+	.string "its limit of challengers for the day...)\p"
+	.string "(I should see what else Oranna has to\n"
+	.string "offer in the meantime.)\p"
+	.string "(Perhaps there's something up\n"
+	.string "northwest I can check out?)$"
 
 ISLANDGAME_TIDALCOVE_Interact_PrimFan1_Text_0:
 	.string "Let us in, old geezer! As Prim's two\n"
@@ -252,7 +260,8 @@ ISLANDGAME_TIDALCOVE_Interact_Bike_Text_0:
 	.string "shine.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0:
-	.string "Yayyy, sand!$"
+	.string "I like sand! It's soft, smooth, and fun\n"
+	.string "to play with!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard_Text_0:
 	.string "We don't have a lifeguard tower yet, so\n"

@@ -37,7 +37,7 @@ script ISLANDGAME_TIDALCOVE_Interact_GymSign {
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking {
     lock
-    msgbox(format("I am sorry, but I cannot let anyone else inside the gym for the day."))
+    msgbox(format("I am sorry, but I cannot let anyone else inside the gym for the day.\p{COLOR RED}(Hmm. It seems like the gym has reached its limit of challengers for the day...)\p(I should see what else Oranna has to offer in the meantime.)\p(Perhaps there's something up northwest I can check out?)"))
     closemessage
     release
 }
@@ -63,7 +63,8 @@ script ISLANDGAME_TIDALCOVE_Interact_Bike {
 script ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl {
     lock
     faceplayer
-    msgbox(format("Yayyy, sand!"), MSGBOX_NPC)
+    msgbox(format("I like sand! It's soft, smooth, and fun to play with!"), MSGBOX_NPC)
+    release
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachLifeguard {
@@ -105,6 +106,7 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachDude {
     closemessage
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
+    release
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer {

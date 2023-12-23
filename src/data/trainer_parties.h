@@ -252,6 +252,7 @@ static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     .species = SPECIES_LARVITAR,
     .heldItem = ITEM_NONE,
     .ability = ABILITY_GUTS,
+    .gender = TRAINER_MON_FEMALE,
     .moves = {MOVE_BITE, MOVE_ROCK_TOMB, MOVE_SANDSTORM, MOVE_DIG}
     },
     {
@@ -260,6 +261,7 @@ static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     .species = SPECIES_DRILBUR,
     .heldItem = ITEM_NONE,
     .ability = ABILITY_SAND_RUSH,
+    .gender = TRAINER_MON_MALE,
     .moves = {MOVE_FURY_SWIPES, MOVE_MUD_SLAP, MOVE_ROCK_TOMB, MOVE_METAL_CLAW}
     },
     {
@@ -268,6 +270,7 @@ static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     .species = SPECIES_GIBLE,
     .heldItem = ITEM_BERRY_JUICE,
     .ability = ABILITY_SAND_VEIL,
+    .gender = TRAINER_MON_FEMALE,
     .moves = {MOVE_SAND_TOMB, MOVE_DRAGON_RAGE, MOVE_SAND_ATTACK, MOVE_METAL_CLAW}
     }
 };
@@ -851,7 +854,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 25,
     .species = SPECIES_CLOYSTER,
-    .heldItem = ITEM_SHELL_BELL,
+    .heldItem = ITEM_FOCUS_SASH,
     .ability = ABILITY_SKILL_LINK,
     .moves = {MOVE_ICICLE_SPEAR, MOVE_RAZOR_SHELL, MOVE_ROCK_BLAST, MOVE_ICE_SHARD}
     }

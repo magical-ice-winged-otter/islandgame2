@@ -20,8 +20,8 @@ ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign::
 
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1::
-	trainerbattle_double TRAINER_MINTY_MEADOWS_1, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_1
-	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_2, MSGBOX_AUTOCLOSE
+	trainerbattle_double TRAINER_MINTY_MEADOWS_1, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_0, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_1, ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_2
+	msgbox ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_3, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -63,11 +63,14 @@ ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_0:
 	.string "{COLOR DARK_GRAY}Hey, let's battle together!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_1:
+	.string "Oh no, we lost!$"
+
+ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_2:
 	.string "{COLOR DARK_GRAY}You don't have enough Pokemon to fight\n"
 	.string "us.$"
 
-ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_2:
-	.string "Oh no, we lost!$"
+ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_3:
+	.string "{COLOR DARK_GRAY}We'll get you next time!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_0:
 	.string "Oi! Get out of my way! I'm trying to keep\n"
@@ -122,6 +125,3 @@ ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_1:
 ISLANDGAME_MINTY_MEADOWS_Trainer8_Text_2:
 	.string "{COLOR DARK_GRAY}Do you have any tissues? I'm not sure\n"
 	.string "how much more of this I can take.$"
-
-ISLANDGAME_MINTY_MEADOWS_Trainer1_Loss::
-	.string "{COLOR DARK_GRAY}We'll get you next time!$"

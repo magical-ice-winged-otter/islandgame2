@@ -714,7 +714,7 @@ ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2::
 	.string "{COLOR DARK_GRAY}It's a grand celebration we host each\n"
 	.string "year to remember the day our great\l"
 	.string "savior, Lugia, rescued us from a\l"
-	.string "cataclysmic storm.\p"
+	.string "cataclysmic event.\p"
 	.string "{COLOR DARK_GRAY}It's not for another month, but it's the\n"
 	.string "largest event in all of Mariyama, and it\l"
 	.string "would be a shame if you missed it!\p"
@@ -842,7 +842,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC::
 	.string "{COLOR DARK_GRAY}! SUPERVISION REQUIRED !$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC::
-	.string "{COLOR DARK_GRAY}PERSI LAKE$"
+	.string "{COLOR DARK_GRAY}PERSI LAKE\n"
+	.string "NO SWIMMING WITHOUT A COUNSELOR!!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC::
 	.string "{COLOR DARK_GRAY}CAMP GARDEN\n"

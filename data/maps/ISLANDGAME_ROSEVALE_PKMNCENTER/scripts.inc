@@ -21,10 +21,9 @@ ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_0
-	showmonpic SPECIES_ARTICUNO, 10, 3
-	hidemonpic
 	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_1
-	release
+	closemessage
+	releaseall
 	return
 
 

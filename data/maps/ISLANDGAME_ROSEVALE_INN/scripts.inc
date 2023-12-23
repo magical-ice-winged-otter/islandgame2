@@ -54,9 +54,25 @@ ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom_3:
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister::
 	lock
 	faceplayer
-	msgbox ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_0, MSGBOX_NPC
+	goto_if_unset FLAG_ROSEVALE_AMULET_COIN_GIFT, ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_2
+	msgbox ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_3, MSGBOX_NPC
+ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_1:
 	release
 	return
+
+ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_2:
+	msgbox ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_0
+	checkitemspace ITEM_AMULET_COIN
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_5
+	msgbox ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_2
+	giveitem ITEM_AMULET_COIN
+	setflag FLAG_ROSEVALE_AMULET_COIN_GIFT
+	goto ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_1
+
+ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_5:
+	msgbox ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_1
+	goto ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_1
 
 
 ISLANDGAME_ROSEVALE_INN_Interact_Marill::
@@ -133,7 +149,7 @@ ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene_Text_2:
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}And could you have gotten\n"
 	.string "it back without {PLAYER}'s and\l"
 	.string "Articuno's help?\p"
-	.string "{COLOR GREEN}Arthur: Mmmmmn...\p"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Mmmmmn...\p"
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}Do you realize what\n"
 	.string "could've happened to you had they not\l"
 	.string "been there? And what happens the next\l"
@@ -157,6 +173,16 @@ ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom_Text_1:
 	.string "to stay, our doors are always open.$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_0:
+	.string "{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Hewwo! Do you have\n"
+	.string "room to take my gift now?$"
+
+ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_1:
+	.string "Eeh? You still don't have space!$"
+
+ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_2:
+	.string "Hooway! Here you go!$"
+
+ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_3:
 	.string "{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Me and A-zoo-wil are\n"
 	.string "dancing! Wanna join?$"
 

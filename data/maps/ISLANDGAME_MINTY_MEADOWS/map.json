@@ -125,9 +125,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route116_EventScript_ItemXSpecial",
-      "flag": "FLAG_ITEM_ROUTE_116_X_SPECIAL"
+      "trainer_sight_or_berry_tree_id": "ITEM_FOCUS_BAND",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_MINTY_MEADOWS_FOCUS_BAND"
     }
   ],
   "warp_events": [

@@ -195,9 +195,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route102_EventScript_ItemPotion",
-      "flag": "FLAG_ITEM_ROUTE_102_POTION"
+      "trainer_sight_or_berry_tree_id": "ITEM_TIMER_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_VERDANT_PATH_TIMER_BALL"
     }
   ],
   "warp_events": [

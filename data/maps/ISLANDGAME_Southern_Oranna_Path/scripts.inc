@@ -207,7 +207,7 @@ TrainerBattle2_Text::
 	.string "them? They're pretty strong too!$"
 
 TrainerBattle2_Defeated_Text::
-	.string "Well shoot! Your Pokémon are cute and strong too!$"
+	.string "Well shoot! Your Pokémon are cute and\nstrong too!$"
 
 TrainerBattle2_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}Where'd you get your Pokémon? I'd love\n"

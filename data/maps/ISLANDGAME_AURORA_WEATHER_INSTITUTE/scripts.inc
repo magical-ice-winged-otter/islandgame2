@@ -4,7 +4,7 @@ ISLANDGAME_AURORA_WEATHER_INSTITUTE_MapScripts::
 
 ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist::
 	goto_if_unset FLAG_RECEIVED_CASTFORM, ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_2
-	msgbox ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_Text_3, MSGBOX_NPC
+	msgbox ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_Text_4, MSGBOX_NPC
 ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_1:
 	release
 	return
@@ -20,6 +20,7 @@ ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_5:
 	callnative CheckDexCount
 	compare VAR_0x8000, 20
 	goto_if_ge ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_7
+	msgbox ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_Text_3
 	goto ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_1
 
 ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_7:
@@ -59,6 +60,10 @@ ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_Text_2:
 	.string "hands. Not much it can do inside here.$"
 
 ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_Text_3:
+	.string "Hm... You still don't have 20... Let me\n"
+	.string "know when you do!$"
+
+ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist_Text_4:
 	.string "I'll be fine here by myself. My new\n"
 	.string "high-tech earmuffs will be in the mail\l"
 	.string "soon!\p"

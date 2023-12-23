@@ -46,7 +46,7 @@ script ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene {
         "That shows me that you can't handle yourself at all.\p"
         "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}But... she stole Annie's Azurill! Are you saying I should've just let her get away!?\p"
         "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}And could you have gotten it back without {PLAYER}'s and Articuno's help?\p"
-        "{COLOR GREEN}Arthur: Mmmmmn...\p"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Mmmmmn...\p"
         "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}Do you realize what could've happened to you had they not been there?"
         "And what happens the next time you do something as reckless as that?\p"
         "I know your heart is in the right place, Arthur, but it's still too early for you."
@@ -78,7 +78,23 @@ script ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom {
 script ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister {
     lock
     faceplayer
-    msgbox(format("{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Me and A-zoo-wil are dancing! Wanna join?"), MSGBOX_NPC)
+    if(!flag(FLAG_ROSEVALE_AMULET_COIN_GIFT)) {
+        msgbox(format(
+            "{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Hewwo! Do you have room to take my gift now?"
+        ))
+        checkitemspace(ITEM_AMULET_COIN)
+        if(!var(VAR_RESULT)) {
+            msgbox(format("Eeh? You still don't have space!"))
+        }
+        else {
+            msgbox(format("Hooway! Here you go!"))
+            giveitem(ITEM_AMULET_COIN)
+            setflag(FLAG_ROSEVALE_AMULET_COIN_GIFT)
+        }
+    }
+    else {
+        msgbox(format("{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Me and A-zoo-wil are dancing! Wanna join?"), MSGBOX_NPC)
+    }
     release
 }
 

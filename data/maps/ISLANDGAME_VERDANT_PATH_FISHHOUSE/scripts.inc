@@ -18,12 +18,13 @@ ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Arnie::
 	giveitem ITEM_SUPER_ROD
 	setflag FLAG_VERDANT_PATH_ROD_RECEIVED
 	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieOutro
+	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Arnie_Text_0
 	release
 	return
 
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived::
-	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived_Text_0
+	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Arnie_Text_0
 	release
 	return
 
@@ -104,9 +105,17 @@ ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_NPC::
 	return
 
 
-ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived_Text_0:
-	.string "{COLOR DARK_GRAY}Be sure to spread word about us on your\n"
-	.string "journey! We could use more members!$"
+ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Arnie_Text_0:
+	.string "{COLOR DARK_GRAY}If you're confused about how to use my\n"
+	.string "super special rod, I'll teach you!\p"
+	.string "The second you get a bite, you gotta\n"
+	.string "reel it in only once so you don't break\l"
+	.string "your line.\p"
+	.string "Then keep at it every time 'till a\n"
+	.string "Pokémon's on the line!\p"
+	.string "It takes a lot of practice and a little\n"
+	.string "bit of luck, but with enough time, you'll\l"
+	.string "become a true Fishing Fanatic!$"
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieDecline_Text_0:
 	.string "{COLOR DARK_GRAY}Well, if you ever change your mind, I'll\n"

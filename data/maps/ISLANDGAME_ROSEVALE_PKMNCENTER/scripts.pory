@@ -23,10 +23,12 @@ script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1 {
         "All I have this is picture of it. Wanna see?"
         )
     )
-    showmonpic(SPECIES_ARTICUNO, 10, 3)
-    hidemonpic
+    // showmonpic(SPECIES_ARTICUNO, 10, 3)
+    // hidemonpic
+    // closemessage
     msgbox(format("It mostly roosts at the top of Mt. Aurora, so unless you want to climb thousands of feet in a blizzard, the best you'll have are pictures."))
-    release
+    closemessage
+    releaseall
 }
 
 

@@ -17,11 +17,12 @@ script ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Arnie {
     giveitem(ITEM_SUPER_ROD)
     setflag(FLAG_VERDANT_PATH_ROD_RECEIVED)
     msgbox(ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieOutro)
+    msgbox(format("{COLOR DARK_GRAY}If you're confused about how to use my super special rod, I'll teach you!\pThe second you get a bite, you gotta reel it in only once so you don't break your line.\pThen keep at it every time 'till a Pokémon's on the line!\pIt takes a lot of practice and a little bit of luck, but with enough time, you'll become a true Fishing Fanatic!"))
     release
 }
 
 script ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived {
-    msgbox(format("{COLOR DARK_GRAY}Be sure to spread word about us on your journey! We could use more members!"))
+    msgbox(format("{COLOR DARK_GRAY}If you're confused about how to use my super special rod, I'll teach you!\pThe second you get a bite, you gotta reel it in only once so you don't break your line.\pThen keep at it every time 'till a Pokémon's on the line!\pIt takes a lot of practice and a little bit of luck, but with enough time, you'll become a true Fishing Fanatic!"))
     release
 }
 

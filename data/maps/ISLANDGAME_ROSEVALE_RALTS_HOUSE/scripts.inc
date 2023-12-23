@@ -68,6 +68,8 @@ ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_Text_0
+	closemessage
+	release
 	return
 
 

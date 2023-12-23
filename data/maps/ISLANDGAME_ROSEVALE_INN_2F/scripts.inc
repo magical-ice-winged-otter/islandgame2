@@ -23,8 +23,13 @@ ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	applymovement 1, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0
+	checkitemspace ITEM_AMULET_COIN
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_2
 	giveitem ITEM_AMULET_COIN
-	msgbox ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1
+	setflag FLAG_ROSEVALE_AMULET_COIN_GIFT
+ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1:
+	msgbox ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	applymovement 1, Movement_GoAway
@@ -44,6 +49,10 @@ ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	removeobject 2
 	setvar VAR_ROSEVALE_STATE, 7
 	return
+
+ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_2:
+	msgbox ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1
+	goto ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_1
 
 
 Movement_GoAway:
@@ -75,6 +84,10 @@ ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
 	.string "a gift from me and A-zoo-wil!$"
 
 ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
+	.string "Oh... your bag is fwull! That's okay, I\n"
+	.string "can give it to you later!$"
+
+ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
 	.string "Arfur told me you're leaving alweady... I\n"
 	.string "wanted to pway with you more!\p"
 	.string "Pwease come back to visit us when you\n"

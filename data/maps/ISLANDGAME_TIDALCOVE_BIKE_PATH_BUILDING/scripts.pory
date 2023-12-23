@@ -1,11 +1,11 @@
 mapscripts ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_MapScripts {
 }
 
-script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee {
-    msgbox(format(
-        "Welcome to the Seaside Bike Path! Please be aware of other bikers."
-    ), MSGBOX_NPC)
-}
+// script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Employee {
+//     msgbox(format(
+//         "Welcome to the Seaside Bike Path! Please be aware of other bikers."
+//     ), MSGBOX_NPC)
+// }
 
 script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker {
     msgbox(format(

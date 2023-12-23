@@ -48,7 +48,7 @@ text TrainerBattle2_Text {
 
 text TrainerBattle2_Defeated_Text
 {
-    "Well shoot! Your Pokémon are cute and strong too!"
+    "Well shoot! Your Pokémon are cute and\nstrong too!"
 }
 
 text TrainerBattle2_PostDefeated_Text
