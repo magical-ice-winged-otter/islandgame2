@@ -841,7 +841,7 @@ static u8 GetBattleTerrainByMapScene(u8 mapBattleScene)
         if (mapBattleScene == sMapBattleSceneMapping[i].mapScene)
             return sMapBattleSceneMapping[i].battleTerrain;
     }
-    return BATTLE_TERRAIN_PLAIN;
+    return BATTLE_TERRAIN_PLAIN; //shouldn't happen
 }
 
 // Loads the entry associated with the battle terrain.
@@ -866,17 +866,19 @@ static u8 GetBattleTerrainOverride(void)
     {
         return BATTLE_TERRAIN_FRONTIER;
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_GROUDON)
+    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
-        return BATTLE_TERRAIN_GROUDON;
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE)
-    {
-        return BATTLE_TERRAIN_KYOGRE;
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_RAYQUAZA)
-    {
-        return BATTLE_TERRAIN_RAYQUAZA;
+        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        {
+        case SPECIES_GROUDON:
+            return BATTLE_TERRAIN_GROUDON;
+        case SPECIES_KYOGRE:
+            return BATTLE_TERRAIN_KYOGRE;
+        case SPECIES_RAYQUAZA:
+            return BATTLE_TERRAIN_RAYQUAZA;
+        default:
+            return gBattleTerrain;
+        }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
@@ -898,7 +900,7 @@ static u8 GetBattleTerrainOverride(void)
 }
 
 
-static void UnusedBattleInit(void)
+static void UNUSED UnusedBattleInit(void)
 {
     u8 spriteId;
 
@@ -908,7 +910,7 @@ static void UnusedBattleInit(void)
     SetMainCallback2(CB2_UnusedBattleInit);
 }
 
-static void CB2_UnusedBattleInit(void)
+static void UNUSED CB2_UnusedBattleInit(void)
 {
     AnimateSprites();
     BuildOamBuffer();
@@ -973,11 +975,10 @@ void LoadBattleTextboxAndBackground(void)
     CopyBgTilemapBufferToVram(0);
     LoadCompressedPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
     LoadBattleMenuWindowGfx();
-#if B_TERRAIN_BG_CHANGE == TRUE
-    DrawTerrainTypeBattleBackground();
-#else
-    DrawMainBattleBackground();
-#endif
+    if (B_TERRAIN_BG_CHANGE == TRUE)
+        DrawTerrainTypeBattleBackground();
+    else
+        DrawMainBattleBackground();
 }
 
 static void DrawLinkBattleParticipantPokeballs(u8 taskId, u8 multiplayerId, u8 bgId, u8 destX, u8 destY)
@@ -1272,17 +1273,23 @@ void DrawBattleEntryBackground(void)
             CopyBgTilemapBufferToVram(2);
         }
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_GROUDON)
+    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
-        LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_CAVE);
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE)
-    {
-        LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_UNDERWATER);
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_RAYQUAZA)
-    {
-        LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_RAYQUAZA);
+        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        {
+        case SPECIES_GROUDON:
+            LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_GROUDON);
+            break;
+        case SPECIES_KYOGRE:
+            LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_KYOGRE);
+            break;
+        case SPECIES_RAYQUAZA:
+            LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_RAYQUAZA);
+            break;
+        default:
+            LoadBattleTerrainEntryGfx(gBattleTerrain);
+            break;
+        }
     }
     else
     {

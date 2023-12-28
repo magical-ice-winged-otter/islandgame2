@@ -377,6 +377,8 @@ static u8 GetTrainerHillUnkVal(void)
 {
     #ifndef FREE_TRAINER_HILL
     return (gSaveBlock1Ptr->trainerHill.unused + 1) % 256;
+    #else
+    return 0;
     #endif
 }
 

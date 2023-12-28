@@ -1137,7 +1137,8 @@ void HideHeaderBox(void)
 #define ITEM_TAG 0x2722 //same as money label
 static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
 {
-    s16 x, y;
+    s16 x = 0;
+    s16 y = 0; //prior implementation has both variables as unitialized. Whether that's a problem, no idea.
     u8 iconSpriteId;   
     u8 spriteId2 = MAX_SPRITES;
 

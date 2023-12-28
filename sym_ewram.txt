@@ -1,3 +1,4 @@
+	.include "gflib/malloc.o"
 	.include "src/decompress.o"
 	.include "src/main.o"
 	.include "gflib/window.o"
@@ -155,3 +156,4 @@
 	.include "src/quests.o"
 
 	.include "src/sound_check_menu.o"
+	.include "src/pokedex_plus_hgss.o"

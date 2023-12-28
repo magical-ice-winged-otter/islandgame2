@@ -273,8 +273,8 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
 static void BuildStartMenuActions(void);
 static void AddStartMenuAction(u8 action);
 static void BuildIslandStartMenu(void);
-static void BuildNormalStartMenu(void);
-static void BuildDebugStartMenu(void);
+static void UNUSED BuildNormalStartMenu(void);
+static void UNUSED BuildDebugStartMenu(void);
 static void BuildSafariZoneStartMenu(void);
 static void BuildLinkModeStartMenu(void);
 static void BuildUnionRoomStartMenu(void);
@@ -284,7 +284,7 @@ static void BuildMultiPartnerRoomStartMenu(void);
 static void ShowSafariBallsWindow(void);
 static void ShowPyramidFloorWindow(void);
 static void RemoveExtraStartMenuWindows(void);
-static bool32 PrintStartMenuActions(s8 *pIndex, u32 count);
+static bool32 PrintStartMenuActions(u8 *pIndex, u32 count);
 static bool32 InitStartMenuStep(void);
 static void InitStartMenu(void);
 static void CreateStartMenuTask(TaskFunc followupFunc);
@@ -535,9 +535,6 @@ static void ShowPyramidFloorWindow(void)
 static void ShowTimeWindow(void)
 {
     const u8 *suffix;
-    const u8 *timeofday;
-    u8 alignedSuffix[16];
-    u8 str[0x20];
     u8* ptr;
     u8 convertedHours;
 
@@ -599,9 +596,9 @@ static void RemoveExtraStartMenuWindows(void)
     }
 }
 
-static bool32 PrintStartMenuActions(s8 *pIndex, u32 count)
+static bool32 PrintStartMenuActions(u8 *pIndex, u32 count)
 {
-    s8 index = *pIndex;
+    u8 index = *pIndex;
 
     do
     {

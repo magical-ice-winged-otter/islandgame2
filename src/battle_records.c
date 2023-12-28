@@ -98,7 +98,7 @@ static void ClearLinkBattleRecord(struct LinkBattleRecord *record)
     record->draws = 0;
 }
 
-static void ClearLinkBattleRecords(struct LinkBattleRecord *records)
+static void UNUSED ClearLinkBattleRecords(struct LinkBattleRecord *records)
 {
     s32 i;
     for (i = 0; i < LINK_B_RECORDS_COUNT; i++)
@@ -201,7 +201,7 @@ static void UpdateLinkBattleGameStats(s32 battleOutcome)
         IncrementGameStat(stat);
 }
 
-static void UpdateLinkBattleRecords(struct LinkBattleRecords *records, const u8 *name, u16 trainerId, s32 battleOutcome, u8 battlerId)
+static void UNUSED UpdateLinkBattleRecords(struct LinkBattleRecords *records, const u8 *name, u16 trainerId, s32 battleOutcome, u8 battlerId)
 {
     s32 index;
 
@@ -243,7 +243,7 @@ static void IncTrainerCardLosses(s32 battlerId)
         *losses = 9999;
 }
 
-static void UpdateTrainerCardWinsLosses(s32 battlerId)
+static void UNUSED UpdateTrainerCardWinsLosses(s32 battlerId)
 {
     switch (gBattleOutcome)
     {
@@ -274,7 +274,7 @@ void UpdatePlayerLinkBattleRecords(s32 battlerId)
     #endif
 }
 
-static void PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
+static void UNUSED PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
 {
     s32 x;
 
@@ -287,7 +287,7 @@ static void PrintLinkBattleWinsLossesDraws(struct LinkBattleRecord *records)
     AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar4, x, 0x11, 0, NULL);
 }
 
-static void PrintLinkBattleRecord(struct LinkBattleRecord *record, u8 y, s32 language)
+static void UNUSED PrintLinkBattleRecord(struct LinkBattleRecord *record, u8 y, s32 language)
 {
     if (record->wins == 0 && record->losses == 0 && record->draws == 0)
     {
@@ -318,7 +318,7 @@ static void PrintLinkBattleRecord(struct LinkBattleRecord *record, u8 y, s32 lan
 
 void ShowLinkBattleRecords(void)
 {
-    s32 i, x;
+    s32 x;
 
     gRecordsWindowId = AddWindow(&sLinkBattleRecordsWindow);
     DrawStdWindowFrame(gRecordsWindowId, FALSE);
@@ -328,6 +328,7 @@ void ShowLinkBattleRecords(void)
     x = GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 208);
     AddTextPrinterParameterized(gRecordsWindowId, FONT_NORMAL, gStringVar4, x, 1, 0, NULL);
     #ifndef FREE_LINK_BATTLE_RECORDS
+    s32 i;
     PrintLinkBattleWinsLossesDraws(gSaveBlock1Ptr->linkBattleRecords.entries);
 
     StringExpandPlaceholders(gStringVar4, gText_WinLoseDraw);

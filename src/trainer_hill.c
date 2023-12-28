@@ -279,11 +279,11 @@ void CallTrainerHillFunction(void)
 
 void ResetTrainerHillResults(void)
 {
-    s32 i;
 
     gSaveBlock2Ptr->frontier.savedGame = 0;
     gSaveBlock2Ptr->frontier.unk_EF9 = 0;
     #ifndef FREE_TRAINER_HILL
+    s32 i;
     gSaveBlock1Ptr->trainerHill.bestTime = 0;
     for (i = 0; i < NUM_TRAINER_HILL_MODES; i++)
         SetTimerValue(&gSaveBlock1Ptr->trainerHillTimes[i], HILL_MAX_TIME);
@@ -526,8 +526,8 @@ static void TrainerHillGetChallengeStatus(void)
 
 static void BufferChallengeTime(void)
 {
-    s32 total, minutes, secondsWhole, secondsFraction;
     #ifndef FREE_TRAINER_HILL
+    s32 total, minutes, secondsWhole, secondsFraction;
     total = gSaveBlock1Ptr->trainerHill.timer;
     if (total >= HILL_MAX_TIME)
         total = HILL_MAX_TIME;
@@ -583,6 +583,8 @@ bool8 InTrainerHillChallenge(void)
         return TRUE;
     else
         return FALSE;
+    #else
+    return FALSE;
     #endif
 }
 
@@ -594,7 +596,7 @@ static void IsTrainerHillChallengeActive(void)
         gSpecialVar_Result = TRUE;
 }
 
-static void TrainerHillDummy_Unused(void)
+static void UNUSED TrainerHillDummy_Unused(void)
 {
 
 }
@@ -606,9 +608,9 @@ static void TrainerHillDummy(void)
 
 void PrintOnTrainerHillRecordsWindow(void)
 {
+    #ifndef FREE_TRAINER_HILL
     s32 i, x, y;
     u32 total, minutes, secondsWhole, secondsFraction;
-    #ifndef FREE_TRAINER_HILL
     SetUpDataStruct();
     FillWindowPixelBuffer(0, PIXEL_FILL(0));
     x = GetStringCenterAlignXOffset(FONT_NORMAL, gText_TimeBoard, 0xD0);
@@ -642,12 +644,12 @@ void PrintOnTrainerHillRecordsWindow(void)
 
 // Leftover from Fire Red / Leaf Green as in these games,
 // the timer had to be xored by the encryption key in Sav2.
-static u32 GetTimerValue(u32 *src)
+static u32 UNUSED GetTimerValue(u32 *src)
 {
     return *src;
 }
 
-static void SetTimerValue(u32 *dst, u32 val)
+static void UNUSED SetTimerValue(u32 *dst, u32 val)
 {
     *dst = val;
 }
@@ -674,7 +676,7 @@ void LoadTrainerHillObjectEventTemplates(void)
         eventTemplates[i].localId = i + 1;
         eventTemplates[i].graphicsId = FacilityClassToGraphicsId(sHillData->floors[floorId].trainers[i].facilityClass);
         eventTemplates[i].x = sHillData->floors[floorId].map.trainerCoords[i] & 0xF;
-        eventTemplates[i].y = ((sHillData->floors[floorId].map.trainerCoords[i] >> 4) & 0xF) + 5;
+        eventTemplates[i].y = ((sHillData->floors[floorId].map.trainerCoords[i] >> 4) & 0xF) + HILL_FLOOR_HEIGHT_MARGIN;
         bits = i << 2;
         eventTemplates[i].movementType = ((sHillData->floors[floorId].map.trainerDirections >> bits) & 0xF) + MOVEMENT_TYPE_FACE_UP;
         eventTemplates[i].trainerRange_berryTreeId = (sHillData->floors[floorId].map.trainerRanges >> bits) & 0xF;
@@ -793,8 +795,7 @@ u8 GetCurrentTrainerHillMapId(void)
     return mapId;
 }
 
-// Unused
-static bool32 OnTrainerHillRoof(void)
+static bool32 UNUSED OnTrainerHillRoof(void)
 {
     bool32 onRoof;
 
@@ -1052,11 +1053,10 @@ static u8 GetPrizeListId(bool8 allowTMs)
     return prizeListId;
 }
 
-static u16 GetPrizeItemId(void)
+static u16 UNUSED GetPrizeItemId(void)
 {
     u8 i;
-    const u16 *prizeList;
-    s32 trainerNumSum = 0, prizeListSetId, minutes, id;
+    s32 trainerNumSum = 0, prizeListSetId;
 
     // First determine which set of prize lists to use. The sets of lists only differ in
     // what TMs they can offer as the "grand prize" for a time under 12 minutes.
@@ -1081,6 +1081,8 @@ static u16 GetPrizeItemId(void)
         i = GetPrizeListId(FALSE);
 
     #ifndef FREE_TRAINER_HILL
+    const u16 *prizeList;
+    s32 minutes, id;
     // 1 is added to Expert mode's prize list selection because otherwise it has the same prizes as Variety
     if (gSaveBlock1Ptr->trainerHill.mode == HILL_MODE_EXPERT)
         i = (i + 1) % NUM_TRAINER_HILL_PRIZE_LISTS;
@@ -1115,7 +1117,10 @@ static u16 GetPrizeItemId(void)
         id = 4; // ITEM_FLUFFY_TAIL
     else
         id = 5; // ITEM_GREAT_BALL
+        
+    return prizeList[id];
+    #else
+    return 0;
     #endif
 
-    return prizeList[id];
 }

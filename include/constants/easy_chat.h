@@ -1117,7 +1117,7 @@
 #define EC_MASK_GROUP ((1 << (16 - EC_MASK_BITS)) - 1)
 #define EC_MASK_INDEX ((1 << EC_MASK_BITS) - 1)
 
-#define EC_POKEMON(mon) ((EC_GROUP_POKEMON << EC_MASK_BITS) | SPECIES_##mon)
+#define EC_POKEMON(mon) ((EC_GROUP_POKEMON << EC_MASK_BITS) | (SPECIES_##mon))
 #define EC_POKEMON_NATIONAL(mon) ((EC_GROUP_POKEMON_NATIONAL << EC_MASK_BITS) | SPECIES_##mon)
 #define EC_MOVE(move) ((EC_GROUP_MOVE_1 << EC_MASK_BITS) | MOVE_##move)
 #define EC_MOVE2(move) ((EC_GROUP_MOVE_2 << EC_MASK_BITS) | MOVE_##move)
