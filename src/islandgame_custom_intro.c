@@ -23,7 +23,7 @@ void IslandGameCustomStartup()
     // This flag makes sure we unlock the quest menu
     FlagSet(FLAG_SYS_QUEST_MENU_GET);
     // This flag makes sure the exp share is toggled on by default
-    FlagSet(I_EXP_SHARE_FLAG);
+    FlagSet(FLAG_EXP_SHARE);
 
     // I'm honestly not sure why you need the weird syntax around string literals,
     // but it breaks pretty badly w/out it so...
@@ -35,11 +35,13 @@ void IslandGameCustomStartup()
         // This flag makes sure that we unlock the pokemon selection menu:
         // usually its set when you pick the starter.
         FlagSet(FLAG_SYS_POKEMON_GET);
+        // LINK data/scripts/islandgame_debug.pory#debug-pokemon-give
+        /* See 
         u16 species = ISLANDGAME_STARTING_MON;
         u8 level = ISLANDGAME_STARTING_MON_LEVEL;
         u16 item = ISLANDGAME_STARTING_MON_ITEM;
         ScriptGiveMon(species, level, item, 0, 0, 0);
-
+        */
         //debug 1: give all badges to raise our obedienceLevel
         FlagToggle(FLAG_BADGE01_GET);
         FlagToggle(FLAG_BADGE02_GET);
@@ -76,7 +78,7 @@ void IslandGameCustomStartup()
         //VarSet(VAR_MINTY_MEADOWS_STATE, 0); //1 = quest active, 2 = saw mareep first time, 3 = mightyena corners mareep, 4 = finish
 
         //See: data/scripts/islandgame_debug[.pory/.inc]
-        //ScriptContext_SetupScript(IslandGame_LoadIn_Message);
+        ScriptContext_SetupScript(IslandGame_LoadIn_Message);
         //note: this script bugs out if there is an "onload" script on the map
 
         
