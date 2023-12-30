@@ -9526,13 +9526,6 @@ BattleScript_MoveUsedLoafingAroundMsg::
 	moveendto MOVEEND_NEXT_TARGET
 	end
 
-BattleScript_IgnoresAndUsesBerserk::
-	printstring STRINGID_USEDBERSERK
-	waitmessage B_WAIT_TIME_LONG
-	setbyte sMOVE_EFFECT, 0
-	jumptocalledmove FALSE
-	end
-
 BattleScript_TruantLoafingAround::
 	call BattleScript_AbilityPopUp
 	goto BattleScript_MoveUsedLoafingAroundMsg

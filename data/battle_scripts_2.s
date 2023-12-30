@@ -259,3 +259,10 @@ BattleScript_TrainerBSlideMsgRet::
 BattleScript_TrainerBSlideMsgEnd2::
     call BattleScript_TrainerBSlideMsgRet
     end2
+
+BattleScript_IgnoresAndUsesBerserk::
+	printstring STRINGID_USEDBERSERK
+	waitmessage B_WAIT_TIME_LONG
+	setbyte sMOVE_EFFECT, 0
+	jumptocalledmove FALSE
+	end

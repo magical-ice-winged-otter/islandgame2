@@ -1670,9 +1670,9 @@
 #define SPECIES_1024_FORM_3                             GEN9_START + 145
 #define SPECIES_1025                                    GEN9_START + 146
 
-#define GENC_START                                     SPECIES_1025
-#define SPECIES_SHADOW_LUGIA GENC_START + 1
-#define SPECIES_SHADOW_MIGHTYENA GENC_START + 2
+#define GENC_START                                      SPECIES_1025
+#define SPECIES_SHADOW_LUGIA                            GENC_START + 1
+#define SPECIES_SHADOW_MIGHTYENA                        GENC_START + 2
 
 #define PLACEHOLDER_START                               SPECIES_SHADOW_MIGHTYENA
 // XD: Gale of Darkness
