@@ -33,12 +33,17 @@ jobs:
         env:
           MODERN: 1
           COMPARE: 0
-        run: make -j${nproc} -O all
+        run: |
+          make tools
+          ./tools/mapjson/mapjson groups emerald data/maps/map_groups.json
+          make -j${nproc} -O all
 
       - name: Test
         env:
           MODERN: 1
           TEST: 1
         run: |
+          make tools
+          ./tools/mapjson/mapjson groups emerald data/maps/map_groups.json
           make -j${nproc} -O pokeemerald-test.elf
           make -j${nproc} check
