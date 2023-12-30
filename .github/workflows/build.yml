@@ -21,12 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Checkout agbcc
-        uses: actions/checkout@v2
-        with:
-          path: agbcc
-          repository: pret/agbcc
-
       - name: Install binutils
         run: |
           sudo apt update
@@ -34,18 +28,6 @@ jobs:
         # build-essential, git, and libpng-dev are already installed
         # gcc-arm-none-eabi is only needed for the modern build
         # as an alternative to dkP
-
-      - name: Install agbcc
-        run: |
-          ./build.sh
-          ./install.sh ../
-        working-directory: agbcc
-
-      - name: Agbcc
-        env:
-          MODERN: 0
-          COMPARE: 0
-        run: make -j${nproc} -O all
 
       - name: Modern
         env:
