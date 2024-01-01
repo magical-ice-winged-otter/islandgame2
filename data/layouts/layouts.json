@@ -4734,7 +4734,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROSEVALE",
       "name": "ISLANDGAME_ROSEVALE_Layout",
-      "width": 48,
+      "width": 36,
       "height": 37,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_islandgame_rosevale",
