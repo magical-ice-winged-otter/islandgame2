@@ -190,6 +190,9 @@
 // gTileset_FireRed
 #define METATILE_FireRed_General_Test_Door  0x071
 
+// gTileset_Forest
+#define METATILE_Forest_Door  0x294
+
 // gTileset_Fortree
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
 #define METATILE_Fortree_BridgeOverGrass_Raised            0x24E
@@ -271,6 +274,9 @@
 #define METATILE_IslandgameGeneral_Door            0x021
 #define METATILE_IslandgameGeneral_DoorPokeCenter  0x061
 #define METATILE_IslandgameGeneral_DoorPokeMart    0x041
+
+// gTileset_IslandgameTidalcove
+#define METATILE_IslandgameTidalcove_Door01  0x22A
 
 // gTileset_Islandgame
 #define METATILE_Islandgame_Door                 0x021
@@ -806,5 +812,9 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
+
+// gTileset_islandgame
+#define METATILE_islandgame_maplegrove_Door01  0x248
+#define METATILE_islandgame_maplegrove_Door02  0x287
 
 #endif // GUARD_METATILE_LABELS_H
