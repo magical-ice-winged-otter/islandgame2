@@ -4,3 +4,10 @@ include/constants/vars.h,       "The scripting variables for the game",         
 include/constants/opponents.h,  "The enemy trainer definitions",                BATTLE | SCRIPT
 src/data/trainer_parties.h,     "The enemy team data (Pokémon, moves, ect.)",   BATTLE
 src/data/trainers.h,            "The enemy data (music, picture, flags, ect.)", BATTLE
+
+include/contest.h,              "Contest struct definitions",                   CONTEST
+src/contest.c,                  "Main contest logic",                           CONTEST
+src/data/contest_opponents.h,   "Enemy contestant definitions",                 CONTEST
+
+graphics/door_anims,            "Door animation source images",                 GRAPHICS
+src/field_door.c,               "Door animation definitions",                   GRAPHICS

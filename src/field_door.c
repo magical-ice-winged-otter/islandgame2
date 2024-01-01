@@ -132,11 +132,12 @@ static const u16 sDoorNullPalette48[16] = {};
 static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/door_anims/trainer_hill_roof_elevator.4bpp");
 static const u16 sDoorNullPalette49[16] = {};
 
+// island-game
 static const u8 sDoorAnimTiles_Islandgame_General[] = INCBIN_U8("graphics/door_anims/islandgame_general.4bpp");
 static const u8 sDoorAnimTiles_Islandgame_Pokecenter[] = INCBIN_U8("graphics/door_anims/islandgame_center.4bpp");
 static const u8 sDoorAnimTiles_Islandgame_Pokemart[] = INCBIN_U8("graphics/door_anims/islandgame_mart.4bpp");
-static const u8 sDoorAnimTiles_Persi[] = INCBIN_U8("graphics/door_anims/persi.4bpp");
-
+static const u8 sDoorAnimTiles_Islandgame_Persi[] = INCBIN_U8("graphics/door_anims/islandgame_persi.4bpp");
+static const u8 sDoorAnimTiles_Islandgame_SSRain[] = INCBIN_U8("graphics/door_anims/islandgame_ss_rain.4bpp");
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -225,39 +226,50 @@ static const u8 sDoorAnimPalettes_BattleDomePreBattleRoom[] = {9, 9, 7, 7, 7, 7,
 static const u8 sDoorAnimPalettes_BattleTentInterior[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
-//island game start:
-static const u8 sDoorAnimPalettes_IslandGameGeneral[] = {
+
+// island-game
+static const u8 sDoorAnimPalettes_Islandgame_General[] = {
     4, 4,
     4, 4,
     4, 4,
     4, 4
 };
-static const u8 sDoorAnimPalettes_IslandGamePokecenter[] = {
+static const u8 sDoorAnimPalettes_Islandgame_Pokecenter[] = {
     4, 4,
     4, 4,
     4, 4,
     4, 4
 };
-static const u8 sDoorAnimPalettes_IslandGamePokemart[] = {
+static const u8 sDoorAnimPalettes_Islandgame_Pokemart[] = {
     4, 4,
     4, 4,
     4, 4,
     4, 4
 };
-static const u8 sDoorAnimPalettes_CampPersi[] = {
+static const u8 sDoorAnimPalettes_Islandgame_Persi[] = {
     7, 7, 
     7, 7, 
-    12, 7, 
+    7, 7, 
     7, 7
+};
+static const u8 sDoorAnimPalettes_Islandgame_SSRain[] = {
+    4, 4,
+    4, 4,
+    4, 4,
+    4, 4,
 };
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
     //note: the search does not look for the tileset first, it only looks up via metatiles.
-    {METATILE_IslandgameGeneral_Door,                       DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_General, sDoorAnimPalettes_IslandGameGeneral},
-    {METATILE_IslandgameGeneral_DoorPokeCenter,             DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Islandgame_Pokecenter, sDoorAnimPalettes_IslandGamePokecenter},
-    {METATILE_IslandgameGeneral_DoorPokeMart,               DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Islandgame_Pokemart, sDoorAnimPalettes_IslandGamePokemart},
-    {METATILE_Persi_Door,                                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Persi, sDoorAnimTiles_Persi},
+
+    // island-game
+    {METATILE_IslandgameGeneral_Door,                       DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_General, sDoorAnimPalettes_Islandgame_General},
+    {METATILE_IslandgameGeneral_DoorPokeCenter,             DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Islandgame_Pokecenter, sDoorAnimPalettes_Islandgame_Pokecenter},
+    {METATILE_IslandgameGeneral_DoorPokeMart,               DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Islandgame_Pokemart, sDoorAnimPalettes_Islandgame_Pokemart},
+    {METATILE_Persi_Door,                                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_Persi, sDoorAnimPalettes_Islandgame_Persi},
+    {METATILE_FireRed_General_Test_Door,                    DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_SSRain, sDoorAnimPalettes_Islandgame_SSRain},
+
     {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
     {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},
     {METATILE_General_Door_Gym,                             DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Gym, sDoorAnimPalettes_Gym},
