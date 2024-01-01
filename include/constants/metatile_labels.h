@@ -277,6 +277,7 @@
 
 // gTileset_IslandgameTidalcove
 #define METATILE_IslandgameTidalcove_Door01  0x22A
+#define METATILE_IslandgameTidalcove_Door02  0x252
 
 // gTileset_Islandgame
 #define METATILE_Islandgame_Door                 0x021
@@ -816,5 +817,6 @@
 // gTileset_islandgame
 #define METATILE_islandgame_maplegrove_Door01  0x248
 #define METATILE_islandgame_maplegrove_Door02  0x287
+#define METATILE_islandgame_rosevale_Door      0x3A1
 
 #endif // GUARD_METATILE_LABELS_H
