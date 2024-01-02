@@ -439,8 +439,9 @@
 #define BATTLE_TERRAIN_RAYQUAZA         34
 //islandgame-add: Custom Battle Terrain Images
 #define BATTLE_TERRAIN_HD_GRASS         35
+#define BATTLE_TERRAIN_HD_PLAINS        36
 
-#define BATTLE_TERRAIN_COUNT            36
+#define BATTLE_TERRAIN_COUNT            37
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)

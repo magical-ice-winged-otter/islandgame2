@@ -484,6 +484,12 @@ extern const u32 gBattleTerrainPalette_HDGrass[];
 extern const u32 gBattleTerrainTilemap_HDGrass[];
 extern const u32 gBattleTerrainAnimTiles_HDGrass[];
 extern const u32 gBattleTerrainAnimTilemap_HDGrass[];
+//BATTLE_TERRAIN_HD_PLAINS
+extern const u32 gBattleTerrainTiles_HDPlains[];
+extern const u32 gBattleTerrainPalette_HDPlains[];
+extern const u32 gBattleTerrainTilemap_HDPlains[];
+extern const u32 gBattleTerrainAnimTiles_HDPlains[];
+extern const u32 gBattleTerrainAnimTilemap_HDPlains[];
 
 // pokedex
 extern const u32 gPokedexInterface_Gfx[];
