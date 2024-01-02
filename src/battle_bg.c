@@ -596,89 +596,32 @@ const struct WindowTemplate * const gBattleWindowTemplates[] =
     [B_WIN_TYPE_ARENA]  = sBattleArenaWindowTemplates,
 };
 
+#define TERRAIN_METADATA(name)                               \
+        .tileset = gBattleTerrainTiles_## name,              \
+        .tilemap = gBattleTerrainTilemap_## name,            \
+        .entryTileset = gBattleTerrainAnimTiles_## name,     \
+        .entryTilemap = gBattleTerrainAnimTilemap_## name,   \
+        .palette = gBattleTerrainPalette_## name,            
+
 const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
 {
     [BATTLE_TERRAIN_GRASS] =
     {
-        .tileset = gBattleTerrainTiles_TallGrass,
-        .tilemap = gBattleTerrainTilemap_TallGrass,
+        .tileset = gBattleTerrainTiles_HDGrass,
+        .tilemap = gBattleTerrainTilemap_HDGrass,
         .entryTileset = gBattleTerrainAnimTiles_TallGrass,
         .entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
-        .palette = gBattleTerrainPalette_TallGrass,
+        .palette = gBattleTerrainPalette_HDGrass,
     },
 
-    [BATTLE_TERRAIN_LONG_GRASS] =
-    {
-        .tileset = gBattleTerrainTiles_LongGrass,
-        .tilemap = gBattleTerrainTilemap_LongGrass,
-        .entryTileset = gBattleTerrainAnimTiles_LongGrass,
-        .entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
-        .palette = gBattleTerrainPalette_LongGrass,
-    },
-
-    [BATTLE_TERRAIN_SAND] =
-    {
-        .tileset = gBattleTerrainTiles_Sand,
-        .tilemap = gBattleTerrainTilemap_Sand,
-        .entryTileset = gBattleTerrainAnimTiles_Sand,
-        .entryTilemap = gBattleTerrainAnimTilemap_Sand,
-        .palette = gBattleTerrainPalette_Sand,
-    },
-
-    [BATTLE_TERRAIN_UNDERWATER] =
-    {
-        .tileset = gBattleTerrainTiles_Underwater,
-        .tilemap = gBattleTerrainTilemap_Underwater,
-        .entryTileset = gBattleTerrainAnimTiles_Underwater,
-        .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
-        .palette = gBattleTerrainPalette_Underwater,
-    },
-
-    [BATTLE_TERRAIN_WATER] =
-    {
-        .tileset = gBattleTerrainTiles_Water,
-        .tilemap = gBattleTerrainTilemap_Water,
-        .entryTileset = gBattleTerrainAnimTiles_Water,
-        .entryTilemap = gBattleTerrainAnimTilemap_Water,
-        .palette = gBattleTerrainPalette_Water,
-    },
-
-    [BATTLE_TERRAIN_POND] =
-    {
-        .tileset = gBattleTerrainTiles_PondWater,
-        .tilemap = gBattleTerrainTilemap_PondWater,
-        .entryTileset = gBattleTerrainAnimTiles_PondWater,
-        .entryTilemap = gBattleTerrainAnimTilemap_PondWater,
-        .palette = gBattleTerrainPalette_PondWater,
-    },
-
-    [BATTLE_TERRAIN_MOUNTAIN] =
-    {
-        .tileset = gBattleTerrainTiles_Rock,
-        .tilemap = gBattleTerrainTilemap_Rock,
-        .entryTileset = gBattleTerrainAnimTiles_Rock,
-        .entryTilemap = gBattleTerrainAnimTilemap_Rock,
-        .palette = gBattleTerrainPalette_Rock,
-    },
-
-    [BATTLE_TERRAIN_CAVE] =
-    {
-        .tileset = gBattleTerrainTiles_Cave,
-        .tilemap = gBattleTerrainTilemap_Cave,
-        .entryTileset = gBattleTerrainAnimTiles_Cave,
-        .entryTilemap = gBattleTerrainAnimTilemap_Cave,
-        .palette = gBattleTerrainPalette_Cave,
-    },
-
-    [BATTLE_TERRAIN_BUILDING] =
-    {
-        .tileset = gBattleTerrainTiles_Building,
-        .tilemap = gBattleTerrainTilemap_Building,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_Building,
-    },
-
+    [BATTLE_TERRAIN_LONG_GRASS] = { TERRAIN_METADATA(LongGrass) },
+    [BATTLE_TERRAIN_SAND] = { TERRAIN_METADATA(Sand) },
+    [BATTLE_TERRAIN_UNDERWATER] = { TERRAIN_METADATA(Underwater) },
+    [BATTLE_TERRAIN_WATER] = { TERRAIN_METADATA(Water) },
+    [BATTLE_TERRAIN_POND] = { TERRAIN_METADATA(PondWater) },
+    [BATTLE_TERRAIN_MOUNTAIN] = { TERRAIN_METADATA(Rock) },
+    [BATTLE_TERRAIN_CAVE] = { TERRAIN_METADATA(Cave) },
+    [BATTLE_TERRAIN_BUILDING] = { TERRAIN_METADATA(Building)},
     [BATTLE_TERRAIN_PLAIN] =
     {
         .tileset = gBattleTerrainTiles_Building,
@@ -804,6 +747,8 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
         .entryTilemap = gBattleTerrainAnimTilemap_Rayquaza,
         .palette = gBattleTerrainPalette_Rayquaza,
     },
+
+    [BATTLE_TERRAIN_HD_GRASS] = { TERRAIN_METADATA(HDGrass) },
 };
 
 static const struct {
