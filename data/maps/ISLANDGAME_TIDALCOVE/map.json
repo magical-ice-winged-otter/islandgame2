@@ -297,6 +297,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_HP_UP",
       "script": "NULL",
       "flag": "FLAG_ITEM_NOR_TWISTEDSPOON"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 3,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_104_SOIL_3",
+      "script": "BerryTreeScript",
+      "flag": "0"
     }
   ],
   "warp_events": [
