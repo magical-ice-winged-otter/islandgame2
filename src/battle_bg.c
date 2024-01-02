@@ -603,15 +603,17 @@ const struct WindowTemplate * const gBattleWindowTemplates[] =
         .entryTilemap = gBattleTerrainAnimTilemap_## name,   \
         .palette = gBattleTerrainPalette_## name,            
 
+//LINK include/constants/battle.h:440
+//LINK src/data/graphics/battle_terrain.h:90
 const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
 {
     [BATTLE_TERRAIN_GRASS] =
     {
-        .tileset = gBattleTerrainTiles_HDWater,
-        .tilemap = gBattleTerrainTilemap_HDWater,
+        .tileset = gBattleTerrainTiles_HDDepths,
+        .tilemap = gBattleTerrainTilemap_HDDepths,
         .entryTileset = gBattleTerrainAnimTiles_TallGrass,
         .entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
-        .palette = gBattleTerrainPalette_HDWater,
+        .palette = gBattleTerrainPalette_HDDepths,
     },
 
     [BATTLE_TERRAIN_LONG_GRASS] = { TERRAIN_METADATA(LongGrass) },
@@ -750,6 +752,8 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
     [BATTLE_TERRAIN_HD_GRASS] = { TERRAIN_METADATA(HDGrass) },
     [BATTLE_TERRAIN_HD_PLAINS] = { TERRAIN_METADATA(HDPlains) },
     [BATTLE_TERRAIN_HD_FOREST] = { TERRAIN_METADATA(HDForest) },
+    [BATTLE_TERRAIN_HD_CAVE2] = { TERRAIN_METADATA(HDCave2) },
+    [BATTLE_TERRAIN_HD_DEPTHS] = { TERRAIN_METADATA(HDDepths) },
 };
 
 static const struct {

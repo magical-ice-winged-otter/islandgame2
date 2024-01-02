@@ -115,3 +115,17 @@ const u32 gBattleTerrainPalette_HDWater[] = INCBIN_U32("graphics/battle_terrain/
 const u32 gBattleTerrainTilemap_HDWater[] = INCBIN_U32("graphics/battle_terrain/new_water/map.bin.lz");
 const u32 gBattleTerrainAnimTiles_HDWater[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_HDWater[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_map.bin.lz");
+
+//BATTLE_TERRAIN_HD_CAVE2
+const u32 gBattleTerrainTiles_HDCave2[] = INCBIN_U32("graphics/battle_terrain/new_cave2/tiles.4bpp.lz");
+const u32 gBattleTerrainPalette_HDCave2[] = INCBIN_U32("graphics/battle_terrain/new_cave2/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_HDCave2[] = INCBIN_U32("graphics/battle_terrain/new_cave2/map.bin.lz");
+const u32 gBattleTerrainAnimTiles_HDCave2[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_tiles.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_HDCave2[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_map.bin.lz");
+
+//BATTLE_TERRAIN_HD_DEPTHS
+const u32 gBattleTerrainTiles_HDDepths[] = INCBIN_U32("graphics/battle_terrain/new_depths/tiles.4bpp.lz");
+const u32 gBattleTerrainPalette_HDDepths[] = INCBIN_U32("graphics/battle_terrain/new_depths/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_HDDepths[] = INCBIN_U32("graphics/battle_terrain/new_depths/map.bin.lz");
+const u32 gBattleTerrainAnimTiles_HDDepths[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_tiles.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_HDDepths[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_map.bin.lz");

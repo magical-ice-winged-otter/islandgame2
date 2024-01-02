@@ -502,6 +502,18 @@ extern const u32 gBattleTerrainPalette_HDWater[];
 extern const u32 gBattleTerrainTilemap_HDWater[];
 extern const u32 gBattleTerrainAnimTiles_HDWater[];
 extern const u32 gBattleTerrainAnimTilemap_HDWater[];
+//BATTLE_TERRAIN_HD_CAVE2
+extern const u32 gBattleTerrainTiles_HDCave2[];
+extern const u32 gBattleTerrainPalette_HDCave2[];
+extern const u32 gBattleTerrainTilemap_HDCave2[];
+extern const u32 gBattleTerrainAnimTiles_HDCave2[];
+extern const u32 gBattleTerrainAnimTilemap_HDCave2[];
+//BATTLE_TERRAIN_HD_DEPTHS
+extern const u32 gBattleTerrainTiles_HDDepths[];
+extern const u32 gBattleTerrainPalette_HDDepths[];
+extern const u32 gBattleTerrainTilemap_HDDepths[];
+extern const u32 gBattleTerrainAnimTiles_HDDepths[];
+extern const u32 gBattleTerrainAnimTilemap_HDDepths[];
 
 // pokedex
 extern const u32 gPokedexInterface_Gfx[];

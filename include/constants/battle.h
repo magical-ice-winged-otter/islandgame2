@@ -442,8 +442,10 @@
 #define BATTLE_TERRAIN_HD_PLAINS        36
 #define BATTLE_TERRAIN_HD_FOREST        37
 #define BATTLE_TERRAIN_HD_WATER         38
+#define BATTLE_TERRAIN_HD_CAVE2         39
+#define BATTLE_TERRAIN_HD_DEPTHS        40
 
-#define BATTLE_TERRAIN_COUNT            39
+#define BATTLE_TERRAIN_COUNT            41
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)
