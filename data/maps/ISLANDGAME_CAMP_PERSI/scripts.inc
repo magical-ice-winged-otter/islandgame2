@@ -540,6 +540,13 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN5::
 	return
 
 
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7::
+	lock
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7_Text_0
+	release
+	return
+
+
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance::
 	lock
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_Text_0, MSGBOX_YESNO
@@ -624,6 +631,9 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag_Text_0:
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_Text_0:
 	.string "{COLOR DARK_GRAY}Aww. That's a shame. I was going to\n"
 	.string "share this Wailmer Pail with you.$"
+
+ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7_Text_0:
+	.string "CHERIPORT{LEFT_ARROW}\nCAMP PERSI{UP_ARROW}$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_Text_0:
 	.string "There's a slight opening in the tree!\n"

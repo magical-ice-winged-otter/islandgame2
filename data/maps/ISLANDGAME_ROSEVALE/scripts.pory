@@ -26,16 +26,16 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
                 setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
-                setobjectxyperm(LOCALID_ARTHUR_SISTER, 14, 14)
+                setobjectxyperm(LOCALID_ARTHUR_SISTER, 8, 14)
                 addobject(LOCALID_ARTHUR_SISTER)
                 setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
             case STATE_DEFEATED_BANDIT:
                 // everyone is standing around the inn
-                setobjectxyperm(LOCALID_ARTHUR, 18, 26)
-                setobjectxyperm(LOCALID_ARTHUR_DAD, 19, 24)
-                setobjectxyperm(LOCALID_ARTHUR_MOM, 18, 24)
-                setobjectxyperm(LOCALID_ARTHUR_SISTER, 20, 24)
-                setobjectxyperm(LOCALID_AZURILL, 20, 26)
+                setobjectxyperm(LOCALID_ARTHUR, 12, 26)
+                setobjectxyperm(LOCALID_ARTHUR_DAD, 13, 24)
+                setobjectxyperm(LOCALID_ARTHUR_MOM, 12, 24)
+                setobjectxyperm(LOCALID_ARTHUR_SISTER, 14, 24)
+                setobjectxyperm(LOCALID_AZURILL, 14, 26)
                 addobject(LOCALID_ARTHUR)
                 addobject(LOCALID_ARTHUR_DAD)
                 addobject(LOCALID_ARTHUR_MOM)
@@ -59,7 +59,7 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
                 setobjectxyperm(LOCALID_ARTHUR, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ARTHUR_MOM, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ARTHUR_DAD, POS_HIDDEN_X, POS_HIDDEN_Y)
-                setobjectxyperm(LOCALID_ARTHUR_SISTER, 14, 14)
+                setobjectxyperm(LOCALID_ARTHUR_SISTER, 8, 14)
                 addobject(LOCALID_ARTHUR_SISTER)
                 setobjectmovementtype(LOCALID_ARTHUR_SISTER, MOVEMENT_TYPE_FACE_LEFT)
             default:
@@ -67,7 +67,7 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
         }
 
         if (var(VAR_ROSEVALE_STATE) != STATE_ARTHUR_FIGHT && var(VAR_ROSEVALE_STATE) != STATE_FINAL) {
-                setobjectxyperm(LOCALID_ARTHUR_DAD, 19, 24)
+                setobjectxyperm(LOCALID_ARTHUR_DAD, 13, 24)
                 setobjectmovementtype(LOCALID_ARTHUR_DAD, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
                 addobject(LOCALID_ARTHUR_DAD)
         }
@@ -286,7 +286,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_EAST)
     // the sister runs up
     addobject(LOCALID_ARTHUR_SISTER)
-    setobjectxy(LOCALID_ARTHUR_SISTER, 20, 14)
+    setobjectxy(LOCALID_ARTHUR_SISTER, 14, 14)
     applymovement(LOCALID_ARTHUR_SISTER, Movement_ArthurSister_RunUpToPath)
     waitmovement(LOCALID_ARTHUR_SISTER)
 
@@ -309,7 +309,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
     // arthur walks up
     msgbox(format("{COLOR GREEN}Arthur: {COLOR DARK_GRAY}{PLAYER}!"))
     addobject(LOCALID_ARTHUR)
-    setobjectxy(LOCALID_ARTHUR, 25, 12)
+    setobjectxy(LOCALID_ARTHUR, 19, 12)
     applymovement(LOCALID_ARTHUR, Movement_Arthur_WalkUpToExit)
     turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
     waitmovement(0)
@@ -366,7 +366,7 @@ script(local) ArthurDefeated {
 
     // dad walks up
     addobject(LOCALID_ARTHUR_DAD)
-    setobjectxy(LOCALID_ARTHUR_DAD, 25, 12)
+    setobjectxy(LOCALID_ARTHUR_DAD, 19, 12)
     applymovement(LOCALID_ARTHUR_DAD, Movement_ArthurDad_WalkUpToArthur)
     applymovement(LOCALID_ARTHUR, Movement_Arthur_SeesDad)
     waitmovement(LOCALID_ARTHUR_DAD)
@@ -379,7 +379,10 @@ script(local) ArthurDefeated {
         "I watched your battle with {PLAYER}. I can tell you still don't trust in your Pokémon, or even yourself.\p"
         "And if you don't trust in yourself, how can you expect your Pokémon to?\p"
         "That's why you need more time. You have to build that trust with your Pokémon. Build that trust with yourself. Do you understand?\p"
-        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm.\p"
+        "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm."
+    ), MSGBOX_NPC)
+
+    msgbox(format(
         "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}I know I may have been a little harsh on you earlier, but it's only because I want the best for you.\p"
         "Pokémon are a big responsibility, and I want to make sure that you can take care of both yourself and your Pokémon before you enter the Gym Challenge.\p"
         "In the next week, if you show me that the bond between you and your Pokemon has strengthened, I will let you challenge Ruka.\p" 

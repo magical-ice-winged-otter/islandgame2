@@ -138,14 +138,6 @@
   ],
   "bg_events": [
     {
-      "type": "sign",
-      "x": 7,
-      "y": 24,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
-    },
-    {
       "type": "hidden_item",
       "x": 31,
       "y": 30,
