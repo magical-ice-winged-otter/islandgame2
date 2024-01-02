@@ -786,6 +786,12 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN5_DESC {
     )
 }
 
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7 {
+    lock
+    msgbox("CHERIPORT{LEFT_ARROW}\nCAMP PERSI{UP_ARROW}")
+    release
+}
+
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance {
     lock
     msgbox(format("There's a slight opening in the tree! Want to climb inside?"), MSGBOX_YESNO)

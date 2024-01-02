@@ -18,17 +18,17 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
 	setobjectxyperm 4, 0, 0
 	setobjectxyperm 6, 0, 0
 	setobjectxyperm 5, 0, 0
-	setobjectxyperm 1, 14, 14
+	setobjectxyperm 1, 8, 14
 	addobject 1
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-	setobjectxyperm 4, 18, 26
-	setobjectxyperm 5, 19, 24
-	setobjectxyperm 6, 18, 24
-	setobjectxyperm 1, 20, 24
-	setobjectxyperm 13, 20, 26
+	setobjectxyperm 4, 12, 26
+	setobjectxyperm 5, 13, 24
+	setobjectxyperm 6, 12, 24
+	setobjectxyperm 1, 14, 24
+	setobjectxyperm 13, 14, 26
 	addobject 4
 	addobject 5
 	addobject 6
@@ -54,13 +54,13 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
 	setobjectxyperm 4, 0, 0
 	setobjectxyperm 6, 0, 0
 	setobjectxyperm 5, 0, 0
-	setobjectxyperm 1, 14, 14
+	setobjectxyperm 1, 8, 14
 	addobject 1
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
-	setobjectxyperm 5, 19, 24
+	setobjectxyperm 5, 13, 24
 	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
 	addobject 5
 	return
@@ -262,7 +262,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest::
 	closemessage
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	addobject 1
-	setobjectxy 1, 20, 14
+	setobjectxy 1, 14, 14
 	applymovement 1, Movement_ArthurSister_RunUpToPath
 	waitmovement 1
 	msgbox Text_ArthurSister_PleaseHelp
@@ -285,7 +285,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
 	lock
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0
 	addobject 4
-	setobjectxy 4, 25, 12
+	setobjectxy 4, 19, 12
 	applymovement 4, Movement_Arthur_WalkUpToExit
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	waitmovement 0
@@ -342,12 +342,13 @@ ArthurDefeated:
 	msgbox ArthurDefeated_Text_0, MSGBOX_NPC
 	closemessage
 	addobject 5
-	setobjectxy 5, 25, 12
+	setobjectxy 5, 19, 12
 	applymovement 5, Movement_ArthurDad_WalkUpToArthur
 	applymovement 4, Movement_Arthur_SeesDad
 	waitmovement 5
 	waitmovement 4
 	msgbox ArthurDefeated_Text_1, MSGBOX_NPC
+	msgbox ArthurDefeated_Text_2, MSGBOX_NPC
 	applymovement 5, Movement_ArthurDad_WalkAway
 	applymovement 4, Movement_Arthur_WalkAway
 	waitmovement 4
@@ -512,7 +513,9 @@ ArthurDefeated_Text_1:
 	.string "to build that trust with your Pokémon.\l"
 	.string "Build that trust with yourself. Do you\l"
 	.string "understand?\p"
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm.\p"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm.$"
+
+ArthurDefeated_Text_2:
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}I know I may have been a\n"
 	.string "little harsh on you earlier, but it's\l"
 	.string "only because I want the best for you.\p"

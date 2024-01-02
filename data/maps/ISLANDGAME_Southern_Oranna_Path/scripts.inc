@@ -1,15 +1,10 @@
 ISLANDGAME_Southern_Oranna_Path_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_TEMP_1, 0
 	return
-
-ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_TEMP_0, 0, ISLANDGAME_Southern_Oranna_Path_OnLoad
-	.2byte 0
 
 
 ISLANDGAME_Southern_Oranna_Path_OnLoad::

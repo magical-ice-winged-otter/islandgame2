@@ -4607,7 +4607,7 @@
       "width": 52,
       "height": 36,
       "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Forest",
+      "secondary_tileset": "gTileset_islandgame_maplegrove",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/map.bin"
     },
@@ -4685,7 +4685,7 @@
       "id": "LAYOUT_ISLANDGAME_VERDANT_PATH",
       "name": "ISLANDGAME_VERDANT_PATH_Layout",
       "width": 40,
-      "height": 70,
+      "height": 63,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_IslandgameVerdant",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/border.bin",
@@ -4774,7 +4774,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_MAPLEGROVE",
       "name": "ISLANDGAME_MAPLEGROVE_Layout",
-      "width": 44,
+      "width": 38,
       "height": 28,
       "primary_tileset": "gTileset_IslandgameGeneral",
       "secondary_tileset": "gTileset_islandgame_maplegrove",
