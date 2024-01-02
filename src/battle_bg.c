@@ -607,11 +607,11 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
 {
     [BATTLE_TERRAIN_GRASS] =
     {
-        .tileset = gBattleTerrainTiles_HDPlains,
-        .tilemap = gBattleTerrainTilemap_HDPlains,
+        .tileset = gBattleTerrainTiles_HDWater,
+        .tilemap = gBattleTerrainTilemap_HDWater,
         .entryTileset = gBattleTerrainAnimTiles_TallGrass,
         .entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
-        .palette = gBattleTerrainPalette_HDPlains,
+        .palette = gBattleTerrainPalette_HDWater,
     },
 
     [BATTLE_TERRAIN_LONG_GRASS] = { TERRAIN_METADATA(LongGrass) },
@@ -749,6 +749,7 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
     },
     [BATTLE_TERRAIN_HD_GRASS] = { TERRAIN_METADATA(HDGrass) },
     [BATTLE_TERRAIN_HD_PLAINS] = { TERRAIN_METADATA(HDPlains) },
+    [BATTLE_TERRAIN_HD_FOREST] = { TERRAIN_METADATA(HDForest) },
 };
 
 static const struct {

@@ -102,3 +102,16 @@ const u32 gBattleTerrainTilemap_HDPlains[] = INCBIN_U32("graphics/battle_terrain
 const u32 gBattleTerrainAnimTiles_HDPlains[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_HDPlains[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_map.bin.lz");
 
+//BATTLE_TERRAIN_HD_FOREST
+const u32 gBattleTerrainTiles_HDForest[] = INCBIN_U32("graphics/battle_terrain/new_darkgrass/tiles.4bpp.lz");
+const u32 gBattleTerrainPalette_HDForest[] = INCBIN_U32("graphics/battle_terrain/new_darkgrass/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_HDForest[] = INCBIN_U32("graphics/battle_terrain/new_darkgrass/map.bin.lz");
+const u32 gBattleTerrainAnimTiles_HDForest[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_tiles.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_HDForest[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_map.bin.lz");
+
+//BATTLE_TERRAIN_HD_WATER
+const u32 gBattleTerrainTiles_HDWater[] = INCBIN_U32("graphics/battle_terrain/new_water/tiles.4bpp.lz");
+const u32 gBattleTerrainPalette_HDWater[] = INCBIN_U32("graphics/battle_terrain/new_water/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_HDWater[] = INCBIN_U32("graphics/battle_terrain/new_water/map.bin.lz");
+const u32 gBattleTerrainAnimTiles_HDWater[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_tiles.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_HDWater[] = INCBIN_U32("graphics/battle_terrain/tall_grass/anim_map.bin.lz");
