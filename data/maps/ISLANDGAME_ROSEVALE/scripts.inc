@@ -513,8 +513,7 @@ ArthurDefeated_Text_1:
 	.string "to build that trust with your Pokémon.\l"
 	.string "Build that trust with yourself. Do you\l"
 	.string "understand?\p"
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm.\p"
-	.string "$"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm.$"
 
 ArthurDefeated_Text_2:
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}I know I may have been a\n"
