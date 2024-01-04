@@ -84,7 +84,23 @@
 #define MAP_ISLANDGAME_MT_AURORA_2F_3                     (75 | (0 << 8))
 
 // gMapGroup_Islandgame2
-#define MAP_ISLANDGAME_APPLEVINE (0 | (1 << 8))
+#define MAP_ISLANDGAME_APPLEVINE          (0 | (1 << 8))
+#define MAP_ISLANDGAME_ROCKY_PATH         (1 | (1 << 8))
+#define MAP_ISLANDGAME_LUMINE_CAVE        (2 | (1 << 8))
+#define MAP_ISLANDGAME_BELLEHAVEN         (3 | (1 << 8))
+#define MAP_ISLANDGAME_VALLEY_OF_PEACE    (4 | (1 << 8))
+#define MAP_ISLANDGAME_BELLE_CATACOMBS    (5 | (1 << 8))
+#define MAP_ISLANDGAME_PLEASANT_AVENUE    (6 | (1 << 8))
+#define MAP_ISLANDGAME_AETHERIA           (7 | (1 << 8))
+#define MAP_ISLANDGAME_AZURE_PATH         (8 | (1 << 8))
+#define MAP_ISLANDGAME_ARBORIA            (9 | (1 << 8))
+#define MAP_ISLANDGAME_ARBORIA_THICKET    (10 | (1 << 8))
+#define MAP_ISLANDGAME_SIERRA_PATH        (11 | (1 << 8))
+#define MAP_ISLANDGAME_SIERRA_DESERT      (12 | (1 << 8))
+#define MAP_ISLANDGAME_CANTALO            (13 | (1 << 8))
+#define MAP_ISLANDGAME_LUMINE_POWER_PLANT (14 | (1 << 8))
+#define MAP_ISLANDGAME_THERION_PATH       (15 | (1 << 8))
+#define MAP_ISLANDGAME_MT_THERION_1F      (16 | (1 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (2 << 8))
