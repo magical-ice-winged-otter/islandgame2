@@ -914,7 +914,7 @@ const struct Tileset gTileset_Forest =
     .palettes = gTilesetPalettes_Forest,
     .metatiles = gMetatiles_Forest,
     .metatileAttributes = gMetatileAttributes_Forest,
-    .callback = NULL,
+    .callback = InitTilesetIsland_Anim_Forest,
 };
 
 const struct Tileset gTileset_islandgame_cheriport =
@@ -991,7 +991,7 @@ const struct Tileset gTileset_islandgame_rosevale =
     .palettes = gTilesetPalettes_islandgame_rosevale,
     .metatiles = gMetatiles_islandgame_rosevale,
     .metatileAttributes = gMetatileAttributes_islandgame_rosevale,
-    .callback = NULL,
+    .callback = InitTilesetIsland_Anim_Rosevale,
 };
 
 const struct Tileset gTileset_IslandgameTidalcove =

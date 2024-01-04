@@ -43,9 +43,11 @@ static void TilesetAnim_MauvilleGym(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
-//island-start
+//island-game
 static void Island_TilesetAnim_Firered_Water(u16);
 static void Island_TilesetAnim_General(u16);
+static void Island_TilesetAnim_Forest(u16);
+static void Island_TilesetAnim_Rosevale(u16);
 
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
@@ -78,13 +80,16 @@ static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
 
-//island-start
+//island-game
 static void Island_QueueAnimTiles_Firered_Water(u16);
 static void Island_QueueAnimTiles_General_Water(u16);
 static void Island_QueueAnimTiles_General_Flower(u16);
 static void Island_QueueAnimTiles_General_Waterfall(u16);
 static void Island_QueueAnimTiles_General_SandWaterEdge(u16);
-
+static void Island_QueueAnimTiles_Forest_Flower_1(u16);
+static void Island_QueueAnimTiles_Forest_Flower_2(u16);
+static void Island_QueueAnimTiles_Rosevale_Flower_1(u16);
+static void Island_QueueAnimTiles_Rosevale_Flower_2(u16);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -117,7 +122,7 @@ const u16 *const gTilesetAnims_General_Water[] = {
     gTilesetAnims_General_Water_Frame6,
     gTilesetAnims_General_Water_Frame7
 };
-//island-start
+//island-game
 //Note: anim with an s, not just anim compared to the other ones.
 const u16 gTilesetAnims_Island_Firered_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/00.4bpp");
 const u16 gTilesetAnims_Island_Firered_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/01.4bpp");
@@ -198,6 +203,63 @@ const u16 *const gTilesetAnims_Island_General_SandWaterEdge[] = {
     gTilesetAnims_Island_General_SandWaterEdge_Frame5,
     gTilesetAnims_Island_General_SandWaterEdge_Frame6,
 };
+
+const u16 gTilesetAnims_Island_Forest_Flower_1_Frame0[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_1/00.4bpp");
+const u16 gTilesetAnims_Island_Forest_Flower_1_Frame1[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_1/01.4bpp");
+const u16 gTilesetAnims_Island_Forest_Flower_1_Frame2[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_1/02.4bpp");
+const u16 gTilesetAnims_Island_Forest_Flower_1_Frame3[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_1/03.4bpp");
+const u16 gTilesetAnims_Island_Forest_Flower_1_Frame4[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_1/04.4bpp");
+
+const u16 *const gTilesetAnims_Island_Forest_Flower_1[] = {
+    gTilesetAnims_Island_Forest_Flower_1_Frame0,
+    gTilesetAnims_Island_Forest_Flower_1_Frame1,
+    gTilesetAnims_Island_Forest_Flower_1_Frame2,
+    gTilesetAnims_Island_Forest_Flower_1_Frame3,
+    gTilesetAnims_Island_Forest_Flower_1_Frame4,
+};
+
+const u16 gTilesetAnims_Island_Forest_Flower_2_Frame0[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_2/00.4bpp");
+const u16 gTilesetAnims_Island_Forest_Flower_2_Frame1[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_2/01.4bpp");
+const u16 gTilesetAnims_Island_Forest_Flower_2_Frame2[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_2/02.4bpp");
+const u16 gTilesetAnims_Island_Forest_Flower_2_Frame3[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_2/03.4bpp");
+const u16 gTilesetAnims_Island_Forest_Flower_2_Frame4[] = INCBIN_U16("data/tilesets/secondary/forest/anim/flower_2/04.4bpp");
+
+const u16 *const gTilesetAnims_Island_Forest_Flower_2[] = {
+    gTilesetAnims_Island_Forest_Flower_2_Frame0,
+    gTilesetAnims_Island_Forest_Flower_2_Frame1,
+    gTilesetAnims_Island_Forest_Flower_2_Frame2,
+    gTilesetAnims_Island_Forest_Flower_2_Frame3,
+    gTilesetAnims_Island_Forest_Flower_2_Frame4,
+};
+
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/00.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/01.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/02.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame3[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/03.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame4[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/04.4bpp");
+
+const u16 *const gTilesetAnims_Island_Rosevale_Flower_1[] = {
+    gTilesetAnims_Island_Rosevale_Flower_1_Frame0,
+    gTilesetAnims_Island_Rosevale_Flower_1_Frame1,
+    gTilesetAnims_Island_Rosevale_Flower_1_Frame2,
+    gTilesetAnims_Island_Rosevale_Flower_1_Frame3,
+    gTilesetAnims_Island_Rosevale_Flower_1_Frame4,
+};
+
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/00.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/01.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/02.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame3[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/03.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame4[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/04.4bpp");
+
+const u16 *const gTilesetAnims_Island_Rosevale_Flower_2[] = {
+    gTilesetAnims_Island_Rosevale_Flower_2_Frame0,
+    gTilesetAnims_Island_Rosevale_Flower_2_Frame1,
+    gTilesetAnims_Island_Rosevale_Flower_2_Frame2,
+    gTilesetAnims_Island_Rosevale_Flower_2_Frame3,
+    gTilesetAnims_Island_Rosevale_Flower_2_Frame4,
+};
+
 //end
 
 const u16 gTilesetAnims_General_SandWaterEdge_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/0.4bpp");
@@ -723,7 +785,7 @@ void InitTilesetAnim_Building(void)
     sPrimaryTilesetAnimCallback = TilesetAnim_Building;
 }
 
-//island-start
+//island-game
 void InitTilesetIsland_Anim_Firered_Water(void)
 {
     sPrimaryTilesetAnimCounter = 0;
@@ -736,6 +798,20 @@ void InitTilesetIsland_Anim_General(void)
     sPrimaryTilesetAnimCounter = 0;
     sPrimaryTilesetAnimCounterMax = 256;
     sPrimaryTilesetAnimCallback = Island_TilesetAnim_General;
+}
+
+void InitTilesetIsland_Anim_Forest(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = Island_TilesetAnim_Forest;
+}
+
+void InitTilesetIsland_Anim_Rosevale(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = Island_TilesetAnim_Rosevale;
 }
 
 
@@ -758,33 +834,39 @@ static void TilesetAnim_Building(u16 timer)
     if (timer % 8 == 0)
         QueueAnimTiles_Building_TVTurnedOn(timer / 8);
 }
-//island-start
+//island-game
 static void Island_TilesetAnim_Firered_Water(u16 timer)
 {
     if (timer % 16 == 1)
-    {
         Island_QueueAnimTiles_Firered_Water(timer / 16);
-    }
 }
 
 static void Island_TilesetAnim_General(u16 timer)
 {
     if (timer % 16 == 0)
-    {
         Island_QueueAnimTiles_General_Flower(timer / 16);
-    }
-    if (timer % 16 == 1)
-    {
+    if (timer % 16 == 4)
         Island_QueueAnimTiles_General_Water(timer / 16);
-    }
-    if (timer % 16 == 2)
-    {
+    if (timer % 16 == 8)
         Island_QueueAnimTiles_General_Waterfall(timer / 16);
-    }
-    if (timer % 16 == 3)
-    {
+    if (timer % 16 == 12)
         Island_QueueAnimTiles_General_SandWaterEdge(timer / 16);
-    }
+}
+
+static void Island_TilesetAnim_Forest(u16 timer)
+{
+    if (timer % 16 == 0)
+        Island_QueueAnimTiles_Forest_Flower_1(timer / 16);
+    if (timer % 16 == 1)
+        Island_QueueAnimTiles_Forest_Flower_2(timer / 16);
+}
+
+static void Island_TilesetAnim_Rosevale(u16 timer)
+{
+    if (timer % 16 == 0)
+        Island_QueueAnimTiles_Rosevale_Flower_1(timer / 16);
+    if (timer % 16 == 1)
+        Island_QueueAnimTiles_Rosevale_Flower_2(timer / 16);
 }
 
 static void QueueAnimTiles_General_Flower(u16 timer)
@@ -793,7 +875,7 @@ static void QueueAnimTiles_General_Flower(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
 }
 
-//island-start
+//island-game
 static void Island_QueueAnimTiles_Firered_Water(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_Island_Firered_Water);
@@ -825,6 +907,31 @@ static void Island_QueueAnimTiles_General_Waterfall(u16 timer)
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_Island_General_Waterfall);
     AppendTilesetAnimToBuffer(gTilesetAnims_Island_General_Waterfall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(45)), 6 * TILE_SIZE_4BPP);
 }
+
+static void Island_QueueAnimTiles_Forest_Flower_1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Island_Forest_Flower_1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Island_Forest_Flower_1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 4 * TILE_SIZE_4BPP);
+}
+
+static void Island_QueueAnimTiles_Forest_Flower_2(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Island_Forest_Flower_2);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Island_Forest_Flower_2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 4)), 4 * TILE_SIZE_4BPP);
+}
+
+static void Island_QueueAnimTiles_Rosevale_Flower_1(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Island_Rosevale_Flower_1);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Island_Rosevale_Flower_1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 4 * TILE_SIZE_4BPP);
+}
+
+static void Island_QueueAnimTiles_Rosevale_Flower_2(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Island_Rosevale_Flower_2);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Island_Rosevale_Flower_2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 4)), 4 * TILE_SIZE_4BPP);
+}
+
 //end
 
 
