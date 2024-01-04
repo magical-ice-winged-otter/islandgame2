@@ -1,6 +1,7 @@
 {
   "group_order": [
     "gMapGroup_Islandgame1",
+    "gMapGroup_Islandgame2",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -113,6 +114,8 @@
     "ISLANDGAME_MT_AURORA_3F",
     "ISLANDGAME_MT_AURORA_2F_2",
     "ISLANDGAME_MT_AURORA_2F_3"
+  ],
+  "gMapGroup_Islandgame2": [
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
