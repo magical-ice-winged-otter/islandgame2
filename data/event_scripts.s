@@ -1227,3 +1227,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_MT_AURORA_2F_2/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MT_AURORA_2F_3/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE/scripts.inc"

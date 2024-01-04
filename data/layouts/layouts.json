@@ -5170,6 +5170,16 @@
       "secondary_tileset": "gTileset_Islandgame_icecave",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_APPLEVINE",
+      "name": "ISLANDGAME_APPLEVINE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_APPLEVINE/map.bin"
     }
   ]
 }
