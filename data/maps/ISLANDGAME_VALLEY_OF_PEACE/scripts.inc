@@ -1,0 +1,3 @@
+ISLANDGAME_VALLEY_OF_PEACE_MapScripts::
+	.byte 0
+

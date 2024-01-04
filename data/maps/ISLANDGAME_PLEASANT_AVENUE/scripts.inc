@@ -1,0 +1,3 @@
+ISLANDGAME_PLEASANT_AVENUE_MapScripts::
+	.byte 0
+

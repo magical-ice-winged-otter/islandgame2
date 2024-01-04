@@ -1,0 +1,3 @@
+ISLANDGAME_BELLEHAVEN_MapScripts::
+	.byte 0
+

@@ -1,0 +1,3 @@
+ISLANDGAME_SIERRA_DESERT_MapScripts::
+	.byte 0
+

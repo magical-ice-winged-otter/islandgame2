@@ -1,0 +1,3 @@
+ISLANDGAME_LUMINE_POWER_PLANT_MapScripts::
+	.byte 0
+
