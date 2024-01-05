@@ -13,6 +13,7 @@
 #include "text.h"
 #include "constants/event_object_movement.h"
 #include "constants/items.h"
+#include "islandgame.h"
 
 static u32 UNUSED GetEnigmaBerryChecksum(struct EnigmaBerry *enigmaBerry);
 static bool32 BerryTreeGrow(struct BerryTree *tree);
@@ -1765,7 +1766,7 @@ static u8 GetBerryCountByBerryTreeId(u8 id)
 
 static u16 GetStageDurationByBerryType(u8 berry)
 {
-    return GetBerryInfo(berry)->stageDuration * 60;
+    return (GetBerryInfo(berry)->stageDuration * 60) / BERRY_GROWTH_MULTIPLIER;
 }
 
 void ObjectEventInteractionGetBerryTreeData(void)

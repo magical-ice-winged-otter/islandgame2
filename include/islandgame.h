@@ -10,6 +10,7 @@
 
 //Settings
 #define EXP_MULTIPLIER 4 //By default, pokemon will gain only 1/4 of the experience if they did not participate in battle.
+#define BERRY_GROWTH_MULTIPLIER 1
 
 /// @brief Different starting points, associating spawn positions with data needed to load a map.
 /// Used to generate a teleportation debug menu.
