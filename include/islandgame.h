@@ -11,6 +11,7 @@
 //Settings
 #define EXP_MULTIPLIER 4 //By default, pokemon will gain only 1/4 of the experience if they did not participate in battle.
 #define BERRY_GROWTH_MULTIPLIER 1
+#define DAY_CARE_EXP_MULTIPLIER 0.5f // This should never be greater than 1, or else you could get inf. XP from just depositing and withdrawing.
 
 /// @brief Different starting points, associating spawn positions with data needed to load a map.
 /// Used to generate a teleportation debug menu.
