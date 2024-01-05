@@ -1,3 +1,6 @@
+// island-game
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleBoyCamper;
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanSurfing;
@@ -1095,6 +1098,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Spe
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Species_904;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
+    // island-game
+    [OBJ_EVENT_GFX_LITTLE_BOY_CAMPER] =        &gObjectEventGraphicsInfo_LittleBoyCamper,
+
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
     [OBJ_EVENT_GFX_BRENDAN_SURFING] =          &gObjectEventGraphicsInfo_BrendanSurfing,

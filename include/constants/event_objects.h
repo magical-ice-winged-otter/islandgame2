@@ -250,7 +250,7 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_REGULAR_OBJ_EVENT_GFX                (OBJ_EVENT_GFX_HOOH + 1)
+#define NUM_REGULAR_OBJ_EVENT_GFX       (OBJ_EVENT_GFX_HOOH + 1)
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)
@@ -1100,7 +1100,12 @@
 #define OBJ_EVENT_GFX_POKEMON_903		(NUM_REGULAR_OBJ_EVENT_GFX + 902)
 #define OBJ_EVENT_GFX_POKEMON_904		(NUM_REGULAR_OBJ_EVENT_GFX + 903)
 
-#define NUM_OBJ_EVENT_GFX               (OBJ_EVENT_GFX_POKEMON_904 + 1)
+// island-game
+#define ISLAND_START                             (OBJ_EVENT_GFX_POKEMON_904)
+#define OBJ_EVENT_GFX_LITTLE_BOY_CAMPER          (ISLAND_START + 1)
+#define ISLAND_END                               (ISLAND_START + 1)
+
+#define NUM_OBJ_EVENT_GFX               (ISLAND_END + 1)
 
 #define species_gfx(species) ((species + (NUM_REGULAR_OBJ_EVENT_GFX - 1)))
 

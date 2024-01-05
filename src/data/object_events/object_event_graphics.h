@@ -1,3 +1,6 @@
+// island-game
+const u32 gObjectEventPic_LittleBoyCamper[] = INCBIN_U32("graphics/object_events/pics/people/little_boy_camper.4bpp");
+
 const u32 gObjectEventPic_BrendanNormal[] = INCBIN_U32("graphics/object_events/pics/people/brendan/walking.4bpp");
 const u32 gObjectEventPic_BrendanRunning[] = INCBIN_U32("graphics/object_events/pics/people/brendan/running.4bpp");
 const u16 gObjectEventPal_Brendan[] = INCBIN_U16("graphics/object_events/palettes/brendan.gbapal");
