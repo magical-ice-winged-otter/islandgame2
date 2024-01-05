@@ -14,3 +14,5 @@ If the image uses multiple palettes, you will be annoyed. The input image will l
 you can only preview with one palette at a time. The best way I found to create multi-palette animations
 is to create a new image for each palette, and merge them together in the end. It should look weird.
 
+For an example of multi-palette door animations, looks at `islandgame_maplegrove_01` and `islandgame_maplegrove_02`.
+
