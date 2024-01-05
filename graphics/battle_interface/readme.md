@@ -22,3 +22,6 @@ Each png from here somehow pulls from the palettes of `ball_status_bar.png` and 
 
 Independent
 - ability_pop_up.png uses ability_pop_up.pal
+
+
+`GetBattlerHealthboxCoords`: The coordinates of the hp bar. They are hard coded here

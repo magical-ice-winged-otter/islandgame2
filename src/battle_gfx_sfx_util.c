@@ -81,10 +81,6 @@ const struct SpritePalette sSpritePalettes_HealthBoxHealthBar[2] =
     {gBattleInterface_BallDisplayPal, TAG_HEALTHBAR_PAL}
 };
 
-const struct SpritePalette  sSpritePalettes_HealthBoxHealthBarTest[1] = {
-    {gBattleInterface_HpBarDisplayPal, TAG_HEALTHBOX_PAL},
-};
-
 // code
 void AllocateBattleSpritesData(void)
 {
@@ -707,10 +703,9 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
     {
         if (state == 1)
         {
-            //LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[0]);
-            //LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[1]);
+            LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[0]);
+            LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[1]);
             
-            LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBarTest[0]);
             MegaIndicator_LoadSpritesGfx();
         }
         else if (!IsDoubleBattle())
@@ -721,8 +716,7 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
                     LoadCompressedSpriteSheet(&sSpriteSheet_SafariHealthbox);
                 else
                 {
-                    FreeSpriteTilesByTag(TAG_HEALTHBOX_PLAYER1_TILE);
-                    LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBarTest[0]);
+                    //FreeSpriteTilesByTag(TAG_HEALTHBOX_PLAYER1_TILE);
                     MgbaPrintf(MGBA_LOG_DEBUG, "TEST");
                     LoadCompressedSpriteSheet(&sSpriteSheet_SinglesPlayerHealthbox);
                 }
