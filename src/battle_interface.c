@@ -34,6 +34,26 @@
 #include "constants/songs.h"
 #include "constants/items.h"
 
+
+// HERE WE DO CONFIG FOR BATTLE INTERFACE
+
+//GetBattlerHealthboxCoords: This sets the coordinates of where the health box would be
+//singles
+#define HEALTH_BOX_OPPONENT_X        44
+#define HEALTH_BOX_OPPONENT_Y        30
+#define HEALTH_BOX_PLAYER_X         158
+#define HEALTH_BOX_PLAYER_Y          88
+
+//doubles
+#define HEALTH_BOX_PLAYER_LEFT_X    159
+#define HEALTH_BOX_PLAYER_LEFT_Y     76  
+#define HEALTH_BOX_PLAYER_RIGHT_X   171
+#define HEALTH_BOX_PLAYER_RIGHT_Y   101
+#define HEALTH_BOX_OPPONENT_LEFT_X   44
+#define HEALTH_BOX_OPPONENT_LEFT_Y   19
+#define HEALTH_BOX_OPPONENT_RIGHT_X  32
+#define HEALTH_BOX_OPPONENT_RIGHT_Y  44
+
 enum
 {   // Corresponds to gHealthboxElementsGfxTable (and the tables after it) in graphics.c
     // These are indexes into the tables, which are filled with 8x8 square pixel data.
@@ -889,7 +909,7 @@ static const u8 *GetHealthboxElementGfxPtr(u8 elementId)
 static void SpriteCB_HealthBar(struct Sprite *sprite)
 {
     u8 healthboxSpriteId = sprite->hBar_HealthBoxSpriteId;
-
+    //memory
     switch (sprite->hBar_Data6)
     {
     case 0:
@@ -1001,25 +1021,25 @@ void GetBattlerHealthboxCoords(u8 battler, s16 *x, s16 *y)
     if (!WhichBattleCoords(battler))
     {
         if (GetBattlerSide(battler) != B_SIDE_PLAYER)
-            *x = 44, *y = 30;
+            *x = HEALTH_BOX_OPPONENT_X, *y = HEALTH_BOX_OPPONENT_Y;
         else
-            *x = 158, *y = 88;
+            *x = HEALTH_BOX_PLAYER_X, *y = HEALTH_BOX_PLAYER_Y;
     }
     else
     {
         switch (GetBattlerPosition(battler))
         {
         case B_POSITION_PLAYER_LEFT:
-            *x = 159, *y = 76;
+            *x = HEALTH_BOX_PLAYER_LEFT_X, *y = HEALTH_BOX_PLAYER_LEFT_Y;
             break;
         case B_POSITION_PLAYER_RIGHT:
-            *x = 171, *y = 101;
+            *x = HEALTH_BOX_PLAYER_RIGHT_X, *y = HEALTH_BOX_PLAYER_RIGHT_Y;
             break;
         case B_POSITION_OPPONENT_LEFT:
-            *x = 44, *y = 19;
+            *x = HEALTH_BOX_OPPONENT_LEFT_X, *y = HEALTH_BOX_OPPONENT_LEFT_Y;
             break;
         case B_POSITION_OPPONENT_RIGHT:
-            *x = 32, *y = 44;
+            *x = HEALTH_BOX_OPPONENT_RIGHT_X, *y = HEALTH_BOX_OPPONENT_RIGHT_Y;
             break;
         }
     }
@@ -2300,7 +2320,6 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     }
 
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
-    MgbaPrintf(MGBA_LOG_DEBUG, "%s", &gDisplayedStringBattle[0]);
 
     if (GetBattlerSide(gSprites[healthboxSpriteId].data[6]) == B_SIDE_PLAYER)
     {
@@ -2697,12 +2716,12 @@ static void MoveBattleBarGraphically(u8 battlerId, u8 whichBar)
         }
         for (i = 0; i < 8; i++)
         {
-            if (i < 4)
+            if (i < 5)
                 CpuCopy32(GetHealthboxElementGfxPtr(HEALTHBOX_GFX_12) + array[i] * 32,
-                          (void *)(OBJ_VRAM0 + (gSprites[gBattleSpritesDataPtr->battleBars[battlerId].healthboxSpriteId].oam.tileNum + 0x24 + i) * TILE_SIZE_4BPP), 32);
+                          (void *)(OBJ_VRAM0 + (0x23 + i + gSprites[gBattleSpritesDataPtr->battleBars[battlerId].healthboxSpriteId].oam.tileNum) * TILE_SIZE_4BPP), 32);
             else
                 CpuCopy32(GetHealthboxElementGfxPtr(HEALTHBOX_GFX_12) + array[i] * 32,
-                          (void *)(OBJ_VRAM0 + 0xB80 + (i + gSprites[gBattleSpritesDataPtr->battleBars[battlerId].healthboxSpriteId].oam.tileNum) * TILE_SIZE_4BPP), 32);
+                          (void *)(OBJ_VRAM0 + (0x5B + i + gSprites[gBattleSpritesDataPtr->battleBars[battlerId].healthboxSpriteId].oam.tileNum) * TILE_SIZE_4BPP), 32);
         }
         break;
     }
