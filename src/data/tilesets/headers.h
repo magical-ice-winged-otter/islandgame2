@@ -1004,3 +1004,14 @@ const struct Tileset gTileset_IslandgameTidalcove =
     .metatileAttributes = gMetatileAttributes_IslandgameTidalcove,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_general_oranna =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_general_oranna,
+    .palettes = gTilesetPalettes_islandgame_general_oranna,
+    .metatiles = gMetatiles_islandgame_general_oranna,
+    .metatileAttributes = gMetatileAttributes_islandgame_general_oranna,
+    .callback = NULL,
+};
