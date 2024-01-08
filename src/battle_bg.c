@@ -607,32 +607,16 @@ const struct WindowTemplate * const gBattleWindowTemplates[] =
 //LINK src/data/graphics/battle_terrain.h:90
 const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
 {
-    [BATTLE_TERRAIN_GRASS] =
-    {
-        .tileset = gBattleTerrainTiles_HDStandard,
-        .tilemap = gBattleTerrainTilemap_HDStandard,
-        .entryTileset = gBattleTerrainAnimTiles_TallGrass,
-        .entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
-        .palette = gBattleTerrainPalette_HDStandard,
-    },
-
-    [BATTLE_TERRAIN_LONG_GRASS] = { TERRAIN_METADATA(LongGrass) },
+    [BATTLE_TERRAIN_GRASS] = { TERRAIN_METADATA(HDGrass) },
+    [BATTLE_TERRAIN_LONG_GRASS] = { TERRAIN_METADATA(HDForest) },
     [BATTLE_TERRAIN_SAND] = { TERRAIN_METADATA(Sand) },
-    [BATTLE_TERRAIN_UNDERWATER] = { TERRAIN_METADATA(Underwater) },
-    [BATTLE_TERRAIN_WATER] = { TERRAIN_METADATA(Water) },
-    [BATTLE_TERRAIN_POND] = { TERRAIN_METADATA(PondWater) },
-    [BATTLE_TERRAIN_MOUNTAIN] = { TERRAIN_METADATA(Rock) },
-    [BATTLE_TERRAIN_CAVE] = { TERRAIN_METADATA(Cave) },
-    [BATTLE_TERRAIN_BUILDING] = { TERRAIN_METADATA(Building)},
-    [BATTLE_TERRAIN_PLAIN] =
-    {
-        .tileset = gBattleTerrainTiles_Building,
-        .tilemap = gBattleTerrainTilemap_Building,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_Plain,
-    },
-
+    [BATTLE_TERRAIN_UNDERWATER] = { TERRAIN_METADATA(HDDepths) },
+    [BATTLE_TERRAIN_WATER] = { TERRAIN_METADATA(HDWater) },
+    [BATTLE_TERRAIN_POND] = { TERRAIN_METADATA(HDWater) },
+    [BATTLE_TERRAIN_MOUNTAIN] = { TERRAIN_METADATA(HDMountain) },
+    [BATTLE_TERRAIN_CAVE] = { TERRAIN_METADATA(HDMountain) },
+    [BATTLE_TERRAIN_BUILDING] = { TERRAIN_METADATA(HDStandard) },
+    [BATTLE_TERRAIN_PLAIN] = { TERRAIN_METADATA(HDPlains) },
     [BATTLE_TERRAIN_FRONTIER] =
     {
         .tileset = gBattleTerrainTiles_Building,
@@ -774,7 +758,7 @@ static const struct {
 };
 
 // Loads the initial battle terrain.
-static void LoadBattleTerrainGfx(u16 terrain)
+void LoadBattleTerrainGfx(u16 terrain)
 {
     if (terrain >= NELEMS(sBattleTerrainTable))
         terrain = BATTLE_TERRAIN_PLAIN;  // If higher than the number of entries in sBattleTerrainTable, use the default.
@@ -786,7 +770,7 @@ static void LoadBattleTerrainGfx(u16 terrain)
 
 // If current map scene equals any of the values in sMapBattleSceneMapping,
 // use its battle terrain value. Otherwise, use the default.
-static u8 GetBattleTerrainByMapScene(u8 mapBattleScene)
+u8 GetBattleTerrainByMapScene(u8 mapBattleScene)
 {
     int i;
     for (i = 0; i < NELEMS(sMapBattleSceneMapping); i++)
