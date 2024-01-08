@@ -35,6 +35,8 @@ void InitTilesetAnim_BattlePyramid(void);
 //island-game-start
 void InitTilesetIsland_Anim_Firered_Water(void);
 void InitTilesetIsland_Anim_General(void);
+void InitTilesetIsland_Anim_Forest(void);
+void InitTilesetIsland_Anim_Rosevale(void);
 
 
 #endif // GUARD_TILESET_ANIMS_H

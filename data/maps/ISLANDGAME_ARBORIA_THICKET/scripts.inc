@@ -1,0 +1,3 @@
+ISLANDGAME_ARBORIA_THICKET_MapScripts::
+	.byte 0
+

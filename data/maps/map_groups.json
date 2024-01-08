@@ -1,6 +1,7 @@
 {
   "group_order": [
     "gMapGroup_Islandgame1",
+    "gMapGroup_Islandgame2",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -113,6 +114,25 @@
     "ISLANDGAME_MT_AURORA_3F",
     "ISLANDGAME_MT_AURORA_2F_2",
     "ISLANDGAME_MT_AURORA_2F_3"
+  ],
+  "gMapGroup_Islandgame2": [
+    "ISLANDGAME_APPLEVINE",
+    "ISLANDGAME_ROCKY_PATH",
+    "ISLANDGAME_LUMINE_CAVE",
+    "ISLANDGAME_BELLEHAVEN",
+    "ISLANDGAME_VALLEY_OF_PEACE",
+    "ISLANDGAME_BELLE_CATACOMBS",
+    "ISLANDGAME_PLEASANT_AVENUE",
+    "ISLANDGAME_AETHERIA",
+    "ISLANDGAME_AZURE_PATH",
+    "ISLANDGAME_ARBORIA",
+    "ISLANDGAME_ARBORIA_THICKET",
+    "ISLANDGAME_SIERRA_PATH",
+    "ISLANDGAME_SIERRA_DESERT",
+    "ISLANDGAME_CANTALO",
+    "ISLANDGAME_LUMINE_POWER_PLANT",
+    "ISLANDGAME_THERION_PATH",
+    "ISLANDGAME_MT_THERION_1F"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

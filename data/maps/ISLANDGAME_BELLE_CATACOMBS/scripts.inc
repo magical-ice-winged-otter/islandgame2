@@ -1,0 +1,3 @@
+ISLANDGAME_BELLE_CATACOMBS_MapScripts::
+	.byte 0
+

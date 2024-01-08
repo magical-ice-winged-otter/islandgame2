@@ -3357,17 +3357,18 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     }
 
                     side = GetBattlerSide(gBattlerAttacker);
-                    if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
-                        && !(gBattleTypeFlags &
-                            (BATTLE_TYPE_EREADER_TRAINER
-                            | BATTLE_TYPE_FRONTIER
-                            | BATTLE_TYPE_LINK
-                            | BATTLE_TYPE_RECORDED_LINK
-                            | BATTLE_TYPE_SECRET_BASE)))
-                    {
-                        gBattlescriptCurrInstr++;
-                    }
-                    else if (!(gBattleTypeFlags &
+                    // if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
+                    //     && !(gBattleTypeFlags &
+                    //         (BATTLE_TYPE_EREADER_TRAINER
+                    //         | BATTLE_TYPE_FRONTIER
+                    //         | BATTLE_TYPE_LINK
+                    //         | BATTLE_TYPE_RECORDED_LINK
+                    //         | BATTLE_TYPE_SECRET_BASE)))
+                    // {
+                    //     gBattlescriptCurrInstr++;
+                    // }
+                    // else if (!(gBattleTypeFlags &
+                    if (!(gBattleTypeFlags &
                             (BATTLE_TYPE_EREADER_TRAINER
                             | BATTLE_TYPE_FRONTIER
                             | BATTLE_TYPE_LINK

@@ -5170,6 +5170,176 @@
       "secondary_tileset": "gTileset_Islandgame_icecave",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_APPLEVINE",
+      "name": "ISLANDGAME_APPLEVINE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_APPLEVINE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROCKY_PATH",
+      "name": "ISLANDGAME_ROCKY_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_LUMINE_CAVE",
+      "name": "ISLANDGAME_LUMINE_CAVE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLEHAVEN",
+      "name": "ISLANDGAME_BELLEHAVEN_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VALLEY_OF_PEACE",
+      "name": "ISLANDGAME_VALLEY_OF_PEACE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_VALLEY_OF_PEACE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VALLEY_OF_PEACE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_PLEASANT_AVENUE",
+      "name": "ISLANDGAME_PLEASANT_AVENUE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_PLEASANT_AVENUE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_PLEASANT_AVENUE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AETHERIA",
+      "name": "ISLANDGAME_AETHERIA_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_AETHERIA/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AETHERIA/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AZURE_PATH",
+      "name": "ISLANDGAME_AZURE_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_AZURE_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AZURE_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ARBORIA",
+      "name": "ISLANDGAME_ARBORIA_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_ARBORIA/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ARBORIA/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ARBORIA_THICKET",
+      "name": "ISLANDGAME_ARBORIA_THICKET_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_ARBORIA_THICKET/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ARBORIA_THICKET/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_SIERRA_PATH",
+      "name": "ISLANDGAME_SIERRA_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_SIERRA_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_SIERRA_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_SIERRA_DESERT",
+      "name": "ISLANDGAME_SIERRA_DESERT_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_SIERRA_DESERT/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_SIERRA_DESERT/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CANTALO",
+      "name": "ISLANDGAME_CANTALO_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_CANTALO/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CANTALO/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_LUMINE_POWER_PLANT",
+      "name": "ISLANDGAME_LUMINE_POWER_PLANT_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_LUMINE_POWER_PLANT/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_POWER_PLANT/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_THERION_PATH",
+      "name": "ISLANDGAME_THERION_PATH_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_THERION_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_THERION_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_MT_THERION_1F",
+      "name": "ISLANDGAME_MT_THERION_1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_test",
+      "border_filepath": "data/layouts/ISLANDGAME_MT_THERION_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_MT_THERION_1F/map.bin"
     }
   ]
 }

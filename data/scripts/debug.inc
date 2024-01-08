@@ -96,7 +96,7 @@ Debug_BoxFilledMessage_Text:
 	.string "Storage boxes filled!$"
 
 Debug_EventScript_Script_1::
-	setcwildbattle 0, SPECIES_ZUBAT, 5, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_CELEBRATE, MOVE_CELEBRATE, MOVE_CELEBRATE, MOVE_CELEBRATE
+	setcwildbattle 0, SPECIES_SNEASEL, 5, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_THIEF, MOVE_THIEF, MOVE_THIEF, MOVE_THIEF
 	dowildbattle
 	end
 

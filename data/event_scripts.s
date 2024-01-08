@@ -1227,3 +1227,37 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_MT_AURORA_2F_2/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MT_AURORA_2F_3/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROCKY_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLE_CATACOMBS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AETHERIA/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AZURE_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ARBORIA/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ARBORIA_THICKET/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_SIERRA_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_SIERRA_DESERT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CANTALO/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_POWER_PLANT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_THERION_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MT_THERION_1F/scripts.inc"
