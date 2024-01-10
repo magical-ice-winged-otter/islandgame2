@@ -63,7 +63,7 @@
 #define HEALTH_BOX_PLAYER_HP_BAR_Y              -1
 
 #define HEALTH_BOX_OPPONENT_HP_BAR_X            8
-#define HEALTH_BOX_OPPONENT_HP_BAR_Y            2
+#define HEALTH_BOX_OPPONENT_HP_BAR_Y            0
 
 #define HEALTH_BOX_PLAYER_HP_TEXT_RIGHT_TILE    0xB00
 #define HEALTH_BOX_PLAYER_HP_TEXT_LEFT_TILE     0x3A0
@@ -2355,7 +2355,6 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     {
     default:
         StringCopy(ptr, gText_HealthboxGender_None);
-        ;
         break;
     case MON_MALE:
         StringCopy(ptr, gText_HealthboxGender_Male);
