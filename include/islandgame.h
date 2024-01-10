@@ -5,6 +5,9 @@
 #include "constants/maps.h"
 #include "gba/types.h"
 
+//To configure battle backgrounds, take a look at
+//LINK src/battle_bg.c:608
+
 // Comment out this line to strip debugging tools from the build.
 #define ISLANDGAME_DEBUG
 

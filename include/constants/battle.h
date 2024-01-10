@@ -437,8 +437,18 @@
 #define BATTLE_TERRAIN_GROUDON          32
 #define BATTLE_TERRAIN_KYOGRE           33
 #define BATTLE_TERRAIN_RAYQUAZA         34
+//islandgame-add: Custom Battle Terrain Images
+#define BATTLE_TERRAIN_HD_GRASS         35
+#define BATTLE_TERRAIN_HD_PLAINS        36
+#define BATTLE_TERRAIN_HD_FOREST        37
+#define BATTLE_TERRAIN_HD_WATER         38
+#define BATTLE_TERRAIN_HD_CAVE2         39
+#define BATTLE_TERRAIN_HD_DEPTHS        40
+#define BATTLE_TERRAIN_HD_SNOW          41
+#define BATTLE_TERRAIN_HD_MOUNTAIN      42
+#define BATTLE_TERRAIN_HD_STANDARD      43
 
-#define BATTLE_TERRAIN_COUNT            35
+#define BATTLE_TERRAIN_COUNT            44
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)
