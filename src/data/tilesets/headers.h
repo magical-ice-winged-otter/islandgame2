@@ -939,14 +939,14 @@ const struct Tileset gTileset_IslandgameSOP =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_IslandgameVerdant =
+const struct Tileset gTileset_islandgame_oranna_verdant =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_IslandgameVerdant,
-    .palettes = gTilesetPalettes_IslandgameVerdant,
-    .metatiles = gMetatiles_IslandgameVerdant,
-    .metatileAttributes = gMetatileAttributes_IslandgameVerdant,
+    .tiles = gTilesetTiles_islandgame_oranna_verdant,
+    .palettes = gTilesetPalettes_islandgame_oranna_verdant,
+    .metatiles = gMetatiles_islandgame_oranna_verdant,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_verdant,
     .callback = NULL,
 };
 
