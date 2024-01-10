@@ -4546,7 +4546,7 @@
       "name": "ISLANDGAME_CHERIPORT_Layout",
       "width": 60,
       "height": 49,
-      "primary_tileset": "gTileset_islandgame_general_oranna",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_cheriport",
       "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT/map.bin"
@@ -4616,7 +4616,7 @@
       "name": "ISLANDGAME_Southern_Oranna_Path_Layout",
       "width": 40,
       "height": 45,
-      "primary_tileset": "gTileset_islandgame_general_oranna",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_IslandgameSOP",
       "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
@@ -4666,7 +4666,7 @@
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Layout",
       "width": 50,
       "height": 56,
-      "primary_tileset": "gTileset_islandgame_general_oranna",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_1/map.bin"
@@ -4676,7 +4676,7 @@
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
       "width": 90,
       "height": 50,
-      "primary_tileset": "gTileset_islandgame_general_oranna",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_IslandgameTidalcove",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/map.bin"
@@ -4686,7 +4686,7 @@
       "name": "ISLANDGAME_VERDANT_PATH_Layout",
       "width": 40,
       "height": 63,
-      "primary_tileset": "gTileset_islandgame_general_oranna",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_IslandgameVerdant",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/map.bin"
@@ -4726,7 +4726,7 @@
       "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_Layout",
       "width": 60,
       "height": 40,
-      "primary_tileset": "gTileset_islandgame_general_oranna",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_test",
       "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/map.bin"

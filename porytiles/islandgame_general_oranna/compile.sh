@@ -1,1 +1,0 @@
-tools/porytiles/porytiles compile-primary  -output=data/tilesets/primary/islandgame_general_oranna  -tiles-output-pal=greyscale  -target-base-game=pokeemerald  -transparency-color=24,40,80  -default-behavior=MB_NORMAL  -assign-explore-cutoff=12  -assign-algorithm=dfs  -best-branches=12  porytiles/islandgame_general_oranna porytiles/metatile_behaviors.h

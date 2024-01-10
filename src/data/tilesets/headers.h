@@ -1005,13 +1005,13 @@ const struct Tileset gTileset_IslandgameTidalcove =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_islandgame_general_oranna =
+const struct Tileset gTileset_islandgame_oranna_general =
 {
     .isCompressed = TRUE,
     .isSecondary = FALSE,
-    .tiles = gTilesetTiles_islandgame_general_oranna,
-    .palettes = gTilesetPalettes_islandgame_general_oranna,
-    .metatiles = gMetatiles_islandgame_general_oranna,
-    .metatileAttributes = gMetatileAttributes_islandgame_general_oranna,
+    .tiles = gTilesetTiles_islandgame_oranna_general,
+    .palettes = gTilesetPalettes_islandgame_oranna_general,
+    .metatiles = gMetatiles_islandgame_oranna_general,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_general,
     .callback = NULL,
 };
