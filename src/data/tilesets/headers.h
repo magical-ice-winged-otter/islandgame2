@@ -1026,3 +1026,14 @@ const struct Tileset gTileset_islandgame_oranna_northern_path =
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_northern_path,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_oranna_central_path =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_oranna_central_path,
+    .palettes = gTilesetPalettes_islandgame_oranna_central_path,
+    .metatiles = gMetatiles_islandgame_oranna_central_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_central_path,
+    .callback = NULL,
+};
