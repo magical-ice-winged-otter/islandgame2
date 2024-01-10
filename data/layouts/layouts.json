@@ -4686,7 +4686,7 @@
       "name": "ISLANDGAME_VERDANT_PATH_Layout",
       "width": 40,
       "height": 63,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_general_oranna",
       "secondary_tileset": "gTileset_IslandgameVerdant",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_PATH/map.bin"
