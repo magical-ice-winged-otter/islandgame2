@@ -705,6 +705,7 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
         {
             LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[0]);
             LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[1]);
+            
             MegaIndicator_LoadSpritesGfx();
         }
         else if (!IsDoubleBattle())
@@ -714,7 +715,11 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
                 if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
                     LoadCompressedSpriteSheet(&sSpriteSheet_SafariHealthbox);
                 else
+                {
+                    //FreeSpriteTilesByTag(TAG_HEALTHBOX_PLAYER1_TILE);
+                    MgbaPrintf(MGBA_LOG_DEBUG, "TEST");
                     LoadCompressedSpriteSheet(&sSpriteSheet_SinglesPlayerHealthbox);
+                }
             }
             else if (state == 3)
                 LoadCompressedSpriteSheet(&sSpriteSheet_SinglesOpponentHealthbox);
