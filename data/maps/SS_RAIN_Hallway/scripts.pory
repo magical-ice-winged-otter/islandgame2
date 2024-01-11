@@ -1,6 +1,14 @@
-const OBJ_STATEROOMS_NPC1 = 2
+const LOCALID_ELECTRICIAN = 1
 
-mapscripts SS_RAIN_Hallway_MapScripts {}
+mapscripts SS_RAIN_Hallway_MapScripts {
+        MAP_SCRIPT_ON_TRANSITION {
+            if(flag(FLAG_TIDALCOVE_RUKA_DEFEATED)) {
+                setobjectxyperm(LOCALID_ELECTRICIAN, 25, 11)
+                addobject(LOCALID_ELECTRICIAN)
+            }
+        }
+
+}
 
 script SS_RAIN_Hallway_GirlTalk {
     lock
@@ -12,19 +20,25 @@ script SS_RAIN_Hallway_GirlTalk {
 
 script SS_RAIN_Hallway_ElectricianTalk {
     lock
-    msgbox(ElectricianTalk_Text)
+    if(flag(FLAG_TIDALCOVE_RUKA_DEFEATED)) {
+        msgbox(format(
+            "Oh hey, you're back!\p"
+            "Unfortunately, we still haven't figured out what's going on with the lights...\p"
+            "We're on our break right now, so you can check it out for yourself if you want.\p"
+            "Just watch your step though... It's pretty dark."
+        ))
+    }
+    else {
+        msgbox(format(
+            "{COLOR DARK_GRAY}We're currently doing some maintenance, so I can't let you downstairs for now.\p"
+            "{COLOR DARK_GRAY}For some reason, the lights just keep turning on and off by themselves.\p"
+            "{COLOR DARK_GRAY}It's almost like they're being possessed by a {COLOR LIGHT_BLUE}ghost {COLOR DARK_GRAY}or something..."
+        ))   
+    }
     waitmessage
     release
 }
 
 text NPCGirl_Text {
     format("{COLOR DARK_GRAY}It's too hot outside. I'm staying in here until it's cooler.")
-}
-
-text ElectricianTalk_Text {
-    format("{COLOR DARK_GRAY}I'm the captain's second in command and in charge of the ship's electronics.\p"
-           "{COLOR DARK_GRAY}We're doing some maintainence right now, so I can't let you downstairs.\p"
-           "{COLOR DARK_GRAY}Apparently there's something wrong with the washing machine.\p"
-           "{COLOR DARK_GRAY}It's acting as if it was possessed by a {COLOR LIGHT_BLUE}ghost{COLOR DARK_GRAY}..."
-    )
 }

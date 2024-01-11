@@ -22,6 +22,11 @@
       "map": "MAP_ISLANDGAME_NORTHERN_ORANNA_PATH",
       "offset": 10,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ISLADNGAME_PROMENADE_PATH",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -247,32 +252,6 @@
       "flag": "FLAG_ITEM_TIDALCOVE_BLACKGLASSES"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
-      "x": 43,
-      "y": 38,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_132",
-      "x": 43,
-      "y": 39,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_TIDALCOVE_jujalos",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 33,
       "y": 47,
@@ -297,19 +276,6 @@
       "trainer_sight_or_berry_tree_id": "ITEM_HP_UP",
       "script": "NULL",
       "flag": "FLAG_ITEM_NOR_TWISTEDSPOON"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 3,
-      "y": 14,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_104_SOIL_3",
-      "script": "BerryTreeScript",
-      "flag": "0"
     }
   ],
   "warp_events": [

@@ -726,7 +726,7 @@ ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2::
 	.string "savior, Lugia, rescued us from a\l"
 	.string "cataclysmic event.\p"
 	.string "{COLOR DARK_GRAY}It's not for another month, but it's the\n"
-	.string "largest event in all of Mariyama, and it\l"
+	.string "largest event in all of Marya, and it\l"
 	.string "would be a shame if you missed it!\p"
 	.string "{COLOR DARK_GRAY}Anyways, I must get going now. It was\n"
 	.string "great meeting you, {PLAYER}.\p"
@@ -738,7 +738,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro::
 	.string "{COLOR DARK_GRAY}Oh? You're a Pokémon trainer visiting\n"
 	.string "the isles from overseas?\p"
 	.string "{COLOR DARK_GRAY}Pardon my assumption, then. Welcome to\n"
-	.string "the Isles of Mariyama, {PLAYER}!\p"
+	.string "the Isles of Marya, {PLAYER}!\p"
 	.string "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling\n"
 	.string "merchant of The Silverwing Order.\p"
 	.string "{COLOR DARK_GRAY}The Silverwing Order is in charge of\n"
@@ -845,7 +845,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk3::
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC::
 	.string "{COLOR DARK_GRAY}CAMP PERSI\n"
-	.string "{COLOR DARK_GRAY}The greatest summer camp in Mariyama!$"
+	.string "{COLOR DARK_GRAY}The greatest summer camp in Marya!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC::
 	.string "{COLOR DARK_GRAY}THE WILD SIDE\n"

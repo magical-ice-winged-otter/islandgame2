@@ -1,5 +1,15 @@
 SS_RAIN_Hallway_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SS_RAIN_Hallway_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+SS_RAIN_Hallway_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	goto_if_set FLAG_TIDALCOVE_RUKA_DEFEATED, SS_RAIN_Hallway_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+SS_RAIN_Hallway_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setobjectxyperm 1, 25, 11
+	addobject 1
+	return
 
 
 SS_RAIN_Hallway_GirlTalk::

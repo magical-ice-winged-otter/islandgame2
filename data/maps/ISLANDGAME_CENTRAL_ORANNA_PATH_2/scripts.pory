@@ -177,7 +177,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
     waitmovement(0)
     applymovement(LOCALID_FAN_4, Common_Movement_Delay32)
     waitmovement(0)
-    msgbox(format("{COLOR DARK_GRAY}Yeah! She's Prim, the greatest idol to ever exist! She and Delcatty are gonna take Mariyama by storm!"))
+    msgbox(format("{COLOR DARK_GRAY}Yeah! She's Prim, the greatest idol to ever exist! She and Delcatty are gonna take Marya by storm!"))
     closemessage
     applymovement(LOCALID_FAN_3, Common_Movement_WalkInPlaceDown)
     waitmovement(0)
@@ -230,7 +230,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1 {
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2 {
     lock
     faceplayer
-    msgbox(format("Primrose sure is incredible... She only just became an idol a few months ago, and now she's already become one of the most popular celebrities in the isles.\pNow, she's on her way to completing the Mariyama Gym Challenge so she can enter in the upcoming Silverwing Festival Tournament!"), MSGBOX_NPC)
+    msgbox(format("Primrose sure is incredible... She only just became an idol a few months ago, and now she's already become one of the most popular celebrities in the isles.\pNow, she's on her way to completing the Marya Gym Challenge so she can enter in the upcoming Silverwing Festival Tournament!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3 {

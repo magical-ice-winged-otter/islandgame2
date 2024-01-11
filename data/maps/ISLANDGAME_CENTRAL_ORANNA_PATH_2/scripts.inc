@@ -349,7 +349,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_2:
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_3:
 	.string "{COLOR DARK_GRAY}Yeah! She's Prim, the greatest idol to\n"
 	.string "ever exist! She and Delcatty are gonna\l"
-	.string "take Mariyama by storm!$"
+	.string "take Marya by storm!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_4:
 	.string "{COLOR DARK_GRAY}You better believe she is! We stand with\n"
@@ -381,9 +381,9 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2_Text_0:
 	.string "the most popular celebrities in the\l"
 	.string "isles.\p"
 	.string "Now, she's on her way to completing the\n"
-	.string "Mariyama Gym Challenge so she can\l"
-	.string "enter in the upcoming Silverwing\l"
-	.string "Festival Tournament!$"
+	.string "Marya Gym Challenge so she can enter in\l"
+	.string "the upcoming Silverwing Festival\l"
+	.string "Tournament!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3_Text_0:
 	.string "Ruka gets so many challenge requests\n"

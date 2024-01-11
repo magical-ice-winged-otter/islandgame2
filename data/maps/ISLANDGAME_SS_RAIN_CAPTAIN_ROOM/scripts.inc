@@ -27,7 +27,7 @@ ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_Shelf::
 CaptainTalk_Text::
 	.string "{COLOR DARK_GRAY}Ahoy there! I'm the captain of this\n"
 	.string "vessel. Hope you enjoy your stay at\l"
-	.string "the beautiful isles of Mariyama!$"
+	.string "the beautiful isles of Marya!$"
 
 ISLANDGAME_SS_RAIN_CAPTAIN_ROOM_BookInspect::
 	.string "{COLOR RED}(It's a light novel titled “The Rising of\n"

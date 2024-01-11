@@ -8,7 +8,7 @@ gText_Birch_Welcome::
 	.string "$"
 
 gText_Birch_Pokemon::
-	.string "The isles of Mariyama are a beautiful \n" 
+	.string "The isles of Marya are a beautiful \n" 
 	.string "paradise filled with hundreds of \n" 
 	.string "different Pokémon species, and plenty \n"
 	.string "more just waiting to be discovered! \p"
@@ -16,7 +16,7 @@ gText_Birch_Pokemon::
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "The isles of Mariyama are a beautiful \n" 
+	.string "The isles of Marya are a beautiful \n" 
 	.string "paradise filled with hundreds of \l" 
 	.string "different Pokémon species, and plenty \l"
 	.string "more just waiting to be discovered! \p"
@@ -27,7 +27,7 @@ gText_Birch_MainSpeech::
 	.string "experience you'll never forget! \p"
 	.string "Now, a little bit about me! \p"
 	.string "You see, I initially traveled to \n"
-	.string "Mariyama for the same reason as many \l"
+	.string "Marya for the same reason as many \l"
 	.string "others from my region: \p" 
 	.string "To escape our chilling winters! \p"
 	.string "But as I stuck around, I became \n"

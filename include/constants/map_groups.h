@@ -82,6 +82,7 @@
 #define MAP_ISLANDGAME_MT_AURORA_3F                       (73 | (0 << 8))
 #define MAP_ISLANDGAME_MT_AURORA_2F_2                     (74 | (0 << 8))
 #define MAP_ISLANDGAME_MT_AURORA_2F_3                     (75 | (0 << 8))
+#define MAP_ISLANDGAME_SS_RAIN_BASEMENT                   (76 | (0 << 8))
 
 // gMapGroup_Islandgame2
 #define MAP_ISLANDGAME_APPLEVINE          (0 | (1 << 8))
@@ -101,6 +102,7 @@
 #define MAP_ISLANDGAME_LUMINE_POWER_PLANT (14 | (1 << 8))
 #define MAP_ISLANDGAME_THERION_PATH       (15 | (1 << 8))
 #define MAP_ISLANDGAME_MT_THERION_1F      (16 | (1 << 8))
+#define MAP_ISLADNGAME_PROMENADE_PATH     (17 | (1 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (2 << 8))

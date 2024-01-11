@@ -96,6 +96,7 @@ Movement_Surprised:
 RukaDefeated:
 	message RukaDefeated_Text_0
 	waitmessage
+	setflag FLAG_TIDALCOVE_RUKA_DEFEATED
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox RukaDefeated_Text_1, MSGBOX_NPC
 	giveitem ITEM_TM07

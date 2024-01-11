@@ -1523,6 +1523,7 @@
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
 //camp persi: first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
+//camp persi: girl in berry shop that gives you berries
 #define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B)
 //minty meadows: rival fight
 #define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
@@ -1556,7 +1557,8 @@
 #define FLAG_TIDALCOVE_GYM_SPONSOR_TALK             (SYSTEM_FLAGS + 0x9A)
 //rosevale: arthur's sister gives you amulet coin
 #define FLAG_ROSEVALE_AMULET_COIN_GIFT              (SYSTEM_FLAGS + 0x9B)
-#define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
+//tidalcove: beat ruka in gym battle
+#define FLAG_TIDALCOVE_RUKA_DEFEATED                (SYSTEM_FLAGS + 0x9C)
 #define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
 #define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
 #define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
