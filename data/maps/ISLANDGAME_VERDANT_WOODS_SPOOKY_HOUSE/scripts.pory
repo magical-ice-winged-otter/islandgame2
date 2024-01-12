@@ -18,6 +18,8 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut {
 
 script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor {
     lock
-    msgbox(format(""))
+    msgbox(format(
+        "(The door is locked... There seems to be some type of message scratched on it.)\p"
+    ))
 
 }
