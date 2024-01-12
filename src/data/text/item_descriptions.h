@@ -4034,3 +4034,4 @@ static const u8 sIslandgameTradingCard[] = _(
     "Someone must be sad\n"
     "to have lost it..."
 );
+

@@ -1265,3 +1265,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLADNGAME_PROMENADE_PATH/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_SS_RAIN_BASEMENT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.inc"

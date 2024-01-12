@@ -99,10 +99,10 @@
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
 #define VAR_OLDALE_TOWN_STATE                            0x4051
-#define VAR_ROSEVALE_STATE                               0x4052 // used for the mt-aurora quest that starts in rosevale
+#define VAR_ROSEVALE_STATE                               0x4052 // island-game: used for the mt-aurora quest that starts in rosevale
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_VERDANTURF_TOWN_STATE                        0x4055 // Unused Var
+#define VAR_SPOOKY_HOUSE_STATE                           0x4055 // island-game: used for the spooky house in verdant woods
 #define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058

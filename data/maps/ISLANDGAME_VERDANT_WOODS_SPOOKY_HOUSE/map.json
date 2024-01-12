@@ -1,0 +1,83 @@
+{
+  "id": "MAP_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE",
+  "name": "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE",
+  "layout": "LAYOUT_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE",
+  "music": "MUS_DP_OLD_CHATEAU",
+  "region_map_section": "MAPSEC_VERDANT_WOODS",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VERDANT_WOODS",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 9,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VERDANT_WOODS",
+      "dest_warp_id": "6"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_SPOOKY_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_SPOOKY_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_SPOOKY_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_SPOOKY_HOUSE_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
+  ]
+}

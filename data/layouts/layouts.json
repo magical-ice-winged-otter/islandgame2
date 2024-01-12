@@ -5360,6 +5360,16 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/ISLANDGAME_SS_RAIN_BASEMENT/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_SS_RAIN_BASEMENT/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE",
+      "name": "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/map.bin"
     }
   ]
 }

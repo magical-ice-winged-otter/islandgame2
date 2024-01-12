@@ -81,7 +81,7 @@
       "x": 24,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_SS_RAIN_HALLWAY",
+      "dest_map": "MAP_ISLANDGAME_SS_RAIN_BASEMENT",
       "dest_warp_id": "0"
     }
   ],

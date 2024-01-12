@@ -1,1 +1,30 @@
 mapscripts ISLANDGAME_SS_RAIN_BASEMENT_MapScripts {}
+
+script ISLANDGAME_SS_RAIN_BASEMENT_BattleRotom {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_ROTOM, 25, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    playmoncry(SPECIES_ROTOM, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setflag(FLAG_SS_RAIN_ROTOM_DEFEATED)
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            setflag(FLAG_SS_RAIN_ROTOM_DEFEATED)
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}

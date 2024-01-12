@@ -1,0 +1,23 @@
+mapscripts ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED) && var(VAR_SPOOKY_HOUSE_STATE) == 1) {
+            setvar(VAR_SPOOKY_HOUSE_STATE, 0)
+        }
+    }
+}
+
+
+script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut {
+    lock
+    playmoncry(SPECIES_MIMIKYU, CRY_MODE_NORMAL)
+    setvar(VAR_SPOOKY_HOUSE_STATE, 1)
+    msgbox(format("LeAVe mY HoUSE nOW NoW nOW NOw NOW grAWUghhH"))
+    closemessage
+    release
+}
+
+script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor {
+    lock
+    msgbox(format(""))
+
+}
