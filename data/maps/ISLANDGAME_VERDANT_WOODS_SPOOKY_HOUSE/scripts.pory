@@ -1,7 +1,19 @@
+const LOCALID_TWIN1 = 2
+const LOCALID_TWIN2 = 3
+const LOCALID_GHOST = 1
+const LOCALID_ITEM = 4
+const POS_HIDDEN_X = -3
+const POS_HIDDEN_Y = 1
+
 mapscripts ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED) && var(VAR_SPOOKY_HOUSE_STATE) == 1) {
+        if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED) && var(VAR_SPOOKY_HOUSE_STATE) <= 2) {
             setvar(VAR_SPOOKY_HOUSE_STATE, 0)
+        }
+
+        if (var(VAR_SPOOKY_HOUSE_STATE) == 2) {
+            removeobject(LOCALID_TWIN1)
+            removeobject(LOCALID_TWIN2)
         }
     }
 }
@@ -19,7 +31,126 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut {
 script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor {
     lock
     msgbox(format(
-        "(The door is locked... There seems to be some type of message scratched on it.)\p"
+        "(The door is locked. I can feel an eerie presence behind it.. Brr...)\p"
     ))
+    playmoncry(SPECIES_MIMIKYU, CRY_MODE_NORMAL)
+    waitmoncry
+    closemessage
+    release
+}
 
+movement spookyApproach {
+    walk_down * 5
+}
+
+movement spookySpin {
+    face_left
+	delay_2
+	face_up
+	delay_2
+	face_right
+	delay_2
+	face_down
+	delay_2
+	face_left
+	delay_2
+	face_up
+	delay_2
+	face_right
+	delay_2
+	face_down
+	delay_2
+	face_left
+	delay_2
+	face_up
+	delay_2
+	face_right
+	delay_2
+	face_down
+	delay_2
+	face_left
+	delay_2
+	face_up
+	delay_2
+	face_right
+	delay_2
+	face_down
+	delay_2
+	face_left
+	delay_2
+	face_up
+	delay_2
+	face_right
+	delay_2
+	face_down
+	delay_2
+	face_left
+	delay_2
+	face_up
+	delay_2
+	face_player
+	step_end
+}
+
+movement spookyTP {
+    face_up
+	disable_anim
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	slide_up
+	step_end
+}
+
+movement spookyHover {
+    delay_16 * 3
+    slide_up
+    walk_right * 7
+}
+
+script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1 {
+    lock
+    playse(SE_M_NIGHTMARE)
+    waitse
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+    applymovement(LOCALID_TWIN1, spookyApproach)
+    applymovement(LOCALID_TWIN2, spookyApproach)
+    waitmovement(0)
+    msgbox(format(
+        "Leave this place...\p"
+        "While you still can..."
+    ))
+    fadescreen(FADE_TO_BLACK)
+    playse(SE_M_NIGHTMARE)
+    waitse
+    removeobject(LOCALID_TWIN1)
+    removeobject(LOCALID_TWIN2)
+    setobjectxyperm(LOCALID_TWIN1, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setobjectxyperm(LOCALID_TWIN2, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setvar(VAR_SPOOKY_HOUSE_STATE, 2)
+    fadescreen(FADE_FROM_BLACK)
+    release
+}
+
+script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2 {
+    lock
+    playse(SE_M_NIGHTMARE)
+    waitse
+    applymovement(LOCALID_GHOST, spookySpin)
+    waitmovement(0)
+    applymovement(LOCALID_GHOST, spookyTP)
+    waitmovement(0)
+    removeobject(LOCALID_GHOST)
+    setobjectxyperm(LOCALID_GHOST, POS_HIDDEN_X, POS_HIDDEN_Y)
+}
+
+script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3 {
+    lock
+    applymovement(LOCALID_ITEM, spookyHover)
+    waitmovement(0)
+    removeobject(LOCALID_ITEM)
+    setobjectxyperm(LOCALID_ITEM, POS_HIDDEN_X, POS_HIDDEN_Y)
+    release
 }
