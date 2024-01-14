@@ -5,8 +5,8 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts::
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_unset FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED, ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	compare VAR_SPOOKY_HOUSE_STATE, 2
-	goto_if_eq ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
+	compare VAR_SPOOKY_HOUSE_STATE, 3
+	goto_if_gt ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
 	return
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
@@ -14,11 +14,12 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	goto ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
-	compare VAR_SPOOKY_HOUSE_STATE, 1
-	goto_if_eq ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	compare VAR_SPOOKY_HOUSE_STATE, 3
+	goto_if_le ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 	goto ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
+	removeobject 1
 	removeobject 2
 	removeobject 3
 	return
@@ -112,10 +113,11 @@ spookyTP:
 	step_end
 
 spookyHover:
-	delay_16
-	delay_16
-	delay_16
 	slide_up
+	delay_16
+	delay_16
+	delay_16
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -130,17 +132,16 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1::
 	playse SE_M_NIGHTMARE
 	waitse
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	applymovement 1, spookyApproach
 	applymovement 2, spookyApproach
-	applymovement 3, spookyApproach
 	waitmovement 0
 	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1_Text_0
 	fadescreen FADE_TO_BLACK
 	playse SE_M_NIGHTMARE
-	waitse
+	removeobject 1
 	removeobject 2
-	removeobject 3
+	setobjectxyperm 1, -3, 1
 	setobjectxyperm 2, -3, 1
-	setobjectxyperm 3, -3, 1
 	setvar VAR_SPOOKY_HOUSE_STATE, 2
 	fadescreen FADE_FROM_BLACK
 	release
@@ -151,21 +152,55 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2::
 	lock
 	playse SE_M_NIGHTMARE
 	waitse
-	applymovement 1, spookySpin
+	applymovement 4, spookySpin
 	waitmovement 0
-	playse SE_M_EXPLOSION
 	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2_Text_0
-	applymovement 1, spookyTP
+	applymovement 4, spookyTP
 	waitmovement 0
-	removeobject 1
+	removeobject 4
+	setobjectxyperm 4, -3, 1
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3::
 	lock
-	applymovement 4, spookyHover
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	playse SE_M_NIGHTMARE
+	applymovement 3, spookyHover
+	waitmovement 0
+	removeobject 3
+	setobjectxyperm 3, -3, 1
+	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3_Text_0
+	setvar VAR_SPOOKY_HOUSE_STATE, 3
+	release
+	return
+
+
+ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4::
+	lock
+	fadescreen FADE_TO_BLACK
+	playse SE_M_NIGHTMARE
+	addobject 4
+	setobjectxy 4, 19, 3
+	fadescreen FADE_FROM_BLACK
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
+	waitmovement 0
+	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4_Text_0
+	closemessage
+	playse SE_M_NIGHTMARE
+	waitse
+	applymovement 4, spookySpin
+	waitmovement 0
+	applymovement 4, spookyTP
 	waitmovement 0
 	removeobject 4
+	setobjectxyperm 4, -3, 1
+	setvar VAR_SPOOKY_HOUSE_STATE, 4
 	release
 	return
 
@@ -185,3 +220,10 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1_Text_0:
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2_Text_0:
 	.string "$"
+
+ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3_Text_0:
+	.string "{COLOR RED}(Huh...? It just floated away through\n"
+	.string "that wall...)$"
+
+ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4_Text_0:
+	.string "(She stares at you ominously.)$"

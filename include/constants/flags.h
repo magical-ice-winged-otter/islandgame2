@@ -1248,7 +1248,7 @@
 #define FLAG_COP_1_CARBOS                                           0x4AB 
 #define FLAG_SS_RAIN_TM_VOLT_SWITCH                                 0x4AC // temporarily is calcium until tms are added
 #define FLAG_SS_RAIN_LEFTOVERS                                      0x4AD
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
+#define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
 #define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag

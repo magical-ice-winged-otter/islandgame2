@@ -84,6 +84,7 @@
 #define MAP_ISLANDGAME_MT_AURORA_2F_3                     (75 | (0 << 8))
 #define MAP_ISLANDGAME_SS_RAIN_BASEMENT                   (76 | (0 << 8))
 #define MAP_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE         (77 | (0 << 8))
+#define MAP_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2        (78 | (0 << 8))
 
 // gMapGroup_Islandgame2
 #define MAP_ISLANDGAME_APPLEVINE          (0 | (1 << 8))

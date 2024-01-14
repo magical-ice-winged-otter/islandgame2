@@ -1,19 +1,20 @@
-const LOCALID_TWIN1 = 2
-const LOCALID_TWIN2 = 3
-const LOCALID_GHOST = 1
-const LOCALID_ITEM = 4
+const LOCALID_TWIN1 = 1
+const LOCALID_TWIN2 = 2
+const LOCALID_GHOST = 4
+const LOCALID_ITEM = 3
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
 
 mapscripts ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED) && var(VAR_SPOOKY_HOUSE_STATE) <= 2) {
+        if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED) && var(VAR_SPOOKY_HOUSE_STATE) <= 3) {
             setvar(VAR_SPOOKY_HOUSE_STATE, 0)
         }
 
-        if (var(VAR_SPOOKY_HOUSE_STATE) == 2) {
+        if (var(VAR_SPOOKY_HOUSE_STATE) > 3) {
             removeobject(LOCALID_TWIN1)
             removeobject(LOCALID_TWIN2)
+            removeobject(LOCALID_ITEM)
         }
     }
 }
@@ -105,9 +106,9 @@ movement spookyTP {
 }
 
 movement spookyHover {
-    delay_16 * 3
     slide_up
-    walk_right * 7
+    delay_16 * 3
+    walk_right * 8
 }
 
 script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1 {
@@ -115,6 +116,10 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1 {
     playse(SE_M_NIGHTMARE)
     waitse
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+    addobject(LOCALID_TWIN1)
+    setobjectxy(LOCALID_TWIN1, 4, 8)
+    addobject(LOCALID_TWIN2)
+    setobjectxy(LOCALID_TWIN2, 5, 8)
     applymovement(LOCALID_TWIN1, spookyApproach)
     applymovement(LOCALID_TWIN2, spookyApproach)
     waitmovement(0)
@@ -124,7 +129,6 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1 {
     ))
     fadescreen(FADE_TO_BLACK)
     playse(SE_M_NIGHTMARE)
-    waitse
     removeobject(LOCALID_TWIN1)
     removeobject(LOCALID_TWIN2)
     setobjectxyperm(LOCALID_TWIN1, POS_HIDDEN_X, POS_HIDDEN_Y)
@@ -140,6 +144,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2 {
     waitse
     applymovement(LOCALID_GHOST, spookySpin)
     waitmovement(0)
+    msgbox(format(""))
     applymovement(LOCALID_GHOST, spookyTP)
     waitmovement(0)
     removeobject(LOCALID_GHOST)
@@ -148,9 +153,41 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2 {
 
 script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3 {
     lock
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+    playse(SE_M_NIGHTMARE)
     applymovement(LOCALID_ITEM, spookyHover)
     waitmovement(0)
     removeobject(LOCALID_ITEM)
     setobjectxyperm(LOCALID_ITEM, POS_HIDDEN_X, POS_HIDDEN_Y)
+    msgbox(format("{COLOR RED}(Huh...? It just floated away through that wall...)"))
+    setvar(VAR_SPOOKY_HOUSE_STATE, 3)
+    release
+}
+
+script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4 {
+    lock
+    fadescreen(FADE_TO_BLACK)
+    playse(SE_M_NIGHTMARE)
+    addobject(LOCALID_GHOST)
+    setobjectxy(LOCALID_GHOST, 19, 3)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
+    waitmovement(0)
+    msgbox(format("(She stares at you ominously.)"))
+    closemessage
+    playse(SE_M_NIGHTMARE)
+    waitse
+    applymovement(LOCALID_GHOST, spookySpin)
+    waitmovement(0)
+    applymovement(LOCALID_GHOST, spookyTP)
+    waitmovement(0)
+    removeobject(LOCALID_GHOST)
+    setobjectxyperm(LOCALID_GHOST, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setvar(VAR_SPOOKY_HOUSE_STATE, 4)
     release
 }
