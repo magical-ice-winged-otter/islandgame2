@@ -4547,7 +4547,7 @@
       "width": 60,
       "height": 49,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_islandgame_cheriport",
+      "secondary_tileset": "gTileset_islandgame_oranna_cheriport",
       "border_filepath": "data/layouts/ISLANDGAME_CHERIPORT/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CHERIPORT/map.bin"
     },

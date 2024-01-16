@@ -917,14 +917,14 @@ const struct Tileset gTileset_Forest =
     .callback = InitTilesetIsland_Anim_Forest,
 };
 
-const struct Tileset gTileset_islandgame_cheriport =
+const struct Tileset gTileset_islandgame_oranna_cheriport =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_islandgame_cheriport,
-    .palettes = gTilesetPalettes_islandgame_cheriport,
-    .metatiles = gMetatiles_islandgame_cheriport,
-    .metatileAttributes = gMetatileAttributes_islandgame_cheriport,
+    .tiles = gTilesetTiles_islandgame_oranna_cheriport,
+    .palettes = gTilesetPalettes_islandgame_oranna_cheriport,
+    .metatiles = gMetatiles_islandgame_oranna_cheriport,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_cheriport,
     .callback = NULL,
 };
 
