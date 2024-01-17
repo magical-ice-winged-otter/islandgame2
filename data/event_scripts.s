@@ -1261,3 +1261,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_THERION_PATH/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_MT_THERION_1F/scripts.inc"
+
+	.include "data/maps/ISLADNGAME_PROMENADE_PATH/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_SS_RAIN_BASEMENT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.inc"

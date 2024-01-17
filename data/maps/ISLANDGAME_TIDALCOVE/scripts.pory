@@ -199,20 +199,3 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
         "I'm all for it. I'm glad to see so many people enthusiastic about our city!"
     ), MSGBOX_NPC)
 }
-
-script ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO {
-    lock
-    faceplayer
-    msgbox(format(
-        "Hello player! Thank you for playing the demo of Pokémon: Wings of Chaos! \p"
-        "We hope you enjoyed it. Stay tuned for future updates! :D"
-    ), MSGBOX_NPC)
-}
-
-script ISLANDGAME_TIDALCOVE_jujalos {
-    lock
-    faceplayer
-    msgbox(format(
-        "janx 4 plein"
-    ), MSGBOX_NPC)
-}

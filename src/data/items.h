@@ -9886,5 +9886,4 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .importance = 1,
     },
-    
 };

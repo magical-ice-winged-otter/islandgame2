@@ -5340,6 +5340,46 @@
       "secondary_tileset": "gTileset_test",
       "border_filepath": "data/layouts/ISLANDGAME_MT_THERION_1F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_THERION_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLADNGAME_PROMENADE_PATH",
+      "name": "ISLADNGAME_PROMENADE_PATH_Layout",
+      "width": 100,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/ISLADNGAME_PROMENADE_PATH/border.bin",
+      "blockdata_filepath": "data/layouts/ISLADNGAME_PROMENADE_PATH/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_SS_RAIN_BASEMENT",
+      "name": "ISLANDGAME_SS_RAIN_BASEMENT_Layout",
+      "width": 20,
+      "height": 15,
+      "primary_tileset": "gTileset_FireRed_General_Test",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/ISLANDGAME_SS_RAIN_BASEMENT/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_SS_RAIN_BASEMENT/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE",
+      "name": "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Layout",
+      "width": 22,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2",
+      "name": "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Layout",
+      "width": 24,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/map.bin"
     }
   ]
 }

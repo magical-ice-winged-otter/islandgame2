@@ -207,9 +207,14 @@ text ISLANDGAME_VERDANT_WOODS_NPC1Talk {
 script ISLANDGAME_VERDANT_WOODS_EventScript_NPC2 {
     lock
     faceplayer
-    msgbox(ISLANDGAME_VERDANT_WOODS_NPC2Talk)
-    playmoncry(SPECIES_MIMIKYU,CRY_MODE_ENCOUNTER)
-    waitmoncry()
+    if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)) {
+        msgbox(ISLANDGAME_VERDANT_WOODS_NPC2Talk)
+        playmoncry(SPECIES_MIMIKYU,CRY_MODE_ENCOUNTER)
+        waitmoncry()
+    }
+    else {
+        msgbox(format("Owww, my head, it hurts..."))
+    }
     release
 }
 
@@ -259,9 +264,14 @@ text ISLANDGAME_VERDANT_WOODS_SIGN1_DESC {
 
 script ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2 {
     lock
-    msgbox(ISLANDGAME_VERDANT_WOODS_SIGN2_DESC)
-    playmoncry(SPECIES_MIMIKYU,CRY_MODE_ENCOUNTER)
-    waitmoncry()
+    if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)) {
+        msgbox(ISLANDGAME_VERDANT_WOODS_SIGN2_DESC)
+        playmoncry(SPECIES_MIMIKYU,CRY_MODE_ENCOUNTER)
+        waitmoncry()    
+    } 
+    else {
+        msgbox(format("NO TRESPASSING"))
+    }
     release
 }
 
