@@ -4917,7 +4917,7 @@
       "width": 50,
       "height": 50,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_IslandgameTidalcove",
+      "secondary_tileset": "gTileset_islandgame_oranna_tidalcove",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE/map.bin"
     },

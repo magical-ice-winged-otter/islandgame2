@@ -275,7 +275,7 @@
 #define METATILE_IslandgameGeneral_DoorPokeCenter  0x061
 #define METATILE_IslandgameGeneral_DoorPokeMart    0x041
 
-// gTileset_IslandgameTidalcove
+// gTileset_islandgame_oranna_tidalcove
 #define METATILE_IslandgameTidalcove_Door01  0x22A
 #define METATILE_IslandgameTidalcove_Door02  0x252
 

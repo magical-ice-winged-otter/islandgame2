@@ -994,14 +994,14 @@ const struct Tileset gTileset_islandgame_oranna_rosevale =
     .callback = InitTilesetIsland_Anim_Rosevale,
 };
 
-const struct Tileset gTileset_IslandgameTidalcove =
+const struct Tileset gTileset_islandgame_oranna_tidalcove =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_IslandgameTidalcove,
-    .palettes = gTilesetPalettes_IslandgameTidalcove,
-    .metatiles = gMetatiles_IslandgameTidalcove,
-    .metatileAttributes = gMetatileAttributes_IslandgameTidalcove,
+    .tiles = gTilesetTiles_islandgame_oranna_tidalcove,
+    .palettes = gTilesetPalettes_islandgame_oranna_tidalcove,
+    .metatiles = gMetatiles_islandgame_oranna_tidalcove,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_tidalcove,
     .callback = NULL,
 };
 
