@@ -895,14 +895,14 @@ const struct Tileset gTileset_IslandgameGeneral =
     .callback = InitTilesetIsland_Anim_General,
 };
 
-const struct Tileset gTileset_IslandgamePersi =
+const struct Tileset gTileset_islandgame_oranna_persi =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_IslandgamePersi,
-    .palettes = gTilesetPalettes_IslandgamePersi,
-    .metatiles = gMetatiles_IslandgamePersi,
-    .metatileAttributes = gMetatileAttributes_IslandgamePersi,
+    .tiles = gTilesetTiles_islandgame_oranna_persi,
+    .palettes = gTilesetPalettes_islandgame_oranna_persi,
+    .metatiles = gMetatiles_islandgame_oranna_persi,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_persi,
     .callback = NULL,
 };
 

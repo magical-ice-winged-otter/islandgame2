@@ -226,8 +226,8 @@ const u16 gMetatileAttributes_FireRed_SS_ANNE_Cont[] = INCBIN_U16("data/tilesets
 const u16 gMetatiles_IslandgameGeneral[] = INCBIN_U16("data/tilesets/primary/islandgame_general/metatiles.bin");
 const u16 gMetatileAttributes_IslandgameGeneral[] = INCBIN_U16("data/tilesets/primary/islandgame_general/metatile_attributes.bin");
 
-const u16 gMetatiles_IslandgamePersi[] = INCBIN_U16("data/tilesets/secondary/islandgame_persi/metatiles.bin");
-const u16 gMetatileAttributes_IslandgamePersi[] = INCBIN_U16("data/tilesets/secondary/islandgame_persi/metatile_attributes.bin");
+const u16 gMetatiles_islandgame_oranna_persi[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_persi/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_oranna_persi[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_persi/metatile_attributes.bin");
 
 const u16 gMetatiles_Forest[] = INCBIN_U16("data/tilesets/secondary/forest/metatiles.bin");
 const u16 gMetatileAttributes_Forest[] = INCBIN_U16("data/tilesets/secondary/forest/metatile_attributes.bin");
