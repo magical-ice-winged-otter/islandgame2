@@ -4736,7 +4736,7 @@
       "name": "ISLANDGAME_ROSEVALE_Layout",
       "width": 36,
       "height": 37,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_rosevale",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE/map.bin"
@@ -4746,7 +4746,7 @@
       "name": "ISLANDGAME_AURORA_PATH_Layout",
       "width": 45,
       "height": 60,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_AURORA_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_AURORA_PATH/map.bin"
