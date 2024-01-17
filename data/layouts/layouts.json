@@ -4606,7 +4606,7 @@
       "name": "ISLANDGAME_MINTY_MEADOWS_Layout",
       "width": 52,
       "height": 36,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_maplegrove",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/map.bin"
@@ -4626,7 +4626,7 @@
       "name": "ISLANDGAME_MINTY_MEADOWS_2_Layout",
       "width": 70,
       "height": 40,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_2/map.bin"
@@ -4636,7 +4636,7 @@
       "name": "ISLANDGAME_MINTY_MEADOWS_3_Layout",
       "width": 30,
       "height": 31,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/map.bin"
@@ -4716,7 +4716,7 @@
       "name": "ISLANDGAME_FRESA_FARMS_Layout",
       "width": 40,
       "height": 26,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS/map.bin"
