@@ -4684,7 +4684,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_VERDANT_PATH",
       "name": "ISLANDGAME_VERDANT_PATH_Layout",
-      "width": 40,
+      "width": 55,
       "height": 63,
       "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_oranna_verdant",

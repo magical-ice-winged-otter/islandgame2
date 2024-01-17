@@ -15,24 +15,24 @@
   "connections": [
     {
       "map": "MAP_ISLANDGAME_CAMP_PERSI",
-      "offset": -41,
+      "offset": -33,
       "direction": "down"
     },
     {
       "map": "MAP_ISLANDGAME_MAPLEGROVE",
-      "offset": 26,
+      "offset": 34,
       "direction": "up"
     },
     {
       "map": "MAP_ISLANDGAME_MAPLEGROVE",
-      "offset": 26,
+      "offset": 34,
       "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 34,
+      "x": 42,
       "y": 57,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
@@ -45,7 +45,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 6,
+      "x": 13,
       "y": 56,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -58,7 +58,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 31,
+      "x": 39,
       "y": 45,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -71,7 +71,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 3,
+      "x": 11,
       "y": 37,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -84,7 +84,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 18,
+      "x": 26,
       "y": 42,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -97,7 +97,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 19,
+      "x": 27,
       "y": 42,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -110,7 +110,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
-      "x": 27,
+      "x": 35,
       "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -123,7 +123,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
-      "x": 36,
+      "x": 44,
       "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -136,7 +136,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 38,
+      "x": 46,
       "y": 49,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -149,7 +149,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 23,
+      "x": 31,
       "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -162,7 +162,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 22,
+      "x": 30,
       "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -175,7 +175,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 15,
+      "x": 23,
       "y": 1,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -188,7 +188,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 2,
+      "x": 10,
       "y": 49,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -202,49 +202,49 @@
   ],
   "warp_events": [
     {
-      "x": 12,
+      "x": 20,
       "y": 38,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_PATH_FISHHOUSE",
       "dest_warp_id": "0"
     },
     {
-      "x": 32,
+      "x": 40,
       "y": 25,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_WOODS",
       "dest_warp_id": "0"
     },
     {
-      "x": 33,
+      "x": 41,
       "y": 25,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_WOODS",
       "dest_warp_id": "1"
     },
     {
-      "x": 27,
+      "x": 35,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_WOODS",
       "dest_warp_id": "2"
     },
     {
-      "x": 28,
+      "x": 36,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_WOODS",
       "dest_warp_id": "3"
     },
     {
-      "x": 7,
+      "x": 15,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_WOODS",
       "dest_warp_id": "4"
     },
     {
-      "x": 8,
+      "x": 16,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_VERDANT_WOODS",
@@ -257,15 +257,15 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 18,
-      "y": 55,
+      "x": 29,
+      "y": 59,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_VERDANT_PATH_EventScript_SIGN1"
     },
     {
       "type": "sign",
-      "x": 15,
+      "x": 23,
       "y": 38,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -273,7 +273,7 @@
     },
     {
       "type": "sign",
-      "x": 31,
+      "x": 39,
       "y": 29,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -281,7 +281,7 @@
     },
     {
       "type": "sign",
-      "x": 33,
+      "x": 41,
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

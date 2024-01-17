@@ -209,8 +209,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 36,
-      "y": 30,
+      "x": 22,
+      "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
@@ -223,7 +223,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 31,
-      "y": 26,
+      "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -235,8 +235,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 56,
-      "y": 19,
+      "x": 55,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
@@ -339,7 +339,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
-      "x": 44,
+      "x": 41,
       "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -365,8 +365,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 58,
-      "y": 49,
+      "x": 65,
+      "y": 48,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -388,19 +388,6 @@
       "trainer_sight_or_berry_tree_id": "ITEM_NEST_BALL",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_PERSI_NEST_BALL"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 65,
-      "y": 48,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route120_EventScript_ItemRevive",
-      "flag": "FLAG_ITEM_ROUTE_120_REVIVE"
     }
   ],
   "warp_events": [
@@ -567,6 +554,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7"
+    },
+    {
+      "type": "hidden_item",
+      "x": 31,
+      "y": 31,
+      "elevation": 0,
+      "item": "ITEM_REVIVE",
+      "flag": "FLAG_ITEM_ROUTE_120_REVIVE"
     }
   ]
 }
