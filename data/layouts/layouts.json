@@ -4607,7 +4607,7 @@
       "width": 52,
       "height": 36,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_islandgame_maplegrove",
+      "secondary_tileset": "gTileset_islandgame_oranna_maplegrove",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS/map.bin"
     },
@@ -4777,7 +4777,7 @@
       "width": 38,
       "height": 28,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_islandgame_maplegrove",
+      "secondary_tileset": "gTileset_islandgame_oranna_maplegrove",
       "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/map.bin"
     },
