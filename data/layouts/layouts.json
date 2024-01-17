@@ -4456,8 +4456,8 @@
       "name": "PoryTileTest1_Layout",
       "width": 32,
       "height": 19,
-      "primary_tileset": "gTileset_FireRed_General_Test",
-      "secondary_tileset": "gTileset_InsideShip",
+      "primary_tileset": "gTileset_islandgame_ss_rain_general",
+      "secondary_tileset": "gTileset_islandgame_ss_rain_secondary",
       "border_filepath": "data/layouts/PoryTileTest1/border.bin",
       "blockdata_filepath": "data/layouts/PoryTileTest1/map.bin"
     },
