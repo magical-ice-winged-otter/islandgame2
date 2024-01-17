@@ -4617,7 +4617,7 @@
       "width": 40,
       "height": 45,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_IslandgameSOP",
+      "secondary_tileset": "gTileset_islandgame_oranna_southern_path",
       "border_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_Southern_Oranna_Path/map.bin"
     },
@@ -4757,7 +4757,7 @@
       "width": 34,
       "height": 36,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Islandgame_icecave",
+      "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_1F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_1F/map.bin"
     },
@@ -4767,7 +4767,7 @@
       "width": 20,
       "height": 40,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Islandgame_icecave",
+      "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F/map.bin"
     },
@@ -5147,7 +5147,7 @@
       "width": 24,
       "height": 20,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Islandgame_icecave",
+      "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_3F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_3F/map.bin"
     },
@@ -5157,7 +5157,7 @@
       "width": 24,
       "height": 20,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Islandgame_icecave",
+      "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_2/map.bin"
     },
@@ -5167,7 +5167,7 @@
       "width": 25,
       "height": 29,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Islandgame_icecave",
+      "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/map.bin"
     },

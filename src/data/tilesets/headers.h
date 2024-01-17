@@ -928,14 +928,14 @@ const struct Tileset gTileset_islandgame_oranna_cheriport =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_IslandgameSOP =
+const struct Tileset gTileset_islandgame_oranna_southern_path =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_IslandgameSOP,
-    .palettes = gTilesetPalettes_IslandgameSOP,
-    .metatiles = gMetatiles_IslandgameSOP,
-    .metatileAttributes = gMetatileAttributes_IslandgameSOP,
+    .tiles = gTilesetTiles_islandgame_oranna_southern_path,
+    .palettes = gTilesetPalettes_islandgame_oranna_southern_path,
+    .metatiles = gMetatiles_islandgame_oranna_southern_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_southern_path,
     .callback = NULL,
 };
 
@@ -950,14 +950,14 @@ const struct Tileset gTileset_islandgame_oranna_verdant =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Islandgame_icecave =
+const struct Tileset gTileset_islandgame_oranna_mt_aurora =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Islandgame_icecave,
-    .palettes = gTilesetPalettes_Islandgame_icecave,
-    .metatiles = gMetatiles_Islandgame_icecave,
-    .metatileAttributes = gMetatileAttributes_Islandgame_icecave,
+    .tiles = gTilesetTiles_islandgame_oranna_mt_aurora,
+    .palettes = gTilesetPalettes_islandgame_oranna_mt_aurora,
+    .metatiles = gMetatiles_islandgame_oranna_mt_aurora,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_mt_aurora,
     .callback = NULL,
 };
 
