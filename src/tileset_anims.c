@@ -124,14 +124,14 @@ const u16 *const gTilesetAnims_General_Water[] = {
 };
 //island-game
 //Note: anim with an s, not just anim compared to the other ones.
-const u16 gTilesetAnims_Island_Firered_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/00.4bpp");
-const u16 gTilesetAnims_Island_Firered_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/01.4bpp");
-const u16 gTilesetAnims_Island_Firered_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/02.4bpp");
-const u16 gTilesetAnims_Island_Firered_Water_Frame3[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/03.4bpp");
-const u16 gTilesetAnims_Island_Firered_Water_Frame4[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/04.4bpp");
-const u16 gTilesetAnims_Island_Firered_Water_Frame5[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/05.4bpp");
-const u16 gTilesetAnims_Island_Firered_Water_Frame6[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/06.4bpp");
-const u16 gTilesetAnims_Island_Firered_Water_Frame7[] = INCBIN_U16("data/tilesets/primary/fire_red_general_test/anim/water/07.4bpp");
+const u16 gTilesetAnims_Island_Firered_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/anim/water/00.4bpp");
+const u16 gTilesetAnims_Island_Firered_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/anim/water/01.4bpp");
+const u16 gTilesetAnims_Island_Firered_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/anim/water/02.4bpp");
+const u16 gTilesetAnims_Island_Firered_Water_Frame3[] = INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/anim/water/03.4bpp");
+const u16 gTilesetAnims_Island_Firered_Water_Frame4[] = INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/anim/water/04.4bpp");
+const u16 gTilesetAnims_Island_Firered_Water_Frame5[] = INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/anim/water/05.4bpp");
+const u16 gTilesetAnims_Island_Firered_Water_Frame6[] = INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/anim/water/06.4bpp");
+const u16 gTilesetAnims_Island_Firered_Water_Frame7[] = INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/anim/water/07.4bpp");
 
 const u16 *const gTilesetAnims_Island_Firered_Water[] = {
     gTilesetAnims_Island_Firered_Water_Frame0,
@@ -786,7 +786,7 @@ void InitTilesetAnim_Building(void)
 }
 
 //island-game
-void InitTilesetIsland_Anim_Firered_Water(void)
+void InitTilesetAnim_islandgame_ss_rain_general(void)
 {
     sPrimaryTilesetAnimCounter = 0;
     sPrimaryTilesetAnimCounterMax = 256;

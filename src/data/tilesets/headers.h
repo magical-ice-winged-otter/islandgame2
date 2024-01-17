@@ -861,25 +861,25 @@ const struct Tileset gTileset_PorytilesSecondaryTest =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_FireRed_General_Test =
+const struct Tileset gTileset_islandgame_ss_rain_general =
 {
     .isCompressed = TRUE,
     .isSecondary = FALSE,
-    .tiles = gTilesetTiles_FireRed_General_Test,
-    .palettes = gTilesetPalettes_FireRed_General_Test,
-    .metatiles = gMetatiles_FireRed_General_Test,
-    .metatileAttributes = gMetatileAttributes_FireRed_General_Test,
-    .callback = InitTilesetIsland_Anim_Firered_Water,
+    .tiles = gTilesetTiles_islandgame_ss_rain_general,
+    .palettes = gTilesetPalettes_islandgame_ss_rain_general,
+    .metatiles = gMetatiles_islandgame_ss_rain_general,
+    .metatileAttributes = gMetatileAttributes_islandgame_ss_rain_general,
+    .callback = InitTilesetAnim_islandgame_ss_rain_general,
 };
 
-const struct Tileset gTileset_FireRed_SS_ANNE_Cont =
+const struct Tileset gTileset_islandgame_ss_rain_secondary =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_FireRed_SS_ANNE_Cont,
-    .palettes = gTilesetPalettes_FireRed_SS_ANNE_Cont,
-    .metatiles = gMetatiles_FireRed_SS_ANNE_Cont,
-    .metatileAttributes = gMetatileAttributes_FireRed_SS_ANNE_Cont,
+    .tiles = gTilesetTiles_islandgame_ss_rain_secondary,
+    .palettes = gTilesetPalettes_islandgame_ss_rain_secondary,
+    .metatiles = gMetatiles_islandgame_ss_rain_secondary,
+    .metatileAttributes = gMetatileAttributes_islandgame_ss_rain_secondary,
     .callback = NULL,
 };
 

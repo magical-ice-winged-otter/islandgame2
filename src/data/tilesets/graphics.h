@@ -1692,43 +1692,43 @@ const u16 gTilesetPalettes_PorytilesSecondaryTest[][16] =
 
 const u32 gTilesetTiles_PorytilesSecondaryTest[] = INCBIN_U32("data/tilesets/secondary/porytiles_secondary_test/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_FireRed_General_Test[][16] =
+const u16 gTilesetPalettes_islandgame_ss_rain_general[][16] =
 {
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/primary/fire_red_general_test/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_ss_rain_general/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_FireRed_General_Test[] = INCBIN_U32("data/tilesets/primary/fire_red_general_test/tiles.4bpp.lz");
+const u32 gTilesetTiles_islandgame_ss_rain_general[] = INCBIN_U32("data/tilesets/primary/islandgame_ss_rain_general/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_FireRed_SS_ANNE_Cont[][16] =
+const u16 gTilesetPalettes_islandgame_ss_rain_secondary[][16] =
 {
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/fire_red_ss_anne_cont/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_ss_rain_secondary/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_FireRed_SS_ANNE_Cont[] = INCBIN_U32("data/tilesets/secondary/fire_red_ss_anne_cont/tiles.4bpp.lz");
+const u32 gTilesetTiles_islandgame_ss_rain_secondary[] = INCBIN_U32("data/tilesets/secondary/islandgame_ss_rain_secondary/tiles.4bpp.lz");
 
 const u16 gTilesetPalettes_IslandgameGeneral[][16] =
 {
