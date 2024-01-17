@@ -4737,7 +4737,7 @@
       "width": 36,
       "height": 37,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_islandgame_rosevale",
+      "secondary_tileset": "gTileset_islandgame_oranna_rosevale",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE/map.bin"
     },

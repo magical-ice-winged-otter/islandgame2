@@ -250,8 +250,8 @@ const u16 gMetatileAttributes_IslandgameEmpty[] = INCBIN_U16("data/tilesets/prim
 const u16 gMetatiles_islandgame_oranna_maplegrove[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_oranna_maplegrove[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/metatile_attributes.bin");
 
-const u16 gMetatiles_islandgame_rosevale[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/metatiles.bin");
-const u16 gMetatileAttributes_islandgame_rosevale[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/metatile_attributes.bin");
+const u16 gMetatiles_islandgame_oranna_rosevale[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_oranna_rosevale[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/metatile_attributes.bin");
 
 const u16 gMetatiles_IslandgameTidalcove[] = INCBIN_U16("data/tilesets/secondary/islandgame_tidalcove/metatiles.bin");
 const u16 gMetatileAttributes_IslandgameTidalcove[] = INCBIN_U16("data/tilesets/secondary/islandgame_tidalcove/metatile_attributes.bin");
