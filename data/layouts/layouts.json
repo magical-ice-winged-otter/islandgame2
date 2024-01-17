@@ -4776,7 +4776,7 @@
       "name": "ISLANDGAME_MAPLEGROVE_Layout",
       "width": 38,
       "height": 28,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_maplegrove",
       "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE/map.bin"
