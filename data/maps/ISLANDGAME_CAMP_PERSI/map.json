@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_ISLANDGAME_VERDANT_PATH",
-      "offset": 41,
+      "offset": 33,
       "direction": "up"
     }
   ],
@@ -235,7 +235,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 55,
+      "x": 54,
       "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
