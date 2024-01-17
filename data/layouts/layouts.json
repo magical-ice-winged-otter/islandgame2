@@ -4536,7 +4536,7 @@
       "name": "ISLANDGAME_CAMP_PERSI_Layout",
       "width": 72,
       "height": 58,
-      "primary_tileset": "gTileset_IslandgameGeneral",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_IslandgamePersi",
       "border_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CAMP_PERSI/map.bin"
