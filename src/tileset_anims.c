@@ -232,11 +232,11 @@ const u16 *const gTilesetAnims_Island_Forest_Flower_2[] = {
     gTilesetAnims_Island_Forest_Flower_2_Frame4,
 };
 
-const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/00.4bpp");
-const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/01.4bpp");
-const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/02.4bpp");
-const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame3[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/03.4bpp");
-const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame4[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_1/04.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_1/00.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_1/01.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_1/02.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame3[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_1/03.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_1_Frame4[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_1/04.4bpp");
 
 const u16 *const gTilesetAnims_Island_Rosevale_Flower_1[] = {
     gTilesetAnims_Island_Rosevale_Flower_1_Frame0,
@@ -246,11 +246,11 @@ const u16 *const gTilesetAnims_Island_Rosevale_Flower_1[] = {
     gTilesetAnims_Island_Rosevale_Flower_1_Frame4,
 };
 
-const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/00.4bpp");
-const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/01.4bpp");
-const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/02.4bpp");
-const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame3[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/03.4bpp");
-const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame4[] = INCBIN_U16("data/tilesets/secondary/islandgame_rosevale/anim/flower_2/04.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_2/00.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_2/01.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_2/02.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame3[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_2/03.4bpp");
+const u16 gTilesetAnims_Island_Rosevale_Flower_2_Frame4[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/anim/flower_2/04.4bpp");
 
 const u16 *const gTilesetAnims_Island_Rosevale_Flower_2[] = {
     gTilesetAnims_Island_Rosevale_Flower_2_Frame0,

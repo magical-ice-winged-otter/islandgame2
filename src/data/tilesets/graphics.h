@@ -1823,7 +1823,7 @@ const u16 gTilesetPalettes_islandgame_oranna_southern_path[][16] =
     INCBIN_U16("data/tilesets/secondary/islandgame_oranna_southern_path/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_islandgame_oranna_southern_path[] = INCBIN_U32("data/tilesets/secondary/islandgame_sop/tiles.4bpp.lz");
+const u32 gTilesetTiles_islandgame_oranna_southern_path[] = INCBIN_U32("data/tilesets/secondary/islandgame_oranna_southern_path/tiles.4bpp.lz");
 
 const u16 gTilesetPalettes_islandgame_oranna_verdant[][16] =
 {
