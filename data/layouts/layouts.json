@@ -4756,7 +4756,7 @@
       "name": "ISLANDGAME_MT_AURORA_1F_Layout",
       "width": 34,
       "height": 36,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_islandgame_empty_primary",
       "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_1F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_1F/map.bin"
@@ -4766,7 +4766,7 @@
       "name": "ISLANDGAME_MT_AURORA_2F_Layout",
       "width": 20,
       "height": 40,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_islandgame_empty_primary",
       "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F/map.bin"
@@ -5146,7 +5146,7 @@
       "name": "ISLANDGAME_MT_AURORA_3F_Layout",
       "width": 24,
       "height": 20,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_islandgame_empty_primary",
       "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_3F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_3F/map.bin"
@@ -5156,7 +5156,7 @@
       "name": "ISLANDGAME_MT_AURORA_2F_2_Layout",
       "width": 24,
       "height": 20,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_islandgame_empty_primary",
       "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_2/map.bin"
@@ -5166,7 +5166,7 @@
       "name": "ISLANDGAME_MT_AURORA_2F_3_Layout",
       "width": 25,
       "height": 29,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_islandgame_empty_primary",
       "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/map.bin"

@@ -961,14 +961,14 @@ const struct Tileset gTileset_islandgame_oranna_mt_aurora =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_IslandgameEmpty =
+const struct Tileset gTileset_islandgame_empty_primary =
 {
     .isCompressed = TRUE,
     .isSecondary = FALSE,
-    .tiles = gTilesetTiles_IslandgameEmpty,
-    .palettes = gTilesetPalettes_IslandgameEmpty,
-    .metatiles = gMetatiles_IslandgameEmpty,
-    .metatileAttributes = gMetatileAttributes_IslandgameEmpty,
+    .tiles = gTilesetTiles_islandgame_empty_primary,
+    .palettes = gTilesetPalettes_islandgame_empty_primary,
+    .metatiles = gMetatiles_islandgame_empty_primary,
+    .metatileAttributes = gMetatileAttributes_islandgame_empty_primary,
     .callback = NULL,
 };
 

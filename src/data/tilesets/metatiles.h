@@ -244,8 +244,8 @@ const u16 gMetatileAttributes_islandgame_oranna_verdant[] = INCBIN_U16("data/til
 const u16 gMetatiles_islandgame_oranna_mt_aurora[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_mt_aurora/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_oranna_mt_aurora[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_mt_aurora/metatile_attributes.bin");
 
-const u16 gMetatiles_IslandgameEmpty[] = INCBIN_U16("data/tilesets/primary/islandgame_empty/metatiles.bin");
-const u16 gMetatileAttributes_IslandgameEmpty[] = INCBIN_U16("data/tilesets/primary/islandgame_empty/metatile_attributes.bin");
+const u16 gMetatiles_islandgame_empty_primary[] = INCBIN_U16("data/tilesets/primary/islandgame_empty_primary/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_empty_primary[] = INCBIN_U16("data/tilesets/primary/islandgame_empty_primary/metatile_attributes.bin");
 
 const u16 gMetatiles_islandgame_oranna_maplegrove[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_oranna_maplegrove[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/metatile_attributes.bin");
