@@ -4747,7 +4747,7 @@
       "width": 45,
       "height": 60,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_Forest",
+      "secondary_tileset": "gTileset_islandgame_oranna_rosevale",
       "border_filepath": "data/layouts/ISLANDGAME_AURORA_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_AURORA_PATH/map.bin"
     },
