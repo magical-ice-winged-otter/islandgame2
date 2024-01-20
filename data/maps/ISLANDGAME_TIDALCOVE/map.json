@@ -377,7 +377,7 @@
     {
       "type": "sign",
       "x": 25,
-      "y": 46,
+      "y": 45,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_TIDALCOVE_Interact_EntranceSign"
