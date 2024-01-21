@@ -4637,7 +4637,7 @@
       "width": 30,
       "height": 31,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_Forest",
+      "secondary_tileset": "gTileset_islandgame_oranna_maplegrove",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/map.bin"
     },
