@@ -266,12 +266,21 @@ static const struct TrainerMon sParty_MintyMeadowsRival[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 15,
+    .lvl = 13,
     .species = SPECIES_GIBLE,
-    .heldItem = ITEM_BERRY_JUICE,
+    .heldItem = ITEM_NONE,
     .ability = ABILITY_SAND_VEIL,
     .gender = TRAINER_MON_FEMALE,
     .moves = {MOVE_SAND_TOMB, MOVE_DRAGON_RAGE, MOVE_SAND_ATTACK, MOVE_METAL_CLAW}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 15,
+    .species = SPECIES_HERDIER,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_SAND_RUSH,
+    .gender = TRAINER_MON_MALE,
+    .moves = {MOVE_TAKE_DOWN, MOVE_THUNDER_FANG, MOVE_FIRE_FANG, MOVE_ICE_FANG}
     }
 };
 
@@ -813,7 +822,7 @@ static const struct TrainerMon sParty_TidalcoveGym4[] = {
     .species = SPECIES_JYNX,
     .heldItem = ITEM_SITRUS_BERRY,
     .ability = ABILITY_DRY_SKIN,
-    .moves = {MOVE_LOVELY_KISS, MOVE_DREAM_EATER, MOVE_DRAINING_KISS, MOVE_ICY_WIND}
+    .moves = {MOVE_LOVELY_KISS, MOVE_HEART_STAMP, MOVE_DRAINING_KISS, MOVE_ICY_WIND}
     }
 };
 
@@ -821,26 +830,10 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 23,
-    .species = SPECIES_AMAURA,
+    .species = SPECIES_NINETALES_ALOLAN,
     .heldItem = ITEM_LIGHT_CLAY,
     .ability = ABILITY_SNOW_WARNING,
-    .moves = {MOVE_ANCIENT_POWER, MOVE_AURORA_VEIL, MOVE_AURORA_BEAM, MOVE_THUNDER_WAVE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_GOLETT_MARYAN,
-    .heldItem = ITEM_EXPERT_BELT,
-    .ability = ABILITY_SLUSH_RUSH,
-    .moves = {MOVE_ICE_BALL, MOVE_SHADOW_PUNCH, MOVE_BULLDOZE, MOVE_ICE_SHARD}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_VANILLITE,
-    .heldItem = ITEM_ICY_ROCK,
-    .ability = ABILITY_SNOW_WARNING,
-    .moves = {MOVE_WATER_PULSE, MOVE_ICY_WIND, MOVE_ICE_SHARD, MOVE_AURORA_VEIL}
+    .moves = {MOVE_DAZZLING_GLEAM, MOVE_AURORA_VEIL, MOVE_AURORA_BEAM, MOVE_CONFUSE_RAY}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -852,11 +845,28 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
+    .species = SPECIES_SANDSLASH_ALOLAN,
+    .heldItem = ITEM_EXPERT_BELT,
+    .ability = ABILITY_SLUSH_RUSH,
+    .moves = {MOVE_ICICLE_SPEAR, MOVE_METAL_CLAW, MOVE_BULLDOZE, MOVE_HAIL}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
+    .species = SPECIES_CRYOGONAL,
+    .heldItem = ITEM_ICY_ROCK,
+    .ability = ABILITY_LEVITATE,
+    .moves = {MOVE_ANCIENT_POWER, MOVE_AURORA_BEAM, MOVE_HAIL, MOVE_AURORA_VEIL}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 25,
     .species = SPECIES_CLOYSTER,
     .heldItem = ITEM_FOCUS_SASH,
     .ability = ABILITY_SKILL_LINK,
-    .moves = {MOVE_ICICLE_SPEAR, MOVE_RAZOR_SHELL, MOVE_ROCK_BLAST, MOVE_ICE_SHARD}
+    .moves = {MOVE_ICICLE_SPEAR, MOVE_RAZOR_SHELL, MOVE_ROCK_BLAST, MOVE_ICE_SHARD},
+    .isShiny = TRUE,
     }
 };
 
@@ -928,6 +938,14 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
     .species = SPECIES_LIEPARD,
     .ability = ABILITY_PRANKSTER,
     .moves = {MOVE_FAKE_OUT, MOVE_SWAGGER, MOVE_THUNDER_WAVE, MOVE_THIEF}
+    },
+    {
+    .lvl = 23,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .species = SPECIES_UMBREON,
+    .ability = ABILITY_SYNCHRONIZE,
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_CONFUSE_RAY, MOVE_PURSUIT, MOVE_YAWN, MOVE_SNARL}
     },
 };
 
