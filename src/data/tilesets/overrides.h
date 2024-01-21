@@ -63,8 +63,8 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaGeneral[] =
 {
     {
         .slot = 4,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaGeneral04
     },
     OVERRIDES_END
@@ -79,14 +79,14 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaCheriport[] =
 {
     {
         .slot = 7,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaCheriport07
     },
     {
         .slot = 12,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaCheriport12
     },
     OVERRIDES_END
@@ -99,8 +99,8 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaMaplegrove[] =
 {
     {
         .slot = 8,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaMaplegrove8
     },
     OVERRIDES_END
@@ -113,8 +113,8 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaCentralPath[] =
 {
     {
         .slot = 6,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaCentralPath6
     },
     OVERRIDES_END
@@ -128,14 +128,14 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaRosevale[] =
 {
     {
         .slot = 10,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaRosevalePath10
     },
     {
         .slot = 11,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaRosevalePath11
     },
     OVERRIDES_END
@@ -148,14 +148,14 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaTidalcove[] =
 {
     {
         .slot = 6,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaTidalcove6
     },
     {
         .slot = 7,
-        .startHour = HOUR_NIGHT,
-        .endHour = HOUR_MORNING,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaTidalcove7
     },
     OVERRIDES_END
