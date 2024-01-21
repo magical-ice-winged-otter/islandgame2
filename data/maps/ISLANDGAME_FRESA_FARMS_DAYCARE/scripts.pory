@@ -4,6 +4,14 @@ mapscripts ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts {
 script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
     lock
     faceplayer
+
+    specialvar(VAR_RESULT, GetDaycareState)
+
+    if (var(VAR_RESULT) == DAYCARE_EGG_WAITING) {
+        goto(Route117_EventScript_DaycareEggWaiting)
+    }
+
+    // handle the torchic egg quest
     returnqueststate(QUEST_FRESA_FARMS_TORCHIC_EGG)
 
     switch (var(VAR_RESULT)) {

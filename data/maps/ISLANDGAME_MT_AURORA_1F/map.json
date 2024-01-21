@@ -19,7 +19,7 @@
   "warp_events": [
     {
       "x": 22,
-      "y": 31,
+      "y": 30,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_AURORA_PATH",
       "dest_warp_id": "0"
