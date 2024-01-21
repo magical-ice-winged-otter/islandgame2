@@ -828,11 +828,11 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 24,
-    .species = SPECIES_SANDSLASH_ALOLAN,
+    .lvl = 23,
+    .species = SPECIES_GOLETT_MARYAN,
     .heldItem = ITEM_EXPERT_BELT,
     .ability = ABILITY_SLUSH_RUSH,
-    .moves = {MOVE_ICICLE_SPEAR, MOVE_METAL_CLAW, MOVE_BULLDOZE, MOVE_HAIL}
+    .moves = {MOVE_ICE_BALL, MOVE_SHADOW_PUNCH, MOVE_BULLDOZE, MOVE_ICE_SHARD}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -848,7 +848,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .species = SPECIES_LAPRAS,
     .heldItem = ITEM_SITRUS_BERRY,
     .ability = ABILITY_ICE_BODY,
-    .moves = {MOVE_WATER_PULSE, MOVE_HAIL, MOVE_AVALANCHE, MOVE_CONFUSE_RAY}
+    .moves = {MOVE_WATER_PULSE, MOVE_HAIL, MOVE_ICE_SHARD, MOVE_CONFUSE_RAY}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
