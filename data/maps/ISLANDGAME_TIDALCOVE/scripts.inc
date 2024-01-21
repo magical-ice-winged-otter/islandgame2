@@ -202,20 +202,6 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top::
 	return
 
 
-ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO::
-	lock
-	faceplayer
-	msgbox ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO_Text_0, MSGBOX_NPC
-	return
-
-
-ISLANDGAME_TIDALCOVE_jujalos::
-	lock
-	faceplayer
-	msgbox ISLANDGAME_TIDALCOVE_jujalos_Text_0, MSGBOX_NPC
-	return
-
-
 ISLANDGAME_TIDALCOVE_Interact_EntranceSign_Text_0:
 	.string "TIDALCOVE\n"
 	.string "Crack open a cold one on our beach!$"
@@ -338,12 +324,3 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top_Text_0:
 	.string "challenge, or our beautiful beaches.\p"
 	.string "I'm all for it. I'm glad to see so many\n"
 	.string "people enthusiastic about our city!$"
-
-ISLANDGAME_TIDALCOVE_THANKYOUFORPLAYINGTHEDEMO_Text_0:
-	.string "Hello player! Thank you for playing the\n"
-	.string "demo of Pokémon: Wings of Chaos!\p"
-	.string "We hope you enjoyed it. Stay tuned for\n"
-	.string "future updates! :D$"
-
-ISLANDGAME_TIDALCOVE_jujalos_Text_0:
-	.string "janx 4 plein$"

@@ -58,11 +58,11 @@ static const u16 sTimeOfDayTints[][3] = {
 
 u8 GetCurrentTimeOfDay(void)
 {
-    if (gLocalTime.hours < HOUR_MORNING)
+    if (gLocalTime.hours < MORNING_HOUR_BEGIN)
         return TIME_NIGHT;
-    else if (gLocalTime.hours < HOUR_DAY)
+    else if (gLocalTime.hours < DAY_HOUR_BEGIN)
         return TIME_MORNING;
-    else if (gLocalTime.hours < HOUR_NIGHT)
+    else if (gLocalTime.hours < NIGHT_HOUR_BEGIN)
         return TIME_DAY;
 
     return TIME_NIGHT;

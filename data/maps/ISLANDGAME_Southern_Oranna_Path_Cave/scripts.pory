@@ -18,6 +18,7 @@ script ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
             setflag(FLAG_S_ORANNA_PATH_ABSOL_DEFEATED)
             goto(Common_EventScript_RemoveStaticPokemon)

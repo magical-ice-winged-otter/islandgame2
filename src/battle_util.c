@@ -3167,7 +3167,7 @@ u8 DoBattlerEndTurnEffects(void)
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_SEA_OF_FIRE_DAMAGE:
-            if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SEA_OF_FIRE)
+            if (IsBattlerAlive(battler) && gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SEA_OF_FIRE)
             {
                 gBattleMoveDamage = gBattleMons[battler].maxHP / 8;
                 BtlController_EmitStatusAnimation(battler, BUFFER_A, FALSE, STATUS1_BURN);
@@ -8169,6 +8169,9 @@ u8 IsMonDisobedient(void)
     s32 calc;
     u8 obedienceLevel = 0;
     u8 levelReferenced;
+
+    // island-game: disable level disobedience entirely
+    return 0;
 
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
         return 0;

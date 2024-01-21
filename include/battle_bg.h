@@ -10,6 +10,9 @@ struct BattleBackground
     const void *palette;
 };
 
+void LoadBattleTerrainGfx(u16);
+u8 GetBattleTerrainByMapScene(u8);
+
 void BattleInitBgsAndWindows(void);
 void InitBattleBgsVideo(void);
 void LoadBattleMenuWindowGfx(void);

@@ -1221,9 +1221,9 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
 //island-game : Pokeball Items
-#define FLAG_ROOM3_ITEM                                             0x493 // SS Rain: Rare Candy
-#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 // Verdant Woods
-#define FLAG_FRESA_FARMS_SHROOM                                     0x495 // Fresa Farms
+#define FLAG_ROOM3_ITEM                                             0x493 
+#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 
+#define FLAG_FRESA_FARMS_SHROOM                                     0x495 
 #define FLAG_VERDANT_PATH_TIMER_BALL                                0x496 
 #define FLAG_ITEM_COP_2_MOON_STONE                                  0x497
 #define FLAG_ITEM_MINTY_MEADOWS_1                                   0x498
@@ -1246,9 +1246,9 @@
 #define FLAG_MINTY_MEADOWS_X_ATTACK                                 0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_CARBOS                                           0x4AB 
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
+#define FLAG_SS_RAIN_TM_VOLT_SWITCH                                 0x4AC // temporarily is calcium until tms are added
+#define FLAG_SS_RAIN_LEFTOVERS                                      0x4AD
+#define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
 #define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
@@ -1523,6 +1523,7 @@
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
 //camp persi: first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
+//camp persi: berry shop npc gives you free berries
 #define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B)
 //minty meadows: rival fight
 #define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
@@ -1556,9 +1557,12 @@
 #define FLAG_TIDALCOVE_GYM_SPONSOR_TALK             (SYSTEM_FLAGS + 0x9A)
 //rosevale: arthur's sister gives you amulet coin
 #define FLAG_ROSEVALE_AMULET_COIN_GIFT              (SYSTEM_FLAGS + 0x9B)
-#define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
-#define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
+//tidalcove: beat ruka in gym battle
+#define FLAG_TIDALCOVE_RUKA_DEFEATED                (SYSTEM_FLAGS + 0x9C)
+//ss rain: defeat rotom in ss rain basement
+#define FLAG_SS_RAIN_ROTOM_DEFEATED                 (SYSTEM_FLAGS + 0x9D)
+//verdant woods: defeat mimikyu in spooky house
+#define FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED         (SYSTEM_FLAGS + 0x9E)
 #define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
 #define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
 #define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag

@@ -801,7 +801,7 @@ static const struct TrainerMon sParty_TidalcoveGym3[] = {
     .lvl = 22,
     .species = SPECIES_DELIBIRD,
     .heldItem = ITEM_LIFE_ORB,
-    .ability = ABILITY_HUSTLE,
+    .ability = ABILITY_INSOMNIA,
     .moves = {MOVE_DRILL_PECK, MOVE_ICE_PUNCH, MOVE_ICE_SHARD, MOVE_FAKE_OUT}
     }
 };
@@ -820,27 +820,11 @@ static const struct TrainerMon sParty_TidalcoveGym4[] = {
 static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 24,
-    .species = SPECIES_NINETALES_ALOLAN,
+    .lvl = 23,
+    .species = SPECIES_AMAURA,
     .heldItem = ITEM_LIGHT_CLAY,
     .ability = ABILITY_SNOW_WARNING,
-    .moves = {MOVE_DAZZLING_GLEAM, MOVE_AURORA_VEIL, MOVE_AURORA_BEAM, MOVE_CONFUSE_RAY}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_SPHEAL,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_ICE_BODY,
-    .moves = {MOVE_WATER_PULSE, MOVE_AURORA_BEAM, MOVE_WATER_SPORT, MOVE_YAWN}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_SNOVER,
-    .heldItem = ITEM_ICY_ROCK,
-    .ability = ABILITY_SNOW_WARNING,
-    .moves = {MOVE_LEECH_SEED, MOVE_ICY_WIND, MOVE_RAZOR_LEAF, MOVE_GRASS_WHISTLE}
+    .moves = {MOVE_ANCIENT_POWER, MOVE_AURORA_VEIL, MOVE_AURORA_BEAM, MOVE_THUNDER_WAVE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -849,6 +833,22 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .heldItem = ITEM_EXPERT_BELT,
     .ability = ABILITY_SLUSH_RUSH,
     .moves = {MOVE_ICICLE_SPEAR, MOVE_METAL_CLAW, MOVE_BULLDOZE, MOVE_HAIL}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
+    .species = SPECIES_VANILLITE,
+    .heldItem = ITEM_ICY_ROCK,
+    .ability = ABILITY_SNOW_WARNING,
+    .moves = {MOVE_WATER_PULSE, MOVE_ICY_WIND, MOVE_ICE_SHARD, MOVE_AURORA_VEIL}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
+    .species = SPECIES_LAPRAS,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_ICE_BODY,
+    .moves = {MOVE_WATER_PULSE, MOVE_HAIL, MOVE_AVALANCHE, MOVE_CONFUSE_RAY}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),

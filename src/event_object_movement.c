@@ -455,6 +455,73 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
+#define OBJ_EVENT_PAL_TAG_NPC_10                  0x1124
+#define OBJ_EVENT_PAL_TAG_NPC_11                  0x1125
+#define OBJ_EVENT_PAL_TAG_NPC_12                  0x1126
+#define OBJ_EVENT_PAL_TAG_NPC_13                  0x1127
+#define OBJ_EVENT_PAL_TAG_NPC_14                  0x1128
+#define OBJ_EVENT_PAL_TAG_NPC_15                  0x1129
+#define OBJ_EVENT_PAL_TAG_NPC_16                  0x1130
+#define OBJ_EVENT_PAL_TAG_NPC_17                  0x1131
+#define OBJ_EVENT_PAL_TAG_NPC_18                  0x1132
+#define OBJ_EVENT_PAL_TAG_NPC_19                  0x1133
+#define OBJ_EVENT_PAL_TAG_NPC_20                  0x1134
+#define OBJ_EVENT_PAL_TAG_NPC_21                  0x1135
+#define OBJ_EVENT_PAL_TAG_NPC_22                  0x1136
+#define OBJ_EVENT_PAL_TAG_NPC_23                  0x1137
+#define OBJ_EVENT_PAL_TAG_NPC_24                  0x1138
+#define OBJ_EVENT_PAL_TAG_NPC_25                  0x1139
+#define OBJ_EVENT_PAL_TAG_NPC_26                  0x1140
+#define OBJ_EVENT_PAL_TAG_NPC_27                  0x1141
+#define OBJ_EVENT_PAL_TAG_NPC_28                  0x1142
+#define OBJ_EVENT_PAL_TAG_NPC_29                  0x1143
+#define OBJ_EVENT_PAL_TAG_NPC_30                  0x1144
+#define OBJ_EVENT_PAL_TAG_NPC_31                  0x1145
+#define OBJ_EVENT_PAL_TAG_NPC_32                  0x1146
+#define OBJ_EVENT_PAL_TAG_NPC_33                  0x1147
+#define OBJ_EVENT_PAL_TAG_NPC_34                  0x1148
+#define OBJ_EVENT_PAL_TAG_NPC_35                  0x1149
+#define OBJ_EVENT_PAL_TAG_NPC_36                  0x1150
+#define OBJ_EVENT_PAL_TAG_NPC_37                  0x1151
+#define OBJ_EVENT_PAL_TAG_NPC_38                  0x1152
+#define OBJ_EVENT_PAL_TAG_NPC_39                  0x1153
+#define OBJ_EVENT_PAL_TAG_NPC_40                  0x1154
+#define OBJ_EVENT_PAL_TAG_NPC_41                  0x1155
+#define OBJ_EVENT_PAL_TAG_NPC_42                  0x1156
+#define OBJ_EVENT_PAL_TAG_NPC_43                  0x1157
+#define OBJ_EVENT_PAL_TAG_NPC_44                  0x1158
+#define OBJ_EVENT_PAL_TAG_NPC_45                  0x1159
+#define OBJ_EVENT_PAL_TAG_NPC_46                  0x1160
+#define OBJ_EVENT_PAL_TAG_NPC_47                  0x1161
+#define OBJ_EVENT_PAL_TAG_NPC_48                  0x1162
+#define OBJ_EVENT_PAL_TAG_NPC_49                  0x1163
+#define OBJ_EVENT_PAL_TAG_NPC_50                  0x1164
+#define OBJ_EVENT_PAL_TAG_NPC_51                  0x1165
+#define OBJ_EVENT_PAL_TAG_NPC_52                  0x1166
+#define OBJ_EVENT_PAL_TAG_NPC_53                  0x1167
+#define OBJ_EVENT_PAL_TAG_NPC_54                  0x1168
+#define OBJ_EVENT_PAL_TAG_NPC_55                  0x1169
+#define OBJ_EVENT_PAL_TAG_NPC_56                  0x1170
+#define OBJ_EVENT_PAL_TAG_NPC_57                  0x1171
+#define OBJ_EVENT_PAL_TAG_NPC_58                  0x1172
+#define OBJ_EVENT_PAL_TAG_NPC_59                  0x1173
+#define OBJ_EVENT_PAL_TAG_NPC_60                  0x1174
+#define OBJ_EVENT_PAL_TAG_NPC_61                  0x1175
+#define OBJ_EVENT_PAL_TAG_NPC_62                  0x1176
+#define OBJ_EVENT_PAL_TAG_NPC_63                  0x1177
+#define OBJ_EVENT_PAL_TAG_NPC_64                  0x1178
+#define OBJ_EVENT_PAL_TAG_NPC_65                  0x1179
+#define OBJ_EVENT_PAL_TAG_NPC_66                  0x1180
+#define OBJ_EVENT_PAL_TAG_NPC_67                  0x1181
+#define OBJ_EVENT_PAL_TAG_NPC_68                  0x1182
+#define OBJ_EVENT_PAL_TAG_NPC_69                  0x1183
+#define OBJ_EVENT_PAL_TAG_NPC_70                  0x1184
+#define OBJ_EVENT_PAL_TAG_NPC_71                  0x1185
+#define OBJ_EVENT_PAL_TAG_NPC_72                  0x1186
+#define OBJ_EVENT_PAL_TAG_NPC_73                  0x1187
+#define OBJ_EVENT_PAL_TAG_NPC_74                  0x1188
+#define OBJ_EVENT_PAL_TAG_NPC_75                  0x1189
+
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 //Pokemon overworlds
@@ -1351,6 +1418,46 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+    {gObjectEventPal_Boy4,                  OBJ_EVENT_PAL_TAG_NPC_10},
+    {gObjectEventPal_Boy5,                  OBJ_EVENT_PAL_TAG_NPC_11},
+    {gObjectEventPal_Girl4,                 OBJ_EVENT_PAL_TAG_NPC_12},
+    {gObjectEventPal_GroundSwimmerF,        OBJ_EVENT_PAL_TAG_NPC_13},
+    {gObjectEventPal_GroundSwimmerM,        OBJ_EVENT_PAL_TAG_NPC_14},
+    {gObjectEventPal_Man6,                  OBJ_EVENT_PAL_TAG_NPC_15},
+    {gObjectEventPal_Police,                OBJ_EVENT_PAL_TAG_NPC_16},
+    {gObjectEventPal_PsychicF,              OBJ_EVENT_PAL_TAG_NPC_17},
+    {gObjectEventPal_RangerF,               OBJ_EVENT_PAL_TAG_NPC_18},
+    {gObjectEventPal_RangerM,               OBJ_EVENT_PAL_TAG_NPC_19},
+    {gObjectEventPal_Roughneck,             OBJ_EVENT_PAL_TAG_NPC_20},
+    {gObjectEventPal_RuinManiac,            OBJ_EVENT_PAL_TAG_NPC_21},
+    {gObjectEventPal_Scientist3,            OBJ_EVENT_PAL_TAG_NPC_22},
+    {gObjectEventPal_TuberFSwimming,        OBJ_EVENT_PAL_TAG_NPC_23},
+    {gObjectEventPal_Worker,                OBJ_EVENT_PAL_TAG_NPC_24},
+    {gObjectEventPal_BlackBelt,             OBJ_EVENT_PAL_TAG_NPC_25},
+    {gObjectEventPal_BugCatcher,            OBJ_EVENT_PAL_TAG_NPC_26},
+    {gObjectEventPal_Camper,                OBJ_EVENT_PAL_TAG_NPC_27},
+    {gObjectEventPal_ExpertM,               OBJ_EVENT_PAL_TAG_NPC_28},
+    {gObjectEventPal_FatMan,                OBJ_EVENT_PAL_TAG_NPC_29},
+    {gObjectEventPal_Fisherman,             OBJ_EVENT_PAL_TAG_NPC_30},
+    {gObjectEventPal_Gentleman,             OBJ_EVENT_PAL_TAG_NPC_31},
+    {gObjectEventPal_Girl3,                 OBJ_EVENT_PAL_TAG_NPC_32},
+    {gObjectEventPal_Hiker,                 OBJ_EVENT_PAL_TAG_NPC_33},
+    {gObjectEventPal_Lass,                  OBJ_EVENT_PAL_TAG_NPC_34},
+    {gObjectEventPal_LittleBoy,             OBJ_EVENT_PAL_TAG_NPC_35},
+    {gObjectEventPal_LittleGirl,            OBJ_EVENT_PAL_TAG_NPC_36},
+    {gObjectEventPal_Picnicker,             OBJ_EVENT_PAL_TAG_NPC_37},
+    {gObjectEventPal_PsychicM,              OBJ_EVENT_PAL_TAG_NPC_38},
+    {gObjectEventPal_Sailor,                OBJ_EVENT_PAL_TAG_NPC_39},
+    {gObjectEventPal_SwimmerF,              OBJ_EVENT_PAL_TAG_NPC_40},
+    {gObjectEventPal_SwimmerM,              OBJ_EVENT_PAL_TAG_NPC_41},
+    {gObjectEventPal_TuberF,                OBJ_EVENT_PAL_TAG_NPC_42},
+    {gObjectEventPal_TuberM,                OBJ_EVENT_PAL_TAG_NPC_43},
+    {gObjectEventPal_TuberMSwimming,        OBJ_EVENT_PAL_TAG_NPC_44},
+    {gObjectEventPal_Youngster,             OBJ_EVENT_PAL_TAG_NPC_45},
+    {gObjectEventPal_Man1,                  OBJ_EVENT_PAL_TAG_NPC_47},
+
+
+
     //Pokemon overworlds
     {gObjectEventPalette_Pokemon_Species_001, OBJ_EVENT_PAL_TAG_POKEMON_001},
 	{gObjectEventPalette_Pokemon_Species_002, OBJ_EVENT_PAL_TAG_POKEMON_002},

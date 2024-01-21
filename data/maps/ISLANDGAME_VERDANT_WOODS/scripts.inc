@@ -98,11 +98,17 @@ ISLANDGAME_VERDANT_WOODS_EventScript_NPC1::
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC2::
 	lock
 	faceplayer
+	goto_if_unset FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED, ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_2
+	msgbox ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_Text_0
+ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_1:
+	release
+	return
+
+ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_2:
 	msgbox ISLANDGAME_VERDANT_WOODS_NPC2Talk
 	playmoncry SPECIES_MIMIKYU, CRY_MODE_ENCOUNTER
 	waitmoncry
-	release
-	return
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_1
 
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC3::
@@ -132,11 +138,17 @@ ISLANDGAME_VERDANT_WOODS_EventScript_SIGN1::
 
 ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2::
 	lock
+	goto_if_unset FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED, ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_2
+	msgbox ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_Text_0
+ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_1:
+	release
+	return
+
+ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_2:
 	msgbox ISLANDGAME_VERDANT_WOODS_SIGN2_DESC
 	playmoncry SPECIES_MIMIKYU, CRY_MODE_ENCOUNTER
 	waitmoncry
-	release
-	return
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_1
 
 
 ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_0:
@@ -148,10 +160,16 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1:
 	.string "doesn't feel like wood at all...)\p"
 	.string "{COLOR DARK_GRAY}Water the strange-looking tree?$"
 
+ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_Text_0:
+	.string "Owww, my head, it hurts...$"
+
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0:
 	.string "{COLOR DARK_GRAY}That's a Miracle Seed. It's not good for\n"
 	.string "cooking, but it's great for powering up\l"
 	.string "grass-type Pokémon in a battle!$"
+
+ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_Text_0:
+	.string "NO TRESPASSING$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Text::
 	.string "{COLOR DARK_GRAY}Bug Pokémon are the best! They evolve\n"
