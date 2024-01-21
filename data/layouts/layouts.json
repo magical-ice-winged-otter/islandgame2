@@ -4637,7 +4637,7 @@
       "width": 30,
       "height": 31,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_Forest",
+      "secondary_tileset": "gTileset_islandgame_oranna_maplegrove",
       "border_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MINTY_MEADOWS_3/map.bin"
     },
@@ -4706,8 +4706,8 @@
       "name": "ISLANDGAME_VERDANT_WOODS_Layout",
       "width": 50,
       "height": 50,
-      "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_Forest",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
+      "secondary_tileset": "gTileset_islandgame_oranna_verdant",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS/map.bin"
     },
