@@ -892,7 +892,7 @@ const struct Tileset gTileset_IslandgameGeneral =
     .metatiles = gMetatiles_IslandgameGeneral,
     .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
     .paletteOverrides = gTilesetPalOverrides_Island_General,
-    .callback = InitTilesetIsland_Anim_General,
+    .callback = InitTilesetAnim_islandgame_oranna_general, // island todo, this is wrong
 };
 
 const struct Tileset gTileset_islandgame_oranna_persi =
@@ -1013,7 +1013,7 @@ const struct Tileset gTileset_islandgame_oranna_general =
     .palettes = gTilesetPalettes_islandgame_oranna_general,
     .metatiles = gMetatiles_islandgame_oranna_general,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_general,
-    .callback = NULL,
+    .callback = InitTilesetAnim_islandgame_oranna_general,
 };
 
 const struct Tileset gTileset_islandgame_oranna_northern_path =
