@@ -5,6 +5,51 @@ FLDEFFGFXDIR := graphics/field_effects/pics
 $(OBJEVENTGFXDIR)/people/little_boy_camper.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
+$(OBJEVENTGFXDIR)/people/boy_4.4bpp: graphics/object_events/pics/people/boy_4.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/boy_5.4bpp: graphics/object_events/pics/people/boy_5.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/girl_4.4bpp: graphics/object_events/pics/people/girl_4.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ground_swimmer_f.4bpp: graphics/object_events/pics/people/ground_swimmer_f.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ground_swimmer_m.4bpp: graphics/object_events/pics/people/ground_swimmer_m.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/man_6.4bpp: graphics/object_events/pics/people/man_6.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/police.4bpp: graphics/object_events/pics/people/police.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/psychic_f.4bpp: graphics/object_events/pics/people/psychic_f.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ranger_f.4bpp: graphics/object_events/pics/people/ranger_f.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ranger_m.4bpp: graphics/object_events/pics/people/ranger_m.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/roughneck.4bpp: graphics/object_events/pics/people/roughneck.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ruin_maniac.4bpp: graphics/object_events/pics/people/ruin_maniac.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/scientist_3.4bpp: graphics/object_events/pics/people/scientist_3.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/tuber_f_swimming.4bpp: graphics/object_events/pics/people/tuber_f_swimming.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/worker.4bpp: graphics/object_events/pics/people/worker.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/brendan/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

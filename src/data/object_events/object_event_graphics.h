@@ -1,5 +1,21 @@
 // island-game
 const u32 gObjectEventPic_LittleBoyCamper[] = INCBIN_U32("graphics/object_events/pics/people/little_boy_camper.4bpp");
+const u32 gObjectEventPic_Boy4[] = INCBIN_U32("graphics/object_events/pics/people/boy_4.4bpp");
+const u32 gObjectEventPic_Boy5[] = INCBIN_U32("graphics/object_events/pics/people/boy_5.4bpp");
+const u32 gObjectEventPic_Girl4[] = INCBIN_U32("graphics/object_events/pics/people/girl_4.4bpp");
+const u32 gObjectEventPic_GroundSwimmerF[] = INCBIN_U32("graphics/object_events/pics/people/ground_swimmer_f.4bpp");
+const u32 gObjectEventPic_GroundSwimmerM[] = INCBIN_U32("graphics/object_events/pics/people/ground_swimmer_m.4bpp");
+const u32 gObjectEventPic_Man6[] = INCBIN_U32("graphics/object_events/pics/people/man_6.4bpp");
+const u32 gObjectEventPic_Police[] = INCBIN_U32("graphics/object_events/pics/people/police.4bpp");
+const u32 gObjectEventPic_PsychicF[] = INCBIN_U32("graphics/object_events/pics/people/psychic_f.4bpp");
+const u32 gObjectEventPic_RangerF[] = INCBIN_U32("graphics/object_events/pics/people/ranger_f.4bpp");
+const u32 gObjectEventPic_RangerM[] = INCBIN_U32("graphics/object_events/pics/people/ranger_m.4bpp");
+const u32 gObjectEventPic_Roughneck[] = INCBIN_U32("graphics/object_events/pics/people/roughneck.4bpp");
+const u32 gObjectEventPic_RuinManiac[] = INCBIN_U32("graphics/object_events/pics/people/ruin_maniac.4bpp");
+const u32 gObjectEventPic_Scientist3[] = INCBIN_U32("graphics/object_events/pics/people/scientist_3.4bpp");
+const u32 gObjectEventPic_TuberFSwimming[] = INCBIN_U32("graphics/object_events/pics/people/tuber_f_swimming.4bpp");
+const u32 gObjectEventPic_Worker[] = INCBIN_U32("graphics/object_events/pics/people/worker.4bpp");
+
 
 const u32 gObjectEventPic_BrendanNormal[] = INCBIN_U32("graphics/object_events/pics/people/brendan/walking.4bpp");
 const u32 gObjectEventPic_BrendanRunning[] = INCBIN_U32("graphics/object_events/pics/people/brendan/running.4bpp");

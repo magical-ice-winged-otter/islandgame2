@@ -132,6 +132,10 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1::
 	playse SE_M_NIGHTMARE
 	waitse
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	addobject 1
+	setobjectxy 1, 4, 8
+	addobject 2
+	setobjectxy 2, 5, 8
 	applymovement 1, spookyApproach
 	applymovement 2, spookyApproach
 	waitmovement 0
