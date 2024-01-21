@@ -5356,7 +5356,7 @@
       "name": "ISLANDGAME_SS_RAIN_BASEMENT_Layout",
       "width": 20,
       "height": 15,
-      "primary_tileset": "gTileset_FireRed_General_Test",
+      "primary_tileset": "gTileset_islandgame_ss_rain_general",
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/ISLANDGAME_SS_RAIN_BASEMENT/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_SS_RAIN_BASEMENT/map.bin"
