@@ -135,7 +135,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CHAMPION_WALLACE,
+        .trainerPic = TRAINER_PIC_JONAS,
         .trainerName = _("Jonas"),
         .items = {ITEM_ENERGY_POWDER, ITEM_HEAL_POWDER},
         .doubleBattle = FALSE,
@@ -297,7 +297,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEAF,
+        .trainerPic = TRAINER_PIC_AUDREY,
         .trainerName = _("Audrey"),
         .items = {},
         .doubleBattle = FALSE,
@@ -792,7 +792,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
-        .trainerPic = TRAINER_PIC_ELITE_FOUR_PHOEBE,
+        .trainerPic = TRAINER_PIC_RUKA,
         .trainerName = _("Ruka"),
         .items = {},
         .doubleBattle = FALSE,
@@ -808,7 +808,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_WALLY,
+        .trainerPic = TRAINER_PIC_ARTHUR,
         .trainerName = _("Arthur"),
         .items = {},
         .doubleBattle = FALSE,
@@ -821,7 +821,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_ADMIN_F,
+        .trainerPic = TRAINER_PIC_EDEA,
         .trainerName = _("Edea"),
         .items = {ITEM_SUPER_POTION},
         .doubleBattle = FALSE,

@@ -370,6 +370,35 @@ static const union AnimCmd *const sAnims_RubySapphireMay[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Arthur[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Edea[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Audrey[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Jonas[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Ruka[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Olivia[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Oliver[] ={
+    sAnim_GeneralFrame0,
+};
+
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -465,4 +494,13 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_LEAF] = sAnims_Leaf,
     [TRAINER_PIC_RS_BRENDAN] = sAnims_RubySapphireBrendan,
     [TRAINER_PIC_RS_MAY] = sAnims_RubySapphireMay,
+
+    // island-game
+    [TRAINER_PIC_ARTHUR] = sAnims_Arthur,
+    [TRAINER_PIC_EDEA] = sAnims_Edea,
+    [TRAINER_PIC_AUDREY] = sAnims_Audrey,
+    [TRAINER_PIC_JONAS] = sAnims_Jonas,
+    [TRAINER_PIC_RUKA] = sAnims_Ruka,
+    [TRAINER_PIC_OLIVIA] = sAnims_Olivia,
+    [TRAINER_PIC_OLIVER] = sAnims_Oliver,
 };
