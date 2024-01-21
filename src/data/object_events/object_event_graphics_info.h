@@ -20,7 +20,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleBoyCamper = 
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy4 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_10,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -40,7 +40,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy4 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy5 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_11,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -59,7 +59,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy5 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl4 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_12,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -78,7 +78,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl4 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroundSwimmerF = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_13,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -97,7 +97,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroundSwimmerF = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroundSwimmerM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_14,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -116,7 +116,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroundSwimmerM = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man6 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_15,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -135,7 +135,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man6 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_16,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -154,7 +154,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicF = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_17,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -173,7 +173,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicF = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_18,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -192,7 +192,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_19,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -211,7 +211,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerM = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_20,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -230,7 +230,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_21,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -249,7 +249,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist3 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_22,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -268,7 +268,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist3 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberFSwimming = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_23,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -287,7 +287,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberFSwimming = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_24,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -554,7 +554,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleBoy = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleGirl = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_36,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 128,
     .width = 16,
@@ -592,7 +592,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy3 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl3 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_32,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -649,7 +649,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman1 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FatMan = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_29,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -687,7 +687,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanF = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man1 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_47,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -725,7 +725,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_28,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -744,7 +744,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertM = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertF = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_28,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -915,7 +915,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldWoman = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Camper = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_27,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -934,7 +934,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Camper = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Picnicker = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_37,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -991,7 +991,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman5 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_45,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1010,7 +1010,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcher = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_26,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1029,7 +1029,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcher = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_38,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1124,7 +1124,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RayquazaStill = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_41,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1143,7 +1143,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerM = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_40,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1162,7 +1162,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlackBelt = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_25,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1219,7 +1219,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist1 = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_34,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1238,7 +1238,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_31,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1257,7 +1257,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sailor = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_39,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1276,7 +1276,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sailor = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fisherman = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_30,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1333,7 +1333,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RunningTriathleteF
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberF = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_42,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1352,7 +1352,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberF = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_43,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -1371,7 +1371,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberM = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hiker = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_33,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -2910,7 +2910,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wally = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireLittleBoy = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_35,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 128,
     .width = 16,
@@ -4411,7 +4411,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KecleonBridgeShado
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberMSwimming = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_44,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
