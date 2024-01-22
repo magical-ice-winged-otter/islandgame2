@@ -1,6 +1,7 @@
 #include "global.h"
 #include "islandgame.h"
 #include "islandgame_save_upgrade.h"
+#include "load_save.h"
 
 static void UpgradeSaveV0ToV1();
 
@@ -19,6 +20,10 @@ void UpgradeSave()
     if (gSaveBlock1Ptr->saveVersion == 0) {
         UpgradeSaveV0ToV1();
     }
+
+    // due to potential tileset and id stuff, just reset to last heal place
+    gSaveBlock1Ptr->continueGameWarp = gSaveBlock1Ptr->lastHealLocation;
+    SetContinueGameWarpStatus();
 }
 
 static u32 GetSaveBlock1Offset(u8* address)
