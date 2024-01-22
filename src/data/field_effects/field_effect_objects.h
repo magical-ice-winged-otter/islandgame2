@@ -1,5 +1,6 @@
 const struct SpritePalette gSpritePalette_GeneralFieldEffect0 = {gFieldEffectObjectPalette0, FLDEFF_PAL_TAG_GENERAL_0};
 const struct SpritePalette gSpritePalette_GeneralFieldEffect1 = {gFieldEffectObjectPalette1, FLDEFF_PAL_TAG_GENERAL_1};
+const struct SpritePalette gSpritePalette_TallGrassEffect     = {gFieldEffectPal_TallGrass, FLDEFF_PAL_TAG_TALL_GRASS};
 
 static const union AnimCmd sAnim_Shadow[] =
 {
@@ -93,7 +94,7 @@ static const union AnimCmd *const sAnimTable_TallGrass[] =
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_TallGrass = {
     .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
+    .paletteTag = FLDEFF_PAL_TAG_TALL_GRASS,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_TallGrass,
     .images = sPicTable_TallGrass,
@@ -325,9 +326,9 @@ static const union AnimCmd *const sAnimTable_JumpTallGrass[] =
     sAnim_JumpTallGrass,
 };
 
-const struct SpriteTemplate gFieldEffectObjectTemplate_JumpTallGrass = {
+const struct SpriteTemplate gFieldEffectObjectTemplate_JumpTallGrass = { //note: this is incomplete - rain dance
     .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_GENERAL_1,
+    .paletteTag = FLDEFF_PAL_TAG_TALL_GRASS,
     .oam = &gObjectEventBaseOam_16x8,
     .anims = sAnimTable_JumpTallGrass,
     .images = sPicTable_JumpTallGrass,

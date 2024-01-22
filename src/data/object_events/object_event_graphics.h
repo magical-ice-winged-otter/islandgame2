@@ -57,7 +57,12 @@ const u16 gObjectEventPal_TuberMSwimming[] = INCBIN_U16("graphics/object_events/
 const u16 gObjectEventPal_Youngster[] = INCBIN_U16("graphics/object_events/pics/people/youngster.gbapal");
 const u16 gObjectEventPal_Man1[] = INCBIN_U16("graphics/object_events/pics/people/man_1.gbapal");
 
-
+//field effects,
+//LINK - src/data/field_effects/field_effect_objects.h
+//LINK - data/field_effect_scripts.s
+//tall grass
+const u32 gFieldEffectObjectPic_TallGrass[] = INCBIN_U32("graphics/field_effects/pics/tall_grass.4bpp");
+const u16 gFieldEffectPal_TallGrass[] = INCBIN_U16("graphics/field_effects/pics/tall_grass.gbapal");
 
 // islandgame-end
 
@@ -387,7 +392,6 @@ const u32 gFieldEffectObjectPic_JumpLongGrass[] = INCBIN_U32("graphics/field_eff
 const u32 gFieldEffectObjectPic_Unknown17[] = INCBIN_U32("graphics/field_effects/pics/unknown_17.4bpp");
 const u32 gFieldEffectObjectPic_UnusedGrass2[] = INCBIN_U32("graphics/field_effects/pics/unused_grass_2.4bpp");
 const u32 gFieldEffectObjectPic_LongGrass[] = INCBIN_U32("graphics/field_effects/pics/long_grass.4bpp");
-const u32 gFieldEffectObjectPic_TallGrass[] = INCBIN_U32("graphics/field_effects/pics/tall_grass.4bpp");
 const u32 gFieldEffectObjectPic_ShortGrass[] = INCBIN_U32("graphics/field_effects/pics/short_grass.4bpp");
 const u32 gFieldEffectObjectPic_SandFootprints[] = INCBIN_U32("graphics/field_effects/pics/sand_footprints.4bpp");
 const u32 gFieldEffectObjectPic_DeepSandFootprints[] = INCBIN_U32("graphics/field_effects/pics/deep_sand_footprints.4bpp");
