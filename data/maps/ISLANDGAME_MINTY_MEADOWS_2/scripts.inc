@@ -651,6 +651,9 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	applymovement 11, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_10
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_11
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_12
 	closemessage
 	applymovement 11, Phase3_RivalRunsOff
 	applymovement 11, Common_Movement_Delay48
@@ -969,6 +972,9 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9:
 	.string "should to! You'd be a great competitor!\p"
 	.string "{COLOR DARK_GRAY}To qualify, you'll have to complete the\n"
 	.string "Marya Gym Challenge!\p"
+	.string "$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_10:
 	.string "{COLOR DARK_GRAY}That is, you'll have to travel across\n"
 	.string "the three main islands of Oranna,\l"
 	.string "Lumine, and Minerva...\p"
@@ -978,6 +984,9 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9:
 	.string "festival to begin tomorrow!\p"
 	.string "{COLOR DARK_GRAY}Huh? Oh, you're right. Neither of us\n"
 	.string "would qualify if it started tomorrow...\p"
+	.string "$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_11:
 	.string "{COLOR DARK_GRAY}Well, I have to report back to the\n"
 	.string "professor with my findings.\p"
 	.string "{COLOR DARK_GRAY}But {PLAYER}, you should go west of\n"
@@ -988,6 +997,9 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9:
 	.string "top of being a gym leader, she's used to\l"
 	.string "be a professional swimmer and swimsuit\l"
 	.string "model!\p"
+	.string "$"
+
+ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_12:
 	.string "{COLOR DARK_GRAY}-sigh- I wish I could be as confident as\n"
 	.string "her...\p"
 	.string "{COLOR DARK_GRAY}Oops, there I go rambling again...\n"

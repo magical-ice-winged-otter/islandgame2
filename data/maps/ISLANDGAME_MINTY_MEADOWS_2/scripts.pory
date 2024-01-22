@@ -698,27 +698,31 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
 	waitmovement(0)
     applymovement(RIVAL_OW_ID, Common_Movement_Delay48)
     waitmovement(0)
-    msgbox(
-        format(
+    msgbox(format(
             "{COLOR DARK_GRAY}Eeeh!? You don't know about the tournament!? \p"
             "{COLOR DARK_GRAY}It's a tournament hosted during the Silverwing Festival where only the best trainers of Marya assemble to compete for the Silverwing Cup! \p"
             "{COLOR DARK_GRAY}I'm taking part in it, and I think you should to! You'd be a great competitor! \p"
             "{COLOR DARK_GRAY}To qualify, you'll have to complete the Marya Gym Challenge! \p"
+    ))
+    msgbox(format(
             "{COLOR DARK_GRAY}That is, you'll have to travel across the three main islands of Oranna, Lumine, and Minerva... \p"
             "{COLOR DARK_GRAY}...and challenge their respective gym leaders in battle! \p"
             "{COLOR DARK_GRAY}Ooh... I just can't wait! I just want the festival to begin tomorrow! \p"
             "{COLOR DARK_GRAY}Huh? Oh, you're right. Neither of us would qualify if it started tomorrow... \p"
+    ))
+    msgbox(format(
             "{COLOR DARK_GRAY}Well, I have to report back to the professor with my findings. \p"
             "{COLOR DARK_GRAY}But {PLAYER}, you should go west of Maplegrove and head up to Tidalcove! \p"
             "{COLOR DARK_GRAY}That's where you'll find the first gym leader: Ruka! \p"
             "{COLOR DARK_GRAY}Ruka is really famous around here. On top of being a gym leader, she's used to be a professional swimmer and swimsuit model! \p"
+    ))
+    msgbox(format(
             "{COLOR DARK_GRAY}-sigh- I wish I could be as confident as her...\p"
             "{COLOR DARK_GRAY}Oops, there I go rambling again... Anyways! Bye-bye for now, {PLAYER}! \p"
             "{COLOR DARK_GRAY}Oh! I almost forgot! Let's exchange phone numbers so we can keep in touch! \p"
             "{COLOR DARK_GRAY}Mhm... alright... and there we go! All set! \p"
             "{COLOR DARK_GRAY}Okie, goodbye for real now! Let's meet up again soon!"
-        )
-    )
+    ))
 
     closemessage
     applymovement(RIVAL_OW_ID, Phase3_RivalRunsOff)
