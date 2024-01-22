@@ -825,7 +825,7 @@
 #define METATILE_islandgame_oranna_rosevale_door       0x259
 #define METATILE_islandgame_oranna_tidalcove_door_00   0x22A
 #define METATILE_islandgame_oranna_tidalcove_door_01   0x252
-#define METATILE_islandgame_oranna_tidalcove_door_03   0x295
+#define METATILE_islandgame_oranna_tidalcove_door_gym  0x295
 #define METATILE_islandgame_rosevale_Door              0x3A1
 #define METATILE_islandgame_ss_rain_general_door       0x071
 
