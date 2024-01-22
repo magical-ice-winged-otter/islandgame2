@@ -240,25 +240,6 @@
 #define OBJ_EVENT_GFX_LINK_RS_MAY                236
 #define OBJ_EVENT_GFX_LUGIA                      237
 #define OBJ_EVENT_GFX_HOOH                       238
-//islandgame-start: new ow sprites
-#define NUM_ISLANDGAME_EVENT_GFX_START           OBJ_EVENT_GFX_HOOH
-#define OBJ_EVENT_GFX_BOY_4                      NUM_ISLANDGAME_EVENT_GFX_START + 1
-#define OBJ_EVENT_GFX_BOY_5                      NUM_ISLANDGAME_EVENT_GFX_START + 2
-#define OBJ_EVENT_GFX_GIRL_4                     NUM_ISLANDGAME_EVENT_GFX_START + 3
-#define OBJ_EVENT_GFX_GROUND_SWIMMER_F           NUM_ISLANDGAME_EVENT_GFX_START + 4
-#define OBJ_EVENT_GFX_GROUND_SWIMMER_M           NUM_ISLANDGAME_EVENT_GFX_START + 5
-#define OBJ_EVENT_GFX_MAN_6                      NUM_ISLANDGAME_EVENT_GFX_START + 6
-#define OBJ_EVENT_GFX_POLICE                     NUM_ISLANDGAME_EVENT_GFX_START + 7
-#define OBJ_EVENT_GFX_PSYCHIC_F                  NUM_ISLANDGAME_EVENT_GFX_START + 8
-#define OBJ_EVENT_GFX_RANGER_F                   NUM_ISLANDGAME_EVENT_GFX_START + 9
-#define OBJ_EVENT_GFX_RANGER_M                   NUM_ISLANDGAME_EVENT_GFX_START + 10
-#define OBJ_EVENT_GFX_ROUGHNECK                  NUM_ISLANDGAME_EVENT_GFX_START + 11
-#define OBJ_EVENT_GFX_RUIN_MANIAC                NUM_ISLANDGAME_EVENT_GFX_START + 12
-#define OBJ_EVENT_GFX_SCIENTIST_3                NUM_ISLANDGAME_EVENT_GFX_START + 13
-#define OBJ_EVENT_GFX_TUBER_F_SWIMMING           NUM_ISLANDGAME_EVENT_GFX_START + 14
-#define OBJ_EVENT_GFX_WORKER                     NUM_ISLANDGAME_EVENT_GFX_START + 15
-
-
 
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
@@ -269,7 +250,7 @@
 // object graphics that can be removed. If more graphics are needed, anything that
 // stores graphics ids will need to be increased in size. See wiki entry below:
 // https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion
-#define NUM_REGULAR_OBJ_EVENT_GFX       (OBJ_EVENT_GFX_WORKER + 1)
+#define NUM_REGULAR_OBJ_EVENT_GFX       (OBJ_EVENT_GFX_HOOH + 1)
 
 //Pokemon overworlds
 #define OBJ_EVENT_GFX_POKEMON_001		(NUM_REGULAR_OBJ_EVENT_GFX + 0)
@@ -1122,7 +1103,22 @@
 // island-game
 #define ISLAND_START                             (OBJ_EVENT_GFX_POKEMON_904)
 #define OBJ_EVENT_GFX_LITTLE_BOY_CAMPER          (ISLAND_START + 1)
-#define ISLAND_END                               (ISLAND_START + 1)
+#define OBJ_EVENT_GFX_BOY_4                      ISLAND_START + 2
+#define OBJ_EVENT_GFX_BOY_5                      ISLAND_START + 3
+#define OBJ_EVENT_GFX_GIRL_4                     ISLAND_START + 4
+#define OBJ_EVENT_GFX_GROUND_SWIMMER_F           ISLAND_START + 5
+#define OBJ_EVENT_GFX_GROUND_SWIMMER_M           ISLAND_START + 6
+#define OBJ_EVENT_GFX_MAN_6                      ISLAND_START + 7
+#define OBJ_EVENT_GFX_POLICE                     ISLAND_START + 8
+#define OBJ_EVENT_GFX_PSYCHIC_F                  ISLAND_START + 9
+#define OBJ_EVENT_GFX_RANGER_F                   ISLAND_START + 10
+#define OBJ_EVENT_GFX_RANGER_M                   ISLAND_START + 11
+#define OBJ_EVENT_GFX_ROUGHNECK                  ISLAND_START + 12
+#define OBJ_EVENT_GFX_RUIN_MANIAC                ISLAND_START + 13
+#define OBJ_EVENT_GFX_SCIENTIST_3                ISLAND_START + 14
+#define OBJ_EVENT_GFX_TUBER_F_SWIMMING           ISLAND_START + 15
+#define OBJ_EVENT_GFX_WORKER                     ISLAND_START + 16
+#define ISLAND_END                               OBJ_EVENT_GFX_WORKER
 
 #define NUM_OBJ_EVENT_GFX               (ISLAND_END + 1)
 
