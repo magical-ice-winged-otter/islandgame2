@@ -821,6 +821,7 @@
 #define METATILE_islandgame_oranna_general_door_01     0x0A1
 #define METATILE_islandgame_oranna_maplegrove_door_00  0x244
 #define METATILE_islandgame_oranna_maplegrove_door_01  0x22C
+#define METATILE_islandgame_oranna_northern_path_door  0x219
 #define METATILE_islandgame_oranna_persi_door          0x26C
 #define METATILE_islandgame_oranna_rosevale_door       0x259
 #define METATILE_islandgame_oranna_tidalcove_door_00   0x22A
