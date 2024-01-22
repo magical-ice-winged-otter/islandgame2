@@ -50,6 +50,7 @@ static void TilesetAnim_islandgame_oranna_general(u16);
 static void TilesetAnim_islandgame_oranna_rosevale(u16);
 static void TilesetAnim_islandgame_oranna_cheriport(u16);
 static void TilesetAnim_islandgame_oranna_tidalcove(u16);
+static void TilesetAnim_islandgame_oranna_maplegrove(u16);
 static void TilesetAnim_islandgame_oranna_mt_aurora(u16);
 
 static void QueueAnimTiles_General_Flower(u16);
@@ -94,6 +95,10 @@ static void QueueAnimTiles_islandgame_oranna_cheriport_sandwateredge(u16);
 static void QueueAnimTiles_islandgame_oranna_tidalcove_sandwateredge(u16);
 static void QueueAnimTiles_islandgame_oranna_rosevale_flower(u16);
 static void QueueAnimTiles_islandgame_oranna_mt_aurora_water(u16);
+static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_00(u16);
+static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_01(u16);
+static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_02(u16);
+static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_03(u16);
 
 // todos
 // static void QueueAnimTiles_islandgame_oranna_maplegrove_flower(u16);
@@ -108,6 +113,48 @@ const u16 *const gTilesetAnims_islandgame_oranna_general_flower_00[] = {
     gTilesetAnims_islandgame_oranna_general_flower_00_Frame0,
     gTilesetAnims_islandgame_oranna_general_flower_00_Frame2
 };
+
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_00_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_00/00.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_00_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_00/01.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_00_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_00/02.4bpp");
+
+const u16 *const gTilesetAnims_islandgame_oranna_maplegrove_flower_00[] = {
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_00_Frame0,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_00_Frame1,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_00_Frame0,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_00_Frame2
+};
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_01_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_01/00.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_01_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_01/01.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_01_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_01/02.4bpp");
+
+const u16 *const gTilesetAnims_islandgame_oranna_maplegrove_flower_01[] = {
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_01_Frame0,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_01_Frame1,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_01_Frame0,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_01_Frame2
+};
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_02_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_02/00.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_02_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_02/01.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_02_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_02/02.4bpp");
+
+const u16 *const gTilesetAnims_islandgame_oranna_maplegrove_flower_02[] = {
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_02_Frame0,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_02_Frame1,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_02_Frame0,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_02_Frame2
+};
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_03_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_03/00.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_03_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_03/01.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_maplegrove_flower_03_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_maplegrove/anim/flower_03/02.4bpp");
+
+const u16 *const gTilesetAnims_islandgame_oranna_maplegrove_flower_03[] = {
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_03_Frame0,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_03_Frame1,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_03_Frame0,
+    gTilesetAnims_islandgame_oranna_maplegrove_flower_03_Frame2
+};
+
 
 const u16 gTilesetAnims_islandgame_oranna_general_water_Frame0[] = INCBIN_U16("data/tilesets/primary/islandgame_oranna_general/anim/water/00.4bpp");
 const u16 gTilesetAnims_islandgame_oranna_general_water_Frame1[] = INCBIN_U16("data/tilesets/primary/islandgame_oranna_general/anim/water/01.4bpp");
@@ -871,6 +918,13 @@ void InitTilesetAnim_islandgame_oranna_mt_aurora(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_islandgame_oranna_mt_aurora;
 }
 
+void InitTilesetAnim_islandgame_oranna_maplegrove(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_islandgame_oranna_maplegrove;
+}
+
 void InitTilesetIsland_Anim_Forest(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -924,6 +978,18 @@ static void TilesetAnim_islandgame_oranna_cheriport(u16 timer)
 {
     if (timer % 16 == 0)
         QueueAnimTiles_islandgame_oranna_cheriport_sandwateredge(timer / 16);
+}
+
+static void TilesetAnim_islandgame_oranna_maplegrove(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_islandgame_oranna_maplegrove_flower_00(timer / 16);
+    if (timer % 16 == 3)
+        QueueAnimTiles_islandgame_oranna_maplegrove_flower_01(timer / 16);
+    if (timer % 16 == 6)
+        QueueAnimTiles_islandgame_oranna_maplegrove_flower_02(timer / 16);
+    if (timer % 16 == 9)
+        QueueAnimTiles_islandgame_oranna_maplegrove_flower_03(timer / 16);
 }
 
 static void TilesetAnim_islandgame_oranna_tidalcove(u16 timer)
@@ -1017,6 +1083,27 @@ static void QueueAnimTiles_islandgame_oranna_rosevale_flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_rosevale_flower);
     AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_rosevale_flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 8 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_00(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_maplegrove_flower_00);
+    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_maplegrove_flower_00[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 4 * TILE_SIZE_4BPP);
+}
+static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_01(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_maplegrove_flower_01);
+    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_maplegrove_flower_01[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 4)), 4 * TILE_SIZE_4BPP);
+}
+static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_02(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_maplegrove_flower_02);
+    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_maplegrove_flower_02[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 8)), 4 * TILE_SIZE_4BPP);
+}
+static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_03(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_maplegrove_flower_03);
+    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_maplegrove_flower_03[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_islandgame_oranna_mt_aurora_water(u16 timer)

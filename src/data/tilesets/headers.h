@@ -982,7 +982,7 @@ const struct Tileset gTileset_islandgame_oranna_maplegrove =
     .metatiles = gMetatiles_islandgame_oranna_maplegrove,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_maplegrove,
     .paletteOverrides = gTilesetPalOverrides_Island_OrannaMaplegrove,
-    .callback = NULL,
+    .callback = InitTilesetAnim_islandgame_oranna_maplegrove,
 };
 
 const struct Tileset gTileset_islandgame_oranna_rosevale =
