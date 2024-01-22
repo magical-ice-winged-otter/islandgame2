@@ -26,6 +26,20 @@ static u32 GetSaveBlock1Offset(u8* address)
     return (u32) (address - (u8*) gSaveBlock1Ptr);
 }
 
+static void SaveBlock1InsertBytesAt(void* address, u32 bytes, u32 oldSaveBlockSize)
+{
+    u8* newDataStart = (u8*) address;
+    u8* newDataEnd = newDataStart + bytes;
+
+    DebugPrintf("new start: 0x%x", (u32) newDataEnd);
+
+    // move existing data forward in the block
+    memmove(newDataEnd, newDataStart, oldSaveBlockSize - GetSaveBlock1Offset(newDataStart));
+
+    // clear new data to zero
+    memset(newDataStart, 0, bytes);
+}
+
 static void SaveBlock1IncreaseArraySize(void* array, u32 oldArraySize, u32 newArraySize, u32 oldSaveBlockSize)
 {
     u8* arrayStart;
@@ -52,17 +66,23 @@ static void UpgradeSaveV0ToV1()
     DebugPrintf("Upgrading save from v0 to v1");
     DebugPrintf("dex size: %u", sizeof(gSaveBlock1Ptr->dexSeen));
     DebugPrintf("item size: %u", sizeof(gSaveBlock1Ptr->bagPocket_Items));
-    DEBUG_SAVEBLOCK1(bagPocket_Items);
-    DEBUG_SAVEBLOCK1(savedMusic);
-    DEBUG_SAVEBLOCK1(saveVersion);
-    // breaking changes:
-
-    // match call people inserted into block
+    DebugPrintf("trainer rematch size: %u", sizeof(gSaveBlock1Ptr->trainerRematchStepCounter) + sizeof(gSaveBlock1Ptr->trainerRematches));
+    DebugPrintf("expected start: 0x%x", (u32) &gSaveBlock1Ptr->objectEvents);
 
     // bag items increased 30 -> 96
-    SaveBlock1IncreaseArraySize(&gSaveBlock1Ptr->bagPocket_Items, 120, 372, saveBlockSize);
+    SaveBlock1IncreaseArraySize(gSaveBlock1Ptr->bagPocket_Items, 120, 372, saveBlockSize);
+    saveBlockSize += (372 - 120);
+
+    // match call people inserted into block
+    SaveBlock1InsertBytesAt(&gSaveBlock1Ptr->trainerRematchStepCounter, 104, saveBlockSize);
+    saveBlockSize += 104;
 
     // pokemon count increased ? -> ? (gen 9)
-    SaveBlock1IncreaseArraySize(&gSaveBlock1Ptr->dexSeen, 114, 129, saveBlockSize);
-    SaveBlock1IncreaseArraySize(&gSaveBlock1Ptr->dexCaught, 114, 129, saveBlockSize);
+    SaveBlock1IncreaseArraySize(gSaveBlock1Ptr->dexSeen, 114, 129, saveBlockSize);
+    saveBlockSize += (129 - 114);
+
+    SaveBlock1IncreaseArraySize(gSaveBlock1Ptr->dexCaught, 114, 129, saveBlockSize);
+    saveBlockSize += (129 - 114);
+
+    gSaveBlock1Ptr->saveVersion = 1;
 }
