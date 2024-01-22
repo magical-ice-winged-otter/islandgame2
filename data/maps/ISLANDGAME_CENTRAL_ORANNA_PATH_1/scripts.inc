@@ -12,7 +12,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	setobjectxyperm 4, 0, 0
 	setobjectxyperm 5, 0, 0
 	setobjectxyperm 6, 0, 0
-	setobjectxyperm 1, 46, 35
+	setobjectxyperm 1, 47, 37
 	setobjectxyperm 3, 0, 0
 	setobjectxyperm 2, 0, 0
 	setobjectxyperm 16, 0, 0
