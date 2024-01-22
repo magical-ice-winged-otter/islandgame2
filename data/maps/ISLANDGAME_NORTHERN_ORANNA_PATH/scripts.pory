@@ -63,7 +63,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3 {
         format("The same species of Pokémon can have different forms in different regions.\pI can show you some of them right now!"), 
         "Did you enjoy seeing them?"
     )
-    msgbox(format("Historians believe that Mariyama was once a part of the Alola Region.\pThat's supposedly why our island has so many of their regional variants."), MSGBOX_NPC)
+    msgbox(format("Historians believe that the Maryan Isles were once a part of the Alola.\pThat's supposedly why our island has so many of their regional variants."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4 {

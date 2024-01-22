@@ -8,7 +8,7 @@ gText_Birch_Welcome::
 	.string "$"
 
 gText_Birch_Pokemon::
-	.string "The isles of Marya are a beautiful \n" 
+	.string "The Maryan Isles are a beautiful \n" 
 	.string "paradise filled with hundreds of \n" 
 	.string "different Pokémon species, and plenty \n"
 	.string "more just waiting to be discovered! \p"
@@ -16,11 +16,11 @@ gText_Birch_Pokemon::
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "The isles of Marya are a beautiful \n" 
+	.string "The Maryan Isles are a beautiful \n" 
 	.string "paradise filled with hundreds of \l" 
 	.string "different Pokémon species, and plenty \l"
 	.string "more just waiting to be discovered! \p"
-	.string "But that's not all the isles has to \n"
+	.string "But that's not all Marya has to \n"
 	.string "offer. \p"
 	.string "Our pristine waters, lush forests, and \n"
 	.string "gorgeous sunsets will make for an \l" 
@@ -35,7 +35,7 @@ gText_Birch_MainSpeech::
 	.string "culture and wildlife of the isles. \p" 
 	.string "A history so profound, an ecosystem \n"
 	.string "so diverse... I had to explore it all. \p"
-	.string "So, I moved to the isles, eager to \n"
+	.string "So, I moved to Marya, eager to \n"
 	.string "unravel the secrets that it hid. \p"
 	.string "I've dedicated more than half my life to \n"
 	.string "researching these vibrant lands. \p"
@@ -67,7 +67,7 @@ gText_Birch_YourePlayer::
 	.string "Well, it's a pleasure to meet you, \n"
 	.string "{PLAYER}! \p"
 	.string "I hope you're excited to begin your \n"
-	.string "Pokémon journey here in the isles! \p"
+	.string "Pokémon journey here in Marya! \p"
 	.string "You'll be helping me conduct field \n"
 	.string "research along with another bright \l"
 	.string "young trainer! \p"

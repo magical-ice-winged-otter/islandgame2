@@ -179,10 +179,10 @@ Scientist1Talk_Text::
 
 CocoTalk_Text::
 	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! Welcome to the\n"
-	.string "isles of Mariyama.\p"
+	.string "Maryan Isles!\p"
 	.string "{COLOR DARK_GRAY}My name is Coco. I'm a close friend of\n"
 	.string "Professor Palm's and the creator of\l"
-	.string "Mariyama's Pokémon Storage System!\p"
+	.string "Marya's Pokémon Storage System!\p"
 	.string "{COLOR DARK_GRAY}I hope you find it easy and convenient\n"
 	.string "to use. Let me know if you have any\l"
 	.string "problems with it!$"

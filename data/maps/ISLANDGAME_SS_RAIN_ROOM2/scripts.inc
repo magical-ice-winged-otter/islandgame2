@@ -83,8 +83,8 @@ ArrivedAtCheriport_Text::
 	.string "finally reached our destination!\p"
 	.string "{COLOR DARK_GRAY}On behalf of the entire crew, I'd like to\n"
 	.string "thank you for choosing to sail with us.\p"
-	.string "{COLOR DARK_GRAY}Now, set forth and explore the isles of\n"
-	.string "Marya! Until next time. Buh-bye!\p"
+	.string "{COLOR DARK_GRAY}Now, set forth and explore the Maryan\n"
+	.string "Isles! Until next time. Buh-bye!\p"
 	.string "{COLOR RED}(I've finally arrived. I should set my\n"
 	.string "watch to the correct time.)$"
 

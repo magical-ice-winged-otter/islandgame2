@@ -861,25 +861,25 @@ const struct Tileset gTileset_PorytilesSecondaryTest =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_FireRed_General_Test =
+const struct Tileset gTileset_islandgame_ss_rain_general =
 {
     .isCompressed = TRUE,
     .isSecondary = FALSE,
-    .tiles = gTilesetTiles_FireRed_General_Test,
-    .palettes = gTilesetPalettes_FireRed_General_Test,
-    .metatiles = gMetatiles_FireRed_General_Test,
-    .metatileAttributes = gMetatileAttributes_FireRed_General_Test,
-    .callback = InitTilesetIsland_Anim_Firered_Water,
+    .tiles = gTilesetTiles_islandgame_ss_rain_general,
+    .palettes = gTilesetPalettes_islandgame_ss_rain_general,
+    .metatiles = gMetatiles_islandgame_ss_rain_general,
+    .metatileAttributes = gMetatileAttributes_islandgame_ss_rain_general,
+    .callback = InitTilesetAnim_islandgame_ss_rain_general,
 };
 
-const struct Tileset gTileset_FireRed_SS_ANNE_Cont =
+const struct Tileset gTileset_islandgame_ss_rain_secondary =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_FireRed_SS_ANNE_Cont,
-    .palettes = gTilesetPalettes_FireRed_SS_ANNE_Cont,
-    .metatiles = gMetatiles_FireRed_SS_ANNE_Cont,
-    .metatileAttributes = gMetatileAttributes_FireRed_SS_ANNE_Cont,
+    .tiles = gTilesetTiles_islandgame_ss_rain_secondary,
+    .palettes = gTilesetPalettes_islandgame_ss_rain_secondary,
+    .metatiles = gMetatiles_islandgame_ss_rain_secondary,
+    .metatileAttributes = gMetatileAttributes_islandgame_ss_rain_secondary,
     .callback = NULL,
 };
 
@@ -892,17 +892,17 @@ const struct Tileset gTileset_IslandgameGeneral =
     .metatiles = gMetatiles_IslandgameGeneral,
     .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
     .paletteOverrides = gTilesetPalOverrides_Island_General,
-    .callback = InitTilesetIsland_Anim_General,
+    .callback = InitTilesetAnim_islandgame_oranna_general, // island todo, this is wrong
 };
 
-const struct Tileset gTileset_IslandgamePersi =
+const struct Tileset gTileset_islandgame_oranna_persi =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_IslandgamePersi,
-    .palettes = gTilesetPalettes_IslandgamePersi,
-    .metatiles = gMetatiles_IslandgamePersi,
-    .metatileAttributes = gMetatileAttributes_IslandgamePersi,
+    .tiles = gTilesetTiles_islandgame_oranna_persi,
+    .palettes = gTilesetPalettes_islandgame_oranna_persi,
+    .metatiles = gMetatiles_islandgame_oranna_persi,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_persi,
     .callback = NULL,
 };
 
@@ -917,90 +917,129 @@ const struct Tileset gTileset_Forest =
     .callback = InitTilesetIsland_Anim_Forest,
 };
 
-const struct Tileset gTileset_islandgame_cheriport =
+const struct Tileset gTileset_islandgame_oranna_cheriport =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_islandgame_cheriport,
-    .palettes = gTilesetPalettes_islandgame_cheriport,
-    .metatiles = gMetatiles_islandgame_cheriport,
-    .metatileAttributes = gMetatileAttributes_islandgame_cheriport,
-    .callback = NULL,
+    .tiles = gTilesetTiles_islandgame_oranna_cheriport,
+    .palettes = gTilesetPalettes_islandgame_oranna_cheriport,
+    .metatiles = gMetatiles_islandgame_oranna_cheriport,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_cheriport,
+    .paletteOverrides = gTilesetPalOverrides_Island_OrannaCheriport,
+    .callback = InitTilesetAnim_islandgame_oranna_cheriport,
 };
 
-const struct Tileset gTileset_IslandgameSOP =
+const struct Tileset gTileset_islandgame_oranna_southern_path =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_IslandgameSOP,
-    .palettes = gTilesetPalettes_IslandgameSOP,
-    .metatiles = gMetatiles_IslandgameSOP,
-    .metatileAttributes = gMetatileAttributes_IslandgameSOP,
+    .tiles = gTilesetTiles_islandgame_oranna_southern_path,
+    .palettes = gTilesetPalettes_islandgame_oranna_southern_path,
+    .metatiles = gMetatiles_islandgame_oranna_southern_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_southern_path,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_IslandgameVerdant =
+const struct Tileset gTileset_islandgame_oranna_verdant =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_IslandgameVerdant,
-    .palettes = gTilesetPalettes_IslandgameVerdant,
-    .metatiles = gMetatiles_IslandgameVerdant,
-    .metatileAttributes = gMetatileAttributes_IslandgameVerdant,
+    .tiles = gTilesetTiles_islandgame_oranna_verdant,
+    .palettes = gTilesetPalettes_islandgame_oranna_verdant,
+    .metatiles = gMetatiles_islandgame_oranna_verdant,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_verdant,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Islandgame_icecave =
+const struct Tileset gTileset_islandgame_oranna_mt_aurora =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Islandgame_icecave,
-    .palettes = gTilesetPalettes_Islandgame_icecave,
-    .metatiles = gMetatiles_Islandgame_icecave,
-    .metatileAttributes = gMetatileAttributes_Islandgame_icecave,
-    .callback = NULL,
+    .tiles = gTilesetTiles_islandgame_oranna_mt_aurora,
+    .palettes = gTilesetPalettes_islandgame_oranna_mt_aurora,
+    .metatiles = gMetatiles_islandgame_oranna_mt_aurora,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_mt_aurora,
+    .callback = InitTilesetAnim_islandgame_oranna_mt_aurora,
 };
 
-const struct Tileset gTileset_IslandgameEmpty =
+const struct Tileset gTileset_islandgame_empty_primary =
 {
     .isCompressed = TRUE,
     .isSecondary = FALSE,
-    .tiles = gTilesetTiles_IslandgameEmpty,
-    .palettes = gTilesetPalettes_IslandgameEmpty,
-    .metatiles = gMetatiles_IslandgameEmpty,
-    .metatileAttributes = gMetatileAttributes_IslandgameEmpty,
+    .tiles = gTilesetTiles_islandgame_empty_primary,
+    .palettes = gTilesetPalettes_islandgame_empty_primary,
+    .metatiles = gMetatiles_islandgame_empty_primary,
+    .metatileAttributes = gMetatileAttributes_islandgame_empty_primary,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_islandgame_maplegrove =
+const struct Tileset gTileset_islandgame_oranna_maplegrove =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_islandgame_maplegrove,
-    .palettes = gTilesetPalettes_islandgame_maplegrove,
-    .metatiles = gMetatiles_islandgame_maplegrove,
-    .metatileAttributes = gMetatileAttributes_islandgame_maplegrove,
+    .tiles = gTilesetTiles_islandgame_oranna_maplegrove,
+    .palettes = gTilesetPalettes_islandgame_oranna_maplegrove,
+    .metatiles = gMetatiles_islandgame_oranna_maplegrove,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_maplegrove,
+    .paletteOverrides = gTilesetPalOverrides_Island_OrannaMaplegrove,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_islandgame_rosevale =
+const struct Tileset gTileset_islandgame_oranna_rosevale =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_islandgame_rosevale,
-    .palettes = gTilesetPalettes_islandgame_rosevale,
-    .metatiles = gMetatiles_islandgame_rosevale,
-    .metatileAttributes = gMetatileAttributes_islandgame_rosevale,
-    .callback = InitTilesetIsland_Anim_Rosevale,
+    .tiles = gTilesetTiles_islandgame_oranna_rosevale,
+    .palettes = gTilesetPalettes_islandgame_oranna_rosevale,
+    .metatiles = gMetatiles_islandgame_oranna_rosevale,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_rosevale,
+    .paletteOverrides = gTilesetPalOverrides_Island_OrannaRosevale,
+    .callback = InitTilesetAnim_islandgame_oranna_rosevale,
 };
 
-const struct Tileset gTileset_IslandgameTidalcove =
+const struct Tileset gTileset_islandgame_oranna_tidalcove =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_IslandgameTidalcove,
-    .palettes = gTilesetPalettes_IslandgameTidalcove,
-    .metatiles = gMetatiles_IslandgameTidalcove,
-    .metatileAttributes = gMetatileAttributes_IslandgameTidalcove,
+    .tiles = gTilesetTiles_islandgame_oranna_tidalcove,
+    .palettes = gTilesetPalettes_islandgame_oranna_tidalcove,
+    .metatiles = gMetatiles_islandgame_oranna_tidalcove,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_tidalcove,
+    .paletteOverrides = gTilesetPalOverrides_Island_OrannaTidalcove,
+    .callback = InitTilesetAnim_islandgame_oranna_tidalcove,
+};
+
+const struct Tileset gTileset_islandgame_oranna_general =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_oranna_general,
+    .palettes = gTilesetPalettes_islandgame_oranna_general,
+    .metatiles = gMetatiles_islandgame_oranna_general,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_general,
+    .paletteOverrides = gTilesetPalOverrides_Island_OrannaGeneral,
+    .callback = InitTilesetAnim_islandgame_oranna_general,
+};
+
+const struct Tileset gTileset_islandgame_oranna_northern_path =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_oranna_northern_path,
+    .palettes = gTilesetPalettes_islandgame_oranna_northern_path,
+    .metatiles = gMetatiles_islandgame_oranna_northern_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_northern_path,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_oranna_central_path =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_oranna_central_path,
+    .palettes = gTilesetPalettes_islandgame_oranna_central_path,
+    .metatiles = gMetatiles_islandgame_oranna_central_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_oranna_central_path,
+    .paletteOverrides = gTilesetPalOverrides_Island_OrannaCentralPath,
     .callback = NULL,
 };

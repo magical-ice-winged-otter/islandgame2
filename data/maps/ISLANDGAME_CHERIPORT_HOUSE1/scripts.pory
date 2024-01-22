@@ -9,7 +9,7 @@ script ISLANDGAME_CHERIPORT_TOWN1_EventScript_NPC1Talk {
 
 text NPC1_Text  {
     format(
-        "{COLOR DARK_GRAY}Oranna is home to one of Mariyama's legendary Isle Guardians. \p"
+        "{COLOR DARK_GRAY}Oranna is home to one of Marya's legendary Isle Guardians. \p"
         "{COLOR DARK_GRAY}The mythical Pokémon: Articuno! \p"
         "{COLOR DARK_GRAY}I've never seen it in person, but they say its wings can cause a blizzard!"
     )

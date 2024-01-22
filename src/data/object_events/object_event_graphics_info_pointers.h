@@ -1,5 +1,20 @@
 // island-game
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleBoyCamper;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy4;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy5;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl4;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroundSwimmerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroundSwimmerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man6;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Police;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PsychicF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist3;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberFSwimming;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
@@ -1340,6 +1355,21 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LINK_RS_MAY] =              &gObjectEventGraphicsInfo_RubySapphireMay,
     [OBJ_EVENT_GFX_LUGIA] =                    &gObjectEventGraphicsInfo_Lugia,
     [OBJ_EVENT_GFX_HOOH] =                     &gObjectEventGraphicsInfo_HoOh,
+    [OBJ_EVENT_GFX_BOY_4] =                   &gObjectEventGraphicsInfo_Boy4,
+    [OBJ_EVENT_GFX_BOY_5] =                   &gObjectEventGraphicsInfo_Boy5,
+    [OBJ_EVENT_GFX_GIRL_4] =                  &gObjectEventGraphicsInfo_Girl4,
+    [OBJ_EVENT_GFX_GROUND_SWIMMER_F] =        &gObjectEventGraphicsInfo_GroundSwimmerF,
+    [OBJ_EVENT_GFX_GROUND_SWIMMER_M] =        &gObjectEventGraphicsInfo_GroundSwimmerM,
+    [OBJ_EVENT_GFX_MAN_6] =                   &gObjectEventGraphicsInfo_Man6,
+    [OBJ_EVENT_GFX_POLICE] =                  &gObjectEventGraphicsInfo_Police,
+    [OBJ_EVENT_GFX_PSYCHIC_F] =               &gObjectEventGraphicsInfo_PsychicF,
+    [OBJ_EVENT_GFX_RANGER_F] =                &gObjectEventGraphicsInfo_RangerF,
+    [OBJ_EVENT_GFX_RANGER_M] =                &gObjectEventGraphicsInfo_RangerM,
+    [OBJ_EVENT_GFX_ROUGHNECK] =               &gObjectEventGraphicsInfo_Roughneck,
+    [OBJ_EVENT_GFX_RUIN_MANIAC] =             &gObjectEventGraphicsInfo_RuinManiac,
+    [OBJ_EVENT_GFX_SCIENTIST_3] =             &gObjectEventGraphicsInfo_Scientist3,
+    [OBJ_EVENT_GFX_TUBER_F_SWIMMING] =        &gObjectEventGraphicsInfo_TuberFSwimming,
+    [OBJ_EVENT_GFX_WORKER] =                  &gObjectEventGraphicsInfo_Worker,
 
     //Pokemon overworlds
     [OBJ_EVENT_GFX_POKEMON_001] = 	&gObjectEventGraphicsInfo_Pokemon_Species_001,

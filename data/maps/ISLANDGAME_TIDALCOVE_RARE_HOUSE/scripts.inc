@@ -161,8 +161,8 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_39:
 
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0:
-	.string "Years ago, I came to the isles of\n"
-	.string "Mariyama in search of rare Pokémon.\p"
+	.string "Years ago, I came to the Maryan Isles in\n"
+	.string "search of rare Pokémon.\p"
 	.string "But alas, all I could find during my\n"
 	.string "ventures were these rare stones.\p"
 	.string "If you've any rare Pokémon, could you\n"

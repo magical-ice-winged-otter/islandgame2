@@ -65,7 +65,7 @@ text ArrivedAtCheriport_Text {
         "{COLOR DARK_GRAY}Ladies and gentleman, this is your captain speaking! \p"
         "{COLOR DARK_GRAY}I'm happy to announce to you that we've finally reached our destination! \p"
         "{COLOR DARK_GRAY}On behalf of the entire crew, I'd like to thank you for choosing to sail with us. \p"
-        "{COLOR DARK_GRAY}Now, set forth and explore the isles of Marya! Until next time. Buh-bye! \p"
+        "{COLOR DARK_GRAY}Now, set forth and explore the Maryan Isles! Until next time. Buh-bye! \p"
         "{COLOR RED}(I've finally arrived. I should set my watch to the correct time.)"
     )
 }

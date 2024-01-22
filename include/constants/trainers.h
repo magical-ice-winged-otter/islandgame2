@@ -110,15 +110,59 @@
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
+#define TRAINER_PIC_ACERON                93
+#define TRAINER_PIC_ALECRAN               94
+#define TRAINER_PIC_BREGA                 95
+#define TRAINER_PIC_CERES                 96
+#define TRAINER_PIC_DELOS                 97
+#define TRAINER_PIC_DUO                   98
+#define TRAINER_PIC_ELECTRO               99
+#define TRAINER_PIC_FANTINA              100
+#define TRAINER_PIC_FAUSTO               101
+#define TRAINER_PIC_GAIA                 102
+#define TRAINER_PIC_GARDENIA             103
+#define TRAINER_PIC_HELIO                104
+#define TRAINER_PIC_INVERNA              105
+#define TRAINER_PIC_ISRAEL               106
+#define TRAINER_PIC_GAMBLER              107
+#define TRAINER_PIC_MANANTI              108
+#define TRAINER_PIC_ROCO                 109
+#define TRAINER_PIC_SATURNO              110
+#define TRAINER_PIC_VENUS                111
+#define TRAINER_PIC_ARTIST               112
+#define TRAINER_PIC_BALD                 113
+#define TRAINER_PIC_BIRDKEEPERF          114
+#define TRAINER_PIC_CLOWN                115
+#define TRAINER_PIC_COOLTRAINERSNOWF     116
+#define TRAINER_PIC_COOLTRAINERSNOWM     117
+#define TRAINER_PIC_COWBOY               118
+#define TRAINER_PIC_COWGIRL              119
+#define TRAINER_PIC_CYNTHIA              120
+#define TRAINER_PIC_FARMERDUO            121
+#define TRAINER_PIC_INTERVIEWERF         122
+#define TRAINER_PIC_INTERVIEWERM         123
+#define TRAINER_PIC_JOGGER               124
+#define TRAINER_PIC_OLDLADY              125
+#define TRAINER_PIC_PIKACHUGIRL          126
+#define TRAINER_PIC_POLICE               127
+#define TRAINER_PIC_POPIDOL              128
+#define TRAINER_PIC_SCIENTIST            129
+#define TRAINER_PIC_SKIF                 130
+#define TRAINER_PIC_SKIM                 131
+#define TRAINER_PIC_SWIMMERTUBERDUO      132
+#define TRAINER_PIC_WAITER               133
+#define TRAINER_PIC_WAITRESS             134
+#define TRAINER_PIC_WORKER               135
+
 
 // island-game
-#define TRAINER_PIC_ARTHUR                93
-#define TRAINER_PIC_EDEA                  94
-#define TRAINER_PIC_AUDREY                95
-#define TRAINER_PIC_JONAS                 96
-#define TRAINER_PIC_RUKA                  97
-#define TRAINER_PIC_OLIVIA                98
-#define TRAINER_PIC_OLIVER                99
+#define TRAINER_PIC_ARTHUR                136
+#define TRAINER_PIC_EDEA                  137
+#define TRAINER_PIC_AUDREY                138
+#define TRAINER_PIC_JONAS                 139
+#define TRAINER_PIC_RUKA                  140
+#define TRAINER_PIC_OLIVIA                141
+#define TRAINER_PIC_OLIVER                142
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

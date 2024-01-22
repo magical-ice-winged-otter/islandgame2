@@ -238,7 +238,7 @@ ISLANDGAME_FRESA_FARMS_Mareep4_Text_0:
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_0:
 	.string "Welcome to Fresa Farms!\p"
 	.string "Our produce is sourced from the\n"
-	.string "healthiest Pokemon in Mariyama!$"
+	.string "healthiest Pokemon in Marya!$"
 
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_1:
 	.string "Thank you for supporting us!$"

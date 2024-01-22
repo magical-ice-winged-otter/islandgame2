@@ -133,17 +133,20 @@ static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/d
 static const u16 sDoorNullPalette49[16] = {};
 
 // island-game
-static const u8 sDoorAnimTiles_Islandgame_General[] = INCBIN_U8("graphics/door_anims/islandgame_general.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_Pokecenter[] = INCBIN_U8("graphics/door_anims/islandgame_center.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_Pokemart[] = INCBIN_U8("graphics/door_anims/islandgame_mart.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_Persi[] = INCBIN_U8("graphics/door_anims/islandgame_persi.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_SSRain[] = INCBIN_U8("graphics/door_anims/islandgame_ss_rain.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_Maplegrove_01[] = INCBIN_U8("graphics/door_anims/islandgame_maplegrove_01.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_Maplegrove_02[] = INCBIN_U8("graphics/door_anims/islandgame_maplegrove_02.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_Tidalcove_01[] = INCBIN_U8("graphics/door_anims/islandgame_tidalcove_01.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_Tidalcove_02[] = INCBIN_U8("graphics/door_anims/islandgame_tidalcove_02.4bpp");
+static const u8 sDoorAnimTiles_Islandgame_General[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_general_00.4bpp");
 static const u8 sDoorAnimTiles_Islandgame_Forest[] = INCBIN_U8("graphics/door_anims/islandgame_forest.4bpp");
-static const u8 sDoorAnimTiles_Islandgame_Rosevale[] = INCBIN_U8("graphics/door_anims/islandgame_rosevale.4bpp");
+
+static const u8 sDoorAnimTiles_islandgame_oranna_general_00[]    = INCBIN_U8("graphics/door_anims/islandgame_oranna_general_00.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_general_01[]    = INCBIN_U8("graphics/door_anims/islandgame_oranna_general_01.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_maplegrove_00[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_maplegrove_00.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_maplegrove_01[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_maplegrove_01.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_persi[]         = INCBIN_U8("graphics/door_anims/islandgame_oranna_persi.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_rosevale_00[]   = INCBIN_U8("graphics/door_anims/islandgame_oranna_rosevale.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_tidalcove_00[]  = INCBIN_U8("graphics/door_anims/islandgame_oranna_tidalcove_00.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_tidalcove_01[]  = INCBIN_U8("graphics/door_anims/islandgame_oranna_tidalcove_01.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_tidalcove_gym[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_tidalcove_gym.4bpp");
+static const u8 sDoorAnimTiles_islandgame_ss_rain_general[]      = INCBIN_U8("graphics/door_anims/islandgame_ss_rain_general.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_northern_path[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_northern_path.4bpp");
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -234,72 +237,20 @@ static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
 
 // island-game
-static const u8 sDoorAnimPalettes_Islandgame_General[] = {
-    4, 4,
-    4, 4,
-    4, 4,
-    4, 4
-};
-static const u8 sDoorAnimPalettes_Islandgame_Pokecenter[] = {
-    4, 4,
-    4, 4,
-    4, 4,
-    4, 4
-};
-static const u8 sDoorAnimPalettes_Islandgame_Pokemart[] = {
-    4, 4,
-    4, 4,
-    4, 4,
-    4, 4
-};
-static const u8 sDoorAnimPalettes_Islandgame_Persi[] = {
-    7, 7, 
-    7, 7, 
-    7, 7, 
-    7, 7
-};
-static const u8 sDoorAnimPalettes_Islandgame_SSRain[] = {
-    4, 4,
-    4, 4,
-    4, 4,
-    4, 4,
-};
-static const u8 sDoorAnimPalettes_Islandgame_Maplegrove_01[] = {
-    7, 7,
-    6, 6,
-    6, 6,
-    6, 6,
-};
-static const u8 sDoorAnimPalettes_Islandgame_Maplegrove_02[] = {
-    7, 7,
-    11, 11,
-    11, 11,
-    11, 11,
-};
-static const u8 sDoorAnimPalettes_Islandgame_Tidalcove_01[] = {
-    6, 6,
-    6, 6,
-    6, 6,
-    6, 6,
-};
-static const u8 sDoorAnimPalettes_Islandgame_Tidalcove_02[] = {
-    6, 6,
-    6, 6,
-    6, 6,
-    6, 6,
-};
-static const u8 sDoorAnimPalettes_Islandgame_Forest[] = {
-    12, 12,
-    12, 12,
-    12, 12,
-    12, 12,
-};
-static const u8 sDoorAnimPalettes_Islandgame_Rosevale[] = {
-    11, 11,
-    11, 11,
-    11, 11,
-    11, 11,
-};
+static const u8 sDoorAnimPalettes_Islandgame_General[] = {4,4,4,4,4,4,4,4};
+static const u8 sDoorAnimPalettes_Islandgame_Forest[] = {12,12,12,12,12,12,12,12};
+
+static const u8 sDoorAnimPalettes_islandgame_oranna_general_00[] = {3,3,3,3,3,3,3,3};
+static const u8 sDoorAnimPalettes_islandgame_oranna_general_01[] = {3,3,3,3,3,3,3,3};
+static const u8 sDoorAnimPalettes_islandgame_oranna_maplegrove_00[] = {4,4,7,7,7,7,7,7};
+static const u8 sDoorAnimPalettes_islandgame_oranna_maplegrove_01[] = {4,4,8,8,8,8,8,8};
+static const u8 sDoorAnimPalettes_islandgame_oranna_persi[] = {6,6,6,6,6,6,6,6};
+static const u8 sDoorAnimPalettes_islandgame_oranna_rosevale[] = {9,9,9,9,9,9,9,9};
+static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_00[] = {9,9,9,9,9,9,9,9};
+static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_01[] = {7,7,9,9,9,9,9,9};
+static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_gym[] = {8,8,7,7,7,7,7,7};
+static const u8 sDoorAnimPalettes_islandgame_ss_rain_general[] = {2,2,2,2,2,2,2,2};
+static const u8 sDoorAnimPalettes_islandgame_oranna_northern_path[] = {6,6,6,6,6,6,6,6};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -307,16 +258,19 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 
     // island-game
     {METATILE_IslandgameGeneral_Door,                       DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_General, sDoorAnimPalettes_Islandgame_General},
-    {METATILE_IslandgameGeneral_DoorPokeCenter,             DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Islandgame_Pokecenter, sDoorAnimPalettes_Islandgame_Pokecenter},
-    {METATILE_IslandgameGeneral_DoorPokeMart,               DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_Islandgame_Pokemart, sDoorAnimPalettes_Islandgame_Pokemart},
-    {METATILE_Persi_Door,                                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_Persi, sDoorAnimPalettes_Islandgame_Persi},
-    {METATILE_FireRed_General_Test_Door,                    DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_SSRain, sDoorAnimPalettes_Islandgame_SSRain},
-    {METATILE_islandgame_maplegrove_Door01,                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_Maplegrove_01, sDoorAnimPalettes_Islandgame_Maplegrove_01},
-    {METATILE_islandgame_maplegrove_Door02,                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_Maplegrove_02, sDoorAnimPalettes_Islandgame_Maplegrove_02},
-    {METATILE_IslandgameTidalcove_Door01,                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_Tidalcove_01, sDoorAnimPalettes_Islandgame_Tidalcove_01},
-    {METATILE_IslandgameTidalcove_Door02,                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_Tidalcove_02, sDoorAnimPalettes_Islandgame_Tidalcove_02},
     {METATILE_Forest_Door,                                  DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_Forest, sDoorAnimPalettes_Islandgame_Forest},
-    {METATILE_islandgame_rosevale_Door,                     DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Islandgame_Rosevale, sDoorAnimPalettes_Islandgame_Rosevale},
+
+    {METATILE_islandgame_oranna_general_door_00,                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_islandgame_oranna_general_00, sDoorAnimPalettes_islandgame_oranna_general_00},
+    {METATILE_islandgame_oranna_general_door_01,                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_islandgame_oranna_general_01, sDoorAnimPalettes_islandgame_oranna_general_01},
+    {METATILE_islandgame_oranna_maplegrove_door_00,              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_maplegrove_00, sDoorAnimPalettes_islandgame_oranna_maplegrove_00},
+    {METATILE_islandgame_oranna_maplegrove_door_01,              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_maplegrove_01, sDoorAnimPalettes_islandgame_oranna_maplegrove_01},
+    {METATILE_islandgame_oranna_persi_door,                      DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_persi, sDoorAnimPalettes_islandgame_oranna_persi},
+    {METATILE_islandgame_oranna_rosevale_door,                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_rosevale_00, sDoorAnimPalettes_islandgame_oranna_rosevale},
+    {METATILE_islandgame_oranna_tidalcove_door_00,               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_tidalcove_00, sDoorAnimPalettes_islandgame_oranna_tidalcove_00},
+    {METATILE_islandgame_oranna_tidalcove_door_01,               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_tidalcove_01, sDoorAnimPalettes_islandgame_oranna_tidalcove_01},
+    {METATILE_islandgame_oranna_tidalcove_door_gym,              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_tidalcove_gym, sDoorAnimPalettes_islandgame_oranna_tidalcove_gym},
+    {METATILE_islandgame_ss_rain_general_door,                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_ss_rain_general, sDoorAnimPalettes_islandgame_ss_rain_general},
+    {METATILE_islandgame_oranna_northern_path_door,              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_northern_path, sDoorAnimPalettes_islandgame_oranna_northern_path},
 
     {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
     {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},

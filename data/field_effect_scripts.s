@@ -94,7 +94,7 @@ gFieldEffectScript_Shadow::
 	field_eff_end
 
 gFieldEffectScript_TallGrass::
-	field_eff_loadfadedpaldaynight_callnative gSpritePalette_GeneralFieldEffect1, FldEff_TallGrass
+	field_eff_loadfadedpaldaynight_callnative gSpritePalette_TallGrassEffect, FldEff_TallGrass
 	field_eff_end
 
 gFieldEffectScript_Ripple::

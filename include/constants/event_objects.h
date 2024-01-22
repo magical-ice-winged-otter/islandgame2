@@ -1103,7 +1103,22 @@
 // island-game
 #define ISLAND_START                             (OBJ_EVENT_GFX_POKEMON_904)
 #define OBJ_EVENT_GFX_LITTLE_BOY_CAMPER          (ISLAND_START + 1)
-#define ISLAND_END                               (ISLAND_START + 1)
+#define OBJ_EVENT_GFX_BOY_4                      ISLAND_START + 2
+#define OBJ_EVENT_GFX_BOY_5                      ISLAND_START + 3
+#define OBJ_EVENT_GFX_GIRL_4                     ISLAND_START + 4
+#define OBJ_EVENT_GFX_GROUND_SWIMMER_F           ISLAND_START + 5
+#define OBJ_EVENT_GFX_GROUND_SWIMMER_M           ISLAND_START + 6
+#define OBJ_EVENT_GFX_MAN_6                      ISLAND_START + 7
+#define OBJ_EVENT_GFX_POLICE                     ISLAND_START + 8
+#define OBJ_EVENT_GFX_PSYCHIC_F                  ISLAND_START + 9
+#define OBJ_EVENT_GFX_RANGER_F                   ISLAND_START + 10
+#define OBJ_EVENT_GFX_RANGER_M                   ISLAND_START + 11
+#define OBJ_EVENT_GFX_ROUGHNECK                  ISLAND_START + 12
+#define OBJ_EVENT_GFX_RUIN_MANIAC                ISLAND_START + 13
+#define OBJ_EVENT_GFX_SCIENTIST_3                ISLAND_START + 14
+#define OBJ_EVENT_GFX_TUBER_F_SWIMMING           ISLAND_START + 15
+#define OBJ_EVENT_GFX_WORKER                     ISLAND_START + 16
+#define ISLAND_END                               OBJ_EVENT_GFX_WORKER
 
 #define NUM_OBJ_EVENT_GFX               (ISLAND_END + 1)
 

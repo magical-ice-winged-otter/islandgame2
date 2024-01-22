@@ -266,7 +266,7 @@ const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You found and returned
 // Berry Maniac Quest
 const u8 sText_SideQuestName_PersiBerryManiac[] = _("Berry Quest");
 const u8 sText_SideQuestDesc_PersiBerryManiac[] = _("The berry maniac from Camp Persi\nneeds more berries!");
-const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You found berries from all\nover Mariyama!");
+const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You found berries from all\nover Marya!");
 // - Subquests
 const u8 sText_SubQuest_PersiBerryManiac1_Name[] = _("Cheri Berry");
 const u8 sText_SubQuest_PersiBerryManiac1_Desc[] = _("Find and return a Cheri Berry\nto the Berry Maniac");
@@ -294,7 +294,7 @@ const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg
 // Fitness Freak Quest
 const u8 sText_SideQuestName_FitnessFreak[] = _("Vitamin Search");
 const u8 sText_SideQuestDesc_FitnessFreak[] = _("The Fitness Freak can't afford\nvitamins! Bring him some\nfor fitness-related rewards!");
-const u8 sText_SideQuestDoneDesc_FitnessFreak[] = _("You have gathered vitamins\nfrom all over Mariyama!\nThe Fitness Freak is stronger\nthan ever!");
+const u8 sText_SideQuestDoneDesc_FitnessFreak[] = _("You have gathered vitamins\nfrom all over Marya!\nThe Fitness Freak is stronger\nthan ever!");
 // - Subquests
 const u8 sText_SubQuest_FitnessFreak_HpUp_Name[] = _("HP Up");
 const u8 sText_SubQuest_FitnessFreak_HpUp_Desc[] = _("Find and return an HP up\nto the Fitness Freak.");

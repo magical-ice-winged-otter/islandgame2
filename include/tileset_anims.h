@@ -33,10 +33,13 @@ void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
 
 //island-game-start
-void InitTilesetIsland_Anim_Firered_Water(void);
-void InitTilesetIsland_Anim_General(void);
+void InitTilesetAnim_islandgame_ss_rain_general(void);
+void InitTilesetAnim_islandgame_oranna_general(void);
+void InitTilesetAnim_islandgame_oranna_cheriport(void);
+void InitTilesetAnim_islandgame_oranna_tidalcove(void);
 void InitTilesetIsland_Anim_Forest(void);
-void InitTilesetIsland_Anim_Rosevale(void);
+void InitTilesetAnim_islandgame_oranna_rosevale(void);
+void InitTilesetAnim_islandgame_oranna_mt_aurora(void);
 
 
 #endif // GUARD_TILESET_ANIMS_H
