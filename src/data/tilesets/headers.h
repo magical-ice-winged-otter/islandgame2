@@ -994,7 +994,7 @@ const struct Tileset gTileset_islandgame_oranna_rosevale =
     .metatiles = gMetatiles_islandgame_oranna_rosevale,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_rosevale,
     .paletteOverrides = gTilesetPalOverrides_Island_OrannaRosevale,
-    .callback = InitTilesetIsland_Anim_Rosevale,
+    .callback = InitTilesetAnim_islandgame_oranna_rosevale,
 };
 
 const struct Tileset gTileset_islandgame_oranna_tidalcove =
