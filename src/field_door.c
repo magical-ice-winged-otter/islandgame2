@@ -145,8 +145,10 @@ static const u8 sDoorAnimTiles_islandgame_oranna_rosevale_00[]   = INCBIN_U8("gr
 static const u8 sDoorAnimTiles_islandgame_oranna_tidalcove_00[]  = INCBIN_U8("graphics/door_anims/islandgame_oranna_tidalcove_00.4bpp");
 static const u8 sDoorAnimTiles_islandgame_oranna_tidalcove_01[]  = INCBIN_U8("graphics/door_anims/islandgame_oranna_tidalcove_01.4bpp");
 static const u8 sDoorAnimTiles_islandgame_oranna_tidalcove_gym[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_tidalcove_gym.4bpp");
-static const u8 sDoorAnimTiles_islandgame_ss_rain_general[]      = INCBIN_U8("graphics/door_anims/islandgame_ss_rain_general.4bpp");
+static const u8 sDoorAnimTiles_islandgame_ss_rain_general_00[]   = INCBIN_U8("graphics/door_anims/islandgame_ss_rain_general_00.4bpp");
+static const u8 sDoorAnimTiles_islandgame_ss_rain_general_01[]   = INCBIN_U8("graphics/door_anims/islandgame_ss_rain_general_01.4bpp");
 static const u8 sDoorAnimTiles_islandgame_oranna_northern_path[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_northern_path.4bpp");
+static const u8 sDoorAnimTiles_islandgame_oranna_cheriport[]     = INCBIN_U8("graphics/door_anims/islandgame_oranna_cheriport.4bpp");
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -249,8 +251,10 @@ static const u8 sDoorAnimPalettes_islandgame_oranna_rosevale[] = {9,9,9,9,9,9,9,
 static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_00[] = {9,9,9,9,9,9,9,9};
 static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_01[] = {7,7,9,9,9,9,9,9};
 static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_gym[] = {8,8,7,7,7,7,7,7};
-static const u8 sDoorAnimPalettes_islandgame_ss_rain_general[] = {2,2,2,2,2,2,2,2};
+static const u8 sDoorAnimPalettes_islandgame_ss_rain_general_00[] = {2,2,2,2,2,2,2,2};
+static const u8 sDoorAnimPalettes_islandgame_ss_rain_general_01[] = {2,2,2,2,2,2,2,2};
 static const u8 sDoorAnimPalettes_islandgame_oranna_northern_path[] = {6,6,6,6,6,6,6,6};
+static const u8 sDoorAnimPalettes_islandgame_oranna_cheriport[] = {8,8,8,8,7,7,8,8};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -269,8 +273,10 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_islandgame_oranna_tidalcove_door_00,               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_tidalcove_00, sDoorAnimPalettes_islandgame_oranna_tidalcove_00},
     {METATILE_islandgame_oranna_tidalcove_door_01,               DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_tidalcove_01, sDoorAnimPalettes_islandgame_oranna_tidalcove_01},
     {METATILE_islandgame_oranna_tidalcove_door_gym,              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_tidalcove_gym, sDoorAnimPalettes_islandgame_oranna_tidalcove_gym},
-    {METATILE_islandgame_ss_rain_general_door,                   DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_ss_rain_general, sDoorAnimPalettes_islandgame_ss_rain_general},
+    {METATILE_islandgame_ss_rain_general_door_00,                DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_ss_rain_general_00, sDoorAnimPalettes_islandgame_ss_rain_general_00},
+    {METATILE_islandgame_ss_rain_general_door_01,                DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_ss_rain_general_01, sDoorAnimPalettes_islandgame_ss_rain_general_01},
     {METATILE_islandgame_oranna_northern_path_door,              DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_northern_path, sDoorAnimPalettes_islandgame_oranna_northern_path},
+    {METATILE_islandgame_oranna_cheriport_door,                  DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_islandgame_oranna_cheriport, sDoorAnimPalettes_islandgame_oranna_cheriport},
 
     {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
     {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},

@@ -817,6 +817,7 @@
 // gTileset_islandgame
 #define METATILE_islandgame_maplegrove_Door01          0x248
 #define METATILE_islandgame_maplegrove_Door02          0x287
+#define METATILE_islandgame_oranna_cheriport_door      0x24C
 #define METATILE_islandgame_oranna_general_door_00     0x0C1
 #define METATILE_islandgame_oranna_general_door_01     0x0A1
 #define METATILE_islandgame_oranna_maplegrove_door_00  0x244
@@ -828,6 +829,7 @@
 #define METATILE_islandgame_oranna_tidalcove_door_01   0x252
 #define METATILE_islandgame_oranna_tidalcove_door_gym  0x295
 #define METATILE_islandgame_rosevale_Door              0x3A1
-#define METATILE_islandgame_ss_rain_general_door       0x071
+#define METATILE_islandgame_ss_rain_general_door_00    0x0FA
+#define METATILE_islandgame_ss_rain_general_door_01    0x071
 
 #endif // GUARD_METATILE_LABELS_H
