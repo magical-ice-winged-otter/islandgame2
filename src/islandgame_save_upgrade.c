@@ -16,14 +16,24 @@ void UpgradeSave()
     DebugPrintf("current save version: %u\n", gSaveBlock1Ptr->saveVersion);
     DebugPrintf("desired save version: %u\n", ISLANDGAME_CURRENT_SAVE_VERSION);
 
-    if (gSaveBlock1Ptr->saveVersion = 0) {
+    if (gSaveBlock1Ptr->saveVersion == 0) {
         UpgradeSaveV0ToV1();
     }
 }
 
+static u32 GetSaveBlock1Offset(u8* address)
+{
+    return (u32) (address - (u8*) gSaveBlock1Ptr);
+}
+
+#define DEBUG_SAVEBLOCK1(field) (DebugPrintf(#field " : 0x%x\n", GetSaveBlock1Offset((u8*) &(gSaveBlock1Ptr->field))))
+
 static void UpgradeSaveV0ToV1()
 {
     DebugPrintf("Upgrading save from v0 to v1");
+    DEBUG_SAVEBLOCK1(bagPocket_Items);
+    DEBUG_SAVEBLOCK1(savedMusic);
+    DEBUG_SAVEBLOCK1(saveVersion);
     // breaking changes:
     // bag items increased 30 -> 96
     // pokemon count increased ? -> ? (gen 9)
