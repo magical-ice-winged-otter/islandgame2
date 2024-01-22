@@ -1,7 +1,7 @@
 # Compile the game
 CORE_COUNT=$(nproc)
 echo -e "\nCompiling game, using $CORE_COUNT cores\n"
-./tools/mapjson/mapjson groups emerald data/maps/map_groups.json # run this before make
+#./tools/mapjson/mapjson groups emerald data/maps/map_groups.json # run this before make
 make -j $(nproc) -O all >/dev/null 
 
 if [ $? -eq 0 ] # Did compilation succeed?

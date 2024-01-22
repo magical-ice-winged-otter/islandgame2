@@ -26,6 +26,25 @@ static u32 GetSaveBlock1Offset(u8* address)
     return (u32) (address - (u8*) gSaveBlock1Ptr);
 }
 
+static void SaveBlock1IncreaseArraySize(void* arrayStart, u32 oldArraySize, u32 newArraySize, u32 oldSaveBlockSize)
+{
+    u8* arrayStart;
+    u8* oldSaveBlockEnd;
+    u8* oldArrayEnd;
+    u8* newArrayEnd;
+
+    arrayStart = (u8*) arrayStart;
+    oldSaveBlockEnd = (u8*) gSaveBlock1Ptr + oldSaveBlockSize;
+    oldArrayEnd = arrayStart + oldArraySize;
+    newArrayEnd = arrayStart + newArraySize;
+
+    // memcopy stuff after the array to the new array end
+    memmove(newArrayEnd, oldArrayEnd, oldSaveBlockSize - GetSaveBlock1Offset(oldArrayEnd));
+
+    // memset remainder of array to zeroes
+    memset(oldArrayEnd, 0, (size_t) (newArrayEnd - oldArrayEnd));
+}
+
 #define DEBUG_SAVEBLOCK1(field) (DebugPrintf(#field " : 0x%x\n", GetSaveBlock1Offset((u8*) &(gSaveBlock1Ptr->field))))
 
 static void UpgradeSaveV0ToV1()
@@ -38,4 +57,5 @@ static void UpgradeSaveV0ToV1()
     // bag items increased 30 -> 96
     // pokemon count increased ? -> ? (gen 9)
     // match call people inserted into block
+    // SaveBlock1IncreaseArraySize(&gSaveBlock1Ptr->bagPocket_Items, 30, 93, );
 }
