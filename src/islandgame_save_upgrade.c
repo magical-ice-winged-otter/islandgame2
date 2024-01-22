@@ -60,7 +60,7 @@ static void UpgradeSaveV0ToV1()
     // match call people inserted into block
 
     // bag items increased 30 -> 96
-    SaveBlock1IncreaseArraySize(&gSaveBlock1Ptr->bagPocket_Items, 30, 93, saveBlockSize);
+    SaveBlock1IncreaseArraySize(&gSaveBlock1Ptr->bagPocket_Items, 120, 372, saveBlockSize);
 
     // pokemon count increased ? -> ? (gen 9)
     SaveBlock1IncreaseArraySize(&gSaveBlock1Ptr->dexSeen, 114, 129, saveBlockSize);
