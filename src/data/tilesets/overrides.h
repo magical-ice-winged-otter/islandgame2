@@ -121,22 +121,23 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaCentralPath[] =
 };
 
 //islandgame_oranna_rosevale
+static const u16 sTilesetPalOverride_Island_OrannaRosevalePath09[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/override_palettes/09.gbapal");
 static const u16 sTilesetPalOverride_Island_OrannaRosevalePath10[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/override_palettes/10.gbapal");
-static const u16 sTilesetPalOverride_Island_OrannaRosevalePath11[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_rosevale/override_palettes/11.gbapal");
 
 const struct PaletteOverride gTilesetPalOverrides_Island_OrannaRosevale[] = 
 {
+    
+    {
+        .slot = 9,
+        .startHour = NIGHT_HOUR_BEGIN,
+        .endHour = NIGHT_HOUR_END,
+        .palette = sTilesetPalOverride_Island_OrannaRosevalePath09
+    },
     {
         .slot = 10,
         .startHour = NIGHT_HOUR_BEGIN,
         .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaRosevalePath10
-    },
-    {
-        .slot = 11,
-        .startHour = NIGHT_HOUR_BEGIN,
-        .endHour = NIGHT_HOUR_END,
-        .palette = sTilesetPalOverride_Island_OrannaRosevalePath11
     },
     OVERRIDES_END
 };
