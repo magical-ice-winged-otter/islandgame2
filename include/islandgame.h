@@ -11,6 +11,10 @@
 // Comment out this line to strip debugging tools from the build.
 #define ISLANDGAME_DEBUG
 
+// whenever we make a breaking change to the save block, we can increment this number
+// then, when we begin the game, check for outdated saves and try to upgrade them or display a warning
+#define ISLANDGAME_CURRENT_SAVE_VERSION 1
+
 //Settings
 #define EXP_MULTIPLIER 4 //By default, pokemon will gain only 1/4 of the experience if they did not participate in battle.
 #define BERRY_GROWTH_MULTIPLIER 1
