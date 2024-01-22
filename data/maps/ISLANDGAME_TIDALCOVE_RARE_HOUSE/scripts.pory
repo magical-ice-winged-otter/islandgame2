@@ -6,7 +6,7 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
     switch (var(VAR_RESULT)) {
         case 1: // inactive
             msgbox(format(
-                "Years ago, I came to the isles of Mariyama in search of rare Pokémon.\p"
+                "Years ago, I came to the Maryan Isles in search of rare Pokémon.\p"
                 "But alas, all I could find during my ventures were these rare stones.\p"
                 "If you've any rare Pokémon, could you show them to me? I'd be more than happy to share with you the stones I found."
             ), MSGBOX_NPC)

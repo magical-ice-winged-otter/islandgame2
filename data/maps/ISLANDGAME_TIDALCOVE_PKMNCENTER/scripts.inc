@@ -103,8 +103,8 @@ ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Books_Text_0:
 	.string "these comic books.)$"
 
 ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_BallBoy_Text_0:
-	.string "My papa works at Strix Industries, the\n"
-	.string "biggest company in Mariyama!\p"
+	.string "My papa works at Skye Industries, the\n"
+	.string "biggest company in Marya!\p"
 	.string "They make lots of cool stuff. One of\n"
 	.string "the things they make are Pokéballs!\p"
 	.string "They gave a bunch of them to my papa,\n"

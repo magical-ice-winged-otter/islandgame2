@@ -322,7 +322,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
         "I couldn't do anything against that thief... I failed my little sister...\p"
         "If it wasn't for you and Articuno... My sister's Pokémon would've been lost forever!\p"
         "I can't something like that happen again... I need to get stronger, so when the time comes... I'll be able to protect her myself!\p"
-        "And there's no better way than for me to take on Mariyama Gym Challenge and enter the Festival Tournament, just like you!\p"
+        "And there's no better way than for me to take on Marya Gym Challenge and enter the Festival Tournament, just like you!\p"
         "My dad says I'm not ready yet..."
     ), MSGBOX_NPC)
 

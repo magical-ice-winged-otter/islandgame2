@@ -121,9 +121,9 @@ ISLANDGAME_ROSEVALE_INN_Interact_LockedDoor::
 
 
 ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene_Text_0:
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Why can't I take on the\n"
-	.string "Mariyama Gym Challenge? I want to\l"
-	.string "become stronger!$"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Why can't I take on the Marya\n"
+	.string "Gym Challenge? I want to become\l"
+	.string "stronger!$"
 
 ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene_Text_1:
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}Because you're not ready\n"
@@ -161,8 +161,7 @@ ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene_Text_2:
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom_Text_0:
 	.string "{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}Arthur and his father\n"
 	.string "have been arguing about participating\l"
-	.string "in the Mariyama Gym Challenge all\l"
-	.string "morning.\p"
+	.string "in the Marya Gym Challenge all morning.\p"
 	.string "I understand that it's natural for a\n"
 	.string "Pokémon trainer to eventually travel\l"
 	.string "off all on their own, but I'm still\l"

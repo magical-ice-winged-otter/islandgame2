@@ -307,8 +307,8 @@ RukaDefeated_Text_2:
 	.string "Hail! With it, you can unleash the true\l"
 	.string "beauty of ice Pokemon!\p"
 	.string "Now that you've completed the first\n"
-	.string "step towards the Mariyama Gym\l"
-	.string "Challenge, I present you with this!$"
+	.string "step towards the Marya Gym Challenge,\l"
+	.string "I present you with this!$"
 
 RukaDefeated_Text_3:
 	.string "That right there will get you a free\n"

@@ -133,7 +133,7 @@ script(local) RukaDefeated {
     giveitem(ITEM_TM07)
     msgbox(format(
         "Inside that TM is my signature move, Hail! With it, you can unleash the true beauty of ice Pokemon!\p"
-        "Now that you've completed the first step towards the Mariyama Gym Challenge, I present you with this!"
+        "Now that you've completed the first step towards the Marya Gym Challenge, I present you with this!"
         )
     )
     giveitem(ITEM_BIKE_VOUCHER)

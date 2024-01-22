@@ -25,7 +25,7 @@ script ISLANDGAME_ROSEVALE_INN_Trigger_Cutscene {
     applymovement(LOCALID_ARTHUR, Common_Movement_Delay48)
     waitmovement(0)
 
-    msgbox(format("{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Why can't I take on the Mariyama Gym Challenge? I want to become stronger!"))
+    msgbox(format("{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Why can't I take on the Marya Gym Challenge? I want to become stronger!"))
     closemessage
 
     applymovement(LOCALID_ARTHUR_DAD, Common_Movement_WalkInPlaceLeft)
@@ -64,7 +64,7 @@ script ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom {
     switch (var(VAR_ROSEVALE_STATE)) {
         case 3: // pre arthur fight
             msgbox(format(
-                "{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}Arthur and his father have been arguing about participating in the Mariyama Gym Challenge all morning.\pI understand that it's natural for a Pokémon trainer to eventually travel off all on their own, but I'm still worried if he'll be okay..."
+                "{COLOR GREEN}Arthur's Mom: {COLOR DARK_GRAY}Arthur and his father have been arguing about participating in the Marya Gym Challenge all morning.\pI understand that it's natural for a Pokémon trainer to eventually travel off all on their own, but I'm still worried if he'll be okay..."
             ))
             closemessage
         default: // post arthur fight

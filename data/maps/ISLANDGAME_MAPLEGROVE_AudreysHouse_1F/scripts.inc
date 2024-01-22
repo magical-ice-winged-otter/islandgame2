@@ -28,7 +28,7 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk::
 	.string "{COLOR DARK_GRAY}Feels like just yesterday, I was taking\n"
 	.string "Audrey to her first day of school.\p"
 	.string "{COLOR DARK_GRAY}Now she's exploring the vast wilderness\n"
-	.string "of Mariyama all on her own.\p"
+	.string "of Marya all on her own.\p"
 	.string "{COLOR DARK_GRAY}Kids grow up so fast, don't they? Blink\n"
 	.string "and you'll miss it!$"
 

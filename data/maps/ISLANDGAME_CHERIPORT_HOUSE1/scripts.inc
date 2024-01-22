@@ -19,7 +19,7 @@ ISLANDGAME_CHERIPORT_TOWN1_EventScript_NPC2Talk::
 
 
 NPC1_Text::
-	.string "{COLOR DARK_GRAY}Oranna is home to one of Mariyama's\n"
+	.string "{COLOR DARK_GRAY}Oranna is home to one of Marya's\n"
 	.string "legendary Isle Guardians.\p"
 	.string "{COLOR DARK_GRAY}The mythical Pokémon: Articuno!\p"
 	.string "{COLOR DARK_GRAY}I've never seen it in person, but they\n"

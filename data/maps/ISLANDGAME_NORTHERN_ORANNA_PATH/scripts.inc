@@ -137,8 +137,8 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3_Text_1:
 	.string "Did you enjoy seeing them?$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3_Text_2:
-	.string "Historians believe that Mariyama was\n"
-	.string "once a part of the Alola Region.\p"
+	.string "Historians believe that the Maryan\n"
+	.string "Isles were once a part of the Alola.\p"
 	.string "That's supposedly why our island has so\n"
 	.string "many of their regional variants.$"
 

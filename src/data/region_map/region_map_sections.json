@@ -3,8 +3,8 @@
     {
       "map_section": "MAPSEC_LITTLEROOT_TOWN",
       "name": "LITTLEROOT TOWN",
-      "x": 4,
-      "y": 11,
+      "x": 1,
+      "y": 16,
       "width": 1,
       "height": 1
     },
@@ -1713,28 +1713,20 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_CHERIPORT",
-      "name": "Cheriport",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
       "map_section": "MAPSEC_SOUTHERN_ORANNA_PATH",
       "name": "S. Oranna Path",
-      "x": 0,
-      "y": 0,
+      "x": 2,
+      "y": 16,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_MINTY_MEADOWS",
       "name": "Minty Meadows",
-      "x": 0,
-      "y": 0,
+      "x": 5,
+      "y": 13,
       "width": 1,
-      "height": 1
+      "height": 2
     },
     {
       "map_section": "MAPSEC_TRAVELERS_TUNNEL",
@@ -1747,48 +1739,48 @@
     {
       "map_section": "MAPSEC_CENTRAL_ORANNA_PATH",
       "name": "C. Oranna Path",
-      "x": 0,
-      "y": 0,
+      "x": 3,
+      "y": 12,
       "width": 1,
-      "height": 1
+      "height": 3
     },
     {
       "map_section": "MAPSEC_VERDANT_PATH",
       "name": "Verdant Path",
-      "x": 0,
-      "y": 0,
+      "x": 4,
+      "y": 16,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_VERDANT_WOODS",
       "name": "Verdant Woods",
-      "x": 0,
-      "y": 0,
+      "x": 4,
+      "y": 15,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_FRESA_FARMS",
       "name": "Fresa Farms",
-      "x": 0,
-      "y": 0,
+      "x": 5,
+      "y": 12,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_NORTHERN_ORANNA_PATH",
       "name": "N. Oranna Path",
-      "x": 0,
-      "y": 0,
+      "x": 2,
+      "y": 10,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROSEVALE",
       "name": "Rosevale",
-      "x": 0,
-      "y": 0,
+      "x": 1,
+      "y": 10,
       "width": 1,
       "height": 1
     },
@@ -1796,7 +1788,7 @@
       "map_section": "MAPSEC_AURORA_PATH",
       "name": "Aurora Path",
       "x": 0,
-      "y": 0,
+      "y": 10,
       "width": 1,
       "height": 1
     },
@@ -1804,7 +1796,7 @@
       "map_section": "MAPSEC_MT_AURORA",
       "name": "Mt. Aurora",
       "x": 0,
-      "y": 0,
+      "y": 9,
       "width": 1,
       "height": 1
     },
@@ -1819,16 +1811,24 @@
     {
       "map_section": "MAPSEC_PERSI",
       "name": "Camp Persi",
-      "x": 0,
-      "y": 0,
+      "x": 3,
+      "y": 16,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_TIDALCOVE",
-      "name": "Tidalcove",
-      "x": 0,
-      "y": 0,
+      "name": "",
+      "x": 3,
+      "y": 10,
+      "width": 1,
+      "height": 2
+    },
+    {
+      "map_section": "MAPSEC_CHERIPORT",
+      "name": "Cheriport",
+      "x": 1,
+      "y": 16,
       "width": 1,
       "height": 1
     }

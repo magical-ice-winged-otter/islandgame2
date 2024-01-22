@@ -11,7 +11,7 @@ script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyDad {
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk {
     format(
         "{COLOR DARK_GRAY}Feels like just yesterday, I was taking Audrey to her first day of school. \p"
-        "{COLOR DARK_GRAY}Now she's exploring the vast wilderness of Mariyama all on her own. \p"
+        "{COLOR DARK_GRAY}Now she's exploring the vast wilderness of Marya all on her own. \p"
         "{COLOR DARK_GRAY}Kids grow up so fast, don't they? Blink and you'll miss it!"
     )
 }

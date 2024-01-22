@@ -47,7 +47,7 @@ script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_BallBoy {
     faceplayer
     if(!flag(FLAG_TIDALCOVE_LUXBALL_GIFT)) {
         msgbox(format(
-            "My papa works at Strix Industries, the biggest company in Mariyama!\p"
+            "My papa works at Skye Industries, the biggest company in Marya!\p"
             "They make lots of cool stuff. One of the things they make are Pokéballs!\p"
             "They gave a bunch of them to my papa, and he gave some to me!\p"
             "You can have one of them. My papa says sharing is caring."

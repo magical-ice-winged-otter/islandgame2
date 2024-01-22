@@ -155,8 +155,8 @@ text Scientist1Talk_Text {
 
 text CocoTalk_Text {
     format(
-        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! Welcome to the isles of Mariyama. \p"
-        "{COLOR DARK_GRAY}My name is Coco. I'm a close friend of Professor Palm's and the creator of Mariyama's Pokémon Storage System! \p"
+        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! Welcome to the Maryan Isles! \p"
+        "{COLOR DARK_GRAY}My name is Coco. I'm a close friend of Professor Palm's and the creator of Marya's Pokémon Storage System! \p"
         "{COLOR DARK_GRAY}I hope you find it easy and convenient to use. Let me know if you have any problems with it!"
     )
 }

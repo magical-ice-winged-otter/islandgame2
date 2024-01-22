@@ -471,7 +471,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1:
 	.string "the time comes... I'll be able to protect\l"
 	.string "her myself!\p"
 	.string "And there's no better way than for me\n"
-	.string "to take on Mariyama Gym Challenge and\l"
+	.string "to take on Marya Gym Challenge and\l"
 	.string "enter the Festival Tournament, just\l"
 	.string "like you!\p"
 	.string "My dad says I'm not ready yet...$"
