@@ -39,6 +39,7 @@
 #include "window.h"
 #include "mystery_gift_menu.h"
 #include "islandgame.h"
+#include "islandgame_save_upgrade.h"
 
 /*
  * Main menu state machine
@@ -179,6 +180,11 @@ static u8 sBirchSpeechMainTaskId;
 
 static u32 InitMainMenu(bool8);
 static void Task_MainMenuCheckSaveFile(u8);
+
+static void Task_AskIfWantsToUpgradeSave(u8);
+static void Task_WaitForUpgradeSaveInput(u8);
+static void FinishUpgradeSaveWindow(u8);
+
 static void Task_MainMenuCheckBattery(u8);
 static void Task_WaitForSaveFileErrorWindow(u8);
 static void CreateMainMenuErrorWindow(const u8 *);
@@ -404,6 +410,18 @@ static const struct WindowTemplate sNewGameBirchSpeechTextWindows[] =
         .baseBlock = 0x85
     },
     DUMMY_WIN_TEMPLATE
+};
+
+static const struct WindowTemplate sWindowTemplate_ConfirmUpgradeSave =
+{
+    .bg = 0,
+    .tilemapLeft = 24,
+    .tilemapTop = 9,
+    .width = 5,
+    .height = 4,
+    .paletteNum = 15,
+    .baseBlock = 0x0260
+    // .baseBlock = 0x16D
 };
 
 static const u16 sMainMenuBgPal[] = INCBIN_U16("graphics/interface/main_menu_bg.gbapal");
@@ -646,7 +664,12 @@ static void Task_MainMenuCheckSaveFile(u8 taskId)
                 tMenuType = HAS_SAVED_GAME;
                 if (IsMysteryGiftEnabled())
                     tMenuType++;
-                gTasks[taskId].func = Task_MainMenuCheckBattery;
+                if (IsSaveOutOfDate()) {
+                    gTasks[taskId].func = Task_AskIfWantsToUpgradeSave;
+                }
+                else {
+                    gTasks[taskId].func = Task_MainMenuCheckBattery;
+                }
                 break;
             case SAVE_STATUS_CORRUPT:
                 CreateMainMenuErrorWindow(gText_SaveFileErased);
@@ -691,6 +714,48 @@ static void Task_MainMenuCheckSaveFile(u8 taskId)
         tCurrItem = sCurrItemAndOptionMenuCheck;
         tItemCount = tMenuType + 2;
     }
+}
+
+static void Task_AskIfWantsToUpgradeSave(u8 taskId)
+{
+    // create a new window for this dialogue
+    FillWindowPixelBuffer(7, PIXEL_FILL(1));
+    AddTextPrinterParameterized(7, FONT_NORMAL, gText_CanUpgradeSave, 0, 1, 2, 0);
+    PutWindowTilemap(7);
+    CopyWindowToVram(7, COPYWIN_GFX);
+    DrawMainMenuWindowBorder(&sWindowTemplates_MainMenu[7], MAIN_MENU_BORDER_TILE);
+    SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, DISPLAY_WIDTH));
+    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(0, DISPLAY_HEIGHT));
+
+    CreateYesNoMenu(&sWindowTemplate_ConfirmUpgradeSave, MAIN_MENU_BORDER_TILE, 0x2, 0);
+
+    gTasks[taskId].func = Task_WaitForUpgradeSaveInput;
+}
+
+static void Task_WaitForUpgradeSaveInput(u8 taskId)
+{
+    RunTextPrinters();
+
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case 0:  // YES
+        PlaySE(SE_SELECT);
+        FinishUpgradeSaveWindow(taskId);
+        UpgradeSave();
+        break;
+    case 1:  // NO
+    case MENU_B_PRESSED:
+        PlaySE(SE_SELECT);
+        FinishUpgradeSaveWindow(taskId);
+        break;
+    }
+}
+
+static void FinishUpgradeSaveWindow(u8 taskId)
+{
+    ClearWindowTilemap(7);
+    ClearMainMenuWindowTilemap(&sWindowTemplates_MainMenu[7]);
+    gTasks[taskId].func = Task_MainMenuCheckBattery;
 }
 
 static void Task_WaitForSaveFileErrorWindow(u8 taskId)
