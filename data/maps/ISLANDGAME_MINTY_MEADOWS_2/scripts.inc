@@ -971,7 +971,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9:
 	.string "Marya Gym Challenge!\p"
 	.string "{COLOR DARK_GRAY}That is, you'll have to travel across\n"
 	.string "the three main islands of Oranna,\l"
-	.string "Lumine, and Ignea...\p"
+	.string "Lumine, and Minerva...\p"
 	.string "{COLOR DARK_GRAY}...and challenge their respective gym\n"
 	.string "leaders in battle!\p"
 	.string "{COLOR DARK_GRAY}Ooh... I just can't wait! I just want the\n"
