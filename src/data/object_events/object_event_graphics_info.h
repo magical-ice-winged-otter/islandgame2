@@ -1884,7 +1884,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CuttableTree = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MartEmployee = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_48,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -2910,7 +2910,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wally = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireLittleBoy = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_35,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 128,
     .width = 16,
