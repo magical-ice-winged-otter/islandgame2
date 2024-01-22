@@ -111,6 +111,109 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
     },
 #endif //P_FAMILY_SHADOW_MIGHTYENA
 
+
+#if P_FAMILY_GOLETT_MARYAN
+    [SPECIES_GOLETT_MARYAN] =
+    {
+        .baseHP        = 59,
+        .baseAttack    = 74,
+        .baseDefense   = 50,
+        .baseSpeed     = 35,
+        .baseSpAttack  = 35,
+        .baseSpDefense = 50,
+        .types = { TYPE_ICE, TYPE_GHOST },
+        .catchRate = 190,
+        .expYield = 61,
+        .evYield_Attack = 1,
+        .itemRare = ITEM_LIGHT_CLAY,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+        .abilities = { ABILITY_IRON_FIST, ABILITY_SLUSH_RUSH, ABILITY_NO_GUARD },
+        .bodyColor = BODY_COLOR_BLUE,
+        .noFlip = TRUE,
+        .speciesName = _("Golett"),
+        .cryId = CRY_GOLETT,
+        .natDexNum = NATIONAL_DEX_GOLETT,
+        .categoryName = _("Automaton"),
+        .height = 10,
+        .weight = 920,
+        .description = COMPOUND_STRING(
+            "These Pokémon are thought to have\n"
+            "been created by the science of an\n"
+            "ancient and mysterious civilization.\n"
+            "It's been active for thousands of years."),
+        .pokemonScale = 305,
+        .pokemonOffset = 7,
+        .trainerScale = 257,
+        .trainerOffset = 0,
+        FRONT_PIC(GolettMaryan, 56, 56),
+        .frontPicYOffset = 7,
+        .frontAnimFrames = sAnims_GolettMaryan,
+        .frontAnimId = ANIM_V_SHAKE,
+        BACK_PIC(Golett, 64, 56),
+        .backPicYOffset = 8,
+        .backAnimId = BACK_ANIM_H_SLIDE,
+        PALETTES(GolettMaryan),
+        ICON(Golett, 0),
+        .footprint = gMonFootprint_Golett,
+        LEARNSETS(Golett),
+    },
+
+    // [SPECIES_GOLURK] =
+    // {
+    //     .baseHP        = 89,
+    //     .baseAttack    = 124,
+    //     .baseDefense   = 80,
+    //     .baseSpeed     = 55,
+    //     .baseSpAttack  = 55,
+    //     .baseSpDefense = 80,
+    //     .types = { TYPE_GROUND, TYPE_GHOST },
+    //     .catchRate = 90,
+    //     .expYield = 169,
+    //     .evYield_Attack = 2,
+    //     .itemRare = ITEM_LIGHT_CLAY,
+    //     .genderRatio = MON_GENDERLESS,
+    //     .eggCycles = 25,
+    //     .friendship = STANDARD_FRIENDSHIP,
+    //     .growthRate = GROWTH_MEDIUM_FAST,
+    //     .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+    //     .abilities = { ABILITY_IRON_FIST, ABILITY_KLUTZ, ABILITY_NO_GUARD },
+    //     .bodyColor = BODY_COLOR_GREEN,
+    //     .noFlip = TRUE,
+    //     .speciesName = _("Golurk"),
+    //     .cryId = CRY_GOLURK,
+    //     .natDexNum = NATIONAL_DEX_GOLURK,
+    //     .categoryName = _("Automaton"),
+    //     .height = 28,
+    //     .weight = 3300,
+    //     .description = COMPOUND_STRING(
+    //         "Golurk were created to protect people\n"
+    //         "and Pokémon by an ancient civilisation.\n"
+    //         "Removing the seal on its chest makes its\n"
+    //         "internal energy go out of control."),
+    //     .pokemonScale = 275,
+    //     .pokemonOffset = 3,
+    //     .trainerScale = 300,
+    //     .trainerOffset = 0,
+    //     FRONT_PIC(Golurk, 64, 64),
+    //     .frontPicYOffset = 0,
+    //     .frontAnimFrames = sAnims_Golurk,
+    //     .frontAnimId = ANIM_V_SHAKE_TWICE,
+    //     BACK_PIC(Golurk, 64, 56),
+    //     .backPicYOffset = 7,
+    //     .backAnimId = BACK_ANIM_V_SHAKE,
+    //     PALETTES(Golurk),
+    //     ICON(Golurk, 0),
+    //     .footprint = gMonFootprint_Golurk,
+    //     LEARNSETS(Golurk),
+    // },
+#endif //P_FAMILY_GOLETT
+
+
+
 #ifdef __INTELLISENSE__
 };
 #endif

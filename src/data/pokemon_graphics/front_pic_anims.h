@@ -10093,6 +10093,10 @@ static const union AnimCmd sAnim_Egg_1[] =
     ANIMCMD_END,
 };
 
+
+
+// island-game 
+
 #if P_FAMILY_SHADOW_LUGIA
 static const union AnimCmd sAnim_ShadowLugia_1[] =
 {
@@ -10113,6 +10117,23 @@ static const union AnimCmd sAnim_ShadowMightyena_1[] =
     ANIMCMD_END,
 };
 #endif //P_FAMILY_SHADOW_MIGHTYENA
+
+#if P_FAMILY_GOLETT_MARYAN
+static const union AnimCmd sAnim_GolettMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 44),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_END,
+};
+
+// static const union AnimCmd sAnim_Golurk_1[] =
+// {
+//     ANIMCMD_FRAME(1, 45),
+//     ANIMCMD_FRAME(0, 10),
+//     ANIMCMD_END,
+// };
+#endif //P_FAMILY_GOLETT
 
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
@@ -12759,3 +12780,7 @@ SINGLE_ANIMATION(ShadowLugia);
 SINGLE_ANIMATION(ShadowMightyena);
 #endif //P_FAMILY_SHADOW_LUGIA
 SINGLE_ANIMATION(Egg);
+#if P_FAMILY_GOLETT_MARYAN
+SINGLE_ANIMATION(GolettMaryan);
+//SINGLE_ANIMATION(Golurk);
+#endif //P_FAMILY_GOLETT

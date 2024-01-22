@@ -136,6 +136,15 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_WAITER] = {.size = 8, .y_offset = 0},
     [TRAINER_PIC_WAITRESS] = {.size = 8, .y_offset = 0},
     [TRAINER_PIC_WORKER] = {.size = 8, .y_offset = 0},
+
+    // island-game
+    [TRAINER_PIC_ARTHUR] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_EDEA] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_AUDREY] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_JONAS] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_RUKA] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_OLIVIA] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_OLIVER] = {.size = 8, .y_offset = 1},
 };
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
@@ -278,6 +287,15 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(WAITER, gTrainerFrontPic_Waiter, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(WAITRESS, gTrainerFrontPic_Waitress, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(WORKER, gTrainerFrontPic_Worker, TRAINER_PIC_SIZE),
+
+    // island-game 
+    TRAINER_SPRITE(ARTHUR, gTrainerFrontPic_Arthur, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(EDEA, gTrainerFrontPic_Edea, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(AUDREY, gTrainerFrontPic_Audrey, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(JONAS, gTrainerFrontPic_Jonas, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(RUKA, gTrainerFrontPic_Ruka, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(OLIVIA, gTrainerFrontPic_Olivia, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(OLIVER, gTrainerFrontPic_Oliver, TRAINER_PIC_SIZE),
 };
 
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
@@ -377,4 +395,13 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(LEAF, gTrainerPalette_Leaf),
     TRAINER_PAL(RS_BRENDAN, gTrainerPalette_RubySapphireBrendan),
     TRAINER_PAL(RS_MAY, gTrainerPalette_RubySapphireMay),
+
+    // island-game
+    TRAINER_PAL(ARTHUR, gTrainerPalette_Arthur),
+    TRAINER_PAL(EDEA, gTrainerPalette_Edea),
+    TRAINER_PAL(AUDREY, gTrainerPalette_Audrey),
+    TRAINER_PAL(JONAS, gTrainerPalette_Jonas),
+    TRAINER_PAL(RUKA, gTrainerPalette_Ruka),
+    TRAINER_PAL(OLIVIA, gTrainerPalette_Olivia),
+    TRAINER_PAL(OLIVER, gTrainerPalette_Oliver),
 };

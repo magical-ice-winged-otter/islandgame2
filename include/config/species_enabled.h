@@ -596,8 +596,9 @@
 #define P_FAMILY_FEZANDIPITI             P_GEN_9_POKEMON
 #define P_FAMILY_OGERPON                 P_GEN_9_POKEMON
 
-//islandgame
+//island-game
 #define P_FAMILY_SHADOW_LUGIA            P_GEN_C_POKEMON
 #define P_FAMILY_SHADOW_MIGHTYENA        P_GEN_C_POKEMON
+#define P_FAMILY_GOLETT_MARYAN           P_GEN_C_POKEMON
 
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H

@@ -352,6 +352,31 @@ extern const u8 gTrainerBackPic_Steven[];
 extern const u32 gTrainerBackPicPalette_Red[];
 extern const u32 gTrainerBackPicPalette_Leaf[];
 
+
+// island-game
+extern const u32 gTrainerFrontPic_Arthur[];
+extern const u32 gTrainerPalette_Arthur[];
+
+extern const u32 gTrainerFrontPic_Edea[];
+extern const u32 gTrainerPalette_Edea[];
+
+extern const u32 gTrainerFrontPic_Audrey[];
+extern const u32 gTrainerPalette_Audrey[];
+
+extern const u32 gTrainerFrontPic_Jonas[];
+extern const u32 gTrainerPalette_Jonas[];
+
+extern const u32 gTrainerFrontPic_Ruka[];
+extern const u32 gTrainerPalette_Ruka[];
+
+extern const u32 gTrainerFrontPic_Olivia[];
+extern const u32 gTrainerPalette_Olivia[];
+
+extern const u32 gTrainerFrontPic_Oliver[];
+extern const u32 gTrainerPalette_Oliver[];
+
+
+
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];
 extern const u32 gMenuPokeblock_Pal[];

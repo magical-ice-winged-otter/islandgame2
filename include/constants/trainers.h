@@ -155,6 +155,15 @@
 #define TRAINER_PIC_WORKER               135
 
 
+// island-game
+#define TRAINER_PIC_ARTHUR                136
+#define TRAINER_PIC_EDEA                  137
+#define TRAINER_PIC_AUDREY                138
+#define TRAINER_PIC_JONAS                 139
+#define TRAINER_PIC_RUKA                  140
+#define TRAINER_PIC_OLIVIA                141
+#define TRAINER_PIC_OLIVER                142
+
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1
