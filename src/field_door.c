@@ -242,10 +242,10 @@ static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7,
 static const u8 sDoorAnimPalettes_Islandgame_General[] = {4,4,4,4,4,4,4,4};
 static const u8 sDoorAnimPalettes_Islandgame_Forest[] = {12,12,12,12,12,12,12,12};
 
-static const u8 sDoorAnimPalettes_islandgame_oranna_general_00[] = {3,3,3,3,3,3,3,3};
-static const u8 sDoorAnimPalettes_islandgame_oranna_general_01[] = {3,3,3,3,3,3,3,3};
-static const u8 sDoorAnimPalettes_islandgame_oranna_maplegrove_00[] = {4,4,7,7,7,7,7,7};
-static const u8 sDoorAnimPalettes_islandgame_oranna_maplegrove_01[] = {4,4,8,8,8,8,8,8};
+static const u8 sDoorAnimPalettes_islandgame_oranna_general_00[] = {3,3,4,4,4,4,3,3};
+static const u8 sDoorAnimPalettes_islandgame_oranna_general_01[] = {3,3,4,4,4,4,3,3};
+static const u8 sDoorAnimPalettes_islandgame_oranna_maplegrove_00[] = {5,5,7,7,7,7,7,7};
+static const u8 sDoorAnimPalettes_islandgame_oranna_maplegrove_01[] = {5,5,8,8,8,8,8,8};
 static const u8 sDoorAnimPalettes_islandgame_oranna_persi[] = {6,6,6,6,6,6,6,6};
 static const u8 sDoorAnimPalettes_islandgame_oranna_rosevale[] = {9,9,9,9,9,9,9,9};
 static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_00[] = {9,9,9,9,9,9,9,9};
