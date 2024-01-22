@@ -959,7 +959,7 @@ const struct Tileset gTileset_islandgame_oranna_mt_aurora =
     .palettes = gTilesetPalettes_islandgame_oranna_mt_aurora,
     .metatiles = gMetatiles_islandgame_oranna_mt_aurora,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_mt_aurora,
-    .callback = NULL,
+    .callback = InitTilesetAnim_islandgame_oranna_mt_aurora,
 };
 
 const struct Tileset gTileset_islandgame_empty_primary =

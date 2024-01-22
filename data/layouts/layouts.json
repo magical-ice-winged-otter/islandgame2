@@ -4756,7 +4756,7 @@
       "name": "ISLANDGAME_MT_AURORA_1F_Layout",
       "width": 34,
       "height": 36,
-      "primary_tileset": "gTileset_islandgame_empty_primary",
+      "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_1F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_1F/map.bin"
