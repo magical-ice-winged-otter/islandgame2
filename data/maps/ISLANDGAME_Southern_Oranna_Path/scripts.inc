@@ -4,6 +4,7 @@ ISLANDGAME_Southern_Oranna_Path_MapScripts::
 
 ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_TEMP_1, 0
+	goto ISLANDGAME_Southern_Oranna_Path_OnLoad
 	return
 
 

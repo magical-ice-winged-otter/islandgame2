@@ -1,6 +1,7 @@
 mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_TEMP_1, 0)
+        goto(ISLANDGAME_Southern_Oranna_Path_OnLoad)
     }
     // MAP_SCRIPT_ON_FRAME_TABLE [
     //     VAR_TEMP_0, 0: ISLANDGAME_Southern_Oranna_Path_OnLoad
