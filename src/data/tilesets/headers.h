@@ -926,7 +926,7 @@ const struct Tileset gTileset_islandgame_oranna_cheriport =
     .metatiles = gMetatiles_islandgame_oranna_cheriport,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_cheriport,
     .paletteOverrides = gTilesetPalOverrides_Island_OrannaCheriport,
-    .callback = NULL,
+    .callback = InitTilesetAnim_islandgame_oranna_cheriport,
 };
 
 const struct Tileset gTileset_islandgame_oranna_southern_path =
@@ -1006,7 +1006,7 @@ const struct Tileset gTileset_islandgame_oranna_tidalcove =
     .metatiles = gMetatiles_islandgame_oranna_tidalcove,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_tidalcove,
     .paletteOverrides = gTilesetPalOverrides_Island_OrannaTidalcove,
-    .callback = NULL,
+    .callback = InitTilesetAnim_islandgame_oranna_tidalcove,
 };
 
 const struct Tileset gTileset_islandgame_oranna_general =

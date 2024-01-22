@@ -48,6 +48,8 @@ static void Island_TilesetAnim_Forest(u16);
 static void TilesetAnim_islandgame_ss_rain(u16);
 static void TilesetAnim_islandgame_oranna_general(u16);
 static void TilesetAnim_islandgame_oranna_rosevale(u16);
+static void TilesetAnim_islandgame_oranna_cheriport(u16);
+static void TilesetAnim_islandgame_oranna_tidalcove(u16);
 
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
@@ -90,8 +92,8 @@ static void QueueAnimTiles_islandgame_oranna_general_flower(u16);
 // todos
 static void QueueAnimTiles_islandgame_ss_rain_water(u16);
 static void QueueAnimTiles_islandgame_oranna_rosevale_flower(u16);
-// static void QueueAnimTiles_islandgame_oranna_cheriport_sandwateredge(u16);
-// static void QueueAnimTiles_islandgame_oranna_tidalcove_sandwateredge(u16);
+static void QueueAnimTiles_islandgame_oranna_cheriport_sandwateredge(u16);
+static void QueueAnimTiles_islandgame_oranna_tidalcove_sandwateredge(u16);
 // static void QueueAnimTiles_islandgame_oranna_maplegrove_flower(u16);
 
 const u16 gTilesetAnims_islandgame_oranna_general_flower_00_Frame0[] = INCBIN_U16("data/tilesets/primary/islandgame_oranna_general/anim/flower/00.4bpp");
@@ -143,6 +145,42 @@ const u16 *const gTilesetAnims_islandgame_ss_rain_water[] = {
     gTilesetAnims_islandgame_ss_rain_water_Frame5,
     gTilesetAnims_islandgame_ss_rain_water_Frame6,
     gTilesetAnims_islandgame_ss_rain_water_Frame7
+};
+
+const u16 gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/anim/sand_water_edge/00.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/anim/sand_water_edge/01.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/anim/sand_water_edge/02.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame3[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/anim/sand_water_edge/03.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame4[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/anim/sand_water_edge/04.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame5[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/anim/sand_water_edge/05.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame6[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/anim/sand_water_edge/06.4bpp");
+
+const u16 *const gTilesetAnims_islandgame_oranna_cheriport_sandwateredge[] = {
+    gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame0,
+    gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame1,
+    gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame2,
+    gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame3,
+    gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame4,
+    gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame5,
+    gTilesetAnims_islandgame_oranna_cheriport_sandwateredge_Frame6,
+};
+
+const u16 gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/anim/sand_water_edge/00.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame1[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/anim/sand_water_edge/01.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame2[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/anim/sand_water_edge/02.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame3[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/anim/sand_water_edge/03.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame4[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/anim/sand_water_edge/04.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame5[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/anim/sand_water_edge/05.4bpp");
+const u16 gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame6[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/anim/sand_water_edge/06.4bpp");
+
+const u16 *const gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge[] = {
+    gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame0,
+    gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame1,
+    gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame2,
+    gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame3,
+    gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame4,
+    gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame5,
+    gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge_Frame6,
 };
 
 //island-game
@@ -804,6 +842,20 @@ void InitTilesetAnim_islandgame_oranna_general(void)
     sPrimaryTilesetAnimCallback = TilesetAnim_islandgame_oranna_general;
 }
 
+void InitTilesetAnim_islandgame_oranna_cheriport(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_islandgame_oranna_cheriport;
+}
+
+void InitTilesetAnim_islandgame_oranna_tidalcove(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_islandgame_oranna_tidalcove;
+}
+
 void InitTilesetIsland_Anim_Forest(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -851,6 +903,18 @@ static void TilesetAnim_islandgame_oranna_general(u16 timer)
         QueueAnimTiles_islandgame_oranna_general_flower(timer / 16);
     if (timer % 16 == 4)
         QueueAnimTiles_islandgame_oranna_general_water(timer / 16);
+}
+
+static void TilesetAnim_islandgame_oranna_cheriport(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_islandgame_oranna_cheriport_sandwateredge(timer / 16);
+}
+
+static void TilesetAnim_islandgame_oranna_tidalcove(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_islandgame_oranna_tidalcove_sandwateredge(timer / 16);
 }
 
 static void Island_TilesetAnim_Forest(u16 timer)
@@ -914,6 +978,18 @@ static void Island_QueueAnimTiles_Forest_Flower_2(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_Island_Forest_Flower_2);
     AppendTilesetAnimToBuffer(gTilesetAnims_Island_Forest_Flower_2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 4)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_islandgame_oranna_cheriport_sandwateredge(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_cheriport_sandwateredge);
+    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_cheriport_sandwateredge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 8 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_islandgame_oranna_tidalcove_sandwateredge(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge);
+    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 8 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_islandgame_oranna_rosevale_flower(u16 timer)

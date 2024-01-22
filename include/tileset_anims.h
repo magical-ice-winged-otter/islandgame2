@@ -35,6 +35,8 @@ void InitTilesetAnim_BattlePyramid(void);
 //island-game-start
 void InitTilesetAnim_islandgame_ss_rain_general(void);
 void InitTilesetAnim_islandgame_oranna_general(void);
+void InitTilesetAnim_islandgame_oranna_cheriport(void);
+void InitTilesetAnim_islandgame_oranna_tidalcove(void);
 void InitTilesetIsland_Anim_Forest(void);
 void InitTilesetIsland_Anim_Rosevale(void);
 
