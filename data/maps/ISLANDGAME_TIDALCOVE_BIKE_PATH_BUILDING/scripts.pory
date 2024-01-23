@@ -33,7 +33,7 @@ script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck {
         waitmovement(0)
     }
     else {
-        msgbox("Welcome to the Seaside Bike Path! Please be aware of other bikers.", MSGBOX_NPC)
+        msgbox(format("Welcome to the Seaside Bike Path! Please be aware of other bikers."), MSGBOX_NPC)
         setflag(FLAG_SYS_CYCLING_ROAD)
         setvar(VAR_TEMP_1, 1)
     }

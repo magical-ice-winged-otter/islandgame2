@@ -48,4 +48,5 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_0:
 	.string "bike path without a bike!$"
 
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_1:
-	.string "Welcome to the Seaside Bike Path! Please be aware of other bikers.$"
+	.string "Welcome to the Seaside Bike Path!\n"
+	.string "Please be aware of other bikers.$"

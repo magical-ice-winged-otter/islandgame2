@@ -142,16 +142,16 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaRosevale[] =
     OVERRIDES_END
 };
 //islandgame_oranna_tidalcove
-static const u16 sTilesetPalOverride_Island_OrannaTidalcove6[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/override_palettes/06.gbapal");
 static const u16 sTilesetPalOverride_Island_OrannaTidalcove7[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/override_palettes/07.gbapal");
+static const u16 sTilesetPalOverride_Island_OrannaTidalcove12[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_tidalcove/override_palettes/12.gbapal");
 
 const struct PaletteOverride gTilesetPalOverrides_Island_OrannaTidalcove[] = 
 {
     {
-        .slot = 6,
+        .slot = 12,
         .startHour = NIGHT_HOUR_BEGIN,
         .endHour = NIGHT_HOUR_END,
-        .palette = sTilesetPalOverride_Island_OrannaTidalcove6
+        .palette = sTilesetPalOverride_Island_OrannaTidalcove12
     },
     {
         .slot = 7,
