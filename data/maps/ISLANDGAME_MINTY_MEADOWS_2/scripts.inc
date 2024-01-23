@@ -971,8 +971,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9:
 	.string "{COLOR DARK_GRAY}I'm taking part in it, and I think you\n"
 	.string "should to! You'd be a great competitor!\p"
 	.string "{COLOR DARK_GRAY}To qualify, you'll have to complete the\n"
-	.string "Marya Gym Challenge!\p"
-	.string "$"
+	.string "Marya Gym Challenge!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_10:
 	.string "{COLOR DARK_GRAY}That is, you'll have to travel across\n"
@@ -983,8 +982,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_10:
 	.string "{COLOR DARK_GRAY}Ooh... I just can't wait! I just want the\n"
 	.string "festival to begin tomorrow!\p"
 	.string "{COLOR DARK_GRAY}Huh? Oh, you're right. Neither of us\n"
-	.string "would qualify if it started tomorrow...\p"
-	.string "$"
+	.string "would qualify if it started tomorrow...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_11:
 	.string "{COLOR DARK_GRAY}Well, I have to report back to the\n"
@@ -996,8 +994,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_11:
 	.string "{COLOR DARK_GRAY}Ruka is really famous around here. On\n"
 	.string "top of being a gym leader, she's used to\l"
 	.string "be a professional swimmer and swimsuit\l"
-	.string "model!\p"
-	.string "$"
+	.string "model!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_12:
 	.string "{COLOR DARK_GRAY}-sigh- I wish I could be as confident as\n"
