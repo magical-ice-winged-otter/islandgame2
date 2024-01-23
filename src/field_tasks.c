@@ -887,10 +887,10 @@ enum {
 #define tSlopeAnimTime(i) data[(i) * SLOPE_DATA_SIZE + SLOPE_DATA_START + SLOPE_TIME]
 
 static const u16 sMuddySlopeMetatiles[] = {
-    METATILE_General_MuddySlope_Frame0,
-    METATILE_General_MuddySlope_Frame3,
-    METATILE_General_MuddySlope_Frame2,
-    METATILE_General_MuddySlope_Frame1
+    METATILE_islandgame_oranna_general_MuddySlope,
+    // METATILE_General_MuddySlope_Frame3,
+    // METATILE_General_MuddySlope_Frame2,
+    // METATILE_General_MuddySlope_Frame1
 };
 
 #define SLOPE_ANIM_TIME 32
@@ -900,13 +900,13 @@ static void SetMuddySlopeMetatile(s16 *data, s16 x, s16 y)
 {
     u16 metatileId;
     if ((--data[SLOPE_TIME]) == 0)
-        metatileId = METATILE_General_MuddySlope_Frame0;
+        metatileId = METATILE_islandgame_oranna_general_MuddySlope;
     else
         metatileId = sMuddySlopeMetatiles[data[SLOPE_TIME] / SLOPE_ANIM_STEP_TIME];
 
     MapGridSetMetatileIdAt(x, y, metatileId);
     CurrentMapDrawMetatileAt(x, y);
-    MapGridSetMetatileIdAt(x, y, METATILE_General_MuddySlope_Frame0);
+    MapGridSetMetatileIdAt(x, y, METATILE_islandgame_oranna_general_MuddySlope);
 }
 
 static void Task_MuddySlope(u8 taskId)

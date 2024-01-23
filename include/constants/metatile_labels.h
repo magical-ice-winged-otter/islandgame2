@@ -818,6 +818,7 @@
 #define METATILE_islandgame_maplegrove_Door01          0x248
 #define METATILE_islandgame_maplegrove_Door02          0x287
 #define METATILE_islandgame_oranna_cheriport_door      0x24C
+#define METATILE_islandgame_oranna_general_MuddySlope  0x082
 #define METATILE_islandgame_oranna_general_door_00     0x0C1
 #define METATILE_islandgame_oranna_general_door_01     0x0A1
 #define METATILE_islandgame_oranna_maplegrove_door_00  0x244
