@@ -9,7 +9,7 @@
 //LINK src/battle_bg.c:608
 
 // Comment out this line to strip debugging tools from the build.
-#define ISLANDGAME_DEBUG
+//#define ISLANDGAME_DEBUG
 
 // whenever we make a breaking change to the save block, we can increment this number
 // then, when we begin the game, check for outdated saves and try to upgrade them or display a warning
