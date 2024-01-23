@@ -243,5 +243,5 @@ script(local) ThiefDefeated {
     setvar(VAR_ROSEVALE_STATE, 2) // see ISLANDGAME_ROSEVALE scripts.pory for state info
 
     // warp back to rosevale
-    warp(MAP_ISLANDGAME_ROSEVALE, 19, 26)
+    warp(MAP_ISLANDGAME_ROSEVALE, 13, 26)
 }
