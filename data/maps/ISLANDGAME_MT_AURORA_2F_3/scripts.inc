@@ -197,7 +197,7 @@ ThiefDefeated:
 	waitmovement 0
 	msgbox ThiefDefeated_Text_9
 	setvar VAR_ROSEVALE_STATE, 2
-	warp MAP_ISLANDGAME_ROSEVALE, 19, 26
+	warp MAP_ISLANDGAME_ROSEVALE, 13, 26
 	return
 
 
