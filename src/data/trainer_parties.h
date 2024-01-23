@@ -853,14 +853,6 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_CRYOGONAL,
-    .heldItem = ITEM_ICY_ROCK,
-    .ability = ABILITY_LEVITATE,
-    .moves = {MOVE_ANCIENT_POWER, MOVE_AURORA_BEAM, MOVE_HAIL, MOVE_AURORA_VEIL}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 25,
     .species = SPECIES_CLOYSTER,
     .heldItem = ITEM_FOCUS_SASH,
@@ -944,7 +936,7 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .species = SPECIES_UMBREON,
     .ability = ABILITY_SYNCHRONIZE,
-    .heldItem = ITEM_LEFTOVERS,
+    .heldItem = ITEM_BLACK_GLASSES,
     .moves = {MOVE_CONFUSE_RAY, MOVE_PURSUIT, MOVE_YAWN, MOVE_SNARL}
     },
 };
