@@ -626,23 +626,9 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
         .palette = gBattleTerrainPalette_Frontier,
     },
 
-    [BATTLE_TERRAIN_GYM] =
-    {
-        .tileset = gBattleTerrainTiles_Building,
-        .tilemap = gBattleTerrainTilemap_Building,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_BuildingGym,
-    },
+    [BATTLE_TERRAIN_GYM] = { TERRAIN_METADATA(HDStandard) },
 
-    [BATTLE_TERRAIN_LEADER] =
-    {
-        .tileset = gBattleTerrainTiles_Building,
-        .tilemap = gBattleTerrainTilemap_Building,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_BuildingLeader,
-    },
+    [BATTLE_TERRAIN_LEADER] = { TERRAIN_METADATA(HDStandard) },
 
     [BATTLE_TERRAIN_MAGMA] =
     {
