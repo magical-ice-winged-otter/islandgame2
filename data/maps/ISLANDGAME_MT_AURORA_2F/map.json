@@ -75,6 +75,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "item": "ITEM_EXP_CANDY_S",
+      "flag": "FLAG_HIDDEN_ITEM_MT_AURORA_EXP_CANDY"
+    }
   ]
 }

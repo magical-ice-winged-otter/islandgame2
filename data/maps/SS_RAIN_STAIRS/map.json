@@ -55,6 +55,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "item": "ITEM_EXP_CANDY_XS",
+      "flag": "FLAG_HIDDEN_ITEM_SS_RAIN_EXP_CANDY"
+    }
   ]
 }

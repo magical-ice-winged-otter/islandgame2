@@ -153,8 +153,8 @@
       "x": 31,
       "y": 23,
       "elevation": 0,
-      "item": "ITEM_BLUE_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_BLUESHARD"
+      "item": "ITEM_EXP_CANDY_S",
+      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_EXP_CANDY"
     },
     {
       "type": "hidden_item",
@@ -169,7 +169,7 @@
       "x": 35,
       "y": 5,
       "elevation": 0,
-      "item": "ITEM_POKE_BALL",
+      "item": "ITEM_GUARD_SPEC",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL"
     },
     {

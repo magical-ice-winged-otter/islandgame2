@@ -1,23 +1,5 @@
 ISLANDGAME_TRAVELERS_TUNNEL_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_TRAVELERS_TUNNEL_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
-
-ISLANDGAME_TRAVELERS_TUNNEL_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	checkitem ITEM_ISLANDGAME_LANTERN
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TRAVELERS_TUNNEL_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-	return
-
-ISLANDGAME_TRAVELERS_TUNNEL_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	setflag FLAG_TEMP_1
-	return
-
-
-ISLANDGAME_TRAVELERS_TUNNEL_Lantern::
-	lock
-	finditem ITEM_ISLANDGAME_LANTERN
-	release
-	return
 
 
 ISLANDGAME_TRAVELERS_TUNNEL_Hiker::
@@ -33,5 +15,4 @@ ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk::
 	.string "tunnel for hours!\p"
 	.string "{COLOR DARK_GRAY}I thought I'd never see light again, but\n"
 	.string "I managed to feel my way over here.\p"
-	.string "{COLOR DARK_GRAY}If only I hadn't tripped and lost my\n"
-	.string "lantern along the way...$"
+	.string "{COLOR DARK_GRAY}If only I had a lantern...$"

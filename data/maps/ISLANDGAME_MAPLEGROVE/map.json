@@ -32,16 +32,16 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 21,
-      "y": 26,
+      "x": 22,
+      "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "ITEM_FOCUS_BAND",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_MAPLEGROVE_FOCUS_BAND"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -212,11 +212,19 @@
     },
     {
       "type": "hidden_item",
-      "x": 22,
-      "y": 31,
+      "x": 3,
+      "y": 7,
       "elevation": 0,
       "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_REVIVE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 25,
+      "y": 7,
+      "elevation": 0,
+      "item": "ITEM_EXP_CANDY_XS",
+      "flag": "FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY"
     }
   ]
 }

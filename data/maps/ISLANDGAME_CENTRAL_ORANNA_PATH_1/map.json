@@ -209,8 +209,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 30,
-      "y": 6,
+      "x": 29,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -374,6 +374,14 @@
       "elevation": 0,
       "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_REVIVE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "item": "ITEM_EXP_CANDY_S",
+      "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY"
     }
   ]
 }

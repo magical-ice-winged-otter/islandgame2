@@ -13,9 +13,9 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
             startquest(QUEST_TIDALCOVE_RARE_PKMN)
         case 2: // active
             lock
-            msgbox(format("I'm looking for five rare Pokémon on this island in particular.\pDid you find any of them?"), MSGBOX_NPC)
+            msgbox(format("I'm looking for five rare Pokémon of different types.\pDid you find any of them?"), MSGBOX_NPC)
 
-            // squirtle checks
+            // water checks
             setvar(VAR_0x8000, SPECIES_SQUIRTLE)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
@@ -32,7 +32,41 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
             }
 
-            // rowlet checks
+            setvar(VAR_0x8000, SPECIES_MUDKIP)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+            }
+            setvar(VAR_0x8000, SPECIES_MARSHTOMP)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+            }
+            setvar(VAR_0x8000, SPECIES_SWAMPERT)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+            }
+
+            setvar(VAR_0x8000, SPECIES_FROAKIE)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+            }
+            setvar(VAR_0x8000, SPECIES_FROGADIER)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+            }
+            setvar(VAR_0x8000, SPECIES_GRENINJA)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+            }
+
+
+
+            // grass checks
             setvar(VAR_0x8000, SPECIES_ROWLET)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
@@ -54,22 +88,93 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
             }
 
-            // tepig checks
-            setvar(VAR_0x8000, SPECIES_TEPIG)
+            setvar(VAR_0x8000, SPECIES_BULBASAUR)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+            setvar(VAR_0x8000, SPECIES_IVYSAUR)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+            setvar(VAR_0x8000, SPECIES_VENUSAUR)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+
+            setvar(VAR_0x8000, SPECIES_TREECKO)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+            setvar(VAR_0x8000, SPECIES_GROVYLE)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+            setvar(VAR_0x8000, SPECIES_SCEPTILE)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+            }
+
+
+
+
+
+
+            // fire checks
+            setvar(VAR_0x8000, SPECIES_TORCHIC)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
             }
-            setvar(VAR_0x8000, SPECIES_PIGNITE)
+            setvar(VAR_0x8000, SPECIES_COMBUSKEN)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
             }
-            setvar(VAR_0x8000, SPECIES_EMBOAR)
+            setvar(VAR_0x8000, SPECIES_BLAZIKEN)
             callnative(CheckPartyMon)
             if (var(VAR_RESULT)) {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
             }
+
+            setvar(VAR_0x8000, SPECIES_CHARMANDER)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+            }
+            setvar(VAR_0x8000, SPECIES_CHARMELEON)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+            }
+            setvar(VAR_0x8000, SPECIES_CHARIZARD)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+            }
+
+            setvar(VAR_0x8000, SPECIES_LITTEN)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+            }
+            setvar(VAR_0x8000, SPECIES_TORRACAT)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+            }
+            setvar(VAR_0x8000, SPECIES_INCINEROAR)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+            }
+
+
 
             // delibird checks
             setvar(VAR_0x8000, SPECIES_DELIBIRD)
@@ -84,6 +189,22 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
             if (var(VAR_RESULT)) {
                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
             }
+            setvar(VAR_0x8000, SPECIES_PICHU)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
+            }
+            setvar(VAR_0x8000, SPECIES_RAICHU)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
+            }
+            setvar(VAR_0x8000, SPECIES_RAICHU_ALOLAN)
+            callnative(CheckPartyMon)
+            if (var(VAR_RESULT)) {
+                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
+            }
+            
             msgbox(format("Hmm, unfortunately you don't have any of the Pokémon I'm looking for."))
             goto(End)
 

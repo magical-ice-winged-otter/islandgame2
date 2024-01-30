@@ -1,6 +1,8 @@
 mapscripts ISLANDGAME_AURORA_WEATHER_INSTITUTE_MapScripts {}
 
 script ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist {
+    lock
+    faceplayer
     if (!flag(FLAG_RECEIVED_CASTFORM)) {
         msgbox(format(
             "Hello there! You must be {PLAYER}. I am one of Professor Palm's aides.\p

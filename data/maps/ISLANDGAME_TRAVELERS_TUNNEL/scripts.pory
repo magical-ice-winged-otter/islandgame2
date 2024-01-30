@@ -1,19 +1,6 @@
 mapscripts ISLANDGAME_TRAVELERS_TUNNEL_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-        checkitem(ITEM_ISLANDGAME_LANTERN)
-
-        if (var(VAR_RESULT)) {
-            setflag(FLAG_TEMP_1) // removes the lantern pokeball if we already have it
-        }
-    }
 }
 
-
-script ISLANDGAME_TRAVELERS_TUNNEL_Lantern {
-    lock
-    finditem(ITEM_ISLANDGAME_LANTERN)
-    release
-}
 
 script ISLANDGAME_TRAVELERS_TUNNEL_Hiker {
     lock
@@ -26,6 +13,6 @@ text ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk {
     format(
         "{COLOR DARK_GRAY}Phew... I've been wandering in this tunnel for hours! \p"
         "{COLOR DARK_GRAY}I thought I'd never see light again, but I managed to feel my way over here. \p"
-        "{COLOR DARK_GRAY}If only I hadn't tripped and lost my lantern along the way..."
+        "{COLOR DARK_GRAY}If only I had a lantern..."
         )
 }
