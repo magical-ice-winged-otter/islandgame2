@@ -39115,6 +39115,12 @@ static const u16 sOgerponTeachableLearnset[] = {
 };
 #endif //P_FAMILY_OGERPON
 
+
+
+
+
+// island-game teachsets
+
 #if P_FAMILY_SHADOW_LUGIA
 static const u16 sShadowLugiaTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
@@ -39214,3 +39220,96 @@ static const u16 sShadowMightyenaTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif // P_FAMILY_SHADOW_MIGHTYENA
+
+#if P_FAMILY_GOLETT_MARYAN
+static const u16 sGolettMaryanTeachableLearnset[] = {
+    MOVE_BRICK_BREAK,
+    MOVE_DOUBLE_TEAM,
+    MOVE_EARTHQUAKE,
+    MOVE_FACADE,
+    MOVE_FLASH,
+    MOVE_FOCUS_PUNCH,
+    MOVE_FRUSTRATION,
+    MOVE_HIDDEN_POWER,
+    MOVE_ICE_BEAM,
+    MOVE_BLIZZARD,
+    MOVE_AURORA_VEIL,
+    MOVE_HAIL,
+    MOVE_DRAIN_PUNCH,
+    MOVE_BULLDOZE,
+    MOVE_PROTECT,
+    MOVE_PSYCHIC,
+    MOVE_RAIN_DANCE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_ROCK_SMASH,
+    MOVE_FLY,
+    MOVE_ROCK_TOMB,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SHADOW_BALL,
+    MOVE_SHOCK_WAVE,
+    MOVE_STRENGTH,
+    MOVE_THIEF,
+    MOVE_TOXIC,
+    MOVE_DEFENSE_CURL,
+    MOVE_DYNAMIC_PUNCH,
+    MOVE_FIRE_PUNCH,
+    MOVE_ICE_PUNCH,
+    MOVE_ICY_WIND,
+    MOVE_MEGA_PUNCH,
+    MOVE_MUD_SLAP,
+    MOVE_ROCK_SLIDE,
+    MOVE_SLEEP_TALK,
+    MOVE_SNORE,
+    MOVE_SUBSTITUTE,
+    MOVE_SWAGGER,
+    MOVE_THUNDER_PUNCH,
+    MOVE_UNAVAILABLE,
+};
+
+// static const u16 sGolurkMaryanTeachableLearnset[] = {
+//     MOVE_BRICK_BREAK,
+//     MOVE_DOUBLE_TEAM,
+//     MOVE_EARTHQUAKE,
+//     MOVE_FACADE,
+//     MOVE_FLASH,
+//     MOVE_FLY,
+//     MOVE_FOCUS_PUNCH,
+//     MOVE_FRUSTRATION,
+//     MOVE_HIDDEN_POWER,
+//     MOVE_HYPER_BEAM,
+//     MOVE_ICE_BEAM,
+//     MOVE_PROTECT,
+//     MOVE_PSYCHIC,
+//     MOVE_RAIN_DANCE,
+//     MOVE_REST,
+//     MOVE_RETURN,
+//     MOVE_ROCK_SMASH,
+//     MOVE_ROCK_TOMB,
+//     MOVE_SAFEGUARD,
+//     MOVE_SECRET_POWER,
+//     MOVE_SHADOW_BALL,
+//     MOVE_SHOCK_WAVE,
+//     MOVE_SOLAR_BEAM,
+//     MOVE_STRENGTH,
+//     MOVE_THIEF,
+//     MOVE_THUNDERBOLT,
+//     MOVE_TOXIC,
+//     MOVE_DEFENSE_CURL,
+//     MOVE_DYNAMIC_PUNCH,
+//     MOVE_FIRE_PUNCH,
+//     MOVE_ICE_PUNCH,
+//     MOVE_ICY_WIND,
+//     MOVE_MEGA_PUNCH,
+//     MOVE_MUD_SLAP,
+//     MOVE_ROCK_SLIDE,
+//     MOVE_ROLLOUT,
+//     MOVE_SLEEP_TALK,
+//     MOVE_SNORE,
+//     MOVE_SUBSTITUTE,
+//     MOVE_SWAGGER,
+//     MOVE_THUNDER_PUNCH,
+//     MOVE_UNAVAILABLE,
+// };
+#endif //P_FAMILY_GOLETT_MARYAN

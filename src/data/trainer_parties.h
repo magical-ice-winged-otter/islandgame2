@@ -819,6 +819,14 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 23,
+    .species = SPECIES_GOLETT_MARYAN,
+    .heldItem = ITEM_EXPERT_BELT,
+    .ability = ABILITY_SLUSH_RUSH,
+    .moves = {MOVE_ICE_PUNCH, MOVE_SHADOW_PUNCH, MOVE_BULLDOZE, MOVE_ICE_SHARD},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
     .species = SPECIES_LAPRAS,
     .heldItem = ITEM_SITRUS_BERRY,
     .ability = ABILITY_ICE_BODY,
@@ -826,17 +834,9 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_SANDSLASH_ALOLAN,
-    .heldItem = ITEM_EXPERT_BELT,
-    .ability = ABILITY_SLUSH_RUSH,
-    .moves = {MOVE_ICICLE_SPEAR, MOVE_METAL_CLAW, MOVE_BULLDOZE, MOVE_HAIL}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 25,
     .species = SPECIES_CLOYSTER,
-    .heldItem = ITEM_FOCUS_SASH,
+    .heldItem = ITEM_KINGS_ROCK,
     .ability = ABILITY_SKILL_LINK,
     .moves = {MOVE_ICICLE_SPEAR, MOVE_RAZOR_SHELL, MOVE_ROCK_BLAST, MOVE_ICE_SHARD},
     .isShiny = TRUE,
