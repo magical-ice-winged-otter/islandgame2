@@ -1,6 +1,10 @@
 #ifndef GUARD_CONSTANTS_GLOBAL_H
 #define GUARD_CONSTANTS_GLOBAL_H
 
+
+// Comment out this line to strip debugging tools from the build.
+#define ISLANDGAME_DEBUG TRUE
+
 #include "config/battle.h"
 #include "config/debug.h"
 #include "config/item.h"
