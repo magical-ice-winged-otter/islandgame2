@@ -3055,4 +3055,8 @@ extern const u8 gText_ExpShareOff[];
 
 extern const u8 gText_BasePointsResetToZero[];
 
+//BSBob map pop-ups
+extern const u8 gText_AM[];
+extern const u8 gText_PM[];
+
 #endif // GUARD_STRINGS_H
