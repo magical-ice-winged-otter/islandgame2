@@ -1,15 +1,13 @@
 #ifndef GUARD_ISLANDGAME_H
 #define GUARD_ISLANDGAME_H
 
+#include "constants/global.h"
 #include "constants/map_groups.h"
 #include "constants/maps.h"
 #include "gba/types.h"
 
 //To configure battle backgrounds, take a look at
 //LINK src/battle_bg.c:608
-
-// Comment out this line to strip debugging tools from the build.
-#define ISLANDGAME_DEBUG
 
 // whenever we make a breaking change to the save block, we can increment this number
 // then, when we begin the game, check for outdated saves and try to upgrade them or display a warning
@@ -131,7 +129,7 @@ void IslandGameCustomStartup();
  *  - IMPORTANT: The max length of characters here is 7. If we go above, we get compiler warnings.
  */
 
-#ifdef ISLANDGAME_DEBUG
+#if ISLANDGAME_DEBUG == TRUE
 
 #define START_LOC_GAME LOCATION_DATA[FRESA_FARMS]
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA

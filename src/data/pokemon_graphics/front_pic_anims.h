@@ -10127,12 +10127,12 @@ static const union AnimCmd sAnim_GolettMaryan_1[] =
     ANIMCMD_END,
 };
 
-// static const union AnimCmd sAnim_Golurk_1[] =
-// {
-//     ANIMCMD_FRAME(1, 45),
-//     ANIMCMD_FRAME(0, 10),
-//     ANIMCMD_END,
-// };
+static const union AnimCmd sAnim_GolurkMaryan_1[] =
+{
+    ANIMCMD_FRAME(1, 45),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
 #endif //P_FAMILY_GOLETT
 
 #define SINGLE_ANIMATION(name)                      \
@@ -12782,5 +12782,5 @@ SINGLE_ANIMATION(ShadowMightyena);
 SINGLE_ANIMATION(Egg);
 #if P_FAMILY_GOLETT_MARYAN
 SINGLE_ANIMATION(GolettMaryan);
-//SINGLE_ANIMATION(Golurk);
+SINGLE_ANIMATION(GolurkMaryan);
 #endif //P_FAMILY_GOLETT_MARYAN

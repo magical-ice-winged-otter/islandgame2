@@ -1126,7 +1126,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
             default:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
                 gPlttBufferFaded[0] = RGB_BLACK;
-#ifdef ISLANDGAME_DEBUG
+#if ISLANDGAME_DEBUG == TRUE
                 gTasks[taskId].func = Task_NewGameBirchSpeech_Cleanup;
 #else
                 gTasks[taskId].func = Task_NewGameBirchSpeech_Init;

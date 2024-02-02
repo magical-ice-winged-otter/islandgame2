@@ -10937,12 +10937,12 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
     const u8 gMonIcon_GolettMaryan[] = INCBIN_U8("graphics/pokemon/maryan_golett/icon.4bpp");
     const u8 gMonFootprint_GolettMaryan[] = INCBIN_U8("graphics/pokemon/maryan_golett/footprint.1bpp");
 
-    // const u32 gMonFrontPic_Golurk[] = INCBIN_U32("graphics/pokemon/golurk/anim_front.4bpp.lz");
-    // const u32 gMonPalette_Golurk[] = INCBIN_U32("graphics/pokemon/golurk/normal.gbapal.lz");
-    // const u32 gMonBackPic_Golurk[] = INCBIN_U32("graphics/pokemon/golurk/back.4bpp.lz");
-    // const u32 gMonShinyPalette_Golurk[] = INCBIN_U32("graphics/pokemon/golurk/shiny.gbapal.lz");
-    // const u8 gMonIcon_Golurk[] = INCBIN_U8("graphics/pokemon/golurk/icon.4bpp");
-    // const u8 gMonFootprint_Golurk[] = INCBIN_U8("graphics/pokemon/golurk/footprint.1bpp");
+    const u32 gMonFrontPic_GolurkMaryan[] = INCBIN_U32("graphics/pokemon/maryan_golurk/anim_front.4bpp.lz");
+    const u32 gMonPalette_GolurkMaryan[] = INCBIN_U32("graphics/pokemon/maryan_golurk/normal.gbapal.lz");
+    const u32 gMonBackPic_GolurkMaryan[] = INCBIN_U32("graphics/pokemon/maryan_golurk/back.4bpp.lz");
+    const u32 gMonShinyPalette_GolurkMaryan[] = INCBIN_U32("graphics/pokemon/maryan_golurk/shiny.gbapal.lz");
+    const u8 gMonIcon_GolurkMaryan[] = INCBIN_U8("graphics/pokemon/maryan_golurk/icon.4bpp");
+    const u8 gMonFootprint_GolurkMaryan[] = INCBIN_U8("graphics/pokemon/maryan_golurk/footprint.1bpp");
 #endif //P_FAMILY_GOLETT
 
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");

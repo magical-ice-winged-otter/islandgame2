@@ -12,7 +12,7 @@
 static void SetPlayerName(const u8* name);
 static const u8 sName[] = _(ISLANDGAME_PLAYER_NAME);
 
-#ifdef ISLANDGAME_DEBUG
+#if ISLANDGAME_DEBUG == TRUE
 extern u8 IslandGame_LoadIn_Message[]; // Extern variable for our script
 #endif
 
@@ -28,7 +28,7 @@ void IslandGameCustomStartup()
     // I'm honestly not sure why you need the weird syntax around string literals,
     // but it breaks pretty badly w/out it so...
 
-    #ifdef ISLANDGAME_DEBUG
+    #if ISLANDGAME_DEBUG == TRUE
         SetPlayerName(sName);
         //put all debug tools here
 

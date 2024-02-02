@@ -272,7 +272,11 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
 // Local functions
 static void BuildStartMenuActions(void);
 static void AddStartMenuAction(u8 action);
+#if ISLANDGAME_DEBUG == TRUE
+static void UNUSED BuildIslandStartMenu(void);
+#elif
 static void BuildIslandStartMenu(void);
+#endif
 static void UNUSED BuildNormalStartMenu(void);
 static void UNUSED BuildDebugStartMenu(void);
 static void BuildSafariZoneStartMenu(void);
@@ -365,7 +369,7 @@ static void AddStartMenuAction(u8 action)
 */
 static void BuildIslandStartMenu(void)
 {
-    #ifdef ISLANDGAME_DEBUG
+    #if ISLANDGAME_DEBUG == TRUE
         AddStartMenuAction(MENU_ACTION_DEBUG); // really cool debug menu thats built in?
         AddStartMenuAction(MENU_ACTION_TELEPORT);
     #endif
