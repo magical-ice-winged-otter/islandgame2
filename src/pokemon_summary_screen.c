@@ -292,10 +292,10 @@ static bool8 DoesMonOTMatchOwner(void);
 static bool8 DidMonComeFromGBAGames(void);
 static bool8 DidMonComeFromRSE(void);
 static bool8 DidMonComeFromFRLG(void);
-static bool8 DidMonComeFromCD(void);
-static bool8 DidMonComeFromDPPt(void);
+//static bool8 DidMonComeFromCD(void);
+//static bool8 DidMonComeFromDPPt(void);
 static bool8 IsInGamePartnerMon(void);
-static void PrintEggOTID(void);
+//static void PrintEggOTID(void);
 static void BufferEggState(void);
 static void BufferEggMemo(void);
 static void PrintSkillsPage(void);
@@ -1975,7 +1975,6 @@ static bool8 IsValidToViewInMulti(struct Pokemon *mon)
 
 static void ChangePage(u8 taskId, s8 delta)
 {
-    struct PokeSummary *summary = &sMonSummaryScreen->summary;
     s16 *data = gTasks[taskId].data;
 
     if (sMonSummaryScreen->minPageIndex == sMonSummaryScreen->maxPageIndex)
@@ -2039,7 +2038,6 @@ static void ChangePageTask(u8 taskId)
 
 static void SwitchToMoveSelection(u8 taskId)
 {
-    u32 i;
     s16 *data = gTasks[taskId].data;
 
     sMonSummaryScreen->firstMoveIndex = 0;
@@ -2268,7 +2266,6 @@ static void ChangeSelectedMove(s16 *taskData, s8 direction, u8 *moveIndexPtr)
 
 static void CloseMoveSelectMode(u8 taskId)
 {
-    u32 i;
     s16 *data = gTasks[taskId].data;
     data[0] = 0;
 
@@ -2779,7 +2776,7 @@ static void PutPageWindowTilemaps(u8 page)
     ScheduleBgCopyTilemapToVram(0);
 }
 
-static u8 AddWindowFromTemplateList(const struct WindowTemplate *template, u8 templateId)
+UNUSED static u8 AddWindowFromTemplateList(const struct WindowTemplate *template, u8 templateId)
 {
     u8 *windowIdPtr = &sMonSummaryScreen->windowIds[templateId];
     if (*windowIdPtr == WINDOW_NONE)
@@ -2790,7 +2787,7 @@ static u8 AddWindowFromTemplateList(const struct WindowTemplate *template, u8 te
     return *windowIdPtr;
 }
 
-static void RemoveWindowByIndex(u8 windowIndex)
+UNUSED static void RemoveWindowByIndex(u8 windowIndex)
 {
     u8 *windowIdPtr = &sMonSummaryScreen->windowIds[windowIndex];
     if (*windowIdPtr != WINDOW_NONE)
@@ -2803,7 +2800,6 @@ static void RemoveWindowByIndex(u8 windowIndex)
 
 static void PrintPageSpecificText(u8 pageIndex)
 {
-    u16 i;
 
     PrintInfoBar(pageIndex, FALSE);
     sTextPrinterFunctions[pageIndex]();
@@ -2821,10 +2817,8 @@ static void SetTypeSpritePosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 
 static void PrintInfoPage(void)
 {
-    u8 x, i;
+    u8 x;
     s64 numExpProgressBarTicks;
-    u16 *dst;
-    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u16 dexNum = SpeciesToPokedexNum(summary->species);
 
@@ -2834,7 +2828,7 @@ static void PrintInfoPage(void)
     if (dexNum == 0xFFFF)
         StringCopy(gStringVar1, gText_ThreeMarks);
     else
-        ConvertIntToDecimalStringN(gStringVar1, dexNum, STR_CONV_MODE_LEADING_ZEROS, 3);
+    ConvertIntToDecimalStringN(gStringVar1, dexNum, STR_CONV_MODE_LEADING_ZEROS, 3);
     x = GetStringCenterAlignXOffset(1, gStringVar1, 72) + 76;
     PrintTextOnWindow(PSS_LABEL_PANE_RIGHT, gStringVar1, x, 16, 0, PSS_COLOR_BLACK_GRAY_SHADOW);
 
@@ -3127,7 +3121,7 @@ static void GetMetLevelString(u8 *output)
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(3, output);
 }
 
-static bool8 DoesMonOTMatchOwner(void)
+UNUSED static bool8 DoesMonOTMatchOwner(void)
 {
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
     u32 trainerId;
@@ -3153,7 +3147,7 @@ static bool8 DoesMonOTMatchOwner(void)
         return TRUE;
 }
 
-static bool8 DidMonComeFromGBAGames(void)
+UNUSED static bool8 DidMonComeFromGBAGames(void)
 {
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
     if (sum->metGame >= VERSION_SAPPHIRE && sum->metGame <= VERSION_LEAF_GREEN)
@@ -3290,10 +3284,8 @@ static void BufferEggMemo(void)
 
 static void PrintSkillsPage(void)
 {
-    u8 x, i;
+    u8 x;
     s64 numHPBarTicks;
-    u16 *dst;
-    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     const s8 *natureMod = gNatureStatTable[sMonSummaryScreen->summary.nature];
 
@@ -3404,10 +3396,8 @@ static void PrintSkillsPage(void)
 
 static void PrintConditionPage(void)
 {
-    u8 x, i;
+    u8 x;
     s64 numSheenBarTicks;
-    u16 *dst;
-    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
 
     FillWindowPixelBuffer(PSS_LABEL_PANE_RIGHT_HP, PIXEL_FILL(0));
@@ -3469,7 +3459,6 @@ static void PrintMoveNameAndPP(u8 moveIndex)
 {
     u32 pp, color = 0, x;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
-    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
 
     if (summary->moves[moveIndex] != MOVE_NONE)
     {
@@ -3532,7 +3521,7 @@ static void PrintContestMoves(void)
     PutWindowTilemap(PSS_LABEL_PANE_RIGHT);
 }
 
-static u8 GetBattleMoveCategory(u16 move)
+UNUSED static u8 GetBattleMoveCategory(u16 move)
 {
     if (gBattleMoves[move].power == 0)
     {
@@ -3813,8 +3802,6 @@ static void SetMoveTypeIcons(void)
 {
     u8 i;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
-    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
-    u16 species = GetMonData(mon, MON_DATA_SPECIES);
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (summary->moves[i] != MOVE_NONE)
@@ -3847,7 +3834,6 @@ static void SetContestMoveTypeIcons(void)
 static void SetNewMoveTypeIcon(void)
 {
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
-    u16 species = GetMonData(mon, MON_DATA_SPECIES);
 
     if (sMonSummaryScreen->newMove == MOVE_NONE)
     {
@@ -4553,7 +4539,7 @@ static void PrintInfoBar(u8 pageIndex, bool8 detailsShown)
 
 static u8 WhatRegionWasMonCaughtIn(struct Pokemon *mon)
 {
-    u8 originGame, versionModifier, metLocation;
+    u8 originGame, metLocation;
 
     originGame = GetMonData(mon, MON_DATA_MET_GAME, 0);
     metLocation = GetMonData(mon, MON_DATA_MET_LOCATION, 0);
