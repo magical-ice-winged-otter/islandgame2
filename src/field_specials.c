@@ -68,6 +68,15 @@
 #include "constants/metatile_labels.h"
 #include "palette.h"
 #include "battle_util.h"
+#include "pokedex.h"
+#include "item_menu.h"
+#include "pokenav.h"
+#include "trainer_card.h"
+#include "frontier_pass.h"
+#include "option_menu.h"
+#include "safari_zone.h"
+#include "battle_pyramid.h"
+#include "battle_pyramid_bag.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -97,6 +106,26 @@ static EWRAM_DATA u32 sBattleTowerMultiBattleTypeFlags = 0;
 
 struct ListMenuTemplate gScrollableMultichoice_ListMenuTemplate;
 EWRAM_DATA u16 gScrollableMultichoice_ScrollOffset = 0;
+
+static EWRAM_DATA u8 sSafariBallsWindowId = 0;
+static EWRAM_DATA u8 sBattlePyramidFloorWindowId = 0;
+
+static const struct WindowTemplate sSafariBallsWindowTemplate = {0, 1, 1, 9, 4, 0xF, 8};
+
+static const u8 *const sPyramidFloorNames[FRONTIER_STAGES_PER_CHALLENGE + 1] =
+{
+    gText_Floor1,
+    gText_Floor2,
+    gText_Floor3,
+    gText_Floor4,
+    gText_Floor5,
+    gText_Floor6,
+    gText_Floor7,
+    gText_Peak
+};
+
+static const struct WindowTemplate sPyramidFloorWindowTemplate_2 = {0, 1, 1, 0xA, 4, 0xF, 8};
+static const struct WindowTemplate sPyramidFloorWindowTemplate_1 = {0, 1, 1, 0xC, 4, 0xF, 8};
 
 void TryLoseFansFromPlayTime(void);
 void SetPlayerGotFirstFans(void);
@@ -4291,4 +4320,96 @@ void PreparePartyForSkyBattle(void)
     }
     VarSet(B_VAR_SKY_BATTLE,participatingPokemonSlot);
     CompactPartySlots();
+}
+
+void Script_StartMenu_OpenPokedexMenu(void)
+{
+    IncrementGameStat(GAME_STAT_CHECKED_POKEDEX);
+    CleanupOverworldWindowsAndTilemaps();
+    SetMainCallback2(CB2_OpenPokedex);
+}
+
+void Script_StartMenu_OpenPokemonMenu(void)
+{
+    CleanupOverworldWindowsAndTilemaps();
+    SetMainCallback2(CB2_PartyMenuFromStartMenu); // Display party menu
+}
+
+void Script_StartMenu_OpenBagMenu(void)
+{
+    CleanupOverworldWindowsAndTilemaps();
+    if (InBattlePyramid())
+        SetMainCallback2(CB2_PyramidBagMenuFromStartMenu);
+    else
+        SetMainCallback2(CB2_BagMenuFromStartMenu); // Display bag menu
+}
+
+void Script_StartMenu_OpenPokenavMenu(void)
+{
+    CleanupOverworldWindowsAndTilemaps();
+    SetMainCallback2(CB2_InitPokeNav);  // Display PokeNav
+}
+
+void Script_StartMenu_OpenTrainerCardMenu(void)
+{
+    CleanupOverworldWindowsAndTilemaps();
+    
+    if (IsOverworldLinkActive() || InUnionRoom())
+        ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu); // Display trainer card
+    else if (FlagGet(FLAG_SYS_FRONTIER_PASS))
+        ShowFrontierPass(CB2_ReturnToFieldWithOpenMenu); // Display frontier pass
+    else
+        ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu); // Display trainer card
+}
+
+void Script_StartMenu_OpenOptionsMenu(void)
+{
+    CleanupOverworldWindowsAndTilemaps();
+    SetMainCallback2(CB2_InitOptionMenu); // Display option menu
+    gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
+}
+
+void Script_StartMenu_OpenRetireSafari(void)
+{
+    SafariZoneRetirePrompt();
+}
+
+void ShowSafariBallsWindow(void)
+{
+    sSafariBallsWindowId = AddWindow(&sSafariBallsWindowTemplate);
+    PutWindowTilemap(sSafariBallsWindowId);
+    DrawStdWindowFrame(sSafariBallsWindowId, FALSE);
+    ConvertIntToDecimalStringN(gStringVar1, gNumSafariBalls, STR_CONV_MODE_RIGHT_ALIGN, 2);
+    StringExpandPlaceholders(gStringVar4, gText_SafariBallStock);
+    AddTextPrinterParameterized(sSafariBallsWindowId, FONT_NORMAL, gStringVar4, 0, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sSafariBallsWindowId, COPYWIN_GFX);
+}
+
+void ShowPyramidFloorWindow(void)
+{
+    if (gSaveBlock2Ptr->frontier.curChallengeBattleNum == FRONTIER_STAGES_PER_CHALLENGE)
+        sBattlePyramidFloorWindowId = AddWindow(&sPyramidFloorWindowTemplate_1);
+    else
+        sBattlePyramidFloorWindowId = AddWindow(&sPyramidFloorWindowTemplate_2);
+
+    PutWindowTilemap(sBattlePyramidFloorWindowId);
+    DrawStdWindowFrame(sBattlePyramidFloorWindowId, FALSE);
+    StringCopy(gStringVar1, sPyramidFloorNames[gSaveBlock2Ptr->frontier.curChallengeBattleNum]);
+    StringExpandPlaceholders(gStringVar4, gText_BattlePyramidFloor);
+    AddTextPrinterParameterized(sBattlePyramidFloorWindowId, FONT_NORMAL, gStringVar4, 0, 1, TEXT_SKIP_DRAW, NULL);
+    CopyWindowToVram(sBattlePyramidFloorWindowId, COPYWIN_GFX);
+}
+
+void RemoveExtraStartMenuWindows(void)
+{
+    if (FlagGet(FLAG_SYS_SAFARI_MODE))
+    {
+        ClearDialogWindowAndFrame(sSafariBallsWindowId, TRUE);
+        RemoveWindow(sSafariBallsWindowId);
+    }
+    if (InBattlePyramid())
+    {
+        ClearDialogWindowAndFrame(sBattlePyramidFloorWindowId, TRUE);
+        RemoveWindow(sBattlePyramidFloorWindowId);
+    }
 }

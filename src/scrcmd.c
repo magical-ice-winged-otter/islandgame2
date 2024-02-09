@@ -1382,12 +1382,14 @@ static void DynamicMultichoiceSortList(struct ListMenuItem *items, u32 count)
 bool8 ScrCmd_dynmultichoice(struct ScriptContext *ctx)
 {
     u32 i;
-    u32 left = VarGet(ScriptReadHalfword(ctx));
-    u32 top = VarGet(ScriptReadHalfword(ctx));
+    u32 left = ScriptReadByte(ctx);
+    u32 top = ScriptReadByte(ctx);
+    u32 height = ScriptReadByte(ctx);
     bool32 ignoreBPress = ScriptReadByte(ctx);
     u32 maxBeforeScroll = ScriptReadByte(ctx);
     bool32 shouldSort = ScriptReadByte(ctx);
     u32 initialSelected = VarGet(ScriptReadHalfword(ctx));
+    u32 choicesSpacing = ScriptReadByte(ctx);
     u32 callbackSet = ScriptReadByte(ctx);
     u32 initialRow = 0;
     // Read vararg
@@ -1430,7 +1432,7 @@ bool8 ScrCmd_dynmultichoice(struct ScriptContext *ctx)
         MultichoiceDynamic_DestroyStack();
     }
 
-    if (ScriptMenu_MultichoiceDynamic(left, top, argc, items, ignoreBPress, maxBeforeScroll, initialRow, callbackSet))
+    if (ScriptMenu_MultichoiceDynamic(left, top, height, argc, items, ignoreBPress, maxBeforeScroll, initialRow, choicesSpacing, callbackSet))
     {
         ScriptContext_Stop();
         return TRUE;

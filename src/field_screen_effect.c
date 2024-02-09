@@ -35,6 +35,7 @@
 #include "constants/rgb.h"
 #include "trainer_hill.h"
 #include "fldeff.h"
+#include "event_scripts.h"
 
 static void Task_ExitNonAnimDoor(u8);
 static void Task_ExitNonDoor(u8);
@@ -447,8 +448,10 @@ void ReturnToFieldOpenStartMenu(void)
 
 bool8 FieldCB_ReturnToFieldOpenStartMenu(void)
 {
-    ShowReturnToFieldStartMenu();
-    return FALSE;
+    FadeInFromBlack();
+    ScriptContext_SetupScript(EventScript_StartMenu);
+    LockPlayerFieldControls();
+    return TRUE;
 }
 
 static void Task_ReturnToFieldNoScript(u8 taskId)

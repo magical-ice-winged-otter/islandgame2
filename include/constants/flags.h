@@ -86,9 +86,9 @@
 #define FLAG_UNUSED_0x049    0x49 // Unused Flag
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
+#define FLAG_SYS_BAG         0x4C // Unused Flag
+#define FLAG_SYS_TRAINER_CARD 0x4D // Unused Flag
+#define FLAG_SYS_SAVE        0x4E // Unused Flag
 #define FLAG_EXP_SHARE       0x4F // LINK include/config/item.h
 
 // Scripts
