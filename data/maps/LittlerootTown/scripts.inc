@@ -393,8 +393,37 @@ LittlerootTown_EventScript_GoSaveBirchTrigger::
 	end
 
 LittlerootTown_EventScript_TownSign::
-	msgbox LittlerootTown_Text_TownSign, MSGBOX_SIGN
+	adddynamicobject MAP_GROUP(LITTLEROOT_TOWN), MAP_NUM(LITTLEROOT_TOWN), OBJ_EVENT_GFX_LUCY, 11, 8, 3, MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN, LRT_DOTestScript
+	msgbox LRT_DOT_MSG
+	closemessage
+	@msgbox LitterootTown_Text_TownSign, MSGBOX_SIGN
+	release
 	end
+
+LRT_DOT_MSG:
+	.string "Added Lucy to Littleroot.\nTalk to her to remove her!$"
+
+LRT_DOT_LUCYMSG:
+	.string "Okay! I'll leave now!$"
+
+LRT_DOTestScript::
+	msgbox LRT_DOT_LUCYMSG
+	closemessage
+	applymovement DYNAMIC_OBJECT_1, LRT_DOTMVMT
+	turnobject DYNAMIC_OBJECT_1, DIR_NORTH
+	waitmovement DYNAMIC_OBJECT_1
+	removeobject DYNAMIC_OBJECT_1 @@just removes object from view
+	removedynamicobject 1, TRUE @@Removes the object from object storage
+	release
+	end
+
+LRT_DOTMVMT:
+	walk_up
+	walk_up
+	walk_up
+	walk_in_place_down
+	walk_in_place_down
+	step_end
 
 LittlerootTown_EventScript_BirchsLabSign::
 	msgbox LittlerootTown_Text_ProfBirchsLab, MSGBOX_SIGN

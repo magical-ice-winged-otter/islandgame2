@@ -10,6 +10,36 @@ You can phrase it as the following:
 Based off RHH's pokeemerald-expansion v1.7.2 https://github.com/rh-hideout/pokeemerald-expansion/
 ```
 
+## What is this branch?
+
+This feature branch contains a dynamic npc system. These dynamic NPC's are stored in the saveblock, and will persist exactly where you left them for as long as you want them to be there. This is good for spawning an object at a remote location for, say, a quest, and not having to deal with messy map scripts or waste flags on hiding/showing one time use objects. 
+
+### IMPORTANT INFORMATION
+Merge Difficulty: Intermediate (7/10)
+ You may have to free up space for this feature branch in your save block.
+ This may interfere with follower systems that use localid's 0xF0 thru 0xF3.
+
+#### Usage Difficulty: Intermediate (5/10)
+ This branch modifies the overworld object spawn function, performance can suffer.
+ This branch offers minimal error checking and assumes you know what you are doing.
+
+#### Requirements: 80 bytes of free space in SaveBlock1. 
+ (This branch reduces the number of secret bases from 20 to 18 in order to free up 320 bytes of space in SaveBlock1.)
+ Note that at the default dynamic object count, the lag is minimal, Adding more dynamic object slots will also increase lag when there are dynamic objects active in the overworld. This could potentiall by optimized out, but that is up to the end user.
+
+### How to use
+There is an example script posted on the Littleroot Town sign. It shows everything necessary to use the system.
+
+## FAQ
+Q: Will this interfere with my followers (if you have them)?
+A: The dynamic objects use overworld objectIDs F0 thru F3. If your followers are using these id's then, yes they will interfere.
+
+Q: Do I need the dynamic overworld palettes or overworld expansion system to use this?
+A: Probably not, but spawning dynamic objects that use palette slots reserved by other objects may result in corrupted palettes. This feature branch does not modify or use any special graphics or palettes. You supply an existing obj_gfx_id
+
+
+
+
 ## What features are included?
 - ***IMPORTANT*❗❗ Read through these to learn what features you can toggle**:
     - [Battle configurations](/include/config/battle.h)

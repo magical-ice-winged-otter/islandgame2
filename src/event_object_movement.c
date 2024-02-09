@@ -33,6 +33,7 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/trainer_types.h"
 #include "constants/union_room.h"
+#include "dynamic_objects.h"
 #include "day_night.h"
 #include "constants/metatile_behaviors.h"
 
@@ -3351,6 +3352,32 @@ void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
                 && !FlagGet(template->flagId))
                 TrySpawnObjectEventTemplate(template, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY);
         }
+
+        for (i = 0; i < MAX_DYNAMIC_OBJECTS; i++)
+        {
+            if (gSaveBlock1Ptr->dynamicObjects[i].active == TRUE)
+            {
+                if ((gSaveBlock1Ptr->location.mapGroup == gSaveBlock1Ptr->dynamicObjects[i].mapGroup) && (gSaveBlock1Ptr->location.mapNum == gSaveBlock1Ptr->dynamicObjects[i].mapNum))
+                {
+                    s16 dynobjX = gSaveBlock1Ptr->dynamicObjects[i].x + 7;
+                    s16 dynobjY = gSaveBlock1Ptr->dynamicObjects[i].y + 7;
+                    if (top <= dynobjY &&
+                        bottom >= dynobjY &&
+                        left <= dynobjX &&
+                        right >= dynobjX)
+                    {
+                            SpawnDynamicObject(gSaveBlock1Ptr->dynamicObjects[i].localId,
+                                                  gSaveBlock1Ptr->dynamicObjects[i].gfxId,
+                                                  gSaveBlock1Ptr->dynamicObjects[i].movement,
+                                                  dynobjX - 7,
+                                                  dynobjY - 7,
+                                                  gSaveBlock1Ptr->dynamicObjects[i].z,
+                                                  gSaveBlock1Ptr->dynamicObjects[i].scriptPtr);
+
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -4008,6 +4035,17 @@ void SetObjectEventDirection(struct ObjectEvent *objectEvent, u8 direction)
 
 static const u8 *GetObjectEventScriptPointerByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
 {
+    switch (localId)
+    {
+        case 0xF0:
+            return gSaveBlock1Ptr->dynamicObjects[0].scriptPtr;
+        case 0xF1:
+            return gSaveBlock1Ptr->dynamicObjects[1].scriptPtr;
+        case 0xF2:
+            return gSaveBlock1Ptr->dynamicObjects[2].scriptPtr;
+        case 0xF3:
+            return gSaveBlock1Ptr->dynamicObjects[3].scriptPtr;
+    }
     return GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup)->script;  
 }
 
