@@ -203,8 +203,9 @@ gScriptCmdTable::
 	.4byte ScrCmd_nop1                              @ 0xc8
 	.4byte ScrCmd_nop1                              @ 0xc9
 	.4byte ScrCmd_nop1                              @ 0xca
-	.4byte ScrCmd_nop1                              @ 0xcb
-	.4byte ScrCmd_nop1                              @ 0xcc
+@@@ Dynamic Multichoice
+	.4byte ScrCmd_dynmultichoice                    @ 0xcb
+	.4byte ScrCmd_dynmultipush                      @ 0xcc
 	.4byte ScrCmd_setmonmodernfatefulencounter      @ 0xcd
 	.4byte ScrCmd_checkmonmodernfatefulencounter    @ 0xce
 	.4byte ScrCmd_trywondercardscript               @ 0xcf
@@ -240,6 +241,6 @@ gScriptCmdTable::
     .4byte ScrCmd_checkfollower						@ 0xec
     .4byte ScrCmd_setwilddoublebattle               @ 0xed
     .4byte ScrCmd_setcwildbattle                    @ 0xee
-	
+
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

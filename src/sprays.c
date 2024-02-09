@@ -99,7 +99,7 @@ void DrawSprayMenu(void)
     gSpecialVar_0x8003 = count;
     menuItems[count].text = gText_Cancel2;
 
-    DrawMultichoiceMenuInternal(18, yCoord, 0, FALSE, menuPos, menuItems, count+1);
+    //TODO: REPEL MENU FIXScriptMenu_DrawMultichoiceMenuGeneric
 }
 #endif
 

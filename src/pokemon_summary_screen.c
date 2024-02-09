@@ -215,7 +215,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     u8 windowIds[PSS_LABEL_WINDOW_END - 1];
     u8 spriteIds[SPRITE_ARR_ID_COUNT];
     bool8 handleDeoxys;
-    s16 switchCounter; // Used for various switch statement cases that decompress/load graphics or pokemon data
+    s16 switchCounter; // Used for various switch statement cases that decompress/load graphics or Pokémon data
     u8 unk_filler4[6];
     u8 splitIconSpriteId;
 } *sMonSummaryScreen = NULL;
