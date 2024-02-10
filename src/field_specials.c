@@ -4337,35 +4337,54 @@ void PreparePartyForSkyBattle(void)
 void Script_StartMenu_OpenPokedexMenu(void)
 {
     IncrementGameStat(GAME_STAT_CHECKED_POKEDEX);
+    PlayRainStoppingSoundEffect();
+    RemoveExtraStartMenuWindows();
     CleanupOverworldWindowsAndTilemaps();
     SetMainCallback2(CB2_OpenPokedex);
 }
 
 void Script_StartMenu_OpenPokemonMenu(void)
 {
+    PlayRainStoppingSoundEffect();
+    RemoveExtraStartMenuWindows();
     CleanupOverworldWindowsAndTilemaps();
     SetMainCallback2(CB2_PartyMenuFromStartMenu); // Display party menu
+
+    if (!GetSafariZoneFlag() && !InBattlePyramid() && gSaveBlock2Ptr->playTimeSeconds == 0) 
+    {
+        RemoveExtraStartMenuWindows();
+        ShowTimeWindow();
+    }
 }
 
 void Script_StartMenu_OpenBagMenu(void)
 {
+    PlayRainStoppingSoundEffect();
+    RemoveExtraStartMenuWindows();
     CleanupOverworldWindowsAndTilemaps();
     if (InBattlePyramid())
+    {
         SetMainCallback2(CB2_PyramidBagMenuFromStartMenu);
-    else
+    } else 
+    {
         SetMainCallback2(CB2_BagMenuFromStartMenu); // Display bag menu
+    }
 }
 
 void Script_StartMenu_OpenPokenavMenu(void)
 {
+    PlayRainStoppingSoundEffect();
+    RemoveExtraStartMenuWindows();
     CleanupOverworldWindowsAndTilemaps();
-    SetMainCallback2(CB2_InitPokeNav);  // Display PokeNav
+    SetMainCallback2(CB2_InitPokeNav);  // Display PokéNav
 }
 
 void Script_StartMenu_OpenTrainerCardMenu(void)
 {
+    PlayRainStoppingSoundEffect();
+    RemoveExtraStartMenuWindows();
     CleanupOverworldWindowsAndTilemaps();
-    
+
     if (IsOverworldLinkActive() || InUnionRoom())
         ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu); // Display trainer card
     else if (FlagGet(FLAG_SYS_FRONTIER_PASS))
@@ -4376,6 +4395,8 @@ void Script_StartMenu_OpenTrainerCardMenu(void)
 
 void Script_StartMenu_OpenOptionsMenu(void)
 {
+    PlayRainStoppingSoundEffect();
+    RemoveExtraStartMenuWindows();
     CleanupOverworldWindowsAndTilemaps();
     SetMainCallback2(CB2_InitOptionMenu); // Display option menu
     gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
