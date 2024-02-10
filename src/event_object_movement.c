@@ -4035,6 +4035,14 @@ void SetObjectEventDirection(struct ObjectEvent *objectEvent, u8 direction)
 
 static const u8 *GetObjectEventScriptPointerByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
 {
+    s8 index;
+    index = localId - 0xF0;
+
+    if (index >= 0 && index <= MAX_DYNAMIC_OBJECTS) {
+        return gSaveBlock1Ptr->dynamicObjects[index].scriptPtr;
+    }
+
+    /* old legacy code (hard-code the # of dynamic objects), probably needs testing w/ more objects though
     switch (localId)
     {
         case 0xF0:
@@ -4046,6 +4054,7 @@ static const u8 *GetObjectEventScriptPointerByLocalIdAndMap(u8 localId, u8 mapNu
         case 0xF3:
             return gSaveBlock1Ptr->dynamicObjects[3].scriptPtr;
     }
+    */
     return GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup)->script;  
 }
 
