@@ -3,6 +3,7 @@
 
 #include "list_menu.h"
 #include "constants/script_menu.h"
+#include "menu.h"
 
 // The default size the stack for dynamic multichoice is initialized to
 // If you try to push an element when the stack is full, it will be reallocated
@@ -44,5 +45,7 @@ int DisplayTextAndGetWidth(const u8 *str, int width);
 int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width);
 bool16 ScriptMenu_CreatePCMultichoice(void);
 void ScriptMenu_DisplayPCStartupPrompt(void);
+
+void DrawMultichoiceMenuInternal(u8 left, u8 top, u8 multichoiceId, bool8 ignoreBPress, u8 cursorPos, const struct MenuAction *actions, int count);
 
 #endif //GUARD_SCRIPT_MENU_H

@@ -578,8 +578,6 @@ static void Task_HandleMultichoiceInput(u8 taskId)
 
 bool8 ScriptMenu_YesNo(u8 left, u8 top)
 {
-    u8 taskId;
-
     if (FuncIsActiveTask(Task_HandleYesNoInput) == TRUE)
     {
         return FALSE;
@@ -588,7 +586,7 @@ bool8 ScriptMenu_YesNo(u8 left, u8 top)
     {
         gSpecialVar_Result = 0xFF;
         DisplayYesNoMenuDefaultYes();
-        taskId = CreateTask(Task_HandleYesNoInput, 0x50);
+        /* u8 taskId = */ CreateTask(Task_HandleYesNoInput, 0x50);
         return TRUE;
     }
 }
@@ -1143,4 +1141,26 @@ int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width)
     }
 
     return adjustedLeft;
+}
+
+void DrawMultichoiceMenuInternal(u8 left, u8 top, u8 multichoiceId, bool8 ignoreBPress, u8 cursorPos, const struct MenuAction *actions, int count)
+{
+    int i;
+    u8 windowId;
+    int width = 0;
+    u8 newWidth;
+
+    for (i = 0; i < count; i++)
+    {
+        width = DisplayTextAndGetWidth(actions[i].text, width);
+    }
+
+    newWidth = ConvertPixelWidthToTileWidth(width);
+    left = ScriptMenu_AdjustLeftCoordFromWidth(left, newWidth);
+    windowId = CreateWindowFromRect(left, top, newWidth, count * 2);
+    SetStandardWindowBorderStyle(windowId, FALSE);
+    PrintMenuTable(windowId, count, actions);
+    InitMenuInUpperLeftCornerNormal(windowId, count, cursorPos);
+    ScheduleBgCopyTilemapToVram(0);
+    InitMultichoiceCheckWrap(ignoreBPress, count, windowId, multichoiceId);
 }
