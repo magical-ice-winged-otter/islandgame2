@@ -556,4 +556,5 @@ gSpecials::
 	def_special RemoveExtraStartMenuWindows
 	def_special Script_StartMenu_OpenRetireSafari
 	def_special InBattlePike
+	def_special ShowTimeWindow
 @ Start menu functions end above:

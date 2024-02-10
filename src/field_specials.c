@@ -109,6 +109,18 @@ EWRAM_DATA u16 gScrollableMultichoice_ScrollOffset = 0;
 
 static EWRAM_DATA u8 sSafariBallsWindowId = 0;
 static EWRAM_DATA u8 sBattlePyramidFloorWindowId = 0;
+//start-clock
+static EWRAM_DATA u8 sStartClockWindowId = 0;
+
+static const struct WindowTemplate sWindowTemplate_StartClock = {
+    .bg = 0,
+    .tilemapLeft = 1,
+    .tilemapTop = 1,
+    .width = 9,
+    .height = 2,
+    .paletteNum = 15,
+    .baseBlock = 0x30
+};
 
 static const struct WindowTemplate sSafariBallsWindowTemplate = {0, 1, 1, 9, 4, 0xF, 8};
 
@@ -4400,16 +4412,68 @@ void ShowPyramidFloorWindow(void)
     CopyWindowToVram(sBattlePyramidFloorWindowId, COPYWIN_GFX);
 }
 
+#define CLOCK_WINDOW_WIDTH 70
+
+void ShowTimeWindow(void)
+{
+    const u8 *suffix;
+    u8* ptr;
+    u8 convertedHours;
+
+    // print window
+    sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
+    PutWindowTilemap(sStartClockWindowId);
+    DrawStdWindowFrame(sStartClockWindowId, FALSE);
+
+    if (gLocalTime.hours < 12)
+    {
+        if (gLocalTime.hours == 0)
+            convertedHours = 12;
+        else
+            convertedHours = gLocalTime.hours;
+        suffix = gText_AM;
+    }
+    else if (gLocalTime.hours == 12)
+    {
+        convertedHours = 12;
+        if (suffix == gText_AM);
+            suffix = gText_PM;
+    }
+    else
+    {
+        convertedHours = gLocalTime.hours - 12;
+        suffix = gText_PM;
+    }
+
+    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuTime);
+    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL); // prints "time"
+
+    ptr = ConvertIntToDecimalStringN(gStringVar4, convertedHours, STR_CONV_MODE_LEFT_ALIGN, 3);
+    *ptr = 0xF0;
+
+    ConvertIntToDecimalStringN(ptr + 1, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+    AddTextPrinterParameterized(sStartClockWindowId, 1, gStringVar4, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH) - (CLOCK_WINDOW_WIDTH - GetStringRightAlignXOffset(1, gStringVar4, CLOCK_WINDOW_WIDTH) + 3), 1, 0xFF, NULL); // print time
+
+    AddTextPrinterParameterized(sStartClockWindowId, 1, suffix, GetStringRightAlignXOffset(1, suffix, CLOCK_WINDOW_WIDTH), 1, 0xFF, NULL); // print am/pm
+
+    CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
+}
+
 void RemoveExtraStartMenuWindows(void)
 {
-    if (FlagGet(FLAG_SYS_SAFARI_MODE))
+    if (GetSafariZoneFlag())
     {
         ClearDialogWindowAndFrame(sSafariBallsWindowId, TRUE);
         RemoveWindow(sSafariBallsWindowId);
-    }
-    if (InBattlePyramid())
+    } else if (InBattlePyramid())
     {
         ClearDialogWindowAndFrame(sBattlePyramidFloorWindowId, TRUE);
         RemoveWindow(sBattlePyramidFloorWindowId);
+    } else {
+        ClearDialogWindowAndFrame(sStartClockWindowId, TRUE);
+        // CopyWindowToVram(sStartClockWindowId, COPYWIN_GFX);
+        DebugPrintf("CLOSED!");
+        RemoveWindow(sStartClockWindowId);
     }
+    DebugPrintf("call!");
 }

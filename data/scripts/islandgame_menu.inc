@@ -11,6 +11,7 @@ EventScript_StartMenu::
 	dynmultipush StartMenu_Text_Option, 6
 	dynmultipush StartMenu_Text_Exit, 7
 	special PlayRainStoppingSoundEffect
+	special ShowTimeWindow
 	dynmultistack 22, 0, 18, FALSE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS
 	switch VAR_RESULT
 	case 0, EventScript_StartMenu_2
