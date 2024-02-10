@@ -644,7 +644,7 @@ extern const u32 gBattleTerrainTilemap_HDStandard[];
 extern const u32 gBattleTerrainAnimTiles_HDStandard[];
 extern const u32 gBattleTerrainAnimTilemap_HDStandard[];
 
-// pokedex
+// Pokédex
 extern const u32 gPokedexInterface_Gfx[];
 extern const u16 gPokedexBgHoenn_Pal[];
 extern const u32 gPokedexMenu_Gfx[];
@@ -2275,7 +2275,7 @@ extern const u32 gBerryPalette_Rowap[];
 extern const u32 gBerryPalette_Kee[];
 extern const u32 gBerryPalette_Maranga[];
 
-//pokenav
+//PokéNav
 extern const u16 gPokenavCondition_Pal[];
 extern const u32 gPokenavCondition_Gfx[];
 extern const u32 gPokenavCondition_Tilemap[];
@@ -3501,7 +3501,7 @@ extern const u32 gBattleAnimBgTilemap_Rainbow[];
 extern const u32 gPokedexAreaScreenAreaUnknown_Gfx[];
 extern const u16 gPokedexAreaScreenAreaUnknown_Pal[];
 
-// Pokemon Storage System
+// Pokémon Storage System
 extern const u32 gStorageSystemMenu_Gfx[];
 extern const u16 gStorageSystemPartyMenu_Pal[];
 extern const u32 gStorageSystemPartyMenu_Tilemap[];
@@ -3629,7 +3629,7 @@ extern const u32 gBerryCrush_Crusher_Gfx[];
 extern const u16 gBerryCrush_Crusher_Pal[];
 extern const u32 gBerryCrush_TextWindows_Tilemap[];
 
-// Pokenav
+// PokéNav
 extern const u32 gPokenavMessageBox_Gfx[];
 extern const u32 gPokenavMessageBox_Tilemap[];
 extern const u16 gPokenavMessageBox_Pal[];
@@ -3711,5 +3711,76 @@ extern const u32 gUnknown_8E84F20[];
 extern const u32 gUnknown_8E85068[];
 extern const u8 gUnknown_8E99118[];
 extern const u16 gTMCaseMainWindowPalette[];
+// Poké Ball Summary Icons
+extern const u32 gBallIcon_Poke[];
+extern const u32 gBallIconPalette_Poke[];
+extern const u32 gBallIcon_Safari[];
+extern const u32 gBallIconPalette_Safari[];
+extern const u32 gBallIcon_Great[];
+extern const u32 gBallIconPalette_Great[];
+extern const u32 gBallIcon_Ultra[];
+extern const u32 gBallIconPalette_Ultra[];
+extern const u32 gBallIcon_Master[];
+extern const u32 gBallIconPalette_Master[];
+extern const u32 gBallIcon_Net[];
+extern const u32 gBallIconPalette_Net[];
+extern const u32 gBallIcon_Dive[];
+extern const u32 gBallIconPalette_Dive[];
+extern const u32 gBallIcon_Nest[];
+extern const u32 gBallIconPalette_Nest[];
+extern const u32 gBallIcon_Repeat[];
+extern const u32 gBallIconPalette_Repeat[];
+extern const u32 gBallIcon_Timer[];
+extern const u32 gBallIconPalette_Timer[];
+extern const u32 gBallIcon_Luxury[];
+extern const u32 gBallIconPalette_Luxury[];
+extern const u32 gBallIcon_Premier[];
+extern const u32 gBallIconPalette_Premier[];
+extern const u32 gBallIcon_Dusk[];
+extern const u32 gBallIconPalette_Dusk[];
+extern const u32 gBallIcon_Heal[];
+extern const u32 gBallIconPalette_Heal[];
+extern const u32 gBallIcon_Quick[];
+extern const u32 gBallIconPalette_Quick[];
+extern const u32 gBallIcon_Cherish[];
+extern const u32 gBallIconPalette_Cherish[];
+extern const u32 gBallIcon_Fast[];
+extern const u32 gBallIconPalette_Fast[];
+extern const u32 gBallIcon_Level[];
+extern const u32 gBallIconPalette_Level[];
+extern const u32 gBallIcon_Lure[];
+extern const u32 gBallIconPalette_Lure[];
+extern const u32 gBallIcon_Heavy[];
+extern const u32 gBallIconPalette_Heavy[];
+extern const u32 gBallIcon_Love[];
+extern const u32 gBallIconPalette_Love[];
+extern const u32 gBallIcon_Friend[];
+extern const u32 gBallIconPalette_Friend[];
+extern const u32 gBallIcon_Moon[];
+extern const u32 gBallIconPalette_Moon[];
+extern const u32 gBallIcon_Sport[];
+extern const u32 gBallIconPalette_Sport[];
+extern const u32 gBallIcon_Dream[];
+extern const u32 gBallIconPalette_Dream[];
+extern const u32 gBallIcon_Beast[];
+extern const u32 gBallIconPalette_Beast[];
+
+// Citrus Bolt & Jaizu's Summary Screen
+extern const u32 gSummaryScreenTiles[];
+extern const u32 gSummaryScreenBackgroundTilemap[];
+extern const u32 gSummaryScreenPalette[];
+extern const u32 gSummaryExpBar_Tiles[];
+extern const u32 gSummaryHealthBar_Tiles[];
+extern const u16 gExpBarHealthBarGreenPal[];
+extern const u32 gSummaryScreenPageInfoTilemap[];
+extern const u32 gSummaryScreenPageMemoTilemap[];
+extern const u32 gSummaryScreenPageSkillsTilemap[];
+extern const u32 gSummaryScreenPageMovesTilemap[];
+extern const u32 gSummaryScreenPageMoveDetailsTilemap[];
+extern const u32 gSummaryScreenPageNewMoveTilemap[];
+extern const u32 gSummaryScreenPageContestMovesTilemap[];
+extern const u32 gSummaryScreenPageContestMoveDetailsTilemap[];
+extern const u32 gSummaryScreenPageContestNewMoveTilemap[];
+extern const u32 gSummaryScreenPageConditionTilemap[];
 
 #endif //GUARD_GRAPHICS_H

@@ -272,7 +272,11 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
 // Local functions
 static void BuildStartMenuActions(void);
 static void AddStartMenuAction(u8 action);
+#if ISLANDGAME_DEBUG == TRUE
+static void UNUSED BuildIslandStartMenu(void);
+#elif
 static void BuildIslandStartMenu(void);
+#endif
 static void UNUSED BuildNormalStartMenu(void);
 static void UNUSED BuildDebugStartMenu(void);
 static void BuildSafariZoneStartMenu(void);
@@ -365,7 +369,7 @@ static void AddStartMenuAction(u8 action)
 */
 static void BuildIslandStartMenu(void)
 {
-    #ifdef ISLANDGAME_DEBUG
+    #if ISLANDGAME_DEBUG == TRUE
         AddStartMenuAction(MENU_ACTION_DEBUG); // really cool debug menu thats built in?
         AddStartMenuAction(MENU_ACTION_TELEPORT);
     #endif
@@ -852,7 +856,7 @@ static bool8 StartMenuPokeNavCallback(void)
         PlayRainStoppingSoundEffect();
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_InitPokeNav);  // Display PokeNav
+        SetMainCallback2(CB2_InitPokeNav);  // Display PokéNav
 
         return TRUE;
     }
@@ -997,7 +1001,7 @@ static bool8 StartMenuTeleportCallback(void)
     HideStartMenu();
 
 
-    ScriptMenu_DrawMultichoiceMenuGeneric(0, 0, FALSE, sStartMenuCursorPos, (u8**) LOCATION_NAMES, LOCATION_COUNT);
+    //TODO MULTICHOICE TELEPORT
 
     gMenuCallback = TeleportScreenCallback;
     return FALSE;
@@ -1627,7 +1631,7 @@ static void ShowSaveInfoWindow(void)
 
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
     {
-        // Print pokedex count
+        // Print Pokédex count
         yOffset += 16;
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
         BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);

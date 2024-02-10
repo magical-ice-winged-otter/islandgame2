@@ -152,7 +152,7 @@ text ISLANDGAME_VERDANT_PATH_TrainerBattle6_Defeated_Text
 text ISLANDGAME_VERDANT_PATH_TrainerBattle6_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}The scoutmaster at Camp Persi told me this was the most elusive Pokémon in their forest. \p"
+        "{COLOR DARK_GRAY}The scoutmaster at Camp Persi told me this was the most elusive Pokémon in Verdant Woods. \p"
         "{COLOR DARK_GRAY}Clearly, it is not worthy of its scarcity. I will be disposing of it."
         )
 }

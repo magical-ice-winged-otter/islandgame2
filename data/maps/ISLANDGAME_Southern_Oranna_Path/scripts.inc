@@ -199,15 +199,15 @@ TrainerBattle1_PostDefeated_Text::
 	.string "also just a newbie too.$"
 
 TrainerBattle2_Text::
-	.string "{COLOR DARK_GRAY}I caught some cute Pokémon. Wanna see\n"
-	.string "them? They're pretty strong too!$"
+	.string "{COLOR DARK_GRAY}I caught a cute Pokémon. Wanna it? It's\n"
+	.string "pretty strong!$"
 
 TrainerBattle2_Defeated_Text::
-	.string "Well shoot! Your Pokémon are cute and\nstrong too!$"
+	.string "Well shoot! Your Pokémon is cute and\nstrong too!$"
 
 TrainerBattle2_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}Where'd you get your Pokémon? I'd love\n"
-	.string "to have them too!$"
+	.string "to get one!$"
 
 TrainerBattle3_Text::
 	.string "{COLOR DARK_GRAY}My Pokémon is really rare! You don't\n"

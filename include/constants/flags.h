@@ -656,27 +656,27 @@
 
 // island-game : Hidden Items
 #define FLAG_HIDDEN_ITEM_TIDALCOVE_PEARL            0x265 
-#define FLAG_HIDDEN_ITEM_ROSEVALE_REPEL             0x266
-#define FLAG_HIDDEN_ITEM_AURORA_PATH_BLUESHARD      0x267 
+#define FLAG_HIDDEN_ITEM_ROSEVALE_EXP_CANDY         0x266
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_EXP_CANDY      0x267 
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_SHINYSTONE     0x268
 #define FLAG_HIDDEN_ITEM_MT_AURORA_NEVERMELTICE     0x269
 #define FLAG_HIDDEN_ITEM_MT_AURORA_DIVEBALL         0x26A 
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
+#define FLAG_HIDDEN_ITEM_SS_RAIN_EXP_CANDY          0x26B 
+#define FLAG_HIDDEN_ITEM_CHERIPORT_EXP_CANDY        0x26C 
+#define FLAG_HIDDEN_ITEM_SORANNA_PATH_EXP_CANDY     0x26D 
+#define FLAG_HIDDEN_ITEM_SORANNA_PATH_PARA_HEAL     0x26E 
+#define FLAG_HIDDEN_ITEM_CAMP_PERSI_EXP_CANDY       0x26F 
+#define FLAG_HIDDEN_ITEM_VERDANT_PATH_EXP_CANDY     0x270 
+#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_COLBUR       0x271
+#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_EXP_CANDY    0x272 
+#define FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY       0x273 
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_EXP_CANDY    0x274 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY     0x275 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY_2   0x276
+#define FLAG_HIDDEN_ITEM_TIDALCOVE_EXP_CANDY        0x277 
+#define FLAG_HIDDEN_ITEM_NORANNA_PATH_SUN_STONE     0x278
+#define FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY     0x279
+#define FLAG_HIDDEN_ITEM_MT_AURORA_EXP_CANDY        0x27A 
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
@@ -1249,10 +1249,10 @@
 #define FLAG_SS_RAIN_TM_VOLT_SWITCH                                 0x4AC // temporarily is calcium until tms are added
 #define FLAG_SS_RAIN_LEFTOVERS                                      0x4AD
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
+#define FLAG_MAPLEGROVE_FOCUS_BAND                                  0x4AF 
+#define FLAG_ITEM_MINTY_MEADOWS_BIG_ROOT                            0x4B0 
+#define FLAG_TRAVELERS_TUNNEL_TM_ROCK_TOMB                          0x4B1 
+#define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
 #define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag

@@ -467,7 +467,7 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_RISING_VOLTAGE]             = 0, // TODO: Assign points
     [EFFECT_BEAK_BLAST]                 = 0, // TODO: Assign points
     [EFFECT_COURT_CHANGE]               = 0, // TODO: Assign points
-    [EFFECT_STEEL_BEAM]                 = 0, // TODO: Assign points
+    [EFFECT_MAX_HP_50_RECOIL]           = 0, // TODO: Assign points
     [EFFECT_EXTREME_EVOBOOST]           = 0, // TODO: Assign points
     [EFFECT_HIT_SET_REMOVE_TERRAIN]     = 0, // TODO: Assign points
     [EFFECT_DARK_VOID]                  = 0, // TODO: Assign points
@@ -702,7 +702,7 @@ static const u16 *const sPointsArray[] =
 };
 
 // Points will always be calculated for these messages
-// even if current pokemon does not have corresponding move
+// even if current Pokémon does not have corresponding move
 static const u16 sSpecialBattleStrings[] =
 {
     STRINGID_PKMNPERISHCOUNTFELL, STRINGID_PKMNWISHCAMETRUE, STRINGID_PKMNLOSTPPGRUDGE,

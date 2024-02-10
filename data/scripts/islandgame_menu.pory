@@ -1,0 +1,277 @@
+
+script EventScript_StartMenu {
+	goto_if_set(FLAG_SYS_SAFARI_MODE, EventScript_StartMenu_BuildSafariZoneMenu)
+	goto_if_in_battle_pyramid(EventScript_StartMenu_BuildBattlePyramidMenu)
+	goto_if_in_battle_pike(EventScript_StartMenu_BuildBattlePikeMenu)
+	call_if_set(FLAG_SYS_POKEDEX_GET, EventScript_StartMenu_TogglePokedex)
+	call_if_set(FLAG_SYS_POKEMON_GET, EventScript_StartMenu_TogglePokemon)
+	call_if_set(FLAG_SYS_BAG, EventScript_StartMenu_ToggleBag)
+	call_if_set(FLAG_SYS_POKENAV_GET, EventScript_StartMenu_TogglePokenav)
+	call_if_set(FLAG_SYS_TRAINER_CARD, EventScript_StartMenu_ToggleTrainerCard)
+	call_if_set(FLAG_SYS_SAVE, EventScript_StartMenu_ToggleSave)
+	dynmultipush(StartMenu_Text_Option, 6)
+	dynmultipush(StartMenu_Text_Exit, 7)
+	special(PlayRainStoppingSoundEffect)
+    special(ShowTimeWindow)
+	dynmultistack(22, 0, 18, FALSE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS)
+
+	switch (var(VAR_RESULT)) {
+        case 0: goto(EventScript_StartMenu_PokedexAccess)
+        case 1: goto(EventScript_StartMenu_PokemonAccess)
+        case 2: goto(EventScript_StartMenu_BagAccess)
+        case 3: goto(EventScript_StartMenu_PokenavAccess)
+        case 4: goto(EventScript_StartMenu_TrainerCardAccess)
+        case 5: goto(EventScript_StartMenu_SaveAccess)
+        case 6: goto(EventScript_StartMenu_OptionAccess)
+        case 7: goto(EventScript_StartMenu_ExitAccess)
+        case MULTI_B_PRESSED: goto(EventScript_StartMenu_ExitAccess)
+    }
+}
+
+script EventScript_StartMenu_TogglePokedex {
+	dynmultipush(StartMenu_Text_Pokedex, 0)
+	return
+}
+
+script EventScript_StartMenu_TogglePokemon {
+	dynmultipush(StartMenu_Text_Pokemon, 1)
+	return
+}
+
+script EventScript_StartMenu_ToggleBag {
+	dynmultipush(StartMenu_Text_Bag, 2)
+	return
+}
+
+script EventScript_StartMenu_TogglePokenav {
+	dynmultipush(StartMenu_Text_Pokenav, 3)
+	return
+}
+
+script EventScript_StartMenu_ToggleTrainerCard {
+	dynmultipush(StartMenu_Text_TrainerCard, 4)
+	return
+}
+
+script EventScript_StartMenu_ToggleSave {
+	dynmultipush(StartMenu_Text_Save, 5)
+	return
+}
+
+
+script EventScript_StartMenu_PokedexAccess {
+	special(RemoveExtraStartMenuWindows)
+	fadescreen(FADE_TO_BLACK)
+	special(Script_StartMenu_OpenPokedexMenu)
+}
+
+script EventScript_StartMenu_PokemonAccess {
+	special(RemoveExtraStartMenuWindows)
+	fadescreen(FADE_TO_BLACK)
+	special(Script_StartMenu_OpenPokemonMenu)
+}
+
+script EventScript_StartMenu_BagAccess {
+	special(RemoveExtraStartMenuWindows)
+	fadescreen(FADE_TO_BLACK)
+	special(Script_StartMenu_OpenBagMenu)
+}
+
+script EventScript_StartMenu_PokenavAccess {
+	special(RemoveExtraStartMenuWindows)
+	fadescreen(FADE_TO_BLACK)
+	special(Script_StartMenu_OpenPokenavMenu)
+}
+
+script EventScript_StartMenu_TrainerCardAccess {
+	special(RemoveExtraStartMenuWindows)
+	fadescreen(FADE_TO_BLACK)
+	special(Script_StartMenu_OpenTrainerCardMenu)
+}
+
+script EventScript_StartMenu_SaveAccess {
+	special(RemoveExtraStartMenuWindows)
+	call(Common_EventScript_SaveGame)
+	releaseall
+}
+
+script EventScript_StartMenu_OptionAccess {
+	special(RemoveExtraStartMenuWindows)
+	fadescreen(FADE_TO_BLACK)
+	special(Script_StartMenu_OpenOptionsMenu)
+}
+
+script EventScript_StartMenu_ExitAccess {
+	special(RemoveExtraStartMenuWindows)
+}
+
+
+text StartMenu_Text_Pokedex {
+    format("Pokédex")
+}
+
+text StartMenu_Text_Pokemon {
+    format("Pokémon")
+}
+
+text StartMenu_Text_Bag {
+    format("Bag")
+}
+
+text StartMenu_Text_Pokenav {
+    format("Pokénav")
+}
+
+text StartMenu_Text_TrainerCard {
+    format("{PLAYER}")
+}
+
+text StartMenu_Text_Save {
+    format("Save")
+}
+
+text StartMenu_Text_Option {
+    format("Options")
+}
+
+text StartMenu_Text_Exit {
+    format("Exit")
+}
+
+script EventScript_StartMenu_BuildSafariZoneMenu {
+	dynmultipush(StartMenu_Text_Retire, 0)
+	call_if_set(FLAG_SYS_POKEDEX_GET, EventScript_StartMenu_TogglePokedexInSafari)
+	call_if_set(FLAG_SYS_POKEMON_GET, EventScript_StartMenu_TogglePokemonInSafari)
+	call_if_set(FLAG_SYS_BAG, EventScript_StartMenu_ToggleBagInSafari)
+	call_if_set(FLAG_SYS_TRAINER_CARD, EventScript_StartMenu_ToggleTrainerCardInSafari)
+	dynmultipush(StartMenu_Text_Option, 5)
+	dynmultipush(StartMenu_Text_Exit, 6)
+	special(PlayRainStoppingSoundEffect)
+	special(ShowSafariBallsWindow)
+	dynmultistack(22, 0, 16, TRUE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS)
+	switch(var(VAR_RESULT)) {
+        case 0: goto(EventScript_StartMenu_RetireSafariAccess)
+        case 1: goto(EventScript_StartMenu_PokedexAccess)
+        case 2: goto(EventScript_StartMenu_PokemonAccess)
+        case 3: goto(EventScript_StartMenu_BagAccess)
+        case 4: goto(EventScript_StartMenu_TrainerCardAccess)
+        case 5: goto(EventScript_StartMenu_OptionAccess)
+        case 6: goto(EventScript_StartMenu_ExitAccess)
+        case MULTI_B_PRESSED: goto(EventScript_StartMenu_ExitAccess)
+    }
+}
+
+script EventScript_StartMenu_TogglePokedexInSafari {
+    dynmultipush(StartMenu_Text_Pokedex, 1)
+    return
+}
+
+script EventScript_StartMenu_TogglePokemonInSafari {
+    dynmultipush(StartMenu_Text_Pokemon, 2)
+    return
+}
+
+script EventScript_StartMenu_ToggleBagInSafari {
+    dynmultipush(StartMenu_Text_Bag, 3)
+    return
+}
+
+script EventScript_StartMenu_ToggleTrainerCardInSafari {
+    dynmultipush(StartMenu_Text_TrainerCard, 4)
+    return
+}
+
+
+script EventScript_StartMenu_RetireSafariAccess {
+	special(Script_StartMenu_OpenRetireSafari)
+}
+
+text StartMenu_Text_Retire {
+    format("Retire")
+}
+
+script EventScript_StartMenu_BuildBattlePyramidMenu {
+	call_if_set(FLAG_SYS_POKEMON_GET, EventScript_StartMenu_TogglePokemonInBattlePyramid)
+	call_if_set(FLAG_SYS_BAG, EventScript_StartMenu_ToggleBagInBattlePyramid)
+	call_if_set(FLAG_SYS_TRAINER_CARD, EventScript_StartMenu_ToggleTrainerCardInBattlePyramid)
+	dynmultipush(StartMenu_Text_Rest, 3)
+	dynmultipush(StartMenu_Text_Retire, 4)
+	dynmultipush(StartMenu_Text_Option, 5)
+	dynmultipush(StartMenu_Text_Exit, 6)
+	special(PlayRainStoppingSoundEffect)
+	special(ShowPyramidFloorWindow)
+	dynmultistack(22, 0, 16, TRUE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS)
+
+	switch (var(VAR_RESULT)) {
+        case 0: goto(EventScript_StartMenu_PokemonAccess)
+        case 1: goto(EventScript_StartMenu_BagAccess)
+        case 2: goto(EventScript_StartMenu_TrainerCardAccess)
+        case 3: goto(EventScript_StartMenu_Rest)
+        case 4: goto(EventScript_StartMenu_RetireBattlePyramidAccess)
+        case 5: goto(EventScript_StartMenu_OptionAccess)
+        case 6: goto(EventScript_StartMenu_ExitAccess)
+        case MULTI_B_PRESSED: goto(EventScript_StartMenu_ExitAccess)
+    }
+}
+
+script EventScript_StartMenu_TogglePokemonInBattlePyramid {
+	dynmultipush(StartMenu_Text_Pokemon, 0)
+	return
+}
+script EventScript_StartMenu_ToggleBagInBattlePyramid {
+	dynmultipush(StartMenu_Text_Bag, 1)
+	return
+}
+script EventScript_StartMenu_ToggleTrainerCardInBattlePike {
+	dynmultipush(StartMenu_Text_TrainerCard, 2)
+	return
+}
+script EventScript_StartMenu_ToggleTrainerCardInBattlePyramid {
+	dynmultipush(StartMenu_Text_TrainerCard, 2)
+	return
+}
+
+script EventScript_StartMenu_Rest {
+    special(RemoveExtraStartMenuWindows)
+    call(Common_EventScript_SaveGame)
+    goto_if_eq(VAR_RESULT, NO, EventScript_StartMenu_BuildBattlePyramidMenu)
+    callnative(DoSoftReset)
+    releaseall
+}
+
+script EventScript_StartMenu_RetireBattlePyramidAccess {
+    msgbox(gText_BattlePyramidConfirmRetire, MSGBOX_YESNO)
+    goto_if_eq(VAR_RESULT, NO, EventScript_StartMenu_RebuildBattlePyramidMenu)
+    closemessage
+    special(RemoveExtraStartMenuWindows)
+    goto(BattleFrontier_BattlePyramid_EventScript_WarpToLobbyLost)
+}
+
+script EventScript_StartMenu_RebuildBattlePyramidMenu {
+    closemessage
+    goto(EventScript_StartMenu_BuildBattlePyramidMenu)
+}
+
+
+text StartMenu_Text_Rest {
+    format("Rest")
+}
+
+script EventScript_StartMenu_BuildBattlePikeMenu {
+    call_if_set(FLAG_SYS_POKEDEX_GET, EventScript_StartMenu_TogglePokedex)
+    call_if_set(FLAG_SYS_POKEMON_GET, EventScript_StartMenu_TogglePokemon)
+    call_if_set(FLAG_SYS_TRAINER_CARD, EventScript_StartMenu_ToggleTrainerCardInBattlePike)
+    dynmultipush(StartMenu_Text_Option, 3)
+    dynmultipush(StartMenu_Text_Exit, 4)
+    special(PlayRainStoppingSoundEffect)
+    dynmultistack(22, 0, 16, TRUE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS)
+
+    switch (var(VAR_RESULT)) {
+        case 0: goto(EventScript_StartMenu_PokedexAccess)
+        case 1: goto(EventScript_StartMenu_PokemonAccess)
+        case 2: goto(EventScript_StartMenu_TrainerCardAccess)
+        case 3: goto(EventScript_StartMenu_OptionAccess)
+        case 4: goto(EventScript_StartMenu_ExitAccess)
+        case MULTI_B_PRESSED: goto(EventScript_StartMenu_ExitAccess)
+    }
+}

@@ -44,17 +44,17 @@ script ISLANDGAME_Southern_Oranna_Path_TrainerBattle2 {
 }
 
 text TrainerBattle2_Text {
-    format("{COLOR DARK_GRAY}I caught some cute Pokémon. Wanna see them? They're pretty strong too!")
+    format("{COLOR DARK_GRAY}I caught a cute Pokémon. Wanna it? It's pretty strong!")
 }
 
 text TrainerBattle2_Defeated_Text
 {
-    "Well shoot! Your Pokémon are cute and\nstrong too!"
+    "Well shoot! Your Pokémon is cute and\nstrong too!"
 }
 
 text TrainerBattle2_PostDefeated_Text
 {
-    format("{COLOR DARK_GRAY}Where'd you get your Pokémon? I'd love to have them too!")
+    format("{COLOR DARK_GRAY}Where'd you get your Pokémon? I'd love to get one!")
 }
 
 

@@ -174,7 +174,7 @@ ISLANDGAME_VERDANT_PATH_TrainerBattle6_Defeated_Text::
 ISLANDGAME_VERDANT_PATH_TrainerBattle6_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}The scoutmaster at Camp Persi told me\n"
 	.string "this was the most elusive Pokémon in\l"
-	.string "their forest.\p"
+	.string "Verdant Woods.\p"
 	.string "{COLOR DARK_GRAY}Clearly, it is not worthy of its\n"
 	.string "scarcity. I will be disposing of it.$"
 
