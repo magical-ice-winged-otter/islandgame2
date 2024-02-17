@@ -2041,8 +2041,10 @@
     .endm
     
     @ remove the following NPC (assumes there will only ever be one)
-    .macro destroyfollower
+	@ set remove=FALSE if you don't want to destroy the object.
+    .macro destroyfollower remove=TRUE
 	.byte 0xea
+	.byte \remove
     .endm
     
     @ makes the player and follower face one another
