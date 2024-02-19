@@ -403,7 +403,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     //follow me
     loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
     setfollower(RIVAL_OW_ID, 100, 0)
-    copyvar(RIVAL_OW_ID, VAR_LAST_TALKED)
+    setflag(FLAG_STAY_MEADOWS)
 
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
@@ -560,6 +560,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
             break
         default:
             destroyfollower(TRUE)
+            removedynamicobject(1, TRUE)
             goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release
@@ -805,6 +806,7 @@ text MareepHelp_Text {
 
 script ISLANDGAME_MINTY_MEADOWS_2_MarkTop_Audrey {
     destroyfollower(FALSE)
+    removedynamicobject(1, TRUE)
     adddynamicobject(MAP_GROUP(ISLANDGAME_MINTY_MEADOWS_2), MAP_NUM(ISLANDGAME_MINTY_MEADOWS_2), AUDREY_GFX, PAUSED_TOP_X, PAUSED_TOP_Y, 3, MOVEMENT_TYPE_FACE_DOWN, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
     removeobject(DYNAMIC_OBJECT_1)
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST)
@@ -813,6 +815,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_MarkTop_Audrey {
 
 script ISLANDGAME_MINTY_MEADOWS_2_MarkBottom_Audrey {
     destroyfollower(FALSE)
+    removedynamicobject(1, TRUE)
     adddynamicobject(MAP_GROUP(ISLANDGAME_MINTY_MEADOWS_2), MAP_NUM(ISLANDGAME_MINTY_MEADOWS_2), AUDREY_GFX, PAUSED_BOTTOM_X, PAUSED_BOTTOM_Y, 3, MOVEMENT_TYPE_FACE_UP, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
     removeobject(DYNAMIC_OBJECT_1)
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST)
@@ -823,13 +826,12 @@ script ISLANDGAME_MINTY_MEADOWS_2_MarkBottom_Audrey {
 script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
     msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}You're back! Let's find that Mareep!"))
     
-    if (flag(FLAG_STAY_MEADOWS)) {
+    if (flag(FLAG_STAY_MEADOWS)) { //when you decided to go back without refreshing the area
+        loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+        setfollower(RIVAL_OW_ID, 100, 0)
+    } else { //by default when you enter the area again, we will use the dynamic object
         loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
         setfollower(DYNAMIC_OBJECT_1, 100, 0)
-    } else {
-        loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-        setfollower(DYNAMIC_OBJECT_1, 100, 0)
-        removedynamicobject(1, TRUE)
     }
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     return
@@ -845,7 +847,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage {
     switch (var(VAR_RESULT)) {
         case YES:
             msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Alright, I will be waiting."))
-            setflag(FLAG_STAY_MEADOWS)
         case NO:
             msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Great!"))
     }

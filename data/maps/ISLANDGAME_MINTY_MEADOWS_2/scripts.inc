@@ -368,7 +368,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	waitmovement 0
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 	setfollower 11, 100, 0
-	copyvar 11, VAR_LAST_TALKED
+	setflag FLAG_TEMP_10
 	setvar VAR_MINTY_MEADOWS_STATE, 1
 	call ISLANDGAME_MINTY_MEADOWS_2_StartedQuest
 	release
@@ -537,6 +537,7 @@ ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 	case B_OUTCOME_LOST, ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_3
 	case B_OUTCOME_RAN, ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_4
 	destroyfollower TRUE
+	removedynamicobject 1, TRUE
 	goto ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene
 ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_1:
 	release
@@ -765,7 +766,7 @@ ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_1:
 
 ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_2:
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
-	setfollower DYNAMIC_OBJECT_1, 100, 0
+	setfollower 11, 100, 0
 	goto ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_1
 
 
@@ -783,7 +784,6 @@ ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_1:
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_3:
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_4
-	setflag FLAG_TEMP_10
 	goto ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_1
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_4:
