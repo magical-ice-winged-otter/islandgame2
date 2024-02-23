@@ -152,8 +152,10 @@ Based off RHH's pokeemerald-expansion v1.7.3 https://github.com/rh-hideout/pokee
     - All bugfixes from pret included.
     - Fixed overworld snow effect.
 
-There are some mechanics, moves and abilities that are missing and being developed. Check [the project's milestones](https://github.com/rh-hideout/pokeemerald-expansion/milestones) to see which ones.
+## Contacts
+If you need support for this, want to give an opinion on this Branch for improvements or fixes or simply want to say hello, you can contact me in the discord DMs at the nickname theleonix or you can find me in the RH Hideout discord server!
 
+<<<<<<< HEAD
 
 ### [Documentation on features can be found here](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
 
@@ -188,3 +190,5 @@ The project has now gotten larger and DizzyEgg is now maintaining the project as
 A Discord-based ROM hacking community that has many members who hack using the disassembly and decompilation projects for Pokémon. Quite a few contributors to the original feature branches by DizzyEgg were members of ROM Hacking Hideout. You can call it RHH for short!
 
 [Click here to join the RHH Discord Server!](https://discord.gg/6CzjAG6GZk)
+=======
+>>>>>>> 3ab62b54ef894851c44118c1c2c6f547b1d29db8
