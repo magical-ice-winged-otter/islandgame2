@@ -734,6 +734,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     removeobject(OLD_MAN_OW_ID)
     setobjectxyperm(RIVAL_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     setobjectxyperm(OLD_MAN_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
+    setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     special(HealPlayerParty)
     completequest(QUEST_FRESA_FARMS_LOST_MAREEP)
     setflag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)
