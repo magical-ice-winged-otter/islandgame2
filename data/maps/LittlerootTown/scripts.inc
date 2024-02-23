@@ -393,8 +393,37 @@ LittlerootTown_EventScript_GoSaveBirchTrigger::
 	end
 
 LittlerootTown_EventScript_TownSign::
-	msgbox LittlerootTown_Text_TownSign, MSGBOX_SIGN
+	adddynamicobject MAP_GROUP(LITTLEROOT_TOWN), MAP_NUM(LITTLEROOT_TOWN), OBJ_EVENT_GFX_LUCY, 11, 8, 3, MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN, LRT_DOTestScript
+	msgbox LRT_DOT_MSG
+	closemessage
+	@msgbox LitterootTown_Text_TownSign, MSGBOX_SIGN
+	release
 	end
+
+LRT_DOT_MSG:
+	.string "Added Lucy to Littleroot.\nTalk to her to remove her!$"
+
+LRT_DOT_LUCYMSG:
+	.string "Okay! I'll leave now!$"
+
+LRT_DOTestScript::
+	msgbox LRT_DOT_LUCYMSG
+	closemessage
+	applymovement DYNAMIC_OBJECT_1, LRT_DOTMVMT
+	turnobject DYNAMIC_OBJECT_1, DIR_NORTH
+	waitmovement DYNAMIC_OBJECT_1
+	removeobject DYNAMIC_OBJECT_1 @@just removes object from view
+	removedynamicobject 1, TRUE @@Removes the object from object storage
+	release
+	end
+
+LRT_DOTMVMT:
+	walk_up
+	walk_up
+	walk_up
+	walk_in_place_down
+	walk_in_place_down
+	step_end
 
 LittlerootTown_EventScript_BirchsLabSign::
 	msgbox LittlerootTown_Text_ProfBirchsLab, MSGBOX_SIGN
@@ -1019,3 +1048,46 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+EventScript_MultichoiceTests::
+	lock
+	faceplayer
+	msgbox LittlerootTown_Text_CanUsePCToStoreItems, MSGBOX_DEFAULT
+	random ITEMS_COUNT
+	bufferitemname STR_VAR_1, VAR_RESULT
+	dynmultipush EventScript_MultichoiceTests_Text_0, VAR_RESULT
+	random ITEMS_COUNT
+	bufferitemname STR_VAR_2, VAR_RESULT
+	dynmultipush EventScript_MultichoiceTests_Text_1, VAR_RESULT
+	random ITEMS_COUNT
+	bufferitemname STR_VAR_3, VAR_RESULT
+	dynmultipush EventScript_MultichoiceTests_Text_2, VAR_RESULT
+	dynmultistack 0, 0, TRUE, 6, FALSE, VAR_0x800A, DYN_MULTICHOICE_CB_SHOW_ITEM
+	dynmultichoice 0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MultichoiceTests_Text_3, EventScript_MultichoiceTests_Text_4, EventScript_MultichoiceTests_Text_5
+	dynmultichoice 0, 0, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, EventScript_MultichoiceTests_Text_3, EventScript_MultichoiceTests_Text_4, EventScript_MultichoiceTests_Text_5, EventScript_MultichoiceTests_Text_6
+	buffernumberstring STR_VAR_1, VAR_RESULT
+	msgbox EventScript_MultichoiceTests_Text_0, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+
+EventScript_MultichoiceTests_Text_0:
+	.string "{STR_VAR_1}$"
+
+EventScript_MultichoiceTests_Text_1:
+	.string "{STR_VAR_2}$"
+
+EventScript_MultichoiceTests_Text_2:
+	.string "{STR_VAR_3}$"
+
+EventScript_MultichoiceTests_Text_3:
+	.string "Option 1$"
+
+EventScript_MultichoiceTests_Text_4:
+	.string "Option 2$"
+
+EventScript_MultichoiceTests_Text_5:
+	.string "Option 3$"
+
+EventScript_MultichoiceTests_Text_6:
+	.string "Option 4$"

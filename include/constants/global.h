@@ -13,9 +13,9 @@
 
 // Invalid Versions show as "----------" in Gen 4 and Gen 5's summary screen.
 // In Gens 6 and 7, invalid versions instead show "a distant land" in the summary screen.
-// In Gen 4 only, migrated Pokemon with Diamond, Pearl, or Platinum's ID show as "----------".
+// In Gen 4 only, migrated Pokémon with Diamond, Pearl, or Platinum's ID show as "----------".
 // Gen 5 and up read Diamond, Pearl, or Platinum's ID as "Sinnoh".
-// In Gen 4 and up, migrated Pokemon with HeartGold or SoulSilver's ID show the otherwise unused "Johto" string.
+// In Gen 4 and up, migrated Pokémon with HeartGold or SoulSilver's ID show the otherwise unused "Johto" string.
 #define VERSION_SAPPHIRE 1
 #define VERSION_RUBY 2
 #define VERSION_EMERALD 3
@@ -75,6 +75,12 @@
 #define GIFT_RIBBONS_COUNT 11
 #define SAVED_TRENDS_COUNT 5
 #define PYRAMID_BAG_ITEMS_COUNT 10
+#define MAX_DYNAMIC_OBJECTS 4 //This is how many slots for persistent dynamic objects you wish to have. Default 4. Require 20 bytes each.
+
+#define DYNAMIC_OBJECT_1 0xF0
+#define DYNAMIC_OBJECT_2 0xF1
+#define DYNAMIC_OBJECT_3 0xF2
+#define DYNAMIC_OBJECT_4 0xF3
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.

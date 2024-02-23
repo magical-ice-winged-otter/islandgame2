@@ -1617,14 +1617,32 @@
 	.4byte \text
 	.endm
 
-	@ Used only in FireRed/LeafGreen, does nothing in Emerald.
-	.macro unloadhelp
+	@ removes the dynamic object with specified ID from dynamic object storage.
+	@ Specify all = TRUE to completely empty the dynamic object storage.
+	.macro removedynamicobject id:req, all=FALSE
 	.byte 0xc9
+	.byte \id
+	.byte \all
 	.endm
 
-	@ Used only in FireRed/LeafGreen, does nothing in Emerald.
-	.macro signmsg
+	@ Creates a dynamic object event in the object event storage space.
+	@ Object will not be created if dynamic object storage is full (default 4 slots)
+	@ Object will spawn where directed with the script specified attached as interact.
+	@ Take care to not exceed the maximum (16) objects that can appear on the screen
+	@ or you're going to have a bad time.
+	@ LocalId defaults to 0xDD to not take any of the reserved slots for player, dynamic gfx id, and camera.
+	@ You can specify localid if you wish, but if you choose one that exists already
+	@ bugs will appear. z should usually be 3, localid will be 0xF0 + the dynamic object id (e.g. dynamic object slot 2 localid would be 0xF1)
+	.macro adddynamicobject mapgroup:req, mapnum:req, gfxid:req, xposition:req, yposition:req, zposition:req, movementType:req,scriptptr:req
 	.byte 0xca
+	.byte \mapgroup
+	.byte \mapnum
+	.2byte \gfxid
+	.2byte \xposition
+	.2byte \yposition
+	.byte \zposition
+	.byte \movementType
+	.4byte \scriptptr
 	.endm
 
 	@ Used only in FireRed/LeafGreen, does nothing in Emerald.
@@ -2222,6 +2240,38 @@
     .endif
 	.endm
 	
+
+	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req argv:vararg
+	.byte 0xcb
+	.2byte \left
+	.2byte \top
+	.byte \ignoreBPress
+	.byte \maxBeforeScroll
+	.byte \shouldSort
+	.2byte \initialSelected
+	.byte \callbacks
+	.byte (.Ldynmultichoice_\@_2 - .Ldynmultichoice_\@_1) / 4
+.Ldynmultichoice_\@_1:
+	.4byte \argv
+.Ldynmultichoice_\@_2:
+	.endm
+
+	@ Displays a multichoice box from which the user can choose a selection, and blocks script execution until a selection is made.
+	@ Lists of options are provided in argv.
+	@ If ignoreBPress is set to a non-zero value, then the user will not be allowed to back out of the multichoice with the B button.
+	.macro dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, initialSelected:req, callbacks:req argv:vararg
+	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, FALSE, \initialSelected, \callbacks, \argv
+	.endm
+
+	.macro dynmultipush name:req, id:req
+	.byte 0xcc
+	.4byte \name
+	.2byte \id
+	.endm
+
+	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
+	.endm
 
 
 @ Supplementary

@@ -560,7 +560,7 @@ struct SaveBlock2
     /*0x90*/ u8 filler_90[0x8];
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;
-    /*0xA8*/ u32 gcnLinkFlags; // Read by Pokemon Colosseum/XD
+    /*0xA8*/ u32 gcnLinkFlags; // Read by Pokémon Colosseum/XD
     /*0xAC*/ u32 encryptionKey;
     /*0xB0*/ struct PlayersApprentice playerApprentice;
     /*0xDC*/ struct Apprentice apprentices[APPRENTICE_COUNT];  //272 bytes
@@ -1025,6 +1025,21 @@ struct ExternalEventFlags
 
 } __attribute__((packed));/*size = 0x15*/
 
+struct DynamicObject //size 20
+{
+    bool8 active;
+    u8 mapGroup;
+    u8 mapNum;
+    s16 x;
+    s16 y;
+    u8 z;
+    u8 gfxId;
+    u8 movement;
+    u8 localId;
+    const u8 *scriptPtr;
+    u8 otherData; //Unused by this feature branch. Can be used for custom parameters for objects, or something. Added to pad to 20 bytes.
+};
+
 struct SaveBlock1
 {
     /*0x00*/ struct Coords16 pos;
@@ -1134,6 +1149,7 @@ struct SaveBlock1
     /*0x3???*/ struct TrainerHillSave trainerHill;
     #endif
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
+               struct DynamicObject dynamicObjects[MAX_DYNAMIC_OBJECTS];//size 80 (4 * 20)
     // sizeof: 0x3???
 };
 
