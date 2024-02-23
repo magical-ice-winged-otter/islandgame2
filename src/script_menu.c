@@ -40,6 +40,8 @@ struct DynamicListMenuEventCollection
     DynamicListCallback OnDestroy;
 };
 
+
+static EWRAM_DATA u16 sCursorPos = 0;
 static EWRAM_DATA u8 sProcessInputDelay = 0;
 static EWRAM_DATA u8 sDynamicMenuEventId = 0;
 static EWRAM_DATA struct DynamicMultichoiceStack *sDynamicMultiChoiceStack = NULL;
@@ -146,12 +148,18 @@ static void MultichoiceDynamicEventDebug_OnInit(struct DynamicListMenuEventArgs 
 
 static void MultichoiceDynamicEventDebug_OnSelectionChanged(struct DynamicListMenuEventArgs *eventArgs)
 {
+    sCursorPos = eventArgs->selectedItem;
     DebugPrintf("OnSelectionChanged: %d", eventArgs->selectedItem);
 }
 
 static void MultichoiceDynamicEventDebug_OnDestroy(struct DynamicListMenuEventArgs *eventArgs)
 {
     DebugPrintf("OnDestroy: %d", eventArgs->windowId);
+}
+
+u16 getCursorPos(void)
+{
+    return sCursorPos;
 }
 
 #define sAuxWindowId sDynamicMenuEventScratchPad[0]
