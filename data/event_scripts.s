@@ -1074,6 +1074,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/scripts/islandgame_debug.inc"
+	.include "data/scripts/islandgame_common.inc"
 	
 	.include "data/maps/ForestBaseCamp_FrontLawn/scripts.inc"
 

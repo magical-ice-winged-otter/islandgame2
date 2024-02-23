@@ -1,0 +1,13 @@
+//Common script to load quest npcs with emotes into the game.
+script Common_QuestEmoteOnWarp {
+    //setvar VAR_0x800B, LOCALID_NURSE
+    //var(VAR_RESULT) == QUEST_UNLOCKED && 
+    if (var(VAR_RESULT) == QUEST_INACTIVE) {
+        applymovement(VAR_0x800B, Common_Movement_ExclamationMark)
+        waitmovement(VAR_0x800B)
+    } elif (var(VAR_RESULT) == QUEST_ACTIVE) {
+        applymovement(VAR_0x800B, Common_Movement_ExclamationMark)
+        waitmovement(VAR_0x800B)
+    }
+    return
+}
