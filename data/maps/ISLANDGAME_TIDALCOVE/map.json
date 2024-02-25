@@ -14,16 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
-      "offset": -39,
-      "direction": "down"
-    },
-    {
-      "map": "MAP_ISLANDGAME_NORTHERN_ORANNA_PATH",
-      "offset": 10,
-      "direction": "left"
-    },
-    {
       "map": "MAP_ISLADNGAME_PROMENADE_PATH",
       "offset": 0,
       "direction": "right"

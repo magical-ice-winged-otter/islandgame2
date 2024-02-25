@@ -1043,3 +1043,14 @@ const struct Tileset gTileset_islandgame_oranna_central_path =
     .paletteOverrides = gTilesetPalOverrides_Island_OrannaCentralPath,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_ocean_general =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_ocean_general,
+    .palettes = gTilesetPalettes_islandgame_ocean_general,
+    .metatiles = gMetatiles_islandgame_ocean_general,
+    .metatileAttributes = gMetatileAttributes_islandgame_ocean_general,
+    .callback = NULL,
+};
