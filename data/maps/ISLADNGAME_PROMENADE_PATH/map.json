@@ -15,8 +15,13 @@
   "connections": [
     {
       "map": "MAP_ISLANDGAME_TIDALCOVE",
-      "offset": 0,
+      "offset": 7,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ISLANDGAME_APPLEVINE",
+      "offset": 10,
+      "direction": "right"
     }
   ],
   "object_events": [
