@@ -6,7 +6,7 @@
 #include "random.h"
 
 static void PokevialFixDoseOverflow(void);
-static u32 PokevialGetDosePercentage(void);
+//static u32 PokevialGetDosePercentage(void);
 
 static void PokevialInit()
 {
