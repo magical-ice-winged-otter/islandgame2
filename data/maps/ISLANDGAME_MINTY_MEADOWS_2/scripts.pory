@@ -7,8 +7,10 @@
 
 const STATE_INITIAL_RIVAL = 0
 const STATE_STARTED_QUEST = 1
+const STATE_PAUSED_QUEST = 2
 const STATE_PRE_FIGHT_SIGHTING = 3
 const STATE_POST_FIGHT = 4
+
 
 const VAR_SEEN_CHASE_CUTSCENE = VAR_TEMP_0
 
@@ -23,6 +25,16 @@ const MAREEP_EXTRA3 = 19
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
 
+// leaving fix
+const FLAG_STAY_MEADOWS = FLAG_TEMP_10 //controls special cases
+
+const AUDREY_GFX = OBJ_EVENT_GFX_LEAF
+const PAUSED_TOP_X = 12
+const PAUSED_TOP_Y = 10
+const PAUSED_BOTTOM_X = 18
+const PAUSED_BOTTOM_Y = 28
+
+
 mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_MINTY_MEADOWS_2_OnTransition
 }
@@ -31,6 +43,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_OnTransition {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
         case STATE_INITIAL_RIVAL:            call(ISLANDGAME_MINTY_MEADOWS_2_InitialRival)
         case STATE_STARTED_QUEST:            call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
+        case STATE_PAUSED_QUEST:             call(ISLANDGAME_MINTY_MEADOWS_2_PausedQuest)
         case STATE_PRE_FIGHT_SIGHTING:       call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
         case STATE_POST_FIGHT:               call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
     }
@@ -65,6 +78,16 @@ script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
     setobjectmovementtype(MAREEP_OW_ID, MOVEMENT_TYPE_FACE_DOWN)
     setobjectmovementtype(MIGHTYENA_OW_ID, MOVEMENT_TYPE_FACE_UP)
     return
+}
+
+// Come back to the quest when entering again
+script ISLANDGAME_MINTY_MEADOWS_2_PausedQuest {
+    setvar(VAR_TEMP_4, 1)
+    setobjectxyperm(OLD_MAN_OW_ID, 10, 9)
+    setobjectxyperm(MAREEP_OW_ID, 61, 13)
+    setobjectxyperm(MIGHTYENA_OW_ID, 61, 15)
+    setobjectmovementtype(MAREEP_OW_ID, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype(MIGHTYENA_OW_ID, MOVEMENT_TYPE_FACE_UP)
 }
 
 // After watching the pre-fight cutscene, wait for the player to beat the mightyena
@@ -380,6 +403,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     //follow me
     loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
     setfollower(RIVAL_OW_ID, 100, 0)
+    copyvar(RIVAL_OW_ID, VAR_LAST_TALKED)
 
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
@@ -531,11 +555,11 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
-            destroyfollower
+            destroyfollower(TRUE)
         case B_OUTCOME_RAN:
             break
         default:
-            destroyfollower
+            destroyfollower(TRUE)
             goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release
@@ -779,13 +803,73 @@ text MareepHelp_Text {
     format("{COLOR DARK_GRAY}Reep! Reep! {COLOR BLUE}(BRO HELP ME PLZ)")
 }
 
+script ISLANDGAME_MINTY_MEADOWS_2_MarkTop_Audrey {
+    destroyfollower(FALSE)
+    adddynamicobject(MAP_GROUP(ISLANDGAME_MINTY_MEADOWS_2), MAP_NUM(ISLANDGAME_MINTY_MEADOWS_2), AUDREY_GFX, PAUSED_TOP_X, PAUSED_TOP_Y, 3, MOVEMENT_TYPE_FACE_DOWN, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+    removeobject(DYNAMIC_OBJECT_1)
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST)
+    return
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_MarkBottom_Audrey {
+    destroyfollower(FALSE)
+    adddynamicobject(MAP_GROUP(ISLANDGAME_MINTY_MEADOWS_2), MAP_NUM(ISLANDGAME_MINTY_MEADOWS_2), AUDREY_GFX, PAUSED_BOTTOM_X, PAUSED_BOTTOM_Y, 3, MOVEMENT_TYPE_FACE_UP, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+    removeobject(DYNAMIC_OBJECT_1)
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST)
+    return
+}
+
+
+script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}You're back! Let's find that Mareep!"))
+    
+    if (flag(FLAG_STAY_MEADOWS)) {
+        loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+        setfollower(DYNAMIC_OBJECT_1, 100, 0)
+    } else {
+        loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+        setfollower(DYNAMIC_OBJECT_1, 100, 0)
+        removedynamicobject(1, TRUE)
+    }
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
+    return
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage {
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Do you still want to?"))
+    
+    dynmultipush("Yes", YES)
+    dynmultipush("No", NO)
+    dynmultistack(0, 0, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
+    switch (var(VAR_RESULT)) {
+        case YES:
+            msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Alright, I will be waiting."))
+            setflag(FLAG_STAY_MEADOWS)
+        case NO:
+            msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Great!"))
+    }
+    return
+}
 
 script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
     lock
-    facefollower
-    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
-    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case STATE_PAUSED_QUEST:
+            call(ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack)
+        case STATE_STARTED_QUEST:
+            facefollower
+            call(ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage)
+            switch (var(VAR_RESULT)) {
+                case YES:
+                    call(ISLANDGAME_MINTY_MEADOWS_2_MarkBottom_Audrey)
+                    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                case NO:
+                    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+            }
+    }
     release
 }
 
@@ -795,10 +879,22 @@ movement ISLANDGAME_MINTY_MEADOWS_2_WalkUp {
 
 script ISLANDGAME_MINTY_MEADOWS_2_CantLeave2 {
     lock
-    facefollower
-    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
-    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case STATE_PAUSED_QUEST:
+            call(ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack)
+        case STATE_STARTED_QUEST:
+            facefollower
+            call(ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage)
+            switch (var(VAR_RESULT)) {
+                case YES:
+                    call(ISLANDGAME_MINTY_MEADOWS_2_MarkTop_Audrey)
+                    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                case NO:
+                    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+            }
+    }
     release
 }
 

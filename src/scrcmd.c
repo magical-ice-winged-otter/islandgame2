@@ -2611,7 +2611,8 @@ bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
 
 bool8 ScrCmd_destroyfollower(struct ScriptContext *ctx)
 {
-    DestroyFollower();
+    bool8 destroyObject = ScriptReadByte(ctx);
+    DestroyFollower(destroyObject);
     return FALSE;
 }
 
