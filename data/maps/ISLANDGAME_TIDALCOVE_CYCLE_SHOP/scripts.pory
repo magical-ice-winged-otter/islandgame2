@@ -17,7 +17,7 @@ script ISLANDGAME_TIDALCOVE_CYCLE_SHOP_Interact_Owner {
 
         if (var(VAR_RESULT)) {
             msgbox(format("Yooo, you got a voucher? That means you got your first badge! Grats, brah!\pIght, here's your ELITE bike, carefully crafted by yours truly!"), MSGBOX_NPC)
-            giveitem(ITEM_MACH_BIKE) // todo: choose between bikes?
+            giveitem(ITEM_ACRO_BIKE)
             removeitem(ITEM_BIKE_VOUCHER)
             setflag(FLAG_RECEIVED_BIKE)
         }
