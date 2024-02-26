@@ -5194,10 +5194,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_LUMINE_CAVE",
       "name": "ISLANDGAME_LUMINE_CAVE_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_test",
+      "width": 45,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE/map.bin"
     },
