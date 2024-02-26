@@ -996,8 +996,9 @@
 #define ITEM_ISLANDGAME_PICKAXE 820
 #define ITEM_ISLANDGAME_POWERGLOVE 821
 #define ITEM_ISLANDGAME_TRADING_CARD 822
+#define ITEM_POKEVIAL 823 // Pokevial Branch
 
-#define ITEMS_COUNT 823
+#define ITEMS_COUNT 824
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
