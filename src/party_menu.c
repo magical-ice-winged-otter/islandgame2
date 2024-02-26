@@ -7754,7 +7754,7 @@ static bool8 IsMonNotFullyHealed(void)
 void HealMonFromSlotId(void)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    u32 i = 0, j = 0, ppBonuses = 0;
+    u32 j = 0, ppBonuses = 0;
     u8 arg[4] = {0,0,0,0};
 
     // restore HP.
