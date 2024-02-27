@@ -9886,4 +9886,17 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .importance = 1,
     },
+
+    //Start Pokevial Branch
+    [ITEM_POKEVIAL] =
+    {
+        .name = _("POKéVIAL"),
+        .price = 0,
+        .description = sPokevialDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Pokevial,
+    },
+    //End Pokevial Branch
 };
