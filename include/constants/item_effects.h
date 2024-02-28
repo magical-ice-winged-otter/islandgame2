@@ -5,6 +5,7 @@
 #define ITEM0_DIRE_HIT          0x30 // Works the same way as the move Focus Energy.
 #define ITEM0_SACRED_ASH        0x40
 #define ITEM0_INFATUATION       0x80
+#define ITEM0_POKEVIAL          0xC0 //Pokevial Branch
 
 // new field 1 masks
 #define ITEM1_X_ATTACK          STAT_ATK
@@ -92,5 +93,6 @@
 #define ITEM_EFFECT_PP_MAX 20
 #define ITEM_EFFECT_HEAL_PP 21
 #define ITEM_EFFECT_NONE 22
+#define ITEM_EFFECT_POKEVIAL 23 //Pokevial Branch
 
 #endif // GUARD_CONSTANTS_ITEM_EFFECTS_H

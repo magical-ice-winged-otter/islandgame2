@@ -51,6 +51,7 @@
 #include "quests.h"
 #include "constants/songs.h"
 
+#include "malloc.h"
 #include "islandgame.h"
 #include "script_menu.h"
 #include "script_pokemon_util.h"
@@ -995,13 +996,45 @@ static bool8 StartMenuBattlePyramidBagCallback(void)
     return FALSE;
 }
 
+//This builds the teleport menu natively.
+void BuildTeleportMenu(void)
+{
+    u32 i;
+
+    for (i = 0; i < LOCATION_COUNT; i++) {
+        u8 *nameBuffer = Alloc(100);
+        const u8 *name = LOCATION_NAMES[i];
+        u32 id = i;
+        struct ListMenuItem item;
+        StringExpandPlaceholders(nameBuffer, name);
+        item.name = nameBuffer;
+        item.id = id;
+        MultichoiceDynamic_PushElement(item);       
+    }
+}
+
+
 static bool8 StartMenuTeleportCallback(void) 
 {
+    u32 argc;
+    struct ListMenuItem *items;
+    u32 i;
+
     RemoveExtraStartMenuWindows();
     HideStartMenu();
 
 
     //TODO MULTICHOICE TELEPORT
+    BuildTeleportMenu();
+    argc = MultichoiceDynamic_StackSize();
+    items = AllocZeroed(sizeof(struct ListMenuItem) * argc);
+    for (i = 0; i < argc; ++i)
+    {
+        struct ListMenuItem *currentItem = MultichoiceDynamic_PeekElementAt(i);
+        items[i] = *currentItem;
+    }
+    MultichoiceDynamic_DestroyStack();
+    ScriptMenu_MultichoiceDynamic(0, 0, argc, items, TRUE, 6, FALSE, DYN_MULTICHOICE_CB_DEBUG);
 
     gMenuCallback = TeleportScreenCallback;
     return FALSE;
@@ -1011,7 +1044,6 @@ static bool8 TeleportScreenCallback(void)
 {
     Location dest;
     u8 cursorPos;
-    //DebugPrintf("TELEPORT CALLBACK!");
     //RETAIN ALL THE PREVIOUS CONTROLS
     if (JOY_NEW(DPAD_UP))
     {
@@ -1022,7 +1054,9 @@ static bool8 TeleportScreenCallback(void)
     {
         PlaySE(SE_SELECT);
     }
-    cursorPos = Menu_GetCursorPos();
+    
+    cursorPos = getCursorPos();
+    DebugPrintf("TELEPORT CALLBACK! %d", cursorPos);
     if (JOY_NEW(A_BUTTON))
     { //HERE WE GO DIFFERENT BEHAVIOR!
         PlaySE(SE_SELECT);

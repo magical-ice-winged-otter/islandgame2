@@ -61,6 +61,7 @@
 #include "constants/quests.h"
 #include "constants/follow_me.h"
 #include "constants/duo_parties.h"
+#include "constants/pokevial.h" //Pokevial Branch
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1074,6 +1075,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/scripts/islandgame_debug.inc"
+	.include "data/scripts/islandgame_common.inc"
 	
 	.include "data/maps/ForestBaseCamp_FrontLawn/scripts.inc"
 

@@ -4,12 +4,25 @@ const CANDY_BOY_ID = 1
 const COOKIE_GIRL_ID = 2
 const JONAS_OW_ID = 13
 
+// quest npcs:
+const QUEST_FAVORITE_CARD_NPC = 25
+
 mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if (flag(FLAG_CAMP_PERSI_JONAS_DEFEATED)) {
             setvar(VAR_TEMP_1, 1)
         }
     }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_C, 0 {
+            returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+            setvar(VAR_0x800B, QUEST_FAVORITE_CARD_NPC)
+            call(Common_QuestEmoteOnWarp)
+
+
+            setvar(VAR_TEMP_C, 1)
+        }
+    ]
 }
 
 
@@ -637,7 +650,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
     returnqueststate(QUEST_PERSI_FAVORITE_CARD)
 
     switch (var(VAR_RESULT)) {
-        case 1: // INACTIVE
+        case QUEST_INACTIVE: // INACTIVE
             msgbox(format("I lost my favorite trading card somewhere in the Verdant Woods!\pCan you help me get it back?"), MSGBOX_YESNO)
 
             if (var(VAR_RESULT) == YES) {
@@ -647,7 +660,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
             else {
                 msgbox(format("Aww, seriously?"))
             }
-        case 2: // ACTIVE
+        case QUEST_ACTIVE: // ACTIVE
             checkitem(ITEM_ISLANDGAME_TRADING_CARD)
 
             if (var(VAR_RESULT)) {
@@ -662,7 +675,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
             else {
                 msgbox(format("Have you found it yet?"))
             }
-        case 4: // COMPLETED
+        case QUEST_COMPLETED: // COMPLETED
             msgbox("I'm never taking my card outside again...")
     }
 

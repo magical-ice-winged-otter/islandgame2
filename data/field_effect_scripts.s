@@ -76,6 +76,8 @@ gFieldEffectScriptPointers::
 	.4byte gFldEffScript_UseVsSeeker                    @ FLDEFF_USE_VS_SEEKER
 	.4byte gFldEffScript_XIcon                          @ FLDEFF_X_ICON
 	.4byte gFldEffScript_DoubleExclMarkIcon             @ FLDEFF_DOUBLE_EXCL_MARK_ICON
+	.4byte gFieldEffectScript_TalkingIcon               @ FLDEFF_TALKING_ICON
+	.4byte gFieldEffectScript_ThinkingIcon              @ FLDEFF_THINKING_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_loadfadedpaldaynight_callnative gSpritePalette_ArrowEmotionsFieldEffect, FldEff_ExclamationMarkIcon
@@ -358,4 +360,11 @@ gFldEffScript_XIcon::
 
 gFldEffScript_DoubleExclMarkIcon::
 	field_eff_callnative FldEff_DoubleExclMarkIcon
+
+gFieldEffectScript_TalkingIcon::
+	field_eff_callnative FldEff_TalkingIcon
+	field_eff_end
+
+gFieldEffectScript_ThinkingIcon::
+	field_eff_callnative FldEff_ThinkingIcon
 	field_eff_end

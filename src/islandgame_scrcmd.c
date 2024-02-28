@@ -1,5 +1,7 @@
 #include "global.h"
 #include "pokedex.h"
+#include "islandgame.h"
+#include "list_menu.h"
 #include "event_data.h" // for gSpecialVar
 #include "field_camera.h" // for MoveCameraAndRedrawMap
 

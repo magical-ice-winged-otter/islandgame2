@@ -79,7 +79,7 @@
 // Used in cases where division by 0 can occur in the retail version.
 // Avoids invalid opcodes on some emulators, and the otherwise UB.
 #ifdef UBFIX
-#define SAFE_DIV(a, b) ((b) ? (a) / (b) : 0)
+#define SAFE_DIV(a, b) (((b) != 0) ? (a) / (b) : 0)
 #else
 #define SAFE_DIV(a, b) ((a) / (b))
 #endif
@@ -1040,6 +1040,14 @@ struct DynamicObject //size 20
     u8 otherData; //Unused by this feature branch. Can be used for custom parameters for objects, or something. Added to pad to 20 bytes.
 };
 
+//Start Pokevial Branch
+struct Pokevial
+{
+    u8 Size : 4;
+    u8 Dose : 4;
+};
+//End Pokevial Branch
+
 struct SaveBlock1
 {
     /*0x00*/ struct Coords16 pos;
@@ -1150,6 +1158,7 @@ struct SaveBlock1
     #endif
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
                struct DynamicObject dynamicObjects[MAX_DYNAMIC_OBJECTS];//size 80 (4 * 20)
+    /*      */ struct Pokevial pokevial; //Pokevial Branch
     // sizeof: 0x3???
 };
 

@@ -19,6 +19,7 @@ const LOCALID_PUDDLEMON = 3
 const LOCALID_AZURILL = 13
 
 mapscripts ISLANDGAME_ROSEVALE_MapScripts {
+    // todo: consider using on_warp_into_map_table instead of map_script_on_transition
     MAP_SCRIPT_ON_TRANSITION {
         switch (var(VAR_ROSEVALE_STATE)) {
             case STATE_STARTED_QUEST:

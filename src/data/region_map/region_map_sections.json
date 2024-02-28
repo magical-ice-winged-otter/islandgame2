@@ -1803,8 +1803,8 @@
     {
       "map_section": "MAPSEC_MAPLEGROVE",
       "name": "Maplegrove",
-      "x": 0,
-      "y": 0,
+      "x": 4,
+      "y": 14,
       "width": 1,
       "height": 1
     },

@@ -56,5 +56,6 @@ enum {
 };
 
 bool32 CanThrowBall(void);
+void ItemUseOutOfBattle_Pokevial(u8); //Pokevial Branch
 
 #endif // GUARD_ITEM_USE_H
