@@ -1054,3 +1054,14 @@ const struct Tileset gTileset_islandgame_ocean_general =
     .metatileAttributes = gMetatileAttributes_islandgame_ocean_general,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_lumine_applevine =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_applevine,
+    .palettes = gTilesetPalettes_islandgame_lumine_applevine,
+    .metatiles = gMetatiles_islandgame_lumine_applevine,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_applevine,
+    .callback = NULL,
+};

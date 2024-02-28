@@ -267,3 +267,6 @@ const u16 gMetatileAttributes_islandgame_oranna_central_path[] = INCBIN_U16("dat
 
 const u16 gMetatiles_islandgame_ocean_general[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_ocean_general[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_lumine_applevine[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_applevine/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_lumine_applevine[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_applevine/metatile_attributes.bin");

@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ISLANDGAME_TIDALCOVE",
-      "offset": -10,
-      "direction": "right"
-    },
-    {
       "map": "MAP_ISLANDGAME_ROSEVALE",
       "offset": 8,
       "direction": "left"
@@ -254,6 +249,13 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_NORTHERN_ORANNA_PATH_FITNESS_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 59,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_TIDALCOVE",
+      "dest_warp_id": "8"
     }
   ],
   "coord_events": [
@@ -262,8 +264,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 57,
-      "y": 7,
+      "x": 55,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_EntranceSign"

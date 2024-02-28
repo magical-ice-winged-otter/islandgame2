@@ -316,14 +316,14 @@
       "x": 8,
       "y": 15,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_TIDALCOVE",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ISLANDGAME_NORTHERN_ORANNA_PATH",
+      "dest_warp_id": "1"
     },
     {
       "x": 23,
       "y": 44,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_TIDALCOVE",
+      "dest_map": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
       "dest_warp_id": "0"
     }
   ],

@@ -4675,7 +4675,7 @@
       "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
       "width": 90,
-      "height": 50,
+      "height": 60,
       "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_oranna_central_path",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
@@ -4724,7 +4724,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_NORTHERN_ORANNA_PATH",
       "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_Layout",
-      "width": 60,
+      "width": 70,
       "height": 40,
       "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_oranna_northern_path",
@@ -5174,10 +5174,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_APPLEVINE",
       "name": "ISLANDGAME_APPLEVINE_Layout",
-      "width": 40,
+      "width": 60,
       "height": 40,
       "primary_tileset": "gTileset_islandgame_ocean_general",
-      "secondary_tileset": "gTileset_islandgame_oranna_tidalcove",
+      "secondary_tileset": "gTileset_islandgame_lumine_applevine",
       "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_APPLEVINE/map.bin"
     },
