@@ -241,6 +241,7 @@ gScriptCmdTable::
     .4byte ScrCmd_checkfollower						@ 0xec
     .4byte ScrCmd_setwilddoublebattle               @ 0xed
     .4byte ScrCmd_setcwildbattle                    @ 0xee
+    .4byte ScrCmd_pokevial                          @ 0xef //Pokevial Branch
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

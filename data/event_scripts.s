@@ -61,6 +61,7 @@
 #include "constants/quests.h"
 #include "constants/follow_me.h"
 #include "constants/duo_parties.h"
+#include "constants/pokevial.h" //Pokevial Branch
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
