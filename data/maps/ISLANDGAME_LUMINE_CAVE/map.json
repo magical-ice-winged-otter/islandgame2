@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 37,
+      "x": 40,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -29,7 +29,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 30,
+      "x": 33,
       "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -42,7 +42,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 9,
+      "x": 12,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -55,7 +55,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 4,
+      "x": 7,
       "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -68,12 +68,25 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 12,
+      "x": 15,
       "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
       "movement_range_x": 6,
       "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_042",
+      "x": 24,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
+      "movement_range_x": 12,
+      "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",

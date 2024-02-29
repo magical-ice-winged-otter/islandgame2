@@ -5194,7 +5194,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_LUMINE_CAVE",
       "name": "ISLANDGAME_LUMINE_CAVE_Layout",
-      "width": 45,
+      "width": 52,
       "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
@@ -5380,6 +5380,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_LUMINE_CAVE_1F_2",
+      "name": "ISLANDGAME_LUMINE_CAVE_1F_2_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_1F_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_1F_2/map.bin"
     }
   ]
 }
