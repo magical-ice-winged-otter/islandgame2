@@ -3292,7 +3292,7 @@ bool32 HandleWishPerishSongOnTurnEnd(void)
     return FALSE;
 }
 
-#define FAINTED_ACTIONS_MAX_CASE 8
+#define FAINTED_ACTIONS_MAX_CASE 7
 
 bool32 HandleFaintedMonActions(void)
 {
@@ -3376,19 +3376,7 @@ bool32 HandleFaintedMonActions(void)
             else
                 gBattleStruct->faintedActionsState = 4;
             break;
-        case 6: // All battlers switch-in abilities happen here to prevent them happening against an empty field.
-            for (i = 0; i < gBattlersCount; i++)
-            {
-                if (gBattleStruct->switchInAbilityPostponed & gBitTable[i])
-                {
-                    if (DoSwitchInAbilitiesItems(i))
-                        return TRUE;
-                    gBattleStruct->switchInAbilityPostponed &= ~(gBitTable[i]);
-                }
-            }
-            gBattleStruct->faintedActionsState++;
-            break;
-        case 7:
+        case 6:
             if (ItemBattleEffects(ITEMEFFECT_NORMAL, 0, TRUE))
                 return TRUE;
             gBattleStruct->faintedActionsState++;
@@ -3843,6 +3831,10 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
 
                 gBattleStruct->beatUpSlot = 0;
                 PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+            }
+            else
+            {
+                gMultiHitCounter = 0;
             }
             gBattleStruct->atkCancellerTracker++;
             break;
@@ -4675,8 +4667,8 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_INTIMIDATE:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
-                gBattlerAttacker = battler;
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                gBattlerAttacker = battler;
                 SET_STATCHANGER(STAT_ATK, 1, TRUE);
                 BattleScriptPushCursorAndCallback(BattleScript_IntimidateActivates);
                 effect++;
@@ -5677,6 +5669,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && TARGET_TURN_DAMAGED
              && IsBattlerAlive(battler))
             {
+                // TODO: Convert this to a proper FORM_CHANGE type.
                 if (gBattleMons[gBattlerTarget].species == SPECIES_CRAMORANT_GORGING)
                 {
                     gBattleMons[gBattlerTarget].species = SPECIES_CRAMORANT;
@@ -5802,7 +5795,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && gBattleMons[gBattlerTarget].hp != 0
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
              && RandomWeighted(RNG_STENCH, 9, 1)
-             && !IS_MOVE_STATUS(move)
+             && TARGET_TURN_DAMAGED
              && gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_HIT
              && gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_STATUS
              && gBattleMoves[gCurrentMove].effect != EFFECT_TRIPLE_ARROWS)
@@ -6119,6 +6112,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED)
              && gBattleStruct->allowedToChangeFormInWeather[gBattlerPartyIndexes[battler]][GetBattlerSide(battler)])
             {
+                // TODO: Convert this to a proper FORM_CHANGE type.
                 gBattleStruct->allowedToChangeFormInWeather[gBattlerPartyIndexes[battler]][GetBattlerSide(battler)] = FALSE;
                 gBattleMons[battler].species = SPECIES_EISCUE_ICE_FACE;
                 BattleScriptPushCursorAndCallback(BattleScript_BattlerFormChangeWithStringEnd3);
@@ -6678,6 +6672,7 @@ static u8 DamagedStatBoostBerryEffect(u32 battler, u8 statId, u8 split)
      && (gBattleScripting.overrideBerryRequirements
          || (!DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
              && GetBattleMoveSplit(gCurrentMove) == split
+             && battler != gBattlerAttacker
              && TARGET_TURN_DAMAGED))
         )
     {
@@ -8258,6 +8253,7 @@ u8 IsMonDisobedient(void)
             } while (gBitTable[gCurrMovePos] & calc);
 
             gCalledMove = gBattleMons[gBattlerAttacker].moves[gCurrMovePos];
+            SetAtkCancellerForCalledMove();
             gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesRandomMove;
             gBattlerTarget = GetMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
             gHitMarker |= HITMARKER_DISOBEDIENT_MOVE;
