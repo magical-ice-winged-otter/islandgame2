@@ -1065,3 +1065,14 @@ const struct Tileset gTileset_islandgame_lumine_aetheria =
     .metatileAttributes = gMetatileAttributes_islandgame_lumine_aetheria,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_lumine_bellehaven =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_bellehaven,
+    .palettes = gTilesetPalettes_islandgame_lumine_bellehaven,
+    .metatiles = gMetatiles_islandgame_lumine_bellehaven,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_bellehaven,
+    .callback = NULL,
+};
