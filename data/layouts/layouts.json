@@ -5204,7 +5204,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN",
       "name": "ISLANDGAME_BELLEHAVEN_Layout",
-      "width": 20,
+      "width": 22,
       "height": 30,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_bellehaven",
