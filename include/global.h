@@ -79,7 +79,7 @@
 // Used in cases where division by 0 can occur in the retail version.
 // Avoids invalid opcodes on some emulators, and the otherwise UB.
 #ifdef UBFIX
-#define SAFE_DIV(a, b) ((b) ? (a) / (b) : 0)
+#define SAFE_DIV(a, b) (((b) != 0) ? (a) / (b) : 0)
 #else
 #define SAFE_DIV(a, b) ((a) / (b))
 #endif
@@ -1040,6 +1040,14 @@ struct DynamicObject //size 20
     u8 otherData; //Unused by this feature branch. Can be used for custom parameters for objects, or something. Added to pad to 20 bytes.
 };
 
+//Start Pokevial Branch
+struct Pokevial
+{
+    u8 Size : 4;
+    u8 Dose : 4;
+};
+//End Pokevial Branch
+
 struct SaveBlock1
 {
     /*0x00*/ struct Coords16 pos;
@@ -1060,7 +1068,7 @@ struct SaveBlock1
     /*0x238*/ struct Pokemon playerParty[PARTY_SIZE];
     /*0x490*/ u32 money;
     /*0x494*/ u16 coins;
-    /*0x496*/ u16 registeredItem; // registered for use with SELECT button
+    /*0x496*/ u16 registeredItemCompat; // used for vanilla registered item
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x560*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
     /*0x5D8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];
@@ -1073,8 +1081,11 @@ struct SaveBlock1
     #endif
     /*0x9BC*/ u16 berryBlenderRecords[3];
     /*0x9C2*/ u8 unused_9C2[6];
-    /*0x9C8*/ u16 trainerRematchStepCounter; //before, this was freed with FREE_MATCH_CALL, but the new vs seeker update uses these now.
+    /*0x9C8*/ u16 trainerRematchStepCounter;
+    // MAX_REMATCH_ENTRIES decreased from vanilla's 100 to 92
+    // This is to accomodate 4 non-vanilla registeredItems
     /*0x9CA*/ u8 trainerRematches[MAX_REMATCH_ENTRIES];
+    /*0xA26*/ u16 registeredItems[MAX_REGISTERED_ITEMS];
     /*0xA2E*/ //u8 padding3[2];
     /*0xA30*/ struct ObjectEvent objectEvents[OBJECT_EVENTS_COUNT];
     /*0xC70*/ struct ObjectEventTemplate objectEventTemplates[OBJECT_EVENT_TEMPLATES_COUNT];
@@ -1150,6 +1161,7 @@ struct SaveBlock1
     #endif
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
                struct DynamicObject dynamicObjects[MAX_DYNAMIC_OBJECTS];//size 80 (4 * 20)
+    /*      */ struct Pokevial pokevial; //Pokevial Branch
     // sizeof: 0x3???
 };
 

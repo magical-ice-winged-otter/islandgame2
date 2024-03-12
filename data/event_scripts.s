@@ -61,6 +61,7 @@
 #include "constants/quests.h"
 #include "constants/follow_me.h"
 #include "constants/duo_parties.h"
+#include "constants/pokevial.h" //Pokevial Branch
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -864,7 +865,7 @@ gText_SandstormIsVicious::
 	.string "It's impossible to keep going.$"
 
 gText_SelectWithoutRegisteredItem::
-	.string "An item in the BAG can be\n"
+	.string "Up to four items in the BAG can be\n"
 	.string "registered to SELECT for easy use.$"
 
 gText_PokemonTrainerSchoolEmail::
@@ -1074,6 +1075,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/scripts/islandgame_debug.inc"
+	.include "data/scripts/islandgame_common.inc"
 	
 	.include "data/maps/ForestBaseCamp_FrontLawn/scripts.inc"
 

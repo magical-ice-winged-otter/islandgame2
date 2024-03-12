@@ -1,3 +1,11 @@
+Common_Movement_Talking:
+	emote_talking
+	step_end
+
+Common_Movement_Thinking:
+	emote_thinking
+	step_end
+
 Common_Movement_QuestionMark:
 	emote_question_mark
 	step_end

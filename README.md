@@ -133,7 +133,7 @@ Based off RHH's pokeemerald-expansion v1.7.3 https://github.com/rh-hideout/pokee
         - Accesible by pressing `R + Start` in the overworld by default.
         - **Additional features**:
             - *Clear Boxes*: cleans every Pokémon from the Boxes.
-            - *Hatch an Egg*: lets you choose an Egg in your party and immediatly hatch it.
+            - *Hatch an Egg*: lets you choose an Egg in your party and immediately hatch it.
     - [HGSS Pokédex](https://github.com/TheXaman/pokeemerald/tree/tx_pokedexPlus_hgss) by @TheXaman
         - May be disabled.
         - **Additional features**:
@@ -152,8 +152,11 @@ Based off RHH's pokeemerald-expansion v1.7.3 https://github.com/rh-hideout/pokee
     - All bugfixes from pret included.
     - Fixed overworld snow effect.
 
-There are some mechanics, moves and abilities that are missing and being developed. Check [the project's milestones](https://github.com/rh-hideout/pokeemerald-expansion/milestones) to see which ones.
+<<<<<<< HEAD
+## Contacts
+If you need support for this, want to give an opinion on this Branch for improvements or fixes or simply want to say hello, you can contact me in the discord DMs at the nickname theleonix or you can find me in the RH Hideout discord server!
 
+<<<<<<< HEAD
 
 ### [Documentation on features can be found here](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
 
@@ -166,7 +169,7 @@ With this, you'll get the latest version of pokeemerald-expansion, plus a couple
 
 ## **How do I update my version of pokeemerald-expansion?**
 - If you haven't set up a remote, run the command `git remote add RHH https://github.com/rh-hideout/pokeemerald-expansion`.
-- Once you have your remote set up, run the command `git pull RHH expansion/1.7.3`.
+- Once you have your remote set up, run the command `git pull RHH expansion/1.7.4`.
 
 ### Please consider crediting the entire [list of contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits) in your project, as they have all worked hard to develop this project :)
 
@@ -188,3 +191,41 @@ The project has now gotten larger and DizzyEgg is now maintaining the project as
 A Discord-based ROM hacking community that has many members who hack using the disassembly and decompilation projects for Pokémon. Quite a few contributors to the original feature branches by DizzyEgg were members of ROM Hacking Hideout. You can call it RHH for short!
 
 [Click here to join the RHH Discord Server!](https://discord.gg/6CzjAG6GZk)
+=======
+>>>>>>> 3ab62b54ef894851c44118c1c2c6f547b1d29db8
+=======
+## FAQ
+### `(followers*)` Q: Where are the config settings?
+A: Configuration for the follower system is mostly in [event_objects.h](include/constants/event_objects.h):
+```c
+// If true, follower pokemon will bob up and down
+// during their idle & walking animations
+#define OW_MON_BOBBING  TRUE
+
+// If true, adds a small amount of overhead
+// to OW code so that large (48x48, 64x64) OWs
+// will display correctly under bridges, etc.
+#define LARGE_OW_SUPPORT TRUE
+```
+
+### `(lighting)` Q: How do I mark certain colors in a palette as light-blended?
+A: Create a `.pla` file in the same folder as the `.pal` with the same name.
+
+In this file you can enter color indices [0,15]
+on separate lines to mark those colors as being light-blended, i.e:
+
+`06.pla:`
+```
+# A comment
+0 # if color 0 is listed, uses it to blend with instead of the default!
+1
+9
+10
+```
+
+You might have to `make mostlyclean` or change the `.pal` file to pick up the changes.
+
+## See also
+
+For contacts and other pret projects, see [pret.github.io](https://pret.github.io/).
+>>>>>>> cc7f3c3a40549e80476d4c92f0a72b7537f5c905

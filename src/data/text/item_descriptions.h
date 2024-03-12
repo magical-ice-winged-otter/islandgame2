@@ -4035,3 +4035,10 @@ static const u8 sIslandgameTradingCard[] = _(
     "to have lost it..."
 );
 
+
+//Start Pokevial Branch
+static const u8 sPokevialDesc[] = _(
+    "Restores all\n"
+    "POKéMON to full\n"
+    "health.");
+//End Pokevial Branch

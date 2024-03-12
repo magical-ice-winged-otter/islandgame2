@@ -20,6 +20,7 @@ struct DynamicMultichoiceStack
     u32 capacity;
     struct ListMenuItem *elements;
 };
+u16 getCursorPos(void);
 
 void MultichoiceDynamic_InitStack(u32 capacity);
 void MultichoiceDynamic_ReallocStack(u32 newCapacity);

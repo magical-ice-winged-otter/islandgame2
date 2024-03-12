@@ -664,6 +664,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	removeobject 12
 	setobjectxyperm 11, -3, 1
 	setobjectxyperm 12, -3, 1
+	setobjectxyperm 6, -3, 1
 	special HealPlayerParty
 	completequest QUEST_FRESA_FARMS_LOST_MAREEP
 	setflag FLAG_MINTY_MEADOWS_RIVAL_DEFEATED

@@ -103,5 +103,7 @@ void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
 bool8 SetUpFieldMove_Fly(void);
 void CB2_ReturnToBagMenu(void);
+void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task); //Pokevial Branch
+void InitPartyMenuForPokevialFromField(u8 taskId); //Pokevial Branch
 
 #endif // GUARD_PARTY_MENU_H

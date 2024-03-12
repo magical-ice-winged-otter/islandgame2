@@ -590,14 +590,13 @@ void CompactPCItems(void)
 
 void SwapRegisteredBike(void)
 {
-    switch (gSaveBlock1Ptr->registeredItem)
-    {
-    case ITEM_MACH_BIKE:
-        gSaveBlock1Ptr->registeredItem = ITEM_ACRO_BIKE;
-        break;
-    case ITEM_ACRO_BIKE:
-        gSaveBlock1Ptr->registeredItem = ITEM_MACH_BIKE;
-        break;
+    s32 index;
+    if ((index = RegisteredItemIndex(ITEM_ACRO_BIKE)) >= 0) {
+        gSaveBlock1Ptr->registeredItems[index] = ITEM_MACH_BIKE;
+        gSaveBlock1Ptr->registeredItemCompat = ITEM_MACH_BIKE;
+    } else if ((index = RegisteredItemIndex(ITEM_MACH_BIKE)) >= 0) {
+        gSaveBlock1Ptr->registeredItems[index] = ITEM_ACRO_BIKE;
+        gSaveBlock1Ptr->registeredItemCompat = ITEM_ACRO_BIKE;
     }
 }
 
@@ -990,11 +989,11 @@ u32 GetItemStatus1Mask(u16 itemId)
         case ITEM3_BURN:
             return STATUS1_BURN;
         case ITEM3_POISON:
-            return STATUS1_POISON | STATUS1_TOXIC_POISON;
+            return STATUS1_PSN_ANY | STATUS1_TOXIC_COUNTER;
         case ITEM3_SLEEP:
             return STATUS1_SLEEP;
         case ITEM3_STATUS_ALL:
-            return STATUS1_ANY;
+            return STATUS1_ANY | STATUS1_TOXIC_COUNTER;
     }
     return 0;
 }

@@ -14,6 +14,16 @@
 #define QUEST_MENU_CHECK_COMPLETE       9   //checks if questId has been completed. Returns result to gSpecialVar_Result
 #define QUEST_MENU_BUFFER_QUEST_NAME    10   //buffers a quest name to gStringVar1
 
+// Quest flags, see enum QuestCases in include/quests.h
+#define QUEST_UNLOCKED   0 // this is never actually being used, maybe we want to make quest trees?
+#define QUEST_INACTIVE   1
+#define QUEST_ACTIVE     2
+#define QUEST_REWARD     3
+#define QUEST_COMPLETED  4
+#define QUEST_FAVORITE   5
+
+
+
 // Custom Quests
 #define QUEST_PERSI_FAVORITE_CARD          0
 #define QUEST_PERSI_BERRY_MANIAC           1
