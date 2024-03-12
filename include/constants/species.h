@@ -1675,8 +1675,10 @@
 #define SPECIES_SHADOW_MIGHTYENA                        GENC_START + 2
 #define SPECIES_GOLETT_MARYAN                           GENC_START + 3
 #define SPECIES_GOLURK_MARYAN                           GENC_START + 4
+#define SPECIES_FEEBAS_MARYAN                           GENC_START + 5
+#define SPECIES_MILOTIC_MARYAN                          GENC_START + 6
 
-#define PLACEHOLDER_START                               SPECIES_GOLURK_MARYAN
+#define PLACEHOLDER_START                               SPECIES_MILOTIC_MARYAN
 // XD: Gale of Darkness
 #define SPECIES_LUGIA_SHADOW                            PLACEHOLDER_START + 1
 // Diamond & Pearl

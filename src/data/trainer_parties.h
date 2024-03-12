@@ -808,35 +808,34 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 23,
+    .species = SPECIES_AMAURA,
+    .heldItem = ITEM_ICY_ROCK,
+    .ability = ABILITY_SNOW_WARNING,
+    .moves = {MOVE_AURORA_VEIL, MOVE_THUNDER_WAVE, MOVE_ICY_WIND, MOVE_ROCK_TOMB},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
     .species = SPECIES_GLACEON,
     .heldItem = ITEM_LIGHT_CLAY,
-    .ability = ABILITY_SNOW_WARNING,
-    .moves = {MOVE_AURORA_VEIL, MOVE_HAIL, MOVE_ICY_WIND, MOVE_WATER_PULSE}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_GOLETT_MARYAN,
-    .heldItem = ITEM_EXPERT_BELT,
     .ability = ABILITY_SLUSH_RUSH,
-    .moves = {MOVE_ICE_PUNCH, MOVE_SHADOW_PUNCH, MOVE_BULLDOZE, MOVE_ICE_SHARD},
+    .moves = {MOVE_AURORA_VEIL, MOVE_SNOWSCAPE, MOVE_ICY_WIND, MOVE_WATER_PULSE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_LAPRAS,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_ICE_BODY,
-    .moves = {MOVE_WATER_PULSE, MOVE_HAIL, MOVE_ICE_SHARD, MOVE_CONFUSE_RAY}
+    .lvl = 24,
+    .species = SPECIES_FROSMOTH,
+    .heldItem = ITEM_FOCUS_SASH,
+    .ability = ABILITY_ICE_SCALES,
+    .moves = {MOVE_AURORA_BEAM, MOVE_SNOWSCAPE, MOVE_STRUGGLE_BUG, MOVE_STUN_SPORE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 25,
-    .species = SPECIES_CLOYSTER,
-    .heldItem = ITEM_KINGS_ROCK,
-    .ability = ABILITY_SKILL_LINK,
-    .moves = {MOVE_ICICLE_SPEAR, MOVE_RAZOR_SHELL, MOVE_ROCK_BLAST, MOVE_ICE_SHARD},
-    .isShiny = TRUE,
+    .species = SPECIES_MILOTIC_MARYAN,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_ICE_BODY,
+    .moves = {MOVE_DRAGON_BREATH, MOVE_CHILLING_WATER, MOVE_AURORA_BEAM, MOVE_SNOWSCAPE},
     }
 };
 

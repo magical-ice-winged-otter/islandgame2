@@ -10155,6 +10155,32 @@ static const union AnimCmd sAnim_GolurkMaryan_1[] =
 };
 #endif //P_FAMILY_GOLETT
 
+#if P_FAMILY_FEEBAS_MARYAN
+static const union AnimCmd sAnim_FeebasMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MiloticMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_FEEBAS_MARYAN
+
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
 {                                                   \
@@ -12801,8 +12827,12 @@ SINGLE_ANIMATION(ShadowLugia);
 #if P_FAMILY_SHADOW_LUGIA
 SINGLE_ANIMATION(ShadowMightyena);
 #endif //P_FAMILY_SHADOW_LUGIA
-SINGLE_ANIMATION(Egg);
 #if P_FAMILY_GOLETT_MARYAN
 SINGLE_ANIMATION(GolettMaryan);
 SINGLE_ANIMATION(GolurkMaryan);
 #endif //P_FAMILY_GOLETT_MARYAN
+#if P_FAMILY_FEEBAS_MARYAN
+SINGLE_ANIMATION(FeebasMaryan);
+SINGLE_ANIMATION(MiloticMaryan);
+#endif //P_FAMILY_FEEBAS_MARYAN
+SINGLE_ANIMATION(Egg);

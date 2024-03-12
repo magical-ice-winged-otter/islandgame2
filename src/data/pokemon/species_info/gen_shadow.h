@@ -213,7 +213,103 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
     },
 #endif //P_FAMILY_GOLETT
 
+#if P_FAMILY_FEEBAS_MARYAN
+    [SPECIES_FEEBAS_MARYAN] =
+    {
+        .baseHP        = 20,
+        .baseAttack    = 15,
+        .baseDefense   = 20,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 10,
+        .baseSpDefense = 55,
+        .types = { TYPE_WATER, TYPE_WATER },
+        .catchRate = 255,
+        .expYield = 40,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON },
+        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_OBLIVIOUS, ABILITY_ADAPTABILITY },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Feebas"),
+        .cryId = CRY_FEEBAS,
+        .natDexNum = NATIONAL_DEX_FEEBAS,
+        .categoryName = _("Fish"),
+        .height = 6,
+        .weight = 74,
+        .description = COMPOUND_STRING(
+            "Feebas live in ponds that are heavily\n"
+            "infested with weeds. Because of its\n"
+            "hopelessly shabby appearance, it\n"
+            "seems as if few Trainers raise it."),
+        .pokemonScale = 423,
+        .pokemonOffset = -4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        FRONT_PIC(Feebas, 40, 48),
+        .frontPicYOffset = 10,
+        .frontAnimFrames = sAnims_FeebasMaryan,
+        .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
+        BACK_PIC(Feebas, 48, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_H_SPRING,
+        PALETTES(Feebas),
+        ICON(Feebas, 2),
+        .footprint = gMonFootprint_Feebas,
+        LEARNSETS(FeebasMaryan),
+        .evolutions = EVOLUTION({EVO_ITEM_HOLD, ITEM_PRISM_SCALE, SPECIES_MILOTIC_MARYAN}),
+    },
 
+    [SPECIES_MILOTIC_MARYAN] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 60,
+        .baseDefense   = 79,
+        .baseSpeed     = 81,
+        .baseSpAttack  = 125,
+        .baseSpDefense = 100,
+        .types = { TYPE_ICE, TYPE_DRAGON },
+        .catchRate = 60,
+        .expYield = 189,
+        .evYield_SpDefense = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON },
+        .abilities = { ABILITY_ICE_BODY, ABILITY_COMPETITIVE, ABILITY_ICE_SCALES },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Milotic"),
+        .cryId = CRY_MILOTIC,
+        .natDexNum = NATIONAL_DEX_MILOTIC,
+        .categoryName = _("Tender"),
+        .height = 62,
+        .weight = 1620,
+        .description = COMPOUND_STRING(
+            "It is said to live at the bottom of\n"
+            "large lakes. Considered to be the most\n"
+            "beautiful of all Pokémon, it has been\n"
+            "depicted in paintings and statues."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 360,
+        .trainerOffset = 7,
+        FRONT_PIC(MiloticMaryan, 64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_MiloticMaryan,
+        .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
+        .frontAnimDelay = 45,
+        BACK_PIC(MiloticMaryan, 64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
+        PALETTES(MiloticMaryan),
+        ICON(MiloticMaryan, 2),
+        .footprint = gMonFootprint_MiloticMaryan,
+        LEARNSETS(MiloticMaryan),
+    },
+#endif //P_FAMILY_FEEBAS
 
 #ifdef __INTELLISENSE__
 };

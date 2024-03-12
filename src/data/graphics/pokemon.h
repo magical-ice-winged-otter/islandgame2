@@ -10945,6 +10945,22 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
     const u8 gMonFootprint_GolurkMaryan[] = INCBIN_U8("graphics/pokemon/maryan_golurk/footprint.1bpp");
 #endif //P_FAMILY_GOLETT
 
+#if P_FAMILY_FEEBAS_MARYAN
+    const u32 gMonFrontPic_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/feebas/anim_front.4bpp.lz");
+    const u32 gMonPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/feebas/normal.gbapal.lz");
+    const u32 gMonBackPic_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/feebas/back.4bpp.lz");
+    const u32 gMonShinyPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/feebas/shiny.gbapal.lz");
+    const u8 gMonIcon_FeebasMaryan[] = INCBIN_U8("graphics/pokemon/feebas/icon.4bpp");
+    const u8 gMonFootprint_FeebasMaryan[] = INCBIN_U8("graphics/pokemon/feebas/footprint.1bpp");
+
+    const u32 gMonFrontPic_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/anim_front.4bpp.lz");
+    const u32 gMonPalette_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/normal.gbapal.lz");
+    const u32 gMonBackPic_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/back.4bpp.lz");
+    const u32 gMonShinyPalette_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/shiny.gbapal.lz");
+    const u8 gMonIcon_MiloticMaryan[] = INCBIN_U8("graphics/pokemon/maryan_milotic/icon.4bpp");
+    const u8 gMonFootprint_MiloticMaryan[] = INCBIN_U8("graphics/pokemon/maryan_milotic/footprint.1bpp");
+#endif //P_FAMILY_FEEBAS_MARYAN
+
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

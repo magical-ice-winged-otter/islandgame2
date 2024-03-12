@@ -1491,6 +1491,8 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
     [SPECIES_SHADOW_MIGHTYENA] = gMonIcon_ShadowMightyena,
     [SPECIES_GOLETT_MARYAN] = gMonIcon_GolettMaryan,
     [SPECIES_GOLURK_MARYAN] = gMonIcon_GolurkMaryan,
+    [SPECIES_FEEBAS_MARYAN] = gMonIcon_Feebas,
+    [SPECIES_MILOTIC_MARYAN] = gMonIcon_MiloticMaryan,
     
     [SPECIES_EGG] = gMonIcon_Egg,
 };
