@@ -760,12 +760,17 @@ static const struct TrainerMon sParty_TidalcoveGym1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 21,
-    .species = SPECIES_VULPIX_ALOLAN,
+    .species = SPECIES_VANILLITE,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 21,
-    .species = SPECIES_SANDSHREW_ALOLAN,
+    .species = SPECIES_CUBCHOO,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 21,
+    .species = SPECIES_GOLETT_MARYAN,
     }
 };
 
@@ -773,27 +778,38 @@ static const struct TrainerMon sParty_TidalcoveGym2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 21,
-    .species = SPECIES_SNORUNT,
+    .species = SPECIES_SWINUB,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 21,
-    .species = SPECIES_SWINUB,
+    .species = SPECIES_SPHEAL,
     }
 };
 
 static const struct TrainerMon sParty_TidalcoveGym3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 21,
+    .species = SPECIES_SNOVER,
+    .heldItem = ITEM_ORAN_BERRY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 22,
-    .species = SPECIES_DELIBIRD,
-    .heldItem = ITEM_LIFE_ORB,
-    .ability = ABILITY_INSOMNIA,
-    .moves = {MOVE_DRILL_PECK, MOVE_ICE_PUNCH, MOVE_ICE_SHARD, MOVE_FAKE_OUT}
+    .species = SPECIES_EISCUE,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_AQUA_RING, MOVE_ICICLE_SPEAR, MOVE_MIST, MOVE_HEADBUTT}
     }
 };
 
 static const struct TrainerMon sParty_TidalcoveGym4[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 21,
+    .species = SPECIES_SNORUNT,
+    .heldItem = ITEM_ORAN_BERRY,
+    },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 22,
@@ -811,6 +827,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .species = SPECIES_AMAURA,
     .heldItem = ITEM_ICY_ROCK,
     .ability = ABILITY_SNOW_WARNING,
+    .gender = TRAINER_MON_FEMALE,
     .moves = {MOVE_AURORA_VEIL, MOVE_THUNDER_WAVE, MOVE_ICY_WIND, MOVE_ROCK_TOMB},
     },
     {
@@ -819,6 +836,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .species = SPECIES_GLACEON,
     .heldItem = ITEM_LIGHT_CLAY,
     .ability = ABILITY_SLUSH_RUSH,
+    .gender = TRAINER_MON_FEMALE,
     .moves = {MOVE_AURORA_VEIL, MOVE_SNOWSCAPE, MOVE_ICY_WIND, MOVE_WATER_PULSE}
     },
     {
@@ -827,6 +845,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .species = SPECIES_FROSMOTH,
     .heldItem = ITEM_FOCUS_SASH,
     .ability = ABILITY_ICE_SCALES,
+    .gender = TRAINER_MON_FEMALE,
     .moves = {MOVE_AURORA_BEAM, MOVE_SNOWSCAPE, MOVE_STRUGGLE_BUG, MOVE_STUN_SPORE}
     },
     {
@@ -835,6 +854,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .species = SPECIES_MILOTIC_MARYAN,
     .heldItem = ITEM_SITRUS_BERRY,
     .ability = ABILITY_ICE_BODY,
+    .gender = TRAINER_MON_FEMALE,
     .moves = {MOVE_DRAGON_BREATH, MOVE_CHILLING_WATER, MOVE_AURORA_BEAM, MOVE_SNOWSCAPE},
     }
 };

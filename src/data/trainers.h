@@ -778,7 +778,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_TIDALCOVE_GYM_4] =
     {
-        .trainerClass = TRAINER_CLASS_WINSTRATE,
+        .trainerClass = TRAINER_CLASS_POKEFAN,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
         .trainerName = _("Heather"),
