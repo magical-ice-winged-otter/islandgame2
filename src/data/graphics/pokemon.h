@@ -10961,6 +10961,22 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
     const u8 gMonFootprint_MiloticMaryan[] = INCBIN_U8("graphics/pokemon/maryan_milotic/footprint.1bpp");
 #endif //P_FAMILY_FEEBAS_MARYAN
 
+#if P_FAMILY_PURRLOIN_MARYAN
+    const u32 gMonFrontPic_PurrloinMaryan[] = INCBIN_U32("graphics/pokemon/maryan_purrloin/anim_front.4bpp.lz");
+    const u32 gMonPalette_PurrloinMaryan[] = INCBIN_U32("graphics/pokemon/maryan_purrloin/normal.gbapal.lz");
+    const u32 gMonBackPic_PurrloinMaryan[] = INCBIN_U32("graphics/pokemon/maryan_purrloin/back.4bpp.lz");
+    const u32 gMonShinyPalette_PurrloinMaryan[] = INCBIN_U32("graphics/pokemon/maryan_purrloin/shiny.gbapal.lz");
+    const u8 gMonIcon_PurrloinMaryan[] = INCBIN_U8("graphics/pokemon/maryan_purrloin/icon.4bpp");
+    const u8 gMonFootprint_PurrloinMaryan[] = INCBIN_U8("graphics/pokemon/maryan_purrloin/footprint.1bpp");
+
+    const u32 gMonFrontPic_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/anim_front.4bpp.lz");
+    const u32 gMonPalette_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/normal.gbapal.lz");
+    const u32 gMonBackPic_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/back.4bpp.lz");
+    const u32 gMonShinyPalette_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/shiny.gbapal.lz");
+    const u8 gMonIcon_LiepardMaryan[] = INCBIN_U8("graphics/pokemon/maryan_liepard/icon.4bpp");
+    const u8 gMonFootprint_LiepardMaryan[] = INCBIN_U8("graphics/pokemon/maryan_liepard/footprint.1bpp");
+#endif //P_FAMILY_PURRLOIN_MARYAN
+
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

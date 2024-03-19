@@ -270,7 +270,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .baseSpeed     = 81,
         .baseSpAttack  = 125,
         .baseSpDefense = 100,
-        .types = { TYPE_ICE, TYPE_DRAGON },
+        .types = { TYPE_WATER , TYPE_ICE },
         .catchRate = 60,
         .expYield = 189,
         .evYield_SpDefense = 2,
@@ -309,7 +309,105 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .footprint = gMonFootprint_MiloticMaryan,
         LEARNSETS(MiloticMaryan),
     },
-#endif //P_FAMILY_FEEBAS
+#endif //P_FAMILY_FEEBAS_MARYAN
+
+#if P_FAMILY_PURRLOIN_MARYAN
+    [SPECIES_PURRLOIN_MARYAN] =
+    {
+        .baseHP        = 41,
+        .baseAttack    = 50,
+        .baseDefense   = 37,
+        .baseSpeed     = 66,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 37,
+        .types = { TYPE_DARK, TYPE_ELECTRIC },
+        .catchRate = 255,
+        .expYield = 56,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
+        .abilities = { ABILITY_STATIC, ABILITY_MOTOR_DRIVE, ABILITY_PRANKSTER },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Purrloin"),
+        .cryId = CRY_PURRLOIN,
+        .natDexNum = NATIONAL_DEX_PURRLOIN,
+        .categoryName = _("Devious"),
+        .height = 4,
+        .weight = 101,
+        .description = COMPOUND_STRING(
+            "Their deceptively cute act is the\n"
+            "perfect ruse. They steal from people for\n"
+            "fun, but their victims can't help but\n"
+            "forgive them."),
+        .pokemonScale = 491,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        FRONT_PIC(PurrloinMaryan, 48, 48),
+        .frontPicYOffset = 11,
+        .frontAnimFrames = sAnims_PurrloinMaryan,
+        .frontAnimId = ANIM_GROW_VIBRATE,
+        BACK_PIC(PurrloinMaryan, 56, 48),
+        .backPicYOffset = 9,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        PALETTES(PurrloinMaryan),
+        ICON(PurrloinMaryan, 0),
+        .footprint = gMonFootprint_PurrloinMaryan,
+        LEARNSETS(PurrloinMaryan),
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_LIEPARD_MARYAN}),
+    },
+
+    [SPECIES_LIEPARD_MARYAN] =
+    {
+        .baseHP        = 64,
+        .baseAttack    = 88,
+        .baseDefense   = 50,
+        .baseSpeed     = 106,
+        .baseSpAttack  = 88,
+        .baseSpDefense = 50,
+        .types = { TYPE_DARK, TYPE_ELECTRIC },
+        .catchRate = 90,
+        .expYield = 156,
+        .evYield_Speed = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
+        .abilities = { ABILITY_STATIC, ABILITY_MOTOR_DRIVE, ABILITY_PRANKSTER },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Liepard"),
+        .cryId = CRY_LIEPARD,
+        .natDexNum = NATIONAL_DEX_LIEPARD,
+        .categoryName = _("Cruel"),
+        .height = 11,
+        .weight = 375,
+        .description = COMPOUND_STRING(
+            "Many Trainers are drawn to their\n"
+            "beautiful form and fur. These Pokémon\n"
+            "vanish and appear unexpectedly.\n"
+            "They run silently in the night."),
+        .pokemonScale = 320,
+        .pokemonOffset = 7,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        FRONT_PIC(LiepardMaryan, 64, 64),
+        .frontPicYOffset = 4,
+        .frontAnimFrames = sAnims_LiepardMaryan,
+        .frontAnimId = ANIM_GROW_VIBRATE,
+        BACK_PIC(LiepardMaryan, 56, 48),
+        .backPicYOffset = 9,
+        .backAnimId = BACK_ANIM_H_STRETCH,
+        PALETTES(LiepardMaryan),
+        ICON(LiepardMaryan, 0),
+        .footprint = gMonFootprint_LiepardMaryan,
+        LEARNSETS(LiepardMaryan),
+    },
+#endif //P_FAMILY_PURRLOIN_MARYAN
+
 
 #ifdef __INTELLISENSE__
 };

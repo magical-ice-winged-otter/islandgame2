@@ -902,10 +902,9 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
     {
     .lvl = 23,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .species = SPECIES_PERSIAN_ALOLAN,
-    .ability = ABILITY_FUR_COAT,
-    .heldItem = ITEM_DARK_GEM,
-    .moves = {MOVE_FAKE_OUT, MOVE_THIEF, MOVE_SNARL, MOVE_PARTING_SHOT}
+    .species = SPECIES_LIEPARD_MARYAN,
+    .ability = ABILITY_PRANKSTER,
+    .moves = {MOVE_FAKE_OUT, MOVE_SPARK, MOVE_THIEF, MOVE_PARTING_SHOT}
     },
     {
     .lvl = 21,
@@ -920,13 +919,6 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .ability = ABILITY_PICKPOCKET,
     .moves = {MOVE_METAL_CLAW, MOVE_ICE_SHARD, MOVE_PURSUIT, MOVE_FAKE_OUT}
-    },
-    {
-    .lvl = 21,
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .species = SPECIES_LIEPARD,
-    .ability = ABILITY_PRANKSTER,
-    .moves = {MOVE_FAKE_OUT, MOVE_SWAGGER, MOVE_THUNDER_WAVE, MOVE_THIEF}
     },
     {
     .lvl = 23,

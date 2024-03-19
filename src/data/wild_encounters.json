@@ -12377,7 +12377,7 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_PURRLOIN"
+                "species": "SPECIES_PURRLOIN_MARYAN"
               },
               {
                 "min_level": 10,
@@ -13246,12 +13246,12 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_FEEBAS"
+                "species": "SPECIES_FEEBAS_MARYAN"
               },
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_FEEBAS"
+                "species": "SPECIES_FEEBAS_MARYAN"
               }
             ]
           }

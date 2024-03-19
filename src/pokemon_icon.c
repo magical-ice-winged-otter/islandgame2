@@ -1493,6 +1493,8 @@ const u8 *const gMonIconTable[NUM_SPECIES + 1] =
     [SPECIES_GOLURK_MARYAN] = gMonIcon_GolurkMaryan,
     [SPECIES_FEEBAS_MARYAN] = gMonIcon_Feebas,
     [SPECIES_MILOTIC_MARYAN] = gMonIcon_MiloticMaryan,
+    [SPECIES_PURRLOIN_MARYAN] = gMonIcon_PurrloinMaryan,
+    [SPECIES_LIEPARD_MARYAN] = gMonIcon_LiepardMaryan,
     
     [SPECIES_EGG] = gMonIcon_Egg,
 };
