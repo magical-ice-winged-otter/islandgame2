@@ -32,7 +32,7 @@ u8 displayTypeSummary(struct Pokemon* mon, u16 move)
 {
     u8 type;
     u16 species;
-    switch (gBattleMoves[move].effect)
+    switch (gMovesInfo[move].effect)
     {
         case EFFECT_HIDDEN_POWER:
             type = calculateHiddenPowerType(GetMonData(mon, MON_DATA_HP_IV),
@@ -58,12 +58,12 @@ u8 displayTypeSummary(struct Pokemon* mon, u16 move)
         case EFFECT_WEATHER_BALL:
         case EFFECT_TERRAIN_PULSE:
         default:
-            type = gBattleMoves[move].type; 
+            type = gMovesInfo[move].type; 
     }
 
     if (type == TYPE_NONE)
     {
-        type = gBattleMoves[move].type;
+        type = gMovesInfo[move].type;
     }
 
     return (type | 0xC0) & 0x3F;
@@ -76,7 +76,7 @@ u8 displayTypeInBattle(u32 battlerAtk, u16 move, bool8 modify)
     u32 moveType, attackerAbility;
     struct BattlePokemon mon = gBattleMons[battlerAtk];
 
-    switch (gBattleMoves[move].effect)
+    switch (gMovesInfo[move].effect)
     {
         case EFFECT_WEATHER_BALL:
             if (WEATHER_HAS_EFFECT)
@@ -86,7 +86,7 @@ u8 displayTypeInBattle(u32 battlerAtk, u16 move, bool8 modify)
             type = calculateHiddenPowerType(mon.hpIV, mon.attackIV, mon.defenseIV, mon.speedIV, mon.spAttackIV, mon.spDefenseIV) | (F_DYNAMIC_TYPE_IGNORE_PHYSICALITY | F_DYNAMIC_TYPE_SET);
             break;
         case EFFECT_CHANGE_TYPE_ON_ITEM:
-            if (holdEffect == gBattleMoves[move].argument)
+            if (holdEffect == gMovesInfo[move].argument)
                 type = calculateItemType(mon.item, move);
             break;
         case EFFECT_REVELATION_DANCE:
@@ -105,7 +105,7 @@ u8 displayTypeInBattle(u32 battlerAtk, u16 move, bool8 modify)
             type = TYPE_NONE;
     }
     attackerAbility = GetBattlerAbility(battlerAtk);
-    moveType = type != TYPE_NONE ? type & DYNAMIC_TYPE_MASK : gBattleMoves[move].type;
+    moveType = type != TYPE_NONE ? type & DYNAMIC_TYPE_MASK : gMovesInfo[move].type;
     
     //the || mirrors the if else statement vanilla behavior 
     bool8 UNUSED logic = handleAteAbilty(&type, battlerAtk, moveType, move, attackerAbility) ||
@@ -146,10 +146,10 @@ static u8 calculateWeatherBallType(u16 holdEffect, u16 weather)
 
 static u8 calculateItemType(u16 item, u16 move)
 {
-    if (ItemId_GetHoldEffect(item) == HOLD_EFFECT_MASK)
+    if (ItemId_GetHoldEffect(item) == EFFECT_IVY_CUDGEL)
             return ItemId_GetSecondaryId(item);
         else
-            return gBattleMoves[move].type;
+            return gMovesInfo[move].type;
 
     return ItemId_GetSecondaryId(item) | F_DYNAMIC_TYPE_SET;
 }
@@ -217,11 +217,11 @@ static bool8 handleFieldMoves(u8* type, u32 battlerAtk, u32 moveType, u16 move, 
 static bool8 handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
 {
     u32 ateType;
-    if (gBattleMoves[move].type == TYPE_NORMAL
-        && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
-        && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
-        && gBattleMoves[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
-        && gBattleMoves[move].effect != EFFECT_NATURAL_GIFT
+    if (gMovesInfo[move].type == TYPE_NORMAL
+        && gMovesInfo[move].effect != EFFECT_HIDDEN_POWER
+        && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
+        && gMovesInfo[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
+        && gMovesInfo[move].effect != EFFECT_NATURAL_GIFT
         && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_FAIRY))
             || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
             || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
@@ -233,9 +233,9 @@ static bool8 handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u
         if (!IsDynamaxed(battlerAtk))
             gBattleStruct->ateBoost[battlerAtk] = 1;
         return TRUE;
-    } else if (gBattleMoves[move].type != TYPE_NORMAL
-        && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
-        && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
+    } else if (gMovesInfo[move].type != TYPE_NORMAL
+        && gMovesInfo[move].effect != EFFECT_HIDDEN_POWER
+        && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
         && attackerAbility == ABILITY_NORMALIZE)
     {
         *type = TYPE_NORMAL | F_DYNAMIC_TYPE_SET;
@@ -248,7 +248,7 @@ static bool8 handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u
 
 static bool8 handleSpecificAbility(u8* type, u32 battlerAtk, u32 moveType, u16 move, u32 attackerAbility)
 {
-    if (gBattleMoves[move].soundMove && attackerAbility == ABILITY_LIQUID_VOICE)
+    if (gMovesInfo[move].soundMove && attackerAbility == ABILITY_LIQUID_VOICE)
     {
         *type = TYPE_WATER | F_DYNAMIC_TYPE_SET;
         return TRUE;

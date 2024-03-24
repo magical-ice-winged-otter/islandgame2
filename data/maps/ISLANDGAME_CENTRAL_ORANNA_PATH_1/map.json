@@ -273,9 +273,7 @@
       "flag": "FLAG_ITEM_ROUTE_119_ZINC"
     }
   ],
-  "warp_events": [
-
-  ],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",

@@ -785,11 +785,6 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8::
 	return
 
 
-ISLANDGAME_MINTY_MEADOWS_2_ItemZapPlate::
-	finditem ITEM_ZAP_PLATE
-	return
-
-
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_0:
 	.string "I could've sworn it was somewhere in the\n"
 	.string "forest to the east...$"

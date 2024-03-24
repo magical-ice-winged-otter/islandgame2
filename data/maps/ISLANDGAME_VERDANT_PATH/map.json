@@ -144,7 +144,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_EventScript_ItemXSpeed",
+      "script": "NULL",
       "flag": "FLAG_ITEM_MAUVILLE_CITY_X_SPEED"
     },
     {
@@ -157,7 +157,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PetalburgWoods_EventScript_ItemXAttack",
+      "script": "NULL",
       "flag": "FLAG_ITEM_PETALBURG_WOODS_X_ATTACK"
     },
     {
@@ -183,7 +183,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ArtisanCave_1F_EventScript_ItemCarbos",
+      "script": "NULL",
       "flag": "FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS"
     },
     {
@@ -251,9 +251,7 @@
       "dest_warp_id": "5"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

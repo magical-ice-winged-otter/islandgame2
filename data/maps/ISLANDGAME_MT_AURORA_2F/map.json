@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ShoalCave_LowTideStairsRoom_EventScript_ItemIceHeal",
+      "script": "NULL",
       "flag": "FLAG_ITEM_SHOAL_CAVE_STAIRS_ROOM_ICE_HEAL"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ShoalCave_LowTideEntranceRoom_EventScript_ItemBigPearl",
+      "script": "NULL",
       "flag": "FLAG_ITEM_SHOAL_CAVE_ENTRANCE_BIG_PEARL"
     }
   ],
@@ -71,9 +71,7 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",

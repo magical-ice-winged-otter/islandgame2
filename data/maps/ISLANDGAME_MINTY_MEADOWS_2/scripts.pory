@@ -881,6 +881,3 @@ text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss {
 }
 
 //ITEMS
-script ISLANDGAME_MINTY_MEADOWS_2_ItemZapPlate {
-	finditem(ITEM_ZAP_PLATE)
-}

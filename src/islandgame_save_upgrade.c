@@ -74,7 +74,9 @@ static void UpgradeSaveV0ToV1()
     SaveBlock1IncreaseArraySize(&saveBlockSize, gSaveBlock1Ptr->bagPocket_Items, 120, 372);
 
     // match call people inserted into block
+    #ifndef FREE_MATCH_CALL
     SaveBlock1InsertBytesAt(&saveBlockSize, &gSaveBlock1Ptr->trainerRematchStepCounter, 104);
+    #endif
 
     // pokemon count increased (gen 9)
     SaveBlock1IncreaseArraySize(&saveBlockSize, gSaveBlock1Ptr->dexSeen, 114, 129);

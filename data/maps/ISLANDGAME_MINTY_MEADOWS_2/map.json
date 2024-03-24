@@ -200,8 +200,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_ItemZapPlate",
+      "trainer_sight_or_berry_tree_id": "ITEM_ZAP_PLATE",
+      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_MINTY_MEADOWS_1"
     },
     {
