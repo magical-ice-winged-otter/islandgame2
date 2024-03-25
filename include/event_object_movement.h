@@ -94,6 +94,7 @@ extern const struct OamData gObjectEventBaseOam_32x32;
 extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 
 extern const struct SpriteFrameImage *const gBerryTreePicTablePointers[];
+extern const u16 *const gBerryTreePaletteTagTablePointers[];
 
 void ResetObjectEvents(void);
 u8 GetMoveDirectionAnimNum(u8 direction);
