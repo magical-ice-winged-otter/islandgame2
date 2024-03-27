@@ -108,6 +108,7 @@
 #define MAP_ISLANDGAME_LUMINE_CAVE_1F_2   (18 | (1 << 8))
 #define MAP_ISLANDGAME_LUMINE_CAVE_B1F_1  (19 | (1 << 8))
 #define MAP_ISLANDGAME_LUMINE_CAVE_B2F    (20 | (1 << 8))
+#define MAP_ISLANDGAME_LUMINE_CAVE_B1F_2  (21 | (1 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (2 << 8))

@@ -5410,6 +5410,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_LUMINE_CAVE_B1F_2",
+      "name": "ISLANDGAME_LUMINE_CAVE_B1F_2_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B1F_2/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B1F_2/map.bin"
     }
   ]
 }
