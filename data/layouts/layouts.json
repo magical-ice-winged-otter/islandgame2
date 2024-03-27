@@ -5244,10 +5244,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_AETHERIA",
       "name": "ISLANDGAME_AETHERIA_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_IslandgameGeneral",
-      "secondary_tileset": "gTileset_test",
+      "width": 80,
+      "height": 50,
+      "primary_tileset": "gTileset_islandgame_lumine_general",
+      "secondary_tileset": "gTileset_islandgame_lumine_aetheria",
       "border_filepath": "data/layouts/ISLANDGAME_AETHERIA/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_AETHERIA/map.bin"
     },

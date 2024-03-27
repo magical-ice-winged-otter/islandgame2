@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_AETHERIA",
   "layout": "LAYOUT_ISLANDGAME_AETHERIA",
   "music": "MUS_HG_VERMILION",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_SAFFRON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",

@@ -69,18 +69,19 @@
 #define DECOR_MAX_PLAYERS_HOUSE 12
 #define APPRENTICE_COUNT 4
 #define APPRENTICE_MAX_QUESTIONS 9
-#define MAX_REMATCH_ENTRIES 100 // only REMATCH_TABLE_ENTRIES (78) are used
+#define MAX_REMATCH_ENTRIES 92 // only REMATCH_TABLE_ENTRIES (78) are used
 #define NUM_CONTEST_WINNERS 13
 #define UNION_ROOM_KB_ROW_COUNT 10
 #define GIFT_RIBBONS_COUNT 11
 #define SAVED_TRENDS_COUNT 5
 #define PYRAMID_BAG_ITEMS_COUNT 10
 #define MAX_DYNAMIC_OBJECTS 4 //This is how many slots for persistent dynamic objects you wish to have. Default 4. Require 20 bytes each.
-
 #define DYNAMIC_OBJECT_1 0xF0
 #define DYNAMIC_OBJECT_2 0xF1
 #define DYNAMIC_OBJECT_3 0xF2
 #define DYNAMIC_OBJECT_4 0xF3
+
+#define MAX_REGISTERED_ITEMS 4
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.

@@ -1044,6 +1044,28 @@ const struct Tileset gTileset_islandgame_oranna_central_path =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_islandgame_lumine_general =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_lumine_general,
+    .palettes = gTilesetPalettes_islandgame_lumine_general,
+    .metatiles = gMetatiles_islandgame_lumine_general,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_general,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_aetheria =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_aetheria,
+    .palettes = gTilesetPalettes_islandgame_lumine_aetheria,
+    .metatiles = gMetatiles_islandgame_lumine_aetheria,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_aetheria,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_islandgame_ocean_general =
 {
     .isCompressed = TRUE,
