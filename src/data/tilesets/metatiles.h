@@ -273,3 +273,6 @@ const u16 gMetatileAttributes_islandgame_lumine_aetheria[] = INCBIN_U16("data/ti
 
 const u16 gMetatiles_islandgame_snow[] = INCBIN_U16("data/tilesets/secondary/islandgame_snow/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_snow[] = INCBIN_U16("data/tilesets/secondary/islandgame_snow/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_houses[] = INCBIN_U16("data/tilesets/secondary/islandgame_houses/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_houses[] = INCBIN_U16("data/tilesets/secondary/islandgame_houses/metatile_attributes.bin");

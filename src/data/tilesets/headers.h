@@ -1076,3 +1076,14 @@ const struct Tileset gTileset_islandgame_snow =
     .metatileAttributes = gMetatileAttributes_islandgame_snow,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_houses =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_houses,
+    .palettes = gTilesetPalettes_islandgame_houses,
+    .metatiles = gMetatiles_islandgame_houses,
+    .metatileAttributes = gMetatileAttributes_islandgame_houses,
+    .callback = NULL,
+};
