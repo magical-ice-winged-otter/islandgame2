@@ -514,7 +514,7 @@ static bool8 SetUpFieldMove_Dive(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
-static bool32 CannotUsePartyBattleItem(u16 itemId, struct Pokemon* mon);
+bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon* mon);
 void UsePokevial(u8); //Start Pokevial Branch
 static void Task_PokevialLoop(u8); //End Pokevial Branch
 static void PokevialStartVariablesAndRun(u8 taskId, TaskFunc task);

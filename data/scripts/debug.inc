@@ -283,21 +283,6 @@ DebugText_BerryWeedsDisabled:
 	.string "OW_BERRY_WEEDS is disabled.\n"
 	.string "Unable to force weeds onto berry trees.$"
 
-.endif
-
-Debug_FlagsAndVarNotSetBattleConfigMessage::
-	lockall
-	message Debug_FlagsAndVarNotSetBattleConfigMessage_Text
-	waitmessage
-	waitbuttonpress
-	releaseall
-	end
-
-Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
-	.string "Feature unavailable! Please define a\n"
-	.string "usable flag and a usable var in:\l"
-	.string "'include/config/battle.h'!$"
-
 Debug_EventScript_InflictStatus1::
 	lockall
 	getpartysize
@@ -390,6 +375,21 @@ Debug_EventScript_InflictStatus1_Party:
 	case MULTI_B_PRESSED, Debug_EventScript_InflictStatus1_Close
 	releaseall
 	end
+
+.endif
+
+Debug_FlagsAndVarNotSetBattleConfigMessage::
+	lockall
+	message Debug_FlagsAndVarNotSetBattleConfigMessage_Text
+	waitmessage
+	waitbuttonpress
+	releaseall
+	end
+
+Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
+	.string "Feature unavailable! Please define a\n"
+	.string "usable flag and a usable var in:\l"
+	.string "'include/config/battle.h'!$"
 
 Debug_EventScript_InflictStatus1_Party_Poison:
 	setstatus1 STATUS1_POISON, PARTY_SIZE
