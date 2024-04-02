@@ -279,7 +279,7 @@ static void BuildStartMenuActions(void);
 static void AddStartMenuAction(u8 action);
 #if ISLANDGAME_DEBUG == TRUE
 static void UNUSED BuildIslandStartMenu(void);
-#elif
+#else
 static void BuildIslandStartMenu(void);
 #endif
 static void UNUSED BuildNormalStartMenu(void);
