@@ -256,7 +256,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -281,6 +283,14 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 44,
+      "y": 8,
+      "elevation": 0,
+      "item": "ITEM_RESIST_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_NORANNA_PATH_R_FEATHER"
     }
   ]
 }

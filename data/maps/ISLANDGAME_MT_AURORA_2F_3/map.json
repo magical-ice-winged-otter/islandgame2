@@ -154,5 +154,7 @@
       "script": "ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+
+  ]
 }

@@ -20,7 +20,7 @@ text ISLANDGAME_MINTY_MEADOWS_3_RessyTalk {
 script ISLANDGAME_MINTY_MEADOWS_3_Chimecho {
     lock
     faceplayer
-    playmoncry(SPECIES_CHIMECHO,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_GALLADE,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk)
     applymovement(2, Common_Movement_FaceOriginalDirection)
     release
@@ -28,7 +28,7 @@ script ISLANDGAME_MINTY_MEADOWS_3_Chimecho {
 
 text ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk {
     format(
-        "{COLOR DARK_GRAY}Ding dong!"
+        "{COLOR DARK_GRAY}Gallade."
         )
 }
 

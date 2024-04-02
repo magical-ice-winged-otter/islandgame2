@@ -540,7 +540,7 @@ const struct Item gItemsInfo[] =
     [ITEM_POTION] =
     {
         .name = _("Potion"),
-        .price = (I_PRICE >= GEN_7) ? 400 : 300,
+        .price = (I_PRICE >= GEN_7) ? 400 : 400, // modded price
         .holdEffectParam = 20,
         .description = COMPOUND_STRING(
             "Restores the HP of\n"
@@ -557,7 +557,7 @@ const struct Item gItemsInfo[] =
     [ITEM_SUPER_POTION] =
     {
         .name = _("Super Potion"),
-        .price = 1400, // og price 700
+        .price = 1000, // modded price
         .holdEffectParam = 60,
         .description = COMPOUND_STRING(
             "Restores the HP of\n"
@@ -578,7 +578,7 @@ const struct Item gItemsInfo[] =
     [ITEM_HYPER_POTION] =
     {
         .name = _("Hyper Potion"),
-        .price = (I_PRICE >= GEN_2 || I_PRICE <= GEN_6) ? 1200 : 3000,
+        .price = (I_PRICE >= GEN_2 || I_PRICE <= GEN_6) ? 1800 : 1800, // modded price
         .holdEffectParam = 120,
         .description = COMPOUND_STRING(
             "Restores the HP of\n"
@@ -599,7 +599,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MAX_POTION] =
     {
         .name = _("Max Potion"),
-        .price = 5000, // og price 2500
+        .price = 3500, // modded price
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
             "Fully restores the\n"
@@ -615,7 +615,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FULL_RESTORE] =
     {
         .name = _("Full Restore"),
-        .price = 6000, // og price 3000
+        .price = 4500, // modded price
         .holdEffectParam = 255,
         .description = COMPOUND_STRING(
             "Fully restores the\n"
@@ -632,7 +632,7 @@ const struct Item gItemsInfo[] =
     [ITEM_REVIVE] =
     {
         .name = _("Revive"),
-        .price = (I_PRICE >= GEN_7) ? 4000 : 1500,
+        .price = (I_PRICE >= GEN_7) ? 3000 : 3000, // modded price
         .description = COMPOUND_STRING(
             "Revives a fainted\n"
             "Pokémon with half\n"
@@ -648,7 +648,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MAX_REVIVE] =
     {
         .name = _("Max Revive"),
-        .price = 8000, // og price 4000
+        .price = 6000, // modded price
         .description = sMaxReviveDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -661,7 +661,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FRESH_WATER] =
     {
         .name = _("Fresh Water"),
-        .price = 400, // og price 200
+        .price = 500, // og price 200
         .holdEffectParam = 30,
         .description = COMPOUND_STRING(
             "A mineral water\n"
@@ -682,7 +682,7 @@ const struct Item gItemsInfo[] =
     [ITEM_SODA_POP] =
     {
         .name = _("Soda Pop"),
-        .price = 600, // og price 300
+        .price = 800, // og price 300
         .holdEffectParam = 50,
         .description = COMPOUND_STRING(
             "A fizzy soda drink\n"
@@ -703,7 +703,7 @@ const struct Item gItemsInfo[] =
     [ITEM_LEMONADE] =
     {
         .name = _("Lemonade"),
-        .price = (I_PRICE >= GEN_7) ? 800 : 350,
+        .price = (I_PRICE >= GEN_7) ? 1200 : 1200, // modded price
         .holdEffectParam = 70,
 #if I_HEALTH_RECOVERY >= GEN_7
         .description = COMPOUND_STRING(
@@ -728,7 +728,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Moomoo Milk"),
         .pluralName = _("Moomoo Milk"),
-        .price = (I_PRICE >= GEN_7) ? 1200 : 500,
+        .price = (I_PRICE >= GEN_7) ? 1500 : 1500, // modded price
         .holdEffectParam = 100,
         .description = COMPOUND_STRING(
             "A nutritious milk\n"
@@ -1057,7 +1057,10 @@ const struct Item gItemsInfo[] =
     {
         .name = _("RageCandyBar"),
         .price = (I_PRICE >= GEN_7) ? 350 : 300,
-        .description = sFullHealDesc,
+        .description = COMPOUND_STRING(
+            "Restores the HP of\n"
+            "a Pokémon by\n"
+            "20 points."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,

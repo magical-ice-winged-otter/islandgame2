@@ -325,7 +325,9 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+
+  ],
   "coord_events": [
     {
       "type": "trigger",
@@ -405,6 +407,22 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY_2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 76,
+      "y": 35,
+      "elevation": 0,
+      "item": "ITEM_MUSCLE_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_M_FEATHER"
+    },
+    {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 16,
+      "elevation": 0,
+      "item": "ITEM_HEALTH_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_H_FEATHER"
     }
   ]
 }

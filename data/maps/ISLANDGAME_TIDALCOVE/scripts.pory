@@ -57,7 +57,7 @@ script ISLANDGAME_TIDALCOVE_Interact_PrimFan2 {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_Bike {
-    msgbox(format("It's a bike - brand new, polished to a shine."), MSGBOX_SIGN)
+    msgbox(format("It's a bike. Brand-new, polished to a shine."), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl {
