@@ -2153,6 +2153,7 @@ void ObjectEventInteractionGetBerryCountString(void)
     {
         count = 1;
         CopyItemNameHandlePlural(BerryTypeToItemId(berry), gStringVar3, count);
+        gSpecialVar_0x8006 = BerryTypeToItemId(berry);
         gSpecialVar_Result = TRUE;
     }
     else

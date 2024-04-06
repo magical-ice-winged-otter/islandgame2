@@ -242,7 +242,7 @@ ISLANDGAME_TIDALCOVE_Interact_PrimFan2_Text_0:
 	.string "front lines! Move aside, loser!$"
 
 ISLANDGAME_TIDALCOVE_Interact_Bike_Text_0:
-	.string "It's a bike - brand new, polished to a\n"
+	.string "It's a bike. Brand-new, polished to a\n"
 	.string "shine.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0:

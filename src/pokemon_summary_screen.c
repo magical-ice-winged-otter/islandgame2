@@ -145,10 +145,12 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     /*0x0C*/ struct Pokemon currentMon;
     /*0x70*/ struct PokeSummary
     {
-        u16 species;
-        u16 species2;
-        u8 isEgg;
-        u8 level;
+        u16 species; // 0x0
+        u16 species2; //0x2
+        u8 isEgg:1; // 0x4
+        u8 isShiny:1;
+        u8 padding:6;
+        u8 level; //0x5
         u8 ribbonCount;
         u8 ailment;
         u8 abilityNum;
@@ -1611,6 +1613,8 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
     default:
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);
         sum->fatefulEncounter = GetMonData(mon, MON_DATA_MODERN_FATEFUL_ENCOUNTER);
+        sum->teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
+        sum->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
         if (sum->isEgg)
         {
             sMonSummaryScreen->minPageIndex = PSS_PAGE_MEMO;
@@ -3777,6 +3781,13 @@ static void SetMonTypeIcons(void)
         SetTypeSpritePosAndPal(gSpeciesInfo[summary->species].types[0], 184, 65, SPRITE_ARR_ID_TYPE);
         SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, TRUE);
     }
+    /*  todo:
+    
+    if (P_SHOW_TERA_TYPE >= GEN_9)
+    {
+        SetTypeSpritePosAndPal(summary->teraType, 167, 65, SPRITE_ARR_ID_TYPE + 2);
+    }
+    */
 }
 
 static void SetMoveTypeIcons(void)
@@ -3927,7 +3938,7 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
             (*state)++;
             return 0xFF;
         case 1:
-            LoadCompressedSpritePaletteWithTag(GetMonSpritePalFromSpeciesAndPersonality(summary->species2, summary->OTID, summary->pid), summary->species2);
+            LoadCompressedSpritePaletteWithTag(GetMonSpritePalFromSpeciesAndPersonality(summary->species2, summary->isShiny, summary->pid), summary->species2);
             SetMultiuseSpriteTemplateToPokemon(summary->species2, B_POSITION_OPPONENT_LEFT);
             (*state)++;
             return 0xFF;

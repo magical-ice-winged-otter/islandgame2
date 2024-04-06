@@ -5604,6 +5604,7 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, bool32 isShiny,
 
     if (isShiny)
     {
+        MgbaPrintf(MGBA_LOG_DEBUG, "IS SHINY");
         if (gSpeciesInfo[species].shinyPaletteFemale != NULL && IsPersonalityFemale(species, personality))
             return gSpeciesInfo[species].shinyPaletteFemale;
         else if (gSpeciesInfo[species].shinyPalette != NULL)
@@ -5613,6 +5614,7 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, bool32 isShiny,
     }
     else
     {
+        MgbaPrintf(MGBA_LOG_DEBUG, "IS NOT SHINY");
         if (gSpeciesInfo[species].paletteFemale != NULL && IsPersonalityFemale(species, personality))
             return gSpeciesInfo[species].paletteFemale;
         else if (gSpeciesInfo[species].palette != NULL)
