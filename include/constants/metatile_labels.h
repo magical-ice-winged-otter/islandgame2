@@ -412,6 +412,11 @@
 // gTileset_Persi
 #define METATILE_Persi_Door  0x26C
 
+// gTileset_Petalburg
+#define METATILE_Petalburg_Door_BirchsLab   0x249
+#define METATILE_Petalburg_Door_Littleroot  0x248
+#define METATILE_Petalburg_Door_Oldale      0x287
+
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_Door                0x224
 #define METATILE_PetalburgGym_RoomEntrance_Left   0x210
@@ -421,11 +426,6 @@
 #define METATILE_PetalburgGym_SlidingDoor_Frame2  0x21A
 #define METATILE_PetalburgGym_SlidingDoor_Frame3  0x21B
 #define METATILE_PetalburgGym_SlidingDoor_Frame4  0x21C
-
-// gTileset_Petalburg
-#define METATILE_Petalburg_Door_BirchsLab   0x249
-#define METATILE_Petalburg_Door_Littleroot  0x248
-#define METATILE_Petalburg_Door_Oldale      0x287
 
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D
@@ -832,5 +832,13 @@
 #define METATILE_islandgame_rosevale_Door              0x3A1
 #define METATILE_islandgame_ss_rain_general_door_00    0x0FA
 #define METATILE_islandgame_ss_rain_general_door_01    0x071
+
+// Other
+#define METATILE_RSMossdeepGym_RedArrow_Down   0x205
+#define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
+#define METATILE_RSMossdeepGym_RedArrow_Right  0x204
+#define METATILE_RSMossdeepGym_RedArrow_Up     0x20D
+#define METATILE_RSMossdeepGym_Switch_Down     0x239
+#define METATILE_RSMossdeepGym_Switch_Up       0x238
 
 #endif // GUARD_METATILE_LABELS_H

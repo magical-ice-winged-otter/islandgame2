@@ -660,7 +660,7 @@
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_EXP_CANDY      0x267 
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_SHINYSTONE     0x268
 #define FLAG_HIDDEN_ITEM_MT_AURORA_NEVERMELTICE     0x269
-#define FLAG_HIDDEN_ITEM_MT_AURORA_DIVEBALL         0x26A 
+#define FLAG_HIDDEN_ITEM_MT_AURORA_SNOWBALL         0x26A 
 #define FLAG_HIDDEN_ITEM_SS_RAIN_EXP_CANDY          0x26B 
 #define FLAG_HIDDEN_ITEM_CHERIPORT_EXP_CANDY        0x26C 
 #define FLAG_HIDDEN_ITEM_SORANNA_PATH_EXP_CANDY     0x26D 
@@ -677,12 +677,12 @@
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_SUN_STONE     0x278
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY     0x279
 #define FLAG_HIDDEN_ITEM_MT_AURORA_EXP_CANDY        0x27A 
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_P_FEATHER     0x27B 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_M_FEATHER     0x27C 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_H_FEATHER     0x27D 
+#define FLAG_HIDDEN_ITEM_NORANNA_PATH_R_FEATHER     0x27E 
+#define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_C_FEATHER      0x280 // Unused Flag
 #define FLAG_UNUSED_0x281  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag
@@ -1238,12 +1238,12 @@
 #define FLAG_ITEM_COP_2_PIXIE_PLATE                                 0x4A1 
 #define FLAG_ITEM_TIDALCOVE_HP_UP                                   0x4A2
 #define FLAG_ITEM_TIDALCOVE_BLACKGLASSES                            0x4A3
-#define FLAG_ITEM_AP_KINGS_ROCK                                     0x4A4 
+#define FLAG_ITEM_AP_COMET_SHARD                                    0x4A4 
 #define FLAG_ITEM_NOR_TWISTEDSPOON                                  0x4A5
 #define FLAG_ITEM_NOR_TM_TOXIC                                      0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
-#define FLAG_MINTY_MEADOWS_FOCUS_BAND                               0x4A8 
-#define FLAG_MINTY_MEADOWS_X_ATTACK                                 0x4A9
+#define FLAG_MINTY_MEADOWS_POTION                                   0x4A8 
+#define FLAG_MINTY_MEADOWS_REPEL                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_CARBOS                                           0x4AB 
 #define FLAG_SS_RAIN_TM_VOLT_SWITCH                                 0x4AC // temporarily is calcium until tms are added
