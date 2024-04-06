@@ -56,8 +56,8 @@
       "x": 11,
       "y": 14,
       "elevation": 0,
-      "item": "ITEM_DIVE_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_MT_AURORA_DIVEBALL"
+      "item": "ITEM_SNOWBALL",
+      "flag": "FLAG_HIDDEN_ITEM_MT_AURORA_SNOWBALL"
     },
     {
       "type": "sign",

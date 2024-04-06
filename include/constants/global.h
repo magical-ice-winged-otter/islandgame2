@@ -3,13 +3,15 @@
 
 
 // Comment out this line to strip debugging tools from the build.
-#define ISLANDGAME_DEBUG TRUE
+#define ISLANDGAME_DEBUG FALSE
 
 #include "config/battle.h"
 #include "config/debug.h"
 #include "config/item.h"
+#include "config/level_caps.h"
 #include "config/pokemon.h"
 #include "config/overworld.h"
+#include "config/decap.h"
 
 // Invalid Versions show as "----------" in Gen 4 and Gen 5's summary screen.
 // In Gens 6 and 7, invalid versions instead show "a distant land" in the summary screen.
@@ -27,6 +29,8 @@
 #define VERSION_PEARL 11
 #define VERSION_PLATINUM 12
 #define VERSION_GAMECUBE 15
+
+#define NUM_VERSIONS 15
 
 #define LANGUAGE_JAPANESE 1
 #define LANGUAGE_ENGLISH  2
@@ -69,18 +73,19 @@
 #define DECOR_MAX_PLAYERS_HOUSE 12
 #define APPRENTICE_COUNT 4
 #define APPRENTICE_MAX_QUESTIONS 9
-#define MAX_REMATCH_ENTRIES 100 // only REMATCH_TABLE_ENTRIES (78) are used
+#define MAX_REMATCH_ENTRIES 92 // only REMATCH_TABLE_ENTRIES (78) are used
 #define NUM_CONTEST_WINNERS 13
 #define UNION_ROOM_KB_ROW_COUNT 10
 #define GIFT_RIBBONS_COUNT 11
 #define SAVED_TRENDS_COUNT 5
 #define PYRAMID_BAG_ITEMS_COUNT 10
 #define MAX_DYNAMIC_OBJECTS 4 //This is how many slots for persistent dynamic objects you wish to have. Default 4. Require 20 bytes each.
-
 #define DYNAMIC_OBJECT_1 0xF0
 #define DYNAMIC_OBJECT_2 0xF1
 #define DYNAMIC_OBJECT_3 0xF2
 #define DYNAMIC_OBJECT_4 0xF3
+
+#define MAX_REGISTERED_ITEMS 4
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.
@@ -109,16 +114,13 @@
 
 // string lengths
 #define ITEM_NAME_LENGTH 14
+#define ITEM_NAME_PLURAL_LENGTH ITEM_NAME_LENGTH + 2 // 2 is used for the instance where a word's suffix becomes y->ies
 #define POKEMON_NAME_LENGTH 10
 #define POKEMON_NAME_BUFFER_SIZE max(20, POKEMON_NAME_LENGTH + 1) // Frequently used buffer size. Larger than necessary
 #define PLAYER_NAME_LENGTH 7
 #define MAIL_WORDS_COUNT 9
 #define EASY_CHAT_BATTLE_WORDS_COUNT 6
-#if B_EXPANDED_MOVE_NAMES == TRUE
-#define MOVE_NAME_LENGTH 16
-#else
-#define MOVE_NAME_LENGTH 12
-#endif
+#define MOVE_NAME_LENGTH ((B_EXPANDED_MOVE_NAMES == TRUE) ? 16 : 12)
 #define NUM_QUESTIONNAIRE_WORDS 4
 #define QUIZ_QUESTION_LEN 9
 #define WONDER_CARD_TEXT_LENGTH 40
@@ -126,11 +128,7 @@
 #define WONDER_CARD_BODY_TEXT_LINES 4
 #define WONDER_NEWS_BODY_TEXT_LINES 10
 #define TYPE_NAME_LENGTH 6
-#if B_EXPANDED_ABILITY_NAMES == TRUE
-#define ABILITY_NAME_LENGTH 16
-#else
-#define ABILITY_NAME_LENGTH 12
-#endif
+#define ABILITY_NAME_LENGTH ((B_EXPANDED_ABILITY_NAMES == TRUE) ? 16 : 12)
 #define TRAINER_NAME_LENGTH 13
 
 #define MAX_STAMP_CARD_STAMPS 7

@@ -5,7 +5,11 @@
 
 static void UpgradeSaveV0ToV1();
 static void SaveBlock1IncreaseArraySize(u32*, void*, u32, u32);
+#ifndef FREE_MATCH_CALL
 static void SaveBlock1InsertBytesAt(u32*, void*, u32);
+#else 
+UNUSED static void SaveBlock1InsertBytesAt(u32*, void*, u32);
+#endif 
 static u32 GetSaveBlock1Offset(u8*);
 
 ALIGNED(4) const u8 gText_CanUpgradeSave[] = _("This save is from an older version\nof the game. Upgrade it?");
@@ -74,7 +78,9 @@ static void UpgradeSaveV0ToV1()
     SaveBlock1IncreaseArraySize(&saveBlockSize, gSaveBlock1Ptr->bagPocket_Items, 120, 372);
 
     // match call people inserted into block
+    #ifndef FREE_MATCH_CALL
     SaveBlock1InsertBytesAt(&saveBlockSize, &gSaveBlock1Ptr->trainerRematchStepCounter, 104);
+    #endif
 
     // pokemon count increased (gen 9)
     SaveBlock1IncreaseArraySize(&saveBlockSize, gSaveBlock1Ptr->dexSeen, 114, 129);

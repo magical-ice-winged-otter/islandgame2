@@ -167,7 +167,5 @@
       "script": "LittlerootTown_BrendansHouse_1F_EventScript_MeetRival2"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

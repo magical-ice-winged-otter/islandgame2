@@ -87,7 +87,3 @@ text SS_Rain_CalmGentleman_Text {
     format("{COLOR DARK_GRAY}I apologize for my rudeness. Please, make yourself at home.")
 }
 
-script SS_Rain_EventScript_Item {
-    finditem(ITEM_RARE_CANDY)
-}
-
