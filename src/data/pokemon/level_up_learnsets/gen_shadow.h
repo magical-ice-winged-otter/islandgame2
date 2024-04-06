@@ -1,4 +1,4 @@
-#include "gen_9.h" // use gen 9 move set as well.
+#include "gen_7.h" // use gen 9 move set as well.
 
 #if P_FAMILY_SHADOW_LUGIA
 static const struct LevelUpMove sShadowLugiaLevelUpLearnset[] = {
