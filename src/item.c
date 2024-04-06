@@ -228,6 +228,12 @@ bool8 AddBagItem(u16 itemId, u16 count)
         newItems = AllocZeroed(itemPocket->capacity * sizeof(struct ItemSlot));
         memcpy(newItems, itemPocket->itemSlots, itemPocket->capacity * sizeof(struct ItemSlot));
 
+        if (pocket == TMHM_POCKET)
+        {
+            if (!CheckBagHasItem(ITEM_TM_CASE, 1))
+                AddBagItem(ITEM_TM_CASE, 1);
+        }
+        
         for (i = 0; i < itemPocket->capacity; i++)
         {
             if (newItems[i].itemId == itemId)
