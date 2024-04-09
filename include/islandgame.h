@@ -88,6 +88,7 @@ static const u8 northernOrannaName[] = _("NorthernOranna");
 static const u8 centralOrannaName[] = _("CentralOranna");
 static const u8 tidalcoveName[] = _("Tidalcove");
 static const u8 rosevaleName[] = _("Rosevale");
+static const u8 rockypathName[] = _("Rocky Path");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
@@ -105,6 +106,7 @@ static const u8 *const LOCATION_NAMES[] = {
     [CENTRAL_ORANNA] = centralOrannaName,
     [TIDALCOVE] = tidalcoveName,
     [ROSEVALE] = rosevaleName,
+    [ROCKY_PATH] = rockypathName,
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 
@@ -133,7 +135,7 @@ void IslandGameCustomStartup();
 
 #if ISLANDGAME_DEBUG == TRUE
 
-#define START_LOC_GAME LOCATION_DATA[CAMP_PERSI]
+#define START_LOC_GAME LOCATION_DATA[ROCKY_PATH]
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA
 #define ISLANDGAME_STARTING_MON_LEVEL 100
 #define ISLANDGAME_STARTING_MON_ITEM ITEM_NONE

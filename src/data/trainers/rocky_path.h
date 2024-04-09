@@ -35,7 +35,7 @@
         .trainerPic = TRAINER_PIC_BEAUTY,
         .trainerName = _("Thalia"),
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING,
-        .party = TRAINER_PARTY(sParty_RockyPath_RockyPath),
+        .party = TRAINER_PARTY(sParty_RockyPath_Beauty),
     },
 
 [TRAINER_ROCKY_PATH_CAMPER_F] = 
