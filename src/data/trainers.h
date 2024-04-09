@@ -832,9 +832,9 @@ const struct Trainer gTrainers[] = {
 
 
 
+    #include "trainers/rocky_path.h"
 
-
-
+    
 
 
 

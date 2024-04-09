@@ -926,7 +926,7 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
 
 
 
-
+#include "trainer_parties/rocky_path.h"
 
 
 
