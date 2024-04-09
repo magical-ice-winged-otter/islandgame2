@@ -52,6 +52,7 @@ typedef struct Location
 #define CENTRAL_ORANNA 11
 #define TIDALCOVE 12
 #define ROSEVALE 13
+#define ROCKY_PATH 14
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -70,6 +71,7 @@ static const Location LOCATION_DATA[] = {
     [NORTHERN_ORANNA] = SET_LOC(ISLANDGAME_NORTHERN_ORANNA_PATH, 33, 19),
     [CENTRAL_ORANNA] = SET_LOC(ISLANDGAME_CENTRAL_ORANNA_PATH_1, 18, 1),
     [ROSEVALE] = SET_LOC(ISLANDGAME_ROSEVALE, 19, 13),
+    [ROCKY_PATH] = SET_LOC(ISLANDGAME_ROCKY_PATH, 10, 9),
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
