@@ -57,6 +57,10 @@
 #include "script_pokemon_util.h"
 #include "overworld.h"
 
+#if (DECAP_ENABLED) && (DECAP_MIRRORING) && !(DECAP_START_MENU)
+#define AddTextPrinterParameterized (AddTextPrinterFixedCaseParameterized)
+#endif
+
 // Menu actions
 enum
 {
@@ -275,7 +279,7 @@ static void BuildStartMenuActions(void);
 static void AddStartMenuAction(u8 action);
 #if ISLANDGAME_DEBUG == TRUE
 static void UNUSED BuildIslandStartMenu(void);
-#elif
+#else
 static void BuildIslandStartMenu(void);
 #endif
 static void UNUSED BuildNormalStartMenu(void);

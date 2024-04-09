@@ -12,7 +12,7 @@ ISLANDGAME_MINTY_MEADOWS_3_Ressy::
 ISLANDGAME_MINTY_MEADOWS_3_Chimecho::
 	lock
 	faceplayer
-	playmoncry SPECIES_CHIMECHO, CRY_MODE_NORMAL
+	playmoncry SPECIES_GALLADE, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk
 	applymovement 2, Common_Movement_FaceOriginalDirection
 	release
@@ -39,7 +39,7 @@ ISLANDGAME_MINTY_MEADOWS_3_RessyTalk::
 	.string "Yup.$"
 
 ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk::
-	.string "{COLOR DARK_GRAY}Ding dong!$"
+	.string "{COLOR DARK_GRAY}Gallade.$"
 
 ISLANDGAME_MINTY_MEADOWS_3_AegislashTalk::
 	.string "{COLOR DARK_GRAY}Shwing! {COLOR BLUE}(THOU SHALL NOT PASSETH)$"

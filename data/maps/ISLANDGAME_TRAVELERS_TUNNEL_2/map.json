@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RusturfTunnel_EventScript_ItemMaxEther",
+      "script": "NULL",
       "flag": "FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER"
     },
     {
@@ -96,9 +96,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",
