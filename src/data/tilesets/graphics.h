@@ -2071,3 +2071,231 @@ const u16 gTilesetPalettes_islandgame_houses[][16] =
 };
 
 const u32 gTilesetTiles_islandgame_houses[] = INCBIN_U32("data/tilesets/secondary/islandgame_houses/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_power_plant_interior[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_power_plant_interior[] = INCBIN_U32("data/tilesets/primary/islandgame_lumine_power_plant_interior/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_mt_therion[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_mt_therion[] = INCBIN_U32("data/tilesets/primary/islandgame_lumine_mt_therion/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_belle_catacombs[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_belle_catacombs[] = INCBIN_U32("data/tilesets/primary/islandgame_lumine_belle_catacombs/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_arboria[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_arboria[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_arboria/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_azure_path[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_azure_path/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_azure_path[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_azure_path/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_bellehaven[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_bellehaven/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_bellehaven[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_bellehaven/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_cantalo[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_cantalo/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_cantalo[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_cantalo/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_power_plant[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_power_plant[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_power_plant/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_rocky_path[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_rocky_path/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_rocky_path[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_rocky_path/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_sierra_path[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_sierra_path/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_sierra_path[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_sierra_path/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_therion_path[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_therion_path/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_therion_path[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_therion_path/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_islandgame_lumine_valley_of_peace[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_islandgame_lumine_valley_of_peace[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_valley_of_peace/tiles.4bpp.lz");
