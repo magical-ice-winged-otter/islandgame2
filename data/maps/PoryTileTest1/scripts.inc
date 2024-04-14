@@ -4,8 +4,7 @@ PoryTileTest1_MapScripts::
 
 PoryTileTest1_EventScript_BoyTalk::
 	lock
-	applymovement 1, Common_Movement_FacePlayer
-	waitmovement 0
+	faceplayer
 	checkitem ITEM_FRESH_WATER, 1
 	goto_if_set FLAG_ROOM3_GAVE_WATER, PoryTileTest1_EventScript_BoyTalk_2
 	compare VAR_RESULT, 0

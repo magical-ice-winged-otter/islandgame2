@@ -86,7 +86,7 @@ static const struct TrainerMon sParty_CampPersiJonas[] = {
     .species = SPECIES_SNORUNT,
     .heldItem = ITEM_STARF_BERRY,
     .ability = ABILITY_INNER_FOCUS,
-    .nature = TRAINER_PARTY_NATURE(NATURE_QUIRKY),
+    .nature = NATURE_QUIRKY,
     .moves = {MOVE_POWDER_SNOW, MOVE_BITE, MOVE_DISABLE, MOVE_ICE_SHARD},
     .gender = TRAINER_MON_FEMALE,
     },

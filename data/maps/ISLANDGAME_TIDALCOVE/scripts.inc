@@ -204,18 +204,20 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top::
 
 ISLANDGAME_TIDALCOVE_Interact_EntranceSign_Text_0:
 	.string "TIDALCOVE\n"
-	.string "Crack open a cold one on our beach!$"
+	.string "Crack open a cold one on our beach!\p"
+	.string "(By cold one, we mean a non-alcoholic\n"
+	.string "beverage, obviously.)$"
 
 ISLANDGAME_TIDALCOVE_Interact_BehindGymSign_Text_0:
 	.string "LOSER LANDING\n"
-	.string "u r noob$"
+	.string "git gud maen$"
 
 ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign_Text_0:
 	.string "SEASIDE BIKE PATH\n"
-	.string "Your express way to Lumine!$"
+	.string "Your most convenient way to Lumine!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BikeShopSign_Text_0:
-	.string "RANDIEZ HOT WHEELZ\n"
+	.string "RANDEEZ HOT WHEELZ\n"
 	.string "“ZOOM ZOOM MOTHER TRUCKERS”$"
 
 ISLANDGAME_TIDALCOVE_Interact_GymSign_Text_0:
@@ -242,8 +244,8 @@ ISLANDGAME_TIDALCOVE_Interact_PrimFan2_Text_0:
 	.string "front lines! Move aside, loser!$"
 
 ISLANDGAME_TIDALCOVE_Interact_Bike_Text_0:
-	.string "It's a bike - brand new, polished to a\n"
-	.string "shine.$"
+	.string "It's a bike. It's shiny and brand-new.\n"
+	.string "The price tag is absurd, though.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0:
 	.string "I like sand! It's soft, smooth, and fun\n"
@@ -277,10 +279,11 @@ ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_0:
 	.string "tommorrow.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_1:
-	.string "Yache Berries are the best on a hot day.$"
+	.string "Yache Berries are a great way to cool\n"
+	.string "off in Marya's sweltering heat.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_2:
-	.string "Try one!$"
+	.string "Try one for yourself!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_3:
 	.string "I'd give you one if you had more room!$"

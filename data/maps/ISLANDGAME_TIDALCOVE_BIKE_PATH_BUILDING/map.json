@@ -91,7 +91,5 @@
       "script": "ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

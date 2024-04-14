@@ -219,7 +219,7 @@ ISLANDGAME_FRESA_FARMS_Mareep2_Text_0:
 ISLANDGAME_FRESA_FARMS_Mareep3_Text_0:
 	.string "Reep! {COLOR BLUE}(Hey there! Thanks for saving my\n"
 	.string "butt from that scary Mightyena.)\p"
-	.string "Reep. {COLOR BLUE}(Please take this as a gift.)$"
+	.string "{COLOR DARK_GRAY}Reep. {COLOR BLUE}(Please take this as a gift.)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep3_Text_1:
 	.string "Reep. {COLOR BLUE}(Oh, you don't have enough space\n"

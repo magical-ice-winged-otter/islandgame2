@@ -16,19 +16,19 @@ mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_EntranceSign {
-    msgbox(format("TIDALCOVE\nCrack open a cold one on our beach!"), MSGBOX_SIGN)
+    msgbox(format("TIDALCOVE\nCrack open a cold one on our beach!\p(By cold one, we mean a non-alcoholic beverage, obviously.)"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BehindGymSign {
-    msgbox(format("LOSER LANDING\nu r noob"), MSGBOX_SIGN)
+    msgbox(format("LOSER LANDING\ngit gud maen"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign {
-    msgbox(format("SEASIDE BIKE PATH\nYour express way to Lumine!"), MSGBOX_SIGN)
+    msgbox(format("SEASIDE BIKE PATH\nYour most convenient way to Lumine!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BikeShopSign {
-    msgbox(format("RANDIEZ HOT WHEELZ\n“ZOOM ZOOM MOTHER TRUCKERS”"), MSGBOX_SIGN)
+    msgbox(format("RANDEEZ HOT WHEELZ\n“ZOOM ZOOM MOTHER TRUCKERS”"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSign {
@@ -57,7 +57,7 @@ script ISLANDGAME_TIDALCOVE_Interact_PrimFan2 {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_Bike {
-    msgbox(format("It's a bike - brand new, polished to a shine."), MSGBOX_SIGN)
+    msgbox(format("It's a bike. It's shiny and brand-new. The price tag is absurd, though."), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl {
@@ -119,12 +119,12 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer {
         MSGBOX_NPC)
     }
     else {
-        msgbox(format("Yache Berries are the best on a hot day."), MSGBOX_NPC)
+        msgbox(format("Yache Berries are a great way to cool off in Marya's sweltering heat."), MSGBOX_NPC)
 
         checkitemspace(ITEM_YACHE_BERRY)
 
         if (var(VAR_RESULT)) {
-            msgbox(format("Try one!"), MSGBOX_NPC)
+            msgbox(format("Try one for yourself!"), MSGBOX_NPC)
             giveitem(ITEM_YACHE_BERRY)
             setflag(FLAG_DAILY_TIDALCOVE_YACHE_GIRL)
         }

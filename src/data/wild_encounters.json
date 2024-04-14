@@ -12776,29 +12776,29 @@
                 "species": "SPECIES_NONE"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 15,
+                "max_level": 15,
                 "species": "SPECIES_MAGIKARP"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 15,
+                "max_level": 15,
                 "species": "SPECIES_TENTACOOL"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_CARVANHA"
-              },
-              {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 15,
+                "max_level": 15,
                 "species": "SPECIES_SHELLDER"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_SHELLDER"
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SQUIRTLE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SQUIRTLE"
               }
             ]
           }
