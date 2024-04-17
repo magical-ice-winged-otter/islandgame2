@@ -5344,10 +5344,10 @@
     {
       "id": "LAYOUT_ISLADNGAME_PROMENADE_PATH",
       "name": "ISLADNGAME_PROMENADE_PATH_Layout",
-      "width": 30,
-      "height": 50,
+      "width": 80,
+      "height": 42,
       "primary_tileset": "gTileset_islandgame_ocean_general",
-      "secondary_tileset": "gTileset_test",
+      "secondary_tileset": "gTileset_islandgame_oranna_tidalcove",
       "border_filepath": "data/layouts/ISLADNGAME_PROMENADE_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLADNGAME_PROMENADE_PATH/map.bin"
     },

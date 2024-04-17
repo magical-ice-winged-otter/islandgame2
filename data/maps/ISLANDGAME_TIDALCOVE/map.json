@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ISLADNGAME_PROMENADE_PATH",
-      "offset": -7,
+      "offset": 8,
       "direction": "right"
     }
   ],
@@ -253,6 +253,58 @@
       "trainer_sight_or_berry_tree_id": "ITEM_DIVE_BALL",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_TIDALCOVE_DIVE_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+      "x": 36,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_278",
+      "x": 46,
+      "y": 43,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_DOWN_RIGHT_UP",
+      "movement_range_x": 8,
+      "movement_range_y": 8,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_090",
+      "x": 39,
+      "y": 47,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_007",
+      "x": 23,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [

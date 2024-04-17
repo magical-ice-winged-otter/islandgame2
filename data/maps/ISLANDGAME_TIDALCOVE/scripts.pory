@@ -199,3 +199,14 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
         "I'm all for it. I'm glad to see so many people enthusiastic about our city!"
     ), MSGBOX_NPC)
 }
+
+script ISLANDGAME_TIDALCOVE_Interact_BikeDude {
+    lock
+    faceplayer
+    msgbox(format(
+        "Welcome to the Seaside Bike Path, trainer! Lumine Island is just up ahead.\p"
+        "Remember to stay on your bike! Oh, and please watch where you're going.\p"
+        "Trust me, the last thing you want is to take a dip in the Sharpedo-infested waters below.\p"
+        "Haha, I'm just kidding! No but seriously, use your eyes."
+    ), MSGBOX_NPC)
+}
