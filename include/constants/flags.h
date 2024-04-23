@@ -1254,8 +1254,8 @@
 #define FLAG_TRAVELERS_TUNNEL_TM_ROCK_TOMB                          0x4B1 
 #define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
 #define FLAG_ITEM_TIDALCOVE_DIVE_BALL                               0x4B3
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
+#define FLAG_ITEM_PROMENADE_PATH_PEARL                              0x4B4
+#define FLAG_ITEM_PROMENADE_SUPER_REPEL                             0x4B5
 #define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
 #define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
 #define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
@@ -1563,7 +1563,8 @@
 #define FLAG_SS_RAIN_ROTOM_DEFEATED                 (SYSTEM_FLAGS + 0x9D)
 //verdant woods: defeat mimikyu in spooky house
 #define FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED         (SYSTEM_FLAGS + 0x9E)
-#define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
+//tidalcove: squirtle gift
+#define FLAG_TIDALCOVE_SQUIRTLE_GIFT                (SYSTEM_FLAGS + 0x9F)
 #define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
 #define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
 #define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag

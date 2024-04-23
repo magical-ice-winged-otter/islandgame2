@@ -4,7 +4,7 @@
   "layout": "LAYOUT_ISLANDGAME_TRAVELERS_TUNNEL_2",
   "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_TRAVELERS_TUNNEL",
-  "requires_flash": true,
+  "requires_flash": false,
   "weather": "WEATHER_FOG_HORIZONTAL",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
@@ -96,7 +96,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

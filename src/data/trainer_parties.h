@@ -935,43 +935,75 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
 
 
 
+/// Promenade Path
 
-
-static const struct TrainerMon sParty_Ricky1[] = {
+static const struct TrainerMon sParty_PromenadePath1[] = {
     {
-    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
-    .lvl = 13,
-    .species = SPECIES_ZIGZAGOON,
-    .moves = {MOVE_SAND_ATTACK, MOVE_HEADBUTT, MOVE_TAIL_WHIP, MOVE_SURF}
-    }
-};
-
-static const struct TrainerMon sParty_Simon[] = {
-    {
-    .lvl = 12,
-    .species = SPECIES_AZURILL,
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 22,
+    .species = SPECIES_KLINK,
     },
     {
-    .lvl = 12,
-    .species = SPECIES_MARILL,
-    }
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 22,
+    .species = SPECIES_LUXIO,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
+    .species = SPECIES_LUCARIO,
+    },
 };
 
-static const struct TrainerMon sParty_Charlie[] = {
+static const struct TrainerMon sParty_PromenadePath2[] = {
     {
-    .lvl = 26,
-    .species = SPECIES_MARILL,
-    }
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 22,
+    .species = SPECIES_ROSELIA,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 22,
+    .species = SPECIES_FERROSEED,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
+    .species = SPECIES_GLOOM,
+    },
 };
 
-static const struct TrainerMon sParty_Ricky2[] = {
+static const struct TrainerMon sParty_PromenadePath3[] = {
     {
-    .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
-    .lvl = 27,
-    .species = SPECIES_LINOONE,
-    .moves = {MOVE_SAND_ATTACK, MOVE_PIN_MISSILE, MOVE_TAIL_WHIP, MOVE_SURF}
-    }
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 24,
+    .species = SPECIES_CHARMELEON,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 25,
+    .species = SPECIES_GURDURR,
+    },
 };
+
+static const struct TrainerMon sParty_PromenadePath4[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 25,
+    .ability = ABILITY_DRIZZLE,
+    .species = SPECIES_PELIPPER,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_ROOST, MOVE_KNOCK_OFF}
+    },
+};
+
+
+
+
+
+
+
+
 
 static const struct TrainerMon sParty_Ricky3[] = {
     {

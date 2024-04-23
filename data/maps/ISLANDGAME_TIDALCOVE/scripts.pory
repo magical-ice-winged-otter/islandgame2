@@ -207,6 +207,42 @@ script ISLANDGAME_TIDALCOVE_Interact_BikeDude {
         "Welcome to the Seaside Bike Path, trainer! Lumine Island is just up ahead.\p"
         "Remember to stay on your bike! Oh, and please watch where you're going.\p"
         "Trust me, the last thing you want is to take a dip in the Sharpedo-infested waters below.\p"
-        "Haha, I'm just kidding! No but seriously, use your eyes."
+        "Haha, I'm just kidding! No but seriously, use your eyes.\p"
+        "I already had to fish one knucklehead out of the waters earlier today..."
     ), MSGBOX_NPC)
+}
+
+
+script ISLANDGAME_TIDALCOVE_Interact_Squirtle {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SQUIRTLE,CRY_MODE_NORMAL)
+    
+    if(!flag(FLAG_TIDALCOVE_SQUIRTLE_GIFT)) {
+        msgbox(
+            format(
+                "{COLOR RED}(Huh? It looks like Squirtle is trying to give me something.) \p"
+                "{COLOR RED}(Should I take it?)"
+            )    
+        , MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            goto(SquirtleGiftEvent_End)
+        }
+
+        checkitemspace(ITEM_WATER_GEM)
+        if (!var(VAR_RESULT)) {
+            msgbox(format("{COLOR RED}(I don't have enough space to carry it.)"))
+            goto(SquirtleGiftEvent_End)
+        }
+
+        giveitem(ITEM_WATER_GEM)
+        setflag(FLAG_TIDALCOVE_SQUIRTLE_GIFT)
+    }
+    else {
+        msgbox(format("{COLOR DARK_GRAY}Squirtle!"))
+    }
+    
+    
+    SquirtleGiftEvent_End:
+        release
 }

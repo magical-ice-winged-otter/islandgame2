@@ -202,6 +202,47 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top::
 	return
 
 
+ISLANDGAME_TIDALCOVE_Interact_BikeDude::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_TIDALCOVE_Interact_BikeDude_Text_0, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle::
+	lock
+	faceplayer
+	playmoncry SPECIES_SQUIRTLE, CRY_MODE_NORMAL
+	goto_if_unset FLAG_TIDALCOVE_SQUIRTLE_GIFT, ISLANDGAME_TIDALCOVE_Interact_Squirtle_2
+	msgbox ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_2
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_1:
+SquirtleGiftEvent_End:
+	release
+	return
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_2:
+	msgbox ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_TIDALCOVE_Interact_Squirtle_6
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_5:
+	checkitemspace ITEM_WATER_GEM
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_TIDALCOVE_Interact_Squirtle_9
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_8:
+	giveitem ITEM_WATER_GEM
+	setflag FLAG_TIDALCOVE_SQUIRTLE_GIFT
+	goto ISLANDGAME_TIDALCOVE_Interact_Squirtle_1
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_6:
+	goto SquirtleGiftEvent_End
+	goto ISLANDGAME_TIDALCOVE_Interact_Squirtle_5
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_9:
+	msgbox ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_1
+	goto SquirtleGiftEvent_End
+	goto ISLANDGAME_TIDALCOVE_Interact_Squirtle_8
+
+
 ISLANDGAME_TIDALCOVE_Interact_EntranceSign_Text_0:
 	.string "TIDALCOVE\n"
 	.string "Crack open a cold one on our beach!\p"
@@ -327,3 +368,28 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top_Text_0:
 	.string "challenge, or our beautiful beaches.\p"
 	.string "I'm all for it. I'm glad to see so many\n"
 	.string "people enthusiastic about our city!$"
+
+ISLANDGAME_TIDALCOVE_Interact_BikeDude_Text_0:
+	.string "Welcome to the Seaside Bike Path,\n"
+	.string "trainer! Lumine Island is just up\l"
+	.string "ahead.\p"
+	.string "Remember to stay on your bike! Oh, and\n"
+	.string "please watch where you're going.\p"
+	.string "Trust me, the last thing you want is to\n"
+	.string "take a dip in the Sharpedo-infested\l"
+	.string "waters below.\p"
+	.string "Haha, I'm just kidding! No but seriously,\n"
+	.string "use your eyes.\p"
+	.string "I already had to fish one knucklehead\n"
+	.string "out of the waters earlier today...$"
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_0:
+	.string "{COLOR RED}(Huh? It looks like Squirtle is trying to\n"
+	.string "give me something.)\p"
+	.string "{COLOR RED}(Should I take it?)$"
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_1:
+	.string "{COLOR RED}(I don't have enough space to carry it.)$"
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_2:
+	.string "{COLOR DARK_GRAY}Squirtle!$"

@@ -20,6 +20,7 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck::
 	specialvar VAR_RESULT, GetPlayerAvatarBike
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_2
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	msgbox ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_1, MSGBOX_NPC
 	setflag FLAG_SYS_CYCLING_ROAD
 	setvar VAR_TEMP_1, 1
@@ -28,6 +29,7 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_1:
 	return
 
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_2:
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	msgbox ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_0, MSGBOX_NPC
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PushPlayerFromCounter
 	waitmovement 0
@@ -41,7 +43,7 @@ Movement_PushPlayerFromCounter:
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker_Text_0:
 	.string "POKÉMON BATTLES ON BICYCLES!!!\p"
 	.string "Sorry. I've been watching a lot of\n"
-	.string "Pokémon Abridged lately.$"
+	.string "abridged anime lately.$"
 
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_0:
 	.string "Hey! It's too dangerous to go on the\n"

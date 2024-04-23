@@ -6,13 +6,15 @@ script ISLANDGAME_TRAVELERS_TUNNEL_Hiker {
     lock
     faceplayer
     msgbox(ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk)
+    applymovement(6, Common_Movement_FaceRight)
     release
 }
 
 text ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk {
     format(
-        "{COLOR DARK_GRAY}Phew... I've been wandering in this tunnel for hours! \p"
-        "{COLOR DARK_GRAY}I thought I'd never see light again, but I managed to feel my way over here. \p"
-        "{COLOR DARK_GRAY}If only I had a lantern..."
+        "Man, what's up with all this pink swirly mist in here?\p"
+        "I think it's coming from deeper in the cave...\p"
+        "Eh? I'm not going down there! You go down there! I've uh, got more important things to attend to!\p"
+        "Like polishing this rock right here! Gotta shine it reeeeal good!"
         )
 }
