@@ -5174,7 +5174,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_APPLEVINE",
       "name": "ISLANDGAME_APPLEVINE_Layout",
-      "width": 60,
+      "width": 64,
       "height": 40,
       "primary_tileset": "gTileset_islandgame_ocean_general",
       "secondary_tileset": "gTileset_islandgame_lumine_applevine",
