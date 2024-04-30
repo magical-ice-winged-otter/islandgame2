@@ -1276,3 +1276,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_COUCH_POTATO/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_RESTAURANT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING/scripts.inc"
