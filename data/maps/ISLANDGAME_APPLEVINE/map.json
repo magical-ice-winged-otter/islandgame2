@@ -269,7 +269,83 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 22,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
+      "dest_warp_id": "01"
+    },
+    {
+      "x": 27,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_RESTAURANT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 41,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_NAME_RATER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 47,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_COUCH_POTATO",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_PKMNMART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 42,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_SIERRA_PATH",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 50,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_PKMNCENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 51,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_GAME_CORNER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 56,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_ROCKY_PATH",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
