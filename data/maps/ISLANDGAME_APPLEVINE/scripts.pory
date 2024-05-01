@@ -1,4 +1,18 @@
-mapscripts ISLANDGAME_APPLEVINE_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+mapscripts ISLANDGAME_APPLEVINE_MapScripts {
+        MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) > 12 + 6) {
+            setflag(FLAG_DAYTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_NIGHTTIME) // controls nighttime npcs
+        }
+    }
+}
 
 
 // signs
@@ -62,6 +76,43 @@ script ISLANDGAME_APPLEVINE_NPC3 {
     lock
     faceplayer
     msgbox(format(
-        ""
+        "I'm trying to teach my Zigzagoon how to surf on the water.\p"
+        "So far, it hasn't been very successful..."
     ), MSGBOX_NPC)
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    closemessage
+    release
 }
+
+script ISLANDGAME_APPLEVINE_NPC4 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_ZIGZAGOON,CRY_MODE_NORMAL)
+    msgbox(format(
+        "Goon... {COLOR BLUE}(The ocean is just a really big bath tub, and I hate baths.)"
+    ))
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC5 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I love my big Marill beach ball!"
+    ), MSGBOX_NPC)
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC6 {
+    lock
+    msgbox(format(
+        "{COLOR RED}(It's a big beach ball of a Marill.)"
+    ))
+    closemessage
+    release
+}
+

@@ -1,5 +1,6 @@
 const FLAG_GYM_OPEN = FLAG_TEMP_1
 const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
 
 mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -11,6 +12,9 @@ mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
 
         if (var(VAR_0x8000) > 12 + 6) {
             setflag(FLAG_DAYTIME) // controls visibilty of Yache Beach Girl
+        }
+        else {
+            setflag(FLAG_NIGHTTIME)
         }
     }
 }
