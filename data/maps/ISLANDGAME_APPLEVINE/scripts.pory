@@ -116,3 +116,13 @@ script ISLANDGAME_APPLEVINE_NPC6 {
     release
 }
 
+script ISLANDGAME_APPLEVINE_NPC7 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I hate swimming during Luvdisc mating season.\p"
+        "It just reminds me that I'm all alone on this crummy island..."
+    ))
+    closemessage
+    release
+}

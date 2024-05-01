@@ -684,8 +684,8 @@
 #define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_C_FEATHER      0x280
 #define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
+#define FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE      0x282 
+#define FLAG_HIDDEN_ITEM_APPLEVINE_PP_UP            0x283
 #define FLAG_UNUSED_0x284  0x284 // Unused Flag
 #define FLAG_UNUSED_0x285  0x285 // Unused Flag
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
@@ -1255,8 +1255,8 @@
 #define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
 #define FLAG_ITEM_TIDALCOVE_DIVE_BALL                               0x4B3
 #define FLAG_ITEM_PROMENADE_PATH_PEARL                              0x4B4
-#define FLAG_ITEM_PROMENADE_SUPER_REPEL                             0x4B5
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
+#define FLAG_ITEM_PROMENADE_PATH_SUPER_REPEL                        0x4B5
+#define FLAG_ITEM_APPLEVINE_TM                                      0x4B6
 #define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
 #define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
 #define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
