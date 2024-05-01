@@ -5450,6 +5450,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_APPLEVINE_QUEST_HOUSE",
+      "name": "ISLANDGAME_APPLEVINE_QUEST_HOUSE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE_QUEST_HOUSE/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_APPLEVINE_QUEST_HOUSE/map.bin"
     }
   ]
 }
