@@ -97,7 +97,7 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachDude {
     , MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         msgbox(format("I will remember that."))
-        playmoncry(SPECIES_WAILORD, CRY_MODE_NORMAL)
+        playmoncry(SPECIES_GROUDON, CRY_MODE_NORMAL)
         waitmoncry
     }
     else {

@@ -13362,24 +13362,24 @@
                 "species": "SPECIES_MAGIKARP"
               },
               {
-                "min_level": 15,
-                "max_level": 15,
-                "species": "SPECIES_TENTACOOL"
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_LUVDISC"
               },
               {
-                "min_level": 15,
-                "max_level": 15,
-                "species": "SPECIES_SHELLDER"
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_CORPHISH"
               },
               {
-                "min_level": 15,
-                "max_level": 15,
-                "species": "SPECIES_SQUIRTLE"
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_WARTORTLE"
               },
               {
-                "min_level": 15,
-                "max_level": 15,
-                "species": "SPECIES_SQUIRTLE"
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_WARTORTLE"
               }
             ]
           }

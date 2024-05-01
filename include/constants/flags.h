@@ -682,8 +682,8 @@
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_H_FEATHER     0x27D 
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_R_FEATHER     0x27E 
 #define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F
-#define FLAG_HIDDEN_ITEM_AURORA_PATH_C_FEATHER      0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_C_FEATHER      0x280
+#define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag
 #define FLAG_UNUSED_0x284  0x284 // Unused Flag
@@ -1565,7 +1565,8 @@
 #define FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED         (SYSTEM_FLAGS + 0x9E)
 //tidalcove: squirtle gift
 #define FLAG_TIDALCOVE_SQUIRTLE_GIFT                (SYSTEM_FLAGS + 0x9F)
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
+//applevine: lemonade gift
+#define FLAG_APPLEVINE_SWEETHEART_GIFT              (SYSTEM_FLAGS + 0xA0)
 #define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
 #define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag

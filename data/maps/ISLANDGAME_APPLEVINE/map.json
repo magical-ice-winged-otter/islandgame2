@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
+      "graphics_id": "OBJ_EVENT_GFX_UNION_ROOM_NURSE",
       "x": 21,
       "y": 19,
       "elevation": 0,
@@ -30,7 +30,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_APPLEVINE_NPC1",
       "flag": "0"
     },
     {
@@ -47,7 +47,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_090",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_341",
       "x": 11,
       "y": 9,
       "elevation": 0,
@@ -60,7 +60,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_278",
+      "graphics_id": "OBJ_EVENT_GFX_WINGULL",
       "x": 14,
       "y": 5,
       "elevation": 0,
@@ -147,7 +147,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_APPLEVINE_NPC2",
       "flag": "0"
     },
     {
@@ -242,13 +242,13 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_UNION_ROOM_NURSE",
-      "x": 28,
-      "y": 26,
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_278",
+      "x": 31,
+      "y": 36,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+      "movement_range_x": 8,
+      "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -269,6 +269,30 @@
       "elevation": 0,
       "item": "ITEM_NONE",
       "flag": "FLAG_TEMP_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 34,
+      "y": 31,
+      "elevation": 0,
+      "item": "ITEM_EXP_CANDY_S",
+      "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_StoreSign"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_CitySign"
     }
   ]
 }

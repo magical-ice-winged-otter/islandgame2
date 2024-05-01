@@ -1,1 +1,67 @@
 mapscripts ISLANDGAME_APPLEVINE_MapScripts {}
+
+
+// signs
+script ISLANDGAME_APPLEVINE_StoreSign {
+    msgbox(format("LA CUCINA DOLCHE\nWe also offer Milcery makeovers!"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_CitySign {
+    msgbox(format("APPLEVINE\nWhere the trees are Applin-free!"), MSGBOX_SIGN)
+}
+
+
+
+
+
+
+
+
+// npcs
+script ISLANDGAME_APPLEVINE_NPC1 {
+    lock
+    faceplayer
+    if(!flag(FLAG_APPLEVINE_SWEETHEART_GIFT)) {
+        msgbox(format(
+            "Welcome to Lumine Island, trainer! You must be famished from your travels.\p"
+            "Here, take one of these. It is a sample from our confectionery.\p"
+            ))
+        giveitem(ITEM_SWEET_HEART)
+    }
+    else {
+        msgbox(format(
+            "We are located south of here. Come and stop by if you like our Sweet Hearts!"
+        ))   
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hey... if we catch them all... does that mean... we'll finally be free?"
+    ), MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("I see..."))
+        playmoncry(SPECIES_KYOGRE, CRY_MODE_NORMAL)
+        waitmoncry
+    }
+    else {
+        msgbox(format("Ah... I apologize, then."))
+    }
+    closemessage
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC3 {
+    lock
+    faceplayer
+    msgbox(format(
+        ""
+    ), MSGBOX_NPC)
+}
