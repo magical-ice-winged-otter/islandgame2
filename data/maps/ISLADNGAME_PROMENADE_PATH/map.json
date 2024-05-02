@@ -3,7 +3,7 @@
   "name": "ISLADNGAME_PROMENADE_PATH",
   "layout": "LAYOUT_ISLADNGAME_PROMENADE_PATH",
   "music": "MUS_DP_CYCLING",
-  "region_map_section": "MAPSEC_ROUTE_110",
+  "region_map_section": "MAPSEC_PROMENADE_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",

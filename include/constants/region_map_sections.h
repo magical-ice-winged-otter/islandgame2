@@ -214,6 +214,7 @@
 #define MAPSEC_ALTERING_CAVE                0xD2
 #define MAPSEC_NAVEL_ROCK                   0xD3
 #define MAPSEC_TRAINER_HILL                 0xD4
+// oranna
 #define MAPSEC_SS_RAIN                      0xD5
 #define MAPSEC_CHERIPORT                    0xD6
 #define MAPSEC_SOUTHERN_ORANNA_PATH         0xD7
@@ -230,7 +231,26 @@
 #define MAPSEC_MAPLEGROVE                   0xE2
 #define MAPSEC_PERSI                        0xE3
 #define MAPSEC_TIDALCOVE                    0xE4
-#define MAPSEC_NONE                         0xE5
+// lumine
+#define MAPSEC_APPLEVINE                    0xE5        
+#define MAPSEC_ROCKY_PATH                   0xE6        
+#define MAPSEC_LUMINE_CAVE                  0xE7        
+#define MAPSEC_BELLEHAVEN                   0xE8        
+#define MAPSEC_VALLEY_OF_PEACE              0xE9            
+#define MAPSEC_BELLE_CATACOMBS              0xEA            
+#define MAPSEC_PLEASANT_AVENUE              0xEB            
+#define MAPSEC_AETHERIA                     0xEC    
+#define MAPSEC_AZURE_PATH                   0xED        
+#define MAPSEC_ARBORIA                      0xEE    
+#define MAPSEC_ARBORIA_THICKET              0xEF            
+#define MAPSEC_SIERRA_PATH                  0xF0        
+#define MAPSEC_CANTALO                      0xF1    
+#define MAPSEC_LUMINE_POWER_PLANT           0xF2                
+#define MAPSEC_THERION_PATH                 0xF3        
+#define MAPSEC_MT_THERION                   0xF4        
+#define MAPSEC_PROMENADE_PATH               0xF5            
+
+#define MAPSEC_NONE                         0xF6
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

@@ -1831,6 +1831,134 @@
       "y": 16,
       "width": 1,
       "height": 1
+    },
+    {
+      "map_section": "MAPSEC_APPLEVINE",
+      "name": "Applevine",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ROCKY_PATH",
+      "name": "Rocky Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LUMINE_CAVE",
+      "name": "Lumine Cave",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_BELLEHAVEN",
+      "name": "Bellehaven",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_VALLEY_OF_PEACE",
+      "name": "Valley of Peace",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_BELLE_CATACOMBS",
+      "name": "Belle Catacombs",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_PLEASANT_AVENUE",
+      "name": "Pleasant Avenue",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_AETHERIA",
+      "name": "Aetheria",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_AZURE_PATH",
+      "name": "Azure Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ARBORIA",
+      "name": "Arboria",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ARBORIA_THICKET",
+      "name": "Arboria Thicket",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_SIERRA_PATH",
+      "name": "Sierra Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_CANTALO",
+      "name": "Cantalo",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LUMINE_POWER_PLANT",
+      "name": "Lumine Power Plant",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_THERION_PATH",
+      "name": "Therion Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_PROMENADE_PATH",
+      "name": "Promenade Path",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     }
   ]
 }
