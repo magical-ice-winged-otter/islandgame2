@@ -17,7 +17,20 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE",
+      "dest_warp_id": "6"
+    }
   ],
   "coord_events": [
 

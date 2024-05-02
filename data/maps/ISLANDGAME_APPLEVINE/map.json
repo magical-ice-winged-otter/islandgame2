@@ -29,7 +29,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_WATER_PULSE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_APPLEVINE_NPC1",
       "flag": "FLAG_TEMP_2"
     },
@@ -42,7 +42,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_APPLEVINE_TM"
     },
@@ -281,13 +281,13 @@
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
-      "dest_warp_id": "01"
+      "dest_warp_id": "1"
     },
     {
       "x": 27,
       "y": 11,
       "elevation": 0,
-      "dest_map": "",
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_QUEST_HOUSE",
       "dest_warp_id": "0"
     },
     {
