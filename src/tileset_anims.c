@@ -1075,7 +1075,7 @@ static void QueueAnimTiles_islandgame_oranna_cheriport_sandwateredge(u16 timer)
 
 static void QueueAnimTiles_islandgame_oranna_tidalcove_sandwateredge(u16 timer)
 {
-    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge);
+    //u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge);
     // todo: fix anims here later
     //AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 8 * TILE_SIZE_4BPP);
 }
