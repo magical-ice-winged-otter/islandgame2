@@ -7,23 +7,33 @@ const COINS_PRICE_500 = 500
 // Generic NPCs
 
 script ISLANDGAME_APPLEVINE_EventScript_Gambler0 {
+    lock
     msgbox(format("Wow, these things are rigged..."))
+    release
 }
 script ISLANDGAME_APPLEVINE_EventScript_Gambler1 {
+    lock
     msgbox(format("Have you won anything yet?"))
+    release
 }
 script ISLANDGAME_APPLEVINE_EventScript_Gambler2 {
+    lock
     msgbox(format("GOTTA KEEP PLAYING!!!"))
+    release
 }
 script ISLANDGAME_APPLEVINE_EventScript_Gambler3 {
+    lock
     msgbox(format("(They've fallen asleep at the machine)"))
+    release
 }
 script ISLANDGAME_APPLEVINE_EventScript_Bouncer {
+    lock
     msgbox(format(
-        "Yep, this is the VIP lounge.\n"
-        "It's so exclusive we removed the door earlier...\n"
+        "Yep, this is the VIP lounge.\p"
+        "It's so exclusive we removed the door earlier...\p"
         "Check back later. Maybe we'll bring it back."
     ))
+    release
 }
 
 // Prize Clerk
@@ -34,7 +44,9 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
     // dynmultipush("Test 2", VAR_RESULT)
     // dynmultipush("Test 3", VAR_RESULT)
     // dynmultistack(0, 0, TRUE, 6, FALSE, VAR_0x800A, DYN_MULTICHOICE_CB_SHOW_ITEM)
+    lock
     msgbox(format("We are sold out. Come back later!"))
+    release
 }
 
 // Coin Clerk

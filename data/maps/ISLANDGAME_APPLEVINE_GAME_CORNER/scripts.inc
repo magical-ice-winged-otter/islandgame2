@@ -3,32 +3,44 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_MapScripts::
 
 
 ISLANDGAME_APPLEVINE_EventScript_Gambler0::
+	lock
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler0_Text_0
+	release
 	return
 
 
 ISLANDGAME_APPLEVINE_EventScript_Gambler1::
+	lock
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler1_Text_0
+	release
 	return
 
 
 ISLANDGAME_APPLEVINE_EventScript_Gambler2::
+	lock
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler2_Text_0
+	release
 	return
 
 
 ISLANDGAME_APPLEVINE_EventScript_Gambler3::
+	lock
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler3_Text_0
+	release
 	return
 
 
 ISLANDGAME_APPLEVINE_EventScript_Bouncer::
+	lock
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Bouncer_Text_0
+	release
 	return
 
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk::
+	lock
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_0
+	release
 	return
 
 
@@ -218,10 +230,10 @@ ISLANDGAME_APPLEVINE_EventScript_Gambler3_Text_0:
 	.string "(They've fallen asleep at the machine)$"
 
 ISLANDGAME_APPLEVINE_EventScript_Bouncer_Text_0:
-	.string "Yep, this is the VIP lounge.\n"
-	.string "It's so exclusive we removed the door\l"
-	.string "earlier...\n"
-	.string "Check back later. Maybe we'll bring it\l"
+	.string "Yep, this is the VIP lounge.\p"
+	.string "It's so exclusive we removed the door\n"
+	.string "earlier...\p"
+	.string "Check back later. Maybe we'll bring it\n"
 	.string "back.$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_0:
