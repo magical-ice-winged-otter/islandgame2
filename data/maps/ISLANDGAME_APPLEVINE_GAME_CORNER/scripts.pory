@@ -1,1 +1,174 @@
 mapscripts ISLANDGAME_APPLEVINE_GAME_CORNER_MapScripts {}
+
+const SLOT_MACHINE_VAR = VAR_0x8004
+const COINS_PRICE_50 = 50
+const COINS_PRICE_500 = 500
+
+// Generic NPCs
+
+script ISLANDGAME_APPLEVINE_EventScript_Gambler0 {
+    msgbox(format("Wow, these things are rigged..."))
+}
+script ISLANDGAME_APPLEVINE_EventScript_Gambler1 {
+    msgbox(format("Have you won anything yet?"))
+}
+script ISLANDGAME_APPLEVINE_EventScript_Gambler2 {
+    msgbox(format("GOTTA KEEP PLAYING!!!"))
+}
+script ISLANDGAME_APPLEVINE_EventScript_Gambler3 {
+    msgbox(format("(They've fallen asleep at the machine)"))
+}
+script ISLANDGAME_APPLEVINE_EventScript_Bouncer {
+    msgbox(format(
+        "Yep, this is the VIP lounge.\n"
+        "It's so exclusive we removed the door earlier...\n"
+        "Check back later. Maybe we'll bring it back."
+    ))
+}
+
+// Prize Clerk
+
+script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
+    // todo: cool dynamic multi choice for prizes...
+    // dynmultipush("Test 1", VAR_RESULT)
+    // dynmultipush("Test 2", VAR_RESULT)
+    // dynmultipush("Test 3", VAR_RESULT)
+    // dynmultistack(0, 0, TRUE, 6, FALSE, VAR_0x800A, DYN_MULTICHOICE_CB_SHOW_ITEM)
+    msgbox(format("We are sold out. Come back later!"))
+}
+
+// Coin Clerk
+
+text Applevine_NoRoomForCoins {format("You don't have room for coins!")} 
+text Applevine_NoMoney {format("You dont' have enough money!")}
+text Applevine_HereAreCoins {format("Here are your coins.")}
+
+script ISLANDGAME_APPLEVINE_AddCoins_50 {
+    checkcoins(VAR_TEMP_1)
+    if (var(VAR_TEMP_1) >= MAX_COINS + 1 - 50) {
+        msgbox(Applevine_NoRoomForCoins)
+        end
+    }
+    checkmoney(COINS_PRICE_50)
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(Applevine_NoMoney)
+        end
+    }
+    addcoins(50)
+    removemoney(COINS_PRICE_50)
+    updatemoneybox
+    updatecoinsbox(1, 6)
+    playse(SE_SHOP)
+    msgbox(Applevine_HereAreCoins)
+}
+script ISLANDGAME_APPLEVINE_AddCoins_500 {
+    checkcoins(VAR_TEMP_1)
+    if (var(VAR_TEMP_1) >= MAX_COINS + 1 - 500) {
+        msgbox(Applevine_NoRoomForCoins)
+        end
+    }
+    checkmoney(COINS_PRICE_500)
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(Applevine_NoMoney)
+        end
+    }
+    addcoins(500)
+    removemoney(COINS_PRICE_500)
+    updatemoneybox
+    updatecoinsbox(1, 6)
+    playse(SE_SHOP)
+    msgbox(Applevine_HereAreCoins)
+}
+
+script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
+    lock
+    faceplayer
+    msgbox(format("Welcome to Applevine Game Corner!"))
+    checkitem(ITEM_COIN_CASE)
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(format("Hey, you need a coin case!"))
+    }
+    else {
+        msgbox(format("Let's get you some coins!"))
+        showmoneybox(0, 0)
+        showcoinsbox(1, 6)
+        multichoicedefault(15, 0, MULTI_GAME_CORNER_COINS, 0, FALSE)
+        switch(var(VAR_RESULT)) {
+            case 0:
+                msgbox(format("Here you go!"))
+                call(ISLANDGAME_APPLEVINE_AddCoins_50)
+            case 1:
+                msgbox(format("Here you go!"))
+                call(ISLANDGAME_APPLEVINE_AddCoins_500)
+            default:
+                msgbox(format("Oh. you don't need coins."))
+        }
+        hidemoneybox
+        hidecoinsbox(1, 6)
+    }
+    release
+}
+
+// Slot Machines
+
+script ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General {
+    lockall
+    checkitem(ITEM_COIN_CASE)
+    if (var(VAR_RESULT) == FALSE) {
+        msgbox(format("You can't play if you don't have a COIN CASE."))
+    }
+    else {
+        specialvar(VAR_RESULT, GetSlotMachineId)
+        playslotmachine(VAR_RESULT)
+    }
+    releaseall
+}
+
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine0 {
+    setvar(SLOT_MACHINE_VAR, 0)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine1 {
+    setvar(SLOT_MACHINE_VAR, 1)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine2 {
+    setvar(SLOT_MACHINE_VAR, 2)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine3 {
+    setvar(SLOT_MACHINE_VAR, 3)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine4 {
+    setvar(SLOT_MACHINE_VAR, 4)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine5 {
+    setvar(SLOT_MACHINE_VAR, 5)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine6 {
+    setvar(SLOT_MACHINE_VAR, 6)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine7 {
+    setvar(SLOT_MACHINE_VAR, 7)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine8 {
+    setvar(SLOT_MACHINE_VAR, 8)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine9 {
+    setvar(SLOT_MACHINE_VAR, 9)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine10 {
+    setvar(SLOT_MACHINE_VAR, 10)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine11 {
+    setvar(SLOT_MACHINE_VAR, 11)
+    call(ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General)
+}

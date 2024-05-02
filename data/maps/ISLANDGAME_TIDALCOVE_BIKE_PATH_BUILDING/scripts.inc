@@ -31,12 +31,12 @@ ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_1:
 ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_2:
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	msgbox ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_Text_0, MSGBOX_NPC
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_PushPlayerFromCounter
+	applymovement OBJ_EVENT_ID_PLAYER, Tidalcove_Movement_PushPlayerFromCounter
 	waitmovement 0
 	goto ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck_1
 
 
-Movement_PushPlayerFromCounter:
+Tidalcove_Movement_PushPlayerFromCounter:
 	walk_left
 	step_end
 
