@@ -1679,8 +1679,9 @@
 	@ LocalId defaults to 0xDD to not take any of the reserved slots for player, dynamic gfx id, and camera.
 	@ You can specify localid if you wish, but if you choose one that exists already
 	@ bugs will appear. z should usually be 3, localid will be 0xF0 + the dynamic object id (e.g. dynamic object slot 2 localid would be 0xF1)
-	.macro adddynamicobject mapgroup:req, mapnum:req, gfxid:req, xposition:req, yposition:req, zposition:req, movementType:req,scriptptr:req
+	.macro adddynamicobject id:req, mapgroup:req, mapnum:req, gfxid:req, xposition:req, yposition:req, zposition:req, movementType:req,scriptptr:req
 	.byte 0xca
+	.byte \id
 	.byte \mapgroup
 	.byte \mapnum
 	.2byte \gfxid

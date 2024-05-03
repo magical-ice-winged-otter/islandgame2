@@ -560,7 +560,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
             break
         default:
             destroyfollower(TRUE)
-            removedynamicobject(1, TRUE)
             goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release
@@ -806,18 +805,20 @@ text MareepHelp_Text {
 
 script ISLANDGAME_MINTY_MEADOWS_2_MarkTop_Audrey {
     destroyfollower(FALSE)
-    removedynamicobject(1, TRUE)
-    adddynamicobject(MAP_GROUP(ISLANDGAME_MINTY_MEADOWS_2), MAP_NUM(ISLANDGAME_MINTY_MEADOWS_2), AUDREY_GFX, PAUSED_TOP_X, PAUSED_TOP_Y, 3, MOVEMENT_TYPE_FACE_DOWN, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-    removeobject(DYNAMIC_OBJECT_1)
+    removedynamicobject(1)
+    removedynamicobject(0)
+    adddynamicobject(1, MAP_GROUP(ISLANDGAME_MINTY_MEADOWS_2), MAP_NUM(ISLANDGAME_MINTY_MEADOWS_2), AUDREY_GFX, PAUSED_TOP_X, PAUSED_TOP_Y, 3, MOVEMENT_TYPE_FACE_DOWN, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+    
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST)
     return
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_MarkBottom_Audrey {
     destroyfollower(FALSE)
-    removedynamicobject(1, TRUE)
-    adddynamicobject(MAP_GROUP(ISLANDGAME_MINTY_MEADOWS_2), MAP_NUM(ISLANDGAME_MINTY_MEADOWS_2), AUDREY_GFX, PAUSED_BOTTOM_X, PAUSED_BOTTOM_Y, 3, MOVEMENT_TYPE_FACE_UP, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-    removeobject(DYNAMIC_OBJECT_1)
+    removedynamicobject(1)
+    removedynamicobject(0)
+    adddynamicobject(0, MAP_GROUP(ISLANDGAME_MINTY_MEADOWS_2), MAP_NUM(ISLANDGAME_MINTY_MEADOWS_2), AUDREY_GFX, PAUSED_BOTTOM_X, PAUSED_BOTTOM_Y, 3, MOVEMENT_TYPE_FACE_UP, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+    
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST)
     return
 }
