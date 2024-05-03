@@ -126,3 +126,38 @@ script ISLANDGAME_APPLEVINE_NPC7 {
     closemessage
     release
 }
+
+script ISLANDGAME_APPLEVINE_NPC8 {
+    lock
+    faceplayer
+    msgbox(format(
+        "The Island Guardian of Lumine is none other than Zapdos!\p"
+        "When it flaps its wings, it can generate enough electricity to power an entire island!\p"
+        "But it mostly stays cooped up in its nest atop Mount Therion.\p"
+        "Some day, I wanna see it in person!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC9 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Did you know that in Galar and Paldea, their trees can have wild Pokemon hiding in apples?\p"
+        "That's pretty wild, man. Imagine you're apple picking, you snag one of 'em, bite into it, and a wild Pokémon pops out!"
+        "I'd be traumatized for life bro. Good thing we don't have 'em over here."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC10 {
+    lock
+    faceplayer
+    msgbox(format(
+        ""
+    ))
+    closemessage
+    release
+}
