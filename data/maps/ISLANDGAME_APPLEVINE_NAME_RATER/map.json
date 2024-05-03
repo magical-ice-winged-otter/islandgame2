@@ -3,21 +3,34 @@
   "name": "ISLANDGAME_APPLEVINE_NAME_RATER",
   "layout": "LAYOUT_ISLANDGAME_APPLEVINE_NAME_RATER",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_APPLEVINE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
-  "show_map_name": true,
+  "allow_running": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
 
   ],
   "warp_events": [
-
+    {
+      "x": 11,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE",
+      "dest_warp_id": "4"
+    }
   ],
   "coord_events": [
 

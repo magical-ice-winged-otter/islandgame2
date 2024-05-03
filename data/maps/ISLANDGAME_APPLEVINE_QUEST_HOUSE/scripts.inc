@@ -1,0 +1,3 @@
+ISLANDGAME_APPLEVINE_QUEST_HOUSE_MapScripts::
+	.byte 0
+

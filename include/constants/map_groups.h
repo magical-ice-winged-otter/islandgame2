@@ -112,6 +112,7 @@
 #define MAP_ISLANDGAME_APPLEVINE_COUCH_POTATO       (22 | (1 << 8))
 #define MAP_ISLANDGAME_APPLEVINE_RESTAURANT         (23 | (1 << 8))
 #define MAP_ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING (24 | (1 << 8))
+#define MAP_ISLANDGAME_APPLEVINE_QUEST_HOUSE        (25 | (1 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (2 << 8))

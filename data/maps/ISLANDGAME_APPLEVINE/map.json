@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_APPLEVINE",
   "layout": "LAYOUT_ISLANDGAME_APPLEVINE",
   "music": "MUS_HG_VERMILION",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_APPLEVINE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",
@@ -29,7 +29,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_WATER_PULSE",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_APPLEVINE_NPC1",
       "flag": "FLAG_TEMP_2"
     },
@@ -42,7 +42,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_APPLEVINE_TM"
     },
@@ -269,7 +269,83 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 22,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 27,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_QUEST_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_RESTAURANT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 41,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_NAME_RATER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 47,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_COUCH_POTATO",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_PKMNMART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 42,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_SIERRA_PATH",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 50,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_PKMNCENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 51,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE_GAME_CORNER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 56,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_ROCKY_PATH",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 

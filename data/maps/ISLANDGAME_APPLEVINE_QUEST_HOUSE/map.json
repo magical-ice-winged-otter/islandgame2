@@ -1,7 +1,7 @@
 {
-  "id": "MAP_ISLANDGAME_APPLEVINE_RESTAURANT",
-  "name": "ISLANDGAME_APPLEVINE_RESTAURANT",
-  "layout": "LAYOUT_ISLANDGAME_APPLEVINE_RESTAURANT",
+  "id": "MAP_ISLANDGAME_APPLEVINE_QUEST_HOUSE",
+  "name": "ISLANDGAME_APPLEVINE_QUEST_HOUSE",
+  "layout": "LAYOUT_ISLANDGAME_APPLEVINE_QUEST_HOUSE",
   "music": "MUS_ABANDONED_SHIP",
   "region_map_section": "MAPSEC_APPLEVINE",
   "requires_flash": false,
@@ -22,14 +22,14 @@
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_APPLEVINE",
-      "dest_warp_id": "3"
+      "dest_warp_id": "2"
     },
     {
       "x": 9,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_APPLEVINE",
-      "dest_warp_id": "3"
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

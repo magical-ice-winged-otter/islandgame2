@@ -52,6 +52,7 @@ typedef struct Location
 #define CENTRAL_ORANNA 11
 #define TIDALCOVE 12
 #define ROSEVALE 13
+#define APPLEVINE 14
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -70,6 +71,7 @@ static const Location LOCATION_DATA[] = {
     [NORTHERN_ORANNA] = SET_LOC(ISLANDGAME_NORTHERN_ORANNA_PATH, 33, 19),
     [CENTRAL_ORANNA] = SET_LOC(ISLANDGAME_CENTRAL_ORANNA_PATH_1, 18, 1),
     [ROSEVALE] = SET_LOC(ISLANDGAME_ROSEVALE, 19, 13),
+    [APPLEVINE] = SET_LOC(ISLANDGAME_APPLEVINE, 26, 20),
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
@@ -86,6 +88,7 @@ static const u8 northernOrannaName[] = _("NorthernOranna");
 static const u8 centralOrannaName[] = _("CentralOranna");
 static const u8 tidalcoveName[] = _("Tidalcove");
 static const u8 rosevaleName[] = _("Rosevale");
+static const u8 applevineName[] = _("Applevine");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
@@ -103,6 +106,7 @@ static const u8 *const LOCATION_NAMES[] = {
     [CENTRAL_ORANNA] = centralOrannaName,
     [TIDALCOVE] = tidalcoveName,
     [ROSEVALE] = rosevaleName,
+    [APPLEVINE] = applevineName,
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 

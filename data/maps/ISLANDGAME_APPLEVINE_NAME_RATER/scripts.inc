@@ -1,0 +1,3 @@
+ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts::
+	.byte 0
+
