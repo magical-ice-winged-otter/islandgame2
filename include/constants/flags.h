@@ -1565,9 +1565,10 @@
 #define FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED         (SYSTEM_FLAGS + 0x9E)
 //tidalcove: squirtle gift
 #define FLAG_TIDALCOVE_SQUIRTLE_GIFT                (SYSTEM_FLAGS + 0x9F)
-//applevine: lemonade gift
+//applevine: sweet heart gift
 #define FLAG_APPLEVINE_SWEETHEART_GIFT              (SYSTEM_FLAGS + 0xA0)
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
+//applevine: coco itemfinder gift
+#define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
 #define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag

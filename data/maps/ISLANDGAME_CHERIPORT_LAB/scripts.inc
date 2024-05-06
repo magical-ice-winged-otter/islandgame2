@@ -6,9 +6,10 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk::
 	lock
 	faceplayer
 	goto_if_unset FLAG_PROF_GAVE_EEVEE, ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2
-	goto_if_unset FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_3
-	msgbox ProfTalk_CheckPokedex
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1:
+	goto_if_unset FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_5
+	msgbox ProfTalk_CheckPokedex
+ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_4:
 	release
 	return
 
@@ -16,15 +17,15 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2:
 	msgbox ProfTalk_First_Text
 	setflag FLAG_PROF_GAVE_EEVEE
 	setflag FLAG_SYS_POKEMON_GET
-	givemon SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, , , , , , , , 31, 31, 31, 31, 31, 31, MOVE_TACKLE, MOVE_MUD_SLAP, MOVE_SAND_ATTACK, MOVE_TAIL_WHIP, FALSE
+	givemon SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, , , , , , , , , , , , , , MOVE_TACKLE, MOVE_MUD_SLAP, MOVE_SAND_ATTACK, MOVE_TAIL_WHIP, FALSE
 	playfanfare MUS_OBTAIN_ITEM
 	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
 	msgbox ReceivedEevee_Text
 	waitfanfare
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_8
-ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_7:
+	goto_if_ne ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_9
+ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_8:
 	msgbox ProfTalk_Second_Text
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Prof_Recieved_Pokedex_Text
@@ -39,14 +40,14 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_7:
 	setflag FLAG_BADGE01_GET
 	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1
 
-ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_3:
+ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_5:
 	msgbox ProfTalk_AudreyNotDefeated
-	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1
+	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_4
 
-ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_8:
+ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_9:
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
-	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_7
+	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_8
 
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist1Talk::
@@ -74,7 +75,6 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk::
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_CocoTalk::
 	lock
-	faceplayer
 	msgbox CocoTalk_Text
 	release
 	return
@@ -178,14 +178,8 @@ Scientist1Talk_Text::
 	.string "papers, and programming software.$"
 
 CocoTalk_Text::
-	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! Welcome to the\n"
-	.string "Maryan Isles!\p"
-	.string "{COLOR DARK_GRAY}My name is Coco. I'm a close friend of\n"
-	.string "Professor Palm's and the creator of\l"
-	.string "Marya's Pokémon Storage System!\p"
-	.string "{COLOR DARK_GRAY}I hope you find it easy and convenient\n"
-	.string "to use. Let me know if you have any\l"
-	.string "problems with it!$"
+	.string "{COLOR RED}(She seems preoccupied. I should leave\n"
+	.string "her be.)$"
 
 ReceivedEevee_Text::
 	.string "{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!$"

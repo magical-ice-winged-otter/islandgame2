@@ -1,5 +1,6 @@
 const FLAG_DAYTIME = FLAG_TEMP_2
 const FLAG_NIGHTTIME = FLAG_TEMP_3
+const COCO_OW_ID = 19
 
 mapscripts ISLANDGAME_APPLEVINE_MapScripts {
         MAP_SCRIPT_ON_TRANSITION {
@@ -10,6 +11,10 @@ mapscripts ISLANDGAME_APPLEVINE_MapScripts {
         }
         else {
             setflag(FLAG_NIGHTTIME) // controls nighttime npcs
+        }
+
+        if (flag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)) {
+            setvar(VAR_TEMP_1, 1)
         }
     }
 }
@@ -27,8 +32,146 @@ script ISLANDGAME_APPLEVINE_CitySign {
 
 
 
+// coco event; if you talk to her directly
+script ISLANDGAME_APPLEVINE_CocoInteract {
+    lock
+    faceplayer
+    if(!flag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)) {
+        msgbox(format("{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing you here!"))
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk1)
+        applymovement(COCO_OW_ID, Common_Movement_FaceAwayPlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk2)
+        giveitem(ITEM_ITEMFINDER)
+        setflag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk3)
+        setvar(VAR_TEMP_1, 1)
+        closemessage
+    }
+    else {
+        msgbox(format(
+            "{COLOR GREEN}Coco: {COLOR DARK_GRAY}It'll be worth checking your surroundings for hidden goodies!"
+        ))
+    }
+    release
+}
 
+// coco event; if you try to skip her
+script ISLANDGAME_APPLEVINE_CocoTrigger1 {
+        lock
+        applymovement(COCO_OW_ID, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(format("{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing you here!"))
+        closemessage
+        applymovement(COCO_OW_ID, CocoWalkOver1)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk1)
+        applymovement(COCO_OW_ID, Common_Movement_FaceAwayPlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk2)
+        giveitem(ITEM_ITEMFINDER)
+        setflag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk3)
+        msgbox(format("Toodles!"))
+        closemessage
+        applymovement(COCO_OW_ID, CocoLeave)
+        waitmovement(0)
+        removeobject(COCO_OW_ID)
+        release
+        setvar(VAR_TEMP_1, 1)
+}
+script ISLANDGAME_APPLEVINE_CocoTrigger2 {
+        lock
+        applymovement(COCO_OW_ID, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(format("{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing you here!"))
+        closemessage
+        applymovement(COCO_OW_ID, CocoWalkOver2)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk1)
+        applymovement(COCO_OW_ID, Common_Movement_FaceAwayPlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk2)
+        giveitem(ITEM_ITEMFINDER)
+        setflag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk3)
+        msgbox(format("Toodles!"))
+        closemessage
+        applymovement(COCO_OW_ID, CocoLeave)
+        waitmovement(0)
+        removeobject(COCO_OW_ID)
+        release
+        setvar(VAR_TEMP_1, 1)
+}
 
+movement CocoWalkOver1 {
+    walk_right * 3
+}
+
+movement CocoWalkOver2 {
+    walk_up
+    walk_right * 3
+}
+
+movement CocoLeave {
+    walk_left * 4
+    walk_up * 7
+}
+
+text ISLANDGAME_APPLEVINE_CocoTalk1 {
+    format(
+        "My name is Coco. I'm a friend of Professor Palm's, and the creator of Marya's Pokémon Storage System!\p" 
+        "Hopefully it's been convenient and helpful to you in your journey. Let me know if you ever have any issues!\p"
+        "I actually wanted to ask a favor of you, if that's alright."
+    )
+}
+
+text ISLANDGAME_APPLEVINE_CocoTalk2 {
+    format(
+        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}This here is a prototype for a new dowsing machine I'm developing, and I figured you'd be the perfect one to help test it for me, since you're roaming the isles anyways!"
+    )
+}
+
+// reminder to update this if we end up reworking the itemfinder
+text ISLANDGAME_APPLEVINE_CocoTalk3 {
+    format(
+        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}It's super easy to use! All you have to do is turn it on, and it'll tell you if there are any hidden items nearby.\p"
+        "It'll even tell you the direction and closeness of the item!\p"
+        "Just like my storage system, I've designed it with the intention to be as user-friendly as possible! Hee-hee.\p"
+        "But that's enough blabbering from me. You've got a Pokédex to fill, and a league to qualify for, as I've heard!\p"
+        "If you ever have the time to chat though, you can find me at my house here in Applevine."
+    )
+}
 
 
 // npcs
@@ -38,9 +181,10 @@ script ISLANDGAME_APPLEVINE_NPC1 {
     if(!flag(FLAG_APPLEVINE_SWEETHEART_GIFT)) {
         msgbox(format(
             "Welcome to Lumine Island, trainer! You must be famished from your travels.\p"
-            "Here, take one of these. It is a sample from our confectionery.\p"
+            "Here, take one of these. It is a sample from our confectionery."
             ))
         giveitem(ITEM_SWEET_HEART)
+        setflag(FLAG_APPLEVINE_SWEETHEART_GIFT)
     }
     else {
         msgbox(format(
@@ -79,7 +223,7 @@ script ISLANDGAME_APPLEVINE_NPC3 {
         "I'm trying to teach my Zigzagoon how to surf on the water.\p"
         "So far, it hasn't been very successful..."
     ), MSGBOX_NPC)
-    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    applymovement(8, Common_Movement_FaceOriginalDirection)
     closemessage
     release
 }
@@ -91,7 +235,7 @@ script ISLANDGAME_APPLEVINE_NPC4 {
     msgbox(format(
         "Goon... {COLOR BLUE}(The ocean is just a really big bath tub, and I hate baths.)"
     ))
-    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    applymovement(9, Common_Movement_FaceOriginalDirection)
     closemessage
     release
 }
@@ -102,7 +246,7 @@ script ISLANDGAME_APPLEVINE_NPC5 {
     msgbox(format(
         "I love my big Marill beach ball!"
     ), MSGBOX_NPC)
-    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    applymovement(7, Common_Movement_FaceOriginalDirection)
     closemessage
     release
 }
@@ -121,7 +265,8 @@ script ISLANDGAME_APPLEVINE_NPC7 {
     faceplayer
     msgbox(format(
         "I hate swimming during Luvdisc mating season.\p"
-        "It just reminds me that I'm all alone on this crummy island..."
+        "It just reminds me that I'm all alone on this crummy island...\p"
+        "I'll always have you though, my signed gravure photo of Ruka."
     ))
     closemessage
     release
@@ -132,9 +277,8 @@ script ISLANDGAME_APPLEVINE_NPC8 {
     faceplayer
     msgbox(format(
         "The Island Guardian of Lumine is none other than Zapdos!\p"
-        "When it flaps its wings, it can generate enough electricity to power an entire island!\p"
+        "When it flaps its wings, it can generate enough electricity to power all of Marya!\p"
         "But it mostly stays cooped up in its nest atop Mount Therion.\p"
-        "Some day, I wanna see it in person!"
     ))
     closemessage
     release
@@ -145,7 +289,7 @@ script ISLANDGAME_APPLEVINE_NPC9 {
     faceplayer
     msgbox(format(
         "Did you know that in Galar and Paldea, their trees can have wild Pokemon hiding in apples?\p"
-        "That's pretty wild, man. Imagine you're apple picking, you snag one of 'em, bite into it, and a wild Pokémon pops out!"
+        "That's pretty wild, man. Imagine you're apple picking, you snag one of 'em, bite into it, and a wild Pokémon pops out!\p"
         "I'd be traumatized for life bro. Good thing we don't have 'em over here."
     ))
     closemessage
