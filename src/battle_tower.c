@@ -23,6 +23,7 @@
 #include "field_message_box.h"
 #include "tv.h"
 #include "battle_factory.h"
+#include "level_scale.h"
 #include "constants/abilities.h"
 #include "constants/apprentice.h"
 #include "constants/battle_dome.h"
@@ -37,6 +38,7 @@
 #include "constants/frontier_util.h"
 #include "constants/items.h"
 #include "constants/trainers.h"
+#include "constants/level_scale.h"
 #include "constants/event_objects.h"
 #include "constants/moves.h"
 
@@ -3381,25 +3383,6 @@ u8 GetFrontierEnemyMonLevel(u8 lvlMode)
     }
 
     return level;
-}
-
-s32 GetHighestLevelInPlayerParty(void)
-{
-    s32 highestLevel = 0;
-    s32 i;
-
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL)
-            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_EGG)
-        {
-            s32 level = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL, NULL);
-            if (level > highestLevel)
-                highestLevel = level;
-        }
-    }
-
-    return highestLevel;
 }
 
 // Frontier Trainer parties are roughly scaled in difficulty with higher trainer IDs, so scale IVs as well

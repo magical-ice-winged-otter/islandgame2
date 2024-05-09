@@ -37,6 +37,7 @@
 #include "constants/frontier_util.h"
 #include "constants/moves.h"
 #include "constants/trainers.h"
+#include "constants/level_scale.h"
 #include "constants/abilities.h"
 #include "constants/songs.h"
 #include "constants/battle_frontier.h"

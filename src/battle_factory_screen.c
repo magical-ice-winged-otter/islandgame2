@@ -29,6 +29,7 @@
 #include "graphics.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_tent.h"
+#include "constants/level_scale.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
 

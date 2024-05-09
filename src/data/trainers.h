@@ -22,6 +22,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_SOrannaPathTrainer1),
+        .levelMode = LVL_SCALE_MODE_PREFER_PLAYER
     },
 
     [TRAINER_S_ORANNA_PATH_TRAINER_2] =
@@ -34,6 +35,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_SOrannaPathTrainer2),
+        .levelMode = LVL_SCALE_MODE_PREFER_PLAYER
     },
 
     [TRAINER_S_ORANNA_PATH_TRAINER_3] =
@@ -46,6 +48,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_SOrannaPathTrainer3),
+        .levelMode = LVL_SCALE_MODE_PREFER_PLAYER
     },
 
     [TRAINER_S_ORANNA_PATH_TRAINER_4] =
@@ -58,6 +61,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_SOrannaPathTrainer4),
+        .levelMode = LVL_SCALE_MODE_PREFER_PLAYER
     },
 
 

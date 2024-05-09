@@ -24,6 +24,7 @@
 #include "text.h"
 #include "constants/battle_frontier.h"
 #include "constants/items.h"
+#include "constants/level_scale.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/moves.h"

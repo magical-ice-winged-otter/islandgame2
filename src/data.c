@@ -6,6 +6,7 @@
 #include "battle_transition.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
+#include "constants/level_scale.h"
 #include "constants/moves.h"
 #include "constants/trainers.h"
 #include "constants/battle_ai.h"

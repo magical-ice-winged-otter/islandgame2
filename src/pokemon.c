@@ -51,6 +51,7 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/layouts.h"
+#include "constants/level_scale.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/species.h"

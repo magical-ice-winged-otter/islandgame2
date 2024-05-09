@@ -87,7 +87,8 @@ struct Trainer
     /*0x13*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
     /*0x1E*/ bool8 doubleBattle:1;
              bool8 mugshotEnabled:1;
-             u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
+             u8 startingStatus:2;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
+             u8 levelMode:4; // see include/level_scale.h
     /*0x1F*/ u8 mugshotColor;
     /*0x20*/ u8 partySize;
 };
