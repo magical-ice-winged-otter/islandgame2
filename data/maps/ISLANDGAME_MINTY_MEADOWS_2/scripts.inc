@@ -56,6 +56,8 @@ ISLANDGAME_MINTY_MEADOWS_2_StartedQuest::
 
 ISLANDGAME_MINTY_MEADOWS_2_PausedQuest::
 	setvar VAR_TEMP_4, 1
+	setobjectxyperm 11, 34, 10
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_DOWN
 	setobjectxyperm 12, 10, 9
 	setobjectxyperm 6, 61, 13
 	setobjectxyperm 7, 61, 15
@@ -297,6 +299,17 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalLookAround:
 	delay_16
 	step_end
 
+ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet::
+	fadescreen FADE_TO_BLACK
+	setvar VAR_0x8000, 34
+	setvar VAR_0x8001, 11
+	callnative TeleportCamera
+	addobject OBJ_EVENT_ID_PLAYER
+	addobject 11
+	fadescreen FADE_FROM_BLACK
+	return
+
+
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	applymovement 11, ISLANDGAME_MINTY_MEADOWS_2_RivalLookAround
 	waitmovement 0
@@ -368,7 +381,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	waitmovement 0
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 	setfollower 11, 100, 0
-	setflag FLAG_TEMP_10
+	call ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet
 	setvar VAR_MINTY_MEADOWS_STATE, 1
 	call ISLANDGAME_MINTY_MEADOWS_2_StartedQuest
 	release
@@ -626,8 +639,8 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setvar VAR_0x8001, 8
 	callnative TeleportCamera
 	addobject OBJ_EVENT_ID_PLAYER
-	addobject 12
 	addobject 11
+	addobject 12
 	addobject 6
 	applymovement 12, Common_Movement_FaceDown
 	waitmovement 12
@@ -737,42 +750,26 @@ ISLANDGAME_MINTY_MEADOWS_2_Mareep::
 	return
 
 
-ISLANDGAME_MINTY_MEADOWS_2_MarkTop_Audrey::
-	destroyfollower FALSE
-	removedynamicobject 1
-	removedynamicobject 0
-	adddynamicobject 1, MAP_GROUP ( ISLANDGAME_MINTY_MEADOWS_2 ), MAP_NUM ( ISLANDGAME_MINTY_MEADOWS_2 ), OBJ_EVENT_GFX_LEAF, 12, 10, 3, MOVEMENT_TYPE_FACE_DOWN, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
+ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey::
 	setvar VAR_MINTY_MEADOWS_STATE, 2
-	return
-
-
-ISLANDGAME_MINTY_MEADOWS_2_MarkBottom_Audrey::
 	destroyfollower FALSE
-	removedynamicobject 1
-	removedynamicobject 0
-	adddynamicobject 0, MAP_GROUP ( ISLANDGAME_MINTY_MEADOWS_2 ), MAP_NUM ( ISLANDGAME_MINTY_MEADOWS_2 ), OBJ_EVENT_GFX_LEAF, 18, 28, 3, MOVEMENT_TYPE_FACE_UP, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
-	setvar VAR_MINTY_MEADOWS_STATE, 2
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack::
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0
-	goto_if_set FLAG_TEMP_10, ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_2
-	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
-	setfollower DYNAMIC_OBJECT_1, 100, 0
-ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_1:
-	setvar VAR_MINTY_MEADOWS_STATE, 1
-	return
-
-ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_2:
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 	setfollower 11, 100, 0
-	goto ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_1
+	setvar VAR_MINTY_MEADOWS_STATE, 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	waitmovement OBJ_EVENT_ID_PLAYER
+	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage::
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_0
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_1
+	message ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_1
+	waitmessage
 	dynmultipush ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_2, YES
 	dynmultipush ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_3, NO
 	dynmultistack 0, 0, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE
@@ -813,57 +810,18 @@ ISLANDGAME_MINTY_MEADOWS_2_CantLeave_4:
 	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave_1
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_6:
-	call ISLANDGAME_MINTY_MEADOWS_2_MarkBottom_Audrey
-	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown
+	call ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 	waitmovement OBJ_EVENT_ID_PLAYER
+	closemessage
 	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave_1
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_7:
-	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 	waitmovement OBJ_EVENT_ID_PLAYER
+	closemessage
 	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave_1
 
-
-ISLANDGAME_MINTY_MEADOWS_2_WalkUp:
-	walk_up
-	step_end
-
-ISLANDGAME_MINTY_MEADOWS_2_CantLeave2::
-	lock
-	switch VAR_MINTY_MEADOWS_STATE
-	case 2, ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_3
-	case 1, ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_4
-ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_1:
-	release
-	return
-
-ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_3:
-	call ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack
-	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_1
-
-ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_4:
-	facefollower
-	call ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage
-	switch VAR_RESULT
-	case YES, ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_6
-	case NO, ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_7
-	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_1
-
-ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_6:
-	call ISLANDGAME_MINTY_MEADOWS_2_MarkTop_Audrey
-	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp
-	waitmovement OBJ_EVENT_ID_PLAYER
-	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_1
-
-ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_7:
-	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown
-	waitmovement OBJ_EVENT_ID_PLAYER
-	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave2_1
-
-
-ISLANDGAME_MINTY_MEADOWS_2_WalkDown:
-	walk_down
-	step_end
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3::
 	trainerbattle_single TRAINER_MINTY_MEADOWS_11, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss
