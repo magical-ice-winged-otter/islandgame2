@@ -86,8 +86,9 @@ ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact::
 	switch VAR_MINTY_MEADOWS_STATE
 	case 0, ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_2
 	case 1, ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_2
-	case 3, ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_3
-	case 4, ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_4
+	case 2, ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_3
+	case 3, ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_4
+	case 4, ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_5
 	return
 
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_2:
@@ -100,6 +101,10 @@ ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_3:
 
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_4:
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_2, MSGBOX_NPC
+	return
+
+ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_5:
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_3, MSGBOX_NPC
 	return
 
 
@@ -306,6 +311,9 @@ ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet::
 	callnative TeleportCamera
 	addobject OBJ_EVENT_ID_PLAYER
 	addobject 11
+	setobjectxy OBJ_EVENT_ID_PLAYER, 34, 11
+	setobjectxyperm 11, 34, 10
+	setobjectxy 11, 34, 11
 	fadescreen FADE_FROM_BLACK
 	return
 
@@ -757,12 +765,18 @@ ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey::
 
 
 ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack::
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0
+	applymovement 11, Common_Movement_WalkInPlaceLeft
+	waitmovement 11
+	playse SE_PIN
+	applymovement 11, Common_Movement_ExclamationMark
+	message ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0
+	waitbuttonpress
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 	setfollower 11, 100, 0
 	setvar VAR_MINTY_MEADOWS_STATE, 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 	waitmovement OBJ_EVENT_ID_PLAYER
+	closemessage
 	return
 
 
@@ -773,19 +787,7 @@ ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage::
 	dynmultipush ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_2, YES
 	dynmultipush ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_3, NO
 	dynmultistack 0, 0, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE
-	switch VAR_RESULT
-	case YES, ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_3
-	case NO, ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_4
-ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_1:
 	return
-
-ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_3:
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_4
-	goto ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_1
-
-ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_4:
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_5
-	goto ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_1
 
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave::
@@ -812,11 +814,21 @@ ISLANDGAME_MINTY_MEADOWS_2_CantLeave_4:
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_6:
 	call ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+	applymovement 11, Common_Movement_WalkRight
+	waitmovement 11
 	waitmovement OBJ_EVENT_ID_PLAYER
+	message ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0
+	applymovement 11, Common_Movement_FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement OBJ_EVENT_ID_PLAYER
+	waitmovement 11
+	waitmessage
+	waitbuttonpress
 	closemessage
 	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave_1
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_7:
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_1
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 	waitmovement OBJ_EVENT_ID_PLAYER
 	closemessage
@@ -864,11 +876,14 @@ ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_0:
 	.string "forest to the east...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_1:
+	.string "I hope you can find my lost Mareep!$"
+
+ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_2:
 	.string "What? A wild Mightyena was chasing my\n"
 	.string "precious Mareep?\p"
 	.string "You have to save him, please!$"
 
-ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_2:
+ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact_Text_3:
 	.string "Thank you so much for saving my\n"
 	.string "precious Mareep!$"
 
@@ -1094,10 +1109,10 @@ ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_2:
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_3:
 	.string "No$"
 
-ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_4:
+ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Alright, I will be waiting.$"
 
-ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_5:
+ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_1:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Great!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_0:

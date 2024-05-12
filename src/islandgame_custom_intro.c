@@ -40,7 +40,7 @@ void IslandGameCustomStartup()
         u16 species = ISLANDGAME_STARTING_MON;
         u8 level = ISLANDGAME_STARTING_MON_LEVEL;
         u16 item = ISLANDGAME_STARTING_MON_ITEM;
-        ScriptGiveMon(species, level, item, 0, 0, 0);
+        ScriptGiveMon(species, level, item);
         
         //debug 1: give all badges to raise our obedienceLevel
         FlagToggle(FLAG_BADGE01_GET);

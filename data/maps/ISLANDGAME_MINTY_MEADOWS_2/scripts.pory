@@ -114,6 +114,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
         case STATE_INITIAL_RIVAL:            
         case STATE_STARTED_QUEST:            msgbox(format("I could've sworn it was somewhere in the forest to the east..."), MSGBOX_NPC)
+        case STATE_PAUSED_QUEST:             msgbox(format("I hope you can find my lost Mareep!"), MSGBOX_NPC)
         case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("What? A wild Mightyena was chasing my precious Mareep?\pYou have to save him, please!"), MSGBOX_NPC)
         case STATE_POST_FIGHT:               msgbox(format("Thank you so much for saving my precious Mareep!"), MSGBOX_NPC)
     }
@@ -279,8 +280,12 @@ script ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet {
     callnative(TeleportCamera) 
     addobject(OBJ_EVENT_ID_PLAYER)
     addobject(RIVAL_OW_ID)
-    
+
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 34, 11)
+    setobjectxyperm(RIVAL_OW_ID, 34, 10)
+    setobjectxy(RIVAL_OW_ID, 34, 11)
     fadescreen(FADE_FROM_BLACK)
+
 
     return
 }
@@ -826,13 +831,19 @@ script ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey {
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
-    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}You're back! Let's find that Mareep!"))
+    applymovement(RIVAL_OW_ID, Common_Movement_WalkInPlaceLeft)
+    waitmovement(RIVAL_OW_ID)
+    playse(SE_PIN)
+    applymovement(RIVAL_OW_ID, Common_Movement_ExclamationMark)
+    message(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}You're back! Let's find that Mareep!"))
+    waitbuttonpress
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
     
     loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
     setfollower(RIVAL_OW_ID, 100, 0)
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
-    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
     waitmovement(OBJ_EVENT_ID_PLAYER)
+    closemessage
     return
 }
 
@@ -843,12 +854,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage {
     dynmultipush("Yes", YES)
     dynmultipush("No", NO)
     dynmultistack(0, 0, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
-    switch (var(VAR_RESULT)) {
-        case YES:
-            msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Alright, I will be waiting."))
-        case NO:
-            msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Great!"))
-    }
+    
     return
 }
 
@@ -865,9 +871,19 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
                     call(ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey)
 
                     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+                    applymovement(RIVAL_OW_ID, Common_Movement_WalkRight)
+                    waitmovement(RIVAL_OW_ID)
                     waitmovement(OBJ_EVENT_ID_PLAYER)
+                    message(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Alright, I will be waiting."))
+                    applymovement(RIVAL_OW_ID, Common_Movement_FaceLeft)
+                    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                    waitmovement(RIVAL_OW_ID)
+                    waitmessage
+                    waitbuttonpress
                     closemessage
                 case NO:
+                    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Great!"))
                     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
                     waitmovement(OBJ_EVENT_ID_PLAYER)
                     closemessage
