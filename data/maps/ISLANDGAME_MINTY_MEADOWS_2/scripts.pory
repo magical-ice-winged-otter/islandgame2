@@ -7,8 +7,10 @@
 
 const STATE_INITIAL_RIVAL = 0
 const STATE_STARTED_QUEST = 1
+const STATE_PAUSED_QUEST = 2
 const STATE_PRE_FIGHT_SIGHTING = 3
 const STATE_POST_FIGHT = 4
+
 
 const VAR_SEEN_CHASE_CUTSCENE = VAR_TEMP_0
 
@@ -23,6 +25,13 @@ const MAREEP_EXTRA3 = 19
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
 
+const AUDREY_GFX = OBJ_EVENT_GFX_LEAF
+const PAUSED_TOP_X = 12
+const PAUSED_TOP_Y = 10
+const PAUSED_BOTTOM_X = 18
+const PAUSED_BOTTOM_Y = 28
+
+
 mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_MINTY_MEADOWS_2_OnTransition
 }
@@ -31,6 +40,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_OnTransition {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
         case STATE_INITIAL_RIVAL:            call(ISLANDGAME_MINTY_MEADOWS_2_InitialRival)
         case STATE_STARTED_QUEST:            call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
+        case STATE_PAUSED_QUEST:             call(ISLANDGAME_MINTY_MEADOWS_2_PausedQuest)
         case STATE_PRE_FIGHT_SIGHTING:       call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
         case STATE_POST_FIGHT:               call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
     }
@@ -67,6 +77,18 @@ script ISLANDGAME_MINTY_MEADOWS_2_StartedQuest {
     return
 }
 
+// Come back to the quest when entering again
+script ISLANDGAME_MINTY_MEADOWS_2_PausedQuest {
+    setvar(VAR_TEMP_4, 1)
+    setobjectxyperm(RIVAL_OW_ID, 34, 10)
+    setobjectmovementtype(RIVAL_OW_ID, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm(OLD_MAN_OW_ID, 10, 9)
+    setobjectxyperm(MAREEP_OW_ID, 61, 13)
+    setobjectxyperm(MIGHTYENA_OW_ID, 61, 15)
+    setobjectmovementtype(MAREEP_OW_ID, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectmovementtype(MIGHTYENA_OW_ID, MOVEMENT_TYPE_FACE_UP)
+}
+
 // After watching the pre-fight cutscene, wait for the player to beat the mightyena
 script ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight {
     setvar(VAR_TEMP_4, 1)
@@ -92,6 +114,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
         case STATE_INITIAL_RIVAL:            
         case STATE_STARTED_QUEST:            msgbox(format("I could've sworn it was somewhere in the forest to the east..."), MSGBOX_NPC)
+        case STATE_PAUSED_QUEST:             msgbox(format("I hope you can find my lost Mareep!"), MSGBOX_NPC)
         case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("What? A wild Mightyena was chasing my precious Mareep?\pYou have to save him, please!"), MSGBOX_NPC)
         case STATE_POST_FIGHT:               msgbox(format("Thank you so much for saving my precious Mareep!"), MSGBOX_NPC)
     }
@@ -250,6 +273,23 @@ movement ISLANDGAME_MINTY_MEADOWS_2_RivalLookAround {
 	step_end
 }
 
+script ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet {
+    fadescreen(FADE_TO_BLACK)
+    setvar(VAR_0x8000, 34) // 34, 11 is the coordinates for being inside the maze
+    setvar(VAR_0x8001, 11)
+    callnative(TeleportCamera) 
+    addobject(OBJ_EVENT_ID_PLAYER)
+    addobject(RIVAL_OW_ID)
+
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 34, 11)
+    setobjectxyperm(RIVAL_OW_ID, 34, 10)
+    setobjectxy(RIVAL_OW_ID, 34, 11)
+    fadescreen(FADE_FROM_BLACK)
+
+
+    return
+}
+
 script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     applymovement(RIVAL_OW_ID, ISLANDGAME_MINTY_MEADOWS_2_RivalLookAround)
     waitmovement(0)
@@ -380,6 +420,9 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     //follow me
     loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
     setfollower(RIVAL_OW_ID, 100, 0)
+
+    //teleport
+    call(ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet)
 
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
@@ -531,11 +574,11 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
-            destroyfollower
+            destroyfollower(TRUE)
         case B_OUTCOME_RAN:
             break
         default:
-            destroyfollower
+            destroyfollower(TRUE)
             goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release
@@ -637,8 +680,8 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     setvar(VAR_0x8001, 8)
     callnative(TeleportCamera) // this is some magic, shoutout to the pret discord (and see src/islandgame_scrcmd.c)
     addobject(OBJ_EVENT_ID_PLAYER)
-    addobject(OLD_MAN_OW_ID)
     addobject(RIVAL_OW_ID)
+    addobject(OLD_MAN_OW_ID)
     addobject(MAREEP_OW_ID)
     applymovement(OLD_MAN_OW_ID, Common_Movement_FaceDown)
     waitmovement(OLD_MAN_OW_ID)
@@ -779,33 +822,75 @@ text MareepHelp_Text {
     format("{COLOR DARK_GRAY}Reep! Reep! {COLOR BLUE}(BRO HELP ME PLZ)")
 }
 
+script ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey {
+    //pause quest
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST) 
+    destroyfollower(FALSE)
+
+    return
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
+    applymovement(RIVAL_OW_ID, Common_Movement_WalkInPlaceLeft)
+    waitmovement(RIVAL_OW_ID)
+    playse(SE_PIN)
+    applymovement(RIVAL_OW_ID, Common_Movement_ExclamationMark)
+    message(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}You're back! Let's find that Mareep!"))
+    waitbuttonpress
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+    
+    loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
+    setfollower(RIVAL_OW_ID, 100, 0)
+    setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    closemessage
+    return
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage {
+    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
+    message(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Do you still want to?"))
+    waitmessage
+    dynmultipush("Yes", YES)
+    dynmultipush("No", NO)
+    dynmultistack(0, 0, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
+    
+    return
+}
 
 script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
     lock
-    facefollower
-    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
-    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkUp)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
+    switch (var(VAR_MINTY_MEADOWS_STATE)) {
+        case STATE_PAUSED_QUEST:
+            call(ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack)
+        case STATE_STARTED_QUEST:
+            facefollower
+            call(ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage)
+            switch (var(VAR_RESULT)) {
+                case YES:
+                    call(ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey)
+
+                    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+                    applymovement(RIVAL_OW_ID, Common_Movement_WalkRight)
+                    waitmovement(RIVAL_OW_ID)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                    message(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Alright, I will be waiting."))
+                    applymovement(RIVAL_OW_ID, Common_Movement_FaceLeft)
+                    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                    waitmovement(RIVAL_OW_ID)
+                    waitmessage
+                    waitbuttonpress
+                    closemessage
+                case NO:
+                    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Great!"))
+                    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                    closemessage
+            }
+    }
     release
 }
-
-movement ISLANDGAME_MINTY_MEADOWS_2_WalkUp {
-    walk_up
-}
-
-script ISLANDGAME_MINTY_MEADOWS_2_CantLeave2 {
-    lock
-    facefollower
-    msgbox(format("{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
-    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_WalkDown)
-    waitmovement(OBJ_EVENT_ID_PLAYER)
-    release
-}
-
-movement ISLANDGAME_MINTY_MEADOWS_2_WalkDown {
-    walk_down
-}
-
 
 
 ///TRAINERS

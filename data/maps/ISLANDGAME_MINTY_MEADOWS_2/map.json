@@ -401,8 +401,8 @@
     },
     {
       "type": "trigger",
-      "x": 16,
-      "y": 31,
+      "x": 32,
+      "y": 11,
       "elevation": 0,
       "var": "VAR_TEMP_4",
       "var_value": "1",
@@ -410,8 +410,8 @@
     },
     {
       "type": "trigger",
-      "x": 17,
-      "y": 31,
+      "x": 32,
+      "y": 10,
       "elevation": 0,
       "var": "VAR_TEMP_4",
       "var_value": "1",
@@ -479,69 +479,6 @@
       "var": "VAR_TEMP_4",
       "var_value": "1",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
-    },
-    {
-      "type": "trigger",
-      "x": 61,
-      "y": 10,
-      "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
     }
   ],
   "bg_events": [
