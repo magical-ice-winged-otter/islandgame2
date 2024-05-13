@@ -11624,28 +11624,28 @@
               },
               {
                 "min_level": 5,
-                "max_level": 8,
+                "max_level": 5,
                 "species": "SPECIES_MAGIKARP"
               },
               {
                 "min_level": 5,
-                "max_level": 8,
+                "max_level": 5,
                 "species": "SPECIES_TENTACOOL"
               },
               {
                 "min_level": 5,
-                "max_level": 8,
-                "species": "SPECIES_BARBOACH"
+                "max_level": 5,
+                "species": "SPECIES_HORSEA"
               },
               {
                 "min_level": 5,
-                "max_level": 8,
-                "species": "SPECIES_BARBOACH"
+                "max_level": 5,
+                "species": "SPECIES_HORSEA"
               },
               {
                 "min_level": 5,
-                "max_level": 8,
-                "species": "SPECIES_BARBOACH"
+                "max_level": 5,
+                "species": "SPECIES_HORSEA"
               }
             ]
           }

@@ -1,0 +1,259 @@
+mapscripts ISLANDGAME_CHERIPORT_PKMNCENTER_2F_MapScripts {}
+
+
+// talk to this girl if you want to change the time
+script ISLANDGAME_PKMNCENTER_2F_TimeNPC {
+    lock
+    faceplayer
+    msgbox(format(
+        "You look tired, trainer. Would you like to take a rest in one of our rooms?\p"
+        "{COLOR RED}(Should I take a break and pass the time...?)"
+    ), MSGBOX_YESNO)
+        
+    if (var(VAR_RESULT) == YES) {
+        fadescreen(FADE_TO_BLACK)
+        msgbox(format("You took a break until..."))
+        waitmessage
+    	special(StartWallClock)
+	    waitstate
+        delay(30)
+        setflag(FLAG_SET_WALL_CLOCK)
+        msgbox(format(
+            "We hope you had a good rest! Come back if you would like to pass time."
+        ))
+    }
+    closemessage
+    release
+}
+
+
+// talk to this gentleman if you want to change a mon's name
+script ISLANDGAME_PKMNCENTER_2F_NameRater {
+    lock
+    faceplayer
+    msgbox(format(
+        "How's it going, youngin? I'm Marya's official Name Rater!\p"
+        "Would you like me to impart my name-rating wisdom on your Pokémon?"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(format(
+            "Alrighty mate, whose name shall I giveth a critique on?"
+        ))
+        special(ChoosePartyMon)
+        waitstate
+        if(var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
+            specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+            if(var(VAR_RESULT) == SPECIES_EGG) {
+                msgbox(format(
+                    "That's an egg, init? I can't judge a Pokémon that hasn't hatched yet!"
+                ))
+                goto(NameRater_End)
+            }
+            special(BufferMonNickname)
+            special(IsMonOTIDNotPlayers)
+            if(var(VAR_RESULT) == TRUE) {
+                msgbox(format(
+                    "Ah, {STR_VAR_1} is it? A truly spectacular name, I say!\p"
+                    "Its original trainer must have been a real nicknaming aficionado.\p"
+                    "If you wanted to change its name, though, I unfortunately can't do that.\p"
+                    "It would go against the official Name Rater moral code of ethics!"
+                ))
+                goto(NameRater_End)
+            }
+            specialvar(VAR_RESULT, MonOTNameNotPlayer)
+            special(BufferMonNickname)
+            if(var(VAR_RESULT) == TRUE) {
+                msgbox(format(
+                    "Ah, {STR_VAR_1} is it? A truly spectacular name, I say!\p"
+                    "Its original trainer must have been a real nicknaming aficionado.\p"
+                    "If you wanted to change its name, though, I unfortunately can't do that.\p"
+                    "It would go against the official Name Rater moral code of ethics!"
+                ))
+                goto(NameRater_End)
+            }
+            msgbox(format(
+                "Hmm, so it's {STR_VAR_1}? A fitting name for such a fine Pokémon!\p"
+                "But if you've a better name, I'm more than happy to change it to that!"
+            ), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                msgbox(format(
+                    "What'll its new name be?"
+                ))
+                call(Common_EventScript_NameReceivedPartyMon)
+                specialvar(VAR_RESULT, TryPutNameRaterShowOnTheAir)
+                special(BufferMonNickname)
+                if(var(VAR_RESULT) == TRUE) {
+                    msgbox(format(
+                        "There we are! This Pokemon shall henceforth be known as...\p"
+                        "{STR_VAR_1}!\p"
+                        "And what a smashing name it is! I'm sure it's absolutely chuffed to have it!"
+                    ))
+                }
+
+            }
+
+        }
+    }
+
+    NameRater_End:
+        msgbox(format("If you've any Pokemon whose name you'd like me to rate, I'm always here!"))
+        closemessage
+        release
+}
+
+
+// talk this old guy if you want to delete moves (in a game with no HMs, for whatever reason)
+script ISLANDGAME_PKMNCENTER_2F_MoveDeleter {
+    lock
+    faceplayer
+    msgbox(format(
+        "Why hello there, whippersnapper! I'm the...{PAUSE 30} um...{PAUSE 30} oh! The Move Deleter!\p"
+        "Would you like me to have your Pokemon forget one of their moves?"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(format(
+            "O-Oh! Splendid! Which Pokémon do you want me to make forget a move?"
+        ))
+        special(ChoosePartyMon)
+        waitstate
+        if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+            msgbox(format(
+                "Oh... I see. It was foolish of me to get excited...\p"
+                "I suppose I will continue being useless in these modern times..."
+            ))
+            goto(MoveDeleter_End)
+        }
+        special(IsSelectedMonEgg)
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox(format(
+                "Eh? Is this a prank? You think it's funny picking on the elderly?\p"
+                "Kids these days... No respect for anyone but themselves."
+            ))
+        }
+        special(GetNumMovesSelectedMonHas)
+        if(var(VAR_RESULT) == 1) {
+            msgbox(format(
+                "I'm afraid I cannot make a Pokemon forget its only move...\p"
+                "Doing so would cause MissingNo. to appear and corrupt this game...\p"
+                "Eh? What do you mean that's a load of baloney? Are you disrespecting me!?"
+            ))
+            goto(MoveDeleter_End)
+        }
+        msgbox(format(
+            "Alright, which move should be forgotten?"
+        ))
+        fadescreen(FADE_TO_BLACK)
+        special(MoveDeleterChooseMoveToForget)
+        fadescreen(FADE_FROM_BLACK)
+        goto_if_eq(VAR_0x8005, MAX_MON_MOVES, ISLANDGAME_PKMNCENTER_2F_MoveDeleter)
+        special(BufferMoveDeleterNicknameAndMove)
+        msgbox(format(
+            "Ah... {STR_VAR_1}'s {STR_VAR_2}? You want this move to be forgotten?"
+        ), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES) {
+            special(MoveDeleterForgetMove)
+            playfanfare(MUS_MOVE_DELETED)
+            waitfanfare
+            msgbox(format(
+                "Your {STR_VAR_1} has successfully forgotten the move {STR_VAR_2}!\p"
+                "If you need another move forgotten, please come again!"
+            ))
+            goto(MoveDeleter_End)
+        }
+        else {
+            msgbox(format("I see... I suppose there is no need for a Move Deleter in this world anymore..."))
+            goto(MoveDeleter_End)
+        }
+    }
+    else {
+        msgbox(format("I see... I suppose there is no need for a Move Deleter in this world anymore..."))
+        goto(MoveDeleter_End)
+    }
+
+    MoveDeleter_End:
+        closemessage
+        release
+}
+
+
+// talk this chub if you want to relearn moves
+script ISLANDGAME_PKMNCENTER_2F_MoveRelearner {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hullo! I am the based gigachad of Marya known as the Move Relearner!\p"
+        "I can help your Pokémon relearn moves they've previously learned!\p"
+        "I can even teach them moves that they missed out on!"
+    ))
+    showmoneybox(0,0)
+    msgbox(format(
+        "I can do this, for the low, low price of ¥1000! How's that sound?"
+    ), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        checkmoney(1000)
+        if (!var(VAR_RESULT)) {
+            msgbox(format(
+                "Sorry pal, I gotta make a living. I can't do it if ya don't got the money."
+            ))
+            goto(MoveRelearner_End)
+        }
+        else {
+            msgbox(format(
+                "Awesome. Which Pokémon do you want to relearn a move?"
+            ))
+            special(ChooseMonForMoveRelearner)
+            waitstate
+            if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+                msgbox(format(
+                    "If you ever need my power, I'll be here, waiting!"
+                ))
+                goto(MoveRelearner_End)
+            }
+            special(IsSelectedMonEgg)
+            if(var(VAR_RESULT)) {
+                msgbox(format(
+                    "Umm... eggs don't even have moves to learn..."
+                ))
+                goto(MoveRelearner_End)
+            }
+            if(var(VAR_0x8005) == 0) {
+                msgbox(format(
+                    "There's no moves for this Pokémon to relearn..."
+                ))
+                goto(MoveRelearner_End)
+            }
+            msgbox(format(
+                "Which move should I reteach this Pokémon?"
+            ))
+            special(TeachMoveRelearnerMove)
+            waitstate
+            if(var(VAR_0x8004) == 0) {
+                msgbox(format("Well, if you change your mind, I'm always here!"))
+                goto(MoveRelearner_End)
+            }
+            msgbox(format(
+                "Okay... {PAUSE 30}annnnnd...{PAUSE 30} done! Your Pokémon has relearned its move!"
+            ))
+            waitmessage
+            showmoneybox(0,0)
+            removemoney(1000)
+            updatemoneybox
+            playse(SE_SHOP)
+            waitse
+            msgbox(format(
+                "Pleasure doin' business with you, trainer!"
+            ))
+        }
+    }
+    else {
+        msgbox(format("Well, if you change your mind, I'm always here!"))
+    }
+    
+    MoveRelearner_End:
+        hidemoneybox
+        closemessage
+        release
+}
+
+goto_if_eq VAR_0x8004, 0, FallarborTown_MoveRelearnersHouse_EventScript_ChooseMon
+

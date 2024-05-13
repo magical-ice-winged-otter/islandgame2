@@ -78,19 +78,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CHERIPORT_LAB_EventScript_CocoTalk",
       "flag": "FLAG_TIDALCOVE_RUKA_DEFEATED"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL",
-      "x": 2,
-      "y": 2,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_CHERIPORT_LAB_EventScript_PikaDoll",
-      "flag": "0"
     }
   ],
   "warp_events": [
@@ -107,6 +94,13 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CHERIPORT",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CHERIPORT_LAB_2F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

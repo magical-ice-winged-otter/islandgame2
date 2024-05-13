@@ -17,7 +17,7 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2:
 	msgbox ProfTalk_First_Text
 	setflag FLAG_PROF_GAVE_EEVEE
 	setflag FLAG_SYS_POKEMON_GET
-	givemon SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, , , , , , , , , , , , , , MOVE_TACKLE, MOVE_MUD_SLAP, MOVE_SAND_ATTACK, MOVE_TAIL_WHIP, FALSE
+	givemon SPECIES_EEVEE, 5, ITEM_NONE, ITEM_CHERISH_BALL, NUM_NATURES, 1, , , , , , , , , , , , , , MOVE_TACKLE, MOVE_MUD_SLAP, MOVE_SAND_ATTACK, MOVE_TAIL_WHIP, FALSE
 	playfanfare MUS_OBTAIN_ITEM
 	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
 	msgbox ReceivedEevee_Text
@@ -61,10 +61,15 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist1Talk::
 ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk::
 	lock
 	msgbox ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_0
+	playse SE_PIN
 	applymovement 3, ExclaimFacePlayer
+	waitmovement 0
+	applymovement 3, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_1
 	applymovement 3, Common_Movement_QuestionMark
+	waitmovement 0
+	applymovement 3, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_2
 	applymovement 3, Common_Movement_FaceOriginalDirection
@@ -95,14 +100,14 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_PikaDoll::
 
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_0:
-	.string "Heheh... Yeah... H-Huh?$"
+	.string "Heheh...{PAUSE 60} Yeah...{PAUSE 120} H-Huh?$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_1:
 	.string "I-It's not what you think! I was just\n"
 	.string "doing research!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_2:
-	.string "Huh? You're not the professor... Go\n"
+	.string "Huh? You're not the professor...{PAUSE 60} Go\n"
 	.string "away! I'm doing grown-up stuff!$"
 
 ProfTalk_First_Text::
@@ -178,7 +183,7 @@ Scientist1Talk_Text::
 	.string "papers, and programming software.$"
 
 CocoTalk_Text::
-	.string "{COLOR RED}(She seems preoccupied. I should leave\n"
+	.string "{COLOR RED}(She seems preoccupied... I should leave\n"
 	.string "her be.)$"
 
 ReceivedEevee_Text::

@@ -1292,3 +1292,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_LAB_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNCENTER_2F/scripts.inc"

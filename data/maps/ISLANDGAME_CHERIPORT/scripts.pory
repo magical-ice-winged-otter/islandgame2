@@ -17,7 +17,7 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
         // todo: I want to turn this into a single macro - setnightflag(FLAG_NIGHT)
         gettime
 
-        if (var(VAR_CURRENT_HOUR) < 12 + 6) {
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
             setflag(FLAG_NIGHT)
         }
         else {
@@ -94,7 +94,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles {
 
 
 text ISLANDGAME_CHERIPORT_OUTSIDE_StayHere {
-    format("{COLOR RED}(There's no reason for me to leave the isles.)")
+    format("{COLOR RED}(There's nothing past here but the vast ocean.)")
 }
 
 movement WalkBack2 {
@@ -138,7 +138,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4 {
 
 text NPCBoy_Talk {
     format("{COLOR DARK_GRAY}While I was exploring the Southern Oranna Path at night, I was attacked by a Pokémon on the mountains. \p"
-           "{COLOR DARK_GRAY}I've never seen anything like it... and I'm too scared to see it again."
+           "{COLOR DARK_GRAY}I've never seen anything like it...{PAUSE 60} and I'm too scared to see it again."
         )
 }
 
@@ -155,7 +155,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko {
 }
 
 text PeekoTalk {
-    format("Peeko: {COLOR DARK_GRAY}Wrooooar!")
+    format("Wrooooar! {COLOR BLUE}(I'm Peeko. Ahoy!)")
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC1 {
@@ -234,7 +234,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC7 {
 
 text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK {
     format(
-        "{COLOR DARK_GRAY}Come on... Come on... Argh! Not another Magikarp! I need a Barboach!")
+        "{COLOR DARK_GRAY}Come on...{PAUSE 30} Come on...{PAUSE 30} Argh! Not another Magikarp! I need a {COLOR LIGHT_BLUE}Horsea!")
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC8 {
@@ -259,7 +259,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC9 {
 
 text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK {
     format(
-        "{COLOR DARK_GRAY}-sigh- If only you were still here with us..."
+        "{COLOR DARK_GRAY}-sigh-{PAUSE 30} If only you were still here with us..."
     )
 }
 

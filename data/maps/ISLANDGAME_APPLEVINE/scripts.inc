@@ -4,18 +4,20 @@ ISLANDGAME_APPLEVINE_MapScripts::
 
 ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	gettime
-	compare VAR_0x8000, 12 + 6
-	goto_if_gt ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
-	setflag FLAG_TEMP_3
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	setflag FLAG_TEMP_2
 ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	goto_if_set FLAG_APPLEVINE_ITEMFINDER_RECEIVED, ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+	goto_if_set FLAG_APPLEVINE_ITEMFINDER_RECEIVED, ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 	return
 
 ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
-	setflag FLAG_TEMP_2
+	setflag FLAG_TEMP_3
 	goto ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
-ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
+ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 	setvar VAR_TEMP_1, 1
 	return
 
@@ -27,6 +29,21 @@ ISLANDGAME_APPLEVINE_StoreSign::
 
 ISLANDGAME_APPLEVINE_CitySign::
 	msgbox ISLANDGAME_APPLEVINE_CitySign_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_APPLEVINE_GameCornerSign::
+	msgbox ISLANDGAME_APPLEVINE_GameCornerSign_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_APPLEVINE_SierraPathSign::
+	msgbox ISLANDGAME_APPLEVINE_SierraPathSign_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_APPLEVINE_RockyPathSign::
+	msgbox ISLANDGAME_APPLEVINE_RockyPathSign_Text_0, MSGBOX_SIGN
 	return
 
 
@@ -54,6 +71,7 @@ ISLANDGAME_APPLEVINE_CocoInteract_2:
 	giveitem ITEM_ITEMFINDER
 	setflag FLAG_APPLEVINE_ITEMFINDER_RECEIVED
 	msgbox ISLANDGAME_APPLEVINE_CocoTalk3
+	setvar VAR_TEMP_1, 1
 	closemessage
 	goto ISLANDGAME_APPLEVINE_CocoInteract_1
 
@@ -272,6 +290,59 @@ ISLANDGAME_APPLEVINE_NPC10::
 	return
 
 
+ISLANDGAME_APPLEVINE_NPC11::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_0
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_1
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_NPC12::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_NPC12_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_NPC13::
+	lock
+	faceplayer
+	playmoncry SPECIES_MANECTRIC, CRY_MODE_NORMAL
+	goto_if_unset FLAG_APPLEVINE_MANECTRIC_GIFT, ISLANDGAME_APPLEVINE_NPC13_2
+	msgbox ISLANDGAME_APPLEVINE_NPC13_Text_1
+ISLANDGAME_APPLEVINE_NPC13_1:
+ManectricGiftEvent_End:
+	release
+	return
+
+ISLANDGAME_APPLEVINE_NPC13_2:
+	msgbox ISLANDGAME_APPLEVINE_NPC13_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_APPLEVINE_NPC13_6
+ISLANDGAME_APPLEVINE_NPC13_5:
+	giveitem ITEM_POKE_TOY
+	setflag FLAG_APPLEVINE_MANECTRIC_GIFT
+	goto ISLANDGAME_APPLEVINE_NPC13_1
+
+ISLANDGAME_APPLEVINE_NPC13_6:
+	goto ManectricGiftEvent_End
+	goto ISLANDGAME_APPLEVINE_NPC13_5
+
+
+ISLANDGAME_APPLEVINE_NPC14::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_NPC14_Text_0
+	closemessage
+	release
+	return
+
+
 ISLANDGAME_APPLEVINE_StoreSign_Text_0:
 	.string "LA CUCINA DOLCHE\n"
 	.string "We also offer Milcery makeovers!$"
@@ -280,14 +351,25 @@ ISLANDGAME_APPLEVINE_CitySign_Text_0:
 	.string "APPLEVINE\n"
 	.string "Where the trees are Applin-free!$"
 
+ISLANDGAME_APPLEVINE_GameCornerSign_Text_0:
+	.string "Eelektrik Game Corner\n"
+	.string "It's not gambling if it takes skill! :)$"
+
+ISLANDGAME_APPLEVINE_SierraPathSign_Text_0:
+	.string "SIERRA PATH\n"
+	.string "The next gym is this-a-way!$"
+
+ISLANDGAME_APPLEVINE_RockyPathSign_Text_0:
+	.string "ROCKY PATH\n"
+	.string "Wanna see the big city? Go here!$"
+
 ISLANDGAME_APPLEVINE_CocoInteract_Text_0:
 	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing\n"
 	.string "you here!$"
 
 ISLANDGAME_APPLEVINE_CocoInteract_Text_1:
 	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}It'll be worth checking your\n"
-	.string "surroundings for hidden goodies!\p"
-	.string "$"
+	.string "surroundings for hidden goodies!$"
 
 ISLANDGAME_APPLEVINE_CocoTrigger1_Text_0:
 	.string "Toodles!$"
@@ -356,7 +438,60 @@ ISLANDGAME_APPLEVINE_NPC9_Text_0:
 	.string "thing we don't have 'em over here.$"
 
 ISLANDGAME_APPLEVINE_NPC10_Text_0:
-	.string "$"
+	.string "It's said that a Luvdisc's heart scale\n"
+	.string "will help you find your lover.$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_0:
+	.string "Hey, kid! Over here! Shhh! Be quiet! Stop\n"
+	.string "attracting attention!\p"
+	.string "You're a Pokémon trainer, yeah? I uh,\n"
+	.string "bet you want some of those rare prizes\l"
+	.string "from the Game Corner, don'cha?\p"
+	.string "Ho-ho! Well you're in luck pal, cause\n"
+	.string "I've got stacks 'n stacks of coins!\p"
+	.string "They're all yours... if you're willin' to\n"
+	.string "help a brotha out...\p"
+	.string "See uh, I'm in need of some “candy”, and\n"
+	.string "I hear y'all trainers got tons of 'em.\p"
+	.string "So with that being said... you got the\n"
+	.string "stuffs?$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_1:
+	.string "Ayo, you don't got nothin'! I only work\n"
+	.string "with serious customers! Buzz off!$"
+
+ISLANDGAME_APPLEVINE_NPC12_Text_0:
+	.string "That gaudy Game Corner is a stain on\n"
+	.string "our once beautiful town.\p"
+	.string "It's corrupting our youth, I tell you!\n"
+	.string "Won't anyone think of the children!?\p"
+	.string "I hear it's being run by some hooligans\n"
+	.string "too... Just what we need. More crime!\p"
+	.string "What's happened to this world I once\n"
+	.string "knew and loved?$"
+
+ISLANDGAME_APPLEVINE_NPC13_Text_0:
+	.string "{COLOR RED}(Huh? It looks like Manectric is trying\n"
+	.string "to give me something.)\p"
+	.string "{COLOR RED}(Should I take it?)$"
+
+ISLANDGAME_APPLEVINE_NPC13_Text_1:
+	.string "{COLOR DARK_GRAY}Borf! {COLOR BLUE}(I have lots of toys, so I'll give\n"
+	.string "you one. :D)$"
+
+ISLANDGAME_APPLEVINE_NPC14_Text_0:
+	.string "I became an officer to get in the line\n"
+	.string "of action, but all the chief's been\l"
+	.string "having me do is lame paperwork.\p"
+	.string "I should've just joined my friend in the\n"
+	.string "merchant guild instead...\p"
+	.string "They get to travel all around the isles,\n"
+	.string "meanwhile I'm stuck listening to a\l"
+	.string "jaded old man complain about the Game\l"
+	.string "Corner for three hours.\p"
+	.string "What's the big deal? It's not like it's\n"
+	.string "gambling or anything. There's skill\l"
+	.string "involved. It says it on the sign!$"
 
 ISLANDGAME_APPLEVINE_CocoTalk1::
 	.string "My name is Coco. I'm a friend of\n"
@@ -377,8 +512,8 @@ ISLANDGAME_APPLEVINE_CocoTalk2::
 
 ISLANDGAME_APPLEVINE_CocoTalk3::
 	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}It's super easy to use! All you\n"
-	.string "have to do is turn it on, and it'll let\l"
-	.string "you know if there are any hidden items\l"
+	.string "have to do is turn it on, and it'll tell\l"
+	.string "you if there are any hidden items\l"
 	.string "nearby.\p"
 	.string "It'll even tell you the direction and\n"
 	.string "closeness of the item!\p"

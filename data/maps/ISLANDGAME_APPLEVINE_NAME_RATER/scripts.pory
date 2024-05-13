@@ -1,1 +1,23 @@
-mapscripts ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts {}
+mapscripts ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts {
+        MAP_SCRIPT_ON_TRANSITION {
+        if (!flag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)) {
+            removeobject(3)
+        }
+    }
+}
+
+script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
+    lock
+    msgbox(format(
+        "{COLOR RED}(It's some sort of smart speaker shaped like a Porygon2.)\p"
+        "(It's name is apparently Subaru. Should I give it a request?)"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(format(
+            "> You asked if Subaru is a duck.\p"
+            "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}NO DUCK!!! AM ROBOT!!!"
+        ))
+    }
+    closemessage
+    release
+}

@@ -10,11 +10,11 @@ mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
 
         gettime
 
-        if (var(VAR_0x8000) > 12 + 6) {
-            setflag(FLAG_DAYTIME) // controls visibilty of Yache Beach Girl
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
         }
         else {
-            setflag(FLAG_NIGHTTIME)
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
         }
     }
 }

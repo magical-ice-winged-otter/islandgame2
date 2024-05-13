@@ -686,8 +686,8 @@
 #define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281
 #define FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE      0x282 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_PP_UP            0x283
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
+#define FLAG_HIDDEN_ITEM_APPLEVINE_SWEET_APPLE      0x284 
+#define FLAG_HIDDEN_ITEM_SS_RAIN_ORAN_BERRY         0x285 
 #define FLAG_UNUSED_0x286  0x286 // Unused Flag
 #define FLAG_UNUSED_0x287  0x287 // Unused Flag
 #define FLAG_UNUSED_0x288  0x288 // Unused Flag
@@ -1246,7 +1246,7 @@
 #define FLAG_MINTY_MEADOWS_REPEL                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_CARBOS                                           0x4AB 
-#define FLAG_SS_RAIN_TM_VOLT_SWITCH                                 0x4AC // temporarily is calcium until tms are added
+#define FLAG_SS_RAIN_TM_SHOCK_WAVE                                  0x4AC 
 #define FLAG_SS_RAIN_LEFTOVERS                                      0x4AD
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
 #define FLAG_MAPLEGROVE_FOCUS_BAND                                  0x4AF 
@@ -1569,7 +1569,7 @@
 #define FLAG_APPLEVINE_SWEETHEART_GIFT              (SYSTEM_FLAGS + 0xA0)
 //applevine: coco itemfinder gift
 #define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
+#define FLAG_APPLEVINE_MANECTRIC_GIFT               (SYSTEM_FLAGS + 0xA2)
 #define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag

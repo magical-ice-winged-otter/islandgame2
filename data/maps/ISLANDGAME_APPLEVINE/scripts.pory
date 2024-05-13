@@ -6,11 +6,11 @@ mapscripts ISLANDGAME_APPLEVINE_MapScripts {
         MAP_SCRIPT_ON_TRANSITION {
         gettime
 
-        if (var(VAR_0x8000) > 12 + 6) {
-            setflag(FLAG_DAYTIME) // controls daytime npcs
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
         }
         else {
-            setflag(FLAG_NIGHTTIME) // controls nighttime npcs
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
         }
 
         if (flag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)) {
@@ -28,6 +28,24 @@ script ISLANDGAME_APPLEVINE_StoreSign {
 script ISLANDGAME_APPLEVINE_CitySign {
     msgbox(format("APPLEVINE\nWhere the trees are Applin-free!"), MSGBOX_SIGN)
 }
+
+script ISLANDGAME_APPLEVINE_GameCornerSign {
+    msgbox(format("Eelektrik Game Corner\nIt's not gambling if it takes skill! :)"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_SierraPathSign {
+    msgbox(format("SIERRA PATH\nThe next gym is this-a-way!"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_RockyPathSign {
+    msgbox(format("ROCKY PATH\nWanna see the big city? Go here!"), MSGBOX_SIGN)
+}
+
+
+
+
+
+
 
 
 
@@ -174,6 +192,22 @@ text ISLANDGAME_APPLEVINE_CocoTalk3 {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // npcs
 script ISLANDGAME_APPLEVINE_NPC1 {
     lock
@@ -300,7 +334,83 @@ script ISLANDGAME_APPLEVINE_NPC10 {
     lock
     faceplayer
     msgbox(format(
-        ""
+        "It's said that a Luvdisc's heart scale will help you find your lover."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC11 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hey, kid! Over here! Shhh! Be quiet! Stop attracting attention!\p"
+        "You're a Pokémon trainer, yeah? I uh, bet you want some of those rare prizes from the Game Corner, don'cha?\p"
+        "Ho-ho! Well you're in luck pal, cause I've got stacks 'n stacks of coins!\p"
+        "They're all yours... if you're willin' to help a brotha out...\p"
+        "See uh, I'm in need of some “candy”, and I hear y'all trainers got tons of 'em.\p"
+        "So with that being said... you got the stuffs?"
+    ))
+
+    // code for exchange here
+
+    msgbox(format(
+        "Ayo, you don't got nothin'! I only work with serious customers! Buzz off!"
+    ))
+    closemessage
+    release
+}
+
+
+script ISLANDGAME_APPLEVINE_NPC12 {
+    lock
+    faceplayer
+    msgbox(format(
+        "That gaudy Game Corner is a stain on our once beautiful town.\p"
+        "It's corrupting our youth, I tell you! Won't anyone think of the children!?\p"
+        "I hear it's being run by some hooligans too... Just what we need. More crime!\p"
+        "What's happened to this world I once knew and loved?"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC13 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MANECTRIC,CRY_MODE_NORMAL)
+    
+    if(!flag(FLAG_APPLEVINE_MANECTRIC_GIFT)) {
+        msgbox(
+            format(
+                "{COLOR RED}(Huh? It looks like Manectric is trying to give me something.) \p"
+                "{COLOR RED}(Should I take it?)"
+            )    
+        , MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            goto(ManectricGiftEvent_End)
+        }
+
+        giveitem(ITEM_POKE_TOY)
+        setflag(FLAG_APPLEVINE_MANECTRIC_GIFT)
+    }
+    else {
+        msgbox(format("{COLOR DARK_GRAY}Borf! {COLOR BLUE}(I have lots of toys, so I'll give you one. :D)"))
+    }
+    
+    
+    ManectricGiftEvent_End:
+        release
+}
+
+script ISLANDGAME_APPLEVINE_NPC14 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I became an officer to get in the line of action, but all the chief's been having me do is lame paperwork.\p"
+        "I should've just joined my friend in the merchant guild instead...\p"
+        "They get to travel all around the isles, meanwhile I'm stuck listening to a jaded old man complain about the Game Corner for three hours.\p"
+        "What's the big deal? It's not like it's gambling or anything. There's skill involved. It says it on the sign!"
     ))
     closemessage
     release

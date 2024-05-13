@@ -1062,7 +1062,7 @@ static const struct InGameTrade sIngameTrades[] =
         .heldItem = ITEM_STAR_PIECE,
         .otName = _("Yomi"),
         .sheen = 10,
-        .requestedSpecies = SPECIES_BARBOACH
+        .requestedSpecies = SPECIES_HORSEA
     },
 };
 

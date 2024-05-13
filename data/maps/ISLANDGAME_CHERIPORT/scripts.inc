@@ -6,8 +6,10 @@ ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_set FLAG_PROF_GAVE_EEVEE, ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	gettime
-	compare VAR_0x8000, 12 + 6
+	compare VAR_0x8000, 6
 	goto_if_lt ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_CHERIPORT_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 	setflag FLAG_TEMP_2
 	return
 
@@ -243,8 +245,8 @@ NeedPokemon_Text::
 	.string "I leave the city.)$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_StayHere::
-	.string "{COLOR RED}(There's no reason for me to leave the\n"
-	.string "isles.)$"
+	.string "{COLOR RED}(There's nothing past here but the vast\n"
+	.string "ocean.)$"
 
 NPCGirl_Talk::
 	.string "{COLOR DARK_GRAY}The islands are known for their tropical\n"
@@ -256,7 +258,7 @@ NPCBoy_Talk::
 	.string "{COLOR DARK_GRAY}While I was exploring the Southern\n"
 	.string "Oranna Path at night, I was attacked\l"
 	.string "by a Pokémon on the mountains.\p"
-	.string "{COLOR DARK_GRAY}I've never seen anything like it... and\n"
+	.string "{COLOR DARK_GRAY}I've never seen anything like it...{PAUSE 60} and\n"
 	.string "I'm too scared to see it again.$"
 
 MrBrineyTalk::
@@ -264,7 +266,7 @@ MrBrineyTalk::
 	.string "Slateport, doesn't it, Peeko?$"
 
 PeekoTalk::
-	.string "Peeko: {COLOR DARK_GRAY}Wrooooar!$"
+	.string "Wrooooar! {COLOR BLUE}(I'm Peeko. Ahoy!)$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC1_TALK::
 	.string "{COLOR DARK_GRAY}Nuh-uh! Nuh-uh!$"
@@ -293,8 +295,8 @@ ISLAND_GAME_CHERIPORT_OUTSIDE_NPC6_TALK::
 	.string "region not too long ago.$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK::
-	.string "{COLOR DARK_GRAY}Come on... Come on... Argh! Not another\n"
-	.string "Magikarp! I need a Barboach!$"
+	.string "{COLOR DARK_GRAY}Come on...{PAUSE 30} Come on...{PAUSE 30} Argh! Not another\n"
+	.string "Magikarp! I need a {COLOR LIGHT_BLUE}Horsea!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC8_TALK::
 	.string "{COLOR DARK_GRAY}Cheriport is home to the Cheri Berry!\p"
@@ -302,7 +304,7 @@ ISLAND_GAME_CHERIPORT_OUTSIDE_NPC8_TALK::
 	.string "Pokémon sure love them!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK::
-	.string "{COLOR DARK_GRAY}-sigh- If only you were still here with\n"
+	.string "{COLOR DARK_GRAY}-sigh-{PAUSE 30} If only you were still here with\n"
 	.string "us...$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC::
