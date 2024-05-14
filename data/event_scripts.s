@@ -1081,6 +1081,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/scripts/islandgame_debug.inc"
 	.include "data/scripts/islandgame_common.inc"
+	.include "data/scripts/islandgame_menu.inc"
 	
 	.include "data/maps/ForestBaseCamp_FrontLawn/scripts.inc"
 

@@ -4,6 +4,7 @@
 #include "list_menu.h"
 #include "event_data.h" // for gSpecialVar
 #include "field_camera.h" // for MoveCameraAndRedrawMap
+#include "rtc.h" // for gLocalTime
 
 void CheckDexCount(void)
 {
@@ -42,4 +43,12 @@ void CheckPartyMon(void)
             }
         }
     }
+}
+
+void setTime(void) 
+{
+    gLocalTime.days += 1;
+    gLocalTime.hours = gSpecialVar_Result;
+    gLocalTime.minutes = 0;
+    gLocalTime.seconds = 0;
 }
