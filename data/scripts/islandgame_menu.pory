@@ -1,3 +1,7 @@
+const DAYS = VAR_0x8009
+const HOURS = VAR_0x800A
+const MINUTES = VAR_0x800B
+const SECONDS = VAR_0x8014
 
 script EventScript_TimeMenu_BuildMenu {
 	//According to src/reset_rtc_screen.c#sInputMap, the min and max is 0 to 23 
@@ -26,8 +30,12 @@ script EventScript_TimeMenu_BuildMenu {
 	dynmultipush(TimeMenu_Text_10PM, 22)
 	dynmultipush(TimeMenu_Text_11PM, 23)
 	dynmultistack(22, 0, FALSE, 8, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
-
+	setvar(DAYS, 0)
+	copyvar(HOURS, VAR_RESULT)
+	setvar(MINUTES, 0)
+	setvar(SECONDS, 0)
 	callnative(setTime)
+	dotimebasedevents
 
 	fadescreen(FADE_TO_BLACK)
 	buffernumberstring(STR_VAR_1, VAR_RESULT)

@@ -5,6 +5,9 @@
 #include "event_data.h" // for gSpecialVar
 #include "field_camera.h" // for MoveCameraAndRedrawMap
 #include "rtc.h" // for gLocalTime
+#include "clock.h" // for InitTimeBasedEvents
+#include "overworld.h"
+#include "main.h"
 
 void CheckDexCount(void)
 {
@@ -47,8 +50,10 @@ void CheckPartyMon(void)
 
 void setTime(void) 
 {
-    gLocalTime.days += 1;
-    gLocalTime.hours = gSpecialVar_Result;
-    gLocalTime.minutes = 0;
-    gLocalTime.seconds = 0;
+    u16 days = gSpecialVar_0x8009;
+    u16 hours = gSpecialVar_0x800A;
+    u16 minutes = gSpecialVar_0x800B;
+    u16 seconds = gSpecialVar_0x8014;
+
+    RtcCalcLocalTimeOffset(days, hours, minutes, seconds);
 }

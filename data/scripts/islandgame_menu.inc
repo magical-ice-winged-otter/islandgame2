@@ -24,7 +24,12 @@ EventScript_TimeMenu_BuildMenu::
 	dynmultipush TimeMenu_Text_10PM, 22
 	dynmultipush TimeMenu_Text_11PM, 23
 	dynmultistack 22, 0, FALSE, 8, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	setvar VAR_0x8009, 0
+	copyvar VAR_0x800A, VAR_RESULT
+	setvar VAR_0x800B, 0
+	setvar VAR_0x8014, 0
 	callnative setTime
+	dotimebasedevents
 	fadescreen FADE_TO_BLACK
 	buffernumberstring STR_VAR_1, VAR_RESULT
 	message EventScript_TimeMenu_BuildMenu_Text_0
