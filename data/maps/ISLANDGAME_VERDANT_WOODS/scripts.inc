@@ -1,6 +1,31 @@
 ISLANDGAME_VERDANT_WOODS_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, ISLANDGAME_VERDANT_WOODS_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_TEMP_1
+	setflag FLAG_TEMP_2
+	setflag FLAG_TEMP_3
+	returnqueststate QUEST_VERDANT_FOREST_SKITTY
+	switch VAR_RESULT
+	case QUEST_INACTIVE, ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	case QUEST_ACTIVE, ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
+	return
+
+ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+	gettime
+	compare VAR_0x8000, 0
+	goto_if_ge ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	return
+
+ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
+	setvar VAR_TEMP_0, 2
+	return
+
+ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+	setvar VAR_TEMP_0, 1
+	return
 
 
 ISLANDGAME_VERDANT_WOODS_OnResume::
@@ -111,6 +136,125 @@ ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_2:
 	goto ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_1
 
 
+ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement:
+	face_left
+	delay_4
+	face_right
+	delay_8
+	face_up
+	delay_4
+	face_left
+	delay_16
+	delay_16
+	step_end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_2:
+	face_left
+	delay_4
+	delay_4
+	emote_exclamation_mark
+	delay_16
+	jump_in_place_left
+	jump_in_place_left
+	step_end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_3:
+	face_up
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_HaunterMovement_4:
+	walk_down
+	walk_down
+	walk_down
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2::
+	compare VAR_TEMP_0, 1
+	goto_if_eq ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2_1
+	end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2_1:
+	setvar VAR_TEMP_0, 2
+	applymovement 5, ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement
+	waitmovement 5
+	playmoncry SPECIES_HAUNTER, CRY_MODE_ENCOUNTER
+	message ISLANDGAME_VERDANT_WOODS_NPC2Talk
+	waitmessage
+	waitbuttonpress
+	waitmoncry
+	playse SE_BALL
+	clearflag FLAG_TEMP_1
+	showobjectat 23, MAP_ISLANDGAME_VERDANT_WOODS
+	addobject 23
+	waitse
+	playse SE_BALL_OPEN
+	waitse
+	removeobject 23
+	setflag FLAG_TEMP_1
+	playmoncry SPECIES_SKITTY, CRY_MODE_ENCOUNTER
+	clearflag FLAG_TEMP_2
+	showobjectat 24, MAP_ISLANDGAME_VERDANT_WOODS
+	addobject 24
+	waitmoncry
+	applymovement 24, ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement
+	waitmovement 24
+	applymovement 24, ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_2
+	waitmovement 24
+	message ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2_Text_0
+	playmoncry SPECIES_SKITTY, CRY_MODE_ENCOUNTER
+	waitmessage
+	waitbuttonpress
+	waitmoncry
+	closemessage
+	delay 120
+	fadescreen FADE_TO_WHITE
+	delay 10
+	fadescreen FADE_FROM_WHITE
+	clearflag FLAG_TEMP_3
+	showobjectat 25, MAP_ISLANDGAME_VERDANT_WOODS
+	addobject 25
+	playmoncry SPECIES_SKITTY, CRY_MODE_ENCOUNTER
+	applymovement 24, ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_3
+	waitmoncry
+	playmoncry SPECIES_SKITTY, CRY_MODE_ENCOUNTER
+	waitmovement 24
+	waitmoncry
+	removeobject 24
+	setflag FLAG_TEMP_2
+	applymovement 25, ISLANDGAME_VERDANT_WOODS_EventScript_HaunterMovement_4
+	waitmovement 25
+	removeobject 25
+	setflag FLAG_TEMP_3
+	startquest QUEST_VERDANT_FOREST_SKITTY
+	return
+
+
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC3::
 	lock
 	faceplayer
@@ -162,6 +306,9 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1:
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_Text_0:
 	.string "Owww, my head, it hurts...$"
+
+ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2_Text_0:
+	.string "The Skitty seems frightened.$"
 
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0:
 	.string "{COLOR DARK_GRAY}That's a Miracle Seed. It's not good for\n"

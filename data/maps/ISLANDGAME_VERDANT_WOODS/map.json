@@ -71,9 +71,9 @@
       "x": 42,
       "y": 17,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_VERDANT_WOODS_EventScript_NPC2",
@@ -299,6 +299,45 @@
       "trainer_sight_or_berry_tree_id": "ITEM_X_ATTACK",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_PETALBURG_WOODS_X_ATTACK"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 43,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SKITTY",
+      "x": 43,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_093",
+      "x": 42,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_3"
     }
   ],
   "warp_events": [
@@ -353,7 +392,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2"
+    }
   ],
   "bg_events": [
     {
