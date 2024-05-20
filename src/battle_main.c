@@ -4295,7 +4295,11 @@ u8 IsRunningFromBattleImpossible(u32 battler)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
         return BATTLE_RUN_FORBIDDEN;
     }
-
+    if (FlagGet(B_FLAG_NO_RUNNING)) // Cannot run from a wild battle if this flag is set
+    {
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WILD_CANT_ESCAPE;
+        return BATTLE_RUN_FORBIDDEN;
+    }
     if (holdEffect == HOLD_EFFECT_CAN_ALWAYS_RUN)
         return BATTLE_RUN_SUCCESS;
     if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))

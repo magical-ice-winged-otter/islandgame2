@@ -33,6 +33,7 @@ mapscripts ISLANDGAME_VERDANT_WOODS_MapScripts {
                 }
             case QUEST_ACTIVE:
                 setvar(SKITTY_VAR, SKITTY_IN_PROGRESS)
+                call(ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc)
         }
         // Skitty quest end   
     }
@@ -349,10 +350,49 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2 {
         removeobject(HAUNTER_NPC) // clear haunter
         setflag(HAUNTER_FLAG) // clear haunter
 
+        call(ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc)
         startquest(QUEST_VERDANT_FOREST_SKITTY)
     } else { // SKITTY_VAR == SKITTY_INACTIVE
         end
     }
+}
+script ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc {
+    clearflag(SKITTY_FLAG)
+    setobjectxyperm(SKITTY_NPC, 11, 40)
+    setobjectmovementtype(SKITTY_NPC, MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT)
+    showobjectat(SKITTY_NPC, MAP_ISLANDGAME_VERDANT_WOODS) // show skitty
+    
+    return
+}
+
+script ISLANDGAME_VERDANT_WOODS_FightHaunter {
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    setcwildbattle(0, SPECIES_HAUNTER, 16, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_SHADOW_BALL, MOVE_HYPNOSIS)
+    setwilddoublebattle(TRUE)
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+
+    return
+}
+script ISLANDGAME_VERDANT_WOODS_SkittyPhase2 {
+    lock
+    call(ISLANDGAME_VERDANT_WOODS_FightHaunter)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+     switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+
+        case B_OUTCOME_RAN:
+            break
+        default:
+            
+    }
+    release
 }
 
 script ISLANDGAME_VERDANT_WOODS_EventScript_NPC3 {
