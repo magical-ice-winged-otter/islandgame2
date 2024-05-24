@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BARD",
-      "x": 11,
-      "y": 9,
+      "x": 8,
+      "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
-      "x": 6,
-      "y": 8,
+      "x": 0,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -42,10 +42,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 14,
-      "y": 11,
+      "x": 7,
+      "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 2,
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -56,20 +56,24 @@
   ],
   "warp_events": [
     {
-      "x": 11,
-      "y": 13,
+      "x": 5,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "1"
     },
     {
-      "x": 10,
-      "y": 13,
+      "x": 4,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

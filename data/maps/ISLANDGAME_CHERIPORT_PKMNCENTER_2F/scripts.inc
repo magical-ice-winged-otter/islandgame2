@@ -168,6 +168,7 @@ ISLANDGAME_PKMNCENTER_2F_MoveRelearner::
 	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_PKMNCENTER_2F_MoveRelearner_2
+	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_8
 ISLANDGAME_PKMNCENTER_2F_MoveRelearner_1:
 MoveRelearner_End:
 	hidemoneybox
@@ -178,51 +179,60 @@ MoveRelearner_End:
 ISLANDGAME_PKMNCENTER_2F_MoveRelearner_2:
 	checkmoney 1000
 	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_PKMNCENTER_2F_MoveRelearner_4
+	goto_if_eq ISLANDGAME_PKMNCENTER_2F_MoveRelearner_5
 	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_3
 	special ChooseMonForMoveRelearner
 	waitstate
 	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
-	goto_if_eq ISLANDGAME_PKMNCENTER_2F_MoveRelearner_8
-ISLANDGAME_PKMNCENTER_2F_MoveRelearner_7:
+	goto_if_eq ISLANDGAME_PKMNCENTER_2F_MoveRelearner_9
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_8:
 	special IsSelectedMonEgg
 	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_PKMNCENTER_2F_MoveRelearner_11
-ISLANDGAME_PKMNCENTER_2F_MoveRelearner_10:
+	goto_if_ne ISLANDGAME_PKMNCENTER_2F_MoveRelearner_12
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_11:
 	compare VAR_0x8005, 0
-	goto_if_eq ISLANDGAME_PKMNCENTER_2F_MoveRelearner_14
-ISLANDGAME_PKMNCENTER_2F_MoveRelearner_13:
+	goto_if_eq ISLANDGAME_PKMNCENTER_2F_MoveRelearner_15
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_14:
 	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_7
 	special TeachMoveRelearnerMove
 	waitstate
-	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_8
+	compare VAR_0x8004, 0
+	goto_if_eq ISLANDGAME_PKMNCENTER_2F_MoveRelearner_18
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_17:
+	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_9
 	waitmessage
+	showmoneybox 0, 0
 	removemoney 1000
 	updatemoneybox
 	playse SE_SHOP
 	waitse
-	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_9
+	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_10
 	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_1
 
-ISLANDGAME_PKMNCENTER_2F_MoveRelearner_4:
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_5:
 	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_2
 	goto MoveRelearner_End
 	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_1
 
-ISLANDGAME_PKMNCENTER_2F_MoveRelearner_8:
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_9:
 	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_4
 	goto MoveRelearner_End
-	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_7
+	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_8
 
-ISLANDGAME_PKMNCENTER_2F_MoveRelearner_11:
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_12:
 	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_5
 	goto MoveRelearner_End
-	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_10
+	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_11
 
-ISLANDGAME_PKMNCENTER_2F_MoveRelearner_14:
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_15:
 	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_6
 	goto MoveRelearner_End
-	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_13
+	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_14
+
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_18:
+	msgbox ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_8
+	goto MoveRelearner_End
+	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_17
 
 
 ISLANDGAME_PKMNCENTER_2F_TimeNPC_Text_0:
@@ -367,9 +377,13 @@ ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_7:
 	.string "Pokémon?$"
 
 ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_8:
+	.string "Well, if you change your mind, I'm always\n"
+	.string "here!$"
+
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_9:
 	.string "Okay... {PAUSE 30}annnnnd...{PAUSE 30} done! Your Pokémon\n"
 	.string "has relearned its move!$"
 
-ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_9:
+ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_10:
 	.string "Pleasure doin' business with you,\n"
 	.string "trainer!$"

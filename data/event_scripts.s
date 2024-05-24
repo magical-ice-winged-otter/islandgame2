@@ -1296,3 +1296,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_CHERIPORT_LAB_2F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F/scripts.inc"

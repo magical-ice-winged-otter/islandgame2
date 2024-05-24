@@ -493,6 +493,14 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_XS",
       "flag": "FLAG_HIDDEN_ITEM_CHERIPORT_EXP_CANDY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 49,
+      "y": 40,
+      "elevation": 0,
+      "item": "ITEM_HEALTH_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_CHERIPORT_H_FEATHER"
     }
   ]
 }

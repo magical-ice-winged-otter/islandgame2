@@ -194,19 +194,9 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_40:
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor::
 	lock
 	faceplayer
-	goto_if_unset FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_2
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_1
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_1:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0
 	release
 	return
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_2:
-	setflag FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0
-	giveitem ITEM_PECHA_BERRY, 2
-	giveitem ITEM_ORAN_BERRY, 2
-	giveitem ITEM_PERSIM_BERRY, 2
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_1
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep::
@@ -222,6 +212,9 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep::
 	.align 2
 BerryHouseItems:
 	.2byte ITEM_BERRY_JUICE
+	.2byte ITEM_ORAN_BERRY
+	.2byte ITEM_PECHA_BERRY
+	.2byte ITEM_CHERI_BERRY
 	.2byte ITEM_NONE
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0:
@@ -297,18 +290,13 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17:
 	.string "REWARD. MAKE SOME ROOM!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0:
-	.string "Oh, it looks like you're new to planting\n"
-	.string "berries!\p"
-	.string "Here, take these to get you started.$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_1:
 	.string "Planting berries is really fun.\p"
-	.string "It feels like giving gifts to my future\n"
+	.string "It's like I'm giving gifts to my future\n"
 	.string "self!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_0:
-	.string "Welcome to the Berry House. Here, we\n"
-	.string "sell locally grown berries and juice.$"
+	.string "Welcome to Berry Good. All of our\n"
+	.string "berries are homegrown and fresh.$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_1:
-	.string "May the peace be with you.$"
+	.string "May peace be with you.$"

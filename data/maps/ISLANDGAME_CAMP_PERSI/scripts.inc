@@ -3,11 +3,22 @@ ISLANDGAME_CAMP_PERSI_MapScripts::
 	.byte 0
 
 ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	goto_if_set FLAG_CAMP_PERSI_JONAS_DEFEATED, ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_set FLAG_CAMP_PERSI_JONAS_DEFEATED, ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	gettime
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	setflag FLAG_TEMP_2
 	return
 
-ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	setvar VAR_TEMP_1, 1
+	goto ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_CAMP_PERSI_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+	setflag FLAG_TEMP_1
 	return
 
 
@@ -704,7 +715,7 @@ ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text::
 
 ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text::
 	.string "Ah... \p"
-	.string "Your aptitude for battle is... \n"
+	.string "Your aptitude for battle is...{PAUSE 60}\n"
 	.string "quite remarkable.$"
 
 ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text::
@@ -716,7 +727,7 @@ ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text::
 
 ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2::
 	.string "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Unfortunately, our conversation\n"
-	.string "must end here. I have a lot of ground\l"
+	.string "must end here.{PAUSE 60} I have a lot of ground\l"
 	.string "to cover today.\p"
 	.string "{COLOR DARK_GRAY}Oh, but before I go, you should know\n"
 	.string "about the upcoming Silverwing\l"
@@ -735,22 +746,22 @@ ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro::
 	.string "{COLOR DARK_GRAY}Are you a new camper by chance? I\n"
 	.string "haven't seen you around here before.\p"
-	.string "{COLOR DARK_GRAY}Oh? You're a Pokémon trainer visiting\n"
+	.string "{COLOR DARK_GRAY}Oh?{PAUSE 60} You're a Pokémon trainer visiting\n"
 	.string "the isles from overseas?\p"
-	.string "{COLOR DARK_GRAY}Pardon my assumption, then. Welcome to\n"
+	.string "{COLOR DARK_GRAY}Pardon my assumption, then.{PAUSE 60} Welcome to\n"
 	.string "the Isles of Marya, {PLAYER}!\p"
 	.string "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling\n"
-	.string "merchant of The Silverwing Order.\p"
-	.string "{COLOR DARK_GRAY}The Silverwing Order is in charge of\n"
-	.string "governing the isles. It's our job to\l"
+	.string "merchant of {COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}The Silverwing Order.\p"
+	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The Silverwing Order is in charge of\n"
+	.string "governing the isles.{PAUSE 60} It's our job to\l"
 	.string "make sure everyone here is comfortable\l"
 	.string "and safe!\p"
 	.string "{COLOR DARK_GRAY}My job in particular is traveling around\n"
 	.string "the islands to provide goods and\l"
 	.string "services to those in need!\p"
-	.string "{COLOR DARK_GRAY}But that's enough about me. You said\n"
+	.string "{COLOR DARK_GRAY}But that's enough about me.{PAUSE 60} You said\n"
 	.string "you were a Pokémon trainer, right?\p"
-	.string "{COLOR DARK_GRAY}In that case... mind if I trouble you for\n"
+	.string "{COLOR DARK_GRAY}In that case...{PAUSE 60} mind if I trouble you for\n"
 	.string "a little battle?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1::
@@ -856,8 +867,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC::
 	.string "NO SWIMMING WITHOUT A COUNSELOR!!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC::
-	.string "{COLOR DARK_GRAY}CAMP GARDEN\n"
-	.string "{COLOR DARK_GRAY}Feel free to contribute! (Please do.)$"
+	.string "{COLOR DARK_GRAY}THE BERRY GOOD BERRY SHOP\n"
+	.string "{COLOR DARK_GRAY}Contribute to our garden! (Please)$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN5_DESC::
 	.string "{COLOR RED}(What is this music? It sounds like\n"

@@ -254,6 +254,3 @@ script ISLANDGAME_PKMNCENTER_2F_MoveRelearner {
         closemessage
         release
 }
-
-goto_if_eq VAR_0x8004, 0, FallarborTown_MoveRelearnersHouse_EventScript_ChooseMon
-

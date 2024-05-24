@@ -667,8 +667,8 @@
 #define FLAG_HIDDEN_ITEM_SORANNA_PATH_PARA_HEAL     0x26E 
 #define FLAG_HIDDEN_ITEM_CAMP_PERSI_EXP_CANDY       0x26F 
 #define FLAG_HIDDEN_ITEM_VERDANT_PATH_EXP_CANDY     0x270 
-#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_COLBUR       0x271
-#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_EXP_CANDY    0x272 
+#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_TANGA        0x271
+#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_BIGSHROOM    0x272 
 #define FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY       0x273 
 #define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_EXP_CANDY    0x274 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY     0x275 
@@ -688,17 +688,17 @@
 #define FLAG_HIDDEN_ITEM_APPLEVINE_PP_UP            0x283
 #define FLAG_HIDDEN_ITEM_APPLEVINE_SWEET_APPLE      0x284 
 #define FLAG_HIDDEN_ITEM_SS_RAIN_ORAN_BERRY         0x285 
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
+#define FLAG_HIDDEN_ITEM_CHERIPORT_H_FEATHER        0x286 
+#define FLAG_HIDDEN_ITEM_CAMP_PERSI_BERRY_JUICE     0x287
+#define FLAG_HIDDEN_ITEM_CAMP_PERSI_MUSCLE_FEATHER  0x288 
+#define FLAG_HIDDEN_ITEM_VERDANT_PATH_G_FEATHER     0x289 
+#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_TINYSHROOM   0x28A 
+#define FLAG_HIDDEN_ITEM_MAPLEGROVE_FEATHER         0x28B
+#define FLAG_HIDDEN_ITEM_MAPLEGROVE_REVIVE          0x28C
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_REPEL        0x28D 
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_R_FEATHER    0x28E
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_C_FEATHER    0x28F
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_ETHER        0x290 
 #define FLAG_UNUSED_0x291  0x291 // Unused Flag
 #define FLAG_UNUSED_0x292  0x292 // Unused Flag
 #define FLAG_UNUSED_0x293  0x293 // Unused Flag
@@ -1228,8 +1228,8 @@
 #define FLAG_ITEM_COP_2_MOON_STONE                                  0x497
 #define FLAG_ITEM_MINTY_MEADOWS_1                                   0x498
 #define FLAG_ITEM_TM_RETURN                                         0x499 
-#define FLAG_ITEM_TM_DIG                                            0x49A 
-#define FLAG_ITEM_PERSI_NEST_BALL                                   0x49B
+#define FLAG_ITEM_CAMP_PERSI_POTION                                 0x49A 
+#define FLAG_ITEM_PERSI_NEST_ETHER                                  0x49B
 #define FLAG_ITEM_MYSTIC_WATER                                      0x49C 
 #define FLAG_ITEM_MINTY_MEADOWS_HOUSE_ITEM                          0x49D
 #define FLAG_ITEM_COP_1_RARE_CANDY                                  0x49E
@@ -1242,30 +1242,30 @@
 #define FLAG_ITEM_NOR_TWISTEDSPOON                                  0x4A5
 #define FLAG_ITEM_NOR_TM_TOXIC                                      0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
-#define FLAG_MINTY_MEADOWS_POTION                                   0x4A8 
-#define FLAG_MINTY_MEADOWS_REPEL                                    0x4A9
+#define FLAG_MINTY_MEADOWS_X_SP_ATK                                 0x4A8 
+#define FLAG_MINTY_MEADOWS_X_DEF                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_CARBOS                                           0x4AB 
 #define FLAG_SS_RAIN_TM_SHOCK_WAVE                                  0x4AC 
 #define FLAG_SS_RAIN_LEFTOVERS                                      0x4AD
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
-#define FLAG_MAPLEGROVE_FOCUS_BAND                                  0x4AF 
-#define FLAG_ITEM_MINTY_MEADOWS_BIG_ROOT                            0x4B0 
+#define FLAG_MAPLEGROVE_REVIVE                                      0x4AF  // currently not in use
+#define FLAG_ITEM_MINTY_MEADOWS_HP_UP                               0x4B0 
 #define FLAG_TRAVELERS_TUNNEL_TM_ROCK_TOMB                          0x4B1 
 #define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
 #define FLAG_ITEM_TIDALCOVE_DIVE_BALL                               0x4B3
 #define FLAG_ITEM_PROMENADE_PATH_PEARL                              0x4B4
 #define FLAG_ITEM_PROMENADE_PATH_SUPER_REPEL                        0x4B5
 #define FLAG_ITEM_APPLEVINE_TM                                      0x4B6
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
+#define FLAG_ITEM_SORANNA_PATH_POKEBALL                             0x4B7
+#define FLAG_ITEM_VERDANT_PATH_ANTIDOTE                             0x4B8
+#define FLAG_ITEM_VERDANT_PATH_SILK_SCARF                           0x4B9 
+#define FLAG_ITEM_VERDANT_WOODS_NET_BALL                            0x4BA
+#define FLAG_ITEM_VERDANT_WOODS_BUG_GEM                             0x4BB
+#define FLAG_ITEM_VERDANT_WOODS_POTION                              0x4BC 
+#define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
+#define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE
+#define FLAG_ITEM_MAPLEGROVE_WHITE_HERB                             0x4BF
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
@@ -1523,8 +1523,7 @@
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
 //camp persi: first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
-//camp persi: berry shop npc gives you free berries
-#define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B)
+#define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B)       // no longer in use
 //minty meadows: rival fight
 #define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
 //verdant woods: miracle seed
@@ -1570,7 +1569,7 @@
 //applevine: coco itemfinder gift
 #define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
 #define FLAG_APPLEVINE_MANECTRIC_GIFT               (SYSTEM_FLAGS + 0xA2)
-#define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
+#define FLAG_CAMP_PERSI_SPOKE_TO_THIEF              (SYSTEM_FLAGS + 0xA3)
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
 #define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag

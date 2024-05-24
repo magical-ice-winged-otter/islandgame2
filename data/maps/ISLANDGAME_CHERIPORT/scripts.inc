@@ -285,7 +285,7 @@ ISLAND_GAME_CHERIPORT_OUTSIDE_NPC4_TALK::
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC5_TALK::
 	.string "{COLOR DARK_GRAY}Welcome to the island of Oranna,\n"
 	.string "traveler.\p"
-	.string "{COLOR DARK_GRAY}We, The Silverwing Order, pray you have\n"
+	.string "{COLOR DARK_GRAY}We, {COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}The Silverwing Order{SHADOW LIGHT_GRAY}{COLOR DARK_GRAY}, pray you have\n"
 	.string "a pleasant stay.$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC6_TALK::

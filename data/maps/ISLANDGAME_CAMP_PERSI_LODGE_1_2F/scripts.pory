@@ -6,9 +6,13 @@ const THIEF_ID = 1
 script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
     lock
     if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)) {
-        msgbox(format("I can't believe those kids didn't see me swipe those cookies and candy bars!"))
-        playse(SE_PIN)
-        applymovement(THIEF_ID, ExclaimFacePlayer)
+        if(!flag(FLAG_CAMP_PERSI_SPOKE_TO_THIEF)) {
+            msgbox(format("I can't believe those kids didn't see me swipe those cookies and candy bars!"))
+            playse(SE_PIN)
+            applymovement(THIEF_ID, ExclaimFacePlayer)
+            setflag(FLAG_CAMP_PERSI_SPOKE_TO_THIEF)
+        }
+        faceplayer
         msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_NPCTalk)
     }
     else {
@@ -28,7 +32,7 @@ text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_NPCTalk {
 
 script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_GulpinDoll {
     lock
-    if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)) {
+    if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED) && flag(FLAG_CAMP_PERSI_SPOKE_TO_THIEF)) {
         msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect, MSGBOX_YESNO)
         if(var(VAR_RESULT) == NO) {
             msgbox(format("Wow. Really? You're gonna let him get away with it?"))
