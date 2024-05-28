@@ -365,6 +365,16 @@ script ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc {
     return
 }
 
+script ISLANDGAME_VERDANT_WOODS_HaunterPhase2Loc {
+    clearflag(HAUNTER_FLAG)
+    setobjectxyperm(HAUNTER_NPC, 12, 35)
+    setobjectmovementtype(HAUNTER_NPC, MOVEMENT_TYPE_FACE_DOWN)
+    showobjectat(HAUNTER_NPC, MAP_ISLANDGAME_VERDANT_WOODS) // show haunter
+    addobject(HAUNTER_NPC) // show haunter
+    
+    return
+}
+
 script ISLANDGAME_VERDANT_WOODS_FightHaunter {
     setflag(FLAG_SMART_WILD_AI)
     setflag(FLAG_NO_CATCHING)
@@ -382,6 +392,31 @@ script ISLANDGAME_VERDANT_WOODS_FightHaunter {
 }
 script ISLANDGAME_VERDANT_WOODS_SkittyPhase2 {
     lock
+    msgbox("Skitty seems frightened.")
+    applymovement(SKITTY_NPC, Common_Movement_FaceUp)
+    waitmovement(SKITTY_NPC)
+    playmoncry(SPECIES_SKITTY, CRY_MODE_ENCOUNTER)
+    delay(120)
+    waitmoncry
+    fadescreen(FADE_TO_WHITE)
+    delay(10)
+    call(ISLANDGAME_VERDANT_WOODS_HaunterPhase2Loc)
+    applymovement(HAUNTER_NPC, Common_Movement_FaceDown)
+    waitmovement(HAUNTER_NPC)
+    fadescreen(FADE_FROM_WHITE)
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    applymovement(HAUNTER_NPC, Common_Movement_WalkDown)
+    waitmovement(HAUNTER_NPC)
+    delay(10)
+    applymovement(HAUNTER_NPC, Common_Movement_WalkDown)
+    waitmovement(HAUNTER_NPC)
+    delay(20)
+    applymovement(HAUNTER_NPC, Common_Movement_WalkDown)
+    waitmovement(HAUNTER_NPC)
+    delay(30)
+    
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    waitmoncry
     call(ISLANDGAME_VERDANT_WOODS_FightHaunter)
     specialvar(VAR_RESULT, GetBattleOutcome)
      switch(var(VAR_RESULT)) {

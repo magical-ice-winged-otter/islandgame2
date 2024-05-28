@@ -265,6 +265,15 @@ ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc::
 	return
 
 
+ISLANDGAME_VERDANT_WOODS_HaunterPhase2Loc::
+	clearflag FLAG_TEMP_3
+	setobjectxyperm 25, 12, 35
+	setobjectmovementtype 25, MOVEMENT_TYPE_FACE_DOWN
+	showobjectat 25, MAP_ISLANDGAME_VERDANT_WOODS
+	addobject 25
+	return
+
+
 ISLANDGAME_VERDANT_WOODS_FightHaunter::
 	setflag FLAG_SMART_WILD_AI
 	setflag FLAG_NO_CATCHING
@@ -282,6 +291,27 @@ ISLANDGAME_VERDANT_WOODS_FightHaunter::
 
 ISLANDGAME_VERDANT_WOODS_SkittyPhase2::
 	lock
+	msgbox ISLANDGAME_VERDANT_WOODS_SkittyPhase2_Text_0
+	applymovement 24, Common_Movement_FaceUp
+	waitmovement 24
+	playmoncry SPECIES_SKITTY, CRY_MODE_ENCOUNTER
+	delay 120
+	waitmoncry
+	fadescreen FADE_TO_WHITE
+	delay 10
+	call ISLANDGAME_VERDANT_WOODS_HaunterPhase2Loc
+	applymovement 25, Common_Movement_FaceDown
+	waitmovement 25
+	fadescreen FADE_FROM_WHITE
+	playmoncry SPECIES_HAUNTER, CRY_MODE_ENCOUNTER
+	applymovement 25, Common_Movement_WalkDown
+	waitmovement 25
+	delay 10
+	applymovement 25, Common_Movement_WalkDown
+	waitmovement 25
+	delay 10
+	playmoncry SPECIES_HAUNTER, CRY_MODE_ENCOUNTER
+	waitmoncry
 	call ISLANDGAME_VERDANT_WOODS_FightHaunter
 	specialvar VAR_RESULT, GetBattleOutcome
 	switch VAR_RESULT
@@ -349,6 +379,9 @@ ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_Text_0:
 
 ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2_Text_0:
 	.string "The Skitty seems frightened.$"
+
+ISLANDGAME_VERDANT_WOODS_SkittyPhase2_Text_0:
+	.string "Skitty seems frightened.$"
 
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0:
 	.string "{COLOR DARK_GRAY}That's a Miracle Seed. It's not good for\n"
