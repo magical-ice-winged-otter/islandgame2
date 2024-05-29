@@ -11,12 +11,13 @@ ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	switch VAR_RESULT
 	case QUEST_INACTIVE, ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 	case QUEST_ACTIVE, ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_3
+	case QUEST_COMPLETED, ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 	return
 
 ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	gettime
 	compare VAR_0x8000, 0
-	goto_if_ge ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	goto_if_ge ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 	return
 
 ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
@@ -25,6 +26,11 @@ ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
 	return
 
 ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+	setvar VAR_TEMP_0, 0
+	call ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc
+	return
+
+ISLANDGAME_VERDANT_WOODS_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 	setvar VAR_TEMP_0, 1
 	return
 
@@ -291,7 +297,13 @@ ISLANDGAME_VERDANT_WOODS_FightHaunter::
 
 ISLANDGAME_VERDANT_WOODS_SkittyPhase2::
 	lock
-	msgbox ISLANDGAME_VERDANT_WOODS_SkittyPhase2_Text_0
+	returnqueststate QUEST_VERDANT_FOREST_SKITTY
+	switch VAR_RESULT
+	case QUEST_COMPLETED, ISLANDGAME_VERDANT_WOODS_SkittyPhase2_3
+ISLANDGAME_VERDANT_WOODS_SkittyPhase2_1:
+	msgbox ISLANDGAME_VERDANT_WOODS_SkittyPhase2_Text_0, MSGBOX_NPC
+	waitmessage
+	closemessage
 	applymovement 24, Common_Movement_FaceUp
 	waitmovement 24
 	playmoncry SPECIES_SKITTY, CRY_MODE_ENCOUNTER
@@ -309,20 +321,71 @@ ISLANDGAME_VERDANT_WOODS_SkittyPhase2::
 	delay 10
 	applymovement 25, Common_Movement_WalkDown
 	waitmovement 25
-	delay 10
+	delay 20
+	applymovement 25, Common_Movement_WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 25
+	delay 30
+	waitmovement OBJ_EVENT_ID_PLAYER
 	playmoncry SPECIES_HAUNTER, CRY_MODE_ENCOUNTER
 	waitmoncry
 	call ISLANDGAME_VERDANT_WOODS_FightHaunter
 	specialvar VAR_RESULT, GetBattleOutcome
 	switch VAR_RESULT
-	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_SkittyPhase2_3
-	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_SkittyPhase2_3
-ISLANDGAME_VERDANT_WOODS_SkittyPhase2_1:
+	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_SkittyPhase2_6
+	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_SkittyPhase2_6
+	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_SkittyPhase2_7
+ISLANDGAME_VERDANT_WOODS_SkittyPhase2_4:
 	release
 	return
 
 ISLANDGAME_VERDANT_WOODS_SkittyPhase2_3:
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty
 	goto ISLANDGAME_VERDANT_WOODS_SkittyPhase2_1
+
+ISLANDGAME_VERDANT_WOODS_SkittyPhase2_6:
+	goto ISLANDGAME_VERDANT_WOODS_SkittyPhase2_4
+
+ISLANDGAME_VERDANT_WOODS_SkittyPhase2_7:
+	removeobject 25
+	setflag FLAG_TEMP_3
+	completequest QUEST_VERDANT_FOREST_SKITTY
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceOriginalDirection
+	setvar VAR_TEMP_0, 0
+	waitmovement OBJ_EVENT_ID_PLAYER
+	call ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty
+	goto ISLANDGAME_VERDANT_WOODS_SkittyPhase2_4
+
+
+ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty::
+	lock
+	faceplayer
+	playmoncry SPECIES_HAUNTER, CRY_MODE_ENCOUNTER
+	waitmoncry
+	msgbox ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_Text_0, MSGBOX_YESNO
+	switch VAR_RESULT
+	case YES, ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_3
+	case NO, ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_4
+ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_1:
+	release
+	return
+
+ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_3:
+	givemon SPECIES_SKITTY, 10, ITEM_NONE, ITEM_PREMIER_BALL, 1, 1, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_FAKE_OUT, MOVE_SING, MOVE_TACKLE, MOVE_DISARMING_VOICE, FALSE
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_SKITTY
+	msgbox ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_Text_1
+	waitfanfare
+	closemessage
+	removeobject 24
+	setflag FLAG_TEMP_2
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_1
+
+ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_4:
+	msgbox ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_Text_2
+	playmoncry SPECIES_HAUNTER, CRY_MODE_ENCOUNTER
+	waitmoncry
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_1
 
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC3::
@@ -382,6 +445,15 @@ ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2_Text_0:
 
 ISLANDGAME_VERDANT_WOODS_SkittyPhase2_Text_0:
 	.string "Skitty seems frightened.$"
+
+ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_Text_0:
+	.string "Skitty wants to join your team. Accept?$"
+
+ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_Text_1:
+	.string "{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!$"
+
+ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty_Text_2:
+	.string "Skitty became dejected.$"
 
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0:
 	.string "{COLOR DARK_GRAY}That's a Miracle Seed. It's not good for\n"
