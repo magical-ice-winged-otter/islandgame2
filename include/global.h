@@ -1065,7 +1065,8 @@ struct SaveBlock1
     /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];
-    /*0x9C2*/ u8 unused_9C2[6];
+    bool8 autoRun;
+    /*0x9C2*/ u8 unused_9C2[5];
 #if FREE_MATCH_CALL == FALSE
     /*0x9C8*/ u16 trainerRematchStepCounter;
     // MAX_REMATCH_ENTRIES decreased from vanilla's 100 to 92
