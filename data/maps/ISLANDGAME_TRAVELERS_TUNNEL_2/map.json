@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 20,
+      "x": 19,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -26,32 +26,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_1"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 2,
-      "y": 14,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 2,
-      "y": 15,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
@@ -106,7 +80,15 @@
       "y": 4,
       "elevation": 0,
       "item": "ITEM_EVERSTONE",
-      "flag": "FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_1"
+      "flag": "FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_EVERSTONE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 24,
+      "elevation": 0,
+      "item": "ITEM_DIRE_HIT",
+      "flag": "FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_DIREHIT"
     }
   ]
 }

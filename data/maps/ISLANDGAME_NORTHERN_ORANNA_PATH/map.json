@@ -165,29 +165,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 12,
-      "y": 33,
+      "x": 58,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_NET_BALL",
+      "trainer_sight_or_berry_tree_id": "ITEM_ICE_HEAL",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_117_GREAT_BALL"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 29,
-      "y": 8,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_REVIVE",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_117_REVIVE"
+      "flag": "FLAG_ITEM_NOP_ICE_HEAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -198,22 +185,22 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_TOXIC",
+      "trainer_sight_or_berry_tree_id": "ITEM_MYSTIC_WATER",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_NOR_TM_TOXIC"
+      "flag": "FLAG_ITEM_NOR_MYSTIC_WATER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 58,
-      "y": 27,
+      "x": 29,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TWISTED_SPOON",
+      "trainer_sight_or_berry_tree_id": "ITEM_SUPER_POTION",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_NOR_TWISTEDSPOON"
+      "flag": "FLAG_ITEM_NOR_SUPER_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -275,14 +262,6 @@
       "x": 5,
       "y": 2,
       "elevation": 0,
-      "item": "ITEM_SUN_STONE",
-      "flag": "FLAG_HIDDEN_ITEM_NORANNA_PATH_SUN_STONE"
-    },
-    {
-      "type": "hidden_item",
-      "x": 37,
-      "y": 15,
-      "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY"
     },
@@ -291,8 +270,8 @@
       "x": 44,
       "y": 8,
       "elevation": 0,
-      "item": "ITEM_RESIST_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_NORANNA_PATH_R_FEATHER"
+      "item": "ITEM_HEALTH_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_NORANNA_PATH_H_FEATHER"
     }
   ]
 }

@@ -1,29 +1,38 @@
 const OLD_MAN_OW_ID = 12
+const FLAG_NIGHT = FLAG_TEMP_1
+const FLAG_DAY = FLAG_TEMP_2
+const VAR_CURRENT_HOUR = VAR_0x8000
 
 mapscripts ISLANDGAME_FRESA_FARMS_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_FRESA_FARMS_HandleDaycareState
-}
+    MAP_SCRIPT_ON_TRANSITION {
+        specialvar(VAR_RESULT, GetDaycareState)
+        switch (var(VAR_RESULT)) {
+        case DAYCARE_NO_MONS:
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+            return
+        case DAYCARE_TWO_MONS:
+            //setvar(VAR_OBJ_GFX_ID_B, VAR_0x800B)
+            //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
+            clearflag(FLAG_TEMP_B)
+            clearflag(FLAG_TEMP_A)
+            return
+        case DAYCARE_ONE_MON:
+            //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
+            setflag(FLAG_TEMP_B)
+            clearflag(FLAG_TEMP_A)
+            return
+        }   
+        gettime
 
-//daycare stuff:
-script ISLANDGAME_FRESA_FARMS_HandleDaycareState {
-    specialvar(VAR_RESULT, GetDaycareState)
-    switch (var(VAR_RESULT)) {
-       case DAYCARE_NO_MONS:
-           setflag(FLAG_TEMP_A)
-           setflag(FLAG_TEMP_B)
-           return
-       case DAYCARE_TWO_MONS:
-           //setvar(VAR_OBJ_GFX_ID_B, VAR_0x800B)
-           //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
-           clearflag(FLAG_TEMP_B)
-           clearflag(FLAG_TEMP_A)
-           return
-       case DAYCARE_ONE_MON:
-           //setvar(VAR_OBJ_GFX_ID_A, VAR_0x800A)
-           setflag(FLAG_TEMP_B)
-           clearflag(FLAG_TEMP_A)
-           return
-    }   
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+            setflag(FLAG_NIGHT)
+        }
+        else {
+            setflag(FLAG_DAY)
+        }
+    }
+
 }
 
 //see daycare.c#updateDaycareGfxVars
@@ -90,7 +99,7 @@ script ISLANDGAME_FRESA_FARMS_Sign {
 script ISLANDGAME_FRESA_FARMS_Man {
     lock
     faceplayer
-    msgbox(format("My parents established this farm a long time ago. One day, it'll belong to me.\pI hope I'll be able to run it just as well as they do."))
+    msgbox(format("My parents established this farm a long time ago.\pOne day, it'll be all mine..."))
     release
 }
 
@@ -98,7 +107,12 @@ script ISLANDGAME_FRESA_FARMS_Miltank_Interact {
     lock
     faceplayer
     playmoncry(SPECIES_MILTANK, CRY_MODE_NORMAL)
-    msgbox(format("Moo. {COLOR BLUE}(Moo.)"))
+    if(flag(FLAG_NIGHT)) {
+        msgbox(format("Moo. {COLOR BLUE}(If you want some of my milk, you'll have to come here during the day.)"))
+    }
+    else {
+        msgbox(format("Moo. {COLOR BLUE}(Moo.)"))
+    }
     release
 }
 
@@ -113,15 +127,21 @@ script ISLANDGAME_FRESA_FARMS_Chansey_Interact {
 script ISLANDGAME_FRESA_FARMS_Mareep1 {
     lock
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
-    msgbox(format("Reeep. {COLOR BLUE}(Heh. That dumb dog's snoozing on his job again!)\p""Reep reep. {COLOR BLUE}(Time to sneak out and have some fun with Chansey...)\p""Reep? {COLOR BLUE}(Huh?)"))
-    faceplayer
-    playse(SE_PIN)
-    applymovement(2, Common_Movement_ExclamationMark)
-    waitmovement(0)
-    applymovement(2, Common_Movement_Delay32)
-    msgbox(format("Reep... {COLOR BLUE}(Oh, it's just a random kid. Good thing they can't understand me.)\p""Reep! {COLOR BLUE}(Go away! I've got big plans for tonight!)\p""Reep. {COLOR BLUE}(Oh wait... They don't understand me.)"))
-    applymovement(2, Common_Movement_FaceOriginalDirection)
-    waitmovement(0)
+    if(flag(FLAG_NIGHT)) {
+        msgbox(format("Reeep. {COLOR BLUE}(Heh. That dumb dog's snoozing on his job again!)\p""{COLOR DARK_GRAY}Reep reep. {COLOR BLUE}(Time to sneak out and have some fun with Chansey...)\p""{COLOR DARK_GRAY}Reep? {COLOR BLUE}(Huh?)"))
+        faceplayer
+        playse(SE_PIN)
+        applymovement(2, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(2, Common_Movement_Delay32)
+        msgbox(format("{COLOR DARK_GRAY}Reep... {COLOR BLUE}(Oh, it's just a random kid. Good thing they can't understand me.)\p""{COLOR DARK_GRAY}Reep! {COLOR BLUE}(Go away! I've got big plans for tonight!)\p""{COLOR DARK_GRAY}Reep. {COLOR BLUE}(Oh wait... They don't understand me.)"))
+        applymovement(2, Common_Movement_FaceOriginalDirection)
+        waitmovement(0)
+    }
+    else {
+        msgbox(format("{COLOR DARK_GRAY}Reep... {COLOR BLUE}(Tch, this mutt is a pain in my fluffy behind!)\p{COLOR DARK_GRAY}Reep. {COLOR BLUE}(I got important business to attend to at night!)"))
+    }
+
     release
 }
 
@@ -164,7 +184,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep4 {
 }
 
 script ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor {
-    msgbox(format("Welcome to Fresa Farms!\pOur produce is sourced from the healthiest Pokemon in Marya!"), MSGBOX_NPC)
+    msgbox(format("Welcome to Fresa Farms!\pOur milk is sourced from the healthiest Miltanks in Marya!"), MSGBOX_NPC)
     pokemart(MilkVendorItems)
     msgbox(format("Thank you for supporting us!"), MSGBOX_NPC)
 }

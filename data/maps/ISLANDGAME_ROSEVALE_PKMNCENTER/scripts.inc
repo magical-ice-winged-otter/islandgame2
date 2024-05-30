@@ -21,7 +21,11 @@ ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_0
+	showmonpic SPECIES_ARTICUNO, 10, 3
 	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_1
+	hidemonpic
+	closemessage
+	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_2
 	closemessage
 	releaseall
 	return
@@ -51,6 +55,9 @@ ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_0:
 	.string "see?$"
 
 ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_1:
+	.string "Voila!$"
+
+ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1_Text_2:
 	.string "It mostly roosts at the top of Mt.\n"
 	.string "Aurora, so unless you want to climb\l"
 	.string "thousands of feet in a blizzard, the\l"

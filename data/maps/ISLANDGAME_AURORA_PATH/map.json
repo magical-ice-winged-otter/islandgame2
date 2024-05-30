@@ -5,7 +5,7 @@
   "music": "MUS_ROUTE101",
   "region_map_section": "MAPSEC_AURORA_PATH",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_SNOW",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -55,9 +55,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_COMET_SHARD",
+      "trainer_sight_or_berry_tree_id": "ITEM_STARDUST",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_AP_COMET_SHARD"
+      "flag": "FLAG_ITEM_AP_STARDUST"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -107,9 +107,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PROTEIN",
+      "trainer_sight_or_berry_tree_id": "ITEM_IRON",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_106_PROTEIN"
+      "flag": "FLAG_ITEM_AURORA_PATH_IRON"
     }
   ],
   "warp_events": [
@@ -150,8 +150,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 31,
-      "y": 23,
+      "x": 29,
+      "y": 6,
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_EXP_CANDY"
@@ -161,40 +161,16 @@
       "x": 21,
       "y": 46,
       "elevation": 0,
-      "item": "ITEM_SHINY_STONE",
-      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_SHINYSTONE"
-    },
-    {
-      "type": "hidden_item",
-      "x": 35,
-      "y": 5,
-      "elevation": 0,
       "item": "ITEM_GUARD_SPEC",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL"
-    },
-    {
-      "type": "hidden_item",
-      "x": 7,
-      "y": 18,
-      "elevation": 0,
-      "item": "ITEM_SWIFT_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE"
-    },
-    {
-      "type": "hidden_item",
-      "x": 16,
-      "y": 52,
-      "elevation": 0,
-      "item": "ITEM_STARDUST",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST"
+      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_GUARD_SPEC"
     },
     {
       "type": "hidden_item",
       "x": 34,
       "y": 52,
       "elevation": 0,
-      "item": "ITEM_CLEVER_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_C_FEATHER"
+      "item": "ITEM_RESIST_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER"
     }
   ]
 }

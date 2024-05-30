@@ -988,10 +988,10 @@ static const struct TrainerMon sParty_PromenadePath4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 25,
-    .ability = ABILITY_DRIZZLE,
+    .ability = ABILITY_RAIN_DISH,
     .species = SPECIES_PELIPPER,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_ROOST, MOVE_KNOCK_OFF}
+    .moves = {MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_ROOST, MOVE_RAIN_DANCE}
     },
 };
 

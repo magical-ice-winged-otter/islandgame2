@@ -83,6 +83,7 @@ script ISLANDGAME_APPLEVINE_CocoInteract {
 // coco event; if you try to skip her
 script ISLANDGAME_APPLEVINE_CocoTrigger1 {
         lock
+        playse(SE_PIN)
         applymovement(COCO_OW_ID, Common_Movement_ExclamationMark)
         waitmovement(0)
         applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
@@ -118,6 +119,7 @@ script ISLANDGAME_APPLEVINE_CocoTrigger1 {
 }
 script ISLANDGAME_APPLEVINE_CocoTrigger2 {
         lock
+        playse(SE_PIN)
         applymovement(COCO_OW_ID, Common_Movement_ExclamationMark)
         waitmovement(0)
         applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
@@ -233,7 +235,7 @@ script ISLANDGAME_APPLEVINE_NPC2 {
     lock
     faceplayer
     msgbox(format(
-        "Hey... if we catch them all... does that mean... we'll finally be free?"
+        "Hey...{PAUSE 30} if we catch them all...{PAUSE 60} does that mean...{PAUSE 60} we'll finally be free?"
     ), MSGBOX_YESNO)
 
     if(var(VAR_RESULT) == YES) {
@@ -242,7 +244,7 @@ script ISLANDGAME_APPLEVINE_NPC2 {
         waitmoncry
     }
     else {
-        msgbox(format("Ah... I apologize, then."))
+        msgbox(format("Ah...{PAUSE 60} I apologize, then."))
     }
     closemessage
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
@@ -300,7 +302,7 @@ script ISLANDGAME_APPLEVINE_NPC7 {
     msgbox(format(
         "I hate swimming during Luvdisc mating season.\p"
         "It just reminds me that I'm all alone on this crummy island...\p"
-        "I'll always have you though, my signed gravure photo of Ruka."
+        "I'll always have you though, my signed swimsuit photo of Ruka."
     ))
     closemessage
     release
@@ -334,7 +336,7 @@ script ISLANDGAME_APPLEVINE_NPC10 {
     lock
     faceplayer
     msgbox(format(
-        "It's said that a Luvdisc's heart scale will help you find your lover."
+        "It's said that a Luvdisc's heart scale will help you find your lover!"
     ))
     closemessage
     release

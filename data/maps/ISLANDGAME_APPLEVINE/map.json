@@ -42,9 +42,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_WATER_PULSE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ZINC",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_APPLEVINE_TM"
+      "flag": "FLAG_ITEM_APPLEVINE_ZINC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_341",
@@ -233,12 +233,12 @@
       "x": 47,
       "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
       "movement_range_x": 0,
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_APPLEVINE_NPC14",
       "flag": "0"
     },
     {
@@ -383,14 +383,6 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 18,
-      "y": 17,
-      "elevation": 0,
-      "item": "ITEM_PP_UP",
-      "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_PP_UP"
-    },
-    {
-      "type": "hidden_item",
       "x": 34,
       "y": 31,
       "elevation": 0,
@@ -415,8 +407,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 7,
-      "y": 28,
+      "x": 34,
+      "y": 6,
       "elevation": 0,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE"
@@ -452,6 +444,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_APPLEVINE_RockyPathSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 54,
+      "y": 5,
+      "elevation": 0,
+      "item": "ITEM_MUSCLE_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_MUSCLE_FEATHER"
     }
   ]
 }

@@ -716,7 +716,7 @@ ISLANDGAME_CAMP_PERSI_TrainerBattle5_PostDefeated_Text::
 ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text::
 	.string "Ah... \p"
 	.string "Your aptitude for battle is...{PAUSE 60}\n"
-	.string "quite remarkable.$"
+	.string "quite remarkable.{PAUSE 30}$"
 
 ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text::
 	.string "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Thank you for the exciting\n"
@@ -727,7 +727,7 @@ ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text::
 
 ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2::
 	.string "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Unfortunately, our conversation\n"
-	.string "must end here.{PAUSE 60} I have a lot of ground\l"
+	.string "must end here. I have a lot of ground\l"
 	.string "to cover today.\p"
 	.string "{COLOR DARK_GRAY}Oh, but before I go, you should know\n"
 	.string "about the upcoming Silverwing\l"
@@ -753,7 +753,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro::
 	.string "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling\n"
 	.string "merchant of {COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}The Silverwing Order.\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The Silverwing Order is in charge of\n"
-	.string "governing the isles.{PAUSE 60} It's our job to\l"
+	.string "governing the isles. It's our job to\l"
 	.string "make sure everyone here is comfortable\l"
 	.string "and safe!\p"
 	.string "{COLOR DARK_GRAY}My job in particular is traveling around\n"

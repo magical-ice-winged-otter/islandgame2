@@ -4675,7 +4675,7 @@
       "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2",
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_Layout",
       "width": 90,
-      "height": 60,
+      "height": 55,
       "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_oranna_central_path",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2/border.bin",
@@ -4724,7 +4724,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_NORTHERN_ORANNA_PATH",
       "name": "ISLANDGAME_NORTHERN_ORANNA_PATH_Layout",
-      "width": 70,
+      "width": 68,
       "height": 40,
       "primary_tileset": "gTileset_islandgame_oranna_general",
       "secondary_tileset": "gTileset_islandgame_oranna_northern_path",
@@ -4904,8 +4904,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_FRESA_FARMS_HOUSE",
       "name": "ISLANDGAME_FRESA_FARMS_HOUSE_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 15,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_FRESA_FARMS_HOUSE/border.bin",
@@ -4944,8 +4944,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROSEVALE_PKMNCENTER",
       "name": "ISLANDGAME_ROSEVALE_PKMNCENTER_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 14,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER/border.bin",
@@ -4984,8 +4984,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_TIDALCOVE_PKMNCENTER",
       "name": "ISLANDGAME_TIDALCOVE_PKMNCENTER_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 14,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNCENTER/border.bin",
@@ -4994,8 +4994,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_TIDALCOVE_PKMNMART",
       "name": "ISLANDGAME_TIDALCOVE_PKMNMART_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 11,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNMART/border.bin",
@@ -5434,10 +5434,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_APPLEVINE_RESTAURANT",
       "name": "ISLANDGAME_APPLEVINE_RESTAURANT_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 11,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE_RESTAURANT/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_APPLEVINE_RESTAURANT/map.bin"
     },
@@ -5500,6 +5500,26 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_TIDALCOVE_PKMNCENTER_2F",
+      "name": "ISLANDGAME_TIDALCOVE_PKMNCENTER_2F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNCENTER_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_TIDALCOVE_PKMNCENTER_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_ROSEVALE_PKMNCENTER_2F",
+      "name": "ISLANDGAME_ROSEVALE_PKMNCENTER_2F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_ROSEVALE_PKMNCENTER_2F/map.bin"
     }
   ]
 }

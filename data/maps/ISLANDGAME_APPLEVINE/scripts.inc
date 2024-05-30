@@ -78,6 +78,7 @@ ISLANDGAME_APPLEVINE_CocoInteract_2:
 
 ISLANDGAME_APPLEVINE_CocoTrigger1::
 	lock
+	playse SE_PIN
 	applymovement 19, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement 19, Common_Movement_FacePlayer
@@ -115,6 +116,7 @@ ISLANDGAME_APPLEVINE_CocoTrigger1::
 
 ISLANDGAME_APPLEVINE_CocoTrigger2::
 	lock
+	playse SE_PIN
 	applymovement 19, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement 19, Common_Movement_FacePlayer
@@ -385,14 +387,14 @@ ISLANDGAME_APPLEVINE_NPC1_Text_1:
 	.string "stop by if you like our Sweet Hearts!$"
 
 ISLANDGAME_APPLEVINE_NPC2_Text_0:
-	.string "Hey... if we catch them all... does that\n"
-	.string "mean... we'll finally be free?$"
+	.string "Hey...{PAUSE 30} if we catch them all...{PAUSE 60} does that\n"
+	.string "mean...{PAUSE 60} we'll finally be free?$"
 
 ISLANDGAME_APPLEVINE_NPC2_Text_1:
 	.string "I see...$"
 
 ISLANDGAME_APPLEVINE_NPC2_Text_2:
-	.string "Ah... I apologize, then.$"
+	.string "Ah...{PAUSE 60} I apologize, then.$"
 
 ISLANDGAME_APPLEVINE_NPC3_Text_0:
 	.string "I'm trying to teach my Zigzagoon how to\n"
@@ -415,7 +417,7 @@ ISLANDGAME_APPLEVINE_NPC7_Text_0:
 	.string "It just reminds me that I'm all alone on\n"
 	.string "this crummy island...\p"
 	.string "I'll always have you though, my signed\n"
-	.string "gravure photo of Ruka.$"
+	.string "swimsuit photo of Ruka.$"
 
 ISLANDGAME_APPLEVINE_NPC8_Text_0:
 	.string "The Island Guardian of Lumine is none\n"
@@ -439,7 +441,7 @@ ISLANDGAME_APPLEVINE_NPC9_Text_0:
 
 ISLANDGAME_APPLEVINE_NPC10_Text_0:
 	.string "It's said that a Luvdisc's heart scale\n"
-	.string "will help you find your lover.$"
+	.string "will help you find your lover!$"
 
 ISLANDGAME_APPLEVINE_NPC11_Text_0:
 	.string "Hey, kid! Over here! Shhh! Be quiet! Stop\n"

@@ -834,15 +834,15 @@ ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival_Text_0:
 	.string "moment. I am trying to count my Mareep.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_0:
-	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Ugg... I'm only missing one more\n"
-	.string "Pokémon! Where in the world is it?\p"
+	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Ugg...{PAUSE 30} I'm only missing one more\n"
+	.string "Pokémon!{PAUSE 30} Where in the world is it?\p"
 	.string "{COLOR DARK_GRAY}Waah! I give up! I'm convinced it\n"
 	.string "doesn't even exist!\p"
 	.string "{COLOR DARK_GRAY}Eh?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Umm, hi! Do I know you?\p"
-	.string "{COLOR DARK_GRAY}...Mhm...Okay...Oh!$"
+	.string "{COLOR DARK_GRAY}...Mhm...{PAUSE 30}Okay...{PAUSE 30}Oh!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2:
 	.string "{COLOR DARK_GRAY}You're {PLAYER}? The professor told\n"
@@ -857,7 +857,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_2:
 	.string "you'll get used to it eventually!\p"
 	.string "{COLOR DARK_GRAY}Oh! Now that you're here, let's have a\n"
 	.string "Pokémon battle! I need some action!\p"
-	.string "{COLOR DARK_GRAY}I'm warning you though... I'm pretty\n"
+	.string "{COLOR DARK_GRAY}I'm warning you though...{PAUSE 30} I'm pretty\n"
 	.string "good!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3:
@@ -865,7 +865,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_3:
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_4:
 	.string "{COLOR GREEN}Audrey: {COLOR DARK_GRAY}Drats, I wasn't expecting to\n"
-	.string "lose to you, {PLAYER}.\p"
+	.string "lose to you, {PLAYER}...\p"
 	.string "{COLOR DARK_GRAY}W-Wait, I didn't mean it like that! I was\n"
 	.string "just surprised at how skilled you are!\p"
 	.string "{COLOR DARK_GRAY}Sorry... sometimes I say things before I\n"
@@ -977,7 +977,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_10:
 	.string "leaders in battle!\p"
 	.string "{COLOR DARK_GRAY}Ooh... I just can't wait! I just want the\n"
 	.string "festival to begin tomorrow!\p"
-	.string "{COLOR DARK_GRAY}Huh? Oh, you're right. Neither of us\n"
+	.string "{COLOR DARK_GRAY}Huh? Oh, you're right.{PAUSE 30} Neither of us\n"
 	.string "would qualify if it started tomorrow...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_11:
@@ -986,7 +986,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_11:
 	.string "{COLOR DARK_GRAY}But {PLAYER}, you should go west of\n"
 	.string "Maplegrove and head up to Tidalcove!\p"
 	.string "{COLOR DARK_GRAY}That's where you'll find the first gym\n"
-	.string "leader: Ruka!\p"
+	.string "leader:{PAUSE 30} Ruka!\p"
 	.string "{COLOR DARK_GRAY}Ruka is really famous around here. On\n"
 	.string "top of being a gym leader, she's used to\l"
 	.string "be a professional swimmer and swimsuit\l"
@@ -995,11 +995,11 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_11:
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_12:
 	.string "{COLOR DARK_GRAY}-sigh- I wish I could be as confident as\n"
 	.string "her...\p"
-	.string "{COLOR DARK_GRAY}Oops, there I go rambling again...\n"
+	.string "{COLOR DARK_GRAY}Oops, there I go rambling again...{PAUSE 30}\n"
 	.string "Anyways! Bye-bye for now, {PLAYER}!\p"
 	.string "{COLOR DARK_GRAY}Oh! I almost forgot! Let's exchange\n"
 	.string "phone numbers so we can keep in touch!\p"
-	.string "{COLOR DARK_GRAY}Mhm... alright... and there we go! All set!\p"
+	.string "{COLOR DARK_GRAY}Mhm...{PAUSE 30} Alright...{PAUSE 30} and there we go! All set!\p"
 	.string "{COLOR DARK_GRAY}Okie, goodbye for real now! Let's meet\n"
 	.string "up again soon!$"
 

@@ -214,7 +214,7 @@ ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_1:
 ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_2:
 	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Haha, this shiny Azurill is gonna\n"
 	.string "snag me a fortune on the black market!\p"
-	.string "As for you... quit moping and just and\n"
+	.string "As for you...{PAUSE 60} quit moping and just and\n"
 	.string "get a new one for your little sis.\p"
 	.string "She's just a dumb child, she probably\n"
 	.string "won't even notice the difference.\p"
@@ -222,8 +222,8 @@ ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_2:
 	.string "understand the value of shiny Pokémon.$"
 
 ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_3:
-	.string "{COLOR DARK_GRAY}Hm? And just who are you? A friend of\n"
-	.string "this his?\p"
+	.string "{COLOR DARK_GRAY}Hm?{PAUSE 60} And just who are you? A friend of\n"
+	.string "his?\p"
 	.string "{COLOR DARK_GRAY}Beat it, kid! Unless you want to get\n"
 	.string "demolished like this loser!$"
 
@@ -231,21 +231,21 @@ ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_4:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Please! You have to stop her!\n"
 	.string "That Azurill means everything to my\l"
 	.string "little sister!\p"
-	.string "I-I tried my best... but it just wasn't\n"
+	.string "I-I tried my best...{PAUSE 60} but it just wasn't\n"
 	.string "enough...$"
 
 ISLANDGAME_MT_AURORA_2F_3_Azurill_Interact_Text_0:
-	.string "Azu... {COLOR BLUE}(pls saef me from mean lady)$"
+	.string "Azu... {COLOR BLUE}(pls saef me frum meen ladi)$"
 
 ISLANDGAME_MT_AURORA_2F_3_EdeaInteract_Text_0:
-	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}-sigh- This is why I hate kids.\n"
+	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}-sigh- This is why I hate kids.{PAUSE 60}\n"
 	.string "You brats just never listen!$"
 
 ISLANDGAME_MT_AURORA_2F_3_EdeaInteract_Text_1:
 	.string "I-Impossible! Just who are you!?$"
 
 ThiefDefeated_Text_0:
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Ha! You lost! Now, give me back\n"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Ha! You lost!{PAUSE 30} Now, give me back\n"
 	.string "my sister's Azurill!$"
 
 ThiefDefeated_Text_1:
@@ -268,18 +268,18 @@ ThiefDefeated_Text_3:
 ThiefDefeated_Text_4:
 	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}W-What!? Articuno!? Where in the\n"
 	.string "blazes did you come from!?\p"
-	.string "Ngggh... F-Fine! I'll give back their\n"
+	.string "Ngggh...{PAUSE 30} F-Fine! I'll give back their\n"
 	.string "stupid Azurill!\p"
 	.string "You punks got lucky this time! Now... if\n"
-	.string "you don't mind me... I'm outta here!$"
+	.string "you don't mind me...{PAUSE 30} I'm outta here!$"
 
 ThiefDefeated_Text_5:
 	.string "Cuuuuun...$"
 
 ThiefDefeated_Text_6:
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Holy heck... Was that Articuno\n"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Holy heck...{PAUSE 30} Was that Articuno\n"
 	.string "in the flesh just now!?\p"
-	.string "It left before we could say anything...\n"
+	.string "It left before we could say anything...{PAUSE 30}\n"
 	.string "T-Thank you for the help, Articuno!$"
 
 ThiefDefeated_Text_7:
@@ -296,5 +296,5 @@ ThiefDefeated_Text_9:
 	.string "I couldn't do anything... If it weren't\n"
 	.string "for you and Articuno, Azurill would've\l"
 	.string "been lost forever!\p"
-	.string "Ah... Ah... Achoo! Brrr... It's freezing in\n"
-	.string "here. Let's head back to Rosevale.$"
+	.string "Ah... Ah... Achoo!{PAUSE 30} Brrr... It's freezing in\n"
+	.string "here.{PAUSE 30} Let's head back to Rosevale.$"

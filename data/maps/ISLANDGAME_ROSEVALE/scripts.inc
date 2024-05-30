@@ -376,7 +376,7 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
 	.string "the least we can do for your kindness.$"
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Watching your Pokémon battle...\n"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Watching your Pokémon battle...{PAUSE 30}\n"
 	.string "it was incredible.\p"
 	.string "They knew exactly what to do in the\n"
 	.string "fight, even in the heat of the moment.\p"
@@ -385,12 +385,12 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
 	.string "Rosevale of all places?$"
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_4:
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Oh... you were training up your\n"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Oh...{PAUSE 30} you were training up your\n"
 	.string "Pokemon to battle against Tidalcove's\l"
 	.string "Gym Leader, Ruka?\p"
-	.string "I see... that means you're taking part in\n"
+	.string "I see...{PAUSE 30} that means you're taking part in\n"
 	.string "the Festival Tournament then, right?\p"
-	.string "Hm... So Pokémon trainers can get\n"
+	.string "Hm...{PAUSE 30} So Pokémon trainers can get\n"
 	.string "stronger by battling Gym Leaders...\p"
 	.string "Oh, sorry! We should probably head\n"
 	.string "inside. Let's continue this\l"
@@ -419,7 +419,7 @@ ISLANDGAME_ROSEVALE_Interact_NPC1_Text_0:
 	.string "The city life just isn't for me.$"
 
 ISLANDGAME_ROSEVALE_Interact_NPC2_Text_0:
-	.string "Brrr... The winds are always so chilly\n"
+	.string "Brrr...{PAUSE 30} The winds are always so chilly\n"
 	.string "here.\p"
 	.string "Talonflame! Warm up my hands, will ya? I\n"
 	.string "hate being on watch duty...$"
@@ -461,14 +461,14 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1:
 	.string "Before you go...\p"
 	.string "Please...\p"
 	.string "Face me in a Pokémon battle! I couldn't\n"
-	.string "do anything against that thief... I\l"
+	.string "do anything against that thief...{PAUSE 30} I\l"
 	.string "failed my little sister...\p"
-	.string "If it wasn't for you and Articuno... My\n"
+	.string "If it wasn't for you and Articuno...{PAUSE 30} My\n"
 	.string "sister's Pokémon would've been lost\l"
 	.string "forever!\p"
 	.string "I can't something like that happen\n"
-	.string "again... I need to get stronger, so when\l"
-	.string "the time comes... I'll be able to protect\l"
+	.string "again...{PAUSE 30} I need to get stronger, so when\l"
+	.string "the time comes...{PAUSE 30} I'll be able to protect\l"
 	.string "her myself!\p"
 	.string "And there's no better way than for me\n"
 	.string "to take on Marya Gym Challenge and\l"
@@ -485,7 +485,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_3:
 
 ArthurDefeated_Text_0:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}...\p"
-	.string "{COLOR DARK_GRAY}Heh... You're truly an amazing trainer,\n"
+	.string "{COLOR DARK_GRAY}Heh...{PAUSE 30} You're truly an amazing trainer,\n"
 	.string "{PLAYER}.\p"
 	.string "I have no doubt that you'll be able to\n"
 	.string "beat Ruka.\p"
@@ -493,8 +493,8 @@ ArthurDefeated_Text_0:
 	.string "give up.\p"
 	.string "{COLOR DARK_GRAY}Maybe I'm just not cut out to be a\n"
 	.string "Pokémon trainer.\p"
-	.string "I never win... Why can't I ever win? That\n"
-	.string "thief was right... I am just a loser.\p"
+	.string "I never win...{PAUSE 30} Why can't I ever win? That\n"
+	.string "thief was right...{PAUSE 30} I am just a loser.\p"
 	.string "...a failure.\p"
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}No, Arthur, that's not\n"
 	.string "true.$"

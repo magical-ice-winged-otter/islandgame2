@@ -1,7 +1,7 @@
 mapscripts ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts {
         MAP_SCRIPT_ON_TRANSITION {
         if (!flag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)) {
-            removeobject(3)
+            setflag(FLAG_TEMP_1)
         }
     }
 }
@@ -10,14 +10,108 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
     lock
     msgbox(format(
         "{COLOR RED}(It's some sort of smart speaker shaped like a Porygon2.)\p"
-        "(It's name is apparently Subaru. Should I give it a request?)"
+        "(Its name is apparently Subaru. Should I give it a request?)"
     ), MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
-        msgbox(format(
-            "> You asked if Subaru is a duck.\p"
-            "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}NO DUCK!!! AM ROBOT!!!"
-        ))
+
+        random(100)
+
+        if (var(VAR_RESULT) < 20) {
+            msgbox(format(
+                "> You asked if Subaru is a duck."
+            ))
+            playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
+            msgbox(format(
+                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}NO DUCK!!! AM ROBOT!!!"
+            ))
+        }
+
+        elif (var(VAR_RESULT) < 40) {
+            msgbox(format(
+                "> You asked Subaru about STARLIGHT."
+            ))
+            playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
+            msgbox(format(
+                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}STARLIGHT is an idol group based in the Maryan Isles consisting of five members: Lucia as its front and center, Camille, Azalea, Serafina, and its newest member, Primrose."
+                "STARLIGHT is managed by Eden Productions, a talent agency stationed in the big city of Aetheria.\p"
+                "Currently, their official PokéTube channel holds the number one spot for most subscribers on the website!"
+            ))
+        }
+
+
+        elif (var(VAR_RESULT) < 60) {
+            msgbox(format(
+                "> You asked Subaru about Ruka."
+            ))
+            playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
+            msgbox(format(
+                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Ruka, colloqially known as Tidalcove's Precious Pearl, is a Maryan Gym Leader and supermodel.\p"
+                "Ruka specializes in ice Pokémon, utilizing a snow-based strategy that takes full advantage of her Pokémon's type.\p"
+                "According to interviews, Ruka used to have a bitter rivalry with famous idol Lucia, stating that the two of them viciously competed against one another when they were younger, but have since then mended their relationship.\p"
+                "One of the most commonly asked questions about Ruka are her measurements, and as such, I will display them here: B90, W56, H86."
+            ))
+        }
+
+        elif (var(VAR_RESULT) < 80) {
+            msgbox(format(
+                "> You asked Subaru to tell you a joke."
+            ))
+            playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
+            msgbox(format(
+                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Sure. Can you tell me the 316th Pokémon in the national Pokédex?\p"
+                "> You told Subaru that you're too savvy to fall for that.\p"
+                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Drats. It was worth a try."
+            ))
+        }
+
+        else {
+            msgbox(format(
+                "> You asked Subaru for trainer tips."
+            ))
+            playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
+            msgbox(format(
+                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}If you're not sure how to build your Pokémon team, you might want to try and form a three-type core!\p"
+                "The most popular core is Fire-Grass-Water, but other viable cores you can try out are Steel-Fairy-Dragon and Psychic-Fighting-Dark."
+                "Hope I helped!"
+            ))
+        }
     }
+    closemessage
+    release
+}
+
+
+script ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract {
+    lock
+    playmoncry(SPECIES_PIKACHU, CRY_MODE_NORMAL)
+    faceplayer
+    msgbox(format(
+        "Pika Pika! {COLOR BLUE}(I'm helping my trainer build a new PC!)\p"
+        "{COLOR DARK_GRAY}Pika Pi... {COLOR BLUE}(I could really use some help. I have no idea where anything goes.)"
+    ))
+    applymovement(2, Common_Movement_FaceLeft)
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract {
+    lock
+    msgbox(format(
+        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hm...{PAUSE 60} this goes here...{PAUSE 60} and that goes there...{PAUSE 60}"
+    ))
+    closemessage
+    playse(SE_PIN)
+    applymovement(3, Common_Movement_ExclamationMark)
+    faceplayer
+    applymovement(3, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Oh! Hiya {PLAYER}! Sorry, I was too engrossed in my work to see you.\p"
+        "I'm currently working on another one of my inventions: A special scope that can reveal invisible Pokémon!\p"
+        "It's still in the early stages of development though.\p"
+        "If you're interested in being my little Minccino, I'll let you know when it's ready to be tested!"
+    ))
+    applymovement(3, Common_Movement_FaceUp)
     closemessage
     release
 }

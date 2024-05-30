@@ -89,6 +89,8 @@
 #define MAP_ISLANDGAME_CHERIPORT_PKMNCENTER_2F            (80 | (0 << 8))
 #define MAP_ISLANDGAME_CAMP_PERSI_PKMNCENTER_2F           (81 | (0 << 8))
 #define MAP_ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F           (82 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_PKMNCENTER_2F            (83 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_PKMNCENTER_2F             (84 | (0 << 8))
 
 // gMapGroup_Islandgame2
 #define MAP_ISLANDGAME_APPLEVINE                    (0 | (1 << 8))

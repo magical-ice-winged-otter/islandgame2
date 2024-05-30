@@ -1,5 +1,19 @@
 ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	gettime
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	setflag FLAG_TEMP_2
+	return
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_1
+	return
 
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder::
@@ -82,6 +96,14 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_19:
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_18
 
 
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_NPC::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_NPC_Text_0
+	release
+	return
+
+
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_0:
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Ah, young trainer! It's good\n"
 	.string "to see you again!\p"
@@ -150,3 +172,8 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_7:
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_8:
 	.string "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still\n"
 	.string "don't even know my name! It's Paulie.$"
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_NPC_Text_0:
+	.string "The farm life is pretty alright.\p"
+	.string "Might be a lotta hard work, but you\n"
+	.string "don't gotta worry 'bout much.$"
