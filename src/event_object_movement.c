@@ -523,11 +523,11 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_NPC_68                  0x1182
 #define OBJ_EVENT_PAL_TAG_NPC_69                  0x1183
 #define OBJ_EVENT_PAL_TAG_NPC_70                  0x1184
-#define OBJ_EVENT_PAL_TAG_NPC_71                  0x1185
-#define OBJ_EVENT_PAL_TAG_NPC_72                  0x1186
-#define OBJ_EVENT_PAL_TAG_NPC_73                  0x1187
-#define OBJ_EVENT_PAL_TAG_NPC_74                  0x1188
-#define OBJ_EVENT_PAL_TAG_NPC_75                  0x1189
+#define OBJ_EVENT_PAL_TAG_OLIVIA_FISHING          0x1185
+#define OBJ_EVENT_PAL_TAG_OLIVIA_BIKE             0x1186
+#define OBJ_EVENT_PAL_TAG_OLIVIA_FIELD_MOVE       0x1187
+#define OBJ_EVENT_PAL_TAG_OLIVIA_NORMAL           0x1188
+#define OBJ_EVENT_PAL_TAG_RUKA                    0x1189
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
@@ -1390,6 +1390,14 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #include "data/object_events/object_event_graphics_info.h"
 
 static const struct SpritePalette sObjectEventSpritePalettes[] = {
+
+    // island-game
+    {gObjectEventPal_Ruka,                  OBJ_EVENT_PAL_TAG_RUKA},
+    {gObjectEventPal_OliviaNormal,          OBJ_EVENT_PAL_TAG_OLIVIA_NORMAL},
+    {gObjectEventPal_OliviaBike,            OBJ_EVENT_PAL_TAG_OLIVIA_BIKE},
+    {gObjectEventPal_OliviaFieldMove,       OBJ_EVENT_PAL_TAG_OLIVIA_FIELD_MOVE},
+    {gObjectEventPal_OliviaFishing,         OBJ_EVENT_PAL_TAG_OLIVIA_FISHING},
+
     {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
     {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},
     {gObjectEventPal_Npc3,                  OBJ_EVENT_PAL_TAG_NPC_3},

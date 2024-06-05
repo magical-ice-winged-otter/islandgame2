@@ -1118,7 +1118,13 @@
 #define OBJ_EVENT_GFX_SCIENTIST_3                ISLAND_START + 14
 #define OBJ_EVENT_GFX_TUBER_F_SWIMMING           ISLAND_START + 15
 #define OBJ_EVENT_GFX_WORKER                     ISLAND_START + 16
-#define ISLAND_END                               OBJ_EVENT_GFX_WORKER
+#define OBJ_EVENT_GFX_RUKA                       ISLAND_START + 17
+#define OBJ_EVENT_GFX_OLIVIA_NORMAL              ISLAND_START + 18
+#define OBJ_EVENT_GFX_OLIVIA_SURFING             ISLAND_START + 19
+#define OBJ_EVENT_GFX_OLIVIA_FISHING             ISLAND_START + 20
+#define OBJ_EVENT_GFX_OLIVIA_FIELD_MOVE          ISLAND_START + 21
+#define OBJ_EVENT_GFX_OLIVIA_MACH_BIKE           ISLAND_START + 22
+#define ISLAND_END                               OBJ_EVENT_GFX_OLIVIA_MACH_BIKE
 
 #define NUM_OBJ_EVENT_GFX               (ISLAND_END + 1)
 

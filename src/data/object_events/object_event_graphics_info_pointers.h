@@ -1,5 +1,6 @@
 // island-game
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleBoyCamper;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ruka;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy4;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy5;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl4;
@@ -15,6 +16,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinManiac;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist3;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TuberFSwimming;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaMachBike;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaFishing;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
@@ -1115,6 +1121,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokemon_Spe
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     // island-game
     [OBJ_EVENT_GFX_LITTLE_BOY_CAMPER] =        &gObjectEventGraphicsInfo_LittleBoyCamper,
+    [OBJ_EVENT_GFX_RUKA] =                     &gObjectEventGraphicsInfo_Ruka,
+    [OBJ_EVENT_GFX_OLIVIA_NORMAL] =            &gObjectEventGraphicsInfo_OliviaNormal,
+    [OBJ_EVENT_GFX_OLIVIA_MACH_BIKE] =         &gObjectEventGraphicsInfo_OliviaMachBike,
+    [OBJ_EVENT_GFX_OLIVIA_SURFING] =           &gObjectEventGraphicsInfo_OliviaSurfing,
+    [OBJ_EVENT_GFX_OLIVIA_FIELD_MOVE] =        &gObjectEventGraphicsInfo_OliviaFieldMove,
+    [OBJ_EVENT_GFX_OLIVIA_FISHING] =           &gObjectEventGraphicsInfo_OliviaFishing,
 
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
