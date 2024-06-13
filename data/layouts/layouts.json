@@ -5187,7 +5187,7 @@
       "width": 80,
       "height": 50,
       "primary_tileset": "gTileset_islandgame_lumine_general",
-      "secondary_tileset": "gTileset_islandgame_oranna_southern_path",
+      "secondary_tileset": "gTileset_islandgame_lumine_rocky_path",
       "border_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH/map.bin"
     },
