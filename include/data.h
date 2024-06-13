@@ -134,6 +134,7 @@ extern const struct SpriteFrameImage gTrainerBackPicTable_Steven[];
 
 // island-game
 extern const struct SpriteFrameImage gTrainerBackPicTable_Olivia[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_Oliver[];
 
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpritePlayerSide[];
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpriteOpponentSide[];
