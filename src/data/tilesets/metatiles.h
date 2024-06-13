@@ -277,14 +277,14 @@ const u16 gMetatileAttributes_islandgame_snow[] = INCBIN_U16("data/tilesets/seco
 const u16 gMetatiles_islandgame_houses[] = INCBIN_U16("data/tilesets/secondary/islandgame_houses/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_houses[] = INCBIN_U16("data/tilesets/secondary/islandgame_houses/metatile_attributes.bin");
 
-const u16 gMetatiles_islandgame_lumine_power_plant_interior[] = INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/metatiles.bin");
-const u16 gMetatileAttributes_islandgame_lumine_power_plant_interior[] = INCBIN_U16("data/tilesets/primary/islandgame_lumine_power_plant_interior/metatile_attributes.bin");
+const u16 gMetatiles_islandgame_lumine_power_plant_interior[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant_interior/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_lumine_power_plant_interior[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant_interior/metatile_attributes.bin");
 
-const u16 gMetatiles_islandgame_lumine_mt_therion[] = INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/metatiles.bin");
-const u16 gMetatileAttributes_islandgame_lumine_mt_therion[] = INCBIN_U16("data/tilesets/primary/islandgame_lumine_mt_therion/metatile_attributes.bin");
+const u16 gMetatiles_islandgame_lumine_mt_therion[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_mt_therion/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_lumine_mt_therion[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_mt_therion/metatile_attributes.bin");
 
-const u16 gMetatiles_islandgame_lumine_belle_catacombs[] = INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/metatiles.bin");
-const u16 gMetatileAttributes_islandgame_lumine_belle_catacombs[] = INCBIN_U16("data/tilesets/primary/islandgame_lumine_belle_catacombs/metatile_attributes.bin");
+const u16 gMetatiles_islandgame_lumine_belle_catacombs[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_belle_catacombs/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_lumine_belle_catacombs[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_belle_catacombs/metatile_attributes.bin");
 
 const u16 gMetatiles_islandgame_lumine_arboria[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_lumine_arboria[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_arboria/metatile_attributes.bin");
@@ -312,3 +312,6 @@ const u16 gMetatileAttributes_islandgame_lumine_therion_path[] = INCBIN_U16("dat
 
 const u16 gMetatiles_islandgame_lumine_valley_of_peace[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_lumine_valley_of_peace[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_lumine_pleasant_avenue[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_pleasant_avenue/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_lumine_pleasant_avenue[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_pleasant_avenue/metatile_attributes.bin");

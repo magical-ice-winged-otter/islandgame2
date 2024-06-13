@@ -1091,7 +1091,7 @@ const struct Tileset gTileset_islandgame_houses =
 const struct Tileset gTileset_islandgame_lumine_power_plant_interior =
 {
     .isCompressed = TRUE,
-    .isSecondary = FALSE,
+    .isSecondary = TRUE,
     .tiles = gTilesetTiles_islandgame_lumine_power_plant_interior,
     .palettes = gTilesetPalettes_islandgame_lumine_power_plant_interior,
     .metatiles = gMetatiles_islandgame_lumine_power_plant_interior,
@@ -1102,7 +1102,7 @@ const struct Tileset gTileset_islandgame_lumine_power_plant_interior =
 const struct Tileset gTileset_islandgame_lumine_mt_therion =
 {
     .isCompressed = TRUE,
-    .isSecondary = FALSE,
+    .isSecondary = TRUE,
     .tiles = gTilesetTiles_islandgame_lumine_mt_therion,
     .palettes = gTilesetPalettes_islandgame_lumine_mt_therion,
     .metatiles = gMetatiles_islandgame_lumine_mt_therion,
@@ -1113,7 +1113,7 @@ const struct Tileset gTileset_islandgame_lumine_mt_therion =
 const struct Tileset gTileset_islandgame_lumine_belle_catacombs =
 {
     .isCompressed = TRUE,
-    .isSecondary = FALSE,
+    .isSecondary = TRUE,
     .tiles = gTilesetTiles_islandgame_lumine_belle_catacombs,
     .palettes = gTilesetPalettes_islandgame_lumine_belle_catacombs,
     .metatiles = gMetatiles_islandgame_lumine_belle_catacombs,
@@ -1217,5 +1217,16 @@ const struct Tileset gTileset_islandgame_lumine_valley_of_peace =
     .palettes = gTilesetPalettes_islandgame_lumine_valley_of_peace,
     .metatiles = gMetatiles_islandgame_lumine_valley_of_peace,
     .metatileAttributes = gMetatileAttributes_islandgame_lumine_valley_of_peace,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_pleasant_avenue =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_pleasant_avenue,
+    .palettes = gTilesetPalettes_islandgame_lumine_pleasant_avenue,
+    .metatiles = gMetatiles_islandgame_lumine_pleasant_avenue,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_pleasant_avenue,
     .callback = NULL,
 };
