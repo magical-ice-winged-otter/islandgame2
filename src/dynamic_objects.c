@@ -29,11 +29,11 @@ void SpawnDynamicObject(u8 dynObjId, u16 graphicsId, u8 movementBehavior, s16 x,
     id = SpawnSpecialObjectEvent(&objectEventTemplate);
 }
 
-void AddDynamicObject(u8 mapGroup, u8 mapNum, u16 graphicsId, u8 movementType, s16 xpos, s16 ypos, u8 zpos, const u8 *scriptPointer)
+void AddDynamicObject(u8 i, u8 mapGroup, u8 mapNum, u16 graphicsId, u8 movementType, s16 xpos, s16 ypos, u8 zpos, const u8 *scriptPointer)
 {
-    u8 i = GetLowestEmptyDynamicObjectSlot();
-    if (i > 3)
+    if (DynamicObjectListIsFull() || gSaveBlock1Ptr->dynamicObjects[i].active == TRUE)
         return;
+
     gSaveBlock1Ptr->dynamicObjects[i].active = TRUE;
     gSaveBlock1Ptr->dynamicObjects[i].gfxId = graphicsId;
     gSaveBlock1Ptr->dynamicObjects[i].movement = movementType;
@@ -63,6 +63,11 @@ int GetLowestEmptyDynamicObjectSlot(void)
 
 }
 
+bool8 DynamicObjectListIsFull(void)
+{
+    return GetLowestEmptyDynamicObjectSlot() == 0xffff;
+}
+
 void ClearAllDynamicObjects(void)
 {
     u32 i;
@@ -82,6 +87,7 @@ void ClearAllDynamicObjects(void)
 
 bool8 ScrCmd_adddynamicobject(struct ScriptContext *ctx)
 {
+    u8 i = ScriptReadByte(ctx);
     u8 mapGroup = ScriptReadByte(ctx);
     u8 mapNum = ScriptReadByte(ctx);
     u16 gfxid = VarGet(ScriptReadHalfword(ctx));
@@ -91,7 +97,7 @@ bool8 ScrCmd_adddynamicobject(struct ScriptContext *ctx)
     u8 movement = ScriptReadByte(ctx);
     const u8 *scriptPointer = (const u8 *)ScriptReadWord(ctx);
 
-    AddDynamicObject(mapGroup, mapNum, gfxid, movement, x, y, z, scriptPointer);
+    AddDynamicObject(i, mapGroup, mapNum, gfxid, movement, x, y, z, scriptPointer);
     return FALSE;
 }
 

@@ -1387,12 +1387,16 @@ void SetUpFollowerSprite(u8 localId, u16 flags, u16 partyID)
 }
 
 //@Details: Ends the follow me feature.
-void DestroyFollower(void)
+void DestroyFollower(bool8 destroyObject)
 {
     if (gSaveBlock2Ptr->follower.inProgress)
     {
-        RemoveObjectEvent(&gObjectEvents[gSaveBlock2Ptr->follower.objId]);
-        FlagSet(gSaveBlock2Ptr->follower.flag);
+        if (destroyObject) {
+            //when this flag is false, we will not remove the object, and let it stay on the screen.
+            RemoveObjectEvent(&gObjectEvents[gSaveBlock2Ptr->follower.objId]);
+            FlagSet(gSaveBlock2Ptr->follower.flag);
+        }
+        
         gSaveBlock2Ptr->follower.inProgress = FALSE;
     }
 }

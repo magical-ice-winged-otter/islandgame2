@@ -57,10 +57,6 @@
 #include "script_pokemon_util.h"
 #include "overworld.h"
 
-#if (DECAP_ENABLED) && (DECAP_MIRRORING) && !(DECAP_START_MENU)
-#define AddTextPrinterParameterized (AddTextPrinterFixedCaseParameterized)
-#endif
-
 // Menu actions
 enum
 {

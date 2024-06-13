@@ -91,7 +91,7 @@ gSpecialVars::
 	.4byte gSpecialVar_ContestCategory
 	.4byte gSpecialVar_MonBoxId
 	.4byte gSpecialVar_MonBoxPos
-	.4byte gSpecialVar_Unused_0x8014
+	.4byte gSpecialVar_0x8014
 	.4byte gTrainerBattleOpponent_A
 
 	.include "data/specials.inc"
@@ -1081,6 +1081,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/scripts/islandgame_debug.inc"
 	.include "data/scripts/islandgame_common.inc"
+	.include "data/scripts/islandgame_menu.inc"
 	
 	.include "data/maps/ForestBaseCamp_FrontLawn/scripts.inc"
 
