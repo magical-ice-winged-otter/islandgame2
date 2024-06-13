@@ -2089,7 +2089,7 @@ const u16 gTilesetPalettes_islandgame_lumine_power_plant_interior[][16] =
     INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant_interior/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_islandgame_lumine_power_plant_interior[] = INCBIN_U32("data/tilesets/primary/islandgame_lumine_power_plant_interior/tiles.4bpp.lz");
+const u32 gTilesetTiles_islandgame_lumine_power_plant_interior[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_power_plant_interior/tiles.4bpp.lz");
 
 const u16 gTilesetPalettes_islandgame_lumine_mt_therion[][16] =
 {
@@ -2108,7 +2108,7 @@ const u16 gTilesetPalettes_islandgame_lumine_mt_therion[][16] =
     INCBIN_U16("data/tilesets/secondary/islandgame_lumine_mt_therion/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_islandgame_lumine_mt_therion[] = INCBIN_U32("data/tilesets/primary/islandgame_lumine_mt_therion/tiles.4bpp.lz");
+const u32 gTilesetTiles_islandgame_lumine_mt_therion[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_mt_therion/tiles.4bpp.lz");
 
 const u16 gTilesetPalettes_islandgame_lumine_belle_catacombs[][16] =
 {
@@ -2127,7 +2127,7 @@ const u16 gTilesetPalettes_islandgame_lumine_belle_catacombs[][16] =
     INCBIN_U16("data/tilesets/secondary/islandgame_lumine_belle_catacombs/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_islandgame_lumine_belle_catacombs[] = INCBIN_U32("data/tilesets/primary/islandgame_lumine_belle_catacombs/tiles.4bpp.lz");
+const u32 gTilesetTiles_islandgame_lumine_belle_catacombs[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_belle_catacombs/tiles.4bpp.lz");
 
 const u16 gTilesetPalettes_islandgame_lumine_arboria[][16] =
 {
