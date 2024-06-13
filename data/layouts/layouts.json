@@ -5184,8 +5184,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROCKY_PATH",
       "name": "ISLANDGAME_ROCKY_PATH_Layout",
-      "width": 72,
-      "height": 40,
+      "width": 80,
+      "height": 50,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_oranna_southern_path",
       "border_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH/border.bin",
