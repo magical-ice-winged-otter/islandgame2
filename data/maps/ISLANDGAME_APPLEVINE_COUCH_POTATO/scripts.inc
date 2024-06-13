@@ -1,0 +1,3 @@
+ISLANDGAME_APPLEVINE_COUCH_POTATO_MapScripts::
+	.byte 0
+

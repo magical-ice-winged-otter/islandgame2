@@ -143,6 +143,7 @@ Debug_EventScript_Script_1::
 	end
 
 Debug_EventScript_Script_2::
+	call(EventScript_TimeMenu_BuildMenu)
 	end
 
 Debug_EventScript_Script_3::
@@ -376,21 +377,6 @@ Debug_EventScript_InflictStatus1_Party:
 	releaseall
 	end
 
-.endif
-
-Debug_FlagsAndVarNotSetBattleConfigMessage::
-	lockall
-	message Debug_FlagsAndVarNotSetBattleConfigMessage_Text
-	waitmessage
-	waitbuttonpress
-	releaseall
-	end
-
-Debug_FlagsAndVarNotSetBattleConfigMessage_Text:
-	.string "Feature unavailable! Please define a\n"
-	.string "usable flag and a usable var in:\l"
-	.string "'include/config/battle.h'!$"
-
 Debug_EventScript_InflictStatus1_Party_Poison:
 	setstatus1 STATUS1_POISON, PARTY_SIZE
 	releaseall
@@ -447,3 +433,5 @@ Debug_EventScript_InflictStatus1_Text_Freeze:
 
 Debug_EventScript_InflictStatus1_Text_Frostbite:
 	.string "Frostbite$"
+
+.endif
