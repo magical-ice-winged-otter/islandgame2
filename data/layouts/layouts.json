@@ -5204,8 +5204,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN",
       "name": "ISLANDGAME_BELLEHAVEN_Layout",
-      "width": 30,
-      "height": 50,
+      "width": 40,
+      "height": 55,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_houses",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN/border.bin",
