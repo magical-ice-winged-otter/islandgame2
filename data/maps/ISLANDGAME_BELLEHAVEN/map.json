@@ -17,12 +17,60 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 24,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 45,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 35,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }
