@@ -1249,7 +1249,8 @@ static void TurnNPCIntoFollower(u8 localId, u16 followerFlags, u16 partyID)
             gSaveBlock2Ptr->follower.flags = followerFlags;
             gSaveBlock2Ptr->follower.createSurfBlob = 0;
             gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
-            gSaveBlock2Ptr->follower.party = partyID;
+            // gSaveBlock2Ptr->follower.party = partyID;
+            VarSet(VAR_TEAM_PARTNER, partyID);
             
             if (!(gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CAN_BIKE) //Follower can't bike
             &&  TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE)) //Player on bike
