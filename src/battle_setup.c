@@ -1373,6 +1373,14 @@ void BattleSetup_StartTrainerBattle(void)
             FillHillTrainerParty();
 
         SetHillTrainerFlag();
+    } else if (gNoOfApproachingTrainers == 2 && VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE) {
+        MgbaPrintf(MGBA_LOG_DEBUG, "SETTING STEVEN HERE %d", VarGet(VAR_TEAM_PARTNER));
+        gBattleTypeFlags |= (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER);
+        
+        gPartnerSpriteId = gBattlePartners[VarGet(VAR_TEAM_PARTNER)].trainerPic;
+        gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
+        MgbaPrintf(MGBA_LOG_DEBUG, "SETTING gPartnerTrainerId HERE 2: %d", gPartnerTrainerId);
+        FillPartnerParty(gPartnerTrainerId);
     }
 
     sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers;

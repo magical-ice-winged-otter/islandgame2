@@ -75,7 +75,6 @@ static void FillTentTrainerParty_(u16 trainerId, u8 firstMonId, u8 monCount);
 static void FillFactoryFrontierTrainerParty(u16 trainerId, u8 firstMonId);
 static void FillFactoryTentTrainerParty(u16 trainerId, u8 firstMonId);
 static u8 GetFrontierTrainerFixedIvs(u16 trainerId);
-static void FillPartnerParty(u16 trainerId);
 #if FREE_BATTLE_TOWER_E_READER == FALSE
 static void SetEReaderTrainerChecksum(struct BattleTowerEReaderTrainer *ereaderTrainer);
 #endif //FREE_BATTLE_TOWER_E_READER
@@ -3015,7 +3014,7 @@ void TryHideBattleTowerReporter(void)
 
 #define STEVEN_OTID 61226
 
-static void FillPartnerParty(u16 trainerId)
+void FillPartnerParty(u16 trainerId)
 {
     s32 i, j, k;
     u32 firstIdPart = 0, secondIdPart = 0, thirdIdPart = 0;
@@ -3029,9 +3028,13 @@ static void FillPartnerParty(u16 trainerId)
 
     if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
     {
+        MgbaPrintf(MGBA_LOG_DEBUG, "SETTING TEAM MONS HERE");
         for (i = 0; i < 3; i++)
             ZeroMonData(&gPlayerParty[i + 3]);
-
+        
+        MgbaPrintf(MGBA_LOG_DEBUG, "trainerID: %d",  trainerId);
+        MgbaPrintf(MGBA_LOG_DEBUG, "TRAINER_PARTNER: %d",  TRAINER_PARTNER(PARTNER_NONE));
+        MgbaPrintf(MGBA_LOG_DEBUG, "LOADING PARTY: %d",  trainerId - TRAINER_PARTNER(PARTNER_NONE));
         for (i = 0; i < 3 && i < gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].partySize; i++)
         {
             const struct TrainerMon *partyData = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].party;
@@ -3069,6 +3072,8 @@ static void FillPartnerParty(u16 trainerId)
                 ModifyPersonalityForNature(&personality, partyData[i].nature - 1);
 
             CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID);
+            
+            MgbaPrintf(MGBA_LOG_DEBUG, "CREATED SPECIES: %d",  partyData[i].species);
             j = partyData[i].isShiny;
             SetMonData(&gPlayerParty[i + 3], MON_DATA_IS_SHINY, &j);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);

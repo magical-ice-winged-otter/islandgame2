@@ -5846,9 +5846,9 @@ const u8 *GetTrainerPartnerName(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
     {
-        if (gPartnerTrainerId == TRAINER_PARTNER(PARTNER_STEVEN))
+        if (gPartnerTrainerId < TRAINER_PARTNER(PARTNER_END))
         {
-            return GetTrainerNameFromId(TRAINER_STEVEN);
+            return GetTrainerNameFromId(gPartnerTrainerId - MAX_TRAINERS_COUNT);
         }
         else
         {
