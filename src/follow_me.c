@@ -1397,7 +1397,7 @@ void DestroyFollower(bool8 destroyObject)
             RemoveObjectEvent(&gObjectEvents[gSaveBlock2Ptr->follower.objId]);
             FlagSet(gSaveBlock2Ptr->follower.flag);
         }
-        
+        VarSet(VAR_TEAM_PARTNER, PARTNER_NONE);
         gSaveBlock2Ptr->follower.inProgress = FALSE;
     }
 }
