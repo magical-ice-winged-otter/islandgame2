@@ -1384,12 +1384,10 @@ void BattleSetup_StartTrainerBattle(void)
     //decide what callback to use
     if (sNoOfPossibleTrainerRetScripts == 2 && VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE) {
         // sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers
-        MgbaPrintf(MGBA_LOG_DEBUG, "SETTING STEVEN HERE %d", VarGet(VAR_TEAM_PARTNER));
         gBattleTypeFlags |= (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER);
         
         gPartnerSpriteId = gBattlePartners[VarGet(VAR_TEAM_PARTNER)].trainerPic;
         gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
-        MgbaPrintf(MGBA_LOG_DEBUG, "SETTING gPartnerTrainerId HERE 2: %d", gPartnerTrainerId);
         FillPartnerParty(gPartnerTrainerId);
         gMain.savedCallback = CB2_End2v2TrainerBattle; // make a custom end function that handles restoring the player party. We just use a modification of EndTrainerBattle.
     } else {

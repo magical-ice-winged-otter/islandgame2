@@ -3028,13 +3028,9 @@ void FillPartnerParty(u16 trainerId)
 
     if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
     {
-        MgbaPrintf(MGBA_LOG_DEBUG, "SETTING TEAM MONS HERE");
         for (i = 0; i < 3; i++)
             ZeroMonData(&gPlayerParty[i + 3]);
-        
-        MgbaPrintf(MGBA_LOG_DEBUG, "trainerID: %d",  trainerId);
-        MgbaPrintf(MGBA_LOG_DEBUG, "TRAINER_PARTNER: %d",  TRAINER_PARTNER(PARTNER_NONE));
-        MgbaPrintf(MGBA_LOG_DEBUG, "LOADING PARTY: %d",  trainerId - TRAINER_PARTNER(PARTNER_NONE));
+
         for (i = 0; i < 3 && i < gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].partySize; i++)
         {
             const struct TrainerMon *partyData = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].party;
@@ -3073,7 +3069,6 @@ void FillPartnerParty(u16 trainerId)
 
             CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID);
             
-            MgbaPrintf(MGBA_LOG_DEBUG, "CREATED SPECIES: %d",  partyData[i].species);
             j = partyData[i].isShiny;
             SetMonData(&gPlayerParty[i + 3], MON_DATA_IS_SHINY, &j);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
