@@ -626,7 +626,7 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
     // island-game
     [TRAINER_BACK_PIC_OLIVER] = {
         .tileTag = TAG_NONE,
-        .paletteTag = 0x1106,
+        .paletteTag = 0,
         .oam = &gOamData_BattleSpritePlayerSide,
         .anims = NULL,
         .images = gTrainerBackPicTable_Oliver,
@@ -636,7 +636,7 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
 
     [TRAINER_BACK_PIC_OLIVIA] = {
         .tileTag = TAG_NONE,
-        .paletteTag = 0x1106,
+        .paletteTag = 0,
         .oam = &gOamData_BattleSpritePlayerSide,
         .anims = NULL,
         .images = gTrainerBackPicTable_Olivia,
@@ -1982,7 +1982,7 @@ void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition)
 
 void SetMultiuseSpriteTemplateToTrainerBack(u16 trainerPicId, u8 battlerPosition)
 {
-    //gMultiuseSpriteTemplate.paletteTag = trainerPicId;
+    gMultiuseSpriteTemplate.paletteTag = trainerPicId;
     if (battlerPosition == B_POSITION_PLAYER_LEFT || battlerPosition == B_POSITION_PLAYER_RIGHT)
     {
         gMultiuseSpriteTemplate = sTrainerBackSpriteTemplates[trainerPicId];
