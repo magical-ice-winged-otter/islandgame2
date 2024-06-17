@@ -54,9 +54,37 @@ static const struct SpriteFrameImage sPicTable_OliviaFishing[] = {
     overworld_ascending_frames(gObjectEventPic_OliviaFishing, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_OliviaWatering[] = {
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_MayWatering, 4, 4, 5),
+};
 
+static const struct SpriteFrameImage sPicTable_OliviaDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_MayDecorating),
+};
 
+static const struct SpriteFrameImage sPicTable_OliviaAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_MayAcroBike, 4, 4),
+};
 
+static const struct SpriteFrameImage sPicTable_OliviaUnderwater[] = {
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_MayUnderwater, 4, 4, 2),
+};
 
 
 
@@ -667,7 +695,7 @@ static const struct SpriteFrameImage sPicTable_Artist[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_MayNormal[] = {
-    overworld_ascending_frames(gObjectEventPic_OliviaNormalRunning, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_MayNormalRunning, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_MayMachBike[] = {
