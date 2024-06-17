@@ -88,6 +88,7 @@ static void CB2_EndFirstBattle(void);
 static void SaveChangesToPlayerParty(void);
 static void HandleBattleVariantEndParty(void);
 static void CB2_EndTrainerBattle(void);
+static void CB2_End2v2TrainerBattle(void); // islandgame-start
 static bool8 BattleHasNoWhiteout(void);
 static bool32 IsPlayerDefeated(u32 battleOutcome);
 #if FREE_MATCH_CALL == FALSE
@@ -1373,7 +1374,16 @@ void BattleSetup_StartTrainerBattle(void)
             FillHillTrainerParty();
 
         SetHillTrainerFlag();
-    } else if (gNoOfApproachingTrainers == 2 && VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE) {
+    }
+
+    sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers;
+    gNoOfApproachingTrainers = 0;
+    sShouldCheckTrainerBScript = FALSE;
+    gWhichTrainerToFaceAfterBattle = 0;
+
+    //decide what callback to use
+    if (sNoOfPossibleTrainerRetScripts == 2 && VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE) {
+        // sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers
         MgbaPrintf(MGBA_LOG_DEBUG, "SETTING STEVEN HERE %d", VarGet(VAR_TEAM_PARTNER));
         gBattleTypeFlags |= (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER);
         
@@ -1381,13 +1391,10 @@ void BattleSetup_StartTrainerBattle(void)
         gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
         MgbaPrintf(MGBA_LOG_DEBUG, "SETTING gPartnerTrainerId HERE 2: %d", gPartnerTrainerId);
         FillPartnerParty(gPartnerTrainerId);
+        gMain.savedCallback = CB2_End2v2TrainerBattle; // make a custom end function that handles restoring the player party. We just use a modification of EndTrainerBattle.
+    } else {
+        gMain.savedCallback = CB2_EndTrainerBattle;
     }
-
-    sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers;
-    gNoOfApproachingTrainers = 0;
-    sShouldCheckTrainerBScript = FALSE;
-    gWhichTrainerToFaceAfterBattle = 0;
-    gMain.savedCallback = CB2_EndTrainerBattle;
 
     if (InBattlePyramid() || InTrainerHillChallenge() || BattleHasNoWhiteout())
         DoBattlePyramidTrainerHillBattle();
@@ -1459,6 +1466,21 @@ static void CB2_EndTrainerBattle(void)
             SetBattledTrainersFlags();
         }
     }
+}
+
+static void CB2_End2v2TrainerBattle(void)
+{
+    s32 i;
+    for (i = 0; i < 3; i++)
+    { // make sure the pokemon played sustained some damage, whatever
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
+            gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
+    }
+    for (; i < PARTY_SIZE; i++)
+    { // restore back the original party 
+        gPlayerParty[i] = gSaveBlock1Ptr->playerParty[i];
+    }
+    CB2_EndTrainerBattle();
 }
 
 static bool8 BattleHasNoWhiteout()
