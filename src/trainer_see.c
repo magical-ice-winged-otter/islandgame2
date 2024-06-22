@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "follow_me.h"
 #include "battle_setup.h"
+#include "battle_tower.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "field_effect.h"
@@ -297,7 +298,7 @@ bool8 CheckForTrainersWantingBattle(void)
 
         if (gNoOfApproachingTrainers > 1)
             break;
-        if (!PlayerHasFollower() && GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS) // one trainer found and cant have a double battle (if no follower)
+        if (VarGet(VAR_TEAM_PARTNER) == PARTNER_NONE && GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS) // one trainer found and cant have a double battle (if no follower)
             break;
     }
 
@@ -312,12 +313,6 @@ bool8 CheckForTrainersWantingBattle(void)
     else if (gNoOfApproachingTrainers == 2)
     {
         ResetTrainerOpponentIds();
-        /*if (PlayerHasFollower()) {
-            DebugPrintf("Hello!");
-            gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
-            FillDuoParty(gSaveBlock2Ptr->follower.party);
-            gPartnerTrainerId = TRAINER_PIC_MAY;
-        }*/
         for (i = 0; i < gNoOfApproachingTrainers; i++, gApproachingTrainerId++)
         {
             ConfigureTwoTrainersBattle(gApproachingTrainers[i].objectEventId,
