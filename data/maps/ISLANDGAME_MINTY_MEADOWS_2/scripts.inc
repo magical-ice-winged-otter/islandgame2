@@ -388,7 +388,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
-	setfollower 11, 100, 0
+	setfollower 11, 100, PARTNER_STEVEN
 	call ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet
 	setvar VAR_MINTY_MEADOWS_STATE, 1
 	call ISLANDGAME_MINTY_MEADOWS_2_StartedQuest
@@ -773,7 +773,7 @@ ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack::
 	waitbuttonpress
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
-	setfollower 11, 100, 0
+	setfollower 11, 100, PARTNER_STEVEN
 	setvar VAR_MINTY_MEADOWS_STATE, 1
 	waitmovement OBJ_EVENT_ID_PLAYER
 	closemessage

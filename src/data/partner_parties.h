@@ -24,3 +24,33 @@ static const struct TrainerMon sParty_StevenPartner[] = {
         .moves = {MOVE_THUNDER, MOVE_PROTECT, MOVE_SOLAR_BEAM, MOVE_DRAGON_CLAW},
     }
 };
+
+static const struct TrainerMon sParty_MintyMeadowsRivalPartner[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 15,
+    .species = SPECIES_HERDIER,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_SAND_RUSH,
+    .gender = TRAINER_MON_MALE,
+    .moves = {MOVE_TAKE_DOWN, MOVE_THUNDER_FANG, MOVE_FIRE_FANG, MOVE_ICE_FANG}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 13,
+    .species = SPECIES_GIBLE,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_SAND_VEIL,
+    .gender = TRAINER_MON_FEMALE,
+    .moves = {MOVE_SAND_TOMB, MOVE_DRAGON_RAGE, MOVE_SANDSTORM, MOVE_METAL_CLAW}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 13,
+    .species = SPECIES_DRILBUR,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_SAND_RUSH,
+    .gender = TRAINER_MON_MALE,
+    .moves = {MOVE_SANDSTORM, MOVE_MUD_SLAP, MOVE_ROCK_TOMB, MOVE_METAL_CLAW}
+    },
+};

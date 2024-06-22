@@ -419,7 +419,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
 
     //follow me
     loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-    setfollower(RIVAL_OW_ID, 100, 0)
+    setfollower(RIVAL_OW_ID, 100, PARTNER_STEVEN)
 
     //teleport
     call(ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet)
@@ -840,7 +840,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
     
     loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-    setfollower(RIVAL_OW_ID, 100, 0)
+    setfollower(RIVAL_OW_ID, 100, PARTNER_STEVEN)
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     waitmovement(OBJ_EVENT_ID_PLAYER)
     closemessage
