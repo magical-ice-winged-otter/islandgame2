@@ -3029,8 +3029,11 @@ void FillPartnerParty(u16 trainerId)
     if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
     {
         for (i = 0; i < 3; i++)
+        {
+            //islandgame-start: first save the party
+            gPlayerSavedParty[i + 3] = gPlayerParty[i + 3];
             ZeroMonData(&gPlayerParty[i + 3]);
-
+        }
         for (i = 0; i < 3 && i < gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].partySize; i++)
         {
             const struct TrainerMon *partyData = gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].party;

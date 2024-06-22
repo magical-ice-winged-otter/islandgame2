@@ -605,6 +605,8 @@ extern const struct Fusion *const gFusionTablePointers[NUM_SPECIES];
 #define GET_SHINY_VALUE(otId, personality) (HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality))
 
 extern u8 gPlayerPartyCount;
+//islandgame-start: Introduce gPlayerSavedParty to save data before a 2v2. We don't need to save it in the saveblock because it is alive during the battle.
+extern struct Pokemon gPlayerSavedParty[PARTY_SIZE];
 extern struct Pokemon gPlayerParty[PARTY_SIZE];
 extern u8 gEnemyPartyCount;
 extern struct Pokemon gEnemyParty[PARTY_SIZE];

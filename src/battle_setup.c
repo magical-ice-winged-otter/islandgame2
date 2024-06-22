@@ -1469,14 +1469,10 @@ static void CB2_EndTrainerBattle(void)
 static void CB2_End2v2TrainerBattle(void)
 {
     s32 i;
-    for (i = 0; i < 3; i++)
-    { // make sure the pokemon played sustained some damage, whatever
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
-            gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
-    }
-    for (; i < PARTY_SIZE; i++)
+    for (i = 3; i < PARTY_SIZE; i++)
     { // restore back the original party 
-        gPlayerParty[i] = gSaveBlock1Ptr->playerParty[i];
+        gPlayerParty[i] = gPlayerSavedParty[i];
+        ZeroMonData(&gPlayerSavedParty[i]);
     }
     CB2_EndTrainerBattle();
 }
