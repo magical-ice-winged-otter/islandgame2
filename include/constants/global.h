@@ -3,7 +3,7 @@
 
 
 // Comment out this line to strip debugging tools from the build.
-// #define ISLANDGAME_DEBUG TRUE
+#define ISLANDGAME_DEBUG TRUE
 
 #include "config/battle.h"
 #include "config/debug.h"

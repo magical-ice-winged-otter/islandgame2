@@ -528,6 +528,13 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_OLIVIA_FIELD_MOVE       0x1187
 #define OBJ_EVENT_PAL_TAG_OLIVIA_NORMAL           0x1188
 #define OBJ_EVENT_PAL_TAG_RUKA                    0x1189
+#define OBJ_EVENT_PAL_TAG_OLIVER_FISHING          0x1190
+#define OBJ_EVENT_PAL_TAG_OLIVER_BIKE             0x1191
+#define OBJ_EVENT_PAL_TAG_OLIVER_FIELD_MOVE       0x1192
+#define OBJ_EVENT_PAL_TAG_OLIVER_NORMAL           0x1193
+#define OBJ_EVENT_PAL_TAG_OLIVIA_WATERING         0x1194
+#define OBJ_EVENT_PAL_TAG_OLIVER_WATERING         0x1195
+#define OBJ_EVENT_PAL_TAG_OLIVIA_SURFING          0x1196
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
@@ -1397,6 +1404,13 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_OliviaBike,            OBJ_EVENT_PAL_TAG_OLIVIA_BIKE},
     {gObjectEventPal_OliviaFieldMove,       OBJ_EVENT_PAL_TAG_OLIVIA_FIELD_MOVE},
     {gObjectEventPal_OliviaFishing,         OBJ_EVENT_PAL_TAG_OLIVIA_FISHING},
+    {gObjectEventPal_OliverNormal,          OBJ_EVENT_PAL_TAG_OLIVER_NORMAL},
+    {gObjectEventPal_OliverBike,            OBJ_EVENT_PAL_TAG_OLIVER_BIKE},
+    {gObjectEventPal_OliverFieldMove,       OBJ_EVENT_PAL_TAG_OLIVER_FIELD_MOVE},
+    {gObjectEventPal_OliverFishing,         OBJ_EVENT_PAL_TAG_OLIVER_FISHING},
+    {gObjectEventPal_OliviaWatering,        OBJ_EVENT_PAL_TAG_OLIVIA_WATERING},
+    {gObjectEventPal_OliverWatering,        OBJ_EVENT_PAL_TAG_OLIVER_WATERING},
+    {gObjectEventPal_OliviaSurfing,         OBJ_EVENT_PAL_TAG_OLIVIA_SURFING},
 
     {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
     {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},

@@ -54,10 +54,45 @@ static const struct SpriteFrameImage sPicTable_OliviaFishing[] = {
     overworld_ascending_frames(gObjectEventPic_OliviaFishing, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_OliverNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_OliverNormalRunning, 2, 4),
+};
 
+static const struct SpriteFrameImage sPicTable_OliverMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_OliverMachBike, 4, 4),
+};
 
+static const struct SpriteFrameImage sPicTable_OliverFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_OliverFieldMove, 4, 4),
+};
 
+static const struct SpriteFrameImage sPicTable_OliverFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_OliverFishing, 4, 4),
+};
 
+static const struct SpriteFrameImage sPicTable_OliverWatering[] = {
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_OliverWatering, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_OliviaWatering[] = {
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_OliviaWatering, 4, 4, 5),
+};
 
 
 
@@ -247,7 +282,7 @@ static const struct SpriteFrameImage sPicTable_Worker[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_BrendanNormal[] = {
-    overworld_ascending_frames(gObjectEventPic_BrendanNormalRunning, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_OliverNormalRunning, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_BrendanMachBike[] = {

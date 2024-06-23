@@ -21,6 +21,13 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaMachB
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaSurfing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaFieldMove;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverNormal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverMachBike;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverSurfing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverFieldMove;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverFishing;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverWatering;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
@@ -1127,6 +1134,13 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OLIVIA_SURFING] =           &gObjectEventGraphicsInfo_OliviaSurfing,
     [OBJ_EVENT_GFX_OLIVIA_FIELD_MOVE] =        &gObjectEventGraphicsInfo_OliviaFieldMove,
     [OBJ_EVENT_GFX_OLIVIA_FISHING] =           &gObjectEventGraphicsInfo_OliviaFishing,
+    [OBJ_EVENT_GFX_OLIVER_NORMAL] =            &gObjectEventGraphicsInfo_OliverNormal,
+    [OBJ_EVENT_GFX_OLIVER_MACH_BIKE] =         &gObjectEventGraphicsInfo_OliverMachBike,
+    // [OBJ_EVENT_GFX_OLIVER_SURFING] =           &gObjectEventGraphicsInfo_OliverSurfing,
+    [OBJ_EVENT_GFX_OLIVER_FIELD_MOVE] =        &gObjectEventGraphicsInfo_OliverFieldMove,
+    [OBJ_EVENT_GFX_OLIVER_FISHING] =           &gObjectEventGraphicsInfo_OliverFishing,
+    [OBJ_EVENT_GFX_OLIVIA_WATERING] =          &gObjectEventGraphicsInfo_OliviaWatering,
+    [OBJ_EVENT_GFX_OLIVER_WATERING] =          &gObjectEventGraphicsInfo_OliverWatering,
 
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
