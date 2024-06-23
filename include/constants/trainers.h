@@ -172,8 +172,8 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
-#define TRAINER_BACK_PIC_OLIVIA                 8
-#define TRAINER_BACK_PIC_OLIVER                 9
+#define TRAINER_BACK_PIC_OLIVER                 8
+#define TRAINER_BACK_PIC_OLIVIA                 9
 
 
 #define FACILITY_CLASS_HIKER                 0x0
@@ -258,8 +258,14 @@
 #define FACILITY_CLASS_LEAF                  0x4f
 #define FACILITY_CLASS_RS_BRENDAN            0x50
 #define FACILITY_CLASS_RS_MAY                0x51
+#define FACILITY_CLASS_OLIVER                0x52
+#define FACILITY_CLASS_OLIVER_2              0x53
+#define FACILITY_CLASS_OLIVER_3              0x54
+#define FACILITY_CLASS_OLIVIA                0x55
+#define FACILITY_CLASS_OLIVIA_2              0x56
+#define FACILITY_CLASS_OLIVIA_3              0x57
 
-#define FACILITY_CLASSES_COUNT               0x52
+#define FACILITY_CLASSES_COUNT               0x58
 
 #define RS_FACILITY_CLASS_AQUA_LEADER_ARCHIE    0x0
 #define RS_FACILITY_CLASS_AQUA_GRUNT_M          0x1
