@@ -17,6 +17,8 @@ const u32 gObjectEventPic_TuberFSwimming[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_Worker[] = INCBIN_U32("graphics/object_events/pics/people/worker.4bpp");
 const u32 gObjectEventPic_Ruka[] = INCBIN_U32("graphics/object_events/pics/people/ruka.4bpp");
 const u16 gObjectEventPal_Ruka[] = INCBIN_U16("graphics/object_events/pics/people/ruka.gbapal");
+const u32 gObjectEventPic_Melissa[] = INCBIN_U32("graphics/object_events/pics/people/melissa.4bpp");
+const u16 gObjectEventPal_Melissa[] = INCBIN_U16("graphics/object_events/pics/people/melissa.gbapal");
 
 
 const u32 gObjectEventPic_OliviaNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/olivia/walking.4bpp", "graphics/object_events/pics/people/olivia/running.4bpp");

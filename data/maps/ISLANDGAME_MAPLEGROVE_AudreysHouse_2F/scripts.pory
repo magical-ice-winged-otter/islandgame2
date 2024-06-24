@@ -39,7 +39,7 @@ script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Drawer {
 
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_DrawerInspect {
     format(
-        "{COLOR RED}(It's a drawer full of Audrey's clothes.) \p"
+        "{COLOR RED}(It's a drawer full of Melissa's clothes.) \p"
         "{COLOR RED}(I should probably stop looking through it.)"
     )
 }
@@ -52,7 +52,7 @@ script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Computer {
 
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_ComputerInspect {
     format(
-        "{COLOR RED}(It looks like Audrey left her computer on.) \p"
+        "{COLOR RED}(It looks like Melissa left her computer on.) \p"
         "{COLOR RED}(Seems like she was watching “PokéLive Summer Splash Highlights”.)"
     )
 }
@@ -77,6 +77,6 @@ script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Gamecube {
 
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_GamecubeInspect {
     format(
-        "{COLOR RED}(It's Audrey's GameCube.)"
+        "{COLOR RED}(It's Melissa's GameCube.)"
     )
 }

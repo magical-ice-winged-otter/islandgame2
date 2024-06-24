@@ -92,7 +92,20 @@ $(OBJEVENTGFXDIR)/people/oliver/watering.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/olivia/watering.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/melissa.4bpp: graphics/object_events/pics/people/melissa.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 # end
+
+
+
+
+
+
+
+
+
+
 
 $(OBJEVENTGFXDIR)/people/brendan/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4

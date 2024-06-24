@@ -156,7 +156,7 @@
 // island-game
 #define TRAINER_PIC_ARTHUR                136
 #define TRAINER_PIC_EDEA                  137
-#define TRAINER_PIC_AUDREY                138
+#define TRAINER_PIC_MELISSA               138
 #define TRAINER_PIC_JONAS                 139
 #define TRAINER_PIC_RUKA                  140
 #define TRAINER_PIC_OLIVIA                141
@@ -172,8 +172,9 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
-#define TRAINER_BACK_PIC_OLIVER                 8
-#define TRAINER_BACK_PIC_OLIVIA                 9
+// #define TRAINER_BACK_PIC_OLIVER                 8
+// #define TRAINER_BACK_PIC_OLIVIA                 9
+// #define TRAINER_BACK_PIC_MELISSA                10
 
 
 #define FACILITY_CLASS_HIKER                 0x0

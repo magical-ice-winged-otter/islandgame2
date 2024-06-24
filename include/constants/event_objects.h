@@ -1131,7 +1131,8 @@
 #define OBJ_EVENT_GFX_OLIVER_MACH_BIKE           ISLAND_START + 27
 #define OBJ_EVENT_GFX_OLIVER_WATERING            ISLAND_START + 28
 #define OBJ_EVENT_GFX_OLIVIA_WATERING            ISLAND_START + 29
-#define ISLAND_END                               OBJ_EVENT_GFX_OLIVIA_WATERING
+#define OBJ_EVENT_GFX_MELISSA                    ISLAND_START + 30
+#define ISLAND_END                               OBJ_EVENT_GFX_MELISSA
 
 #define NUM_OBJ_EVENT_GFX               (ISLAND_END + 1)
 

@@ -29,28 +29,25 @@ static const struct TrainerMon sParty_MintyMeadowsRivalPartner[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 15,
-    .species = SPECIES_HERDIER,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_SAND_RUSH,
+    .species = SPECIES_ROCKRUFF,
+    .ability = ABILITY_VITAL_SPIRIT,
     .gender = TRAINER_MON_MALE,
-    .moves = {MOVE_TAKE_DOWN, MOVE_THUNDER_FANG, MOVE_FIRE_FANG, MOVE_ICE_FANG}
+    .moves = {MOVE_ROCK_TOMB, MOVE_SAND_ATTACK, MOVE_FIRE_FANG, MOVE_THUNDER_FANG}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 13,
+    .lvl = 15,
+    .species = SPECIES_DRILBUR,
+    .ability = ABILITY_SAND_RUSH,
+    .gender = TRAINER_MON_MALE,
+    .moves = {MOVE_METAL_CLAW, MOVE_MUD_SLAP, MOVE_HONE_CLAWS, MOVE_RAPID_SPIN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 15,
     .species = SPECIES_GIBLE,
-    .heldItem = ITEM_NONE,
     .ability = ABILITY_SAND_VEIL,
     .gender = TRAINER_MON_FEMALE,
-    .moves = {MOVE_SAND_TOMB, MOVE_DRAGON_RAGE, MOVE_SANDSTORM, MOVE_METAL_CLAW}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 13,
-    .species = SPECIES_DRILBUR,
-    .heldItem = ITEM_NONE,
-    .ability = ABILITY_SAND_RUSH,
-    .gender = TRAINER_MON_MALE,
-    .moves = {MOVE_SANDSTORM, MOVE_MUD_SLAP, MOVE_ROCK_TOMB, MOVE_METAL_CLAW}
+    .moves = {MOVE_SAND_TOMB, MOVE_DRAGON_RAGE, MOVE_SAND_ATTACK, MOVE_METAL_CLAW}
     },
 };

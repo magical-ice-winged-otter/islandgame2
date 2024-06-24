@@ -28,6 +28,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverField
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliviaWatering;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OliverWatering;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Melissa;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
@@ -1141,6 +1142,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OLIVER_FISHING] =           &gObjectEventGraphicsInfo_OliverFishing,
     [OBJ_EVENT_GFX_OLIVIA_WATERING] =          &gObjectEventGraphicsInfo_OliviaWatering,
     [OBJ_EVENT_GFX_OLIVER_WATERING] =          &gObjectEventGraphicsInfo_OliverWatering,
+    [OBJ_EVENT_GFX_MELISSA] =                  &gObjectEventGraphicsInfo_Melissa,
 
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
