@@ -45,6 +45,7 @@ const u16 gObjectEventPal_OliverFieldMove[] = INCBIN_U16("graphics/object_events
 const u16 gObjectEventPal_OliverFishing[] = INCBIN_U16("graphics/object_events/palettes/oliver_fishing.gbapal");
 const u32 gObjectEventPic_OliverWatering[] = INCBIN_U32("graphics/object_events/pics/people/oliver/watering.4bpp");
 const u16 gObjectEventPal_OliverWatering[] = INCBIN_U16("graphics/object_events/palettes/oliver_watering.gbapal");
+const u16 gObjectEventPal_FieldEffects[] = INCBIN_U16("graphics/object_events/palettes/brendan.gbapal");
 
 //const u16 gObjectEventPal_OliviaReflection[] = INCBIN_U16("graphics/object_events/palettes/olivia_reflection.gbapal");
 // const u32 gObjectEventPic_MayUnderwater[] = INCBIN_U32("graphics/object_events/pics/people/may/underwater.4bpp");

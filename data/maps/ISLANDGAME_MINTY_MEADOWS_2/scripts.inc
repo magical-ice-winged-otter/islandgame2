@@ -120,6 +120,7 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1:
 	waitfanfare
 	special HealPlayerParty
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_5
+	closemessage
 	return
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_3:

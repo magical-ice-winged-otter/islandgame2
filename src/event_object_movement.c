@@ -536,6 +536,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_OLIVER_WATERING         0x1195
 #define OBJ_EVENT_PAL_TAG_OLIVIA_SURFING          0x1196
 #define OBJ_EVENT_PAL_TAG_MELISSA                 0x1197
+#define OBJ_EVENT_PAL_TAG_FIELD_EFFECTS           0x1198
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
@@ -1413,6 +1414,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_OliverWatering,        OBJ_EVENT_PAL_TAG_OLIVER_WATERING},
     {gObjectEventPal_OliviaSurfing,         OBJ_EVENT_PAL_TAG_OLIVIA_SURFING},
     {gObjectEventPal_Melissa,               OBJ_EVENT_PAL_TAG_MELISSA},
+    {gObjectEventPal_FieldEffects,          OBJ_EVENT_PAL_TAG_FIELD_EFFECTS},
 
     {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
     {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},
