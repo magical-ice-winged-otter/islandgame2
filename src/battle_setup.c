@@ -80,6 +80,7 @@ static void DoSafariBattle(void);
 static void DoStandardWildBattle(bool32 isDouble);
 static void CB2_EndWildBattle(void);
 static void CB2_EndScriptedWildBattle(void);
+static void CB2_End2v2ScriptedWildBattle(void); // islandgame-start
 static void TryUpdateGymLeaderRematchFromWild(void);
 static void TryUpdateGymLeaderRematchFromTrainer(void);
 static void CB2_GiveStarter(void);
@@ -576,8 +577,20 @@ void BattleSetup_StartScriptedWildBattle(void)
 void BattleSetup_StartScriptedDoubleWildBattle(void)
 {
     LockPlayerFieldControls();
-    gMain.savedCallback = CB2_EndScriptedWildBattle;
-    gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
+
+    if (VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE)
+    {
+        gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        gPartnerSpriteId = gBattlePartners[VarGet(VAR_TEAM_PARTNER)].trainerPic;
+        gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
+        FillPartnerParty(gPartnerTrainerId);
+        gMain.savedCallback = CB2_End2v2ScriptedWildBattle;
+    } else 
+    {
+        gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
+        gMain.savedCallback = CB2_EndScriptedWildBattle;
+    }
+    
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -737,6 +750,19 @@ static void CB2_EndScriptedWildBattle(void)
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
 }
+
+static void CB2_End2v2ScriptedWildBattle(void)
+{
+    s32 i;
+    for (i = 3; i < PARTY_SIZE; i++)
+    { // restore back the original party 
+        gPlayerParty[i] = gPlayerSavedParty[i];
+        ZeroMonData(&gPlayerSavedParty[i]);
+    }
+    CB2_EndScriptedWildBattle();
+}
+
+
 
 u8 BattleSetup_GetTerrainId(void)
 {
