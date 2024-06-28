@@ -315,3 +315,6 @@ const u16 gMetatileAttributes_islandgame_lumine_valley_of_peace[] = INCBIN_U16("
 
 const u16 gMetatiles_islandgame_lumine_pleasant_avenue[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_pleasant_avenue/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_lumine_pleasant_avenue[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_pleasant_avenue/metatile_attributes.bin");
+
+const u16 gMetatiles_coastalcave[] = INCBIN_U16("data/tilesets/secondary/coastalcave/metatiles.bin");
+const u16 gMetatileAttributes_coastalcave[] = INCBIN_U16("data/tilesets/secondary/coastalcave/metatile_attributes.bin");

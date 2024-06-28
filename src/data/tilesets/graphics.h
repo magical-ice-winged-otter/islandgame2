@@ -2318,3 +2318,22 @@ const u16 gTilesetPalettes_islandgame_lumine_pleasant_avenue[][16] =
 };
 
 const u32 gTilesetTiles_islandgame_lumine_pleasant_avenue[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_pleasant_avenue/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_coastalcave[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coastalcave/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_coastalcave[] = INCBIN_U32("data/tilesets/secondary/coastalcave/tiles.4bpp.lz");

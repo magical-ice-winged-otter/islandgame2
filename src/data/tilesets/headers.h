@@ -1230,3 +1230,14 @@ const struct Tileset gTileset_islandgame_lumine_pleasant_avenue =
     .metatileAttributes = gMetatileAttributes_islandgame_lumine_pleasant_avenue,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_coastalcave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_coastalcave,
+    .palettes = gTilesetPalettes_coastalcave,
+    .metatiles = gMetatiles_coastalcave,
+    .metatileAttributes = gMetatileAttributes_coastalcave,
+    .callback = NULL,
+};
