@@ -1241,3 +1241,14 @@ const struct Tileset gTileset_coastalcave =
     .metatileAttributes = gMetatileAttributes_coastalcave,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_dojointerior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_dojointerior,
+    .palettes = gTilesetPalettes_dojointerior,
+    .metatiles = gMetatiles_dojointerior,
+    .metatileAttributes = gMetatileAttributes_dojointerior,
+    .callback = NULL,
+};

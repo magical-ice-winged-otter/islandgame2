@@ -318,3 +318,6 @@ const u16 gMetatileAttributes_islandgame_lumine_pleasant_avenue[] = INCBIN_U16("
 
 const u16 gMetatiles_coastalcave[] = INCBIN_U16("data/tilesets/secondary/coastalcave/metatiles.bin");
 const u16 gMetatileAttributes_coastalcave[] = INCBIN_U16("data/tilesets/secondary/coastalcave/metatile_attributes.bin");
+
+const u16 gMetatiles_dojointerior[] = INCBIN_U16("data/tilesets/secondary/dojointerior/metatiles.bin");
+const u16 gMetatileAttributes_dojointerior[] = INCBIN_U16("data/tilesets/secondary/dojointerior/metatile_attributes.bin");
