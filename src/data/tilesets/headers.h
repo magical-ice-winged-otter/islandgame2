@@ -1263,3 +1263,14 @@ const struct Tileset gTileset_shadyforest =
     .metatileAttributes = gMetatileAttributes_shadyforest,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_kanto_building =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_kanto_building,
+    .palettes = gTilesetPalettes_islandgame_kanto_building,
+    .metatiles = gMetatiles_islandgame_kanto_building,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_building,
+    .callback = NULL,
+};

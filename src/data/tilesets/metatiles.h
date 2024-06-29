@@ -324,3 +324,6 @@ const u16 gMetatileAttributes_dojointerior[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_shadyforest[] = INCBIN_U16("data/tilesets/secondary/shadyforest/metatiles.bin");
 const u16 gMetatileAttributes_shadyforest[] = INCBIN_U16("data/tilesets/secondary/shadyforest/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_kanto_building[] = INCBIN_U16("data/tilesets/primary/islandgame_kanto_building/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_kanto_building[] = INCBIN_U16("data/tilesets/primary/islandgame_kanto_building/metatile_attributes.bin");
