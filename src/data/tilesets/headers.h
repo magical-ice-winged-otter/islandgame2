@@ -1274,3 +1274,14 @@ const struct Tileset gTileset_islandgame_kanto_building =
     .metatileAttributes = gMetatileAttributes_islandgame_kanto_building,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_kanto_powerplant =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_kanto_powerplant,
+    .palettes = gTilesetPalettes_islandgame_kanto_powerplant,
+    .metatiles = gMetatiles_islandgame_kanto_powerplant,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_powerplant,
+    .callback = NULL,
+};
