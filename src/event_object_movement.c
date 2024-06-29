@@ -476,7 +476,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_NPC_21                  0x1135
 #define OBJ_EVENT_PAL_TAG_NPC_22                  0x1136
 #define OBJ_EVENT_PAL_TAG_NPC_23                  0x1137
-#define OBJ_EVENT_PAL_TAG_NPC_24                  0x1138
+#define OBJ_EVENT_PAL_TAG_NPC_24                  0x1138 // worker
 #define OBJ_EVENT_PAL_TAG_NPC_25                  0x1139
 #define OBJ_EVENT_PAL_TAG_NPC_26                  0x1140
 #define OBJ_EVENT_PAL_TAG_NPC_27                  0x1141
@@ -537,6 +537,38 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_OLIVIA_SURFING          0x1196
 #define OBJ_EVENT_PAL_TAG_MELISSA                 0x1197
 #define OBJ_EVENT_PAL_TAG_FIELD_EFFECTS           0x1198
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_F           0x1199
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_M           0x1200
+#define OBJ_EVENT_PAL_TAG_JONAS                   0x1201
+#define OBJ_EVENT_PAL_TAG_PALM                    0x1202
+#define OBJ_EVENT_PAL_TAG_ARTHUR                  0x1203
+#define OBJ_EVENT_PAL_TAG_COCO                    0x1204
+#define OBJ_EVENT_PAL_TAG_PRIMROSE                0x1205
+#define OBJ_EVENT_PAL_TAG_EDEA                    0x1206
+#define OBJ_EVENT_PAL_TAG_BEAUTY_MASTERS          0x1207 
+#define OBJ_EVENT_PAL_TAG_COWGIRL                 0x1208
+#define OBJ_EVENT_PAL_TAG_GIRL_5                  0x1209
+#define OBJ_EVENT_PAL_TAG_GIRL_6                  0x1210
+#define OBJ_EVENT_PAL_TAG_GIRL_7                  0x1211
+#define OBJ_EVENT_PAL_TAG_JUGGLER                 0x1212
+#define OBJ_EVENT_PAL_TAG_MAN_7                   0x1213
+#define OBJ_EVENT_PAL_TAG_BIKER                   0x1214
+#define OBJ_EVENT_PAL_TAG_CHANNELER               0x1215
+#define OBJ_EVENT_PAL_TAG_NERD                    0x1216
+#define OBJ_EVENT_PAL_TAG_RANCHER                 0x1217
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M_2          0x1218
+#define OBJ_EVENT_PAL_TAG_SCOUT_M                 0x1219
+#define OBJ_EVENT_PAL_TAG_SCOUT_F                 0x1220
+#define OBJ_EVENT_PAL_TAG_SILVERWING_M            0x1221
+#define OBJ_EVENT_PAL_TAG_SILVERWING_F            0x1222
+#define OBJ_EVENT_PAL_TAG_WOMAN_6                 0x1223
+#define OBJ_EVENT_PAL_TAG_WOMAN_7                 0x1224
+#define OBJ_EVENT_PAL_TAG_WOMAN_8                 0x1225
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_F            0x1226
+
+
+
+
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
@@ -1415,6 +1447,34 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_OliviaSurfing,         OBJ_EVENT_PAL_TAG_OLIVIA_SURFING},
     {gObjectEventPal_Melissa,               OBJ_EVENT_PAL_TAG_MELISSA},
     {gObjectEventPal_FieldEffects,          OBJ_EVENT_PAL_TAG_FIELD_EFFECTS},
+    {gObjectEventPal_AceTrainerF,           OBJ_EVENT_PAL_TAG_ACE_TRAINER_F},
+    {gObjectEventPal_AceTrainerM,           OBJ_EVENT_PAL_TAG_ACE_TRAINER_M},
+    {gObjectEventPal_Jonas,                 OBJ_EVENT_PAL_TAG_JONAS},
+    {gObjectEventPal_Palm,                  OBJ_EVENT_PAL_TAG_PALM},
+    {gObjectEventPal_Arthur,                OBJ_EVENT_PAL_TAG_ARTHUR},
+    {gObjectEventPal_Coco,                  OBJ_EVENT_PAL_TAG_COCO},
+    {gObjectEventPal_Primrose,              OBJ_EVENT_PAL_TAG_PRIMROSE},
+    {gObjectEventPal_Edea,                  OBJ_EVENT_PAL_TAG_EDEA},
+    {gObjectEventPal_BeautyMasters,         OBJ_EVENT_PAL_TAG_BEAUTY_MASTERS},
+    {gObjectEventPal_Cowgirl,               OBJ_EVENT_PAL_TAG_COWGIRL},
+    {gObjectEventPal_Girl5,                 OBJ_EVENT_PAL_TAG_GIRL_5},
+    {gObjectEventPal_Girl6,                 OBJ_EVENT_PAL_TAG_GIRL_6},
+    {gObjectEventPal_Girl7,                 OBJ_EVENT_PAL_TAG_GIRL_7},
+    {gObjectEventPal_Juggler,               OBJ_EVENT_PAL_TAG_JUGGLER},
+    {gObjectEventPal_Man7,                  OBJ_EVENT_PAL_TAG_MAN_7},
+    {gObjectEventPal_Biker,                 OBJ_EVENT_PAL_TAG_BIKER},
+    {gObjectEventPal_Channeler,             OBJ_EVENT_PAL_TAG_CHANNELER},
+    {gObjectEventPal_Nerd,                  OBJ_EVENT_PAL_TAG_NERD},
+    {gObjectEventPal_Rancher,               OBJ_EVENT_PAL_TAG_RANCHER},
+    {gObjectEventPal_SchoolKidM2,           OBJ_EVENT_PAL_TAG_SCHOOL_KID_M_2},
+    {gObjectEventPal_ScoutM,                OBJ_EVENT_PAL_TAG_SCOUT_M},
+    {gObjectEventPal_ScoutF,                OBJ_EVENT_PAL_TAG_SCOUT_F},
+    {gObjectEventPal_SilverwingM,           OBJ_EVENT_PAL_TAG_SILVERWING_M},
+    {gObjectEventPal_SilverwingF,           OBJ_EVENT_PAL_TAG_SILVERWING_F},
+    {gObjectEventPal_Woman6,                OBJ_EVENT_PAL_TAG_WOMAN_6},
+    {gObjectEventPal_Woman7,                OBJ_EVENT_PAL_TAG_WOMAN_7},
+    {gObjectEventPal_Woman8,                OBJ_EVENT_PAL_TAG_WOMAN_8},
+    {gObjectEventPal_SchoolKidF,            OBJ_EVENT_PAL_TAG_SCHOOL_KID_F},
 
     {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
     {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},

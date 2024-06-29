@@ -121,6 +121,7 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1:
 	special HealPlayerParty
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_5
 	closemessage
+	release
 	return
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_3:
@@ -776,7 +777,7 @@ ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack::
 	waitbuttonpress
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
-	setfollower 11, 100, PARTNER_STEVEN
+	setfollower 11, 100, PARTNER_MEADOWS_RIVAL
 	setvar VAR_MINTY_MEADOWS_STATE, 1
 	waitmovement OBJ_EVENT_ID_PLAYER
 	closemessage
