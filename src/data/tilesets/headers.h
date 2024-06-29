@@ -1230,3 +1230,58 @@ const struct Tileset gTileset_islandgame_lumine_pleasant_avenue =
     .metatileAttributes = gMetatileAttributes_islandgame_lumine_pleasant_avenue,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_coastalcave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_coastalcave,
+    .palettes = gTilesetPalettes_coastalcave,
+    .metatiles = gMetatiles_coastalcave,
+    .metatileAttributes = gMetatileAttributes_coastalcave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_dojointerior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_dojointerior,
+    .palettes = gTilesetPalettes_dojointerior,
+    .metatiles = gMetatiles_dojointerior,
+    .metatileAttributes = gMetatileAttributes_dojointerior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_shadyforest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_shadyforest,
+    .palettes = gTilesetPalettes_shadyforest,
+    .metatiles = gMetatiles_shadyforest,
+    .metatileAttributes = gMetatileAttributes_shadyforest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_kanto_building =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_kanto_building,
+    .palettes = gTilesetPalettes_islandgame_kanto_building,
+    .metatiles = gMetatiles_islandgame_kanto_building,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_building,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_kanto_powerplant =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_kanto_powerplant,
+    .palettes = gTilesetPalettes_islandgame_kanto_powerplant,
+    .metatiles = gMetatiles_islandgame_kanto_powerplant,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_powerplant,
+    .callback = NULL,
+};

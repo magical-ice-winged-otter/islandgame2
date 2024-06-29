@@ -315,3 +315,18 @@ const u16 gMetatileAttributes_islandgame_lumine_valley_of_peace[] = INCBIN_U16("
 
 const u16 gMetatiles_islandgame_lumine_pleasant_avenue[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_pleasant_avenue/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_lumine_pleasant_avenue[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_pleasant_avenue/metatile_attributes.bin");
+
+const u16 gMetatiles_coastalcave[] = INCBIN_U16("data/tilesets/secondary/coastalcave/metatiles.bin");
+const u16 gMetatileAttributes_coastalcave[] = INCBIN_U16("data/tilesets/secondary/coastalcave/metatile_attributes.bin");
+
+const u16 gMetatiles_dojointerior[] = INCBIN_U16("data/tilesets/secondary/dojointerior/metatiles.bin");
+const u16 gMetatileAttributes_dojointerior[] = INCBIN_U16("data/tilesets/secondary/dojointerior/metatile_attributes.bin");
+
+const u16 gMetatiles_shadyforest[] = INCBIN_U16("data/tilesets/secondary/shadyforest/metatiles.bin");
+const u16 gMetatileAttributes_shadyforest[] = INCBIN_U16("data/tilesets/secondary/shadyforest/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_kanto_building[] = INCBIN_U16("data/tilesets/primary/islandgame_kanto_building/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_kanto_building[] = INCBIN_U16("data/tilesets/primary/islandgame_kanto_building/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_kanto_powerplant[] = INCBIN_U16("data/tilesets/secondary/islandgame_kanto_powerplant/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_kanto_powerplant[] = INCBIN_U16("data/tilesets/secondary/islandgame_kanto_powerplant/metatile_attributes.bin");
