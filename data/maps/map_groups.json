@@ -136,7 +136,17 @@
     "ISLANDGAME_LUMINE_POWER_PLANT",
     "ISLANDGAME_THERION_PATH",
     "ISLANDGAME_MT_THERION_1F",
-    "ISLADNGAME_PROMENADE_PATH"
+    "ISLADNGAME_PROMENADE_PATH",
+    "ISLANDGAME_APPLEVINE_NAME_RATER",
+    "ISLANDGAME_APPLEVINE_PKMNCENTER",
+    "ISLANDGAME_APPLEVINE_PKMNMART",
+    "ISLANDGAME_APPLEVINE_GAME_CORNER",
+    "ISLANDGAME_APPLEVINE_COUCH_POTATO",
+    "ISLANDGAME_APPLEVINE_RESTAURANT",
+    "ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
+    "ISLANDGAME_APPLEVINE_QUEST_HOUSE",
+    "ISLANDGAME_ROCKY_PATH_HOUSE",
+    "ISLANDGAME_ROCKY_PATH_PKMNCENTER"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -149,7 +159,6 @@
     "SootopolisCity",
     "EverGrandeCity",
     "LittlerootTown",
-    "OldaleTown",
     "DewfordTown",
     "LavaridgeTown",
     "FallarborTown",
@@ -205,11 +214,7 @@
     "LittlerootTown_ProfessorBirchsLab"
   ],
   "gMapGroup_IndoorOldale": [
-    "OldaleTown_House1",
-    "OldaleTown_House2",
-    "OldaleTown_PokemonCenter_1F",
-    "OldaleTown_PokemonCenter_2F",
-    "OldaleTown_Mart"
+    
   ],
   "gMapGroup_IndoorDewford": [
     "DewfordTown_House1",

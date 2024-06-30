@@ -1,0 +1,3 @@
+ISLANDGAME_APPLEVINE_GAME_CORNER_MapScripts::
+	.byte 0
+

@@ -1087,3 +1087,201 @@ const struct Tileset gTileset_islandgame_houses =
     .metatileAttributes = gMetatileAttributes_islandgame_houses,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_lumine_power_plant_interior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_power_plant_interior,
+    .palettes = gTilesetPalettes_islandgame_lumine_power_plant_interior,
+    .metatiles = gMetatiles_islandgame_lumine_power_plant_interior,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_power_plant_interior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_mt_therion =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_mt_therion,
+    .palettes = gTilesetPalettes_islandgame_lumine_mt_therion,
+    .metatiles = gMetatiles_islandgame_lumine_mt_therion,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_mt_therion,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_belle_catacombs =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_belle_catacombs,
+    .palettes = gTilesetPalettes_islandgame_lumine_belle_catacombs,
+    .metatiles = gMetatiles_islandgame_lumine_belle_catacombs,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_belle_catacombs,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_arboria =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_arboria,
+    .palettes = gTilesetPalettes_islandgame_lumine_arboria,
+    .metatiles = gMetatiles_islandgame_lumine_arboria,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_arboria,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_azure_path =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_azure_path,
+    .palettes = gTilesetPalettes_islandgame_lumine_azure_path,
+    .metatiles = gMetatiles_islandgame_lumine_azure_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_azure_path,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_bellehaven =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_bellehaven,
+    .palettes = gTilesetPalettes_islandgame_lumine_bellehaven,
+    .metatiles = gMetatiles_islandgame_lumine_bellehaven,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_bellehaven,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_cantalo =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_cantalo,
+    .palettes = gTilesetPalettes_islandgame_lumine_cantalo,
+    .metatiles = gMetatiles_islandgame_lumine_cantalo,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_cantalo,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_power_plant =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_power_plant,
+    .palettes = gTilesetPalettes_islandgame_lumine_power_plant,
+    .metatiles = gMetatiles_islandgame_lumine_power_plant,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_power_plant,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_rocky_path =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_rocky_path,
+    .palettes = gTilesetPalettes_islandgame_lumine_rocky_path,
+    .metatiles = gMetatiles_islandgame_lumine_rocky_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_rocky_path,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_sierra_path =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_sierra_path,
+    .palettes = gTilesetPalettes_islandgame_lumine_sierra_path,
+    .metatiles = gMetatiles_islandgame_lumine_sierra_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_sierra_path,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_therion_path =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_therion_path,
+    .palettes = gTilesetPalettes_islandgame_lumine_therion_path,
+    .metatiles = gMetatiles_islandgame_lumine_therion_path,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_therion_path,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_valley_of_peace =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_valley_of_peace,
+    .palettes = gTilesetPalettes_islandgame_lumine_valley_of_peace,
+    .metatiles = gMetatiles_islandgame_lumine_valley_of_peace,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_valley_of_peace,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_lumine_pleasant_avenue =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_pleasant_avenue,
+    .palettes = gTilesetPalettes_islandgame_lumine_pleasant_avenue,
+    .metatiles = gMetatiles_islandgame_lumine_pleasant_avenue,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_pleasant_avenue,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_coastalcave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_coastalcave,
+    .palettes = gTilesetPalettes_coastalcave,
+    .metatiles = gMetatiles_coastalcave,
+    .metatileAttributes = gMetatileAttributes_coastalcave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_dojointerior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_dojointerior,
+    .palettes = gTilesetPalettes_dojointerior,
+    .metatiles = gMetatiles_dojointerior,
+    .metatileAttributes = gMetatileAttributes_dojointerior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_shadyforest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_shadyforest,
+    .palettes = gTilesetPalettes_shadyforest,
+    .metatiles = gMetatiles_shadyforest,
+    .metatileAttributes = gMetatileAttributes_shadyforest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_kanto_building =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_kanto_building,
+    .palettes = gTilesetPalettes_islandgame_kanto_building,
+    .metatiles = gMetatiles_islandgame_kanto_building,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_building,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_kanto_powerplant =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_kanto_powerplant,
+    .palettes = gTilesetPalettes_islandgame_kanto_powerplant,
+    .metatiles = gMetatiles_islandgame_kanto_powerplant,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_powerplant,
+    .callback = NULL,
+};

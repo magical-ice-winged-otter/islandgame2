@@ -1,277 +1,146 @@
+const DAYS = VAR_0x8009
+const HOURS = VAR_0x800A
+const MINUTES = VAR_0x800B
+const SECONDS = VAR_0x8014
 
-script EventScript_StartMenu {
-	goto_if_set(FLAG_SYS_SAFARI_MODE, EventScript_StartMenu_BuildSafariZoneMenu)
-	goto_if_in_battle_pyramid(EventScript_StartMenu_BuildBattlePyramidMenu)
-	goto_if_in_battle_pike(EventScript_StartMenu_BuildBattlePikeMenu)
-	call_if_set(FLAG_SYS_POKEDEX_GET, EventScript_StartMenu_TogglePokedex)
-	call_if_set(FLAG_SYS_POKEMON_GET, EventScript_StartMenu_TogglePokemon)
-	call_if_set(FLAG_SYS_BAG, EventScript_StartMenu_ToggleBag)
-	call_if_set(FLAG_SYS_POKENAV_GET, EventScript_StartMenu_TogglePokenav)
-	call_if_set(FLAG_SYS_TRAINER_CARD, EventScript_StartMenu_ToggleTrainerCard)
-	call_if_set(FLAG_SYS_SAVE, EventScript_StartMenu_ToggleSave)
-	dynmultipush(StartMenu_Text_Option, 6)
-	dynmultipush(StartMenu_Text_Exit, 7)
-	special(PlayRainStoppingSoundEffect)
-    special(ShowTimeWindow)
-	dynmultistack(22, 0, 18, FALSE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS)
+script EventScript_TimeMenu_BuildMenu {
+	//According to src/reset_rtc_screen.c#sInputMap, the min and max is 0 to 23 
+    dynmultipush(TimeMenu_Text_0AM, 0)
+	dynmultipush(TimeMenu_Text_1AM, 1)
+	dynmultipush(TimeMenu_Text_2AM, 2)
+	dynmultipush(TimeMenu_Text_3AM, 3)
+	dynmultipush(TimeMenu_Text_4AM, 4)
+	dynmultipush(TimeMenu_Text_5AM, 5)
+	dynmultipush(TimeMenu_Text_6AM, 6)
+	dynmultipush(TimeMenu_Text_7AM, 7)
+	dynmultipush(TimeMenu_Text_8AM, 8)
+	dynmultipush(TimeMenu_Text_9AM, 9)
+	dynmultipush(TimeMenu_Text_10AM, 10)
+	dynmultipush(TimeMenu_Text_11AM, 11)
+	dynmultipush(TimeMenu_Text_12PM, 12)
+	dynmultipush(TimeMenu_Text_1PM, 13)
+	dynmultipush(TimeMenu_Text_2PM, 14)
+	dynmultipush(TimeMenu_Text_3PM, 15)
+	dynmultipush(TimeMenu_Text_4PM, 16)
+	dynmultipush(TimeMenu_Text_5PM, 17)
+	dynmultipush(TimeMenu_Text_6PM, 18)
+	dynmultipush(TimeMenu_Text_7PM, 19)
+	dynmultipush(TimeMenu_Text_8PM, 20)
+	dynmultipush(TimeMenu_Text_9PM, 21)
+	dynmultipush(TimeMenu_Text_10PM, 22)
+	dynmultipush(TimeMenu_Text_11PM, 23)
+	dynmultistack(22, 0, FALSE, 8, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	setvar(DAYS, 0)
+	copyvar(HOURS, VAR_RESULT)
+	setvar(MINUTES, 0)
+	setvar(SECONDS, 0)
+	callnative(setTime)
+	dotimebasedevents
 
-	switch (var(VAR_RESULT)) {
-        case 0: goto(EventScript_StartMenu_PokedexAccess)
-        case 1: goto(EventScript_StartMenu_PokemonAccess)
-        case 2: goto(EventScript_StartMenu_BagAccess)
-        case 3: goto(EventScript_StartMenu_PokenavAccess)
-        case 4: goto(EventScript_StartMenu_TrainerCardAccess)
-        case 5: goto(EventScript_StartMenu_SaveAccess)
-        case 6: goto(EventScript_StartMenu_OptionAccess)
-        case 7: goto(EventScript_StartMenu_ExitAccess)
-        case MULTI_B_PRESSED: goto(EventScript_StartMenu_ExitAccess)
-    }
-}
-
-script EventScript_StartMenu_TogglePokedex {
-	dynmultipush(StartMenu_Text_Pokedex, 0)
-	return
-}
-
-script EventScript_StartMenu_TogglePokemon {
-	dynmultipush(StartMenu_Text_Pokemon, 1)
-	return
-}
-
-script EventScript_StartMenu_ToggleBag {
-	dynmultipush(StartMenu_Text_Bag, 2)
-	return
-}
-
-script EventScript_StartMenu_TogglePokenav {
-	dynmultipush(StartMenu_Text_Pokenav, 3)
-	return
-}
-
-script EventScript_StartMenu_ToggleTrainerCard {
-	dynmultipush(StartMenu_Text_TrainerCard, 4)
-	return
-}
-
-script EventScript_StartMenu_ToggleSave {
-	dynmultipush(StartMenu_Text_Save, 5)
-	return
-}
-
-
-script EventScript_StartMenu_PokedexAccess {
-	special(RemoveExtraStartMenuWindows)
 	fadescreen(FADE_TO_BLACK)
-	special(Script_StartMenu_OpenPokedexMenu)
-}
+	buffernumberstring(STR_VAR_1, VAR_RESULT)
+	message(format("You have successfully changed the time to {STR_VAR_1}:00!"))
+	delay(10)
+    fadescreen(FADE_FROM_BLACK)
 
-script EventScript_StartMenu_PokemonAccess {
-	special(RemoveExtraStartMenuWindows)
-	fadescreen(FADE_TO_BLACK)
-	special(Script_StartMenu_OpenPokemonMenu)
-}
-
-script EventScript_StartMenu_BagAccess {
-	special(RemoveExtraStartMenuWindows)
-	fadescreen(FADE_TO_BLACK)
-	special(Script_StartMenu_OpenBagMenu)
-}
-
-script EventScript_StartMenu_PokenavAccess {
-	special(RemoveExtraStartMenuWindows)
-	fadescreen(FADE_TO_BLACK)
-	special(Script_StartMenu_OpenPokenavMenu)
-}
-
-script EventScript_StartMenu_TrainerCardAccess {
-	special(RemoveExtraStartMenuWindows)
-	fadescreen(FADE_TO_BLACK)
-	special(Script_StartMenu_OpenTrainerCardMenu)
-}
-
-script EventScript_StartMenu_SaveAccess {
-	special(RemoveExtraStartMenuWindows)
-	call(Common_EventScript_SaveGame)
-	releaseall
-}
-
-script EventScript_StartMenu_OptionAccess {
-	special(RemoveExtraStartMenuWindows)
-	fadescreen(FADE_TO_BLACK)
-	special(Script_StartMenu_OpenOptionsMenu)
-}
-
-script EventScript_StartMenu_ExitAccess {
-	special(RemoveExtraStartMenuWindows)
-}
-
-
-text StartMenu_Text_Pokedex {
-    format("Pokédex")
-}
-
-text StartMenu_Text_Pokemon {
-    format("Pokémon")
-}
-
-text StartMenu_Text_Bag {
-    format("Bag")
-}
-
-text StartMenu_Text_Pokenav {
-    format("Pokénav")
-}
-
-text StartMenu_Text_TrainerCard {
-    format("{PLAYER}")
-}
-
-text StartMenu_Text_Save {
-    format("Save")
-}
-
-text StartMenu_Text_Option {
-    format("Options")
-}
-
-text StartMenu_Text_Exit {
-    format("Exit")
-}
-
-script EventScript_StartMenu_BuildSafariZoneMenu {
-	dynmultipush(StartMenu_Text_Retire, 0)
-	call_if_set(FLAG_SYS_POKEDEX_GET, EventScript_StartMenu_TogglePokedexInSafari)
-	call_if_set(FLAG_SYS_POKEMON_GET, EventScript_StartMenu_TogglePokemonInSafari)
-	call_if_set(FLAG_SYS_BAG, EventScript_StartMenu_ToggleBagInSafari)
-	call_if_set(FLAG_SYS_TRAINER_CARD, EventScript_StartMenu_ToggleTrainerCardInSafari)
-	dynmultipush(StartMenu_Text_Option, 5)
-	dynmultipush(StartMenu_Text_Exit, 6)
-	special(PlayRainStoppingSoundEffect)
-	special(ShowSafariBallsWindow)
-	dynmultistack(22, 0, 16, TRUE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS)
-	switch(var(VAR_RESULT)) {
-        case 0: goto(EventScript_StartMenu_RetireSafariAccess)
-        case 1: goto(EventScript_StartMenu_PokedexAccess)
-        case 2: goto(EventScript_StartMenu_PokemonAccess)
-        case 3: goto(EventScript_StartMenu_BagAccess)
-        case 4: goto(EventScript_StartMenu_TrainerCardAccess)
-        case 5: goto(EventScript_StartMenu_OptionAccess)
-        case 6: goto(EventScript_StartMenu_ExitAccess)
-        case MULTI_B_PRESSED: goto(EventScript_StartMenu_ExitAccess)
-    }
-}
-
-script EventScript_StartMenu_TogglePokedexInSafari {
-    dynmultipush(StartMenu_Text_Pokedex, 1)
-    return
-}
-
-script EventScript_StartMenu_TogglePokemonInSafari {
-    dynmultipush(StartMenu_Text_Pokemon, 2)
-    return
-}
-
-script EventScript_StartMenu_ToggleBagInSafari {
-    dynmultipush(StartMenu_Text_Bag, 3)
-    return
-}
-
-script EventScript_StartMenu_ToggleTrainerCardInSafari {
-    dynmultipush(StartMenu_Text_TrainerCard, 4)
-    return
-}
-
-
-script EventScript_StartMenu_RetireSafariAccess {
-	special(Script_StartMenu_OpenRetireSafari)
-}
-
-text StartMenu_Text_Retire {
-    format("Retire")
-}
-
-script EventScript_StartMenu_BuildBattlePyramidMenu {
-	call_if_set(FLAG_SYS_POKEMON_GET, EventScript_StartMenu_TogglePokemonInBattlePyramid)
-	call_if_set(FLAG_SYS_BAG, EventScript_StartMenu_ToggleBagInBattlePyramid)
-	call_if_set(FLAG_SYS_TRAINER_CARD, EventScript_StartMenu_ToggleTrainerCardInBattlePyramid)
-	dynmultipush(StartMenu_Text_Rest, 3)
-	dynmultipush(StartMenu_Text_Retire, 4)
-	dynmultipush(StartMenu_Text_Option, 5)
-	dynmultipush(StartMenu_Text_Exit, 6)
-	special(PlayRainStoppingSoundEffect)
-	special(ShowPyramidFloorWindow)
-	dynmultistack(22, 0, 16, TRUE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS)
-
-	switch (var(VAR_RESULT)) {
-        case 0: goto(EventScript_StartMenu_PokemonAccess)
-        case 1: goto(EventScript_StartMenu_BagAccess)
-        case 2: goto(EventScript_StartMenu_TrainerCardAccess)
-        case 3: goto(EventScript_StartMenu_Rest)
-        case 4: goto(EventScript_StartMenu_RetireBattlePyramidAccess)
-        case 5: goto(EventScript_StartMenu_OptionAccess)
-        case 6: goto(EventScript_StartMenu_ExitAccess)
-        case MULTI_B_PRESSED: goto(EventScript_StartMenu_ExitAccess)
-    }
-}
-
-script EventScript_StartMenu_TogglePokemonInBattlePyramid {
-	dynmultipush(StartMenu_Text_Pokemon, 0)
-	return
-}
-script EventScript_StartMenu_ToggleBagInBattlePyramid {
-	dynmultipush(StartMenu_Text_Bag, 1)
-	return
-}
-script EventScript_StartMenu_ToggleTrainerCardInBattlePike {
-	dynmultipush(StartMenu_Text_TrainerCard, 2)
-	return
-}
-script EventScript_StartMenu_ToggleTrainerCardInBattlePyramid {
-	dynmultipush(StartMenu_Text_TrainerCard, 2)
+	waitmessage
+	waitbuttonpress
+	closemessage
 	return
 }
 
-script EventScript_StartMenu_Rest {
-    special(RemoveExtraStartMenuWindows)
-    call(Common_EventScript_SaveGame)
-    goto_if_eq(VAR_RESULT, NO, EventScript_StartMenu_BuildBattlePyramidMenu)
-    callnative(DoSoftReset)
-    releaseall
+text TimeMenu_Text_0AM {
+	format("0:00")
 }
 
-script EventScript_StartMenu_RetireBattlePyramidAccess {
-    msgbox(gText_BattlePyramidConfirmRetire, MSGBOX_YESNO)
-    goto_if_eq(VAR_RESULT, NO, EventScript_StartMenu_RebuildBattlePyramidMenu)
-    closemessage
-    special(RemoveExtraStartMenuWindows)
-    goto(BattleFrontier_BattlePyramid_EventScript_WarpToLobbyLost)
+text TimeMenu_Text_1AM {
+	format("1:00")
 }
 
-script EventScript_StartMenu_RebuildBattlePyramidMenu {
-    closemessage
-    goto(EventScript_StartMenu_BuildBattlePyramidMenu)
+text TimeMenu_Text_2AM {
+	format("2:00")
 }
 
-
-text StartMenu_Text_Rest {
-    format("Rest")
+text TimeMenu_Text_3AM {
+	format("3:00")
 }
 
-script EventScript_StartMenu_BuildBattlePikeMenu {
-    call_if_set(FLAG_SYS_POKEDEX_GET, EventScript_StartMenu_TogglePokedex)
-    call_if_set(FLAG_SYS_POKEMON_GET, EventScript_StartMenu_TogglePokemon)
-    call_if_set(FLAG_SYS_TRAINER_CARD, EventScript_StartMenu_ToggleTrainerCardInBattlePike)
-    dynmultipush(StartMenu_Text_Option, 3)
-    dynmultipush(StartMenu_Text_Exit, 4)
-    special(PlayRainStoppingSoundEffect)
-    dynmultistack(22, 0, 16, TRUE, 8, FALSE, VAR_START_MENU_CURSOR_POS, 2, DYN_MULTICHOICE_CB_UPDATE_START_MENU_CURSOR_POS)
+text TimeMenu_Text_4AM {
+	format("4:00")
+}
 
-    switch (var(VAR_RESULT)) {
-        case 0: goto(EventScript_StartMenu_PokedexAccess)
-        case 1: goto(EventScript_StartMenu_PokemonAccess)
-        case 2: goto(EventScript_StartMenu_TrainerCardAccess)
-        case 3: goto(EventScript_StartMenu_OptionAccess)
-        case 4: goto(EventScript_StartMenu_ExitAccess)
-        case MULTI_B_PRESSED: goto(EventScript_StartMenu_ExitAccess)
-    }
+text TimeMenu_Text_5AM {
+	format("5:00")
+}
+
+text TimeMenu_Text_6AM {
+	format("6:00")
+}
+
+text TimeMenu_Text_7AM {
+	format("7:00")
+}
+
+text TimeMenu_Text_8AM {
+	format("8:00")
+}
+
+text TimeMenu_Text_9AM {
+	format("9:00")
+}
+
+text TimeMenu_Text_10AM {
+	format("10:00")
+}
+
+text TimeMenu_Text_11AM {
+	format("11:00")
+}
+
+text TimeMenu_Text_12PM {
+	format("12:00")
+}
+
+text TimeMenu_Text_1PM {
+	format("13:00")
+}
+
+text TimeMenu_Text_2PM {
+	format("14:00")
+}
+
+text TimeMenu_Text_3PM {
+	format("15:00")
+}
+
+text TimeMenu_Text_4PM {
+	format("16:00")
+}
+
+text TimeMenu_Text_5PM {
+	format("17:00")
+}
+
+text TimeMenu_Text_6PM {
+	format("18:00")
+}
+
+text TimeMenu_Text_7PM {
+	format("19:00")
+}
+
+text TimeMenu_Text_8PM {
+	format("20:00")
+}
+
+text TimeMenu_Text_9PM {
+	format("21:00")
+}
+
+text TimeMenu_Text_10PM {
+	format("22:00")
+}
+
+text TimeMenu_Text_11PM {
+	format("23:00")
 }

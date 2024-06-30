@@ -1,6 +1,9 @@
 #ifndef GUARD_CONFIG_SPECIES_ENABLED_H
 #define GUARD_CONFIG_SPECIES_ENABLED_H
 
+// WARNING: For some reason, using 1/0 instead of TRUE/FALSE causes cry IDs to be shifted.
+// Please use TRUE/FALSE when using the family toggles.
+
 // Modifying the latest generation WILL change the saveblock due to Dex flags and will require a new save file.
 // Generations of Pokémon are defined by the first member introduced,
 // so Pikachu depends on the Gen 1 setting despite Pichu being the lowest member of the evolution tree.
@@ -14,7 +17,7 @@
 #define P_GEN_6_POKEMON                  TRUE // Generation 6 Pokémon (XY, ORAS)
 #define P_GEN_7_POKEMON                  TRUE // Generation 7 Pokémon (SM, USUM, LGPE)
 #define P_GEN_8_POKEMON                  TRUE // Generation 8 Pokémon (SwSh, BDSP, LA)
-#define P_GEN_9_POKEMON                  TRUE // Generation 9 Pokémon (SV)
+#define P_GEN_9_POKEMON                  FALSE // Generation 9 Pokémon (SV)
 #define P_GEN_C_POKEMON                  TRUE // CUSTOM MONs
 
 // Setting this to TRUE will add the new evolutions to the Regional Dex.

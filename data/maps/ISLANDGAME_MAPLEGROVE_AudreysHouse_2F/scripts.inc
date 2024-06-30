@@ -65,12 +65,13 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_WooperInspect::
 	.string "it. Should I press it?)$"
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_DrawerInspect::
-	.string "{COLOR RED}(It's a drawer full of Audrey's clothes.)\p"
+	.string "{COLOR RED}(It's a drawer full of Melissa's\n"
+	.string "clothes.)\p"
 	.string "{COLOR RED}(I should probably stop looking through\n"
 	.string "it.)$"
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_ComputerInspect::
-	.string "{COLOR RED}(It looks like Audrey left her computer\n"
+	.string "{COLOR RED}(It looks like Melissa left her computer\n"
 	.string "on.)\p"
 	.string "{COLOR RED}(Seems like she was watching “PokéLive\n"
 	.string "Summer Splash Highlights”.)$"
@@ -80,4 +81,4 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_BookInspect::
 	.string "Galar”.)$"
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_GamecubeInspect::
-	.string "{COLOR RED}(It's Audrey's GameCube.)$"
+	.string "{COLOR RED}(It's Melissa's GameCube.)$"

@@ -91,7 +91,7 @@ gSpecialVars::
 	.4byte gSpecialVar_ContestCategory
 	.4byte gSpecialVar_MonBoxId
 	.4byte gSpecialVar_MonBoxPos
-	.4byte gSpecialVar_Unused_0x8014
+	.4byte gSpecialVar_0x8014
 	.4byte gTrainerBattleOpponent_A
 
 	.include "data/specials.inc"
@@ -120,7 +120,6 @@ gStdScripts_End::
 	.include "data/maps/SootopolisCity/scripts.inc"
 	.include "data/maps/EverGrandeCity/scripts.inc"
 	.include "data/maps/LittlerootTown/scripts.inc"
-	.include "data/maps/OldaleTown/scripts.inc"
 	.include "data/maps/DewfordTown/scripts.inc"
 	.include "data/maps/LavaridgeTown/scripts.inc"
 	.include "data/maps/FallarborTown/scripts.inc"
@@ -172,11 +171,6 @@ gStdScripts_End::
 	.include "data/maps/LittlerootTown_MaysHouse_1F/scripts.inc"
 	.include "data/maps/LittlerootTown_MaysHouse_2F/scripts.inc"
 	.include "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc"
-	.include "data/maps/OldaleTown_House1/scripts.inc"
-	.include "data/maps/OldaleTown_House2/scripts.inc"
-	.include "data/maps/OldaleTown_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/OldaleTown_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/OldaleTown_Mart/scripts.inc"
 	.include "data/maps/DewfordTown_House1/scripts.inc"
 	.include "data/maps/DewfordTown_PokemonCenter_1F/scripts.inc"
 	.include "data/maps/DewfordTown_PokemonCenter_2F/scripts.inc"
@@ -585,6 +579,7 @@ gStdScripts_End::
 	.include "data/scripts/new_game.inc"
 	.include "data/scripts/hall_of_fame.inc"
 
+	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
 
 EventScript_WhiteOut::
@@ -1080,6 +1075,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/scripts/islandgame_debug.inc"
 	.include "data/scripts/islandgame_common.inc"
+	.include "data/scripts/islandgame_menu.inc"
 	
 	.include "data/maps/ForestBaseCamp_FrontLawn/scripts.inc"
 
@@ -1275,3 +1271,23 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_COUCH_POTATO/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_RESTAURANT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROCKY_PATH_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROCKY_PATH_PKMNCENTER/scripts.inc"
