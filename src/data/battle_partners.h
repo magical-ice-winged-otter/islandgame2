@@ -23,7 +23,7 @@ const struct Trainer gBattlePartners[] = {
         .party = TRAINER_PARTY(sParty_MintyMeadowsRivalPartner),
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_AUDREY, // NOTE THIS DOESN"T WORK AS IS, IT WILL CRASH IF YOU DON'T PROVIDE A PROPER BACKSPRITE
-        .trainerName = _("Audrey"),
+        .trainerPic = TRAINER_BACK_PIC_STEVEN, // NOTE THIS DOESN"T WORK AS IS, IT WILL CRASH IF YOU DON'T PROVIDE A PROPER BACKSPRITE
+        .trainerName = _("Melissa"),
     }
 };
