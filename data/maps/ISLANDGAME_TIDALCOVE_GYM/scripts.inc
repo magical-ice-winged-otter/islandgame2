@@ -224,8 +224,7 @@ ISLANDGAME_TIDALCOVE_GYM_Trainer3_Text_1:
 
 ISLANDGAME_TIDALCOVE_GYM_Trainer3_Text_2:
 	.string "Ruka is my close friend, so I offer to\n"
-	.string "help her out at her gym time to time.\p"
-	.string "$"
+	.string "help her out at her gym time to time.$"
 
 ISLANDGAME_TIDALCOVE_GYM_Trainer4_Text_0:
 	.string "I see you staring at me with a confused\n"

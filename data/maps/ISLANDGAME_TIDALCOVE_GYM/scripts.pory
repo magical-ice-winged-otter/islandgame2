@@ -68,7 +68,7 @@ script ISLANDGAME_TIDALCOVE_GYM_Trainer3 {
         format("You're almost at the peak, but I have to stop you here. My apologies."), 
         "Your Pokémon fight with elegance."
     )
-    msgbox(format("Ruka is my close friend, so I offer to help her out at her gym time to time.\p"), MSGBOX_NPC)
+    msgbox(format("Ruka is my close friend, so I offer to help her out at her gym time to time."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_TIDALCOVE_GYM_Trainer4 {

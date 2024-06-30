@@ -1,0 +1,1 @@
+tools/porytiles/porytiles compile-primary  -Wall -output=data/tilesets/primary/islandgame_kanto_building  -tiles-output-pal=greyscale  -target-base-game=pokeemerald  -transparency-color=24,40,80  -default-behavior=MB_NORMAL  porytiles/islandgame_frlgbuilding porytiles/metatile_behaviors.h

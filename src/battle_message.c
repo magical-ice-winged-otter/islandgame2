@@ -4032,6 +4032,18 @@ struct TrainerSlide
     const u8 *msgDynamax;
 };
 
+
+
+// trainer dialogue 
+static const u8 sText_RukaLastSwitchIn[] = _("You've done well so far, but me and my\nPokémon still aren't finished yet!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_RukaSuperEffective[] = _("Ah, I can tell you're a trainer who is\nalways well-prepared for a battle!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_RukaCriticalHit[] = _("Bravo! That was a nice hit!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_RukaIntro[] = _("I hope you don't mind if I enhance\nour arena with a little Ruka magic!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sText_EdeaLastSwitchIn[] = _("W-What? How am I the one backed up in a\ncorner here!?{PAUSE_UNTIL_PRESS}");
+static const u8 sText_EdeaCriticalHit[] = _("Tch... lucky shot in the dark!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_EdeaNoEffect[] = _("Bahaha! Nice move, kid!{PAUSE_UNTIL_PRESS}");
+
 static const struct TrainerSlide sTrainerSlides[] =
 {
     /* Put any trainer slide-in messages inside this array.
@@ -4053,6 +4065,20 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgDynamax = sText_TargetWokeUp,
     },
     */
+
+   {
+    .trainerId = TRAINER_TIDALCOVE_GYM_RUKA,
+    .msgLastSwitchIn = sText_RukaLastSwitchIn,
+    .msgFirstSuperEffectiveHit = sText_RukaSuperEffective,
+    .msgFirstCriticalHit = sText_RukaCriticalHit,
+    .msgBeforeFirstTurn = sText_RukaIntro,
+   },
+   {
+    .trainerId = TRAINER_MT_AURORA_EDEA,
+    .msgLastSwitchIn = sText_EdeaLastSwitchIn,
+    .msgFirstCriticalHit = sText_EdeaCriticalHit,
+    .msgPlayerMonUnaffected = sText_EdeaNoEffect,
+   }
 };
 
 static u32 GetEnemyMonCount(u32 firstId, u32 lastId, bool32 onlyAlive)

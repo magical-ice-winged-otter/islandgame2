@@ -80,6 +80,7 @@ void TrySpecialOverworldEvo();
 EWRAM_DATA static u8 sLearningMoveTableID = 0;
 EWRAM_DATA u8 gPlayerPartyCount = 0;
 EWRAM_DATA u8 gEnemyPartyCount = 0;
+EWRAM_DATA struct Pokemon gPlayerSavedParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct Pokemon gPlayerParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct Pokemon gEnemyParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct SpriteTemplate gMultiuseSpriteTemplate = {0};
@@ -622,6 +623,37 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
         .affineAnims = gAffineAnims_BattleSpritePlayerSide,
         .callback = SpriteCB_BattleSpriteStartSlideLeft,
     },
+
+    // island-game
+    // [TRAINER_BACK_PIC_OLIVER] = {
+    //     .tileTag = TAG_NONE,
+    //     .paletteTag = 0,
+    //     .oam = &gOamData_BattleSpritePlayerSide,
+    //     .anims = NULL,
+    //     .images = gTrainerBackPicTable_Oliver,
+    //     .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+    //     .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    // },
+
+    // [TRAINER_BACK_PIC_OLIVIA] = {
+    //     .tileTag = TAG_NONE,
+    //     .paletteTag = 0,
+    //     .oam = &gOamData_BattleSpritePlayerSide,
+    //     .anims = NULL,
+    //     .images = gTrainerBackPicTable_Olivia,
+    //     .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+    //     .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    // },
+
+    // [TRAINER_BACK_PIC_MELISSA] = {
+    //     .tileTag = TAG_NONE,
+    //     .paletteTag = 0,
+    //     .oam = &gOamData_BattleSpritePlayerSide,
+    //     .anims = NULL,
+    //     .images = gTrainerBackPicTable_Melissa,
+    //     .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+    //     .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    // },
 };
 
 #define NUM_SECRET_BASE_CLASSES 5
@@ -5846,9 +5878,9 @@ const u8 *GetTrainerPartnerName(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
     {
-        if (gPartnerTrainerId == TRAINER_PARTNER(PARTNER_STEVEN))
+        if (gPartnerTrainerId < TRAINER_PARTNER(PARTNER_END))
         {
-            return GetTrainerNameFromId(TRAINER_STEVEN);
+            return GetTrainerNameFromId(gPartnerTrainerId - MAX_TRAINERS_COUNT);
         }
         else
         {
@@ -6049,9 +6081,9 @@ u16 FacilityClassToPicIndex(u16 facilityClass)
 u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 {
     if (playerGender != MALE)
-        return FacilityClassToPicIndex(FACILITY_CLASS_MAY);
+        return FacilityClassToPicIndex(FACILITY_CLASS_OLIVIA);
     else
-        return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);
+        return FacilityClassToPicIndex(FACILITY_CLASS_OLIVER);
 }
 
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)

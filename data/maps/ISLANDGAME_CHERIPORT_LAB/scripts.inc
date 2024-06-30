@@ -16,7 +16,7 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2:
 	msgbox ProfTalk_First_Text
 	setflag FLAG_PROF_GAVE_EEVEE
 	setflag FLAG_SYS_POKEMON_GET
-	givemon SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, , , , , , , , 31, 31, 31, 31, 31, 31, MOVE_TACKLE, MOVE_MUD_SLAP, MOVE_SAND_ATTACK, MOVE_TAIL_WHIP, FALSE
+	givemon SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, , , , , , , , 31, 31, 31, 31, 31, 31, MOVE_TACKLE, MOVE_MUD_SLAP, MOVE_GROWL, MOVE_WORK_UP, FALSE
 	playfanfare MUS_OBTAIN_ITEM
 	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
 	msgbox ReceivedEevee_Text
@@ -149,16 +149,16 @@ ProfTalk_Fourth_Text::
 	.string "to begin your journey!\p"
 	.string "{COLOR DARK_GRAY}I suggest you meet up with my other\n"
 	.string "student first, though.\p"
-	.string "{COLOR DARK_GRAY}Her name is Audrey, and she's been\n"
+	.string "{COLOR DARK_GRAY}Her name is Melissa, and she's been\n"
 	.string "helping me out for about a week or two.\p"
 	.string "{COLOR DARK_GRAY}She knows her way around Oranna better\n"
 	.string "than me, so she can help you navigate\l"
 	.string "the island and give you some pointers!\p"
-	.string "{COLOR DARK_GRAY}Audrey should be somewhere near her\n"
+	.string "{COLOR DARK_GRAY}Melissa should be somewhere near her\n"
 	.string "hometown, Maplegrove, right now.$"
 
 ProfTalk_AudreyNotDefeated::
-	.string "{COLOR DARK_GRAY}Audrey should be somewhere near her\n"
+	.string "{COLOR DARK_GRAY}Melissa should be somewhere near her\n"
 	.string "hometown, Maplegrove, right now.$"
 
 ProfTalk_CheckPokedex::
