@@ -1,11 +1,25 @@
+const FLAG_NIGHT = FLAG_TEMP_1
+const FLAG_DAY = FLAG_TEMP_2
+const VAR_CURRENT_HOUR = VAR_0x8000
+
 mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_TEMP_1, 0)
         goto(ISLANDGAME_Southern_Oranna_Path_OnLoad)
+
+        gettime
+
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+            setflag(FLAG_NIGHT)
+        }
+        else {
+            setflag(FLAG_DAY)
+        }
     }
     // MAP_SCRIPT_ON_FRAME_TABLE [
     //     VAR_TEMP_0, 0: ISLANDGAME_Southern_Oranna_Path_OnLoad
     // ]
+    
 }
 
 script ISLANDGAME_Southern_Oranna_Path_OnLoad {

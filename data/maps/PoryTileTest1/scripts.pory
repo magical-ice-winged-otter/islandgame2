@@ -1,8 +1,24 @@
 const OBJ_SHIP_BOY = 1
 const OBJ_SHIP_MAN = 2
 const OBJ_SHIP_WOMAN = 3
+const OBJ_SHIP_GIRL = 4
+const FLAG_NIGHT = FLAG_TEMP_1
+const FLAG_DAY = FLAG_TEMP_2
+const VAR_CURRENT_HOUR = VAR_0x8000
 
-mapscripts PoryTileTest1_MapScripts {}
+mapscripts PoryTileTest1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        // todo: I want to turn this into a single macro - setnightflag(FLAG_NIGHT)
+        gettime
+
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+            setflag(FLAG_NIGHT)
+        }
+        else {
+            setflag(FLAG_DAY)
+        }
+    }
+}
 
 script PoryTileTest1_EventScript_BoyTalk {
     lock
@@ -65,4 +81,19 @@ script PoryTileTest2_EventScript_NPC3Talk {
 
 text PoryTileTest1_NPC3_Text {
     format("{COLOR DARK_GRAY}Aaaah. This vacation was exactly what I needed. Maybe I'll lay here all day.")
+}
+
+script PoryTileTest2_EventScript_NPC4Talk {
+    lock
+    faceplayer
+    msgbox(format(
+        "I'M FLYING!!!!!\p"
+        "Huh? What do you mean, why am I yelling that? Do you really not know why?\p"
+        "I feel bad for you kids. You missed out on the golden age of entertainment.\p"
+        "Now you're all engrossed in that cringe PokéIdol nonsense or whatever."
+    ))
+    applymovement(OBJ_SHIP_GIRL, Common_Movement_FaceLeft)
+    waitmovement(0)
+    closemessage
+    release
 }

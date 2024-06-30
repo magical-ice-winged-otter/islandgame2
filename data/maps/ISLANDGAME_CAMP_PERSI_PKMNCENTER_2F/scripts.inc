@@ -1,0 +1,3 @@
+ISLANDGAME_CAMP_PERSI_PKMNCENTER_2F_MapScripts::
+	.byte 0
+

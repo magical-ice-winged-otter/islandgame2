@@ -90,7 +90,7 @@ script ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade {
 
 text ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeTalk {
     format(
-        "{COLOR DARK_GRAY}Hey there, do you happen to have a Barboach by chance? \p"
+        "{COLOR DARK_GRAY}Hey there, do you happen to have a Horsea by chance? \p"
         "{COLOR DARK_GRAY}I've been looking everywhere for one, but I can't seem to find any. \p"
         "{COLOR DARK_GRAY}Will you find me one? I'll trade you this super rare Staryu for it!"
         )
@@ -107,7 +107,7 @@ script ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeDecline {
 }
 
 script ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeWrong {
-    msgbox(format("{COLOR DARK_GRAY}Huh? That's not a Barboach. Don't try and scam me with that!"))
+    msgbox(format("{COLOR DARK_GRAY}Huh? That's not a Horsea. Don't try and scam me with that!"))
     release
 }
 

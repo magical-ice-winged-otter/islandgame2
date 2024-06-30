@@ -10,7 +10,7 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor::
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorOffer, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_1
-	checkmoney 1000
+	checkmoney 1500
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_5
 ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_4:
@@ -24,7 +24,7 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_EventScript_HPTutor_7:
 	showmoneybox 0, 0
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorMoveLearned
 	closemessage
-	removemoney 1000
+	removemoney 1500
 	updatemoneybox
 	playse SE_SHOP
 	waitse
@@ -88,7 +88,7 @@ ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorIntro::
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorOffer::
 	.string "{COLOR DARK_GRAY}I will teach your Pokémon its hidden\n"
-	.string "power for ¥1000... How's that sound?$"
+	.string "power for ¥1500... How's that sound?$"
 
 ISLANDGAME_MAPLEGROVE_HOUSE1_HPTutorWhichMon::
 	.string "{COLOR DARK_GRAY}Excellent... Whose hidden power do you\n"

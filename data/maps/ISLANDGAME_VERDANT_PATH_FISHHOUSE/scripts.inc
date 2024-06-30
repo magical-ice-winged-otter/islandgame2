@@ -128,8 +128,8 @@ ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeDecline_Text_0:
 	.string "very famous man. You're missing out!$"
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeWrong_Text_0:
-	.string "{COLOR DARK_GRAY}Huh? That's not a Barboach. Don't try\n"
-	.string "and scam me with that!$"
+	.string "{COLOR DARK_GRAY}Huh? That's not a Horsea. Don't try and\n"
+	.string "scam me with that!$"
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieIntro::
 	.string "{COLOR DARK_GRAY}Howdy there, trainer! I'm Arnie,\n"
@@ -150,7 +150,7 @@ ISLANDGAME_VERDANT_PATH_FISHHOUSE_ArnieOutro::
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_TradeTalk::
 	.string "{COLOR DARK_GRAY}Hey there, do you happen to have a\n"
-	.string "Barboach by chance?\p"
+	.string "Horsea by chance?\p"
 	.string "{COLOR DARK_GRAY}I've been looking everywhere for one,\n"
 	.string "but I can't seem to find any.\p"
 	.string "{COLOR DARK_GRAY}Will you find me one? I'll trade you this\n"

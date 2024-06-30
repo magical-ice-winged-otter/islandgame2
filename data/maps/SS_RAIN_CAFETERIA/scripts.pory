@@ -1,37 +1,53 @@
+const VAR_CURRENT_HOUR = VAR_0x8000
+
 mapscripts SS_RAIN_CAFETERIA_MapScripts {}
 
 
 script SS_RAIN_CAFETERIA_NPC1_TALK {
     lock
+    faceplayer
     msgbox(SS_RAIN_CAFETERIA_NPC1_TEXT)
     waitmessage
     release
 }
 
 text SS_RAIN_CAFETERIA_NPC1_TEXT {
-    format("Today's menu choices are great! I love the burgers here!")
+    format("I can't believe meals aren't paid for with the ticket!\pThese prices are highway robbery!")
 }
 
 script SS_RAIN_CAFETERIA_NPC2_TALK {
     lock
-    msgbox(SS_RAIN_CAFETERIA_NPC2_TEXT)
+    faceplayer
+    gettime
+    if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+        msgbox(format(
+            "Unfortunately, we are all out of lobster for the night." // temporary until we make a lobster roll item
+        ))
+    }
+    else {
+        msgbox(format(
+            "If you would like to try our famous lobster roll, you will have to come back later tonight."
+        ))
+    }
     waitmessage
     release
 }
 
-text SS_RAIN_CAFETERIA_NPC2_TEXT {
-    format("An extra large pinap... Who puts pinap berries on a PIZZA?\pWhat has this world come to?")
-}
-
 script SS_RAIN_CAFETERIA_NPC3_TALK {
     lock
+    faceplayer
     msgbox(SS_RAIN_CAFETERIA_NPC3_TEXT)
     waitmessage
     release
 }
 
 text SS_RAIN_CAFETERIA_NPC3_TEXT {
-    format("I swear to Arceus, if I get another room service request on the top floor...")
+    format(
+        "Contrary to popular belief, our famous lobster roll is not made from Pokémon.\p"
+        "We actually just use regular ol' lobster.\p"
+        "Yeah, you heard that right. Normal animals exist in the Pokémon world.\p"
+        "Now you can stop accusing me of committing Pokémon cruelty!"
+        )
 }
 
 script SS_RAIN_CAFETERIA_IceCreamGirl {

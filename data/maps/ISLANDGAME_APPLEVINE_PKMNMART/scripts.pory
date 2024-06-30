@@ -1,1 +1,18 @@
 mapscripts ISLANDGAME_APPLEVINE_PKMNMART_MapScripts {}
+
+// todo: prolly really want to make this better
+
+script ISLANDGAME_APPLEVINE_PKMNMART_Interact_Employee {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the Applevine PokeMart!"))
+    pokemart(Applevine_MartItems)
+    msgbox(format("Have a good day!"))
+    closemessage
+    release
+}
+
+mart Applevine_MartItems {
+    ITEM_POKE_BALL
+    ITEM_REPEL
+}

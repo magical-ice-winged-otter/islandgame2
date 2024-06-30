@@ -838,53 +838,61 @@ const struct Trainer gTrainers[] = {
 
 
 
-    [TRAINER_RICKY_1] =
+
+
+    // Promenade Path
+
+    [TRAINER_PROMENADE_1] =
     {
-        .trainerClass = TRAINER_CLASS_TUBER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_M,
-        .trainerName = _("RICKY"),
+        .trainerClass = TRAINER_CLASS_TRIATHLETE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
+        .trainerName = _("Yoosay"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Ricky1),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_PromenadePath1),
     },
 
-    [TRAINER_SIMON] =
+    [TRAINER_PROMENADE_2] =
     {
-        .trainerClass = TRAINER_CLASS_TUBER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_M,
-        .trainerName = _("SIMON"),
+        .trainerClass = TRAINER_CLASS_TRIATHLETE,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_F,
+        .trainerName = _("Akeezuh"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Simon),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_PromenadePath2),
     },
 
-    [TRAINER_CHARLIE] =
+    [TRAINER_PROMENADE_3] =
     {
-        .trainerClass = TRAINER_CLASS_TUBER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_M,
-        .trainerName = _("CHARLIE"),
+        .trainerClass = TRAINER_CLASS_TRIATHLETE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
+        .trainerName = _("Jak"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Charlie),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_PromenadePath3),
     },
 
-    [TRAINER_RICKY_2] =
+
+
+    [TRAINER_PROMENADE_4] =
     {
-        .trainerClass = TRAINER_CLASS_TUBER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_M,
-        .trainerName = _("RICKY"),
+        .trainerClass = TRAINER_CLASS_TRIATHLETE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_M,
+        .trainerName = _("Hoagie"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Ricky2),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_PromenadePath4),
     },
+
+
 
     [TRAINER_RICKY_3] =
     {

@@ -17,10 +17,13 @@ ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer::
 
 
 ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer_Text_0:
-	.string "Boo!$"
+	.string "Oof! Sorry, I didn't see you there!\p"
+	.string "But now that we're this close... we may\n"
+	.string "as well have a battle!$"
 
 ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer_Text_1:
-	.string "Did I startle you?$"
+	.string "Maybe it wasn't such a good idea to go\n"
+	.string "crawling in this cave...$"
 
 ISLANDGAME_TRAVELERS_TUNNEL_2_ManiacTalk::
 	.string "Hey there trainer. I have a SUPER\n"
@@ -34,4 +37,4 @@ ISLANDGAME_TRAVELERS_TUNNEL_2_ManiacTalk::
 	.string "then! Shoo! Serious buyers ONLY!$"
 
 ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer_Loss::
-	.string "Booooo.$"
+	.string "Gah, it's too hard to battle in this\nmist.$"

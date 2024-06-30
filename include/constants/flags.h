@@ -658,7 +658,7 @@
 #define FLAG_HIDDEN_ITEM_TIDALCOVE_PEARL            0x265 
 #define FLAG_HIDDEN_ITEM_ROSEVALE_EXP_CANDY         0x266
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_EXP_CANDY      0x267 
-#define FLAG_HIDDEN_ITEM_AURORA_PATH_SHINYSTONE     0x268
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_GUARD_SPEC     0x268
 #define FLAG_HIDDEN_ITEM_MT_AURORA_NEVERMELTICE     0x269
 #define FLAG_HIDDEN_ITEM_MT_AURORA_SNOWBALL         0x26A 
 #define FLAG_HIDDEN_ITEM_SS_RAIN_EXP_CANDY          0x26B 
@@ -667,42 +667,42 @@
 #define FLAG_HIDDEN_ITEM_SORANNA_PATH_PARA_HEAL     0x26E 
 #define FLAG_HIDDEN_ITEM_CAMP_PERSI_EXP_CANDY       0x26F 
 #define FLAG_HIDDEN_ITEM_VERDANT_PATH_EXP_CANDY     0x270 
-#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_COLBUR       0x271
-#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_EXP_CANDY    0x272 
+#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_TANGA        0x271
+#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_BIGSHROOM    0x272 
 #define FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY       0x273 
 #define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_EXP_CANDY    0x274 
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY     0x275 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_S_FEATHER     0x275 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY_2   0x276
 #define FLAG_HIDDEN_ITEM_TIDALCOVE_EXP_CANDY        0x277 
-#define FLAG_HIDDEN_ITEM_NORANNA_PATH_SUN_STONE     0x278
+#define FLAG_HIDDEN_ITEM_APPLEVINE_MUSCLE_FEATHER   0x278  
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY     0x279
 #define FLAG_HIDDEN_ITEM_MT_AURORA_EXP_CANDY        0x27A 
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_P_FEATHER     0x27B 
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_M_FEATHER     0x27C 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_P_FEATHER     0x27B   // not in use
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_M_FEATHER     0x27C   // not in use
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_H_FEATHER     0x27D 
-#define FLAG_HIDDEN_ITEM_NORANNA_PATH_R_FEATHER     0x27E 
+#define FLAG_HIDDEN_ITEM_NORANNA_PATH_H_FEATHER     0x27E 
 #define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F
-#define FLAG_HIDDEN_ITEM_AURORA_PATH_C_FEATHER      0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER      0x280  
+#define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281
+#define FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE      0x282 
+#define FLAG_HIDDEN_ITEM_APPLEVINE_PP_UP            0x283
+#define FLAG_HIDDEN_ITEM_APPLEVINE_SWEET_APPLE      0x284 
+#define FLAG_HIDDEN_ITEM_SS_RAIN_ORAN_BERRY         0x285 
+#define FLAG_HIDDEN_ITEM_CHERIPORT_H_FEATHER        0x286 
+#define FLAG_HIDDEN_ITEM_CAMP_PERSI_BERRY_JUICE     0x287
+#define FLAG_HIDDEN_ITEM_CAMP_PERSI_MUSCLE_FEATHER  0x288 
+#define FLAG_HIDDEN_ITEM_VERDANT_PATH_G_FEATHER     0x289 
+#define FLAG_HIDDEN_ITEM_VERDANT_WOODS_TINYSHROOM   0x28A 
+#define FLAG_HIDDEN_ITEM_MAPLEGROVE_FEATHER         0x28B
+#define FLAG_HIDDEN_ITEM_MAPLEGROVE_REVIVE          0x28C
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_REPEL        0x28D 
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_R_FEATHER    0x28E
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_C_FEATHER    0x28F
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_ETHER        0x290 
+#define FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_DIREHIT   0x291 
+#define FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_EVERSTONE 0x292 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_PROTEIN       0x293 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_XP_CANDY      0x294 
 #define FLAG_UNUSED_0x295  0x295 // Unused Flag
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
@@ -1223,51 +1223,51 @@
 //island-game : Pokeball Items
 #define FLAG_ROOM3_ITEM                                             0x493 
 #define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 
-#define FLAG_FRESA_FARMS_SHROOM                                     0x495 
+#define FLAG_FRESA_FARMS_POKE_TOY                                   0x495 
 #define FLAG_VERDANT_PATH_TIMER_BALL                                0x496 
-#define FLAG_ITEM_COP_2_MOON_STONE                                  0x497
+#define FLAG_ITEM_COP_2_ELIXIR                                      0x497
 #define FLAG_ITEM_MINTY_MEADOWS_1                                   0x498
 #define FLAG_ITEM_TM_RETURN                                         0x499 
-#define FLAG_ITEM_TM_DIG                                            0x49A 
-#define FLAG_ITEM_PERSI_NEST_BALL                                   0x49B
-#define FLAG_ITEM_MYSTIC_WATER                                      0x49C 
+#define FLAG_ITEM_CAMP_PERSI_POTION                                 0x49A 
+#define FLAG_ITEM_PERSI_NEST_ETHER                                  0x49B
+#define FLAG_ITEM_FRESA_FARMS_REVIVE                                0x49C 
 #define FLAG_ITEM_MINTY_MEADOWS_HOUSE_ITEM                          0x49D
 #define FLAG_ITEM_COP_1_RARE_CANDY                                  0x49E
-#define FLAG_ITEM_COP_1_CHARCOAL                                    0x49F
-#define FLAG_ITEM_COP_2_TM_SHOCKWAVE                                0x4A0 
-#define FLAG_ITEM_COP_2_PIXIE_PLATE                                 0x4A1 
-#define FLAG_ITEM_TIDALCOVE_HP_UP                                   0x4A2
-#define FLAG_ITEM_TIDALCOVE_BLACKGLASSES                            0x4A3
-#define FLAG_ITEM_AP_COMET_SHARD                                    0x4A4 
-#define FLAG_ITEM_NOR_TWISTEDSPOON                                  0x4A5
-#define FLAG_ITEM_NOR_TM_TOXIC                                      0x4A6
+#define FLAG_ITEM_NOP_ICE_HEAL                                      0x49F  
+#define FLAG_ITEM_COP_2_TM_BULLET_SEED                              0x4A0 
+#define FLAG_ITEM_ROSEVALE_REPEL                                    0x4A1 
+#define FLAG_ITEM_TIDALCOVE_CALCIUM                                 0x4A2
+#define FLAG_ITEM_AURORA_PATH_IRON                                  0x4A3 
+#define FLAG_ITEM_AP_STARDUST                                       0x4A4 
+#define FLAG_ITEM_NOR_SUPER_POTION                                  0x4A5
+#define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
-#define FLAG_MINTY_MEADOWS_POTION                                   0x4A8 
-#define FLAG_MINTY_MEADOWS_REPEL                                    0x4A9
+#define FLAG_MINTY_MEADOWS_X_SP_ATK                                 0x4A8 
+#define FLAG_MINTY_MEADOWS_X_DEF                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
-#define FLAG_COP_1_CARBOS                                           0x4AB 
-#define FLAG_SS_RAIN_TM_VOLT_SWITCH                                 0x4AC // temporarily is calcium until tms are added
+#define FLAG_COP_1_REVIVE                                           0x4AB 
+#define FLAG_SS_RAIN_TM_SHOCK_WAVE                                  0x4AC 
 #define FLAG_SS_RAIN_LEFTOVERS                                      0x4AD
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
-#define FLAG_MAPLEGROVE_FOCUS_BAND                                  0x4AF 
-#define FLAG_ITEM_MINTY_MEADOWS_BIG_ROOT                            0x4B0 
+#define FLAG_ITEM_COP_1_X_SP_ATK                                    0x4AF  
+#define FLAG_ITEM_MINTY_MEADOWS_HP_UP                               0x4B0 
 #define FLAG_TRAVELERS_TUNNEL_TM_ROCK_TOMB                          0x4B1 
 #define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
-#define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
-#define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
+#define FLAG_ITEM_TIDALCOVE_DIVE_BALL                               0x4B3
+#define FLAG_ITEM_PROMENADE_PATH_PEARL                              0x4B4
+#define FLAG_ITEM_PROMENADE_PATH_SUPER_REPEL                        0x4B5
+#define FLAG_ITEM_APPLEVINE_ZINC                                    0x4B6
+#define FLAG_ITEM_SORANNA_PATH_POKEBALL                             0x4B7
+#define FLAG_ITEM_VERDANT_PATH_ANTIDOTE                             0x4B8
+#define FLAG_ITEM_VERDANT_PATH_SILK_SCARF                           0x4B9 
+#define FLAG_ITEM_VERDANT_WOODS_NET_BALL                            0x4BA
+#define FLAG_ITEM_VERDANT_WOODS_BUG_GEM                             0x4BB
+#define FLAG_ITEM_VERDANT_WOODS_POTION                              0x4BC 
+#define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
+#define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE
+#define FLAG_ITEM_MAPLEGROVE_WHITE_HERB                             0x4BF
+#define FLAG_ITEM_COP_1_BURN_HEAL                                   0x4C0
+#define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
 #define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
 #define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
@@ -1523,8 +1523,7 @@
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
 //camp persi: first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
-//camp persi: berry shop npc gives you free berries
-#define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B)
+#define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B)       // no longer in use
 //minty meadows: rival fight
 #define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
 //verdant woods: miracle seed
@@ -1563,11 +1562,14 @@
 #define FLAG_SS_RAIN_ROTOM_DEFEATED                 (SYSTEM_FLAGS + 0x9D)
 //verdant woods: defeat mimikyu in spooky house
 #define FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED         (SYSTEM_FLAGS + 0x9E)
-#define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
-#define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
+//tidalcove: squirtle gift
+#define FLAG_TIDALCOVE_SQUIRTLE_GIFT                (SYSTEM_FLAGS + 0x9F)
+//applevine: sweet heart gift
+#define FLAG_APPLEVINE_SWEETHEART_GIFT              (SYSTEM_FLAGS + 0xA0)
+//applevine: coco itemfinder gift
+#define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
+#define FLAG_APPLEVINE_MANECTRIC_GIFT               (SYSTEM_FLAGS + 0xA2)
+#define FLAG_CAMP_PERSI_SPOKE_TO_THIEF              (SYSTEM_FLAGS + 0xA3)
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
 #define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag

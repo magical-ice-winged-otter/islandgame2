@@ -103,8 +103,8 @@ ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Books_Text_0:
 	.string "these comic books.)$"
 
 ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_BallBoy_Text_0:
-	.string "My papa works at Skye Industries, the\n"
-	.string "biggest company in Marya!\p"
+	.string "My papa works at Poe Industries, one of\n"
+	.string "the biggest companies in Marya!\p"
 	.string "They make lots of cool stuff. One of\n"
 	.string "the things they make are Pokéballs!\p"
 	.string "They gave a bunch of them to my papa,\n"
@@ -116,5 +116,5 @@ ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_BallBoy_Text_1:
 	.string "Aw. Your bag is full. I can't be caring.$"
 
 ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_BallBoy_Text_2:
-	.string "When I grow up, I wanna work at Strix\n"
+	.string "When I grow up, I wanna work at Poe\n"
 	.string "Industries too.$"

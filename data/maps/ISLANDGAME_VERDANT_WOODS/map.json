@@ -153,22 +153,22 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
+      "trainer_sight_or_berry_tree_id": "ITEM_BALM_MUSHROOM",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_103_PP_UP"
+      "flag": "FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 49,
-      "y": 48,
+      "x": 47,
+      "y": 33,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_ANTIDOTE",
+      "trainer_sight_or_berry_tree_id": "ITEM_NET_BALL",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL"
+      "flag": "FLAG_ITEM_VERDANT_WOODS_NET_BALL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -179,9 +179,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_NET_BALL",
+      "trainer_sight_or_berry_tree_id": "ITEM_BUG_GEM",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_PETALBURG_WOODS_ETHER"
+      "flag": "FLAG_ITEM_VERDANT_WOODS_BUG_GEM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -194,7 +194,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_SILVER_POWDER",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL"
+      "flag": "FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -202,8 +202,8 @@
       "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 4,
-      "movement_range_y": 4,
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_VERDANT_WOODS_EventScript_NPC3",
@@ -289,16 +289,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 47,
-      "y": 33,
+      "x": 49,
+      "y": 48,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_X_ATTACK",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_PETALBURG_WOODS_X_ATTACK"
+      "flag": "FLAG_ITEM_VERDANT_WOODS_POTION"
     }
   ],
   "warp_events": [
@@ -385,24 +385,24 @@
       "x": 45,
       "y": 42,
       "elevation": 0,
-      "item": "ITEM_COLBUR_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_VERDANT_WOODS_COLBUR"
-    },
-    {
-      "type": "sign",
-      "x": 0,
-      "y": 48,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "item": "ITEM_TANGA_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_VERDANT_WOODS_TANGA"
     },
     {
       "type": "hidden_item",
       "x": 32,
       "y": 16,
       "elevation": 0,
-      "item": "ITEM_EXP_CANDY_XS",
-      "flag": "FLAG_HIDDEN_ITEM_VERDANT_WOODS_EXP_CANDY"
+      "item": "ITEM_BIG_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_VERDANT_WOODS_BIGSHROOM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 24,
+      "y": 42,
+      "elevation": 0,
+      "item": "ITEM_TINY_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_VERDANT_WOODS_TINYSHROOM"
     }
   ]
 }

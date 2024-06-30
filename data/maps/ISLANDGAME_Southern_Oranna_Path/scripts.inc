@@ -5,6 +5,16 @@ ISLANDGAME_Southern_Oranna_Path_MapScripts::
 ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_TEMP_1, 0
 	goto ISLANDGAME_Southern_Oranna_Path_OnLoad
+	gettime
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	setflag FLAG_TEMP_2
+	return
+
+ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_1
 	return
 
 

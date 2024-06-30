@@ -4,7 +4,7 @@ script ISLANDGAME_SS_RAIN_BASEMENT_BattleRotom {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_ROTOM, 25, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    setcwildbattle(0, SPECIES_ROTOM, 25, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
     playmoncry(SPECIES_ROTOM, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)

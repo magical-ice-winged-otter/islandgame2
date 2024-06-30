@@ -1,0 +1,3 @@
+ISLANDGAME_ROSEVALE_PKMNCENTER_2F_MapScripts::
+	.byte 0
+

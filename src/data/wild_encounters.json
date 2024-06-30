@@ -11624,28 +11624,28 @@
               },
               {
                 "min_level": 5,
-                "max_level": 8,
+                "max_level": 5,
                 "species": "SPECIES_MAGIKARP"
               },
               {
                 "min_level": 5,
-                "max_level": 8,
+                "max_level": 5,
                 "species": "SPECIES_TENTACOOL"
               },
               {
                 "min_level": 5,
-                "max_level": 8,
-                "species": "SPECIES_BARBOACH"
+                "max_level": 5,
+                "species": "SPECIES_HORSEA"
               },
               {
                 "min_level": 5,
-                "max_level": 8,
-                "species": "SPECIES_BARBOACH"
+                "max_level": 5,
+                "species": "SPECIES_HORSEA"
               },
               {
                 "min_level": 5,
-                "max_level": 8,
-                "species": "SPECIES_BARBOACH"
+                "max_level": 5,
+                "species": "SPECIES_HORSEA"
               }
             ]
           }
@@ -12776,29 +12776,29 @@
                 "species": "SPECIES_NONE"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 15,
+                "max_level": 15,
                 "species": "SPECIES_MAGIKARP"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 15,
+                "max_level": 15,
                 "species": "SPECIES_TENTACOOL"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_CARVANHA"
-              },
-              {
-                "min_level": 13,
-                "max_level": 14,
+                "min_level": 15,
+                "max_level": 15,
                 "species": "SPECIES_SHELLDER"
               },
               {
-                "min_level": 13,
-                "max_level": 14,
-                "species": "SPECIES_SHELLDER"
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SQUIRTLE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_SQUIRTLE"
               }
             ]
           }
@@ -13321,6 +13321,65 @@
                 "min_level": 18,
                 "max_level": 18,
                 "species": "SPECIES_QUAGSIRE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_APPLEVINE",
+          "base_label": "gISLANDGAME_APPLEVINE0",
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": ""
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_LUVDISC"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_WARTORTLE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_WARTORTLE"
               }
             ]
           }

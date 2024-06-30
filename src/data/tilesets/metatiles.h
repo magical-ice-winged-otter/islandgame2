@@ -277,6 +277,12 @@ const u16 gMetatileAttributes_islandgame_snow[] = INCBIN_U16("data/tilesets/seco
 const u16 gMetatiles_islandgame_houses[] = INCBIN_U16("data/tilesets/secondary/islandgame_houses/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_houses[] = INCBIN_U16("data/tilesets/secondary/islandgame_houses/metatile_attributes.bin");
 
+const u16 gMetatiles_islandgame_ocean_general[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_ocean_general[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_lumine_applevine[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_applevine/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_lumine_applevine[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_applevine/metatile_attributes.bin");
+
 const u16 gMetatiles_islandgame_lumine_power_plant_interior[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant_interior/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_lumine_power_plant_interior[] = INCBIN_U16("data/tilesets/secondary/islandgame_lumine_power_plant_interior/metatile_attributes.bin");
 

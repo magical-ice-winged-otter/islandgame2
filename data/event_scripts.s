@@ -1288,6 +1288,18 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.inc"
 
+	.include "data/maps/ISLANDGAME_CHERIPORT_LAB_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_PKMNCENTER_2F/scripts.inc"
+	
 	.include "data/maps/ISLANDGAME_ROCKY_PATH_HOUSE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_ROCKY_PATH_PKMNCENTER/scripts.inc"
