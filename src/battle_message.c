@@ -847,6 +847,7 @@ static const u8 sText_AttackerLostItsType[] = _("{B_ATK_NAME_WITH_PREFIX} lost\n
 static const u8 sText_ShedItsTail[] = _("{B_ATK_NAME_WITH_PREFIX} shed its tail\nto create a decoy!");
 static const u8 sText_SupersweetAromaWafts[] = _("A supersweet aroma is wafting from\nthe syrup covering {B_ATK_NAME_WITH_PREFIX}!");
 static const u8 sText_TidyingUpComplete[] = _("Tidying up complete!");
+static const u8 sText_CantEscapeWildMon[] = _("You can't flee from this fight!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1548,6 +1549,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ITEMWASUSEDUP - BATTLESTRINGS_TABLE_START] = sText_ItemWasUsedUp,
     [STRINGID_ATTACKERLOSTITSTYPE - BATTLESTRINGS_TABLE_START] = sText_AttackerLostItsType,
     [STRINGID_CLOAKEDINAHARSHLIGHT - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCloakedInAHarshLight,
+    [STRINGID_CANTESCAPEWILD - BATTLESTRINGS_TABLE_START] = sText_CantEscapeWildMon,
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1664,7 +1666,8 @@ const u16 gNoEscapeStringIds[] =
     [B_MSG_DONT_LEAVE_BIRCH]     = STRINGID_DONTLEAVEBIRCH,
     [B_MSG_PREVENTS_ESCAPE]      = STRINGID_PREVENTSESCAPE,
     [B_MSG_CANT_ESCAPE_2]        = STRINGID_CANTESCAPE2,
-    [B_MSG_ATTACKER_CANT_ESCAPE] = STRINGID_ATTACKERCANTESCAPE
+    [B_MSG_ATTACKER_CANT_ESCAPE] = STRINGID_ATTACKERCANTESCAPE,
+    [B_MSG_WILD_CANT_ESCAPE]     = STRINGID_CANTESCAPEWILD,
 };
 
 const u16 gMoveWeatherChangeStringIds[] =

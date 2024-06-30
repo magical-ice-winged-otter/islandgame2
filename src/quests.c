@@ -317,6 +317,12 @@ const u8 sText_SubQuest_FitnessFreak_PpMax_Desc[] = _("Find and return a PP Max\
 const u8 sText_SideQuestName_TidalcoveRarePkmn[] = _("Rare Pokemon");
 const u8 sText_SideQuestDesc_TidalcoveRarePkmn[] = _("A collector from Tidalcove\nwant's to see rare Pokemon\nfrom Oranna!");
 const u8 sText_SideQuestDoneDesc_TidalcoveRarePkmn[] = _("You discovered and caught\nrare Pokemon from all over\nOranna.");
+
+// Verdant Forest Pokemon Quest
+const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
+const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
+const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in Verdant Forest!\nAt least for now...");
+
 // - Subquests
 const u8 sText_SubQuest_TidalcoveRarePkmn_Pikachu_Name[] = _("Pikachu");
 const u8 sText_SubQuest_TidalcoveRarePkmn_Pikachu_Desc[] = _("Capture and show a Pikachu to the collector.");
@@ -565,16 +571,26 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
               0 
 	),
-        [QUEST_TIDALCOVE_RARE_PKMN] = side_quest(
-              sText_SideQuestName_TidalcoveRarePkmn,
-              sText_SideQuestDesc_TidalcoveRarePkmn,
-              sText_SideQuestDoneDesc_TidalcoveRarePkmn,
-              sText_SideQuestMap_FresaFarms,
-              OBJ_EVENT_GFX_GENTLEMAN,
-              OBJECT,
-              sSubQuests_TidalcoveRarePkmn,
-              SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN
-        )
+	[QUEST_TIDALCOVE_RARE_PKMN] = side_quest(
+			sText_SideQuestName_TidalcoveRarePkmn,
+			sText_SideQuestDesc_TidalcoveRarePkmn,
+			sText_SideQuestDoneDesc_TidalcoveRarePkmn,
+			sText_SideQuestMap_FresaFarms,
+			OBJ_EVENT_GFX_GENTLEMAN,
+			OBJECT,
+			sSubQuests_TidalcoveRarePkmn,
+			SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN
+	),
+	[QUEST_VERDANT_FOREST_SKITTY] = side_quest(
+		sText_SideQuestName_VerdantForestSkitty,
+		sText_SideQuestDesc_VerdantForestSkitty,
+		sText_SideQuestDoneDesc_VerdantForestSkitty,
+		sText_SideQuestMap_VerdantWoods,
+		OBJ_EVENT_GFX_GIRL_2,
+		OBJECT,
+		NULL,
+			0
+	)
 };
 
 //BG layer defintions
