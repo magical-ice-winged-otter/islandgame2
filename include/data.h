@@ -132,6 +132,11 @@ extern const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireMay[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Wally[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Steven[];
 
+// island-game
+// extern const struct SpriteFrameImage gTrainerBackPicTable_Olivia[];
+// extern const struct SpriteFrameImage gTrainerBackPicTable_Oliver[];
+// extern const struct SpriteFrameImage gTrainerBackPicTable_Melissa[];
+
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpritePlayerSide[];
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpriteOpponentSide[];
 extern const union AffineAnimCmd *const gAffineAnims_BattleSpriteContest[];
@@ -168,14 +173,14 @@ static inline const u8 GetTrainerClassFromId(u16 trainerId)
 static inline const u8 *GetTrainerClassNameFromId(u16 trainerId)
 {
     if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
-        return gTrainerClasses[gBattlePartners[trainerId].trainerClass].name;
+        return gTrainerClasses[gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerClass].name;
     return gTrainerClasses[GetTrainerClassFromId(trainerId)].name;
 }
 
 static inline const u8 *GetTrainerNameFromId(u16 trainerId)
 {
     if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
-        return gBattlePartners[trainerId].trainerName;
+        return gBattlePartners[trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerName;
     return gTrainers[SanitizeTrainerId(trainerId)].trainerName;
 }
 

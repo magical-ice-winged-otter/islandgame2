@@ -1,0 +1,1 @@
+tools/porytiles/porytiles compile-secondary -output=data/tilesets/secondary/islandgame_lumine_mt_therion -tiles-output-pal=greyscale -target-base-game=pokeemerald -transparency-color=24,40,80 -default-behavior=MB_NORMAL porytiles/islandgame_lumine_mt_therion porytiles/islandgame_empty_primary porytiles/metatile_behaviors.h

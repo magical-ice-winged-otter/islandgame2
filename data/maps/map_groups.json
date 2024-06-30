@@ -150,7 +150,9 @@
     "ISLANDGAME_APPLEVINE_COUCH_POTATO",
     "ISLANDGAME_APPLEVINE_RESTAURANT",
     "ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
-    "ISLANDGAME_APPLEVINE_QUEST_HOUSE"
+    "ISLANDGAME_APPLEVINE_QUEST_HOUSE",
+    "ISLANDGAME_ROCKY_PATH_HOUSE",
+    "ISLANDGAME_ROCKY_PATH_PKMNCENTER"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -163,7 +165,6 @@
     "SootopolisCity",
     "EverGrandeCity",
     "LittlerootTown",
-    "OldaleTown",
     "DewfordTown",
     "LavaridgeTown",
     "FallarborTown",
@@ -219,11 +220,7 @@
     "LittlerootTown_ProfessorBirchsLab"
   ],
   "gMapGroup_IndoorOldale": [
-    "OldaleTown_House1",
-    "OldaleTown_House2",
-    "OldaleTown_PokemonCenter_1F",
-    "OldaleTown_PokemonCenter_2F",
-    "OldaleTown_Mart"
+    
   ],
   "gMapGroup_IndoorDewford": [
     "DewfordTown_House1",

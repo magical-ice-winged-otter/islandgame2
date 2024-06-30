@@ -86,7 +86,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_4",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_7",
       "x": 42,
       "y": 30,
       "elevation": 0,
@@ -151,7 +151,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
       "x": 9,
       "y": 14,
       "elevation": 0,

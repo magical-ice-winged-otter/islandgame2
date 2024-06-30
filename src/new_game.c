@@ -216,10 +216,12 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetContestLinkResults();
     QuestMenu_ResetMenuSaveData();
+    gSaveBlock1Ptr->autoRun = FALSE;
     
     memset(&gSaveBlock2Ptr->itemFlags, 0, sizeof(gSaveBlock2Ptr->itemFlags));
     memset(&gSaveBlock2Ptr->follower, 0, sizeof(gSaveBlock2Ptr->follower));
     gSaveBlock1Ptr->saveVersion = ISLANDGAME_CURRENT_SAVE_VERSION;
+    VarSet(VAR_TEAM_PARTNER, PARTNER_MEADOWS_RIVAL);
 }
 
 static void ResetMiniGamesRecords(void)

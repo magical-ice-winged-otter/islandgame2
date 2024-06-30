@@ -66,7 +66,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract::
 	playmoncry SPECIES_PIKACHU, CRY_MODE_NORMAL
 	faceplayer
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract_Text_0
-	applymovement 2, Common_Movement_FaceOriginalDirection
+	applymovement 2, Common_Movement_FaceLeft
 	closemessage
 	release
 	return
@@ -79,10 +79,10 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract::
 	playse SE_PIN
 	applymovement 3, Common_Movement_ExclamationMark
 	faceplayer
-	applymovement 3, Common_Movement_Delay32
+	applymovement 3, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1
-	applymovement 3, Common_Movement_FaceOriginalDirection
+	applymovement 3, Common_Movement_FaceUp
 	closemessage
 	release
 	return
@@ -170,8 +170,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract_Text_0:
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_0:
 	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hm...{PAUSE 60} this goes here...{PAUSE 60} and that\n"
-	.string "goes there...{PAUSE 60}\p"
-	.string "$"
+	.string "goes there...{PAUSE 60}$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1:
 	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Oh! Hiya {PLAYER}! Sorry, I was\n"
@@ -180,7 +179,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1:
 	.string "my inventions: A special scope that\l"
 	.string "can reveal invisible Pokémon!\p"
 	.string "It's still in the early stages of\n"
-	.string "development though. If you're\l"
-	.string "interested in being my little Minccino,\l"
-	.string "I'll let you know when it's ready to be\l"
-	.string "tested!$"
+	.string "development though.\p"
+	.string "If you're interested in being my little\n"
+	.string "Minccino, I'll let you know when it's\l"
+	.string "ready to be tested!$"

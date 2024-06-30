@@ -32,9 +32,6 @@
 // We define these when using certain IDEs to fool preproc
 #define _(x)        {x}
 #define __(x)       {x}
-// Like the above, but prepends a fixed-case character
-#define _C(x)       {x}
-#define __C(x)      {x}
 #define INCBIN(...) {0}
 #define INCBIN_U8   INCBIN
 #define INCBIN_U16  INCBIN
@@ -1065,7 +1062,8 @@ struct SaveBlock1
     /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];
-    /*0x9C2*/ u8 unused_9C2[6];
+    bool8 autoRun;
+    /*0x9C2*/ u8 unused_9C2[5];
 #if FREE_MATCH_CALL == FALSE
     /*0x9C8*/ u16 trainerRematchStepCounter;
     // MAX_REMATCH_ENTRIES decreased from vanilla's 100 to 92
@@ -1160,7 +1158,5 @@ struct MapPosition
     s16 y;
     s8 elevation;
 };
-
-extern u8 gStackBase[]; // Start of stack-allocated IWRAM
 
 #endif // GUARD_GLOBAL_H

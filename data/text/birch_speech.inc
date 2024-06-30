@@ -45,11 +45,10 @@ gText_Birch_MainSpeech::
 	.string "younger, so I've decided to pass my \l"
 	.string "dreams and aspirations onto young \l"
 	.string "and ambitious trainers like you! \p"
-	.string "Speaking of which, that's\nenough about me.\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "I want to hear more\n"
+	.string "I want to learn more\n"
 	.string "about you!$"
 
 gText_Birch_BoyOrGirl::

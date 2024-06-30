@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_LUCY",
+      "graphics_id": "OBJ_EVENT_GFX_PRIMROSE",
       "x": 41,
       "y": 14,
       "elevation": 0,
@@ -60,7 +60,7 @@
       "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_4",
       "x": 45,
       "y": 17,
       "elevation": 0,
@@ -151,7 +151,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_COWGIRL",
       "x": 75,
       "y": 33,
       "elevation": 0,
@@ -190,7 +190,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
       "x": 34,
       "y": 25,
       "elevation": 0,
