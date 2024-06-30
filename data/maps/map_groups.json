@@ -159,7 +159,6 @@
     "SootopolisCity",
     "EverGrandeCity",
     "LittlerootTown",
-    "OldaleTown",
     "DewfordTown",
     "LavaridgeTown",
     "FallarborTown",
@@ -215,11 +214,7 @@
     "LittlerootTown_ProfessorBirchsLab"
   ],
   "gMapGroup_IndoorOldale": [
-    "OldaleTown_House1",
-    "OldaleTown_House2",
-    "OldaleTown_PokemonCenter_1F",
-    "OldaleTown_PokemonCenter_2F",
-    "OldaleTown_Mart"
+    
   ],
   "gMapGroup_IndoorDewford": [
     "DewfordTown_House1",
