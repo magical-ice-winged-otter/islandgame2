@@ -6,8 +6,7 @@ mapscripts PoryTileTest1_MapScripts {}
 
 script PoryTileTest1_EventScript_BoyTalk {
     lock
-    applymovement(OBJ_SHIP_BOY, Common_Movement_FacePlayer)
-    waitmovement(0)
+    faceplayer
 
     checkitem(ITEM_FRESH_WATER, 1)
     if (flag(FLAG_ROOM3_GAVE_WATER)) {

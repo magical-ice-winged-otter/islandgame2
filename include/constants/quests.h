@@ -31,7 +31,8 @@
 #define QUEST_FRESA_FARMS_TORCHIC_EGG      3
 #define QUEST_NORANNA_FITNESS_FREAK        4
 #define QUEST_TIDALCOVE_RARE_PKMN          5
-#define QUEST_COUNT                        6 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_VERDANT_FOREST_SKITTY        6
+#define QUEST_COUNT                        7 // This number is literally how many to show in the UI (keep it accurate!)
 
 // Custom Sub-Quests
 #define SUB_QUEST_PERSI_BERRY_1            0

@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_SCOUT_M",
       "x": 9,
       "y": 4,
       "elevation": 0,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_CAMPER",
       "x": 11,
       "y": 4,
       "elevation": 0,

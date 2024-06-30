@@ -14,8 +14,6 @@
 #define TRAINER_SECRET_BASE                 1024
 #define TRAINER_LINK_OPPONENT               2048
 #define TRAINER_UNION_ROOM                  3072
-#define TRAINER_STEVEN_PARTNER              3075
-#define TRAINER_CUSTOM_PARTNER              3076
 
 #define TRAINER_PIC_HIKER                  0
 #define TRAINER_PIC_AQUA_GRUNT_M           1
@@ -158,11 +156,12 @@
 // island-game
 #define TRAINER_PIC_ARTHUR                136
 #define TRAINER_PIC_EDEA                  137
-#define TRAINER_PIC_AUDREY                138
+#define TRAINER_PIC_MELISSA               138
 #define TRAINER_PIC_JONAS                 139
 #define TRAINER_PIC_RUKA                  140
 #define TRAINER_PIC_OLIVIA                141
 #define TRAINER_PIC_OLIVER                142
+#define TRAINER_PIC_COUNT                 143
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -173,6 +172,10 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
+// #define TRAINER_BACK_PIC_OLIVER                 8
+// #define TRAINER_BACK_PIC_OLIVIA                 9
+// #define TRAINER_BACK_PIC_MELISSA                10
+
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1
@@ -256,8 +259,14 @@
 #define FACILITY_CLASS_LEAF                  0x4f
 #define FACILITY_CLASS_RS_BRENDAN            0x50
 #define FACILITY_CLASS_RS_MAY                0x51
+#define FACILITY_CLASS_OLIVER                0x52
+#define FACILITY_CLASS_OLIVER_2              0x53
+#define FACILITY_CLASS_OLIVER_3              0x54
+#define FACILITY_CLASS_OLIVIA                0x55
+#define FACILITY_CLASS_OLIVIA_2              0x56
+#define FACILITY_CLASS_OLIVIA_3              0x57
 
-#define FACILITY_CLASSES_COUNT               0x52
+#define FACILITY_CLASSES_COUNT               0x58
 
 #define RS_FACILITY_CLASS_AQUA_LEADER_ARCHIE    0x0
 #define RS_FACILITY_CLASS_AQUA_GRUNT_M          0x1

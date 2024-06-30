@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_THERION_PATH",
   "layout": "LAYOUT_ISLANDGAME_THERION_PATH",
   "music": "MUS_HG_VERMILION",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_THERION_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",

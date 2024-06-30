@@ -1049,7 +1049,7 @@ static const struct InGameTrade sIngameTrades[] =
         .requestedSpecies = SPECIES_SKITTY
     },
 
-    // ISLANDGAME TRADES
+    // island-game trades
     [INGAME_TRADE_STARYU] =
     {
         .nickname = _("Suisei"),

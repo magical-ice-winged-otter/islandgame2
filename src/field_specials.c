@@ -140,11 +140,11 @@ static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
 static u16 PlayerGainRandomTrainerFan(void);
-#ifndef FREE_LINK_BATTLE_RECORDS
+#if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *, u8, u8);
 #else
 static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer);
-#endif
+#endif //FREE_LINK_BATTLE_RECORDS
 
 void Special_ShowDiploma(void)
 {
@@ -1652,7 +1652,7 @@ bool8 BufferTMHMMoveName(void)
 {
     if (gSpecialVar_0x8004 >= ITEM_TM01 && gSpecialVar_0x8004 <= ITEM_HM08)
     {
-        StringCopy(gStringVar2, gMoveNames[ItemIdToBattleMoveId(gSpecialVar_0x8004)]);
+        StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(gSpecialVar_0x8004)));
         return TRUE;
     }
 
@@ -2022,7 +2022,6 @@ bool8 UsedPokemonCenterWarp(void)
 {
     static const u16 sPokemonCenters[] =
     {
-        MAP_OLDALE_TOWN_POKEMON_CENTER_1F,
         MAP_DEWFORD_TOWN_POKEMON_CENTER_1F,
         MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
@@ -3073,7 +3072,7 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
 
 void BufferBattleFrontierTutorMoveName(void)
 {
-    StringCopy(gStringVar1, gMoveNames[gSpecialVar_0x8005]);
+    StringCopy(gStringVar1, GetMoveName(gSpecialVar_0x8005));
 }
 
 static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection)
@@ -3535,7 +3534,6 @@ u32 GetMartEmployeeObjectEventId(void)
 {
     static const u8 sPokeMarts[][3] =
     {
-        { MAP_GROUP(OLDALE_TOWN_MART),     MAP_NUM(OLDALE_TOWN_MART),     LOCALID_OLDALE_MART_CLERK },
         { MAP_GROUP(LAVARIDGE_TOWN_MART),  MAP_NUM(LAVARIDGE_TOWN_MART),  LOCALID_LAVARIDGE_MART_CLERK },
         { MAP_GROUP(FALLARBOR_TOWN_MART),  MAP_NUM(FALLARBOR_TOWN_MART),  LOCALID_FALLARBOR_MART_CLERK },
         { MAP_GROUP(VERDANTURF_TOWN_MART), MAP_NUM(VERDANTURF_TOWN_MART), LOCALID_VERDANTURF_MART_CLERK },
@@ -3834,7 +3832,6 @@ bool8 InPokemonCenter(void)
 {
     static const u16 sPokemonCenters[] =
     {
-        MAP_OLDALE_TOWN_POKEMON_CENTER_1F,
         MAP_DEWFORD_TOWN_POKEMON_CENTER_1F,
         MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
@@ -4146,14 +4143,14 @@ void BufferFanClubTrainerName(void)
     case FANCLUB_MEMBER8:
         break;
     }
-    #ifndef FREE_LINK_BATTLE_RECORDS
+#if FREE_LINK_BATTLE_RECORDS == FALSE
     BufferFanClubTrainerName_(&gSaveBlock1Ptr->linkBattleRecords, whichLinkTrainer, whichNPCTrainer);
-    #else
+#else
     BufferFanClubTrainerName_(whichLinkTrainer, whichNPCTrainer);
-    #endif
+#endif //FREE_LINK_BATTLE_RECORDS
 }
 
-#ifndef FREE_LINK_BATTLE_RECORDS
+#if FREE_LINK_BATTLE_RECORDS == FALSE
 static void BufferFanClubTrainerName_(struct LinkBattleRecords *linkRecords, u8 whichLinkTrainer, u8 whichNPCTrainer)
 {
     struct LinkBattleRecord *record = &linkRecords->entries[whichLinkTrainer];
@@ -4219,7 +4216,7 @@ static void BufferFanClubTrainerName_(u8 whichLinkTrainer, u8 whichNPCTrainer)
             break;
     }
 }
-#endif
+#endif //FREE_LINK_BATTLE_RECORDS
 
 void UpdateTrainerFansAfterLinkBattle(void)
 {

@@ -138,7 +138,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep3 {
     faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
     if(!flag(FLAG_FRESA_FARMS_MAREEP_GIFT)) {
-        msgbox(format("Reep! {COLOR BLUE}(Hey there! Thanks for saving my butt from that scary Mightyena.)\p""Reep. {COLOR BLUE}(Please take this as a gift.)"))
+        msgbox(format("Reep! {COLOR BLUE}(Hey there! Thanks for saving my butt from that scary Mightyena.)\p""{COLOR DARK_GRAY}Reep. {COLOR BLUE}(Please take this as a gift.)"))
         checkitemspace(ITEM_ELECTRIC_GEM)
         if(!var(VAR_RESULT)) {
             msgbox(format("Reep. {COLOR BLUE}(Oh, you don't have enough space for this.)"))

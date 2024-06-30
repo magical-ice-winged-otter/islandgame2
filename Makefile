@@ -188,7 +188,7 @@ MAKEFLAGS += --no-print-directory
 # Secondary expansion is required for dependency variables in object rules.
 .SECONDEXPANSION:
 
-.PHONY: all rom clean compare tidy tools check-tools mostlyclean clean-tools clean-check-tools porytiles-clean $(TOOLDIRS) $(CHECKTOOLDIRS) porytiles libagbsyscall agbcc modern tidymodern tidynonmodern check
+.PHONY: all rom clean compare tidy tools check-tools mostlyclean clean-tools clean-check-tools porytiles-clean $(TOOLDIRS) $(CHECKTOOLDIRS) porytiles libagbsyscall agbcc modern tidymodern tidynonmodern check history
 
 infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
 
@@ -255,7 +255,10 @@ endif
 
 AUTO_GEN_TARGETS :=
 
-all: rom
+all: history rom
+
+history:
+	@bash ./check_history.sh
 
 tools: $(TOOLDIRS)
 
@@ -464,6 +467,10 @@ $(OBJ_DIR)/sym_common.ld: sym_common.txt $(C_OBJS) $(wildcard common_syms/*.txt)
 
 $(OBJ_DIR)/sym_ewram.ld: sym_ewram.txt
 	$(RAMSCRGEN) ewram_data $< ENGLISH > $@
+
+# NOTE: Depending on event_scripts.o is hacky, but we want to depend on everything event_scripts.s depends on without having to alter scaninc
+$(DATA_SRC_SUBDIR)/pokemon/teachable_learnsets.h: $(DATA_ASM_BUILDDIR)/event_scripts.o
+	python3 tools/learnset_helpers/teachable.py
 
 # NOTE: Based on C_DEP above, but without NODEP and KEEP_TEMPS handling.
 define TEST_DEP

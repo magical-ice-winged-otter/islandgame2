@@ -393,7 +393,7 @@ LittlerootTown_EventScript_GoSaveBirchTrigger::
 	end
 
 LittlerootTown_EventScript_TownSign::
-	adddynamicobject MAP_GROUP(LITTLEROOT_TOWN), MAP_NUM(LITTLEROOT_TOWN), OBJ_EVENT_GFX_LUCY, 11, 8, 3, MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN, LRT_DOTestScript
+	adddynamicobject 0, MAP_GROUP(LITTLEROOT_TOWN), MAP_NUM(LITTLEROOT_TOWN), OBJ_EVENT_GFX_LUCY, 11, 8, 3, MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN, LRT_DOTestScript
 	msgbox LRT_DOT_MSG
 	closemessage
 	@msgbox LitterootTown_Text_TownSign, MSGBOX_SIGN

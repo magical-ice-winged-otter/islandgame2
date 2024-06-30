@@ -253,15 +253,15 @@ static const u16 sRivalAvatarGfxIds[][2] =
 
 static const u16 sPlayerAvatarGfxIds[][2] =
 {
-    [PLAYER_AVATAR_STATE_NORMAL]     = {OBJ_EVENT_GFX_BRENDAN_NORMAL,     OBJ_EVENT_GFX_MAY_NORMAL},
-    [PLAYER_AVATAR_STATE_MACH_BIKE]  = {OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,  OBJ_EVENT_GFX_MAY_MACH_BIKE},
+    [PLAYER_AVATAR_STATE_NORMAL]     = {OBJ_EVENT_GFX_OLIVER_NORMAL,     OBJ_EVENT_GFX_OLIVIA_NORMAL},
+    [PLAYER_AVATAR_STATE_MACH_BIKE]  = {OBJ_EVENT_GFX_OLIVER_MACH_BIKE,  OBJ_EVENT_GFX_OLIVIA_MACH_BIKE},
     [PLAYER_AVATAR_STATE_ACRO_BIKE]  = {OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE,  OBJ_EVENT_GFX_MAY_ACRO_BIKE},
-    [PLAYER_AVATAR_STATE_SURFING]    = {OBJ_EVENT_GFX_BRENDAN_SURFING,    OBJ_EVENT_GFX_MAY_SURFING},
+    [PLAYER_AVATAR_STATE_SURFING]    = {OBJ_EVENT_GFX_BRENDAN_SURFING,    OBJ_EVENT_GFX_OLIVIA_SURFING},
     [PLAYER_AVATAR_STATE_UNDERWATER] = {OBJ_EVENT_GFX_BRENDAN_UNDERWATER, OBJ_EVENT_GFX_MAY_UNDERWATER},
-    [PLAYER_AVATAR_STATE_FIELD_MOVE] = {OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE, OBJ_EVENT_GFX_MAY_FIELD_MOVE},
-    [PLAYER_AVATAR_STATE_FISHING]    = {OBJ_EVENT_GFX_BRENDAN_FISHING,    OBJ_EVENT_GFX_MAY_FISHING},
-    [PLAYER_AVATAR_STATE_WATERING]   = {OBJ_EVENT_GFX_BRENDAN_WATERING,   OBJ_EVENT_GFX_MAY_WATERING},
-    [PLAYER_AVATAR_STATE_VSSEEKER]   = {OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE, OBJ_EVENT_GFX_MAY_FIELD_MOVE},
+    [PLAYER_AVATAR_STATE_FIELD_MOVE] = {OBJ_EVENT_GFX_OLIVER_FIELD_MOVE, OBJ_EVENT_GFX_OLIVIA_FIELD_MOVE},
+    [PLAYER_AVATAR_STATE_FISHING]    = {OBJ_EVENT_GFX_OLIVER_FISHING,    OBJ_EVENT_GFX_OLIVIA_FISHING},
+    [PLAYER_AVATAR_STATE_WATERING]   = {OBJ_EVENT_GFX_OLIVER_WATERING,   OBJ_EVENT_GFX_OLIVIA_WATERING},
+    [PLAYER_AVATAR_STATE_VSSEEKER]   = {OBJ_EVENT_GFX_OLIVER_FIELD_MOVE, OBJ_EVENT_GFX_OLIVIA_FIELD_MOVE},
 };
 
 static const u16 sFRLGAvatarGfxIds[GENDER_COUNT] =
@@ -280,18 +280,18 @@ static const u16 sPlayerAvatarGfxToStateFlag[GENDER_COUNT][5][2] =
 {
     [MALE] =
     {
-        {OBJ_EVENT_GFX_BRENDAN_NORMAL,     PLAYER_AVATAR_FLAG_ON_FOOT},
-        {OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,  PLAYER_AVATAR_FLAG_MACH_BIKE},
+        {OBJ_EVENT_GFX_OLIVER_NORMAL,     PLAYER_AVATAR_FLAG_ON_FOOT},
+        {OBJ_EVENT_GFX_OLIVER_MACH_BIKE,  PLAYER_AVATAR_FLAG_MACH_BIKE},
         {OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE,  PLAYER_AVATAR_FLAG_ACRO_BIKE},
         {OBJ_EVENT_GFX_BRENDAN_SURFING,    PLAYER_AVATAR_FLAG_SURFING},
         {OBJ_EVENT_GFX_BRENDAN_UNDERWATER, PLAYER_AVATAR_FLAG_UNDERWATER},
     },
     [FEMALE] =
     {
-        {OBJ_EVENT_GFX_MAY_NORMAL,         PLAYER_AVATAR_FLAG_ON_FOOT},
-        {OBJ_EVENT_GFX_MAY_MACH_BIKE,      PLAYER_AVATAR_FLAG_MACH_BIKE},
+        {OBJ_EVENT_GFX_OLIVIA_NORMAL,         PLAYER_AVATAR_FLAG_ON_FOOT},
+        {OBJ_EVENT_GFX_OLIVIA_MACH_BIKE,      PLAYER_AVATAR_FLAG_MACH_BIKE},
         {OBJ_EVENT_GFX_MAY_ACRO_BIKE,      PLAYER_AVATAR_FLAG_ACRO_BIKE},
-        {OBJ_EVENT_GFX_MAY_SURFING,        PLAYER_AVATAR_FLAG_SURFING},
+        {OBJ_EVENT_GFX_OLIVIA_SURFING,        PLAYER_AVATAR_FLAG_SURFING},
         {OBJ_EVENT_GFX_MAY_UNDERWATER,     PLAYER_AVATAR_FLAG_UNDERWATER},
     }
 };
@@ -657,13 +657,21 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         return;
     }
 
-    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
+    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON || gSaveBlock1Ptr->autoRun) && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 && !FollowerComingThroughDoor())
     {
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
             PlayerRunSlow(direction);
         else
-            PlayerRun(direction);
+            if (heldKeys & B_BUTTON && gSaveBlock1Ptr->autoRun == TRUE)
+            {
+                PlayerWalkNormal(direction);
+            }
+            else
+            {
+                PlayerRun(direction);
+                gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+            }
         
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
@@ -1319,14 +1327,14 @@ u8 GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
 {
     switch (gfxId)
     {
-    case OBJ_EVENT_GFX_MAY_NORMAL:
-    case OBJ_EVENT_GFX_MAY_MACH_BIKE:
+    case OBJ_EVENT_GFX_OLIVIA_NORMAL:
+    case OBJ_EVENT_GFX_OLIVIA_MACH_BIKE:
     case OBJ_EVENT_GFX_MAY_ACRO_BIKE:
-    case OBJ_EVENT_GFX_MAY_SURFING:
-    case OBJ_EVENT_GFX_MAY_FIELD_MOVE:
+    case OBJ_EVENT_GFX_OLIVIA_SURFING:
+    case OBJ_EVENT_GFX_OLIVIA_FIELD_MOVE:
     case OBJ_EVENT_GFX_MAY_UNDERWATER:
-    case OBJ_EVENT_GFX_MAY_FISHING:
-    case OBJ_EVENT_GFX_MAY_WATERING:
+    case OBJ_EVENT_GFX_OLIVIA_FISHING:
+    case OBJ_EVENT_GFX_OLIVIA_WATERING:
         return FEMALE;
     default:
         return MALE;
@@ -1727,6 +1735,10 @@ static void Task_WaitStopSurfing(u8 taskId)
         gPlayerAvatar.preventStep = FALSE;
         UnlockPlayerFieldControls();
         DestroySprite(&gSprites[playerObjEvent->fieldEffectSpriteId]);
+#ifdef BUGFIX
+        // If this is not defined but the player steps into grass from surfing, they will appear over the grass instead of in the grass.
+        playerObjEvent->triggerGroundEffectsOnMove = TRUE;
+#endif
         DestroyTask(taskId);
     }
 }
@@ -2157,7 +2169,7 @@ static void Task_DoPlayerSpinExit(u8 taskId)
             tSpeed = 1;
             tCurY = (u16)(sprite->y + sprite->y2) << 4;
             sprite->y2 = 0;
-            CameraObjectReset2();
+            CameraObjectFreeze();
             object->fixedPriority = TRUE;
             sprite->oam.priority = 0;
             sprite->subpriority = 0;
@@ -2226,7 +2238,7 @@ static void Task_DoPlayerSpinEntrance(u8 taskId)
             tSubpriority = sprite->subpriority;
             tCurY = -((u16)sprite->y2 + 32) * 16;
             sprite->y2 = 0;
-            CameraObjectReset2();
+            CameraObjectFreeze();
             object->fixedPriority = TRUE;
             sprite->oam.priority = 1;
             sprite->subpriority = 0;
@@ -2261,7 +2273,7 @@ static void Task_DoPlayerSpinEntrance(u8 taskId)
                 object->fixedPriority = 0;
                 sprite->oam.priority = tPriority;
                 sprite->subpriority = tSubpriority;
-                CameraObjectReset1();
+                CameraObjectReset();
                 DestroyTask(taskId);
             }
             break;

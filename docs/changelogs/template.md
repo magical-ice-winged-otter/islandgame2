@@ -7,7 +7,10 @@
 ```
 
 ## 🌋 *IMPORTANT CHANGES* 🌋
-* We deleted the whole repo LOL by @AsparagusEduardo in https://github.com/rh-hideout/pokeemerald-expansion/pull/3367
+* N/A
+
+## 💥 *Softlock/Crash fixes* 💥
+* N/A
 
 ## 🧬 General 🧬
 ### Added
@@ -15,6 +18,36 @@
 ### Changed
 * N/A
 ### Fixed
+* N/A
+
+## ✨ Feature Branches ✨
+### ***TheXaman's Debug Menu***:
+#### Added
+* N/A
+#### Changed
+* N/A
+#### Fixed
+* N/A
+### ***TheXaman's HGSS Pokédex Plus***:
+#### Added
+* N/A
+#### Changed
+* N/A
+#### Fixed
+* N/A
+### ***SBird/Karathan's Dynamic Multichoices***:
+#### Added
+* N/A
+#### Changed
+* N/A
+#### Fixed
+* N/A
+### ***ghoulslash's Saveblock Cleansing***:
+#### Added
+* N/A
+#### Changed
+* N/A
+#### Fixed
 * N/A
 
 ## 🐉 Pokémon 🐉
@@ -86,7 +119,7 @@
 
 
 ## New Contributors
-* Tony
+* N/A
 
 **Full Changelog**: https://github.com/rh-hideout/pokeemerald-expansion/compare/expansion/1.Y.Z...expansion/1.Y.Z
 

@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_LUMINE_POWER_PLANT",
   "layout": "LAYOUT_ISLANDGAME_LUMINE_POWER_PLANT",
   "music": "MUS_HG_VERMILION",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_LUMINE_POWER_PLANT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",

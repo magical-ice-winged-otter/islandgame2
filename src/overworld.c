@@ -402,10 +402,14 @@ void Overworld_ResetStateAfterDigEscRope(void)
 }
 
 #if B_RESET_FLAGS_VARS_AFTER_WHITEOUT  == TRUE
-    void Overworld_ResetBattleFlagsAndVars(void)
+void Overworld_ResetBattleFlagsAndVars(void)
 {
-    #if VAR_TERRAIN != 0
-        VarSet(VAR_TERRAIN, 0);
+    #if B_VAR_STARTING_STATUS != 0
+        VarSet(B_VAR_STARTING_STATUS, 0);
+    #endif
+
+    #if B_VAR_STARTING_STATUS_TIMER != 0
+        VarSet(B_VAR_STARTING_STATUS_TIMER, 0);
     #endif
 
     #if B_VAR_WILD_AI_FLAGS != 0
@@ -825,7 +829,9 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     ClearTempFieldEventData();
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
+#if FREE_MATCH_CALL == FALSE
     TryUpdateRandomTrainerRematches(mapGroup, mapNum);
+#endif //FREE_MATCH_CALL
 
 if (I_VS_SEEKER_CHARGING != 0)
     MapResetTrainerRematches(mapGroup, mapNum);
@@ -879,7 +885,9 @@ static void LoadMapFromWarp(bool32 a1)
     ClearTempFieldEventData();
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
+#if FREE_MATCH_CALL == FALSE
     TryUpdateRandomTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+#endif //FREE_MATCH_CALL
 
 if (I_VS_SEEKER_CHARGING != 0)
      MapResetTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
@@ -3096,7 +3104,7 @@ static void SetPlayerFacingDirection(u8 linkPlayerId, u8 facing)
     {
         if (facing > FACING_FORCED_RIGHT)
         {
-            objEvent->triggerGroundEffectsOnMove = 1;
+            objEvent->triggerGroundEffectsOnMove = TRUE;
         }
         else
         {
@@ -3245,7 +3253,7 @@ static void CreateLinkPlayerSprite(u8 linkPlayerId, u8 gameVersion)
         sprite = &gSprites[objEvent->spriteId];
         sprite->coordOffsetEnabled = TRUE;
         sprite->data[0] = linkPlayerId;
-        objEvent->triggerGroundEffectsOnMove = 0;
+        objEvent->triggerGroundEffectsOnMove = FALSE;
     }
 }
 

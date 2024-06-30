@@ -13,7 +13,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         msgbox(ProfTalk_First_Text)
         setflag(FLAG_PROF_GAVE_EEVEE)
         setflag(FLAG_SYS_POKEMON_GET)
-        givecustommon(SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_SAND_ATTACK, MOVE_HELPING_HAND, FALSE)
+        // givemon(SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_SAND_ATTACK, MOVE_HELPING_HAND, FALSE)
+        givemon(SPECIES_EEVEE,5,ITEM_NONE,ITEM_PREMIER_BALL,NUM_NATURES,1,,,,,,,,31,31,31,31,31,31,MOVE_TACKLE,MOVE_MUD_SLAP,MOVE_GROWL,MOVE_WORK_UP,FALSE)
         playfanfare(MUS_OBTAIN_ITEM)
         bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
         msgbox(ReceivedEevee_Text)
@@ -89,14 +90,14 @@ text ProfTalk_Fourth_Text {
         "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs. They're a special tool that you can use to catch wild Pokémon! \p"
         "{COLOR DARK_GRAY}And with that, {PLAYER}, you're all set to begin your journey! \p"
         "{COLOR DARK_GRAY}I suggest you meet up with my other student first, though. \p"
-        "{COLOR DARK_GRAY}Her name is Audrey, and she's been helping me out for about a week or two. \p"
+        "{COLOR DARK_GRAY}Her name is Melissa, and she's been helping me out for about a week or two. \p"
         "{COLOR DARK_GRAY}She knows her way around Oranna better than me, so she can help you navigate the island and give you some pointers! \p"
-        "{COLOR DARK_GRAY}Audrey should be somewhere near her hometown, Maplegrove, right now."
+        "{COLOR DARK_GRAY}Melissa should be somewhere near her hometown, Maplegrove, right now."
     )
 }
 
 text ProfTalk_AudreyNotDefeated {
-    format("{COLOR DARK_GRAY}Audrey should be somewhere near her hometown, Maplegrove, right now.")
+    format("{COLOR DARK_GRAY}Melissa should be somewhere near her hometown, Maplegrove, right now.")
 }
 
 text ProfTalk_CheckPokedex {

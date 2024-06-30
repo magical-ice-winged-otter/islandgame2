@@ -55,9 +55,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_KINGS_ROCK",
+      "trainer_sight_or_berry_tree_id": "ITEM_COMET_SHARD",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_AP_KINGS_ROCK"
+      "flag": "FLAG_ITEM_AP_COMET_SHARD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -169,7 +169,7 @@
       "x": 35,
       "y": 5,
       "elevation": 0,
-      "item": "ITEM_GUARD_SPEC",
+      "item": "ITEM_SUN_STONE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL"
     },
     {
@@ -177,7 +177,7 @@
       "x": 7,
       "y": 18,
       "elevation": 0,
-      "item": "ITEM_HEART_SCALE",
+      "item": "ITEM_SWIFT_FEATHER",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE"
     },
     {
@@ -187,6 +187,14 @@
       "elevation": 0,
       "item": "ITEM_STARDUST",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 34,
+      "y": 52,
+      "elevation": 0,
+      "item": "ITEM_CLEVER_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_C_FEATHER"
     }
   ]
 }

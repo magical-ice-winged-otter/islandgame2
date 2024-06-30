@@ -26,7 +26,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_LUCY",
+      "graphics_id": "OBJ_EVENT_GFX_PRIMROSE",
       "x": 41,
       "y": 9,
       "elevation": 0,
@@ -65,7 +65,7 @@
       "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_4",
       "x": 45,
       "y": 12,
       "elevation": 0,
@@ -156,7 +156,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_COWGIRL",
       "x": 75,
       "y": 28,
       "elevation": 0,
@@ -195,7 +195,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
       "x": 34,
       "y": 20,
       "elevation": 0,
@@ -407,6 +407,22 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY_2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 76,
+      "y": 35,
+      "elevation": 0,
+      "item": "ITEM_MUSCLE_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_M_FEATHER"
+    },
+    {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 16,
+      "elevation": 0,
+      "item": "ITEM_HEALTH_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_H_FEATHER"
     }
   ]
 }

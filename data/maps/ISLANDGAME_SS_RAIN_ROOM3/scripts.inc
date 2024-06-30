@@ -89,11 +89,6 @@ SS_Rain_EventScript_Talk::
 	return
 
 
-SS_Rain_EventScript_Item::
-	finditem ITEM_RARE_CANDY
-	return
-
-
 SS_Rain_EventScript_HasWater_Text_0:
 	.string "{COLOR DARK_GRAY}Huh?$"
 

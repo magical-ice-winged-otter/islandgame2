@@ -85,4 +85,6 @@ u16 FacilityClassToGraphicsId(u8 facilityClass);
 bool32 ValidateBattleTowerRecord(u8 recordId); // unused
 void TrySetLinkBattleTowerEnemyPartyLevel(void);
 
+void FillPartnerParty(u16 trainerId);
+
 #endif //GUARD_BATTLE_TOWER_H

@@ -61,7 +61,5 @@
       "script": "SS_Rain_EventScript_NeedRunningShoes"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

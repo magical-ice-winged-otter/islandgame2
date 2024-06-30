@@ -121,7 +121,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_hidemonpic                        @ 0x76
 	.4byte ScrCmd_showcontestpainting               @ 0x77
 	.4byte ScrCmd_braillemessage                    @ 0x78
-	.4byte ScrCmd_givemon                           @ 0x79
+	.4byte ScrCmd_nop1                              @ 0x79
 	.4byte ScrCmd_giveegg                           @ 0x7a
 	.4byte ScrCmd_setmonmove                        @ 0x7b
 	.4byte ScrCmd_checkpartymove                    @ 0x7c
@@ -206,8 +206,8 @@ gScriptCmdTable::
 @@@ Dynamic Multichoice
 	.4byte ScrCmd_dynmultichoice                    @ 0xcb
 	.4byte ScrCmd_dynmultipush                      @ 0xcc
-	.4byte ScrCmd_setmonmodernfatefulencounter      @ 0xcd
-	.4byte ScrCmd_checkmonmodernfatefulencounter    @ 0xce
+	.4byte ScrCmd_setmodernfatefulencounter     	@ 0xcd
+	.4byte ScrCmd_checkmodernfatefulencounter    	@ 0xce
 	.4byte ScrCmd_trywondercardscript               @ 0xcf
 	.4byte ScrCmd_nop1                              @ 0xd0
 	.4byte ScrCmd_warpspinenter                     @ 0xd1
@@ -228,7 +228,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_warpwhitefade                     @ 0xe0
 	.4byte ScrCmd_buffercontestname                 @ 0xe1
 	.4byte ScrCmd_bufferitemnameplural              @ 0xe2
-	.4byte ScrCmd_givecustommon						@ 0xe3
+	.4byte ScrCmd_nop1						        @ 0xe3
 	.4byte ScrCmd_showitemdesc              		@ 0xe4
 	.4byte ScrCmd_hideitemdesc              		@ 0xe5
 	.4byte ScrCmd_questmenu                         @ 0xe6
