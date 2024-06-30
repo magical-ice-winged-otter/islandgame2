@@ -1272,6 +1272,15 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.inc"
 
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_1F_3/scripts.inc"
 	.include "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNCENTER/scripts.inc"
