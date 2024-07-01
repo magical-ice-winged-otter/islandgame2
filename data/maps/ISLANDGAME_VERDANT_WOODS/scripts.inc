@@ -40,6 +40,12 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_6:
 	goto ISLANDGAME_VERDANT_WOODS_Sudowoodo_1
 
 ISLANDGAME_VERDANT_WOODS_Sudowoodo_7:
+	special DoWateringBerryTreeAnim
+	waitstate
+	waitse
+	playse SE_SUDOWOODO_SHAKE
+	applymovement 2, BattleFrontier_OutsideEast_Movement_SudowoodoShake
+	waitmovement 0
 	setwildbattle SPECIES_SUDOWOODO, 10
 	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
 	waitmoncry
@@ -181,9 +187,7 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text::
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}Even still, I think bug Pokémon are\n"
-	.string "awesome!\p"
-	.string "{COLOR DARK_GRAY}I'm the most popular kid at camp thanks\n"
-	.string "to Butterfree and Beedrill!$"
+	.string "awesome!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_NotEnoughMons::
 	.string "{COLOR DARK_GRAY}Huh? You need at least two Pokémon to\n"
@@ -213,15 +217,11 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text::
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}I just wish he would use a Pokémon that\n"
-	.string "wasn't a bug for once.\p"
-	.string "{COLOR DARK_GRAY}They have an unfair advantage against\n"
-	.string "my Shroomish!\p"
-	.string "{COLOR DARK_GRAY}Hmm, maybe I'll just get a Pokémon\n"
-	.string "that's good against his.$"
+	.string "wasn't a bug for once.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text::
 	.string "{COLOR DARK_GRAY}Ugh... I hate forests. They're dirty and\n"
-	.string "full of icky bugs and poisonous plants.$"
+	.string "full of icky bugs.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Defeated_Text::
 	.string "The only thing I hate more than forests  \n"
@@ -250,8 +250,8 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text::
 	.string "an hour!$"
 
 ISLANDGAME_VERDANT_WOODS_NPC1Talk::
-	.string "{COLOR DARK_GRAY}When I was trying to find a Tepig here, I\n"
-	.string "came across this HUGE bug Pokémon.\p"
+	.string "{COLOR DARK_GRAY}When I was trying to find a Joltik here,\n"
+	.string "I came across this HUGE bug Pokémon.\p"
 	.string "{COLOR DARK_GRAY}It was blue, had big muscles, and had a\n"
 	.string "giant horn on its head.\p"
 	.string "{COLOR DARK_GRAY}Lucky for me, it was just passing by.\n"

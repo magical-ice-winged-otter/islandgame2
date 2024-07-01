@@ -194,15 +194,15 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 42,
-      "y": 28,
+      "y": 37,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_FOCUS_BAND",
+      "trainer_sight_or_berry_tree_id": "ITEM_BRIGHT_POWDER",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MINTY_MEADOWS_1"
+      "flag": "FLAG_ITEM_MINTY_MEADOWS_BRIGHT_POWDER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -281,6 +281,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_425",
+      "x": 19,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_DrifloonBattle",
+      "flag": "FLAG_DAILY_MINTY_MEADOWS_DRIFLOON"
     }
   ],
   "warp_events": [
@@ -419,66 +432,66 @@
     },
     {
       "type": "trigger",
-      "x": 36,
-      "y": 32,
+      "x": 61,
+      "y": 10,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
     },
     {
       "type": "trigger",
-      "x": 35,
-      "y": 32,
+      "x": 8,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 37,
-      "y": 32,
+      "x": 9,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 38,
-      "y": 32,
+      "x": 10,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 39,
-      "y": 32,
+      "x": 11,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 41,
-      "y": 32,
+      "x": 12,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 42,
-      "y": 32,
+      "x": 13,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     }
   ],
   "bg_events": [
@@ -492,8 +505,8 @@
     },
     {
       "type": "sign",
-      "x": 19,
-      "y": 3,
+      "x": 18,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact"

@@ -1226,7 +1226,7 @@
 #define FLAG_FRESA_FARMS_POKE_TOY                                   0x495 
 #define FLAG_VERDANT_PATH_TIMER_BALL                                0x496 
 #define FLAG_ITEM_COP_2_ELIXIR                                      0x497
-#define FLAG_ITEM_MINTY_MEADOWS_1                                   0x498
+#define FLAG_ITEM_MINTY_MEADOWS_BRIGHT_POWDER                       0x498
 #define FLAG_ITEM_TM_RETURN                                         0x499 
 #define FLAG_ITEM_CAMP_PERSI_POTION                                 0x49A 
 #define FLAG_ITEM_PERSI_NEST_ETHER                                  0x49B
@@ -1246,8 +1246,8 @@
 #define FLAG_MINTY_MEADOWS_X_DEF                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_REVIVE                                           0x4AB 
-#define FLAG_SS_RAIN_TM_SHOCK_WAVE                                  0x4AC 
-#define FLAG_SS_RAIN_LEFTOVERS                                      0x4AD
+#define FLAG_SS_RAIN_TM_SNATCH                                      0x4AC 
+#define FLAG_SS_RAIN_MAX_REVIVE                                     0x4AD
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
 #define FLAG_ITEM_COP_1_X_SP_ATK                                    0x4AF  
 #define FLAG_ITEM_MINTY_MEADOWS_HP_UP                               0x4B0 
@@ -1544,8 +1544,8 @@
 #define FLAG_S_ORANNA_PATH_ABSOL_DEFEATED           (SYSTEM_FLAGS + 0x94) 
 //camp persi: free food
 #define FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED          (SYSTEM_FLAGS + 0x95)
-//maplegrove: oddish gift
-#define FLAG_MAPLEGROVE_ODDISH_GIFT                 (SYSTEM_FLAGS + 0x96)
+//maplegrove: buneary gift
+#define FLAG_MAPLEGROVE_BUNEARY_GIFT                (SYSTEM_FLAGS + 0x96)
 //fresa farms: mareep gift
 #define FLAG_FRESA_FARMS_MAREEP_GIFT                (SYSTEM_FLAGS + 0x97) 
 //tidalcove: luxury ball gift
@@ -1630,7 +1630,7 @@
 #define FLAG_DAILY_PERSI_CANDY_BOY_SALE             (DAILY_FLAGS_START + 0x16) 
 #define FLAG_DAILY_PERSI_COOKIE_GIRL_SALE           (DAILY_FLAGS_START + 0x17) 
 #define FLAG_DAILY_TIDALCOVE_YACHE_GIRL             (DAILY_FLAGS_START + 0x18) 
-#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
+#define FLAG_DAILY_MINTY_MEADOWS_DRIFLOON           (DAILY_FLAGS_START + 0x19)
 #define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag

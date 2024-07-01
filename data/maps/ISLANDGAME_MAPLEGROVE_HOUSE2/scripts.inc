@@ -22,7 +22,7 @@ ISLANDGAME_MAPLEGROVE_HOUSE2_DollText::
 	.string "jiggly.)$"
 
 ISLANDGAME_MAPLEGROVE_HOUSE2_eDaterText::
-	.string "Oh Katie, my dear Katie! Why has fate\n"
+	.string "Oh Lana, my dear Lana! Why has fate\n"
 	.string "whisked you away from me?\p"
 	.string "Tis been but only a month since you\n"
 	.string "departed from Oranna, the origin of our\l"

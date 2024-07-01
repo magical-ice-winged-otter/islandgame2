@@ -3,7 +3,7 @@ mapscripts ISLANDGAME_CHERIPORT_LAB_2F_MapScripts {}
 script ISLANDGAME_CHERIPORT_LAB_2F_BagInteract {
     lock
     msgbox(format(
-        "{COLOR RED}(It's the professor's bag. There seems to be three Pokéballs inside.)"
+        "{COLOR RED}(It seems to be someone's bag. I probably shouldn't be digging in it.)"
     ))
     closemessage
     release

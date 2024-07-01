@@ -242,7 +242,7 @@ TrainerBattle4_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}You ruined my perfect record today... ):$"
 
 ISLANDGAME_Southern_Oranna_Path_NPC1Talk::
-	.string "{COLOR DARK_GRAY}Have you seen any Jigglypuff yet? I\n"
+	.string "{COLOR DARK_GRAY}Have you seen any Charmander yet? I\n"
 	.string "like that Pokémon.$"
 
 ISLANDGAME_Southern_Oranna_Path_NPC2Talk1::

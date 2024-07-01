@@ -48,28 +48,31 @@ ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign_Text_0:
 	.string "{RIGHT_ARROW} MINTY MEADOWS$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_0:
-	.string "{COLOR DARK_GRAY}Hey, let's battle together!$"
+	.string "{COLOR DARK_GRAY}Oi! You're ruining our romantic\n"
+	.string "excursion!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_1:
-	.string "Oh no, we lost!$"
+	.string "Lizzy: Ugh! Worst date ever!\pOwen: W-Wait! Don't leave!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_2:
-	.string "{COLOR DARK_GRAY}You don't have enough Pokemon to fight\n"
-	.string "us.$"
+	.string "{COLOR DARK_GRAY}Go away! We're having a touching\n"
+	.string "moment!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer1_Text_3:
-	.string "{COLOR DARK_GRAY}We'll get you next time!$"
+	.string "{COLOR DARK_GRAY}Ugh, now we have to take our Pokémon to\n"
+	.string "Nurse Joy.\p"
+	.string "Thanks a lot.$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_0:
-	.string "Oi! Get out of my way! I'm trying to keep\n"
-	.string "up my pace here!$"
+	.string "Hey! Get out of my way! I'm trying to\n"
+	.string "keep up my pace here!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_1:
 	.string "I couldn't keep up the momentum...$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer3_Text_2:
 	.string "I need to get stronger... Fight, Jack...\n"
-	.string "Fight!$"
+	.string "Fight! TATAKAE!!!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer4_Text_0:
 	.string "{COLOR DARK_GRAY}Let our Pokémon bloom in the meadow's\n"
@@ -91,7 +94,7 @@ ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_1:
 
 ISLANDGAME_MINTY_MEADOWS_Trainer6_Text_2:
 	.string "You'll pay for this... Delaying my search\n"
-	.string "for my lovely Queen Combee!$"
+	.string "for my lovely Vespiquen!$"
 
 ISLANDGAME_MINTY_MEADOWS_Trainer7_Text_0:
 	.string "Go Go Go! My awesome Pokémon!$"

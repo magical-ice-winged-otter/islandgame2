@@ -27,8 +27,8 @@ ISLANDGAME_CHERIPORT_LAB_2F_BallInteract::
 
 
 ISLANDGAME_CHERIPORT_LAB_2F_BagInteract_Text_0:
-	.string "{COLOR RED}(It's the professor's bag. There seems\n"
-	.string "to be three Pokéballs inside.)$"
+	.string "{COLOR RED}(It seems to be someone's bag. I\n"
+	.string "probably shouldn't be digging in it.)$"
 
 ISLANDGAME_CHERIPORT_LAB_2F_PCInteract_Text_0:
 	.string "{COLOR RED}(It's the professor's computer. It's\n"

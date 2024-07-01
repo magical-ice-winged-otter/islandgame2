@@ -22,7 +22,7 @@ script ISLANDGAME_MAPLEGROVE_HOUSE2_EventScript_eDater {
 
 text ISLANDGAME_MAPLEGROVE_HOUSE2_eDaterText {
     format(
-        "Oh Katie, my dear Katie! Why has fate whisked you away from me? \p"
+        "Oh Lana, my dear Lana! Why has fate whisked you away from me? \p"
         "Tis been but only a month since you departed from Oranna, the origin of our love... \p"
         "...and yet, it feels you have been absent from my life for years! \p"
         "Oh, if only there was some way for me to speak to you once more... \p"

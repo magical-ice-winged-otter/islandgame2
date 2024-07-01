@@ -31,23 +31,36 @@ const PAUSED_TOP_Y = 10
 const PAUSED_BOTTOM_X = 18
 const PAUSED_BOTTOM_Y = 28
 
+const FLAG_NIGHT = FLAG_TEMP_1
+const FLAG_DAY = FLAG_TEMP_2
+const VAR_CURRENT_HOUR = VAR_0x8000
+
 
 mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION: ISLANDGAME_MINTY_MEADOWS_2_OnTransition
-}
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
 
-script ISLANDGAME_MINTY_MEADOWS_2_OnTransition {
-    switch (var(VAR_MINTY_MEADOWS_STATE)) {
-        case STATE_INITIAL_RIVAL:            call(ISLANDGAME_MINTY_MEADOWS_2_InitialRival)
-        case STATE_STARTED_QUEST:            call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
-        case STATE_PAUSED_QUEST:             call(ISLANDGAME_MINTY_MEADOWS_2_PausedQuest)
-        case STATE_PRE_FIGHT_SIGHTING:       call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
-        case STATE_POST_FIGHT:               call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+            setflag(FLAG_NIGHT)
+        }
+        else {
+            setflag(FLAG_DAY)
+            setobjectxyperm(20, POS_HIDDEN_X, POS_HIDDEN_Y) // drifloon can only appear at night
+        }
+
+        switch (var(VAR_MINTY_MEADOWS_STATE)) {
+            case STATE_INITIAL_RIVAL:            call(ISLANDGAME_MINTY_MEADOWS_2_InitialRival)
+            case STATE_STARTED_QUEST:            call(ISLANDGAME_MINTY_MEADOWS_2_StartedQuest)
+            case STATE_PAUSED_QUEST:             call(ISLANDGAME_MINTY_MEADOWS_2_PausedQuest)
+            case STATE_PRE_FIGHT_SIGHTING:       call(ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight)
+            case STATE_POST_FIGHT:               call(ISLANDGAME_MINTY_MEADOWS_2_DefeatedMightyena)
+        }
+
+        if (flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+            setvar(VAR_TEMP_5, 1) // allow player freely go to places that were restricted prior to beating shadow mightyena
+        }
+
     }
-
-    // if (var(VAR_MINTY_MEADOWS_STATE) != STATE_STARTED_QUEST) {
-    //     setvar(VAR_MINTY_MEADOWS_STATE, 1)
-    // }
 }
 
 // section: object positions
@@ -114,7 +127,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_OldMan_Interact {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
         case STATE_INITIAL_RIVAL:            
         case STATE_STARTED_QUEST:            msgbox(format("I could've sworn it was somewhere in the forest to the east..."), MSGBOX_NPC)
-        case STATE_PAUSED_QUEST:             msgbox(format("I hope you can find my lost Mareep!"), MSGBOX_NPC)
+        case STATE_PAUSED_QUEST:             msgbox(format("I could've sworn it was somewhere in the forest to the east..."), MSGBOX_NPC)
         case STATE_PRE_FIGHT_SIGHTING:       msgbox(format("What? A wild Mightyena was chasing my precious Mareep?\pYou have to save him, please!"), MSGBOX_NPC)
         case STATE_POST_FIGHT:               msgbox(format("Thank you so much for saving my precious Mareep!"), MSGBOX_NPC)
     }
@@ -143,7 +156,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact {
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact {
-    msgbox(format("{COLOR DARK_GRAY}MINTY MEADOWS\nPlease don't pick the flowers!"), MSGBOX_SIGN)
+    msgbox(format("{COLOR DARK_GRAY}MINTY MEADOWS\nBeware of scary Drifloon at night!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_TunnelSign_Interact {
@@ -165,12 +178,14 @@ movement ISLANDGAME_MINTY_MEADOWS_2_Player_StepBack {
 script ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival {
     lock
     playse(SE_PIN)
-	applymovement(RIVAL_OW_ID, Common_Movement_ExclamationMark) 
+	applymovement(OLD_MAN_OW_ID, Common_Movement_ExclamationMark) 
 	waitmovement(0)
-	applymovement(RIVAL_OW_ID, Common_Movement_Delay48)
+	applymovement(OLD_MAN_OW_ID, Common_Movement_Delay48)
     waitmovement(0)
-    faceplayer
+    applymovement(OLD_MAN_OW_ID,Common_Movement_FacePlayer)
+    waitmovement(0)
     msgbox(format("{COLOR DARK_GRAY}Ah, young trainer! Please give me a moment. I am trying to count my Mareep."))
+    closemessage
     applymovement(OLD_MAN_OW_ID,Common_Movement_FaceOriginalDirection)
     applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_Player_StepBack)
     waitmovement(OBJ_EVENT_ID_PLAYER)
@@ -785,6 +800,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     special(HealPlayerParty)
     completequest(QUEST_FRESA_FARMS_LOST_MAREEP)
     setflag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)
+    setvar(VAR_TEMP_5, 1) // let player go to places that were restricted prior
     release
 }
 
@@ -839,7 +855,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
     waitmovement(RIVAL_OW_ID)
     playse(SE_PIN)
     applymovement(RIVAL_OW_ID, Common_Movement_ExclamationMark)
-    message(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}You're back! Let's find that Mareep!"))
+    message(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Welcome back! Let's go get that Mareep!"))
     waitbuttonpress
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
     
@@ -852,8 +868,8 @@ script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage {
-    msgbox(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Eh? We can't leave! We said we would help find his Mareep!"))
-    message(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Do you still want to?"))
+    msgbox(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Eh? We can't leave yet! We told the old-timer we'd help find his Mareep!"))
+    message(format("Do you really have to leave?"))
     waitmessage
     dynmultipush("Yes", YES)
     dynmultipush("No", NO)
@@ -867,6 +883,31 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
     switch (var(VAR_MINTY_MEADOWS_STATE)) {
         case STATE_PAUSED_QUEST:
             call(ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack)
+        case STATE_PRE_FIGHT_SIGHTING:
+            facefollower
+            call(ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage)
+            switch (var(VAR_RESULT)) {
+                case YES:
+                    call(ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey)
+
+                    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+                    applymovement(RIVAL_OW_ID, Common_Movement_WalkRight)
+                    waitmovement(RIVAL_OW_ID)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                    message(format("Okay... Please come back as soon as you can!"))
+                    applymovement(RIVAL_OW_ID, Common_Movement_FaceLeft)
+                    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                    waitmovement(RIVAL_OW_ID)
+                    waitmessage
+                    waitbuttonpress
+                    closemessage
+                case NO:
+                    msgbox(format("Alright! Let's get back to business!"))
+                    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+                    waitmovement(OBJ_EVENT_ID_PLAYER)
+                    closemessage
+            }
         case STATE_STARTED_QUEST:
             facefollower
             call(ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage)
@@ -878,7 +919,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
                     applymovement(RIVAL_OW_ID, Common_Movement_WalkRight)
                     waitmovement(RIVAL_OW_ID)
                     waitmovement(OBJ_EVENT_ID_PLAYER)
-                    message(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Alright, I will be waiting."))
+                    message(format("Okay... Please come back as soon as you can!"))
                     applymovement(RIVAL_OW_ID, Common_Movement_FaceLeft)
                     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
                     waitmovement(OBJ_EVENT_ID_PLAYER)
@@ -887,7 +928,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
                     waitbuttonpress
                     closemessage
                 case NO:
-                    msgbox(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Great!"))
+                    msgbox(format("Alright! Let's get back to business!"))
                     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
                     waitmovement(OBJ_EVENT_ID_PLAYER)
                     closemessage
@@ -896,6 +937,56 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
     release
 }
 
+script ISLANDGAME_MINTY_MEADOWS_2_CantLeave2 {
+    if(!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+        msgbox(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Huh? We have to help Mareep!"))
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_WalkDown)
+        waitmovement(OBJ_EVENT_ID_PLAYER)
+        closemessage
+    }
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_DrifloonBattle {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_DRIFLOON, 13)
+    playmoncry(SPECIES_DRIFLOON, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setflag(FLAG_DAILY_MINTY_MEADOWS_DRIFLOON)
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setflag(FLAG_DAILY_MINTY_MEADOWS_DRIFLOON)
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_MINTY_MEADOWS_2_CantGoYet {
+    if(!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+        msgbox(format("{COLOR RED}(I should really help the Farm Owner find his Mareep first...)"))
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_WalkDown)
+        waitmovement(OBJ_EVENT_ID_PLAYER)
+        closemessage
+    }
+}
+
+movement Movement_WalkDown {
+    walk_down
+}
 
 ///TRAINERS
 

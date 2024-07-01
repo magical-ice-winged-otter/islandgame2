@@ -474,6 +474,15 @@ const u32 gTrainerPalette_Melissa[] = INCBIN_U32("graphics/trainers/front_pics/m
 const u8 gTrainerBackPic_Melissa[] = INCBIN_U8("graphics/trainers/back_pics/melissa.4bpp");
 const u32 gTrainerBackPicPalette_Melissa[] = INCBIN_U32("graphics/trainers/back_pics/melissa.gbapal.lz");
 
+const u32 gTrainerFrontPic_ScoutM[] = INCBIN_U32("graphics/trainers/front_pics/scout_m.4bpp.lz");
+const u32 gTrainerPalette_ScoutM[] = INCBIN_U32("graphics/trainers/front_pics/scout_m.gbapal.lz");
+
+const u32 gTrainerFrontPic_ScoutF[] = INCBIN_U32("graphics/trainers/front_pics/scout_f.4bpp.lz");
+const u32 gTrainerPalette_ScoutF[] = INCBIN_U32("graphics/trainers/front_pics/scout_f.gbapal.lz");
+
+const u32 gTrainerFrontPic_BugCatcherF[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher_f_pp.4bpp.lz");
+const u32 gTrainerPalette_BugCatcherF[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher_f_pp.gbapal.lz");
+
 
 
 // The first two parameters invoke a front pic and palette by
@@ -637,6 +646,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(OLIVIA, Olivia),
     TRAINER_SPRITE(OLIVER, Oliver),
     TRAINER_SPRITE(MELISSA, Melissa),
+    TRAINER_SPRITE(SCOUT_M, ScoutM),
+    TRAINER_SPRITE(SCOUT_F, ScoutF),
+    TRAINER_SPRITE(BUG_CATCHER_F, BugCatcherF),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

@@ -26,6 +26,12 @@ script ISLANDGAME_VERDANT_WOODS_Sudowoodo {
                 case NO:
                     break
                 case YES:
+                    special(DoWateringBerryTreeAnim)
+                    waitstate
+                    waitse
+                    playse(SE_SUDOWOODO_SHAKE)
+                    applymovement(2, BattleFrontier_OutsideEast_Movement_SudowoodoShake)
+                    waitmovement(0)
                     setwildbattle(SPECIES_SUDOWOODO, 10)
                     playmoncry(SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER)
                     waitmoncry
@@ -65,8 +71,7 @@ text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}Even still, I think bug Pokémon are awesome! \p"
-        "{COLOR DARK_GRAY}I'm the most popular kid at camp thanks to Butterfree and Beedrill!"
+        "{COLOR DARK_GRAY}Even still, I think bug Pokémon are awesome!"
         )
 }
 
@@ -124,9 +129,7 @@ text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}I just wish he would use a Pokémon that wasn't a bug for once. \p"
-        "{COLOR DARK_GRAY}They have an unfair advantage against my Shroomish! \p"
-        "{COLOR DARK_GRAY}Hmm, maybe I'll just get a Pokémon that's good against his."
+        "{COLOR DARK_GRAY}I just wish he would use a Pokémon that wasn't a bug for once."
         )
 }
 
@@ -138,7 +141,7 @@ script ISLANDGAME_VERDANT_WOODS_TrainerBattle4 {
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text {
     format(
-        "{COLOR DARK_GRAY}Ugh... I hate forests. They're dirty and full of icky bugs and poisonous plants."
+        "{COLOR DARK_GRAY}Ugh... I hate forests. They're dirty and full of icky bugs."
     )
 }
 
@@ -198,7 +201,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_NPC1 {
 
 text ISLANDGAME_VERDANT_WOODS_NPC1Talk {
     format(
-        "{COLOR DARK_GRAY}When I was trying to find a Tepig here, I came across this HUGE bug Pokémon. \p"
+        "{COLOR DARK_GRAY}When I was trying to find a Joltik here, I came across this HUGE bug Pokémon. \p"
         "{COLOR DARK_GRAY}It was blue, had big muscles, and had a giant horn on its head. \p"
         "{COLOR DARK_GRAY}Lucky for me, it was just passing by. There's no way I'd fight that thing!"
     )

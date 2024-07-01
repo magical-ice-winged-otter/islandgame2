@@ -50,9 +50,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_S_ORANNA_PATH_TRAINER_4] =
     {
-        .trainerClass = TRAINER_CLASS_YOUNGSTER,
+        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
         .trainerName = _("Logan"),
         .items = {},
         .doubleBattle = FALSE,
@@ -85,9 +85,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_CAMP_PERSI_TRAINER_2] =
     {
-        .trainerClass = TRAINER_CLASS_CAMPER,
+        .trainerClass = TRAINER_CLASS_SCOUT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerPic = TRAINER_PIC_SCOUT_M,
         .trainerName = _("Edward"),
         .items = {},
         .doubleBattle = FALSE,
@@ -97,9 +97,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_CAMP_PERSI_TRAINER_3] =
     {
-        .trainerClass = TRAINER_CLASS_CAMPER,
+        .trainerClass = TRAINER_CLASS_SCOUT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerPic = TRAINER_PIC_SCOUT_M,
         .trainerName = _("Lazlo"),
         .items = {},
         .doubleBattle = FALSE,
@@ -109,9 +109,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_CAMP_PERSI_TRAINER_4] =
     {
-        .trainerClass = TRAINER_CLASS_PICNICKER,
+        .trainerClass = TRAINER_CLASS_SCOUT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerPic = TRAINER_PIC_SCOUT_F,
         .trainerName = _("Patsy"),
         .items = {},
         .doubleBattle = FALSE,
@@ -121,9 +121,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_CAMP_PERSI_TRAINER_5] =
     {
-        .trainerClass = TRAINER_CLASS_PICNICKER,
+        .trainerClass = TRAINER_CLASS_SCOUT,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerPic = TRAINER_PIC_SCOUT_F,
         .trainerName = _("Nina"),
         .items = {},
         .doubleBattle = FALSE,
@@ -229,9 +229,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_VERDANT_WOODS_1] =
     {
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .trainerName = _("Owen"),
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER_F,
+        .trainerName = _("Maya"),
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
@@ -307,10 +307,10 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MINTY_MEADOWS_1] =
     {
-        .trainerClass = TRAINER_CLASS_TWINS,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_TWINS,
-        .trainerPic = TRAINER_PIC_TWINS,
-        .trainerName = _("Amy & Anna"),
+        .trainerClass = TRAINER_CLASS_YOUNG_COUPLE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_YOUNG_COUPLE,
+        .trainerName = _("Lizzy & Owen"),
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
