@@ -1,0 +1,34 @@
+mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+
+    }
+}
+
+// script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Kricketune {
+//     lock 
+//     faceplayer
+//     setflag(FLAG_SMART_WILD_AI)
+//     setcwildbattle(0,SPECIES_KRICKETUNE,)
+//     playmoncry(SPECIES_DRIFLOON, CRY_MODE_ENCOUNTER)
+//     waitmoncry
+//     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+//     dowildbattle
+//     clearflag(FLAG_SMART_WILD_AI)
+//     specialvar(VAR_RESULT, GetBattleOutcome)
+        
+//     switch(var(VAR_RESULT)) {
+//         case B_OUTCOME_LOST:
+//             break
+//         case B_OUTCOME_RAN:
+//             break
+//         case B_OUTCOME_WON:
+//             setflag(FLAG_DAILY_MINTY_MEADOWS_DRIFLOON)
+//             goto(Common_EventScript_RemoveStaticPokemon)
+//         case B_OUTCOME_CAUGHT:
+//             setflag(FLAG_DAILY_MINTY_MEADOWS_DRIFLOON)
+//             goto(Common_EventScript_RemoveStaticPokemon)
+//         default:
+//             goto(Common_EventScript_RemoveStaticPokemon)
+//     }
+//     release
+// }mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_MapScripts {}

@@ -28,7 +28,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid {
-    msgbox(format("Swimming looks really fun! I wanna try it when I'm older..."), MSGBOX_NPC)
+    msgbox(format("My sister wants to be a model just like Ruka, so she's training her body."), MSGBOX_NPC)
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
 }
@@ -43,7 +43,11 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayDude {
             "Ruka, the leader of Tidalcove's Gym, specializes in ice-type Pokémon!\p"
             "So fighting, fire, steel, and rock moves will be super useful in the fight!\p"
             "Bet you're glad I filled you in on the secrets, huh?\p"
-            "Eh? What do you mean, that was all public information?"
+            "Eh? What do you mean, that was all public information?\p"
+            "Well then, allow me to provide you with some more personal stuff about her...\p"
+            "-whisper whisper-\p"
+            "How'd you like them apples? I'm not so useless anymore, yeah?\p"
+            "What? Why are you looking at me like that? Stop judging me! I'm important!"
         ), 
     MSGBOX_NPC)
     release
@@ -51,18 +55,18 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayDude {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman {
     trainerbattle_single(TRAINER_CORANNA_2_FISHERMAN, 
-        format("Interested in seeing some of my catches?"), 
-        "Back to fishing."
+        format("Tryna see some of my catches?"), 
+        "Pretty snazzy, right?"
     )
-    msgbox(format("This is a nice place to fish since it's so remote.\pNothing like waking up early to the sounds of nature and fishing!"), MSGBOX_NPC)
+    msgbox(format("I wish the people at Tidalcove would stop tossing their trash in the sea.\pA lot of it ends up flowing down this river. You won't believe the things I've caught thinking I caught a Totodile."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper {
     trainerbattle_single(TRAINER_CORANNA_2_CAMPER, 
-        format("My Pokémon just got a massage from the salon over there, so let's battle!"), 
-        "I could go for a haircut too."
+        format("I'm tired of facing all these sweaty trainers scurrying about.\pLet's just get this over with."), 
+        "Humph."
     )
-    msgbox(format("If you've got some extra cash, you should hit up the salon too!\pYour Pokémon will love it, trust me!"), MSGBOX_NPC)
+    msgbox(format("There is a salon right there, trainer. While it's intended for Pokemon, I think they would be willing to make an exception after seeing you."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac {
@@ -70,7 +74,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac {
         format("Nyeh heh heh... Let me SHOW you my Pokémans!"), 
         "Did you like my Pokémans?"
     )
-    msgbox(format("My Pokémans are super rare... I'll get all the ladies with them!"), MSGBOX_NPC)
+    msgbox(format("I'll be getting all the ladies with my Pokémans..."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker {
@@ -78,15 +82,15 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker {
         format("Hey, check out my new ride! Isn't it slick?"), 
         "Crap! I fell!"
     )
-    msgbox(format("You should totally get a bike too! You can get one at Tidalcove!"), MSGBOX_NPC)
+    msgbox(format("If you want a bike, you should hit up Randy's at Tidalcove!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger {
     trainerbattle_single(TRAINER_MINTY_MEADOWS_5, 
         format("I need to be alone! Go away!"), 
-        "Sorry for being so rude. I'm just\nupset because I lost my gym battle."
+        "-sigh-"
     )
-    msgbox(format("I thought I could beat Ruka, but her ace Pokémon... it was just too strong!"), MSGBOX_NPC)
+    msgbox(format("I'm just upset about losing to Ruka. Her ace Pokémon was just too strong.\pNow I'll have to wait until tomorrow for another chance..."), MSGBOX_NPC)
 }
  
 movement Movement_DELCATTYAttack {

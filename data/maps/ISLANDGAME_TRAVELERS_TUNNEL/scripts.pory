@@ -14,7 +14,7 @@ text ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk {
     format(
         "Man, what's up with all this pink swirly mist in here?\p"
         "I think it's coming from deeper in the cave...\p"
-        "Eh? I'm not going down there! You go down there! I've uh, got more important things to attend to!\p"
+        "Huh? I'm not going down there! You go down there! I've uh, got more important things to attend to!\p"
         "Like polishing this rock right here! Gotta shine it reeeeal good!"
         )
 }

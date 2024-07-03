@@ -728,6 +728,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	special HealPlayerParty
 	completequest QUEST_FRESA_FARMS_LOST_MAREEP
 	setflag FLAG_MINTY_MEADOWS_RIVAL_DEFEATED
+	setvar VAR_TEMP_5, 1
 	release
 	return
 
@@ -1214,7 +1215,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_12:
 	.string "up again soon!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0:
-	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Welcome back! Let's go find\n"
+	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Welcome back! Let's go get\n"
 	.string "that Mareep!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_0:
@@ -1245,58 +1246,54 @@ ISLANDGAME_MINTY_MEADOWS_2_CantGoYet_Text_0:
 	.string "find his Mareep first...)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_0:
-	.string "{COLOR DARK_GRAY}I'm trying to tap into my psychic\n"
-	.string "powers. Don't disturb me!$"
+	.string "{COLOR DARK_GRAY}Howdy pardner! Howsabout we get a\n"
+	.string "quick scrap in?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_1:
-	.string "I come to this forest to train my\n"
-	.string "psychic abilities every day.\p"
-	.string "I think I'm almost there... Soon I'll be\n"
-	.string "moving objects with my mind!$"
+	.string "A mighty fine party of Pokes ya got on\n"
+	.string "ya.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_0:
-	.string "{COLOR DARK_GRAY}That guy over there is a weirdo. He\n"
-	.string "keeps thinking he has psychic powers.\p"
-	.string "Me? I'm the real deal. I trained under\n"
-	.string "Sabrina in the Kanto region!$"
+	.string "{COLOR DARK_GRAY}My Pokemans are purty cute. Wanna take\n"
+	.string "a gander?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_1:
-	.string "I only lost because a sudden Pokémon\n"
-	.string "cry broke my concentration!$"
+	.string "I love my darlin' lil ball of cotton\n"
+	.string "candy. Even if she don't fight too well.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_0:
-	.string "{COLOR DARK_GRAY}I'm looking for some cool bug Pokémon\n"
-	.string "here. Have you found any?$"
+	.string "{COLOR DARK_GRAY}I have a super special Bug Pokémon. You\n"
+	.string "literally can't get it.\p"
+	.string "How jealous are you?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_1:
-	.string "I really want to find the cool bug\n"
-	.string "Pokémon here.\p"
-	.string "I'll stay here until midnight if I have\n"
-	.string "to!$"
+	.string "Okay, maybe I should be more specific.\p"
+	.string "You can't catch a Vivillon with the same\n"
+	.string "pattern as mine here in Marya.\p"
+	.string "That's because a Vivillon's pattern is\n"
+	.string "dependent on where it lives!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_0:
-	.string "{COLOR DARK_GRAY}I've been wandering around here for a\n"
-	.string "while. I'm beginning to think I'm lost...$"
+	.string "{COLOR DARK_GRAY}Hi!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_1:
-	.string "You just came from the entrance, right?\n"
-	.string "I'll be able to find my way back then!$"
+	.string "I'm not a very interesting person, so I\n"
+	.string "don't really say much.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_0:
-	.string "{COLOR DARK_GRAY}I saw a scary Pokémon chasing a Mareep\n"
-	.string "this way. Are you going after it?$"
+	.string "{COLOR DARK_GRAY}POKÉMON IS LOVE! POKÉMON IS LIFE!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_1:
-	.string "I feel bad for that Mareep, but there's\n"
-	.string "not much I can do to help.$"
+	.string "I was only nine years old when I met my\n"
+	.string "Riolu. It's the coolest Pokémon ever.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0:
-	.string "{COLOR DARK_GRAY}I like shorts! Shorts are comfy and\n"
-	.string "easy to wear! Don't you agree?$"
+	.string "{COLOR DARK_GRAY}Shorts are awesome. They're so comfy to\n"
+	.string "wear. Don't you agree?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1:
 	.string "Shorts are in the top percentage of\n"
-	.string "clothes! They're easily S tier!$"
+	.string "pants! They're easily S tier!$"
 
 ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"
@@ -1305,19 +1302,19 @@ MareepHelp_Text::
 	.string "{COLOR DARK_GRAY}Reep! Reep! {COLOR BLUE}(BRO HELP ME PLZ)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss::
-	.string "I lost focus. I'm sorry, my Pokémon.$"
+	.string "Well I'll be.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss::
-	.string "I-Impossible! How could my powers let\nme down!?$"
+	.string "Ain't she just the sweetest lil thang\n you've eva laid yer eyes on?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss::
-	.string "The bug Pokémon I have aren't strong\nenough.$"
+	.string "Ack! My super special bug Pokémon!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss::
-	.string "My Pokémon are too tired to fight well.$"
+	.string "Heck!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss::
-	.string "Wow. You might have what it takes to\ntake on that scary Pokémon!$"
+	.string "It's all Kyogre now...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss::
 	.string "I think I'm going to need a new pair of\nshorts...$"

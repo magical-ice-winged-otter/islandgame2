@@ -63,5 +63,5 @@ ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC3_Text_0:
 	.string "plush.)$"
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC4_Text_0:
-	.string "I can't wait for the festival. It's the\n"
-	.string "only time we get to leave the farm!$"
+	.string "Hi sweetie! If you're hear for our\n"
+	.string "famous milk, come back during the day.$"

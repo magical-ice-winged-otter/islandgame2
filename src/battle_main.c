@@ -678,6 +678,10 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(RS_PROTAG, "{PKMN} Trainer"),
     // island-game
     TRAINER_CLASS(SCOUT, "Scout"),
+    TRAINER_CLASS(COWGIRL, "Cowgirl"),
+    TRAINER_CLASS(RANCHER, "Rancher"),
+    TRAINER_CLASS(NERD, "Nerd"),
+    TRAINER_CLASS(PATHMASTER, "Path Master"),
 };
 
 static void (* const sTurnActionsFuncsTable[])(void) =

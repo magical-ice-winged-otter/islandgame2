@@ -87,7 +87,6 @@
 #define TRAINER_FELIX                        TRAINER_MINTY_MEADOWS_15
 #define TRAINER_MINTY_MEADOWS_16             39
 #define TRAINER_VIOLET                       TRAINER_MINTY_MEADOWS_16
-#define TRAINER_ROSE_2                       40
 #define TRAINER_ROSE_3                       41
 #define TRAINER_ROSE_4                       42
 
@@ -134,8 +133,8 @@
 #define TRAINER_AUSTINA                      TRAINER_CORANNA_2_BIKER
 #define TRAINER_GWEN                         TRAINER_CORANNA_2_FISHERMAN
 #define TRAINER_MINTY_MEADOWS_5              28 // Central Oranna Path Ranger Crystal
-
-
+#define TRAINER_CORANNA_PATHMASTER           40
+#define TRAINER_ROSE_2                       TRAINER_CORANNA_PATHMASTER
 
 
 

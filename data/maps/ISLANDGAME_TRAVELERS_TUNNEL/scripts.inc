@@ -16,7 +16,7 @@ ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk::
 	.string "mist in here?\p"
 	.string "I think it's coming from deeper in the\n"
 	.string "cave...\p"
-	.string "Eh? I'm not going down there! You go\n"
+	.string "Huh? I'm not going down there! You go\n"
 	.string "down there! I've uh, got more important\l"
 	.string "things to attend to!\p"
 	.string "Like polishing this rock right here!\n"

@@ -1303,3 +1303,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_ROCKY_PATH_HOUSE/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_ROCKY_PATH_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/scripts.inc"

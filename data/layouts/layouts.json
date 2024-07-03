@@ -5530,6 +5530,16 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH_PKMNCENTER/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH_PKMNCENTER/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO",
+      "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Layout",
+      "width": 8,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/map.bin"
     }
   ]
 }

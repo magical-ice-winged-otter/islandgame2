@@ -352,8 +352,8 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked_Text_0:
 	.string "Will be back next update (:$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0:
-	.string "Swimming looks really fun! I wanna try\n"
-	.string "it when I'm older...$"
+	.string "My sister wants to be a model just like\n"
+	.string "Ruka, so she's training her body.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayDude_Text_0:
 	.string "Howdy trainer! Nice job on making it\n"
@@ -367,32 +367,41 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayDude_Text_0:
 	.string "Bet you're glad I filled you in on the\n"
 	.string "secrets, huh?\p"
 	.string "Eh? What do you mean, that was all\n"
-	.string "public information?$"
+	.string "public information?\p"
+	.string "Well then, allow me to provide you with\n"
+	.string "some more personal stuff about her...\p"
+	.string "-whisper whisper-\p"
+	.string "How'd you like them apples? I'm not so\n"
+	.string "useless anymore, yeah?\p"
+	.string "What? Why are you looking at me like\n"
+	.string "that? Stop judging me! I'm important!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_0:
-	.string "Interested in seeing some of my\n"
-	.string "catches?$"
+	.string "Tryna see some of my catches?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_1:
-	.string "Back to fishing.$"
+	.string "Pretty snazzy, right?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_2:
-	.string "This is a nice place to fish since it's so\n"
-	.string "remote.\p"
-	.string "Nothing like waking up early to the\n"
-	.string "sounds of nature and fishing!$"
+	.string "I wish the people at Tidalcove would\n"
+	.string "stop tossing their trash in the sea.\p"
+	.string "A lot of it ends up flowing down this\n"
+	.string "river. You won't believe the things I've\l"
+	.string "caught thinking I caught a Totodile.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper_Text_0:
-	.string "My Pokémon just got a massage from the\n"
-	.string "salon over there, so let's battle!$"
+	.string "I'm tired of facing all these sweaty\n"
+	.string "trainers scurrying about.\p"
+	.string "Let's just get this over with.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper_Text_1:
-	.string "I could go for a haircut too.$"
+	.string "Humph.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper_Text_2:
-	.string "If you've got some extra cash, you\n"
-	.string "should hit up the salon too!\p"
-	.string "Your Pokémon will love it, trust me!$"
+	.string "There is a salon right there, trainer.\n"
+	.string "While it's intended for Pokemon, I think\l"
+	.string "they would be willing to make an\l"
+	.string "exception after seeing you.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_0:
 	.string "Nyeh heh heh... Let me SHOW you my\n"
@@ -402,8 +411,8 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_1:
 	.string "Did you like my Pokémans?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_2:
-	.string "My Pokémans are super rare... I'll get all\n"
-	.string "the ladies with them!$"
+	.string "I'll be getting all the ladies with my\n"
+	.string "Pokémans...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_0:
 	.string "Hey, check out my new ride! Isn't it\n"
@@ -413,18 +422,20 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_1:
 	.string "Crap! I fell!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_2:
-	.string "You should totally get a bike too! You\n"
-	.string "can get one at Tidalcove!$"
+	.string "If you want a bike, you should hit up\n"
+	.string "Randy's at Tidalcove!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger_Text_0:
 	.string "I need to be alone! Go away!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger_Text_1:
-	.string "Sorry for being so rude. I'm just\nupset because I lost my gym battle.$"
+	.string "-sigh-$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger_Text_2:
-	.string "I thought I could beat Ruka, but her\n"
-	.string "ace Pokémon... it was just too strong!$"
+	.string "I'm just upset about losing to Ruka. Her\n"
+	.string "ace Pokémon was just too strong.\p"
+	.string "Now I'll have to wait until tomorrow for\n"
+	.string "another chance...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_0:
 	.string "KYAAA! PRIM YOU'RE SO COOL!\p"

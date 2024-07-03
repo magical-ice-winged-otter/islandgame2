@@ -1001,33 +1001,33 @@ movement Movement_WalkDown {
 // }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_11, format("{COLOR DARK_GRAY}I'm trying to tap into my psychic powers. Don't disturb me!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss)
-	msgbox(format("I come to this forest to train my psychic abilities every day.\pI think I'm almost there... Soon I'll be moving objects with my mind!"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_11, format("{COLOR DARK_GRAY}Howdy pardner! Howsabout we get a quick scrap in?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss)
+	msgbox(format("A mighty fine party of Pokes ya got on ya."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_12, format("{COLOR DARK_GRAY}That guy over there is a weirdo. He keeps thinking he has psychic powers.\pMe? I'm the real deal. I trained under Sabrina in the Kanto region!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss)
-	msgbox(format("I only lost because a sudden Pokémon cry broke my concentration!"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_12, format("{COLOR DARK_GRAY}My Pokemans are purty cute. Wanna take a gander?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss)
+	msgbox(format("I love my darlin' lil ball of cotton candy. Even if she don't fight too well."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_13, format("{COLOR DARK_GRAY}I'm looking for some cool bug Pokémon here. Have you found any?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss)
-	msgbox(format("I really want to find the cool bug Pokémon here. \pI'll stay here until midnight if I have to!"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_13, format("{COLOR DARK_GRAY}I have a super special Bug Pokémon. You literally can't get it.\pHow jealous are you?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss)
+	msgbox(format("Okay, maybe I should be more specific.\pYou can't catch a Vivillon with the same pattern as mine here in Marya.\pThat's because a Vivillon's pattern is dependent on where it lives!"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_14, format("{COLOR DARK_GRAY}I've been wandering around here for a while. I'm beginning to think I'm lost..."), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss)
-	msgbox(format("You just came from the entrance, right? I'll be able to find my way back then!"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_14, format("{COLOR DARK_GRAY}Hi!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss)
+	msgbox(format("I'm not a very interesting person, so I don't really say much."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_15, format("{COLOR DARK_GRAY}I saw a scary Pokémon chasing a Mareep this way. Are you going after it? "), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss)
-	msgbox(format("I feel bad for that Mareep, but there's not much I can do to help."), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_15, format("{COLOR DARK_GRAY}POKÉMON IS LOVE! POKÉMON IS LIFE!"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss)
+	msgbox(format("I was only nine years old when I met my Riolu. It's the coolest Pokémon ever."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_16, format("{COLOR DARK_GRAY}I like shorts! Shorts are comfy and easy to wear! Don't you agree?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
-	msgbox(format("Shorts are in the top percentage of clothes! They're easily S tier!"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_16, format("{COLOR DARK_GRAY}Shorts are awesome. They're so comfy to wear. Don't you agree?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
+	msgbox(format("Shorts are in the top percentage of pants! They're easily S tier!"), MSGBOX_AUTOCLOSE)
 }
 
 // text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss {
@@ -1039,21 +1039,21 @@ script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
 // }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss {
-    "I lost focus. I'm sorry, my Pokémon."
+    "Well I'll be."
 }
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss {
-    "I-Impossible! How could my powers let\nme down!?"
+    "Ain't she just the sweetest lil thang\n you've eva laid yer eyes on?"
 }
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss {
-    "The bug Pokémon I have aren't strong\nenough."
+    "Ack! My super special bug Pokémon!"
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss {
-    "My Pokémon are too tired to fight well."
+    "Heck!"
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss {
-    "Wow. You might have what it takes to\ntake on that scary Pokémon!"
+    "It's all Kyogre now..."
 }
 
 text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss {

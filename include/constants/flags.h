@@ -1266,7 +1266,7 @@
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
 #define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE
 #define FLAG_ITEM_MAPLEGROVE_WHITE_HERB                             0x4BF
-#define FLAG_ITEM_COP_1_BURN_HEAL                                   0x4C0
+#define FLAG_ITEM_COP_1_BURN_HEAL                                   0x4C0 // not in use
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
 #define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
@@ -1631,7 +1631,7 @@
 #define FLAG_DAILY_PERSI_COOKIE_GIRL_SALE           (DAILY_FLAGS_START + 0x17) 
 #define FLAG_DAILY_TIDALCOVE_YACHE_GIRL             (DAILY_FLAGS_START + 0x18) 
 #define FLAG_DAILY_MINTY_MEADOWS_DRIFLOON           (DAILY_FLAGS_START + 0x19)
-#define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
+#define FLAG_DAILY_COR_HIDDEN_GROTTO                (DAILY_FLAGS_START + 0x1A)
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
 #define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag

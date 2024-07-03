@@ -91,6 +91,7 @@
 #define MAP_ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F           (82 | (0 << 8))
 #define MAP_ISLANDGAME_TIDALCOVE_PKMNCENTER_2F            (83 | (0 << 8))
 #define MAP_ISLANDGAME_ROSEVALE_PKMNCENTER_2F             (84 | (0 << 8))
+#define MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO         (85 | (0 << 8))
 
 // gMapGroup_Islandgame2
 #define MAP_ISLANDGAME_APPLEVINE                    (0 | (1 << 8))

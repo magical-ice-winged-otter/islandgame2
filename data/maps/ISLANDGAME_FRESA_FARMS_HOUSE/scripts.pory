@@ -40,7 +40,7 @@ script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC4 {
     lock
     faceplayer
     msgbox(format(
-        "I can't wait for the festival. It's the only time we get to leave the farm!"
+        "Hi sweetie! If you're hear for our famous milk, come back during the day."
     ))
     release
 }
