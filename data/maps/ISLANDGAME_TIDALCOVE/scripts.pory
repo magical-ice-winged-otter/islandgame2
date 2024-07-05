@@ -24,7 +24,7 @@ script ISLANDGAME_TIDALCOVE_Interact_EntranceSign {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BehindGymSign {
-    msgbox(format("LOSER LANDING\ngit gud maen"), MSGBOX_SIGN)
+    msgbox(format("LOSER LANDING\ngit gud brah"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign {
@@ -41,7 +41,7 @@ script ISLANDGAME_TIDALCOVE_Interact_GymSign {
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking {
     lock
-    msgbox(format("I am sorry, but I cannot let anyone else inside the gym for the day.\p{COLOR RED}(Hmm. It seems like the gym has reached its limit of challengers for the day...)\p(I should see what else Oranna has to offer in the meantime.)\p(Perhaps there's something up northwest I can check out?)"))
+    msgbox(format("I am sorry, but I cannot let anyone else inside the gym for the day.\p{COLOR RED}(Hmm. It seems like the gym has reached its limit of challengers for the day...)\p(I should see what else Oranna has to offer in the meantime.)\p(Perhaps there's something west I can check out?)"))
     closemessage
     release
 }
@@ -61,7 +61,7 @@ script ISLANDGAME_TIDALCOVE_Interact_PrimFan2 {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_Bike {
-    msgbox(format("It's a bike. It's shiny and brand-new. The price tag is absurd, though."), MSGBOX_SIGN)
+    msgbox(format("It's a bike. It's shiny and brand-new. The price tag is absurd, though.\p"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl {
@@ -143,18 +143,14 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer {
 script ISLANDGAME_TIDALCOVE_Interact_BeachFisher {
     lock
     faceplayer
-    msgbox(format("My pals went off to the Northern Oranna Lake to fish without me..."), MSGBOX_NPC)
-    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
-    waitmovement(0)
+    msgbox(format("Hm... Your sense of fashion is severely lacking."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachGazer {
     lock
     faceplayer
-    msgbox(format("Do you ever wonder what's out there, just over the horizon?") MSGBOX_NPC)
+    msgbox(format("Did you know Galarians can't say “bottle of water”?") MSGBOX_NPC)
     closemessage
-    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
-    waitmovement(0)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad {
@@ -173,7 +169,8 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance {
     lock
     faceplayer
     msgbox(format(
-        "Ruka is the face of Tidalcove. Without her, we'd still be a fishing village!"
+        "{COLOR LIGHT_BLUE}Ruka's Milotic {COLOR DARK_GRAY}is so pretty. I wish I one too, but I heard they're notoriously hard to find.\p"
+        "It's rumored that they only reside at the bottom of the Maryan Sea."
     ), MSGBOX_NPC)
 }
 
@@ -181,7 +178,10 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop {
     lock
     faceplayer
     msgbox(format(
-        "Man, cycling looks fun. It's a shame the store ran out of rentals for the week."
+        "Ruka is an ice-type specialist. Just like that one gym leader from Sinnoh!\p"
+        "Ummm.. what was her name again?\p"
+        "...\p"
+        "Drats. You're too hip to fall for that."
     ), MSGBOX_NPC)
 }
 
@@ -189,8 +189,7 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle {
     lock
     faceplayer
     msgbox(format(
-        "Would be weird if I asked Ruka to sign my body pillow of her? \p"
-        "Its value would skyrocket on the second-hand market!"
+        "Would be weird if I asked Ruka to sign my body pillow of her?"
     ), MSGBOX_NPC)
 }
 
@@ -198,9 +197,11 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
     lock
     faceplayer
     msgbox(format(
-        "We get so many visitors here in Tidalcove.\p"
-        "Whether they're here for Ruka, the gym challenge, or our beautiful beaches.\p"
-        "I'm all for it. I'm glad to see so many people enthusiastic about our city!"
+        "Ruka's presence has garnered a lot of foot traffic into Tidalcove.\p"
+        "I think it's neat seeing so many tourists stop by just to see her.\p"
+        "I can't help but feel a tad envious though... I wish I had all that attention.\p"
+        "Oh, by the way, I'm Ruka's sister. I thought you should know that.\p"
+        "Don't you want to ask me questions about her? Yes? No? Maybe?"
     ), MSGBOX_NPC)
 }
 

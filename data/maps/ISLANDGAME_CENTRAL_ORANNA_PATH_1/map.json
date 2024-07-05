@@ -382,6 +382,14 @@
       "elevation": 0,
       "item": "ITEM_SWIFT_FEATHER",
       "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_S_FEATHER"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 45,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_GrottoSign"
     }
   ]
 }

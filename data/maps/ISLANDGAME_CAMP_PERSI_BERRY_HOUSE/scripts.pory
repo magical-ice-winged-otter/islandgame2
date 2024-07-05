@@ -14,148 +14,357 @@ script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac {
 
     switch (var(VAR_RESULT)) {
         case 1: // INACTIVE
-            msgbox(format("I AM BARRY, THE BERRY MANIAC. I LOVE BERRIES. GET ME A CHERI BERRY NOW!!!"))
+            msgbox(format(
+                "I AM THE BERRY MANIAC!!!{PAUSE 30} I AM LOOKING FOR THE RAREST BERRIES IN MARYA!!!\p"
+                "BRING THEM TO ME, AND I WILL REWARD YOU HANDSOMELY DEAR FRIEND!"
+            ))
             startquest(QUEST_PERSI_BERRY_MANIAC)
-            completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1)
             goto(BerryManiac_End)
         case 2: // ACTIVE
-            msgbox(format("DO YOU POSSESS THE BERRY I YEARN FOR!?"))
-            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2, BerryManiac_CheriStep)
-            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3, BerryManiac_AspearStep)
-            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4, BerryManiac_LeppaStep)
-            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5, BerryManiac_SitrusStep)
-            goto_if_subquest_not_complete(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6, BerryManiac_LumStep)
-            goto(BerryManiac_LiechiStep)
+            msgbox(format("DO YOU POSSESS A BERRY I YEARN FOR!?"))
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_LIECHI_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE LIECHI BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_LIECHI_BERRY)
+                        giveitem(ITEM_MUSCLE_BAND)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_GANLON_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE GANLON BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_GANLON_BERRY)
+                        giveitem(ITEM_GRASSY_SEED)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_SALAC_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE SALAC BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_SALAC_BERRY)
+                        giveitem(ITEM_CHOICE_SCARF)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_PETAYA_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE PETAYA BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_PETAYA_BERRY)
+                        giveitem(ITEM_WISE_GLASSES)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_APICOT_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE APICOT BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_APICOT_BERRY)
+                        giveitem(ITEM_MISTY_SEED)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+            
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_KEE_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE KEE BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_KEE_BERRY)
+                        giveitem(ITEM_ELECTRIC_SEED)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_MARANGA_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE MARANGA BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_MARANGA_BERRY)
+                        giveitem(ITEM_PSYCHIC_SEED)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_LANSAT_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE LANSAT BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_LANSAT_BERRY)
+                        giveitem(ITEM_EXPERT_BELT)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_ENIGMA_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE ENIGMA BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_ENIGMA_BERRY)
+                        giveitem(ITEM_LEFTOVERS)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_MICLE_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE MICLE BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_MICLE_BERRY)
+                        giveitem(ITEM_CHOICE_SPECS)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_CUSTAP_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE CUSTAP BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_CUSTAP_BERRY)
+                        giveitem(ITEM_CHOICE_BAND)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_JABOCA_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE JABOCA BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_JABOCA_BERRY)
+                        giveitem(ITEM_ROCKY_HELMET)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13)
+            if (!var(VAR_RESULT)) {
+                checkitem(ITEM_ROWAP_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE ROWAP BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_ROWAP_BERRY)
+                        giveitem(ITEM_ASSAULT_VEST)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14)
+            if (!var(VAR_RESULT)) {
+            BerryManiac_StarfStep:
+                checkitem(ITEM_STARF_BERRY)
+                if (var(VAR_RESULT)) {
+                    msgbox(format("YES! YES! THE STARF BERRY! HAND IT OVER TO ME RIGHT NOW!!!"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        msgbox(format("EXCELLENT, EXCELLENT! HERE IS YOUR REWARD, MY SWEET BERRY GATHERER!"))
+                        removeitem(ITEM_STARF_BERRY)
+                        giveitem(ITEM_LIFE_ORB)
+                        completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14)
+                        msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
+                        goto(BerryManiac_End)
+                    }
+                    else {
+                        goto(BerryManiac_Decline)
+                    }
+                }
+            }
+
+            // final check if all subquests have been complete
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14)
+            if(!var(VAR_RESULT)) {
+                goto(BerryManiac_End)   
+            }
+            completequest(QUEST_PERSI_BERRY_MANIAC)
         case 4: // COMPLETED
             msgbox(format("FINALLY. IT'S COMPLETE. I HAVE ALL THE BERRIES NEEDED FOR MY COLLECTION!!! \p AHAHAHAHAHAHA"))
             goto(BerryManiac_End)
     }
+    goto(BerryManiac_End)
 
-BerryManiac_CheriStep:
-                checkitem(ITEM_CHERI_BERRY)
 
-                if (!var(VAR_RESULT)) {
-                    msgbox(format("NO, NO, NO, THAT WON'T DO. I NEED A CHERI BERRY!!!"))
-                    goto(BerryManiac_End)
-                }
+    BerryManiac_Decline:
+        msgbox(format(
+            "WHAT!? YOU DARE DENY ME MY DESTINY, YOU INSOLENT BRAT? GIVE IT TO ME!!!"
+        ))
+        goto(BerryManiac_End)
 
-                msgbox(format("YES! YES! THE CHERI BERRY! IT IS MINE! THANK YOU VERY MUCH. TAKE THIS!"))
-                checkitemspace(ITEM_BERRY_JUICE)
-
-                if (!var(VAR_RESULT)) {
-                    goto(BerryManiac_NotEnoughRoom)
-                }
-
-                removeitem(ITEM_CHERI_BERRY)
-                giveitem(ITEM_BERRY_JUICE)
-                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2)
-                msgbox(format("NOW GET ME AN ASPEAR BERRY. QUICKLY! TIME IS WASTING AWAY, MY FRIEND!"))
-                goto(BerryManiac_End)
-BerryManiac_AspearStep:
-                checkitem(ITEM_ASPEAR_BERRY)
-
-                if (!var(VAR_RESULT)) {
-                    msgbox(format("NO, NO, NO, THAT WON'T DO. I NEED AN ASPEAR BERRY!!!"))
-                    goto(BerryManiac_End)
-                }
-
-                msgbox(format("YES! YES! THE ASPEAR BERRY! IT IS MINE! THANK YOU VERY MUCH. TAKE THIS!"))
-                checkitemspace(ITEM_RARE_CANDY)
-
-                if (!var(VAR_RESULT)) {
-                    goto(BerryManiac_NotEnoughRoom)
-                }
-
-                removeitem(ITEM_ASPEAR_BERRY)
-                giveitem(ITEM_RARE_CANDY)
-                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3)
-                msgbox(format("NOW GET ME A LEPPA BERRY. QUICKLY! TIME IS WASTING AWAY, MY FRIEND!"))
-                goto(BerryManiac_End)
-BerryManiac_LeppaStep:
-                checkitem(ITEM_LEPPA_BERRY)
-
-                if (!var(VAR_RESULT)) {
-                    msgbox(format("NO, NO, NO, THAT WON'T DO. I NEED A LEPPA BERRY!!!"))
-                    goto(BerryManiac_End)
-                }
-
-                msgbox(format("YES! YES! THE ASPEAR BERRY! IT IS MINE! THANK YOU VERY MUCH. TAKE THIS!"))
-                checkitemspace(ITEM_EXP_SHARE)
-
-                if (!var(VAR_RESULT)) {
-                    goto(BerryManiac_NotEnoughRoom)
-                }
-
-                removeitem(ITEM_LEPPA_BERRY)
-                giveitem(ITEM_EXP_SHARE)
-                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4)
-                msgbox(format("NOW GET ME A SITRUS BERRY. QUICKLY! TIME IS WASTING AWAY, MY FRIEND!"))
-                goto(BerryManiac_End)
-BerryManiac_SitrusStep:
-                checkitem(ITEM_SITRUS_BERRY)
-
-                if (!var(VAR_RESULT)) {
-                    msgbox(format("NO, NO, NO, THAT WON'T DO. I NEED A SITRUS BERRY!!!"))
-                    goto(BerryManiac_End)
-                }
-
-                msgbox(format("YES! YES! THE ASPEAR BERRY! IT IS MINE! THANK YOU VERY MUCH. TAKE THIS!"))
-                checkitemspace(ITEM_FULL_RESTORE)
-
-                if (!var(VAR_RESULT)) {
-                    goto(BerryManiac_NotEnoughRoom)
-                }
-
-                removeitem(ITEM_SITRUS_BERRY)
-                giveitem(ITEM_FULL_RESTORE)
-                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5)
-                msgbox(format("NOW GET ME A LUM BERRY. QUICKLY! TIME IS WASTING AWAY, MY FRIEND!"))
-                goto(BerryManiac_End)
-BerryManiac_LumStep:
-                checkitem(ITEM_LUM_BERRY)
-
-                if (!var(VAR_RESULT)) {
-                    msgbox(format("NO, NO, NO, THAT WON'T DO. I NEED A SITRUS BERRY!!!"))
-                    goto(BerryManiac_End)
-                }
-
-                msgbox(format("YES! YES! THE LUM BERRY! IT IS MINE! THANK YOU VERY MUCH. TAKE THIS!"))
-                checkitemspace(ITEM_PP_MAX)
-
-                if (!var(VAR_RESULT)) {
-                    goto(BerryManiac_NotEnoughRoom)
-                }
-
-                removeitem(ITEM_LUM_BERRY)
-                giveitem(ITEM_PP_MAX)
-                completesubquest(QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6)
-                msgbox(format("FINALLY, I NEED THE LEGENDARY LIECHI BERRY! FIND IT FOR ME. FIND IT NOW!!!"))
-                goto(BerryManiac_End)
-BerryManiac_LiechiStep:
-                checkitem(ITEM_LIECHI_BERRY)
-
-                if (!var(VAR_RESULT)) {
-                    msgbox(format("NO, NO, NO, THAT WON'T DO. I NEED THE LEGENDARY LIECHI BERRY!!!"))
-                    goto(BerryManiac_End)
-                }
-
-                msgbox(format("YES... YES!!! YOU FOUND IT! AHAHAHAHA! TAKE THIS TAKE THIS TAKE THIS!"))
-                checkitemspace(ITEM_MAX_REVIVE)
-
-                if (!var(VAR_RESULT)) {
-                    goto(BerryManiac_NotEnoughRoom)
-                }
-
-                removeitem(ITEM_LIECHI_BERRY)
-                giveitem(ITEM_MAX_REVIVE)
-                completequest(QUEST_PERSI_BERRY_MANIAC)
-                msgbox(format("FINALLY. IT'S COMPLETE. I HAVE ALL THE BERRIES NEEDED FOR MY COLLECTION!!! \p AHAHAHAHAHAHA"))
-                goto(BerryManiac_End)
-BerryManiac_NotEnoughRoom:
-                msgbox(format("YOU DON'T HAVE ENOUGH ROOM FOR YOUR REWARD. MAKE SOME ROOM!!!"))
-BerryManiac_End:
-
-    release
+    BerryManiac_End:
+        release
 }
 
 script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor {
@@ -179,4 +388,6 @@ mart BerryHouseItems {
     ITEM_ORAN_BERRY
     ITEM_PECHA_BERRY
     ITEM_CHERI_BERRY
+    ITEM_CHESTO_BERRY
+    ITEM_PERSIM_BERRY
 }

@@ -154,8 +154,6 @@ ISLANDGAME_TIDALCOVE_Interact_BeachFisher::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachFisher_Text_0, MSGBOX_NPC
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
 	return
 
 
@@ -164,8 +162,6 @@ ISLANDGAME_TIDALCOVE_Interact_BeachGazer::
 	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachGazer_Text_0
 	closemessage
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
 	return
 
 
@@ -254,7 +250,7 @@ ISLANDGAME_TIDALCOVE_Interact_EntranceSign_Text_0:
 
 ISLANDGAME_TIDALCOVE_Interact_BehindGymSign_Text_0:
 	.string "LOSER LANDING\n"
-	.string "git gud maen$"
+	.string "git gud brah$"
 
 ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign_Text_0:
 	.string "SEASIDE BIKE PATH\n"
@@ -276,8 +272,8 @@ ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking_Text_0:
 	.string "its limit of challengers for the day...)\p"
 	.string "(I should see what else Oranna has to\n"
 	.string "offer in the meantime.)\p"
-	.string "(Perhaps there's something up\n"
-	.string "northwest I can check out?)$"
+	.string "(Perhaps there's something west I can\n"
+	.string "check out?)$"
 
 ISLANDGAME_TIDALCOVE_Interact_PrimFan1_Text_0:
 	.string "Let us in, old geezer! As Prim's two\n"
@@ -289,7 +285,8 @@ ISLANDGAME_TIDALCOVE_Interact_PrimFan2_Text_0:
 
 ISLANDGAME_TIDALCOVE_Interact_Bike_Text_0:
 	.string "It's a bike. It's shiny and brand-new.\n"
-	.string "The price tag is absurd, though.$"
+	.string "The price tag is absurd, though.\p"
+	.string "$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0:
 	.string "I like sand! It's soft, smooth, and fun\n"
@@ -333,12 +330,12 @@ ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_3:
 	.string "I'd give you one if you had more room!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachFisher_Text_0:
-	.string "My pals went off to the Northern Oranna\n"
-	.string "Lake to fish without me...$"
+	.string "Hm... Your sense of fashion is severely\n"
+	.string "lacking.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachGazer_Text_0:
-	.string "Do you ever wonder what's out there,\n"
-	.string "just over the horizon?$"
+	.string "Did you know Galarians can't say\n"
+	.string "“bottle of water”?$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad_Text_0:
 	.string "I'm training for the festival\n"
@@ -351,26 +348,35 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad_Text_0:
 	.string "going to fall behind otherwise!$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance_Text_0:
-	.string "Ruka is the face of Tidalcove. Without\n"
-	.string "her, we'd still be a fishing village!$"
+	.string "{COLOR LIGHT_BLUE}Ruka's Milotic {COLOR DARK_GRAY}is so pretty. I wish I one\n"
+	.string "too, but I heard they're notoriously\l"
+	.string "hard to find.\p"
+	.string "It's rumored that they only reside at\n"
+	.string "the bottom of the Maryan Sea.$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop_Text_0:
-	.string "Man, cycling looks fun. It's a shame the\n"
-	.string "store ran out of rentals for the week.$"
+	.string "Ruka is an ice-type specialist. Just\n"
+	.string "like that one gym leader from Sinnoh!\p"
+	.string "Ummm.. what was her name again?\p"
+	.string "...\p"
+	.string "Drats. You're too hip to fall for that.$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle_Text_0:
 	.string "Would be weird if I asked Ruka to sign\n"
-	.string "my body pillow of her?\p"
-	.string "Its value would skyrocket on the\n"
-	.string "second-hand market!$"
+	.string "my body pillow of her?$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top_Text_0:
-	.string "We get so many visitors here in\n"
-	.string "Tidalcove.\p"
-	.string "Whether they're here for Ruka, the gym\n"
-	.string "challenge, or our beautiful beaches.\p"
-	.string "I'm all for it. I'm glad to see so many\n"
-	.string "people enthusiastic about our city!$"
+	.string "Ruka's presence has garnered a lot of\n"
+	.string "foot traffic into Tidalcove.\p"
+	.string "I think it's neat seeing so many\n"
+	.string "tourists stop by just to see her.\p"
+	.string "I can't help but feel a tad envious\n"
+	.string "though... I wish I had all that\l"
+	.string "attention.\p"
+	.string "Oh, by the way, I'm Ruka's sister. I\n"
+	.string "thought you should know that.\p"
+	.string "Don't you want to ask me questions\n"
+	.string "about her? Yes? No? Maybe?$"
 
 ISLANDGAME_TIDALCOVE_Interact_BikeDude_Text_0:
 	.string "Welcome to the Seaside Bike Path,\n"

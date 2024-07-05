@@ -663,14 +663,14 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
 
     switch (var(VAR_RESULT)) {
         case QUEST_INACTIVE: // INACTIVE
-            msgbox(format("I lost my favorite trading card somewhere in the Verdant Woods!\pCan you help me get it back?"), MSGBOX_YESNO)
+            msgbox(format("WAAAAAH!\pI lost my favorite Charizard trading card in Verdant Woods!\pPlease help me find it!"), MSGBOX_YESNO)
 
             if (var(VAR_RESULT) == YES) {
-                msgbox(format("Awesome! I don't know much longer I can go on without it..."))
+                msgbox(format("Yay! That card means everything to me! I need it back!"))
                 startquest(QUEST_PERSI_FAVORITE_CARD)
             }
             else {
-                msgbox(format("Aww, seriously?"))
+                msgbox(format("PLZZZZZZZZZ"))
             }
         case QUEST_ACTIVE: // ACTIVE
             checkitem(ITEM_ISLANDGAME_TRADING_CARD)

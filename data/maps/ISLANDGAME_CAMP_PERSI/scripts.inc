@@ -613,16 +613,17 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_4:
 	.string "{COLOR DARK_GRAY}Woohoo! Thanks for your support!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_0:
-	.string "I lost my favorite trading card\n"
-	.string "somewhere in the Verdant Woods!\p"
-	.string "Can you help me get it back?$"
+	.string "WAAAAAH!\p"
+	.string "I lost my favorite Charizard trading\n"
+	.string "card in Verdant Woods!\p"
+	.string "Please help me find it!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_1:
-	.string "Awesome! I don't know much longer I can\n"
-	.string "go on without it...$"
+	.string "Yay! That card means everything to me!\n"
+	.string "I need it back!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_2:
-	.string "Aww, seriously?$"
+	.string "PLZZZZZZZZZ$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_3:
 	.string "You found my card! Thank you so much!\p"

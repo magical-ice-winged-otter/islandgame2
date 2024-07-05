@@ -125,7 +125,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster::
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1:
 	checktrainerflag TRAINER_CORANNA_PATHMASTER
 	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_23
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_4
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_5
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_22:
 	closemessage
 	release
@@ -135,6 +135,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_2:
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_26
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_3
 	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_3:
@@ -183,7 +184,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_19:
 	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_23:
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_3
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_4
 	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_22
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_26:
@@ -292,10 +293,14 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_2:
 	.string "It's kind of mouthful, I know.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_3:
+	.string "Okay. Let me know when you are\n"
+	.string "prepared!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_4:
 	.string "With skills like that, I've no doubt\n"
 	.string "you'll be ready to take on Ruka!$"
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_4:
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_5:
 	.string "Greetings, trainer! I am what's known as\n"
 	.string "a Path Master!\p"
 	.string "If you manage to defeat all the other\n"

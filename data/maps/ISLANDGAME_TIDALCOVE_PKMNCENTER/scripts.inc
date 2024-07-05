@@ -96,7 +96,9 @@ ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_NPC1_Text_2:
 
 ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_NPC2_Text_0:
 	.string "Hohoho... The magazines here are great!\n"
-	.string "Ruka is on the cover of all of them.$"
+	.string "Ruka is on the cover of all of them.\p"
+	.string "Such radiant skin...Such elegant\n"
+	.string "curves...$"
 
 ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Books_Text_0:
 	.string "{COLOR RED}(Wow. Ruka even made a cameo in one of\n"

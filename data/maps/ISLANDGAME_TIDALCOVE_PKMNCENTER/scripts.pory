@@ -31,7 +31,8 @@ script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_NPC1 {
 script ISLANDGAME_TIDALCOVE_PKMNCENTER_Interact_NPC2 {
     lock
     msgbox(format(
-        "Hohoho... The magazines here are great! Ruka is on the cover of all of them."
+        "Hohoho... The magazines here are great! Ruka is on the cover of all of them.\p"
+        "Such radiant skin...Such elegant curves..."
     ))
     release
 }
