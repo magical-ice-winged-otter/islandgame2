@@ -52,9 +52,9 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
             ))
             closemessage
         }
-         else {
+        else {
             setvar(VAR_TIDALCOVE_STATE, 2)
-         }
+        }
     }
     elif (var(VAR_TIDALCOVE_STATE) == 1) {
         msgbox(format(
@@ -81,9 +81,9 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
             ))
             closemessage
         }
-         else {
+        else {
             setvar(VAR_TIDALCOVE_STATE, 2)
-         }
+        }
     }
     else {
         msgbox(format(

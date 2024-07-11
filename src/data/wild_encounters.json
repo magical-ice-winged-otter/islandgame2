@@ -11822,7 +11822,7 @@
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_DEERLING_AUTUMN"
+                "species": "SPECIES_DEERLING_SPRING"
               },
               {
                 "min_level": 8,
@@ -12241,64 +12241,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_STUFFUL"
-              },
-              {
-                "min_level": 12,
-                "max_level": 13,
-                "species": "SPECIES_GROWLITHE"
-              },
-              {
-                "min_level": 12,
-                "max_level": 13,
+                "min_level": 16,
+                "max_level": 16,
                 "species": "SPECIES_RALTS"
               },
               {
-                "min_level": 12,
-                "max_level": 13,
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GROWLITHE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_TIMBURR"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
                 "species": "SPECIES_DEWPIDER"
               },
               {
-                "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_MUDKIP"
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_SQUIRTLE"
               },
               {
-                "min_level": 12,
-                "max_level": 13,
-                "species": "SPECIES_ROOKIDEE"
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_NIDORAN_F"
               },
               {
-                "min_level": 12,
-                "max_level": 13,
-                "species": "SPECIES_COTTONEE"
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_NIDORAN_M"
               },
               {
-                "min_level": 12,
-                "max_level": 13,
-                "species": "SPECIES_STARAVIA"
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_PUMPKABOO_AVERAGE"
               },
               {
-                "min_level": 12,
-                "max_level": 13,
-                "species": "SPECIES_STARAVIA"
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_PUMPKABOO_AVERAGE"
               },
               {
-                "min_level": 12,
-                "max_level": 13,
-                "species": "SPECIES_STARAVIA"
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_PUMPKABOO_SMALL"
               },
               {
-                "min_level": 12,
-                "max_level": 13,
-                "species": "SPECIES_STARAVIA"
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_PUMPKABOO_LARGE"
               },
               {
-                "min_level": 12,
-                "max_level": 13,
-                "species": "SPECIES_STARAVIA"
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_PUMPKABOO_SUPER"
               }
             ]
           },
@@ -12331,29 +12331,29 @@
                 "species": "SPECIES_NONE"
               },
               {
-                "min_level": 13,
-                "max_level": 15,
+                "min_level": 18,
+                "max_level": 18,
                 "species": "SPECIES_MAGIKARP"
               },
               {
-                "min_level": 13,
-                "max_level": 15,
-                "species": "SPECIES_WOOPER"
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_TYMPOLE"
               },
               {
-                "min_level": 13,
-                "max_level": 15,
+                "min_level": 18,
+                "max_level": 18,
                 "species": "SPECIES_POLIWAG"
               },
               {
-                "min_level": 13,
-                "max_level": 15,
-                "species": "SPECIES_POLIWAG"
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_SQUIRTLE"
               },
               {
-                "min_level": 13,
-                "max_level": 15,
-                "species": "SPECIES_POLIWAG"
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_SQUIRTLE"
               }
             ]
           }

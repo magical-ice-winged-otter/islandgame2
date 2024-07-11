@@ -1231,15 +1231,15 @@
 #define FLAG_ITEM_CAMP_PERSI_POTION                                 0x49A 
 #define FLAG_ITEM_PERSI_NEST_ETHER                                  0x49B
 #define FLAG_ITEM_FRESA_FARMS_REVIVE                                0x49C 
-#define FLAG_ITEM_MINTY_MEADOWS_HOUSE_ITEM                          0x49D
+#define FLAG_ITEM_MINTY_MEADOWS_HOUSE_ITEM                          0x49D // no longer in use
 #define FLAG_ITEM_COP_1_RARE_CANDY                                  0x49E
-#define FLAG_ITEM_NOP_ICE_HEAL                                      0x49F  
+#define FLAG_ITEM_NOR_QUICK_BALL                                    0x49F  
 #define FLAG_ITEM_COP_2_TM_BULLET_SEED                              0x4A0 
 #define FLAG_ITEM_ROSEVALE_REPEL                                    0x4A1 
 #define FLAG_ITEM_TIDALCOVE_CALCIUM                                 0x4A2
 #define FLAG_ITEM_AURORA_PATH_IRON                                  0x4A3 
 #define FLAG_ITEM_AP_STARDUST                                       0x4A4 
-#define FLAG_ITEM_NOR_SUPER_POTION                                  0x4A5
+#define FLAG_ITEM_NOR_SUPER_POTION                                  0x4A5   // no longer in use
 #define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
 #define FLAG_MINTY_MEADOWS_X_SP_ATK                                 0x4A8 
@@ -1523,7 +1523,8 @@
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
 //camp persi: first jonas battle in camp persi
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
-#define FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED     (SYSTEM_FLAGS + 0x8B)       // no longer in use
+//minty meadows: free mint
+#define FLAG_MINTY_MEADOWS_FREE_MINT                (SYSTEM_FLAGS + 0x8B)
 //minty meadows: rival fight
 #define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
 //verdant woods: miracle seed

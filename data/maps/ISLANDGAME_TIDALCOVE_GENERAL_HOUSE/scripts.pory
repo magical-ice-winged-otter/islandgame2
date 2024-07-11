@@ -6,7 +6,9 @@ script ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_NPC {
     msgbox(format(
         "The size of your Pumpkaboo will affect its stats!\p"
         "Smaller Pumpkaboo are faster, and have higher special attack and special defense, but have lower physical attack and physical defense.\p"
-        "The opposite is true for larger Pumpkaboo!"
+        "The opposite is true for larger Pumpkaboo!\p"
+        "If you want to catch a Pumpkaboo, they're most active during the night.\p"
+        "You might find one just roaming around up north!"
     ), MSGBOX_NPC)
 }
 

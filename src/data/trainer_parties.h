@@ -359,7 +359,7 @@ static const struct TrainerMon sParty_MintyMeadows8[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 14,
-    .species = SPECIES_DEERLING_AUTUMN,
+    .species = SPECIES_DEERLING_SPRING,
     }
 };
 
@@ -517,49 +517,44 @@ static const struct TrainerMon sParty_Rose5[] = {
 static const struct TrainerMon sParty_NOrannaPathTrainer1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 18,
-    .species = SPECIES_CHARMELEON,
+    .lvl = 21,
+    .species = SPECIES_GROWLITHE,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 18,
-    .species = SPECIES_GROWLITHE,
+    .lvl = 21,
+    .species = SPECIES_WARTORTLE,
     }
 };
 
 static const struct TrainerMon sParty_NOrannaPathTrainer2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 19,
-    .species = SPECIES_STARAVIA,
+    .lvl = 22,
+    .species = SPECIES_NIDORINA,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 19,
-    .species = SPECIES_ROCKRUFF,
+    .lvl = 22,
+    .species = SPECIES_DEERLING_WINTER,
     }
 };
 
 static const struct TrainerMon sParty_NOrannaPathTrainer3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 17,
-    .species = SPECIES_EKANS,
+    .lvl = 20,
+    .species = SPECIES_PUMPKABOO_SMALL,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 17,
-    .species = SPECIES_YANMA,
+    .lvl = 21,
+    .species = SPECIES_PUMPKABOO_AVERAGE,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 17,
-    .species = SPECIES_PURRLOIN,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 17,
-    .species = SPECIES_SUNFLORA,
+    .lvl = 22,
+    .species = SPECIES_PUMPKABOO_LARGE,
     },
 };
 
@@ -575,8 +570,8 @@ static const struct TrainerMon sParty_NOrannaPathTrainer4[] = {
 static const struct TrainerMon sParty_NOrannaPathTrainer5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 20,
-    .species = SPECIES_CARVANHA
+    .lvl = 22,
+    .species = SPECIES_PIDGEOTTO
     },
 };
 
@@ -674,12 +669,7 @@ static const struct TrainerMon sParty_COrannaPathTrainer4[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 17,
-    .species = SPECIES_PUMPKABOO_AVERAGE,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 18,
+    .lvl = 19,
     .species = SPECIES_CORVISQUIRE,
     },
 };

@@ -1,5 +1,19 @@
 ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	gettime
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	setflag FLAG_TEMP_2
+	return
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_3
+	return
 
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_EntranceSign::
@@ -79,9 +93,45 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCWest::
 	return
 
 
+ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average::
+	lock
+	faceplayer
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_PUMPKABOO_AVERAGE, 18, ITEM_NONE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0
+	playmoncry SPECIES_PUMPKABOO_AVERAGE, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_3
+	case B_OUTCOME_RAN, ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_4
+	case B_OUTCOME_WON, ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_5
+	case B_OUTCOME_CAUGHT, ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_6
+	goto Common_EventScript_RemoveStaticPokemon
+ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_1:
+	release
+	return
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_3:
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_1
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_4:
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_1
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_5:
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_1
+
+ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_6:
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average_1
+
+
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_EntranceSign_Text_0:
 	.string "NORTHERN ORANNA PATH\n"
-	.string "TIDALCOVE{RIGHT_ARROW}$"
+	.string "{LEFT_ARROW}ROSEVALE / TIDALCOVE{RIGHT_ARROW}$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast_Text_0:
 	.string "My buddy across the lake thinks he can\n"

@@ -257,6 +257,7 @@ const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
 const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
 const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
+const u8 sText_SideQuestMap_Unknown[] = _("???");
 
 // Persi Favorite Card Quest
 const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
@@ -359,7 +360,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_1,
 		sText_SubQuest_PersiBerryManiac1_Name,
 		sText_SubQuest_PersiBerryManiac1_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_LIECHI_BERRY,
 		ITEM,
 		sText_Active
@@ -369,7 +370,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_2,
 		sText_SubQuest_PersiBerryManiac2_Name,
 		sText_SubQuest_PersiBerryManiac2_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_GANLON_BERRY,
 		ITEM,
 		sText_Active
@@ -379,7 +380,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_3,
 		sText_SubQuest_PersiBerryManiac3_Name,
 		sText_SubQuest_PersiBerryManiac3_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_SALAC_BERRY,
 		ITEM,
 		sText_Active
@@ -389,7 +390,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_4,
 		sText_SubQuest_PersiBerryManiac4_Name,
 		sText_SubQuest_PersiBerryManiac4_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_PETAYA_BERRY,
 		ITEM,
 		sText_Active
@@ -399,7 +400,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_5,
 		sText_SubQuest_PersiBerryManiac5_Name,
 		sText_SubQuest_PersiBerryManiac5_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_APICOT_BERRY,
 		ITEM,
 		sText_Active
@@ -409,7 +410,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_6,
 		sText_SubQuest_PersiBerryManiac6_Name,
 		sText_SubQuest_PersiBerryManiac6_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_KEE_BERRY,
 		ITEM,
 		sText_Active
@@ -419,7 +420,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_7,
 		sText_SubQuest_PersiBerryManiac7_Name,
 		sText_SubQuest_PersiBerryManiac7_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_MARANGA_BERRY,
 		ITEM,
 		sText_Active
@@ -429,7 +430,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_8,
 		sText_SubQuest_PersiBerryManiac8_Name,
 		sText_SubQuest_PersiBerryManiac8_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_LANSAT_BERRY,
 		ITEM,
 		sText_Active
@@ -439,7 +440,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_9,
 		sText_SubQuest_PersiBerryManiac9_Name,
 		sText_SubQuest_PersiBerryManiac9_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_ENIGMA_BERRY,
 		ITEM,
 		sText_Active
@@ -449,7 +450,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_10,
 		sText_SubQuest_PersiBerryManiac10_Name,
 		sText_SubQuest_PersiBerryManiac10_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_MICLE_BERRY,
 		ITEM,
 		sText_Active
@@ -459,7 +460,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_11,
 		sText_SubQuest_PersiBerryManiac11_Name,
 		sText_SubQuest_PersiBerryManiac11_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_CUSTAP_BERRY,
 		ITEM,
 		sText_Active
@@ -469,7 +470,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_12,
 		sText_SubQuest_PersiBerryManiac12_Name,
 		sText_SubQuest_PersiBerryManiac12_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_JABOCA_BERRY,
 		ITEM,
 		sText_Active
@@ -479,7 +480,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_13,
 		sText_SubQuest_PersiBerryManiac13_Name,
 		sText_SubQuest_PersiBerryManiac13_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_ROWAP_BERRY,
 		ITEM,
 		sText_Active
@@ -489,7 +490,7 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 		SUB_QUEST_PERSI_BERRY_14,
 		sText_SubQuest_PersiBerryManiac14_Name,
 		sText_SubQuest_PersiBerryManiac14_Desc,
-		sText_SideQuestMap_Persi,
+		sText_SideQuestMap_Unknown,
 		ITEM_STARF_BERRY,
 		ITEM,
 		sText_Active
