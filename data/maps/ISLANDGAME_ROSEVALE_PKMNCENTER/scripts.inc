@@ -42,7 +42,7 @@ ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC2::
 ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee::
 	lock
 	faceplayer
-	playmoncry SPECIES_COTTONEE, CRY_MODE_NORMAL
+	playmoncry SPECIES_SWINUB, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee_Text_0
 	release
 	return
@@ -71,5 +71,5 @@ ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC2_Text_0:
 
 ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee_Text_0:
 	.string "Howdy there, partner!\p"
-	.string "Oop, I mean, Neeeee! {COLOR BLUE}(Howdy there,\n"
+	.string "Oop, I mean, Nuuuuub! {COLOR BLUE}(Howdy there,\n"
 	.string "partner!)$"

@@ -108,7 +108,7 @@
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
 #define VAR_TIDALCOVE_STATE                              0x4059 // island-game used for tidalcove rare stone dood
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
-#define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
+#define VAR_AURORA_PATH_HIDDEN_GROTTO_STATE              0x405B // island-game used for aurora path's hidden grotto
 #define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E

@@ -42,8 +42,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SILVERWING_M",
-      "x": 13,
-      "y": 11,
+      "x": 10,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_546",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_220",
       "x": 10,
       "y": 7,
       "elevation": 0,

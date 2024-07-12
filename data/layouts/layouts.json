@@ -5540,6 +5540,16 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AURORA_PATH_GROTTO",
+      "name": "ISLANDGAME_AURORA_PATH_GROTTO_Layout",
+      "width": 17,
+      "height": 10,
+      "primary_tileset": "gTileset_islandgame_oranna_general",
+      "secondary_tileset": "gTileset_islandgame_oranna_rosevale",
+      "border_filepath": "data/layouts/ISLANDGAME_AURORA_PATH_GROTTO/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AURORA_PATH_GROTTO/map.bin"
     }
   ]
 }

@@ -10,6 +10,10 @@ mapscripts ISLANDGAME_NORTHERN_ORANNA_PATH_MapScripts {
         }
         else {
             setflag(FLAG_DAYTIME) 
+            setflag(FLAG_TEMP_4) 
+            setflag(FLAG_TEMP_5) 
+            setflag(FLAG_TEMP_6) 
+            setflag(FLAG_TEMP_7)
         }
     }
 }
@@ -22,10 +26,19 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_EntranceSign {
     msgbox(format("NORTHERN ORANNA PATH\n{LEFT_ARROW}ROSEVALE / TIDALCOVE{RIGHT_ARROW}"), MSGBOX_SIGN)
 }
 
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FitnessSign {
+    msgbox(format("XTREEM FITNESS AREA\nDO NOT TOUCH EQUIPMENT!!!"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_Touch {
+    msgbox(format("tuch"), MSGBOX_SIGN)
+}
+
+
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast {
     msgbox(format(
-        "My buddy across the lake thinks he can catch more than me!\p"
-        "Heh... I've been fishing in this lake my entire life. He's going down!"
+        "My buddy across the lake thinks he can catch more Pokémon than me!\p"
+        "I've been fishing in this lake since I was a little Tympole. He's toast!"
     ), MSGBOX_NPC)
 
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
@@ -35,20 +48,10 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast {
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest {
     lock
     msgbox(format(
-        "I challenged my mate to a fishing contest today. Can I tell you a secret?"
-    ), MSGBOX_YESNO)
-
-    if (var(VAR_RESULT)) {
-        msgbox(format(
-            "Well... I just got my custom-built fishing rod from Arnie's today...\p"
-            "My mate over there still uses his crusty Old Rod. He's done for!"
-        ), MSGBOX_NPC)
-    }
-    else {
-        msgbox(format(
-            "Appreciate the honesty."
-        ), MSGBOX_NPC)
-    }
+        "I challenged my mate to a fishing contest today.\p"
+        "He doesn't know I have a super special fishing rod from Arnie's.\p"
+        "Meanwhile he's still using his crusty old weathered rod! He's done for!"
+    ))
 
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
@@ -77,7 +80,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2 {
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3 {
     trainerbattle_single(TRAINER_NORANNA_3, 
-        format("Mweheheh, I've got a whole heap of spooky scary Pumpkaboos!"), 
+        format("Mweheheh, I've gotta whole heap of spooky scary Pumpkaboos!"), 
         "Party pooper."
     )
     msgbox(format("I've been tryin'ta find me a super Pumpkaboo all gosh darn day.\pThey've gots to be hidin' somewhere here..."), MSGBOX_NPC)
@@ -85,10 +88,10 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer3 {
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer4 {
     trainerbattle_single(TRAINER_NORANNA_4, 
-        format("Hiiiiya! You won't stand a chance against me and my Pokémon!"), 
-        "Noooo! Lucario!"
+        format("Hooh! Haah! Hooh! Haah! I'm in the middle of my training arc!"), 
+        "Looks like I still have a lot to learn."
     )
-    msgbox(format("Looks like we still have a lot to learn."), MSGBOX_NPC)
+    msgbox(format("Just a few more training montages and filler episodes, and I'll be ready!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5 {
@@ -101,18 +104,18 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer5 {
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer6 {
     trainerbattle_single(TRAINER_NORANNA_6, 
-        format("The only path to success is through practice! No shortcuts!"), 
-        "I can tell you put in the work!"
+        format("Take a look at my Pokémon! Don't be shy!"), 
+        "Hooh. That was fun!"
     )
-    msgbox(format("There's a dude called the “Fitness Freak” over there in that house.\pHe thinks he can get stronger by taking vitamins..."), MSGBOX_NPC)
+    msgbox(format("I have to keep my dialogue family-friendly and generic because of my kid."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer7 {
     trainerbattle_single(TRAINER_NORANNA_7, 
-        format("My victory is near... I am manifesting it!"), 
-        "The power of the cosmos have failed me\nonce more..."
+        format("I have seen the future! You will lose! IT'S NO USE!"), 
+        "B-But how? This was not in my vision..."
     )
-    msgbox(format("I will need to purchase some more psychic stones."), MSGBOX_NPC)
+    msgbox(format("Could it be... that my vision was false? I will need to consult my manual."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_LowerNPCWest {
@@ -157,6 +160,60 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Large {
     setflag(FLAG_SMART_WILD_AI)
     setcwildbattle(0, SPECIES_PUMPKABOO_LARGE, 19, ITEM_NONE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
     playmoncry(SPECIES_PUMPKABOO_LARGE, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Small {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_PUMPKABOO_SMALL, 17, ITEM_NONE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+    playmoncry(SPECIES_PUMPKABOO_SMALL, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Super {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_PUMPKABOO_SUPER, 20, ITEM_COLBUR_BERRY, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0)
+    playmoncry(SPECIES_PUMPKABOO_SUPER, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     dowildbattle

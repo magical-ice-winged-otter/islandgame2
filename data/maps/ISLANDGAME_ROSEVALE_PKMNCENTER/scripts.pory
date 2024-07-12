@@ -43,8 +43,8 @@ script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC2 {
 script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee {
     lock
     faceplayer
-    playmoncry(SPECIES_COTTONEE,CRY_MODE_NORMAL)
-    msgbox(format("Howdy there, partner!\pOop, I mean, Neeeee! {COLOR BLUE}(Howdy there, partner!)"))
+    playmoncry(SPECIES_SWINUB,CRY_MODE_NORMAL)
+    msgbox(format("Howdy there, partner!\pOop, I mean, Nuuuuub! {COLOR BLUE}(Howdy there, partner!)"))
     release
 }
 

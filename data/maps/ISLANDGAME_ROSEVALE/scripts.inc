@@ -144,7 +144,7 @@ Movement_SisterHappyToSee:
 ISLANDGAME_ROSEVALE_Interact_PuddleMon::
 	lock
 	faceplayer
-	playmoncry SPECIES_CHARMANDER, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_CHARMANDER, CRY_MODE_WEAK
 	msgbox ISLANDGAME_ROSEVALE_Interact_PuddleMon_Text_0
 	release
 	return
@@ -266,6 +266,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest::
 	applymovement 1, Movement_ArthurSister_RunUpToPath
 	waitmovement 1
 	msgbox Text_ArthurSister_PleaseHelp
+	startquest QUEST_ROSEVALE_RESCUE
 	setvar VAR_ROSEVALE_STATE, 1
 	release
 	return
@@ -413,10 +414,8 @@ ISLANDGAME_ROSEVALE_Interact_PuddleTrainer_Text_1:
 	.string "It's shallow!$"
 
 ISLANDGAME_ROSEVALE_Interact_NPC1_Text_0:
-	.string "The air here is nice and fresh thanks to\n"
-	.string "our Isle Guardian, Articuno.\p"
-	.string "I'm glad I moved here from Tidalcove.\n"
-	.string "The city life just isn't for me.$"
+	.string "Ew, a city-dweller. Keep your city germs\n"
+	.string "away from our clean town!$"
 
 ISLANDGAME_ROSEVALE_Interact_NPC2_Text_0:
 	.string "Brrr...{PAUSE 30} The winds are always so chilly\n"
@@ -429,11 +428,16 @@ ISLANDGAME_ROSEVALE_Interact_Talonflame_Text_0:
 
 ISLANDGAME_ROSEVALE_Interact_NPC3_Text_0:
 	.string "La dee dum... I love the sweet fragrance\n"
-	.string "of flowers!$"
+	.string "of flowers!\p"
+	.string "Would you like to take a whiff?\p"
+	.string "...Oops, sorry. I didn't know you were\n"
+	.string "allergic.$"
 
 ISLANDGAME_ROSEVALE_Interact_NPC4_Text_0:
-	.string "My gramma said I needed to “touch\n"
-	.string "grass” more, so here I am.$"
+	.string "My gramps said I needed to “touch\n"
+	.string "grass” more, so here I am.\p"
+	.string "I just wanna go back inside and tend to\n"
+	.string "my farm on Starfdew Valley.$"
 
 ISLANDGAME_ROSEVALE_Interact_EntranceSign_Text_0:
 	.string "ROSEVALE\n"
@@ -446,7 +450,7 @@ ISLANDGAME_ROSEVALE_Interact_InnSign_Text_0:
 
 ISLANDGAME_ROSEVALE_Interact_ArthurSister_Text_0:
 	.string "My bwother went that-a-way! I think he\n"
-	.string "wan into the mountain!$"
+	.string "wan into Mount Awowa!$"
 
 ISLANDGAME_ROSEVALE_Interact_ArthurDad_Text_0:
 	.string "Where in the world could that boy be...?$"

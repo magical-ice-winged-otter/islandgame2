@@ -13,6 +13,9 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
         if (flag(FLAG_PROF_GAVE_EEVEE)) {
             setvar(VAR_TEMP_1, 1)
         }
+        if (flag(FLAG_RECEIVED_TOWN_MAP)) {
+            setvar(VAR_TEMP_2, 1)
+        }
 
         // todo: I want to turn this into a single macro - setnightflag(FLAG_NIGHT)
         gettime
@@ -198,19 +201,6 @@ text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC4_TALK {
     format("{COLOR DARK_GRAY}Left! Right! Left! Right! Huh? I'm in the middle of my training! Shoo!")
 }
 
-script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC5 {
-    lock
-    faceplayer
-    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC5_TALK)
-    release
-}
-
-text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC5_TALK {
-    format(
-        "{COLOR DARK_GRAY}Welcome to the island of Oranna, traveler. \p"
-        "{COLOR DARK_GRAY}We, {COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}The Silverwing Order{SHADOW LIGHT_GRAY}{COLOR DARK_GRAY}, pray you have a pleasant stay."
-    )
-}
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC6 {
     lock
@@ -264,7 +254,43 @@ text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK {
 }
 
 
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter {
+    lock
+    faceplayer
+    if(!flag(FLAG_RECEIVED_TOWN_MAP)) {
+        msgbox(format(
+            "Welcome to the Maryan Isles, traveler.\p"
+            "Please take this map. It will aid you in traversing the region."
+        ))
+        giveitem(ITEM_TOWN_MAP)
+    }
+    else {
+        msgbox(format(
+            "We, The Silverwing Order, pray you have a pleasant stay."
+        ))
+    }
+    closemessage
+    setvar(VAR_TEMP_2, 1)
+    setflag(FLAG_RECEIVED_TOWN_MAP)
+    release
+}
 
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter2 {
+    lock
+    playse(SE_PIN)
+    applymovement(8, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(8, Common_Movement_Delay32)
+    waitmovement(0)
+    msgbox(format(
+        "Welcome to the Maryan Isles, traveler.\p"
+        "Please take this map. It will aid you in traversing the region."
+    ))
+    giveitem(ITEM_TOWN_MAP)
+    setflag(FLAG_RECEIVED_TOWN_MAP)
+    closemessage
+    release
+}
 
 
 

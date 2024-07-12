@@ -12613,64 +12613,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_MEDITITE"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_SWINUB"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_SLOWPOKE"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_SOLOSIS"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
-                "species": "SPECIES_SQUIRTLE"
-              },
-              {
-                "min_level": 14,
-                "max_level": 15,
+                "min_level": 17,
+                "max_level": 17,
                 "species": "SPECIES_SNOVER"
               },
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_MINCCINO"
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_VANILLITE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_PIPLUP"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_DEERLING_WINTER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_TIMBURR"
               },
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_CHIMECHO"
+                "species": "SPECIES_SNOM"
               },
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_CHIMECHO"
+                "species": "SPECIES_SNOM"
               },
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_CHIMECHO"
+                "species": "SPECIES_SNOM"
               },
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_CHIMECHO"
+                "species": "SPECIES_SNOM"
               },
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_CHIMECHO"
+                "species": "SPECIES_SNOM"
               }
             ]
           }
@@ -12876,7 +12876,7 @@
           "map": "MAP_ISLANDGAME_ROSEVALE",
           "base_label": "gISLANDGAME_ROSEVALE0",
           "fishing_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 5,
@@ -12904,28 +12904,28 @@
                 "species": "SPECIES_NONE"
               },
               {
-                "min_level": 14,
-                "max_level": 16,
+                "min_level": 19,
+                "max_level": 19,
                 "species": "SPECIES_MAGIKARP"
               },
               {
-                "min_level": 14,
-                "max_level": 16,
-                "species": "SPECIES_MARILL"
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_TYMPOLE"
               },
               {
-                "min_level": 14,
-                "max_level": 16,
-                "species": "SPECIES_POLIWAG"
-              },
-              {
-                "min_level": 18,
-                "max_level": 18,
+                "min_level": 19,
+                "max_level": 19,
                 "species": "SPECIES_AZUMARILL"
               },
               {
-                "min_level": 18,
-                "max_level": 18,
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_AZUMARILL"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
                 "species": "SPECIES_AZUMARILL"
               }
             ]

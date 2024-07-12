@@ -522,7 +522,7 @@ static const struct TrainerMon sParty_NOrannaPathTrainer1[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 21,
+    .lvl = 22,
     .species = SPECIES_WARTORTLE,
     }
 };
@@ -561,16 +561,18 @@ static const struct TrainerMon sParty_NOrannaPathTrainer3[] = {
 static const struct TrainerMon sParty_NOrannaPathTrainer4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 20,
-    .species = SPECIES_LUCARIO,
-    .heldItem = ITEM_BERRY_JUICE
+    .lvl = 23,
+    .species = SPECIES_BRELOOM,
+    .heldItem = ITEM_COBA_BERRY,
+    .ability = ABILITY_TECHNICIAN,
+    .moves = {MOVE_BULLET_SEED, MOVE_MACH_PUNCH, MOVE_STUN_SPORE, MOVE_LEECH_SEED},
     }
 };
 
 static const struct TrainerMon sParty_NOrannaPathTrainer5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 22,
+    .lvl = 23,
     .species = SPECIES_PIDGEOTTO
     },
 };
@@ -578,34 +580,39 @@ static const struct TrainerMon sParty_NOrannaPathTrainer5[] = {
 static const struct TrainerMon sParty_NOrannaPathTrainer6[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 18,
-    .species = SPECIES_ZUBAT
+    .lvl = 21,
+    .species = SPECIES_NIDORINO
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 19,
-    .species = SPECIES_CORVISQUIRE
+    .lvl = 22,
+    .species = SPECIES_BUIZEL
     },
 };
 
 static const struct TrainerMon sParty_NOrannaPathTrainer7[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 20,
-    .species = SPECIES_KIRLIA
+    .lvl = 21,
+    .species = SPECIES_SLOWPOKE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 22,
+    .species = SPECIES_MEDITITE
     },
 };
 
 static const struct TrainerMon sParty_NOrannaLowerWest[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 19,
-    .species = SPECIES_BARBOACH
+    .lvl = 21,
+    .species = SPECIES_DEWPIDER
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 19,
-    .species = SPECIES_DEWPIDER
+    .lvl = 22,
+    .species = SPECIES_MASQUERAIN
     },
 };
 

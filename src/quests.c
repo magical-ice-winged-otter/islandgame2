@@ -255,18 +255,16 @@ const u8 sText_SideQuestMap_NorthernOrannaPath[] = _("N. Oranna Path");
 const u8 sText_SideQuestMap_CentralOrannaPath[] = _("C. Oranna Path");
 const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
+const u8 sText_SideQuestMap_MintyMeadows[] = _("Minty Meadows");
 const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
 const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
+const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
 const u8 sText_SideQuestMap_Unknown[] = _("???");
 
 // Persi Favorite Card Quest
 const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
 const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A camper from Camp Persi lost his\nfavorite trading card in Verdant Woods!");
 const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You found and returned the camper's\nfavorite card!");
-
-
-
-
 
 // Berry Maniac Quest
 const u8 sText_SideQuestName_PersiBerryManiac[] = _("Berry Hunting");
@@ -315,13 +313,6 @@ const u8 sText_SubQuest_PersiBerryManiac13_Desc[] = _("You found and gave a Rowa
 const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
 const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
 
-
-
-
-
-
-
-
 // Lost Mareep Quest
 const u8 sText_SideQuestName_FresaFarmsLostMareep[] = _("Missing Mareep");
 const u8 sText_SideQuestDesc_FresaFarmsLostMareep[] = _("The owner of Fresa Farms has\n lost one of his Mareep!");
@@ -332,27 +323,11 @@ const u8 sText_SideQuestName_FresaFarmsTorchicEgg[] = _("The Egg");
 const u8 sText_SideQuestDesc_FresaFarmsTorchicEgg[] = _("The owner of Fresa Farms wants you\n to hatch and evolve this egg!");
 const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg and fully\n evolved the Pokémon!");
 
-// Fitness Freak Quest
-const u8 sText_SideQuestName_FitnessFreak[] = _("The Goods");
-const u8 sText_SideQuestDesc_FitnessFreak[] = _("The Fitness Freak can't afford\nvitamins! Get him the goods!");
-const u8 sText_SideQuestDoneDesc_FitnessFreak[] = _("You've aided the Fitness Freak\n in completing his training!");
-// - Subquests
-const u8 sText_SubQuest_FitnessFreak_HpUp_Name[] = _("HP Up");
-const u8 sText_SubQuest_FitnessFreak_HpUp_Desc[] = _("Give an HP Up to the\n Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Protein_Name[] = _("Protein");
-const u8 sText_SubQuest_FitnessFreak_Protein_Desc[] = _("Give a Protein to the\n Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Iron_Name[] = _("Iron");
-const u8 sText_SubQuest_FitnessFreak_Iron_Desc[] = _("Give an Iron to the\n Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Calcium_Name[] = _("Calcium");
-const u8 sText_SubQuest_FitnessFreak_Calcium_Desc[] = _("Give a Calcium to the\n Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Zinc_Name[] = _("Zinc");
-const u8 sText_SubQuest_FitnessFreak_Zinc_Desc[] = _("Give a Zinc to the\n Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Carbos_Name[] = _("Carbos");
-const u8 sText_SubQuest_FitnessFreak_Carbos_Desc[] = _("Give a Carbos to the\n Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_PpUp_Name[] = _("PP Up");
-const u8 sText_SubQuest_FitnessFreak_PpUp_Desc[] = _("Give a PP Up to the\n Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_PpMax_Name[] = _("PP Max");
-const u8 sText_SubQuest_FitnessFreak_PpMax_Desc[] = _("Give a PP Max to the\n Fitness Freak.");
+// Lost Azurill Quest
+const u8 sText_SideQuestName_RosevaleAzurillRescue[] = _("Rescue Mission");
+const u8 sText_SideQuestDesc_RosevaleAzurillRescue[] = _("A little girl's Azurill has been stolen!\nThe thief is somewhere in Mt. Aurora...");
+const u8 sText_SideQuestDoneDesc_RosevaleAzurillRescue[] = _("You successfully rescued Azurill,\n with some help from Articuno!");
+
 
 static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_BERRY] =
 {
@@ -498,94 +473,9 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 
 };
 
-static const struct SubQuest sSubQuests_FitnessFreak[SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK] =
-{
-	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_PPMAX,
-	      sText_SubQuest_FitnessFreak_PpMax_Name,
-	      sText_SubQuest_FitnessFreak_PpMax_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_PP_MAX,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_PPUP,
-	      sText_SubQuest_FitnessFreak_PpUp_Name,
-	      sText_SubQuest_FitnessFreak_PpUp_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_PP_UP,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_CARBOS,
-	      sText_SubQuest_FitnessFreak_Carbos_Name,
-	      sText_SubQuest_FitnessFreak_Carbos_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_CARBOS,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_ZINC,
-	      sText_SubQuest_FitnessFreak_Zinc_Name,
-	      sText_SubQuest_FitnessFreak_Zinc_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_ZINC,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_CALCIUM,
-	      sText_SubQuest_FitnessFreak_Calcium_Name,
-	      sText_SubQuest_FitnessFreak_Calcium_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_CALCIUM,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_HPUP,
-	      sText_SubQuest_FitnessFreak_HpUp_Name,
-	      sText_SubQuest_FitnessFreak_HpUp_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_HP_UP,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_PROTEIN,
-	      sText_SubQuest_FitnessFreak_Protein_Name,
-	      sText_SubQuest_FitnessFreak_Protein_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_PROTEIN,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_IRON,
-	      sText_SubQuest_FitnessFreak_Iron_Name,
-	      sText_SubQuest_FitnessFreak_Iron_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_IRON,
-	      ITEM,
-	      sText_Found
-	),
-};
 
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
-	[QUEST_NORANNA_FITNESS_FREAK] = side_quest(
-	      sText_SideQuestName_FitnessFreak,
-	      sText_SideQuestDesc_FitnessFreak,
-	      sText_SideQuestDoneDesc_FitnessFreak,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      OBJ_EVENT_GFX_BLACK_BELT, 
-	      OBJECT,
-	      sSubQuests_FitnessFreak,
-	      SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK
-	),
 	[QUEST_PERSI_FAVORITE_CARD] = side_quest(
 	      sText_SideQuestName_PersiFavoriteCard,
 	      sText_SideQuestDesc_PersiFavoriteCard,
@@ -610,7 +500,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sText_SideQuestName_FresaFarmsLostMareep,
 	      sText_SideQuestDesc_FresaFarmsLostMareep,
 	      sText_SideQuestDoneDesc_FresaFarmsLostMareep,
-	      sText_SideQuestMap_FresaFarms,
+	      sText_SideQuestMap_MintyMeadows,
 	      SPECIES_MAREEP, 
 	      PKMN,
 	      NULL,
@@ -623,6 +513,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sText_SideQuestMap_FresaFarms,
 	      ITEM_LUCKY_EGG, 
 	      ITEM,
+	      NULL,
+              0 
+	),
+	[QUEST_ROSEVALE_RESCUE] = side_quest(
+	      sText_SideQuestName_RosevaleAzurillRescue,
+	      sText_SideQuestDesc_RosevaleAzurillRescue,
+	      sText_SideQuestDoneDesc_RosevaleAzurillRescue,
+	      sText_SideQuestMap_Rosevale,
+	      SPECIES_AZURILL, 
+	      PKMN,
 	      NULL,
               0 
 	),

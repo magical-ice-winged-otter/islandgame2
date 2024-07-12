@@ -161,7 +161,7 @@ movement Movement_SisterHappyToSee {
 script ISLANDGAME_ROSEVALE_Interact_PuddleMon {
     lock
     faceplayer
-    playmoncry(SPECIES_CHARMANDER, CRY_MODE_ENCOUNTER)
+    playmoncry(SPECIES_CHARMANDER, CRY_MODE_WEAK)
     msgbox(format("Char... {COLOR BLUE}(water scary :c)"))
     release
 }
@@ -202,10 +202,8 @@ script ISLANDGAME_ROSEVALE_Interact_NPC1 {
     lock
     faceplayer
     msgbox(format(
-        "The air here is nice and fresh thanks to our Isle Guardian, Articuno.\p"
-        "I'm glad I moved here from Tidalcove. The city life just isn't for me."
-        )
-    )
+        "Ew, a city-dweller. Keep your city germs away from our clean town!"
+    ))
     release
 }
 
@@ -233,7 +231,9 @@ script ISLANDGAME_ROSEVALE_Interact_NPC3 {
     lock
     faceplayer
     msgbox(format(
-        "La dee dum... I love the sweet fragrance of flowers!"
+        "La dee dum... I love the sweet fragrance of flowers!\p"
+        "Would you like to take a whiff?\p"
+        "...Oops, sorry. I didn't know you were allergic."
         )
     )
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
@@ -244,7 +244,10 @@ script ISLANDGAME_ROSEVALE_Interact_NPC3 {
 script ISLANDGAME_ROSEVALE_Interact_NPC4 {
     lock
     faceplayer
-    msgbox(format("My gramma said I needed to “touch grass” more, so here I am."))
+    msgbox(format(
+        "My gramps said I needed to “touch grass” more, so here I am.\p"
+        "I just wanna go back inside and tend to my farm on Starfdew Valley."
+    ))
     release
 }
 
@@ -257,7 +260,7 @@ script ISLANDGAME_ROSEVALE_Interact_InnSign {
 }
 
 script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
-    msgbox(format("My bwother went that-a-way! I think he wan into the mountain!"), MSGBOX_NPC)
+    msgbox(format("My bwother went that-a-way! I think he wan into Mount Awowa!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_ROSEVALE_Interact_ArthurDad {
@@ -295,6 +298,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
     msgbox(Text_ArthurSister_PleaseHelp)
 
     // quest starts
+    startquest(QUEST_ROSEVALE_RESCUE)
     setvar(VAR_ROSEVALE_STATE, STATE_STARTED_QUEST)
 
     release

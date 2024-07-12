@@ -677,8 +677,8 @@
 #define FLAG_HIDDEN_ITEM_APPLEVINE_MUSCLE_FEATHER   0x278  
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY     0x279
 #define FLAG_HIDDEN_ITEM_MT_AURORA_EXP_CANDY        0x27A 
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_P_FEATHER     0x27B   // not in use
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_M_FEATHER     0x27C   // not in use
+#define FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL         0x27B   
+#define FLAG_HIDDEN_ITEM_NORANNA_PATH_REVIVE        0x27C
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_H_FEATHER     0x27D 
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_H_FEATHER     0x27E 
 #define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F
@@ -1265,7 +1265,7 @@
 #define FLAG_ITEM_VERDANT_WOODS_POTION                              0x4BC 
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
 #define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE
-#define FLAG_ITEM_MAPLEGROVE_WHITE_HERB                             0x4BF
+#define FLAG_ITEM_MAPLEGROVE_ABILITY_CAPSULE                        0x4BF
 #define FLAG_ITEM_COP_1_BURN_HEAL                                   0x4C0 // not in use
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
@@ -1571,7 +1571,7 @@
 #define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
 #define FLAG_APPLEVINE_MANECTRIC_GIFT               (SYSTEM_FLAGS + 0xA2)
 #define FLAG_CAMP_PERSI_SPOKE_TO_THIEF              (SYSTEM_FLAGS + 0xA3)
-#define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
+#define FLAG_RECEIVED_TOWN_MAP                      (SYSTEM_FLAGS + 0xA4) 
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
 #define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
 #define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
@@ -1633,7 +1633,7 @@
 #define FLAG_DAILY_TIDALCOVE_YACHE_GIRL             (DAILY_FLAGS_START + 0x18) 
 #define FLAG_DAILY_MINTY_MEADOWS_DRIFLOON           (DAILY_FLAGS_START + 0x19)
 #define FLAG_DAILY_COR_HIDDEN_GROTTO_ROLL           (DAILY_FLAGS_START + 0x1A)
-#define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
+#define FLAG_DAILY_AURORA_PATH_HIDDEN_GROTTO_ROLL   (DAILY_FLAGS_START + 0x1B)
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
 #define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
 #define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag

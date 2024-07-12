@@ -145,5 +145,5 @@ ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_Text_0:
 	.string "happen...\p"
 	.string "Now I just have this Galladite rolling\n"
 	.string "around in my drawer doing nothing...\p"
-	.string "Honestly, if you have a Gallade of your\n"
-	.string "own, I wouldn't mind giving it to you.$"
+	.string "If you had a Gallade of your own, I\n"
+	.string "wouldn't mind giving it to you.$"
