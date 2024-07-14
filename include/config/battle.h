@@ -258,4 +258,6 @@
 #define B_NEW_IMPACT_PALETTE            TRUE    // If set to TRUE, it updates the basic 'hit' palette.
 #define B_NEW_SURF_PARTICLE_PALETTE     TRUE    // If set to TRUE, it updates Surf's wave palette.
 
+#define B_BATTLE_SPEED      VAR_BATTLE_SPEED    // See battle_controllers.c#Rogue_GetBattleSpeedScale 
+
 #endif // GUARD_CONFIG_BATTLE_H
