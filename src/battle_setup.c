@@ -581,7 +581,6 @@ void BattleSetup_StartScriptedDoubleWildBattle(void)
     if (VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE)
     {
         gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
-        gPartnerSpriteId = gBattlePartners[VarGet(VAR_TEAM_PARTNER)].trainerPic;
         gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
         FillPartnerParty(gPartnerTrainerId);
         gMain.savedCallback = CB2_End2v2ScriptedWildBattle;
@@ -1411,8 +1410,6 @@ void BattleSetup_StartTrainerBattle(void)
     if (sNoOfPossibleTrainerRetScripts == 2 && VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE) {
         // sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers
         gBattleTypeFlags |= (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER);
-        
-        gPartnerSpriteId = gBattlePartners[VarGet(VAR_TEAM_PARTNER)].trainerPic;
         gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
         FillPartnerParty(gPartnerTrainerId);
         gMain.savedCallback = CB2_End2v2TrainerBattle; // make a custom end function that handles restoring the player party. We just use a modification of EndTrainerBattle.
