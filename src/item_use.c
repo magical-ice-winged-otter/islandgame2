@@ -17,6 +17,7 @@
 #include "field_effect.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
+#include "field_specials.h"
 #include "field_weather.h"
 #include "fldeff.h"
 #include "item.h"
@@ -1673,5 +1674,12 @@ void ItemUseOutOfBattle_Pokevial(u8 taskId)
         PokevialPrintNoDosesMessage(isPlayerUsingRegisteredKeyItem, taskId);
 }
 //End Pokevial Branch
+
+void FieldShowRegionMap(void);
+
+void ItemUseOutOfBattle_TownMap(u8 taskId)
+{
+    FieldShowRegionMap();
+}
 
 #undef tUsingRegisteredKeyItem
