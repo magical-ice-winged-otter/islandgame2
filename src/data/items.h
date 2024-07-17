@@ -11152,7 +11152,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_WAILMER_PAIL] =
     {
-        .name = _("Wailmer Pail"),
+        .name = _("Squirt Bottle"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A tool used for\n"
@@ -12720,16 +12720,15 @@ const struct Item gItemsInfo[] =
         .name = _("Trading Card"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A rare trading card!\n"
-            "Someone must be sad\n"
-            "to have lost it..."
+            "Wow, this is a really\n"
+            "rare card! Do I have\n"
+            "to return it...?"
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1,
     },
 
-    //Start Pokevial Branch
     [ITEM_POKEVIAL] =
     {
         .name = _("POKéVIAL"),
@@ -12744,5 +12743,18 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokevial,
     },
-    //End Pokevial Branch
+
+    [ITEM_ISLANDGAME_ROMANS_LETTER] =
+    {
+        .name = _("Love Letter"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A love letter written\n"
+            "by Roman to his one\n"
+            "true love: Julie."
+        ),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
+    },
 };

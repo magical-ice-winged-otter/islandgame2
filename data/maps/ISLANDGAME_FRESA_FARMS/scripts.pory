@@ -136,6 +136,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep1 {
         applymovement(2, Common_Movement_ExclamationMark)
         waitmovement(0)
         applymovement(2, Common_Movement_Delay32)
+        waitmovement(0)
         msgbox(format("{COLOR DARK_GRAY}Reep... {COLOR BLUE}(Oh, it's just a random kid. Good thing they can't understand me.)\p""{COLOR DARK_GRAY}Reep! {COLOR BLUE}(Go away! I've got big plans for tonight!)\p""{COLOR DARK_GRAY}Reep. {COLOR BLUE}(Oh wait... They don't understand me.)"))
         applymovement(2, Common_Movement_FaceOriginalDirection)
         waitmovement(0)
@@ -151,7 +152,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep2 {
     lock
     faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
-    msgbox(format("Reep. {COLOR BLUE}(I'm just saying man, if it was me against that Mightyena, hoo boy.)\p""Reep! {COLOR BLUE}(I would'a messed that Mightyena up real good, ya feel me?)\p""Reep? {COLOR BLUE}(Huh? Why are you looking me like that? I'm fo' realzies!)"))
+    msgbox(format("Reep. {COLOR BLUE}(I'm just saying man, if it was me against that Mightyena, hoo boy.)\p""{COLOR DARK_GRAY}Reep! {COLOR BLUE}(I would'a messed that Mightyena up real good, ya feel me?)\p""{COLOR DARK_GRAY}Reep? {COLOR BLUE}(Huh? Why are you looking me like that? I'm fo' realzies!)"))
     release
 }
 
@@ -181,7 +182,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep4 {
     lock
     faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
-    msgbox(format("Reep. {COLOR BLUE}(My little brother always strays away from the herd to explore.)\p""Reep. {COLOR BLUE}(Hopefully he's finally learned his lesson.)"))
+    msgbox(format("GIRIGIRI WARUKUNAI WATAME!!!"))
     release
 }
 

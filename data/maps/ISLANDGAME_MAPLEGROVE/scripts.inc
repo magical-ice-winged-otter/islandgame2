@@ -113,7 +113,7 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_Text_0:
 	.string "{COLOR RED}(I don't have enough space to carry it.)$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_Text_1:
-	.string "{COLOR DARK_GRAY}Konpeko!$"
+	.string "{COLOR DARK_GRAY}Konpeko Konpeko Konpeko!$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_Text_0:
 	.string "These two Pokémon don't get along at\n"

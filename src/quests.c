@@ -251,7 +251,7 @@ static const u8 sText_AZ[] = _(" A-Z");
 // Map Locations
 const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
 const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
-const u8 sText_SideQuestMap_NorthernOrannaPath[] = _("N. Oranna Path");
+const u8 sText_SideQuestMap_Maplegrove[] = _("Maplegrove");
 const u8 sText_SideQuestMap_CentralOrannaPath[] = _("C. Oranna Path");
 const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
@@ -312,6 +312,12 @@ const u8 sText_SubQuest_PersiBerryManiac13_Desc[] = _("You found and gave a Rowa
 
 const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
 const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
+
+// Maplegrove Lovers Quest
+const u8 sText_SideQuestName_MaplegroveLovers[] = _("Star-crossed Lovers");
+const u8 sText_SideQuestDesc_MaplegroveLovers[] = _("Deliver Roman's love letter\nto Julie in Applevine!");
+const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("Thanks to you, Roman and Julie\nhave found their one true pair.");
+
 
 // Lost Mareep Quest
 const u8 sText_SideQuestName_FresaFarmsLostMareep[] = _("Missing Mareep");
@@ -495,6 +501,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
+	),
+	[QUEST_MAPLEGROVE_LOVERS] = side_quest(
+	      sText_SideQuestName_MaplegroveLovers,
+	      sText_SideQuestDesc_MaplegroveLovers,
+	      sText_SideQuestDoneDesc_MaplegroveLovers,
+	      sText_SideQuestMap_Maplegrove,
+	      ITEM_ISLANDGAME_ROMANS_LETTER, 
+	      ITEM,
+	      NULL,
+              0 
 	),
 	[QUEST_FRESA_FARMS_LOST_MAREEP] = side_quest(
 	      sText_SideQuestName_FresaFarmsLostMareep,

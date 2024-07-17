@@ -39,14 +39,22 @@ script ISLANDGAME_ROSEVALE_RALTS_HOUSE_Ralts {
 script ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl {
     lock
     faceplayer
-    msgbox(
-        format(
-            "I thought my Kirlia was going to evolve into a Gallade, but I didn't realize that I'd need a Dawn Stone for that to happen...\p"
-            "Now I just have this Galladite rolling around in my drawer doing nothing...\p"
-            "If you had a Gallade of your own, I wouldn't mind giving it to you."
+    if(!flag(FLAG_ROSEVALE_GALLADITE)) {
+        msgbox(
+            format(
+                "I thought my Kirlia was going to evolve into a Gallade, but I didn't realize that I'd need a Dawn Stone for that to happen...\p"
+                "Now I just have this Galladite rolling around in my drawer doing nothing...\p"
+                "Oh, you're a trainer? Perhaps you can make use of it."
+            )
         )
-    )
-    // insert check pokemon code here
+        giveitem(ITEM_GALLADITE)
+        setflag(FLAG_ROSEVALE_GALLADITE)
+    }
+    msgbox(format(
+        "You'll need a Mega Ring in order to use that Galladite.\p"
+        "Oh, and I should inform you that only a male Kirlia can evolve into a Gallade.\p"
+        "Don't forget to use a Dawn Stone like I did!"
+    ))
     closemessage
     release
 }

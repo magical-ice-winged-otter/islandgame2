@@ -24,7 +24,7 @@ script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1 {
         setflag(FLAG_MAPLEGROVE_BUNEARY_GIFT)
     }
     else {
-        msgbox(format("{COLOR DARK_GRAY}Konpeko!"))
+        msgbox(format("{COLOR DARK_GRAY}Konpeko Konpeko Konpeko!"))
     }
     
     

@@ -3,7 +3,6 @@ mapscripts ISLANDGAME_MAPLEGROVE_HOUSE2_MapScripts {}
 
 script ISLANDGAME_MAPLEGROVE_HOUSE2_EventScript_Doll {
     lock
-    faceplayer
     msgbox(ISLANDGAME_MAPLEGROVE_HOUSE2_DollText)
     release
 }
@@ -16,19 +15,55 @@ text ISLANDGAME_MAPLEGROVE_HOUSE2_DollText {
 
 script ISLANDGAME_MAPLEGROVE_HOUSE2_EventScript_eDater {
     lock
-    msgbox(ISLANDGAME_MAPLEGROVE_HOUSE2_eDaterText)
+    returnqueststate(QUEST_MAPLEGROVE_LOVERS)
+    if(!flag(FLAG_TEMP_1) && var(VAR_RESULT) == 1) {
+        msgbox(format(
+            "Oh Julie, my dear Julie! Why has fate whisked you away from me?\p"
+            "Tis been but only a month since you departed from Oranna...\p"
+            "But it feels as if a millennium has come and gone!\p"
+            "Oh! If only I had mustered the courage to confess my feelings sooner!\p"
+            "If only I had not wasted our last week together before you moved to Lumine...\p"
+            "Then, maybe then, the power of our newfound love would have bound us together on this island forever!\p"
+            "But alas, the great Maryan Sea now separates us for eternity...\p"
+            "Oh great winged guardian of the sea! Hear my lowly plea!\p"
+            "Bestow upon me a messenger of love! One that may deliver my confession to my one true soulmate in this world!\p"
+            "Perhaps... a traveling Pokémon trainer of sorts!\p"
+            "Preferably, one that will happen to pass by the town of Applevine!\p"
+            "...{PAUSE 60}Eh?"
+        ))
+        faceplayer
+        closemessage
+        playse(SE_PIN)
+        applymovement(1, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(1, Common_Movement_Delay48)
+        waitmovement(0)
+        setflag(FLAG_TEMP_1)
+    }
+    if(var(VAR_RESULT) == 1) {
+        faceplayer
+        msgbox(format(
+            "O-Oh! You must be the messenger of love that Lugia has blessed me with!\p"
+            "Please! Deliver this letter to my beloved! It is all I ask for in this life!"
+        ), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES) {
+            msgbox(format(
+                "Splendid! My love is somewhere in Applevine. Please tell me what she says!"
+            ))
+            giveitem(ITEM_ISLANDGAME_ROMANS_LETTER)
+            startquest(QUEST_MAPLEGROVE_LOVERS)
+        }
+        else {
+            msgbox(format(
+                "Oh... My apologies. I mistook you for a heavenly messenger sent by Lugia."
+            ))
+        }
+    }
+    else {
+        msgbox(format(
+            "My love is somewhere in Applevine. Please tell me what she says!"
+        ))
+    }
+    closemessage
     release
-}
-
-text ISLANDGAME_MAPLEGROVE_HOUSE2_eDaterText {
-    format(
-        "Oh Lana, my dear Lana! Why has fate whisked you away from me? \p"
-        "Tis been but only a month since you departed from Oranna, the origin of our love... \p"
-        "...and yet, it feels you have been absent from my life for years! \p"
-        "Oh, if only there was some way for me to speak to you once more... \p"
-        "But I am without ways to journey to your new home of Lumine! \p"
-        "Oh, how I wish Lugia would bestow upon us a messenger of love! \p"
-        "Perhaps a Pokémon trainer of sorts, willing to transfer my messages... \p"
-        "But alas, it is only a wish... Nothing more..."
-    )
 }

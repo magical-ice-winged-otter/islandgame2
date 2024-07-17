@@ -2179,3 +2179,6 @@ const u32 gItemIconPalette_IslandgamePickaxe[] = INCBIN_U32("graphics/items/icon
 
 const u32 gItemIcon_IslandgameTradingCard[] = INCBIN_U32("graphics/items/icons/trading_card.4bpp.lz");
 const u32 gItemIconPalette_IslandgameTradingCard[] = INCBIN_U32("graphics/items/icon_palettes/trading_card.gbapal.lz");
+
+const u32 gItemIcon_IslandgameSquirtBottle[] = INCBIN_U32("graphics/items/icons/squirt_bottle.4bpp.lz");
+const u32 gItemIconPalette_IslandgameSquirtBottle[] = INCBIN_U32("graphics/items/icon_palettes/squirt_bottle.gbapal.lz");

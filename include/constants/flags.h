@@ -1513,66 +1513,66 @@
 // island-game flags
 //ss rain: set when you leave the ship at the beginning of the game
 #define FLAG_LEFT_SHIP                              (SYSTEM_FLAGS + 0x85) 
-//ss rain: old man in room 3
+//ss rain: old man quest
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
-//cheriport: set when you talk to the professor for the first time and got the eevee
+//cheriport: get first mon
 #define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87)
-//southern oranna path: npc gives you a potion
+//southern oranna path: bro gives u some pot
 #define FLAG_S_ORANNA_PATH_NPC                      (SYSTEM_FLAGS + 0x88)
-//southern oranna path: see an absol in the area
+//southern oranna path: witness sussy absol
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
-//camp persi: first jonas battle in camp persi
+//camp persi: first battle with totally-not-secret-true-villain
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
-//minty meadows: free mint
+//minty meadows: free mint 
 #define FLAG_MINTY_MEADOWS_FREE_MINT                (SYSTEM_FLAGS + 0x8B)
-//minty meadows: rival fight
+//minty meadows: beat up mel, fight a dog w rabies, rescue watame
 #define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
 //verdant woods: miracle seed
 #define FLAG_VERDANT_WOODS_SEED_RECEIVED            (SYSTEM_FLAGS + 0x8D)
-//verdant woods: fight sudowoodo
+//verdant woods: beat fake tree
 #define FLAG_VERDANT_WOODS_SUDOWOODO_DEFEATED       (SYSTEM_FLAGS + 0x8E)
-//verdant path: trade 
+//verdant path: trade with fisherdood
 #define FLAG_VERDANT_PATH_TRADE_DONE                (SYSTEM_FLAGS + 0x8F) 
-//verdant path: fishing rod 
+//verdant path: obtain big long rod
 #define FLAG_VERDANT_PATH_ROD_RECEIVED              (SYSTEM_FLAGS + 0x90) 
-//verdant path: repel
+//verdant path: old lady gives you insect repellent
 #define FLAG_VERDANT_PATH_NPC                       (SYSTEM_FLAGS + 0x91) 
-//central oranna path: prim cutscene finish
+//central oranna path: watch egirl girlboss on noob
 #define FLAG_NORANNA_PRIM_CUTSCENE_FINISHED         (SYSTEM_FLAGS + 0x92)
-//ss rain: little girl in cafeteria
+//ss rain: steal ice cream from little girl
 #define FLAG_SSRAIN_ICECREAM_RECEIVED               (SYSTEM_FLAGS + 0x93) 
-//southern oranna path: defeat absol
+//southern oranna path: beat up sussy absol
 #define FLAG_S_ORANNA_PATH_ABSOL_DEFEATED           (SYSTEM_FLAGS + 0x94) 
-//camp persi: free food
+//camp persi: become a cop
 #define FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED          (SYSTEM_FLAGS + 0x95)
-//maplegrove: buneary gift
+//maplegrove: steal from pekora
 #define FLAG_MAPLEGROVE_BUNEARY_GIFT                (SYSTEM_FLAGS + 0x96)
-//fresa farms: mareep gift
+//fresa farms: steal from watame
 #define FLAG_FRESA_FARMS_MAREEP_GIFT                (SYSTEM_FLAGS + 0x97) 
-//tidalcove: luxury ball gift
+//tidalcove: extort local child for expensive technology
 #define FLAG_TIDALCOVE_LUXBALL_GIFT                 (SYSTEM_FLAGS + 0x98)
-//rosevale: tm attract gift
+//rosevale: simp for a girl in inn
 #define FLAG_ROSEVALE_TM_GIFT                       (SYSTEM_FLAGS + 0x99)
-//tidalcove: talked to sponsor
+//tidalcove: get complementary water
 #define FLAG_TIDALCOVE_GYM_SPONSOR_TALK             (SYSTEM_FLAGS + 0x9A)
-//rosevale: arthur's sister gives you amulet coin
+//rosevale: arthur's sister gives u a crappily made good-luck charm that ur not allowed to reject because it would be really mean
 #define FLAG_ROSEVALE_AMULET_COIN_GIFT              (SYSTEM_FLAGS + 0x9B)
-//tidalcove: beat ruka in gym battle
+//tidalcove: death by glamour
 #define FLAG_TIDALCOVE_RUKA_DEFEATED                (SYSTEM_FLAGS + 0x9C)
-//ss rain: defeat rotom in ss rain basement
+//ss rain: have the memory of an elephant and have the foresight to check back at the ship arbitrarily after beating Ruka
 #define FLAG_SS_RAIN_ROTOM_DEFEATED                 (SYSTEM_FLAGS + 0x9D)
-//verdant woods: defeat mimikyu in spooky house
+//verdant woods: gwAurGh!!!
 #define FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED         (SYSTEM_FLAGS + 0x9E)
-//tidalcove: squirtle gift
+//tidalcove: steal from a turtle
 #define FLAG_TIDALCOVE_SQUIRTLE_GIFT                (SYSTEM_FLAGS + 0x9F)
-//applevine: sweet heart gift
+//applevine: get hit on by a min-wage employee
 #define FLAG_APPLEVINE_SWEETHEART_GIFT              (SYSTEM_FLAGS + 0xA0)
-//applevine: coco itemfinder gift
+//applevine: become coco's lab rat
 #define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
 #define FLAG_APPLEVINE_MANECTRIC_GIFT               (SYSTEM_FLAGS + 0xA2)
-#define FLAG_CAMP_PERSI_SPOKE_TO_THIEF              (SYSTEM_FLAGS + 0xA3)
+#define FLAG_TRAVELERS_TUNNEL_AGGRONITE             (SYSTEM_FLAGS + 0xA3)
 #define FLAG_RECEIVED_TOWN_MAP                      (SYSTEM_FLAGS + 0xA4) 
-#define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
+#define FLAG_ROSEVALE_GALLADITE                     (SYSTEM_FLAGS + 0xA5)
 #define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
 #define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
 #define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag

@@ -61,8 +61,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 36,
-      "y": 27,
+      "x": 38,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -180,8 +180,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 34,
-      "y": 52,
+      "x": 42,
+      "y": 32,
       "elevation": 0,
       "item": "ITEM_RESIST_FEATHER",
       "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER"

@@ -3,6 +3,8 @@ ISLANDGAME_FRESA_FARMS_MapScripts::
 	.byte 0
 
 ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_TEMP_A
+	setflag FLAG_TEMP_B
 	gettime
 	compare VAR_0x8000, 6
 	goto_if_lt ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
@@ -113,6 +115,7 @@ ISLANDGAME_FRESA_FARMS_Mareep1_2:
 	applymovement 2, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement 2, Common_Movement_Delay32
+	waitmovement 0
 	msgbox ISLANDGAME_FRESA_FARMS_Mareep1_Text_1
 	applymovement 2, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -221,9 +224,9 @@ ISLANDGAME_FRESA_FARMS_Mareep1_Text_2:
 ISLANDGAME_FRESA_FARMS_Mareep2_Text_0:
 	.string "Reep. {COLOR BLUE}(I'm just saying man, if it was me\n"
 	.string "against that Mightyena, hoo boy.)\p"
-	.string "Reep! {COLOR BLUE}(I would'a messed that Mightyena\n"
+	.string "{COLOR DARK_GRAY}Reep! {COLOR BLUE}(I would'a messed that Mightyena\n"
 	.string "up real good, ya feel me?)\p"
-	.string "Reep? {COLOR BLUE}(Huh? Why are you looking me like\n"
+	.string "{COLOR DARK_GRAY}Reep? {COLOR BLUE}(Huh? Why are you looking me like\n"
 	.string "that? I'm fo' realzies!)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep3_Text_0:
@@ -240,10 +243,7 @@ ISLANDGAME_FRESA_FARMS_Mareep3_Text_2:
 	.string "today. Hope it helps you out!)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep4_Text_0:
-	.string "Reep. {COLOR BLUE}(My little brother always strays\n"
-	.string "away from the herd to explore.)\p"
-	.string "Reep. {COLOR BLUE}(Hopefully he's finally learned his\n"
-	.string "lesson.)$"
+	.string "GIRIGIRI WARUKUNAI WATAME!!!$"
 
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_0:
 	.string "Welcome to Fresa Farms!\p"

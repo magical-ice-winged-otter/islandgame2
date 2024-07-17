@@ -67,10 +67,18 @@ ISLANDGAME_ROSEVALE_RALTS_HOUSE_Ralts::
 ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl::
 	lock
 	faceplayer
-	msgbox ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_Text_0
+	goto_if_unset FLAG_ROSEVALE_GALLADITE, ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_2
+ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_1:
+	msgbox ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_Text_1
 	closemessage
 	release
 	return
+
+ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_2:
+	msgbox ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_Text_0
+	giveitem ITEM_GALLADITE
+	setflag FLAG_ROSEVALE_GALLADITE
+	goto ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_1
 
 
 ISLANDGAME_ROSEVALE_RALTS_HOUSE_FriendshipChecker_Text_0:
@@ -145,5 +153,13 @@ ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_Text_0:
 	.string "happen...\p"
 	.string "Now I just have this Galladite rolling\n"
 	.string "around in my drawer doing nothing...\p"
-	.string "If you had a Gallade of your own, I\n"
-	.string "wouldn't mind giving it to you.$"
+	.string "Oh, you're a trainer? Perhaps you can\n"
+	.string "make use of it.$"
+
+ISLANDGAME_ROSEVALE_RALTS_HOUSE_MegaStoneGirl_Text_1:
+	.string "You'll need a Mega Ring in order to use\n"
+	.string "that Galladite.\p"
+	.string "Oh, and I should inform you that only a\n"
+	.string "male Kirlia can evolve into a Gallade.\p"
+	.string "Don't forget to use a Dawn Stone like I\n"
+	.string "did!$"
