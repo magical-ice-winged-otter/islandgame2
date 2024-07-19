@@ -25,6 +25,7 @@ ISLANDGAME_MAPLEGROVE_HOUSE2_EventScript_eDater_6:
 ISLANDGAME_MAPLEGROVE_HOUSE2_EventScript_eDater_2:
 	msgbox ISLANDGAME_MAPLEGROVE_HOUSE2_EventScript_eDater_Text_0
 	faceplayer
+	closemessage
 	playse SE_PIN
 	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0

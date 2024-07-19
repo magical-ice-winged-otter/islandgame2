@@ -682,6 +682,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(RANCHER, "Rancher"),
     TRAINER_CLASS(NERD, "Nerd"),
     TRAINER_CLASS(PATHMASTER, "Path Master"),
+    TRAINER_CLASS(THIEF, "{PKMN} Thief"),
 };
 
 static void (* const sTurnActionsFuncsTable[])(void) =
@@ -5597,13 +5598,16 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
+        case TRAINER_CLASS_THIEF:
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:
-            PlayBGM(MUS_VICTORY_GYM_LEADER);
+            PlayBGM(MUS_DP_VICTORY_GYM_LEADER);
             break;
+        case TRAIENR_CLASS_PATHMASTER:
+            PlayBGM(MUS_HG_VICTORY_TRAINER)
         default:
-            PlayBGM(MUS_VICTORY_TRAINER);
+            PlayBGM(MUS_DP_VICTORY_TRAINER);
             break;
         }
     }

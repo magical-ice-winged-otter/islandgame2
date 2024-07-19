@@ -5481,6 +5481,8 @@ u16 GetBattleBGM(void)
             return MUS_HG_VS_TRAINER_KANTO;
         case TRAINER_CLASS_PATHMASTER:
             return MUS_HG_VS_TRAINER;
+        case TRAINER_CLASS_THIEF:
+            return MUS_DP_VS_GALACTIC_COMMANDER;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
         case TRAINER_CLASS_SALON_MAIDEN:

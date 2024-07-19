@@ -203,7 +203,7 @@ ThiefDefeated:
 
 ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_0:
 	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Pfft. THAT was your attempt at\n"
-	.string "battling? You didn't even land a single\l"
+	.string "battling?{PAUSE 30} You didn't even land a single\l"
 	.string "hit on any of my Pokémon!\p"
 	.string "{COLOR DARK_GRAY}And you came ALL this way just to try\n"
 	.string "and stop me? How pathetic.$"

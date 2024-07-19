@@ -821,7 +821,7 @@ const struct Trainer gTrainers[] = {
     // Mt. Aurora
     [TRAINER_MT_AURORA_EDEA] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+        .trainerClass = TRAINER_CLASS_THIEF,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
         .trainerPic = TRAINER_PIC_EDEA,
         .trainerName = _("Edea"),

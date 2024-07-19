@@ -426,7 +426,8 @@
 #define TRAINER_CLASS_COWGIRL        0x44
 #define TRAINER_CLASS_RANCHER        0x45
 #define TRAINER_CLASS_PATHMASTER     0x46
-#define TRAINER_CLASS_COUNT          0x47
+#define TRAINER_CLASS_THIEF          0x47
+#define TRAINER_CLASS_COUNT          0x48
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

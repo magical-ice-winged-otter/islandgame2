@@ -70,17 +70,17 @@
   "warp_events": [
     {
       "x": 0,
-      "y": 5,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_AURORA_PATH",
-      "dest_warp_id": "2"
-    },
-    {
-      "x": 0,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_AURORA_PATH",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_AURORA_PATH",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

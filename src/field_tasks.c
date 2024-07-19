@@ -56,6 +56,7 @@ static void PacifidlogBridgePerStepCallback(u8);
 static void SootopolisGymIcePerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
 static void Task_MuddySlope(u8);
+static void IcefallCaveIcePerStepCallback(u8); // island-game
 
 static const TaskFunc sPerStepCallbacks[] =
 {
@@ -66,7 +67,8 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_SOOTOPOLIS_ICE]    = SootopolisGymIcePerStepCallback,
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
-    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback
+    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
+    [STEP_CB_ICE]               = IcefallCaveIcePerStepCallback,
 };
 
 // Each array has 4 pairs of data, each pair representing two metatiles of a log and their relative position.
@@ -974,3 +976,143 @@ static void Task_MuddySlope(u8 taskId)
         }
     }
 }
+
+
+
+// island-game: Mt. Aurora ice tile handler stuff
+static const u8 sIcefallCaveIceCoords[][2] =
+{
+    {  6,  14 },
+    {  8,  10 },
+    { 11,  3 },
+    { 13,  6 },
+    { 13,  8 },
+    { 13,  11 },
+    { 12,  15 },
+};
+
+static void MarkIcePuzzleCoordVisited2(s16 x, s16 y)
+{
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(sIcefallCaveIceCoords); i++)
+    {
+        if (sIcefallCaveIceCoords[i][0] + MAP_OFFSET == x && sIcefallCaveIceCoords[i][1] + MAP_OFFSET == y)
+        {
+            FlagSet(i + 1);
+            break;
+        }
+    }
+}
+
+void SetIcefallCaveCrackedIceMetatiles(void)
+{
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(sIcefallCaveIceCoords); i++)
+    {
+        if (FlagGet(i + 1) == TRUE)
+        {
+            int x = sIcefallCaveIceCoords[i][0] + MAP_OFFSET;
+            int y = sIcefallCaveIceCoords[i][1] + MAP_OFFSET;
+            MapGridSetMetatileIdAt(x, y, METATILE_islandgame_oranna_mt_aurora_Ice_Cracked);
+        }
+    }
+}
+
+
+
+
+// island-game mt aurora stuff
+#define tState data[1]
+#define tPrevX data[2]
+#define tPrevY data[3]
+#define tIceX  data[4]
+#define tIceY  data[5]
+#define tDelay data[6]
+
+static void IcefallCaveIcePerStepCallback(u8 taskId)
+{
+    s16 x, y;
+    u8 tileBehavior;
+    u16 *iceStepCount;
+    s16 *data = gTasks[taskId].data;
+    switch (tState)
+    {
+        case 0:
+            PlayerGetDestCoords(&x, &y);
+            tPrevX = x;
+            tPrevY = y;
+            tState = 1;
+            break;
+        case 1:
+            PlayerGetDestCoords(&x, &y);
+            // End if player hasn't moved
+            if (x == tPrevX && y == tPrevY)
+                return;
+
+            tPrevX = x;
+            tPrevY = y;
+            tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+            if (MetatileBehavior_IsThinIce(tileBehavior) == TRUE)
+            {
+                // Thin ice, set it to cracked ice
+                MarkIcePuzzleCoordVisited2(x, y);
+                tDelay = 4;
+                tState = 2;
+                tIceX = x;
+                tIceY = y;
+            }
+            else if (MetatileBehavior_IsCrackedIce(tileBehavior) == TRUE)
+            {
+                // Cracked ice, set it to broken ice
+                tDelay = 4;
+                tState = 3;
+                tIceX = x;
+                tIceY = y;
+            }
+            break;
+        case 2:
+            if (tDelay != 0)
+            {
+                tDelay--;
+            }
+            else
+            {
+                // Crack ice
+                x = tIceX;
+                y = tIceY;
+                PlaySE(SE_ICE_CRACK);
+                MapGridSetMetatileIdAt(x, y, METATILE_islandgame_oranna_mt_aurora_Ice_Cracked);
+                CurrentMapDrawMetatileAt(x, y);
+                tState = 1;
+            }
+            break;
+        case 3:
+            if (tDelay != 0)
+            {
+                tDelay--;
+            }
+            else
+            {
+                // Break ice
+                x = tIceX;
+                y = tIceY;
+                PlaySE(SE_ICE_BREAK);
+                MapGridSetMetatileIdAt(x, y, METATILE_islandgame_oranna_mt_aurora_Ice_Broken);
+                CurrentMapDrawMetatileAt(x, y);
+                VarSet(VAR_TEMP_1, 1);
+                tState = 1;
+            }
+            break;
+    }
+}
+
+#undef tState
+#undef tPrevX
+#undef tPrevY
+#undef tIceX
+#undef tIceY
+#undef tDelay
+
+#define tPrevX data[1]
+#define tPrevY data[2]
+

@@ -802,6 +802,10 @@
 #define METATILE_islandgame_oranna_maplegrove_door_00  0x244
 #define METATILE_islandgame_oranna_maplegrove_door_01  0x22C
 
+// gTileset_islandgame_oranna_mt_aurora
+#define METATILE_islandgame_oranna_mt_aurora_Ice_Broken   0x2DB
+#define METATILE_islandgame_oranna_mt_aurora_Ice_Cracked  0x2DA
+
 // gTileset_islandgame_oranna_northern_path
 #define METATILE_islandgame_oranna_northern_path_door  0x219
 

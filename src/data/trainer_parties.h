@@ -914,33 +914,41 @@ static const struct TrainerMon sParty_RosevaleArthur[] = {
 /// Mt. Aurora - Edea Fight
 static const struct TrainerMon sParty_MtAuroraEdea[] = {
     {
-    .lvl = 23,
+    .lvl = 24,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .species = SPECIES_LIEPARD_MARYAN,
     .ability = ABILITY_PRANKSTER,
-    .moves = {MOVE_FAKE_OUT, MOVE_SPARK, MOVE_THIEF, MOVE_PARTING_SHOT}
+    .moves = {MOVE_FAKE_OUT, MOVE_SPARK, MOVE_THIEF, MOVE_PARTING_SHOT},
+    .ball = ITEM_LUXURY_BALL,
+    .gender = TRAINER_MON_FEMALE,
     },
     {
-    .lvl = 21,
+    .lvl = 23,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .species = SPECIES_SABLEYE,
     .ability = ABILITY_PRANKSTER,
-    .moves = {MOVE_SHADOW_SNEAK, MOVE_THIEF, MOVE_FAKE_OUT, MOVE_WILL_O_WISP}
+    .moves = {MOVE_SHADOW_SNEAK, MOVE_THIEF, MOVE_FAKE_OUT, MOVE_WILL_O_WISP},
+    .ball = ITEM_LUXURY_BALL,
+    .gender = TRAINER_MON_MALE,
     },
     {
-    .lvl = 21,
+    .lvl = 23,
     .species = SPECIES_SNEASEL,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .ability = ABILITY_PICKPOCKET,
-    .moves = {MOVE_METAL_CLAW, MOVE_ICE_SHARD, MOVE_PURSUIT, MOVE_FAKE_OUT}
+    .moves = {MOVE_METAL_CLAW, MOVE_ICE_SHARD, MOVE_PURSUIT, MOVE_FAKE_OUT},
+    .ball = ITEM_LUXURY_BALL,
+    .gender = TRAINER_MON_MALE,
     },
     {
     .lvl = 23,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .species = SPECIES_UMBREON,
     .ability = ABILITY_INTIMIDATE,
-    .heldItem = ITEM_BLACK_GLASSES,
-    .moves = {MOVE_CONFUSE_RAY, MOVE_PURSUIT, MOVE_YAWN, MOVE_SNARL}
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_CONFUSE_RAY, MOVE_PURSUIT, MOVE_YAWN, MOVE_SNARL},
+    .ball = ITEM_LUXURY_BALL,
+    .gender = TRAINER_MON_FEMALE,
     },
 };
 
