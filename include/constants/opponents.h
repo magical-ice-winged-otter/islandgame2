@@ -87,8 +87,9 @@
 #define TRAINER_FELIX                        TRAINER_MINTY_MEADOWS_15
 #define TRAINER_MINTY_MEADOWS_16             39
 #define TRAINER_VIOLET                       TRAINER_MINTY_MEADOWS_16
-#define TRAINER_ROSE_3                       41
-#define TRAINER_ROSE_4                       42
+
+
+#define TRAINER_ROSE_4                       42 // unused
 
 
 
@@ -159,6 +160,8 @@
 // Rosevale
 #define TRAINER_ROSEVALE_ARTHUR              61
 #define TRAINER_LOLA_3                       TRAINER_ROSEVALE_ARTHUR
+#define TRAINER_ROSEVALE_RED                 41 
+#define TRAINER_ROSE_3                       TRAINER_ROSEVALE_RED
 
 
 

@@ -78,7 +78,7 @@ ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_5:
 ISLANDGAME_ROSEVALE_INN_Interact_Marill::
 	lock
 	faceplayer
-	playmoncry SPECIES_MARILL, CRY_MODE_NORMAL
+	playmoncry SPECIES_AZURILL, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_ROSEVALE_INN_Interact_Marill_Text_0, MSGBOX_NPC
 	release
 	return
@@ -172,8 +172,8 @@ ISLANDGAME_ROSEVALE_INN_Interact_ArthurMom_Text_1:
 	.string "to stay, our doors are always open.$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_0:
-	.string "{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Hewwo! Do you have\n"
-	.string "room to take my gift now?$"
+	.string "{COLOR GREEN}Annie: {COLOR DARK_GRAY}Hewwo! Do you have room to take\n"
+	.string "my gift now?$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_1:
 	.string "Eeh? You still don't have space!$"
@@ -182,12 +182,12 @@ ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_2:
 	.string "Hooway! Here you go!$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_ArthurSister_Text_3:
-	.string "{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Me and A-zoo-wil are\n"
-	.string "dancing! Wanna join?$"
+	.string "{COLOR GREEN}Annie: {COLOR DARK_GRAY}Me and A-zoo-wil are dancing!\n"
+	.string "Wanna join?$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_Marill_Text_0:
-	.string "Azu! {COLOR BLUE}((Good luck on the rest of your\n"
-	.string "journey! I'll never forget you!))$"
+	.string "Azu! {COLOR BLUE}(Good luck on the rest of your\n"
+	.string "journey! I'll never forget you!)$"
 
 ISLANDGAME_ROSEVALE_INN_Interact_Arthur_Text_0:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}I-It's not fair...$"

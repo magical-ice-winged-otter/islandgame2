@@ -451,23 +451,7 @@ static const struct TrainerMon sParty_TravelersTunnel1[] = {
 
 
 
-static const struct TrainerMon sParty_Rose3[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
-    .lvl = 28,
-    .species = SPECIES_SHROOMISH,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
-    .lvl = 28,
-    .species = SPECIES_GLOOM,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
-    .lvl = 28,
-    .species = SPECIES_ROSELIA,
-    }
-};
+
 
 static const struct TrainerMon sParty_Rose4[] = {
     {
@@ -875,39 +859,50 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
 
 
 
-/// Rosevale - Arthur Fight
+
+
+
+
+
+/// Rosevale
 static const struct TrainerMon sParty_RosevaleArthur[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 19,
-    .species = SPECIES_SOLOSIS,
-    .ability = ABILITY_MAGIC_GUARD,
-    .moves = {MOVE_PSYBEAM, MOVE_CONFUSE_RAY, MOVE_HIDDEN_POWER, MOVE_RECOVER}
+    .lvl = 23,
+    .species = SPECIES_SCRAGGY,
+    .ability = ABILITY_INTIMIDATE,
+    .moves = {MOVE_BRICK_BREAK, MOVE_PAYBACK, MOVE_SWAGGER, MOVE_FAKE_OUT}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 19,
+    .lvl = 23,
     .species = SPECIES_FLAAFFY,
     .ability = ABILITY_STATIC,
     .moves = {MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_SIGNAL_BEAM, MOVE_CHARGE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 19,
-    .species = SPECIES_KECLEON,
-    .ability = ABILITY_PROTEAN,
-    .moves = {MOVE_DIZZY_PUNCH, MOVE_SHADOW_SNEAK, MOVE_THIEF, MOVE_FAKE_OUT}
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 21,
+    .lvl = 24,
     .species = SPECIES_AZUMARILL,
-    .ability = ABILITY_HUGE_POWER,
+    .ability = ABILITY_SAP_SIPPER,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_PLAY_ROUGH, MOVE_AQUA_JET, MOVE_AQUA_TAIL, MOVE_AQUA_RING}
     }
 };
 
+static const struct TrainerMon sParty_RosevaleRed[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS(0, 252, 0, 6, 0, 252),
+    .lvl = 25,
+    .species = SPECIES_PIKACHU,
+    .gender = TRAINER_MON_MALE,
+    .ball = ITEM_CHERISH_BALL,
+    .ability = ABILITY_STATIC,
+    .moves = {MOVE_EXTREME_SPEED, MOVE_VOLT_TACKLE, MOVE_SURF, MOVE_IRON_TAIL},
+    .heldItem = ITEM_LIGHT_BALL,
+    },
+};
 
 
 
@@ -944,7 +939,7 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
     .lvl = 23,
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .species = SPECIES_UMBREON,
-    .ability = ABILITY_INTIMIDATE,
+    .ability = ABILITY_UNNERVE,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_CONFUSE_RAY, MOVE_PURSUIT, MOVE_YAWN, MOVE_SNARL},
     .ball = ITEM_LUXURY_BALL,

@@ -11,7 +11,7 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	case 5, ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	compare VAR_ROSEVALE_STATE, 3
-	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
+	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_9
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
@@ -29,16 +29,14 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 	setobjectxyperm 6, 12, 24
 	setobjectxyperm 1, 14, 24
 	setobjectxyperm 13, 14, 26
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_DOWN
 	addobject 4
 	addobject 5
 	addobject 6
 	addobject 1
 	addobject 13
-	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_DOWN
 	turnobject 4, DIR_NORTH
 	turnobject 13, DIR_NORTH
 	goto ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
@@ -66,8 +64,13 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
-	compare VAR_ROSEVALE_STATE, 4
+	compare VAR_ROSEVALE_STATE, 2
 	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+	return
+
+ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_9:
+	compare VAR_ROSEVALE_STATE, 4
+	goto_if_ne ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 	return
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
@@ -76,7 +79,16 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	setvar VAR_ROSEVALE_STATE, 6
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	applymovement 1, Common_Movement_FaceDown
+	waitmovement 0
+	playse SE_PIN
 	applymovement 1, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 13, Common_Movement_FaceUp
+	waitmovement 0
 	applymovement 13, Common_Movement_ExclamationMark
 	waitmovement 0
 	playmoncry SPECIES_AZURILL, CRY_MODE_NORMAL
@@ -119,6 +131,7 @@ ISLANDGAME_ROSEVALE_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
+	completequest QUEST_ROSEVALE_RESCUE
 	setrespawn HEAL_LOCATION_ISLANDGAME_ROSEVALE
 	warp MAP_ISLANDGAME_ROSEVALE_INN_2F_ROOM1, 2, 2
 	return
@@ -285,13 +298,34 @@ Movement_Arthur_WalkUpToExit:
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
 	lock
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_0
+	closemessage
 	addobject 4
 	setobjectxy 4, 19, 12
 	applymovement 4, Movement_Arthur_WalkUpToExit
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	waitmovement 0
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1, MSGBOX_NPC
-	trainerbattle_single TRAINER_ROSEVALE_ARTHUR, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_3, ArthurDefeated
+	trainerbattle_no_intro TRAINER_ROSEVALE_ARTHUR, ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2
+	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_3, MSGBOX_NPC
+	closemessage
+	addobject 5
+	setobjectxy 5, 19, 12
+	applymovement 5, Movement_ArthurDad_WalkUpToArthur
+	applymovement 4, Movement_Arthur_SeesDad
+	waitmovement 5
+	waitmovement 4
+	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_4, MSGBOX_NPC
+	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_5, MSGBOX_NPC
+	applymovement 4, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_6
+	applymovement 5, Movement_ArthurDad_WalkAway
+	applymovement 4, Movement_Arthur_WalkAway
+	waitmovement 4
+	waitmovement 5
+	removeobject 4
+	removeobject 5
+	setvar VAR_ROSEVALE_STATE, 4
 	release
 	return
 
@@ -340,24 +374,6 @@ Movement_Arthur_WalkAway:
 	step_end
 
 ArthurDefeated:
-	msgbox ArthurDefeated_Text_0, MSGBOX_NPC
-	closemessage
-	addobject 5
-	setobjectxy 5, 19, 12
-	applymovement 5, Movement_ArthurDad_WalkUpToArthur
-	applymovement 4, Movement_Arthur_SeesDad
-	waitmovement 5
-	waitmovement 4
-	msgbox ArthurDefeated_Text_1, MSGBOX_NPC
-	msgbox ArthurDefeated_Text_2, MSGBOX_NPC
-	applymovement 5, Movement_ArthurDad_WalkAway
-	applymovement 4, Movement_Arthur_WalkAway
-	waitmovement 4
-	waitmovement 5
-	removeobject 4
-	removeobject 5
-	setvar VAR_ROSEVALE_STATE, 4
-	release
 	return
 
 
@@ -478,16 +494,15 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_1:
 	.string "to take on Marya Gym Challenge and\l"
 	.string "enter the Festival Tournament, just\l"
 	.string "like you!\p"
-	.string "My dad says I'm not ready yet...$"
+	.string "My dad says I'm not ready yet... So I'll\n"
+	.string "prove it to him! Right here and now!\l"
+	.string "Prepare yourself, {PLAYER}!$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_2:
-	.string "So I'll prove it to him! Right here and\n"
-	.string "now! Prepare yourself, {PLAYER}!$"
+	.string "...\p"
+	.string "I lost again...$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_3:
-	.string "...\pI lost again...$"
-
-ArthurDefeated_Text_0:
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}...\p"
 	.string "{COLOR DARK_GRAY}Heh...{PAUSE 30} You're truly an amazing trainer,\n"
 	.string "{PLAYER}.\p"
@@ -503,7 +518,7 @@ ArthurDefeated_Text_0:
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}No, Arthur, that's not\n"
 	.string "true.$"
 
-ArthurDefeated_Text_1:
+ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_4:
 	.string "Losing just means you have more to\n"
 	.string "learn. It doesn't mean you're a failure.\p"
 	.string "Failure only comes when you give up.\n"
@@ -519,7 +534,7 @@ ArthurDefeated_Text_1:
 	.string "understand?\p"
 	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}-sniff- Mhm.$"
 
-ArthurDefeated_Text_2:
+ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_5:
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}I know I may have been a\n"
 	.string "little harsh on you earlier, but it's\l"
 	.string "only because I want the best for you.\p"
@@ -539,6 +554,11 @@ ArthurDefeated_Text_2:
 	.string "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}It has been a pleasure,\n"
 	.string "{PLAYER}.\p"
 	.string "I wish you all the best in your travels.$"
+
+ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_6:
+	.string "{COLOR GREEN}Arthur: {PLAYER}! I swear the next\n"
+	.string "time we battle, I'll be stronger! And\l"
+	.string "I'll win!$"
 
 Text_ArthurSister_PleaseHelp::
 	.string "You're a twainer, right? Someone stole\n"

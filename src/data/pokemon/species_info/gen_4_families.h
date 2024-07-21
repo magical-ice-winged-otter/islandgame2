@@ -4442,7 +4442,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_MOTOR_DRIVE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -4452,7 +4452,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .weight = 3,
         .description = COMPOUND_STRING(
             "The first appliance developed that Rotom\n"
-            "coud inspirit was the electric fan. It uses\n"
+            "could possess was the electric fan. It uses\n"
             "its power over wind in its pranks, happily\n"
             "blowing any important documents it finds."),
         .pokemonScale = 530,

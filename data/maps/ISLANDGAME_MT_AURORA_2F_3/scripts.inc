@@ -121,7 +121,6 @@ ThiefDefeated:
 	applymovement 5, Common_Movement_Delay32
 	waitmovement 0
 	msgbox ThiefDefeated_Text_0
-	closemessage
 	applymovement 3, Common_Movement_FaceDown
 	msgbox ThiefDefeated_Text_1
 	closemessage
@@ -147,10 +146,17 @@ ThiefDefeated:
 	msgbox ThiefDefeated_Text_3
 	closemessage
 	applymovement 3, Common_Movement_FaceUp
+	waitmovement 0
 	applymovement 4, Common_Movement_FaceUp
+	waitmovement 0
 	playse SE_PIN
 	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
 	applymovement 5, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
@@ -163,21 +169,28 @@ ThiefDefeated:
 	applymovement 3, Movement_ThiefRunAway
 	waitmovement 0
 	applymovement 5, Common_Movement_FaceDown
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	applymovement 4, Common_Movement_FaceDown
+	waitmovement 0
 	removeobject 3
 	waitmovement 0
 	playmoncry SPECIES_ARTICUNO, CRY_MODE_NORMAL
 	msgbox ThiefDefeated_Text_5
 	closemessage
 	applymovement 5, Common_Movement_FaceUp
+	waitmovement 0
 	applymovement 4, Common_Movement_FaceUp
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
 	delay 30
 	fadescreen FADE_TO_WHITE
 	removeobject 2
 	fadescreen FADE_FROM_WHITE
 	applymovement 5, WalkInPlaceUp
+	waitmovement 0
 	applymovement 5, Common_Movement_Delay32
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
@@ -197,13 +210,16 @@ ThiefDefeated:
 	waitmovement 0
 	msgbox ThiefDefeated_Text_9
 	setvar VAR_ROSEVALE_STATE, 2
+	fadescreen FADE_TO_BLACK
+	delay 30
+	removeobject 5
 	warp MAP_ISLANDGAME_ROSEVALE, 13, 26
 	return
 
 
 ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene_Text_0:
 	.string "{COLOR GREEN}Thief: {COLOR DARK_GRAY}Pfft. THAT was your attempt at\n"
-	.string "battling?{PAUSE 30} You didn't even land a single\l"
+	.string "battling? You didn't even land a single\l"
 	.string "hit on any of my Pokémon!\p"
 	.string "{COLOR DARK_GRAY}And you came ALL this way just to try\n"
 	.string "and stop me? How pathetic.$"
@@ -245,7 +261,7 @@ ISLANDGAME_MT_AURORA_2F_3_EdeaInteract_Text_1:
 	.string "I-Impossible! Just who are you!?$"
 
 ThiefDefeated_Text_0:
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Ha! You lost!{PAUSE 30} Now, give me back\n"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Ha! You lost!{PAUSE 60} Now, give me back\n"
 	.string "my sister's Azurill!$"
 
 ThiefDefeated_Text_1:
@@ -268,18 +284,18 @@ ThiefDefeated_Text_3:
 ThiefDefeated_Text_4:
 	.string "{COLOR GREEN}Edea: {COLOR DARK_GRAY}W-What!? Articuno!? Where in the\n"
 	.string "blazes did you come from!?\p"
-	.string "Ngggh...{PAUSE 30} F-Fine! I'll give back their\n"
+	.string "Ngggh...{PAUSE 60} F-Fine! I'll give back their\n"
 	.string "stupid Azurill!\p"
 	.string "You punks got lucky this time! Now... if\n"
-	.string "you don't mind me...{PAUSE 30} I'm outta here!$"
+	.string "you don't mind me...{PAUSE 60} I'm outta here!$"
 
 ThiefDefeated_Text_5:
 	.string "Cuuuuun...$"
 
 ThiefDefeated_Text_6:
-	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Holy heck...{PAUSE 30} Was that Articuno\n"
+	.string "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Holy heck...{PAUSE 60} Was that Articuno\n"
 	.string "in the flesh just now!?\p"
-	.string "It left before we could say anything...{PAUSE 30}\n"
+	.string "It left before we could say anything...{PAUSE 60}\n"
 	.string "T-Thank you for the help, Articuno!$"
 
 ThiefDefeated_Text_7:
@@ -296,5 +312,5 @@ ThiefDefeated_Text_9:
 	.string "I couldn't do anything... If it weren't\n"
 	.string "for you and Articuno, Azurill would've\l"
 	.string "been lost forever!\p"
-	.string "Ah... Ah... Achoo!{PAUSE 30} Brrr... It's freezing in\n"
-	.string "here.{PAUSE 30} Let's head back to Rosevale.$"
+	.string "Ah... Ah... Achoo!{PAUSE 60} Brrr... It's freezing in\n"
+	.string "here.{PAUSE 60} Let's head back to Rosevale.$"

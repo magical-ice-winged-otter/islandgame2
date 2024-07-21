@@ -479,18 +479,7 @@ const struct Trainer gTrainers[] = {
 
 
 
-    [TRAINER_ROSE_3] =
-    {
-        .trainerClass = TRAINER_CLASS_AROMA_LADY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .trainerName = _("ROSE"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Rose3),
-    },
-
+  
     [TRAINER_ROSE_4] =
     {
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
@@ -817,6 +806,19 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_ACE_POKEMON | AI_FLAG_SMART_SWITCHING,
         .party = TRAINER_PARTY(sParty_RosevaleArthur),
     },
+
+  [TRAINER_ROSEVALE_RED] =
+    {
+        .trainerClass = TRAINER_CLASS_LEGEND,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_RED,
+        .trainerName = _("Red"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_RosevaleRed),
+    },
+
 
     // Mt. Aurora
     [TRAINER_MT_AURORA_EDEA] =

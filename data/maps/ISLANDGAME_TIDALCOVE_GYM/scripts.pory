@@ -38,7 +38,7 @@ script ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor {
             "Anyways, good luck, and remember to have fun!\p"
             "Oh, and take one of these too! Everyone gets one for participating!"
         ))
-        giveitem(ITEM_FRESH_WATER)
+        giveitem(ITEM_CASTELIACONE)
         setflag(FLAG_TIDALCOVE_GYM_SPONSOR_TALK)
     }
     else {

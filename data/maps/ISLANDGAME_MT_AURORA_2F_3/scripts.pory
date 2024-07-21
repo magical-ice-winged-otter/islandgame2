@@ -133,7 +133,6 @@ script(local) ThiefDefeated {
     msgbox(format(
         "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Ha! You lost!{PAUSE 60} Now, give me back my sister's Azurill!"
     ))
-    closemessage
     applymovement(LOCALID_THIEF, Common_Movement_FaceDown)
     msgbox(format(
         "{COLOR GREEN}Edea: {COLOR DARK_GRAY}In your dreams, squirt! I'm not giving this Pokémon up! It's worth more than your dinky little inn!\p"
@@ -169,10 +168,17 @@ script(local) ThiefDefeated {
     msgbox(format("Cuuuuun!"))
     closemessage
     applymovement(LOCALID_THIEF, Common_Movement_FaceUp)
+    waitmovement(0)
     applymovement(LOCALID_AZURILL, Common_Movement_FaceUp)
+    waitmovement(0)
     playse(SE_PIN)
     applymovement(LOCALID_THIEF, Common_Movement_ExclamationMark)
+    waitmovement(0)
     applymovement(LOCALID_ARTHUR, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(LOCALID_AZURILL, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
     waitmovement(0)
@@ -191,16 +197,22 @@ script(local) ThiefDefeated {
     applymovement(LOCALID_THIEF, Movement_ThiefRunAway)
     waitmovement(0)
     applymovement(LOCALID_ARTHUR, Common_Movement_FaceDown)
+    waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    waitmovement(0)
     applymovement(LOCALID_AZURILL, Common_Movement_FaceDown)
+    waitmovement(0)
     removeobject(LOCALID_THIEF)
     waitmovement(0)
     playmoncry(SPECIES_ARTICUNO, CRY_MODE_NORMAL)
     msgbox(format("Cuuuuun..."))
     closemessage
     applymovement(LOCALID_ARTHUR, Common_Movement_FaceUp)
+    waitmovement(0)
     applymovement(LOCALID_AZURILL, Common_Movement_FaceUp)
+    waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
 
     // articuno leaves
     delay(30)
@@ -209,6 +221,7 @@ script(local) ThiefDefeated {
     fadescreen(FADE_FROM_WHITE)
 
     applymovement(LOCALID_ARTHUR, WalkInPlaceUp)
+    waitmovement(0)
     applymovement(LOCALID_ARTHUR, Common_Movement_Delay32)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
@@ -241,6 +254,10 @@ script(local) ThiefDefeated {
         "Ah... Ah... Achoo!{PAUSE 60} Brrr... It's freezing in here.{PAUSE 60} Let's head back to Rosevale."
     ))
     setvar(VAR_ROSEVALE_STATE, 2) // see ISLANDGAME_ROSEVALE scripts.pory for state info
+    
+    fadescreen(FADE_TO_BLACK)
+    delay(30)
+    removeobject(LOCALID_ARTHUR)
 
     // warp back to rosevale
     warp(MAP_ISLANDGAME_ROSEVALE, 13, 26)

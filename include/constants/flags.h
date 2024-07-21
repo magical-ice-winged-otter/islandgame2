@@ -1572,8 +1572,10 @@
 #define FLAG_APPLEVINE_MANECTRIC_GIFT               (SYSTEM_FLAGS + 0xA2)
 #define FLAG_TRAVELERS_TUNNEL_AGGRONITE             (SYSTEM_FLAGS + 0xA3)
 #define FLAG_RECEIVED_TOWN_MAP                      (SYSTEM_FLAGS + 0xA4) 
+//rosevale: its time 2 dool
 #define FLAG_ROSEVALE_GALLADITE                     (SYSTEM_FLAGS + 0xA5)
-#define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
+//rosevale: ...
+#define FLAG_ROSEVALE_RED                           (SYSTEM_FLAGS + 0xA6) 
 #define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
 #define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
 #define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
