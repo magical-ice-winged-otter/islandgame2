@@ -1497,6 +1497,14 @@ static void CB2_End2v2TrainerBattle(void)
         gPlayerParty[i] = gPlayerSavedParty[i];
         ZeroMonData(&gPlayerSavedParty[i]);
     }
+
+    if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+    {
+        if (PlayerHasFollower())
+        {
+            DestroyFollower(TRUE);
+        }
+    }
     CB2_EndTrainerBattle();
 }
 
