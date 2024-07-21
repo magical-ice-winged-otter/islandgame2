@@ -760,7 +760,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_LADY,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LADY,
-        .trainerName = _("Mina"),
+        .trainerName = _("Holly"),
         .items = {ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
@@ -787,7 +787,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Ruka"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN | AI_FLAG_ACE_POKEMON | AI_FLAG_SMART_SWITCHING,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_TidalcoveGymRuka),
     },
 
@@ -836,10 +836,7 @@ const struct Trainer gTrainers[] = {
 
 
 
-
-
-
-
+    // #include "trainers/rocky_path.h"
 
 
 

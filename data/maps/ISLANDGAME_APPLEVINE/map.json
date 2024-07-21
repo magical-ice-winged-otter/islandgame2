@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_UNION_ROOM_NURSE",
+      "graphics_id": "OBJ_EVENT_GFX_SILVERWING_F",
       "x": 21,
       "y": 19,
       "elevation": 0,
@@ -47,11 +47,11 @@
       "flag": "FLAG_ITEM_APPLEVINE_ZINC"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_341",
-      "x": 11,
-      "y": 9,
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_728",
+      "x": 16,
+      "y": 37,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -73,7 +73,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 26,
       "y": 14,
       "elevation": 0,
@@ -151,7 +151,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_GROUND_SWIMMER_F",
       "x": 22,
       "y": 9,
       "elevation": 0,
@@ -164,7 +164,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_5",
       "x": 38,
       "y": 19,
       "elevation": 0,
@@ -255,7 +255,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_COCO",
       "x": 30,
       "y": 19,
       "elevation": 0,
@@ -278,7 +278,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_APPLEVINE_NPC11",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_341",
+      "x": 11,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [

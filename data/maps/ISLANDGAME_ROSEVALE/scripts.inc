@@ -319,6 +319,7 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight::
 	applymovement 4, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_6
+	closemessage
 	applymovement 5, Movement_ArthurDad_WalkAway
 	applymovement 4, Movement_Arthur_WalkAway
 	waitmovement 4
@@ -556,9 +557,8 @@ ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_5:
 	.string "I wish you all the best in your travels.$"
 
 ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight_Text_6:
-	.string "{COLOR GREEN}Arthur: {PLAYER}! I swear the next\n"
-	.string "time we battle, I'll be stronger! And\l"
-	.string "I'll win!$"
+	.string "{COLOR GREEN}Arthur:{COLOR DARK_GRAY} {PLAYER}! I swear the next\n"
+	.string "time we battle, I'll be stronger!$"
 
 Text_ArthurSister_PleaseHelp::
 	.string "You're a twainer, right? Someone stole\n"

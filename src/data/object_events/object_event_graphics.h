@@ -126,6 +126,8 @@ const u16 gObjectEventPal_Woman8[] = INCBIN_U16("graphics/object_events/pics/peo
 const u32 gObjectEventPic_SchoolKidF[] = INCBIN_U32("graphics/object_events/pics/people/school_kid_f.4bpp");
 const u16 gObjectEventPal_SchoolKidF[] = INCBIN_U16("graphics/object_events/pics/people/school_kid_f.gbapal");
 
+const u32 gObjectEventPic_Apple[] = INCBIN_U32("graphics/object_events/pics/misc/apple.4bpp");
+const u16 gObjectEventPal_Apple[] = INCBIN_U16("graphics/items/icon_palettes/sweet_apple.gbapal");
 
 //vanilla
 const u16 gObjectEventPal_BlackBelt[] = INCBIN_U16("graphics/object_events/pics/people/black_belt.gbapal");

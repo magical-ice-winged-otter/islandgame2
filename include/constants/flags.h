@@ -48,7 +48,7 @@
 #define FLAG_FORCE_DOUBLE_WILD 0x23 
 #define FLAG_SMART_WILD_AI    0x24 
 #define FLAG_NO_CATCHING    0x25 
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
+#define FLAG_NO_RUNNING      0x26 
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
@@ -1255,7 +1255,7 @@
 #define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
 #define FLAG_ITEM_TIDALCOVE_DIVE_BALL                               0x4B3
 #define FLAG_ITEM_PROMENADE_PATH_PEARL                              0x4B4
-#define FLAG_ITEM_PROMENADE_PATH_SUPER_REPEL                        0x4B5
+#define FLAG_ITEM_PROMENADE_PATH_PP_UP                              0x4B5
 #define FLAG_ITEM_APPLEVINE_ZINC                                    0x4B6
 #define FLAG_ITEM_SORANNA_PATH_POKEBALL                             0x4B7
 #define FLAG_ITEM_VERDANT_PATH_ANTIDOTE                             0x4B8

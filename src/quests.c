@@ -313,6 +313,11 @@ const u8 sText_SubQuest_PersiBerryManiac13_Desc[] = _("You found and gave a Rowa
 const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
 const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
 
+// Verdant Forest Pokemon Quest
+const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
+const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
+const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in Verdant Forest!\nAt least for now...");
+
 // Maplegrove Lovers Quest
 const u8 sText_SideQuestName_MaplegroveLovers[] = _("Star-crossed Lovers");
 const u8 sText_SideQuestDesc_MaplegroveLovers[] = _("Deliver Roman's love letter\nto Julie in Applevine!");
@@ -501,6 +506,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
+	),
+	[QUEST_VERDANT_FOREST_SKITTY] = side_quest(
+		sText_SideQuestName_VerdantForestSkitty,
+		sText_SideQuestDesc_VerdantForestSkitty,
+		sText_SideQuestDoneDesc_VerdantForestSkitty,
+		sText_SideQuestMap_VerdantWoods,
+		OBJ_EVENT_GFX_GIRL_2,
+		OBJECT,
+		NULL,
+			0
 	),
 	[QUEST_MAPLEGROVE_LOVERS] = side_quest(
 	      sText_SideQuestName_MaplegroveLovers,

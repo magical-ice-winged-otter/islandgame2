@@ -386,8 +386,9 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
     applymovement(LOCALID_ARTHUR, Common_Movement_FaceRight)
     waitmovement(0)
     msgbox(format(
-        "{COLOR GREEN}Arthur: {PLAYER}! I swear the next time we battle, I'll be stronger! And I'll win!"
+        "{COLOR GREEN}Arthur:{COLOR DARK_GRAY} {PLAYER}! I swear the next time we battle, I'll be stronger!"
     ))
+    closemessage
     
     // dad and arthur walk away
     applymovement(LOCALID_ARTHUR_DAD, Movement_ArthurDad_WalkAway)

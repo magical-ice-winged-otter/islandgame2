@@ -351,7 +351,7 @@ ISLANDGAME_APPLEVINE_StoreSign_Text_0:
 
 ISLANDGAME_APPLEVINE_CitySign_Text_0:
 	.string "APPLEVINE\n"
-	.string "Where the trees are Applin-free!$"
+	.string "Watch out for wild Applin!$"
 
 ISLANDGAME_APPLEVINE_GameCornerSign_Text_0:
 	.string "Eelektrik Game Corner\n"
@@ -359,11 +359,11 @@ ISLANDGAME_APPLEVINE_GameCornerSign_Text_0:
 
 ISLANDGAME_APPLEVINE_SierraPathSign_Text_0:
 	.string "SIERRA PATH\n"
-	.string "The next gym is this-a-way!$"
+	.string "$"
 
 ISLANDGAME_APPLEVINE_RockyPathSign_Text_0:
 	.string "ROCKY PATH\n"
-	.string "Wanna see the big city? Go here!$"
+	.string "$"
 
 ISLANDGAME_APPLEVINE_CocoInteract_Text_0:
 	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing\n"
