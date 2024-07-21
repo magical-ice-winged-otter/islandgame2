@@ -393,11 +393,11 @@ script ISLANDGAME_APPLEVINE_NPC13 {
             goto(ManectricGiftEvent_End)
         }
 
-        giveitem(ITEM_POKE_TOY)
+        giveitem(ITEM_ESCAPE_ROPE)
         setflag(FLAG_APPLEVINE_MANECTRIC_GIFT)
     }
     else {
-        msgbox(format("{COLOR DARK_GRAY}Borf! {COLOR BLUE}(I have lots of toys, so I'll give you one. :D)"))
+        msgbox(format("{COLOR DARK_GRAY}Borf! {COLOR BLUE}(I have lots of toys, so I'll give you one of mine. :D)"))
     }
     
     
@@ -415,5 +415,203 @@ script ISLANDGAME_APPLEVINE_NPC14 {
         "What's the big deal? It's not like it's gambling or anything. There's skill involved. It says it on the sign!"
     ))
     closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_AppleRoll1 {
+    random(10)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_1)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 1:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_1)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 2: 
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20,, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0,,,,,,,,,,,TRUE)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_1)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }    
+        case 3:
+        case 4:
+        case 5:
+        case 6: finditem(ITEM_TART_APPLE)
+        default: finditem(ITEM_SWEET_APPLE)
+    }
+    release
+}
+
+script ISLANDGAME_APPLEVINE_AppleRoll2 {
+    random(10)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_2)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 1:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_2)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 2: 
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20,, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0,,,,,,,,,,,TRUE)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_2)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }    
+        case 3:
+        case 4:
+        case 5:
+        case 6: finditem(ITEM_TART_APPLE)
+        default: finditem(ITEM_SWEET_APPLE)
+    }
+    release
+}
+
+script ISLANDGAME_APPLEVINE_AppleRoll3 {
+    random(10)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_3)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 1:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_3)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 2: 
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20,, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0,,,,,,,,,,,TRUE)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    setflag(FLAG_DAILY_APPLEVINE_APPLE_3)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }    
+        case 3:
+        case 4:
+        case 5:
+        case 6: finditem(ITEM_TART_APPLE)
+        default: finditem(ITEM_SWEET_APPLE)
+    }
     release
 }

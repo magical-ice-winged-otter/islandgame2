@@ -54,4 +54,6 @@ script ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING_NPC {
         "See those sick moves? You can't do that with one of those lame Mach Bikes.\p"
         "If you wanna be fly like me, you'll have to hit up the shop on Minerva Island!"
     ))
+    closemessage
+    release
 }

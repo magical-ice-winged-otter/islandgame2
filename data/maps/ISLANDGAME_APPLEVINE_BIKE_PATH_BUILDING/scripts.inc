@@ -51,6 +51,8 @@ ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING_NPC::
 	applymovement 2, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING_NPC_Text_1
+	closemessage
+	release
 	return
 
 

@@ -11,6 +11,21 @@ ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	return
 
 
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC::
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC2::
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC2_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC3::
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC3_Text_0, MSGBOX_SIGN
+	return
+
+
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract::
 	lock
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_0, MSGBOX_YESNO
@@ -74,6 +89,16 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract::
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract::
 	lock
+	goto_if_unset FLAG_TEMP_2, ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_2
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_1:
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_2
+	applymovement 3, Common_Movement_FaceUp
+	waitmovement 0
+	closemessage
+	release
+	return
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_2:
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_0
 	closemessage
 	playse SE_PIN
@@ -82,11 +107,21 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract::
 	applymovement 3, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1
-	applymovement 3, Common_Movement_FaceUp
-	closemessage
-	release
-	return
+	setflag FLAG_TEMP_2
+	goto ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_1
 
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_0:
+	.string "{COLOR RED}(It's Coco's gaming setup. This looks\n"
+	.string "like it cost a lot of money.)$"
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC2_Text_0:
+	.string "{COLOR RED}(Wow, there are like, fifty tabs open on\n"
+	.string "this computer.)$"
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC3_Text_0:
+	.string "{COLOR RED}(It's a really fancy PC see-through\n"
+	.string "tower case with RGB lights.)$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_0:
 	.string "{COLOR RED}(It's some sort of smart speaker shaped\n"
@@ -113,8 +148,9 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_4:
 	.string "talent agency stationed in the big\l"
 	.string "city of Aetheria.\p"
 	.string "Currently, their official PokéTube\n"
-	.string "channel holds the number one spot for\l"
-	.string "most subscribers on the website!$"
+	.string "channel holds the number two spot for\l"
+	.string "most subscribers on the website, only\l"
+	.string "topped by Paldea's very own Iono!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_5:
 	.string "> You asked Subaru about Ruka.$"
@@ -143,11 +179,11 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_7:
 	.string "> You asked Subaru to tell you a joke.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_8:
-	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Sure. Can you tell me the 316th\n"
-	.string "Pokémon in the national Pokédex?\p"
-	.string "> You told Subaru that you're too savvy\n"
-	.string "to fall for that.\p"
-	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Drats. It was worth a try.$"
+	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Sure. What Pokemon does Swalot\n"
+	.string "evolve from?\p"
+	.string "...\p"
+	.string "Hello? Are you still there? I need you\n"
+	.string "to respond to complete my joke!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_9:
 	.string "> You asked Subaru for trainer tips.$"
@@ -179,7 +215,9 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1:
 	.string "my inventions: A special scope that\l"
 	.string "can reveal invisible Pokémon!\p"
 	.string "It's still in the early stages of\n"
-	.string "development though.\p"
+	.string "development though.$"
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_2:
 	.string "If you're interested in being my little\n"
 	.string "Minccino, I'll let you know when it's\l"
 	.string "ready to be tested!$"

@@ -243,12 +243,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_278",
-      "x": 31,
-      "y": 36,
+      "x": 37,
+      "y": 37,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
       "movement_range_x": 8,
-      "movement_range_y": 4,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -292,6 +292,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_APPLE",
+      "x": 33,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_APPLEVINE_AppleRoll2",
+      "flag": "FLAG_DAILY_APPLEVINE_APPLE_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_APPLE",
+      "x": 34,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_APPLEVINE_AppleRoll1",
+      "flag": "FLAG_DAILY_APPLEVINE_APPLE_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_APPLE",
+      "x": 56,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_APPLEVINE_AppleRoll3",
+      "flag": "FLAG_DAILY_APPLEVINE_APPLE_3"
     }
   ],
   "warp_events": [
@@ -395,14 +434,6 @@
   ],
   "bg_events": [
     {
-      "type": "hidden_item",
-      "x": 34,
-      "y": 31,
-      "elevation": 0,
-      "item": "ITEM_EXP_CANDY_S",
-      "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY"
-    },
-    {
       "type": "sign",
       "x": 23,
       "y": 27,
@@ -420,8 +451,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 34,
-      "y": 6,
+      "x": 7,
+      "y": 28,
       "elevation": 0,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE"
@@ -433,14 +464,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_APPLEVINE_GameCornerSign"
-    },
-    {
-      "type": "hidden_item",
-      "x": 56,
-      "y": 23,
-      "elevation": 0,
-      "item": "ITEM_SWEET_APPLE",
-      "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_SWEET_APPLE"
     },
     {
       "type": "sign",
@@ -463,8 +486,16 @@
       "x": 54,
       "y": 5,
       "elevation": 0,
-      "item": "ITEM_MUSCLE_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_MUSCLE_FEATHER"
+      "item": "ITEM_PRETTY_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_PRETTY_FEATHER"
+    },
+    {
+      "type": "hidden_item",
+      "x": 55,
+      "y": 17,
+      "elevation": 0,
+      "item": "ITEM_EXP_CANDY_M",
+      "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY"
     }
   ]
 }

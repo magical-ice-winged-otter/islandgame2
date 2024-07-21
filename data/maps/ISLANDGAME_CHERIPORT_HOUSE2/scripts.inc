@@ -76,7 +76,7 @@ ISLANDGAME_CHERIPORT_HOUSE2_NPC2_TALK::
 	.string "{COLOR DARK_GRAY}I wish I was a water Pokémon. Then, I\n"
 	.string "wouldn't have to wear this inner tube!\p"
 	.string "{COLOR DARK_GRAY}Which water Pokémon would you wanna\n"
-	.string "be? I like Luvdisc, it's cute!$"
+	.string "be? I wanna be a Wooper! Woop Woop!$"
 
 ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK::
 	.string "{COLOR DARK_GRAY}You look thirsty. Would you like a\n"

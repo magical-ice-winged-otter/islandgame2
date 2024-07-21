@@ -327,7 +327,7 @@ ISLANDGAME_APPLEVINE_NPC13_2:
 	compare VAR_RESULT, NO
 	goto_if_eq ISLANDGAME_APPLEVINE_NPC13_6
 ISLANDGAME_APPLEVINE_NPC13_5:
-	giveitem ITEM_POKE_TOY
+	giveitem ITEM_ESCAPE_ROPE
 	setflag FLAG_APPLEVINE_MANECTRIC_GIFT
 	goto ISLANDGAME_APPLEVINE_NPC13_1
 
@@ -345,13 +345,235 @@ ISLANDGAME_APPLEVINE_NPC14::
 	return
 
 
+ISLANDGAME_APPLEVINE_AppleRoll1::
+	random 10
+	switch VAR_RESULT
+	case 0, ISLANDGAME_APPLEVINE_AppleRoll1_3
+	case 1, ISLANDGAME_APPLEVINE_AppleRoll1_4
+	case 2, ISLANDGAME_APPLEVINE_AppleRoll1_5
+	case 3, ISLANDGAME_APPLEVINE_AppleRoll1_6
+	case 4, ISLANDGAME_APPLEVINE_AppleRoll1_6
+	case 5, ISLANDGAME_APPLEVINE_AppleRoll1_6
+	case 6, ISLANDGAME_APPLEVINE_AppleRoll1_6
+	finditem ITEM_SWEET_APPLE
+ISLANDGAME_APPLEVINE_AppleRoll1_1:
+	release
+	return
+
+ISLANDGAME_APPLEVINE_AppleRoll1_3:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll1_9
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_9
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_9
+ISLANDGAME_APPLEVINE_AppleRoll1_9:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_1
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
+
+ISLANDGAME_APPLEVINE_AppleRoll1_4:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll1_11
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_11
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_11
+ISLANDGAME_APPLEVINE_AppleRoll1_11:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_1
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
+
+ISLANDGAME_APPLEVINE_AppleRoll1_5:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, , NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, , , , , , , , , , , TRUE
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll1_13
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_13
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_13
+ISLANDGAME_APPLEVINE_AppleRoll1_13:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_1
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
+
+ISLANDGAME_APPLEVINE_AppleRoll1_6:
+	finditem ITEM_TART_APPLE
+	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
+
+
+ISLANDGAME_APPLEVINE_AppleRoll2::
+	random 10
+	switch VAR_RESULT
+	case 0, ISLANDGAME_APPLEVINE_AppleRoll2_3
+	case 1, ISLANDGAME_APPLEVINE_AppleRoll2_4
+	case 2, ISLANDGAME_APPLEVINE_AppleRoll2_5
+	case 3, ISLANDGAME_APPLEVINE_AppleRoll2_6
+	case 4, ISLANDGAME_APPLEVINE_AppleRoll2_6
+	case 5, ISLANDGAME_APPLEVINE_AppleRoll2_6
+	case 6, ISLANDGAME_APPLEVINE_AppleRoll2_6
+	finditem ITEM_SWEET_APPLE
+ISLANDGAME_APPLEVINE_AppleRoll2_1:
+	release
+	return
+
+ISLANDGAME_APPLEVINE_AppleRoll2_3:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll2_9
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_9
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_9
+ISLANDGAME_APPLEVINE_AppleRoll2_9:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_2
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
+
+ISLANDGAME_APPLEVINE_AppleRoll2_4:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll2_11
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_11
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_11
+ISLANDGAME_APPLEVINE_AppleRoll2_11:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_2
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
+
+ISLANDGAME_APPLEVINE_AppleRoll2_5:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, , NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, , , , , , , , , , , TRUE
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll2_13
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_13
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_13
+ISLANDGAME_APPLEVINE_AppleRoll2_13:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_2
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
+
+ISLANDGAME_APPLEVINE_AppleRoll2_6:
+	finditem ITEM_TART_APPLE
+	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
+
+
+ISLANDGAME_APPLEVINE_AppleRoll3::
+	random 10
+	switch VAR_RESULT
+	case 0, ISLANDGAME_APPLEVINE_AppleRoll3_3
+	case 1, ISLANDGAME_APPLEVINE_AppleRoll3_4
+	case 2, ISLANDGAME_APPLEVINE_AppleRoll3_5
+	case 3, ISLANDGAME_APPLEVINE_AppleRoll3_6
+	case 4, ISLANDGAME_APPLEVINE_AppleRoll3_6
+	case 5, ISLANDGAME_APPLEVINE_AppleRoll3_6
+	case 6, ISLANDGAME_APPLEVINE_AppleRoll3_6
+	finditem ITEM_SWEET_APPLE
+ISLANDGAME_APPLEVINE_AppleRoll3_1:
+	release
+	return
+
+ISLANDGAME_APPLEVINE_AppleRoll3_3:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll3_9
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_9
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_9
+ISLANDGAME_APPLEVINE_AppleRoll3_9:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_3
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
+
+ISLANDGAME_APPLEVINE_AppleRoll3_4:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll3_11
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_11
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_11
+ISLANDGAME_APPLEVINE_AppleRoll3_11:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_3
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
+
+ISLANDGAME_APPLEVINE_AppleRoll3_5:
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_APPLIN, 20, , NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, , , , , , , , , , , TRUE
+	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll3_13
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_13
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_13
+ISLANDGAME_APPLEVINE_AppleRoll3_13:
+	setflag FLAG_DAILY_APPLEVINE_APPLE_3
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
+
+ISLANDGAME_APPLEVINE_AppleRoll3_6:
+	finditem ITEM_TART_APPLE
+	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
+
+
 ISLANDGAME_APPLEVINE_StoreSign_Text_0:
 	.string "LA CUCINA DOLCHE\n"
 	.string "We also offer Milcery makeovers!$"
 
 ISLANDGAME_APPLEVINE_CitySign_Text_0:
 	.string "APPLEVINE\n"
-	.string "Watch out for wild Applin!$"
+	.string "CHECK YOUR APPLES FOR APPLIN!$"
 
 ISLANDGAME_APPLEVINE_GameCornerSign_Text_0:
 	.string "Eelektrik Game Corner\n"
@@ -426,22 +648,22 @@ ISLANDGAME_APPLEVINE_NPC8_Text_0:
 	.string "enough electricity to power all of\l"
 	.string "Marya!\p"
 	.string "But it mostly stays cooped up in its\n"
-	.string "nest atop Mount Therion.\p"
-	.string "$"
+	.string "nest atop Mount Therion.$"
 
 ISLANDGAME_APPLEVINE_NPC9_Text_0:
-	.string "Did you know that in Galar and Paldea,\n"
-	.string "their trees can have wild Pokemon\l"
-	.string "hiding in apples?\p"
-	.string "That's pretty wild, man. Imagine you're\n"
-	.string "apple picking, you snag one of 'em, bite\l"
-	.string "into it, and a wild Pokémon pops out!\p"
-	.string "I'd be traumatized for life bro. Good\n"
-	.string "thing we don't have 'em over here.$"
+	.string "Earlier today I was hungry, so I picked\n"
+	.string "up a random apple on the ground and\l"
+	.string "took a big bite out of it, not realizing\l"
+	.string "there was a Pokémon living inside! That\l"
+	.string "entire event has traumatized me. I\l"
+	.string "don't think I can ever eat fruit again.$"
 
 ISLANDGAME_APPLEVINE_NPC10_Text_0:
-	.string "It's said that a Luvdisc's heart scale\n"
-	.string "will help you find your lover!$"
+	.string "My boyfriend gave me a Luvdisc for our\n"
+	.string "two-week anniversary! Isn't that just\l"
+	.string "soooo romantic?\p"
+	.string "I love it soooo much, I'm gonna use it in\n"
+	.string "my next Pokémon Contest in Aetheria!$"
 
 ISLANDGAME_APPLEVINE_NPC11_Text_0:
 	.string "Hey, kid! Over here! Shhh! Be quiet! Stop\n"
@@ -479,7 +701,7 @@ ISLANDGAME_APPLEVINE_NPC13_Text_0:
 
 ISLANDGAME_APPLEVINE_NPC13_Text_1:
 	.string "{COLOR DARK_GRAY}Borf! {COLOR BLUE}(I have lots of toys, so I'll give\n"
-	.string "you one. :D)$"
+	.string "you one of mine. :D)$"
 
 ISLANDGAME_APPLEVINE_NPC14_Text_0:
 	.string "I became an officer to get in the line\n"

@@ -30,9 +30,23 @@ script ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC3 {
 
 script ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC4 {
     lock
+    faceplayer
     msgbox(format(
-        "We've been waiting on our shipment of experience candies for months...\p"
-        "What on earth are our providers doing...?"
+        "Be sure to check out our booth at the Silverwing Festival. We will be selling some of our limited-time premium mochi!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_CONFECTIONERY_Employee {
+    lock
+    faceplayer
+    msgbox(format(
+        "Welcome to La Cucina Dolche, the sweetest shop in Marya."
+    ))
+    pokemart(ISLANDGAME_APPLEVINE_CONFECTIONERY_MartItems)
+    msgbox(format(
+        "Have a blessed day."
     ))
     closemessage
     release
@@ -41,8 +55,7 @@ script ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC4 {
 
 mart ISLANDGAME_APPLEVINE_CONFECTIONERY_MartItems {
     ITEM_SWEET_HEART
-    ITEM_SWEET_APPLE
-    ITEM_TART_APPLE
+    ITEM_LUMIOSE_GALETTE
     ITEM_SYRUPY_APPLE
     ITEM_STAR_SWEET
     ITEM_LOVE_SWEET
@@ -52,4 +65,5 @@ mart ISLANDGAME_APPLEVINE_CONFECTIONERY_MartItems {
     ITEM_RIBBON_SWEET
     ITEM_STRAWBERRY_SWEET
     ITEM_WHIPPED_DREAM
+    ITEM_FRESH_START_MOCHI
 }

@@ -28,7 +28,19 @@ ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC3::
 
 ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC4::
 	lock
+	faceplayer
 	msgbox ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC4_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_CONFECTIONERY_Employee::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_CONFECTIONERY_Employee_Text_0
+	pokemart ISLANDGAME_APPLEVINE_CONFECTIONERY_MartItems
+	msgbox ISLANDGAME_APPLEVINE_CONFECTIONERY_Employee_Text_1
 	closemessage
 	release
 	return
@@ -37,8 +49,7 @@ ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC4::
 	.align 2
 ISLANDGAME_APPLEVINE_CONFECTIONERY_MartItems:
 	.2byte ITEM_SWEET_HEART
-	.2byte ITEM_SWEET_APPLE
-	.2byte ITEM_TART_APPLE
+	.2byte ITEM_LUMIOSE_GALETTE
 	.2byte ITEM_SYRUPY_APPLE
 	.2byte ITEM_STAR_SWEET
 	.2byte ITEM_LOVE_SWEET
@@ -48,6 +59,7 @@ ISLANDGAME_APPLEVINE_CONFECTIONERY_MartItems:
 	.2byte ITEM_RIBBON_SWEET
 	.2byte ITEM_STRAWBERRY_SWEET
 	.2byte ITEM_WHIPPED_DREAM
+	.2byte ITEM_FRESH_START_MOCHI
 	.2byte ITEM_NONE
 
 ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC1_Text_0:
@@ -65,7 +77,13 @@ ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC3_Text_0:
 	.string "with...?$"
 
 ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC4_Text_0:
-	.string "We've been waiting on our shipment of\n"
-	.string "experience candies for months...\p"
-	.string "What on earth are our providers\n"
-	.string "doing...?$"
+	.string "Be sure to check out our booth at the\n"
+	.string "Silverwing Festival. We will be selling\l"
+	.string "some of our limited-time premium mochi!$"
+
+ISLANDGAME_APPLEVINE_CONFECTIONERY_Employee_Text_0:
+	.string "Welcome to La Cucina Dolche, the\n"
+	.string "sweetest shop in Marya.$"
+
+ISLANDGAME_APPLEVINE_CONFECTIONERY_Employee_Text_1:
+	.string "Have a blessed day.$"

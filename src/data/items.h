@@ -1009,7 +1009,7 @@ const struct Item gItemsInfo[] =
     [ITEM_SWEET_HEART] =
     {
         .name = _("Sweet Heart"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 100,
+        .price = (I_PRICE >= GEN_7) ? 350 : 100,
         .holdEffectParam = 20,
         .description = COMPOUND_STRING(
             "A sweet chocolate\n"
@@ -3775,7 +3775,7 @@ const struct Item gItemsInfo[] =
     [ITEM_STRAWBERRY_SWEET] =
     {
         .name = _("StrwbrySweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "Strawberry-shaped\n"
             "sweet loved by\n"
@@ -3789,7 +3789,7 @@ const struct Item gItemsInfo[] =
     [ITEM_LOVE_SWEET] =
     {
         .name = _("Love Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A heart-shaped\n"
             "sweet loved by\n"
@@ -3803,7 +3803,7 @@ const struct Item gItemsInfo[] =
     [ITEM_BERRY_SWEET] =
     {
         .name = _("Berry Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A berry-shaped\n"
             "sweet loved by\n"
@@ -3817,7 +3817,7 @@ const struct Item gItemsInfo[] =
     [ITEM_CLOVER_SWEET] =
     {
         .name = _("Clover Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A clover-shaped\n"
             "sweet loved by\n"
@@ -3831,7 +3831,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FLOWER_SWEET] =
     {
         .name = _("Flower Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A flower-shaped\n"
             "sweet loved by\n"
@@ -3845,7 +3845,7 @@ const struct Item gItemsInfo[] =
     [ITEM_STAR_SWEET] =
     {
         .name = _("Star Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A star-shaped\n"
             "sweet loved by\n"
@@ -3859,7 +3859,7 @@ const struct Item gItemsInfo[] =
     [ITEM_RIBBON_SWEET] =
     {
         .name = _("Ribbon Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .price = 1000 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A ribbon-shaped\n"
             "sweet loved by\n"
@@ -12224,7 +12224,7 @@ const struct Item gItemsInfo[] =
     [ITEM_SYRUPY_APPLE] =
     {
         .name = _("Syrupy Apple"),
-        .price = 2200,
+        .price = 2500,
         .description = COMPOUND_STRING(
             "A very syrupy apple\n"
             "that makes certain\n"

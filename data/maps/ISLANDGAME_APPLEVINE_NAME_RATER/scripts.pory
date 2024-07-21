@@ -6,6 +6,25 @@ mapscripts ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts {
     }
 }
 
+
+script ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC {
+    msgbox(format(
+        "{COLOR RED}(It's Coco's gaming setup. This looks like it cost a lot of money.)"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC2 {
+    msgbox(format(
+        "{COLOR RED}(Wow, there are like, fifty tabs open on this computer.)"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC3 {
+    msgbox(format(
+        "{COLOR RED}(It's a really fancy PC see-through tower case with RGB lights.)"
+    ), MSGBOX_SIGN)
+}
+
 script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
     lock
     msgbox(format(
@@ -34,7 +53,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
             msgbox(format(
                 "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}STARLIGHT is an idol group based in the Maryan Isles consisting of five members: Lucia as its front and center, Camille, Azalea, Serafina, and its newest member, Primrose."
                 "STARLIGHT is managed by Eden Productions, a talent agency stationed in the big city of Aetheria.\p"
-                "Currently, their official PokéTube channel holds the number one spot for most subscribers on the website!"
+                "Currently, their official PokéTube channel holds the number two spot for most subscribers on the website, only topped by Paldea's very own Iono!"
             ))
         }
 
@@ -58,9 +77,9 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
-                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Sure. Can you tell me the 316th Pokémon in the national Pokédex?\p"
-                "> You told Subaru that you're too savvy to fall for that.\p"
-                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Drats. It was worth a try."
+                "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Sure. What Pokemon does Swalot evolve from?\p"
+                "...\p"
+                "Hello? Are you still there? I need you to respond to complete my joke!"
             ))
         }
 
@@ -80,7 +99,6 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
     release
 }
 
-
 script ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract {
     lock
     playmoncry(SPECIES_PIKACHU, CRY_MODE_NORMAL)
@@ -96,22 +114,28 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract {
 
 script ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract {
     lock
+    if(!flag(FLAG_TEMP_2)) {
+        msgbox(format(
+            "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hm...{PAUSE 60} this goes here...{PAUSE 60} and that goes there...{PAUSE 60}"
+        ))
+        closemessage
+        playse(SE_PIN)
+        applymovement(3, Common_Movement_ExclamationMark)
+        faceplayer
+        applymovement(3, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(format(
+            "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Oh! Hiya {PLAYER}! Sorry, I was too engrossed in my work to see you.\p"
+            "I'm currently working on another one of my inventions: A special scope that can reveal invisible Pokémon!\p"
+            "It's still in the early stages of development though."
+        ))
+        setflag(FLAG_TEMP_2)
+    }
     msgbox(format(
-        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hm...{PAUSE 60} this goes here...{PAUSE 60} and that goes there...{PAUSE 60}"
-    ))
-    closemessage
-    playse(SE_PIN)
-    applymovement(3, Common_Movement_ExclamationMark)
-    faceplayer
-    applymovement(3, Common_Movement_Delay48)
-    waitmovement(0)
-    msgbox(format(
-        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Oh! Hiya {PLAYER}! Sorry, I was too engrossed in my work to see you.\p"
-        "I'm currently working on another one of my inventions: A special scope that can reveal invisible Pokémon!\p"
-        "It's still in the early stages of development though.\p"
         "If you're interested in being my little Minccino, I'll let you know when it's ready to be tested!"
     ))
     applymovement(3, Common_Movement_FaceUp)
+    waitmovement(0)
     closemessage
     release
 }
