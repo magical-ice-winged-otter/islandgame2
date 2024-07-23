@@ -1033,7 +1033,7 @@ static void IcefallCaveIcePerStepCallback(u8 taskId)
 {
     s16 x, y;
     u8 tileBehavior;
-    u16 *iceStepCount;
+    // u16 *iceStepCount;
     s16 *data = gTasks[taskId].data;
     switch (tState)
     {

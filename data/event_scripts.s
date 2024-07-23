@@ -1307,3 +1307,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_AURORA_PATH_GROTTO/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNCENTER_2F/scripts.inc"

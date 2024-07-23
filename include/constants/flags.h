@@ -1576,7 +1576,8 @@
 #define FLAG_ROSEVALE_GALLADITE                     (SYSTEM_FLAGS + 0xA5)
 //rosevale: ...
 #define FLAG_ROSEVALE_RED                           (SYSTEM_FLAGS + 0xA6) 
-#define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
+//applevine: fwee move tutor
+#define FLAG_APPLEVINE_MOVE_TUTOR_FREEBIE           (SYSTEM_FLAGS + 0xA7) 
 #define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
 #define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
 #define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag

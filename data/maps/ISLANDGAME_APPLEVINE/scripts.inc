@@ -398,7 +398,7 @@ ISLANDGAME_APPLEVINE_AppleRoll1_11:
 
 ISLANDGAME_APPLEVINE_AppleRoll1_5:
 	setflag FLAG_SMART_WILD_AI
-	setcwildbattle 0, SPECIES_APPLIN, 20, , NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, , , , , , , , , , , TRUE
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0
 	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -472,7 +472,7 @@ ISLANDGAME_APPLEVINE_AppleRoll2_11:
 
 ISLANDGAME_APPLEVINE_AppleRoll2_5:
 	setflag FLAG_SMART_WILD_AI
-	setcwildbattle 0, SPECIES_APPLIN, 20, , NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, , , , , , , , , , , TRUE
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0
 	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -546,7 +546,7 @@ ISLANDGAME_APPLEVINE_AppleRoll3_11:
 
 ISLANDGAME_APPLEVINE_AppleRoll3_5:
 	setflag FLAG_SMART_WILD_AI
-	setcwildbattle 0, SPECIES_APPLIN, 20, , NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, , , , , , , , , , , TRUE
+	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0
 	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
