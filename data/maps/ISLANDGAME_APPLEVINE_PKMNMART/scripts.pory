@@ -1,18 +1,103 @@
-mapscripts ISLANDGAME_APPLEVINE_PKMNMART_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+
+mapscripts ISLANDGAME_APPLEVINE_PKMNMART_MapScripts {
+        MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+        }
+    }
+}
 
 // todo: prolly really want to make this better
 
 script ISLANDGAME_APPLEVINE_PKMNMART_Interact_Employee {
     lock
     faceplayer
-    msgbox(format("Welcome to the Applevine PokeMart!"))
+    msgbox(format("Welcome! What would you like to buy?"))
     pokemart(Applevine_MartItems)
-    msgbox(format("Have a good day!"))
+    msgbox(format("Have a nice rest of your day!"))
     closemessage
     release
 }
 
 mart Applevine_MartItems {
     ITEM_POKE_BALL
+    ITEM_GREAT_BALL
+    ITEM_DIVE_BALL
+    ITEM_NEST_BALL
+    ITEM_POTION
+    ITEM_SUPER_POTION
+    ITEM_PARALYZE_HEAL
+    ITEM_ANTIDOTE
+    ITEM_AWAKENING
     ITEM_REPEL
+    ITEM_SUPER_REPEL
+    ITEM_SWEET_APPLE
+    ITEM_TART_APPLE
+}
+
+mart Applevine_Scout {
+    ITEM_LAVA_COOKIE
+    ITEM_RAGE_CANDY_BAR
+    ITEM_BERRY_JUICE
+    ITEM_SOOTHE_BELL
+    ITEM_POKE_DOLL
+    ITEM_ABSORB_BULB
+    ITEM_CELL_BATTERY
+    ITEM_LUMINOUS_MOSS
+    ITEM_SNOWBALL
+    ITEM_RED_CARD
+}
+
+script ISLANDGAME_APPLEVINE_PKMNMART_NPC1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Yooo, tryna buy some product from a strugglin' Braviary Scout?"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(format(
+            "Word. Wutchu want?"
+        ))
+        pokemart(Applevine_Scout)
+        msgbox(format(
+            "I'm always here for you, broski."
+        ))
+    }
+    else {
+        msgbox(format(
+            "That's cold, brah."
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_PKMNMART_BINGCHILING {
+    lock
+    faceplayer
+    playmoncry(SPECIES_VANILLITE, CRY_MODE_NORMAL)
+    msgbox(format(
+        "{COLOR RED}(Looks like Vanillite is chilling. Bing Chilling, one could say.)"
+    ))
+    closemessage
+    release
+}
+
+
+script ISLANDGAME_APPLEVINE_PKMNMART_NPC2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Seems kind of counterproductive for this place to be selling apples..."
+    ))
+    closemessage
+    release
 }

@@ -1,8 +1,6 @@
 mapscripts ISLANDGAME_APPLEVINE_GAME_CORNER_MapScripts {}
 
 const SLOT_MACHINE_VAR = VAR_0x8004
-const COINS_PRICE_50 = 50
-const COINS_PRICE_500 = 500
 
 // Generic NPCs
 
@@ -37,89 +35,714 @@ script ISLANDGAME_APPLEVINE_EventScript_Bouncer {
 }
 
 // Prize Clerk
-
 script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
-    // todo: cool dynamic multi choice for prizes...
-    // dynmultipush("Test 1", VAR_RESULT)
-    // dynmultipush("Test 2", VAR_RESULT)
-    // dynmultipush("Test 3", VAR_RESULT)
-    // dynmultistack(0, 0, TRUE, 6, FALSE, VAR_0x800A, DYN_MULTICHOICE_CB_SHOW_ITEM)
     lock
-    msgbox(format("We are sold out. Come back later!"))
-    release
+    faceplayer
+    if(!flag(FLAG_APPLEVINE_COIN_CASE)) {
+        msgbox(format(
+            "Welcome to the Prize Counter! It looks like you don't have a coin case.\p"
+            "Please pick one up from the clerk over there."
+        ))
+        goto(PrizeClerk_End)
+    }
+
+    msgbox(format(
+        "Welcome to the Prize Counter! Would you like to exchange your coins for some fabulous prizes?"
+    ), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        goto(PrizeClerk_Exchange)
+    }
+    else {
+        goto(PrizeClerk_End)
+    }
+
+    PrizeClerk_Exchange:
+        msgbox(format(
+            "This is our selection of prizes."
+        ))
+        showcoinsbox(18,7)
+        dynmultipush("See ya!", 0)
+        dynmultipush("Wide Lens (800)", 474)
+        dynmultipush("Zoom Lens (800)", 482)
+        dynmultipush("Scope Lens (800)", 471)
+        dynmultipush("King's Rock (1600)", 465)
+        dynmultipush("Razor Fang (1600)", 492)
+        dynmultipush("Razor Claw (1600)", 493)
+        dynmultipush("Muscle Band (2400)", 475)
+        dynmultipush("Wise Glasses (2400)", 476)
+        dynmultipush("Loaded Dice (2400)", 762)
+        dynmultipush("TM12 (3200)", 593)
+        dynmultipush("TM28 (3200)", 609)
+        dynmultipush("TM32 (3200)", 613)
+        dynmultipush("TM43 (3200)", 624)
+        dynmultipush("TM48 (3200)", 629)
+        dynmultipush("Gimmighoul (4800)", 370)
+        dynmultipush("Eevee (6400)", 376)
+        dynmultipush("Porygon (8000)", 357)
+        dynmultipush("Mystery Box (9999)", 746)
+        dynmultistack(0,0,TRUE,5,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        switch (var(VAR_RESULT)) {
+            case 474:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 800) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 800 coins for a Wide Lens?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(800)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_WIDE_LENS)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 482:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 800) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 800 coins for a Zoom Lens?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(800)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_ZOOM_LENS)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 471:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 800) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 800 coins for a Scope Lens?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(800)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_SCOPE_LENS)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 465:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 1600) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 1600 coins for a King's Rock?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(1600)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_KINGS_ROCK)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 492:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 1600) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 1600 coins for a Razor Fang?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(1600)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_RAZOR_FANG)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 493:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 1600) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 1600 coins for a Razor Claw?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(1600)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_RAZOR_CLAW)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 475:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 2400) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 2400 coins for a Muscle Band?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(2400)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_MUSCLE_BAND)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 476:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 2400) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 2400 coins for a pair of Wise Glasses?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(2400)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_WISE_GLASSES)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 762:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 2400) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 2400 coins for a Loaded Die?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(2400)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_LOADED_DICE)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 593:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 3200) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 3200 coins for TM12 - Taunt?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(3200)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_TM12)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 624:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 3200) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 3200 coins for TM43 - Secret Power?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(3200)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_TM43)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 609:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 3200) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 3200 coins for TM28 - Dig?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(3200)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_TM28)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 613:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 3200) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 3200 coins for TM32 - Double Team?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(3200)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_TM32)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 615:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 3200) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 3200 coins for TM48 - Skill Swap?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(3200)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_TM48)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 370:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 4800) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 4800 coins for a Gimmighoul?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(4800)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    givemon(SPECIES_GIMMIGHOUL,20,ITEM_NUGGET,ITEM_POKE_BALL,NUM_NATURES)
+                    playfanfare(MUS_OBTAIN_ITEM)
+                    bufferspeciesname(STR_VAR_1, SPECIES_GIMMIGHOUL)
+                    msgbox(format("You received a Gimmighoul!"))
+                    waitfanfare 
+
+                    msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        call(Common_EventScript_GetGiftMonPartySlot)
+                        call(Common_EventScript_NameReceivedPartyMon)
+                    }
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 376:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 6400) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 6400 coins for an Eevee?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(6400)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    givemon(SPECIES_EEVEE,20,ITEM_LUCKY_EGG,ITEM_POKE_BALL,NUM_NATURES)
+                    playfanfare(MUS_OBTAIN_ITEM)
+                    bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
+                    msgbox(format("You received an Eevee!"))
+                    waitfanfare 
+
+                    msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        call(Common_EventScript_GetGiftMonPartySlot)
+                        call(Common_EventScript_NameReceivedPartyMon)
+                    }
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 357:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 8000) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 8000 coins for a Porygon?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(8000)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    givemon(SPECIES_PORYGON,20,ITEM_EVIOLITE,ITEM_POKE_BALL,NUM_NATURES)
+                    playfanfare(MUS_OBTAIN_ITEM)
+                    bufferspeciesname(STR_VAR_1, SPECIES_PORYGON)
+                    msgbox(format("You received a Porygon!"))
+                    waitfanfare 
+
+                    msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+                    if (var(VAR_RESULT)) {
+                        call(Common_EventScript_GetGiftMonPartySlot)
+                        call(Common_EventScript_NameReceivedPartyMon)
+                    }
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 746:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 9999) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Ah, so you've decided to try your luck with one of our Mystery Boxes?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(9999)
+                    updatecoinsbox(18,7)
+                    playse(SE_SHOP)
+                    waitse
+                    random(10)
+                    switch(var(VAR_RESULT)) {
+                        case 0: giveitem(ITEM_IRON_BALL)
+                        case 1: giveitem(ITEM_EXP_CANDY_XL)
+                        case 2: giveitem(ITEM_BIG_NUGGET)
+                        case 3: giveitem(ITEM_TM15)
+                        case 4: giveitem(ITEM_LIFE_ORB)
+                        case 5: giveitem(ITEM_MAX_REVIVE)
+                        case 6: giveitem(ITEM_EXP_CANDY_XL)
+                        case 7: 
+                            givemon(SPECIES_DITTO, 20, ITEM_QUICK_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2)
+                            playfanfare(MUS_OBTAIN_ITEM)
+                            bufferspeciesname(STR_VAR_1, SPECIES_DITTO)
+                            msgbox(format("You received a Ditto!"))
+                            waitfanfare 
+
+                            msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+                            if (var(VAR_RESULT)) {
+                                call(Common_EventScript_GetGiftMonPartySlot)
+                                call(Common_EventScript_NameReceivedPartyMon)
+                            }
+                        case 8: 
+                            givemon(SPECIES_DITTO, 20, ITEM_METAL_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2)
+                            playfanfare(MUS_OBTAIN_ITEM)
+                            bufferspeciesname(STR_VAR_1, SPECIES_DITTO)
+                            msgbox(format("You received a Ditto!"))
+                            waitfanfare 
+
+                            msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+                            if (var(VAR_RESULT)) {
+                                call(Common_EventScript_GetGiftMonPartySlot)
+                                call(Common_EventScript_NameReceivedPartyMon)
+                            }
+                        default: 
+                            givemon(SPECIES_BELDUM, 20, ITEM_COMET_SHARD,ITEM_CHERISH_BALL,NUM_NATURES,0,,,,,,,,,,,,,,,,,,TRUE)
+                            playfanfare(MUS_OBTAIN_ITEM)
+                            bufferspeciesname(STR_VAR_1, SPECIES_BELDUM)
+                            msgbox(format("You received a Beldum!"))
+                            waitfanfare 
+
+                            msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+                            if (var(VAR_RESULT)) {
+                                call(Common_EventScript_GetGiftMonPartySlot)
+                                call(Common_EventScript_NameReceivedPartyMon)
+                            }
+                    }
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            default:
+                hidecoinsbox(18,7) 
+                goto(PrizeClerk_End)
+        }
+
+    PrizeClerk_End:
+        closemessage
+        release
 }
+
+
 
 // Coin Clerk
-
-text Applevine_NoRoomForCoins {format("You don't have room for coins!")} 
-text Applevine_NoMoney {format("You dont' have enough money!")}
-text Applevine_HereAreCoins {format("Here are your coins.")}
-
-script ISLANDGAME_APPLEVINE_AddCoins_50 {
-    checkcoins(VAR_TEMP_1)
-    if (var(VAR_TEMP_1) >= MAX_COINS + 1 - 50) {
-        msgbox(Applevine_NoRoomForCoins)
-        end
-    }
-    checkmoney(COINS_PRICE_50)
-    if (var(VAR_RESULT) == FALSE) {
-        msgbox(Applevine_NoMoney)
-        end
-    }
-    addcoins(50)
-    removemoney(COINS_PRICE_50)
-    updatemoneybox
-    updatecoinsbox(1, 6)
-    playse(SE_SHOP)
-    msgbox(Applevine_HereAreCoins)
-}
-script ISLANDGAME_APPLEVINE_AddCoins_500 {
-    checkcoins(VAR_TEMP_1)
-    if (var(VAR_TEMP_1) >= MAX_COINS + 1 - 500) {
-        msgbox(Applevine_NoRoomForCoins)
-        end
-    }
-    checkmoney(COINS_PRICE_500)
-    if (var(VAR_RESULT) == FALSE) {
-        msgbox(Applevine_NoMoney)
-        end
-    }
-    addcoins(500)
-    removemoney(COINS_PRICE_500)
-    updatemoneybox
-    updatecoinsbox(1, 6)
-    playse(SE_SHOP)
-    msgbox(Applevine_HereAreCoins)
-}
-
 script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
     lock
     faceplayer
-    msgbox(format("Welcome to Applevine Game Corner!"))
-    checkitem(ITEM_COIN_CASE)
-    if (var(VAR_RESULT) == FALSE) {
-        msgbox(format("Hey, you need a coin case!"))
+    if(!flag(FLAG_APPLEVINE_COIN_CASE)) {
+        msgbox(format(
+            "Welcome to the Eelektrik Game Corner! Our games are entirely skill-based!\p"
+            "Oh! Are you a new customer? Here, you'll need one of these!"
+        ))
+        giveitem(ITEM_COIN_CASE)
+        setflag(FLAG_APPLEVINE_COIN_CASE)
+        showcoinsbox(18,1)
+        msgbox(format(
+            "Now that you've got a coin case, here is our complementary welcome bonus!"
+        ))
+        addcoins(20)
+        updatecoinsbox(18,1)
+        playse(SE_SHOP)
+        waitse
+        msgbox(format(
+            "Good luck and have fun! Oop, I mean, may your skills bring you victory!"
+        ))
+        hidecoinsbox(18,1)
+        goto(CoinsClerk_End)
     }
     else {
-        msgbox(format("Let's get you some coins!"))
-        showmoneybox(0, 0)
-        showcoinsbox(1, 6)
-        multichoicedefault(15, 0, MULTI_GAME_CORNER_COINS, 0, FALSE)
-        switch(var(VAR_RESULT)) {
-            case 0:
-                msgbox(format("Here you go!"))
-                call(ISLANDGAME_APPLEVINE_AddCoins_50)
-            case 1:
-                msgbox(format("Here you go!"))
-                call(ISLANDGAME_APPLEVINE_AddCoins_500)
-            default:
-                msgbox(format("Oh. you don't need coins."))
+        msgbox(format(
+            "Welcome to the Eelektrik Game Corner! Would you like to purchase some coins?"
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            goto(CoinsClerk_Exchange)
         }
-        hidemoneybox
-        hidecoinsbox(1, 6)
+        else {
+            goto(CoinsClerk_End)
+        }
     }
-    release
+
+    CoinsClerk_Exchange:
+        msgbox(format(
+            "What bundle would you like to purchase?"
+        ))
+        showcoinsbox(18,1)
+        showmoneybox(17,4)
+        dynmultipush("See ya!", 0)
+        dynmultipush("50 Coins - ¥1,000", 1)
+        dynmultipush("250 Coins - ¥4,500", 2)
+        dynmultipush("1,000 Coins - ¥16,000", 3)
+        dynmultipush("4,000 Coins - ¥40,000", 4)
+        dynmultistack(0,0,TRUE,5,FALSE,0,DYN_MULTICHOICE_CB_NONE)
+        switch(var(VAR_RESULT)) {
+            case 1:
+                msgbox(format(
+                    "Would you like to purchase 50 Coins for ¥1000?"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    checkmoney(1000)
+                    if (!var(VAR_RESULT)) {
+                        msgbox(format(
+                            "Sorry, you do not have the sufficient funds for this bundle."
+                        ))
+                        goto(CoinsClerk_Exchange)
+                    }
+                    removemoney(1000)
+                    addcoins(50)
+                    updatemoneybox
+                    updatecoinsbox(18,1)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Thank you for your patronage!"
+                    ))
+                    goto(CoinsClerk_End)
+                }
+                else {
+                    goto(CoinsClerk_Exchange)
+                }
+            case 2:
+                msgbox(format(
+                    "Would you like to purchase 250 Coins for ¥4,500?"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    checkmoney(4500)
+                    if (!var(VAR_RESULT)) {
+                        msgbox(format(
+                            "Sorry, you do not have the sufficient funds for this bundle."
+                        ))
+                        goto(CoinsClerk_Exchange)
+                    }
+                    removemoney(4500)
+                    addcoins(250)
+                    updatemoneybox
+                    updatecoinsbox(18,1)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Thank you for your patronage!"
+                    ))
+                    goto(CoinsClerk_End)
+                }
+                else {
+                    goto(CoinsClerk_Exchange)
+                }
+            case 3:
+                msgbox(format(
+                    "Would you like to purchase 1,000 Coins for ¥16,000?"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    checkmoney(16000)
+                    if (!var(VAR_RESULT)) {
+                        msgbox(format(
+                            "Sorry, you do not have the sufficient funds for this bundle."
+                        ))
+                        goto(CoinsClerk_Exchange)
+                    }
+                    removemoney(16000)
+                    addcoins(1000)
+                    updatemoneybox
+                    updatecoinsbox(18,1)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Thank you for your patronage!"
+                    ))
+                    goto(CoinsClerk_End)
+                }
+                else {
+                    goto(CoinsClerk_Exchange)
+                }
+            case 4:
+                msgbox(format(
+                    "Would you like to purchase 4,000 Coins for ¥40,000?"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    checkmoney(40000)
+                    if (!var(VAR_RESULT)) {
+                        msgbox(format(
+                            "Sorry, you do not have the sufficient funds for this bundle."
+                        ))
+                        goto(CoinsClerk_Exchange)
+                    }
+                    removemoney(40000)
+                    addcoins(4000)
+                    updatemoneybox
+                    updatecoinsbox(18,1)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Thank you for your patronage!"
+                    ))
+                    goto(CoinsClerk_End)
+                }
+                else {
+                    goto(CoinsClerk_Exchange)
+                }
+            default:
+                hidemoneybox
+                hidecoinsbox(18,1) 
+                goto(CoinsClerk_End)
+        }
+
+    CoinsClerk_End:
+        closemessage
+        release
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Slot Machines
 

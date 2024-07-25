@@ -30,7 +30,7 @@ script ISLANDGAME_APPLEVINE_CitySign {
 }
 
 script ISLANDGAME_APPLEVINE_GameCornerSign {
-    msgbox(format("Eelektrik Game Corner\nIt's not gambling if it takes skill! :)"), MSGBOX_SIGN)
+    msgbox(format("Eelektrik Game Corner\pFun for all ages! :)"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_APPLEVINE_SierraPathSign {
@@ -345,22 +345,208 @@ script ISLANDGAME_APPLEVINE_NPC10 {
 script ISLANDGAME_APPLEVINE_NPC11 {
     lock
     faceplayer
-    msgbox(format(
-        "Hey, kid! Over here! Shhh! Be quiet! Stop attracting attention!\p"
-        "You're a Pokémon trainer, yeah? I uh, bet you want some of those rare prizes from the Game Corner, don'cha?\p"
-        "Ho-ho! Well you're in luck pal, cause I've got stacks 'n stacks of coins!\p"
-        "They're all yours... if you're willin' to help a brotha out...\p"
-        "See uh, I'm in need of some “candy”, and I hear y'all trainers got tons of 'em.\p"
-        "So with that being said... you got the stuffs?"
-    ))
+    if (!flag(FLAG_APPLEVINE_COIN_CASE)) {
+        msgbox(format(
+            "Buzz off, kid!"
+        ))
+        goto(Applevine_CandyMan_End)
+    }
+    if (!flag(FLAG_TEMP_4)) {
+        msgbox(format(
+            "Hey, bud! {PAUSE 30}Over here!{PAUSE 30} Shhh! Be quiet! Stop attracting attention!\p"
+            "You're a Pokémon trainer, yeah?{PAUSE 30} I uh, bet you want some of those rare prizes from the Game Corner, don'cha?\p"
+            "Ho-ho! Well you're in luck pal, cause I've got stacks 'n stacks of coins!\p"
+            "They're all yours...{PAUSE 60} if you're willin' to help a brotha out...{PAUSE 60}\p"
+            "See uh, I'm in need of some “candy”, and I hear y'all trainers got tons of 'em.\p"
+            "So with that being said...{PAUSE 60} you got the stuffs?"
+        ), MSGBOX_YESNO)
+        setflag(FLAG_TEMP_4)
+    }
+    else {
+        msgbox(format(
+            "H-Hey there... you got the stuffs now?"
+        ), MSGBOX_YESNO)
+    }
 
-    // code for exchange here
+    
+    if(var(VAR_RESULT) == YES) {
+        goto(CandyMan_Exchange)
+    }
+    else {
+        msgbox(format(
+            "No? Go away then! Shoo! Shoo!"
+        ))
+        goto(Applevine_CandyMan_End)
+    }
 
-    msgbox(format(
-        "Ayo, you don't got nothin'! I only work with serious customers! Buzz off!"
-    ))
-    closemessage
-    release
+
+    CandyMan_Exchange:
+        showcoinsbox(18,1)
+
+        dynmultipush("I'm outie!", 0)
+        checkitem(ITEM_RARE_CANDY)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Rare Candy", 102)
+        }
+        checkitem(ITEM_EXP_CANDY_XS)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy XS", 103)
+        }
+        checkitem(ITEM_EXP_CANDY_S)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy S", 104)
+        }
+        checkitem(ITEM_EXP_CANDY_M)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy M", 105)
+        }
+        checkitem(ITEM_EXP_CANDY_L)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy L", 106)
+        }
+        checkitem(ITEM_EXP_CANDY_XL)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy XL", 107)
+        }
+        dynmultistack(0,0,TRUE,6,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        switch (var(VAR_RESULT)) {
+            case 102:
+                msgbox(format(
+                    "Oooo, is that rare candy I see? I'll give you 4,000 coins for it!"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(4000)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_RARE_CANDY)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 103:
+                msgbox(format(
+                    "Just an Exp Candy XS? Humph... 100 coins is all I'm givin' for it!"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(100)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_XS)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 104:
+                msgbox(format(
+                    "An Exp Candy S? How's 500 coins sound?"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(500)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_S)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 105:
+                msgbox(format(
+                    "An Exp Candy M? I'll give ya 1,000 coins for it."
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(1000)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_M)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 106:
+                msgbox(format(
+                    "Ho-ho, an Exp Candy L? I'll give you 2,000 coins for it!"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(2000)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_L)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 107:
+                msgbox(format(
+                    "An EXP Candy XL!? I'll give you a whopping 8,000 coins for that gem!!"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(8000)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_XL)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            default:
+                msgbox(format(
+                    "Huh? You holdin' out on me, bud??"
+                ))
+                hidecoinsbox(18,1)
+                goto(Applevine_CandyMan_End)
+        }
+
+    Applevine_CandyMan_End:
+        closemessage
+        release
 }
 
 
@@ -381,28 +567,11 @@ script ISLANDGAME_APPLEVINE_NPC13 {
     lock
     faceplayer
     playmoncry(SPECIES_MANECTRIC,CRY_MODE_NORMAL)
-    
-    if(!flag(FLAG_APPLEVINE_MANECTRIC_GIFT)) {
-        msgbox(
-            format(
-                "{COLOR RED}(Huh? It looks like Manectric is trying to give me something.) \p"
-                "{COLOR RED}(Should I take it?)"
-            )    
-        , MSGBOX_YESNO)
-        if (var(VAR_RESULT) == NO) {
-            goto(ManectricGiftEvent_End)
-        }
-
-        giveitem(ITEM_ESCAPE_ROPE)
-        setflag(FLAG_APPLEVINE_MANECTRIC_GIFT)
-    }
-    else {
-        msgbox(format("{COLOR DARK_GRAY}Borf! {COLOR BLUE}(I have lots of toys, so I'll give you one of mine. :D)"))
-    }
-    
-    
-    ManectricGiftEvent_End:
-        release
+    msgbox(format(
+        "Borf!"
+    ))
+    closemessage
+    release
 }
 
 script ISLANDGAME_APPLEVINE_NPC14 {
@@ -412,7 +581,7 @@ script ISLANDGAME_APPLEVINE_NPC14 {
         "I became an officer to get in the line of action, but all the chief's been having me do is lame paperwork.\p"
         "I should've just joined my friend in the merchant guild instead...\p"
         "They get to travel all around the isles, meanwhile I'm stuck listening to a jaded old man complain about the Game Corner for three hours.\p"
-        "What's the big deal? It's not like it's gambling or anything. There's skill involved. It says it on the sign!"
+        "What's even the big deal? It's not like there's anything illegal going on inside or anything. They're broken no laws!"
     ))
     closemessage
     release
@@ -444,7 +613,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll1 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_1)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }   
         case 1:
@@ -462,7 +630,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll1 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_1)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }   
         case 2: 
@@ -480,7 +647,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll1 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_1)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }    
         case 3:
@@ -510,7 +676,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll2 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_2)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }   
         case 1:
@@ -528,7 +693,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll2 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_2)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }   
         case 2: 
@@ -546,7 +710,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll2 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_2)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }    
         case 3:
@@ -576,7 +739,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll3 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_3)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }   
         case 1:
@@ -594,7 +756,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll3 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_3)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }   
         case 2: 
@@ -612,7 +773,6 @@ script ISLANDGAME_APPLEVINE_AppleRoll3 {
                 case B_OUTCOME_RAN:
                 case B_OUTCOME_CAUGHT:
                 default:
-                    setflag(FLAG_DAILY_APPLEVINE_APPLE_3)
                     goto(Common_EventScript_RemoveStaticPokemon)
             }    
         case 3:

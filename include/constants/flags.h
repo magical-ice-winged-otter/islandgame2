@@ -1251,7 +1251,7 @@
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
 #define FLAG_ITEM_COP_1_X_SP_ATK                                    0x4AF  
 #define FLAG_ITEM_MINTY_MEADOWS_HP_UP                               0x4B0 
-#define FLAG_TRAVELERS_TUNNEL_TM_ROCK_TOMB                          0x4B1 
+#define FLAG_TRAVELERS_TUNNEL_TM_ROCK_TOMB                          0x4B1 // not in use
 #define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
 #define FLAG_ITEM_TIDALCOVE_DIVE_BALL                               0x4B3
 #define FLAG_ITEM_PROMENADE_PATH_PEARL                              0x4B4
@@ -1569,7 +1569,8 @@
 #define FLAG_APPLEVINE_SWEETHEART_GIFT              (SYSTEM_FLAGS + 0xA0)
 //applevine: become coco's lab rat
 #define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
-#define FLAG_APPLEVINE_MANECTRIC_GIFT               (SYSTEM_FLAGS + 0xA2)
+//applevine: sell ur soul to EA
+#define FLAG_APPLEVINE_COIN_CASE                    (SYSTEM_FLAGS + 0xA2)
 #define FLAG_TRAVELERS_TUNNEL_AGGRONITE             (SYSTEM_FLAGS + 0xA3)
 #define FLAG_RECEIVED_TOWN_MAP                      (SYSTEM_FLAGS + 0xA4) 
 //rosevale: its time 2 dool
@@ -1637,9 +1638,9 @@
 #define FLAG_DAILY_MINTY_MEADOWS_DRIFLOON           (DAILY_FLAGS_START + 0x19)
 #define FLAG_DAILY_COR_HIDDEN_GROTTO_ROLL           (DAILY_FLAGS_START + 0x1A)
 #define FLAG_DAILY_AURORA_PATH_HIDDEN_GROTTO_ROLL   (DAILY_FLAGS_START + 0x1B)
-#define FLAG_DAILY_APPLEVINE_APPLE_1                (DAILY_FLAGS_START + 0x1C) 
-#define FLAG_DAILY_APPLEVINE_APPLE_2                (DAILY_FLAGS_START + 0x1D) 
-#define FLAG_DAILY_APPLEVINE_APPLE_3                (DAILY_FLAGS_START + 0x1E) 
+#define FLAG_DAILY_APPLEVINE_APPLE_1                (DAILY_FLAGS_START + 0x1C) // Unused Flag
+#define FLAG_DAILY_APPLEVINE_APPLE_2                (DAILY_FLAGS_START + 0x1D) // Unused Flag
+#define FLAG_DAILY_APPLEVINE_APPLE_3                (DAILY_FLAGS_START + 0x1E) // Unused Flag
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag

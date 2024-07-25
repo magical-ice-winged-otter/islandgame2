@@ -9,7 +9,7 @@ ISLANDGAME_APPLEVINE_PKMNCENTER_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 
 ISLANDGAME_APPLEVINE_PKMNCENTER_Interact_Nurse::
-	setvar VAR_0x800B, LOCALID_NURSE
+	setvar VAR_0x800B, 1
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress
@@ -279,8 +279,8 @@ ISLANDGAME_APPLEVINE_PKMNCENTER_MoveTutor_Text_1:
 
 ISLANDGAME_APPLEVINE_PKMNCENTER_MoveTutor_Text_2:
 	.string "I'll teach your Pokémon a variety of\n"
-	.string "moves just for a heart scale! How's\l"
-	.string "that sound?$"
+	.string "moves just for a heart scale!\p"
+	.string "How's that sound?$"
 
 ISLANDGAME_APPLEVINE_PKMNCENTER_MoveTutor_Text_3:
 	.string "Splendid! Which move would you like to\n"

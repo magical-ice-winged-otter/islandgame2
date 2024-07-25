@@ -295,11 +295,205 @@ ISLANDGAME_APPLEVINE_NPC10::
 ISLANDGAME_APPLEVINE_NPC11::
 	lock
 	faceplayer
-	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_0
-	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_1
+	goto_if_unset FLAG_APPLEVINE_COIN_CASE, ISLANDGAME_APPLEVINE_NPC11_2
+ISLANDGAME_APPLEVINE_NPC11_1:
+	goto_if_unset FLAG_TEMP_4, ISLANDGAME_APPLEVINE_NPC11_5
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_2, MSGBOX_YESNO
+ISLANDGAME_APPLEVINE_NPC11_4:
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_NPC11_9
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_3
+	goto Applevine_CandyMan_End
+ISLANDGAME_APPLEVINE_NPC11_8:
+CandyMan_Exchange:
+	showcoinsbox 18, 1
+	dynmultipush ISLANDGAME_APPLEVINE_NPC11_Text_4, 0
+	checkitem ITEM_RARE_CANDY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_NPC11_13
+ISLANDGAME_APPLEVINE_NPC11_12:
+	checkitem ITEM_EXP_CANDY_XS
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_NPC11_16
+ISLANDGAME_APPLEVINE_NPC11_15:
+	checkitem ITEM_EXP_CANDY_S
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_NPC11_19
+ISLANDGAME_APPLEVINE_NPC11_18:
+	checkitem ITEM_EXP_CANDY_M
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_NPC11_22
+ISLANDGAME_APPLEVINE_NPC11_21:
+	checkitem ITEM_EXP_CANDY_L
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_NPC11_25
+ISLANDGAME_APPLEVINE_NPC11_24:
+	checkitem ITEM_EXP_CANDY_XL
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_NPC11_28
+ISLANDGAME_APPLEVINE_NPC11_27:
+	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+	switch VAR_RESULT
+	case 102, ISLANDGAME_APPLEVINE_NPC11_32
+	case 103, ISLANDGAME_APPLEVINE_NPC11_33
+	case 104, ISLANDGAME_APPLEVINE_NPC11_34
+	case 105, ISLANDGAME_APPLEVINE_NPC11_35
+	case 106, ISLANDGAME_APPLEVINE_NPC11_36
+	case 107, ISLANDGAME_APPLEVINE_NPC11_37
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_13
+	hidecoinsbox 18, 1
+	goto Applevine_CandyMan_End
+ISLANDGAME_APPLEVINE_NPC11_30:
+Applevine_CandyMan_End:
 	closemessage
 	release
 	return
+
+ISLANDGAME_APPLEVINE_NPC11_2:
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_0
+	goto Applevine_CandyMan_End
+	goto ISLANDGAME_APPLEVINE_NPC11_1
+
+ISLANDGAME_APPLEVINE_NPC11_5:
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_1, MSGBOX_YESNO
+	setflag FLAG_TEMP_4
+	goto ISLANDGAME_APPLEVINE_NPC11_4
+
+ISLANDGAME_APPLEVINE_NPC11_9:
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_8
+
+ISLANDGAME_APPLEVINE_NPC11_13:
+	dynmultipush ISLANDGAME_APPLEVINE_NPC11_Text_5, 102
+	goto ISLANDGAME_APPLEVINE_NPC11_12
+
+ISLANDGAME_APPLEVINE_NPC11_16:
+	dynmultipush ISLANDGAME_APPLEVINE_NPC11_Text_6, 103
+	goto ISLANDGAME_APPLEVINE_NPC11_15
+
+ISLANDGAME_APPLEVINE_NPC11_19:
+	dynmultipush ISLANDGAME_APPLEVINE_NPC11_Text_7, 104
+	goto ISLANDGAME_APPLEVINE_NPC11_18
+
+ISLANDGAME_APPLEVINE_NPC11_22:
+	dynmultipush ISLANDGAME_APPLEVINE_NPC11_Text_8, 105
+	goto ISLANDGAME_APPLEVINE_NPC11_21
+
+ISLANDGAME_APPLEVINE_NPC11_25:
+	dynmultipush ISLANDGAME_APPLEVINE_NPC11_Text_9, 106
+	goto ISLANDGAME_APPLEVINE_NPC11_24
+
+ISLANDGAME_APPLEVINE_NPC11_28:
+	dynmultipush ISLANDGAME_APPLEVINE_NPC11_Text_10, 107
+	goto ISLANDGAME_APPLEVINE_NPC11_27
+
+ISLANDGAME_APPLEVINE_NPC11_32:
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_11, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_NPC11_39
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_13
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_33:
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_14, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_NPC11_42
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_13
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_34:
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_15, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_NPC11_45
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_13
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_35:
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_16, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_NPC11_48
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_13
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_36:
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_17, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_NPC11_51
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_13
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_37:
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_18, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_NPC11_54
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_13
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_39:
+	addcoins 4000
+	updatecoinsbox 18, 1
+	removeitem ITEM_RARE_CANDY
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_12
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_42:
+	addcoins 100
+	updatecoinsbox 18, 1
+	removeitem ITEM_EXP_CANDY_XS
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_12
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_45:
+	addcoins 500
+	updatecoinsbox 18, 1
+	removeitem ITEM_EXP_CANDY_S
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_12
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_48:
+	addcoins 1000
+	updatecoinsbox 18, 1
+	removeitem ITEM_EXP_CANDY_M
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_12
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_51:
+	addcoins 2000
+	updatecoinsbox 18, 1
+	removeitem ITEM_EXP_CANDY_L
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_12
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
+
+ISLANDGAME_APPLEVINE_NPC11_54:
+	addcoins 8000
+	updatecoinsbox 18, 1
+	removeitem ITEM_EXP_CANDY_XL
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_NPC11_Text_12
+	goto CandyMan_Exchange
+	goto ISLANDGAME_APPLEVINE_NPC11_30
 
 
 ISLANDGAME_APPLEVINE_NPC12::
@@ -315,25 +509,10 @@ ISLANDGAME_APPLEVINE_NPC13::
 	lock
 	faceplayer
 	playmoncry SPECIES_MANECTRIC, CRY_MODE_NORMAL
-	goto_if_unset FLAG_APPLEVINE_MANECTRIC_GIFT, ISLANDGAME_APPLEVINE_NPC13_2
-	msgbox ISLANDGAME_APPLEVINE_NPC13_Text_1
-ISLANDGAME_APPLEVINE_NPC13_1:
-ManectricGiftEvent_End:
+	msgbox ISLANDGAME_APPLEVINE_NPC13_Text_0
+	closemessage
 	release
 	return
-
-ISLANDGAME_APPLEVINE_NPC13_2:
-	msgbox ISLANDGAME_APPLEVINE_NPC13_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq ISLANDGAME_APPLEVINE_NPC13_6
-ISLANDGAME_APPLEVINE_NPC13_5:
-	giveitem ITEM_ESCAPE_ROPE
-	setflag FLAG_APPLEVINE_MANECTRIC_GIFT
-	goto ISLANDGAME_APPLEVINE_NPC13_1
-
-ISLANDGAME_APPLEVINE_NPC13_6:
-	goto ManectricGiftEvent_End
-	goto ISLANDGAME_APPLEVINE_NPC13_5
 
 
 ISLANDGAME_APPLEVINE_NPC14::
@@ -374,7 +553,6 @@ ISLANDGAME_APPLEVINE_AppleRoll1_3:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_9
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_9
 ISLANDGAME_APPLEVINE_AppleRoll1_9:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_1
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
 
@@ -392,7 +570,6 @@ ISLANDGAME_APPLEVINE_AppleRoll1_4:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_11
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_11
 ISLANDGAME_APPLEVINE_AppleRoll1_11:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_1
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
 
@@ -410,7 +587,6 @@ ISLANDGAME_APPLEVINE_AppleRoll1_5:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_13
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_13
 ISLANDGAME_APPLEVINE_AppleRoll1_13:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_1
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
 
@@ -448,7 +624,6 @@ ISLANDGAME_APPLEVINE_AppleRoll2_3:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_9
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_9
 ISLANDGAME_APPLEVINE_AppleRoll2_9:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_2
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
 
@@ -466,7 +641,6 @@ ISLANDGAME_APPLEVINE_AppleRoll2_4:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_11
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_11
 ISLANDGAME_APPLEVINE_AppleRoll2_11:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_2
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
 
@@ -484,7 +658,6 @@ ISLANDGAME_APPLEVINE_AppleRoll2_5:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_13
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_13
 ISLANDGAME_APPLEVINE_AppleRoll2_13:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_2
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
 
@@ -522,7 +695,6 @@ ISLANDGAME_APPLEVINE_AppleRoll3_3:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_9
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_9
 ISLANDGAME_APPLEVINE_AppleRoll3_9:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_3
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
 
@@ -540,7 +712,6 @@ ISLANDGAME_APPLEVINE_AppleRoll3_4:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_11
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_11
 ISLANDGAME_APPLEVINE_AppleRoll3_11:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_3
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
 
@@ -558,7 +729,6 @@ ISLANDGAME_APPLEVINE_AppleRoll3_5:
 	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_13
 	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_13
 ISLANDGAME_APPLEVINE_AppleRoll3_13:
-	setflag FLAG_DAILY_APPLEVINE_APPLE_3
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
 
@@ -576,8 +746,8 @@ ISLANDGAME_APPLEVINE_CitySign_Text_0:
 	.string "CHECK YOUR APPLES FOR APPLIN!$"
 
 ISLANDGAME_APPLEVINE_GameCornerSign_Text_0:
-	.string "Eelektrik Game Corner\n"
-	.string "It's not gambling if it takes skill! :)$"
+	.string "Eelektrik Game Corner\p"
+	.string "Fun for all ages! :)$"
 
 ISLANDGAME_APPLEVINE_SierraPathSign_Text_0:
 	.string "SIERRA PATH\n"
@@ -666,23 +836,78 @@ ISLANDGAME_APPLEVINE_NPC10_Text_0:
 	.string "my next Pokémon Contest in Aetheria!$"
 
 ISLANDGAME_APPLEVINE_NPC11_Text_0:
-	.string "Hey, kid! Over here! Shhh! Be quiet! Stop\n"
-	.string "attracting attention!\p"
-	.string "You're a Pokémon trainer, yeah? I uh,\n"
+	.string "Buzz off, kid!$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_1:
+	.string "Hey, bud! {PAUSE 30}Over here!{PAUSE 30} Shhh! Be quiet!\n"
+	.string "Stop attracting attention!\p"
+	.string "You're a Pokémon trainer, yeah?{PAUSE 30} I uh,\n"
 	.string "bet you want some of those rare prizes\l"
 	.string "from the Game Corner, don'cha?\p"
 	.string "Ho-ho! Well you're in luck pal, cause\n"
 	.string "I've got stacks 'n stacks of coins!\p"
-	.string "They're all yours... if you're willin' to\n"
-	.string "help a brotha out...\p"
+	.string "They're all yours...{PAUSE 60} if you're willin' to\n"
+	.string "help a brotha out...{PAUSE 60}\p"
 	.string "See uh, I'm in need of some “candy”, and\n"
 	.string "I hear y'all trainers got tons of 'em.\p"
-	.string "So with that being said... you got the\n"
+	.string "So with that being said...{PAUSE 60} you got the\n"
 	.string "stuffs?$"
 
-ISLANDGAME_APPLEVINE_NPC11_Text_1:
-	.string "Ayo, you don't got nothin'! I only work\n"
-	.string "with serious customers! Buzz off!$"
+ISLANDGAME_APPLEVINE_NPC11_Text_2:
+	.string "H-Hey there... you got the stuffs now?$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_3:
+	.string "No? Go away then! Shoo! Shoo!$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_4:
+	.string "I'm outie!$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_5:
+	.string "Rare Candy$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_6:
+	.string "Exp Candy XS$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_7:
+	.string "Exp Candy S$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_8:
+	.string "Exp Candy M$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_9:
+	.string "Exp Candy L$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_10:
+	.string "Exp Candy XL$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_11:
+	.string "Oooo, is that rare candy I see? I'll give\n"
+	.string "you 4,000 coins for it!$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_12:
+	.string "Heheh... Thank ye kindly!$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_13:
+	.string "Huh? You holdin' out on me, bud??$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_14:
+	.string "Just an Exp Candy XS? Humph... 100 coins\n"
+	.string "is all I'm givin' for it!$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_15:
+	.string "An Exp Candy S? How's 500 coins sound?$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_16:
+	.string "An Exp Candy M? I'll give ya 1,000 coins\n"
+	.string "for it.$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_17:
+	.string "Ho-ho, an Exp Candy L? I'll give you\n"
+	.string "2,000 coins for it!$"
+
+ISLANDGAME_APPLEVINE_NPC11_Text_18:
+	.string "An EXP Candy XL!? I'll give you a\n"
+	.string "whopping 8,000 coins for that gem!!$"
 
 ISLANDGAME_APPLEVINE_NPC12_Text_0:
 	.string "That gaudy Game Corner is a stain on\n"
@@ -695,13 +920,7 @@ ISLANDGAME_APPLEVINE_NPC12_Text_0:
 	.string "knew and loved?$"
 
 ISLANDGAME_APPLEVINE_NPC13_Text_0:
-	.string "{COLOR RED}(Huh? It looks like Manectric is trying\n"
-	.string "to give me something.)\p"
-	.string "{COLOR RED}(Should I take it?)$"
-
-ISLANDGAME_APPLEVINE_NPC13_Text_1:
-	.string "{COLOR DARK_GRAY}Borf! {COLOR BLUE}(I have lots of toys, so I'll give\n"
-	.string "you one of mine. :D)$"
+	.string "Borf!$"
 
 ISLANDGAME_APPLEVINE_NPC14_Text_0:
 	.string "I became an officer to get in the line\n"
@@ -713,9 +932,9 @@ ISLANDGAME_APPLEVINE_NPC14_Text_0:
 	.string "meanwhile I'm stuck listening to a\l"
 	.string "jaded old man complain about the Game\l"
 	.string "Corner for three hours.\p"
-	.string "What's the big deal? It's not like it's\n"
-	.string "gambling or anything. There's skill\l"
-	.string "involved. It says it on the sign!$"
+	.string "What's even the big deal? It's not like\n"
+	.string "there's anything illegal going on inside\l"
+	.string "or anything. They're broken no laws!$"
 
 ISLANDGAME_APPLEVINE_CocoTalk1::
 	.string "My name is Coco. I'm a friend of\n"
