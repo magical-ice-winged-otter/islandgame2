@@ -4,35 +4,264 @@ const SLOT_MACHINE_VAR = VAR_0x8004
 
 // Generic NPCs
 
-script ISLANDGAME_APPLEVINE_EventScript_Gambler0 {
-    lock
-    msgbox(format("Wow, these things are rigged..."))
-    release
-}
-script ISLANDGAME_APPLEVINE_EventScript_Gambler1 {
-    lock
-    msgbox(format("Have you won anything yet?"))
-    release
-}
-script ISLANDGAME_APPLEVINE_EventScript_Gambler2 {
-    lock
-    msgbox(format("GOTTA KEEP PLAYING!!!"))
-    release
-}
-script ISLANDGAME_APPLEVINE_EventScript_Gambler3 {
-    lock
-    msgbox(format("(They've fallen asleep at the machine)"))
-    release
-}
-script ISLANDGAME_APPLEVINE_EventScript_Bouncer {
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC1 {
     lock
     msgbox(format(
-        "Yep, this is the VIP lounge.\p"
-        "It's so exclusive we removed the door earlier...\p"
-        "Check back later. Maybe we'll bring it back."
+        "{COLOR RED}(It's a giant stuffed Charizard.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "At last... After years of commitment and every last dollar of my savings, I have finally gotten enough coins for this giant stuffed Charizard.\p"
+        "Hm?{PAUSE 60} You're asking why I didn't just buy one from a toy store instead?\p"
+        "Ah,{PAUSE 30} the new generation and their inability to understand the value of hard work...\p"
+        "What value would this giant stuffed Charizard hold if I simply just bought it from the store?{PAUSE 60} Absolutely none!\p"
+        "It is the time and effort I spent to obtain this oversized plush that grants it true value! That is what makes it special!\p"
+        "You kids sure are lazy today."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC3 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hey kid, need some coins?\p"
+        "Well, I can't give you any.\p"
+        "Because...{PAUSE 60} I'm...{PAUSE 60} all...{PAUSE 60} out...{PAUSE 60} of...{PAUSE 60}\nMONEY!!!!!!!!!!!!!!!!!!!\p"
+        "I have a serious gambling addiction. I'm seeing a therapist about it tomorrow."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_EventScript_RouletteEmployee {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hey there, gamer! You interested in playing a little roulette?\p"
+        "The rules are simple! There are twelve slots on the roulette wheel, each with a specific color and Pokémon on it.\p"
+        "By betting on the correct slot, you'll win coins! You can place bets on a specific color, Pokémon, or slot!\p"
+        "Rolled balls stay in their slot until the sixth is rolled, then the wheel is reset!\p"
+        "Well, what are ya waiting for? Come play a few rounds of skill-based roulette!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC4 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Unbelievable... I just lost all my coins betting on yellow!\p"
+        "I thought for sure it would land on it after not landing on so many times..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5 {
+    lock
+    faceplayer
+    if(!flag(FLAG_APPLEVINE_COIN_CASE)) {
+        msgbox(format(
+            "halp need coin"
+        ))
+        goto(GameCornerNPC_End)
+    }
+    showcoinsbox(18,1)
+    msgbox(format(
+        "gib coin pls"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        checkcoins(VAR_TEMP_D)
+        if (var(VAR_TEMP_D) < 1) {
+            msgbox(format(
+                "wtf poor"
+            ))
+            goto(GameCornerNPC_End)
+        }
+        removecoins(1)
+        updatecoinsbox(18,1)
+        playse(SE_SHOP)
+        waitse
+        msgbox(format(
+            "thx"
+        ))
+    }
+    else {
+        msgbox(format(
+            "wai"
+        ))
+    }
+    hidecoinsbox(18,1)
+    GameCornerNPC_End:
+        closemessage
+        release
+}
+
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC6 {
+    lock
+    msgbox(format(
+        "Come on... come on! Give me my non-alcoholic beverage, you stupid machine!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_EventScript_Gambler0 {
+    lock
+    msgbox(format(
+        "BRO WHAT DO YOU MEAN I MISSED?? MY INPUT WAS FRAME PERFECT DUDE"
     ))
     release
 }
+
+script ISLANDGAME_APPLEVINE_EventScript_Gambler1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I like playing on this machine the most. I always get lucky when playing on it!"
+    ))
+    applymovement(2, Common_Movement_FaceLeft)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_APPLEVINE_EventScript_Gambler2 {
+    lock
+    faceplayer
+    if(!flag(FLAG_APPLEVINE_COIN_CASE)) {
+        msgbox(format(
+            "I got extra coins if you want 'em, but you're gonna need a coin case."
+        ))
+    }
+    else {
+        if(!flag(FLAG_DAILY_APPLEVINE_COIN_BRO)) { 
+            showcoinsbox(18,1)
+            msgbox(format(
+                "Want some coins? I got tons of 'em."
+            ))
+            addcoins(40)
+            updatecoinsbox(18,1)
+            playse(SE_SHOP)
+            waitse
+            hidecoinsbox(18,1)
+            setflag(FLAG_DAILY_APPLEVINE_COIN_BRO)
+        }
+        else {
+            msgbox(format(
+                "Come back tomorrow if ya want more coins."
+            ))
+        }
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_EventScript_Gambler3 {
+    lock
+    msgbox(format(
+        "What the heck, man! It's like these things are rigged or something!"
+    ))
+    release
+}
+
+script ISLANDGAME_APPLEVINE_EventScript_Bouncer {
+    lock
+    faceplayer
+    msgbox(format(
+        "Sorry, you must have a VIP Pass in order to enter the High Limit Area."
+    ))
+    release
+}
+
+
+
+
+// Vending Machine
+script ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine {
+    lock
+
+    Applevine_VendingMachine:
+        msgbox(format(
+            "{COLOR RED}(It's a vending machine. What should I get?)"
+        ))
+        showmoneybox(18,7)
+        dynmultipush("Nah, I'm good", 0)
+        dynmultipush("Fresh Water - ¥500", 35)
+        dynmultipush("Soda Pop - ¥800", 36)
+        dynmultipush("Lemonade - ¥1200", 37)
+        dynmultistack(0,0,TRUE,4,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        switch (var(VAR_RESULT)) {
+            case 35:
+                checkmoney(500)
+                if(!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "{COLOR RED}(I don't have enough money.)"
+                    ))
+                    goto(Applevine_VendingMachine)
+                }
+                removemoney(500)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                playse(SE_VEND)
+                waitse
+                giveitem(ITEM_FRESH_WATER)
+                goto(Applevine_VendingMachine)
+            case 36:
+                checkmoney(800)
+                if(!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "{COLOR RED}(I don't have enough money.)"
+                    ))
+                    goto(Applevine_VendingMachine)
+                }
+                removemoney(800)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                playse(SE_VEND)
+                waitse
+                hidemoneybox
+                giveitem(ITEM_SODA_POP)
+                goto(Applevine_VendingMachine)
+            case 37:
+                checkmoney(1200)
+                if(!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "{COLOR RED}(I don't have enough money.)"
+                    ))
+                    goto(Applevine_VendingMachine)
+                }
+                removemoney(1200)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                playse(SE_VEND)
+                waitse
+                giveitem(ITEM_LEMONADE)
+                goto(Applevine_VendingMachine)
+            default: goto(ApplevineVending_End)
+        }
+
+    ApplevineVending_End:
+        hidemoneybox
+        closemessage
+        release
+}
+
+
+
+
+
 
 // Prize Clerk
 script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
