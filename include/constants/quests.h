@@ -32,9 +32,12 @@
 #define QUEST_FRESA_FARMS_LOST_MAREEP      4
 #define QUEST_FRESA_FARMS_TORCHIC_EGG      5
 #define QUEST_ROSEVALE_RESCUE              6
-#define QUEST_COUNT                        7 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_APPLEVINE_COUCH_POTATO       7
+#define QUEST_COUNT                        8 // This number is literally how many to show in the UI (keep it accurate!)
 
 // Custom Sub-Quests
+
+//Persi Berry
 #define SUB_QUEST_PERSI_BERRY_1            0
 #define SUB_QUEST_PERSI_BERRY_2            1
 #define SUB_QUEST_PERSI_BERRY_3            2
@@ -50,9 +53,15 @@
 #define SUB_QUEST_PERSI_BERRY_13           12
 #define SUB_QUEST_PERSI_BERRY_14           13
 
-#define SUB_QUEST_COUNT_PERSI_BERRY 14
+#define SUB_QUEST_COUNT_PERSI_BERRY        14
 
-#define SUB_QUEST_COUNT SUB_QUEST_COUNT_PERSI_BERRY
+// Applevine Couch Potato
+#define SUB_QUEST_COUCH_POTATO_1           0
+#define SUB_QUEST_COUCH_POTATO_2           1
+
+#define SUB_QUEST_COUNT_COUCH_POTATO       2
+
+#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_COUCH_POTATO)
 
 
 // We want to allocate more space in the saveblock for quests than we need,

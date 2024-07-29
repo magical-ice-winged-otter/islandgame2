@@ -259,6 +259,7 @@ const u8 sText_SideQuestMap_MintyMeadows[] = _("Minty Meadows");
 const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
 const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
 const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
+const u8 sText_SideQuestMap_Applevine[] = _("Applevine");
 const u8 sText_SideQuestMap_Unknown[] = _("???");
 
 // Persi Favorite Card Quest
@@ -266,11 +267,13 @@ const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
 const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A camper from Camp Persi lost his\nfavorite trading card in Verdant Woods!");
 const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You found and returned the camper's\nfavorite card!");
 
+// - Subquests
+
 // Berry Maniac Quest
 const u8 sText_SideQuestName_PersiBerryManiac[] = _("Berry Hunting");
 const u8 sText_SideQuestDesc_PersiBerryManiac[] = _("The Berry Maniac from Camp Persi\nyearns for rare berries!");
 const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You've aided the Berry Maniac\n in achieving his full power...");
-// - Subquests
+
 const u8 sText_SubQuest_PersiBerryManiac1_Name[] = _("Liechi Berry");
 const u8 sText_SubQuest_PersiBerryManiac1_Desc[] = _("You found and gave a Liechi Berry\nto the Berry Maniac.");
 
@@ -313,6 +316,13 @@ const u8 sText_SubQuest_PersiBerryManiac13_Desc[] = _("You found and gave a Rowa
 const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
 const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
 
+// Couch Potato Quest
+const u8 sText_SubQuest_CouchPotato1_Name[] 	  = _("HP UP");
+const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You found and gave a HP UP\nto the Couch Potato.");
+
+const u8 sText_SubQuest_CouchPotato2_Name[] 	  = _("Protein");
+const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("You found and gave a Protein\nto the Couch Potato.");
+
 // Verdant Forest Pokemon Quest
 const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
 const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
@@ -338,6 +348,11 @@ const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg
 const u8 sText_SideQuestName_RosevaleAzurillRescue[] = _("Rescue Mission");
 const u8 sText_SideQuestDesc_RosevaleAzurillRescue[] = _("A little girl's Azurill has been stolen!\nThe thief is somewhere in Mt. Aurora...");
 const u8 sText_SideQuestDoneDesc_RosevaleAzurillRescue[] = _("You successfully rescued Azurill,\n with some help from Articuno!");
+
+// Lost Azurill Quest
+const u8 sText_SideQuestName_APPLEVINE_COUCH_POTATO[] = _("Couch Potato");
+const u8 sText_SideQuestDesc_APPLEVINE_COUCH_POTATO[] = _("A lazy man in Applevine is\nreally hungry...");
+const u8 sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO[] = _("You got his leftovers...?");
 
 
 static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_BERRY] =
@@ -484,6 +499,27 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 
 };
 
+static const struct SubQuest sSubQuests_ApplevineCouchPotato[SUB_QUEST_COUNT_COUCH_POTATO] = 
+{
+	sub_quest(
+		SUB_QUEST_COUCH_POTATO_1,
+		sText_SubQuest_CouchPotato1_Name,
+		sText_SubQuest_CouchPotato1_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_HP_UP,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_COUCH_POTATO_2,
+		sText_SubQuest_CouchPotato2_Name,
+		sText_SubQuest_CouchPotato2_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_PROTEIN,
+		ITEM,
+		sText_Active
+	),
+};
 
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
@@ -556,6 +592,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      PKMN,
 	      NULL,
               0 
+	),
+	[QUEST_APPLEVINE_COUCH_POTATO] = side_quest(
+	      sText_SideQuestName_APPLEVINE_COUCH_POTATO,
+	      sText_SideQuestDesc_APPLEVINE_COUCH_POTATO,
+	      sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO,
+	      sText_SideQuestMap_Applevine,
+	      ITEM_LEFTOVERS, 
+	      ITEM,
+	      sSubQuests_ApplevineCouchPotato,
+          SUB_QUEST_COUNT_COUCH_POTATO 
 	),
 };
 
@@ -2491,6 +2537,27 @@ void QuestMenu_CopyQuestName(u8 *dst, u8 questId)
 void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId)
 {
 	StringCopy(dst, sSideQuests[parentId].subquests[childId].name);
+}
+
+u16 QuestMenu_Subquest_Sprite(u8 parentId, u8 childId)
+{
+	return sSideQuests[parentId].subquests[childId].sprite;
+}
+
+void QuestMenu_CopySubquestType(u8 *dst, u8 parentId, u8 childId)
+{
+	struct SubQuest sub_quest = sSideQuests[parentId].subquests[childId];
+	switch (sub_quest.spritetype) 
+	{
+		case OBJECT:
+			break;
+		case ITEM:
+			CopyItemName(sub_quest.sprite, dst);
+			break;
+		case PKMN:
+			StringCopy(dst, GetSpeciesName(sub_quest.sprite));
+			break;
+	}
 }
 
 void QuestMenu_ResetMenuSaveData(void)

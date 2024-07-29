@@ -131,6 +131,8 @@ ISLANDGAME_APPLEVINE_EventScript_Gambler2_5:
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler2_Text_1
 	addcoins 40
 	updatecoinsbox 18, 1
+	playse SE_SHOP
+	waitse
 	hidecoinsbox 18, 1
 	setflag FLAG_DAILY_APPLEVINE_COIN_BRO
 	goto ISLANDGAME_APPLEVINE_EventScript_Gambler2_1
@@ -155,7 +157,7 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine::
 	lock
 Applevine_VendingMachine:
 	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_0
-	showmoneybox 18, 0
+	showmoneybox 18, 7
 	dynmultipush ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_1, 0
 	dynmultipush ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_2, 35
 	dynmultipush ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_3, 36
@@ -199,6 +201,7 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_10:
 	waitse
 	playse SE_VEND
 	waitse
+	hidemoneybox
 	giveitem ITEM_SODA_POP
 	goto Applevine_VendingMachine
 	goto ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_1
@@ -1185,9 +1188,9 @@ ISLANDGAME_APPLEVINE_EventScript_RouletteEmployee_Text_0:
 	.string "specific color, Pokémon, or slot!\p"
 	.string "Rolled balls stay in their slot until the\n"
 	.string "sixth is rolled, then the wheel is\l"
-	.string "reset! Well, what are ya waiting for?\l"
-	.string "Come play a few rounds of skill-based\l"
-	.string "roulette!$"
+	.string "reset!\p"
+	.string "Well, what are ya waiting for? Come play\n"
+	.string "a few rounds of skill-based roulette!$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC4_Text_0:
 	.string "Unbelievable... I just lost all my coins\n"
