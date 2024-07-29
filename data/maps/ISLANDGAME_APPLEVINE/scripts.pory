@@ -22,7 +22,7 @@ mapscripts ISLANDGAME_APPLEVINE_MapScripts {
 
 // signs
 script ISLANDGAME_APPLEVINE_StoreSign {
-    msgbox(format("LA CUCINA DOLCHE\nWe also offer Milcery makeovers!"), MSGBOX_SIGN)
+    msgbox(format("LA CUCINA DOLCHE\nGive your Milcery a makeover!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_APPLEVINE_CitySign {

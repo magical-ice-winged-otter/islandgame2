@@ -2,6 +2,11 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_MapScripts::
 	.byte 0
 
 
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_OutOfOrder::
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_OutOfOrder_Text_0, MSGBOX_SIGN
+	return
+
+
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC1::
 	lock
 	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC1_Text_0
@@ -1147,6 +1152,9 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine11::
 	return
 
 
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_OutOfOrder_Text_0:
+	.string "OUT OF ORDER$"
+
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC1_Text_0:
 	.string "{COLOR RED}(It's a giant stuffed Charizard.)$"
 
@@ -1172,7 +1180,7 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC2_Text_0:
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC3_Text_0:
 	.string "Hey kid, need some coins?\p"
 	.string "Well, I can't give you any.\p"
-	.string "Because...{PAUSE 60} I'm...{PAUSE 60} all...{PAUSE 60} out...{PAUSE 60} of...{PAUSE 60}\n"
+	.string "Because...{PAUSE 30} I'm...{PAUSE 30} all...{PAUSE 30} out...{PAUSE 30} of...{PAUSE 60}\n"
 	.string "MONEY!!!!!!!!!!!!!!!!!!!\p"
 	.string "I have a serious gambling addiction. I'm\n"
 	.string "seeing a therapist about it tomorrow.$"
@@ -1214,9 +1222,8 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_4:
 	.string "wai$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC6_Text_0:
-	.string "Come on... come on! Give me my\n"
-	.string "non-alcoholic beverage, you stupid\l"
-	.string "machine!$"
+	.string "Come on! Give me my non-alcoholic\n"
+	.string "beverage, you stupid machine!$"
 
 ISLANDGAME_APPLEVINE_EventScript_Gambler0_Text_0:
 	.string "BRO WHAT DO YOU MEAN I MISSED?? MY\n"
@@ -1242,7 +1249,7 @@ ISLANDGAME_APPLEVINE_EventScript_Gambler3_Text_0:
 	.string "things are rigged or something!$"
 
 ISLANDGAME_APPLEVINE_EventScript_Bouncer_Text_0:
-	.string "Sorry, you must have a VIP Pass in order\n"
+	.string "Sorry, you must have a {COLOR LIGHT_RED}VIP Pass{COLOR DARK_GRAY} in order\n"
 	.string "to enter the High Limit Area.$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_0:

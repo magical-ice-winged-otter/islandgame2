@@ -766,13 +766,13 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro::
 	.string "a little battle?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1::
-	.string "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava\n"
-	.string "Cookies to support Troop 115.\p"
+	.string "{COLOR DARK_GRAY}Hi there! I'm selling delicious Girl\n"
+	.string "Scout Cookies to support Troop 115.\p"
 	.string "{COLOR DARK_GRAY}Would you like to buy one for ¥250?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1::
-	.string "{COLOR DARK_GRAY}Hi there! I'm selling tasty Rage Candy\n"
-	.string "Bars to support Troop 117.\p"
+	.string "{COLOR DARK_GRAY}Hi there! I'm selling tasty Boy Scout\n"
+	.string "Candy Bars to support Troop 117.\p"
 	.string "{COLOR DARK_GRAY}Would you like to buy one for ¥250?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC1Talk::

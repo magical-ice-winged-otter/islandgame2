@@ -4,6 +4,12 @@ const SLOT_MACHINE_VAR = VAR_0x8004
 
 // Generic NPCs
 
+script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_OutOfOrder {
+    msgbox(format(
+        "OUT OF ORDER"
+    ), MSGBOX_SIGN)
+}
+
 script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC1 {
     lock
     msgbox(format(
@@ -34,7 +40,7 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC3 {
     msgbox(format(
         "Hey kid, need some coins?\p"
         "Well, I can't give you any.\p"
-        "Because...{PAUSE 60} I'm...{PAUSE 60} all...{PAUSE 60} out...{PAUSE 60} of...{PAUSE 60}\nMONEY!!!!!!!!!!!!!!!!!!!\p"
+        "Because...{PAUSE 30} I'm...{PAUSE 30} all...{PAUSE 30} out...{PAUSE 30} of...{PAUSE 60}\nMONEY!!!!!!!!!!!!!!!!!!!\p"
         "I have a serious gambling addiction. I'm seeing a therapist about it tomorrow."
     ))
     closemessage
@@ -109,7 +115,7 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5 {
 script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC6 {
     lock
     msgbox(format(
-        "Come on... come on! Give me my non-alcoholic beverage, you stupid machine!"
+        "Come on! Give me my non-alcoholic beverage, you stupid machine!"
     ))
     closemessage
     release
@@ -177,7 +183,7 @@ script ISLANDGAME_APPLEVINE_EventScript_Bouncer {
     lock
     faceplayer
     msgbox(format(
-        "Sorry, you must have a VIP Pass in order to enter the High Limit Area."
+        "Sorry, you must have a {COLOR LIGHT_RED}VIP Pass{COLOR DARK_GRAY} in order to enter the High Limit Area."
     ))
     release
 }

@@ -278,7 +278,7 @@ ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1_Text_1:
 ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer1_Text_2:
 	.string "Whelp... Time to head back home. Some\n"
 	.string "livestreams oughta cheer me up.\p"
-	.string "I've been really enjoying Iono's\n"
+	.string "I've been really enjoying Serafina's\n"
 	.string "streams recently.$"
 
 ISLANDGAME_NORTHERN_ORANNA_PATH_Battle_Trainer2_Text_0:

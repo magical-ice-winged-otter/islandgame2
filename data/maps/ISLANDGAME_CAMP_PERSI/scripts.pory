@@ -371,7 +371,7 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro {
 
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1 {
     format(
-        "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava Cookies to support Troop 115. \p"
+        "{COLOR DARK_GRAY}Hi there! I'm selling delicious Girl Scout Cookies to support Troop 115. \p"
         "{COLOR DARK_GRAY}Would you like to buy one for ¥250?"
         )
 }
@@ -423,7 +423,7 @@ CookieGirl_End:
 
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1 {
     format(
-        "{COLOR DARK_GRAY}Hi there! I'm selling tasty Rage Candy Bars to support Troop 117. \p"
+        "{COLOR DARK_GRAY}Hi there! I'm selling tasty Boy Scout Candy Bars to support Troop 117. \p"
         "{COLOR DARK_GRAY}Would you like to buy one for ¥250?"
         )
 }

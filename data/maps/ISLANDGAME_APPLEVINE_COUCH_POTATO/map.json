@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_APPLEVINE_COUCH_POTATO",
   "name": "ISLANDGAME_APPLEVINE_COUCH_POTATO",
   "layout": "LAYOUT_ISLANDGAME_APPLEVINE_COUCH_POTATO",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_HG_VERMILION",
   "region_map_section": "MAPSEC_APPLEVINE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -16,10 +16,10 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 9,
-      "y": 15,
+      "x": 8,
+      "y": 4,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -29,10 +29,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_446",
-      "x": 7,
-      "y": 18,
+      "x": 10,
+      "y": 2,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -43,15 +43,15 @@
   ],
   "warp_events": [
     {
-      "x": 10,
-      "y": 19,
+      "x": 4,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_APPLEVINE",
       "dest_warp_id": "5"
     },
     {
-      "x": 9,
-      "y": 19,
+      "x": 3,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_APPLEVINE",
       "dest_warp_id": "5"
@@ -61,6 +61,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COUCH_POTATO_TV"
+    }
   ]
 }

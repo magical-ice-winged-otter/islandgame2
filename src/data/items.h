@@ -1009,12 +1009,12 @@ const struct Item gItemsInfo[] =
     [ITEM_SWEET_HEART] =
     {
         .name = _("Sweet Heart"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 100,
-        .holdEffectParam = 20,
+        .price = (I_PRICE >= GEN_7) ? 1000 : 1000,
+        .holdEffectParam = 30,
         .description = COMPOUND_STRING(
             "A sweet chocolate\n"
             "that restores HP\n"
-            "by 20 points."),
+            "by 30 points."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1041,10 +1041,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_PEWTER_CRUNCHIES] =
     {
-        .name = _("PewtrCrnches"),
-        .pluralName = _("PewtrCrnches"),
+        .name = _("Sera-Snaxx"),
+        .pluralName = _("Sera-Snaxx"),
         .price = 250,
-        .description = sFullHealDesc,
+        .description = COMPOUND_STRING(
+            "A yummy treat\n"
+            "that heals all\n"
+            "status problems."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1055,7 +1058,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_RAGE_CANDY_BAR] =
     {
-        .name = _("RageCandyBar"),
+        .name = _("Candy Bar"),
         .price = (I_PRICE >= GEN_7) ? 1000 : 1000,
         .description = COMPOUND_STRING(
             "Restores the HP of\n"
@@ -1071,10 +1074,10 @@ const struct Item gItemsInfo[] =
 
     [ITEM_LAVA_COOKIE] =
     {
-        .name = _("Lava Cookie"),
+        .name = _("Cookie"),
         .price = (I_PRICE >= GEN_7) ? 1000 : 1000,
         .description = COMPOUND_STRING(
-            "A local specialty\n"
+            "A yummy treat\n"
             "that heals all\n"
             "status problems."),
         .pocket = POCKET_ITEMS,
@@ -1087,10 +1090,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_OLD_GATEAU] =
     {
-        .name = _("Old Gateau"),
-        .pluralName = _("Old Gateaux"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 200,
-        .description = sFullHealDesc,
+        .name = _("Pudding"),
+        .pluralName = _("Pudding"),
+        .price = (I_PRICE >= GEN_7) ? 1000 : 1000,
+        .description = COMPOUND_STRING(
+            "A yummy treat\n"
+            "that heals all\n"
+            "status problems."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1101,9 +1107,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_CASTELIACONE] =
     {
-        .name = _("Casteliacone"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 100,
-        .description = sFullHealDesc,
+        .name = _("Ice Cream"),
+        .price = (I_PRICE >= GEN_7) ? 1000 : 1000,
+        .description = COMPOUND_STRING(
+            "A yummy treat\n"
+            "that heals all\n"
+            "status problems."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1114,9 +1123,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_LUMIOSE_GALETTE] =
     {
-        .name = _("LumioseGlete"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 200,
-        .description = sFullHealDesc,
+        .name = _("Pancake"),
+        .price = (I_PRICE >= GEN_7) ? 1000 : 1000,
+        .description = COMPOUND_STRING(
+            "A yummy treat\n"
+            "that heals all\n"
+            "status problems."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1127,9 +1139,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SHALOUR_SABLE] =
     {
-        .name = _("ShalourSable"),
+        .name = _("Biscuit"),
         .price = (I_PRICE >= GEN_7) ? 350 : 200,
-        .description = sFullHealDesc,
+        .description = COMPOUND_STRING(
+            "A yummy treat\n"
+            "that heals all\n"
+            "status problems."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1140,9 +1155,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BIG_MALASADA] =
     {
-        .name = _("Big Malasada"),
-        .price = 350,
-        .description = sFullHealDesc,
+        .name = _("Jelly Donut"),
+        .price = 1000,
+        .description = COMPOUND_STRING(
+            "A yummy treat\n"
+            "that heals all\n"
+            "status problems."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -3515,7 +3533,7 @@ const struct Item gItemsInfo[] =
     [ITEM_SWEET_APPLE] =
     {
         .name = _("Sweet Apple"),
-        .price = 1000,
+        .price = 500,
         .description = COMPOUND_STRING(
             "A very sweet apple\n"
             "that makes certain\n"
@@ -3530,7 +3548,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TART_APPLE] =
     {
         .name = _("Tart Apple"),
-        .price = 1000,
+        .price = 500,
         .description = COMPOUND_STRING(
             "A very tart apple\n"
             "that makes certain\n"
@@ -12387,7 +12405,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("FrshStrtMochi"),
         .pluralName = _("FrshStrtMochi"),
-        .price = 300,
+        .price = 1000,
         .description = COMPOUND_STRING(
             "An item that resets\n"
             "all base points of\n"
@@ -12439,9 +12457,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_JUBILIFE_MUFFIN] =
     {
-        .name = _("JublifeMuffin"),
+        .name = _("Muffin"),
         .price = 250,
-        .description = sFullHealDesc,
+        .description = COMPOUND_STRING(
+            "A yummy treat\n"
+            "that heals all\n"
+            "status problems."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,

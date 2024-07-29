@@ -58,8 +58,11 @@
 // Applevine Couch Potato
 #define SUB_QUEST_COUCH_POTATO_1           0
 #define SUB_QUEST_COUCH_POTATO_2           1
+#define SUB_QUEST_COUCH_POTATO_3           2
+#define SUB_QUEST_COUCH_POTATO_4           3
+#define SUB_QUEST_COUCH_POTATO_5           4
 
-#define SUB_QUEST_COUNT_COUCH_POTATO       2
+#define SUB_QUEST_COUNT_COUCH_POTATO       5
 
 #define SUB_QUEST_COUNT (SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_COUCH_POTATO)
 

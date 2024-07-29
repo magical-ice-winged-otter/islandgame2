@@ -739,7 +739,7 @@ ISLANDGAME_APPLEVINE_AppleRoll3_6:
 
 ISLANDGAME_APPLEVINE_StoreSign_Text_0:
 	.string "LA CUCINA DOLCHE\n"
-	.string "We also offer Milcery makeovers!$"
+	.string "Give your Milcery a makeover!$"
 
 ISLANDGAME_APPLEVINE_CitySign_Text_0:
 	.string "APPLEVINE\n"

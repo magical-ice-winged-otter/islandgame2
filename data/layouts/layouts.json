@@ -5414,8 +5414,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_APPLEVINE_COUCH_POTATO",
       "name": "ISLANDGAME_APPLEVINE_COUCH_POTATO_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 11,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE_COUCH_POTATO/border.bin",

@@ -260,14 +260,13 @@ const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
 const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
 const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
 const u8 sText_SideQuestMap_Applevine[] = _("Applevine");
-const u8 sText_SideQuestMap_Unknown[] = _("???");
+const u8 sText_SideQuestMap_Unknown[] = _("-");
 
 // Persi Favorite Card Quest
 const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
 const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A camper from Camp Persi lost his\nfavorite trading card in Verdant Woods!");
 const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You found and returned the camper's\nfavorite card!");
 
-// - Subquests
 
 // Berry Maniac Quest
 const u8 sText_SideQuestName_PersiBerryManiac[] = _("Berry Hunting");
@@ -316,12 +315,7 @@ const u8 sText_SubQuest_PersiBerryManiac13_Desc[] = _("You found and gave a Rowa
 const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
 const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
 
-// Couch Potato Quest
-const u8 sText_SubQuest_CouchPotato1_Name[] 	  = _("HP UP");
-const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You found and gave a HP UP\nto the Couch Potato.");
 
-const u8 sText_SubQuest_CouchPotato2_Name[] 	  = _("Protein");
-const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("You found and gave a Protein\nto the Couch Potato.");
 
 // Verdant Forest Pokemon Quest
 const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
@@ -331,7 +325,7 @@ const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the poss
 // Maplegrove Lovers Quest
 const u8 sText_SideQuestName_MaplegroveLovers[] = _("Star-crossed Lovers");
 const u8 sText_SideQuestDesc_MaplegroveLovers[] = _("Deliver Roman's love letter\nto Julie in Applevine!");
-const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("Thanks to you, Roman and Julie\nhave found their one true pair.");
+const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("Thanks to you, their ship has sailed\nsuccessfully!");
 
 
 // Lost Mareep Quest
@@ -349,10 +343,27 @@ const u8 sText_SideQuestName_RosevaleAzurillRescue[] = _("Rescue Mission");
 const u8 sText_SideQuestDesc_RosevaleAzurillRescue[] = _("A little girl's Azurill has been stolen!\nThe thief is somewhere in Mt. Aurora...");
 const u8 sText_SideQuestDoneDesc_RosevaleAzurillRescue[] = _("You successfully rescued Azurill,\n with some help from Articuno!");
 
-// Lost Azurill Quest
-const u8 sText_SideQuestName_APPLEVINE_COUCH_POTATO[] = _("Couch Potato");
-const u8 sText_SideQuestDesc_APPLEVINE_COUCH_POTATO[] = _("A lazy man in Applevine is\nreally hungry...");
-const u8 sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO[] = _("You got his leftovers...?");
+// Couch Potato Quest
+const u8 sText_SideQuestName_APPLEVINE_COUCH_POTATO[] = _("Part-Time Job");
+const u8 sText_SideQuestDesc_APPLEVINE_COUCH_POTATO[] = _("You probably weren't expecting to get\none.");
+const u8 sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO[] = _("Looks like you've been laid off.\nAt least you were compensated...?");
+
+const u8 sText_SubQuest_CouchPotato1_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You know Sweet Hearts have a serving size\nof two people, right?");
+
+const u8 sText_SubQuest_CouchPotato2_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("They should just set up a scout camp at\nthis guy's house. They'd make bank for sure.");
+
+const u8 sText_SubQuest_CouchPotato3_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato3_Desc[] 	  = _("Pancakes are just dessert pizzas.");
+
+const u8 sText_SubQuest_CouchPotato4_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("Imagine if you brought him a rice ball\ninstead.");
+
+const u8 sText_SubQuest_CouchPotato5_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("Man, Sera's fans are down bad.");
+
+
 
 
 static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_BERRY] =
@@ -506,7 +517,7 @@ static const struct SubQuest sSubQuests_ApplevineCouchPotato[SUB_QUEST_COUNT_COU
 		sText_SubQuest_CouchPotato1_Name,
 		sText_SubQuest_CouchPotato1_Desc,
 		sText_SideQuestMap_Unknown,
-		ITEM_HP_UP,
+		ITEM_SWEET_HEART,
 		ITEM,
 		sText_Active
 	),
@@ -515,7 +526,34 @@ static const struct SubQuest sSubQuests_ApplevineCouchPotato[SUB_QUEST_COUNT_COU
 		sText_SubQuest_CouchPotato2_Name,
 		sText_SubQuest_CouchPotato2_Desc,
 		sText_SideQuestMap_Unknown,
-		ITEM_PROTEIN,
+		ITEM_RAGE_CANDY_BAR,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_COUCH_POTATO_3,
+		sText_SubQuest_CouchPotato3_Name,
+		sText_SubQuest_CouchPotato3_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_LUMIOSE_GALETTE,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_COUCH_POTATO_4,
+		sText_SubQuest_CouchPotato4_Name,
+		sText_SubQuest_CouchPotato4_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_BIG_MALASADA,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_COUCH_POTATO_5,
+		sText_SubQuest_CouchPotato5_Name,
+		sText_SubQuest_CouchPotato5_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_PEWTER_CRUNCHIES,
 		ITEM,
 		sText_Active
 	),
