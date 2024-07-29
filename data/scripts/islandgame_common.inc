@@ -24,13 +24,13 @@ Common_NextSubQuest_2:
 	return
 
 Common_NextSubQuest_3:
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_APPLEVINE_COUCH_POTATO, VAR_TEMP_B
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, VAR_TEMP_C, VAR_TEMP_B
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_NextSubQuest_6
 	addvar VAR_TEMP_B, 1
 	goto Common_NextSubQuest_2
 
 Common_NextSubQuest_6:
-	subquestmenu QUEST_MENU_BUFFER_QUEST_NAME, QUEST_APPLEVINE_COUCH_POTATO, VAR_TEMP_B
+	subquestmenu QUEST_MENU_BUFFER_QUEST_NAME, VAR_TEMP_C, VAR_TEMP_B
 	return
 

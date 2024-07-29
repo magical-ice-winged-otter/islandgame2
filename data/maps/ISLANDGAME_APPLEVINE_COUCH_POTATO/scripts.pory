@@ -1,6 +1,7 @@
 const LOOP_BOUND = VAR_TEMP_A
 const LOOP_ITER  = VAR_TEMP_B
-const ITEM_VAR   = VAR_TEMP_C
+const QUEST      = VAR_TEMP_C
+const ITEM_VAR   = VAR_TEMP_D
 
 mapscripts ISLANDGAME_APPLEVINE_COUCH_POTATO_MapScripts {}
 
@@ -20,6 +21,7 @@ script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
         case QUEST_ACTIVE:
             setvar(LOOP_ITER, SUB_QUEST_COUCH_POTATO_1)
             setvar(LOOP_BOUND, (SUB_QUEST_COUCH_POTATO_1 + SUB_QUEST_COUNT_COUCH_POTATO))
+            setvar(QUEST, QUEST_APPLEVINE_COUCH_POTATO)
             call(Common_NextSubQuest)
             // -> {STR_VAR_1} = quest name
             // -> {STR_VAR_2} = item/pokemon name
