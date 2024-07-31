@@ -320,12 +320,12 @@ const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Star
 // Verdant Forest Pokemon Quest
 const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
 const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
-const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in Verdant Forest!\nAt least for now...");
+const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
 
 // Maplegrove Lovers Quest
-const u8 sText_SideQuestName_MaplegroveLovers[] = _("Star-crossed Lovers");
+const u8 sText_SideQuestName_MaplegroveLovers[] = _("A Star-crossed Lover");
 const u8 sText_SideQuestDesc_MaplegroveLovers[] = _("Deliver Roman's love letter\nto Julie in Applevine!");
-const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("Thanks to you, their ship has sailed\nsuccessfully!");
+const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("You've cleared up the confusion\nbetween the two!");
 
 
 // Lost Mareep Quest
@@ -349,16 +349,16 @@ const u8 sText_SideQuestDesc_APPLEVINE_COUCH_POTATO[] = _("You probably weren't 
 const u8 sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO[] = _("Looks like you've been laid off.\nAt least you were compensated...?");
 
 const u8 sText_SubQuest_CouchPotato1_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You know Sweet Hearts have a serving size\nof two people, right?");
+const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You know Sweet Hearts have a serving\nsize of two people, right?");
 
 const u8 sText_SubQuest_CouchPotato2_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("They should just set up a scout camp at\nthis guy's house. They'd make bank for sure.");
+const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("They should just set up a scout camp\nat this guy's house...");
 
 const u8 sText_SubQuest_CouchPotato3_Name[] 	  = _("Delivery Complete!");
 const u8 sText_SubQuest_CouchPotato3_Desc[] 	  = _("Pancakes are just dessert pizzas.");
 
 const u8 sText_SubQuest_CouchPotato4_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("Imagine if you brought him a rice ball\ninstead.");
+const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("Imagine if you brought him a rice\nball instead.");
 
 const u8 sText_SubQuest_CouchPotato5_Name[] 	  = _("Delivery Complete!");
 const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("Man, Sera's fans are down bad.");

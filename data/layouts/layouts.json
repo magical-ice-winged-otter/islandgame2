@@ -5444,8 +5444,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_APPLEVINE_QUEST_HOUSE",
       "name": "ISLANDGAME_APPLEVINE_QUEST_HOUSE_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 10,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE_QUEST_HOUSE/border.bin",

@@ -12770,9 +12770,23 @@ const struct Item gItemsInfo[] =
         .name = _("Love Letter"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A love letter written\n"
-            "by Roman to his one\n"
+            "A love letter from\n"
+            "Roman to his one\n"
             "true love: Julie."
+        ),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
+    },
+
+    [ITEM_ISLANDGAME_JULIES_LETTER] =
+    {
+        .name = _("Reply Letter"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Julie's response to\n"
+            "Roman's confession.\n"
+            "No peekies!"
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

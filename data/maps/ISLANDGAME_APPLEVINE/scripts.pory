@@ -313,7 +313,7 @@ script ISLANDGAME_APPLEVINE_NPC8 {
     faceplayer
     msgbox(format(
         "The Island Guardian of Lumine is none other than Zapdos!\p"
-        "When it flaps its wings, it can generate enough electricity to power all of Marya!\p"
+        "When it flaps its wings, it can generate enough electricity to power the entire island!\p"
         "But it mostly stays cooped up in its nest atop Mount Therion."
     ))
     closemessage
@@ -341,6 +341,7 @@ script ISLANDGAME_APPLEVINE_NPC10 {
     closemessage
     release
 }
+
 
 script ISLANDGAME_APPLEVINE_NPC11 {
     lock
@@ -587,7 +588,15 @@ script ISLANDGAME_APPLEVINE_NPC14 {
     release
 }
 
-
+script ISLANDGAME_APPLEVINE_NPC15 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Out of the three main islands, Lumine is the largest and most populated one!"
+    ))
+    closemessage
+    release
+}
 
 
 

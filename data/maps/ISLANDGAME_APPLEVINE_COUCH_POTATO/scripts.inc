@@ -19,10 +19,10 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_3:
 	msgbox ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_0
 	closemessage
 	faceplayer
-	playse SE_PIN
-	waitse
 	applymovement 1, Common_Movement_ExclamationMark
 	waitmovement 0
+	playse SE_PIN
+	waitse
 	msgbox ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_1
 	startquest QUEST_APPLEVINE_COUCH_POTATO
 	goto ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_1
@@ -43,6 +43,7 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_4:
 	showmoneybox 0, 0
 	removeitem VAR_TEMP_D
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_APPLEVINE_COUCH_POTATO, VAR_TEMP_B
+	addvar VAR_TEMP_B, 1
 	compare VAR_TEMP_B, VAR_TEMP_A
 	goto_if_eq ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_13
 	msgbox ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_7
@@ -51,7 +52,6 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_12:
 	updatemoneybox
 	playse SE_SHOP
 	waitse
-	addvar VAR_TEMP_B, 1
 	switch VAR_TEMP_B
 	case 1, ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_18
 	case 2, ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_19
@@ -84,6 +84,7 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_13:
 	playse SE_SHOP
 	waitse
 	msgbox ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_6
+	hidemoneybox
 	giveitem ITEM_LEFTOVERS
 	completequest QUEST_APPLEVINE_COUCH_POTATO
 	goto ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_12
@@ -176,7 +177,7 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_5:
 	.string "Here you are, your last paycheck!$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_6:
-	.string "Hm? What do you mean, “That's It?” I\n"
+	.string "Hm?{PAUSE 60} What do you mean, “That's It?” I\n"
 	.string "paid you the amount I always give.\p"
 	.string "WHAT!? The cookies cost THAT much!? I\n"
 	.string "don't have that kind of money!\p"
@@ -189,7 +190,7 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_6:
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_7:
 	.string "Ah, excellent! Present me the goods,\n"
 	.string "server!\p"
-	.string "Mmmmmm...{PAUSE 60}That's the stuff...\p"
+	.string "Mmmmmm...{PAUSE 60} That's the stuff...\p"
 	.string "Huh? Oh, right. As compensation for\n"
 	.string "your services, here's a little\l"
 	.string "something for your troubles.$"
@@ -219,6 +220,7 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_10:
 	.string "strawberry, it's my favorite!$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_11:
+	.string "...\p"
 	.string "Oh... {PAUSE 30}my... {PAUSE 30}GOD!\p"
 	.string "SERAFINA JUST ANNOUNCED HER NEW\n"
 	.string "COOKIE BRAND, SERA-SNAXX!\p"

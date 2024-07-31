@@ -1249,7 +1249,7 @@ ISLANDGAME_APPLEVINE_EventScript_Gambler3_Text_0:
 	.string "things are rigged or something!$"
 
 ISLANDGAME_APPLEVINE_EventScript_Bouncer_Text_0:
-	.string "Sorry, you must have a {COLOR LIGHT_RED}VIP Pass{COLOR DARK_GRAY} in order\n"
+	.string "Sorry, you must have a {COLOR LIGHT_GREEN}VIP Pass{COLOR DARK_GRAY} in order\n"
 	.string "to enter the High Limit Area.$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_0:

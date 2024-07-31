@@ -37,7 +37,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         if (var(VAR_RESULT) < 20) {
             msgbox(format(
-                "> You asked if Subaru is a duck."
+                "{COLOR GREEN}> You asked if Subaru is a duck."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -47,7 +47,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         elif (var(VAR_RESULT) < 40) {
             msgbox(format(
-                "> You asked Subaru about STARLIGHT."
+                "{COLOR GREEN}> You asked Subaru about STARLIGHT."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -60,7 +60,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         elif (var(VAR_RESULT) < 60) {
             msgbox(format(
-                "> You asked Subaru about Ruka."
+                "{COLOR GREEN}> You asked Subaru about Ruka."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -73,7 +73,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         elif (var(VAR_RESULT) < 80) {
             msgbox(format(
-                "> You asked Subaru to tell you a joke."
+                "{COLOR GREEN}> You asked Subaru to tell you a joke."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -85,7 +85,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         else {
             msgbox(format(
-                "> You asked Subaru for trainer tips."
+                "{COLOR GREEN}> You asked Subaru for trainer tips."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(

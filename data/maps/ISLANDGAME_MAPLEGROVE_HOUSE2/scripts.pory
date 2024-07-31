@@ -16,54 +16,87 @@ text ISLANDGAME_MAPLEGROVE_HOUSE2_DollText {
 script ISLANDGAME_MAPLEGROVE_HOUSE2_EventScript_eDater {
     lock
     returnqueststate(QUEST_MAPLEGROVE_LOVERS)
-    if(!flag(FLAG_TEMP_1) && var(VAR_RESULT) == 1) {
-        msgbox(format(
-            "Oh Julie, my dear Julie! Why has fate whisked you away from me?\p"
-            "Tis been but only a month since you departed from Oranna...\p"
-            "But it feels as if a millennium has come and gone!\p"
-            "Oh! If only I had mustered the courage to confess my feelings sooner!\p"
-            "If only I had not wasted our last week together before you moved to Lumine...\p"
-            "Then, maybe then, the power of our newfound love would have bound us together on this island forever!\p"
-            "But alas, the great Maryan Sea now separates us for eternity...\p"
-            "Oh great winged guardian of the sea! Hear my lowly plea!\p"
-            "Bestow upon me a messenger of love! One that may deliver my confession to my one true soulmate in this world!\p"
-            "Perhaps... a traveling Pokémon trainer of sorts!\p"
-            "Preferably, one that will happen to pass by the town of Applevine!\p"
-            "...{PAUSE 60}Eh?"
-        ))
-        faceplayer
-        closemessage
-        playse(SE_PIN)
-        applymovement(1, Common_Movement_ExclamationMark)
-        waitmovement(0)
-        applymovement(1, Common_Movement_Delay48)
-        waitmovement(0)
-        setflag(FLAG_TEMP_1)
-    }
-    if(var(VAR_RESULT) == 1) {
-        faceplayer
-        msgbox(format(
-            "O-Oh! You must be the messenger of love that Lugia has blessed me with!\p"
-            "Please! Deliver this letter to my beloved! It is all I ask for in this life!"
-        ), MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES) {
+    switch(var(VAR_RESULT)) {
+        case QUEST_INACTIVE:
+            if(!flag(FLAG_TEMP_1)) {
+                msgbox(format(
+                    "Oh Julie, my dear Julie! Why has fate whisked you away from me?\p"
+                    "Tis been but only a month since you departed from Oranna...\p"
+                    "But it feels as if a millennium has come and gone!\p"
+                    "Oh! If only I had mustered the courage to confess my feelings sooner!\p"
+                    "If only I had not wasted our last week together before you moved to Lumine...\p"
+                    "Then, maybe then, the power of our newfound love would have bound us together on this island forever!\p"
+                    "But alas, the great Maryan Sea now separates us for eternity...\p"
+                    "Oh great winged guardian of the sea! Hear my lowly plea!\p"
+                    "Bestow upon me a messenger of love! One that may deliver my confession to my one true soulmate in this world!\p"
+                    "Perhaps... a traveling Pokémon trainer of sorts!\p"
+                    "Preferably, one that will happen to pass by the town of Applevine!\p"
+                    "...{PAUSE 60}Eh?"
+                ))
+                faceplayer
+                closemessage
+                playse(SE_PIN)
+                applymovement(1, Common_Movement_ExclamationMark)
+                waitmovement(0)
+                applymovement(1, Common_Movement_Delay48)
+                waitmovement(0)
+                setflag(FLAG_TEMP_1)
+            }
+            faceplayer
             msgbox(format(
-                "Splendid! My love is somewhere in Applevine. Please tell me what she says!"
-            ))
-            giveitem(ITEM_ISLANDGAME_ROMANS_LETTER)
-            startquest(QUEST_MAPLEGROVE_LOVERS)
-        }
-        else {
+                "O-Oh! You must be the messenger of love that Lugia has blessed me with!\p"
+                "Please! Deliver this letter to my beloved! It is all I ask for in my life!"
+            ), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                msgbox(format(
+                    "Splendid! My love is somewhere in Applevine. Please tell me what she says!"
+                ))
+                giveitem(ITEM_ISLANDGAME_ROMANS_LETTER)
+                startquest(QUEST_MAPLEGROVE_LOVERS)
+            }
+            else {
+                msgbox(format(
+                    "Oh... My apologies. I mistook you for a heavenly messenger sent by Lugia."
+                ))
+            }
+        case QUEST_ACTIVE:
+            faceplayer
+            checkitem(ITEM_ISLANDGAME_JULIES_LETTER)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "My love is somewhere in Applevine. Please tell me what she says!"
+                ))
+            }
+            else {
+                msgbox(format(
+                    "Ah! You've returned! What did she say?\p"
+                    "> You hand Julie's letter to Roman.\p"
+                    "...{PAUSE 60}Oh...{PAUSE 60}I see...{PAUSE 60}What a fool I truly was...{PAUSE 60}\p"
+                    "...It appears I've misinterpreted her leaving to be permanent.\p"
+                    "Turns out she's only staying there for the summer to help her relatives with their family business.\p"
+                    "Come to think of it... it did seem strange that her parents were still living here...\p"
+                    "My apologies, trainer. Please take this as penance for my blunder."
+                ))
+                giveitem(ITEM_DESTINY_KNOT)
+                msgbox(format(
+                    "Hm? You wish to know her response to my confession?\p"
+                    "I suppose I do owe it to you to at least tell you what she said...\p"
+                    "She told me to meet her at the Silverwing Festival for her answer!\p"
+                    "Argh... the anticipation is killing me...{PAUSE 30} but I am at least glad to know I'll still be able to see her, regardless of her answer.\p"
+                    "It just gives us more time to form a bond together!"
+                ))
+                removeitem(ITEM_ISLANDGAME_JULIES_LETTER)
+                completequest(QUEST_MAPLEGROVE_LOVERS)
+            }
+        case QUEST_COMPLETED:
+            faceplayer
             msgbox(format(
-                "Oh... My apologies. I mistook you for a heavenly messenger sent by Lugia."
+                "I guess I was being a little dramatic earlier."
             ))
-        }
+
+        default: // how u get here lol
     }
-    else {
-        msgbox(format(
-            "My love is somewhere in Applevine. Please tell me what she says!"
-        ))
-    }
+
     closemessage
     release
 }

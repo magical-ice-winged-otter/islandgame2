@@ -64,8 +64,8 @@ script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
                 else {
                     showmoneybox(0,0)
                     removeitem(ITEM_VAR)
-                    addvar(LOOP_ITER, 1) // we add 1 here to see if finished the last quest (ie, we are next to the loop bound by index)
                     subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_APPLEVINE_COUCH_POTATO, LOOP_ITER)
+                    addvar(LOOP_ITER, 1) // we add 1 here to see if finished the last quest (ie, we are next to the loop bound by index)
                     if (var(LOOP_ITER) == LOOP_BOUND) { // last quest
                         msgbox(format(
                             "Yessss... YESSSS! Good work, very good work indeed, my faithful servant!\p"
@@ -81,12 +81,13 @@ script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
                         playse(SE_SHOP)
                         waitse
                         msgbox(format(
-                            "Hm? What do you mean, “That's It?” I paid you the amount I always give.\p"
+                            "Hm?{PAUSE 60} What do you mean, “That's It?” I paid you the amount I always give.\p"
                             "WHAT!? The cookies cost THAT much!? I don't have that kind of money!\p"
                             "Umm, uhh, wait! I can fix this! Just give me a second!\p"
                             "C'mon... Where is it... O-Oh, found it!\p"
                             "Here, you can have this as the payment! It's my most prized possession!"
                         ))
+                        hidemoneybox
                         giveitem(ITEM_LEFTOVERS)
                         completequest(QUEST_APPLEVINE_COUCH_POTATO)
                     } 
@@ -116,7 +117,7 @@ script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
                             ))
                         case 4:
                             msgbox(format(
-                                "Oh... {PAUSE 30}my... {PAUSE 30}GOD!\pSERAFINA JUST ANNOUNCED HER NEW COOKIE BRAND, SERA-SNAXX!\pFudgesicles... they're only going to be selling it at her hometown in Minerva...\pAs a devoted tier three subscriber, I MUST have her Sera-Snaxx!\pServer! This is your final task! Get me an order of {COLOR LIGHT_RED}Sera-Snaxx{COLOR DARK_GRAY} by ANY means necessary! Money is no object!"
+                                "...\pOh... {PAUSE 30}my... {PAUSE 30}GOD!\pSERAFINA JUST ANNOUNCED HER NEW COOKIE BRAND, SERA-SNAXX!\pFudgesicles... they're only going to be selling it at her hometown in Minerva...\pAs a devoted tier three subscriber, I MUST have her Sera-Snaxx!\pServer! This is your final task! Get me an order of {COLOR LIGHT_RED}Sera-Snaxx{COLOR DARK_GRAY} by ANY means necessary! Money is no object!"
                             ))
                         default:
                     }

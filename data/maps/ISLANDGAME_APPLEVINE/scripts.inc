@@ -524,6 +524,15 @@ ISLANDGAME_APPLEVINE_NPC14::
 	return
 
 
+ISLANDGAME_APPLEVINE_NPC15::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_NPC15_Text_0
+	closemessage
+	release
+	return
+
+
 ISLANDGAME_APPLEVINE_AppleRoll1::
 	random 10
 	switch VAR_RESULT
@@ -815,8 +824,8 @@ ISLANDGAME_APPLEVINE_NPC8_Text_0:
 	.string "The Island Guardian of Lumine is none\n"
 	.string "other than Zapdos!\p"
 	.string "When it flaps its wings, it can generate\n"
-	.string "enough electricity to power all of\l"
-	.string "Marya!\p"
+	.string "enough electricity to power the entire\l"
+	.string "island!\p"
 	.string "But it mostly stays cooped up in its\n"
 	.string "nest atop Mount Therion.$"
 
@@ -935,6 +944,10 @@ ISLANDGAME_APPLEVINE_NPC14_Text_0:
 	.string "What's even the big deal? It's not like\n"
 	.string "there's anything illegal going on inside\l"
 	.string "or anything. They're broken no laws!$"
+
+ISLANDGAME_APPLEVINE_NPC15_Text_0:
+	.string "Out of the three main islands, Lumine is\n"
+	.string "the largest and most populated one!$"
 
 ISLANDGAME_APPLEVINE_CocoTalk1::
 	.string "My name is Coco. I'm a friend of\n"
