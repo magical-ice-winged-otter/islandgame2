@@ -51,79 +51,70 @@ script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
                 msgbox(format("Where's my {COLOR LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}? I need it now!"))
                 goto(CouchPotatoSpeakEnd)
             }
-            else {
+            msgbox(format("Ah, have you brought my {COLOR LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == NO) {
+                msgbox(format("No? Then go back out there and get one!"))
+                goto(CouchPotatoSpeakEnd)
+            }
+            showmoneybox(0,0)
+            removeitem(ITEM_VAR)
+            subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_APPLEVINE_COUCH_POTATO, LOOP_ITER)
+            addvar(LOOP_ITER, 1) // we add 1 here to see if finished the last quest (ie, we are next to the loop bound by index)
+            if (var(LOOP_ITER) == LOOP_BOUND) { // last quest
                 msgbox(format(
-                    "Ah, have you brought my {COLOR LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}?"
-                ), MSGBOX_YESNO)
-                if (var(VAR_RESULT) == NO) {
-                    msgbox(format(
-                        "No? Then go back out there and get one!"
-                    ))
-                    goto(CouchPotatoSpeakEnd)
-                }
-                else {
-                    showmoneybox(0,0)
-                    removeitem(ITEM_VAR)
-                    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_APPLEVINE_COUCH_POTATO, LOOP_ITER)
-                    addvar(LOOP_ITER, 1) // we add 1 here to see if finished the last quest (ie, we are next to the loop bound by index)
-                    if (var(LOOP_ITER) == LOOP_BOUND) { // last quest
+                    "Yessss... YESSSS! Good work, very good work indeed, my faithful servant!\p"
+                    "-nom nom nom-\p"
+                    "Ooh, soo delicious... Knowing that Serafina made these heavenly cookies with her love makes it soo much better!\p"
+                    "Ah... that really hit the spot. Server, you are relieved of your duties. Thank you for your service.\p"
+                    "...Hm? What do you mean, I'm forgetting something?\p"
+                    "O-Oh! Right. Your payment! Silly me, how could I forget?\p"
+                    "Here you are, your last paycheck!"
+                ))
+                addmoney(2000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                msgbox(format(
+                    "Hm? What do you mean, “That's It?” I paid you the amount I always give.\p"
+                    "WHAT!? The cookies cost THAT much!? I don't have that kind of money!\p"
+                    "Umm, uhh, wait! I can fix this! Just give me a second!\p"
+                    "C'mon... Where is it... O-Oh, found it!\p"
+                    "Here, you can have this as the payment! It's my most prized possession!"
+                ))
+                hidemoneybox
+                giveitem(ITEM_LEFTOVERS)
+                completequest(QUEST_APPLEVINE_COUCH_POTATO)
+            } else {
+                msgbox(format(
+                    "Ah, excellent! Present me the goods, server!\p"
+                    "Mmmmmm...{PAUSE 60} That's the stuff...\p"
+                    "Huh? Oh, right. As compensation for your services, here's a little something for your troubles."
+                ))
+                addmoney(2000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                switch (var(LOOP_ITER) ) {
+                    case SUB_QUEST_COUCH_POTATO_2: 
                         msgbox(format(
-                            "Yessss... YESSSS! Good work, very good work indeed, my faithful servant!\p"
-                            "-nom nom nom-\p"
-                            "Ooh, soo delicious... Knowing that Serafina made these heavenly cookies with her love makes it soo much better!\p"
-                            "Ah... that really hit the spot. Server, you are relieved of your duties. Thank you for your service.\p"
-                            "...Hm? What do you mean, I'm forgetting something?\p"
-                            "O-Oh! Right. Your payment! Silly me, how could I forget?\p"
-                            "Here you are, your last paycheck!"
+                            "Hmm, I'm still pretty hungry...\pOh, I've always wanted to try one of those boy scout {COLOR LIGHT_RED}Candy Bars{COLOR DARK_GRAY} they sell at Camp Persi.\pGo forth, my loyal servant!"
                         ))
-                        addmoney(2000)
-                        updatemoneybox
-                        playse(SE_SHOP)
-                        waitse
+                    case SUB_QUEST_COUCH_POTATO_3: 
                         msgbox(format(
-                            "Hm?{PAUSE 60} What do you mean, “That's It?” I paid you the amount I always give.\p"
-                            "WHAT!? The cookies cost THAT much!? I don't have that kind of money!\p"
-                            "Umm, uhh, wait! I can fix this! Just give me a second!\p"
-                            "C'mon... Where is it... O-Oh, found it!\p"
-                            "Here, you can have this as the payment! It's my most prized possession!"
+                            "Let's see what else I want to order...\pOh! Apparently a new café just opened up in Aetheria, and their pancakes are bomb, according to Serafina!\pGet me one of those Sera-approved {COLOR LIGHT_RED}Pancakes{COLOR DARK_GRAY} at once!"
                         ))
-                        hidemoneybox
-                        giveitem(ITEM_LEFTOVERS)
-                        completequest(QUEST_APPLEVINE_COUCH_POTATO)
-                    } 
-                    else {
+                    case SUB_QUEST_COUCH_POTATO_4:
                         msgbox(format(
-                            "Ah, excellent! Present me the goods, server!\p"
-                            "Mmmmmm...{PAUSE 60} That's the stuff...\p"
-                            "Huh? Oh, right. As compensation for your services, here's a little something for your troubles."
+                            "Man, I haven't had a good donut in years. When I lived in Cantalo with my mom, she would always bring me home a jelly-filled donut.\pYo, mind snagging me one of those {COLOR LIGHT_RED}Jelly Donuts{COLOR DARK_GRAY} from Cantalo? Be sure to get strawberry, it's my favorite!"
                         ))
-                    }
-                    addmoney(2000)
-                    updatemoneybox
-                    playse(SE_SHOP)
-                    waitse
-                    switch (var(LOOP_ITER) ) {
-                        case 1: 
-                            msgbox(format(
-                                "Hmm, I'm still pretty hungry...\pOh, I've always wanted to try one of those boy scout {COLOR LIGHT_RED}Candy Bars{COLOR DARK_GRAY} they sell at Camp Persi.\pGo forth, my loyal servant!"
-                            ))
-                        case 2: 
-                            msgbox(format(
-                                "Let's see what else I want to order...\pOh! Apparently a new café just opened up in Aetheria, and their pancakes are bomb, according to Serafina!\pGet me one of those Sera-approved {COLOR LIGHT_RED}Pancakes{COLOR DARK_GRAY} at once!"
-                            ))
-                        case 3:
-                            msgbox(format(
-                                "Man, I haven't had a good donut in years. When I lived in Cantalo with my mom, she would always bring me home a jelly-filled donut.\pYo, mind snagging me one of those {COLOR LIGHT_RED}Jelly Donuts{COLOR DARK_GRAY} from Cantalo? Be sure to get strawberry, it's my favorite!"
-                            ))
-                        case 4:
-                            msgbox(format(
-                                "...\pOh... {PAUSE 30}my... {PAUSE 30}GOD!\pSERAFINA JUST ANNOUNCED HER NEW COOKIE BRAND, SERA-SNAXX!\pFudgesicles... they're only going to be selling it at her hometown in Minerva...\pAs a devoted tier three subscriber, I MUST have her Sera-Snaxx!\pServer! This is your final task! Get me an order of {COLOR LIGHT_RED}Sera-Snaxx{COLOR DARK_GRAY} by ANY means necessary! Money is no object!"
-                            ))
-                        default:
-                    }
-                    hidemoneybox
+                    case SUB_QUEST_COUCH_POTATO_5:
+                        msgbox(format(
+                            "...\pOh... {PAUSE 30}my... {PAUSE 30}GOD!\pSERAFINA JUST ANNOUNCED HER NEW COOKIE BRAND, SERA-SNAXX!\pFudgesicles... they're only going to be selling it at her hometown in Minerva...\pAs a devoted tier three subscriber, I MUST have her Sera-Snaxx!\pServer! This is your final task! Get me an order of {COLOR LIGHT_RED}Sera-Snaxx{COLOR DARK_GRAY} by ANY means necessary! Money is no object!"
+                        ))
+                    default:
                 }
             }
+            hidemoneybox
         case QUEST_COMPLETED:
             msgbox(format(
                 "Whelp, paying for all those delivery fees completely drained my wallet...\p"
