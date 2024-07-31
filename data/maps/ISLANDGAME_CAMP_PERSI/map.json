@@ -52,7 +52,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_RANGER_M",
       "x": 27,
       "y": 19,
       "elevation": 0,
@@ -169,7 +169,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_5",
       "x": 5,
       "y": 9,
       "elevation": 0,
@@ -223,11 +223,11 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SCOUT_M",
       "x": 31,
-      "y": 25,
+      "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
-      "movement_range_y": 4,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC10",
@@ -320,7 +320,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_102_PECHA",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_CAMP_PERSI_1",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -333,7 +333,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_104_ORAN_1",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_CAMP_PERSI_2",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -372,9 +372,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_DIG",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_TM_DIG"
+      "flag": "FLAG_ITEM_CAMP_PERSI_POTION"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -385,9 +385,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_NEST_BALL",
+      "trainer_sight_or_berry_tree_id": "ITEM_ETHER",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_PERSI_NEST_BALL"
+      "flag": "FLAG_ITEM_PERSI_NEST_ETHER"
     }
   ],
   "warp_events": [
@@ -544,8 +544,8 @@
       "x": 31,
       "y": 31,
       "elevation": 0,
-      "item": "ITEM_REVIVE",
-      "flag": "FLAG_ITEM_ROUTE_120_REVIVE"
+      "item": "ITEM_BERRY_JUICE",
+      "flag": "FLAG_HIDDEN_ITEM_CAMP_PERSI_BERRY_JUICE"
     },
     {
       "type": "hidden_item",
@@ -554,6 +554,14 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_CAMP_PERSI_EXP_CANDY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 56,
+      "y": 37,
+      "elevation": 0,
+      "item": "ITEM_MUSCLE_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_CAMP_PERSI_MUSCLE_FEATHER"
     }
   ]
 }

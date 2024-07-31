@@ -28,7 +28,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid {
-    msgbox(format("Swimming looks really fun! I wanna try it when I'm older..."), MSGBOX_NPC)
+    msgbox(format("My sister wants to be a model just like Ruka, so she's training her body."), MSGBOX_NPC)
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
 }
@@ -43,7 +43,11 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayDude {
             "Ruka, the leader of Tidalcove's Gym, specializes in ice-type Pokémon!\p"
             "So fighting, fire, steel, and rock moves will be super useful in the fight!\p"
             "Bet you're glad I filled you in on the secrets, huh?\p"
-            "Eh? What do you mean, that was all public information?"
+            "Eh? What do you mean, that was all public information?\p"
+            "Well then, allow me to provide you with some more personal stuff about her...\p"
+            "-whisper whisper-\p"
+            "How'd you like them apples? I'm not so useless anymore, yeah?\p"
+            "What? Why are you looking at me like that? Stop judging me! I'm important!"
         ), 
     MSGBOX_NPC)
     release
@@ -51,18 +55,18 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayDude {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman {
     trainerbattle_single(TRAINER_CORANNA_2_FISHERMAN, 
-        format("Interested in seeing some of my catches?"), 
-        "Back to fishing."
+        format("Tryna see some of my catches?"), 
+        "Pretty snazzy, right?"
     )
-    msgbox(format("This is a nice place to fish since it's so remote.\pNothing like waking up early to the sounds of nature and fishing!"), MSGBOX_NPC)
+    msgbox(format("I wish the people at Tidalcove would stop tossing their trash in the sea.\pA lot of it ends up flowing down this river. You won't believe the things I've caught thinking I caught a Totodile."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper {
     trainerbattle_single(TRAINER_CORANNA_2_CAMPER, 
-        format("My Pokémon just got a massage from the salon over there, so let's battle!"), 
-        "I could go for a haircut too."
+        format("I'm tired of facing all these sweaty trainers scurrying about.\pLet's just get this over with."), 
+        "Humph."
     )
-    msgbox(format("If you've got some extra cash, you should hit up the salon too!\pYour Pokémon will love it, trust me!"), MSGBOX_NPC)
+    msgbox(format("There is a salon right there, trainer. While it's intended for Pokemon, I think they would be willing to make an exception after seeing you."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac {
@@ -70,7 +74,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac {
         format("Nyeh heh heh... Let me SHOW you my Pokémans!"), 
         "Did you like my Pokémans?"
     )
-    msgbox(format("My Pokémans are super rare... I'll get all the ladies with them!"), MSGBOX_NPC)
+    msgbox(format("I'll be getting all the ladies with my Pokémans..."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker {
@@ -78,15 +82,15 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker {
         format("Hey, check out my new ride! Isn't it slick?"), 
         "Crap! I fell!"
     )
-    msgbox(format("You should totally get a bike too! You can get one at Tidalcove!"), MSGBOX_NPC)
+    msgbox(format("If you want a bike, you should hit up Randy's at Tidalcove!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger {
     trainerbattle_single(TRAINER_MINTY_MEADOWS_5, 
         format("I need to be alone! Go away!"), 
-        "Sorry for being so rude. I'm just\nupset because I lost my gym battle."
+        "-sigh-"
     )
-    msgbox(format("I thought I could beat Ruka, but her ace Pokémon... it was just too strong!"), MSGBOX_NPC)
+    msgbox(format("I'm just upset about losing to Ruka. Her ace Pokémon was just too strong.\pNow I'll have to wait until tomorrow for another chance..."), MSGBOX_NPC)
 }
  
 movement Movement_DELCATTYAttack {
@@ -128,13 +132,33 @@ movement Movement_Fan4WalkAway {
     walk_fast_right * 4
 }
 
-script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
+movement Movement_PlayerWalkOver1 {
+    walk_up * 6
+    walk_right * 2
+}
+
+movement Movement_PlayerWalkOver2 {
+    walk_up * 6
+    walk_right * 3
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1 {
     lock
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+    msgbox(format(
+        "KYAAA! PRIM YOU'RE SO COOL!\p"
+        "That girl... isn't she the newest member of STARLIGHT?\p"
+        "Her Delcatty is so pretty... I wish I had one too!"
+    ))
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerWalkOver1)
+    waitmovement(0)
+
+
 
     // prim commands DELCATTY to finish it
     msgbox(
         format(
-            "{COLOR GREEN}???: {COLOR DARK_GRAY}Time to end this, Delcatty!"
+            "{COLOR GREEN}Primrose: {COLOR DARK_GRAY}Time to end this."
             )
         )
     closemessage
@@ -149,7 +173,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
 
     // prim roasts the opponent for losing
     msgbox(
-        format("{COLOR GREEN}???: {COLOR DARK_GRAY}-sigh- What a waste of time. You should've just given me the spot.")
+        format("{COLOR GREEN}Primrose: {COLOR DARK_GRAY}-sigh- What a waste of time...")
         )
     closemessage
 
@@ -177,7 +201,103 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene {
     waitmovement(0)
     applymovement(LOCALID_FAN_4, Common_Movement_Delay32)
     waitmovement(0)
-    msgbox(format("{COLOR DARK_GRAY}Yeah! She's Prim, the greatest idol to ever exist! She and Delcatty are gonna take Marya by storm!"))
+    msgbox(format("{COLOR DARK_GRAY}Yeah! She's Lady Primrose, the greatest idol to ever exist! She and Delcatty are gonna take Marya by storm!"))
+    closemessage
+    applymovement(LOCALID_FAN_3, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(LOCALID_FAN_3, Common_Movement_Delay32)
+    waitmovement(0)
+    msgbox(format("{COLOR DARK_GRAY}You better believe she is! We stand with Her Majesty!"))
+    closemessage
+    
+    playse(SE_PIN)
+    applymovement(LOCALID_FAN_3, Common_Movement_ExclamationMark)
+    applymovement(LOCALID_FAN_4, Common_Movement_ExclamationMark)
+    waitmovement(LOCALID_FAN_3)
+    waitmovement(LOCALID_FAN_4)
+    applymovement(LOCALID_FAN_3, Common_Movement_Delay32)
+    applymovement(LOCALID_FAN_3, Common_Movement_Delay32)
+    waitmovement(LOCALID_FAN_3)
+    waitmovement(LOCALID_FAN_4)
+    applymovement(LOCALID_FAN_3, Common_Movement_FaceRight)
+    applymovement(LOCALID_FAN_3, Common_Movement_FaceRight)
+    msgbox(format("{COLOR DARK_GRAY}E-Eh? W-Wait for us, Prim! C'mon Jess, let's ditch these goobers!"))
+    closemessage
+    applymovement(LOCALID_FAN_3, Movement_Fan3WalkAway)
+    applymovement(LOCALID_FAN_4, Movement_Fan4WalkAway)
+
+    waitmovement(LOCALID_FAN_3)
+    waitmovement(LOCALID_FAN_4)
+    removeobject(LOCALID_FAN_3)
+    removeobject(LOCALID_FAN_4)
+
+    setflag(FLAG_NORANNA_PRIM_CUTSCENE_FINISHED)
+    setvar(VAR_CUTSCENE_FINISHED, 1)
+    release
+}
+
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene2 {
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+    msgbox(format(
+        "KYAAA! PRIM YOU'RE SO COOL!\p"
+        "That girl... isn't she the newest member of STARLIGHT?\p"
+        "Her Delcatty is so pretty... I wish I had one too!"
+    ))
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerWalkOver2)
+    waitmovement(0)
+
+
+
+    // prim commands DELCATTY to finish it
+    msgbox(
+        format(
+            "{COLOR GREEN}Primrose: {COLOR DARK_GRAY}Time to end this."
+            )
+        )
+    closemessage
+
+    // DELCATTY attacks
+    applymovement(LOCALID_DELCATTY, Movement_DELCATTYAttack)
+    waitmovement(LOCALID_DELCATTY)
+    playmoncry(SPECIES_DELCATTY, CRY_MODE_NORMAL)
+    waitmoncry
+    playmoncry(SPECIES_LOMBRE, CRY_MODE_WEAK)
+    waitmoncry
+
+    // prim roasts the opponent for losing
+    msgbox(
+        format("{COLOR GREEN}Primrose: {COLOR DARK_GRAY}-sigh- What a waste of time...")
+        )
+    closemessage
+
+    // prim and 2 spectators walk away
+    applymovement(LOCALID_PRIM, Movement_PrimWalkAway)
+    applymovement(LOCALID_DELCATTY, Movement_DELCATTYWalkAway)
+    // applymovement(LOCALID_FAN_1, Movement_Fan1WalkAway)
+    // applymovement(LOCALID_FAN_2, Movement_Fan2WalkAway)
+    waitmovement(LOCALID_PRIM)
+    waitmovement(LOCALID_DELCATTY)
+    // waitmovement(LOCALID_FAN_1)
+    // waitmovement(LOCALID_FAN_2)
+    removeobject(LOCALID_PRIM)
+    removeobject(LOCALID_DELCATTY)
+    // removeobject(LOCALID_FAN_1)
+    // removeobject(LOCALID_FAN_2)
+
+    applymovement(LOCALID_FAN_3, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(LOCALID_FAN_3, Common_Movement_Delay32)
+    waitmovement(0)
+    msgbox(format("{COLOR DARK_GRAY}Yeah! You should've just let her have it! She has better things to do than spender her time dealing with scrubs like you!"))
+    closemessage
+    applymovement(LOCALID_FAN_4, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(LOCALID_FAN_4, Common_Movement_Delay32)
+    waitmovement(0)
+    msgbox(format("{COLOR DARK_GRAY}Yeah! She's Lady Primrose, the greatest idol to ever exist! She and Delcatty are gonna take Marya by storm!"))
     closemessage
     applymovement(LOCALID_FAN_3, Common_Movement_WalkInPlaceDown)
     waitmovement(0)
@@ -224,13 +344,18 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1 {
-    msgbox(format("Prim is so pretty and confident. Her Pokémon fight so elegantly too.\pShe'd be a perfect Pokémon Coordinator! I wonder why she chose to become a trainer instead..."), MSGBOX_NPC)
+    msgbox(format("Prim's Pokémon fight so elegantly... As expected from an idol!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2 {
     lock
     faceplayer
-    msgbox(format("Primrose sure is incredible... She only just became an idol a few months ago, and now she's already become one of the most popular celebrities in the isles.\pNow, she's on her way to completing the Marya Gym Challenge so she can enter in the upcoming Silverwing Festival Tournament!"), MSGBOX_NPC)
+    msgbox(format(
+        "Apparently Primrose just became a member of STARLIGHT a few months ago.\p"
+        "Huh? You don't know what STARLIGHT is? That's wild, bro. They're the biggest idol group in Marya!\p"
+        "Prim's gained a ton of popularity 'cause of her amazing talent as a trainer.\p"
+        "She's definitely got this year's festival tournament in the bag."
+    ), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3 {

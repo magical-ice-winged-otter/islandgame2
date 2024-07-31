@@ -2,13 +2,14 @@ mapscripts ISLANDGAME_TIDALCOVE_PKMNMART_MapScripts {}
 
 script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_NPC1 {
     lock
-    msgbox(format("Hmm... I've heard good things about these ones."))
+    faceplayer
+    msgbox(format("I liked this store before it became affiliated with Ruka.\pNow everything's marked up at a whopping two-hundred percent."))
     release
 }
 
 script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Vitamins {
     lock
-    msgbox(format("{COLOR RED}(There's rows upon rows of exorbitantly priced vitamins.)\p(They all have pictures of Ruka on them too.)"), MSGBOX_SIGN)
+    msgbox(format("{COLOR RED}(There's rows upon rows of exorbitantly priced vitamins.)\p(They all claim that taking them will make you look like Ruka.)"), MSGBOX_SIGN)
     release
 }
 
@@ -37,11 +38,14 @@ script ISLANDGAME_TIDALCOVE_PKMNMART_Interact_Employee {
 mart Tidalcove_MartItems {
     ITEM_POKE_BALL
     ITEM_GREAT_BALL
-    ITEM_NEST_BALL
+    ITEM_DIVE_BALL
     ITEM_FRESH_WATER
     ITEM_SODA_POP
-    ITEM_CASTELIACONE
+    ITEM_PARALYZE_HEAL
+    ITEM_ANTIDOTE
+    ITEM_AWAKENING
     ITEM_ICE_HEAL
+    ITEM_BURN_HEAL
     ITEM_REPEL
     ITEM_HP_UP
     ITEM_PROTEIN

@@ -19,35 +19,40 @@ script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_Nurse {
 script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN1 {
     lock
     faceplayer
-    playmoncry(SPECIES_HOPPIP,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_CHIKORITA,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN1Talk)
     release
 }
 
 text ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN1Talk {
     format(
-        "{COLOR DARK_GRAY}Pip-pip!"
+        "{COLOR DARK_GRAY}Chika Chika! {COLOR BLUE}(Boom Boom!)"
     )
 }
 
 script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN2 {
     lock
     faceplayer
-    playmoncry(SPECIES_SKIDDO,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_MINCCINO,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN2Talk)
     release
 }
 
 text ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN2Talk {
     format(
-        "{COLOR DARK_GRAY}Baah."
+        "{COLOR DARK_GRAY}Squeak!"
     )
 }
 
 script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1 {
     lock
     faceplayer
-    msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk)
+    if (!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+        msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk)
+    }
+    else {
+        msgbox(format(""))
+    }
     applymovement(KID_OW_ID,Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release

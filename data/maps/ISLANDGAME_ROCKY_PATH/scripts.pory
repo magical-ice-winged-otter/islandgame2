@@ -2,65 +2,65 @@ mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {}
 
 
 script ISLANDGAME_ROCKY_PATH_KarateBro {
-    trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_BRO, 
-        format("My sister prefers to train more than 1 Pokemon, but as for me..."), 
-        format("How did you defeat my Machamp!"))
-    msgbox(format("I will only train with my Machamp for as long as I live."), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_BRO, 
+    //     format("My sister prefers to train more than 1 Pokemon, but as for me..."), 
+    //     format("How did you defeat my Machamp!"))
+    // msgbox(format("I will only train with my Machamp for as long as I live."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_ROCKY_PATH_KarateSis {
-    trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_SIS, 
-        format("You've met weird brother right?"), 
-        format("I still lost with multiple Pokemon..."))
-    msgbox(format("I can't deny that his Machamp is strong, but my Pokemon are stronger than his!"), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_SIS, 
+    //     format("You've met weird brother right?"), 
+    //     format("I still lost with multiple Pokemon..."))
+    // msgbox(format("I can't deny that his Machamp is strong, but my Pokemon are stronger than his!"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_ROCKY_PATH_CyclerF {
-    trainerbattle_single(TRAINER_ROCKY_PATH_CYCLER_F, 
-        format("How do I get back on the water path?"), 
-        format("Oh okay, I think I got it."))
-    msgbox(format("Maybe I will here for a while, biking in grass can be fun."), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_CYCLER_F, 
+    //     format("How do I get back on the water path?"), 
+    //     format("Oh okay, I think I got it."))
+    // msgbox(format("Maybe I will here for a while, biking in grass can be fun."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_ROCKY_PATH_Beauty {
-    trainerbattle_single(TRAINER_ROCKY_PATH_BEAUTY, 
-        format("Those fighters, while they are admirable, stink up the place."), 
-        format("You're also contributing to the stench!"))
-    msgbox(format("I heard that there's a hidden grotto around here full of water, but I've yet to find it."), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_BEAUTY, 
+    //     format("Those fighters, while they are admirable, stink up the place."), 
+    //     format("You're also contributing to the stench!"))
+    // msgbox(format("I heard that there's a hidden grotto around here full of water, but I've yet to find it."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_ROCKY_PATH_Camper_F {
-    trainerbattle_single(TRAINER_ROCKY_PATH_CAMPER_F, 
-        format("Shh!"), 
-        format("Don't you see that old man walking around lost?"))
-    msgbox(format("I'd be careful if I were you, he looks dangerous"), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_CAMPER_F, 
+    //     format("Shh!"), 
+    //     format("Don't you see that old man walking around lost?"))
+    // msgbox(format("I'd be careful if I were you, he looks dangerous"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_ROCKY_PATH_Gentleman {
-    trainerbattle_single(TRAINER_ROCKY_PATH_GENTLEMAN, 
-        format("Hahahahhahahahaha!"), 
-        format("What isn't funny?"))
-    msgbox(format("Most people are scared of me because I tend to be pretty laidback. Why aren't you?"), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_GENTLEMAN, 
+    //     format("Hahahahhahahahaha!"), 
+    //     format("What isn't funny?"))
+    // msgbox(format("Most people are scared of me because I tend to be pretty laidback. Why aren't you?"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_ROCKY_PATH_PsychicF {
-    trainerbattle_single(TRAINER_ROCKY_PATH_PSYCHIC_F, 
-        format("Caught you!"), 
-        format("Looks like I didn't have the advantage this time."))
-    msgbox(format("Using my psychic powers allows me to enhance my sight, which is how I found you."), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_PSYCHIC_F, 
+    //     format("Caught you!"), 
+    //     format("Looks like I didn't have the advantage this time."))
+    // msgbox(format("Using my psychic powers allows me to enhance my sight, which is how I found you."), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_ROCKY_PATH_PsychicM {
-    trainerbattle_single(TRAINER_ROCKY_PATH_PSYCHIC_M, 
-        format("I'm sorry, you met my sister right?"), 
-        format("I knew I would've lost to you as well."))
-    # TODO
-    msgbox(format("My sister is stronger than me, so we usually double battle"), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_PSYCHIC_M, 
+    //     format("I'm sorry, you met my sister right?"), 
+    //     format("I knew I would've lost to you as well."))
+    // # TODO
+    // msgbox(format("My sister is stronger than me, so we usually double battle"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_ROCKY_PATH_Fisherman {
-    trainerbattle_single(TRAINER_ROCKY_PATH_FISHERMAN, 
-        format("I used to be a trainer in Unova."), 
-        format("Darn."))
-    msgbox(format("I got my own starter Pokemon in everything, but how come I wasn't able to win the championship?"), MSGBOX_AUTOCLOSE)
+    // trainerbattle_single(TRAINER_ROCKY_PATH_FISHERMAN, 
+    //     format("I used to be a trainer in Unova."), 
+    //     format("Darn."))
+    // msgbox(format("I got my own starter Pokemon in everything, but how come I wasn't able to win the championship?"), MSGBOX_AUTOCLOSE)
 }

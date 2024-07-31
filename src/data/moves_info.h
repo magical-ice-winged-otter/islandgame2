@@ -19842,7 +19842,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         ),
         .effect = EFFECT_HIT,
         
-        .power = 30,
+        .power = 60,
         .type = TYPE_SHADOW,
         .accuracy = 100,
         .pp = 5, // doesn't matter

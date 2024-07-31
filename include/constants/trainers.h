@@ -133,7 +133,7 @@
 #define TRAINER_PIC_CLOWN                115
 #define TRAINER_PIC_COOLTRAINERSNOWF     116
 #define TRAINER_PIC_COOLTRAINERSNOWM     117
-#define TRAINER_PIC_COWBOY               118
+#define TRAINER_PIC_RANCHER              118
 #define TRAINER_PIC_COWGIRL              119
 #define TRAINER_PIC_CYNTHIA              120
 #define TRAINER_PIC_FARMERDUO            121
@@ -161,7 +161,11 @@
 #define TRAINER_PIC_RUKA                  140
 #define TRAINER_PIC_OLIVIA                141
 #define TRAINER_PIC_OLIVER                142
-#define TRAINER_PIC_COUNT                 143
+#define TRAINER_PIC_SCOUT_M               143
+#define TRAINER_PIC_SCOUT_F               144
+#define TRAINER_PIC_BUG_CATCHER_F         145
+#define TRAINER_PIC_NERD                  146
+#define TRAINER_PIC_COUNT                 147
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -414,7 +418,17 @@
 #define TRAINER_CLASS_PIKE_QUEEN     0x3f
 #define TRAINER_CLASS_PYRAMID_KING   0x40
 #define TRAINER_CLASS_RS_PROTAG      0x41
-#define TRAINER_CLASS_COUNT          0x42
+
+// island-game
+
+#define TRAINER_CLASS_SCOUT          0x42
+#define TRAINER_CLASS_NERD           0x43
+#define TRAINER_CLASS_COWGIRL        0x44
+#define TRAINER_CLASS_RANCHER        0x45
+#define TRAINER_CLASS_PATHMASTER     0x46
+#define TRAINER_CLASS_THIEF          0x47
+#define TRAINER_CLASS_LEGEND         0x48
+#define TRAINER_CLASS_COUNT          0x49
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

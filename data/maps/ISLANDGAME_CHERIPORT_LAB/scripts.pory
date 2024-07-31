@@ -14,7 +14,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         setflag(FLAG_PROF_GAVE_EEVEE)
         setflag(FLAG_SYS_POKEMON_GET)
         // givemon(SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_SAND_ATTACK, MOVE_HELPING_HAND, FALSE)
-        givemon(SPECIES_EEVEE,5,ITEM_NONE,ITEM_PREMIER_BALL,NUM_NATURES,1,,,,,,,,31,31,31,31,31,31,MOVE_TACKLE,MOVE_MUD_SLAP,MOVE_GROWL,MOVE_WORK_UP,FALSE)
+        givemon(SPECIES_EEVEE,5,ITEM_NONE,ITEM_CHERISH_BALL,NUM_NATURES,1,,,,,,,,,,,,,,MOVE_TACKLE,MOVE_MUD_SLAP,MOVE_SAND_ATTACK,MOVE_TAIL_WHIP,FALSE)
         playfanfare(MUS_OBTAIN_ITEM)
         bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
         msgbox(ReceivedEevee_Text)
@@ -41,10 +41,10 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         giveitem(ITEM_POKE_BALL, 5)
         msgbox(ProfTalk_Fourth_Text)
         setrespawn(HEAL_LOCATION_CHERIPORT)
-        setflag(FLAG_BADGE01_GET)
+        setflag(FLAG_BADGE01_GET) // temporary until trade disobedience fixed
     } 
     // Before player defeats Audrey for the first time.
-    elif(!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+    if(!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
         msgbox(ProfTalk_AudreyNotDefeated)
     }
     // everything else; check how many Pokemon you've caught
@@ -128,13 +128,18 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist1Talk {
 
 script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk {
     lock
-    msgbox(format("Heheh... Yeah... H-Huh?"))
+    msgbox(format("Heheh...{PAUSE 60} Yeah...{PAUSE 120} H-Huh?"))
+    playse(SE_PIN)
     applymovement(SCIENTIST_ID, ExclaimFacePlayer)
+    waitmovement(0)
+    applymovement(SCIENTIST_ID, Common_Movement_Delay48)
     waitmovement(0)
     msgbox(format("I-It's not what you think! I was just doing research!"))
     applymovement(SCIENTIST_ID,Common_Movement_QuestionMark)
     waitmovement(0)
-    msgbox(format("Huh? You're not the professor... Go away! I'm doing grown-up stuff!"))
+    applymovement(SCIENTIST_ID, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format("Huh? You're not the professor...{PAUSE 60} Go away! I'm doing grown-up stuff!"))
     applymovement(SCIENTIST_ID,Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release
@@ -142,7 +147,6 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk {
 
 script ISLANDGAME_CHERIPORT_LAB_EventScript_CocoTalk {
     lock
-    faceplayer
     msgbox(CocoTalk_Text)
     release
 }
@@ -156,9 +160,7 @@ text Scientist1Talk_Text {
 
 text CocoTalk_Text {
     format(
-        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hello, {PLAYER}! Welcome to the Maryan Isles! \p"
-        "{COLOR DARK_GRAY}My name is Coco. I'm a close friend of Professor Palm's and the creator of Marya's Pokémon Storage System! \p"
-        "{COLOR DARK_GRAY}I hope you find it easy and convenient to use. Let me know if you have any problems with it!"
+        "{COLOR RED}(She seems preoccupied... I should leave her be.)"
     )
 }
 

@@ -1,3 +1,30 @@
 mapscripts ISLANDGAME_MT_AURORA_2F_2_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_1, 1: FallThroughIceAurora
+    ]
+    // MAP_SCRIPT_ON_TRANSITION {
+    //     setvar(VAR_ICE_STEP_COUNT, 1)
+    // }
+    MAP_SCRIPT_ON_RESUME {
+        setstepcallback(STEP_CB_ICE)
+    }
+    MAP_SCRIPT_ON_LOAD {
+        special(SetIcefallCaveCrackedIceMetatiles)
+    }
 }
 
+movement Movement_PlayerFallAurora {
+    set_invisible
+}
+
+script(local) FallThroughIceAurora {
+    lock
+    delay(20)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerFallAurora)
+    waitmovement(0)
+    playse(SE_FALL)
+    delay(60)
+    warphole(MAP_ISLANDGAME_MT_AURORA_3F)
+    waitstate
+    release
+}

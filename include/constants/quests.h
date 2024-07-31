@@ -27,41 +27,44 @@
 // Custom Quests
 #define QUEST_PERSI_FAVORITE_CARD          0
 #define QUEST_PERSI_BERRY_MANIAC           1
-#define QUEST_FRESA_FARMS_LOST_MAREEP      2
-#define QUEST_FRESA_FARMS_TORCHIC_EGG      3
-#define QUEST_NORANNA_FITNESS_FREAK        4
-#define QUEST_TIDALCOVE_RARE_PKMN          5
-#define QUEST_VERDANT_FOREST_SKITTY        6
-#define QUEST_COUNT                        7 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_VERDANT_FOREST_SKITTY        2
+#define QUEST_MAPLEGROVE_LOVERS            3
+#define QUEST_FRESA_FARMS_LOST_MAREEP      4
+#define QUEST_FRESA_FARMS_TORCHIC_EGG      5
+#define QUEST_ROSEVALE_RESCUE              6
+#define QUEST_APPLEVINE_COUCH_POTATO       7
+#define QUEST_COUNT                        8 // This number is literally how many to show in the UI (keep it accurate!)
 
 // Custom Sub-Quests
+
+//Persi Berry
 #define SUB_QUEST_PERSI_BERRY_1            0
 #define SUB_QUEST_PERSI_BERRY_2            1
 #define SUB_QUEST_PERSI_BERRY_3            2
 #define SUB_QUEST_PERSI_BERRY_4            3
 #define SUB_QUEST_PERSI_BERRY_5            4
 #define SUB_QUEST_PERSI_BERRY_6            5
+#define SUB_QUEST_PERSI_BERRY_7            6
+#define SUB_QUEST_PERSI_BERRY_8            7
+#define SUB_QUEST_PERSI_BERRY_9            8
+#define SUB_QUEST_PERSI_BERRY_10           9
+#define SUB_QUEST_PERSI_BERRY_11           10
+#define SUB_QUEST_PERSI_BERRY_12           11
+#define SUB_QUEST_PERSI_BERRY_13           12
+#define SUB_QUEST_PERSI_BERRY_14           13
 
-#define SUB_QUEST_NORANNA_FITNESS_FREAK_HPUP    6
-#define SUB_QUEST_NORANNA_FITNESS_FREAK_PROTEIN 7
-#define SUB_QUEST_NORANNA_FITNESS_FREAK_IRON    8 
-#define SUB_QUEST_NORANNA_FITNESS_FREAK_CALCIUM 9
-#define SUB_QUEST_NORANNA_FITNESS_FREAK_ZINC    10
-#define SUB_QUEST_NORANNA_FITNESS_FREAK_CARBOS  11
-#define SUB_QUEST_NORANNA_FITNESS_FREAK_PPUP    12
-#define SUB_QUEST_NORANNA_FITNESS_FREAK_PPMAX   13
+#define SUB_QUEST_COUNT_PERSI_BERRY        14
 
-#define SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU   14
-#define SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE  15
-#define SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET    16
-#define SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG     17
-#define SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD  18
+// Applevine Couch Potato
+#define SUB_QUEST_COUCH_POTATO_1           0
+#define SUB_QUEST_COUCH_POTATO_2           1
+#define SUB_QUEST_COUCH_POTATO_3           2
+#define SUB_QUEST_COUCH_POTATO_4           3
+#define SUB_QUEST_COUCH_POTATO_5           4
 
-#define SUB_QUEST_COUNT_PERSI_BERRY 6
-#define SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK 8
-#define SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN 5
+#define SUB_QUEST_COUNT_COUCH_POTATO       5
 
-#define SUB_QUEST_COUNT SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK + SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN
+#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_COUCH_POTATO)
 
 
 // We want to allocate more space in the saveblock for quests than we need,

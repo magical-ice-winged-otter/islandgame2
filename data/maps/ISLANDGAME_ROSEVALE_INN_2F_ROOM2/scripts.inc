@@ -33,9 +33,9 @@ ISLANDGAME_ROSEVALE_INN_2F_ROOM2_NPC_Text_1:
 	.string "thoughtful, I'll give you this TM!$"
 
 ISLANDGAME_ROSEVALE_INN_2F_ROOM2_NPC_Text_2:
-	.string "How rude! -smack- That'll teach you to\n"
+	.string "How rude!{PAUSE 60} -smack- {PAUSE 60}That'll teach you to\n"
 	.string "say that to a cute girl like me!$"
 
 ISLANDGAME_ROSEVALE_INN_2F_ROOM2_NPC_Text_3:
 	.string "Don't try and use that move on me,\n"
-	.string "you're not my type. -giggle-$"
+	.string "you're not my type. {PAUSE 30}-giggle-$"

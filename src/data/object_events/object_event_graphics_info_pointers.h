@@ -58,6 +58,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman6;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman7;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman8;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Apple;
 
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
@@ -1201,7 +1202,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_WOMAN_6] =                  &gObjectEventGraphicsInfo_Woman6,
     [OBJ_EVENT_GFX_WOMAN_7] =                  &gObjectEventGraphicsInfo_Woman7,
     [OBJ_EVENT_GFX_WOMAN_8] =                  &gObjectEventGraphicsInfo_Woman8,
-    [OBJ_EVENT_GFX_SCHOOL_KID_F] =              &gObjectEventGraphicsInfo_SchoolKidF,
+    [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
+    [OBJ_EVENT_GFX_APPLE] =                    &gObjectEventGraphicsInfo_Apple,
 
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,

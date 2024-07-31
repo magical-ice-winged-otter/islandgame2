@@ -49,7 +49,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "graphics_id": "OBJ_EVENT_GFX_RANCHER",
       "x": 48,
       "y": 6,
       "elevation": 0,
@@ -62,7 +62,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_COWGIRL",
       "x": 48,
       "y": 11,
       "elevation": 0,
@@ -75,7 +75,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
       "x": 47,
       "y": 24,
       "elevation": 0,
@@ -129,7 +129,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES",
       "x": 26,
-      "y": 8,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -142,7 +142,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES",
       "x": 27,
-      "y": 8,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -155,13 +155,13 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES",
       "x": 28,
-      "y": 8,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_MINTY_CHESTO_3",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_MINTY_PECHA_3",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -193,16 +193,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 42,
-      "y": 28,
+      "x": 39,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_ZAP_PLATE",
+      "trainer_sight_or_berry_tree_id": "ITEM_BRIGHT_POWDER",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MINTY_MEADOWS_1"
+      "flag": "FLAG_ITEM_MINTY_MEADOWS_BRIGHT_POWDER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -213,9 +213,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_REPEL",
+      "trainer_sight_or_berry_tree_id": "ITEM_X_DEFENSE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_MINTY_MEADOWS_REPEL"
+      "flag": "FLAG_MINTY_MEADOWS_X_DEF"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -281,6 +281,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_425",
+      "x": 19,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_DrifloonBattle",
+      "flag": "FLAG_DAILY_MINTY_MEADOWS_DRIFLOON"
     }
   ],
   "warp_events": [
@@ -419,66 +432,66 @@
     },
     {
       "type": "trigger",
-      "x": 36,
-      "y": 32,
+      "x": 61,
+      "y": 10,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
     },
     {
       "type": "trigger",
-      "x": 35,
-      "y": 32,
+      "x": 8,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 37,
-      "y": 32,
+      "x": 9,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 38,
-      "y": 32,
+      "x": 10,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 39,
-      "y": 32,
+      "x": 11,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 41,
-      "y": 32,
+      "x": 12,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     },
     {
       "type": "trigger",
-      "x": 42,
-      "y": 32,
+      "x": 13,
+      "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_4",
-      "var_value": "1",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave"
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     }
   ],
   "bg_events": [
@@ -492,8 +505,8 @@
     },
     {
       "type": "sign",
-      "x": 19,
-      "y": 3,
+      "x": 18,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact"
@@ -503,16 +516,16 @@
       "x": 57,
       "y": 7,
       "elevation": 0,
-      "item": "ITEM_SUPER_POTION",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_116_SUPER_POTION"
+      "item": "ITEM_ETHER",
+      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_ETHER"
     },
     {
       "type": "hidden_item",
       "x": 57,
       "y": 33,
       "elevation": 0,
-      "item": "ITEM_MUSCLE_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE"
+      "item": "ITEM_CLEVER_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_C_FEATHER"
     },
     {
       "type": "sign",

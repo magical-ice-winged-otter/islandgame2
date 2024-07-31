@@ -2,27 +2,72 @@
   "id": "MAP_ISLANDGAME_APPLEVINE_COUCH_POTATO",
   "name": "ISLANDGAME_APPLEVINE_COUCH_POTATO",
   "layout": "LAYOUT_ISLANDGAME_APPLEVINE_COUCH_POTATO",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_HG_VERMILION",
   "region_map_section": "MAPSEC_APPLEVINE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
-  "show_map_name": true,
+  "allow_running": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_446",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_APPLEVINE_COUCH_POTATO_Munchlax",
+      "flag": "0"
+    }
   ],
   "warp_events": [
-
+    {
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_APPLEVINE",
+      "dest_warp_id": "5"
+    }
   ],
   "coord_events": [
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COUCH_POTATO_TV"
+    }
   ]
 }

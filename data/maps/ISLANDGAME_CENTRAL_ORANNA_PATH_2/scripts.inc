@@ -153,9 +153,36 @@ Movement_Fan4WalkAway:
 	walk_fast_right
 	step_end
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
+Movement_PlayerWalkOver1:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	step_end
+
+Movement_PlayerWalkOver2:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1::
 	lock
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerWalkOver1
+	waitmovement 0
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_1
 	closemessage
 	applymovement 8, Movement_DELCATTYAttack
 	waitmovement 8
@@ -163,7 +190,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 	waitmoncry
 	playmoncry SPECIES_LOMBRE, CRY_MODE_WEAK
 	waitmoncry
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_1
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_2
 	closemessage
 	applymovement 1, Movement_PrimWalkAway
 	applymovement 8, Movement_DELCATTYWalkAway
@@ -175,19 +202,19 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 	waitmovement 0
 	applymovement 3, Common_Movement_Delay32
 	waitmovement 0
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_2
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_3
 	closemessage
 	applymovement 5, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	applymovement 5, Common_Movement_Delay32
 	waitmovement 0
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_3
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_4
 	closemessage
 	applymovement 3, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	applymovement 3, Common_Movement_Delay32
 	waitmovement 0
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_4
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_5
 	closemessage
 	playse SE_PIN
 	applymovement 3, Common_Movement_ExclamationMark
@@ -200,7 +227,73 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene::
 	waitmovement 5
 	applymovement 3, Common_Movement_FaceRight
 	applymovement 3, Common_Movement_FaceRight
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_5
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_6
+	closemessage
+	applymovement 3, Movement_Fan3WalkAway
+	applymovement 5, Movement_Fan4WalkAway
+	waitmovement 3
+	waitmovement 5
+	removeobject 3
+	removeobject 5
+	setflag FLAG_NORANNA_PRIM_CUTSCENE_FINISHED
+	setvar VAR_TEMP_0, 1
+	release
+	return
+
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene2::
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerWalkOver2
+	waitmovement 0
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_1
+	closemessage
+	applymovement 8, Movement_DELCATTYAttack
+	waitmovement 8
+	playmoncry SPECIES_DELCATTY, CRY_MODE_NORMAL
+	waitmoncry
+	playmoncry SPECIES_LOMBRE, CRY_MODE_WEAK
+	waitmoncry
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_2
+	closemessage
+	applymovement 1, Movement_PrimWalkAway
+	applymovement 8, Movement_DELCATTYWalkAway
+	waitmovement 1
+	waitmovement 8
+	removeobject 1
+	removeobject 8
+	applymovement 3, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	applymovement 3, Common_Movement_Delay32
+	waitmovement 0
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_3
+	closemessage
+	applymovement 5, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	applymovement 5, Common_Movement_Delay32
+	waitmovement 0
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_4
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	applymovement 3, Common_Movement_Delay32
+	waitmovement 0
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_5
+	closemessage
+	playse SE_PIN
+	applymovement 3, Common_Movement_ExclamationMark
+	applymovement 5, Common_Movement_ExclamationMark
+	waitmovement 3
+	waitmovement 5
+	applymovement 3, Common_Movement_Delay32
+	applymovement 3, Common_Movement_Delay32
+	waitmovement 3
+	waitmovement 5
+	applymovement 3, Common_Movement_FaceRight
+	applymovement 3, Common_Movement_FaceRight
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_6
 	closemessage
 	applymovement 3, Movement_Fan3WalkAway
 	applymovement 5, Movement_Fan4WalkAway
@@ -259,8 +352,8 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked_Text_0:
 	.string "Will be back next update (:$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0:
-	.string "Swimming looks really fun! I wanna try\n"
-	.string "it when I'm older...$"
+	.string "My sister wants to be a model just like\n"
+	.string "Ruka, so she's training her body.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayDude_Text_0:
 	.string "Howdy trainer! Nice job on making it\n"
@@ -274,32 +367,41 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_HalfwayDude_Text_0:
 	.string "Bet you're glad I filled you in on the\n"
 	.string "secrets, huh?\p"
 	.string "Eh? What do you mean, that was all\n"
-	.string "public information?$"
+	.string "public information?\p"
+	.string "Well then, allow me to provide you with\n"
+	.string "some more personal stuff about her...\p"
+	.string "-whisper whisper-\p"
+	.string "How'd you like them apples? I'm not so\n"
+	.string "useless anymore, yeah?\p"
+	.string "What? Why are you looking at me like\n"
+	.string "that? Stop judging me! I'm important!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_0:
-	.string "Interested in seeing some of my\n"
-	.string "catches?$"
+	.string "Tryna see some of my catches?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_1:
-	.string "Back to fishing.$"
+	.string "Pretty snazzy, right?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Fisherman_Text_2:
-	.string "This is a nice place to fish since it's so\n"
-	.string "remote.\p"
-	.string "Nothing like waking up early to the\n"
-	.string "sounds of nature and fishing!$"
+	.string "I wish the people at Tidalcove would\n"
+	.string "stop tossing their trash in the sea.\p"
+	.string "A lot of it ends up flowing down this\n"
+	.string "river. You won't believe the things I've\l"
+	.string "caught thinking I caught a Totodile.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper_Text_0:
-	.string "My Pokémon just got a massage from the\n"
-	.string "salon over there, so let's battle!$"
+	.string "I'm tired of facing all these sweaty\n"
+	.string "trainers scurrying about.\p"
+	.string "Let's just get this over with.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper_Text_1:
-	.string "I could go for a haircut too.$"
+	.string "Humph.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Camper_Text_2:
-	.string "If you've got some extra cash, you\n"
-	.string "should hit up the salon too!\p"
-	.string "Your Pokémon will love it, trust me!$"
+	.string "There is a salon right there, trainer.\n"
+	.string "While it's intended for Pokemon, I think\l"
+	.string "they would be willing to make an\l"
+	.string "exception after seeing you.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_0:
 	.string "Nyeh heh heh... Let me SHOW you my\n"
@@ -309,8 +411,8 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_1:
 	.string "Did you like my Pokémans?$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Maniac_Text_2:
-	.string "My Pokémans are super rare... I'll get all\n"
-	.string "the ladies with them!$"
+	.string "I'll be getting all the ladies with my\n"
+	.string "Pokémans...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_0:
 	.string "Hey, check out my new ride! Isn't it\n"
@@ -320,42 +422,50 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_1:
 	.string "Crap! I fell!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Biker_Text_2:
-	.string "You should totally get a bike too! You\n"
-	.string "can get one at Tidalcove!$"
+	.string "If you want a bike, you should hit up\n"
+	.string "Randy's at Tidalcove!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger_Text_0:
 	.string "I need to be alone! Go away!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger_Text_1:
-	.string "Sorry for being so rude. I'm just\nupset because I lost my gym battle.$"
+	.string "-sigh-$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger_Text_2:
-	.string "I thought I could beat Ruka, but her\n"
-	.string "ace Pokémon... it was just too strong!$"
+	.string "I'm just upset about losing to Ruka. Her\n"
+	.string "ace Pokémon was just too strong.\p"
+	.string "Now I'll have to wait until tomorrow for\n"
+	.string "another chance...$"
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_0:
-	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}Time to end this, Delcatty!$"
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_0:
+	.string "KYAAA! PRIM YOU'RE SO COOL!\p"
+	.string "That girl... isn't she the newest member\n"
+	.string "of STARLIGHT?\p"
+	.string "Her Delcatty is so pretty... I wish I had\n"
+	.string "one too!$"
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_1:
-	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}-sigh- What a waste of time. You\n"
-	.string "should've just given me the spot.$"
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_1:
+	.string "{COLOR GREEN}Primrose: {COLOR DARK_GRAY}Time to end this.$"
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_2:
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_2:
+	.string "{COLOR GREEN}Primrose: {COLOR DARK_GRAY}-sigh- What a waste of time...$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_3:
 	.string "{COLOR DARK_GRAY}Yeah! You should've just let her have\n"
 	.string "it! She has better things to do than\l"
 	.string "spender her time dealing with scrubs\l"
 	.string "like you!$"
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_3:
-	.string "{COLOR DARK_GRAY}Yeah! She's Prim, the greatest idol to\n"
-	.string "ever exist! She and Delcatty are gonna\l"
-	.string "take Marya by storm!$"
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_4:
+	.string "{COLOR DARK_GRAY}Yeah! She's Lady Primrose, the greatest\n"
+	.string "idol to ever exist! She and Delcatty\l"
+	.string "are gonna take Marya by storm!$"
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_4:
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_5:
 	.string "{COLOR DARK_GRAY}You better believe she is! We stand with\n"
 	.string "Her Majesty!$"
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene_Text_5:
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_6:
 	.string "{COLOR DARK_GRAY}E-Eh? W-Wait for us, Prim! C'mon Jess,\n"
 	.string "let's ditch these goobers!$"
 
@@ -368,22 +478,19 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLombre_Text_0:
 	.string "{COLOR RED}(Looks like Lombre took a thrashing.)$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec1_Text_0:
-	.string "Prim is so pretty and confident. Her\n"
-	.string "Pokémon fight so elegantly too.\p"
-	.string "She'd be a perfect Pokémon\n"
-	.string "Coordinator! I wonder why she chose to\l"
-	.string "become a trainer instead...$"
+	.string "Prim's Pokémon fight so elegantly... As\n"
+	.string "expected from an idol!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec2_Text_0:
-	.string "Primrose sure is incredible... She only\n"
-	.string "just became an idol a few months ago,\l"
-	.string "and now she's already become one of\l"
-	.string "the most popular celebrities in the\l"
-	.string "isles.\p"
-	.string "Now, she's on her way to completing the\n"
-	.string "Marya Gym Challenge so she can enter in\l"
-	.string "the upcoming Silverwing Festival\l"
-	.string "Tournament!$"
+	.string "Apparently Primrose just became a\n"
+	.string "member of STARLIGHT a few months ago.\p"
+	.string "Huh? You don't know what STARLIGHT is?\n"
+	.string "That's wild, bro. They're the biggest\l"
+	.string "idol group in Marya!\p"
+	.string "Prim's gained a ton of popularity 'cause\n"
+	.string "of her amazing talent as a trainer.\p"
+	.string "She's definitely got this year's\n"
+	.string "festival tournament in the bag.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightSpec3_Text_0:
 	.string "Ruka gets so many challenge requests\n"

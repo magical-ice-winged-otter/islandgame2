@@ -3,38 +3,47 @@ mapscripts ISLANDGAME_AURORA_WEATHER_INSTITUTE_MapScripts {}
 script ISLANDGAME_AURORA_WEATHER_INSTITUTE_Interact_Scientist {
     lock
     faceplayer
-    if (!flag(FLAG_RECEIVED_CASTFORM)) {
-        msgbox(format(
-            "Hello there! You must be {PLAYER}. I am one of Professor Palm's aides.\p
-            I came here to study the weather and ecosystem surrounding Mt. Aurora...\p
-            ...Buuuut I didn't realize how gosh darn cold it'd be here, so I just stay cooped up in here for most of my time.\p
-            Say... you've got your Pokédex on you, right? Wanna help a poor guy out?\p
-            If you can catch 20 different Pokémon and show me their Pokédex entries, I'll make it worth your while! How's that sound?"
-        ), MSGBOX_YESNO)
-
-        if (var(VAR_RESULT) == YES) {
-            msgbox(format("Awesome! Let's see how many Pokémon you've caught so far..."))
-            callnative(CheckDexCount)
-
-            if (var(VAR_0x8000) >= 20) {
+    msgbox(format(
+        "Hello! I'm one of Professor Palm's aides. You must be {PLAYER}, I assume?\p"
+        "I'm here to conduct research on the inhabitants of Mt. Aurora.\p"
+        "...Buuuut I didn't realize how gosh darn cold it is here, especially in the cave.\p"
+        "I'm not very good with the cold, so I've stayed indoors for the time being.\p"
+        "Any chance you'd be willing to help me fill out the last Pokémon entry I need?\p"
+        "The only Pokemon I wasn't able to find was {COLOR LIGHT_BLUE}Lapras{COLOR DARK_GRAY}. Do you have one by chance?"
+    ), MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES) {
+        special(ChoosePartyMon)
+        waitstate
+        copyvar(VAR_0x800A, VAR_0x8004)
+        if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+            msgbox(format(
+                "Ah, no worries. They're a pretty rare sight in the cavern."
+            ))
+            goto(Scientist_End)
+        }
+        else {
+            specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+            if (var(VAR_RESULT) == SPECIES_LAPRAS) {
                 msgbox(format(
-                    "Wowie... that's at least 20 Pokémon, alright! Well, a deal's a deal!\p"
-                    "This right here is a Pokémon that we received from the Hoenn region to help predict the crazy weather here in the isles!\p"
-                    "...Buuuut it's probably better in your hands. Not much it can do inside here."
-                    )
-                )
-                givemon(SPECIES_CASTFORM, 20, ITEM_MACHO_BRACE, ITEM_POKE_BALL, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_SAND_ATTACK, MOVE_HELPING_HAND, FALSE)
-                setflag(FLAG_RECEIVED_CASTFORM)
+                    "Wow! That is a Lapras! Here is your reward! (placeholder)"
+                ))
             }
             else {
-                msgbox(format("Hm... You still don't have 20... Let me know when you do!"))
+                msgbox(format(
+                    "Hm, I'm afraid that's not a Lapras. They can be found deep in Mt. Aurora."
+                ))
+                goto(Scientist_End)
             }
         }
-
-
     }
     else {
-        msgbox(format("I'll be fine here by myself. My new high-tech earmuffs will be in the mail soon!\pT-That being said, it wouldn't hurt to come visit once or twice...\pI um, don't get much human interaction living up right by the mountain..."), MSGBOX_NPC)
+        msgbox(format(
+            "Ah, no worries. They're a pretty rare sight in the cavern."
+        ))
+        goto(Scientist_End)
     }
-    release
+
+    Scientist_End:
+        closemessage
+        release
 }

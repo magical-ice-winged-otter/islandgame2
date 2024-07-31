@@ -29,15 +29,28 @@ ISLANDGAME_TIDALCOVE_GYM_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor::
 	lock
 	faceplayer
-	goto_if_unset FLAG_TIDALCOVE_GYM_SPONSOR_TALK, ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_2
-	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_1
+	goto_if_set FLAG_TIDALCOVE_RUKA_DEFEATED, ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_2
+	goto_if_unset FLAG_TIDALCOVE_GYM_SPONSOR_TALK, ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_7
+	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_3
 ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_1:
+	closemessage
 	release
 	return
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_2:
 	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_0
-	giveitem ITEM_FRESH_WATER
+	goto_if_unset FLAG_TIDALCOVE_GYM_SPONSOR_TALK, ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_5
+	goto ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_1
+
+ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_5:
+	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_1
+	giveitem ITEM_CASTELIACONE
+	setflag FLAG_TIDALCOVE_GYM_SPONSOR_TALK
+	goto ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_1
+
+ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_7:
+	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_2
+	giveitem ITEM_CASTELIACONE
 	setflag FLAG_TIDALCOVE_GYM_SPONSOR_TALK
 	goto ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_1
 
@@ -161,6 +174,16 @@ UnlockNextStairs:
 
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_0:
+	.string "That was a great battle you had with\n"
+	.string "Ruka, kid! Good luck on the rest of the\l"
+	.string "two gyms of Marya!$"
+
+ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_1:
+	.string "Here, I didn't have a chance to give\n"
+	.string "this to you earlier. You can take it as\l"
+	.string "a little prize for your victory.$"
+
+ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_2:
 	.string "Welcome, challenger! Sorry we couldn't\n"
 	.string "get to your request yesterday.\p"
 	.string "Ruka gets so many of them since she's\n"
@@ -184,7 +207,7 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_0:
 	.string "Oh, and take one of these too! Everyone\n"
 	.string "gets one for participating!$"
 
-ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_1:
+ISLANDGAME_TIDALCOVE_GYM_Interact_Sponsor_Text_3:
 	.string "Good luck, and remember to have fun!$"
 
 ISLANDGAME_TIDALCOVE_GYM_Trainer1_Text_0:
@@ -211,9 +234,10 @@ ISLANDGAME_TIDALCOVE_GYM_Trainer2_Text_1:
 	.string "Not a fan of puns, I see...$"
 
 ISLANDGAME_TIDALCOVE_GYM_Trainer2_Text_2:
-	.string "I hate being in the sweltering sun, so\n"
-	.string "being a gym trainer at Tidalcove was\l"
-	.string "definitely the right play for me!$"
+	.string "It was “ice” to meet you!\p"
+	.string "...Alright I'll stop. My mom says the best\n"
+	.string "way to make friends is to make them\l"
+	.string "laugh. I guess I need better material.$"
 
 ISLANDGAME_TIDALCOVE_GYM_Trainer3_Text_0:
 	.string "You're almost at the peak, but I have to\n"
@@ -284,7 +308,7 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_3:
 	.string "with the Tidalcove Badge!$"
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_4:
-	.string "{COLOR GREEN}Ruka: {COLOR DARK_GRAY}-yawn- Being a gym leader really\n"
+	.string "{COLOR GREEN}Ruka: {COLOR DARK_GRAY}-yawn-{PAUSE 60} Being a gym leader really\n"
 	.string "drains all the energy away from me.\p"
 	.string "I think I'll go for a relaxing swim over\n"
 	.string "to Applevine after work.$"
@@ -316,7 +340,7 @@ RukaDefeated_Text_3:
 	.string "Seaside Bike Path to get to Lumine\l"
 	.string "Island, where your next challenge\l"
 	.string "awaits!\p"
-	.string "Ah... The end of a gym challenge is\n"
+	.string "Ah...{PAUSE 30} The end of a gym challenge is\n"
 	.string "always so bittersweet.\p"
 	.string "Right as I've just begun to get to know\n"
 	.string "you, I have to bid you farewell.\p"

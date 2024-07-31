@@ -1,3 +1,35 @@
 ISLANDGAME_MT_AURORA_2F_2_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, ISLANDGAME_MT_AURORA_2F_2_MapScripts_MAP_SCRIPT_ON_RESUME
+	map_script MAP_SCRIPT_ON_LOAD, ISLANDGAME_MT_AURORA_2F_2_MapScripts_MAP_SCRIPT_ON_LOAD
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, ISLANDGAME_MT_AURORA_2F_2_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+ISLANDGAME_MT_AURORA_2F_2_MapScripts_MAP_SCRIPT_ON_RESUME:
+	setstepcallback STEP_CB_ICE
+	return
+
+ISLANDGAME_MT_AURORA_2F_2_MapScripts_MAP_SCRIPT_ON_LOAD:
+	special SetIcefallCaveCrackedIceMetatiles
+	return
+
+ISLANDGAME_MT_AURORA_2F_2_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_TEMP_1, 1, FallThroughIceAurora
+	.2byte 0
+
+
+Movement_PlayerFallAurora:
+	set_invisible
+	step_end
+
+FallThroughIceAurora:
+	lock
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerFallAurora
+	waitmovement 0
+	playse SE_FALL
+	delay 60
+	warphole MAP_ISLANDGAME_MT_AURORA_3F
+	waitstate
+	release
+	return
 

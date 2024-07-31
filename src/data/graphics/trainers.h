@@ -376,8 +376,8 @@ const u32 gTrainerPalette_CooltrainerSnowF[] = INCBIN_U32("graphics/trainers/fro
 const u32 gTrainerFrontPic_CooltrainerSnowM[] = INCBIN_U32("graphics/trainers/front_pics/cooltrainer_snow_m.4bpp.lz");
 const u32 gTrainerPalette_CooltrainerSnowM[] = INCBIN_U32("graphics/trainers/front_pics/cooltrainer_snow_m.gbapal.lz");
 
-const u32 gTrainerFrontPic_Cowboy[] = INCBIN_U32("graphics/trainers/front_pics/cowboy.4bpp.lz");
-const u32 gTrainerPalette_Cowboy[] = INCBIN_U32("graphics/trainers/front_pics/cowboy.gbapal.lz");
+const u32 gTrainerFrontPic_Rancher[] = INCBIN_U32("graphics/trainers/front_pics/cowboy.4bpp.lz");
+const u32 gTrainerPalette_Rancher[] = INCBIN_U32("graphics/trainers/front_pics/cowboy.gbapal.lz");
 
 const u32 gTrainerFrontPic_Cowgirl[] = INCBIN_U32("graphics/trainers/front_pics/cowgirl.4bpp.lz");
 const u32 gTrainerPalette_Cowgirl[] = INCBIN_U32("graphics/trainers/front_pics/cowgirl.gbapal.lz");
@@ -473,6 +473,18 @@ const u32 gTrainerPalette_Melissa[] = INCBIN_U32("graphics/trainers/front_pics/m
 
 const u8 gTrainerBackPic_Melissa[] = INCBIN_U8("graphics/trainers/back_pics/melissa.4bpp");
 const u32 gTrainerBackPicPalette_Melissa[] = INCBIN_U32("graphics/trainers/back_pics/melissa.gbapal.lz");
+
+const u32 gTrainerFrontPic_ScoutM[] = INCBIN_U32("graphics/trainers/front_pics/scout_m.4bpp.lz");
+const u32 gTrainerPalette_ScoutM[] = INCBIN_U32("graphics/trainers/front_pics/scout_m.gbapal.lz");
+
+const u32 gTrainerFrontPic_ScoutF[] = INCBIN_U32("graphics/trainers/front_pics/scout_f.4bpp.lz");
+const u32 gTrainerPalette_ScoutF[] = INCBIN_U32("graphics/trainers/front_pics/scout_f.gbapal.lz");
+
+const u32 gTrainerFrontPic_BugCatcherF[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher_f_pp.4bpp.lz");
+const u32 gTrainerPalette_BugCatcherF[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher_f_pp.gbapal.lz");
+
+const u32 gTrainerFrontPic_Nerd[] = INCBIN_U32("graphics/trainers/front_pics/nerd.4bpp.lz");
+const u32 gTrainerPalette_Nerd[] = INCBIN_U32("graphics/trainers/front_pics/nerd.gbapal.lz");
 
 
 
@@ -610,7 +622,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(CLOWN, Clown),
     TRAINER_SPRITE(COOLTRAINERSNOWF, CooltrainerSnowF),
     TRAINER_SPRITE(COOLTRAINERSNOWM, CooltrainerSnowM),
-    TRAINER_SPRITE(COWBOY, Cowboy),
+    TRAINER_SPRITE(RANCHER, Rancher),
     TRAINER_SPRITE(COWGIRL, Cowgirl),
     TRAINER_SPRITE(CYNTHIA, Cynthia),
     TRAINER_SPRITE(FARMERDUO, FarmerDuo),
@@ -637,6 +649,10 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(OLIVIA, Olivia),
     TRAINER_SPRITE(OLIVER, Oliver),
     TRAINER_SPRITE(MELISSA, Melissa),
+    TRAINER_SPRITE(SCOUT_M, ScoutM),
+    TRAINER_SPRITE(SCOUT_F, ScoutF),
+    TRAINER_SPRITE(BUG_CATCHER_F, BugCatcherF),
+    TRAINER_SPRITE(NERD, Nerd),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

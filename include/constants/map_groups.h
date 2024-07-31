@@ -85,6 +85,14 @@
 #define MAP_ISLANDGAME_SS_RAIN_BASEMENT                   (76 | (0 << 8))
 #define MAP_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE         (77 | (0 << 8))
 #define MAP_ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2        (78 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT_LAB_2F                   (79 | (0 << 8))
+#define MAP_ISLANDGAME_CHERIPORT_PKMNCENTER_2F            (80 | (0 << 8))
+#define MAP_ISLANDGAME_CAMP_PERSI_PKMNCENTER_2F           (81 | (0 << 8))
+#define MAP_ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F           (82 | (0 << 8))
+#define MAP_ISLANDGAME_TIDALCOVE_PKMNCENTER_2F            (83 | (0 << 8))
+#define MAP_ISLANDGAME_ROSEVALE_PKMNCENTER_2F             (84 | (0 << 8))
+#define MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO         (85 | (0 << 8))
+#define MAP_ISLANDGAME_AURORA_PATH_GROTTO                 (86 | (0 << 8))
 
 // gMapGroup_Islandgame2
 #define MAP_ISLANDGAME_APPLEVINE                    (0 | (1 << 8))
@@ -115,6 +123,7 @@
 #define MAP_ISLANDGAME_APPLEVINE_QUEST_HOUSE        (25 | (1 << 8))
 #define MAP_ISLANDGAME_ROCKY_PATH_HOUSE             (26 | (1 << 8))
 #define MAP_ISLANDGAME_ROCKY_PATH_PKMNCENTER        (27 | (1 << 8))
+#define MAP_ISLANDGAME_APPLEVINE_PKMNCENTER_2F      (28 | (1 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (2 << 8))

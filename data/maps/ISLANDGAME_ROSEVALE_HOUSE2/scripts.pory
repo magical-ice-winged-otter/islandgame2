@@ -5,9 +5,9 @@ script ISLANDGAME_ROSEVALE_HOUSE2_NPC {
     lock
     faceplayer
     msgbox(format(
-        "The Silverwing Festival is Marya's most anticipated celebration.\p"
-        "Dancing, singing, good food, Pokémon battles and performances...\p"
-        "I'm happy to be attending my 80th festival this year!"
+        "I don't get what all the craze is about these newfangled video games.\p"
+        "My grandson spends ten hours a day doing chores on his virtual farm, while ignoring all of his real chores.\p"
+        "Video games must have been made by the government to enslave our youth!"
     ))
     release
 }

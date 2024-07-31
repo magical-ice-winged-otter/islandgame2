@@ -6685,7 +6685,7 @@ bool32 TryMultichoiceFormChange(u8 taskId)
 static void CursorCb_CatalogBulb(u8 taskId)
 {
     gSpecialVar_Result = 0;
-    gSpecialVar_0x8000 = MOVE_THUNDER_SHOCK;
+    gSpecialVar_0x8000 = MOVE_DISCHARGE;
     TryMultichoiceFormChange(taskId);
 }
 
@@ -6706,14 +6706,14 @@ static void CursorCb_CatalogWashing(u8 taskId)
 static void CursorCb_CatalogFridge(u8 taskId)
 {
     gSpecialVar_Result = 3;
-    gSpecialVar_0x8000 = MOVE_BLIZZARD;
+    gSpecialVar_0x8000 = MOVE_FREEZE_DRY;
     TryMultichoiceFormChange(taskId);
 }
 
 static void CursorCb_CatalogFan(u8 taskId)
 {
     gSpecialVar_Result = 4;
-    gSpecialVar_0x8000 = MOVE_AIR_SLASH;
+    gSpecialVar_0x8000 = MOVE_HURRICANE;
     TryMultichoiceFormChange(taskId);
 }
 

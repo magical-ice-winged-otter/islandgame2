@@ -4082,15 +4082,14 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         FOOTPRINT(Milcery)
         .levelUpLearnset = sMilceryLevelUpLearnset,
         .teachableLearnset = sMilceryTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM},
-                                {EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM},
-                                {EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM},
-                                {EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM},
-                                {EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM},
-                                {EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM},
-                                {EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL},
-                                {EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL},
-                                {EVO_LEVEL, 0, SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL}),
+        .evolutions = EVOLUTION(
+                                {EVO_ITEM_HOLD, ITEM_STRAWBERRY_SWEET, SPECIES_ALCREMIE_STRAWBERRY},
+                                {EVO_ITEM_HOLD, ITEM_LOVE_SWEET, SPECIES_ALCREMIE_LOVE},
+                                {EVO_ITEM_HOLD, ITEM_BERRY_SWEET, SPECIES_ALCREMIE_BERRY},
+                                {EVO_ITEM_HOLD, ITEM_CLOVER_SWEET, SPECIES_ALCREMIE_CLOVER},
+                                {EVO_ITEM_HOLD, ITEM_FLOWER_SWEET, SPECIES_ALCREMIE_FLOWER},
+                                {EVO_ITEM_HOLD, ITEM_STAR_SWEET, SPECIES_ALCREMIE_STAR},
+                                {EVO_ITEM_HOLD, ITEM_RIBBON_SWEET, SPECIES_ALCREMIE_RIBBON}),
     },
 
 #define ALCREMIE_MISC_INFO(color)                                               \

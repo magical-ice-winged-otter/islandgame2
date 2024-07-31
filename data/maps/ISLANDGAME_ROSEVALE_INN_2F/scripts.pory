@@ -35,7 +35,7 @@ mapscripts ISLANDGAME_ROSEVALE_INN_2F_MapScripts {
             }
 
             msgbox(format(
-                "Arfur told me you're leaving alweady... I wanted to pway with you more!\p"
+                "Arfur told me you're leaving alweady...{PAUSE 30} I wanted to pway with you more!\p"
                 "Pwease come back to visit us when you finish with your twainer stuff!"
             ))
             closemessage

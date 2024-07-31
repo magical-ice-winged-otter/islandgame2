@@ -437,6 +437,10 @@ static const struct SpriteFrameImage sPicTable_SchoolKidF[] = {
     overworld_frame(gObjectEventPic_SchoolKidF, 2, 4, 8),
 };
 
+static const struct SpriteFrameImage sPicTable_Apple[] = {
+    obj_frame_tiles(gObjectEventPic_Apple),
+};
+
 
 
 
