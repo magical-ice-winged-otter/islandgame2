@@ -66,6 +66,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "cable_club.h"
+#include "islandgame.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -3339,6 +3340,13 @@ static void BattleStartClearSetData(void)
     memset(&gSideTimers, 0, sizeof(gSideTimers));
     memset(&gWishFutureKnock, 0, sizeof(gWishFutureKnock));
     memset(&gBattleResults, 0, sizeof(gBattleResults));
+
+    // islandgame-preset hazards
+    gSideTimers[B_SIDE_OPPONENT] = gPresetSideTimer[B_SIDE_OPPONENT];
+    gSideTimers[B_SIDE_PLAYER] = gPresetSideTimer[B_SIDE_PLAYER];
+    gSideStatuses[B_SIDE_OPPONENT] = gPresetHazards[B_SIDE_OPPONENT];
+    gSideStatuses[B_SIDE_PLAYER] = gPresetHazards[B_SIDE_PLAYER];
+
     ClearSetBScriptingStruct();
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)

@@ -8,6 +8,10 @@
 #include "clock.h" // for InitTimeBasedEvents
 #include "overworld.h"
 #include "main.h"
+#include "battle.h" // for gSideStatus
+
+u32 gPresetHazards[NUM_BATTLE_SIDES];
+struct SideTimer gPresetSideTimer[NUM_BATTLE_SIDES];
 
 void CheckDexCount(void)
 {
@@ -44,6 +48,21 @@ void CheckPartyMon(void)
                 gSpecialVar_Result = TRUE;
                 break;
             }
+        }
+    }
+}
+
+void SetHazards(void) {
+    u16 hazardType = gSpecialVar_0x8000;
+    u16 hazardCount = gSpecialVar_0x8001;
+    u16 side = gSpecialVar_0x8002;
+
+    gPresetHazards[side] |= hazardType;
+
+    switch (hazardType) {
+        case SIDE_STATUS_STEALTH_ROCK: {
+            gPresetSideTimer[side].stealthRockAmount = 1;
+            break;
         }
     }
 }

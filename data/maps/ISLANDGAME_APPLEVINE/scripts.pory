@@ -606,6 +606,11 @@ script ISLANDGAME_APPLEVINE_NPC15 {
 // applin handler
 script ISLANDGAME_APPLEVINE_AppleRoll1 {
     random(10)
+
+    setvar(VAR_0x8000, SIDE_STATUS_STEALTH_ROCK)
+    setvar(VAR_0x8002, B_SIDE_PLAYER)
+    callnative(SetHazards)
+
     switch (var(VAR_RESULT)) {
         case 0:
             setflag(FLAG_SMART_WILD_AI)

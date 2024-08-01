@@ -5,6 +5,7 @@
 #include "constants/map_groups.h"
 #include "constants/maps.h"
 #include "gba/types.h"
+#include "battle.h"
 
 //To configure battle backgrounds, take a look at
 //LINK src/battle_bg.c:608
@@ -151,5 +152,8 @@ void IslandGameCustomStartup();
 #define ISLANDGAME_PLAYER_NAME "Rain"
 
 #endif
+
+extern u32 gPresetHazards[NUM_BATTLE_SIDES];
+extern struct SideTimer gPresetSideTimer[NUM_BATTLE_SIDES];
 
 #endif // GUARD_ISLANDGAME_H
