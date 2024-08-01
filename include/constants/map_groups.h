@@ -124,6 +124,9 @@
 #define MAP_ISLANDGAME_ROCKY_PATH_HOUSE             (26 | (1 << 8))
 #define MAP_ISLANDGAME_ROCKY_PATH_PKMNCENTER        (27 | (1 << 8))
 #define MAP_ISLANDGAME_APPLEVINE_PKMNCENTER_2F      (28 | (1 << 8))
+#define MAP_ISLANDGAME_AETHERIA_MUSEUM_1F           (29 | (1 << 8))
+#define MAP_ISLANDGAME_AETHERIA_MUSEUM_2F           (30 | (1 << 8))
+#define MAP_ISLANDGAME_AETHERIA_PKMNCENTER          (31 | (1 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (2 << 8))

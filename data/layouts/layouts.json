@@ -5560,6 +5560,36 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_APPLEVINE_PKMNCENTER_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_APPLEVINE_PKMNCENTER_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AETHERIA_MUSEUM_1F",
+      "name": "ISLANDGAME_AETHERIA_MUSEUM_1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_AETHERIA_MUSEUM_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AETHERIA_MUSEUM_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AETHERIA_MUSEUM_2F",
+      "name": "ISLANDGAME_AETHERIA_MUSEUM_2F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_AETHERIA_MUSEUM_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AETHERIA_MUSEUM_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AETHERIA_PKMNCENTER",
+      "name": "ISLANDGAME_AETHERIA_PKMNCENTER_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ISLANDGAME_AETHERIA_PKMNCENTER/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AETHERIA_PKMNCENTER/map.bin"
     }
   ]
 }
