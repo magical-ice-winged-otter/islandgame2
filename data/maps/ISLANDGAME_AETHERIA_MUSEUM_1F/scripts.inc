@@ -1,0 +1,3 @@
+ISLANDGAME_AETHERIA_MUSEUM_1F_MapScripts::
+	.byte 0
+
