@@ -17,7 +17,27 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 9,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_AETHERIA",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 15,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_AETHERIA_MUSEUM_2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_AETHERIA",
+      "dest_warp_id": "1"
+    }
   ],
   "coord_events": [
 
