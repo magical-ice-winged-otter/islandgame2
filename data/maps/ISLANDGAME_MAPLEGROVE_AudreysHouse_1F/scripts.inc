@@ -26,7 +26,7 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom_2:
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk::
 	.string "{COLOR DARK_GRAY}Feels like just yesterday, I was taking\n"
-	.string "Audrey to her first day of school.\p"
+	.string "Melissa to her first day of school.\p"
 	.string "{COLOR DARK_GRAY}Now she's exploring the vast wilderness\n"
 	.string "of Marya all on her own.\p"
 	.string "{COLOR DARK_GRAY}Kids grow up so fast, don't they? Blink\n"
@@ -47,7 +47,7 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomFirstTalk::
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomSecondTalk::
 	.string "It's good to see you again, dearie!\n"
-	.string "Audrey just stopped by earlier.\p"
+	.string "Melissa just stopped by earlier.\p"
 	.string "She told me all about how you two helped\n"
 	.string "the owner of Fresa Farms find his\l"
 	.string "missing Mareep!\p"

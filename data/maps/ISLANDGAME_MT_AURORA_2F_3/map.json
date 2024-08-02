@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "graphics_id": "OBJ_EVENT_GFX_EDEA",
       "x": 12,
       "y": 14,
       "elevation": 0,
@@ -67,7 +67,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_ARTHUR",
       "x": 12,
       "y": 16,
       "elevation": 0,
@@ -92,34 +92,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 10,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_ROSEVALE_STATE",
-      "var_value": "1",
-      "script": "ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_ROSEVALE_STATE",
-      "var_value": "1",
-      "script": "ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene"
-    },
-    {
-      "type": "trigger",
       "x": 11,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_ROSEVALE_STATE",
-      "var_value": "1",
-      "script": "ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
       "y": 17,
       "elevation": 0,
       "var": "VAR_ROSEVALE_STATE",
@@ -137,7 +110,7 @@
     },
     {
       "type": "trigger",
-      "x": 12,
+      "x": 14,
       "y": 17,
       "elevation": 0,
       "var": "VAR_ROSEVALE_STATE",
@@ -146,7 +119,16 @@
     },
     {
       "type": "trigger",
-      "x": 14,
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_ROSEVALE_STATE",
+      "var_value": "1",
+      "script": "ISLANDGAME_MT_AURORA_2F_3_Trigger_ThiefCutscene"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
       "y": 17,
       "elevation": 0,
       "var": "VAR_ROSEVALE_STATE",

@@ -10,7 +10,7 @@ mapscripts ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_MapScripts {
 script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Interact_Biker {
     msgbox(format(
         "POKÉMON BATTLES ON BICYCLES!!!\p"
-        "Sorry. I've been watching a lot of Pokémon Abridged lately."
+        "Sorry. I've been watching a lot of abridged anime lately."
     ), MSGBOX_NPC)
 }
 
@@ -26,13 +26,15 @@ script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck {
     specialvar(VAR_RESULT, GetPlayerAvatarBike)
 
     if (var(VAR_RESULT) == 0) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
         msgbox(format(
             "Hey! It's too dangerous to go on the bike path without a bike!"
         ), MSGBOX_NPC)
-        applymovement(OBJ_EVENT_ID_PLAYER, Movement_PushPlayerFromCounter)
+        applymovement(OBJ_EVENT_ID_PLAYER, Tidalcove_Movement_PushPlayerFromCounter)
         waitmovement(0)
     }
     else {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
         msgbox(format("Welcome to the Seaside Bike Path! Please be aware of other bikers."), MSGBOX_NPC)
         setflag(FLAG_SYS_CYCLING_ROAD)
         setvar(VAR_TEMP_1, 1)
@@ -41,6 +43,6 @@ script ISLANDGAME_TIDALCOVE_BIKE_PATH_BUILDING_Trigger_BikeCheck {
     release
 }
 
-movement Movement_PushPlayerFromCounter {
+movement Tidalcove_Movement_PushPlayerFromCounter {
     walk_left
 }

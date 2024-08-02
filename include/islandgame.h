@@ -52,6 +52,8 @@ typedef struct Location
 #define CENTRAL_ORANNA 11
 #define TIDALCOVE 12
 #define ROSEVALE 13
+#define APPLEVINE 14
+#define ROCKY_PATH 15
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -64,12 +66,14 @@ static const Location LOCATION_DATA[] = {
     [TRAVELERS_TUNNEL] = SET_LOC(ISLANDGAME_TRAVELERS_TUNNEL, 10, 16),
     [CAMP_PERSI] = SET_LOC(ISLANDGAME_CAMP_PERSI, 1, 24),
     [VERDANT_PATH] = SET_LOC(ISLANDGAME_VERDANT_PATH, 10, 10),
-    [VERDANT_WOODS] = SET_LOC(ISLANDGAME_VERDANT_WOODS, 10, 10),
+    [VERDANT_WOODS] = SET_LOC(ISLANDGAME_VERDANT_WOODS, 35, 17),
     [FRESA_FARMS] = SET_LOC(ISLANDGAME_FRESA_FARMS, 10, 10),
     [TIDALCOVE] = SET_LOC(ISLANDGAME_TIDALCOVE, 18, 21),
     [NORTHERN_ORANNA] = SET_LOC(ISLANDGAME_NORTHERN_ORANNA_PATH, 33, 19),
     [CENTRAL_ORANNA] = SET_LOC(ISLANDGAME_CENTRAL_ORANNA_PATH_1, 18, 1),
     [ROSEVALE] = SET_LOC(ISLANDGAME_ROSEVALE, 19, 13),
+    [APPLEVINE] = SET_LOC(ISLANDGAME_APPLEVINE, 47, 28),
+    [ROCKY_PATH] = SET_LOC(ISLANDGAME_ROCKY_PATH, 10, 9),
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
@@ -86,6 +90,8 @@ static const u8 northernOrannaName[] = _("NorthernOranna");
 static const u8 centralOrannaName[] = _("CentralOranna");
 static const u8 tidalcoveName[] = _("Tidalcove");
 static const u8 rosevaleName[] = _("Rosevale");
+static const u8 applevineName[] = _("Applevine");
+static const u8 rockypathName[] = _("Rocky Path");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
@@ -103,6 +109,8 @@ static const u8 *const LOCATION_NAMES[] = {
     [CENTRAL_ORANNA] = centralOrannaName,
     [TIDALCOVE] = tidalcoveName,
     [ROSEVALE] = rosevaleName,
+    [APPLEVINE] = applevineName,
+    [ROCKY_PATH] = rockypathName,
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 
@@ -131,7 +139,7 @@ void IslandGameCustomStartup();
 
 #if ISLANDGAME_DEBUG == TRUE
 
-#define START_LOC_GAME LOCATION_DATA[FRESA_FARMS]
+#define START_LOC_GAME LOCATION_DATA[APPLEVINE]
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA
 #define ISLANDGAME_STARTING_MON_LEVEL 100
 #define ISLANDGAME_STARTING_MON_ITEM ITEM_NONE

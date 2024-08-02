@@ -10120,8 +10120,20 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(IronCrown);
 #endif //P_FAMILY_IRON_CROWN
 
 #if P_FAMILY_TERAPAGOS
-PLACEHOLDER_ANIM_SINGLE_FRAME(TerapagosNormal);
-PLACEHOLDER_ANIM_SINGLE_FRAME(TerapagosTerastal);
+static const union AnimCmd sAnim_TerapagosNormal_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+static const union AnimCmd sAnim_TerapagosTerastal_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
 PLACEHOLDER_ANIM_SINGLE_FRAME(TerapagosStellar);
 #endif //P_FAMILY_TERAPAGOS
 
@@ -10172,13 +10184,57 @@ static const union AnimCmd sAnim_GolettMaryan_1[] =
     ANIMCMD_END,
 };
 
-// static const union AnimCmd sAnim_Golurk_1[] =
-// {
-//     ANIMCMD_FRAME(1, 45),
-//     ANIMCMD_FRAME(0, 10),
-//     ANIMCMD_END,
-// };
+static const union AnimCmd sAnim_GolurkMaryan_1[] =
+{
+    ANIMCMD_FRAME(1, 45),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
 #endif //P_FAMILY_GOLETT
+
+#if P_FAMILY_FEEBAS_MARYAN
+static const union AnimCmd sAnim_FeebasMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MiloticMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_FEEBAS_MARYAN
+
+#if P_FAMILY_PURRLOIN_MARYAN
+static const union AnimCmd sAnim_PurrloinMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 54),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_LiepardMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 45),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_PURRLOIN_MARYAN
 
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
@@ -12850,8 +12906,16 @@ SINGLE_ANIMATION(ShadowLugia);
 #if P_FAMILY_SHADOW_LUGIA
 SINGLE_ANIMATION(ShadowMightyena);
 #endif //P_FAMILY_SHADOW_LUGIA
-SINGLE_ANIMATION(Egg);
 #if P_FAMILY_GOLETT_MARYAN
 SINGLE_ANIMATION(GolettMaryan);
-//SINGLE_ANIMATION(Golurk);
-#endif //P_FAMILY_GOLETT
+SINGLE_ANIMATION(GolurkMaryan);
+#endif //P_FAMILY_GOLETT_MARYAN
+#if P_FAMILY_FEEBAS_MARYAN
+SINGLE_ANIMATION(FeebasMaryan);
+SINGLE_ANIMATION(MiloticMaryan);
+#endif //P_FAMILY_FEEBAS_MARYAN
+#if P_FAMILY_PURRLOIN_MARYAN
+SINGLE_ANIMATION(PurrloinMaryan);
+SINGLE_ANIMATION(LiepardMaryan);
+#endif //P_FAMILY_PURRLOIN_MARYAN
+SINGLE_ANIMATION(Egg);

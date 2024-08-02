@@ -98,6 +98,11 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign::
 	return
 
 
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_GrottoSign::
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_GrottoSign_Text_0, MSGBOX_SIGN
+	return
+
+
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1::
 	lock
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1_Text_0
@@ -112,55 +117,132 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger2::
 	return
 
 
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_CORANNA_1_NPC1
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_4
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1:
+	checktrainerflag TRAINER_CORANNA_PATHMASTER
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_23
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_5
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_22:
+	closemessage
+	release
+	return
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_2:
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_26
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_3
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_3:
+	checktrainerflag TRAINER_CORANNA_1_NPC3
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_8
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_4:
+	checktrainerflag TRAINER_CORANNA_1_NPC2
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_3
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_7:
+	checktrainerflag TRAINER_CORANNA_2_CAMPER
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_12
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_8:
+	checktrainerflag TRAINER_CORANNA_1_NPC4
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_7
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_11:
+	checktrainerflag TRAINER_CORANNA_2_BIKER
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_16
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_12:
+	checktrainerflag TRAINER_CORANNA_2_MANIAC
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_11
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_15:
+	checktrainerflag TRAINER_MINTY_MEADOWS_5
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_19
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_16:
+	checktrainerflag TRAINER_CORANNA_2_FISHERMAN
+	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_15
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_19:
+	checktrainerflag TRAINER_CORANNA_PATHMASTER
+	goto_if 0, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_2
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_23:
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_4
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_22
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_26:
+	trainerbattle_no_intro TRAINER_CORANNA_PATHMASTER, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_1
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_2
+	giveitem ITEM_PETAYA_BERRY
+	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
+
+
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous_Text_0:
 	.string "Hey! It's too dangerous to go any\n"
 	.string "further! Please let us deal with this!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1_Text_0:
-	.string "It's a lot of walking to get to\n"
-	.string "Tidalcove. Let's battle instead!$"
+	.string "Take a look at my darling Pokémon!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1_Text_1:
-	.string "Well, good luck with the rest of your\ntrip!$"
+	.string "Oh dear...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1_Text_2:
-	.string "I heard that the trip is easier with a\n"
-	.string "bike.\p"
-	.string "But the bike shop is in Tidalcove!$"
+	.string "Are you headed to Tidalcove? It's a\n"
+	.string "fairly long journey ahead. Good luck!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC2_Text_0:
-	.string "There's no mountain that my team and I\n"
-	.string "can't climb!$"
+	.string "According to all known laws of aviation,\n"
+	.string "there's no way that a non-flying type\l"
+	.string "Bug Pokémon should be able to fly.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC2_Text_1:
-	.string "Climb higher through failure!$"
+	.string "The Bug Pokémon of course, flies \nanyways.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC2_Text_2:
-	.string "One day, I'm going to climb Mt. Aurora!\p"
-	.string "It'll be hard... but it's the only way to\n"
-	.string "know if the rumors are true...$"
+	.string "Bug Pokémon don't care what humans\n"
+	.string "think is impossible.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3_Text_0:
-	.string "Hey! There's only room for one bug\n"
-	.string "catcher around here!$"
+	.string "My glasses! Where are my glasses? I\n"
+	.string "can't see anything without my glasses!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3_Text_1:
-	.string "What's that? You don't care about\nbugs?$"
+	.string "Oh, here they are.{PAUSE 60} They were in my\n pocket the entire time.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3_Text_2:
-	.string "I'm looking for a cool bug around here.\n"
-	.string "Have you found it yet?$"
+	.string "Sorry. I'm kinda forgetful. Umm... What\n"
+	.string "was I doing again?\p"
+	.string "I knew I came down here for a reason...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_0:
-	.string "I don't think I'm ready for the\n"
-	.string "Tidalcove Gym yet, so let's train!$"
+	.string "Argh! Not again! Why do these Abra keep\n"
+	.string "teleporting away!?\p"
+	.string "Time to take my frustration on you!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_1:
-	.string "Thanks for the battle!$"
+	.string "Mrgrgrgr...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_2:
-	.string "It's okay to lose a couple of times. Life\n"
-	.string "is a marathon, not a sprint!$"
+	.string "I'm sorry. It was rude of me to subject\n"
+	.string "you to my anger.$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger_Text_0:
 	.string "Phew, we finally managed to get rid of\n"
@@ -178,8 +260,48 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign_Text_0:
 	.string "CENTRAL ORANNA PATH\n"
 	.string "MAPLEGROVE{RIGHT_ARROW}$"
 
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_GrottoSign_Text_0:
+	.string "Hi! I'm a sentient sign. Below me is a\n"
+	.string "hidden grotto!\p"
+	.string "Hidden grottoes can sometimes have\n"
+	.string "items or even special Pokémon!\p"
+	.string "Don't worry if you don't find anything.\n"
+	.string "You can always check back tomorrow!\p"
+	.string "- Billy The Board (Not a Pokémon)$"
+
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1_Text_0:
 	.string "Linoone! Use slash!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger2_Text_0:
-	.string "Watch out, Raticate!$"
+	.string "Watch out, Ariados!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_0:
+	.string "Wow! You beat every other trainer on\n"
+	.string "this path!\p"
+	.string "As a reward, I'll give you this ultra rare\n"
+	.string "Petaya berry!\p"
+	.string "...but only if you can beat me in a\n"
+	.string "battle! Are you ready?$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_1:
+	.string "GG! You won!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_2:
+	.string "Well, a deal's a deal! I pass this berry\n"
+	.string "onto you, as well as the title of\l"
+	.string "Central Oranna Path's Path Master!\p"
+	.string "It's kind of mouthful, I know.$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_3:
+	.string "Okay. Let me know when you are\n"
+	.string "prepared!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_4:
+	.string "With skills like that, I've no doubt\n"
+	.string "you'll be ready to take on Ruka!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_5:
+	.string "Greetings, trainer! I am what's known as\n"
+	.string "a Path Master!\p"
+	.string "If you manage to defeat all the other\n"
+	.string "trainers on this path, return to me!$"

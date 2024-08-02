@@ -1,3 +1,7 @@
+const LOOP_BOUND = VAR_TEMP_A
+const LOOP_ITER  = VAR_TEMP_B
+const QUEST      = VAR_TEMP_C
+
 //Common script to load quest npcs with emotes into the game.
 script Common_QuestEmoteOnWarp {
     //setvar VAR_0x800B, LOCALID_NURSE
@@ -8,6 +12,30 @@ script Common_QuestEmoteOnWarp {
     } elif (var(VAR_RESULT) == QUEST_ACTIVE) {
         applymovement(VAR_0x800B, Common_Movement_ExclamationMark)
         waitmovement(VAR_0x800B)
+    }
+    return
+}
+
+//Common script to loop through subquests of a quest
+//Usage:
+//  setvar(LOOP_ITER, start)                where start represents the starting index of the first subquest
+//  setvar(LOOP_BOUND, start + end)         where end represents the number of possible subquests
+//  setvar(QUEST, quest)                    where quest represents the actual quest
+//  call(Common_NextSubQuest)
+//
+script Common_NextSubQuest {
+    while (var(LOOP_ITER) < LOOP_BOUND) {
+        subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST, LOOP_ITER)
+        if (var(VAR_RESULT) == FALSE) {
+            subquestmenu(QUEST_MENU_BUFFER_QUEST_NAME, QUEST, LOOP_ITER)
+            // -> {STR_VAR_1} = quest name
+            // -> {STR_VAR_2} = item/pokemon name
+            // -> var(VAR_RESULT) = the actual id
+            // -> var(LOOP_ITER)  = the subquest that wasn't complete
+            // -> var(LOOP_BOUND) = the index that represents the number of subquests
+            return 
+        }
+        addvar(LOOP_ITER, 1)
     }
     return
 }

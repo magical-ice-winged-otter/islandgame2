@@ -5,10 +5,199 @@ ISLANDGAME_MINTY_MEADOWS_HOUSE_MapScripts::
 ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1::
 	lock
 	faceplayer
-	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText
-	waitmessage
+	goto_if_unset FLAG_MINTY_MEADOWS_FREE_MINT, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_2
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_3
+	showmoneybox 18, 0
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_4, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_31
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_2
+	goto MintShopEnd
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_1:
+OpenMintShop:
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_6, 0
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_7, 81
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_8, 82
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_9, 83
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_10, 84
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_11, 85
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_12, 86
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_13, 87
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_14, 88
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_15, 89
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_16, 90
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_17, 91
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_18, 92
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_19, 93
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_20, 94
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_21, 95
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_22, 96
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_23, 97
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_24, 98
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_25, 99
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_26, 100
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_27, 101
+	dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+	switch VAR_RESULT
+	case 81, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_7
+	case 82, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_8
+	case 83, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_9
+	case 84, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_10
+	case 85, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_11
+	case 86, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_12
+	case 87, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_13
+	case 88, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_14
+	case 89, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_15
+	case 90, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_16
+	case 91, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_17
+	case 92, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_18
+	case 93, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_19
+	case 94, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_20
+	case 95, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_21
+	case 96, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_22
+	case 97, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_23
+	case 98, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_24
+	case 99, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_25
+	case 100, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_26
+	case 101, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_27
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5:
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_35
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_34:
+	goto_if_set FLAG_MINTY_MEADOWS_FREE_MINT, ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_41
+	setflag FLAG_MINTY_MEADOWS_FREE_MINT
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_30
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_40:
+MintShopEnd:
+	closemessage
 	release
 	return
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_2:
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_28
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_2
+	goto MintShopEnd
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_1
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_7:
+	giveitem ITEM_LONELY_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_8:
+	giveitem ITEM_ADAMANT_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_9:
+	giveitem ITEM_NAUGHTY_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_10:
+	giveitem ITEM_BRAVE_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_11:
+	giveitem ITEM_BOLD_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_12:
+	giveitem ITEM_IMPISH_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_13:
+	giveitem ITEM_LAX_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_14:
+	giveitem ITEM_RELAXED_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_15:
+	giveitem ITEM_MODEST_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_16:
+	giveitem ITEM_MILD_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_17:
+	giveitem ITEM_RASH_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_18:
+	giveitem ITEM_QUIET_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_19:
+	giveitem ITEM_CALM_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_20:
+	giveitem ITEM_GENTLE_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_21:
+	giveitem ITEM_CAREFUL_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_22:
+	giveitem ITEM_SASSY_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_23:
+	giveitem ITEM_TIMID_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_24:
+	giveitem ITEM_HASTY_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_25:
+	giveitem ITEM_JOLLY_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_26:
+	giveitem ITEM_NAIVE_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_27:
+	giveitem ITEM_SERIOUS_MINT
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_5
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_28:
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_1
+	goto OpenMintShop
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_1
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_31:
+	checkmoney 1000
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_37
+	hidemoneybox
+	goto OpenMintShop
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_1
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_35:
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_28
+	goto MintShopEnd
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_34
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_37:
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_5
+	goto HPTutor_End
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_1
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_41:
+	showmoneybox 18, 0
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_29
+	removemoney 1000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	hidemoneybox
+	goto MintShopEnd
+	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_40
 
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_Mordecai::
@@ -60,35 +249,124 @@ ISLANDGAME_MINTY_MEADOWS_HOUSE_Skips::
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson::
 	lock
+	faceplayer
 	playmoncry SPECIES_BLACEPHALON, CRY_MODE_NORMAL
-	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_2
-	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_2
-ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_1:
+	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_0
 	closemessage
 	release
 	return
 
-ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_2:
-	msgbox ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_1
-	goto ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_1
 
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_0:
+	.string "Salutations! My name is Pops. Would you\n"
+	.string "like to try one of our Meadow Mints?\p"
+	.string "They can be used to change the nature\n"
+	.string "of your Pokémon!$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_1:
+	.string "Good show! Which scent would you like?\n"
+	.string "The first one you get is free!$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_2:
+	.string "Oh... bad show...$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_3:
+	.string "Welcome back, trainer! Here to try\n"
+	.string "another of our fresh mints?$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_4:
+	.string "For the price of ¥1000, I will happily\n"
+	.string "sell you one of them!$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_5:
+	.string "Oh dear... I'm afraid I can't give you a\n"
+	.string "mint if you don't have enough money.$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_6:
+	.string "I'll decide later!$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_7:
+	.string "Lonely Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_8:
+	.string "Adamant Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_9:
+	.string "Naughty Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_10:
+	.string "Brave Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_11:
+	.string "Bold Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_12:
+	.string "Impish Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_13:
+	.string "Lax Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_14:
+	.string "Relaxed Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_15:
+	.string "Modest Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_16:
+	.string "Mild Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_17:
+	.string "Rash Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_18:
+	.string "Quiet Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_19:
+	.string "Calm Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_20:
+	.string "Gentle Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_21:
+	.string "Careful Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_22:
+	.string "Sassy Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_23:
+	.string "Timid Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_24:
+	.string "Hasty Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_25:
+	.string "Jolly Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_26:
+	.string "Naive Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_27:
+	.string "Serious Mint$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_28:
+	.string "Alright. Come back when you've made a\n"
+	.string "decision!$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_29:
+	.string "Jolly good show! Thank you for your\n"
+	.string "patronage!$"
+
+ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1_Text_30:
+	.string "Jolly good show! I hope your Pokémon\n"
+	.string "likes it!$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_0:
-	.string "Do you like gumballs?$"
-
-ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_1:
-	.string "Me too. They are yummy. I especially like\n"
-	.string "blue raspberry.$"
-
-ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson_Text_2:
-	.string "Huh? Why are you looking at me like\n"
-	.string "that?$"
-
-ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText::
-	.string "{COLOR DARK_GRAY}Salutations! My name is Pops. Me and my\n"
-	.string "Pokémon manage the meadows.$"
+	.string "MORDECAI AND RIGBY GO AND GET US SOME\n"
+	.string "FRESH MINTS OR YOU'RE BOTH FIRED!!!\p"
+	.string "Huh? Oh, sorry. I didn't mean to startle\n"
+	.string "you.\p"
+	.string "I'm Benson, the manager of Minty\n"
+	.string "Meadows. Please enjoy your stay!$"
 
 ISLANDGAME_MINTY_MEADOWS_HOUSE_MordecaiText::
 	.string "hueheuhuehuehue melk$"

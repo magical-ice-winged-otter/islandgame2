@@ -88,7 +88,7 @@ ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
 	.string "can give it to you later!$"
 
 ISLANDGAME_ROSEVALE_INN_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
-	.string "Arfur told me you're leaving alweady... I\n"
+	.string "Arfur told me you're leaving alweady...{PAUSE 30} I\n"
 	.string "wanted to pway with you more!\p"
 	.string "Pwease come back to visit us when you\n"
 	.string "finish with your twainer stuff!$"

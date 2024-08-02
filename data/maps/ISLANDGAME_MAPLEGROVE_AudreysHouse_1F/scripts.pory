@@ -10,7 +10,7 @@ script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyDad {
 
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk {
     format(
-        "{COLOR DARK_GRAY}Feels like just yesterday, I was taking Audrey to her first day of school. \p"
+        "{COLOR DARK_GRAY}Feels like just yesterday, I was taking Melissa to her first day of school. \p"
         "{COLOR DARK_GRAY}Now she's exploring the vast wilderness of Marya all on her own. \p"
         "{COLOR DARK_GRAY}Kids grow up so fast, don't they? Blink and you'll miss it!"
     )
@@ -40,7 +40,7 @@ text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomFirstTalk {
 
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomSecondTalk {
     format(
-        "It's good to see you again, dearie! Audrey just stopped by earlier. \p"
+        "It's good to see you again, dearie! Melissa just stopped by earlier. \p"
         "She told me all about how you two helped the owner of Fresa Farms find his missing Mareep! \p"
         "You were both very kind and brave to stand up to that wild Mightyena. \p"
         "Thank you for being with my daughter. She gets ahead of herself a lot, so I'm glad neither of you were hurt."

@@ -75,6 +75,8 @@ u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId);
 void Task_QuestMenu_OpenFromStartMenu(u8);
 void QuestMenu_CopyQuestName(u8 *dst, u8 questId);
 void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId);
+void QuestMenu_CopySubquestType(u8 *dst, u8 parentId, u8 childId);
+u16 QuestMenu_Subquest_Sprite(u8 parentId, u8 childId);
 void QuestMenu_ResetMenuSaveData(void);
 
 #endif // GUARD_QUESTS_H

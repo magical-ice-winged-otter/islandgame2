@@ -80,6 +80,7 @@ static void DoSafariBattle(void);
 static void DoStandardWildBattle(bool32 isDouble);
 static void CB2_EndWildBattle(void);
 static void CB2_EndScriptedWildBattle(void);
+static void CB2_End2v2ScriptedWildBattle(void); // islandgame-start
 static void TryUpdateGymLeaderRematchFromWild(void);
 static void TryUpdateGymLeaderRematchFromTrainer(void);
 static void CB2_GiveStarter(void);
@@ -88,6 +89,7 @@ static void CB2_EndFirstBattle(void);
 static void SaveChangesToPlayerParty(void);
 static void HandleBattleVariantEndParty(void);
 static void CB2_EndTrainerBattle(void);
+static void CB2_End2v2TrainerBattle(void); // islandgame-start
 static bool8 BattleHasNoWhiteout(void);
 static bool32 IsPlayerDefeated(u32 battleOutcome);
 #if FREE_MATCH_CALL == FALSE
@@ -575,8 +577,19 @@ void BattleSetup_StartScriptedWildBattle(void)
 void BattleSetup_StartScriptedDoubleWildBattle(void)
 {
     LockPlayerFieldControls();
-    gMain.savedCallback = CB2_EndScriptedWildBattle;
-    gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
+
+    if (VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE)
+    {
+        gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
+        FillPartnerParty(gPartnerTrainerId);
+        gMain.savedCallback = CB2_End2v2ScriptedWildBattle;
+    } else 
+    {
+        gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
+        gMain.savedCallback = CB2_EndScriptedWildBattle;
+    }
+    
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -736,6 +749,19 @@ static void CB2_EndScriptedWildBattle(void)
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
 }
+
+static void CB2_End2v2ScriptedWildBattle(void)
+{
+    s32 i;
+    for (i = 3; i < PARTY_SIZE; i++)
+    { // restore back the original party 
+        gPlayerParty[i] = gPlayerSavedParty[i];
+        ZeroMonData(&gPlayerSavedParty[i]);
+    }
+    CB2_EndScriptedWildBattle();
+}
+
+
 
 u8 BattleSetup_GetTerrainId(void)
 {
@@ -1379,7 +1405,17 @@ void BattleSetup_StartTrainerBattle(void)
     gNoOfApproachingTrainers = 0;
     sShouldCheckTrainerBScript = FALSE;
     gWhichTrainerToFaceAfterBattle = 0;
-    gMain.savedCallback = CB2_EndTrainerBattle;
+
+    //decide what callback to use
+    if (sNoOfPossibleTrainerRetScripts == 2 && VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE) {
+        // sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers
+        gBattleTypeFlags |= (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER);
+        gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
+        FillPartnerParty(gPartnerTrainerId);
+        gMain.savedCallback = CB2_End2v2TrainerBattle; // make a custom end function that handles restoring the player party. We just use a modification of EndTrainerBattle.
+    } else {
+        gMain.savedCallback = CB2_EndTrainerBattle;
+    }
 
     if (InBattlePyramid() || InTrainerHillChallenge() || BattleHasNoWhiteout())
         DoBattlePyramidTrainerHillBattle();
@@ -1451,6 +1487,25 @@ static void CB2_EndTrainerBattle(void)
             SetBattledTrainersFlags();
         }
     }
+}
+
+static void CB2_End2v2TrainerBattle(void)
+{
+    s32 i;
+    for (i = 3; i < PARTY_SIZE; i++)
+    { // restore back the original party 
+        gPlayerParty[i] = gPlayerSavedParty[i];
+        ZeroMonData(&gPlayerSavedParty[i]);
+    }
+
+    if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+    {
+        if (PlayerHasFollower())
+        {
+            DestroyFollower(TRUE);
+        }
+    }
+    CB2_EndTrainerBattle();
 }
 
 static bool8 BattleHasNoWhiteout()
@@ -1936,15 +1991,16 @@ static bool32 HasAtLeastFiveBadges(void)
 void IncrementRematchStepCounter(void)
 {
 #if FREE_MATCH_CALL == FALSE
-    if (HasAtLeastFiveBadges()
-        && (I_VS_SEEKER_CHARGING != 0)
-        && (!CheckBagHasItem(ITEM_VS_SEEKER, 1)))
-    {
-        if (gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
-            gSaveBlock1Ptr->trainerRematchStepCounter = STEP_COUNTER_MAX;
-        else
-            gSaveBlock1Ptr->trainerRematchStepCounter++;
-    }
+    if (!HasAtLeastFiveBadges())
+        return;
+    
+    if (IsVsSeekerEnabled())
+        return;
+
+    if (gSaveBlock1Ptr->trainerRematchStepCounter >= STEP_COUNTER_MAX)
+        gSaveBlock1Ptr->trainerRematchStepCounter = STEP_COUNTER_MAX;
+    else
+        gSaveBlock1Ptr->trainerRematchStepCounter++;
 #endif //FREE_MATCH_CALL
 }
 

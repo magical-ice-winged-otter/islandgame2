@@ -1,5 +1,48 @@
+// SKITTY SIDE QUEST : START
+const GIRL_NPC = 5
+const BALL_NPC = 23
+const SKITTY_NPC = 24
+const HAUNTER_NPC = 25
+
+const BALL_FLAG = FLAG_TEMP_1
+const SKITTY_FLAG = FLAG_TEMP_2
+const HAUNTER_FLAG = FLAG_TEMP_3
+
+const TIME_24 = 0 //18 by default
+const SKITTY_VAR = VAR_TEMP_0 // controls if the trigger script should run
+const SKITTY_IN_PROGRESS = 2
+const SKITTY_ACTIVE = 1
+const SKITTY_INACTIVE = 0
+
+const ABILITY_NORMALIZE = 1
+
+
+// SKITTY SIDE QUEST : END
 mapscripts ISLANDGAME_VERDANT_WOODS_MapScripts {
     MAP_SCRIPT_ON_RESUME: ISLANDGAME_VERDANT_WOODS_OnResume
+    MAP_SCRIPT_ON_TRANSITION {
+        // Skitty quest
+        setflag(BALL_FLAG)
+        setflag(SKITTY_FLAG)
+        setflag(HAUNTER_FLAG)
+
+        returnqueststate(QUEST_VERDANT_FOREST_SKITTY)
+        switch (var(VAR_RESULT)) {
+            case QUEST_INACTIVE:
+                gettime 
+                if (var(VAR_0x8000) >= TIME_24) {
+                    setvar(SKITTY_VAR, SKITTY_ACTIVE)
+                }
+            case QUEST_ACTIVE:
+                setvar(SKITTY_VAR, SKITTY_IN_PROGRESS)
+                call(ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc)
+            case QUEST_COMPLETED:
+                setvar(SKITTY_VAR, SKITTY_INACTIVE)
+                call(ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc)
+            
+        }
+        // Skitty quest end   
+    }
 }
 
 script ISLANDGAME_VERDANT_WOODS_OnResume {
@@ -26,6 +69,12 @@ script ISLANDGAME_VERDANT_WOODS_Sudowoodo {
                 case NO:
                     break
                 case YES:
+                    special(DoWateringBerryTreeAnim)
+                    waitstate
+                    waitse
+                    playse(SE_SUDOWOODO_SHAKE)
+                    applymovement(2, BattleFrontier_OutsideEast_Movement_SudowoodoShake)
+                    waitmovement(0)
                     setwildbattle(SPECIES_SUDOWOODO, 10)
                     playmoncry(SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER)
                     waitmoncry
@@ -65,8 +114,7 @@ text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}Even still, I think bug Pokémon are awesome! \p"
-        "{COLOR DARK_GRAY}I'm the most popular kid at camp thanks to Butterfree and Beedrill!"
+        "{COLOR DARK_GRAY}Even still, I think bug Pokémon are awesome!"
         )
 }
 
@@ -124,9 +172,7 @@ text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}I just wish he would use a Pokémon that wasn't a bug for once. \p"
-        "{COLOR DARK_GRAY}They have an unfair advantage against my Shroomish! \p"
-        "{COLOR DARK_GRAY}Hmm, maybe I'll just get a Pokémon that's good against his."
+        "{COLOR DARK_GRAY}I just wish he would use a Pokémon that wasn't a bug for once."
         )
 }
 
@@ -138,7 +184,7 @@ script ISLANDGAME_VERDANT_WOODS_TrainerBattle4 {
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text {
     format(
-        "{COLOR DARK_GRAY}Ugh... I hate forests. They're dirty and full of icky bugs and poisonous plants."
+        "{COLOR DARK_GRAY}Ugh... I hate forests. They're dirty and full of icky bugs."
     )
 }
 
@@ -198,7 +244,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_NPC1 {
 
 text ISLANDGAME_VERDANT_WOODS_NPC1Talk {
     format(
-        "{COLOR DARK_GRAY}When I was trying to find a Tepig here, I came across this HUGE bug Pokémon. \p"
+        "{COLOR DARK_GRAY}When I was trying to find a Joltik here, I came across this HUGE bug Pokémon. \p"
         "{COLOR DARK_GRAY}It was blue, had big muscles, and had a giant horn on its head. \p"
         "{COLOR DARK_GRAY}Lucky for me, it was just passing by. There's no way I'd fight that thing!"
     )
@@ -211,8 +257,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_NPC2 {
         msgbox(ISLANDGAME_VERDANT_WOODS_NPC2Talk)
         playmoncry(SPECIES_MIMIKYU,CRY_MODE_ENCOUNTER)
         waitmoncry()
-    }
-    else {
+    } else {
         msgbox(format("Owww, my head, it hurts..."))
     }
     release
@@ -222,6 +267,219 @@ text ISLANDGAME_VERDANT_WOODS_NPC2Talk {
     format(
         "{COLOR DARK_GRAY}get out of my head get out of my head get out of my head GeT oUT oF mY hEaD"
     )
+}
+
+movement ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement {
+    face_left
+    delay_4
+    face_right
+    delay_8
+    face_up
+    delay_4
+    face_left
+    delay_16 * 2
+}
+
+movement ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_2 {
+    face_left
+    delay_4 * 2
+    emote_exclamation_mark
+    delay_16
+    jump_in_place_left * 2
+}
+
+movement ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_3 {
+    face_up
+    emote_exclamation_mark
+    delay_16 * 3
+    walk_fast_down * 10
+}
+
+movement ISLANDGAME_VERDANT_WOODS_EventScript_HaunterMovement_4 {
+    walk_down * 3
+    face_left
+    delay_16 * 5
+    walk_down * 6
+}
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2 {
+    if (var(SKITTY_VAR) == SKITTY_ACTIVE) {
+        setvar(SKITTY_VAR, SKITTY_IN_PROGRESS)
+        
+        applymovement(GIRL_NPC, ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement)
+        waitmovement(GIRL_NPC)
+        playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+        message(ISLANDGAME_VERDANT_WOODS_NPC2Talk)
+        waitmessage
+        waitbuttonpress
+        waitmoncry
+        playse(SE_BALL)
+        clearflag(BALL_FLAG) // show ball
+        showobjectat(BALL_NPC, MAP_ISLANDGAME_VERDANT_WOODS) // show ball
+        addobject(BALL_NPC) // show ball
+        waitse
+        playse(SE_BALL_OPEN)
+        waitse
+        removeobject(BALL_NPC) // clear ball
+        setflag(BALL_FLAG) // clear ball
+        playmoncry(SPECIES_SKITTY, CRY_MODE_ENCOUNTER) // play skitty sound
+        clearflag(SKITTY_FLAG) // show skitty 
+        showobjectat(SKITTY_NPC, MAP_ISLANDGAME_VERDANT_WOODS) // show skitty
+        addobject(SKITTY_NPC) // show skitty
+        waitmoncry
+
+        applymovement(SKITTY_NPC, ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement)
+        waitmovement(SKITTY_NPC)
+        applymovement(SKITTY_NPC, ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_2)
+        waitmovement(SKITTY_NPC)
+        message(format("The Skitty seems frightened."))
+        playmoncry(SPECIES_SKITTY, CRY_MODE_ENCOUNTER)
+        waitmessage
+        waitbuttonpress
+        waitmoncry
+        closemessage
+        delay(120)
+        fadescreen(FADE_TO_WHITE)
+        delay(10)
+        fadescreen(FADE_FROM_WHITE)
+        clearflag(HAUNTER_FLAG) // show haunter 
+        showobjectat(HAUNTER_NPC, MAP_ISLANDGAME_VERDANT_WOODS) // show haunter
+        addobject(HAUNTER_NPC) // show haunter
+        playmoncry(SPECIES_SKITTY, CRY_MODE_ENCOUNTER)
+        applymovement(SKITTY_NPC, ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_3)
+        waitmoncry
+        playmoncry(SPECIES_SKITTY, CRY_MODE_ENCOUNTER)
+        waitmovement(SKITTY_NPC) // skitty runs away
+        waitmoncry
+        removeobject(SKITTY_NPC) // clear skitty
+        setflag(SKITTY_FLAG) // clear skitty
+        
+        applymovement(HAUNTER_NPC, ISLANDGAME_VERDANT_WOODS_EventScript_HaunterMovement_4)
+        waitmovement(HAUNTER_NPC)
+        removeobject(HAUNTER_NPC) // clear haunter
+        setflag(HAUNTER_FLAG) // clear haunter
+
+        call(ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc)
+        startquest(QUEST_VERDANT_FOREST_SKITTY)
+    } else { // SKITTY_VAR == SKITTY_INACTIVE
+        end
+    }
+}
+script ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc {
+    clearflag(SKITTY_FLAG)
+    setobjectxyperm(SKITTY_NPC, 11, 40)
+    setobjectmovementtype(SKITTY_NPC, MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT)
+    showobjectat(SKITTY_NPC, MAP_ISLANDGAME_VERDANT_WOODS) // show skitty
+    
+    return
+}
+
+script ISLANDGAME_VERDANT_WOODS_HaunterPhase2Loc {
+    clearflag(HAUNTER_FLAG)
+    setobjectxyperm(HAUNTER_NPC, 12, 35)
+    setobjectmovementtype(HAUNTER_NPC, MOVEMENT_TYPE_FACE_DOWN)
+    showobjectat(HAUNTER_NPC, MAP_ISLANDGAME_VERDANT_WOODS) // show haunter
+    addobject(HAUNTER_NPC) // show haunter
+    
+    return
+}
+
+script ISLANDGAME_VERDANT_WOODS_FightHaunter {
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    setcwildbattle(0, SPECIES_HAUNTER, 16, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_SHADOW_BALL, MOVE_HYPNOSIS)
+    setwilddoublebattle(TRUE)
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+
+    return
+}
+
+script ISLANDGAME_VERDANT_WOODS_SkittyPhase2 {
+    lock
+    returnqueststate(QUEST_VERDANT_FOREST_SKITTY)
+    switch (var(VAR_RESULT)) {
+        case QUEST_COMPLETED:
+            goto(ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty)
+    }
+    msgbox("Skitty seems frightened.", MSGBOX_NPC)
+    waitmessage
+    closemessage
+    applymovement(SKITTY_NPC, Common_Movement_FaceUp)
+    waitmovement(SKITTY_NPC)
+    playmoncry(SPECIES_SKITTY, CRY_MODE_ENCOUNTER)
+    delay(120)
+    waitmoncry
+    fadescreen(FADE_TO_WHITE)
+    delay(10)
+    call(ISLANDGAME_VERDANT_WOODS_HaunterPhase2Loc)
+    applymovement(HAUNTER_NPC, Common_Movement_FaceDown)
+    waitmovement(HAUNTER_NPC)
+    fadescreen(FADE_FROM_WHITE)
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    applymovement(HAUNTER_NPC, Common_Movement_WalkDown)
+    waitmovement(HAUNTER_NPC)
+    delay(10)
+    applymovement(HAUNTER_NPC, Common_Movement_WalkDown)
+    waitmovement(HAUNTER_NPC)
+    delay(20)
+    applymovement(HAUNTER_NPC, Common_Movement_WalkDown)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(HAUNTER_NPC)
+    delay(30)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    call(ISLANDGAME_VERDANT_WOODS_FightHaunter)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            removeobject(HAUNTER_NPC) // clear haunter
+            setflag(HAUNTER_FLAG) // clear haunter
+            completequest(QUEST_VERDANT_FOREST_SKITTY)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceOriginalDirection)
+            setvar(SKITTY_VAR, SKITTY_INACTIVE)
+            waitmovement(OBJ_EVENT_ID_PLAYER)
+            call(ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty)
+        default:
+            break
+    }
+    release
+}
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty {
+    lock
+    faceplayer
+    playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    msgbox("Skitty wants to join your team. Accept?", MSGBOX_YESNO)
+    switch (var(VAR_RESULT)) {
+        case YES:
+            givemon(SPECIES_SKITTY, 10, ITEM_NONE, ITEM_PREMIER_BALL, ABILITY_NORMALIZE, 1, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_FAKE_OUT, MOVE_SING, MOVE_TACKLE, MOVE_DISARMING_VOICE, FALSE)
+            playfanfare(MUS_OBTAIN_ITEM)
+            bufferspeciesname(STR_VAR_1, SPECIES_SKITTY)
+            msgbox(format("{COLOR DARK_GRAY}{PLAYER} recieved an {STR_VAR_1}!"))
+            waitfanfare
+            closemessage
+            removeobject(SKITTY_NPC) // clear skitty
+            setflag(SKITTY_FLAG) // clear skitty
+        case NO:
+            msgbox("Skitty became dejected.")
+            playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
+            waitmoncry
+    }
+
+    release
 }
 
 script ISLANDGAME_VERDANT_WOODS_EventScript_NPC3 {

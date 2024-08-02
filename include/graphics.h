@@ -2934,6 +2934,11 @@ extern const u32 gBattleAnimSpriteGfx_SyrupShell[];
 extern const u32 gBattleAnimSpriteGfx_SyrupSplat[];
 extern const u32 gBattleAnimSpritePal_SyrupRed[];
 extern const u32 gBattleAnimSpritePal_SyrupYellow[];
+extern const u32 gBattleAnimSpriteGfx_IvyCudgel[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelGrass[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelFire[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelRock[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelWater[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];
@@ -3430,6 +3435,9 @@ extern const u32 gItemIcon_IslandgamePickaxe[];
 extern const u32 gItemIconPalette_IslandgamePickaxe[];
 extern const u32 gItemIcon_IslandgameTradingCard[];
 extern const u32 gItemIconPalette_IslandgameTradingCard[];
+extern const u32 gItemIcon_IslandgameSquirtBottle[];
+extern const u32 gItemIconPalette_IslandgameSquirtBottle[];
+
 
 // frlg_tm_case_port
 extern const u32 gUnknown_8E845D8[];

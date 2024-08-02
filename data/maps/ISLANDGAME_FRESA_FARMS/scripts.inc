@@ -1,29 +1,20 @@
 ISLANDGAME_FRESA_FARMS_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_FRESA_FARMS_HandleDaycareState
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
-
-ISLANDGAME_FRESA_FARMS_HandleDaycareState::
-	specialvar VAR_RESULT, GetDaycareState
-	switch VAR_RESULT
-	case DAYCARE_NO_MONS, ISLANDGAME_FRESA_FARMS_HandleDaycareState_2
-	case DAYCARE_TWO_MONS, ISLANDGAME_FRESA_FARMS_HandleDaycareState_3
-	case DAYCARE_ONE_MON, ISLANDGAME_FRESA_FARMS_HandleDaycareState_4
-	return
-
-ISLANDGAME_FRESA_FARMS_HandleDaycareState_2:
+ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_TEMP_A
 	setflag FLAG_TEMP_B
+	gettime
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	setflag FLAG_TEMP_2
 	return
 
-ISLANDGAME_FRESA_FARMS_HandleDaycareState_3:
-	clearflag FLAG_TEMP_B
-	clearflag FLAG_TEMP_A
-	return
-
-ISLANDGAME_FRESA_FARMS_HandleDaycareState_4:
-	setflag FLAG_TEMP_B
-	clearflag FLAG_TEMP_A
+ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_1
 	return
 
 
@@ -88,9 +79,15 @@ ISLANDGAME_FRESA_FARMS_Miltank_Interact::
 	lock
 	faceplayer
 	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
-	msgbox ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0
+	goto_if_set FLAG_TEMP_1, ISLANDGAME_FRESA_FARMS_Miltank_Interact_2
+	msgbox ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_1
+ISLANDGAME_FRESA_FARMS_Miltank_Interact_1:
 	release
 	return
+
+ISLANDGAME_FRESA_FARMS_Miltank_Interact_2:
+	msgbox ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0
+	goto ISLANDGAME_FRESA_FARMS_Miltank_Interact_1
 
 
 ISLANDGAME_FRESA_FARMS_Chansey_Interact::
@@ -105,17 +102,24 @@ ISLANDGAME_FRESA_FARMS_Chansey_Interact::
 ISLANDGAME_FRESA_FARMS_Mareep1::
 	lock
 	playmoncry SPECIES_MAREEP, CRY_MODE_NORMAL
+	goto_if_set FLAG_TEMP_1, ISLANDGAME_FRESA_FARMS_Mareep1_2
+	msgbox ISLANDGAME_FRESA_FARMS_Mareep1_Text_2
+ISLANDGAME_FRESA_FARMS_Mareep1_1:
+	release
+	return
+
+ISLANDGAME_FRESA_FARMS_Mareep1_2:
 	msgbox ISLANDGAME_FRESA_FARMS_Mareep1_Text_0
 	faceplayer
 	playse SE_PIN
 	applymovement 2, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement 2, Common_Movement_Delay32
+	waitmovement 0
 	msgbox ISLANDGAME_FRESA_FARMS_Mareep1_Text_1
 	applymovement 2, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	release
-	return
+	goto ISLANDGAME_FRESA_FARMS_Mareep1_1
 
 
 ISLANDGAME_FRESA_FARMS_Mareep2::
@@ -178,11 +182,14 @@ ISLANDGAME_FRESA_FARMS_Sign_Text_0:
 
 ISLANDGAME_FRESA_FARMS_Man_Text_0:
 	.string "My parents established this farm a long\n"
-	.string "time ago. One day, it'll belong to me.\p"
-	.string "I hope I'll be able to run it just as well\n"
-	.string "as they do.$"
+	.string "time ago.\p"
+	.string "One day, it'll be all mine...$"
 
 ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0:
+	.string "Moo. {COLOR BLUE}(If you want some of my milk, you'll\n"
+	.string "have to come here during the day.)$"
+
+ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_1:
 	.string "Moo. {COLOR BLUE}(Moo.)$"
 
 ISLANDGAME_FRESA_FARMS_Chansey_Interact_Text_0:
@@ -196,24 +203,30 @@ ISLANDGAME_FRESA_FARMS_Chansey_Interact_Text_0:
 ISLANDGAME_FRESA_FARMS_Mareep1_Text_0:
 	.string "Reeep. {COLOR BLUE}(Heh. That dumb dog's snoozing\n"
 	.string "on his job again!)\p"
-	.string "Reep reep. {COLOR BLUE}(Time to sneak out and have\n"
+	.string "{COLOR DARK_GRAY}Reep reep. {COLOR BLUE}(Time to sneak out and have\n"
 	.string "some fun with Chansey...)\p"
-	.string "Reep? {COLOR BLUE}(Huh?)$"
+	.string "{COLOR DARK_GRAY}Reep? {COLOR BLUE}(Huh?)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep1_Text_1:
-	.string "Reep... {COLOR BLUE}(Oh, it's just a random kid. Good\n"
+	.string "{COLOR DARK_GRAY}Reep... {COLOR BLUE}(Oh, it's just a random kid. Good\n"
 	.string "thing they can't understand me.)\p"
-	.string "Reep! {COLOR BLUE}(Go away! I've got big plans for\n"
+	.string "{COLOR DARK_GRAY}Reep! {COLOR BLUE}(Go away! I've got big plans for\n"
 	.string "tonight!)\p"
-	.string "Reep. {COLOR BLUE}(Oh wait... They don't understand\n"
+	.string "{COLOR DARK_GRAY}Reep. {COLOR BLUE}(Oh wait... They don't understand\n"
 	.string "me.)$"
+
+ISLANDGAME_FRESA_FARMS_Mareep1_Text_2:
+	.string "{COLOR DARK_GRAY}Reep... {COLOR BLUE}(Tch, this mutt is a pain in my\n"
+	.string "fluffy behind!)\p"
+	.string "{COLOR DARK_GRAY}Reep. {COLOR BLUE}(I got important business to\n"
+	.string "attend to at night!)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep2_Text_0:
 	.string "Reep. {COLOR BLUE}(I'm just saying man, if it was me\n"
 	.string "against that Mightyena, hoo boy.)\p"
-	.string "Reep! {COLOR BLUE}(I would'a messed that Mightyena\n"
+	.string "{COLOR DARK_GRAY}Reep! {COLOR BLUE}(I would'a messed that Mightyena\n"
 	.string "up real good, ya feel me?)\p"
-	.string "Reep? {COLOR BLUE}(Huh? Why are you looking me like\n"
+	.string "{COLOR DARK_GRAY}Reep? {COLOR BLUE}(Huh? Why are you looking me like\n"
 	.string "that? I'm fo' realzies!)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep3_Text_0:
@@ -230,15 +243,12 @@ ISLANDGAME_FRESA_FARMS_Mareep3_Text_2:
 	.string "today. Hope it helps you out!)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep4_Text_0:
-	.string "Reep. {COLOR BLUE}(My little brother always strays\n"
-	.string "away from the herd to explore.)\p"
-	.string "Reep. {COLOR BLUE}(Hopefully he's finally learned his\n"
-	.string "lesson.)$"
+	.string "GIRIGIRI WARUKUNAI WATAME!!!$"
 
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_0:
 	.string "Welcome to Fresa Farms!\p"
-	.string "Our produce is sourced from the\n"
-	.string "healthiest Pokemon in Marya!$"
+	.string "Our milk is sourced from the healthiest\n"
+	.string "Miltanks in Marya!$"
 
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_1:
 	.string "Thank you for supporting us!$"

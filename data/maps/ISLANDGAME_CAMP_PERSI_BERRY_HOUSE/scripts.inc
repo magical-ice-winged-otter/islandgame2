@@ -18,98 +18,10 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac::
 	case 2, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_4
 	case 4, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_5
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1:
-BerryManiac_CheriStep:
-	checkitem ITEM_CHERI_BERRY
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_7
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_4
-	checkitemspace ITEM_BERRY_JUICE
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_10
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9:
-	removeitem ITEM_CHERI_BERRY
-	giveitem ITEM_BERRY_JUICE
-	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_5
 	goto BerryManiac_End
-BerryManiac_AspearStep:
-	checkitem ITEM_ASPEAR_BERRY
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_13
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_12:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7
-	checkitemspace ITEM_RARE_CANDY
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_16
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_15:
-	removeitem ITEM_ASPEAR_BERRY
-	giveitem ITEM_RARE_CANDY
-	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_8
+BerryManiac_Decline:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_19
 	goto BerryManiac_End
-BerryManiac_LeppaStep:
-	checkitem ITEM_LEPPA_BERRY
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_19
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_18:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7
-	checkitemspace ITEM_EXP_SHARE
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_21:
-	removeitem ITEM_LEPPA_BERRY
-	giveitem ITEM_EXP_SHARE
-	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10
-	goto BerryManiac_End
-BerryManiac_SitrusStep:
-	checkitem ITEM_SITRUS_BERRY
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_25
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_24:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7
-	checkitemspace ITEM_FULL_RESTORE
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_28
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_27:
-	removeitem ITEM_SITRUS_BERRY
-	giveitem ITEM_FULL_RESTORE
-	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12
-	goto BerryManiac_End
-BerryManiac_LumStep:
-	checkitem ITEM_LUM_BERRY
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_31
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13
-	checkitemspace ITEM_PP_MAX
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_34
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_33:
-	removeitem ITEM_LUM_BERRY
-	giveitem ITEM_PP_MAX
-	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14
-	goto BerryManiac_End
-BerryManiac_LiechiStep:
-	checkitem ITEM_LIECHI_BERRY
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_37
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_36:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16
-	checkitemspace ITEM_MAX_REVIVE
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_40
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_39:
-	removeitem ITEM_LIECHI_BERRY
-	giveitem ITEM_MAX_REVIVE
-	completequest QUEST_PERSI_BERRY_MANIAC
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2
-	goto BerryManiac_End
-BerryManiac_NotEnoughRoom:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
 BerryManiac_End:
 	release
 	return
@@ -117,96 +29,503 @@ BerryManiac_End:
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_3:
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0
 	startquest QUEST_PERSI_BERRY_MANIAC
-	completesubquest QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_4:
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_1
-	goto_if_subquest_not_complete QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2, BerryManiac_CheriStep
-	goto_if_subquest_not_complete QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3, BerryManiac_AspearStep
-	goto_if_subquest_not_complete QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4, BerryManiac_LeppaStep
-	goto_if_subquest_not_complete QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5, BerryManiac_SitrusStep
-	goto_if_subquest_not_complete QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6, BerryManiac_LumStep
-	goto BerryManiac_LiechiStep
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_7
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_10
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_15
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_14:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_23
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_31
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_39
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_38:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_47
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_46:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_55
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_54:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_63
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_62:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_71
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_70:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_79
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_78:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_87
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_86:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_95
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_94:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_103
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_102:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_111
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_110:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_119
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_118:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_125
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_124:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_128
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_127:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_131
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_130:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_134
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_133:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_137
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_136:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_140
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_139:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_143
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_142:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_146
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_145:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_149
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_148:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_152
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_151:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_155
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_154:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_158
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_157:
+	completequest QUEST_PERSI_BERRY_MANIAC
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_5:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_18
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_7:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-	goto BerryManiac_End
+	checkitem ITEM_LIECHI_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_12
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_10:
-	goto BerryManiac_NotEnoughRoom
+	checkitem ITEM_GANLON_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_17
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9
 
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_13:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_6
-	goto BerryManiac_End
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_12
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_12:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_19
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6
 
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_16:
-	goto BerryManiac_NotEnoughRoom
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_15
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_15:
+	checkitem ITEM_SALAC_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_25
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_14
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_17:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_4, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_27
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_19:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_9
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_LIECHI_BERRY
+	giveitem ITEM_MUSCLE_BAND
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1
 	goto BerryManiac_End
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_18
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6
 
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22:
-	goto BerryManiac_NotEnoughRoom
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_21
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_23:
+	checkitem ITEM_PETAYA_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_33
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_25:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11
-	goto BerryManiac_End
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_24
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_5, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_35
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_14
 
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_28:
-	goto BerryManiac_NotEnoughRoom
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_27
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_27:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_GANLON_BERRY
+	giveitem ITEM_GRASSY_SEED
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_31:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11
+	checkitem ITEM_APICOT_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_41
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_33:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_6, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_43
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_35:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_SALAC_BERRY
+	giveitem ITEM_CHOICE_SCARF
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_14
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_39:
+	checkitem ITEM_KEE_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_49
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_38
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_41:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_51
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_43:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_PETAYA_BERRY
+	giveitem ITEM_WISE_GLASSES
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_47:
+	checkitem ITEM_MARANGA_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_57
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_46
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_49:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_8, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_59
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_38
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_51:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_APICOT_BERRY
+	giveitem ITEM_MISTY_SEED
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30
 
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_34:
-	goto BerryManiac_NotEnoughRoom
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_33
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_55:
+	checkitem ITEM_LANSAT_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_65
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_54
 
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_37:
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_57:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_9, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_67
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_46
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_59:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_KEE_BERRY
+	giveitem ITEM_ELECTRIC_SEED
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6
 	goto BerryManiac_End
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_36
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_38
 
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_40:
-	goto BerryManiac_NotEnoughRoom
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_39
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_63:
+	checkitem ITEM_ENIGMA_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_73
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_62
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_65:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_75
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_54
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_67:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_MARANGA_BERRY
+	giveitem ITEM_PSYCHIC_SEED
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_46
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_71:
+	checkitem ITEM_MICLE_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_81
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_70
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_73:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_83
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_62
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_75:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_LANSAT_BERRY
+	giveitem ITEM_EXPERT_BELT
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_54
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_79:
+	checkitem ITEM_CUSTAP_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_89
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_78
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_81:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_91
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_70
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_83:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_ENIGMA_BERRY
+	giveitem ITEM_LEFTOVERS
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_62
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_87:
+	checkitem ITEM_JABOCA_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_97
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_86
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_89:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_99
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_78
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_91:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_MICLE_BERRY
+	giveitem ITEM_CHOICE_SPECS
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_70
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_95:
+	checkitem ITEM_ROWAP_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_105
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_94
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_97:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_107
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_86
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_99:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_CUSTAP_BERRY
+	giveitem ITEM_CHOICE_BAND
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_78
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_103:
+BerryManiac_StarfStep:
+	checkitem ITEM_STARF_BERRY
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_113
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_102
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_105:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_115
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_94
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_107:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_JABOCA_BERRY
+	giveitem ITEM_ROCKY_HELMET
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_86
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_111:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_110
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_113:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_121
+	goto BerryManiac_Decline
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_102
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_115:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_ROWAP_BERRY
+	giveitem ITEM_ASSAULT_VEST
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_94
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_119:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_118
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_121:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
+	removeitem ITEM_STARF_BERRY
+	giveitem ITEM_LIFE_ORB
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_102
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_125:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_124
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_128:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_127
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_131:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_130
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_134:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_133
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_137:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_136
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_140:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_139
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_143:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_142
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_146:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_145
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_149:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_148
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_152:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_151
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_155:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_154
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_158:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
+	goto BerryManiac_End
+	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_157
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor::
 	lock
 	faceplayer
-	goto_if_unset FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_2
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_1
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_1:
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0
 	release
 	return
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_2:
-	setflag FLAG_CAMP_PERSI_BERRY_DONATION_RECEIVED
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0
-	giveitem ITEM_PECHA_BERRY, 2
-	giveitem ITEM_ORAN_BERRY, 2
-	giveitem ITEM_PERSIM_BERRY, 2
-	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_1
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep::
@@ -222,93 +541,104 @@ ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep::
 	.align 2
 BerryHouseItems:
 	.2byte ITEM_BERRY_JUICE
+	.2byte ITEM_ORAN_BERRY
+	.2byte ITEM_PECHA_BERRY
+	.2byte ITEM_CHERI_BERRY
+	.2byte ITEM_CHESTO_BERRY
+	.2byte ITEM_PERSIM_BERRY
 	.2byte ITEM_NONE
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0:
-	.string "I AM BARRY, THE BERRY MANIAC. I LOVE\n"
-	.string "BERRIES. GET ME A CHERI BERRY NOW!!!$"
+	.string "I AM THE BERRY MANIAC!!!{PAUSE 30} I AM LOOKING\n"
+	.string "FOR THE RAREST BERRIES IN MARYA!!!\p"
+	.string "BRING THEM TO ME, AND I WILL REWARD YOU\n"
+	.string "HANDSOMELY DEAR FRIEND!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_1:
-	.string "DO YOU POSSESS THE BERRY I YEARN FOR!?$"
+	.string "DO YOU POSSESS A BERRY I YEARN FOR!?$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2:
+	.string "YES! YES! THE LIECHI BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3:
+	.string "EXCELLENT, EXCELLENT! HERE IS YOUR\n"
+	.string "REWARD, MY SWEET BERRY GATHERER!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_4:
+	.string "YES! YES! THE GANLON BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_5:
+	.string "YES! YES! THE SALAC BERRY! HAND IT OVER\n"
+	.string "TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_6:
+	.string "YES! YES! THE PETAYA BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7:
+	.string "YES! YES! THE APICOT BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_8:
+	.string "YES! YES! THE KEE BERRY! HAND IT OVER\n"
+	.string "TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_9:
+	.string "YES! YES! THE MARANGA BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10:
+	.string "YES! YES! THE LANSAT BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11:
+	.string "YES! YES! THE ENIGMA BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12:
+	.string "YES! YES! THE MICLE BERRY! HAND IT OVER\n"
+	.string "TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13:
+	.string "YES! YES! THE CUSTAP BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14:
+	.string "YES! YES! THE JABOCA BERRY! HAND IT\n"
+	.string "OVER TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15:
+	.string "YES! YES! THE ROWAP BERRY! HAND IT OVER\n"
+	.string "TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16:
+	.string "YES! YES! THE STARF BERRY! HAND IT OVER\n"
+	.string "TO ME RIGHT NOW!!!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17:
+	.string "NOW GET ME THE OTHER REMAINING\n"
+	.string "BERRIES!!!\p"
+	.string "TIME IS WASTING AWAY, MY FRIEND!$"
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_18:
 	.string "FINALLY. IT'S COMPLETE. I HAVE ALL THE\n"
 	.string "BERRIES NEEDED FOR MY COLLECTION!!!\p"
 	.string "AHAHAHAHAHAHA$"
 
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3:
-	.string "NO, NO, NO, THAT WON'T DO. I NEED A CHERI\n"
-	.string "BERRY!!!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_4:
-	.string "YES! YES! THE CHERI BERRY! IT IS MINE!\n"
-	.string "THANK YOU VERY MUCH. TAKE THIS!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_5:
-	.string "NOW GET ME AN ASPEAR BERRY. QUICKLY!\n"
-	.string "TIME IS WASTING AWAY, MY FRIEND!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_6:
-	.string "NO, NO, NO, THAT WON'T DO. I NEED AN\n"
-	.string "ASPEAR BERRY!!!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7:
-	.string "YES! YES! THE ASPEAR BERRY! IT IS MINE!\n"
-	.string "THANK YOU VERY MUCH. TAKE THIS!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_8:
-	.string "NOW GET ME A LEPPA BERRY. QUICKLY! TIME\n"
-	.string "IS WASTING AWAY, MY FRIEND!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_9:
-	.string "NO, NO, NO, THAT WON'T DO. I NEED A LEPPA\n"
-	.string "BERRY!!!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10:
-	.string "NOW GET ME A SITRUS BERRY. QUICKLY!\n"
-	.string "TIME IS WASTING AWAY, MY FRIEND!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11:
-	.string "NO, NO, NO, THAT WON'T DO. I NEED A\n"
-	.string "SITRUS BERRY!!!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12:
-	.string "NOW GET ME A LUM BERRY. QUICKLY! TIME\n"
-	.string "IS WASTING AWAY, MY FRIEND!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13:
-	.string "YES! YES! THE LUM BERRY! IT IS MINE!\n"
-	.string "THANK YOU VERY MUCH. TAKE THIS!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14:
-	.string "FINALLY, I NEED THE LEGENDARY LIECHI\n"
-	.string "BERRY! FIND IT FOR ME. FIND IT NOW!!!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15:
-	.string "NO, NO, NO, THAT WON'T DO. I NEED THE\n"
-	.string "LEGENDARY LIECHI BERRY!!!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16:
-	.string "YES... YES!!! YOU FOUND IT! AHAHAHAHA!\n"
-	.string "TAKE THIS TAKE THIS TAKE THIS!$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17:
-	.string "YOU DON'T HAVE ENOUGH ROOM FOR YOUR\n"
-	.string "REWARD. MAKE SOME ROOM!!!$"
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_19:
+	.string "WHAT!? YOU DARE DENY ME MY DESTINY, YOU\n"
+	.string "INSOLENT BRAT? GIVE IT TO ME!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0:
-	.string "Oh, it looks like you're new to planting\n"
-	.string "berries!\p"
-	.string "Here, take these to get you started.$"
-
-ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_1:
 	.string "Planting berries is really fun.\p"
-	.string "It feels like giving gifts to my future\n"
+	.string "It's like I'm giving gifts to my future\n"
 	.string "self!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_0:
-	.string "Welcome to the Berry House. Here, we\n"
-	.string "sell locally grown berries and juice.$"
+	.string "Welcome to Berry Good. All of our\n"
+	.string "berries are homegrown and fresh.$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_1:
-	.string "May the peace be with you.$"
+	.string "May peace be with you.$"

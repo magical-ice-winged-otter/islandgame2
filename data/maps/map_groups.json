@@ -116,7 +116,15 @@
     "ISLANDGAME_MT_AURORA_2F_3",
     "ISLANDGAME_SS_RAIN_BASEMENT",
     "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE",
-    "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2"
+    "ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2",
+    "ISLANDGAME_CHERIPORT_LAB_2F",
+    "ISLANDGAME_CHERIPORT_PKMNCENTER_2F",
+    "ISLANDGAME_CAMP_PERSI_PKMNCENTER_2F",
+    "ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F",
+    "ISLANDGAME_TIDALCOVE_PKMNCENTER_2F",
+    "ISLANDGAME_ROSEVALE_PKMNCENTER_2F",
+    "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO",
+    "ISLANDGAME_AURORA_PATH_GROTTO"
   ],
   "gMapGroup_Islandgame2": [
     "ISLANDGAME_APPLEVINE",
@@ -144,7 +152,13 @@
     "ISLANDGAME_APPLEVINE_COUCH_POTATO",
     "ISLANDGAME_APPLEVINE_RESTAURANT",
     "ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
-    "ISLANDGAME_APPLEVINE_QUEST_HOUSE"
+    "ISLANDGAME_APPLEVINE_QUEST_HOUSE",
+    "ISLANDGAME_ROCKY_PATH_HOUSE",
+    "ISLANDGAME_ROCKY_PATH_PKMNCENTER",
+    "ISLANDGAME_APPLEVINE_PKMNCENTER_2F",
+    "ISLANDGAME_AETHERIA_MUSEUM_1F",
+    "ISLANDGAME_AETHERIA_MUSEUM_2F",
+    "ISLANDGAME_AETHERIA_PKMNCENTER"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -157,7 +171,6 @@
     "SootopolisCity",
     "EverGrandeCity",
     "LittlerootTown",
-    "OldaleTown",
     "DewfordTown",
     "LavaridgeTown",
     "FallarborTown",
@@ -213,11 +226,7 @@
     "LittlerootTown_ProfessorBirchsLab"
   ],
   "gMapGroup_IndoorOldale": [
-    "OldaleTown_House1",
-    "OldaleTown_House2",
-    "OldaleTown_PokemonCenter_1F",
-    "OldaleTown_PokemonCenter_2F",
-    "OldaleTown_Mart"
+
   ],
   "gMapGroup_IndoorDewford": [
     "DewfordTown_House1",

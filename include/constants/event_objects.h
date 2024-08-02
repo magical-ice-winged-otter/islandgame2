@@ -1118,7 +1118,50 @@
 #define OBJ_EVENT_GFX_SCIENTIST_3                ISLAND_START + 14
 #define OBJ_EVENT_GFX_TUBER_F_SWIMMING           ISLAND_START + 15
 #define OBJ_EVENT_GFX_WORKER                     ISLAND_START + 16
-#define ISLAND_END                               OBJ_EVENT_GFX_WORKER
+#define OBJ_EVENT_GFX_RUKA                       ISLAND_START + 17
+#define OBJ_EVENT_GFX_OLIVIA_NORMAL              ISLAND_START + 18
+#define OBJ_EVENT_GFX_OLIVIA_SURFING             ISLAND_START + 19
+#define OBJ_EVENT_GFX_OLIVIA_FISHING             ISLAND_START + 20
+#define OBJ_EVENT_GFX_OLIVIA_FIELD_MOVE          ISLAND_START + 21
+#define OBJ_EVENT_GFX_OLIVIA_MACH_BIKE           ISLAND_START + 22
+#define OBJ_EVENT_GFX_OLIVER_NORMAL              ISLAND_START + 23
+// #define OBJ_EVENT_GFX_OLIVER_SURFING             ISLAND_START + 24
+#define OBJ_EVENT_GFX_OLIVER_FISHING             ISLAND_START + 25
+#define OBJ_EVENT_GFX_OLIVER_FIELD_MOVE          ISLAND_START + 26
+#define OBJ_EVENT_GFX_OLIVER_MACH_BIKE           ISLAND_START + 27
+#define OBJ_EVENT_GFX_OLIVER_WATERING            ISLAND_START + 28
+#define OBJ_EVENT_GFX_OLIVIA_WATERING            ISLAND_START + 29
+#define OBJ_EVENT_GFX_MELISSA                    ISLAND_START + 30
+#define OBJ_EVENT_GFX_ACE_TRAINER_M              ISLAND_START + 31
+#define OBJ_EVENT_GFX_ACE_TRAINER_F              ISLAND_START + 32
+#define OBJ_EVENT_GFX_JONAS                      ISLAND_START + 33
+#define OBJ_EVENT_GFX_PALM                       ISLAND_START + 34
+#define OBJ_EVENT_GFX_ARTHUR                     ISLAND_START + 35
+#define OBJ_EVENT_GFX_COCO                       ISLAND_START + 36
+#define OBJ_EVENT_GFX_PRIMROSE                   ISLAND_START + 37
+#define OBJ_EVENT_GFX_EDEA                       ISLAND_START + 38
+#define OBJ_EVENT_GFX_BEAUTY_MASTERS             ISLAND_START + 39
+#define OBJ_EVENT_GFX_COWGIRL                    ISLAND_START + 40
+#define OBJ_EVENT_GFX_GIRL_5                     ISLAND_START + 41
+#define OBJ_EVENT_GFX_GIRL_6                     ISLAND_START + 42
+#define OBJ_EVENT_GFX_GIRL_7                     ISLAND_START + 43
+#define OBJ_EVENT_GFX_JUGGLER                    ISLAND_START + 44
+#define OBJ_EVENT_GFX_MAN_7                      ISLAND_START + 45
+#define OBJ_EVENT_GFX_BIKER                      ISLAND_START + 46
+#define OBJ_EVENT_GFX_CHANNELER                  ISLAND_START + 47
+#define OBJ_EVENT_GFX_NERD                       ISLAND_START + 48
+#define OBJ_EVENT_GFX_RANCHER                    ISLAND_START + 49
+#define OBJ_EVENT_GFX_SCHOOL_KID_M_2             ISLAND_START + 50
+#define OBJ_EVENT_GFX_SCOUT_M                    ISLAND_START + 51
+#define OBJ_EVENT_GFX_SCOUT_F                    ISLAND_START + 52
+#define OBJ_EVENT_GFX_SILVERWING_M               ISLAND_START + 53
+#define OBJ_EVENT_GFX_SILVERWING_F               ISLAND_START + 54
+#define OBJ_EVENT_GFX_WOMAN_6                    ISLAND_START + 55
+#define OBJ_EVENT_GFX_WOMAN_7                    ISLAND_START + 56
+#define OBJ_EVENT_GFX_WOMAN_8                    ISLAND_START + 57
+#define OBJ_EVENT_GFX_SCHOOL_KID_F               ISLAND_START + 58
+#define OBJ_EVENT_GFX_APPLE                      ISLAND_START + 59
+#define ISLAND_END                               OBJ_EVENT_GFX_APPLE
 
 #define NUM_OBJ_EVENT_GFX               (ISLAND_END + 1)
 

@@ -17,7 +17,7 @@
 #define P_GEN_6_POKEMON                  TRUE // Generation 6 Pokémon (XY, ORAS)
 #define P_GEN_7_POKEMON                  TRUE // Generation 7 Pokémon (SM, USUM, LGPE)
 #define P_GEN_8_POKEMON                  TRUE // Generation 8 Pokémon (SwSh, BDSP, LA)
-#define P_GEN_9_POKEMON                  TRUE // Generation 9 Pokémon (SV)
+#define P_GEN_9_POKEMON                  FALSE // Generation 9 Pokémon (SV)
 #define P_GEN_C_POKEMON                  TRUE // CUSTOM MONs
 
 // Setting this to TRUE will add the new evolutions to the Regional Dex.
@@ -609,5 +609,10 @@
 #define P_FAMILY_SHADOW_LUGIA            P_GEN_C_POKEMON
 #define P_FAMILY_SHADOW_MIGHTYENA        P_GEN_C_POKEMON
 #define P_FAMILY_GOLETT_MARYAN           P_GEN_C_POKEMON
+#define P_FAMILY_GOLURK_MARYAN           P_GEN_C_POKEMON
+#define P_FAMILY_FEEBAS_MARYAN           P_GEN_C_POKEMON
+#define P_FAMILY_MILOTIC_MARYAN          P_GEN_C_POKEMON
+#define P_FAMILY_PURRLOIN_MARYAN         P_GEN_C_POKEMON
+#define P_FAMILY_LIEPARD_MARYAN          P_GEN_C_POKEMON
 
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H

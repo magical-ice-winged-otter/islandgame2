@@ -5,6 +5,16 @@ ISLANDGAME_Southern_Oranna_Path_MapScripts::
 ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_TEMP_1, 0
 	goto ISLANDGAME_Southern_Oranna_Path_OnLoad
+	gettime
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	setflag FLAG_TEMP_2
+	return
+
+ISLANDGAME_Southern_Oranna_Path_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_1
 	return
 
 
@@ -232,7 +242,7 @@ TrainerBattle4_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}You ruined my perfect record today... ):$"
 
 ISLANDGAME_Southern_Oranna_Path_NPC1Talk::
-	.string "{COLOR DARK_GRAY}Have you seen any Jigglypuff yet? I\n"
+	.string "{COLOR DARK_GRAY}Have you seen any Charmander yet? I\n"
 	.string "like that Pokémon.$"
 
 ISLANDGAME_Southern_Oranna_Path_NPC2Talk1::

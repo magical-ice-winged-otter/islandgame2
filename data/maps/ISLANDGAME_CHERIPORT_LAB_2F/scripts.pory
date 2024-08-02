@@ -1,0 +1,30 @@
+mapscripts ISLANDGAME_CHERIPORT_LAB_2F_MapScripts {}
+
+script ISLANDGAME_CHERIPORT_LAB_2F_BagInteract {
+    lock
+    msgbox(format(
+        "{COLOR RED}(It seems to be someone's bag. I probably shouldn't be digging in it.)"
+    ))
+    closemessage
+    release
+
+}
+
+script ISLANDGAME_CHERIPORT_LAB_2F_PCInteract {
+    lock
+    msgbox(format(
+        "{COLOR RED}(It's the professor's computer. It's password protected.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_CHERIPORT_LAB_2F_BallInteract {
+    lock
+    msgbox(format(
+        "Really? You're just going to barge into your professor's lab and steal?\p"
+        "{COLOR RED}-20 Karma."
+    ))
+    closemessage
+    release
+}

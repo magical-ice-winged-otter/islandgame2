@@ -1,4 +1,19 @@
+const FLAG_NIGHT = FLAG_TEMP_1
+const FLAG_DAY = FLAG_TEMP_2
+const VAR_CURRENT_HOUR = VAR_0x8000
+
 mapscripts ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+
+        gettime
+
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+            setflag(FLAG_NIGHT)
+        }
+        else {
+            setflag(FLAG_DAY)
+        }
+    }
 }
 
 script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
@@ -93,5 +108,15 @@ Torchic_End:
             msgbox(format("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still don't even know my name! It's Paulie."))
     }
 
+    release
+}
+
+
+script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_NPC {
+    lock
+    faceplayer
+    msgbox(format(
+        "The farm life is pretty alright.\pMight be a lotta hard work, but you don't gotta worry 'bout much."
+    ))
     release
 }

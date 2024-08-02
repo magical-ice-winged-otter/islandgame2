@@ -5,8 +5,8 @@ ISLANDGAME_MAPLEGROVE_MapScripts::
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1::
 	lock
 	faceplayer
-	playmoncry SPECIES_ODDISH, CRY_MODE_NORMAL
-	goto_if_unset FLAG_MAPLEGROVE_ODDISH_GIFT, ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_2
+	playmoncry SPECIES_BUNEARY, CRY_MODE_NORMAL
+	goto_if_unset FLAG_MAPLEGROVE_BUNEARY_GIFT, ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_2
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_Text_1
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_1:
 PKMN1Event_End:
@@ -18,12 +18,12 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_2:
 	compare VAR_RESULT, NO
 	goto_if_eq ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_6
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_5:
-	checkitemspace ITEM_GRASS_GEM
+	checkitemspace ITEM_NORMAL_GEM
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_9
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_8:
-	giveitem ITEM_GRASS_GEM
-	setflag FLAG_MAPLEGROVE_ODDISH_GIFT
+	giveitem ITEM_NORMAL_GEM
+	setflag FLAG_MAPLEGROVE_BUNEARY_GIFT
 	goto ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_1
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_6:
@@ -57,7 +57,7 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN3::
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN4::
 	lock
 	faceplayer
-	playmoncry SPECIES_PACHIRISU, CRY_MODE_WEAK
+	playmoncry SPECIES_COTTONEE, CRY_MODE_WEAK
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk
 	release
 	return
@@ -90,9 +90,15 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC2::
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3::
 	lock
-	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk
+	goto_if_unset FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_2
+	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_Text_0
+ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_1:
 	release
 	return
+
+ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_2:
+	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk
+	goto ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_1
 
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_SIGN::
@@ -107,10 +113,14 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_Text_0:
 	.string "{COLOR RED}(I don't have enough space to carry it.)$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_Text_1:
-	.string "{COLOR DARK_GRAY}Oddish!$"
+	.string "{COLOR DARK_GRAY}Konpeko Konpeko Konpeko!$"
+
+ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_Text_0:
+	.string "These two Pokémon don't get along at\n"
+	.string "all. I don't know why.$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk::
-	.string "{COLOR RED}(Huh? It looks like Oddish is trying to\n"
+	.string "{COLOR RED}(Huh? It looks like Buneary is trying to\n"
 	.string "give me something.)\p"
 	.string "{COLOR RED}(Should I take it?)$"
 
@@ -121,17 +131,24 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN3Talk::
 	.string "{COLOR DARK_GRAY}A$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk::
-	.string "{COLOR DARK_GRAY}Chitter chitter...\p"
-	.string "{COLOR RED}(Pachirisu seems kind of disappointed\n"
-	.string "with the crumbs it's being fed.)$"
+	.string "{COLOR DARK_GRAY}Nee...\p"
+	.string "{COLOR RED}(It seems like Cottonee is trying to\n"
+	.string "tell me something.)\p"
+	.string "{COLOR RED}(She says her name is CJ and that she\n"
+	.string "hates the Fletchling over there.)\p"
+	.string "{COLOR RED}(She says it's because she stole her\n"
+	.string "boyfriend from her.)\p"
+	.string "{COLOR RED}(...How does that even work?)$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN5Talk::
-	.string "{COLOR DARK_GRAY}Chirp chirp!\p"
+	.string "{COLOR DARK_GRAY}Chirp chirp...\p"
 	.string "{COLOR RED}(It seems like Fletchling is trying to\n"
 	.string "tell me something.)\p"
-	.string "{COLOR RED}(She says her name is Margaret, and\n"
-	.string "that Pachirisu over there is her friend\l"
-	.string "Eileen.)$"
+	.string "{COLOR RED}(She says her name is Margaret and that\n"
+	.string "she hates the Cottonee over there.)\p"
+	.string "{COLOR RED}(She says it's because she stole her\n"
+	.string "boyfriend from her.)\p"
+	.string "{COLOR RED}(...How does that even work?)$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC1Talk::
 	.string "{COLOR DARK_GRAY}Be kind to Pokémon, and they'll be kind\n"

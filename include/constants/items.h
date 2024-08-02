@@ -1003,12 +1003,14 @@
 #define ITEM_ISLANDGAME_PICKAXE 832
 #define ITEM_ISLANDGAME_POWERGLOVE 833
 #define ITEM_ISLANDGAME_TRADING_CARD 834
-#define ITEM_POKEVIAL 835 // Pokevial Branch
+#define ITEM_POKEVIAL 835 
+#define ITEM_ISLANDGAME_ROMANS_LETTER 836
+#define ITEM_ISLANDGAME_JULIES_LETTER 837
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 836
+#define ITEMS_COUNT 838
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

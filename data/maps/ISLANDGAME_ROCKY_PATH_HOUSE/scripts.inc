@@ -1,0 +1,3 @@
+ISLANDGAME_ROCKY_PATH_HOUSE_MapScripts::
+	.byte 0
+
