@@ -1,12 +1,20 @@
-// static const struct TrainerMon sParty_RockyPath_KarateBro[] = {
-//     {
-//     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-//     .lvl = 30,
-//     .species = SPECIES_MACHAMP,
-//     .heldItem = ITEM_BLACK_BELT,
-//     .ability = ABILITY_NO_GUARD
-//     },
-// };
+static const struct TrainerMon sParty_Rose4[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 25,
+    .species = SPECIES_MILCERY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 25,
+    .species = SPECIES_TINKATUFF,
+    },
+};
+
+
+
+
+
 
 // static const struct TrainerMon sParty_RockyPath_KarateSis[] = {
 //     {

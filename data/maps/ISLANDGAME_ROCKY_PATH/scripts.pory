@@ -1,12 +1,38 @@
 mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {}
 
-
-script ISLANDGAME_ROCKY_PATH_KarateBro {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_BRO, 
-    //     format("My sister prefers to train more than 1 Pokemon, but as for me..."), 
-    //     format("How did you defeat my Machamp!"))
-    // msgbox(format("I will only train with my Machamp for as long as I live."), MSGBOX_AUTOCLOSE)
+script ISLANDGAME_ROCKY_PATH_Sign {
+    msgbox(format(
+        "ROCKY PATH\n{LEFT_ARROW}APPLEVINE / LUMINE CAVE{DOWN_ARROW}"
+    ), MSGBOX_SIGN)
 }
+
+script ISLANDGAME_ROCKY_PATH_Trainer1 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_1,
+        format(
+            "I'm almost done setting my picnic up! I won't have you interfere!"
+        ),
+        format(
+            "Maybe I shouldn't have set up a picnic\nat the path entrance..."
+        ))
+    msgbox(format(
+        "This is my first time trying to setup a picnic. I've been trying to follow along this guide online, but it's just talking about making sandwiches."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer2 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_1,
+        format(
+            "Curses, my mortal enemy...{PAUSE 60} LEDGES."
+        ),
+        format(
+            "My second mortal enemy...{PAUSE 60} LOSING!"
+        ))
+    msgbox(format(
+        "I was going to explore Lumine Cave, but after seeing all these ledges, I think I'll just hike through Sierra Path instead..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+
 
 script ISLANDGAME_ROCKY_PATH_KarateSis {
     // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_SIS, 

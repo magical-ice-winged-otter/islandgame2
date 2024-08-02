@@ -89,12 +89,6 @@
 #define TRAINER_VIOLET                       TRAINER_MINTY_MEADOWS_16
 
 
-#define TRAINER_ROSE_4                       42 // unused
-
-
-
-
-
 // Traveler's Tunnel
 #define TRAINER_TRAVELERS_TUNNEL_1           25
 
@@ -189,6 +183,9 @@
 
 
 
+// Rocky Path
+#define TRAINER_ROCKY_PATH_1                 42
+#define TRAINER_ROSE_4                       TRAINER_ROCKY_PATH_1
 
 
 #define TRAINER_RICKY_3                      68

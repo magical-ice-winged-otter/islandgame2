@@ -287,6 +287,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter2 {
         "Please take this map. It will aid you in traversing the region."
     ))
     giveitem(ITEM_TOWN_MAP)
+    setvar(VAR_TEMP_2, 1)
     setflag(FLAG_RECEIVED_TOWN_MAP)
     closemessage
     release

@@ -453,23 +453,6 @@ static const struct TrainerMon sParty_TravelersTunnel1[] = {
 
 
 
-static const struct TrainerMon sParty_Rose4[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 31,
-    .species = SPECIES_SHROOMISH,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 31,
-    .species = SPECIES_GLOOM,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 31,
-    .species = SPECIES_ROSELIA,
-    }
-};
 
 static const struct TrainerMon sParty_Rose5[] = {
     {
@@ -981,7 +964,7 @@ static const struct TrainerMon sParty_PromenadePath3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 25,
-    .species = SPECIES_QUILAVA,
+    .species = SPECIES_TOGEDEMARU,
     },
 };
 

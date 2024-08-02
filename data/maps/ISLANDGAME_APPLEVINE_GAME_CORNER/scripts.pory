@@ -183,7 +183,7 @@ script ISLANDGAME_APPLEVINE_EventScript_Bouncer {
     lock
     faceplayer
     msgbox(format(
-        "Sorry, you must have a {COLOR LIGHT_GREEN}VIP Pass{COLOR DARK_GRAY} in order to enter the High Limit Area."
+        "Sorry, you must have a VIP Pass in order to enter the High Limit Area."
     ))
     release
 }

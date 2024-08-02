@@ -371,7 +371,6 @@ const struct Trainer gTrainers[] = {
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
         .trainerPic = TRAINER_PIC_PICNICKER,
         .trainerName = _("Alice"),
-
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
@@ -468,31 +467,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_TravelersTunnel1),
     },
-
-
-
-
-
-
-
-
-
-
-
-  
-    [TRAINER_ROSE_4] =
-    {
-        .trainerClass = TRAINER_CLASS_AROMA_LADY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_AROMA_LADY,
-        .trainerName = _("ROSE"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Rose4),
-    },
-
-
 
 
 
@@ -834,13 +808,6 @@ const struct Trainer gTrainers[] = {
     },
 
 
-
-
-    // #include "trainers/rocky_path.h"
-
-
-
-
     // Promenade Path
 
     [TRAINER_PROMENADE_1] =
@@ -879,8 +846,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_PromenadePath3),
     },
 
-
-
     [TRAINER_PROMENADE_4] =
     {
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
@@ -892,6 +857,12 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_PromenadePath4),
     },
+
+
+
+
+
+    // #include "trainers/rocky_path.h"
 
 
 
