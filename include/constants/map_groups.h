@@ -127,6 +127,9 @@
 #define MAP_ISLANDGAME_AETHERIA_MUSEUM_1F           (29 | (1 << 8))
 #define MAP_ISLANDGAME_AETHERIA_MUSEUM_2F           (30 | (1 << 8))
 #define MAP_ISLANDGAME_AETHERIA_PKMNCENTER          (31 | (1 << 8))
+#define MAP_ISLANDGAME_BELLEHAVEN_HOUSE_1           (32 | (1 << 8))
+#define MAP_ISLANDGAME_BELLEHAVEN_HOUSE_2           (33 | (1 << 8))
+#define MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME       (34 | (1 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (2 << 8))
