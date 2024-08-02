@@ -5594,8 +5594,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_1",
       "name": "ISLANDGAME_BELLEHAVEN_HOUSE_1_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 11,
+      "height": 10,
       "primary_tileset": "gTileset_islandgame_kanto_building",
       "secondary_tileset": "gTileset_Unused1",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_1/border.bin",
@@ -5604,8 +5604,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_2",
       "name": "ISLANDGAME_BELLEHAVEN_HOUSE_2_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 14,
+      "height": 10,
       "primary_tileset": "gTileset_islandgame_kanto_building",
       "secondary_tileset": "gTileset_Unused1",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_2/border.bin",
@@ -5614,8 +5614,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_FOSTER_HOME",
       "name": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 15,
+      "height": 14,
       "primary_tileset": "gTileset_islandgame_kanto_building",
       "secondary_tileset": "gTileset_Unused1",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/border.bin",
