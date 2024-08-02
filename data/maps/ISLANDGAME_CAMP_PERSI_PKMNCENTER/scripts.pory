@@ -7,14 +7,6 @@ mapscripts ISLANDGAME_CAMP_PERSI_PKMNCENTER_MapScripts {
     }
 }
 
-script ISLANDGAME_PERSI_PKMNCENTER_EventScript_Nurse {
-    setvar(VAR_0x800B, LOCALID_NURSE)
-    call(Common_EventScript_PkmnCenterNurse)
-    waitmessage
-    waitbuttonpress
-    release
-}
-
 script ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerKid {
     lock
     msgbox(format("Man, the connection here sucks!"))

@@ -8,15 +8,6 @@ ISLANDGAME_MAPLEGROVE_PKMNCENTER_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 
-ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_Nurse::
-	setvar VAR_0x800B, 1
-	call Common_EventScript_PkmnCenterNurse
-	waitmessage
-	waitbuttonpress
-	release
-	return
-
-
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN1::
 	lock
 	faceplayer
