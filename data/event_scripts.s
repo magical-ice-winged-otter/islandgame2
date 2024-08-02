@@ -1321,3 +1321,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_BELLEHAVEN_HOUSE_2/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.inc"

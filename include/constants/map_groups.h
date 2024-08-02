@@ -130,6 +130,8 @@
 #define MAP_ISLANDGAME_BELLEHAVEN_HOUSE_1           (32 | (1 << 8))
 #define MAP_ISLANDGAME_BELLEHAVEN_HOUSE_2           (33 | (1 << 8))
 #define MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME       (34 | (1 << 8))
+#define MAP_ISLANDGAME_BELLEHAVEN_PKMNCENTER        (35 | (1 << 8))
+#define MAP_ISLANDGAME_BELLEHAVEN_PKMNMART          (36 | (1 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (2 << 8))
