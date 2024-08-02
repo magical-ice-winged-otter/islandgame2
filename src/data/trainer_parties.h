@@ -800,7 +800,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .heldItem = ITEM_LIGHT_CLAY,
     .ability = ABILITY_SNOW_WARNING,
     .gender = TRAINER_MON_FEMALE,
-    .moves = {MOVE_AURORA_VEIL, MOVE_HAIL, MOVE_ICY_WIND, MOVE_WATER_PULSE}
+    .moves = {MOVE_AURORA_VEIL, MOVE_SNOWSCAPE, MOVE_ICY_WIND, MOVE_WATER_PULSE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -810,7 +810,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .ability = ABILITY_SHELL_ARMOR,
     .gender = TRAINER_MON_FEMALE,
     .ball = ITEM_DIVE_BALL,
-    .moves = {MOVE_ICE_SHARD, MOVE_WATER_PULSE, MOVE_CONFUSE_RAY, MOVE_HAIL}
+    .moves = {MOVE_ICE_SHARD, MOVE_WATER_PULSE, MOVE_CONFUSE_RAY, MOVE_SNOWSCAPE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -820,7 +820,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .ability = ABILITY_ICE_BODY,
     .gender = TRAINER_MON_FEMALE,
     .ball = ITEM_DIVE_BALL,
-    .moves = {MOVE_DRAGON_BREATH, MOVE_WATER_PULSE, MOVE_AURORA_BEAM, MOVE_HAIL},
+    .moves = {MOVE_DRAGON_BREATH, MOVE_WATER_PULSE, MOVE_AURORA_BEAM, MOVE_SNOWSCAPE},
     }
 };
 

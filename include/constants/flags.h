@@ -1639,7 +1639,7 @@
 #define FLAG_DAILY_COR_HIDDEN_GROTTO_ROLL           (DAILY_FLAGS_START + 0x1A)
 #define FLAG_DAILY_AURORA_PATH_HIDDEN_GROTTO_ROLL   (DAILY_FLAGS_START + 0x1B)
 #define FLAG_DAILY_APPLEVINE_COIN_BRO               (DAILY_FLAGS_START + 0x1C)
-#define FLAG_DAILY_APPLEVINE_APPLE_2                (DAILY_FLAGS_START + 0x1D) // Unused Flag
+#define FLAG_DAILY_SS_RAIN_LOBSTER_ROLL             (DAILY_FLAGS_START + 0x1D)
 #define FLAG_DAILY_APPLEVINE_APPLE_3                (DAILY_FLAGS_START + 0x1E) // Unused Flag
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag

@@ -20,17 +20,56 @@ script SS_RAIN_CAFETERIA_NPC2_TALK {
     faceplayer
     gettime
     if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
-        msgbox(format(
-            "Unfortunately, we are all out of lobster for the night." // temporary until we make a lobster roll item
-        ))
+        if (!flag(FLAG_DAILY_SS_RAIN_LOBSTER_ROLL)) {
+            msgbox(format(
+                "Our famous lobster roll is made with only the freshest lobster."
+            ))
+            showmoneybox(0,0)
+            msgbox(format(
+                "Would you like to try one? It is ¥3000 for a roll."
+            ), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                checkmoney(3000)
+                if (!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "Sorry, you do not have enough money."
+                    ))
+                    hidemoneybox
+                    goto(LobsterRoll_End)
+                }
+                else {
+                    removemoney(3000)
+                    updatemoneybox
+                    playse(SE_SHOP)
+                    waitse
+                    hidemoneybox
+                    giveitem(ITEM_ISLANDGAME_LOBSTER_ROLL)
+                    setflag(FLAG_DAILY_SS_RAIN_LOBSTER_ROLL)
+                    goto(LobsterRoll_End)
+                }
+            }
+            else {
+                goto(LobsterRoll_End)
+                hidemoneybox
+            }
+
+        }
+        else {
+            msgbox(format(
+                "Sorry, due to the high popularity of our lobster roll, only one may be purchased per customer every night.\p"
+                "If you would like another one, please come back tomorrow."
+            ))
+        }
     }
     else {
         msgbox(format(
             "If you would like to try our famous lobster roll, you will have to come back later tonight."
         ))
     }
-    waitmessage
-    release
+
+    LobsterRoll_End:
+        closemessage
+        release
 }
 
 script SS_RAIN_CAFETERIA_NPC3_TALK {

@@ -19,14 +19,46 @@ SS_RAIN_CAFETERIA_NPC2_TALK::
 	goto_if_lt SS_RAIN_CAFETERIA_NPC2_TALK_2
 	compare VAR_0x8000, 18
 	goto_if_ge SS_RAIN_CAFETERIA_NPC2_TALK_2
-	msgbox SS_RAIN_CAFETERIA_NPC2_TALK_Text_1
+	msgbox SS_RAIN_CAFETERIA_NPC2_TALK_Text_4
 SS_RAIN_CAFETERIA_NPC2_TALK_1:
-	waitmessage
+LobsterRoll_End:
+	closemessage
 	release
 	return
 
 SS_RAIN_CAFETERIA_NPC2_TALK_2:
+	goto_if_unset FLAG_DAILY_SS_RAIN_LOBSTER_ROLL, SS_RAIN_CAFETERIA_NPC2_TALK_7
+	msgbox SS_RAIN_CAFETERIA_NPC2_TALK_Text_3
+	goto SS_RAIN_CAFETERIA_NPC2_TALK_1
+
+SS_RAIN_CAFETERIA_NPC2_TALK_7:
 	msgbox SS_RAIN_CAFETERIA_NPC2_TALK_Text_0
+	showmoneybox 0, 0
+	msgbox SS_RAIN_CAFETERIA_NPC2_TALK_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq SS_RAIN_CAFETERIA_NPC2_TALK_10
+	goto LobsterRoll_End
+	hidemoneybox
+	goto SS_RAIN_CAFETERIA_NPC2_TALK_1
+
+SS_RAIN_CAFETERIA_NPC2_TALK_10:
+	checkmoney 3000
+	compare VAR_RESULT, 0
+	goto_if_eq SS_RAIN_CAFETERIA_NPC2_TALK_13
+	removemoney 3000
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	hidemoneybox
+	giveitem ITEM_ISLANDGAME_LOBSTER_ROLL
+	setflag FLAG_DAILY_SS_RAIN_LOBSTER_ROLL
+	goto LobsterRoll_End
+	goto SS_RAIN_CAFETERIA_NPC2_TALK_1
+
+SS_RAIN_CAFETERIA_NPC2_TALK_13:
+	msgbox SS_RAIN_CAFETERIA_NPC2_TALK_Text_2
+	hidemoneybox
+	goto LobsterRoll_End
 	goto SS_RAIN_CAFETERIA_NPC2_TALK_1
 
 
@@ -74,10 +106,24 @@ SS_RAIN_CAFETERIA_IceCreamGirl_8:
 
 
 SS_RAIN_CAFETERIA_NPC2_TALK_Text_0:
-	.string "Unfortunately, we are all out of lobster\n"
-	.string "for the night.$"
+	.string "Our famous lobster roll is made with\n"
+	.string "only the freshest lobster.$"
 
 SS_RAIN_CAFETERIA_NPC2_TALK_Text_1:
+	.string "Would you like to try one? It is ¥3000\n"
+	.string "for a roll.$"
+
+SS_RAIN_CAFETERIA_NPC2_TALK_Text_2:
+	.string "Sorry, you do not have enough money.$"
+
+SS_RAIN_CAFETERIA_NPC2_TALK_Text_3:
+	.string "Sorry, due to the high popularity of our\n"
+	.string "lobster roll, only one may be purchased\l"
+	.string "per customer every night.\p"
+	.string "If you would like another one, please\n"
+	.string "come back tomorrow.$"
+
+SS_RAIN_CAFETERIA_NPC2_TALK_Text_4:
 	.string "If you would like to try our famous\n"
 	.string "lobster roll, you will have to come back\l"
 	.string "later tonight.$"

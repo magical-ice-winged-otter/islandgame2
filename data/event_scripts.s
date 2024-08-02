@@ -1315,3 +1315,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_AETHERIA_MUSEUM_2F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_AETHERIA_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_HOUSE_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_HOUSE_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.inc"

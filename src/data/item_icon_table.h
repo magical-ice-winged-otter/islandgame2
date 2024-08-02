@@ -884,6 +884,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_POKEVIAL] = {gItemIcon_Pokevial, gItemIconPalette_Pokevial}, // Pokevial Branch
     [ITEM_ISLANDGAME_ROMANS_LETTER] = {gItemIcon_WaveMail, gItemIconPalette_WaveMail},
     [ITEM_ISLANDGAME_JULIES_LETTER] = {gItemIcon_FabMail, gItemIconPalette_FabMail},
+    [ITEM_ISLANDGAME_LOBSTER_ROLL] = {gItemIcon_IslandgameLobsterRoll, gItemIconPalette_IslandgameLobsterRoll},
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

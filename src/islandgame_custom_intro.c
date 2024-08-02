@@ -68,6 +68,7 @@ void IslandGameCustomStartup()
         //debug 3: CHERIPORT LOCATION
         FlagToggle(FLAG_PROF_GAVE_EEVEE);
         FlagToggle(FLAG_SYS_POKEDEX_GET);
+        FlagToggle(FLAG_SYS_NATIONAL_DEX);
         FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
         
 

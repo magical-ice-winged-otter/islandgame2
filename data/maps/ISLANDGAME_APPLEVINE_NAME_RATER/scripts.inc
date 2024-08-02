@@ -130,13 +130,13 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_0:
 	.string "I give it a request?)$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_1:
-	.string "> You asked if Subaru is a duck.$"
+	.string "{COLOR GREEN}> You asked if Subaru is a duck.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_2:
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}NO DUCK!!! AM ROBOT!!!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_3:
-	.string "> You asked Subaru about STARLIGHT.$"
+	.string "{COLOR GREEN}> You asked Subaru about STARLIGHT.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_4:
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}STARLIGHT is an idol group\n"
@@ -153,7 +153,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_4:
 	.string "topped by Paldea's very own Iono!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_5:
-	.string "> You asked Subaru about Ruka.$"
+	.string "{COLOR GREEN}> You asked Subaru about Ruka.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_6:
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Ruka, colloqially known as\n"
@@ -176,7 +176,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_6:
 	.string "display them here: B90, W56, H86.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_7:
-	.string "> You asked Subaru to tell you a joke.$"
+	.string "{COLOR GREEN}> You asked Subaru to tell you a joke.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_8:
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Sure. What Pokemon does Swalot\n"
@@ -186,7 +186,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_8:
 	.string "to respond to complete my joke!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_9:
-	.string "> You asked Subaru for trainer tips.$"
+	.string "{COLOR GREEN}> You asked Subaru for trainer tips.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_10:
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}If you're not sure how to build\n"

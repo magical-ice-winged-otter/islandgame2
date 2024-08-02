@@ -219,6 +219,7 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter2::
 	waitmovement 0
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_Text_0
 	giveitem ITEM_TOWN_MAP
+	setvar VAR_TEMP_2, 1
 	setflag FLAG_RECEIVED_TOWN_MAP
 	closemessage
 	release

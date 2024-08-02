@@ -759,11 +759,11 @@ ISLANDGAME_APPLEVINE_GameCornerSign_Text_0:
 	.string "Fun for all ages! :)$"
 
 ISLANDGAME_APPLEVINE_SierraPathSign_Text_0:
-	.string "SIERRA PATH\n"
+	.string "SIERRA PATH{UP_ARROW}\n"
 	.string "$"
 
 ISLANDGAME_APPLEVINE_RockyPathSign_Text_0:
-	.string "ROCKY PATH\n"
+	.string "ROCKY PATH{RIGHT_ARROW}\n"
 	.string "$"
 
 ISLANDGAME_APPLEVINE_CocoInteract_Text_0:
@@ -943,7 +943,7 @@ ISLANDGAME_APPLEVINE_NPC14_Text_0:
 	.string "Corner for three hours.\p"
 	.string "What's even the big deal? It's not like\n"
 	.string "there's anything illegal going on inside\l"
-	.string "or anything. They're broken no laws!$"
+	.string "or anything. They've broken no laws!$"
 
 ISLANDGAME_APPLEVINE_NPC15_Text_0:
 	.string "Out of the three main islands, Lumine is\n"

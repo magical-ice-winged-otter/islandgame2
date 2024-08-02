@@ -468,3 +468,12 @@ const u8 gItemEffect_TamatoBerry[10] = {
     [6] = ITEM6_SUBTRACT_EV,
     EV_BERRY_FRIENDSHIP_CHANGE,
 };
+
+
+
+// island-game effects
+
+const u8 gItemEffect_LobsterRoll[7] = {
+    [4] = ITEM4_HEAL_HP,
+    [6] = 200,
+};
