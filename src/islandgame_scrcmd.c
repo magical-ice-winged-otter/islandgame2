@@ -56,14 +56,52 @@ void SetHazards(void) {
     u16 hazardType = gSpecialVar_0x8000;
     u16 hazardCount = gSpecialVar_0x8001;
     u16 side = gSpecialVar_0x8002;
+    u16 battlerSide = side == B_SIDE_PLAYER ? B_SIDE_OPPONENT : B_SIDE_PLAYER;
+    u8 battler = side == B_SIDE_PLAYER ? B_POSITION_OPPONENT_LEFT : B_POSITION_PLAYER_LEFT;
 
     gPresetHazards[side] |= hazardType;
 
     switch (hazardType) {
+        case SIDE_STATUS_REFLECT: {
+            gPresetSideTimer[side].reflectTimer = hazardCount;
+            gPresetSideTimer[side].reflectBattlerId = battler;
+            break;
+        }
+        case SIDE_STATUS_LIGHTSCREEN: {
+            gPresetSideTimer[side].lightscreenTimer = hazardCount;
+            gPresetSideTimer[side].lightscreenBattlerId = battler;
+            break;
+        }
+        case SIDE_STATUS_STICKY_WEB: {
+            gPresetSideTimer[side].stickyWebAmount = 1;
+            gPresetSideTimer[side].stickyWebBattlerSide = battlerSide;
+            gPresetSideTimer[side].stickyWebBattlerId = battler;
+            break;
+        }
+        case SIDE_STATUS_SPIKES: {
+            gPresetSideTimer[side].spikesAmount = hazardCount;
+            break;
+        }
+        case SIDE_STATUS_SAFEGUARD: {
+            gPresetSideTimer[side].safeguardTimer = hazardCount;
+            gPresetSideTimer[side].safeguardBattlerId = battler;
+            break;
+        }
+        case SIDE_STATUS_MIST: {
+            gPresetSideTimer[side].mistTimer = hazardCount;
+            gPresetSideTimer[side].mistBattlerId = battler;
+            break;
+        }
+        case SIDE_STATUS_TAILWIND: {
+            gPresetSideTimer[side].tailwindTimer = hazardCount;
+            gPresetSideTimer[side].tailwindBattlerId = battler;
+            break;
+        }
         case SIDE_STATUS_STEALTH_ROCK: {
             gPresetSideTimer[side].stealthRockAmount = 1;
             break;
         }
+        case SIDE_STATUS_AURORA_VEIL
     }
 }
 
