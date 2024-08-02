@@ -35,14 +35,14 @@
       "x": 13,
       "y": 35,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_PKMNMART",
       "dest_warp_id": "0"
     },
     {
       "x": 21,
       "y": 39,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_PKMNCENTER",
       "dest_warp_id": "0"
     },
     {
