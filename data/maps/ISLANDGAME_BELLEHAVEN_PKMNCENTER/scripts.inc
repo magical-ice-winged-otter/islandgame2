@@ -1,0 +1,3 @@
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_MapScripts::
+	.byte 0
+

@@ -8,15 +8,6 @@ ISLANDGAME_CAMP_PERSI_PKMNCENTER_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 
-ISLANDGAME_PERSI_PKMNCENTER_EventScript_Nurse::
-	setvar VAR_0x800B, 1
-	call Common_EventScript_PkmnCenterNurse
-	waitmessage
-	waitbuttonpress
-	release
-	return
-
-
 ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerKid::
 	lock
 	msgbox ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerKid_Text_0
