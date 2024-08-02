@@ -721,6 +721,10 @@ static void CB2_EndWildBattle(void)
 
     if (IsPlayerDefeated(gBattleOutcome) == TRUE && !InBattlePyramid() && !InBattlePike())
     {
+        if (PlayerHasFollower())
+        {
+            DestroyFollower(TRUE);
+        }
         SetMainCallback2(CB2_WhiteOut);
     }
     else
@@ -758,6 +762,8 @@ static void CB2_End2v2ScriptedWildBattle(void)
         gPlayerParty[i] = gPlayerSavedParty[i];
         ZeroMonData(&gPlayerSavedParty[i]);
     }
+    // Heal the party
+    HealPlayerParty();
     CB2_EndScriptedWildBattle();
 }
 
