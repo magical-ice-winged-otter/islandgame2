@@ -331,7 +331,7 @@ ISLAND_GAME_CHERIPORT_OUTSIDE_NPC6_TALK::
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK::
 	.string "{COLOR DARK_GRAY}Come on...{PAUSE 30} Come on...{PAUSE 30} Argh! Not another\n"
-	.string "Magikarp! I need a {COLOR LIGHT_BLUE}Horsea!$"
+	.string "Magikarp! I need a Horsea!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC8_TALK::
 	.string "{COLOR DARK_GRAY}Cheriport is home to the Cheri Berry!\p"

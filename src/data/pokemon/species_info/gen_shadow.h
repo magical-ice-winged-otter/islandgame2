@@ -182,7 +182,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         FOOTPRINT(Golett)
         .levelUpLearnset = sGolettMaryanLevelUpLearnset,
         .teachableLearnset = sGolettMaryanTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 43, SPECIES_GOLURK_MARYAN}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_GOLURK_MARYAN}),
     },
 
     [SPECIES_GOLURK_MARYAN] =
@@ -251,7 +251,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .baseSpeed     = 80,
         .baseSpAttack  = 10,
         .baseSpDefense = 55,
-        .types = MON_TYPES(TYPE_WATER),
+        .types = MON_TYPES(TYPE_WATER, TYPE_ICE),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 40 : 61,
         .evYield_Speed = 1,
@@ -261,7 +261,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_DRAGON),
         .abilities = { ABILITY_SWIFT_SWIM, ABILITY_OBLIVIOUS, ABILITY_ADAPTABILITY },
-        .bodyColor = BODY_COLOR_BROWN,
+        .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Feebas"),
         .cryId = CRY_FEEBAS,
         .natDexNum = NATIONAL_DEX_FEEBAS_MARYAN,
@@ -269,26 +269,26 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .height = 6,
         .weight = 74,
         .description = COMPOUND_STRING(
-            "Feebas live in ponds that are heavily\n"
-            "infested with weeds. Because of its\n"
-            "hopelessly shabby appearance, it\n"
-            "seems as if few Trainers raise it."),
+            "It is the shabbiest Pokémon of all.\n"
+            "It forms schools and lives at the\n"
+            "bottom of lakes that teem with\n"
+            "plant life."),
         .pokemonScale = 423,
         .pokemonOffset = -4,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Feebas,
+        .frontPic = gMonFrontPic_FeebasMaryan,
         .frontPicSize = MON_COORDS_SIZE(40, 48),
         .frontPicYOffset = 10,
-        .frontAnimFrames = sAnims_Feebas,
+        .frontAnimFrames = sAnims_FeebasMaryan,
         .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
-        .backPic = gMonBackPic_Feebas,
+        .backPic = gMonBackPic_FeebasMaryan,
         .backPicSize = MON_COORDS_SIZE(48, 56),
         .backPicYOffset = 6,
         .backAnimId = BACK_ANIM_H_SPRING,
-        .palette = gMonPalette_Feebas,
-        .shinyPalette = gMonShinyPalette_Feebas,
-        .iconSprite = gMonIcon_Feebas,
+        .palette = gMonPalette_FeebasMaryan,
+        .shinyPalette = gMonShinyPalette_FeebasMaryan,
+        .iconSprite = gMonIcon_FeebasMaryan,
         .iconPalIndex = 2,
         FOOTPRINT(Feebas)
         .levelUpLearnset = sFeebasMaryanLevelUpLearnset,
@@ -463,6 +463,169 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
     },
 #endif //P_FAMILY_PURRLOIN_MARYAN
 
+
+#if P_FAMILY_NINCADA_MARYAN
+    [SPECIES_NINCADA_MARYAN] =
+    {
+        .baseHP        = 31,
+        .baseAttack    = 45,
+        .baseDefense   = 90,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 30,
+        .types = MON_TYPES(TYPE_BUG, TYPE_DARK),
+        .catchRate = 255,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 53 : 65,
+        .evYield_Defense = 1,
+        .itemRare = ITEM_SILVER_POWDER,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_HUSTLE, ABILITY_INSOMNIA, ABILITY_SWARM },
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Nincada"),
+        .cryId = CRY_NINCADA,
+        .natDexNum = NATIONAL_DEX_NINCADA_MARYAN,
+        .categoryName = _("Genin"),
+        .height = 5,
+        .weight = 55,
+        .description = COMPOUND_STRING(
+            "It makes its nest at the roots of a mighty\n"
+            "tree. Using its whiskerlike antennae, it\n"
+            "probes its surroundings in the\n"
+            "pitch-black darkness of soil."),
+        .pokemonScale = 405,
+        .pokemonOffset = 21,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_NincadaMaryan,
+        .frontPicSize = MON_COORDS_SIZE(56, 32),
+        .frontPicYOffset = 16,
+        .frontAnimFrames = sAnims_NincadaMaryan,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_NincadaMaryan,
+        .backPicSize = MON_COORDS_SIZE(64, 32),
+        .backPicYOffset = 18,
+        .backAnimId = BACK_ANIM_V_SHAKE_H_SLIDE,
+        .palette = gMonPalette_NincadaMaryan,
+        .shinyPalette = gMonShinyPalette_NincadaMaryan,
+        .iconSprite = gMonIcon_NincadaMaryan,
+        .iconPalIndex = 1,
+        FOOTPRINT(NincadaMaryan)
+        .levelUpLearnset = sNincadaMaryanLevelUpLearnset,
+        .teachableLearnset = sNincadaMaryanTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL_NINJASK, 20, SPECIES_NINJASK_MARYAN},
+                                {EVO_LEVEL_SHEDINJA, 20, SPECIES_SHEDINJA_MARYAN}),
+    },
+
+    [SPECIES_NINJASK_MARYAN] =
+    {
+        .baseHP        = 61,
+        .baseAttack    = 90,
+        .baseDefense   = 45,
+        .baseSpeed     = 160,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_BUG, TYPE_DARK),
+        .catchRate = 120,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 160 : 155,
+        .evYield_Speed = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_SPEED_BOOST, ABILITY_STAKEOUT, ABILITY_INFILTRATOR },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Ninjask"),
+        .cryId = CRY_NINJASK,
+        .natDexNum = NATIONAL_DEX_NINJASK_MARYAN,
+        .categoryName = _("Shinobi"),
+        .height = 8,
+        .weight = 120,
+        .description = COMPOUND_STRING(
+            "Because it darts about vigorously at high\n"
+            "speed, it is very difficult to see. Hearing\n"
+            "its distinctive cries for too long induces\n"
+            "a headache."),
+        .pokemonScale = 383,
+        .pokemonOffset = -9,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_NinjaskMaryan,
+        .frontPicSize = MON_COORDS_SIZE(64, 48),
+        .frontPicYOffset = 11,
+        .frontAnimFrames = sAnims_NinjaskMaryan,
+        .frontAnimId = ANIM_H_SLIDE_SLOW,
+        .enemyMonElevation = 10,
+        .backPic = gMonBackPic_NinjaskMaryan,
+        .backPicSize = MON_COORDS_SIZE(64, 40),
+        .backPicYOffset = 13,
+        .backAnimId = BACK_ANIM_H_VIBRATE,
+        .palette = gMonPalette_NinjaskMaryan,
+        .shinyPalette = gMonShinyPalette_NinjaskMaryan,
+        .iconSprite = gMonIcon_NinjaskMaryan,
+        .iconPalIndex = 1,
+        FOOTPRINT(NinjaskMaryan)
+        .levelUpLearnset = sNinjaskMaryanLevelUpLearnset,
+        .teachableLearnset = sNinjaskMaryanTeachableLearnset,
+    },
+
+    [SPECIES_SHEDINJA_MARYAN] =
+    {
+        .baseHP        = 61,
+        .baseAttack    = 90,
+        .baseDefense   = 120,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 115,
+        .types = MON_TYPES(TYPE_BUG, TYPE_GHOST),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 83 : 95,
+        .evYield_HP = 2,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_MAGIC_GUARD, ABILITY_FILTER },
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Shedinja"),
+        .cryId = CRY_SHEDINJA,
+        .natDexNum = NATIONAL_DEX_SHEDINJA_MARYAN,
+        .categoryName = _("Oni"),
+        .height = 8,
+        .weight = 12,
+        .description = COMPOUND_STRING(
+            "A peculiar Pokémon that floats in air even\n"
+            "though its wings remain completely still.\n"
+            "The inside of its body is hollow and\n"
+            "utterly dark."),
+        .pokemonScale = 372,
+        .pokemonOffset = -8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_ShedinjaMaryan,
+        .frontPicSize = MON_COORDS_SIZE(48, 48),
+        .frontPicYOffset = 10,
+        .frontAnimFrames = sAnims_ShedinjaMaryan,
+        .frontAnimId = ANIM_V_SLIDE_WOBBLE,
+        .enemyMonElevation = 8,
+        .backPic = gMonBackPic_ShedinjaMaryan,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_ShedinjaMaryan,
+        .shinyPalette = gMonShinyPalette_ShedinjaMaryan,
+        .iconSprite = gMonIcon_ShedinjaMaryan,
+        .iconPalIndex = 1,
+        FOOTPRINT(ShedinjaMaryan)
+        .levelUpLearnset = sShedinjaMaryanLevelUpLearnset,
+        .teachableLearnset = sShedinjaMaryanTeachableLearnset,
+    },
+#endif //P_FAMILY_NINCADA_MARYAN
 
 #ifdef __INTELLISENSE__
 };

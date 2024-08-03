@@ -246,7 +246,7 @@
       "x": 37,
       "y": 37,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_DOWN_UP_RIGHT",
       "movement_range_x": 8,
       "movement_range_y": 6,
       "trainer_type": "TRAINER_TYPE_NONE",

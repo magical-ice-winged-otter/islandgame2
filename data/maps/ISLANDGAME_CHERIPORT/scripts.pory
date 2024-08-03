@@ -224,7 +224,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC7 {
 
 text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK {
     format(
-        "{COLOR DARK_GRAY}Come on...{PAUSE 30} Come on...{PAUSE 30} Argh! Not another Magikarp! I need a {COLOR LIGHT_BLUE}Horsea!")
+        "{COLOR DARK_GRAY}Come on...{PAUSE 30} Come on...{PAUSE 30} Argh! Not another Magikarp! I need a Horsea!")
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC8 {

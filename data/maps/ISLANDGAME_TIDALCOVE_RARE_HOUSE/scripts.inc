@@ -137,7 +137,7 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0:
 	.string "But alas, all I could find during my\n"
 	.string "ventures were these rare stones.\p"
 	.string "If only I could catch a glimpse of an\n"
-	.string "{COLOR LIGHT_GRAY}Eevee{COLOR DARK_GRAY}. I'm convinced there aren't any\l"
+	.string "Eevee. I'm convinced there aren't any\l"
 	.string "left in the wild anymore...$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_1:

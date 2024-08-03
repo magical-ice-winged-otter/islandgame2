@@ -1246,7 +1246,7 @@
 #define FLAG_MINTY_MEADOWS_X_DEF                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_REVIVE                                           0x4AB 
-#define FLAG_SS_RAIN_TM_SNATCH                                      0x4AC 
+#define FLAG_SS_RAIN_TM_CHARGE_BEAM                                 0x4AC 
 #define FLAG_SS_RAIN_MAX_REVIVE                                     0x4AD
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
 #define FLAG_ITEM_COP_1_X_SP_ATK                                    0x4AF  

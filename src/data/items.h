@@ -10011,13 +10011,13 @@ const struct Item gItemsInfo[] =
         .name = _("TM51"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Deals more damage\n"
-            "if used consecutively.\n"), 
+            "May boost the user's\n"
+            "Special Attack.\n"), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_ECHOED_VOICE, // Todo
+        .secondaryId = MOVE_CHARGE_BEAM, // Todo
     },
 
     [ITEM_TM52] =
