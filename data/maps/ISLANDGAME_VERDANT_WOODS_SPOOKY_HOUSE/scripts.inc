@@ -35,16 +35,6 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut::
 	return
 
 
-ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor::
-	lock
-	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor_Text_0
-	playmoncry SPECIES_MIMIKYU, CRY_MODE_NORMAL
-	waitmoncry
-	closemessage
-	release
-	return
-
-
 spookyApproach:
 	walk_down
 	walk_down
@@ -213,11 +203,6 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut_Text_0:
 	.string "LeAVe mY HoUSE nOW NoW nOW NOw NOW\n"
 	.string "grAWUghhH$"
 
-ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor_Text_0:
-	.string "(The door is locked. I can feel an eerie\n"
-	.string "presence behind it.. Brr...)\p"
-	.string "$"
-
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1_Text_0:
 	.string "Leave this place...\p"
 	.string "While you still can...$"
@@ -226,8 +211,7 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2_Text_0:
 	.string "$"
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3_Text_0:
-	.string "{COLOR RED}(Huh...? It just floated away through\n"
-	.string "that wall...)$"
+	.string "{COLOR RED}(Huh...?)$"
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4_Text_0:
 	.string "(She stares at you ominously.)$"

@@ -225,7 +225,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 45,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -327,7 +327,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_093",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_292",
       "x": 42,
       "y": 16,
       "elevation": 0,
@@ -398,7 +398,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_TEMP_0",
-      "var_value": "1",
+      "var_value": "0",
       "script": "ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2"
     },
     {
@@ -407,7 +407,7 @@
       "y": 17,
       "elevation": 0,
       "var": "VAR_TEMP_0",
-      "var_value": "1",
+      "var_value": "0",
       "script": "ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2"
     }
   ],

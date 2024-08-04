@@ -1,5 +1,39 @@
-mapscripts ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
 
+mapscripts ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hide daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hide nighttime npcs
+        }
+    }
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_MelissaSister {
+    lock
+    faceplayer
+    msgbox(format(
+        "I can't wait to be a Pokémon trainer like you and my big sister!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_Buneary {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BUNEARY, CRY_MODE_NORMAL)
+    msgbox(format(
+        "HA{UP_ARROW} HA{RIGHT_ARROW} HA{DOWN_ARROW} HA{LEFT_ARROW}"
+    ))
+    closemessage
+    release
+}
 
 script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyDad {
     lock

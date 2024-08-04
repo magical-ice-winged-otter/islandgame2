@@ -9,6 +9,13 @@ const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
 
 
+script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_TV {
+    msgbox(format(
+        "ThIS roOm wiLl bE yOUR ToMB ThIS roOm wiLl bE yOUR ToMB gWauhAUhauahAHAHA"
+    ), MSGBOX_SIGN)
+}
+
+
 script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Spook {
     lock
     fadescreen(FADE_TO_BLACK)
@@ -91,22 +98,16 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1 {
         
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
-            break
         case B_OUTCOME_RAN:
-            setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
-            goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_WON:
-            setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
-            goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
-            setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
-            goto(Common_EventScript_RemoveStaticPokemon)
         default:
             setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     
     removeobject(LOCALID_MIMIKYU)
+    setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
 }
 
 
@@ -154,20 +155,14 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2 {
         
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
-            break
         case B_OUTCOME_RAN:
-            setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
-            goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_WON:
-            setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
-            goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
-            setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
-            goto(Common_EventScript_RemoveStaticPokemon)
         default:
             setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
 
     removeobject(LOCALID_MIMIKYU)
+    setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
 }

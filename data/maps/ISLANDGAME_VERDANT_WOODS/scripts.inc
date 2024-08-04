@@ -121,7 +121,12 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle4::
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle5::
 	trainerbattle_single TRAINER_VERDANT_WOODS_5, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text
+	goto_if_set FLAG_CAMP_PERSI_TRADING_CARD_ITEM, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_1
 	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+ISLANDGAME_VERDANT_WOODS_TrainerBattle5_1:
+	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -443,6 +448,10 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1:
 	.string "doesn't feel like wood at all...)\p"
 	.string "{COLOR DARK_GRAY}Water the strange-looking tree?$"
 
+ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text_0:
+	.string "Hey! You found it! You've got pretty\n"
+	.string "sharp eyes.$"
+
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_Text_0:
 	.string "Owww, my head, it hurts...$"
 
@@ -516,14 +525,12 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text::
 	.string "full of icky bugs.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Defeated_Text::
-	.string "The only thing I hate more than forests  \n"
+	.string "The only thing I hate more than forests \n"
 	.string "is losing.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text::
-	.string "{COLOR DARK_GRAY}If you're going to Maplegrove, you\n"
-	.string "should go the other way instead.\p"
-	.string "{COLOR DARK_GRAY}There's nothing past here except some\n"
-	.string "weird girl talking to herself.$"
+	.string "This place gives me the\n"
+	.string "heebie-jeebies...$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text::
 	.string "{COLOR DARK_GRAY}Trying to find this trading card is like\n"

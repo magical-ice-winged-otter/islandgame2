@@ -29,17 +29,6 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut {
     release
 }
 
-script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor {
-    lock
-    msgbox(format(
-        "(The door is locked. I can feel an eerie presence behind it.. Brr...)\p"
-    ))
-    playmoncry(SPECIES_MIMIKYU, CRY_MODE_NORMAL)
-    waitmoncry
-    closemessage
-    release
-}
-
 movement spookyApproach {
     walk_down * 5
 }
@@ -161,7 +150,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3 {
     waitmovement(0)
     removeobject(LOCALID_ITEM)
     setobjectxyperm(LOCALID_ITEM, POS_HIDDEN_X, POS_HIDDEN_Y)
-    msgbox(format("{COLOR RED}(Huh...? It just floated away through that wall...)"))
+    msgbox(format("{COLOR RED}(Huh...?)"))
     setvar(VAR_SPOOKY_HOUSE_STATE, 3)
     release
 }

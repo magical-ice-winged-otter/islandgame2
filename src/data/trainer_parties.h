@@ -39,7 +39,7 @@ static const struct TrainerMon sParty_CampPersiTrainer1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 8,
-    .species = SPECIES_NINCADA,
+    .species = SPECIES_NINCADA_MARYAN,
     }
 };
 
