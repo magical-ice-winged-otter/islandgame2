@@ -2475,7 +2475,7 @@ void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
 
 // follow me script commands
 #include "follow_me.h"
-bool8 ScrCmd_createfollower(struct ScriptContext *ctx)
+bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
 {
     u8 localId = ScriptReadByte(ctx);
     u16 flags = ScriptReadHalfword(ctx);
