@@ -318,9 +318,9 @@ const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Star
 
 
 // Verdant Forest Pokemon Quest
-const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
-const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
-const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
+// const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
+// const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
+// const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
 
 // Maplegrove Lovers Quest
 const u8 sText_SideQuestName_MaplegroveLovers[] = _("A Star-crossed Lover");
@@ -581,16 +581,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
 	),
-	[QUEST_VERDANT_FOREST_SKITTY] = side_quest(
-		sText_SideQuestName_VerdantForestSkitty,
-		sText_SideQuestDesc_VerdantForestSkitty,
-		sText_SideQuestDoneDesc_VerdantForestSkitty,
-		sText_SideQuestMap_VerdantWoods,
-		OBJ_EVENT_GFX_GIRL_2,
-		OBJECT,
-		NULL,
-			0
-	),
+	// [QUEST_VERDANT_FOREST_SKITTY] = side_quest(
+	// 	sText_SideQuestName_VerdantForestSkitty,
+	// 	sText_SideQuestDesc_VerdantForestSkitty,
+	// 	sText_SideQuestDoneDesc_VerdantForestSkitty,
+	// 	sText_SideQuestMap_VerdantWoods,
+	// 	OBJ_EVENT_GFX_GIRL_2,
+	// 	OBJECT,
+	// 	NULL,
+	// 		0
+	// ),
 	[QUEST_MAPLEGROVE_LOVERS] = side_quest(
 	      sText_SideQuestName_MaplegroveLovers,
 	      sText_SideQuestDesc_MaplegroveLovers,

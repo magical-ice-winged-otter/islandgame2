@@ -12155,12 +12155,12 @@
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_FROAKIE"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_FROAKIE"
               }
             ]
           }
@@ -13463,12 +13463,12 @@
               {
                 "min_level": 19,
                 "max_level": 19,
-                "species": "SPECIES_SWABLU"
+                "species": "SPECIES_TAILLOW"
               },
               {
                 "min_level": 21,
                 "max_level": 21,
-                "species": "SPECIES_TEPIG"
+                "species": "SPECIES_LITTEN"
               },
               {
                 "min_level": 19,
@@ -13478,7 +13478,7 @@
               {
                 "min_level": 19,
                 "max_level": 19,
-                "species": "SPECIES_TINKATINK"
+                "species": "SPECIES_MAKUHITA"
               },
               {
                 "min_level": 18,
@@ -13504,6 +13504,61 @@
                 "min_level": 18,
                 "max_level": 18,
                 "species": "SPECIES_SHUCKLE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_FROGADIER"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_FROGADIER"
               }
             ]
           }

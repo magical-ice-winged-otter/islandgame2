@@ -7,7 +7,7 @@ const POS_HIDDEN_Y = 1
 
 mapscripts ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED) && var(VAR_SPOOKY_HOUSE_STATE) <= 3) {
+        if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED) && var(VAR_SPOOKY_HOUSE_STATE) < 6) {
             setvar(VAR_SPOOKY_HOUSE_STATE, 0)
         }
 
@@ -123,6 +123,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1 {
     setobjectxyperm(LOCALID_TWIN1, POS_HIDDEN_X, POS_HIDDEN_Y)
     setobjectxyperm(LOCALID_TWIN2, POS_HIDDEN_X, POS_HIDDEN_Y)
     setvar(VAR_SPOOKY_HOUSE_STATE, 2)
+    setvar(VAR_SPOOKY_HOUSE_STATE, 3)
     fadescreen(FADE_FROM_BLACK)
     release
 }
@@ -167,7 +168,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4 {
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32)
     waitmovement(0)
-    msgbox(format("(She stares at you ominously.)"))
+    msgbox(format("> She stares at you ominously."))
     closemessage
     playse(SE_M_NIGHTMARE)
     waitse

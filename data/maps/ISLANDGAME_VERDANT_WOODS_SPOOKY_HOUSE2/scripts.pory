@@ -1,5 +1,9 @@
 mapscripts ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_MapScripts {
-    
+    MAP_SCRIPT_ON_TRANSITION {
+        if(!flag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED) && var(VAR_SPOOKY_HOUSE_STATE) == 7) {
+            setvar(VAR_SPOOKY_HOUSE_STATE, 6)
+        }
+    }
 }
 
 const LOCALID_GHOST = 1
@@ -43,6 +47,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Item {
     lock
     finditem(ITEM_SPELL_TAG)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+    waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown)
     waitmovement(0)
     msgbox(format("{COLOR RED}(Brrr... Did the air suddenly just get colder?)"))
@@ -85,7 +90,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1 {
 
     // battle
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_MIMIKYU, 30, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,MOVE_SHADOW_SNEAK,MOVE_MIMIC,MOVE_DOUBLE_TEAM,MOVE_FEINT_ATTACK)
+    setcwildbattle(0, SPECIES_MIMIKYU, 30, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,MOVE_SHADOW_SNEAK,MOVE_MIMIC,MOVE_COPYCAT,MOVE_FEINT_ATTACK)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(0)
@@ -99,15 +104,15 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1 {
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
         case B_OUTCOME_RAN:
+            setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
         case B_OUTCOME_WON:
+            setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
         case B_OUTCOME_CAUGHT:
-        default:
+            setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
             setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
-            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
     }
-    
-    removeobject(LOCALID_MIMIKYU)
-    setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
 }
 
 
@@ -142,7 +147,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2 {
 
     // battle
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_MIMIKYU, 30, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,MOVE_SHADOW_SNEAK,MOVE_MIMIC,MOVE_DOUBLE_TEAM,MOVE_FEINT_ATTACK)
+    setcwildbattle(0, SPECIES_MIMIKYU, 30, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,MOVE_SHADOW_SNEAK,MOVE_MIMIC,MOVE_COPYCAT,MOVE_FEINT_ATTACK)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(0)
@@ -156,13 +161,13 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2 {
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
         case B_OUTCOME_RAN:
+            setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
         case B_OUTCOME_WON:
+            setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
         case B_OUTCOME_CAUGHT:
-        default:
+            setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
             setflag(FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED)
-            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
     }
-
-    removeobject(LOCALID_MIMIKYU)
-    setobjectxyperm(LOCALID_MIMIKYU, POS_HIDDEN_X, POS_HIDDEN_Y)
 }

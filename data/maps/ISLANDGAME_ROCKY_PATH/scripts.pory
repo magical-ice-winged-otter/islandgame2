@@ -1,11 +1,15 @@
 mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {}
 
+
+// signs
 script ISLANDGAME_ROCKY_PATH_Sign {
     msgbox(format(
         "ROCKY PATH\n{LEFT_ARROW}APPLEVINE / LUMINE CAVE{DOWN_ARROW}"
     ), MSGBOX_SIGN)
 }
 
+
+// trainers
 script ISLANDGAME_ROCKY_PATH_Trainer1 {
     trainerbattle_single(TRAINER_ROCKY_PATH_1,
         format(
@@ -20,7 +24,7 @@ script ISLANDGAME_ROCKY_PATH_Trainer1 {
 }
 
 script ISLANDGAME_ROCKY_PATH_Trainer2 {
-    trainerbattle_single(TRAINER_ROCKY_PATH_1,
+    trainerbattle_single(TRAINER_ROCKY_PATH_2,
         format(
             "Curses, my mortal enemy...{PAUSE 60} LEDGES."
         ),
@@ -28,11 +32,67 @@ script ISLANDGAME_ROCKY_PATH_Trainer2 {
             "My second mortal enemy...{PAUSE 60} LOSING!"
         ))
     msgbox(format(
-        "I was going to explore Lumine Cave, but after seeing all these ledges, I think I'll just hike through Sierra Path instead..."
+        "Whose idea was it to have all these darn ledges!?\pI'd like to speak to them directly and give them a piece of my mind!"
     ), MSGBOX_AUTOCLOSE)
 }
 
+script ISLANDGAME_ROCKY_PATH_Trainer3 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_3,
+        format(
+            "Don'chu fuggle with my Shuckle!"
+        ),
+        format(
+            "Aw, shucks. My strat didn't work."
+        ))
+    msgbox(format(
+        "Did you know Shuckle can deal the most damage out of any Pokémon?\p"
+        "Yup! You heard me right! My little Shuckie has the potential to pack a bigger punch than any of the Isle Guardians, or even Lugia!"
+    ), MSGBOX_AUTOCLOSE)
+}
 
+script ISLANDGAME_ROCKY_PATH_Trainer4 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_4,
+        format(
+            "Oi! What're you doing in me line o' sight?"
+        ),
+        format(
+            "It's all over now..."
+        ))
+    msgbox(format(
+        "Me and my merry band of Pokémon are on our way to see Arboria down south!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer5 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_5,
+        format(
+            "Hey! Have you heard about my SUPER COOL RATTATA!?\p"
+            "IT IS VERY DIFFERENT FROM OTHER RATTATAS!!\p"
+            "IT'S IN THE TOP PERCENTAGE OF RATTATAS, IN FACT!!!\p"
+            "1 V 1 M E B R O"
+        ),
+        format(
+            "No fair! 1 v 1 me like a REAL trainer!"
+        ))
+    msgbox(format(
+        "You must've cheated! There's no way I could lose with my perfect setup!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer6 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_6,
+        format(
+            "Hoo! Haa! Hee! Haa! Hoo! Haa! Hee! Haa!\p"
+            "Who shall be next to challenge me!?"
+        ),
+        format(
+            "Hoo... Haa... Hee..."
+        ))
+    msgbox(format(
+        "I train with my Hariyama every day in close quarters combat!\p"
+        "I'll be getting first place at this year's festival martial arts tournament for sure!"
+    ), MSGBOX_AUTOCLOSE)
+}
 
 script ISLANDGAME_ROCKY_PATH_KarateSis {
     // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_SIS, 
@@ -82,11 +142,4 @@ script ISLANDGAME_ROCKY_PATH_PsychicM {
     //     format("I knew I would've lost to you as well."))
     // # TODO
     // msgbox(format("My sister is stronger than me, so we usually double battle"), MSGBOX_AUTOCLOSE)
-}
-
-script ISLANDGAME_ROCKY_PATH_Fisherman {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_FISHERMAN, 
-    //     format("I used to be a trainer in Unova."), 
-    //     format("Darn."))
-    // msgbox(format("I got my own starter Pokemon in everything, but how come I wasn't able to win the championship?"), MSGBOX_AUTOCLOSE)
 }

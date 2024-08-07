@@ -1,5 +1,38 @@
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	gettime
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	setflag FLAG_TEMP_2
+	return
+
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_3
+	return
+
+
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_MelissaSister::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_MelissaSister_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_Buneary::
+	lock
+	faceplayer
+	playmoncry SPECIES_BUNEARY, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_Buneary_Text_0
+	closemessage
+	release
+	return
 
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyDad::
@@ -23,6 +56,13 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom_2:
 	msgbox ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomFirstTalk
 	goto ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyMom_1
 
+
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_MelissaSister_Text_0:
+	.string "I can't wait to be a Pokémon trainer\n"
+	.string "like you and my big sister!$"
+
+ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_Buneary_Text_0:
+	.string "HA{UP_ARROW} HA{RIGHT_ARROW} HA{DOWN_ARROW} HA{LEFT_ARROW}$"
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk::
 	.string "{COLOR DARK_GRAY}Feels like just yesterday, I was taking\n"
