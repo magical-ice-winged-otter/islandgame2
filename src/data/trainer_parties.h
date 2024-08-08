@@ -1,3 +1,17 @@
+
+
+
+#include "trainer_parties/rocky_path.h"
+
+
+
+
+
+
+
+
+
+
 static const struct TrainerMon sParty_SOrannaPathTrainer1[] = {
     {
     .lvl = 5,
@@ -913,18 +927,6 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
     .gender = TRAINER_MON_FEMALE,
     },
 };
-
-
-
-
-
-#include "trainer_parties/rocky_path.h"
-
-
-
-
-
-
 
 
 /// Promenade Path

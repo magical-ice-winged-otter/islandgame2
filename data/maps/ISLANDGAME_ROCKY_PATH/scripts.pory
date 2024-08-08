@@ -1,4 +1,18 @@
-mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+        }
+    }
+}
 
 
 // signs
@@ -93,6 +107,39 @@ script ISLANDGAME_ROCKY_PATH_Trainer6 {
         "I'll be getting first place at this year's festival martial arts tournament for sure!"
     ), MSGBOX_AUTOCLOSE)
 }
+
+// script ISLANDGAME_ROCKY_PATH_Trainer7 {
+//     trainerbattle_single(TRAINER_ROCKY_PATH_7,
+//         format(
+//             "Inside of me are two Lycanrocs fighting...\p"
+//             "One is Midday... the other is Midnight...\p"
+//             "Which one will win...? I'll show you right here!{PAUSE 60} RAAAAAAAAAAUUUGHHHH!"
+//         ),
+//         format(
+//             "M-My inner Lycanroc...{PAUSE 30} wasn't strong\nenough?"
+//         ))
+//     msgbox(format(
+//         "Inside of every trainer are two Lycanrocs...\p"
+//         "One is Midday... the other is Midnight...\p"
+//         "Which one will win...? The one that the trainer chooses to train..."
+//     ), MSGBOX_AUTOCLOSE)
+// }
+
+// script ISLANDGAME_ROCKY_PATH_Trainer8 {
+//     trainerbattle_single(TRAINER_ROCKY_PATH_8,
+//         format(
+//             "Ah, did you think I couldn't see you walking by, trainer?\p"
+//             "Thanks to my psychic powers, I can see what the human eye cannot!"
+//         ),
+//         format(
+//             "My vision... It is fading..."
+//         ))
+//     msgbox(format(
+//         "Argh... My mana reserves are running low...\p"
+//         "Perhaps I should have saved them for our battle..."
+//     ), MSGBOX_AUTOCLOSE)
+// }
+
 
 script ISLANDGAME_ROCKY_PATH_KarateSis {
     // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_SIS, 

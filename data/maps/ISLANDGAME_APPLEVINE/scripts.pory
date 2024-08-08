@@ -3,7 +3,7 @@ const FLAG_NIGHTTIME = FLAG_TEMP_3
 const COCO_OW_ID = 19
 
 mapscripts ISLANDGAME_APPLEVINE_MapScripts {
-        MAP_SCRIPT_ON_TRANSITION {
+    MAP_SCRIPT_ON_TRANSITION {
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {

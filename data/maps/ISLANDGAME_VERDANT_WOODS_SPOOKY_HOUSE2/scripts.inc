@@ -17,6 +17,11 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_TV::
+	goto_if_set FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED, ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_TV_1
+	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_TV_Text_1, MSGBOX_SIGN
+	return
+
+ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_TV_1:
 	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_TV_Text_0, MSGBOX_SIGN
 	return
 
@@ -53,6 +58,7 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Item::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Item_Text_0
+	closemessage
 	setvar VAR_SPOOKY_HOUSE_STATE, 6
 	release
 	return
@@ -71,23 +77,17 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
 	waitmovement 0
 	fadescreen FADE_TO_BLACK
-	playse SE_M_NIGHTMARE
-	waitse
 	addobject 2
 	setobjectxy 2, 21, 3
 	fadescreen FADE_FROM_BLACK
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
 	waitmovement 0
 	fadescreen FADE_TO_BLACK
-	playse SE_M_NIGHTMARE
-	waitse
 	applymovement 2, spookyInch
 	fadescreen FADE_FROM_BLACK
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
 	waitmovement 0
 	fadescreen FADE_TO_BLACK
-	playse SE_M_NIGHTMARE
-	waitse
 	applymovement 2, spookyInch
 	fadescreen FADE_FROM_BLACK
 	setflag FLAG_SMART_WILD_AI
@@ -106,18 +106,22 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1::
 	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1_2
 	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1_3
 	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1_4
+	removeobject 2
 	setobjectxyperm 2, -3, 1
 	return
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1_2:
+	removeobject 2
 	setobjectxyperm 2, -3, 1
 	return
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1_3:
+	removeobject 2
 	setobjectxyperm 2, -3, 1
 	return
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1_4:
+	removeobject 2
 	setobjectxyperm 2, -3, 1
 	setflag FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED
 	return
@@ -167,24 +171,32 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2::
 	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2_2
 	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2_3
 	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2_4
+	removeobject 2
 	setobjectxyperm 2, -3, 1
 	return
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2_2:
+	removeobject 2
 	setobjectxyperm 2, -3, 1
 	return
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2_3:
+	removeobject 2
 	setobjectxyperm 2, -3, 1
 	return
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2_4:
+	removeobject 2
 	setobjectxyperm 2, -3, 1
 	setflag FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_TV_Text_0:
+	.string "{COLOR RED}(There's nothing but static. Why is the\n"
+	.string "TV even turned on...?)$"
+
+ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_TV_Text_1:
 	.string "ThIS roOm wiLl bE yOUR ToMB ThIS roOm\n"
 	.string "wiLl bE yOUR ToMB gWauhAUhauahAHAHA$"
 
@@ -193,5 +205,5 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Spook_Text_0:
 	.string "end up like the rest of us...$"
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Item_Text_0:
-	.string "{COLOR RED}(Brrr... Did the air suddenly just get\n"
+	.string "{COLOR RED}(Brrr...{PAUSE 60} Did the air suddenly just get\n"
 	.string "colder?)$"

@@ -70,6 +70,7 @@ void IslandGameCustomStartup()
         FlagToggle(FLAG_SYS_POKEDEX_GET);
         FlagToggle(FLAG_SYS_NATIONAL_DEX);
         FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
+        EnableNationalPokedex();
         
 
         //debug sidequest:
