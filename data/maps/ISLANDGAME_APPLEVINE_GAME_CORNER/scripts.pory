@@ -199,7 +199,7 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine {
         msgbox(format(
             "{COLOR RED}(It's a vending machine. What should I get?)"
         ))
-        showmoneybox(18,7)
+        showmoneybox(17,1)
         dynmultipush("Nah, I'm good", 0)
         dynmultipush("Fresh Water - ¥500", 35)
         dynmultipush("Soda Pop - ¥800", 36)
@@ -295,7 +295,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
         msgbox(format(
             "This is our selection of prizes."
         ))
-        showcoinsbox(18,7)
+        showcoinsbox(17,1)
         dynmultipush("See ya!", 0)
         dynmultipush("Wide Lens (800)", 474)
         dynmultipush("Zoom Lens (800)", 482)
@@ -306,16 +306,16 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
         dynmultipush("Muscle Band (2400)", 475)
         dynmultipush("Wise Glasses (2400)", 476)
         dynmultipush("Loaded Dice (2400)", 762)
+        dynmultipush("TM06 (3200)", 587)
         dynmultipush("TM12 (3200)", 593)
-        dynmultipush("TM28 (3200)", 609)
-        dynmultipush("TM32 (3200)", 613)
-        dynmultipush("TM43 (3200)", 624)
+        dynmultipush("TM46 (3200)", 627)
         dynmultipush("TM48 (3200)", 629)
+        dynmultipush("TM49 (3200)", 630)
         dynmultipush("Gimmighoul (4800)", 370)
         dynmultipush("Eevee (6400)", 376)
         dynmultipush("Porygon (8000)", 357)
         dynmultipush("Mystery Box (9999)", 746)
-        dynmultistack(0,0,TRUE,5,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        dynmultistack(0,0,TRUE,5,FALSE,0,DYN_MULTICHOICE_CB_NONE)
         switch (var(VAR_RESULT)) {
             case 474:
                 checkcoins(VAR_TEMP_D)
@@ -330,7 +330,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(800)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_WIDE_LENS)
@@ -352,7 +352,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(800)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_ZOOM_LENS)
@@ -374,7 +374,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(800)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_SCOPE_LENS)
@@ -396,7 +396,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(1600)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_KINGS_ROCK)
@@ -418,7 +418,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(1600)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_RAZOR_FANG)
@@ -440,7 +440,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(1600)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_RAZOR_CLAW)
@@ -462,7 +462,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(2400)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_MUSCLE_BAND)
@@ -484,7 +484,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(2400)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_WISE_GLASSES)
@@ -506,10 +506,32 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(2400)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_LOADED_DICE)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 587:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 3200) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 3200 coins for TM06 - Toxic?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(3200)
+                    updatecoinsbox(17,1)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_TM06)
                     msgbox(format(
                         "We hope you enjoy your prize!"
                     ))
@@ -528,7 +550,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(3200)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_TM12)
@@ -537,7 +559,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                     ))
                 }
                 goto(PrizeClerk_Exchange)
-            case 624:
+            case 627:
                 checkcoins(VAR_TEMP_D)
                 if(var(VAR_TEMP_D) < 3200) {
                     msgbox(format(
@@ -546,64 +568,20 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                     goto(PrizeClerk_Exchange)
                 }
                 msgbox(format(
-                    "Would you like to exchange 3200 coins for TM43 - Secret Power?"
+                    "Would you like to exchange 3200 coins for TM46 - Thief?"
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(3200)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
-                    giveitem(ITEM_TM43)
+                    giveitem(ITEM_TM46)
                     msgbox(format(
                         "We hope you enjoy your prize!"
                     ))
                 }
                 goto(PrizeClerk_Exchange)
-            case 609:
-                checkcoins(VAR_TEMP_D)
-                if(var(VAR_TEMP_D) < 3200) {
-                    msgbox(format(
-                        "Sorry, you don't have enough coins for this prize."
-                    ))
-                    goto(PrizeClerk_Exchange)
-                }
-                msgbox(format(
-                    "Would you like to exchange 3200 coins for TM28 - Dig?"
-                ), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES) {
-                    removecoins(3200)
-                    updatecoinsbox(18,7)
-                    playse(SE_SHOP)
-                    waitse
-                    giveitem(ITEM_TM28)
-                    msgbox(format(
-                        "We hope you enjoy your prize!"
-                    ))
-                }
-                goto(PrizeClerk_Exchange)
-            case 613:
-                checkcoins(VAR_TEMP_D)
-                if(var(VAR_TEMP_D) < 3200) {
-                    msgbox(format(
-                        "Sorry, you don't have enough coins for this prize."
-                    ))
-                    goto(PrizeClerk_Exchange)
-                }
-                msgbox(format(
-                    "Would you like to exchange 3200 coins for TM32 - Double Team?"
-                ), MSGBOX_YESNO)
-                if(var(VAR_RESULT) == YES) {
-                    removecoins(3200)
-                    updatecoinsbox(18,7)
-                    playse(SE_SHOP)
-                    waitse
-                    giveitem(ITEM_TM32)
-                    msgbox(format(
-                        "We hope you enjoy your prize!"
-                    ))
-                }
-                goto(PrizeClerk_Exchange)
-            case 615:
+            case 629:
                 checkcoins(VAR_TEMP_D)
                 if(var(VAR_TEMP_D) < 3200) {
                     msgbox(format(
@@ -616,10 +594,32 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(3200)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     giveitem(ITEM_TM48)
+                    msgbox(format(
+                        "We hope you enjoy your prize!"
+                    ))
+                }
+                goto(PrizeClerk_Exchange)
+            case 630:
+                checkcoins(VAR_TEMP_D)
+                if(var(VAR_TEMP_D) < 3200) {
+                    msgbox(format(
+                        "Sorry, you don't have enough coins for this prize."
+                    ))
+                    goto(PrizeClerk_Exchange)
+                }
+                msgbox(format(
+                    "Would you like to exchange 3200 coins for TM49 - Snatch?"
+                ), MSGBOX_YESNO)
+                if(var(VAR_RESULT) == YES) {
+                    removecoins(3200)
+                    updatecoinsbox(17,1)
+                    playse(SE_SHOP)
+                    waitse
+                    giveitem(ITEM_TM49)
                     msgbox(format(
                         "We hope you enjoy your prize!"
                     ))
@@ -638,7 +638,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(4800)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     givemon(SPECIES_GIMMIGHOUL,20,ITEM_NUGGET,ITEM_POKE_BALL,NUM_NATURES)
@@ -670,7 +670,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(6400)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     givemon(SPECIES_EEVEE,20,ITEM_LUCKY_EGG,ITEM_POKE_BALL,NUM_NATURES)
@@ -702,7 +702,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(8000)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     givemon(SPECIES_PORYGON,20,ITEM_EVIOLITE,ITEM_POKE_BALL,NUM_NATURES)
@@ -734,15 +734,15 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(9999)
-                    updatecoinsbox(18,7)
+                    updatecoinsbox(17,1)
                     playse(SE_SHOP)
                     waitse
                     random(10)
                     switch(var(VAR_RESULT)) {
-                        case 0: giveitem(ITEM_IRON_BALL)
+                        case 0: giveitem(ITEM_TM32)
                         case 1: giveitem(ITEM_EXP_CANDY_XL)
                         case 2: giveitem(ITEM_BIG_NUGGET)
-                        case 3: giveitem(ITEM_TM15)
+                        case 3: giveitem(ITEM_TM21)
                         case 4: giveitem(ITEM_LIFE_ORB)
                         case 5: giveitem(ITEM_MAX_REVIVE)
                         case 6: giveitem(ITEM_EXP_CANDY_XL)
@@ -771,7 +771,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                                 call(Common_EventScript_NameReceivedPartyMon)
                             }
                         default: 
-                            givemon(SPECIES_BELDUM, 20, ITEM_COMET_SHARD,ITEM_CHERISH_BALL,NUM_NATURES,0,,,,,,,,,,,,,,,,,,TRUE)
+                            givemon(SPECIES_BELDUM, 20, ITEM_COMET_SHARD,ITEM_CHERISH_BALL,NUM_NATURES,0)
                             playfanfare(MUS_OBTAIN_ITEM)
                             bufferspeciesname(STR_VAR_1, SPECIES_BELDUM)
                             msgbox(format("You received a Beldum!"))
@@ -789,7 +789,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                 }
                 goto(PrizeClerk_Exchange)
             default:
-                hidecoinsbox(18,7) 
+                hidecoinsbox(17,1) 
                 goto(PrizeClerk_End)
         }
 
@@ -860,6 +860,8 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
                         msgbox(format(
                             "Sorry, you do not have the sufficient funds for this bundle."
                         ))
+                        hidemoneybox
+                        hidecoinsbox(18,1)
                         goto(CoinsClerk_Exchange)
                     }
                     removemoney(1000)
@@ -874,6 +876,8 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
                     goto(CoinsClerk_End)
                 }
                 else {
+                    hidemoneybox
+                    hidecoinsbox(18,1)
                     goto(CoinsClerk_Exchange)
                 }
             case 2:
@@ -886,6 +890,8 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
                         msgbox(format(
                             "Sorry, you do not have the sufficient funds for this bundle."
                         ))
+                        hidemoneybox
+                        hidecoinsbox(18,1)
                         goto(CoinsClerk_Exchange)
                     }
                     removemoney(4500)
@@ -900,6 +906,8 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
                     goto(CoinsClerk_End)
                 }
                 else {
+                    hidemoneybox
+                    hidecoinsbox(18,1)
                     goto(CoinsClerk_Exchange)
                 }
             case 3:
@@ -912,6 +920,8 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
                         msgbox(format(
                             "Sorry, you do not have the sufficient funds for this bundle."
                         ))
+                        hidemoneybox
+                        hidecoinsbox(18,1)
                         goto(CoinsClerk_Exchange)
                     }
                     removemoney(16000)
@@ -926,6 +936,8 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
                     goto(CoinsClerk_End)
                 }
                 else {
+                    hidemoneybox
+                    hidecoinsbox(18,1)
                     goto(CoinsClerk_Exchange)
                 }
             case 4:
@@ -938,6 +950,8 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
                         msgbox(format(
                             "Sorry, you do not have the sufficient funds for this bundle."
                         ))
+                        hidemoneybox
+                        hidecoinsbox(18,1)
                         goto(CoinsClerk_Exchange)
                     }
                     removemoney(40000)
@@ -952,6 +966,8 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
                     goto(CoinsClerk_End)
                 }
                 else {
+                    hidemoneybox
+                    hidecoinsbox(18,1)
                     goto(CoinsClerk_Exchange)
                 }
             default:

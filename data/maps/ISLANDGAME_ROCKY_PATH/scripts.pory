@@ -23,6 +23,7 @@ script ISLANDGAME_ROCKY_PATH_Sign {
 }
 
 
+
 // trainers
 script ISLANDGAME_ROCKY_PATH_Trainer1 {
     trainerbattle_single(TRAINER_ROCKY_PATH_1,
@@ -108,85 +109,116 @@ script ISLANDGAME_ROCKY_PATH_Trainer6 {
     ), MSGBOX_AUTOCLOSE)
 }
 
-// script ISLANDGAME_ROCKY_PATH_Trainer7 {
-//     trainerbattle_single(TRAINER_ROCKY_PATH_7,
-//         format(
-//             "Inside of me are two Lycanrocs fighting...\p"
-//             "One is Midday... the other is Midnight...\p"
-//             "Which one will win...? I'll show you right here!{PAUSE 60} RAAAAAAAAAAUUUGHHHH!"
-//         ),
-//         format(
-//             "M-My inner Lycanroc...{PAUSE 30} wasn't strong\nenough?"
-//         ))
-//     msgbox(format(
-//         "Inside of every trainer are two Lycanrocs...\p"
-//         "One is Midday... the other is Midnight...\p"
-//         "Which one will win...? The one that the trainer chooses to train..."
-//     ), MSGBOX_AUTOCLOSE)
-// }
-
-// script ISLANDGAME_ROCKY_PATH_Trainer8 {
-//     trainerbattle_single(TRAINER_ROCKY_PATH_8,
-//         format(
-//             "Ah, did you think I couldn't see you walking by, trainer?\p"
-//             "Thanks to my psychic powers, I can see what the human eye cannot!"
-//         ),
-//         format(
-//             "My vision... It is fading..."
-//         ))
-//     msgbox(format(
-//         "Argh... My mana reserves are running low...\p"
-//         "Perhaps I should have saved them for our battle..."
-//     ), MSGBOX_AUTOCLOSE)
-// }
-
-
-script ISLANDGAME_ROCKY_PATH_KarateSis {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_SIS, 
-    //     format("You've met weird brother right?"), 
-    //     format("I still lost with multiple Pokemon..."))
-    // msgbox(format("I can't deny that his Machamp is strong, but my Pokemon are stronger than his!"), MSGBOX_AUTOCLOSE)
+script ISLANDGAME_ROCKY_PATH_Trainer7 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_7,
+        format(
+            "Inside of me are two Lycanrocs fighting...\p"
+            "One is Midday... the other is Midnight...\p"
+            "Which one will win...? I'll show you right here!{PAUSE 60} RAAAAAAAAAAUUUGHHHH!"
+        ),
+        format(
+            "M-My inner Lycanroc...{PAUSE 30} wasn't strong\nenough?"
+        ))
+    msgbox(format(
+        "Inside of every trainer are two Lycanrocs...\p"
+        "One is Midday... the other is Midnight...\p"
+        "Which one will win...? The one that the trainer chooses to train..."
+    ), MSGBOX_AUTOCLOSE)
 }
 
-script ISLANDGAME_ROCKY_PATH_CyclerF {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_CYCLER_F, 
-    //     format("How do I get back on the water path?"), 
-    //     format("Oh okay, I think I got it."))
-    // msgbox(format("Maybe I will here for a while, biking in grass can be fun."), MSGBOX_AUTOCLOSE)
+script ISLANDGAME_ROCKY_PATH_Trainer8 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_8,
+        format(
+            "Ah, did you think I couldn't see you walking by, trainer?\p"
+            "Thanks to my psychic powers, I can see what the human eye cannot!"
+        ),
+        format(
+            "My vision... It is fading..."
+        ))
+    msgbox(format(
+        "Argh... My mana reserves are running low...\p"
+        "Perhaps I should have saved them for our battle..."
+    ), MSGBOX_AUTOCLOSE)
 }
 
-script ISLANDGAME_ROCKY_PATH_Beauty {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_BEAUTY, 
-    //     format("Those fighters, while they are admirable, stink up the place."), 
-    //     format("You're also contributing to the stench!"))
-    // msgbox(format("I heard that there's a hidden grotto around here full of water, but I've yet to find it."), MSGBOX_AUTOCLOSE)
+script ISLANDGAME_ROCKY_PATH_Trainer9 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_9,
+        format(
+            "Hmm, yes, exquisite..."
+        ),
+        format(
+            "You are quite the fine specimen\nindeed..."
+        ))
+    msgbox(format(
+        "You are no ordinary trainer. My analysis has made that abundantly clear..."
+    ), MSGBOX_AUTOCLOSE)
 }
 
-script ISLANDGAME_ROCKY_PATH_Camper_F {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_CAMPER_F, 
-    //     format("Shh!"), 
-    //     format("Don't you see that old man walking around lost?"))
-    // msgbox(format("I'd be careful if I were you, he looks dangerous"), MSGBOX_AUTOCLOSE)
+script ISLANDGAME_ROCKY_PATH_Trainer10 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_10,
+        format(
+            "Have you heard?"
+        ),
+        format(
+            "Ah... it was with my understanding that\neveryone had heard."
+        ))
+    msgbox(format(
+        "Come on, don't you know? About the...?"
+    ), MSGBOX_AUTOCLOSE)
 }
 
-script ISLANDGAME_ROCKY_PATH_Gentleman {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_GENTLEMAN, 
-    //     format("Hahahahhahahahaha!"), 
-    //     format("What isn't funny?"))
-    // msgbox(format("Most people are scared of me because I tend to be pretty laidback. Why aren't you?"), MSGBOX_AUTOCLOSE)
-}
 
-script ISLANDGAME_ROCKY_PATH_PsychicF {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_PSYCHIC_F, 
-    //     format("Caught you!"), 
-    //     format("Looks like I didn't have the advantage this time."))
-    // msgbox(format("Using my psychic powers allows me to enhance my sight, which is how I found you."), MSGBOX_AUTOCLOSE)
-}
+script ISLANDGAME_ROCKY_PATH_PathMaster {
+    lock
+    faceplayer
+    if(
+        defeated(TRAINER_ROCKY_PATH_1) &&
+        defeated(TRAINER_ROCKY_PATH_2) &&
+        defeated(TRAINER_ROCKY_PATH_3) &&
+        defeated(TRAINER_ROCKY_PATH_4) &&
+        defeated(TRAINER_ROCKY_PATH_5) &&
+        defeated(TRAINER_ROCKY_PATH_6) &&
+        defeated(TRAINER_ROCKY_PATH_7) &&
+        defeated(TRAINER_ROCKY_PATH_8) && 
+        defeated(TRAINER_ROCKY_PATH_9) &&
+        defeated(TRAINER_ROCKY_PATH_10) &&
+        !defeated(TRAINER_ROCKY_PATHMASTER)
+    ) {
+        msgbox(format(
+            "Well, bite my biscuits, ya beat all the trainers of Rocky Path!\p"
+            "This super rare Jaboca Berry is all yours!... If you can take it from me."
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format(
+                "Let's see if you've got what it takes against my FREAKING MASSIVE WALLS!"
+            ))
+            trainerbattle_no_intro(TRAINER_ROCKY_PATHMASTER, "Ack! It seems I've met the unstoppable\nforce to my unbreakable shield...")
+            msgbox(format(
+                "Rip in pepperonis. Looks like I gotta give this over to ya."
+            ))
+            giveitem(ITEM_JABOCA_BERRY)
+            goto(RockyPath_PathMaster_End)
+        }
+        else {
+            msgbox(format(
+                "Understandable, have a nice day!"
+            ))
+            goto(RockyPath_PathMaster_End)
+        }
+    }
+    if (defeated(TRAINER_ROCKY_PATHMASTER)) {
+        msgbox(format(
+            "Looks like you're the master of Rocky Path now!"
+        ))
+    }
+    else {
+        msgbox(format(
+            "Hey, hey, hey! I'm the rock hard Path Master of Rocky Path!\p"
+            "If ya manage to conquer all the trainers here, I'll give ya a reward!"
+        ))
+    }
 
-script ISLANDGAME_ROCKY_PATH_PsychicM {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_PSYCHIC_M, 
-    //     format("I'm sorry, you met my sister right?"), 
-    //     format("I knew I would've lost to you as well."))
-    // # TODO
-    // msgbox(format("My sister is stronger than me, so we usually double battle"), MSGBOX_AUTOCLOSE)
+    RockyPath_PathMaster_End:
+        closemessage
+        release
 }

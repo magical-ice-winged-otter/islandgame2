@@ -729,14 +729,14 @@ static const struct TrainerMon sParty_COrannaPathPathMaster[] = {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 21,
     .species = SPECIES_KIRLIA,
-    .heldItem = ITEM_PETAYA_BERRY,
+    .heldItem = ITEM_WISE_GLASSES,
     .moves = {MOVE_DISARMING_VOICE, MOVE_MAGICAL_LEAF, MOVE_CONFUSION, MOVE_DOUBLE_TEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 21,
     .species = SPECIES_KADABRA,
-    .heldItem = ITEM_PETAYA_BERRY,
+    .heldItem = ITEM_PSYCHIC_GEM,
     .moves = {MOVE_PSYBEAM, MOVE_DISABLE, MOVE_HIDDEN_POWER, MOVE_SHOCK_WAVE}
     },
     {

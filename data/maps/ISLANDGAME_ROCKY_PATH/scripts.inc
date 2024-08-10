@@ -1,5 +1,19 @@
 ISLANDGAME_ROCKY_PATH_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	gettime
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	setflag FLAG_TEMP_2
+	return
+
+ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_3
+	return
 
 
 ISLANDGAME_ROCKY_PATH_Sign::
@@ -43,32 +57,114 @@ ISLANDGAME_ROCKY_PATH_Trainer6::
 	return
 
 
-ISLANDGAME_ROCKY_PATH_KarateSis::
+ISLANDGAME_ROCKY_PATH_Trainer7::
+	trainerbattle_single TRAINER_ROCKY_PATH_7, ISLANDGAME_ROCKY_PATH_Trainer7_Text_0, ISLANDGAME_ROCKY_PATH_Trainer7_Text_1
+	msgbox ISLANDGAME_ROCKY_PATH_Trainer7_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
-ISLANDGAME_ROCKY_PATH_CyclerF::
+ISLANDGAME_ROCKY_PATH_Trainer8::
+	trainerbattle_single TRAINER_ROCKY_PATH_8, ISLANDGAME_ROCKY_PATH_Trainer8_Text_0, ISLANDGAME_ROCKY_PATH_Trainer8_Text_1
+	msgbox ISLANDGAME_ROCKY_PATH_Trainer8_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
-ISLANDGAME_ROCKY_PATH_Beauty::
+ISLANDGAME_ROCKY_PATH_Trainer9::
+	trainerbattle_single TRAINER_ROCKY_PATH_9, ISLANDGAME_ROCKY_PATH_Trainer9_Text_0, ISLANDGAME_ROCKY_PATH_Trainer9_Text_1
+	msgbox ISLANDGAME_ROCKY_PATH_Trainer9_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
-ISLANDGAME_ROCKY_PATH_Camper_F::
+ISLANDGAME_ROCKY_PATH_Trainer10::
+	trainerbattle_single TRAINER_ROCKY_PATH_10, ISLANDGAME_ROCKY_PATH_Trainer10_Text_0, ISLANDGAME_ROCKY_PATH_Trainer10_Text_1
+	msgbox ISLANDGAME_ROCKY_PATH_Trainer10_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
-ISLANDGAME_ROCKY_PATH_Gentleman::
+ISLANDGAME_ROCKY_PATH_PathMaster::
+	lock
+	faceplayer
+	checktrainerflag TRAINER_ROCKY_PATH_1
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_4
+ISLANDGAME_ROCKY_PATH_PathMaster_1:
+	checktrainerflag TRAINER_ROCKY_PATHMASTER
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_25
+	msgbox ISLANDGAME_ROCKY_PATH_PathMaster_Text_6
+ISLANDGAME_ROCKY_PATH_PathMaster_24:
+RockyPath_PathMaster_End:
+	closemessage
+	release
 	return
 
+ISLANDGAME_ROCKY_PATH_PathMaster_2:
+	msgbox ISLANDGAME_ROCKY_PATH_PathMaster_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_ROCKY_PATH_PathMaster_28
+	msgbox ISLANDGAME_ROCKY_PATH_PathMaster_Text_4
+	goto RockyPath_PathMaster_End
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
 
-ISLANDGAME_ROCKY_PATH_PsychicF::
-	return
+ISLANDGAME_ROCKY_PATH_PathMaster_3:
+	checktrainerflag TRAINER_ROCKY_PATH_3
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_8
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
 
+ISLANDGAME_ROCKY_PATH_PathMaster_4:
+	checktrainerflag TRAINER_ROCKY_PATH_2
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_3
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
 
-ISLANDGAME_ROCKY_PATH_PsychicM::
-	return
+ISLANDGAME_ROCKY_PATH_PathMaster_7:
+	checktrainerflag TRAINER_ROCKY_PATH_5
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_12
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
+
+ISLANDGAME_ROCKY_PATH_PathMaster_8:
+	checktrainerflag TRAINER_ROCKY_PATH_4
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_7
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
+
+ISLANDGAME_ROCKY_PATH_PathMaster_11:
+	checktrainerflag TRAINER_ROCKY_PATH_7
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_16
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
+
+ISLANDGAME_ROCKY_PATH_PathMaster_12:
+	checktrainerflag TRAINER_ROCKY_PATH_6
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_11
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
+
+ISLANDGAME_ROCKY_PATH_PathMaster_15:
+	checktrainerflag TRAINER_ROCKY_PATH_9
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_20
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
+
+ISLANDGAME_ROCKY_PATH_PathMaster_16:
+	checktrainerflag TRAINER_ROCKY_PATH_8
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_15
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
+
+ISLANDGAME_ROCKY_PATH_PathMaster_19:
+	checktrainerflag TRAINER_ROCKY_PATHMASTER
+	goto_if 0, ISLANDGAME_ROCKY_PATH_PathMaster_2
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
+
+ISLANDGAME_ROCKY_PATH_PathMaster_20:
+	checktrainerflag TRAINER_ROCKY_PATH_10
+	goto_if 1, ISLANDGAME_ROCKY_PATH_PathMaster_19
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
+
+ISLANDGAME_ROCKY_PATH_PathMaster_25:
+	msgbox ISLANDGAME_ROCKY_PATH_PathMaster_Text_5
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_24
+
+ISLANDGAME_ROCKY_PATH_PathMaster_28:
+	msgbox ISLANDGAME_ROCKY_PATH_PathMaster_Text_1
+	trainerbattle_no_intro TRAINER_ROCKY_PATHMASTER, ISLANDGAME_ROCKY_PATH_PathMaster_Text_2
+	msgbox ISLANDGAME_ROCKY_PATH_PathMaster_Text_3
+	giveitem ITEM_JABOCA_BERRY
+	goto RockyPath_PathMaster_End
+	goto ISLANDGAME_ROCKY_PATH_PathMaster_1
 
 
 ISLANDGAME_ROCKY_PATH_Sign_Text_0:
@@ -154,3 +250,87 @@ ISLANDGAME_ROCKY_PATH_Trainer6_Text_2:
 	.string "I'll be getting first place at this\n"
 	.string "year's festival martial arts\l"
 	.string "tournament for sure!$"
+
+ISLANDGAME_ROCKY_PATH_Trainer7_Text_0:
+	.string "Inside of me are two Lycanrocs\n"
+	.string "fighting...\p"
+	.string "One is Midday... the other is Midnight...\p"
+	.string "Which one will win...? I'll show you right\n"
+	.string "here!{PAUSE 60} RAAAAAAAAAAUUUGHHHH!$"
+
+ISLANDGAME_ROCKY_PATH_Trainer7_Text_1:
+	.string "M-My inner Lycanroc...{PAUSE 30} wasn't strong\n"
+	.string "enough?$"
+
+ISLANDGAME_ROCKY_PATH_Trainer7_Text_2:
+	.string "Inside of every trainer are two\n"
+	.string "Lycanrocs...\p"
+	.string "One is Midday... the other is Midnight...\p"
+	.string "Which one will win...? The one that the\n"
+	.string "trainer chooses to train...$"
+
+ISLANDGAME_ROCKY_PATH_Trainer8_Text_0:
+	.string "Ah, did you think I couldn't see you\n"
+	.string "walking by, trainer?\p"
+	.string "Thanks to my psychic powers, I can see\n"
+	.string "what the human eye cannot!$"
+
+ISLANDGAME_ROCKY_PATH_Trainer8_Text_1:
+	.string "My vision... It is fading...$"
+
+ISLANDGAME_ROCKY_PATH_Trainer8_Text_2:
+	.string "Argh... My mana reserves are running\n"
+	.string "low...\p"
+	.string "Perhaps I should have saved them for\n"
+	.string "our battle...$"
+
+ISLANDGAME_ROCKY_PATH_Trainer9_Text_0:
+	.string "Hmm, yes, exquisite...$"
+
+ISLANDGAME_ROCKY_PATH_Trainer9_Text_1:
+	.string "You are quite the fine specimen\n"
+	.string "indeed...$"
+
+ISLANDGAME_ROCKY_PATH_Trainer9_Text_2:
+	.string "You are no ordinary trainer. My analysis\n"
+	.string "has made that abundantly clear...$"
+
+ISLANDGAME_ROCKY_PATH_Trainer10_Text_0:
+	.string "Have you heard?$"
+
+ISLANDGAME_ROCKY_PATH_Trainer10_Text_1:
+	.string "Ah... it was with my understanding that\n"
+	.string "everyone had heard.$"
+
+ISLANDGAME_ROCKY_PATH_Trainer10_Text_2:
+	.string "Come on, don't you know? About the...?$"
+
+ISLANDGAME_ROCKY_PATH_PathMaster_Text_0:
+	.string "Well, bite my biscuits, ya beat all the\n"
+	.string "trainers of Rocky Path!\p"
+	.string "This super rare Jaboca Berry is all\n"
+	.string "yours!... If you can take it from me.$"
+
+ISLANDGAME_ROCKY_PATH_PathMaster_Text_1:
+	.string "Let's see if you've got what it takes\n"
+	.string "against my FREAKING MASSIVE WALLS!$"
+
+ISLANDGAME_ROCKY_PATH_PathMaster_Text_2:
+	.string "Ack! It seems I've met the unstoppable\nforce to my unbreakable shield...$"
+
+ISLANDGAME_ROCKY_PATH_PathMaster_Text_3:
+	.string "Rip in pepperonis. Looks like I gotta\n"
+	.string "give this over to ya.$"
+
+ISLANDGAME_ROCKY_PATH_PathMaster_Text_4:
+	.string "Understandable, have a nice day!$"
+
+ISLANDGAME_ROCKY_PATH_PathMaster_Text_5:
+	.string "Looks like you're the master of Rocky\n"
+	.string "Path now!$"
+
+ISLANDGAME_ROCKY_PATH_PathMaster_Text_6:
+	.string "Hey, hey, hey! I'm the rock hard Path\n"
+	.string "Master of Rocky Path!\p"
+	.string "If ya manage to conquer all the\n"
+	.string "trainers here, I'll give ya a reward!$"

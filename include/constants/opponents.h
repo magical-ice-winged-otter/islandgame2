@@ -183,13 +183,18 @@
 #define TRAINER_RANDALL                      TRAINER_ROCKY_PATH_5
 #define TRAINER_ROCKY_PATH_6                 72
 #define TRAINER_PARKER                       TRAINER_ROCKY_PATH_6
+#define TRAINER_ROCKY_PATH_7                 73
+#define TRAINER_GEORGE                       TRAINER_ROCKY_PATH_7
+#define TRAINER_ROCKY_PATH_8                 74
+#define TRAINER_BERKE                        TRAINER_ROCKY_PATH_8
+#define TRAINER_ROCKY_PATH_9                 75
+#define TRAINER_BRAXTON                      TRAINER_ROCKY_PATH_9
+#define TRAINER_ROCKY_PATH_10                76
+#define TRAINER_VINCENT                      TRAINER_ROCKY_PATH_10
+#define TRAINER_ROCKY_PATHMASTER             77
+#define TRAINER_LEROY                        TRAINER_ROCKY_PATHMASTER
 
 
-#define TRAINER_GEORGE                       73
-#define TRAINER_BERKE                        74
-#define TRAINER_BRAXTON                      75
-#define TRAINER_VINCENT                      76
-#define TRAINER_LEROY                        77
 #define TRAINER_WILTON_1                     78
 #define TRAINER_EDGAR                        79
 #define TRAINER_ALBERT                       80

@@ -16,15 +16,15 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 50,
-      "y": 59,
+      "x": 45,
+      "y": 62,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "5",
-      "script": "NULL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "ISLANDGAME_ROCKY_PATH_Trainer9",
       "flag": "0"
     },
     {
@@ -71,12 +71,12 @@
       "x": 59,
       "y": 66,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "30",
-      "script": "NULL",
+      "trainer_sight_or_berry_tree_id": "11",
+      "script": "ISLANDGAME_ROCKY_PATH_Trainer8",
       "flag": "0"
     },
     {
@@ -89,20 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
-      "x": 49,
-      "y": 59,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_ROCKY_PATH_Trainer7",
       "flag": "0"
     },
     {
@@ -206,7 +193,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ISLANDGAME_ROCKY_PATH_PathMaster",
       "flag": "0"
     },
     {
@@ -260,6 +247,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RANGER_F",
+      "x": 25,
+      "y": 60,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 15,
+      "y": 52,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "ISLANDGAME_ROCKY_PATH_Trainer10",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -283,13 +296,6 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_APPLEVINE",
       "dest_warp_id": "10"
-    },
-    {
-      "x": 20,
-      "y": 63,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_ROCKY_PATH",
-      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -314,8 +320,8 @@
     },
     {
       "type": "sign",
-      "x": 19,
-      "y": 64,
+      "x": 77,
+      "y": 50,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
