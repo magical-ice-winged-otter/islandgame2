@@ -5,20 +5,232 @@ ISLANDGAME_ROCKY_PATH_MapScripts::
 ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	gettime
 	compare VAR_0x8000, 6
-	goto_if_lt ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_lt ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 	compare VAR_0x8000, 18
-	goto_if_ge ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_ge ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 	setflag FLAG_TEMP_2
+ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	goto_if_unset FLAG_DAILY_ROCKY_PATH_ROCKRUFF, ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+	setobjectxyperm 8, 0, 72
 	return
 
-ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	setflag FLAG_TEMP_3
+	goto ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_ROCKY_PATH_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+	setvar VAR_ROCKY_PATH_STATE, 0
+	return
+
+
+RockyPath_RunAway1:
+	jump_2_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+RockyPath_RunAway2:
+	jump_2_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+RockyPath_RunAway3:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+RockyPath_RunAway4:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+RockyPath_RunAway5:
+	jump_2_up
+	walk_fast_left
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+RockyPath_RunAway6:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+ISLANDGAME_ROCKY_PATH_Rockruff::
+	switch VAR_ROCKY_PATH_STATE
+	case 0, ISLANDGAME_ROCKY_PATH_Rockruff_2
+	case 1, ISLANDGAME_ROCKY_PATH_Rockruff_3
+	case 2, ISLANDGAME_ROCKY_PATH_Rockruff_4
+	case 3, ISLANDGAME_ROCKY_PATH_Rockruff_5
+	faceplayer
+	setflag FLAG_SMART_WILD_AI
+	setcwildbattle 0, SPECIES_ROCKRUFF_OWN_TEMPO, 23, ITEM_WIKI_BERRY, NATURE_JOLLY, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ROCK_TOMB, MOVE_FIRE_FANG, MOVE_THUNDER_FANG, MOVE_SUCKER_PUNCH
+	playmoncry SPECIES_ROCKRUFF, CRY_MODE_ENCOUNTER
+	waitmoncry
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ISLANDGAME_ROCKY_PATH_Rockruff_8
+	case B_OUTCOME_CAUGHT, ISLANDGAME_ROCKY_PATH_Rockruff_9
+	return
+
+ISLANDGAME_ROCKY_PATH_Rockruff_2:
+	applymovement 8, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitse
+	applymovement 8, Common_Movement_FacePlayer
+	waitmovement 0
+	playmoncry SPECIES_ROCKRUFF, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement 8, Common_Movement_WalkUp2
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement 8, RockyPath_RunAway1
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement 8, RockyPath_RunAway2
+	waitmovement 0
+	setobjectxyperm 8, 46, 45
+	setvar VAR_ROCKY_PATH_STATE, 1
+	return
+
+ISLANDGAME_ROCKY_PATH_Rockruff_3:
+	applymovement 8, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitse
+	applymovement 8, Common_Movement_FacePlayer
+	waitmovement 0
+	playmoncry SPECIES_ROCKRUFF, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement 8, RockyPath_RunAway3
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement 8, RockyPath_RunAway2
+	waitmovement 0
+	setobjectxyperm 8, 72, 64
+	setvar VAR_ROCKY_PATH_STATE, 2
+	return
+
+ISLANDGAME_ROCKY_PATH_Rockruff_4:
+	applymovement 8, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitse
+	applymovement 8, Common_Movement_FacePlayer
+	waitmovement 0
+	playmoncry SPECIES_ROCKRUFF, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement 8, RockyPath_RunAway4
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement 8, RockyPath_RunAway5
+	waitmovement 0
+	setobjectxyperm 8, 14, 65
+	setvar VAR_ROCKY_PATH_STATE, 3
+	return
+
+ISLANDGAME_ROCKY_PATH_Rockruff_5:
+	applymovement 8, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitse
+	applymovement 8, Common_Movement_FacePlayer
+	waitmovement 0
+	playmoncry SPECIES_ROCKRUFF, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement 8, RockyPath_RunAway6
+	waitmovement 0
+	setobjectxyperm 8, 43, 52
+	setvar VAR_ROCKY_PATH_STATE, 4
+	return
+
+ISLANDGAME_ROCKY_PATH_Rockruff_8:
+	setflag FLAG_DAILY_ROCKY_PATH_ROCKRUFF
+	goto Common_EventScript_RemoveStaticPokemon
+	return
+
+ISLANDGAME_ROCKY_PATH_Rockruff_9:
+	setflag FLAG_DAILY_ROCKY_PATH_ROCKRUFF
+	goto Common_EventScript_RemoveStaticPokemon
 	return
 
 
 ISLANDGAME_ROCKY_PATH_Sign::
 	msgbox ISLANDGAME_ROCKY_PATH_Sign_Text_0, MSGBOX_SIGN
 	return
+
+
+ISLANDGAME_ROCKY_PATH_LumineCaveEntrance::
+	msgbox ISLANDGAME_ROCKY_PATH_LumineCaveEntrance_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_ROCKY_PATH_Ranger::
+	lock
+	faceplayer
+	goto_if_unset FLAG_ROCKY_PATH_ESCAPE_ROPE, ISLANDGAME_ROCKY_PATH_Ranger_2
+	msgbox ISLANDGAME_ROCKY_PATH_Ranger_Text_1
+ISLANDGAME_ROCKY_PATH_Ranger_1:
+	closemessage
+	release
+	return
+
+ISLANDGAME_ROCKY_PATH_Ranger_2:
+	msgbox ISLANDGAME_ROCKY_PATH_Ranger_Text_0
+	giveitem ITEM_ESCAPE_ROPE
+	setflag FLAG_ROCKY_PATH_ESCAPE_ROPE
+	goto ISLANDGAME_ROCKY_PATH_Ranger_1
 
 
 ISLANDGAME_ROCKY_PATH_Trainer1::
@@ -170,6 +382,20 @@ ISLANDGAME_ROCKY_PATH_PathMaster_28:
 ISLANDGAME_ROCKY_PATH_Sign_Text_0:
 	.string "ROCKY PATH\n"
 	.string "{LEFT_ARROW}APPLEVINE / LUMINE CAVE{DOWN_ARROW}$"
+
+ISLANDGAME_ROCKY_PATH_LumineCaveEntrance_Text_0:
+	.string "LUMINE CAVE\n"
+	.string "Just follow the yellow sand road!$"
+
+ISLANDGAME_ROCKY_PATH_Ranger_Text_0:
+	.string "It's easy to get lost in Lumine's\n"
+	.string "enormous cave system, so I'm handing\l"
+	.string "out these handy dandy escape ropes to\l"
+	.string "journeying trainers! Here, take one!$"
+
+ISLANDGAME_ROCKY_PATH_Ranger_Text_1:
+	.string "With one of those, you'll be able to find\n"
+	.string "your way to the entrance of any cave!$"
 
 ISLANDGAME_ROCKY_PATH_Trainer1_Text_0:
 	.string "I'm almost done setting my picnic up! I\n"

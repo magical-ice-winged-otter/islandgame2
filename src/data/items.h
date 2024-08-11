@@ -10017,19 +10017,21 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_CHARGE_BEAM, // Todo
+        .secondaryId = MOVE_CHARGE_BEAM,
     },
 
     [ITEM_TM52] =
     {
         .name = _("TM52"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "Critical hits land\n"
+            "more easily.\n"), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_STONE_EDGE,
     },
 
     [ITEM_TM53] =
@@ -12752,11 +12754,11 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POKEVIAL] =
     {
-        .name = _("POKéVIAL"),
+        .name = _("PokéVial"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Restores all\n"
-            "POKéMON to full\n"
+            "Pokémon to full\n"
             "health."
         ),
         .importance = 1,

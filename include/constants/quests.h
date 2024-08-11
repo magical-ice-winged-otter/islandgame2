@@ -33,7 +33,8 @@
 #define QUEST_FRESA_FARMS_TORCHIC_EGG      4
 #define QUEST_ROSEVALE_RESCUE              5
 #define QUEST_APPLEVINE_COUCH_POTATO       6
-#define QUEST_COUNT                        7 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_ROCKY_PATH_NURSE             7
+#define QUEST_COUNT                        8 // This number is literally how many to show in the UI (keep it accurate!)
 
 // Custom Sub-Quests
 

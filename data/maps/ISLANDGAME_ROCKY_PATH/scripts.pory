@@ -1,5 +1,6 @@
 const FLAG_DAYTIME = FLAG_TEMP_2
 const FLAG_NIGHTTIME = FLAG_TEMP_3
+const ROCKRUFF_OW_ID = 8
 
 mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -11,6 +12,131 @@ mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {
         else {
             setflag(FLAG_DAYTIME) // controls nighttime npcs
         }
+
+        if (!flag(FLAG_DAILY_ROCKY_PATH_ROCKRUFF)) {
+            setvar(VAR_ROCKY_PATH_STATE, 0)
+        }
+        else {
+            setobjectxyperm(ROCKRUFF_OW_ID, 0, 72)
+        }
+
+    }
+}
+
+movement RockyPath_RunAway1 {
+    jump_2_up
+    walk_fast_up
+    walk_fast_right * 4
+}
+
+movement RockyPath_RunAway2 {
+    jump_2_right
+    walk_fast_right * 15
+}
+
+movement RockyPath_RunAway3 {
+    walk_fast_right * 4
+}
+
+movement RockyPath_RunAway4 {
+    walk_fast_left * 6 
+    walk_fast_up * 4
+}
+
+movement RockyPath_RunAway5 {
+    jump_2_up
+    walk_fast_left
+    walk_fast_up
+    walk_fast_left * 8
+}
+
+movement RockyPath_RunAway6 {
+    walk_fast_up * 19
+}
+
+// rockruff event
+script ISLANDGAME_ROCKY_PATH_Rockruff {
+    switch(var(VAR_ROCKY_PATH_STATE)) {
+        case 0:
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_ExclamationMark)
+            playse(SE_PIN) 
+            waitse 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_FacePlayer)
+            waitmovement(0)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_WalkUp2)
+            waitmovement(0)
+            playse(SE_LEDGE)
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway1)
+            waitmovement(0)
+            playse(SE_LEDGE)
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway2)
+            waitmovement(0)
+            setobjectxyperm(ROCKRUFF_OW_ID, 46, 45)
+            setvar(VAR_ROCKY_PATH_STATE, 1)
+        case 1:
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_ExclamationMark)
+            playse(SE_PIN) 
+            waitse 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_FacePlayer)
+            waitmovement(0)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway3)
+            waitmovement(0)
+            playse(SE_LEDGE)
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway2)
+            waitmovement(0)
+            setobjectxyperm(ROCKRUFF_OW_ID, 72, 64)
+            setvar(VAR_ROCKY_PATH_STATE, 2)
+        case 2:
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_ExclamationMark)
+            playse(SE_PIN) 
+            waitse 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_FacePlayer)
+            waitmovement(0)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway4)
+            waitmovement(0)
+            playse(SE_LEDGE)
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway5)
+            waitmovement(0)
+            setobjectxyperm(ROCKRUFF_OW_ID, 14, 65)
+            setvar(VAR_ROCKY_PATH_STATE, 3)
+        case 3: 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_ExclamationMark)
+            playse(SE_PIN) 
+            waitse 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_FacePlayer)
+            waitmovement(0)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway6)
+            waitmovement(0)
+            setobjectxyperm(ROCKRUFF_OW_ID, 43, 52)
+            setvar(VAR_ROCKY_PATH_STATE, 4)
+        default:
+            faceplayer
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_ROCKRUFF_OWN_TEMPO, 23, ITEM_WIKI_BERRY, NATURE_JOLLY, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ROCK_TOMB, MOVE_FIRE_FANG, MOVE_THUNDER_FANG, MOVE_SUCKER_PUNCH)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_WON:
+                    setflag(FLAG_DAILY_ROCKY_PATH_ROCKRUFF)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+                case B_OUTCOME_CAUGHT:
+                    setflag(FLAG_DAILY_ROCKY_PATH_ROCKRUFF)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+                default:
+            }   
     }
 }
 
@@ -21,6 +147,32 @@ script ISLANDGAME_ROCKY_PATH_Sign {
         "ROCKY PATH\n{LEFT_ARROW}APPLEVINE / LUMINE CAVE{DOWN_ARROW}"
     ), MSGBOX_SIGN)
 }
+
+script ISLANDGAME_ROCKY_PATH_LumineCaveEntrance {
+    msgbox(format(
+        "LUMINE CAVE\nJust follow the yellow sand road!"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_ROCKY_PATH_Ranger {
+    lock
+    faceplayer
+    if(!flag(FLAG_ROCKY_PATH_ESCAPE_ROPE)) {
+        msgbox(format(
+            "It's easy to get lost in Lumine's enormous cave system, so I'm handing out these handy dandy escape ropes to journeying trainers! Here, take one!"
+        ))
+        giveitem(ITEM_ESCAPE_ROPE)
+        setflag(FLAG_ROCKY_PATH_ESCAPE_ROPE)
+    }
+    else {
+        msgbox(format(
+            "With one of those, you'll be able to find your way to the entrance of any cave!"
+        ))
+    }
+    closemessage
+    release
+}
+
 
 
 

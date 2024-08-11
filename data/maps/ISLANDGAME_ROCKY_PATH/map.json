@@ -115,8 +115,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "script": "ISLANDGAME_ROCKY_PATH_Rockruff",
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -127,9 +127,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "ITEM_CARBOS",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROCKY_PATH_CARBOS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -205,9 +205,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "ITEM_TM52",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ROCKY_PATH_TM"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_276",
@@ -225,15 +225,15 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 75,
-      "y": 47,
+      "y": 45,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "ITEM_ETHER",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROCKY_PATH_ETHER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_296",
@@ -273,6 +273,19 @@
       "trainer_sight_or_berry_tree_id": "5",
       "script": "ISLANDGAME_ROCKY_PATH_Trainer10",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 59,
+      "y": 52,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GREAT_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROCKY_PATH_GREAT_BALL"
     }
   ],
   "warp_events": [
@@ -287,7 +300,7 @@
       "x": 72,
       "y": 36,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_ROCKY_PATH",
+      "dest_map": "MAP_ISLANDGAME_ROCKY_PATH_HOUSE",
       "dest_warp_id": "0"
     },
     {
@@ -308,7 +321,7 @@
       "y": 60,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_ROCKY_PATH_LumineCaveEntrance"
     },
     {
       "type": "sign",
@@ -319,36 +332,28 @@
       "script": "ISLANDGAME_ROCKY_PATH_Sign"
     },
     {
-      "type": "sign",
-      "x": 77,
-      "y": 50,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
-    },
-    {
       "type": "hidden_item",
       "x": 40,
       "y": 37,
       "elevation": 0,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_EXP_CANDY_S",
+      "flag": "FLAG_HIDDEN_ITEM_ROCKY_PATH_EXP_CANDY_S"
     },
     {
       "type": "hidden_item",
       "x": 61,
       "y": 42,
       "elevation": 0,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_HEALTH_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_ROCKY_PATH_H_FEATHER"
     },
     {
       "type": "hidden_item",
-      "x": 59,
-      "y": 52,
+      "x": 77,
+      "y": 50,
       "elevation": 0,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_FLOAT_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_ROCKY_PATH_FLOAT_STONE"
     }
   ]
 }

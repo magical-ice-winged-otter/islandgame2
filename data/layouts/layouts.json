@@ -5514,9 +5514,9 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROCKY_PATH_HOUSE",
       "name": "ISLANDGAME_ROCKY_PATH_HOUSE_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_Building",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH_HOUSE/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH_HOUSE/map.bin"
