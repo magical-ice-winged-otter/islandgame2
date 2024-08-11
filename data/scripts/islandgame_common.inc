@@ -36,7 +36,7 @@ Common_NextSubQuest_6:
 
 
 IslandGame_Common_PokemonCenter_1F_EventScript_Nurse::
-	setvar VAR_0x800B, LOCALID_NURSE
+	setvar VAR_0x800B, 1
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress

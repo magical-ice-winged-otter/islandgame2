@@ -1,3 +1,4 @@
+const LOCALID_NURSE = 1
 const LOOP_BOUND = VAR_TEMP_A
 const LOOP_ITER  = VAR_TEMP_B
 const QUEST      = VAR_TEMP_C
@@ -46,7 +47,6 @@ script IslandGame_Common_PokemonCenter_1F_EventScript_Nurse {
 	waitmessage
 	waitbuttonpress
 	release
-    return
 }
 
 
