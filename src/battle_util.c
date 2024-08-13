@@ -8220,6 +8220,9 @@ u8 IsMonDisobedient(void)
             return 0;
         if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
             return 0;
+        //islandgame-start: remove badge obedience
+        return 0;
+        /*
         if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
             return 0;
 
@@ -8239,6 +8242,7 @@ u8 IsMonDisobedient(void)
             obedienceLevel = 70;
         if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
             obedienceLevel = 80;
+        */
     }
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
