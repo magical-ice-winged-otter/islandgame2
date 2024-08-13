@@ -13065,6 +13065,10 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
 #endif //P_FOOTPRINTS
 #endif //P_FAMILY_PECHARUNT
 
+
+
+
+
 // island-game 
 
 #if P_FAMILY_SHADOW_LUGIA
@@ -13102,12 +13106,12 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
 #endif //P_FAMILY_GOLETT
 
 #if P_FAMILY_FEEBAS_MARYAN
-    const u32 gMonFrontPic_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/feebas/anim_front.4bpp.lz");
-    const u32 gMonPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/feebas/normal.gbapal.lz");
-    const u32 gMonBackPic_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/feebas/back.4bpp.lz");
-    const u32 gMonShinyPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/feebas/shiny.gbapal.lz");
-    const u8 gMonIcon_FeebasMaryan[] = INCBIN_U8("graphics/pokemon/feebas/icon.4bpp");
-    const u8 gMonFootprint_FeebasMaryan[] = INCBIN_U8("graphics/pokemon/feebas/footprint.1bpp");
+    const u32 gMonFrontPic_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/maryan_feebas/anim_front.4bpp.lz");
+    const u32 gMonPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/maryan_feebas/normal.gbapal.lz");
+    const u32 gMonBackPic_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/maryan_feebas/back.4bpp.lz");
+    const u32 gMonShinyPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/maryan_feebas/shiny.gbapal.lz");
+    const u8 gMonIcon_FeebasMaryan[] = INCBIN_U8("graphics/pokemon/maryan_feebas/icon.4bpp");
+    const u8 gMonFootprint_FeebasMaryan[] = INCBIN_U8("graphics/pokemon/maryan_feebas/footprint.1bpp");
 
     const u32 gMonFrontPic_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/anim_front.4bpp.lz");
     const u32 gMonPalette_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/normal.gbapal.lz");
@@ -13132,6 +13136,35 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
     const u8 gMonIcon_LiepardMaryan[] = INCBIN_U8("graphics/pokemon/maryan_liepard/icon.4bpp");
     const u8 gMonFootprint_LiepardMaryan[] = INCBIN_U8("graphics/pokemon/maryan_liepard/footprint.1bpp");
 #endif //P_FAMILY_PURRLOIN_MARYAN
+
+#if P_FAMILY_NINCADA_MARYAN
+    const u32 gMonFrontPic_NincadaMaryan[] = INCBIN_U32("graphics/pokemon/maryan_nincada/anim_front.4bpp.lz");
+    const u32 gMonPalette_NincadaMaryan[] = INCBIN_U32("graphics/pokemon/maryan_nincada/normal.gbapal.lz");
+    const u32 gMonBackPic_NincadaMaryan[] = INCBIN_U32("graphics/pokemon/maryan_nincada/back.4bpp.lz");
+    const u32 gMonShinyPalette_NincadaMaryan[] = INCBIN_U32("graphics/pokemon/maryan_nincada/shiny.gbapal.lz");
+    const u8 gMonIcon_NincadaMaryan[] = INCBIN_U8("graphics/pokemon/maryan_nincada/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_NincadaMaryan[] = INCBIN_U8("graphics/pokemon/maryan_nincada/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_NinjaskMaryan[] = INCBIN_U32("graphics/pokemon/maryan_ninjask/anim_front.4bpp.lz");
+    const u32 gMonPalette_NinjaskMaryan[] = INCBIN_U32("graphics/pokemon/maryan_ninjask/normal.gbapal.lz");
+    const u32 gMonBackPic_NinjaskMaryan[] = INCBIN_U32("graphics/pokemon/maryan_ninjask/back.4bpp.lz");
+    const u32 gMonShinyPalette_NinjaskMaryan[] = INCBIN_U32("graphics/pokemon/maryan_ninjask/shiny.gbapal.lz");
+    const u8 gMonIcon_NinjaskMaryan[] = INCBIN_U8("graphics/pokemon/maryan_ninjask/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_NinjaskMaryan[] = INCBIN_U8("graphics/pokemon/maryan_ninjask/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_ShedinjaMaryan[] = INCBIN_U32("graphics/pokemon/maryan_shedinja/anim_front.4bpp.lz");
+    const u32 gMonPalette_ShedinjaMaryan[] = INCBIN_U32("graphics/pokemon/maryan_shedinja/normal.gbapal.lz");
+    const u32 gMonBackPic_ShedinjaMaryan[] = INCBIN_U32("graphics/pokemon/maryan_shedinja/back.4bpp.lz");
+    const u32 gMonShinyPalette_ShedinjaMaryan[] = INCBIN_U32("graphics/pokemon/maryan_shedinja/shiny.gbapal.lz");
+    const u8 gMonIcon_ShedinjaMaryan[] = INCBIN_U8("graphics/pokemon/maryan_shedinja/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_ShedinjaMaryan[] = INCBIN_U8("graphics/pokemon/maryan_shedinja/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#endif //P_FAMILY_NINCADA
 
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");

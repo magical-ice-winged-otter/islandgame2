@@ -89,12 +89,6 @@
 #define TRAINER_VIOLET                       TRAINER_MINTY_MEADOWS_16
 
 
-#define TRAINER_ROSE_4                       42 // unused
-
-
-
-
-
 // Traveler's Tunnel
 #define TRAINER_TRAVELERS_TUNNEL_1           25
 
@@ -177,30 +171,30 @@
 #define TRAINER_RICKY_2                      TRAINER_PROMENADE_4
 
 // Rocky Path
-// #define TRAINER_ROCKY_PATH_KARATE_BRO        64
-// #define TRAINER_ROCKY_PATH_KARATE_SIS        65
-// #define TRAINER_ROCKY_PATH_CYCLER_F          66
-// #define TRAINER_ROCKY_PATH_BEAUTY            67
-// #define TRAINER_ROCKY_PATH_CAMPER_F          68
-// #define TRAINER_ROCKY_PATH_GENTLEMAN         69
-// #define TRAINER_ROCKY_PATH_PSYCHIC_F         70
-// #define TRAINER_ROCKY_PATH_PSYCHIC_M         71
-// #define TRAINER_ROCKY_PATH_FISHERMAN         72
+#define TRAINER_ROCKY_PATH_1                 42
+#define TRAINER_ROSE_4                       TRAINER_ROCKY_PATH_1
+#define TRAINER_ROCKY_PATH_2                 68
+#define TRAINER_RICKY_3                      TRAINER_ROCKY_PATH_2
+#define TRAINER_ROCKY_PATH_3                 69
+#define TRAINER_RICKY_4                      TRAINER_ROCKY_PATH_3
+#define TRAINER_ROCKY_PATH_4                 70
+#define TRAINER_RICKY_5                      TRAINER_ROCKY_PATH_4
+#define TRAINER_ROCKY_PATH_5                 71
+#define TRAINER_RANDALL                      TRAINER_ROCKY_PATH_5
+#define TRAINER_ROCKY_PATH_6                 72
+#define TRAINER_PARKER                       TRAINER_ROCKY_PATH_6
+#define TRAINER_ROCKY_PATH_7                 73
+#define TRAINER_GEORGE                       TRAINER_ROCKY_PATH_7
+#define TRAINER_ROCKY_PATH_8                 74
+#define TRAINER_BERKE                        TRAINER_ROCKY_PATH_8
+#define TRAINER_ROCKY_PATH_9                 75
+#define TRAINER_BRAXTON                      TRAINER_ROCKY_PATH_9
+#define TRAINER_ROCKY_PATH_10                76
+#define TRAINER_VINCENT                      TRAINER_ROCKY_PATH_10
+#define TRAINER_ROCKY_PATHMASTER             77
+#define TRAINER_LEROY                        TRAINER_ROCKY_PATHMASTER
 
 
-
-
-
-#define TRAINER_RICKY_3                      68
-#define TRAINER_RICKY_4                      69
-#define TRAINER_RICKY_5                      70
-#define TRAINER_RANDALL                      71
-#define TRAINER_PARKER                       72
-#define TRAINER_GEORGE                       73
-#define TRAINER_BERKE                        74
-#define TRAINER_BRAXTON                      75
-#define TRAINER_VINCENT                      76
-#define TRAINER_LEROY                        77
 #define TRAINER_WILTON_1                     78
 #define TRAINER_EDGAR                        79
 #define TRAINER_ALBERT                       80

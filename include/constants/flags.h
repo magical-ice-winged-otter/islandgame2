@@ -685,8 +685,8 @@
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER      0x280  
 #define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE      0x282 
-#define FLAG_HIDDEN_ITEM_APPLEVINE_PP_UP            0x283 // not in use
-#define FLAG_HIDDEN_ITEM_APPLEVINE_SWEET_APPLE      0x284 // not in use
+#define FLAG_HIDDEN_ITEM_ROCKY_PATH_EXP_CANDY_S     0x283
+#define FLAG_HIDDEN_ITEM_ROCKY_PATH_H_FEATHER       0x284 
 #define FLAG_HIDDEN_ITEM_SS_RAIN_ORAN_BERRY         0x285 
 #define FLAG_HIDDEN_ITEM_CHERIPORT_H_FEATHER        0x286 
 #define FLAG_HIDDEN_ITEM_CAMP_PERSI_BERRY_JUICE     0x287
@@ -703,7 +703,7 @@
 #define FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_EVERSTONE 0x292 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_PROTEIN       0x293 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_XP_CANDY      0x294 
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ROCKY_PATH_FLOAT_STONE     0x295 
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag
@@ -1239,19 +1239,19 @@
 #define FLAG_ITEM_TIDALCOVE_CALCIUM                                 0x4A2
 #define FLAG_ITEM_AURORA_PATH_IRON                                  0x4A3 
 #define FLAG_ITEM_AP_COMET_SHARD                                    0x4A4 
-#define FLAG_ITEM_NOR_SUPER_POTION                                  0x4A5   // no longer in use
+#define FLAG_ITEM_ROCKY_PATH_CARBOS                                 0x4A5 
 #define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
 #define FLAG_MINTY_MEADOWS_X_SP_ATK                                 0x4A8 
 #define FLAG_MINTY_MEADOWS_X_DEF                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_REVIVE                                           0x4AB 
-#define FLAG_SS_RAIN_TM_SNATCH                                      0x4AC 
+#define FLAG_SS_RAIN_TM_CHARGE_BEAM                                 0x4AC 
 #define FLAG_SS_RAIN_MAX_REVIVE                                     0x4AD
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
 #define FLAG_ITEM_COP_1_X_SP_ATK                                    0x4AF  
 #define FLAG_ITEM_MINTY_MEADOWS_HP_UP                               0x4B0 
-#define FLAG_TRAVELERS_TUNNEL_TM_ROCK_TOMB                          0x4B1 // not in use
+#define FLAG_ROCKY_PATH_TM                                          0x4B1
 #define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
 #define FLAG_ITEM_TIDALCOVE_DIVE_BALL                               0x4B3
 #define FLAG_ITEM_PROMENADE_PATH_PEARL                              0x4B4
@@ -1266,9 +1266,9 @@
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
 #define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE
 #define FLAG_ITEM_MAPLEGROVE_ABILITY_CAPSULE                        0x4BF
-#define FLAG_ITEM_COP_1_BURN_HEAL                                   0x4C0 // not in use
+#define FLAG_ITEM_ROCKY_PATH_ETHER                                  0x4C0 
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
-#define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
+#define FLAG_ITEM_ROCKY_PATH_GREAT_BALL                             0x4C2
 #define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
 #define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
 #define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
@@ -1572,6 +1572,7 @@
 //applevine: sell ur soul to EA
 #define FLAG_APPLEVINE_COIN_CASE                    (SYSTEM_FLAGS + 0xA2)
 #define FLAG_TRAVELERS_TUNNEL_AGGRONITE             (SYSTEM_FLAGS + 0xA3)
+//cheriport: im da map
 #define FLAG_RECEIVED_TOWN_MAP                      (SYSTEM_FLAGS + 0xA4) 
 //rosevale: its time 2 dool
 #define FLAG_ROSEVALE_GALLADITE                     (SYSTEM_FLAGS + 0xA5)
@@ -1579,8 +1580,8 @@
 #define FLAG_ROSEVALE_RED                           (SYSTEM_FLAGS + 0xA6) 
 //applevine: fwee move tutor
 #define FLAG_APPLEVINE_MOVE_TUTOR_FREEBIE           (SYSTEM_FLAGS + 0xA7) 
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
-#define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
+#define FLAG_ROCKY_PATH_ESCAPE_ROPE                 (SYSTEM_FLAGS + 0xA8) 
+#define FLAG_ROCKY_PATH_HAPPINY_GIFT                (SYSTEM_FLAGS + 0xA9) 
 #define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
 #define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
 #define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
@@ -1639,8 +1640,8 @@
 #define FLAG_DAILY_COR_HIDDEN_GROTTO_ROLL           (DAILY_FLAGS_START + 0x1A)
 #define FLAG_DAILY_AURORA_PATH_HIDDEN_GROTTO_ROLL   (DAILY_FLAGS_START + 0x1B)
 #define FLAG_DAILY_APPLEVINE_COIN_BRO               (DAILY_FLAGS_START + 0x1C)
-#define FLAG_DAILY_APPLEVINE_APPLE_2                (DAILY_FLAGS_START + 0x1D) // Unused Flag
-#define FLAG_DAILY_APPLEVINE_APPLE_3                (DAILY_FLAGS_START + 0x1E) // Unused Flag
+#define FLAG_DAILY_SS_RAIN_LOBSTER_ROLL             (DAILY_FLAGS_START + 0x1D)
+#define FLAG_DAILY_ROCKY_PATH_ROCKRUFF              (DAILY_FLAGS_START + 0x1E) 
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag

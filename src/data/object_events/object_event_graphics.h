@@ -20,7 +20,6 @@ const u16 gObjectEventPal_Ruka[] = INCBIN_U16("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Melissa[] = INCBIN_U32("graphics/object_events/pics/people/melissa.4bpp");
 const u16 gObjectEventPal_Melissa[] = INCBIN_U16("graphics/object_events/pics/people/melissa.gbapal");
 
-
 const u32 gObjectEventPic_OliviaNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/olivia/walking.4bpp", "graphics/object_events/pics/people/olivia/running.4bpp");
 const u32 gObjectEventPic_OliviaSurfing[] = INCBIN_U32("graphics/object_events/pics/people/olivia/surfing.4bpp");
 const u32 gObjectEventPic_OliviaFishing[] = INCBIN_U32("graphics/object_events/pics/people/olivia/fishing.4bpp");
@@ -67,7 +66,6 @@ const u16 gObjectEventPal_Scientist3[] = INCBIN_U16("graphics/object_events/pics
 const u16 gObjectEventPal_TuberFSwimming[] = INCBIN_U16("graphics/object_events/pics/people/tuber_f_swimming.gbapal");
 const u16 gObjectEventPal_Worker[] = INCBIN_U16("graphics/object_events/pics/people/worker.gbapal");
 const u16 gObjectEventPal_MartEmployee[] = INCBIN_U16("graphics/object_events/palettes/mart_employee.gbapal");
-
 
 const u32 gObjectEventPic_AceTrainerF[] = INCBIN_U32("graphics/object_events/pics/people/ace_trainer_f.4bpp");
 const u16 gObjectEventPal_AceTrainerF[] = INCBIN_U16("graphics/object_events/pics/people/ace_trainer_f.gbapal");
@@ -125,9 +123,28 @@ const u32 gObjectEventPic_Woman8[] = INCBIN_U32("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Woman8[] = INCBIN_U16("graphics/object_events/pics/people/woman_8.gbapal");
 const u32 gObjectEventPic_SchoolKidF[] = INCBIN_U32("graphics/object_events/pics/people/school_kid_f.4bpp");
 const u16 gObjectEventPal_SchoolKidF[] = INCBIN_U16("graphics/object_events/pics/people/school_kid_f.gbapal");
+const u16 gObjectEventPal_HexManiac[] = INCBIN_U16("graphics/object_events/pics/people/hex_maniac.gbapal");
 
 const u32 gObjectEventPic_Apple[] = INCBIN_U32("graphics/object_events/pics/misc/apple.4bpp");
 const u16 gObjectEventPal_Apple[] = INCBIN_U16("graphics/items/icon_palettes/sweet_apple.gbapal");
+
+const u32 gObjectEventPic_IslandgamePKMN_ShinyAzurill[] = INCBIN_U32("graphics/object_events/pics/pokemon/maryan/shiny_azurill.4bpp");
+const u16 gObjectEventPalette_IslandgamePKMN_ShinyAzurill[] = INCBIN_U16("graphics/object_events/pics/pokemon/maryan/shiny_azurill.gbapal");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //vanilla
 const u16 gObjectEventPal_BlackBelt[] = INCBIN_U16("graphics/object_events/pics/people/black_belt.gbapal");

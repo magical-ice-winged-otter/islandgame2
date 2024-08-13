@@ -27,12 +27,13 @@
 // Custom Quests
 #define QUEST_PERSI_FAVORITE_CARD          0
 #define QUEST_PERSI_BERRY_MANIAC           1
-#define QUEST_VERDANT_FOREST_SKITTY        2
-#define QUEST_MAPLEGROVE_LOVERS            3
-#define QUEST_FRESA_FARMS_LOST_MAREEP      4
-#define QUEST_FRESA_FARMS_TORCHIC_EGG      5
-#define QUEST_ROSEVALE_RESCUE              6
-#define QUEST_APPLEVINE_COUCH_POTATO       7
+// #define QUEST_VERDANT_FOREST_SKITTY        2
+#define QUEST_MAPLEGROVE_LOVERS            2
+#define QUEST_FRESA_FARMS_LOST_MAREEP      3
+#define QUEST_FRESA_FARMS_TORCHIC_EGG      4
+#define QUEST_ROSEVALE_RESCUE              5
+#define QUEST_APPLEVINE_COUCH_POTATO       6
+#define QUEST_ROCKY_PATH_NURSE             7
 #define QUEST_COUNT                        8 // This number is literally how many to show in the UI (keep it accurate!)
 
 // Custom Sub-Quests

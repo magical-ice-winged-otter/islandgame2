@@ -246,9 +246,9 @@
       "x": 37,
       "y": 37,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_DOWN_UP_RIGHT",
       "movement_range_x": 8,
-      "movement_range_y": 2,
+      "movement_range_y": 6,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -422,7 +422,7 @@
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_ROCKY_PATH",
-      "dest_warp_id": "0"
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

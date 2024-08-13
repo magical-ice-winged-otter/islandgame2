@@ -1006,11 +1006,12 @@
 #define ITEM_POKEVIAL 835 
 #define ITEM_ISLANDGAME_ROMANS_LETTER 836
 #define ITEM_ISLANDGAME_JULIES_LETTER 837
+#define ITEM_ISLANDGAME_LOBSTER_ROLL 838
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 838
+#define ITEMS_COUNT 839
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

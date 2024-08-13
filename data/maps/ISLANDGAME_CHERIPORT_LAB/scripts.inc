@@ -32,6 +32,8 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_8:
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	special SetUnlockedPokedexFlags
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	msgbox ProfTalk_Third_Text
 	giveitem ITEM_POKE_BALL, 5

@@ -127,6 +127,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1:
 	goto_if 1, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_23
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_5
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_22:
+Coranna_PathMaster_End:
 	closemessage
 	release
 	return
@@ -136,6 +137,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_2:
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_26
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_3
+	goto Coranna_PathMaster_End
 	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_3:
@@ -191,6 +193,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_26:
 	trainerbattle_no_intro TRAINER_CORANNA_PATHMASTER, ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_1
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_Text_2
 	giveitem ITEM_PETAYA_BERRY
+	goto Coranna_PathMaster_End
 	goto ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster_1
 
 

@@ -1,66 +1,376 @@
-mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+const ROCKRUFF_OW_ID = 8
 
+mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
 
-script ISLANDGAME_ROCKY_PATH_KarateBro {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_BRO, 
-    //     format("My sister prefers to train more than 1 Pokemon, but as for me..."), 
-    //     format("How did you defeat my Machamp!"))
-    // msgbox(format("I will only train with my Machamp for as long as I live."), MSGBOX_AUTOCLOSE)
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+        }
+
+        if (!flag(FLAG_DAILY_ROCKY_PATH_ROCKRUFF)) {
+            setvar(VAR_ROCKY_PATH_STATE, 0)
+        }
+        else {
+            setobjectxyperm(ROCKRUFF_OW_ID, 0, 72)
+        }
+
+    }
 }
 
-script ISLANDGAME_ROCKY_PATH_KarateSis {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_KARATE_SIS, 
-    //     format("You've met weird brother right?"), 
-    //     format("I still lost with multiple Pokemon..."))
-    // msgbox(format("I can't deny that his Machamp is strong, but my Pokemon are stronger than his!"), MSGBOX_AUTOCLOSE)
+movement RockyPath_RunAway1 {
+    jump_2_up
+    walk_fast_up
+    walk_fast_right * 4
 }
 
-script ISLANDGAME_ROCKY_PATH_CyclerF {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_CYCLER_F, 
-    //     format("How do I get back on the water path?"), 
-    //     format("Oh okay, I think I got it."))
-    // msgbox(format("Maybe I will here for a while, biking in grass can be fun."), MSGBOX_AUTOCLOSE)
+movement RockyPath_RunAway2 {
+    jump_2_right
+    walk_fast_right * 15
 }
 
-script ISLANDGAME_ROCKY_PATH_Beauty {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_BEAUTY, 
-    //     format("Those fighters, while they are admirable, stink up the place."), 
-    //     format("You're also contributing to the stench!"))
-    // msgbox(format("I heard that there's a hidden grotto around here full of water, but I've yet to find it."), MSGBOX_AUTOCLOSE)
+movement RockyPath_RunAway3 {
+    walk_fast_right * 4
 }
 
-script ISLANDGAME_ROCKY_PATH_Camper_F {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_CAMPER_F, 
-    //     format("Shh!"), 
-    //     format("Don't you see that old man walking around lost?"))
-    // msgbox(format("I'd be careful if I were you, he looks dangerous"), MSGBOX_AUTOCLOSE)
+movement RockyPath_RunAway4 {
+    walk_fast_left * 6 
+    walk_fast_up * 4
 }
 
-script ISLANDGAME_ROCKY_PATH_Gentleman {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_GENTLEMAN, 
-    //     format("Hahahahhahahahaha!"), 
-    //     format("What isn't funny?"))
-    // msgbox(format("Most people are scared of me because I tend to be pretty laidback. Why aren't you?"), MSGBOX_AUTOCLOSE)
+movement RockyPath_RunAway5 {
+    jump_2_up
+    walk_fast_left
+    walk_fast_up
+    walk_fast_left * 8
 }
 
-script ISLANDGAME_ROCKY_PATH_PsychicF {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_PSYCHIC_F, 
-    //     format("Caught you!"), 
-    //     format("Looks like I didn't have the advantage this time."))
-    // msgbox(format("Using my psychic powers allows me to enhance my sight, which is how I found you."), MSGBOX_AUTOCLOSE)
+movement RockyPath_RunAway6 {
+    walk_fast_up * 19
 }
 
-script ISLANDGAME_ROCKY_PATH_PsychicM {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_PSYCHIC_M, 
-    //     format("I'm sorry, you met my sister right?"), 
-    //     format("I knew I would've lost to you as well."))
-    // # TODO
-    // msgbox(format("My sister is stronger than me, so we usually double battle"), MSGBOX_AUTOCLOSE)
+// rockruff event
+script ISLANDGAME_ROCKY_PATH_Rockruff {
+    switch(var(VAR_ROCKY_PATH_STATE)) {
+        case 0:
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_ExclamationMark)
+            playse(SE_PIN) 
+            waitse 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_FacePlayer)
+            waitmovement(0)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_WalkUp2)
+            waitmovement(0)
+            playse(SE_LEDGE)
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway1)
+            waitmovement(0)
+            playse(SE_LEDGE)
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway2)
+            waitmovement(0)
+            setobjectxyperm(ROCKRUFF_OW_ID, 46, 45)
+            setvar(VAR_ROCKY_PATH_STATE, 1)
+        case 1:
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_ExclamationMark)
+            playse(SE_PIN) 
+            waitse 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_FacePlayer)
+            waitmovement(0)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway3)
+            waitmovement(0)
+            playse(SE_LEDGE)
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway2)
+            waitmovement(0)
+            setobjectxyperm(ROCKRUFF_OW_ID, 72, 64)
+            setvar(VAR_ROCKY_PATH_STATE, 2)
+        case 2:
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_ExclamationMark)
+            playse(SE_PIN) 
+            waitse 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_FacePlayer)
+            waitmovement(0)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway4)
+            waitmovement(0)
+            playse(SE_LEDGE)
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway5)
+            waitmovement(0)
+            setobjectxyperm(ROCKRUFF_OW_ID, 14, 65)
+            setvar(VAR_ROCKY_PATH_STATE, 3)
+        case 3: 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_ExclamationMark)
+            playse(SE_PIN) 
+            waitse 
+            applymovement(ROCKRUFF_OW_ID, Common_Movement_FacePlayer)
+            waitmovement(0)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway6)
+            waitmovement(0)
+            setobjectxyperm(ROCKRUFF_OW_ID, 43, 52)
+            setvar(VAR_ROCKY_PATH_STATE, 4)
+        default:
+            faceplayer
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_ROCKRUFF_OWN_TEMPO, 23, ITEM_WIKI_BERRY, NATURE_JOLLY, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ROCK_TOMB, MOVE_FIRE_FANG, MOVE_THUNDER_FANG, MOVE_SUCKER_PUNCH)
+            playmoncry(SPECIES_ROCKRUFF, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_WON:
+                    setflag(FLAG_DAILY_ROCKY_PATH_ROCKRUFF)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+                case B_OUTCOME_CAUGHT:
+                    setflag(FLAG_DAILY_ROCKY_PATH_ROCKRUFF)
+                    goto(Common_EventScript_RemoveStaticPokemon)
+                default:
+            }   
+    }
 }
 
-script ISLANDGAME_ROCKY_PATH_Fisherman {
-    // trainerbattle_single(TRAINER_ROCKY_PATH_FISHERMAN, 
-    //     format("I used to be a trainer in Unova."), 
-    //     format("Darn."))
-    // msgbox(format("I got my own starter Pokemon in everything, but how come I wasn't able to win the championship?"), MSGBOX_AUTOCLOSE)
+
+// signs
+script ISLANDGAME_ROCKY_PATH_Sign {
+    msgbox(format(
+        "ROCKY PATH\n{LEFT_ARROW}APPLEVINE / LUMINE CAVE{DOWN_ARROW}"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_ROCKY_PATH_LumineCaveEntrance {
+    msgbox(format(
+        "LUMINE CAVE\nJust follow the yellow sand road!"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_ROCKY_PATH_Ranger {
+    lock
+    faceplayer
+    if(!flag(FLAG_ROCKY_PATH_ESCAPE_ROPE)) {
+        msgbox(format(
+            "It's easy to get lost in Lumine's enormous cave system, so I'm handing out these handy dandy escape ropes to journeying trainers! Here, take one!"
+        ))
+        giveitem(ITEM_ESCAPE_ROPE)
+        setflag(FLAG_ROCKY_PATH_ESCAPE_ROPE)
+    }
+    else {
+        msgbox(format(
+            "With one of those, you'll be able to find your way to the entrance of any cave!"
+        ))
+    }
+    closemessage
+    release
+}
+
+
+
+
+// trainers
+script ISLANDGAME_ROCKY_PATH_Trainer1 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_1,
+        format(
+            "I'm almost done setting my picnic up! I won't have you interfere!"
+        ),
+        format(
+            "Maybe I shouldn't have set up a picnic\nat the path entrance..."
+        ))
+    msgbox(format(
+        "This is my first time trying to setup a picnic. I've been trying to follow along this guide online, but it's just talking about making sandwiches."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer2 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_2,
+        format(
+            "Curses, my mortal enemy...{PAUSE 60} LEDGES."
+        ),
+        format(
+            "My second mortal enemy...{PAUSE 60} LOSING!"
+        ))
+    msgbox(format(
+        "Whose idea was it to have all these darn ledges!?\pI'd like to speak to them directly and give them a piece of my mind!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer3 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_3,
+        format(
+            "Don'chu fuggle with my Shuckle!"
+        ),
+        format(
+            "Aw, shucks. My strat didn't work."
+        ))
+    msgbox(format(
+        "Did you know Shuckle can deal the most damage out of any Pokémon?\p"
+        "Yup! You heard me right! My little Shuckie has the potential to pack a bigger punch than any of the Isle Guardians, or even Lugia!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer4 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_4,
+        format(
+            "Oi! What're you doing in me line o' sight?"
+        ),
+        format(
+            "It's all over now..."
+        ))
+    msgbox(format(
+        "Me and my merry band of Pokémon are on our way to see Arboria down south!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer5 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_5,
+        format(
+            "Hey! Have you heard about my SUPER COOL RATTATA!?\p"
+            "IT IS VERY DIFFERENT FROM OTHER RATTATAS!!\p"
+            "IT'S IN THE TOP PERCENTAGE OF RATTATAS, IN FACT!!!\p"
+            "1 V 1 M E B R O"
+        ),
+        format(
+            "No fair! 1 v 1 me like a REAL trainer!"
+        ))
+    msgbox(format(
+        "You must've cheated! There's no way I could lose with my perfect setup!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer6 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_6,
+        format(
+            "Hoo! Haa! Hee! Haa! Hoo! Haa! Hee! Haa!\p"
+            "Who shall be next to challenge me!?"
+        ),
+        format(
+            "Hoo... Haa... Hee..."
+        ))
+    msgbox(format(
+        "I train with my Hariyama every day in close quarters combat!\p"
+        "I'll be getting first place at this year's festival martial arts tournament for sure!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer7 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_7,
+        format(
+            "Inside of me are two Lycanrocs fighting...\p"
+            "One is Midday... the other is Midnight...\p"
+            "Which one will win...? I'll show you right here!{PAUSE 60} RAAAAAAAAAAUUUGHHHH!"
+        ),
+        format(
+            "M-My inner Lycanroc...{PAUSE 30} wasn't strong\nenough?"
+        ))
+    msgbox(format(
+        "Inside of every trainer are two Lycanrocs...\p"
+        "One is Midday... the other is Midnight...\p"
+        "Which one will win...? The one that the trainer chooses to train..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer8 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_8,
+        format(
+            "Ah, did you think I couldn't see you walking by, trainer?\p"
+            "Thanks to my psychic powers, I can see what the human eye cannot!"
+        ),
+        format(
+            "My vision... It is fading..."
+        ))
+    msgbox(format(
+        "Argh... My mana reserves are running low...\p"
+        "Perhaps I should have saved them for our battle..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer9 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_9,
+        format(
+            "Hmm, yes, exquisite..."
+        ),
+        format(
+            "You are quite the fine specimen\nindeed..."
+        ))
+    msgbox(format(
+        "You are no ordinary trainer. My analysis has made that abundantly clear..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_ROCKY_PATH_Trainer10 {
+    trainerbattle_single(TRAINER_ROCKY_PATH_10,
+        format(
+            "Have you heard?"
+        ),
+        format(
+            "Ah... it was with my understanding that\neveryone had heard."
+        ))
+    msgbox(format(
+        "Come on, don't you know? About the...?"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+
+script ISLANDGAME_ROCKY_PATH_PathMaster {
+    lock
+    faceplayer
+    if(
+        defeated(TRAINER_ROCKY_PATH_1) &&
+        defeated(TRAINER_ROCKY_PATH_2) &&
+        defeated(TRAINER_ROCKY_PATH_3) &&
+        defeated(TRAINER_ROCKY_PATH_4) &&
+        defeated(TRAINER_ROCKY_PATH_5) &&
+        defeated(TRAINER_ROCKY_PATH_6) &&
+        defeated(TRAINER_ROCKY_PATH_7) &&
+        defeated(TRAINER_ROCKY_PATH_8) && 
+        defeated(TRAINER_ROCKY_PATH_9) &&
+        defeated(TRAINER_ROCKY_PATH_10) &&
+        !defeated(TRAINER_ROCKY_PATHMASTER)
+    ) {
+        msgbox(format(
+            "Well, bite my biscuits, ya beat all the trainers of Rocky Path!\p"
+            "This super rare Jaboca Berry is all yours!... If you can take it from me."
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format(
+                "Let's see if you've got what it takes against my FREAKING MASSIVE WALLS!"
+            ))
+            trainerbattle_no_intro(TRAINER_ROCKY_PATHMASTER, "Ack! It seems I've met the unstoppable\nforce to my unbreakable shield...")
+            msgbox(format(
+                "Rip in pepperonis. Looks like I gotta give this over to ya."
+            ))
+            giveitem(ITEM_JABOCA_BERRY)
+            goto(RockyPath_PathMaster_End)
+        }
+        else {
+            msgbox(format(
+                "Understandable, have a nice day!"
+            ))
+            goto(RockyPath_PathMaster_End)
+        }
+    }
+    if (defeated(TRAINER_ROCKY_PATHMASTER)) {
+        msgbox(format(
+            "Looks like you're the master of Rocky Path now!"
+        ))
+    }
+    else {
+        msgbox(format(
+            "Hey, hey, hey! I'm the rock hard Path Master of Rocky Path!\p"
+            "If ya manage to conquer all the trainers here, I'll give ya a reward!"
+        ))
+    }
+
+    RockyPath_PathMaster_End:
+        closemessage
+        release
 }

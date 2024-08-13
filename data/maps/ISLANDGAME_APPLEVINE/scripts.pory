@@ -3,7 +3,7 @@ const FLAG_NIGHTTIME = FLAG_TEMP_3
 const COCO_OW_ID = 19
 
 mapscripts ISLANDGAME_APPLEVINE_MapScripts {
-        MAP_SCRIPT_ON_TRANSITION {
+    MAP_SCRIPT_ON_TRANSITION {
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
@@ -34,11 +34,11 @@ script ISLANDGAME_APPLEVINE_GameCornerSign {
 }
 
 script ISLANDGAME_APPLEVINE_SierraPathSign {
-    msgbox(format("SIERRA PATH\n"), MSGBOX_SIGN)
+    msgbox(format("SIERRA PATH{UP_ARROW}\n"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_APPLEVINE_RockyPathSign {
-    msgbox(format("ROCKY PATH\n"), MSGBOX_SIGN)
+    msgbox(format("ROCKY PATH{RIGHT_ARROW}\n"), MSGBOX_SIGN)
 }
 
 
@@ -582,7 +582,7 @@ script ISLANDGAME_APPLEVINE_NPC14 {
         "I became an officer to get in the line of action, but all the chief's been having me do is lame paperwork.\p"
         "I should've just joined my friend in the merchant guild instead...\p"
         "They get to travel all around the isles, meanwhile I'm stuck listening to a jaded old man complain about the Game Corner for three hours.\p"
-        "What's even the big deal? It's not like there's anything illegal going on inside or anything. They're broken no laws!"
+        "What's even the big deal? It's not like there's anything illegal going on inside or anything. They've broken no laws!"
     ))
     closemessage
     release

@@ -162,11 +162,13 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster {
                 "It's kind of mouthful, I know."
             ))
             giveitem(ITEM_PETAYA_BERRY)
+            goto(Coranna_PathMaster_End)
         }
         else {
             msgbox(format(
                 "Okay. Let me know when you are prepared!"
             ))
+            goto(Coranna_PathMaster_End)
         }
     }
     if (defeated(TRAINER_CORANNA_PATHMASTER)) {
@@ -180,6 +182,8 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster {
             "If you manage to defeat all the other trainers on this path, return to me!"
         ))
     }
-    closemessage
-    release
+
+    Coranna_PathMaster_End:
+        closemessage
+        release
 }

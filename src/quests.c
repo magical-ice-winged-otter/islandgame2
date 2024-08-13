@@ -260,6 +260,7 @@ const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
 const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
 const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
 const u8 sText_SideQuestMap_Applevine[] = _("Applevine");
+const u8 sText_SideQuestMap_RockyPath[] = _("Rocky Path");
 const u8 sText_SideQuestMap_Unknown[] = _("-");
 
 // Persi Favorite Card Quest
@@ -316,11 +317,10 @@ const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
 const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
 
 
-
 // Verdant Forest Pokemon Quest
-const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
-const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
-const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
+// const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
+// const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
+// const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
 
 // Maplegrove Lovers Quest
 const u8 sText_SideQuestName_MaplegroveLovers[] = _("A Star-crossed Lover");
@@ -363,6 +363,10 @@ const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("Imagine if you brought him a
 const u8 sText_SubQuest_CouchPotato5_Name[] 	  = _("Delivery Complete!");
 const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("Man, Sera's fans are down bad.");
 
+// PokeVial Nurse Quest 
+const u8 sText_SideQuestName_ROCKY_PATH_NURSE[] = _("The Missing Ingredient");
+const u8 sText_SideQuestDesc_ROCKY_PATH_NURSE[] = _("Nurse Joy needs a Balm Mushroom for\nher newest medicinal breakthrough!");
+const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\nin creating the PokéVial!");
 
 
 
@@ -581,16 +585,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
 	),
-	[QUEST_VERDANT_FOREST_SKITTY] = side_quest(
-		sText_SideQuestName_VerdantForestSkitty,
-		sText_SideQuestDesc_VerdantForestSkitty,
-		sText_SideQuestDoneDesc_VerdantForestSkitty,
-		sText_SideQuestMap_VerdantWoods,
-		OBJ_EVENT_GFX_GIRL_2,
-		OBJECT,
-		NULL,
-			0
-	),
+	// [QUEST_VERDANT_FOREST_SKITTY] = side_quest(
+	// 	sText_SideQuestName_VerdantForestSkitty,
+	// 	sText_SideQuestDesc_VerdantForestSkitty,
+	// 	sText_SideQuestDoneDesc_VerdantForestSkitty,
+	// 	sText_SideQuestMap_VerdantWoods,
+	// 	OBJ_EVENT_GFX_GIRL_2,
+	// 	OBJECT,
+	// 	NULL,
+	// 		0
+	// ),
 	[QUEST_MAPLEGROVE_LOVERS] = side_quest(
 	      sText_SideQuestName_MaplegroveLovers,
 	      sText_SideQuestDesc_MaplegroveLovers,
@@ -640,6 +644,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM,
 	      sSubQuests_ApplevineCouchPotato,
           SUB_QUEST_COUNT_COUCH_POTATO 
+	),
+	[QUEST_ROCKY_PATH_NURSE] = side_quest(
+	      sText_SideQuestName_ROCKY_PATH_NURSE,
+	      sText_SideQuestDesc_ROCKY_PATH_NURSE,
+	      sText_SideQuestDoneDesc_ROCKY_PATH_NURSE,
+	      sText_SideQuestMap_RockyPath,
+	      ITEM_POKEVIAL, 
+	      ITEM,
+		  NULL,
+		  	   0
 	),
 };
 

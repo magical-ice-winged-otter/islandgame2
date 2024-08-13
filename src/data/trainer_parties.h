@@ -1,3 +1,17 @@
+
+
+
+#include "trainer_parties/rocky_path.h"
+
+
+
+
+
+
+
+
+
+
 static const struct TrainerMon sParty_SOrannaPathTrainer1[] = {
     {
     .lvl = 5,
@@ -39,7 +53,7 @@ static const struct TrainerMon sParty_CampPersiTrainer1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 8,
-    .species = SPECIES_NINCADA,
+    .species = SPECIES_NINCADA_MARYAN,
     }
 };
 
@@ -453,23 +467,6 @@ static const struct TrainerMon sParty_TravelersTunnel1[] = {
 
 
 
-static const struct TrainerMon sParty_Rose4[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 31,
-    .species = SPECIES_SHROOMISH,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 31,
-    .species = SPECIES_GLOOM,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-    .lvl = 31,
-    .species = SPECIES_ROSELIA,
-    }
-};
 
 static const struct TrainerMon sParty_Rose5[] = {
     {
@@ -732,14 +729,14 @@ static const struct TrainerMon sParty_COrannaPathPathMaster[] = {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 21,
     .species = SPECIES_KIRLIA,
-    .heldItem = ITEM_PETAYA_BERRY,
+    .heldItem = ITEM_WISE_GLASSES,
     .moves = {MOVE_DISARMING_VOICE, MOVE_MAGICAL_LEAF, MOVE_CONFUSION, MOVE_DOUBLE_TEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 21,
     .species = SPECIES_KADABRA,
-    .heldItem = ITEM_PETAYA_BERRY,
+    .heldItem = ITEM_PSYCHIC_GEM,
     .moves = {MOVE_PSYBEAM, MOVE_DISABLE, MOVE_HIDDEN_POWER, MOVE_SHOCK_WAVE}
     },
     {
@@ -817,7 +814,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .heldItem = ITEM_LIGHT_CLAY,
     .ability = ABILITY_SNOW_WARNING,
     .gender = TRAINER_MON_FEMALE,
-    .moves = {MOVE_AURORA_VEIL, MOVE_HAIL, MOVE_ICY_WIND, MOVE_WATER_PULSE}
+    .moves = {MOVE_AURORA_VEIL, MOVE_SNOWSCAPE, MOVE_ICY_WIND, MOVE_WATER_PULSE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -827,7 +824,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .ability = ABILITY_SHELL_ARMOR,
     .gender = TRAINER_MON_FEMALE,
     .ball = ITEM_DIVE_BALL,
-    .moves = {MOVE_ICE_SHARD, MOVE_WATER_PULSE, MOVE_CONFUSE_RAY, MOVE_HAIL}
+    .moves = {MOVE_ICE_SHARD, MOVE_WATER_PULSE, MOVE_CONFUSE_RAY, MOVE_SNOWSCAPE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -837,7 +834,7 @@ static const struct TrainerMon sParty_TidalcoveGymRuka[] = {
     .ability = ABILITY_ICE_BODY,
     .gender = TRAINER_MON_FEMALE,
     .ball = ITEM_DIVE_BALL,
-    .moves = {MOVE_DRAGON_BREATH, MOVE_WATER_PULSE, MOVE_AURORA_BEAM, MOVE_HAIL},
+    .moves = {MOVE_DRAGON_BREATH, MOVE_WATER_PULSE, MOVE_AURORA_BEAM, MOVE_SNOWSCAPE},
     }
 };
 
@@ -932,18 +929,6 @@ static const struct TrainerMon sParty_MtAuroraEdea[] = {
 };
 
 
-
-
-
-#include "trainer_parties/rocky_path.h"
-
-
-
-
-
-
-
-
 /// Promenade Path
 
 static const struct TrainerMon sParty_PromenadePath1[] = {
@@ -981,7 +966,7 @@ static const struct TrainerMon sParty_PromenadePath3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 25,
-    .species = SPECIES_QUILAVA,
+    .species = SPECIES_TOGEDEMARU,
     },
 };
 

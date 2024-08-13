@@ -486,7 +486,8 @@ const u32 gTrainerPalette_BugCatcherF[] = INCBIN_U32("graphics/trainers/front_pi
 const u32 gTrainerFrontPic_Nerd[] = INCBIN_U32("graphics/trainers/front_pics/nerd.4bpp.lz");
 const u32 gTrainerPalette_Nerd[] = INCBIN_U32("graphics/trainers/front_pics/nerd.gbapal.lz");
 
-
+const u32 gTrainerFrontPic_BirdKeeperF[] = INCBIN_U32("graphics/trainers/front_pics/birdkeeper_f.4bpp.lz");
+const u32 gTrainerPalette_BirdKeeperF[] = INCBIN_U32("graphics/trainers/front_pics/birdkeeper_f.gbapal.lz");
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
@@ -653,6 +654,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(SCOUT_F, ScoutF),
     TRAINER_SPRITE(BUG_CATCHER_F, BugCatcherF),
     TRAINER_SPRITE(NERD, Nerd),
+    TRAINER_SPRITE(BIRD_KEEPER_F, BirdKeeperF),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

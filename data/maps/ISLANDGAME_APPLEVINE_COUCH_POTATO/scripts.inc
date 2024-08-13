@@ -147,16 +147,16 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_1:
 	.string "my server! Welcome to your new job!\p"
 	.string "Hmm... I could go for some chocolate. Go\n"
 	.string "down to La Cucina Dolche and get me\l"
-	.string "one of their tasty {COLOR LIGHT_RED}Sweet Hearts{COLOR DARK_GRAY},\l"
+	.string "one of their tasty Sweet Hearts,\l"
 	.string "server!$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_2:
-	.string "Where's my {COLOR LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}? I need it\n"
+	.string "Where's my {STR_VAR_2}? I need it\n"
 	.string "now!$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_3:
 	.string "Ah, have you brought my\n"
-	.string "{COLOR LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}?$"
+	.string "{STR_VAR_2}?$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_4:
 	.string "No? Then go back out there and get one!$"
@@ -178,7 +178,7 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_5:
 	.string "Here you are, your last paycheck!$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_6:
-	.string "Hm?{PAUSE 60} What do you mean, “That's It?” I\n"
+	.string "Hm? What do you mean, “That's It?” I\n"
 	.string "paid you the amount I always give.\p"
 	.string "WHAT!? The cookies cost THAT much!? I\n"
 	.string "don't have that kind of money!\p"
@@ -199,7 +199,7 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_7:
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_8:
 	.string "Hmm, I'm still pretty hungry...\p"
 	.string "Oh, I've always wanted to try one of\n"
-	.string "those boy scout {COLOR LIGHT_RED}Candy Bars{COLOR DARK_GRAY} they sell\l"
+	.string "those boy scout Candy Bars they sell\l"
 	.string "at Camp Persi.\p"
 	.string "Go forth, my loyal servant!$"
 
@@ -209,15 +209,15 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_9:
 	.string "up in Aetheria, and their pancakes are\l"
 	.string "bomb, according to Serafina!\p"
 	.string "Get me one of those Sera-approved\n"
-	.string "{COLOR LIGHT_RED}Pancakes{COLOR DARK_GRAY} at once!$"
+	.string "Pancakes at once!$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_10:
 	.string "Man, I haven't had a good donut in\n"
 	.string "years. When I lived in Cantalo with my\l"
 	.string "mom, she would always bring me home a\l"
 	.string "jelly-filled donut.\p"
-	.string "Yo, mind snagging me one of those {COLOR LIGHT_RED}Jelly\n"
-	.string "Donuts{COLOR DARK_GRAY} from Cantalo? Be sure to get\l"
+	.string "Yo, mind snagging me one of those Jelly\n"
+	.string "Donuts from Cantalo? Be sure to get\l"
 	.string "strawberry, it's my favorite!$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_11:
@@ -230,7 +230,7 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_11:
 	.string "As a devoted tier three subscriber, I\n"
 	.string "MUST have her Sera-Snaxx!\p"
 	.string "Server! This is your final task! Get me\n"
-	.string "an order of {COLOR LIGHT_RED}Sera-Snaxx{COLOR DARK_GRAY} by ANY means\l"
+	.string "an order of Sera-Snaxx by ANY means\l"
 	.string "necessary! Money is no object!$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_12:

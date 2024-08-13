@@ -1161,7 +1161,8 @@
 #define OBJ_EVENT_GFX_WOMAN_8                    ISLAND_START + 57
 #define OBJ_EVENT_GFX_SCHOOL_KID_F               ISLAND_START + 58
 #define OBJ_EVENT_GFX_APPLE                      ISLAND_START + 59
-#define ISLAND_END                               OBJ_EVENT_GFX_APPLE
+#define OBJ_EVENT_GFX_SHINY_AZURILL              ISLAND_START + 60
+#define ISLAND_END                               OBJ_EVENT_GFX_SHINY_AZURILL
 
 #define NUM_OBJ_EVENT_GFX               (ISLAND_END + 1)
 
