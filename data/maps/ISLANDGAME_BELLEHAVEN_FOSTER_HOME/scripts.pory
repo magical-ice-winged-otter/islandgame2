@@ -1,1 +1,8 @@
 mapscripts ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts {}
+
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Togepi_NPC {
+    lock
+    msgbox("Oh dear... Togepi, not again!")
+    release
+}

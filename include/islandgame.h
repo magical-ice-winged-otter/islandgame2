@@ -54,6 +54,7 @@ typedef struct Location
 #define ROSEVALE 13
 #define APPLEVINE 14
 #define ROCKY_PATH 15
+#define BELLEHAVEN 16
 
 /// @brief Map loading information for each custom location. Contains spawn locations and map ids.
 // Get the set_loc first argument from map_groups.h
@@ -74,6 +75,7 @@ static const Location LOCATION_DATA[] = {
     [ROSEVALE] = SET_LOC(ISLANDGAME_ROSEVALE, 19, 13),
     [APPLEVINE] = SET_LOC(ISLANDGAME_APPLEVINE, 47, 28),
     [ROCKY_PATH] = SET_LOC(ISLANDGAME_ROCKY_PATH, 10, 9),
+    [BELLEHAVEN] = SET_LOC(ISLANDGAME_BELLEHAVEN, 21, 40),
 };
 
 static const u8 frontLawnName[] = _("Front Lawn");
@@ -92,6 +94,7 @@ static const u8 tidalcoveName[] = _("Tidalcove");
 static const u8 rosevaleName[] = _("Rosevale");
 static const u8 applevineName[] = _("Applevine");
 static const u8 rockypathName[] = _("Rocky Path");
+static const u8 bellehavenName[] = _("Bellehaven");
 
 /// @brief A human-readable name for each custom location in the game.
 static const u8 *const LOCATION_NAMES[] = { 
@@ -111,6 +114,7 @@ static const u8 *const LOCATION_NAMES[] = {
     [ROSEVALE] = rosevaleName,
     [APPLEVINE] = applevineName,
     [ROCKY_PATH] = rockypathName,
+    [BELLEHAVEN] = bellehavenName,
 };
 // The actual string values must be defined outside the array, or crashes will follow.
 
