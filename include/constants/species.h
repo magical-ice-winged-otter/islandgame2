@@ -1639,8 +1639,10 @@
 #define SPECIES_NINCADA_MARYAN                          1532
 #define SPECIES_NINJASK_MARYAN                          1533
 #define SPECIES_SHEDINJA_MARYAN                         1534
+#define SPECIES_COMBEE_MARYAN                           1535
+#define SPECIES_VESPIQUEN_MARYAN                        1536
 
-#define SPECIES_EGG SPECIES_SHEDINJA_MARYAN + 1
+#define SPECIES_EGG SPECIES_VESPIQUEN_MARYAN + 1
 
 #define NUM_SPECIES SPECIES_EGG
 

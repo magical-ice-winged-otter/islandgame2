@@ -285,8 +285,7 @@ ISLANDGAME_TIDALCOVE_Interact_PrimFan2_Text_0:
 
 ISLANDGAME_TIDALCOVE_Interact_Bike_Text_0:
 	.string "It's a bike. It's shiny and brand-new.\n"
-	.string "The price tag is absurd, though.\p"
-	.string "$"
+	.string "The price tag is absurd, though.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0:
 	.string "I like sand! It's soft, smooth, and fun\n"

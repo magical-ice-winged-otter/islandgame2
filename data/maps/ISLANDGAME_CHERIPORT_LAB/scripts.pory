@@ -43,7 +43,6 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         giveitem(ITEM_POKE_BALL, 5)
         msgbox(ProfTalk_Fourth_Text)
         setrespawn(HEAL_LOCATION_CHERIPORT)
-        setflag(FLAG_BADGE01_GET) // temporary until trade disobedience fixed
     } 
     // Before player defeats Audrey for the first time.
     if(!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {

@@ -39,7 +39,6 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_8:
 	giveitem ITEM_POKE_BALL, 5
 	msgbox ProfTalk_Fourth_Text
 	setrespawn HEAL_LOCATION_CHERIPORT
-	setflag FLAG_BADGE01_GET
 	goto ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_1
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_5:

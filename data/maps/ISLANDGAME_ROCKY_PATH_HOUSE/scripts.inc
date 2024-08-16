@@ -40,7 +40,7 @@ ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_5:
 	goto ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_1
 
 ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_6:
-	msgbox ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_Text_2
+	msgbox ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_9
 	goto ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_1
@@ -78,6 +78,7 @@ ISLANDGAME_ROCKY_PATH_HOUSE_Happiny_1:
 ISLANDGAME_ROCKY_PATH_HOUSE_Happiny_2:
 	msgbox ISLANDGAME_ROCKY_PATH_HOUSE_Happiny_Text_0
 	giveitem ITEM_FULL_RESTORE
+	setflag FLAG_ROCKY_PATH_HAPPINY_GIFT
 	goto ISLANDGAME_ROCKY_PATH_HOUSE_Happiny_1
 
 
@@ -113,8 +114,7 @@ ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_Text_2:
 
 ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_Text_3:
 	.string "O-Oh!{PAUSE 30} You managed to find one!? I am\n"
-	.string "forever in your debt, trainer!\p"
-	.string "$"
+	.string "forever in your debt, trainer!$"
 
 ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_Text_4:
 	.string "{PAUSE 60}Alright... {PAUSE 60}Just a little more...{PAUSE 60} annnd...{PAUSE 60}\n"
@@ -146,9 +146,9 @@ ISLANDGAME_ROCKY_PATH_HOUSE_Nurse_Text_8:
 	.string "of countless future Pokémon in need.$"
 
 ISLANDGAME_ROCKY_PATH_HOUSE_Happiny_Text_0:
-	.string "Hapi! (I might not have healing\n"
+	.string "Hapi! {COLOR BLUE}(I might not have healing\n"
 	.string "capabilities, but this does!)$"
 
 ISLANDGAME_ROCKY_PATH_HOUSE_Happiny_Text_1:
-	.string "Hapi Hapi. (I hope it will be useful in\n"
+	.string "Hapi Hapi. {COLOR BLUE}(I hope it will be useful in\n"
 	.string "your journey. :D)$"

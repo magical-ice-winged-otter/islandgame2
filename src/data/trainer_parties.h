@@ -322,31 +322,31 @@ static const struct TrainerMon sParty_MintyMeadows6[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 13,
-    .species = SPECIES_COMBEE,
+    .species = SPECIES_COMBEE_MARYAN,
     .gender = TRAINER_MON_MALE
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 13,
-    .species = SPECIES_COMBEE,
+    .species = SPECIES_COMBEE_MARYAN,
     .gender = TRAINER_MON_MALE
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 13,
-    .species = SPECIES_COMBEE,
+    .species = SPECIES_COMBEE_MARYAN,
     .gender = TRAINER_MON_MALE
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 13,
-    .species = SPECIES_COMBEE,
+    .species = SPECIES_COMBEE_MARYAN,
     .gender = TRAINER_MON_MALE
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 13,
-    .species = SPECIES_COMBEE,
+    .species = SPECIES_COMBEE_MARYAN,
     .gender = TRAINER_MON_MALE
     },
 };
@@ -622,7 +622,7 @@ static const struct TrainerMon sParty_COrannaPathTrainer2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 16,
-    .species = SPECIES_COMBEE,
+    .species = SPECIES_COMBEE_MARYAN,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),

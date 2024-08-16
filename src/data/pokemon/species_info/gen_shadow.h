@@ -464,6 +464,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
 #endif //P_FAMILY_PURRLOIN_MARYAN
 
 
+
 #if P_FAMILY_NINCADA_MARYAN
     [SPECIES_NINCADA_MARYAN] =
     {
@@ -590,7 +591,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_CURSED_BODY, ABILITY_MAGIC_GUARD, ABILITY_FILTER },
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_SHELL_ARMOR, ABILITY_FILTER },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Shedinja"),
         .cryId = CRY_SHEDINJA,
@@ -626,6 +627,126 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .teachableLearnset = sShedinjaMaryanTeachableLearnset,
     },
 #endif //P_FAMILY_NINCADA_MARYAN
+
+
+
+#if P_FAMILY_COMBEE_MARYAN
+    [SPECIES_COMBEE_MARYAN] =
+    {
+        .baseHP        = 30,
+        .baseAttack    = 30,
+        .baseDefense   = 42,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 42,
+        .types = MON_TYPES(TYPE_BUG, TYPE_FLYING),
+        .catchRate = 120,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 49 : 63,
+        .evYield_Speed = 1,
+        .itemRare = ITEM_HONEY,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_HONEY_GATHER, ABILITY_SWARM, ABILITY_HUSTLE },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Combee"),
+        .cryId = CRY_COMBEE,
+        .natDexNum = NATIONAL_DEX_COMBEE_MARYAN,
+        .categoryName = _("Tiny Bee"),
+        .height = 3,
+        .weight = 55,
+        .description = COMPOUND_STRING(
+            "A Pokémon formed by three others.\n"
+            "It constantly gathers honey from flowers\n"
+            "to please Vespiquen. At night, they\n"
+            "cluster to form a beehive and sleep."),
+        .pokemonScale = 530,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Combee,
+        .frontPicSize = MON_COORDS_SIZE(64, 40),
+        .frontPicYOffset = 16,
+        .frontAnimFrames = sAnims_Combee,
+        .frontAnimId = ANIM_V_SLIDE_WOBBLE,
+        .enemyMonElevation = 15,
+        .backPic = gMonBackPic_Combee,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 22,
+        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
+        .palette = gMonPalette_Combee,
+        .paletteFemale = gMonPalette_CombeeF,
+        .shinyPalette = gMonShinyPalette_Combee,
+        .shinyPaletteFemale = gMonShinyPalette_CombeeF,
+        .iconSprite = gMonIcon_Combee,
+        .iconPalIndex = 0,
+        FOOTPRINT(Combee)
+        .tmIlliterate = TRUE,
+        .levelUpLearnset = sCombeeMaryanLevelUpLearnset,
+        .teachableLearnset = sCombeeMaryanTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 21, SPECIES_VESPIQUEN_MARYAN}),
+    },
+
+    [SPECIES_VESPIQUEN_MARYAN] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 80,
+        .baseDefense   = 102,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 102,
+        .types = MON_TYPES(TYPE_BUG, TYPE_PSYCHIC),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 166 : 188,
+        .evYield_Defense = 1,
+        .evYield_SpDefense = 1,
+        .itemCommon = ITEM_PSYCHIC_GEM,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
+        .abilities = { ABILITY_QUEENLY_MAJESTY, ABILITY_MAGIC_GUARD, ABILITY_TELEPATHY },
+        .bodyColor = BODY_COLOR_YELLOW,
+        .speciesName = _("Vespiquen"),
+        .cryId = CRY_VESPIQUEN,
+        .natDexNum = NATIONAL_DEX_VESPIQUEN_MARYAN,
+        .categoryName = _("Beehive"),
+        .height = 12,
+        .weight = 385,
+        .description = COMPOUND_STRING(
+            "It houses its colony in cells in its body\n"
+            "and releases various pheromones to\n"
+            "make those grubs do its bidding.\n"
+            "There is only one in a colony."),
+        .pokemonScale = 282,
+        .pokemonOffset = 4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_VespiquenMaryan,
+        .frontPicSize = MON_COORDS_SIZE(48, 56),
+        .frontPicYOffset = 4,
+        .frontAnimFrames = sAnims_VespiquenMaryan,
+        .frontAnimId = ANIM_LUNGE_GROW,
+        .enemyMonElevation = 4,
+        .backPic = gMonBackPic_VespiquenMaryan,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_CIRCLE_COUNTERCLOCKWISE,
+        .palette = gMonPalette_VespiquenMaryan,
+        .shinyPalette = gMonShinyPalette_VespiquenMaryan,
+        .iconSprite = gMonIcon_VespiquenMaryan,
+        .iconPalIndex = 0,
+        FOOTPRINT(VespiquenMaryan)
+        .levelUpLearnset = sVespiquenMaryanLevelUpLearnset,
+        .teachableLearnset = sVespiquenMaryanTeachableLearnset,
+    },
+#endif //P_FAMILY_COMBEE_MARYAN
+
+
+
 
 #ifdef __INTELLISENSE__
 };

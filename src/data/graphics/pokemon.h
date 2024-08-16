@@ -13166,6 +13166,31 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
 #endif //P_FOOTPRINTS
 #endif //P_FAMILY_NINCADA
 
+#if P_FAMILY_COMBEE_MARYAN
+    const u32 gMonFrontPic_CombeeMaryan[] = INCBIN_U32("graphics/pokemon/combee/anim_front.4bpp.lz");
+    const u32 gMonPalette_CombeeMaryan[] = INCBIN_U32("graphics/pokemon/combee/normal.gbapal.lz");
+    const u32 gMonBackPic_CombeeMaryan[] = INCBIN_U32("graphics/pokemon/combee/back.4bpp.lz");
+    const u32 gMonShinyPalette_CombeeMaryan[] = INCBIN_U32("graphics/pokemon/combee/shiny.gbapal.lz");
+    const u8 gMonIcon_CombeeMaryan[] = INCBIN_U8("graphics/pokemon/combee/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CombeeMaryan[] = INCBIN_U8("graphics/pokemon/combee/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonPalette_CombeeMaryanF[] = INCBIN_U32("graphics/pokemon/combee/normalf.gbapal.lz");
+    const u32 gMonShinyPalette_CombeeMaryanF[] = INCBIN_U32("graphics/pokemon/combee/shinyf.gbapal.lz");
+
+    const u32 gMonFrontPic_VespiquenMaryan[] = INCBIN_U32("graphics/pokemon/maryan_vespiquen/anim_front.4bpp.lz");
+    const u32 gMonPalette_VespiquenMaryan[] = INCBIN_U32("graphics/pokemon/maryan_vespiquen/normal.gbapal.lz");
+    const u32 gMonBackPic_VespiquenMaryan[] = INCBIN_U32("graphics/pokemon/maryan_vespiquen/back.4bpp.lz");
+    const u32 gMonShinyPalette_VespiquenMaryan[] = INCBIN_U32("graphics/pokemon/maryan_vespiquen/shiny.gbapal.lz");
+    const u8 gMonIcon_VespiquenMaryan[] = INCBIN_U8("graphics/pokemon/maryan_vespiquen/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_VespiquenMaryan[] = INCBIN_U8("graphics/pokemon/maryan_vespiquen/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#endif //P_FAMILY_COMBEE_MARYAN
+
+
+
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
 const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

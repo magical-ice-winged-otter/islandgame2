@@ -61,7 +61,7 @@ script ISLANDGAME_TIDALCOVE_Interact_PrimFan2 {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_Bike {
-    msgbox(format("It's a bike. It's shiny and brand-new. The price tag is absurd, though.\p"), MSGBOX_SIGN)
+    msgbox(format("It's a bike. It's shiny and brand-new. The price tag is absurd, though."), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl {

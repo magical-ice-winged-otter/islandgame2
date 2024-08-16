@@ -10281,6 +10281,42 @@ static const union AnimCmd sAnim_ShedinjaMaryan_1[] =
 };
 #endif //P_FAMILY_NINCADA_MARYAN
 
+#if P_FAMILY_COMBEE_MARYAN
+static const union AnimCmd sAnim_CombeeMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_VespiquenMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_COMBEE_MARYAN
+
+
+
+
+
+
+
+
+
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
 {                                                   \
@@ -12968,5 +13004,9 @@ SINGLE_ANIMATION(NincadaMaryan);
 SINGLE_ANIMATION(NinjaskMaryan);
 SINGLE_ANIMATION(ShedinjaMaryan);
 #endif //P_FAMILY_NINCADA_MARYAN
+#if P_FAMILY_COMBEE_MARYAN
+SINGLE_ANIMATION(CombeeMaryan);
+SINGLE_ANIMATION(VespiquenMaryan);
+#endif //P_FAMILY_COMBEE_MARYAN
 
 SINGLE_ANIMATION(Egg);
