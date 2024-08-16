@@ -1,0 +1,92 @@
+{
+  "id": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO",
+  "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO",
+  "layout": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO",
+  "music": "MUS_DP_ETERNA_FOREST",
+  "region_map_section": "MAPSEC_CENTRAL_ORANNA_PATH",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_ItemBall",
+      "flag": "FLAG_TEMP_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_572",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon1",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_167",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon2",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_661",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon3",
+      "flag": "FLAG_TEMP_3"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_1",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

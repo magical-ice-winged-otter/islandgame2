@@ -1,245 +1,337 @@
 mapscripts ISLANDGAME_TIDALCOVE_RARE_HOUSE_MapScripts {}
 
+script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Stone {
+    msgbox(format(
+        "{COLOR RED}(It's a giant rock. Wow. A rock that is giant.)"
+    ), MSGBOX_SIGN)
+}
+
 script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
-    returnqueststate(QUEST_TIDALCOVE_RARE_PKMN)
-
-    switch (var(VAR_RESULT)) {
-        case 1: // inactive
+    lock
+    faceplayer
+    if(var(VAR_TIDALCOVE_STATE) == 0) {
+        msgbox(format(
+            "Years ago, I came to the Maryan Isles in search of a particular rare Pokémon.\p"
+            "But alas, all I could find during my ventures were these rare stones.\p"
+            "If only I could catch a glimpse of an Eevee. I'm convinced there aren't any left in the wild anymore..."
+        ))
+        closemessage
+        setvar(VAR_0x8000, SPECIES_EEVEE)
+        callnative(CheckPartyMon)
+        if (var(VAR_RESULT)) {
+            playse(SE_PIN)
+            applymovement(1, Common_Movement_ExclamationMark)
+            waitmovement(0)
+            applymovement(1, Common_Movement_Delay32)
+            waitmovement(0)
+            setvar(VAR_TIDALCOVE_STATE, 1)
             msgbox(format(
-                "Years ago, I came to the Maryan Isles in search of rare Pokémon.\p"
-                "But alas, all I could find during my ventures were these rare stones.\p"
-                "If you've any rare Pokémon, could you show them to me? I'd be more than happy to share with you the stones I found."
-            ), MSGBOX_NPC)
-            startquest(QUEST_TIDALCOVE_RARE_PKMN)
-        case 2: // active
-            lock
-            msgbox(format("I'm looking for five rare Pokémon of different types.\pDid you find any of them?"), MSGBOX_NPC)
-
-            // water checks
-            setvar(VAR_0x8000, SPECIES_SQUIRTLE)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-            setvar(VAR_0x8000, SPECIES_WARTORTLE)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-            setvar(VAR_0x8000, SPECIES_BLASTOISE)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-
-            setvar(VAR_0x8000, SPECIES_MUDKIP)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-            setvar(VAR_0x8000, SPECIES_MARSHTOMP)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-            setvar(VAR_0x8000, SPECIES_SWAMPERT)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-
-            setvar(VAR_0x8000, SPECIES_FROAKIE)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-            setvar(VAR_0x8000, SPECIES_FROGADIER)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-            setvar(VAR_0x8000, SPECIES_GRENINJA)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
-            }
-
-
-
-            // grass checks
-            setvar(VAR_0x8000, SPECIES_ROWLET)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-            setvar(VAR_0x8000, SPECIES_DARTRIX)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-            setvar(VAR_0x8000, SPECIES_DECIDUEYE)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-            setvar(VAR_0x8000, SPECIES_DECIDUEYE_HISUIAN)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-
-            setvar(VAR_0x8000, SPECIES_BULBASAUR)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-            setvar(VAR_0x8000, SPECIES_IVYSAUR)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-            setvar(VAR_0x8000, SPECIES_VENUSAUR)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-
-            setvar(VAR_0x8000, SPECIES_TREECKO)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-            setvar(VAR_0x8000, SPECIES_GROVYLE)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-            setvar(VAR_0x8000, SPECIES_SCEPTILE)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
-            }
-
-
-
-
-
-
-            // fire checks
-            setvar(VAR_0x8000, SPECIES_TORCHIC)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-            setvar(VAR_0x8000, SPECIES_COMBUSKEN)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-            setvar(VAR_0x8000, SPECIES_BLAZIKEN)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-
-            setvar(VAR_0x8000, SPECIES_CHARMANDER)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-            setvar(VAR_0x8000, SPECIES_CHARMELEON)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-            setvar(VAR_0x8000, SPECIES_CHARIZARD)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-
-            setvar(VAR_0x8000, SPECIES_LITTEN)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-            setvar(VAR_0x8000, SPECIES_TORRACAT)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-            setvar(VAR_0x8000, SPECIES_INCINEROAR)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
-            }
-
-
-
-            // delibird checks
-            setvar(VAR_0x8000, SPECIES_DELIBIRD)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD, FoundDelibird)
-            }
-
-            // pikachu check
-            setvar(VAR_0x8000, SPECIES_PIKACHU)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
-            }
-            setvar(VAR_0x8000, SPECIES_PICHU)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
-            }
-            setvar(VAR_0x8000, SPECIES_RAICHU)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
-            }
-            setvar(VAR_0x8000, SPECIES_RAICHU_ALOLAN)
-            callnative(CheckPartyMon)
-            if (var(VAR_RESULT)) {
-                goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
-            }
-            
-            msgbox(format("Hmm, unfortunately you don't have any of the Pokémon I'm looking for."))
-            goto(End)
-
-        FoundSquirtle:
-            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
-            completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE)
-            giveitem(ITEM_WATER_STONE)
-            goto(End)
-        FoundRowlet:
-            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
-            completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET)
-            giveitem(ITEM_LEAF_STONE)
-            goto(End)
-        FoundTepig:
-            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
-            completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG)
-            giveitem(ITEM_FIRE_STONE)
-            goto(End)
-        FoundDelibird:
-            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
-            completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD)
-            giveitem(ITEM_ICE_STONE)
-            goto(End)
-        FoundPikachu:
-            msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
-            completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU)
-            giveitem(ITEM_THUNDER_STONE)
-            goto(End)
-        End:
-            msgbox(format("If you find a Pokémon you think is rare, please do not hesitate to show me."))
+                "Oh! Y-You have one!? P-Please, may I take a closer look at it?\p"
+                "Ooh... What a majestic specimen indeed! And just when I thought I would never see a real one in my lifetime!\p"
+                "Thank you, young trainer. Here, take one of my rare stones as a token of my appreciation! Choose wisely!"
+            ))      
+        }
+        dynmultipush("Fire Stone", 211)
+        dynmultipush("Water Stone", 212)
+        dynmultipush("Thunder Stone", 213)
+        dynmultipush("Leaf Stone", 214)
+        dynmultipush("Ice Stone", 215)
+        dynmultipush("I'll decide later!", 0)
+        dynmultistack(0,0,TRUE,6,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        switch(var(VAR_RESULT)) {
+            case 211: giveitem(ITEM_FIRE_STONE)
+            case 212: giveitem(ITEM_WATER_STONE)
+            case 213: giveitem(ITEM_THUNDER_STONE)
+            case 214: giveitem(ITEM_LEAF_STONE)
+            case 215: giveitem(ITEM_ICE_STONE)
+            default:
+        }
+        if(var(VAR_RESULT) == 0) {
+            msgbox(format(
+                "Alright. Just let me know when you would like your rare stone!"
+            ))
+            closemessage
+        }
+        else {
+            setvar(VAR_TIDALCOVE_STATE, 2)
+        }
     }
-    closemessage
-    release
-}
+    elif (var(VAR_TIDALCOVE_STATE) == 1) {
+        msgbox(format(
+            "Welcome back! Have you decided which of my rare stones you want?"
+        ))
+        dynmultipush("Fire Stone", 211)
+        dynmultipush("Water Stone", 212)
+        dynmultipush("Thunder Stone", 213)
+        dynmultipush("Leaf Stone", 214)
+        dynmultipush("Ice Stone", 215)
+        dynmultipush("I'll decide later!", 0)
+        dynmultistack(0,0,TRUE,6,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        switch(var(VAR_RESULT)) {
+            case 211: giveitem(ITEM_FIRE_STONE)
+            case 212: giveitem(ITEM_WATER_STONE)
+            case 213: giveitem(ITEM_THUNDER_STONE)
+            case 214: giveitem(ITEM_LEAF_STONE)
+            case 215: giveitem(ITEM_ICE_STONE)
+            default:
+        }
+        if(var(VAR_RESULT) == 0) {
+            msgbox(format(
+                "Alright. Just let me know when you would like your rare stone!"
+            ))
+            closemessage
+        }
+        else {
+            setvar(VAR_TIDALCOVE_STATE, 2)
+        }
+    }
+    else {
+        msgbox(format(
+            "Ah... if only I had an Eevee of my own."
+        ))
+        closemessage
+    }
 
-text ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon {
-    format("Oh! That is one of the Pokémon I am looking for! May I have a closer look?\pExquisite... A majestic Pokémon, indeed! Well, a deal's a deal! Here you are!")
 }
+    // returnqueststate(QUEST_TIDALCOVE_RARE_PKMN)
+
+//     switch (var(VAR_RESULT)) {
+//         case 1: // inactive
+//             msgbox(format(
+//                 "Years ago, I came to the Maryan Isles in search of rare Pokémon.\p"
+//                 "But alas, all I could find during my ventures were these rare stones.\p"
+//                 "If you've any rare Pokémon, could you show them to me? I'd be more than happy to share with you the stones I found."
+//             ), MSGBOX_NPC)
+//             startquest(QUEST_TIDALCOVE_RARE_PKMN)
+//         case 2: // active
+//             lock
+//             msgbox(format("I'm looking for five rare Pokémon of different types.\pDid you find any of them?"), MSGBOX_NPC)
+
+//             // water checks
+//             setvar(VAR_0x8000, SPECIES_SQUIRTLE)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+//             setvar(VAR_0x8000, SPECIES_WARTORTLE)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+//             setvar(VAR_0x8000, SPECIES_BLASTOISE)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+
+//             setvar(VAR_0x8000, SPECIES_MUDKIP)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+//             setvar(VAR_0x8000, SPECIES_MARSHTOMP)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+//             setvar(VAR_0x8000, SPECIES_SWAMPERT)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+
+//             setvar(VAR_0x8000, SPECIES_FROAKIE)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+//             setvar(VAR_0x8000, SPECIES_FROGADIER)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+//             setvar(VAR_0x8000, SPECIES_GRENINJA)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle)
+//             }
+
+
+
+//             // grass checks
+//             setvar(VAR_0x8000, SPECIES_ROWLET)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+//             setvar(VAR_0x8000, SPECIES_DARTRIX)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+//             setvar(VAR_0x8000, SPECIES_DECIDUEYE)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+//             setvar(VAR_0x8000, SPECIES_DECIDUEYE_HISUIAN)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+
+//             setvar(VAR_0x8000, SPECIES_BULBASAUR)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+//             setvar(VAR_0x8000, SPECIES_IVYSAUR)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+//             setvar(VAR_0x8000, SPECIES_VENUSAUR)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+
+//             setvar(VAR_0x8000, SPECIES_TREECKO)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+//             setvar(VAR_0x8000, SPECIES_GROVYLE)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+//             setvar(VAR_0x8000, SPECIES_SCEPTILE)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet)
+//             }
+
+
+
+
+
+
+//             // fire checks
+//             setvar(VAR_0x8000, SPECIES_TORCHIC)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+//             setvar(VAR_0x8000, SPECIES_COMBUSKEN)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+//             setvar(VAR_0x8000, SPECIES_BLAZIKEN)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+
+//             setvar(VAR_0x8000, SPECIES_CHARMANDER)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+//             setvar(VAR_0x8000, SPECIES_CHARMELEON)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+//             setvar(VAR_0x8000, SPECIES_CHARIZARD)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+
+//             setvar(VAR_0x8000, SPECIES_LITTEN)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+//             setvar(VAR_0x8000, SPECIES_TORRACAT)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+//             setvar(VAR_0x8000, SPECIES_INCINEROAR)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig)
+//             }
+
+
+
+//             // delibird checks
+//             setvar(VAR_0x8000, SPECIES_DELIBIRD)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD, FoundDelibird)
+//             }
+
+//             // pikachu check
+//             setvar(VAR_0x8000, SPECIES_PIKACHU)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
+//             }
+//             setvar(VAR_0x8000, SPECIES_PICHU)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
+//             }
+//             setvar(VAR_0x8000, SPECIES_RAICHU)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
+//             }
+//             setvar(VAR_0x8000, SPECIES_RAICHU_ALOLAN)
+//             callnative(CheckPartyMon)
+//             if (var(VAR_RESULT)) {
+//                 goto_if_subquest_not_complete(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu)
+//             }
+            
+//             msgbox(format("Hmm, unfortunately you don't have any of the Pokémon I'm looking for."))
+//             goto(End)
+
+//         FoundSquirtle:
+//             msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
+//             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE)
+//             giveitem(ITEM_WATER_STONE)
+//             goto(End)
+//         FoundRowlet:
+//             msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
+//             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET)
+//             giveitem(ITEM_LEAF_STONE)
+//             goto(End)
+//         FoundTepig:
+//             msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
+//             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG)
+//             giveitem(ITEM_FIRE_STONE)
+//             goto(End)
+//         FoundDelibird:
+//             msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
+//             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD)
+//             giveitem(ITEM_ICE_STONE)
+//             goto(End)
+//         FoundPikachu:
+//             msgbox(ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon)
+//             completesubquest(QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU)
+//             giveitem(ITEM_THUNDER_STONE)
+//             goto(End)
+//         End:
+//             msgbox(format("If you find a Pokémon you think is rare, please do not hesitate to show me."))
+//     }
+//     closemessage
+//     release
+// }
+
+// text ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon {
+//     format("Oh! That is one of the Pokémon I am looking for! May I have a closer look?\pExquisite... A majestic Pokémon, indeed! Well, a deal's a deal! Here you are!")
+// }

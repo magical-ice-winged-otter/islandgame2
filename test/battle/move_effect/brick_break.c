@@ -3,11 +3,11 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gBattleMoves[MOVE_BRICK_BREAK].effect == EFFECT_BRICK_BREAK);
-    ASSUME(gBattleMoves[MOVE_SNOWSCAPE].effect == EFFECT_SNOWSCAPE);
-    ASSUME(gBattleMoves[MOVE_LIGHT_SCREEN].effect == EFFECT_LIGHT_SCREEN);
-    ASSUME(gBattleMoves[MOVE_REFLECT].effect == EFFECT_REFLECT);
-    ASSUME(gBattleMoves[MOVE_AURORA_VEIL].effect == EFFECT_AURORA_VEIL);
+    ASSUME(gMovesInfo[MOVE_BRICK_BREAK].effect == EFFECT_BRICK_BREAK);
+    ASSUME(gMovesInfo[MOVE_SNOWSCAPE].effect == EFFECT_SNOWSCAPE);
+    ASSUME(gMovesInfo[MOVE_LIGHT_SCREEN].effect == EFFECT_LIGHT_SCREEN);
+    ASSUME(gMovesInfo[MOVE_REFLECT].effect == EFFECT_REFLECT);
+    ASSUME(gMovesInfo[MOVE_AURORA_VEIL].effect == EFFECT_AURORA_VEIL);
 }
 
 SINGLE_BATTLE_TEST("Brick Break removes Light Screen, Reflect and Aurora Veil from the target's side of the field")
@@ -135,26 +135,5 @@ DOUBLE_BATTLE_TEST("Brick Break can remove Light Screen, Reflect and Aurora Veil
         ANIMATION(ANIM_TYPE_MOVE, MOVE_BRICK_BREAK, playerRight);
         MESSAGE("The wall shattered!");
         HP_BAR(playerLeft);
-    }
-}
-
-SINGLE_BATTLE_TEST("Move Raging Bull changes it's type depending on the Tauros Form")
-{
-    u16 speciesPlayer;
-    u16 speciesOpponent;
-
-    PARAMETRIZE { speciesPlayer = SPECIES_TAUROS_PALDEAN_COMBAT_BREED; speciesOpponent = SPECIES_CHARIZARD; }
-    PARAMETRIZE { speciesPlayer = SPECIES_TAUROS_PALDEAN_BLAZE_BREED; speciesOpponent = SPECIES_BLASTOISE; }
-    PARAMETRIZE { speciesPlayer = SPECIES_TAUROS_PALDEAN_AQUA_BREED; speciesOpponent = SPECIES_VENUSAUR; }
-
-    GIVEN {
-        PLAYER(speciesPlayer);
-        OPPONENT(speciesOpponent);
-    } WHEN {
-        TURN { MOVE(player, MOVE_RAGING_BULL); }
-    } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_RAGING_BULL, player);
-        HP_BAR(opponent);
-        MESSAGE("It's not very effective…");
     }
 }

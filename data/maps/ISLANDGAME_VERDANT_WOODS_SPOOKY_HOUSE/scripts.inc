@@ -14,8 +14,8 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	goto ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_3:
-	compare VAR_SPOOKY_HOUSE_STATE, 3
-	goto_if_le ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	compare VAR_SPOOKY_HOUSE_STATE, 4
+	goto_if_lt ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 	goto ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
@@ -28,18 +28,9 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut::
 	lock
 	playmoncry SPECIES_MIMIKYU, CRY_MODE_NORMAL
+	waitmoncry
 	setvar VAR_SPOOKY_HOUSE_STATE, 1
 	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut_Text_0
-	closemessage
-	release
-	return
-
-
-ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor::
-	lock
-	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor_Text_0
-	playmoncry SPECIES_MIMIKYU, CRY_MODE_NORMAL
-	waitmoncry
 	closemessage
 	release
 	return
@@ -132,6 +123,7 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1::
 	playse SE_M_NIGHTMARE
 	waitse
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+	waitmovement 0
 	addobject 1
 	setobjectxy 1, 4, 8
 	addobject 2
@@ -146,23 +138,9 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1::
 	removeobject 2
 	setobjectxyperm 1, -3, 1
 	setobjectxyperm 2, -3, 1
-	setvar VAR_SPOOKY_HOUSE_STATE, 2
+	setvar VAR_SPOOKY_HOUSE_STATE, 3
 	fadescreen FADE_FROM_BLACK
 	release
-	return
-
-
-ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2::
-	lock
-	playse SE_M_NIGHTMARE
-	waitse
-	applymovement 4, spookySpin
-	waitmovement 0
-	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2_Text_0
-	applymovement 4, spookyTP
-	waitmovement 0
-	removeobject 4
-	setobjectxyperm 4, -3, 1
 	return
 
 
@@ -177,7 +155,6 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3::
 	removeobject 3
 	setobjectxyperm 3, -3, 1
 	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3_Text_0
-	setvar VAR_SPOOKY_HOUSE_STATE, 3
 	release
 	return
 
@@ -213,21 +190,12 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_GetOut_Text_0:
 	.string "LeAVe mY HoUSE nOW NoW nOW NOw NOW\n"
 	.string "grAWUghhH$"
 
-ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_LockedDoor_Text_0:
-	.string "(The door is locked. I can feel an eerie\n"
-	.string "presence behind it.. Brr...)\p"
-	.string "$"
-
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1_Text_0:
 	.string "Leave this place...\p"
 	.string "While you still can...$"
 
-ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook2_Text_0:
-	.string "$"
-
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3_Text_0:
-	.string "{COLOR RED}(Huh...? It just floated away through\n"
-	.string "that wall...)$"
+	.string "{COLOR RED}(Huh...?)$"
 
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4_Text_0:
-	.string "(She stares at you ominously.)$"
+	.string "> She stares into your soul ominously.$"

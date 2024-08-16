@@ -37,16 +37,14 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
                 setobjectxyperm(LOCALID_ARTHUR_MOM, 12, 24)
                 setobjectxyperm(LOCALID_ARTHUR_SISTER, 14, 24)
                 setobjectxyperm(LOCALID_AZURILL, 14, 26)
+                setobjectmovementtype(LOCALID_ARTHUR, MOVEMENT_TYPE_FACE_UP)
+                setobjectmovementtype(LOCALID_AZURILL, MOVEMENT_TYPE_FACE_UP)
+                setobjectmovementtype(LOCALID_ARTHUR_DAD, MOVEMENT_TYPE_FACE_DOWN)
                 addobject(LOCALID_ARTHUR)
                 addobject(LOCALID_ARTHUR_DAD)
                 addobject(LOCALID_ARTHUR_MOM)
                 addobject(LOCALID_ARTHUR_SISTER)
                 addobject(LOCALID_AZURILL)
-                setobjectmovementtype(OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_UP)
-                turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
-                setobjectmovementtype(LOCALID_ARTHUR, MOVEMENT_TYPE_FACE_UP)
-                setobjectmovementtype(LOCALID_AZURILL, MOVEMENT_TYPE_FACE_UP)
-                setobjectmovementtype(LOCALID_ARTHUR_DAD, MOVEMENT_TYPE_FACE_DOWN)
                 turnobject(LOCALID_ARTHUR, DIR_NORTH)
                 turnobject(LOCALID_AZURILL, DIR_NORTH)
             case STATE_FINAL:
@@ -67,7 +65,7 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
 
         }
 
-        if (var(VAR_ROSEVALE_STATE) != STATE_ARTHUR_FIGHT && var(VAR_ROSEVALE_STATE) != STATE_FINAL) {
+        if (var(VAR_ROSEVALE_STATE) != STATE_ARTHUR_FIGHT && var(VAR_ROSEVALE_STATE) != STATE_FINAL && var(VAR_ROSEVALE_STATE) != STATE_DEFEATED_BANDIT) {
                 setobjectxyperm(LOCALID_ARTHUR_DAD, 13, 24)
                 setobjectmovementtype(LOCALID_ARTHUR_DAD, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
                 addobject(LOCALID_ARTHUR_DAD)
@@ -77,7 +75,16 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
         VAR_ROSEVALE_STATE, STATE_DEFEATED_BANDIT {
             setvar(VAR_ROSEVALE_STATE, STATE_WAKE_UP)
 
+            turnobject(OBJ_EVENT_ID_PLAYER, DIR_NORTH)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            waitmovement(0)
+            applymovement(LOCALID_ARTHUR_SISTER, Common_Movement_FaceDown)
+            waitmovement(0)
+            playse(SE_PIN)
             applymovement(LOCALID_ARTHUR_SISTER, Common_Movement_ExclamationMark)
+            waitmovement(0)
+            applymovement(LOCALID_AZURILL, Common_Movement_FaceUp)
+            waitmovement(0)
             applymovement(LOCALID_AZURILL, Common_Movement_ExclamationMark)
             waitmovement(0)
             playmoncry(SPECIES_AZURILL, CRY_MODE_NORMAL)
@@ -88,7 +95,6 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             waitmovement(0)
             applymovement(LOCALID_ARTHUR_SISTER, Common_Movement_FaceDown)
             msgbox(format("{COLOR GREEN}Arthur's Sister: {COLOR DARK_GRAY}Hooway!! You did it! You saved A-zoo-will and Arfur!"))
-
 
 
             // everyone thanks you for helping
@@ -113,7 +119,7 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             waitmovement(0)
             turnobject(OBJ_EVENT_ID_PLAYER, DIR_WEST)
             msgbox(format(
-                "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Watching your Pokémon battle... it was incredible.\p"
+                "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Watching your Pokémon battle...{PAUSE 30} it was incredible.\p"
                 "They knew exactly what to do in the fight, even in the heat of the moment.\p"
                 "You must be a pretty seasoned Pokémon trainer, right? What brings you here to Rosevale of all places?"
             ))
@@ -124,9 +130,9 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             waitmovement(0)
 
             msgbox(format(
-                "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Oh... you were training up your Pokemon to battle against Tidalcove's Gym Leader, Ruka?\p"
-                "I see... that means you're taking part in the Festival Tournament then, right?\p"
-                "Hm... So Pokémon trainers can get stronger by battling Gym Leaders...\p"
+                "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Oh...{PAUSE 30} you were training up your Pokemon to battle against Tidalcove's Gym Leader, Ruka?\p"
+                "I see...{PAUSE 30} that means you're taking part in the Festival Tournament then, right?\p"
+                "Hm...{PAUSE 30} So Pokémon trainers can get stronger by battling Gym Leaders...\p"
                 "Oh, sorry! We should probably head inside. Let's continue this conversation after dinner!"
             ))
             closemessage
@@ -138,6 +144,7 @@ mapscripts ISLANDGAME_ROSEVALE_MapScripts {
             playfanfare(MUS_HEAL)
             waitfanfare
             special(HealPlayerParty)
+            completequest(QUEST_ROSEVALE_RESCUE)
             setrespawn(HEAL_LOCATION_ISLANDGAME_ROSEVALE) // so you can't skip arthur if you lose
             warp(MAP_ISLANDGAME_ROSEVALE_INN_2F_ROOM1, 2, 2)
         }
@@ -161,7 +168,7 @@ movement Movement_SisterHappyToSee {
 script ISLANDGAME_ROSEVALE_Interact_PuddleMon {
     lock
     faceplayer
-    playmoncry(SPECIES_CHARMANDER, CRY_MODE_ENCOUNTER)
+    playmoncry(SPECIES_CHARMANDER, CRY_MODE_WEAK)
     msgbox(format("Char... {COLOR BLUE}(water scary :c)"))
     release
 }
@@ -202,17 +209,15 @@ script ISLANDGAME_ROSEVALE_Interact_NPC1 {
     lock
     faceplayer
     msgbox(format(
-        "The air here is nice and fresh thanks to our Isle Guardian, Articuno.\p"
-        "I'm glad I moved here from Tidalcove. The city life just isn't for me."
-        )
-    )
+        "Ew, a city-dweller. Keep your city germs away from our clean town!"
+    ))
     release
 }
 
 script ISLANDGAME_ROSEVALE_Interact_NPC2 {
     lock
     msgbox(format(
-        "Brrr... The winds are always so chilly here.\p"
+        "Brrr...{PAUSE 30} The winds are always so chilly here.\p"
         "Talonflame! Warm up my hands, will ya? I hate being on watch duty..."
         )
     )
@@ -233,7 +238,9 @@ script ISLANDGAME_ROSEVALE_Interact_NPC3 {
     lock
     faceplayer
     msgbox(format(
-        "La dee dum... I love the sweet fragrance of flowers!"
+        "La dee dum... I love the sweet fragrance of flowers!\p"
+        "Would you like to take a whiff?\p"
+        "...Oops, sorry. I didn't know you were allergic."
         )
     )
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
@@ -244,7 +251,10 @@ script ISLANDGAME_ROSEVALE_Interact_NPC3 {
 script ISLANDGAME_ROSEVALE_Interact_NPC4 {
     lock
     faceplayer
-    msgbox(format("My gramma said I needed to “touch grass” more, so here I am."))
+    msgbox(format(
+        "My gramps said I needed to “touch grass” more, so here I am.\p"
+        "I just wanna go back inside and tend to my farm on Starfdew Valley."
+    ))
     release
 }
 
@@ -257,7 +267,7 @@ script ISLANDGAME_ROSEVALE_Interact_InnSign {
 }
 
 script ISLANDGAME_ROSEVALE_Interact_ArthurSister {
-    msgbox(format("My bwother went that-a-way! I think he wan into the mountain!"), MSGBOX_NPC)
+    msgbox(format("My bwother went that-a-way! I think he wan into Mount Awowa!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_ROSEVALE_Interact_ArthurDad {
@@ -295,6 +305,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveWithoutQuest {
     msgbox(Text_ArthurSister_PleaseHelp)
 
     // quest starts
+    startquest(QUEST_ROSEVALE_RESCUE)
     setvar(VAR_ROSEVALE_STATE, STATE_STARTED_QUEST)
 
     release
@@ -309,6 +320,7 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
     lock
     // arthur walks up
     msgbox(format("{COLOR GREEN}Arthur: {COLOR DARK_GRAY}{PLAYER}!"))
+    closemessage
     addobject(LOCALID_ARTHUR)
     setobjectxy(LOCALID_ARTHUR, 19, 12)
     applymovement(LOCALID_ARTHUR, Movement_Arthur_WalkUpToExit)
@@ -320,46 +332,25 @@ script ISLANDGAME_ROSEVALE_Trigger_TryLeaveArthurFight {
         "Before you go...\p"
         "Please...\p"
         "Face me in a Pokémon battle!"
-        "I couldn't do anything against that thief... I failed my little sister...\p"
-        "If it wasn't for you and Articuno... My sister's Pokémon would've been lost forever!\p"
-        "I can't something like that happen again... I need to get stronger, so when the time comes... I'll be able to protect her myself!\p"
+        "I couldn't do anything against that thief...{PAUSE 30} I failed my little sister...\p"
+        "If it wasn't for you and Articuno...{PAUSE 30} My sister's Pokémon would've been lost forever!\p"
+        "I can't something like that happen again...{PAUSE 30} I need to get stronger, so when the time comes...{PAUSE 30} I'll be able to protect her myself!\p"
         "And there's no better way than for me to take on Marya Gym Challenge and enter the Festival Tournament, just like you!\p"
         "My dad says I'm not ready yet..."
+        "So I'll prove it to him! Right here and now! Prepare yourself, {PLAYER}!"
     ), MSGBOX_NPC)
 
-    // battle starts
-    trainerbattle_single(TRAINER_ROSEVALE_ARTHUR, format("So I'll prove it to him! Right here and now! Prepare yourself, {PLAYER}!"), "...\pI lost again...", ArthurDefeated)
-    release
-}
+    trainerbattle_no_intro(TRAINER_ROSEVALE_ARTHUR, format("...\pI lost again..."))
 
-movement Movement_ArthurDad_WalkUpToArthur {
-    walk_right * 6
-}
 
-movement Movement_Arthur_SeesDad {
-    delay_16 * 4
-    face_left
-    emote_exclamation_mark
-}
-
-movement Movement_ArthurDad_WalkAway {
-    walk_left * 7
-}
-
-movement Movement_Arthur_WalkAway {
-    delay_16 * 4
-    walk_left * 8
-}
-
-script(local) ArthurDefeated {
     // arthur talks about fight
     msgbox(format(
         "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}...\p"
-        "{COLOR DARK_GRAY}Heh... You're truly an amazing trainer, {PLAYER}.\p"
+        "{COLOR DARK_GRAY}Heh...{PAUSE 30} You're truly an amazing trainer, {PLAYER}.\p"
         "I have no doubt that you'll be able to beat Ruka.\p"
         "{COLOR DARK_GRAY}Me on the other hand? I should just give up.\p"
         "{COLOR DARK_GRAY}Maybe I'm just not cut out to be a Pokémon trainer.\p"
-        "I never win... Why can't I ever win? That thief was right... I am just a loser.\p"
+        "I never win...{PAUSE 30} Why can't I ever win? That thief was right...{PAUSE 30} I am just a loser.\p"
         "...a failure.\p"
         "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}No, Arthur, that's not true."
     ), MSGBOX_NPC)
@@ -391,6 +382,13 @@ script(local) ArthurDefeated {
         "{COLOR GREEN}Arthur: {COLOR DARK_GRAY}Okay. I'll train really really hard.\p"
         "{COLOR GREEN}Arthur's Dad: {COLOR DARK_GRAY}It has been a pleasure, {PLAYER}.\pI wish you all the best in your travels."
     ), MSGBOX_NPC)
+
+    applymovement(LOCALID_ARTHUR, Common_Movement_FaceRight)
+    waitmovement(0)
+    msgbox(format(
+        "{COLOR GREEN}Arthur:{COLOR DARK_GRAY} {PLAYER}! I swear the next time we battle, I'll be stronger!"
+    ))
+    closemessage
     
     // dad and arthur walk away
     applymovement(LOCALID_ARTHUR_DAD, Movement_ArthurDad_WalkAway)
@@ -402,4 +400,27 @@ script(local) ArthurDefeated {
 
     setvar(VAR_ROSEVALE_STATE, STATE_FINAL)
     release
+}
+
+movement Movement_ArthurDad_WalkUpToArthur {
+    walk_right * 6
+}
+
+movement Movement_Arthur_SeesDad {
+    delay_16 * 4
+    face_left
+    emote_exclamation_mark
+}
+
+movement Movement_ArthurDad_WalkAway {
+    walk_left * 7
+}
+
+movement Movement_Arthur_WalkAway {
+    delay_16 * 4
+    walk_left * 8
+}
+
+script(local) ArthurDefeated {
+
 }

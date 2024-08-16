@@ -1,0 +1,3 @@
+ISLANDGAME_AETHERIA_PKMNCENTER_MapScripts::
+	.byte 0
+

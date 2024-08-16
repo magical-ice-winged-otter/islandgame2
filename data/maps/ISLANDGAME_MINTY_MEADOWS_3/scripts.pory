@@ -10,7 +10,6 @@ script ISLANDGAME_MINTY_MEADOWS_3_Ressy {
 text ISLANDGAME_MINTY_MEADOWS_3_RessyTalk {
     format(
         "The mysterious man stares blankly into the vast horizon. \p"
-        "He points, as if he was attempting to reenact an iconic scene from a show.\p"
         "What a loser. You should like, just forget he exists and stuff. \p"
         "Definitely don't come back here later. It would be a huge waste of time. \p"
         "Yup."
@@ -20,7 +19,7 @@ text ISLANDGAME_MINTY_MEADOWS_3_RessyTalk {
 script ISLANDGAME_MINTY_MEADOWS_3_Chimecho {
     lock
     faceplayer
-    playmoncry(SPECIES_CHIMECHO,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_GALLADE,CRY_MODE_NORMAL)
     msgbox(ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk)
     applymovement(2, Common_Movement_FaceOriginalDirection)
     release
@@ -28,7 +27,7 @@ script ISLANDGAME_MINTY_MEADOWS_3_Chimecho {
 
 text ISLANDGAME_MINTY_MEADOWS_3_ChimechoTalk {
     format(
-        "{COLOR DARK_GRAY}Ding dong!"
+        "{COLOR DARK_GRAY}Gallade! {COLOR BLUE}(I long for a worthy adversary!)"
         )
 }
 

@@ -1,0 +1,69 @@
+mapscripts ISLANDGAME_APPLEVINE_RESTAURANT_MapScripts {}
+
+
+script ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC1 {
+    lock
+    msgbox(format(
+        "I WANNA LOLLIPOP MOM! I WANNA I WANNA I WANNAAAAAAAA"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC2 {
+    lock
+    msgbox(format(
+        "No! The last time I got you a lollipop, you spent the entire day counting how many licks it took to get to the center!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC3 {
+    lock
+    msgbox(format(
+        "Hmm, what should I decorate my Alcremie with...?"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_CONFECTIONERY_NPC4 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Be sure to check out our booth at the Silverwing Festival. We will be selling some of our limited-time premium mochi!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_CONFECTIONERY_Employee {
+    lock
+    faceplayer
+    msgbox(format(
+        "Welcome to La Cucina Dolche, the sweetest shop in Marya."
+    ))
+    pokemart(ISLANDGAME_APPLEVINE_CONFECTIONERY_MartItems)
+    msgbox(format(
+        "Have a blessed day."
+    ))
+    closemessage
+    release
+}
+
+
+mart ISLANDGAME_APPLEVINE_CONFECTIONERY_MartItems {
+    ITEM_SWEET_HEART
+    ITEM_OLD_GATEAU
+    ITEM_SYRUPY_APPLE
+    ITEM_STAR_SWEET
+    ITEM_LOVE_SWEET
+    ITEM_BERRY_SWEET
+    ITEM_CLOVER_SWEET
+    ITEM_FLOWER_SWEET
+    ITEM_RIBBON_SWEET
+    ITEM_STRAWBERRY_SWEET
+    ITEM_WHIPPED_DREAM
+    ITEM_FRESH_START_MOCHI
+}

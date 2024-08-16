@@ -43,11 +43,9 @@ ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_Employee_Text_1:
 	.string "Thank you for shopping with us!$"
 
 ISLANDGAME_MAPLEGROVE_PKMNMART_NPC1Talk::
-	.string "{COLOR DARK_GRAY}Achoooo! -sniff- Oops, sorry. I didn't\n"
+	.string "{COLOR DARK_GRAY}Achoooo!{PAUSE 60} -sniff-{PAUSE 60} Oops, sorry.{PAUSE 30} I didn't\n"
 	.string "mean to sneeze all over you.$"
 
 ISLANDGAME_MAPLEGROVE_PKMNMART_NPC2Talk::
 	.string "{COLOR RED}(It seems like this Audino is actually\n"
-	.string "an employee at the shop.)\p"
-	.string "{COLOR RED}(It's diligently restocking the shelves.\n"
-	.string "I should just let it do its job.)$"
+	.string "an employee at the shop.)$"

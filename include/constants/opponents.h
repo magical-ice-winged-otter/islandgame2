@@ -1,6 +1,8 @@
 #ifndef GUARD_CONSTANTS_OPPONENTS_H
 #define GUARD_CONSTANTS_OPPONENTS_H
 
+#include "constants/battle_partner.h"
+
 #define TRAINER_NONE                          0
 
 /// Southern Oranna Path
@@ -85,12 +87,6 @@
 #define TRAINER_FELIX                        TRAINER_MINTY_MEADOWS_15
 #define TRAINER_MINTY_MEADOWS_16             39
 #define TRAINER_VIOLET                       TRAINER_MINTY_MEADOWS_16
-#define TRAINER_ROSE_2                       40
-#define TRAINER_ROSE_3                       41
-#define TRAINER_ROSE_4                       42
-
-
-
 
 
 // Traveler's Tunnel
@@ -132,7 +128,8 @@
 #define TRAINER_AUSTINA                      TRAINER_CORANNA_2_BIKER
 #define TRAINER_GWEN                         TRAINER_CORANNA_2_FISHERMAN
 #define TRAINER_MINTY_MEADOWS_5              28 // Central Oranna Path Ranger Crystal
-
+#define TRAINER_CORANNA_PATHMASTER           40
+#define TRAINER_ROSE_2                       TRAINER_CORANNA_PATHMASTER
 
 
 
@@ -157,27 +154,47 @@
 // Rosevale
 #define TRAINER_ROSEVALE_ARTHUR              61
 #define TRAINER_LOLA_3                       TRAINER_ROSEVALE_ARTHUR
+#define TRAINER_ROSEVALE_RED                 41 
+#define TRAINER_ROSE_3                       TRAINER_ROSEVALE_RED
 
 
 
 
+// Promenade Path
+#define TRAINER_PROMENADE_1                  64
+#define TRAINER_RICKY_1                      TRAINER_PROMENADE_1
+#define TRAINER_PROMENADE_2                  65
+#define TRAINER_SIMON                        TRAINER_PROMENADE_2
+#define TRAINER_PROMENADE_3                  66
+#define TRAINER_CHARLIE                      TRAINER_PROMENADE_3
+#define TRAINER_PROMENADE_4                  67
+#define TRAINER_RICKY_2                      TRAINER_PROMENADE_4
+
+// Rocky Path
+#define TRAINER_ROCKY_PATH_1                 42
+#define TRAINER_ROSE_4                       TRAINER_ROCKY_PATH_1
+#define TRAINER_ROCKY_PATH_2                 68
+#define TRAINER_RICKY_3                      TRAINER_ROCKY_PATH_2
+#define TRAINER_ROCKY_PATH_3                 69
+#define TRAINER_RICKY_4                      TRAINER_ROCKY_PATH_3
+#define TRAINER_ROCKY_PATH_4                 70
+#define TRAINER_RICKY_5                      TRAINER_ROCKY_PATH_4
+#define TRAINER_ROCKY_PATH_5                 71
+#define TRAINER_RANDALL                      TRAINER_ROCKY_PATH_5
+#define TRAINER_ROCKY_PATH_6                 72
+#define TRAINER_PARKER                       TRAINER_ROCKY_PATH_6
+#define TRAINER_ROCKY_PATH_7                 73
+#define TRAINER_GEORGE                       TRAINER_ROCKY_PATH_7
+#define TRAINER_ROCKY_PATH_8                 74
+#define TRAINER_BERKE                        TRAINER_ROCKY_PATH_8
+#define TRAINER_ROCKY_PATH_9                 75
+#define TRAINER_BRAXTON                      TRAINER_ROCKY_PATH_9
+#define TRAINER_ROCKY_PATH_10                76
+#define TRAINER_VINCENT                      TRAINER_ROCKY_PATH_10
+#define TRAINER_ROCKY_PATHMASTER             77
+#define TRAINER_LEROY                        TRAINER_ROCKY_PATHMASTER
 
 
-
-#define TRAINER_RICKY_1                      64
-#define TRAINER_SIMON                        65
-#define TRAINER_CHARLIE                      66
-#define TRAINER_RICKY_2                      67
-#define TRAINER_RICKY_3                      68
-#define TRAINER_RICKY_4                      69
-#define TRAINER_RICKY_5                      70
-#define TRAINER_RANDALL                      71
-#define TRAINER_PARKER                       72
-#define TRAINER_GEORGE                       73
-#define TRAINER_BERKE                        74
-#define TRAINER_BRAXTON                      75
-#define TRAINER_VINCENT                      76
-#define TRAINER_LEROY                        77
 #define TRAINER_WILTON_1                     78
 #define TRAINER_EDGAR                        79
 #define TRAINER_ALBERT                       80
@@ -956,11 +973,23 @@
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 
+
+// #define TRAINER_RICKY_1                      TRAINER_ROCKY_PATH_KARATE_BRO
+// #define TRAINER_SIMON                        TRAINER_ROCKY_PATH_KARATE_SIS
+// #define TRAINER_CHARLIE                      TRAINER_ROCKY_PATH_CYCLER_F
+// #define TRAINER_RICKY_2                      TRAINER_ROCKY_PATH_BEAUTY
+// #define TRAINER_RICKY_3                      TRAINER_ROCKY_PATH_CAMPER_F
+// #define TRAINER_RICKY_4                      TRAINER_ROCKY_PATH_GENTLEMAN
+// #define TRAINER_RICKY_5                      TRAINER_ROCKY_PATH_PSYCHIC_F
+// #define TRAINER_RANDALL                      TRAINER_ROCKY_PATH_PSYCHIC_M
+// #define TRAINER_PARKER                       TRAINER_ROCKY_PATH_FISHERMAN
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
 #define TRAINERS_COUNT                      855
 #define MAX_TRAINERS_COUNT                  864
+#define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

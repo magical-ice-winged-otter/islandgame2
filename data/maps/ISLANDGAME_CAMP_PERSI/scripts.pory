@@ -3,6 +3,9 @@ const ZIGZAGGIRL_OW_ID = 10
 const CANDY_BOY_ID = 1
 const COOKIE_GIRL_ID = 2
 const JONAS_OW_ID = 13
+const FLAG_NIGHT = FLAG_TEMP_1
+const FLAG_DAY = FLAG_TEMP_2
+const VAR_CURRENT_HOUR = VAR_0x8000
 
 // quest npcs:
 const QUEST_FAVORITE_CARD_NPC = 25
@@ -12,17 +15,26 @@ mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
         if (flag(FLAG_CAMP_PERSI_JONAS_DEFEATED)) {
             setvar(VAR_TEMP_1, 1)
         }
-    }
-    MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_C, 0 {
-            returnqueststate(QUEST_PERSI_FAVORITE_CARD)
-            setvar(VAR_0x800B, QUEST_FAVORITE_CARD_NPC)
-            call(Common_QuestEmoteOnWarp)
 
+        gettime
 
-            setvar(VAR_TEMP_C, 1)
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+            setflag(FLAG_NIGHT)
         }
-    ]
+        else {
+            setflag(FLAG_DAY)
+        }
+    }
+    // MAP_SCRIPT_ON_FRAME_TABLE [
+    //     VAR_TEMP_C, 0 {
+    //         returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+    //         setvar(VAR_0x800B, QUEST_FAVORITE_CARD_NPC)
+    //         call(Common_QuestEmoteOnWarp)
+
+
+    //         setvar(VAR_TEMP_C, 1)
+    //     }
+    // ]
 }
 
 
@@ -314,8 +326,8 @@ movement ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave {
 text ISLANDGAME_CAMP_PERSI_Jonas_Defeated_Text
 {
     "Ah... \p"
-    "Your aptitude for battle is... \n"
-    "quite remarkable."
+    "Your aptitude for battle is...{PAUSE 60}\n"
+    "quite remarkable.{PAUSE 30}"
 }
 
 text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text
@@ -341,13 +353,13 @@ text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro {
     format(
         "{COLOR DARK_GRAY}Are you a new camper by chance? I haven't seen you around here before. \p"
-        "{COLOR DARK_GRAY}Oh? You're a Pokémon trainer visiting the isles from overseas? \p"
-        "{COLOR DARK_GRAY}Pardon my assumption, then. Welcome to the Isles of Marya, {PLAYER}! \p"
-        "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling merchant of The Silverwing Order. \p"
-        "{COLOR DARK_GRAY}The Silverwing Order is in charge of governing the isles. It's our job to make sure everyone here is comfortable and safe! \p"
+        "{COLOR DARK_GRAY}Oh?{PAUSE 60} You're a Pokémon trainer visiting the isles from overseas? \p"
+        "{COLOR DARK_GRAY}Pardon my assumption, then.{PAUSE 60} Welcome to the Isles of Marya, {PLAYER}! \p"
+        "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling merchant of {COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}The Silverwing Order. \p"
+        "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The Silverwing Order is in charge of governing the isles. It's our job to make sure everyone here is comfortable and safe! \p"
         "{COLOR DARK_GRAY}My job in particular is traveling around the islands to provide goods and services to those in need! \p"
-        "{COLOR DARK_GRAY}But that's enough about me. You said you were a Pokémon trainer, right? \p"
-        "{COLOR DARK_GRAY}In that case... mind if I trouble you for a little battle?"
+        "{COLOR DARK_GRAY}But that's enough about me.{PAUSE 60} You said you were a Pokémon trainer, right? \p"
+        "{COLOR DARK_GRAY}In that case...{PAUSE 60} mind if I trouble you for a little battle?"
     )
 }
 
@@ -359,7 +371,7 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro {
 
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_CookieGirlTalk1 {
     format(
-        "{COLOR DARK_GRAY}Hi there! I'm selling delicious Lava Cookies to support Troop 115. \p"
+        "{COLOR DARK_GRAY}Hi there! I'm selling delicious Girl Scout Cookies to support Troop 115. \p"
         "{COLOR DARK_GRAY}Would you like to buy one for ¥250?"
         )
 }
@@ -411,7 +423,7 @@ CookieGirl_End:
 
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_CandyBoyTalk1 {
     format(
-        "{COLOR DARK_GRAY}Hi there! I'm selling tasty Rage Candy Bars to support Troop 117. \p"
+        "{COLOR DARK_GRAY}Hi there! I'm selling tasty Boy Scout Candy Bars to support Troop 117. \p"
         "{COLOR DARK_GRAY}Would you like to buy one for ¥250?"
         )
 }
@@ -651,14 +663,14 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
 
     switch (var(VAR_RESULT)) {
         case QUEST_INACTIVE: // INACTIVE
-            msgbox(format("I lost my favorite trading card somewhere in the Verdant Woods!\pCan you help me get it back?"), MSGBOX_YESNO)
+            msgbox(format("WAAAAAH!\pI lost my favorite Charizard trading card in Verdant Woods!\pPlease help me find it!"), MSGBOX_YESNO)
 
             if (var(VAR_RESULT) == YES) {
-                msgbox(format("Awesome! I don't know much longer I can go on without it..."))
+                msgbox(format("Yay! That card means everything to me! I need it back!"))
                 startquest(QUEST_PERSI_FAVORITE_CARD)
             }
             else {
-                msgbox(format("Aww, seriously?"))
+                msgbox(format("PLZZZZZZZZZ"))
             }
         case QUEST_ACTIVE: // ACTIVE
             checkitem(ITEM_ISLANDGAME_TRADING_CARD)
@@ -782,8 +794,8 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4 {
 
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC {
     format(
-        "{COLOR DARK_GRAY}CAMP GARDEN \n"
-        "{COLOR DARK_GRAY}Feel free to contribute! (Please do.)"
+        "{COLOR DARK_GRAY}THE BERRY GOOD BERRY SHOP\n"
+        "{COLOR DARK_GRAY}Contribute to our garden! (Please)"
     )
 }
 

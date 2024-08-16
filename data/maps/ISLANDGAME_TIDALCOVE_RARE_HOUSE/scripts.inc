@@ -2,378 +2,179 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_MapScripts::
 	.byte 0
 
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector::
-	returnqueststate QUEST_TIDALCOVE_RARE_PKMN
-	switch VAR_RESULT
-	case 1, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_3
-	case 2, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_4
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1:
-	closemessage
-	release
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Stone::
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Stone_Text_0, MSGBOX_SIGN
 	return
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_3:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0, MSGBOX_NPC
-	startquest QUEST_TIDALCOVE_RARE_PKMN
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_4:
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector::
 	lock
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_1, MSGBOX_NPC
-	setvar VAR_0x8000, SPECIES_SQUIRTLE
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_6
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_5:
-	setvar VAR_0x8000, SPECIES_WARTORTLE
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_8:
-	setvar VAR_0x8000, SPECIES_BLASTOISE
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_12
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11:
-	setvar VAR_0x8000, SPECIES_MUDKIP
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_15
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14:
-	setvar VAR_0x8000, SPECIES_MARSHTOMP
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_17:
-	setvar VAR_0x8000, SPECIES_SWAMPERT
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_21
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_20:
-	setvar VAR_0x8000, SPECIES_FROAKIE
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_24
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23:
-	setvar VAR_0x8000, SPECIES_FROGADIER
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_27
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_26:
-	setvar VAR_0x8000, SPECIES_GRENINJA
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_30
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_29:
-	setvar VAR_0x8000, SPECIES_ROWLET
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_33
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_32:
-	setvar VAR_0x8000, SPECIES_DARTRIX
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_36
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_35:
-	setvar VAR_0x8000, SPECIES_DECIDUEYE
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_39
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_38:
-	setvar VAR_0x8000, SPECIES_DECIDUEYE_HISUIAN
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_42
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_41:
-	setvar VAR_0x8000, SPECIES_BULBASAUR
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_45
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_44:
-	setvar VAR_0x8000, SPECIES_IVYSAUR
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_48
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_47:
-	setvar VAR_0x8000, SPECIES_VENUSAUR
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_51
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_50:
-	setvar VAR_0x8000, SPECIES_TREECKO
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_54
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_53:
-	setvar VAR_0x8000, SPECIES_GROVYLE
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_57
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_56:
-	setvar VAR_0x8000, SPECIES_SCEPTILE
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_60
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_59:
-	setvar VAR_0x8000, SPECIES_TORCHIC
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_63
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_62:
-	setvar VAR_0x8000, SPECIES_COMBUSKEN
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_66
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_65:
-	setvar VAR_0x8000, SPECIES_BLAZIKEN
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_69
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_68:
-	setvar VAR_0x8000, SPECIES_CHARMANDER
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_72
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_71:
-	setvar VAR_0x8000, SPECIES_CHARMELEON
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_75
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_74:
-	setvar VAR_0x8000, SPECIES_CHARIZARD
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_78
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_77:
-	setvar VAR_0x8000, SPECIES_LITTEN
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_81
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_80:
-	setvar VAR_0x8000, SPECIES_TORRACAT
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_84
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_83:
-	setvar VAR_0x8000, SPECIES_INCINEROAR
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_87
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_86:
-	setvar VAR_0x8000, SPECIES_DELIBIRD
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_90
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_89:
-	setvar VAR_0x8000, SPECIES_PIKACHU
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_93
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_92:
-	setvar VAR_0x8000, SPECIES_PICHU
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_96
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_95:
-	setvar VAR_0x8000, SPECIES_RAICHU
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_99
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_98:
-	setvar VAR_0x8000, SPECIES_RAICHU_ALOLAN
-	callnative CheckPartyMon
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_102
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_101:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2
-	goto End
-FoundSquirtle:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
-	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE
-	giveitem ITEM_WATER_STONE
-	goto End
-FoundRowlet:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
-	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET
-	giveitem ITEM_LEAF_STONE
-	goto End
-FoundTepig:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
-	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG
-	giveitem ITEM_FIRE_STONE
-	goto End
-FoundDelibird:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
-	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD
-	giveitem ITEM_ICE_STONE
-	goto End
-FoundPikachu:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon
-	completesubquest QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU
-	giveitem ITEM_THUNDER_STONE
-	goto End
-End:
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
+	faceplayer
+	compare VAR_TIDALCOVE_STATE, 0
+	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
+	compare VAR_TIDALCOVE_STATE, 1
+	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_2
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_10
+	closemessage
+	return
 
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0
+	closemessage
+	setvar VAR_0x8000, SPECIES_EEVEE
+	callnative CheckPartyMon
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_7
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_6:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_5
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2, 211
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3, 212
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4, 213
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5, 214
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6, 215
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_7, 0
+	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+	switch VAR_RESULT
+	case 211, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
+	case 212, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19
+	case 213, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_20
+	case 214, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_21
+	case 215, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_22
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16:
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_26
+	setvar VAR_TIDALCOVE_STATE, 2
+	return
 
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_2:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_9
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2, 211
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3, 212
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4, 213
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5, 214
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6, 215
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_7, 0
+	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+	switch VAR_RESULT
+	case 211, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
+	case 212, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_12
+	case 213, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_13
+	case 214, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14
+	case 215, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_15
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_8
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23
+	setvar VAR_TIDALCOVE_STATE, 2
+	return
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_7:
+	playse SE_PIN
+	applymovement 1, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 1, Common_Movement_Delay32
+	waitmovement 0
+	setvar VAR_TIDALCOVE_STATE, 1
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_1
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_6
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11:
+	giveitem ITEM_FIRE_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_12:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
+	giveitem ITEM_WATER_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_13:
+	giveitem ITEM_THUNDER_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14:
+	giveitem ITEM_LEAF_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_15:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14
+	giveitem ITEM_ICE_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_9
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_17
+	giveitem ITEM_FIRE_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19:
+	giveitem ITEM_WATER_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_20:
+	giveitem ITEM_THUNDER_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_21:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_20
+	giveitem ITEM_LEAF_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_24:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_22:
+	giveitem ITEM_ICE_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_27:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_26
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_8
+	closemessage
+	return
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_30:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE, FoundSquirtle
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_29
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_26:
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_8
+	closemessage
+	return
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_33:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_32
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_36:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_35
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_39:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_38
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_42:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_41
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_45:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_44
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_48:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_47
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_51:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_50
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_54:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_53
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_57:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_56
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_60:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET, FoundRowlet
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_59
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_63:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_62
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_66:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_65
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_69:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_68
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_72:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_71
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_75:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_74
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_78:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_77
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_81:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_80
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_84:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_83
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_87:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG, FoundTepig
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_86
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_90:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD, FoundDelibird
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_89
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_93:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_92
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_96:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_95
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_99:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_98
-
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_102:
-	goto_if_subquest_not_complete QUEST_TIDALCOVE_RARE_PKMN, SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU, FoundPikachu
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_101
-
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Stone_Text_0:
+	.string "{COLOR RED}(It's a giant rock. Wow. A rock that is\n"
+	.string "giant.)$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_0:
 	.string "Years ago, I came to the Maryan Isles in\n"
-	.string "search of rare Pokémon.\p"
+	.string "search of a particular rare Pokémon.\p"
 	.string "But alas, all I could find during my\n"
 	.string "ventures were these rare stones.\p"
-	.string "If you've any rare Pokémon, could you\n"
-	.string "show them to me? I'd be more than\l"
-	.string "happy to share with you the stones I\l"
-	.string "found.$"
+	.string "If only I could catch a glimpse of an\n"
+	.string "Eevee. I'm convinced there aren't any\l"
+	.string "left in the wild anymore...$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_1:
-	.string "I'm looking for five rare Pokémon of\n"
-	.string "different types.\p"
-	.string "Did you find any of them?$"
+	.string "Oh! Y-You have one!? P-Please, may I\n"
+	.string "take a closer look at it?\p"
+	.string "Ooh... What a majestic specimen indeed!\n"
+	.string "And just when I thought I would never\l"
+	.string "see a real one in my lifetime!\p"
+	.string "Thank you, young trainer. Here, take one\n"
+	.string "of my rare stones as a token of my\l"
+	.string "appreciation! Choose wisely!$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2:
-	.string "Hmm, unfortunately you don't have any\n"
-	.string "of the Pokémon I'm looking for.$"
+	.string "Fire Stone$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3:
-	.string "If you find a Pokémon you think is rare,\n"
-	.string "please do not hesitate to show me.$"
+	.string "Water Stone$"
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_FoundRareMon::
-	.string "Oh! That is one of the Pokémon I am\n"
-	.string "looking for! May I have a closer look?\p"
-	.string "Exquisite... A majestic Pokémon, indeed!\n"
-	.string "Well, a deal's a deal! Here you are!$"
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4:
+	.string "Thunder Stone$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5:
+	.string "Leaf Stone$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6:
+	.string "Ice Stone$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_7:
+	.string "I'll decide later!$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_8:
+	.string "Alright. Just let me know when you would\n"
+	.string "like your rare stone!$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_9:
+	.string "Welcome back! Have you decided which of\n"
+	.string "my rare stones you want?$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_10:
+	.string "Ah... if only I had an Eevee of my own.$"

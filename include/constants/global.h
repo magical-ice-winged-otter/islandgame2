@@ -8,6 +8,7 @@
 #include "config/battle.h"
 #include "config/debug.h"
 #include "config/item.h"
+#include "config/level_caps.h"
 #include "config/pokemon.h"
 #include "config/overworld.h"
 
@@ -27,6 +28,8 @@
 #define VERSION_PEARL 11
 #define VERSION_PLATINUM 12
 #define VERSION_GAMECUBE 15
+
+#define NUM_VERSIONS 15
 
 #define LANGUAGE_JAPANESE 1
 #define LANGUAGE_ENGLISH  2
@@ -110,16 +113,13 @@
 
 // string lengths
 #define ITEM_NAME_LENGTH 14
+#define ITEM_NAME_PLURAL_LENGTH ITEM_NAME_LENGTH + 2 // 2 is used for the instance where a word's suffix becomes y->ies
 #define POKEMON_NAME_LENGTH 10
 #define POKEMON_NAME_BUFFER_SIZE max(20, POKEMON_NAME_LENGTH + 1) // Frequently used buffer size. Larger than necessary
 #define PLAYER_NAME_LENGTH 7
 #define MAIL_WORDS_COUNT 9
 #define EASY_CHAT_BATTLE_WORDS_COUNT 6
-#if B_EXPANDED_MOVE_NAMES == TRUE
-#define MOVE_NAME_LENGTH 16
-#else
-#define MOVE_NAME_LENGTH 12
-#endif
+#define MOVE_NAME_LENGTH ((B_EXPANDED_MOVE_NAMES == TRUE) ? 16 : 12)
 #define NUM_QUESTIONNAIRE_WORDS 4
 #define QUIZ_QUESTION_LEN 9
 #define WONDER_CARD_TEXT_LENGTH 40
@@ -127,11 +127,7 @@
 #define WONDER_CARD_BODY_TEXT_LINES 4
 #define WONDER_NEWS_BODY_TEXT_LINES 10
 #define TYPE_NAME_LENGTH 6
-#if B_EXPANDED_ABILITY_NAMES == TRUE
-#define ABILITY_NAME_LENGTH 16
-#else
-#define ABILITY_NAME_LENGTH 12
-#endif
+#define ABILITY_NAME_LENGTH ((B_EXPANDED_ABILITY_NAMES == TRUE) ? 16 : 12)
 #define TRAINER_NAME_LENGTH 13
 
 #define MAX_STAMP_CARD_STAMPS 7
@@ -159,6 +155,13 @@
 
 #define OPTIONS_BATTLE_STYLE_SHIFT 0
 #define OPTIONS_BATTLE_STYLE_SET 1
+
+#define OPTIONS_BATTLE_SCENE_1X         0
+#define OPTIONS_BATTLE_SCENE_2X         1
+#define OPTIONS_BATTLE_SCENE_3X         2
+#define OPTIONS_BATTLE_SCENE_4X         3
+#define OPTIONS_BATTLE_SCENE_DISABLED   4
+#define OPTIONS_BATTLE_SCENE_COUNT      5
 
 #define DIR_NONE        0
 #define DIR_SOUTH       1

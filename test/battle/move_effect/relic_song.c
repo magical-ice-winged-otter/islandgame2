@@ -3,7 +3,8 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gBattleMoves[MOVE_RELIC_SONG].effect == EFFECT_RELIC_SONG);
+    ASSUME(gMovesInfo[MOVE_RELIC_SONG].effect == EFFECT_RELIC_SONG);
+    ASSUME(MoveHasAdditionalEffect(MOVE_RELIC_SONG, MOVE_EFFECT_SLEEP) == TRUE);
 }
 
 SINGLE_BATTLE_TEST("Relic Song has a 10% chance to put the target to sleep")
@@ -81,6 +82,25 @@ SINGLE_BATTLE_TEST("Relic Song transforms Meloetta if used successfully")
         MESSAGE("Meloetta transformed!");
     } THEN {
         EXPECT_EQ(player->species, SPECIES_MELOETTA_PIROUETTE);
+    }
+}
+
+SINGLE_BATTLE_TEST("Relic Song does not transform Pokemon other than Meloetta")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_RELIC_SONG); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_RELIC_SONG, player);
+        HP_BAR(opponent);
+        NONE_OF {
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
+            MESSAGE("Wobbuffet transformed!");
+        }
+    } THEN {
+        EXPECT_EQ(player->species, SPECIES_WOBBUFFET);
     }
 }
 

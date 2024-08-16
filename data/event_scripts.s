@@ -91,7 +91,7 @@ gSpecialVars::
 	.4byte gSpecialVar_ContestCategory
 	.4byte gSpecialVar_MonBoxId
 	.4byte gSpecialVar_MonBoxPos
-	.4byte gSpecialVar_Unused_0x8014
+	.4byte gSpecialVar_0x8014
 	.4byte gTrainerBattleOpponent_A
 
 	.include "data/specials.inc"
@@ -120,7 +120,6 @@ gStdScripts_End::
 	.include "data/maps/SootopolisCity/scripts.inc"
 	.include "data/maps/EverGrandeCity/scripts.inc"
 	.include "data/maps/LittlerootTown/scripts.inc"
-	.include "data/maps/OldaleTown/scripts.inc"
 	.include "data/maps/DewfordTown/scripts.inc"
 	.include "data/maps/LavaridgeTown/scripts.inc"
 	.include "data/maps/FallarborTown/scripts.inc"
@@ -172,11 +171,6 @@ gStdScripts_End::
 	.include "data/maps/LittlerootTown_MaysHouse_1F/scripts.inc"
 	.include "data/maps/LittlerootTown_MaysHouse_2F/scripts.inc"
 	.include "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc"
-	.include "data/maps/OldaleTown_House1/scripts.inc"
-	.include "data/maps/OldaleTown_House2/scripts.inc"
-	.include "data/maps/OldaleTown_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/OldaleTown_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/OldaleTown_Mart/scripts.inc"
 	.include "data/maps/DewfordTown_House1/scripts.inc"
 	.include "data/maps/DewfordTown_PokemonCenter_1F/scripts.inc"
 	.include "data/maps/DewfordTown_PokemonCenter_2F/scripts.inc"
@@ -585,6 +579,7 @@ gStdScripts_End::
 	.include "data/scripts/new_game.inc"
 	.include "data/scripts/hall_of_fame.inc"
 
+	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
 
 EventScript_WhiteOut::
@@ -953,6 +948,10 @@ gText_PlayerFoundOneTMHM::
 	.string "{PLAYER} found one {STR_VAR_1}\n"
 	.string "{STR_VAR_2}!$"
 
+gText_PlayerFoundTMHMs::
+	.string "{PLAYER} found {STR_VAR_3} {STR_VAR_1}\n"
+	.string "{STR_VAR_2}!$"
+
 gText_Sudowoodo_Attacked::
 	.string "The weird tree doesn't like the\n"
 	.string "WAILMER PAIL!\p"
@@ -1076,6 +1075,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/scripts/islandgame_debug.inc"
 	.include "data/scripts/islandgame_common.inc"
+	.include "data/scripts/islandgame_menu.inc"
 	
 	.include "data/maps/ForestBaseCamp_FrontLawn/scripts.inc"
 
@@ -1281,3 +1281,57 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_LUMINE_CAVE_1F_3/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_COUCH_POTATO/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_RESTAURANT/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_LAB_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CHERIPORT_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CAMP_PERSI_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TIDALCOVE_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROSEVALE_PKMNCENTER_2F/scripts.inc"
+	
+	.include "data/maps/ISLANDGAME_ROCKY_PATH_HOUSE/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ROCKY_PATH_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AURORA_PATH_GROTTO/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNCENTER_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AETHERIA_MUSEUM_1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AETHERIA_MUSEUM_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AETHERIA_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_HOUSE_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_HOUSE_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.inc"

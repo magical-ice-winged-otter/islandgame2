@@ -7,14 +7,6 @@ mapscripts ISLANDGAME_CAMP_PERSI_PKMNCENTER_MapScripts {
     }
 }
 
-script ISLANDGAME_PERSI_PKMNCENTER_EventScript_Nurse {
-    setvar(VAR_0x800B, LOCALID_NURSE)
-    call(Common_EventScript_PkmnCenterNurse)
-    waitmessage
-    waitbuttonpress
-    release
-}
-
 script ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerKid {
     lock
     msgbox(format("Man, the connection here sucks!"))
@@ -24,7 +16,7 @@ script ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerKid {
 script ISLANDGAME_PERSI_PKMNCENTER_EventScript_GamerWatcher {
     lock
     faceplayer
-    msgbox(format("My parents didn't let me bring my Game Boy, so I watch other people play..."))
+    msgbox(format("My parents didn't let me bring my Game Boy, so I watch other people play."))
     applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release

@@ -1,0 +1,60 @@
+mapscripts ISLANDGAME_APPLEVINE_QUEST_HOUSE_MapScripts {}
+
+
+script ISLANDGAME_APPLEVINE_EventScript_Doll {
+    msgbox(format(
+        "{COLOR RED}(It's a Clefairy Doll. Apparently these bring the holder good luck.)"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_EventScript_Julie {
+    lock
+    returnqueststate(QUEST_MAPLEGROVE_LOVERS)
+
+    switch(var(VAR_RESULT)) {
+        case QUEST_INACTIVE:
+            msgbox(format(
+                "I wonder how Roman is doing in Maplegrove..."
+            ))
+        case QUEST_ACTIVE:
+            checkitem(ITEM_ISLANDGAME_JULIES_LETTER)
+            if (var(VAR_RESULT)) {
+                faceplayer
+                msgbox(format(
+                    "Thank you, you are a very kind trainer."
+                ))
+            }
+            else {
+                msgbox(format(
+                    "I wonder how Roman is doing in Maplegrove..."
+                ))
+                closemessage
+                faceplayer
+                applymovement(1, Common_Movement_QuestionMark)
+                waitmovement(0)
+                applymovement(1, Common_Movement_Delay48)
+                waitmovement(0)
+                msgbox(format(
+                    "Hm? May I help you?\p"
+                    "...\p"
+                    "I see. He sent you all the way from Oranna just to give me this letter?\p"
+                    "{COLOR GREEN}> You hand the letter to Julie, who opens it up and reads it to herself.\p"
+                    "{COLOR DARK_GRAY}Oh, Roman... {PAUSE 30}What am I going to do with you...\p"
+                    "{COLOR GREEN}> Julie begins composing a response letter.\p"
+                    "Sorry to trouble you again, but would you mind giving this to Roman?"
+                ))
+                giveitem(ITEM_ISLANDGAME_JULIES_LETTER)
+                removeitem(ITEM_ISLANDGAME_ROMANS_LETTER)
+            }
+        case QUEST_COMPLETED:
+            faceplayer
+            msgbox(format(
+                "The first thing I'm getting for Roman when I see him is a cell phone..."
+            ))
+
+        default: // howd you get here lol
+    }
+
+    closemessage
+    release
+}

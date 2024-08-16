@@ -32,19 +32,6 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 22,
-      "y": 31,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_FOCUS_BAND",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_MAPLEGROVE_FOCUS_BAND"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 25,
       "y": 26,
       "elevation": 0,
@@ -70,7 +57,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_043",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_427",
       "x": 27,
       "y": 29,
       "elevation": 0,
@@ -80,7 +67,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_661",
@@ -88,21 +75,21 @@
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN5",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_417",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_546",
       "x": 5,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN4",
@@ -158,7 +145,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC1",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 27,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ABILITY_CAPSULE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_MAPLEGROVE_ABILITY_CAPSULE"
     }
   ],
   "warp_events": [
@@ -215,8 +215,8 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "item": "ITEM_REVIVE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_REVIVE"
+      "item": "ITEM_PRETTY_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_MAPLEGROVE_FEATHER"
     },
     {
       "type": "hidden_item",
@@ -225,6 +225,14 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_XS",
       "flag": "FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 22,
+      "y": 31,
+      "elevation": 0,
+      "item": "ITEM_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_MAPLEGROVE_REVIVE"
     }
   ]
 }

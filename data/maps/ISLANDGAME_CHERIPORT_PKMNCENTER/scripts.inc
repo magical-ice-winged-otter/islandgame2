@@ -18,11 +18,7 @@ ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse::
 	return
 
 ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse_1:
-	setvar VAR_0x800B, 1
-	call Common_EventScript_PkmnCenterNurse
-	waitmessage
-	waitbuttonpress
-	release
+	call IslandGame_Common_PokemonCenter_1F_EventScript_Nurse
 	return
 
 

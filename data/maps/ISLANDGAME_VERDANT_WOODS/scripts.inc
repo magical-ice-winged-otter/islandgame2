@@ -40,6 +40,12 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_6:
 	goto ISLANDGAME_VERDANT_WOODS_Sudowoodo_1
 
 ISLANDGAME_VERDANT_WOODS_Sudowoodo_7:
+	special DoWateringBerryTreeAnim
+	waitstate
+	waitse
+	playse SE_SUDOWOODO_SHAKE
+	applymovement 2, BattleFrontier_OutsideEast_Movement_SudowoodoShake
+	waitmovement 0
 	setwildbattle SPECIES_SUDOWOODO, 10
 	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
 	waitmoncry
@@ -83,7 +89,12 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle4::
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle5::
 	trainerbattle_single TRAINER_VERDANT_WOODS_5, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text
+	goto_if_set FLAG_CAMP_PERSI_TRADING_CARD_ITEM, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_1
 	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE
+	return
+
+ISLANDGAME_VERDANT_WOODS_TrainerBattle5_1:
+	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text_0, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -109,6 +120,88 @@ ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_2:
 	playmoncry SPECIES_MIMIKYU, CRY_MODE_ENCOUNTER
 	waitmoncry
 	goto ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_1
+
+
+ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement:
+	face_left
+	delay_4
+	face_right
+	delay_8
+	face_up
+	delay_4
+	face_left
+	delay_16
+	delay_16
+	step_end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_2:
+	face_left
+	delay_4
+	delay_4
+	emote_exclamation_mark
+	delay_16
+	jump_in_place_left
+	jump_in_place_left
+	step_end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_3:
+	face_up
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	delay_16
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_HaunterMovement_4:
+	walk_down
+	walk_down
+	walk_down
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+ISLANDGAME_VERDANT_WOODS_EventScript_Trigger_NPC2::
+	return
+
+
+ISLANDGAME_VERDANT_WOODS_SkittyPhase2Loc::
+	return
+
+
+ISLANDGAME_VERDANT_WOODS_HaunterPhase2Loc::
+	return
+
+
+ISLANDGAME_VERDANT_WOODS_FightHaunter::
+	return
+
+
+ISLANDGAME_VERDANT_WOODS_SkittyPhase2::
+	return
+
+
+ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty::
+	return
 
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC3::
@@ -160,6 +253,10 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1:
 	.string "doesn't feel like wood at all...)\p"
 	.string "{COLOR DARK_GRAY}Water the strange-looking tree?$"
 
+ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text_0:
+	.string "Hey! You found it! You've got pretty\n"
+	.string "sharp eyes.$"
+
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_Text_0:
 	.string "Owww, my head, it hurts...$"
 
@@ -181,9 +278,7 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text::
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}Even still, I think bug Pokémon are\n"
-	.string "awesome!\p"
-	.string "{COLOR DARK_GRAY}I'm the most popular kid at camp thanks\n"
-	.string "to Butterfree and Beedrill!$"
+	.string "awesome!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_NotEnoughMons::
 	.string "{COLOR DARK_GRAY}Huh? You need at least two Pokémon to\n"
@@ -213,25 +308,19 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text::
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text::
 	.string "{COLOR DARK_GRAY}I just wish he would use a Pokémon that\n"
-	.string "wasn't a bug for once.\p"
-	.string "{COLOR DARK_GRAY}They have an unfair advantage against\n"
-	.string "my Shroomish!\p"
-	.string "{COLOR DARK_GRAY}Hmm, maybe I'll just get a Pokémon\n"
-	.string "that's good against his.$"
+	.string "wasn't a bug for once.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text::
 	.string "{COLOR DARK_GRAY}Ugh... I hate forests. They're dirty and\n"
-	.string "full of icky bugs and poisonous plants.$"
+	.string "full of icky bugs.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Defeated_Text::
-	.string "The only thing I hate more than forests  \n"
+	.string "The only thing I hate more than forests \n"
 	.string "is losing.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text::
-	.string "{COLOR DARK_GRAY}If you're going to Maplegrove, you\n"
-	.string "should go the other way instead.\p"
-	.string "{COLOR DARK_GRAY}There's nothing past here except some\n"
-	.string "weird girl talking to herself.$"
+	.string "This place gives me the\n"
+	.string "heebie-jeebies...$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text::
 	.string "{COLOR DARK_GRAY}Trying to find this trading card is like\n"
@@ -250,8 +339,8 @@ ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text::
 	.string "an hour!$"
 
 ISLANDGAME_VERDANT_WOODS_NPC1Talk::
-	.string "{COLOR DARK_GRAY}When I was trying to find a Tepig here, I\n"
-	.string "came across this HUGE bug Pokémon.\p"
+	.string "{COLOR DARK_GRAY}When I was trying to find a Joltik here,\n"
+	.string "I came across this HUGE bug Pokémon.\p"
 	.string "{COLOR DARK_GRAY}It was blue, had big muscles, and had a\n"
 	.string "giant horn on its head.\p"
 	.string "{COLOR DARK_GRAY}Lucky for me, it was just passing by.\n"

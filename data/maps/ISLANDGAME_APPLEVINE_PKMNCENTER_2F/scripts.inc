@@ -1,0 +1,3 @@
+ISLANDGAME_APPLEVINE_PKMNCENTER_2F_MapScripts::
+	.byte 0
+

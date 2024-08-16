@@ -1,5 +1,39 @@
-mapscripts ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
 
+mapscripts ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hide daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hide nighttime npcs
+        }
+    }
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_MelissaSister {
+    lock
+    faceplayer
+    msgbox(format(
+        "I can't wait to be a Pokémon trainer like you and my big sister!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_Buneary {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BUNEARY, CRY_MODE_NORMAL)
+    msgbox(format(
+        "HA{UP_ARROW} HA{RIGHT_ARROW} HA{DOWN_ARROW} HA{LEFT_ARROW}"
+    ))
+    closemessage
+    release
+}
 
 script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyDad {
     lock
@@ -10,7 +44,7 @@ script ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_EventScript_AudreyDad {
 
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyDadTalk {
     format(
-        "{COLOR DARK_GRAY}Feels like just yesterday, I was taking Audrey to her first day of school. \p"
+        "{COLOR DARK_GRAY}Feels like just yesterday, I was taking Melissa to her first day of school. \p"
         "{COLOR DARK_GRAY}Now she's exploring the vast wilderness of Marya all on her own. \p"
         "{COLOR DARK_GRAY}Kids grow up so fast, don't they? Blink and you'll miss it!"
     )
@@ -40,7 +74,7 @@ text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomFirstTalk {
 
 text ISLANDGAME_MAPLEGROVE_AudreysHouse_1F_AudreyMomSecondTalk {
     format(
-        "It's good to see you again, dearie! Audrey just stopped by earlier. \p"
+        "It's good to see you again, dearie! Melissa just stopped by earlier. \p"
         "She told me all about how you two helped the owner of Fresa Farms find his missing Mareep! \p"
         "You were both very kind and brave to stand up to that wild Mightyena. \p"
         "Thank you for being with my daughter. She gets ahead of herself a lot, so I'm glad neither of you were hurt."

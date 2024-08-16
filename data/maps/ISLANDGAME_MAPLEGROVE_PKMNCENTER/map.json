@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_Nurse",
+      "script": "IslandGame_Common_PokemonCenter_1F_EventScript_Nurse",
       "flag": "0"
     },
     {
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_187",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_152",
       "x": 11,
       "y": 5,
       "elevation": 0,
@@ -67,13 +67,13 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_672",
-      "x": 2,
-      "y": 6,
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_572",
+      "x": 3,
+      "y": 8,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN2",
@@ -93,6 +93,13 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_MAPLEGROVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_MAPLEGROVE_PKMNCENTER_2F",
       "dest_warp_id": "0"
     }
   ],

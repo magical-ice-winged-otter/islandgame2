@@ -1,0 +1,147 @@
+const LOOP_BOUND = VAR_TEMP_A
+const LOOP_ITER  = VAR_TEMP_B
+const QUEST      = VAR_TEMP_C
+const ITEM_VAR   = VAR_TEMP_D
+
+mapscripts ISLANDGAME_APPLEVINE_COUCH_POTATO_MapScripts {}
+
+
+script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
+    lock
+    returnqueststate(QUEST_APPLEVINE_COUCH_POTATO)
+
+    switch (var(VAR_RESULT)) {
+        case QUEST_INACTIVE:
+            msgbox(format(
+                "Man, I'm starving, but I don't feel like getting up and going to the store...\p"
+                "I wish there was like, some sort of service where I could just pay someone to deliver food straight to my house!\p"
+                "Huh?"
+            ))
+            closemessage
+            faceplayer
+            applymovement(1, Common_Movement_ExclamationMark)
+            waitmovement(0)
+            playse(SE_PIN)
+            waitse
+            msgbox(format(
+                "Who are you? What are you doing in my house?\p"
+                "Hmm... You're a Pokémon trainer? That means you do a lot of walking around...\p"
+                "Ho-ho, have I got the perfect opportunity for you!\p"
+                "See, I'm hungry, but I wanna keep watching Serafina's livestream.\p"
+                "You're a trainer, and I bet you could use some money for your travels.\p"
+                "See where I'm getting at? You give me the grub, I give you the dough.\p"
+                "Awesome! I'm glad you've chosen to be my server! Welcome to your new job!\p"
+                "Hmm... I could go for some chocolate. Go down to La Cucina Dolche and get me one of their tasty Sweet Hearts, server!"
+            ))
+            startquest(QUEST_APPLEVINE_COUCH_POTATO)
+        case QUEST_ACTIVE:
+            faceplayer
+            setvar(LOOP_ITER, SUB_QUEST_COUCH_POTATO_1)
+            setvar(LOOP_BOUND, (SUB_QUEST_COUCH_POTATO_1 + SUB_QUEST_COUNT_COUCH_POTATO))
+            setvar(QUEST, QUEST_APPLEVINE_COUCH_POTATO)
+            call(Common_NextSubQuest)
+            // -> {STR_VAR_1} = quest name
+            // -> {STR_VAR_2} = item/pokemon name
+            // -> var(VAR_RESULT) = the actual id
+            // -> var(LOOP_ITER)  = the subquest that wasn't complete
+            // -> var(LOOP_BOUND) = the index that represents the number of subquests
+            copyvar(ITEM_VAR, VAR_RESULT)
+            checkitem(ITEM_VAR)
+            if (var(VAR_RESULT) == FALSE) { // don't have the item
+                msgbox(format("Where's my {STR_VAR_2}? I need it now!"))
+                goto(CouchPotatoSpeakEnd)
+            }
+            msgbox(format("Ah, have you brought my {STR_VAR_2}?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == NO) {
+                msgbox(format("No? Then go back out there and get one!"))
+                goto(CouchPotatoSpeakEnd)
+            }
+            showmoneybox(0,0)
+            removeitem(ITEM_VAR)
+            subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_APPLEVINE_COUCH_POTATO, LOOP_ITER)
+            addvar(LOOP_ITER, 1) // we add 1 here to see if finished the last quest (ie, we are next to the loop bound by index)
+            if (var(LOOP_ITER) == LOOP_BOUND) { // last quest
+                msgbox(format(
+                    "Yessss... YESSSS! Good work, very good work indeed, my faithful servant!\p"
+                    "-nom nom nom-\p"
+                    "Ooh, soo delicious... Knowing that Serafina made these heavenly cookies with her love makes it soo much better!\p"
+                    "Ah... that really hit the spot. Server, you are relieved of your duties. Thank you for your service.\p"
+                    "...Hm? What do you mean, I'm forgetting something?\p"
+                    "O-Oh! Right. Your payment! Silly me, how could I forget?\p"
+                    "Here you are, your last paycheck!"
+                ))
+                addmoney(2000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                msgbox(format(
+                    "Hm? What do you mean, “That's It?” I paid you the amount I always give.\p"
+                    "WHAT!? The cookies cost THAT much!? I don't have that kind of money!\p"
+                    "Umm, uhh, wait! I can fix this! Just give me a second!\p"
+                    "C'mon... Where is it... O-Oh, found it!\p"
+                    "Here, you can have this as the payment! It's my most prized possession!"
+                ))
+                hidemoneybox
+                giveitem(ITEM_LEFTOVERS)
+                completequest(QUEST_APPLEVINE_COUCH_POTATO)
+            } else {
+                msgbox(format(
+                    "Ah, excellent! Present me the goods, server!\p"
+                    "Mmmmmm...{PAUSE 60} That's the stuff...\p"
+                    "Huh? Oh, right. As compensation for your services, here's a little something for your troubles."
+                ))
+                addmoney(2000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                switch (var(LOOP_ITER) ) {
+                    case SUB_QUEST_COUCH_POTATO_2: 
+                        msgbox(format(
+                            "Hmm, I'm still pretty hungry...\pOh, I've always wanted to try one of those boy scout Candy Bars they sell at Camp Persi.\pGo forth, my loyal servant!"
+                        ))
+                    case SUB_QUEST_COUCH_POTATO_3: 
+                        msgbox(format(
+                            "Let's see what else I want to order...\pOh! Apparently a new café just opened up in Aetheria, and their pancakes are bomb, according to Serafina!\pGet me one of those Sera-approved Pancakes at once!"
+                        ))
+                    case SUB_QUEST_COUCH_POTATO_4:
+                        msgbox(format(
+                            "Man, I haven't had a good donut in years. When I lived in Cantalo with my mom, she would always bring me home a jelly-filled donut.\pYo, mind snagging me one of those Jelly Donuts from Cantalo? Be sure to get strawberry, it's my favorite!"
+                        ))
+                    case SUB_QUEST_COUCH_POTATO_5:
+                        msgbox(format(
+                            "...\pOh... {PAUSE 30}my... {PAUSE 30}GOD!\pSERAFINA JUST ANNOUNCED HER NEW COOKIE BRAND, SERA-SNAXX!\pFudgesicles... they're only going to be selling it at her hometown in Minerva...\pAs a devoted tier three subscriber, I MUST have her Sera-Snaxx!\pServer! This is your final task! Get me an order of Sera-Snaxx by ANY means necessary! Money is no object!"
+                        ))
+                    default:
+                }
+            }
+            hidemoneybox
+        case QUEST_COMPLETED:
+            msgbox(format(
+                "Whelp, paying for all those delivery fees completely drained my wallet...\p"
+                "How in the world am I going to pay for my monthly subscription now?"
+            ))
+            faceplayer
+            msgbox(format(
+                "Huh? Just find a job? I-It's not as easy as you say it is! They don't just appear out of thin air!"
+            ))
+    }
+    
+    CouchPotatoSpeakEnd:
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_COUCH_POTATO_Munchlax {
+    lock
+    faceplayer
+    msgbox(format("{COLOR RED}(How the heck are you 230 pounds?)"))
+    playmoncry(SPECIES_MUNCHLAX, CRY_MODE_NORMAL)
+    waitmoncry
+    release
+}
+
+script ISLANDGAME_APPLEVINE_COUCH_POTATO_TV {
+    msgbox(format(
+        "It's one of Serafina's private streams. She's just chatting with subscribers."
+    ),MSGBOX_SIGN)
+}

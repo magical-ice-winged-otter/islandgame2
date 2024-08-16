@@ -3,14 +3,14 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gBattleMoves[MOVE_TELEKINESIS].effect == EFFECT_TELEKINESIS);
+    ASSUME(gMovesInfo[MOVE_TELEKINESIS].effect == EFFECT_TELEKINESIS);
 }
 
 SINGLE_BATTLE_TEST("Telekinesis makes the target unable to avoid any attacks made against it")
 {
     GIVEN {
-        ASSUME(gBattleMoves[MOVE_MINIMIZE].effect == EFFECT_MINIMIZE); // Raises evs by 2
-        ASSUME(gBattleMoves[MOVE_SCREECH].accuracy < 100);
+        ASSUME(gMovesInfo[MOVE_MINIMIZE].effect == EFFECT_MINIMIZE); // Raises evs by 2
+        ASSUME(gMovesInfo[MOVE_SCREECH].accuracy < 100);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
@@ -47,7 +47,7 @@ SINGLE_BATTLE_TEST("Telekinesis ends after 3 turns")
 SINGLE_BATTLE_TEST("Telekinesis makes the target immune to Ground-type attacks")
 {
     GIVEN {
-        ASSUME(gBattleMoves[MOVE_BULLDOZE].type == TYPE_GROUND);
+        ASSUME(gMovesInfo[MOVE_BULLDOZE].type == TYPE_GROUND);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
@@ -68,3 +68,7 @@ SINGLE_BATTLE_TEST("Telekinesis makes the target immune to Ground-type attacks")
         MESSAGE("It doesn't affect Foe Wynaut…");
     }
 }
+
+TO_DO_BATTLE_TEST("Baton Pass passes Telekinesis' effect");
+//Bulbapedia doesn't confirm what happens with Diglett, Dugtrio, Sandygast and Palossand, so it needs to be tested in-game.
+TO_DO_BATTLE_TEST("Baton Pass removes Telekinesis' effect disappears if the switching-in mon is Mega Gengar"); 

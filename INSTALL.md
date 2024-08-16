@@ -33,27 +33,23 @@ WSL1 is the preferred terminal to build **pokeemerald Expansion**. The following
 - Otherwise, **open WSL** and go to [Choosing where to store pokeemerald Expansion (WSL1)](#Choosing-where-to-store-pokeemerald-expansion-WSL1).
 
 ### Installing WSL1
-1. Open [Windows Powershell **as Administrator**](https://i.imgur.com/QKmVbP9.png), and run the following command (Right Click or Shift+Insert is paste in the Powershell).
+1. Open [Windows Powershell **as Administrator**](https://i.imgur.com/QKmVbP9.png), and run the following commands (Right Click or Shift+Insert is paste in the Powershell).
 
     ```powershell
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+	wsl --install -d Ubuntu --enable-wsl1
     ```
 
 2. Once the process finishes, restart your machine.
 
-3. The next step is to choose and install a Linux distribution from the Microsoft Store. The following instructions will assume Ubuntu as the Linux distribution of choice.
+3. Open Windows Powershell **as Administrator** again (after restarting), and run the following command to configure Ubuntu to use WSL1.
+
+    ```powershell
+    wsl --set-version Ubuntu 1
+    ```
     <details>
-        <summary><i>Note for advanced users...</i></summary>
+        <summary><i>Note...</i></summary>
 
-    >   You can pick a preferred Linux distribution, but setup instructions may differ. Debian should work with the given instructions, but has not been tested.
-    </details>
-
-4. Open the [Microsoft Store Linux Selection](https://aka.ms/wslstore), click Ubuntu, then click Get, which will install the Ubuntu distribution.
-    <details>
-        <summary><i>Notes...</i></summary>
-
-    >   Note 1: If a dialog pops up asking for you to sign into a Microsoft Account, then just close the dialog.
-    >   Note 2: If the link does not work, then open the Microsoft Store manually, and search for the Ubuntu app (choose the one with no version number).
+    >   WSL may open automatically after restarting, but you can ignore it for now.
     </details>
 
 ### Setting up WSL1
@@ -117,6 +113,17 @@ Some tips before proceeding:
     ```
 
 devkitARM is now installed.
+
+### Installing Python on WSL1
+
+To install Python on WSL1, simply run the following commands:
+
+```bash
+sudo apt update && sudo apt upgrade
+sudo apt install python3
+```
+
+Python is now installed.
 
 ### Choosing where to store pokeemerald Expansion (WSL1)
 WSL has its own file system that's not natively accessible from Windows, but Windows files *are* accessible from WSL. So you're going to want to store pokeemerald Expansion within Windows.
@@ -199,6 +206,16 @@ Note that in msys2, Copy is Ctrl+Insert and Paste is Shift+Insert.
     ```bash
     cd
     ```
+
+### Installing Python on msys2
+
+To install Python on msys2, simply run the following commands:
+
+```bash
+pacman -S mingw-w64-x86_64-python3
+```
+
+Python is now installed.
 
 ### Choosing where to store pokeemerald Expansion (msys2)
 At this point, you can choose a folder to store pokeemerald Expansion into. If you're okay with storing pokeemerald Expansion in the user profile folder, then proceed to [Installation](#installation). Otherwise, you'll need to account for where pokeemerald Expansion is stored when changing directory to the pokeemerald-expansion folder.
@@ -289,6 +306,7 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
     ```
 
 2.  - If libpng is **not installed**, then go to [Installing libpng (macOS)](#installing-libpng-macos).
+    - If pkg-config is **not installed**, then go to [Installing pkg-config (macos)](#installing-pkg-config-macos).
     - If devkitARM is **not installed**, then go to [Installing devkitARM (macOS)](#installing-devkitarm-macos).
     - Otherwise, **open the Terminal** and go to [Choosing where to store pokeemerald Expansion (macOS)](#choosing-where-to-store-pokeemerald-expansion-macos)
 
@@ -307,6 +325,26 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
     brew install libpng
     ```
     libpng is now installed.
+
+    Continue to [Installing pkg-config (macOS)](#installing-pkg-config-macos) if **pkg-config is not installed**. Otherwise, continue to [Installing devkitARM (macOS)](#installing-devkitarm-macos) if **devkitARM is not installed**.
+    
+    If both pkg-config and devkitARM are already installed, go to [Choosing where to store pokeemerald Expansion (macOS)](#choosing-where-to-store-pokeemerald-expansion-macos).
+
+### Installing pkg-config (macOS)
+<details>
+    <summary><i>Note for advanced users...</i></summary>
+
+>   This guide installs pkg-config via Homebrew as it is the easiest method, however advanced users can install pkg-config through other means if they so desire.
+</details>
+
+1. Open the Terminal.
+2. If Homebrew is not installed, then install [Homebrew](https://brew.sh/) by following the instructions on the website.
+3. Run the following command to install libpng.
+
+    ```bash
+    brew install pkg-config
+    ```
+    pkg-config is now installed.
 
     Continue to [Installing devkitARM (macOS)](#installing-devkitarm-macos) if **devkitARM is not installed**, otherwise, go to [Choosing where to store pokeemerald Expansion (macOS)](#choosing-where-to-store-pokeemerald-expansion-macos).
 
@@ -327,12 +365,31 @@ If this works, then proceed to [Installation](#installation). Otherwise, ask for
 
     ```bash
     export DEVKITPRO=/opt/devkitpro
+    echo "export DEVKITPRO=$DEVKITPRO" >> ~/.zshrc
+    export DEVKITARM=$DEVKITPRO/devkitARM
+    echo "export DEVKITARM=$DEVKITARM" >> ~/.zshrc
+
+    echo "if [ -f ~/.zshrc ]; then . ~/.zshrc; fi" >> ~/.zprofile
+    ```
+    *Note: Starting with macOS 10.15, the default Unix shell is now zsh. If you migrated from an older version of macOS, you might still be using bash. You can check my running `echo $0` in the terminal.*
+    <details>
+        <summary><i>If your terminal is using bash instead of zsh...</i></summary>
+
+    ```bash
+    export DEVKITPRO=/opt/devkitpro
     echo "export DEVKITPRO=$DEVKITPRO" >> ~/.bashrc
     export DEVKITARM=$DEVKITPRO/devkitARM
     echo "export DEVKITARM=$DEVKITARM" >> ~/.bashrc
 
     echo "if [ -f ~/.bashrc ]; then . ~/.bashrc; fi" >> ~/.bash_profile
     ```
+    </details>
+
+### Installing Python (macOS)
+1. Download the latest Python package from [here](https://www.python.org/downloads/).
+2. Open the package to install Python.
+
+Python is now installed.
 
 ### Choosing where to store pokeemerald Expansion (macOS)
 At this point, you can choose a folder to store pokeemerald Expansion into. If you're okay with storing pokeemerald Expansion in the user folder, then proceed to [Installation](#installation). Otherwise, you'll need to account for where pokeemerald Expansion is stored when changing directory to the pokeemerald-expansion folder.
@@ -414,6 +471,20 @@ devkitARM is now installed.
 
 Then proceed to [Choosing where to store pokeemerald Expansion (Linux)](#choosing-where-to-store-pokeemerald-expansion-linux).
 
+### NixOS
+Run the following command to start an interactive shell with the necessary packages:
+```bash
+nix-shell -p pkgsCross.arm-embedded.stdenv.cc git pkg-config libpng
+```
+Then proceed to [Choosing where to store pokeemerald Expansion (Linux)](#choosing-where-to-store-pokeemerald-expansion-linux).
+
+### NixOS
+Run the following command to start an interactive shell with the necessary packages:
+```bash
+nix-shell -p pkgsCross.arm-embedded.stdenv.cc git pkg-config libpng
+```
+Then proceed to [Choosing where to store pokeemerald Expansion (Linux)](#choosing-where-to-store-pokeemerald-expansion-linux).
+
 ### Other distributions
 _(Specific instructions for other distributions would be greatly appreciated!)_
 
@@ -433,6 +504,9 @@ _(Specific instructions for other distributions would be greatly appreciated!)_
     ```
 
     The last command will ask for the selection of packages to install. Just press Enter to install all of them, followed by entering Y to proceed with the installation.
+
+### Installing Python in Linux
+Installing Python depends on your distribution, please refere to the instructions [here](https://docs.python-guide.org/starting/install3/linux/).
 
 ### Choosing where to store pokeemerald Expansion (Linux)
 At this point, you can choose a folder to store pokeemerald Expansion into. If so, you'll have to account for the modified folder path when changing directory to the pokeemerald-expansion folder.
@@ -528,7 +602,8 @@ Note that this is not necessary for a non-modern (agbcc) build since those are b
 
 <details>
     <summary><i>Deprecated; installing agbcc is optional since 1.7.0</i>.</summary>
-2. Install agbcc into pokeemerald-expansion. The commands to run depend on certain conditions. **You should only follow one of the listed instructions**:
+
+1. Install agbcc into pokeemerald-expansion. The commands to run depend on certain conditions. **You should only follow one of the listed instructions**:
 - If agbcc has **not been built before** in the folder where you chose to store pokeemerald Expansion, run the following commands to build and install it into pokeemerald-expansion:
 
     ```bash
@@ -557,18 +632,20 @@ Note that this is not necessary for a non-modern (agbcc) build since those are b
     <details>
         <summary><i>Note...</i></summary>
 
-        > If building agbcc or pokeemerald results in an error, try deleting the agbcc folder and re-installing agbcc as if it has not been built before.
+    > If building agbcc or pokeemerald results in an error, try deleting the agbcc folder and re-installing agbcc as if it has not been built before.
     </details>
 
-3. Once agbcc is installed, change directory back to the base directory where pokeemerald-expansion and agbcc are stored:
+2. Once agbcc is installed, change directory back to the base directory where pokeemerald-expansion and agbcc are stored:
 
     ```bash
     cd ..
     ```
-    
-4. To compile with agbcc:
 
-    ```make agbcc```
+3. To compile with agbcc:
+
+    ```bash
+    make agbcc
+    ```
 
 </details>
 

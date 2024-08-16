@@ -159,7 +159,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 17,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_1F_2",
+      "dest_warp_id": "1"
+    }
   ],
   "coord_events": [
 

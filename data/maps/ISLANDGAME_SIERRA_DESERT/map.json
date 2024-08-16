@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_SIERRA_DESERT",
   "layout": "LAYOUT_ISLANDGAME_SIERRA_DESERT",
   "music": "MUS_HG_VERMILION",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_SIERRA_PATH",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",

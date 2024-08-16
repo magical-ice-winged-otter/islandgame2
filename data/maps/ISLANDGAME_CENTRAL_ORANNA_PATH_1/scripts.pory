@@ -21,7 +21,7 @@ mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts {
                 setobjectxyperm(LOCALID_MIGHTYENA_1, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_MIGHTYENA_2, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_MIGHTYENA_3, POS_HIDDEN_X, POS_HIDDEN_Y)
-                setobjectxyperm(LOCALID_ENTRANCE_RANGER_1, 47, 37)
+                setobjectxyperm(LOCALID_ENTRANCE_RANGER_1, 37, 27)
                 setobjectxyperm(LOCALID_ENTRANCE_RANGER_3, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ENTRANCE_RANGER_2, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_PKMN1, POS_HIDDEN_X, POS_HIDDEN_Y)
@@ -63,34 +63,34 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Trigger_MightyenaTooDangerous {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC1 {
     trainerbattle_single(TRAINER_CORANNA_1_NPC1,
-        format("It's a lot of walking to get to Tidalcove. Let's battle instead!"),
-        "Well, good luck with the rest of your\ntrip!"
+        format("Take a look at my darling Pokémon!"),
+        "Oh dear..."
     )
-    msgbox(format("I heard that the trip is easier with a bike.\pBut the bike shop is in Tidalcove!"), MSGBOX_NPC)
+    msgbox(format("Are you headed to Tidalcove? It's a fairly long journey ahead. Good luck!"), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC2 {
     trainerbattle_single(TRAINER_CORANNA_1_NPC2,
-        format("There's no mountain that my team and I can't climb!"),
-        "Climb higher through failure!"
+        format("According to all known laws of aviation, there's no way that a non-flying type Bug Pokémon should be able to fly."),
+        "The Bug Pokémon of course, flies \nanyways."
     )
-    msgbox(format("One day, I'm going to climb Mt. Aurora!\pIt'll be hard... but it's the only way to know if the rumors are true..."), MSGBOX_NPC)
+    msgbox(format("Bug Pokémon don't care what humans think is impossible."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3 {
     trainerbattle_single(TRAINER_CORANNA_1_NPC3,
-        format("Hey! There's only room for one bug catcher around here!"),
-        "What's that? You don't care about\nbugs?"
+        format("My glasses! Where are my glasses? I can't see anything without my glasses!"),
+        "Oh, here they are.{PAUSE 60} They were in my\n pocket the entire time."
     )
-    msgbox(format("I'm looking for a cool bug around here. Have you found it yet?"), MSGBOX_NPC)
+    msgbox(format("Sorry. I'm kinda forgetful. Umm... What was I doing again?\pI knew I came down here for a reason..."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4 {
     trainerbattle_single(TRAINER_CORANNA_1_NPC4,
-        format("I don't think I'm ready for the Tidalcove Gym yet, so let's train!"),
-        "Thanks for the battle!"
+        format("Argh! Not again! Why do these Abra keep teleporting away!?\pTime to take my frustration on you!"),
+        "Mrgrgrgr..."
     )
-    msgbox(format("It's okay to lose a couple of times. Life is a marathon, not a sprint!"), MSGBOX_NPC)
+    msgbox(format("I'm sorry. It was rude of me to subject you to my anger."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceRanger {
@@ -119,6 +119,10 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign {
     msgbox(format("CENTRAL ORANNA PATH\nMAPLEGROVE{RIGHT_ARROW}"), MSGBOX_SIGN)
 }
 
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_GrottoSign {
+    msgbox(format("Hi! I'm a sentient sign. Below me is a hidden grotto!\pHidden grottoes can sometimes have items or even special Pokémon!\pDon't worry if you don't find anything. You can always check back tomorrow!\p- Billy The Board (Not a Pokémon)"), MSGBOX_SIGN)
+}
+
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1 {
     lock
     msgbox(format("Linoone! Use slash!"))
@@ -127,6 +131,59 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1 {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger2 {
     lock
-    msgbox(format("Watch out, Raticate!"))
+    msgbox(format("Watch out, Ariados!"))
     release
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_1_RouteMaster {
+    lock
+    faceplayer
+    if(
+        defeated(TRAINER_CORANNA_1_NPC1) &&
+        defeated(TRAINER_CORANNA_1_NPC2) &&
+        defeated(TRAINER_CORANNA_1_NPC3) &&
+        defeated(TRAINER_CORANNA_1_NPC4) &&
+        defeated(TRAINER_CORANNA_2_CAMPER) &&
+        defeated(TRAINER_CORANNA_2_MANIAC) &&
+        defeated(TRAINER_CORANNA_2_BIKER) &&
+        defeated(TRAINER_CORANNA_2_FISHERMAN) && 
+        defeated(TRAINER_MINTY_MEADOWS_5)  &&
+        !defeated(TRAINER_CORANNA_PATHMASTER)
+    ) {
+        msgbox(format(
+            "Wow! You beat every other trainer on this path!\p"
+            "As a reward, I'll give you this ultra rare Petaya berry!\p"
+            "...but only if you can beat me in a battle! Are you ready?"
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            trainerbattle_no_intro(TRAINER_CORANNA_PATHMASTER, "GG! You won!")
+            msgbox(format(
+                "Well, a deal's a deal! I pass this berry onto you, as well as the title of Central Oranna Path's Path Master!\p"
+                "It's kind of mouthful, I know."
+            ))
+            giveitem(ITEM_PETAYA_BERRY)
+            goto(Coranna_PathMaster_End)
+        }
+        else {
+            msgbox(format(
+                "Okay. Let me know when you are prepared!"
+            ))
+            goto(Coranna_PathMaster_End)
+        }
+    }
+    if (defeated(TRAINER_CORANNA_PATHMASTER)) {
+        msgbox(format(
+            "With skills like that, I've no doubt you'll be ready to take on Ruka!"
+        ))
+    }
+    else {
+        msgbox(format(
+            "Greetings, trainer! I am what's known as a Path Master!\p"
+            "If you manage to defeat all the other trainers on this path, return to me!"
+        ))
+    }
+
+    Coranna_PathMaster_End:
+        closemessage
+        release
 }

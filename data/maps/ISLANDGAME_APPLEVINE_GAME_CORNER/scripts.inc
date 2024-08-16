@@ -1,0 +1,1513 @@
+ISLANDGAME_APPLEVINE_GAME_CORNER_MapScripts::
+	.byte 0
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_OutOfOrder::
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_OutOfOrder_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC1::
+	lock
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC1_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC2::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC2_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC3::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC3_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_EventScript_RouletteEmployee::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_EventScript_RouletteEmployee_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC4::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC4_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5::
+	lock
+	faceplayer
+	goto_if_unset FLAG_APPLEVINE_COIN_CASE, ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_2
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_1:
+	showcoinsbox 18, 1
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_5
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_4
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_4:
+	hidecoinsbox 18, 1
+GameCornerNPC_End:
+	closemessage
+	release
+	return
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_2:
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_0
+	goto GameCornerNPC_End
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_1
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_5:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 1
+	goto_if_lt ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_9
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_8:
+	removecoins 1
+	updatecoinsbox 18, 1
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_3
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_4
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_9:
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_2
+	goto GameCornerNPC_End
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_8
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC6::
+	lock
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC6_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler0::
+	lock
+	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler0_Text_0
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler1::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler1_Text_0
+	applymovement 2, Common_Movement_FaceLeft
+	waitmovement 0
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler2::
+	lock
+	faceplayer
+	goto_if_unset FLAG_APPLEVINE_COIN_CASE, ISLANDGAME_APPLEVINE_EventScript_Gambler2_2
+	goto_if_unset FLAG_DAILY_APPLEVINE_COIN_BRO, ISLANDGAME_APPLEVINE_EventScript_Gambler2_5
+	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler2_Text_2
+ISLANDGAME_APPLEVINE_EventScript_Gambler2_1:
+	closemessage
+	release
+	return
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler2_2:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler2_Text_0
+	goto ISLANDGAME_APPLEVINE_EventScript_Gambler2_1
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler2_5:
+	showcoinsbox 18, 1
+	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler2_Text_1
+	addcoins 40
+	updatecoinsbox 18, 1
+	playse SE_SHOP
+	waitse
+	hidecoinsbox 18, 1
+	setflag FLAG_DAILY_APPLEVINE_COIN_BRO
+	goto ISLANDGAME_APPLEVINE_EventScript_Gambler2_1
+
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler3::
+	lock
+	msgbox ISLANDGAME_APPLEVINE_EventScript_Gambler3_Text_0
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_EventScript_Bouncer::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_APPLEVINE_EventScript_Bouncer_Text_0
+	release
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine::
+	lock
+Applevine_VendingMachine:
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_0
+	showmoneybox 17, 1
+	dynmultipush ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_1, 0
+	dynmultipush ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_2, 35
+	dynmultipush ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_3, 36
+	dynmultipush ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_4, 37
+	dynmultistack 0, 0, TRUE, 4, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+	switch VAR_RESULT
+	case 35, ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_3
+	case 36, ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_4
+	case 37, ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_5
+	goto ApplevineVending_End
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_1:
+ApplevineVending_End:
+	hidemoneybox
+	closemessage
+	release
+	return
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_3:
+	checkmoney 500
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_8
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_7:
+	removemoney 500
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	playse SE_VEND
+	waitse
+	giveitem ITEM_FRESH_WATER
+	goto Applevine_VendingMachine
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_1
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_4:
+	checkmoney 800
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_11
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_10:
+	removemoney 800
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	playse SE_VEND
+	waitse
+	hidemoneybox
+	giveitem ITEM_SODA_POP
+	goto Applevine_VendingMachine
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_1
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_5:
+	checkmoney 1200
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_14
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_13:
+	removemoney 1200
+	updatemoneybox
+	playse SE_SHOP
+	waitse
+	playse SE_VEND
+	waitse
+	giveitem ITEM_LEMONADE
+	goto Applevine_VendingMachine
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_1
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_8:
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_5
+	goto Applevine_VendingMachine
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_7
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_11:
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_5
+	goto Applevine_VendingMachine
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_10
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_14:
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_5
+	goto Applevine_VendingMachine
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_13
+
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk::
+	lock
+	faceplayer
+	goto_if_unset FLAG_APPLEVINE_COIN_CASE, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_2
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_1:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_5
+	goto PrizeClerk_End
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_4:
+PrizeClerk_Exchange:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_2
+	showcoinsbox 17, 1
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_3, 0
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_4, 474
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_5, 482
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_6, 471
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_7, 465
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_8, 492
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_9, 493
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_10, 475
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_11, 476
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_12, 762
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_13, 587
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_14, 593
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_15, 627
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_16, 629
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_17, 630
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_18, 370
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_19, 376
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_20, 357
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_21, 746
+	dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	switch VAR_RESULT
+	case 474, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_10
+	case 482, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_11
+	case 471, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_12
+	case 465, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_13
+	case 492, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_14
+	case 493, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_15
+	case 475, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_16
+	case 476, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_17
+	case 762, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_18
+	case 587, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_19
+	case 593, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_20
+	case 627, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_21
+	case 629, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_22
+	case 630, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
+	case 370, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_24
+	case 376, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_25
+	case 357, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_26
+	case 746, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_27
+	hidecoinsbox 17, 1
+	goto PrizeClerk_End
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8:
+PrizeClerk_End:
+	closemessage
+	release
+	return
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_2:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_0
+	goto PrizeClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_1
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_5:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_4
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_10:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 800
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_30
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_29:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_23, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_84
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_83:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_11:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 800
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_33
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_32:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_25, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_87
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_86:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_12:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 800
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_36
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_35:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_26, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_90
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_89:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_13:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 1600
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_39
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_38:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_27, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_93
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_92:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_14:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 1600
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_42
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_41:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_28, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_96
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_95:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_15:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 1600
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_45
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_44:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_29, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_99
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_98:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_16:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 2400
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_48
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_47:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_30, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_102
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_101:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_17:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 2400
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_51
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_50:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_31, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_105
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_104:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_18:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 2400
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_54
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_53:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_32, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_108
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_107:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_19:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 3200
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_57
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_56:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_33, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_111
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_110:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_20:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 3200
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_60
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_59:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_34, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_114
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_113:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_21:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 3200
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_63
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_62:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_35, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_117
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_116:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_22:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 3200
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_66
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_65:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_36, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_120
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_119:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 3200
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_69
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_68:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_37, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_123
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_122:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_24:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 4800
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_72
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_71:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_38, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_126
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_125:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_25:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 6400
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_75
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_74:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_40, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_129
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_128:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_26:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 8000
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_78
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_77:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_42, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_132
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_131:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_27:
+	checkcoins VAR_TEMP_D
+	compare VAR_TEMP_D, 9999
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_81
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_80:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_44, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_135
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_134:
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_30:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_29
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_33:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_32
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_36:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_35
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_39:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_38
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_42:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_41
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_45:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_44
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_48:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_47
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_51:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_50
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_54:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_53
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_57:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_56
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_60:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_59
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_63:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_62
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_66:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_65
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_69:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_68
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_72:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_71
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_75:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_74
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_78:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_77
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_81:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_80
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_84:
+	removecoins 800
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_WIDE_LENS
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_83
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_87:
+	removecoins 800
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_ZOOM_LENS
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_86
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_90:
+	removecoins 800
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_SCOPE_LENS
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_89
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_93:
+	removecoins 1600
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_KINGS_ROCK
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_92
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_96:
+	removecoins 1600
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_RAZOR_FANG
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_95
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_99:
+	removecoins 1600
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_RAZOR_CLAW
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_98
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_102:
+	removecoins 2400
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_MUSCLE_BAND
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_101
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_105:
+	removecoins 2400
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_WISE_GLASSES
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_104
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_108:
+	removecoins 2400
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_LOADED_DICE
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_107
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_111:
+	removecoins 3200
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_TM06
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_110
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_114:
+	removecoins 3200
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_TM12
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_113
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_117:
+	removecoins 3200
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_TM46
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_116
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_120:
+	removecoins 3200
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_TM48
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_119
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_123:
+	removecoins 3200
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	giveitem ITEM_TM49
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_122
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_126:
+	removecoins 4800
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	givemon SPECIES_GIMMIGHOUL, 20, ITEM_NUGGET, ITEM_POKE_BALL, NUM_NATURES
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_GIMMIGHOUL
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_39
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_138
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_137:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_125
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_129:
+	removecoins 6400
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	givemon SPECIES_EEVEE, 20, ITEM_LUCKY_EGG, ITEM_POKE_BALL, NUM_NATURES
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_41
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_141
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_140:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_128
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_132:
+	removecoins 8000
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	givemon SPECIES_PORYGON, 20, ITEM_EVIOLITE, ITEM_POKE_BALL, NUM_NATURES
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_PORYGON
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_43
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_144
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_143:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_131
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_135:
+	removecoins 9999
+	updatecoinsbox 17, 1
+	playse SE_SHOP
+	waitse
+	random 10
+	switch VAR_RESULT
+	case 0, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_148
+	case 1, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_149
+	case 2, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_150
+	case 3, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_151
+	case 4, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_152
+	case 5, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_153
+	case 6, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_154
+	case 7, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_155
+	case 8, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_156
+	givemon SPECIES_BELDUM, 20, ITEM_COMET_SHARD, ITEM_CHERISH_BALL, NUM_NATURES, 0
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_BELDUM
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_46
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_162
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_134
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_138:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_137
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_141:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_140
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_144:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_143
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_148:
+	giveitem ITEM_TM32
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_149:
+	giveitem ITEM_EXP_CANDY_XL
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_150:
+	giveitem ITEM_BIG_NUGGET
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_151:
+	giveitem ITEM_TM21
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_152:
+	giveitem ITEM_LIFE_ORB
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_153:
+	giveitem ITEM_MAX_REVIVE
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_154:
+	giveitem ITEM_EXP_CANDY_XL
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_155:
+	givemon SPECIES_DITTO, 20, ITEM_QUICK_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_DITTO
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_45
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_158
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_156:
+	givemon SPECIES_DITTO, 20, ITEM_METAL_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_DITTO
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_45
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_160
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_158:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_160:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_162:
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk::
+	lock
+	faceplayer
+	goto_if_unset FLAG_APPLEVINE_COIN_CASE, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_2
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_3, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_12
+	goto CoinsClerk_End
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_1:
+CoinsClerk_Exchange:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_4
+	showcoinsbox 18, 1
+	showmoneybox 17, 4
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_3, 0
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_5, 1
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_6, 2
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_7, 3
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_8, 4
+	dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+	switch VAR_RESULT
+	case 1, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_7
+	case 2, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_8
+	case 3, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_9
+	case 4, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_10
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_End
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5:
+CoinsClerk_End:
+	closemessage
+	release
+	return
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_2:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_0
+	giveitem ITEM_COIN_CASE
+	setflag FLAG_APPLEVINE_COIN_CASE
+	showcoinsbox 18, 1
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_1
+	addcoins 20
+	updatecoinsbox 18, 1
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_2
+	hidecoinsbox 18, 1
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_1
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_7:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_9, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_15
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_8:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_18
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_9:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_13, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_21
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_10:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_14, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_24
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_12:
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_1
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_15:
+	checkmoney 1000
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_28
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_27:
+	removemoney 1000
+	addcoins 50
+	updatemoneybox
+	updatecoinsbox 18, 1
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_18:
+	checkmoney 4500
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_31
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_30:
+	removemoney 4500
+	addcoins 250
+	updatemoneybox
+	updatecoinsbox 18, 1
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_21:
+	checkmoney 16000
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_34
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_33:
+	removemoney 16000
+	addcoins 1000
+	updatemoneybox
+	updatecoinsbox 18, 1
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_24:
+	checkmoney 40000
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_37
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_36:
+	removemoney 40000
+	addcoins 4000
+	updatemoneybox
+	updatecoinsbox 18, 1
+	playse SE_SHOP
+	waitse
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_28:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_27
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_31:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_30
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_34:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_33
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_37:
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10
+	hidemoneybox
+	hidecoinsbox 18, 1
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_36
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General::
+	lockall
+	checkitem ITEM_COIN_CASE
+	compare VAR_RESULT, FALSE
+	goto_if_eq ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_2
+	specialvar VAR_RESULT, GetSlotMachineId
+	playslotmachine VAR_RESULT
+ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_1:
+	releaseall
+	return
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_2:
+	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_Text_0
+	goto ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_1
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine0::
+	setvar VAR_0x8004, 0
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine1::
+	setvar VAR_0x8004, 1
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine2::
+	setvar VAR_0x8004, 2
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine3::
+	setvar VAR_0x8004, 3
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine4::
+	setvar VAR_0x8004, 4
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine5::
+	setvar VAR_0x8004, 5
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine6::
+	setvar VAR_0x8004, 6
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine7::
+	setvar VAR_0x8004, 7
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine8::
+	setvar VAR_0x8004, 8
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine9::
+	setvar VAR_0x8004, 9
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine10::
+	setvar VAR_0x8004, 10
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine11::
+	setvar VAR_0x8004, 11
+	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
+	return
+
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_OutOfOrder_Text_0:
+	.string "OUT OF ORDER$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC1_Text_0:
+	.string "{COLOR RED}(It's a giant stuffed Charizard.)$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC2_Text_0:
+	.string "At last... After years of commitment and\n"
+	.string "every last dollar of my savings, I have\l"
+	.string "finally gotten enough coins for this\l"
+	.string "giant stuffed Charizard.\p"
+	.string "Hm?{PAUSE 60} You're asking why I didn't just buy\n"
+	.string "one from a toy store instead?\p"
+	.string "Ah,{PAUSE 30} the new generation and their\n"
+	.string "inability to understand the value of\l"
+	.string "hard work...\p"
+	.string "What value would this giant stuffed\n"
+	.string "Charizard hold if I simply just bought\l"
+	.string "it from the store?{PAUSE 60} Absolutely none!\p"
+	.string "It is the time and effort I spent to\n"
+	.string "obtain this oversized plush that\l"
+	.string "grants it true value! That is what\l"
+	.string "makes it special!\p"
+	.string "You kids sure are lazy today.$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC3_Text_0:
+	.string "Hey kid, need some coins?\p"
+	.string "Well, I can't give you any.\p"
+	.string "Because...{PAUSE 30} I'm...{PAUSE 30} all...{PAUSE 30} out...{PAUSE 30} of...{PAUSE 60}\n"
+	.string "MONEY!!!!!!!!!!!!!!!!!!!\p"
+	.string "I have a serious gambling addiction. I'm\n"
+	.string "seeing a therapist about it tomorrow.$"
+
+ISLANDGAME_APPLEVINE_EventScript_RouletteEmployee_Text_0:
+	.string "Hey there, gamer! You interested in\n"
+	.string "playing a little roulette?\p"
+	.string "The rules are simple! There are twelve\n"
+	.string "slots on the roulette wheel, each with\l"
+	.string "a specific color and Pokémon on it.\p"
+	.string "By betting on the correct slot, you'll\n"
+	.string "win coins! You can place bets on a\l"
+	.string "specific color, Pokémon, or slot!\p"
+	.string "Rolled balls stay in their slot until the\n"
+	.string "sixth is rolled, then the wheel is\l"
+	.string "reset!\p"
+	.string "Well, what are ya waiting for? Come play\n"
+	.string "a few rounds of skill-based roulette!$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC4_Text_0:
+	.string "Unbelievable... I just lost all my coins\n"
+	.string "betting on yellow!\p"
+	.string "I thought for sure it would land on it\n"
+	.string "after not landing on so many times...$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_0:
+	.string "halp need coin$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_1:
+	.string "gib coin pls$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_2:
+	.string "wtf poor$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_3:
+	.string "thx$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_4:
+	.string "wai$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC6_Text_0:
+	.string "Come on! Give me my non-alcoholic\n"
+	.string "beverage, you stupid machine!$"
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler0_Text_0:
+	.string "BRO WHAT DO YOU MEAN I MISSED?? MY\n"
+	.string "INPUT WAS FRAME PERFECT DUDE$"
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler1_Text_0:
+	.string "I like playing on this machine the most.\n"
+	.string "I always get lucky when playing on it!$"
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler2_Text_0:
+	.string "I got extra coins if you want 'em, but\n"
+	.string "you're gonna need a coin case.$"
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler2_Text_1:
+	.string "Want some coins? I got tons of 'em.$"
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler2_Text_2:
+	.string "Come back tomorrow if ya want more\n"
+	.string "coins.$"
+
+ISLANDGAME_APPLEVINE_EventScript_Gambler3_Text_0:
+	.string "What the heck, man! It's like these\n"
+	.string "things are rigged or something!$"
+
+ISLANDGAME_APPLEVINE_EventScript_Bouncer_Text_0:
+	.string "Sorry, you must have a VIP Pass in order\n"
+	.string "to enter the High Limit Area.$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_0:
+	.string "{COLOR RED}(It's a vending machine. What should I\n"
+	.string "get?)$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_1:
+	.string "Nah, I'm good$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_2:
+	.string "Fresh Water - ¥500$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_3:
+	.string "Soda Pop - ¥800$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_4:
+	.string "Lemonade - ¥1200$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_5:
+	.string "{COLOR RED}(I don't have enough money.)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_0:
+	.string "Welcome to the Prize Counter! It looks\n"
+	.string "like you don't have a coin case.\p"
+	.string "Please pick one up from the clerk over\n"
+	.string "there.$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_1:
+	.string "Welcome to the Prize Counter! Would you\n"
+	.string "like to exchange your coins for some\l"
+	.string "fabulous prizes?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_2:
+	.string "This is our selection of prizes.$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_3:
+	.string "See ya!$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_4:
+	.string "Wide Lens (800)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_5:
+	.string "Zoom Lens (800)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_6:
+	.string "Scope Lens (800)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_7:
+	.string "King's Rock (1600)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_8:
+	.string "Razor Fang (1600)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_9:
+	.string "Razor Claw (1600)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_10:
+	.string "Muscle Band (2400)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_11:
+	.string "Wise Glasses (2400)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_12:
+	.string "Loaded Dice (2400)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_13:
+	.string "TM06 (3200)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_14:
+	.string "TM12 (3200)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_15:
+	.string "TM46 (3200)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_16:
+	.string "TM48 (3200)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_17:
+	.string "TM49 (3200)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_18:
+	.string "Gimmighoul (4800)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_19:
+	.string "Eevee (6400)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_20:
+	.string "Porygon (8000)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_21:
+	.string "Mystery Box (9999)$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22:
+	.string "Sorry, you don't have enough coins for\n"
+	.string "this prize.$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_23:
+	.string "Would you like to exchange 800 coins\n"
+	.string "for a Wide Lens?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24:
+	.string "We hope you enjoy your prize!$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_25:
+	.string "Would you like to exchange 800 coins\n"
+	.string "for a Zoom Lens?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_26:
+	.string "Would you like to exchange 800 coins\n"
+	.string "for a Scope Lens?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_27:
+	.string "Would you like to exchange 1600 coins\n"
+	.string "for a King's Rock?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_28:
+	.string "Would you like to exchange 1600 coins\n"
+	.string "for a Razor Fang?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_29:
+	.string "Would you like to exchange 1600 coins\n"
+	.string "for a Razor Claw?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_30:
+	.string "Would you like to exchange 2400 coins\n"
+	.string "for a Muscle Band?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_31:
+	.string "Would you like to exchange 2400 coins\n"
+	.string "for a pair of Wise Glasses?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_32:
+	.string "Would you like to exchange 2400 coins\n"
+	.string "for a Loaded Die?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_33:
+	.string "Would you like to exchange 3200 coins\n"
+	.string "for TM06 - Toxic?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_34:
+	.string "Would you like to exchange 3200 coins\n"
+	.string "for TM12 - Taunt?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_35:
+	.string "Would you like to exchange 3200 coins\n"
+	.string "for TM46 - Thief?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_36:
+	.string "Would you like to exchange 3200 coins\n"
+	.string "for TM48 - Skill Swap?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_37:
+	.string "Would you like to exchange 3200 coins\n"
+	.string "for TM49 - Snatch?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_38:
+	.string "Would you like to exchange 4800 coins\n"
+	.string "for a Gimmighoul?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_39:
+	.string "You received a Gimmighoul!$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_40:
+	.string "Would you like to exchange 6400 coins\n"
+	.string "for an Eevee?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_41:
+	.string "You received an Eevee!$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_42:
+	.string "Would you like to exchange 8000 coins\n"
+	.string "for a Porygon?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_43:
+	.string "You received a Porygon!$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_44:
+	.string "Ah, so you've decided to try your luck\n"
+	.string "with one of our Mystery Boxes?$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_45:
+	.string "You received a Ditto!$"
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_46:
+	.string "You received a Beldum!$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_0:
+	.string "Welcome to the Eelektrik Game Corner!\n"
+	.string "Our games are entirely skill-based!\p"
+	.string "Oh! Are you a new customer? Here, you'll\n"
+	.string "need one of these!$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_1:
+	.string "Now that you've got a coin case, here is\n"
+	.string "our complementary welcome bonus!$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_2:
+	.string "Good luck and have fun! Oop, I mean, may\n"
+	.string "your skills bring you victory!$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_3:
+	.string "Welcome to the Eelektrik Game Corner!\n"
+	.string "Would you like to purchase some coins?$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_4:
+	.string "What bundle would you like to purchase?$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_5:
+	.string "50 Coins - ¥1,000$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_6:
+	.string "250 Coins - ¥4,500$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_7:
+	.string "1,000 Coins - ¥16,000$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_8:
+	.string "4,000 Coins - ¥40,000$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_9:
+	.string "Would you like to purchase 50 Coins for\n"
+	.string "¥1000?$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10:
+	.string "Sorry, you do not have the sufficient\n"
+	.string "funds for this bundle.$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11:
+	.string "Thank you for your patronage!$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12:
+	.string "Would you like to purchase 250 Coins\n"
+	.string "for ¥4,500?$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_13:
+	.string "Would you like to purchase 1,000 Coins\n"
+	.string "for ¥16,000?$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_14:
+	.string "Would you like to purchase 4,000 Coins\n"
+	.string "for ¥40,000?$"
+
+ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_Text_0:
+	.string "You can't play if you don't have a COIN\n"
+	.string "CASE.$"

@@ -1,0 +1,3 @@
+ISLANDGAME_LUMINE_CAVE_B2F_MapScripts::
+	.byte 0
+

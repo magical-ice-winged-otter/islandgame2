@@ -3,15 +3,15 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gBattleMoves[MOVE_STRENGTH_SAP].effect == EFFECT_STRENGTH_SAP);
+    ASSUME(gMovesInfo[MOVE_STRENGTH_SAP].effect == EFFECT_STRENGTH_SAP);
 }
 
 SINGLE_BATTLE_TEST("Strength Sap lowers Attack by 1 and restores HP based on target's Attack Stat", s16 hp)
 {
     u32 atkStat = 0;
 
-    PARAMETRIZE{ atkStat = 100; }
-    PARAMETRIZE{ atkStat = 50; }
+    PARAMETRIZE { atkStat = 100; }
+    PARAMETRIZE { atkStat = 50; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(200); }
@@ -35,8 +35,8 @@ SINGLE_BATTLE_TEST("Strength Sap works exactly the same when attacker is behind 
 {
     u32 atkStat = 0;
 
-    PARAMETRIZE{ atkStat = 100; }
-    PARAMETRIZE{ atkStat = 50; }
+    PARAMETRIZE { atkStat = 100; }
+    PARAMETRIZE { atkStat = 50; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(200); }
@@ -65,12 +65,12 @@ SINGLE_BATTLE_TEST("Strength Sap lowers Attack by 1 and restores HP based on tar
 
     for (j = 0; j <= MAX_STAT_STAGE; j++) {
         if (j == DEFAULT_STAT_STAGE - 1) { continue; } // Ignore -6, because Strength Sap won't work otherwise
-        PARAMETRIZE{ statStage = j; }
+        PARAMETRIZE { statStage = j; }
     }
 
     GIVEN {
-        ASSUME(gBattleMoves[MOVE_WORK_UP].effect == EFFECT_ATTACK_SPATK_UP);
-        ASSUME(gBattleMoves[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
+        ASSUME(gMovesInfo[MOVE_WORK_UP].effect == EFFECT_ATTACK_SPATK_UP);
+        ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
         PLAYER(SPECIES_WOBBUFFET) { HP(50); }
         OPPONENT(SPECIES_WOBBUFFET) { Attack(60); }
     } WHEN {
@@ -117,7 +117,7 @@ SINGLE_BATTLE_TEST("Strength Sap lowers Attack by 1 and restores HP based on tar
 SINGLE_BATTLE_TEST("Strength Sap fails if target is at -6 Atk")
 {
     GIVEN {
-        ASSUME(gBattleMoves[MOVE_CHARM].effect == EFFECT_ATTACK_DOWN_2);
+        ASSUME(gMovesInfo[MOVE_CHARM].effect == EFFECT_ATTACK_DOWN_2);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -149,7 +149,7 @@ SINGLE_BATTLE_TEST("Strength Sap restores more HP if Big Root is held", s16 hp)
     PARAMETRIZE { item = ITEM_BIG_ROOT; }
 
     GIVEN {
-        ASSUME(gItems[ITEM_BIG_ROOT].holdEffect == HOLD_EFFECT_BIG_ROOT);
+        ASSUME(gItemsInfo[ITEM_BIG_ROOT].holdEffect == HOLD_EFFECT_BIG_ROOT);
         PLAYER(SPECIES_WOBBUFFET) { HP(200); Item(item); }
         OPPONENT(SPECIES_WOBBUFFET) { Attack(100); }
     } WHEN {

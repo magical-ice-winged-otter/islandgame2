@@ -24,6 +24,8 @@
 // param2: time of day to check, optional.
 // - DAY if Form change that activates in the daytime.
 // - NIGHT if Form change that activates at nighttime.
+// - 0 if irrelevant, but param3 is necessary.
+// param3: illegal statuses to have, optional.
 #define FORM_CHANGE_ITEM_USE                    2
 
 // TODO: Form change that activates when the Pokémon learns or forgets the move.
@@ -119,5 +121,8 @@
 // Form change that activates when inflicted with a specific status
 // param1: status
 #define FORM_CHANGE_STATUS                      20
+
+// Form change that activates after move is used. Currently only used for activating Gulp Missile.
+#define FORM_CHANGE_HIT_BY_MOVE                     21
 
 #endif // GUARD_CONSTANTS_FORM_CHANGE_TYPES_H

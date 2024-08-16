@@ -39,16 +39,7 @@ ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_5:
 	goto_if_eq ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_9
 ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_8:
 	setflag FLAG_DAILY_CHERIPORT_RECEIVED_DRINK
-	random 100
-	compare VAR_RESULT, 30
-	goto_if_lt ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_11
-	compare VAR_RESULT, 30 + 25
-	goto_if_lt ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_12
-	compare VAR_RESULT, 30 + 25 + 20
-	goto_if_lt ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_13
-	compare VAR_RESULT, 30 + 25 + 20 + 15
-	goto_if_lt ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_14
-	giveitem ITEM_BERRY_JUICE
+	giveitem ITEM_FRESH_WATER
 	goto ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_1
 
 ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_6:
@@ -60,22 +51,6 @@ ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_9:
 	msgbox ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_Text_1
 	goto PriestessDrinkGiver_End
 	goto ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_8
-
-ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_11:
-	giveitem ITEM_FRESH_WATER
-	goto ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_1
-
-ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_12:
-	giveitem ITEM_LEMONADE
-	goto ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_1
-
-ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_13:
-	giveitem ITEM_SODA_POP
-	goto ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_1
-
-ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_14:
-	giveitem ITEM_MOOMOO_MILK
-	goto ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_1
 
 
 ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3_Text_0:
@@ -101,7 +76,7 @@ ISLANDGAME_CHERIPORT_HOUSE2_NPC2_TALK::
 	.string "{COLOR DARK_GRAY}I wish I was a water Pokémon. Then, I\n"
 	.string "wouldn't have to wear this inner tube!\p"
 	.string "{COLOR DARK_GRAY}Which water Pokémon would you wanna\n"
-	.string "be? I like Luvdisc, it's cute!$"
+	.string "be? I wanna be a Wooper! Woop Woop!$"
 
 ISLANDGAME_CHERIPORT_HOUSE2_NPC3_TALK::
 	.string "{COLOR DARK_GRAY}You look thirsty. Would you like a\n"

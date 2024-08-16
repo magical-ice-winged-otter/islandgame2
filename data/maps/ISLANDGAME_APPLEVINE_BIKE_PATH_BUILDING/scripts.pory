@@ -1,0 +1,59 @@
+mapscripts ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING_MapScripts {}
+
+script ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING_Trigger_Clear {
+    lock
+    clearflag(FLAG_SYS_CYCLING_ROAD)
+    setvar(VAR_TEMP_1, 0)
+    release
+}
+
+script ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING_Trigger_BikeCheck {
+    lock
+    specialvar(VAR_RESULT, GetPlayerAvatarBike)
+
+    if (var(VAR_RESULT) == 0) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        msgbox(format(
+            "Hey! It's too dangerous to go on the bike path without a bike!"
+        ), MSGBOX_NPC)
+        applymovement(OBJ_EVENT_ID_PLAYER, Applevine_Movement_PushPlayerFromCounter)
+        waitmovement(0)
+    }
+    else {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        msgbox(format("Welcome to the Seaside Bike Path! Please be aware of other bikers."), MSGBOX_NPC)
+        setflag(FLAG_SYS_CYCLING_ROAD)
+        setvar(VAR_TEMP_1, 1)
+    }
+
+    release
+}
+
+movement Applevine_Movement_PushPlayerFromCounter {
+    walk_right
+}
+
+movement Applevine_MadHops {
+    jump_in_place_down
+    jump_in_place_left
+    jump_in_place_up
+    jump_in_place_right
+}
+
+script ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING_NPC {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hey! Check out my mad hops!"
+    ))
+    applymovement(2, Applevine_MadHops)
+    waitmovement(0)
+    applymovement(2, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(format(
+        "See those sick moves? You can't do that with one of those lame Mach Bikes.\p"
+        "If you wanna be fly like me, you'll have to hit up the shop on Minerva Island!"
+    ))
+    closemessage
+    release
+}

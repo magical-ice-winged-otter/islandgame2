@@ -7,8 +7,11 @@ ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_eq ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	gettime
-	compare VAR_0x8000, 12 + 6
-	goto_if_gt ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	setflag FLAG_TEMP_2
 	return
 
 ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
@@ -16,7 +19,7 @@ ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	goto ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 ISLANDGAME_TIDALCOVE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-	setflag FLAG_TEMP_2
+	setflag FLAG_TEMP_3
 	return
 
 
@@ -117,7 +120,7 @@ ISLANDGAME_TIDALCOVE_Interact_BeachDude_1:
 
 ISLANDGAME_TIDALCOVE_Interact_BeachDude_2:
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachDude_Text_1
-	playmoncry SPECIES_WAILORD, CRY_MODE_NORMAL
+	playmoncry SPECIES_GROUDON, CRY_MODE_NORMAL
 	waitmoncry
 	goto ISLANDGAME_TIDALCOVE_Interact_BeachDude_1
 
@@ -151,8 +154,6 @@ ISLANDGAME_TIDALCOVE_Interact_BeachFisher::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachFisher_Text_0, MSGBOX_NPC
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
 	return
 
 
@@ -161,8 +162,6 @@ ISLANDGAME_TIDALCOVE_Interact_BeachGazer::
 	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_Interact_BeachGazer_Text_0
 	closemessage
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
 	return
 
 
@@ -202,20 +201,63 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top::
 	return
 
 
+ISLANDGAME_TIDALCOVE_Interact_BikeDude::
+	lock
+	faceplayer
+	msgbox ISLANDGAME_TIDALCOVE_Interact_BikeDude_Text_0, MSGBOX_NPC
+	return
+
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle::
+	lock
+	faceplayer
+	playmoncry SPECIES_SQUIRTLE, CRY_MODE_NORMAL
+	goto_if_unset FLAG_TIDALCOVE_SQUIRTLE_GIFT, ISLANDGAME_TIDALCOVE_Interact_Squirtle_2
+	msgbox ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_2
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_1:
+SquirtleGiftEvent_End:
+	release
+	return
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_2:
+	msgbox ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_TIDALCOVE_Interact_Squirtle_6
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_5:
+	checkitemspace ITEM_WATER_GEM
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_TIDALCOVE_Interact_Squirtle_9
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_8:
+	giveitem ITEM_WATER_GEM
+	setflag FLAG_TIDALCOVE_SQUIRTLE_GIFT
+	goto ISLANDGAME_TIDALCOVE_Interact_Squirtle_1
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_6:
+	goto SquirtleGiftEvent_End
+	goto ISLANDGAME_TIDALCOVE_Interact_Squirtle_5
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_9:
+	msgbox ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_1
+	goto SquirtleGiftEvent_End
+	goto ISLANDGAME_TIDALCOVE_Interact_Squirtle_8
+
+
 ISLANDGAME_TIDALCOVE_Interact_EntranceSign_Text_0:
 	.string "TIDALCOVE\n"
-	.string "Crack open a cold one on our beach!$"
+	.string "Crack open a cold one on our beach!\p"
+	.string "(By cold one, we mean a non-alcoholic\n"
+	.string "beverage, obviously.)$"
 
 ISLANDGAME_TIDALCOVE_Interact_BehindGymSign_Text_0:
 	.string "LOSER LANDING\n"
-	.string "u r noob$"
+	.string "git gud brah$"
 
 ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign_Text_0:
 	.string "SEASIDE BIKE PATH\n"
-	.string "Your express way to Lumine!$"
+	.string "Your most convenient way to Lumine!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BikeShopSign_Text_0:
-	.string "RANDIEZ HOT WHEELZ\n"
+	.string "RANDEEZ HOT WHEELZ\n"
 	.string "“ZOOM ZOOM MOTHER TRUCKERS”$"
 
 ISLANDGAME_TIDALCOVE_Interact_GymSign_Text_0:
@@ -230,8 +272,8 @@ ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking_Text_0:
 	.string "its limit of challengers for the day...)\p"
 	.string "(I should see what else Oranna has to\n"
 	.string "offer in the meantime.)\p"
-	.string "(Perhaps there's something up\n"
-	.string "northwest I can check out?)$"
+	.string "(Perhaps there's something west I can\n"
+	.string "check out?)$"
 
 ISLANDGAME_TIDALCOVE_Interact_PrimFan1_Text_0:
 	.string "Let us in, old geezer! As Prim's two\n"
@@ -242,8 +284,8 @@ ISLANDGAME_TIDALCOVE_Interact_PrimFan2_Text_0:
 	.string "front lines! Move aside, loser!$"
 
 ISLANDGAME_TIDALCOVE_Interact_Bike_Text_0:
-	.string "It's a bike - brand new, polished to a\n"
-	.string "shine.$"
+	.string "It's a bike. It's shiny and brand-new.\n"
+	.string "The price tag is absurd, though.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl_Text_0:
 	.string "I like sand! It's soft, smooth, and fun\n"
@@ -277,21 +319,22 @@ ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_0:
 	.string "tommorrow.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_1:
-	.string "Yache Berries are the best on a hot day.$"
+	.string "Yache Berries are a great way to cool\n"
+	.string "off in Marya's sweltering heat.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_2:
-	.string "Try one!$"
+	.string "Try one for yourself!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer_Text_3:
 	.string "I'd give you one if you had more room!$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachFisher_Text_0:
-	.string "My pals went off to the Northern Oranna\n"
-	.string "Lake to fish without me...$"
+	.string "Hm... Your sense of fashion is severely\n"
+	.string "lacking.$"
 
 ISLANDGAME_TIDALCOVE_Interact_BeachGazer_Text_0:
-	.string "Do you ever wonder what's out there,\n"
-	.string "just over the horizon?$"
+	.string "Did you know Galarians can't say\n"
+	.string "“bottle of water”?$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad_Text_0:
 	.string "I'm training for the festival\n"
@@ -304,23 +347,57 @@ ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad_Text_0:
 	.string "going to fall behind otherwise!$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance_Text_0:
-	.string "Ruka is the face of Tidalcove. Without\n"
-	.string "her, we'd still be a fishing village!$"
+	.string "{COLOR LIGHT_BLUE}Ruka's Milotic {COLOR DARK_GRAY}is so pretty. I wish I one\n"
+	.string "too, but I heard they're notoriously\l"
+	.string "hard to find.\p"
+	.string "It's rumored that they only reside at\n"
+	.string "the bottom of the Maryan Sea.$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop_Text_0:
-	.string "Man, cycling looks fun. It's a shame the\n"
-	.string "store ran out of rentals for the week.$"
+	.string "Ruka is an ice-type specialist. Just\n"
+	.string "like that one gym leader from Sinnoh!\p"
+	.string "Ummm.. what was her name again?\p"
+	.string "...\p"
+	.string "Drats. You're too hip to fall for that.$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle_Text_0:
 	.string "Would be weird if I asked Ruka to sign\n"
-	.string "my body pillow of her?\p"
-	.string "Its value would skyrocket on the\n"
-	.string "second-hand market!$"
+	.string "my body pillow of her?$"
 
 ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top_Text_0:
-	.string "We get so many visitors here in\n"
-	.string "Tidalcove.\p"
-	.string "Whether they're here for Ruka, the gym\n"
-	.string "challenge, or our beautiful beaches.\p"
-	.string "I'm all for it. I'm glad to see so many\n"
-	.string "people enthusiastic about our city!$"
+	.string "Ruka's presence has garnered a lot of\n"
+	.string "foot traffic into Tidalcove.\p"
+	.string "I think it's neat seeing so many\n"
+	.string "tourists stop by just to see her.\p"
+	.string "I can't help but feel a tad envious\n"
+	.string "though... I wish I had all that\l"
+	.string "attention.\p"
+	.string "Oh, by the way, I'm Ruka's sister. I\n"
+	.string "thought you should know that.\p"
+	.string "Don't you want to ask me questions\n"
+	.string "about her? Yes? No? Maybe?$"
+
+ISLANDGAME_TIDALCOVE_Interact_BikeDude_Text_0:
+	.string "Welcome to the Seaside Bike Path,\n"
+	.string "trainer! Lumine Island is just up\l"
+	.string "ahead.\p"
+	.string "Remember to stay on your bike! Oh, and\n"
+	.string "please watch where you're going.\p"
+	.string "Trust me, the last thing you want is to\n"
+	.string "take a dip in the Sharpedo-infested\l"
+	.string "waters below.\p"
+	.string "Haha, I'm just kidding! No but seriously,\n"
+	.string "use your eyes.\p"
+	.string "I already had to fish one knucklehead\n"
+	.string "out of the waters earlier today...$"
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_0:
+	.string "{COLOR RED}(Huh? It looks like Squirtle is trying to\n"
+	.string "give me something.)\p"
+	.string "{COLOR RED}(Should I take it?)$"
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_1:
+	.string "{COLOR RED}(I don't have enough space to carry it.)$"
+
+ISLANDGAME_TIDALCOVE_Interact_Squirtle_Text_2:
+	.string "{COLOR DARK_GRAY}Squirtle!$"

@@ -1,0 +1,138 @@
+mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (!flag(FLAG_DAILY_COR_HIDDEN_GROTTO_ROLL)) {
+            random(10)
+            copyvar(VAR_COR_HIDDEN_GROTTO_STATE, VAR_RESULT)
+            setflag(FLAG_DAILY_COR_HIDDEN_GROTTO_ROLL) 
+        }
+        // put item or Pokemon on map.
+        if (var(VAR_COR_HIDDEN_GROTTO_STATE) <= 4) { 
+            setflag(FLAG_TEMP_1) // hide all pokemon GFX
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+        }
+        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 5) {
+            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+        }
+        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 6) {
+            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
+            setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_3)
+        }
+        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 7) {
+            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
+            setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+        }
+        else {
+            setflag(FLAG_TEMP_1) // hide everything
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+        }
+    }
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_ItemBall {
+    switch (var(VAR_COR_HIDDEN_GROTTO_STATE)) {
+        case 0: finditem(ITEM_POKE_BALL)
+        case 1: finditem(ITEM_POTION)
+        case 2: finditem(ITEM_FULL_HEAL)
+        case 3: finditem(ITEM_REPEL)
+        case 4: finditem(ITEM_TINY_MUSHROOM)
+        default:
+    }
+    setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon1 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_MINCCINO, 15, ITEM_ORAN_BERRY, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_KNOCK_OFF, MOVE_DOUBLE_SLAP, MOVE_ENCORE, MOVE_TICKLE)
+    playmoncry(SPECIES_MINCCINO, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon2 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SPINARAK, 15, ITEM_CHESTO_BERRY, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_TWINEEDLE, MOVE_TOXIC_SPIKES, MOVE_RAGE_POWDER, MOVE_PURSUIT)
+    playmoncry(SPECIES_SPINARAK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon3 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_FLETCHLING, 15, ITEM_CHARTI_BERRY, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    playmoncry(SPECIES_FLETCHLING, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+// script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Kricketune {
+
+// }mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_MapScripts {}

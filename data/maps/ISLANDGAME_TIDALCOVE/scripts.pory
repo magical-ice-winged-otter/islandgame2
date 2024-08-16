@@ -1,5 +1,6 @@
 const FLAG_GYM_OPEN = FLAG_TEMP_1
 const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
 
 mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -9,26 +10,29 @@ mapscripts ISLANDGAME_TIDALCOVE_MapScripts {
 
         gettime
 
-        if (var(VAR_0x8000) > 12 + 6) {
-            setflag(FLAG_DAYTIME) // controls visibilty of Yache Beach Girl
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
         }
     }
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_EntranceSign {
-    msgbox(format("TIDALCOVE\nCrack open a cold one on our beach!"), MSGBOX_SIGN)
+    msgbox(format("TIDALCOVE\nCrack open a cold one on our beach!\p(By cold one, we mean a non-alcoholic beverage, obviously.)"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BehindGymSign {
-    msgbox(format("LOSER LANDING\nu r noob"), MSGBOX_SIGN)
+    msgbox(format("LOSER LANDING\ngit gud brah"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_CyclingPathSign {
-    msgbox(format("SEASIDE BIKE PATH\nYour express way to Lumine!"), MSGBOX_SIGN)
+    msgbox(format("SEASIDE BIKE PATH\nYour most convenient way to Lumine!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BikeShopSign {
-    msgbox(format("RANDIEZ HOT WHEELZ\n“ZOOM ZOOM MOTHER TRUCKERS”"), MSGBOX_SIGN)
+    msgbox(format("RANDEEZ HOT WHEELZ\n“ZOOM ZOOM MOTHER TRUCKERS”"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSign {
@@ -37,7 +41,7 @@ script ISLANDGAME_TIDALCOVE_Interact_GymSign {
 
 script ISLANDGAME_TIDALCOVE_Interact_GymSponsorBlocking {
     lock
-    msgbox(format("I am sorry, but I cannot let anyone else inside the gym for the day.\p{COLOR RED}(Hmm. It seems like the gym has reached its limit of challengers for the day...)\p(I should see what else Oranna has to offer in the meantime.)\p(Perhaps there's something up northwest I can check out?)"))
+    msgbox(format("I am sorry, but I cannot let anyone else inside the gym for the day.\p{COLOR RED}(Hmm. It seems like the gym has reached its limit of challengers for the day...)\p(I should see what else Oranna has to offer in the meantime.)\p(Perhaps there's something west I can check out?)"))
     closemessage
     release
 }
@@ -57,7 +61,7 @@ script ISLANDGAME_TIDALCOVE_Interact_PrimFan2 {
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_Bike {
-    msgbox(format("It's a bike - brand new, polished to a shine."), MSGBOX_SIGN)
+    msgbox(format("It's a bike. It's shiny and brand-new. The price tag is absurd, though."), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachLittleGirl {
@@ -97,7 +101,7 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachDude {
     , MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES) {
         msgbox(format("I will remember that."))
-        playmoncry(SPECIES_WAILORD, CRY_MODE_NORMAL)
+        playmoncry(SPECIES_GROUDON, CRY_MODE_NORMAL)
         waitmoncry
     }
     else {
@@ -119,12 +123,12 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer {
         MSGBOX_NPC)
     }
     else {
-        msgbox(format("Yache Berries are the best on a hot day."), MSGBOX_NPC)
+        msgbox(format("Yache Berries are a great way to cool off in Marya's sweltering heat."), MSGBOX_NPC)
 
         checkitemspace(ITEM_YACHE_BERRY)
 
         if (var(VAR_RESULT)) {
-            msgbox(format("Try one!"), MSGBOX_NPC)
+            msgbox(format("Try one for yourself!"), MSGBOX_NPC)
             giveitem(ITEM_YACHE_BERRY)
             setflag(FLAG_DAILY_TIDALCOVE_YACHE_GIRL)
         }
@@ -139,18 +143,14 @@ script ISLANDGAME_TIDALCOVE_Interact_BeachMiddleWanderer {
 script ISLANDGAME_TIDALCOVE_Interact_BeachFisher {
     lock
     faceplayer
-    msgbox(format("My pals went off to the Northern Oranna Lake to fish without me..."), MSGBOX_NPC)
-    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
-    waitmovement(0)
+    msgbox(format("Hm... Your sense of fashion is severely lacking."), MSGBOX_NPC)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_BeachGazer {
     lock
     faceplayer
-    msgbox(format("Do you ever wonder what's out there, just over the horizon?") MSGBOX_NPC)
+    msgbox(format("Did you know Galarians can't say “bottle of water”?") MSGBOX_NPC)
     closemessage
-    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
-    waitmovement(0)
 }
 
 script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearCycleRoad {
@@ -169,7 +169,8 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearEntrance {
     lock
     faceplayer
     msgbox(format(
-        "Ruka is the face of Tidalcove. Without her, we'd still be a fishing village!"
+        "{COLOR LIGHT_BLUE}Ruka's Milotic {COLOR DARK_GRAY}is so pretty. I wish I one too, but I heard they're notoriously hard to find.\p"
+        "It's rumored that they only reside at the bottom of the Maryan Sea."
     ), MSGBOX_NPC)
 }
 
@@ -177,7 +178,10 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_NearBikeShop {
     lock
     faceplayer
     msgbox(format(
-        "Man, cycling looks fun. It's a shame the store ran out of rentals for the week."
+        "Ruka is an ice-type specialist. Just like that one gym leader from Sinnoh!\p"
+        "Ummm.. what was her name again?\p"
+        "...\p"
+        "Drats. You're too hip to fall for that."
     ), MSGBOX_NPC)
 }
 
@@ -185,8 +189,7 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Middle {
     lock
     faceplayer
     msgbox(format(
-        "Would be weird if I asked Ruka to sign my body pillow of her? \p"
-        "Its value would skyrocket on the second-hand market!"
+        "Would be weird if I asked Ruka to sign my body pillow of her?"
     ), MSGBOX_NPC)
 }
 
@@ -194,8 +197,57 @@ script ISLANDGAME_TIDALCOVE_Interact_TownCitizen_Top {
     lock
     faceplayer
     msgbox(format(
-        "We get so many visitors here in Tidalcove.\p"
-        "Whether they're here for Ruka, the gym challenge, or our beautiful beaches.\p"
-        "I'm all for it. I'm glad to see so many people enthusiastic about our city!"
+        "Ruka's presence has garnered a lot of foot traffic into Tidalcove.\p"
+        "I think it's neat seeing so many tourists stop by just to see her.\p"
+        "I can't help but feel a tad envious though... I wish I had all that attention.\p"
+        "Oh, by the way, I'm Ruka's sister. I thought you should know that.\p"
+        "Don't you want to ask me questions about her? Yes? No? Maybe?"
     ), MSGBOX_NPC)
+}
+
+script ISLANDGAME_TIDALCOVE_Interact_BikeDude {
+    lock
+    faceplayer
+    msgbox(format(
+        "Welcome to the Seaside Bike Path, trainer! Lumine Island is just up ahead.\p"
+        "Remember to stay on your bike! Oh, and please watch where you're going.\p"
+        "Trust me, the last thing you want is to take a dip in the Sharpedo-infested waters below.\p"
+        "Haha, I'm just kidding! No but seriously, use your eyes.\p"
+        "I already had to fish one knucklehead out of the waters earlier today..."
+    ), MSGBOX_NPC)
+}
+
+
+script ISLANDGAME_TIDALCOVE_Interact_Squirtle {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SQUIRTLE,CRY_MODE_NORMAL)
+    
+    if(!flag(FLAG_TIDALCOVE_SQUIRTLE_GIFT)) {
+        msgbox(
+            format(
+                "{COLOR RED}(Huh? It looks like Squirtle is trying to give me something.) \p"
+                "{COLOR RED}(Should I take it?)"
+            )    
+        , MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO) {
+            goto(SquirtleGiftEvent_End)
+        }
+
+        checkitemspace(ITEM_WATER_GEM)
+        if (!var(VAR_RESULT)) {
+            msgbox(format("{COLOR RED}(I don't have enough space to carry it.)"))
+            goto(SquirtleGiftEvent_End)
+        }
+
+        giveitem(ITEM_WATER_GEM)
+        setflag(FLAG_TIDALCOVE_SQUIRTLE_GIFT)
+    }
+    else {
+        msgbox(format("{COLOR DARK_GRAY}Squirtle!"))
+    }
+    
+    
+    SquirtleGiftEvent_End:
+        release
 }

@@ -13,11 +13,11 @@ script ISLANDGAME_ROSEVALE_INN_2F_ROOM2_NPC {
             setflag(FLAG_ROSEVALE_TM_GIFT)
         }
         else {
-            msgbox(format("How rude! -smack- That'll teach you to say that to a cute girl like me!"))
+            msgbox(format("How rude!{PAUSE 60} -smack- {PAUSE 60}That'll teach you to say that to a cute girl like me!"))
         }
     }
     else {
-        msgbox(format("Don't try and use that move on me, you're not my type. -giggle-"))
+        msgbox(format("Don't try and use that move on me, you're not my type. {PAUSE 30}-giggle-"))
     }
     release
 }

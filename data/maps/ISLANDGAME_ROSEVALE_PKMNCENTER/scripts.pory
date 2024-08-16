@@ -7,14 +7,6 @@ mapscripts ISLANDGAME_ROSEVALE_PKMNCENTER_MapScripts {
     MAP_SCRIPT_ON_RESUME: CableClub_OnResume
 }
 
-script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Nurse {
-    setvar(VAR_0x800B, LOCALID_NURSE)
-    call(Common_EventScript_PkmnCenterNurse)
-    waitmessage
-    waitbuttonpress
-    release
-}
-
 script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1 {
     lock
     faceplayer
@@ -23,9 +15,10 @@ script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC1 {
         "All I have this is picture of it. Wanna see?"
         )
     )
-    // showmonpic(SPECIES_ARTICUNO, 10, 3)
-    // hidemonpic
-    // closemessage
+    showmonpic(SPECIES_ARTICUNO, 10, 3)
+    msgbox(format("Voila!"))
+    hidemonpic
+    closemessage
     msgbox(format("It mostly roosts at the top of Mt. Aurora, so unless you want to climb thousands of feet in a blizzard, the best you'll have are pictures."))
     closemessage
     releaseall
@@ -42,8 +35,8 @@ script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_NPC2 {
 script ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Cottonee {
     lock
     faceplayer
-    playmoncry(SPECIES_COTTONEE,CRY_MODE_NORMAL)
-    msgbox(format("Howdy there, partner!\pOop, I mean, Neeeee! {COLOR BLUE}(Howdy there, partner!)"))
+    playmoncry(SPECIES_SWINUB,CRY_MODE_NORMAL)
+    msgbox(format("Howdy there, partner!\pOop, I mean, Nuuuuub! {COLOR BLUE}(Howdy there, partner!)"))
     release
 }
 

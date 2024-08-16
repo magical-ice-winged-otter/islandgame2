@@ -3,8 +3,8 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gBattleMoves[MOVE_TACKLE].split == SPLIT_PHYSICAL);
-    ASSUME(gBattleMoves[MOVE_TRI_ATTACK].split == SPLIT_SPECIAL);
+    ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
+    ASSUME(gMovesInfo[MOVE_TRI_ATTACK].category == DAMAGE_CATEGORY_SPECIAL);
 }
 
 SINGLE_BATTLE_TEST("Download raises Attack if player has lower Def than Sp. Def", s16 damage)
@@ -56,10 +56,11 @@ SINGLE_BATTLE_TEST("Download raises Sp.Attack if enemy has lower Sp. Def than De
 SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet", s16 damagePhysical, s16 damageSpecial)
 {
     u32 ability;
+
     PARAMETRIZE { ability = ABILITY_TRACE; }
     PARAMETRIZE { ability = ABILITY_DOWNLOAD; }
     GIVEN {
-        ASSUME(gBattleMoves[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
+        ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
         PLAYER(SPECIES_WOBBUFFET) { Speed(100); }
         PLAYER(SPECIES_PORYGON) { Ability(ability); Defense(400); SpDefense(300); Speed(300); Attack(100); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
@@ -73,13 +74,13 @@ SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet
         // Everyone faints.
 
         MESSAGE("Go! Porygon!");
-        MESSAGE("2 sent out Porygon2!");
-
         NONE_OF {
             ABILITY_POPUP(player, ABILITY_DOWNLOAD);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
             MESSAGE("Porygon's Download raised its Attack!");
         }
+        MESSAGE("2 sent out Porygon2!");
+
         if (ability == ABILITY_DOWNLOAD)
         {
             ABILITY_POPUP(opponent, ABILITY_DOWNLOAD);

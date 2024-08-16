@@ -12,7 +12,6 @@ const struct OamData gOamData_AffineOff_ObjNormal_8x8 =
     .paletteNum = 0,
 };
 
-
 const struct OamData gOamData_AffineOff_ObjNormal_16x16 =
 {
     .y = 0,
@@ -1455,6 +1454,10 @@ const struct CompressedSpriteSheet gBattleAnimPicTable[] =
     {gBattleAnimSpriteGfx_SyrupShell, 0x2000, ANIM_TAG_SYRUP_SHELL_YELLOW},
     {gBattleAnimSpriteGfx_SyrupSplat, 0x400, ANIM_TAG_SYRUP_SPLAT_RED},
     {gBattleAnimSpriteGfx_SyrupSplat, 0x400, ANIM_TAG_SYRUP_SPLAT_YELLOW},
+    {gBattleAnimSpriteGfx_IvyCudgel, 0x800, ANIM_TAG_IVY_CUDGEL_GRASS},
+    {NULL, 0x0, ANIM_TAG_IVY_CUDGEL_FIRE},
+    {NULL, 0x0, ANIM_TAG_IVY_CUDGEL_ROCK},
+    {NULL, 0x0, ANIM_TAG_IVY_CUDGEL_WATER},
 };
 
 const struct CompressedSpritePalette gBattleAnimPaletteTable[] =
@@ -1910,6 +1913,10 @@ const struct CompressedSpritePalette gBattleAnimPaletteTable[] =
     {gBattleAnimSpritePal_SyrupYellow, ANIM_TAG_SYRUP_SHELL_YELLOW},
     {gBattleAnimSpritePal_SyrupRed, ANIM_TAG_SYRUP_SPLAT_RED},
     {gBattleAnimSpritePal_SyrupYellow, ANIM_TAG_SYRUP_SPLAT_YELLOW},
+    {gBattleAnimSpritePal_IvyCudgelGrass, ANIM_TAG_IVY_CUDGEL_GRASS},
+    {gBattleAnimSpritePal_IvyCudgelFire, ANIM_TAG_IVY_CUDGEL_FIRE},
+    {gBattleAnimSpritePal_IvyCudgelRock, ANIM_TAG_IVY_CUDGEL_ROCK},
+    {gBattleAnimSpritePal_IvyCudgelWater, ANIM_TAG_IVY_CUDGEL_WATER},
 };
 
 const struct BattleAnimBackground gBattleAnimBackgroundTable[] =

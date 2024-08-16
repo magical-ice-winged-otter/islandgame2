@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gBattleMoves[MOVE_STICKY_WEB].effect == EFFECT_STICKY_WEB);
+    ASSUME(gMovesInfo[MOVE_STICKY_WEB].effect == EFFECT_STICKY_WEB);
 }
 
 SINGLE_BATTLE_TEST("Sticky Web lowers Speed by 1 on switch-in")
@@ -49,14 +49,14 @@ SINGLE_BATTLE_TEST("Sticky Web can only be set up 1 time")
 DOUBLE_BATTLE_TEST("Sticky Web lowers Speed by 1 in a double battle after Explosion fainting both mons")
 {
     GIVEN {
-        ASSUME(gBattleMoves[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
+        ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
         PLAYER(SPECIES_WOBBUFFET) {Speed(5);}
         PLAYER(SPECIES_WOBBUFFET) {HP(1500); Speed(10);}
         PLAYER(SPECIES_WOBBUFFET) {Speed(10);}
         OPPONENT(SPECIES_WOBBUFFET) {HP(1); Speed(1);}
         OPPONENT(SPECIES_WOBBUFFET) {HP(1); Speed(1);}
         OPPONENT(SPECIES_WYNAUT) {Speed(10);}
-        OPPONENT(SPECIES_WYNAUT) {Speed(10);}
+        OPPONENT(SPECIES_ALAKAZAM) {Speed(100);}
     } WHEN {
         TURN { MOVE(playerRight, MOVE_STICKY_WEB); MOVE(playerLeft, MOVE_EXPLOSION); SEND_OUT(playerLeft, 2); SEND_OUT(opponentLeft, 2); SEND_OUT(opponentRight, 3); }
         TURN {}
@@ -65,12 +65,12 @@ DOUBLE_BATTLE_TEST("Sticky Web lowers Speed by 1 in a double battle after Explos
         MESSAGE("A sticky web spreads out on the ground around the opposing team!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EXPLOSION, playerLeft);
         MESSAGE("2 sent out Wynaut!");
+        MESSAGE("2 sent out Alakazam!");
+        MESSAGE("Foe Alakazam was caught in a Sticky Web!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
+        MESSAGE("Foe Alakazam's Speed fell!");
         MESSAGE("Foe Wynaut was caught in a Sticky Web!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentLeft);
-        MESSAGE("Foe Wynaut's Speed fell!");
-        MESSAGE("2 sent out Wynaut!");
-        MESSAGE("Foe Wynaut was caught in a Sticky Web!");
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponentRight);
         MESSAGE("Foe Wynaut's Speed fell!");
     }
 }
@@ -191,7 +191,7 @@ DOUBLE_BATTLE_TEST("Sticky Web has correct interactions with Mirror Armor - no o
     PARAMETRIZE {hasReplacement = FALSE;}
 
     GIVEN {
-        ASSUME(gBattleMoves[MOVE_MEMENTO].effect == EFFECT_MEMENTO);
+        ASSUME(gMovesInfo[MOVE_MEMENTO].effect == EFFECT_MEMENTO);
         PLAYER(SPECIES_SQUIRTLE) {Speed(5); }
         PLAYER(SPECIES_CHARMANDER) {Speed(5); }
         PLAYER(SPECIES_CORVIKNIGHT) {Ability(ABILITY_MIRROR_ARMOR); Item(ITEM_IRON_BALL); Speed(5); } // Iron Ball, so that flying type Corviknight is affected by Sticky Web.

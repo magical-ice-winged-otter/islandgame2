@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 8,
-      "y": 7,
+      "x": 2,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -30,8 +30,8 @@
   ],
   "warp_events": [
     {
-      "x": 10,
-      "y": 5,
+      "x": 4,
+      "y": 1,
       "elevation": 0,
       "dest_map": "MAP_SS_RAIN_HALLWAY",
       "dest_warp_id": "1"

@@ -11,6 +11,7 @@
 #include "battle_setup.h"
 #include "battle_tv.h"
 #include "cable_club.h"
+#include "event_data.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "palette.h"
@@ -83,10 +84,6 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
         i = 0;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &i);
     }
-
-    // Below are never read
-    gUnusedFirstBattleVar1 = 0;
-    gUnusedFirstBattleVar2 = 0;
 }
 
 void InitBattleControllers(void)
@@ -1115,7 +1112,7 @@ void BtlController_EmitPrintString(u32 battler, u32 bufferId, u16 stringID)
     stringInfo->bakScriptPartyIdx = gBattleStruct->scriptPartyIdx;
     stringInfo->hpScale = gBattleStruct->hpScale;
     stringInfo->itemEffectBattler = gPotentialItemEffectBattler;
-    stringInfo->moveType = gBattleMoves[gCurrentMove].type;
+    stringInfo->moveType = gMovesInfo[gCurrentMove].type;
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
         stringInfo->abilities[i] = gBattleMons[i].ability;
@@ -1605,6 +1602,7 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
         battleMon.abilityNum = GetMonData(&party[monId], MON_DATA_ABILITY_NUM);
         battleMon.otId = GetMonData(&party[monId], MON_DATA_OT_ID);
         battleMon.metLevel = GetMonData(&party[monId], MON_DATA_MET_LEVEL);
+        battleMon.isShiny = GetMonData(&party[monId], MON_DATA_IS_SHINY);
         GetMonData(&party[monId], MON_DATA_NICKNAME, nickname);
         StringCopy_Nickname(battleMon.nickname, nickname);
         GetMonData(&party[monId], MON_DATA_OT_NAME, battleMon.otName);
@@ -2480,7 +2478,7 @@ void BtlController_HandleDrawTrainerPic(u32 battler, u32 trainerPicId, bool32 is
                                                    yPos,
                                                    subpriority);
 
-        gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerFrontPicPaletteTable[trainerPicId].tag);
+        gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerSprites[trainerPicId].palette.tag);
         gSprites[gBattlerSpriteIds[battler]].x2 = -DISPLAY_WIDTH;
         gSprites[gBattlerSpriteIds[battler]].sSpeedX = 2;
         gSprites[gBattlerSpriteIds[battler]].oam.affineParam = trainerPicId;
@@ -2498,7 +2496,7 @@ void BtlController_HandleDrawTrainerPic(u32 battler, u32 trainerPicId, bool32 is
                                                              yPos,
                                                              subpriority);
 
-            gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerFrontPicPaletteTable[trainerPicId].tag);
+            gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerSprites[trainerPicId].palette.tag);
             gSprites[gBattlerSpriteIds[battler]].oam.affineMode = ST_OAM_AFFINE_OFF;
             gSprites[gBattlerSpriteIds[battler]].hFlip = 1;
             gSprites[gBattlerSpriteIds[battler]].y2 = 48;
@@ -2532,7 +2530,7 @@ void BtlController_HandleTrainerSlide(u32 battler, u32 trainerPicId)
         SetMultiuseSpriteTemplateToTrainerBack(trainerPicId, GetBattlerPosition(battler));
         gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate,
                                                          80,
-                                                         (8 - gTrainerBackPicCoords[trainerPicId].size) * 4 + 80,
+                                                         (8 - gTrainerBacksprites[trainerPicId].coordinates.size) * 4 + 80,
                                                          30);
         gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
         gSprites[gBattlerSpriteIds[battler]].x2 = -96;
@@ -2542,12 +2540,9 @@ void BtlController_HandleTrainerSlide(u32 battler, u32 trainerPicId)
     {
         DecompressTrainerFrontPic(trainerPicId, battler);
         SetMultiuseSpriteTemplateToTrainerBack(trainerPicId, GetBattlerPosition(battler));
-        gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate,
-                                                  176,
-                                                  (8 - gTrainerFrontPicCoords[trainerPicId].size) * 4 + 40,
-                                                  30);
+        gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate, 176, 40, 30);
         gSprites[gBattlerSpriteIds[battler]].oam.affineParam = trainerPicId;
-        gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerFrontPicPaletteTable[trainerPicId].tag);
+        gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerSprites[trainerPicId].palette.tag);
         gSprites[gBattlerSpriteIds[battler]].x2 = 96;
         gSprites[gBattlerSpriteIds[battler]].x += 32;
         gSprites[gBattlerSpriteIds[battler]].sSpeedX = -2;
@@ -2649,7 +2644,7 @@ void BtlController_HandleMoveAnimation(u32 battler, bool32 updateTvData)
         gWeatherMoveAnim = gBattleResources->bufferA[battler][12] | (gBattleResources->bufferA[battler][13] << 8);
         gAnimDisableStructPtr = (struct DisableStruct *)&gBattleResources->bufferA[battler][16];
         gTransformedPersonalities[battler] = gAnimDisableStructPtr->transformedMonPersonality;
-        gTransformedOtIds[battler] = gAnimDisableStructPtr->transformedMonOtId;
+        gTransformedShininess[battler] = gAnimDisableStructPtr->transformedMonShininess;
         gBattleSpritesDataPtr->healthBoxesData[battler].animationState = 0;
         gBattlerControllerFuncs[battler] = Controller_DoMoveAnimation;
         if (updateTvData)
@@ -3046,4 +3041,53 @@ void BtlController_HandleBattleAnimation(u32 battler, bool32 ignoreSE, bool32 up
         if (updateTvData)
             BattleTv_SetDataBasedOnAnimation(animationId);
     }
+}
+
+u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar)
+{
+    u8 battleSceneOption = VarGet(B_BATTLE_SPEED); // Originally GetBattleSceneOption() with a saveblock stored value;
+
+    // Hold L to slow down
+    if(JOY_HELD(L_BUTTON))
+        return 1;
+
+    // We want to speed up all anims until input selection starts
+    if(InBattleChoosingMoves())
+        gBattleStruct->hasBattleInputStarted = TRUE;
+
+    if(gBattleStruct->hasBattleInputStarted)
+    {
+        // Always run at 1x speed here
+        if(InBattleChoosingMoves())
+            return 1;
+
+        // When battle anims are turned off, it's a bit too hard to read text, so force running at normal speed
+        if(!forHealthbar && battleSceneOption == OPTIONS_BATTLE_SCENE_DISABLED && InBattleRunningActions())
+            return 1;
+    }
+
+    // We don't need to speed up health bar anymore as that passively happens now
+    switch (battleSceneOption)
+    {
+    case OPTIONS_BATTLE_SCENE_1X:
+        return forHealthbar ? 1 : 1;
+
+    case OPTIONS_BATTLE_SCENE_2X:
+        return forHealthbar ? 1 : 2;
+
+    case OPTIONS_BATTLE_SCENE_3X:
+        return forHealthbar ? 1 : 3;
+
+    case OPTIONS_BATTLE_SCENE_4X:
+        return forHealthbar ? 1 : 4;
+
+    // Print text at a readable speed still
+    case OPTIONS_BATTLE_SCENE_DISABLED:
+        if(gBattleStruct->hasBattleInputStarted)
+            return forHealthbar ? 10 : 1;
+        else
+            return 4;
+    }
+
+    return 1;
 }

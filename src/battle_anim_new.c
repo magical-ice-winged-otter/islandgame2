@@ -110,6 +110,14 @@ static const union AffineAnimCmd sSquishTargetAffineAnimCmds[] =
     AFFINEANIMCMD_END,
 };
 
+static const union AffineAnimCmd sSquishTargetShortAffineAnimCmds[] =
+{
+    AFFINEANIMCMD_FRAME(0, 64, 0, 4), //Flatten
+    AFFINEANIMCMD_FRAME(0, 0, 0, 16),
+    AFFINEANIMCMD_FRAME(0, -64, 0, 4),
+    AFFINEANIMCMD_END,
+};
+
 // GEN 4
 // shadow sneak
 const struct SpriteTemplate gShadowSneakImpactSpriteTemplate =
@@ -3950,7 +3958,7 @@ const struct SpriteTemplate gAppleAcidDripTemplate =
     .tileTag = ANIM_TAG_POISON_BUBBLE,
     .paletteTag = ANIM_TAG_POISON_BUBBLE,
     .oam = &gOamData_AffineDouble_ObjNormal_16x16,
-    .anims = gAnims_AcidPoisonDroplet,
+    .anims = &gAnims_PoisonProjectile[1],
     .images = NULL,
     .affineAnims = gAffineAnims_Droplet,
     .callback = SpriteCB_AcidDripSingleTarget
@@ -4241,11 +4249,11 @@ const struct SpriteTemplate gSpriteTemplate_SpiritBreakExplode = {
 };
 
 // chloroblast
-static const union AffineAnimCmd sSpriteAffineAnim_HydroCannonBall[] = {
+const union AffineAnimCmd sSpriteAffineAnim_HydroCannonBall[] = {
 	AFFINEANIMCMD_FRAME(16, 16, 0, 16), //Double in size
 	AFFINEANIMCMD_END
 };
-static const union AffineAnimCmd* const sSpriteAffineAnimTable_HydroCannonBall[] = {
+const union AffineAnimCmd* const sSpriteAffineAnimTable_HydroCannonBall[] = {
 	sSpriteAffineAnim_HydroCannonBall,
 };
 const struct SpriteTemplate gSpriteTemplate_ChloroblastShot = {
@@ -4769,6 +4777,17 @@ const struct SpriteTemplate gUltraBurstSymbolSpriteTemplate =
     .images = NULL,
     .affineAnims = gAffineAnims_LusterPurgeCircle,
     .callback = AnimSpriteOnMonPos
+};
+
+const struct SpriteTemplate gAxeKickSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_HANDS_AND_FEET,
+    .paletteTag = ANIM_TAG_HANDS_AND_FEET,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = &gAnims_HandsAndFeet[2],
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimBounceBallLand,
 };
 
 // Z MOVES
@@ -8514,6 +8533,15 @@ void AnimTask_SquishTarget(u8 taskId)
     task->func = AnimTask_WaitAffineAnim;
 }
 
+void AnimTask_SquishTargetShort(u8 taskId)
+{
+    struct Task* task = &gTasks[taskId];
+    u8 spriteId = GetAnimBattlerSpriteId(ANIM_TARGET);
+
+    PrepareAffineAnimInTaskData(task, spriteId, sSquishTargetShortAffineAnimCmds);
+    task->func = AnimTask_WaitAffineAnim;
+}
+
 void CoreEnforcerLoadBeamTarget(struct Sprite *sprite)
 {
     sprite->data[0] = gBattleAnimArgs[2];
@@ -9131,7 +9159,7 @@ void AnimTask_DynamaxGrowth(u8 taskId) // from CFRU
 
 void AnimTask_GetWeatherToSet(u8 taskId)
 {
-    switch (gBattleMoves[gCurrentMove].argument)
+    switch (gMovesInfo[gCurrentMove].argument)
     {
         case MAX_EFFECT_SUN:
             gBattleAnimArgs[ARG_RET_ID] = 1;

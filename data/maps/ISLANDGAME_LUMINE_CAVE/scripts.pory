@@ -1,1 +1,84 @@
-mapscripts ISLANDGAME_LUMINE_CAVE_MapScripts {}
+mapscripts ISLANDGAME_LUMINE_CAVE_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if(flag(FLAG_HIDDEN_ITEM_LUMINE_CAVE_SALT_1)) {
+            setmetatile(44, 8, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        }
+        if(flag(FLAG_HIDDEN_ITEM_LUMINE_CAVE_SHELL_1)) {
+            setmetatile(8, 16, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        }
+    }
+}
+
+
+
+script ISLANDGAME_LUMINE_CAVE_Scout {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hi! I'm trying to make a Shell Bell, but I need Salts and Shells!\p"
+        "If you find some, can you let me know?{PAUSE 60} If you bring me 4 Shells and 4 Salts, I can make a Shell Bell for both of us!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_Salt {
+    lock
+    if(!flag(FLAG_HIDDEN_ITEM_LUMINE_CAVE_SALT_1)) {
+        giveitem(ITEM_SHOAL_SALT)
+        setmetatile(44, 8, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_HIDDEN_ITEM_LUMINE_CAVE_SALT_1)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No more salt here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_Shell {
+    lock
+    if(!flag(FLAG_HIDDEN_ITEM_LUMINE_CAVE_SHELL_1)) {
+        giveitem(ITEM_SHOAL_SHELL)
+        setmetatile(8, 16, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_HIDDEN_ITEM_LUMINE_CAVE_SHELL_1)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No shells here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+
+script ISLANDGAME_LUMINE_CAVE_Trainer1 {
+    // trainerbattle_single(TRAINER_LUMINE_CAVE_1,
+    //     format(
+    //         "Roll out, my rocky comrades!"
+    //     ),
+    //     format(
+    //         "Nooo, my precious pebbles!"
+    //     ))
+    // msgbox(format(
+    //     "Are you also looking for a Larvitar? I've been trying to find one for hours."
+    // ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_Trainer2 {
+    // trainerbattle_single(TRAINER_LUMINE_CAVE_2,
+    //     format(
+    //         "READY? FIGHT!"
+    //     ),
+    //     format(
+    //         "DEFEATED..."
+    //     ))
+    // msgbox(format(
+    //     "CONTINUE...?{PAUSE 60} NO...{PAUSE 60} GAME OVER!"
+    // ), MSGBOX_AUTOCLOSE)
+}

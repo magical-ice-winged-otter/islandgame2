@@ -147,9 +147,9 @@ static u32 FindObjectEventPaletteIndexByTag(u16);
 static void UNUSED _PatchObjectPalette(u16, u8);
 static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *, u8);
 static void SpriteCB_CameraObject(struct Sprite *);
-static void CameraObject_0(struct Sprite *);
-static void CameraObject_1(struct Sprite *);
-static void CameraObject_2(struct Sprite *);
+static void CameraObject_Init(struct Sprite *);
+static void CameraObject_UpdateMove(struct Sprite *);
+static void CameraObject_UpdateFrozen(struct Sprite *);
 static const struct ObjectEventTemplate *FindObjectEventTemplateByLocalId(u8, const struct ObjectEventTemplate *, u8);
 static void ClearObjectEventMovement(struct ObjectEvent *, struct Sprite *);
 static void ObjectEventSetSingleMovement(struct ObjectEvent *, struct Sprite *, u8);
@@ -198,10 +198,16 @@ static const struct SpriteTemplate sCameraSpriteTemplate = {
     .callback = SpriteCB_CameraObject
 };
 
+enum {
+    CAMERA_STATE_INIT,
+    CAMERA_STATE_MOVE,
+    CAMERA_STATE_FROZEN,
+};
+
 static void (*const sCameraObjectFuncs[])(struct Sprite *) = {
-    CameraObject_0,
-    CameraObject_1,
-    CameraObject_2,
+    [CAMERA_STATE_INIT]   = CameraObject_Init,
+    [CAMERA_STATE_MOVE]   = CameraObject_UpdateMove,
+    [CAMERA_STATE_FROZEN] = CameraObject_UpdateFrozen,
 };
 
 #include "data/object_events/object_event_graphics.h"
@@ -470,7 +476,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_NPC_21                  0x1135
 #define OBJ_EVENT_PAL_TAG_NPC_22                  0x1136
 #define OBJ_EVENT_PAL_TAG_NPC_23                  0x1137
-#define OBJ_EVENT_PAL_TAG_NPC_24                  0x1138
+#define OBJ_EVENT_PAL_TAG_NPC_24                  0x1138 // worker
 #define OBJ_EVENT_PAL_TAG_NPC_25                  0x1139
 #define OBJ_EVENT_PAL_TAG_NPC_26                  0x1140
 #define OBJ_EVENT_PAL_TAG_NPC_27                  0x1141
@@ -517,11 +523,53 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_NPC_68                  0x1182
 #define OBJ_EVENT_PAL_TAG_NPC_69                  0x1183
 #define OBJ_EVENT_PAL_TAG_NPC_70                  0x1184
-#define OBJ_EVENT_PAL_TAG_NPC_71                  0x1185
-#define OBJ_EVENT_PAL_TAG_NPC_72                  0x1186
-#define OBJ_EVENT_PAL_TAG_NPC_73                  0x1187
-#define OBJ_EVENT_PAL_TAG_NPC_74                  0x1188
-#define OBJ_EVENT_PAL_TAG_NPC_75                  0x1189
+#define OBJ_EVENT_PAL_TAG_OLIVIA_FISHING          0x1185
+#define OBJ_EVENT_PAL_TAG_OLIVIA_BIKE             0x1186
+#define OBJ_EVENT_PAL_TAG_OLIVIA_FIELD_MOVE       0x1187
+#define OBJ_EVENT_PAL_TAG_OLIVIA_NORMAL           0x1188
+#define OBJ_EVENT_PAL_TAG_RUKA                    0x1189
+#define OBJ_EVENT_PAL_TAG_OLIVER_FISHING          0x1190
+#define OBJ_EVENT_PAL_TAG_OLIVER_BIKE             0x1191
+#define OBJ_EVENT_PAL_TAG_OLIVER_FIELD_MOVE       0x1192
+#define OBJ_EVENT_PAL_TAG_OLIVER_NORMAL           0x1193
+#define OBJ_EVENT_PAL_TAG_OLIVIA_WATERING         0x1194
+#define OBJ_EVENT_PAL_TAG_OLIVER_WATERING         0x1195
+#define OBJ_EVENT_PAL_TAG_OLIVIA_SURFING          0x1196
+#define OBJ_EVENT_PAL_TAG_MELISSA                 0x1197
+#define OBJ_EVENT_PAL_TAG_FIELD_EFFECTS           0x1198
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_F           0x1199
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_M           0x1200
+#define OBJ_EVENT_PAL_TAG_JONAS                   0x1201
+#define OBJ_EVENT_PAL_TAG_PALM                    0x1202
+#define OBJ_EVENT_PAL_TAG_ARTHUR                  0x1203
+#define OBJ_EVENT_PAL_TAG_COCO                    0x1204
+#define OBJ_EVENT_PAL_TAG_PRIMROSE                0x1205
+#define OBJ_EVENT_PAL_TAG_EDEA                    0x1206
+#define OBJ_EVENT_PAL_TAG_BEAUTY_MASTERS          0x1207 
+#define OBJ_EVENT_PAL_TAG_COWGIRL                 0x1208
+#define OBJ_EVENT_PAL_TAG_GIRL_5                  0x1209
+#define OBJ_EVENT_PAL_TAG_GIRL_6                  0x1210
+#define OBJ_EVENT_PAL_TAG_GIRL_7                  0x1211
+#define OBJ_EVENT_PAL_TAG_JUGGLER                 0x1212
+#define OBJ_EVENT_PAL_TAG_MAN_7                   0x1213
+#define OBJ_EVENT_PAL_TAG_BIKER                   0x1214
+#define OBJ_EVENT_PAL_TAG_CHANNELER               0x1215
+#define OBJ_EVENT_PAL_TAG_NERD                    0x1216
+#define OBJ_EVENT_PAL_TAG_RANCHER                 0x1217
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_M_2          0x1218
+#define OBJ_EVENT_PAL_TAG_SCOUT_M                 0x1219
+#define OBJ_EVENT_PAL_TAG_SCOUT_F                 0x1220
+#define OBJ_EVENT_PAL_TAG_SILVERWING_M            0x1221
+#define OBJ_EVENT_PAL_TAG_SILVERWING_F            0x1222
+#define OBJ_EVENT_PAL_TAG_WOMAN_6                 0x1223
+#define OBJ_EVENT_PAL_TAG_WOMAN_7                 0x1224
+#define OBJ_EVENT_PAL_TAG_WOMAN_8                 0x1225
+#define OBJ_EVENT_PAL_TAG_SCHOOL_KID_F            0x1226
+#define OBJ_EVENT_PAL_TAG_APPLE                   0x1227
+#define OBJ_EVENT_PAL_TAG_SHINY_AZURILL           0x1228
+#define OBJ_EVENT_PAL_TAG_HEX_MANIAC              0x1229
+
+
 
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
@@ -1384,6 +1432,54 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #include "data/object_events/object_event_graphics_info.h"
 
 static const struct SpritePalette sObjectEventSpritePalettes[] = {
+
+    // island-game
+    {gObjectEventPal_Ruka,                  OBJ_EVENT_PAL_TAG_RUKA},
+    {gObjectEventPal_OliviaNormal,          OBJ_EVENT_PAL_TAG_OLIVIA_NORMAL},
+    {gObjectEventPal_OliviaBike,            OBJ_EVENT_PAL_TAG_OLIVIA_BIKE},
+    {gObjectEventPal_OliviaFieldMove,       OBJ_EVENT_PAL_TAG_OLIVIA_FIELD_MOVE},
+    {gObjectEventPal_OliviaFishing,         OBJ_EVENT_PAL_TAG_OLIVIA_FISHING},
+    {gObjectEventPal_OliverNormal,          OBJ_EVENT_PAL_TAG_OLIVER_NORMAL},
+    {gObjectEventPal_OliverBike,            OBJ_EVENT_PAL_TAG_OLIVER_BIKE},
+    {gObjectEventPal_OliverFieldMove,       OBJ_EVENT_PAL_TAG_OLIVER_FIELD_MOVE},
+    {gObjectEventPal_OliverFishing,         OBJ_EVENT_PAL_TAG_OLIVER_FISHING},
+    {gObjectEventPal_OliviaWatering,        OBJ_EVENT_PAL_TAG_OLIVIA_WATERING},
+    {gObjectEventPal_OliverWatering,        OBJ_EVENT_PAL_TAG_OLIVER_WATERING},
+    {gObjectEventPal_OliviaSurfing,         OBJ_EVENT_PAL_TAG_OLIVIA_SURFING},
+    {gObjectEventPal_Melissa,               OBJ_EVENT_PAL_TAG_MELISSA},
+    {gObjectEventPal_FieldEffects,          OBJ_EVENT_PAL_TAG_FIELD_EFFECTS},
+    {gObjectEventPal_AceTrainerF,           OBJ_EVENT_PAL_TAG_ACE_TRAINER_F},
+    {gObjectEventPal_AceTrainerM,           OBJ_EVENT_PAL_TAG_ACE_TRAINER_M},
+    {gObjectEventPal_Jonas,                 OBJ_EVENT_PAL_TAG_JONAS},
+    {gObjectEventPal_Palm,                  OBJ_EVENT_PAL_TAG_PALM},
+    {gObjectEventPal_Arthur,                OBJ_EVENT_PAL_TAG_ARTHUR},
+    {gObjectEventPal_Coco,                  OBJ_EVENT_PAL_TAG_COCO},
+    {gObjectEventPal_Primrose,              OBJ_EVENT_PAL_TAG_PRIMROSE},
+    {gObjectEventPal_Edea,                  OBJ_EVENT_PAL_TAG_EDEA},
+    {gObjectEventPal_BeautyMasters,         OBJ_EVENT_PAL_TAG_BEAUTY_MASTERS},
+    {gObjectEventPal_Cowgirl,               OBJ_EVENT_PAL_TAG_COWGIRL},
+    {gObjectEventPal_Girl5,                 OBJ_EVENT_PAL_TAG_GIRL_5},
+    {gObjectEventPal_Girl6,                 OBJ_EVENT_PAL_TAG_GIRL_6},
+    {gObjectEventPal_Girl7,                 OBJ_EVENT_PAL_TAG_GIRL_7},
+    {gObjectEventPal_Juggler,               OBJ_EVENT_PAL_TAG_JUGGLER},
+    {gObjectEventPal_Man7,                  OBJ_EVENT_PAL_TAG_MAN_7},
+    {gObjectEventPal_Biker,                 OBJ_EVENT_PAL_TAG_BIKER},
+    {gObjectEventPal_Channeler,             OBJ_EVENT_PAL_TAG_CHANNELER},
+    {gObjectEventPal_Nerd,                  OBJ_EVENT_PAL_TAG_NERD},
+    {gObjectEventPal_Rancher,               OBJ_EVENT_PAL_TAG_RANCHER},
+    {gObjectEventPal_SchoolKidM2,           OBJ_EVENT_PAL_TAG_SCHOOL_KID_M_2},
+    {gObjectEventPal_ScoutM,                OBJ_EVENT_PAL_TAG_SCOUT_M},
+    {gObjectEventPal_ScoutF,                OBJ_EVENT_PAL_TAG_SCOUT_F},
+    {gObjectEventPal_SilverwingM,           OBJ_EVENT_PAL_TAG_SILVERWING_M},
+    {gObjectEventPal_SilverwingF,           OBJ_EVENT_PAL_TAG_SILVERWING_F},
+    {gObjectEventPal_Woman6,                OBJ_EVENT_PAL_TAG_WOMAN_6},
+    {gObjectEventPal_Woman7,                OBJ_EVENT_PAL_TAG_WOMAN_7},
+    {gObjectEventPal_Woman8,                OBJ_EVENT_PAL_TAG_WOMAN_8},
+    {gObjectEventPal_SchoolKidF,            OBJ_EVENT_PAL_TAG_SCHOOL_KID_F},
+    {gObjectEventPal_Apple,                 OBJ_EVENT_PAL_TAG_APPLE},
+    {gObjectEventPalette_IslandgamePKMN_ShinyAzurill,       OBJ_EVENT_PAL_TAG_SHINY_AZURILL},
+    {gObjectEventPal_HexManiac,            OBJ_EVENT_PAL_TAG_HEX_MANIAC},
+
     {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
     {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},
     {gObjectEventPal_Npc3,                  OBJ_EVENT_PAL_TAG_NPC_3},
@@ -3539,7 +3635,7 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
     sprite->x += 8;
     sprite->y += 16 + sprite->centerToCornerVecY;
     if (objectEvent->trackedByCamera)
-        CameraObjectReset1();
+        CameraObjectReset();
 }
 
 void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)
@@ -3591,7 +3687,7 @@ static void SetBerryTreeGraphics(struct ObjectEvent *objectEvent, struct Sprite 
             berryId = 0;
 
         LoadObjectEventPalette(gBerryTreePaletteTagTablePointers[berryId][berryStage]);
-        ObjectEventSetGraphicsId(objectEvent, gBerryTreeObjectEventGraphicsIdTablePointers[berryId][berryStage]);
+        ObjectEventSetGraphicsId(objectEvent, gBerryTreeObjectEventGraphicsIdTable[berryStage]);
         sprite->images = gBerryTreePicTablePointers[berryId];
         sprite->oam.paletteNum = IndexOfSpritePaletteTag(gBerryTreePaletteTagTablePointers[berryId][berryStage]);
         UpdatePaletteGammaType(sprite->oam.paletteNum, GAMMA_ALT);
@@ -3802,7 +3898,7 @@ void MoveObjectEventToMapCoords(struct ObjectEvent *objectEvent, s16 x, s16 y)
     sprite->y += 16 + sprite->centerToCornerVecY;
     ResetObjectEventFldEffData(objectEvent);
     if (objectEvent->trackedByCamera)
-        CameraObjectReset1();
+        CameraObjectReset();
 }
 
 void TryMoveObjectEventToMapCoords(u8 localId, u8 mapNum, u8 mapGroup, s16 x, s16 y)
@@ -3878,15 +3974,15 @@ void UpdateObjectEventsForCameraUpdate(s16 x, s16 y)
     RemoveObjectEventsOutsideView();
 }
 
-#define sLinkedSpriteId data[0]
-#define sState          data[1]
-
-u8 AddCameraObject(u8 linkedSpriteId)
+// The "CameraObject" functions below are responsible for an invisible sprite
+// that follows the movements of a different sprite (normally the player's sprite)
+// and tracks x/y movement distances for the camera so it knows where to move.
+u8 AddCameraObject(u8 followSpriteId)
 {
     u8 spriteId = CreateSprite(&sCameraSpriteTemplate, 0, 0, 4);
 
     gSprites[spriteId].invisible = TRUE;
-    gSprites[spriteId].sLinkedSpriteId = linkedSpriteId;
+    gSprites[spriteId].sCamera_FollowSpriteId = followSpriteId;
     return spriteId;
 }
 
@@ -3895,35 +3991,37 @@ static void SpriteCB_CameraObject(struct Sprite *sprite)
     void (*callbacks[ARRAY_COUNT(sCameraObjectFuncs)])(struct Sprite *);
 
     memcpy(callbacks, sCameraObjectFuncs, sizeof sCameraObjectFuncs);
-    callbacks[sprite->sState](sprite);
+    callbacks[sprite->sCamera_State](sprite);
 }
 
-static void CameraObject_0(struct Sprite *sprite)
+static void CameraObject_Init(struct Sprite *sprite)
 {
-    sprite->x = gSprites[sprite->sLinkedSpriteId].x;
-    sprite->y = gSprites[sprite->sLinkedSpriteId].y;
+    sprite->x = gSprites[sprite->sCamera_FollowSpriteId].x;
+    sprite->y = gSprites[sprite->sCamera_FollowSpriteId].y;
     sprite->invisible = TRUE;
-    sprite->sState = 1;
-    CameraObject_1(sprite);
+    sprite->sCamera_State = CAMERA_STATE_MOVE;
+    CameraObject_UpdateMove(sprite);
 }
 
-static void CameraObject_1(struct Sprite *sprite)
+static void CameraObject_UpdateMove(struct Sprite *sprite)
 {
-    s16 x = gSprites[sprite->sLinkedSpriteId].x;
-    s16 y = gSprites[sprite->sLinkedSpriteId].y;
+    s16 x = gSprites[sprite->sCamera_FollowSpriteId].x;
+    s16 y = gSprites[sprite->sCamera_FollowSpriteId].y;
 
-    sprite->data[2] = x - sprite->x;
-    sprite->data[3] = y - sprite->y;
+    sprite->sCamera_MoveX = x - sprite->x;
+    sprite->sCamera_MoveY = y - sprite->y;
     sprite->x = x;
     sprite->y = y;
 }
 
-static void CameraObject_2(struct Sprite *sprite)
+// Invisible sprite will continue to follow the parent sprite,
+// but no corresponding camera movement will be shown.
+static void CameraObject_UpdateFrozen(struct Sprite *sprite)
 {
-    sprite->x = gSprites[sprite->sLinkedSpriteId].x;
-    sprite->y = gSprites[sprite->sLinkedSpriteId].y;
-    sprite->data[2] = 0;
-    sprite->data[3] = 0;
+    sprite->x = gSprites[sprite->sCamera_FollowSpriteId].x;
+    sprite->y = gSprites[sprite->sCamera_FollowSpriteId].y;
+    sprite->sCamera_MoveX = 0;
+    sprite->sCamera_MoveY = 0;
 }
 
 static struct Sprite *FindCameraSprite(void)
@@ -3938,51 +4036,43 @@ static struct Sprite *FindCameraSprite(void)
     return NULL;
 }
 
-void CameraObjectReset1(void)
+void CameraObjectReset(void)
 {
-    struct Sprite *camera;
-
-    camera = FindCameraSprite();
+    struct Sprite *camera = FindCameraSprite();
     if (camera != NULL)
     {
-        camera->sState = 0;
+        camera->sCamera_State = CAMERA_STATE_INIT;
         camera->callback(camera);
     }
 }
 
 void CameraObjectSetFollowedSpriteId(u8 spriteId)
 {
-    struct Sprite *camera;
-
-    camera = FindCameraSprite();
+    struct Sprite *camera = FindCameraSprite();
     if (camera != NULL)
     {
-        camera->sLinkedSpriteId = spriteId;
-        CameraObjectReset1();
+        camera->sCamera_FollowSpriteId = spriteId;
+        CameraObjectReset();
     }
 }
 
 static u8 UNUSED CameraObjectGetFollowedSpriteId(void)
 {
-    struct Sprite *camera;
-
-    camera = FindCameraSprite();
+    struct Sprite *camera = FindCameraSprite();
     if (camera == NULL)
         return MAX_SPRITES;
 
-    return camera->sLinkedSpriteId;
+    return camera->sCamera_FollowSpriteId;
 }
 
-void CameraObjectReset2(void)
+void CameraObjectFreeze(void)
 {
-    // UB: Possible null dereference
-#ifdef UBFIX
     struct Sprite *camera = FindCameraSprite();
-    if (camera)
-        camera->sState = 2;
-#else
-    FindCameraSprite()->sState = 2;
-#endif // UBFIX
+#ifdef UBFIX // Possible null dereference
+    if (camera == NULL)
+        return;
+#endif
+    camera->sCamera_State = CAMERA_STATE_FROZEN;
 }
 
 u8 CopySprite(struct Sprite *sprite, s16 x, s16 y, u8 subpriority)
@@ -9999,14 +10089,18 @@ static void DoGroundEffects_OnSpawn(struct ObjectEvent *objEvent, struct Sprite 
 {
     u32 flags;
 
+#ifdef BUGFIX
+    if (objEvent->triggerGroundEffectsOnMove && objEvent->localId != OBJ_EVENT_ID_CAMERA)
+#else
     if (objEvent->triggerGroundEffectsOnMove)
+#endif
     {
         flags = 0;
         UpdateObjectEventElevationAndPriority(objEvent, sprite);
         GetAllGroundEffectFlags_OnSpawn(objEvent, &flags);
         SetObjectEventSpriteOamTableForLongGrass(objEvent, sprite);
         DoFlaggedGroundEffects(objEvent, sprite, flags);
-        objEvent->triggerGroundEffectsOnMove = 0;
+        objEvent->triggerGroundEffectsOnMove = FALSE;
         objEvent->disableCoveringGroundEffects = 0;
     }
 }
@@ -10015,7 +10109,11 @@ static void DoGroundEffects_OnBeginStep(struct ObjectEvent *objEvent, struct Spr
 {
     u32 flags;
 
+#ifdef BUGFIX
+    if (objEvent->triggerGroundEffectsOnMove && objEvent->localId != OBJ_EVENT_ID_CAMERA)
+#else
     if (objEvent->triggerGroundEffectsOnMove)
+#endif
     {
         flags = 0;
         UpdateObjectEventElevationAndPriority(objEvent, sprite);
@@ -10023,7 +10121,7 @@ static void DoGroundEffects_OnBeginStep(struct ObjectEvent *objEvent, struct Spr
         SetObjectEventSpriteOamTableForLongGrass(objEvent, sprite);
         filters_out_some_ground_effects(objEvent, &flags);
         DoFlaggedGroundEffects(objEvent, sprite, flags);
-        objEvent->triggerGroundEffectsOnMove = 0;
+        objEvent->triggerGroundEffectsOnMove = FALSE;
         objEvent->disableCoveringGroundEffects = 0;
     }
 }
@@ -10032,7 +10130,11 @@ static void DoGroundEffects_OnFinishStep(struct ObjectEvent *objEvent, struct Sp
 {
     u32 flags;
 
+#ifdef BUGFIX
+    if (objEvent->triggerGroundEffectsOnStop && objEvent->localId != OBJ_EVENT_ID_CAMERA)
+#else
     if (objEvent->triggerGroundEffectsOnStop)
+#endif
     {
         flags = 0;
         UpdateObjectEventElevationAndPriority(objEvent, sprite);

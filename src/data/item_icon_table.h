@@ -672,8 +672,8 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_TM48] = {gItemIcon_TM, gItemIconPalette_PsychicTMHM},
     [ITEM_TM49] = {gItemIcon_TM, gItemIconPalette_DarkTMHM},
     [ITEM_TM50] = {gItemIcon_TM, gItemIconPalette_FireTMHM},
-    [ITEM_TM51] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
-    [ITEM_TM52] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
+    [ITEM_TM51] = {gItemIcon_TM, gItemIconPalette_ElectricTMHM},  // Charge Beam
+    [ITEM_TM52] = {gItemIcon_TM, gItemIconPalette_RockTMHM},  // Stone Edge
     [ITEM_TM53] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
     [ITEM_TM54] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
     [ITEM_TM55] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
@@ -764,7 +764,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_POKEMON_BOX_LINK] = {gItemIcon_PokemonBoxLink, gItemIconPalette_PokemonBoxLink},
     [ITEM_COIN_CASE] = {gItemIcon_CoinCase, gItemIconPalette_CoinCase},
     [ITEM_POWDER_JAR] = {gItemIcon_PowderJar, gItemIconPalette_PowderJar},
-    [ITEM_WAILMER_PAIL] = {gItemIcon_WailmerPail, gItemIconPalette_WailmerPail},
+    [ITEM_WAILMER_PAIL] = {gItemIcon_IslandgameSquirtBottle, gItemIconPalette_IslandgameSquirtBottle},
     [ITEM_POKE_RADAR] = {gItemIcon_PokeRadar, gItemIconPalette_PokeRadar},
     [ITEM_POKEBLOCK_CASE] = {gItemIcon_PokeblockCase, gItemIconPalette_PokeblockCase},
     [ITEM_SOOT_SACK] = {gItemIcon_SootSack, gItemIconPalette_SootSack},
@@ -859,7 +859,20 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_SWIFT_MOCHI] =  {gItemIcon_Mochi, gItemIconPalette_SwiftMochi},
     [ITEM_FRESH_START_MOCHI] =  {gItemIcon_Mochi, gItemIconPalette_FreshStartMochi},
     [ITEM_GLIMMERING_CHARM] = {gItemIcon_GlimmeringCharm, gItemIconPalette_GlimmeringCharm},
-
+    [ITEM_METAL_ALLOY] =  {gItemIcon_MetalAlloy, gItemIconPalette_MetalAlloy},
+    [ITEM_STELLAR_TERA_SHARD] = {gItemIcon_StellarTeraShard, gItemIconPalette_StellarTeraShard},
+    [ITEM_JUBILIFE_MUFFIN] = {gItemIcon_JubilifeMuffin, gItemIconPalette_JubilifeMuffin},
+    [ITEM_REMEDY] = {gItemIcon_Remedy, gItemIconPalette_Remedy},
+    [ITEM_FINE_REMEDY] = {gItemIcon_FineRemedy, gItemIconPalette_FineRemedy},
+    [ITEM_SUPERB_REMEDY] = {gItemIcon_SuperbRemedy, gItemIconPalette_SuperbRemedy},
+    [ITEM_AUX_EVASION] = {gItemIcon_AuxBottle, gItemIconPalette_AuxEvasion},
+    [ITEM_AUX_GUARD] = {gItemIcon_AuxBottle, gItemIconPalette_AuxGuard},
+    [ITEM_AUX_POWER] = {gItemIcon_AuxBottle, gItemIconPalette_AuxPower},
+    [ITEM_AUX_POWERGUARD] = {gItemIcon_AuxPowerguard, gItemIconPalette_AuxPowerguard},
+    [ITEM_CHOICE_DUMPLING] = {gItemIcon_ChoiceDumpling, gItemIconPalette_ChoiceDumpling},
+    [ITEM_SWAP_SNACK] = {gItemIcon_SwapSnack, gItemIconPalette_SwapSnack},
+    [ITEM_TWICE_SPICED_RADISH] = {gItemIcon_TwiceSpicedRadish, gItemIconPalette_TwiceSpicedRadish},
+    [ITEM_POKESHI_DOLL] = {gItemIcon_PokeshiDoll, gItemIconPalette_PokeshiDoll},
     // Islandgame Custom Items
     [ITEM_ISLANDGAME_MACHETE] = {gItemIcon_IslandgameMachete, gItemIconPalette_IslandgameMachete},
     [ITEM_ISLANDGAME_LANTERN] = {gItemIcon_IslandgameLantern, gItemIconPalette_IslandgameLantern},
@@ -868,9 +881,10 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_ISLANDGAME_PICKAXE] = {gItemIcon_IslandgamePickaxe, gItemIconPalette_IslandgamePickaxe},
     [ITEM_ISLANDGAME_POWERGLOVE] = {gItemIcon_PunchingGlove, gItemIconPalette_PunchingGlove},
     [ITEM_ISLANDGAME_TRADING_CARD] = {gItemIcon_IslandgameTradingCard, gItemIconPalette_IslandgameTradingCard},
-
-
     [ITEM_POKEVIAL] = {gItemIcon_Pokevial, gItemIconPalette_Pokevial}, // Pokevial Branch
+    [ITEM_ISLANDGAME_ROMANS_LETTER] = {gItemIcon_WaveMail, gItemIconPalette_WaveMail},
+    [ITEM_ISLANDGAME_JULIES_LETTER] = {gItemIcon_FabMail, gItemIconPalette_FabMail},
+    [ITEM_ISLANDGAME_LOBSTER_ROLL] = {gItemIcon_IslandgameLobsterRoll, gItemIconPalette_IslandgameLobsterRoll},
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

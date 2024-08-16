@@ -2894,13 +2894,7 @@ static const union AnimCmd sAnim_Mismagius_1[] =
 #endif //P_FAMILY_MISDREAVUS
 
 #if P_FAMILY_UNOWN
-static const union AnimCmd sAnim_Unown_1[] =
-{
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END,
-};
+PLACEHOLDER_ANIM_SINGLE_FRAME(Unown);
 #endif //P_FAMILY_UNOWN
 
 #if P_FAMILY_WOBBUFFET
@@ -9587,6 +9581,7 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(AppletunGigantamax);
 
 #if P_GEN_9_CROSS_EVOS
 PLACEHOLDER_ANIM_SINGLE_FRAME(Dipplin);
+PLACEHOLDER_ANIM_SINGLE_FRAME(Hydrapple);
 #endif //P_GEN_9_CROSS_EVOS
 #endif //P_FAMILY_APPLIN
 
@@ -9738,6 +9733,10 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(Duraludon);
 #if P_GIGANTAMAX_FORMS
 PLACEHOLDER_ANIM_SINGLE_FRAME(DuraludonGigantamax);
 #endif //P_GIGANTAMAX_FORMS
+
+#if P_GEN_9_CROSS_EVOS
+PLACEHOLDER_ANIM_SINGLE_FRAME(Archaludon);
+#endif //P_GEN_9_CROSS_EVOS
 #endif //P_FAMILY_DURALUDON
 
 #if P_FAMILY_DREEPY
@@ -10104,6 +10103,44 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(Fezandipiti);
 PLACEHOLDER_ANIM_SINGLE_FRAME(Ogerpon);
 #endif //P_FAMILY_OGERPON
 
+#if P_FAMILY_GOUGING_FIRE
+PLACEHOLDER_ANIM_SINGLE_FRAME(GougingFire);
+#endif //P_FAMILY_GOUGING_FIRE
+
+#if P_FAMILY_RAGING_BOLT
+PLACEHOLDER_ANIM_SINGLE_FRAME(RagingBolt);
+#endif //P_FAMILY_RAGING_BOLT
+
+#if P_FAMILY_IRON_BOULDER
+PLACEHOLDER_ANIM_SINGLE_FRAME(IronBoulder);
+#endif //P_FAMILY_IRON_BOULDER
+
+#if P_FAMILY_IRON_CROWN
+PLACEHOLDER_ANIM_SINGLE_FRAME(IronCrown);
+#endif //P_FAMILY_IRON_CROWN
+
+#if P_FAMILY_TERAPAGOS
+static const union AnimCmd sAnim_TerapagosNormal_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+static const union AnimCmd sAnim_TerapagosTerastal_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+PLACEHOLDER_ANIM_SINGLE_FRAME(TerapagosStellar);
+#endif //P_FAMILY_TERAPAGOS
+
+#if P_FAMILY_PECHARUNT
+PLACEHOLDER_ANIM_SINGLE_FRAME(Pecharunt);
+#endif //P_FAMILY_PECHARUNT
+
 static const union AnimCmd sAnim_Egg_1[] =
 {
     ANIMCMD_FRAME(0, 6),
@@ -10147,13 +10184,138 @@ static const union AnimCmd sAnim_GolettMaryan_1[] =
     ANIMCMD_END,
 };
 
-// static const union AnimCmd sAnim_Golurk_1[] =
-// {
-//     ANIMCMD_FRAME(1, 45),
-//     ANIMCMD_FRAME(0, 10),
-//     ANIMCMD_END,
-// };
+static const union AnimCmd sAnim_GolurkMaryan_1[] =
+{
+    ANIMCMD_FRAME(1, 45),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
 #endif //P_FAMILY_GOLETT
+
+#if P_FAMILY_FEEBAS_MARYAN
+static const union AnimCmd sAnim_FeebasMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_MiloticMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_FEEBAS_MARYAN
+
+#if P_FAMILY_PURRLOIN_MARYAN
+static const union AnimCmd sAnim_PurrloinMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 54),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_LiepardMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 45),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_PURRLOIN_MARYAN
+
+#if P_FAMILY_NINCADA_MARYAN
+static const union AnimCmd sAnim_NincadaMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 22),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_FRAME(1, 33),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_NinjaskMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 33),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_ShedinjaMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 33),
+    ANIMCMD_FRAME(1, 33),
+    ANIMCMD_FRAME(0, 33),
+    ANIMCMD_FRAME(1, 33),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_NINCADA_MARYAN
+
+#if P_FAMILY_COMBEE_MARYAN
+static const union AnimCmd sAnim_CombeeMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_VespiquenMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_COMBEE_MARYAN
+
+
+
+
+
+
+
+
 
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
@@ -12405,6 +12567,7 @@ SINGLE_ANIMATION(AppletunGigantamax);
 #endif //P_GIGANTAMAX_FORMS
 #if P_GEN_9_CROSS_EVOS
 SINGLE_ANIMATION(Dipplin);
+SINGLE_ANIMATION(Hydrapple);
 #endif //P_GEN_9_CROSS_EVOS
 #endif //P_FAMILY_APPLIN
 #if P_FAMILY_SILICOBRA
@@ -12512,6 +12675,9 @@ SINGLE_ANIMATION(Duraludon);
 #if P_GIGANTAMAX_FORMS
 SINGLE_ANIMATION(DuraludonGigantamax);
 #endif //P_GIGANTAMAX_FORMS
+#if P_GEN_9_CROSS_EVOS
+SINGLE_ANIMATION(Archaludon);
+#endif //P_GEN_9_CROSS_EVOS
 #endif //P_FAMILY_DURALUDON
 #if P_FAMILY_DREEPY
 SINGLE_ANIMATION(Dreepy);
@@ -12795,14 +12961,52 @@ SINGLE_ANIMATION(Fezandipiti);
 #if P_FAMILY_OGERPON
 SINGLE_ANIMATION(Ogerpon);
 #endif //P_FAMILY_OGERPON
+#if P_FAMILY_GOUGING_FIRE
+SINGLE_ANIMATION(GougingFire);
+#endif //P_FAMILY_GOUGING_FIRE
+#if P_FAMILY_RAGING_BOLT
+SINGLE_ANIMATION(RagingBolt);
+#endif //P_FAMILY_RAGING_BOLT
+#if P_FAMILY_IRON_BOULDER
+SINGLE_ANIMATION(IronBoulder);
+#endif //P_FAMILY_IRON_BOULDER
+#if P_FAMILY_IRON_CROWN
+SINGLE_ANIMATION(IronCrown);
+#endif //P_FAMILY_IRON_CROWN
+#if P_FAMILY_TERAPAGOS
+SINGLE_ANIMATION(TerapagosNormal);
+SINGLE_ANIMATION(TerapagosTerastal);
+SINGLE_ANIMATION(TerapagosStellar);
+#endif //P_FAMILY_TERAPAGOS
+#if P_FAMILY_PECHARUNT
+SINGLE_ANIMATION(Pecharunt);
+#endif //P_FAMILY_PECHARUNT
 #if P_FAMILY_SHADOW_LUGIA
 SINGLE_ANIMATION(ShadowLugia);
 #endif //P_FAMILY_SHADOW_LUGIA
 #if P_FAMILY_SHADOW_LUGIA
 SINGLE_ANIMATION(ShadowMightyena);
 #endif //P_FAMILY_SHADOW_LUGIA
-SINGLE_ANIMATION(Egg);
 #if P_FAMILY_GOLETT_MARYAN
 SINGLE_ANIMATION(GolettMaryan);
-//SINGLE_ANIMATION(Golurk);
-#endif //P_FAMILY_GOLETT
+SINGLE_ANIMATION(GolurkMaryan);
+#endif //P_FAMILY_GOLETT_MARYAN
+#if P_FAMILY_FEEBAS_MARYAN
+SINGLE_ANIMATION(FeebasMaryan);
+SINGLE_ANIMATION(MiloticMaryan);
+#endif //P_FAMILY_FEEBAS_MARYAN
+#if P_FAMILY_PURRLOIN_MARYAN
+SINGLE_ANIMATION(PurrloinMaryan);
+SINGLE_ANIMATION(LiepardMaryan);
+#endif //P_FAMILY_PURRLOIN_MARYAN
+#if P_FAMILY_NINCADA_MARYAN
+SINGLE_ANIMATION(NincadaMaryan);
+SINGLE_ANIMATION(NinjaskMaryan);
+SINGLE_ANIMATION(ShedinjaMaryan);
+#endif //P_FAMILY_NINCADA_MARYAN
+#if P_FAMILY_COMBEE_MARYAN
+SINGLE_ANIMATION(CombeeMaryan);
+SINGLE_ANIMATION(VespiquenMaryan);
+#endif //P_FAMILY_COMBEE_MARYAN
+
+SINGLE_ANIMATION(Egg);

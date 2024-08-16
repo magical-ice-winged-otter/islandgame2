@@ -120,6 +120,7 @@ top:
         MoveSaveBlocks_ResetHeap();
         ClearSav1();
         ClearSav2();
+        ClearSav3();
 
         gIntrTable[7] = Intr_Timer2;
 
@@ -178,6 +179,7 @@ top:
         }
 
         MgbaPrintf_(":N%s", gTestRunnerState.test->name);
+        MgbaPrintf_(":L%s:%d", gTestRunnerState.test->filename);
         gTestRunnerState.result = TEST_RESULT_PASS;
         gTestRunnerState.expectedResult = TEST_RESULT_PASS;
         gTestRunnerState.expectLeaks = FALSE;
@@ -215,6 +217,7 @@ top:
         // NOTE: Assumes that the compiler interns __FILE__.
         if (gTestRunnerState.skipFilename == gTestRunnerState.test->filename) // Assumption fails for tests in this file.
         {
+            MgbaPrintf_(":L%s:%d", gTestRunnerState.test->filename, gTestRunnerState.failedAssumptionsBlockLine);
             gTestRunnerState.result = TEST_RESULT_ASSUMPTION_FAIL;
             return;
         }
@@ -404,11 +407,21 @@ static void FunctionTest_TearDown(void *data)
     FREE_AND_SET_NULL(gFunctionTestRunnerState);
 }
 
+static bool32 FunctionTest_CheckProgress(void *data)
+{
+    bool32 madeProgress;
+    (void)data;
+    madeProgress = gFunctionTestRunnerState->checkProgressParameter < gFunctionTestRunnerState->runParameter;
+    gFunctionTestRunnerState->checkProgressParameter = gFunctionTestRunnerState->runParameter;
+    return madeProgress;
+}
+
 const struct TestRunner gFunctionTestRunner =
 {
     .setUp = FunctionTest_SetUp,
     .run = FunctionTest_Run,
     .tearDown = FunctionTest_TearDown,
+    .checkProgress = FunctionTest_CheckProgress,
 };
 
 static void Assumptions_Run(void *data)
@@ -469,9 +482,10 @@ static void Intr_Timer2(void)
     }
 }
 
-void Test_ExitWithResult(enum TestResult result, const char *fmt, ...)
+void Test_ExitWithResult(enum TestResult result, u32 stopLine, const char *fmt, ...)
 {
     gTestRunnerState.result = result;
+    gTestRunnerState.failedAssumptionsBlockLine = stopLine;
     ReinitCallbacks();
     if (gTestRunnerState.state == STATE_REPORT_RESULT
      && gTestRunnerState.result != gTestRunnerState.expectedResult)
@@ -657,7 +671,11 @@ static s32 MgbaVPrintf_(const char *fmt, va_list va)
 /* Entry point for the Debugging and Control System. Handles illegal
  * instructions, which are typically caused by branching to an invalid
  * address. */
+#if MODERN
 __attribute__((naked, section(".dacs"), target("arm")))
+#else
+__attribute__((naked, section(".dacs")))
+#endif
 void DACSEntry(void)
 {
     asm(".arm\n\
@@ -674,4 +692,25 @@ void DACSHandle(void)
     gTestRunnerState.result = TEST_RESULT_CRASH;
     ReinitCallbacks();
     DACS_LR = ((uintptr_t)JumpToAgbMainLoop & ~1) + 4;
+}
+
+static const struct Test *GetTest(void)
+{
+    const struct Test *test = gTestRunnerState.test;
+    return test;
+}
+
+u32 SourceLine(u32 sourceLineOffset)
+{
+    const struct Test *test = GetTest();
+    return test->sourceLine + sourceLineOffset;
+}
+
+u32 SourceLineOffset(u32 sourceLine)
+{
+    const struct Test *test = GetTest();
+    if (sourceLine - test->sourceLine > 0xFF)
+        return 0;
+    else
+        return sourceLine - test->sourceLine;
 }

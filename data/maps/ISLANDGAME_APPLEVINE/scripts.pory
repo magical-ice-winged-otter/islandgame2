@@ -1,1 +1,794 @@
-mapscripts ISLANDGAME_APPLEVINE_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+const COCO_OW_ID = 19
+
+mapscripts ISLANDGAME_APPLEVINE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+        }
+
+        if (flag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+}
+
+
+// signs
+script ISLANDGAME_APPLEVINE_StoreSign {
+    msgbox(format("LA CUCINA DOLCHE\nGive your Milcery a makeover!"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_CitySign {
+    msgbox(format("APPLEVINE\nCHECK YOUR APPLES FOR APPLIN!"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_GameCornerSign {
+    msgbox(format("Eelektrik Game Corner\pFun for all ages! :)"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_SierraPathSign {
+    msgbox(format("SIERRA PATH{UP_ARROW}\n"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_APPLEVINE_RockyPathSign {
+    msgbox(format("ROCKY PATH{RIGHT_ARROW}\n"), MSGBOX_SIGN)
+}
+
+
+
+
+
+
+
+
+
+
+// coco event; if you talk to her directly
+script ISLANDGAME_APPLEVINE_CocoInteract {
+    lock
+    faceplayer
+    if(!flag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)) {
+        msgbox(format("{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing you here!"))
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk1)
+        applymovement(COCO_OW_ID, Common_Movement_FaceAwayPlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk2)
+        giveitem(ITEM_ITEMFINDER)
+        setflag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk3)
+        setvar(VAR_TEMP_1, 1)
+        closemessage
+    }
+    else {
+        msgbox(format(
+            "{COLOR GREEN}Coco: {COLOR DARK_GRAY}It'll be worth checking your surroundings for hidden goodies!"
+        ))
+    }
+    release
+}
+
+// coco event; if you try to skip her
+script ISLANDGAME_APPLEVINE_CocoTrigger1 {
+        lock
+        playse(SE_PIN)
+        applymovement(COCO_OW_ID, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(format("{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing you here!"))
+        closemessage
+        applymovement(COCO_OW_ID, CocoWalkOver1)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk1)
+        applymovement(COCO_OW_ID, Common_Movement_FaceAwayPlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk2)
+        giveitem(ITEM_ITEMFINDER)
+        setflag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk3)
+        msgbox(format("Toodles!"))
+        closemessage
+        applymovement(COCO_OW_ID, CocoLeave)
+        waitmovement(0)
+        removeobject(COCO_OW_ID)
+        release
+        setvar(VAR_TEMP_1, 1)
+}
+script ISLANDGAME_APPLEVINE_CocoTrigger2 {
+        lock
+        playse(SE_PIN)
+        applymovement(COCO_OW_ID, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(format("{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing you here!"))
+        closemessage
+        applymovement(COCO_OW_ID, CocoWalkOver2)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk1)
+        applymovement(COCO_OW_ID, Common_Movement_FaceAwayPlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_FacePlayer)
+        waitmovement(0)
+        applymovement(COCO_OW_ID, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk2)
+        giveitem(ITEM_ITEMFINDER)
+        setflag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)
+        msgbox(ISLANDGAME_APPLEVINE_CocoTalk3)
+        msgbox(format("Toodles!"))
+        closemessage
+        applymovement(COCO_OW_ID, CocoLeave)
+        waitmovement(0)
+        removeobject(COCO_OW_ID)
+        release
+        setvar(VAR_TEMP_1, 1)
+}
+
+movement CocoWalkOver1 {
+    walk_right * 3
+}
+
+movement CocoWalkOver2 {
+    walk_up
+    walk_right * 3
+}
+
+movement CocoLeave {
+    walk_left * 4
+    walk_up * 7
+}
+
+text ISLANDGAME_APPLEVINE_CocoTalk1 {
+    format(
+        "My name is Coco. I'm a friend of Professor Palm's, and the creator of Marya's Pokémon Storage System!\p" 
+        "Hopefully it's been convenient and helpful to you in your journey. Let me know if you ever have any issues!\p"
+        "I actually wanted to ask a favor of you, if that's alright."
+    )
+}
+
+text ISLANDGAME_APPLEVINE_CocoTalk2 {
+    format(
+        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}This here is a prototype for a new dowsing machine I'm developing, and I figured you'd be the perfect one to help test it for me, since you're roaming the isles anyways!"
+    )
+}
+
+// reminder to update this if we end up reworking the itemfinder
+text ISLANDGAME_APPLEVINE_CocoTalk3 {
+    format(
+        "{COLOR GREEN}Coco: {COLOR DARK_GRAY}It's super easy to use! All you have to do is turn it on, and it'll tell you if there are any hidden items nearby.\p"
+        "It'll even tell you the direction and closeness of the item!\p"
+        "Just like my storage system, I've designed it with the intention to be as user-friendly as possible! Hee-hee.\p"
+        "But that's enough blabbering from me. You've got a Pokédex to fill, and a league to qualify for, as I've heard!\p"
+        "If you ever have the time to chat though, you can find me at my house here in Applevine."
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// npcs
+script ISLANDGAME_APPLEVINE_NPC1 {
+    lock
+    faceplayer
+    if(!flag(FLAG_APPLEVINE_SWEETHEART_GIFT)) {
+        msgbox(format(
+            "Welcome to Lumine Island, trainer! You must be famished from your travels.\p"
+            "Here, take one of these. It is a sample from our confectionery."
+            ))
+        giveitem(ITEM_SWEET_HEART)
+        setflag(FLAG_APPLEVINE_SWEETHEART_GIFT)
+    }
+    else {
+        msgbox(format(
+            "We are located south of here. Come and stop by if you like our Sweet Hearts!"
+        ))   
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hey...{PAUSE 30} if we catch them all...{PAUSE 60} does that mean...{PAUSE 60} we'll finally be free?"
+    ), MSGBOX_YESNO)
+
+    if(var(VAR_RESULT) == YES) {
+        msgbox(format("I see..."))
+        playmoncry(SPECIES_KYOGRE, CRY_MODE_NORMAL)
+        waitmoncry
+    }
+    else {
+        msgbox(format("Ah...{PAUSE 60} I apologize, then."))
+    }
+    closemessage
+    applymovement(VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC3 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I'm trying to teach my Zigzagoon how to surf on the water.\p"
+        "So far, it hasn't been very successful..."
+    ), MSGBOX_NPC)
+    applymovement(8, Common_Movement_FaceOriginalDirection)
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC4 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_ZIGZAGOON,CRY_MODE_NORMAL)
+    msgbox(format(
+        "Goon... {COLOR BLUE}(The ocean is just a really big bath tub, and I hate baths.)"
+    ))
+    applymovement(9, Common_Movement_FaceOriginalDirection)
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC5 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I love my big Marill beach ball!"
+    ), MSGBOX_NPC)
+    applymovement(7, Common_Movement_FaceOriginalDirection)
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC6 {
+    lock
+    msgbox(format(
+        "{COLOR RED}(It's a big beach ball of a Marill.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC7 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I hate swimming during Luvdisc mating season.\p"
+        "It just reminds me that I'm all alone on this crummy island...\p"
+        "I'll always have you though, my signed swimsuit photo of Ruka."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC8 {
+    lock
+    faceplayer
+    msgbox(format(
+        "The Island Guardian of Lumine is none other than Zapdos!\p"
+        "When it flaps its wings, it can generate enough electricity to power the entire island!\p"
+        "But it mostly stays cooped up in its nest atop Mount Therion."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC9 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Earlier today I was hungry, so I picked up a random apple on the ground and took a big bite out of it, not realizing there was a Pokémon living inside!"
+        "That entire event has traumatized me. I don't think I can ever eat fruit again."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC10 {
+    lock
+    faceplayer
+    msgbox(format(
+        "My boyfriend gave me a Luvdisc for our two-week anniversary! Isn't that just soooo romantic?\p"
+        "I love it soooo much, I'm gonna use it in my next Pokémon Contest in Aetheria!"
+    ))
+    closemessage
+    release
+}
+
+
+script ISLANDGAME_APPLEVINE_NPC11 {
+    lock
+    faceplayer
+    if (!flag(FLAG_APPLEVINE_COIN_CASE)) {
+        msgbox(format(
+            "Buzz off, kid!"
+        ))
+        goto(Applevine_CandyMan_End)
+    }
+    if (!flag(FLAG_TEMP_4)) {
+        msgbox(format(
+            "Hey, bud! {PAUSE 30}Over here!{PAUSE 30} Shhh! Be quiet! Stop attracting attention!\p"
+            "You're a Pokémon trainer, yeah?{PAUSE 30} I uh, bet you want some of those rare prizes from the Game Corner, don'cha?\p"
+            "Ho-ho! Well you're in luck pal, cause I've got stacks 'n stacks of coins!\p"
+            "They're all yours...{PAUSE 60} if you're willin' to help a brotha out...{PAUSE 60}\p"
+            "See uh, I'm in need of some “candy”, and I hear y'all trainers got tons of 'em.\p"
+            "So with that being said...{PAUSE 60} you got the stuffs?"
+        ), MSGBOX_YESNO)
+        setflag(FLAG_TEMP_4)
+    }
+    else {
+        msgbox(format(
+            "H-Hey there... you got the stuffs now?"
+        ), MSGBOX_YESNO)
+    }
+
+    
+    if(var(VAR_RESULT) == YES) {
+        goto(CandyMan_Exchange)
+    }
+    else {
+        msgbox(format(
+            "No? Go away then! Shoo! Shoo!"
+        ))
+        goto(Applevine_CandyMan_End)
+    }
+
+
+    CandyMan_Exchange:
+        showcoinsbox(18,1)
+
+        dynmultipush("I'm outie!", 0)
+        checkitem(ITEM_RARE_CANDY)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Rare Candy", 102)
+        }
+        checkitem(ITEM_EXP_CANDY_XS)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy XS", 103)
+        }
+        checkitem(ITEM_EXP_CANDY_S)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy S", 104)
+        }
+        checkitem(ITEM_EXP_CANDY_M)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy M", 105)
+        }
+        checkitem(ITEM_EXP_CANDY_L)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy L", 106)
+        }
+        checkitem(ITEM_EXP_CANDY_XL)
+        if (var(VAR_RESULT)) {
+            dynmultipush("Exp Candy XL", 107)
+        }
+        dynmultistack(0,0,TRUE,6,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        switch (var(VAR_RESULT)) {
+            case 102:
+                msgbox(format(
+                    "Oooo, is that rare candy I see? I'll give you 4,000 coins for it!"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(4000)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_RARE_CANDY)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 103:
+                msgbox(format(
+                    "Just an Exp Candy XS? Humph... 100 coins is all I'm givin' for it!"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(100)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_XS)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 104:
+                msgbox(format(
+                    "An Exp Candy S? How's 500 coins sound?"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(500)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_S)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 105:
+                msgbox(format(
+                    "An Exp Candy M? I'll give ya 1,000 coins for it."
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(1000)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_M)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 106:
+                msgbox(format(
+                    "Ho-ho, an Exp Candy L? I'll give you 2,000 coins for it!"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(2000)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_L)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            case 107:
+                msgbox(format(
+                    "An EXP Candy XL!? I'll give you a whopping 8,000 coins for that gem!!"
+                ), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == YES) {
+                    addcoins(8000)
+                    updatecoinsbox(18,1)
+                    removeitem(ITEM_EXP_CANDY_XL)
+                    playse(SE_SHOP)
+                    waitse
+                    msgbox(format(
+                        "Heheh... Thank ye kindly!"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+                else {
+                    msgbox(format(
+                        "Huh? You holdin' out on me, bud??"
+                    ))
+                    goto(CandyMan_Exchange)
+                }
+            default:
+                msgbox(format(
+                    "Huh? You holdin' out on me, bud??"
+                ))
+                hidecoinsbox(18,1)
+                goto(Applevine_CandyMan_End)
+        }
+
+    Applevine_CandyMan_End:
+        closemessage
+        release
+}
+
+
+script ISLANDGAME_APPLEVINE_NPC12 {
+    lock
+    faceplayer
+    msgbox(format(
+        "That gaudy Game Corner is a stain on our once beautiful town.\p"
+        "It's corrupting our youth, I tell you! Won't anyone think of the children!?\p"
+        "I hear it's being run by some hooligans too... Just what we need. More crime!\p"
+        "What's happened to this world I once knew and loved?"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC13 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MANECTRIC,CRY_MODE_NORMAL)
+    msgbox(format(
+        "Borf!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC14 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I became an officer to get in the line of action, but all the chief's been having me do is lame paperwork.\p"
+        "I should've just joined my friend in the merchant guild instead...\p"
+        "They get to travel all around the isles, meanwhile I'm stuck listening to a jaded old man complain about the Game Corner for three hours.\p"
+        "What's even the big deal? It's not like there's anything illegal going on inside or anything. They've broken no laws!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_NPC15 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Out of the three main islands, Lumine is the largest and most populated one!"
+    ))
+    closemessage
+    release
+}
+
+
+
+
+
+
+// applin handler
+script ISLANDGAME_APPLEVINE_AppleRoll1 {
+    random(10)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 1:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 2: 
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }    
+        case 3:
+        case 4:
+        case 5:
+        case 6: finditem(ITEM_TART_APPLE)
+        default: finditem(ITEM_SWEET_APPLE)
+    }
+    release
+}
+
+script ISLANDGAME_APPLEVINE_AppleRoll2 {
+    random(10)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 1:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 2: 
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }    
+        case 3:
+        case 4:
+        case 5:
+        case 6: finditem(ITEM_TART_APPLE)
+        default: finditem(ITEM_SWEET_APPLE)
+    }
+    release
+}
+
+script ISLANDGAME_APPLEVINE_AppleRoll3 {
+    random(10)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 1:
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }   
+        case 2: 
+            setflag(FLAG_SMART_WILD_AI)
+            setcwildbattle(0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0)
+            playmoncry(SPECIES_APPLIN, CRY_MODE_ENCOUNTER)
+            waitmoncry
+            setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+            dowildbattle
+            clearflag(FLAG_SMART_WILD_AI)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+                
+            switch(var(VAR_RESULT)) {
+                case B_OUTCOME_LOST:
+                case B_OUTCOME_RAN:
+                case B_OUTCOME_CAUGHT:
+                default:
+                    goto(Common_EventScript_RemoveStaticPokemon)
+            }    
+        case 3:
+        case 4:
+        case 5:
+        case 6: finditem(ITEM_TART_APPLE)
+        default: finditem(ITEM_SWEET_APPLE)
+    }
+    release
+}
