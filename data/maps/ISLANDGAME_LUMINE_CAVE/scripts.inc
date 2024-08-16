@@ -53,7 +53,7 @@ ISLANDGAME_LUMINE_CAVE_Shell_1:
 	return
 
 ISLANDGAME_LUMINE_CAVE_Shell_2:
-	giveitem ITEM_SHOAL_SALT
+	giveitem ITEM_SHOAL_SHELL
 	setmetatile 8, 16, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE
 	special DrawWholeMapView
 	setflag FLAG_HIDDEN_ITEM_LUMINE_CAVE_SHELL_1
