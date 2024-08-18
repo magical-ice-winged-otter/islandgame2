@@ -1,1 +1,175 @@
-mapscripts ISLANDGAME_LUMINE_CAVE_1F_2_MapScripts {}
+mapscripts ISLANDGAME_LUMINE_CAVE_1F_2_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if(flag(FLAG_DAILY_LUMINE_CAVE_SALT_2)) {
+            setmetatile(42, 5, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        }
+        if(flag(FLAG_DAILY_LUMINE_CAVE_SHELL_2)) {
+            setmetatile(14, 6, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        }
+    }
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Salt {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SALT_2)) {
+        giveitem(ITEM_SHOAL_SALT)
+        setmetatile(42, 5, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_DAILY_LUMINE_CAVE_SALT_2)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No more salt here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Shell {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SHELL_2)) {
+        giveitem(ITEM_SHOAL_SHELL)
+        setmetatile(14, 6, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_DAILY_LUMINE_CAVE_SHELL_2)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No shells here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+
+
+
+// npcs
+script ISLANDGAME_LUMINE_CAVE_1F_2_NPC1 {
+    lock
+    msgbox(format(
+        "Timmy! Take that rock out of your mouth this instant!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_NPC2 {
+    lock
+    msgbox(format(
+        "Bleugh! This doesn't taste like candy at all! Brett lied to me!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_NPC3 {
+    lock
+    msgbox(format(
+        "Hah! What an idiot! Kids will believe anything you tell them!\p"
+        "I bet he'd believe me if I told him this pile of sand is actually sugar..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr {
+    lock
+    faceplayer
+    playmoncry(SPECIES_GURDURR, CRY_MODE_NORMAL)
+    if(!flag(FLAG_LUMINE_CAVE_GURDURR_GIFT)) {
+        msgbox(format(
+            "Durr... {COLOR BLUE}(I found this while mining for ore. You can have it.)"
+        ))
+        giveitem(ITEM_FIGHTING_GEM)
+        setflag(FLAG_LUMINE_CAVE_GURDURR_GIFT)
+    }
+    else {
+        msgbox(format(
+            "Durr. {COLOR BLUE}(Chaperoning kids is tough work. I hope my trainer is being paid well.)"
+        ))
+    }
+    closemessage
+    release
+}
+
+
+
+
+
+
+// trainers
+script ISLANDGAME_LUMINE_CAVE_1F_2_Trainer1 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_3,
+        format(
+            "You thought it was a pile of Cave Salt, but it was me, Ninja Boy Dioh!"
+        ),
+        format(
+            "WRRRRRRRYYYYY"
+        ))
+    msgbox(format(
+        "I'm parodying my favorite animated show. It's fun to reference it."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Trainer2 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_4,
+        format(
+            "I'm on my way to see Serafina in Aetheria. I hear she's hosting a stream!"
+        ),
+        format(
+            "I guess I could just watch it on my\nphone..."
+        ))
+    msgbox(format(
+        "This cave is soooo long. I don't know why we can't just have a direct path from Applevine to Aetheria.\p"
+        "Seems like a major design flaw to me... but I'm no engineer."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Trainer3 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_5,
+        format(
+            "Contrary to popular opinion, I quite enjoy the abundance of Zubat in caves."
+        ),
+        format(
+            "I see you have a differing view..."
+        ))
+    msgbox(format(
+        "Zubat are quite the fascinating Pokémon, utilizing echolocation to navigate around rather than the traditional sense of sight and smell.\p"
+        "Interestingly enough, its evolutions of Golbat and Crobat do possess eyes, a physical feature that is noticeably absent from Zubat.\p"
+        "Pokémon evolution is quite strange, is it not?"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Trainer4 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_6,
+        format(
+            "Nwehehehehe! You stand no chance against my army of RARE Pokémon!"
+        ),
+        format(
+            "I-Inconceivable..."
+        ))
+    msgbox(format(
+        "Impossible, impossible, impossible!\p"
+        "How could I have lost with these premium Pokémon!?"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Trainer5 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_7,
+        format(
+            "-ding ding-\p"
+            "That means get out of my way!"
+        ),
+        format(
+            "-ding ding-\p"
+            "That means I surrender."
+        ))
+    msgbox(format(
+        "-ding ding-\p"
+        "That didn't mean anything. It's just fun to ring the bell.\p"
+        "-ding ding-"
+    ), MSGBOX_AUTOCLOSE)
+}

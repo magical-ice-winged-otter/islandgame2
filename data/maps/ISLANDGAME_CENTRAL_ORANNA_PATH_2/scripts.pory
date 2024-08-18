@@ -146,7 +146,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1 {
     lock
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
     msgbox(format(
-        "KYAAA! PRIM YOU'RE SO COOL!\p"
+        "KYAAA!{PAUSE 30} PRIM YOU'RE SO COOL!\p"
         "That girl... isn't she the newest member of STARLIGHT?\p"
         "Her Delcatty is so pretty... I wish I had one too!"
     ))

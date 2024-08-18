@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
-      "script": "NULL",
+      "script": "ISLANDGAME_LUMINE_CAVE_Trainer1",
       "flag": "0"
     },
     {
@@ -146,6 +146,13 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_1F_2",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_1F_2",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

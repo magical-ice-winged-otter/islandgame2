@@ -244,7 +244,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1::
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene2::
 	lock
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_0
+	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene2_Text_0
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerWalkOver2
 	waitmovement 0
@@ -438,7 +438,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Battle_Ranger_Text_2:
 	.string "another chance...$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_0:
-	.string "KYAAA! PRIM YOU'RE SO COOL!\p"
+	.string "KYAAA!{PAUSE 30} PRIM YOU'RE SO COOL!\p"
 	.string "That girl... isn't she the newest member\n"
 	.string "of STARLIGHT?\p"
 	.string "Her Delcatty is so pretty... I wish I had\n"
@@ -468,6 +468,13 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_5:
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1_Text_6:
 	.string "{COLOR DARK_GRAY}E-Eh? W-Wait for us, Prim! C'mon Jess,\n"
 	.string "let's ditch these goobers!$"
+
+ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene2_Text_0:
+	.string "KYAAA! PRIM YOU'RE SO COOL!\p"
+	.string "That girl... isn't she the newest member\n"
+	.string "of STARLIGHT?\p"
+	.string "Her Delcatty is so pretty... I wish I had\n"
+	.string "one too!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_PrimFightLoser_Text_0:
 	.string "N-No way... She beat me without taking\n"
