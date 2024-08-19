@@ -2439,8 +2439,8 @@ const struct Item gItemsInfo[] =
         .price = 20,
         .description = COMPOUND_STRING(
             "Salt obtained from\n"
-            "deep inside the\n"
-            "Lumine Cave."),
+            "inside the depths\n"
+            "of Lumine Cave."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -2453,8 +2453,8 @@ const struct Item gItemsInfo[] =
         .price = 20,
         .description = COMPOUND_STRING(
             "A seashell found\n"
-            "deep inside the\n"
-            "Lumine Cave."),
+            "inside the depths\n"
+            "of Lumine Cave."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

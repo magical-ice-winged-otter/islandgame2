@@ -1,1 +1,58 @@
-mapscripts ISLANDGAME_LUMINE_CAVE_B2F_MapScripts {}
+mapscripts ISLANDGAME_LUMINE_CAVE_B2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if(flag(FLAG_LUMINE_CAVE_GIGALITH_DEFEATED)) {
+            setflag(FLAG_TEMP_1F)
+        }
+    }
+    MAP_SCRIPT_ON_LOAD {
+        if(flag(FLAG_DAILY_LUMINE_CAVE_SHELL_3)) {
+            setmetatile(14, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        }
+    }
+}
+
+
+script ISLANDGAME_LUMINE_CAVE_B2F_Shell {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SHELL_3)) {
+        giveitem(ITEM_SHOAL_SHELL)
+        setmetatile(14, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_DAILY_LUMINE_CAVE_SHELL_3)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No shells here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+
+
+script ISLANDGAME_LUMINE_CAVE_B2F_GigalithInteract {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setcwildbattle(0, SPECIES_GIGALITH, 40, ITEM_CHESTO_BERRY, NATURE_ADAMANT, 1, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_ROCK_SLIDE, MOVE_BULLDOZE, MOVE_REST, MOVE_CURSE)
+    setwilddoublebattle(TRUE)
+    playmoncry(SPECIES_GIGALITH, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        default:
+            setflag(FLAG_LUMINE_CAVE_GIGALITH_DEFEATED)
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}

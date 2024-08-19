@@ -1,3 +1,35 @@
 ISLANDGAME_LUMINE_CAVE_B1F_1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_LUMINE_CAVE_B1F_1_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_RESUME, ISLANDGAME_LUMINE_CAVE_B1F_1_MapScripts_MAP_SCRIPT_ON_RESUME
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, ISLANDGAME_LUMINE_CAVE_B1F_1_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+ISLANDGAME_LUMINE_CAVE_B1F_1_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	copyvar VAR_ICE_STEP_COUNT, 1
+	return
+
+ISLANDGAME_LUMINE_CAVE_B1F_1_MapScripts_MAP_SCRIPT_ON_RESUME:
+	setstepcallback STEP_CB_CRACKED_FLOOR
+	return
+
+ISLANDGAME_LUMINE_CAVE_B1F_1_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_ICE_STEP_COUNT, 0, ISLANDGAME_LUMINE_CAVE_B1F_1_FallDownHole
+	.2byte 0
+
+
+Movement_PlayerFallLumine:
+	set_invisible
+	step_end
+
+ISLANDGAME_LUMINE_CAVE_B1F_1_FallDownHole:
+	lock
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerFallLumine
+	waitmovement 0
+	playse SE_FALL
+	delay 60
+	warphole MAP_ISLANDGAME_LUMINE_CAVE_B2F
+	waitstate
+	release
+	return
 

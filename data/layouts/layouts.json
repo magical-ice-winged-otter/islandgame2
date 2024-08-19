@@ -5690,6 +5690,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNMART/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNMART/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_LUMINE_CAVE_B3F",
+      "name": "ISLANDGAME_LUMINE_CAVE_B3F_Layout",
+      "width": 32,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B3F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B3F/map.bin"
     }
   ]
 }

@@ -61,7 +61,6 @@ ISLANDGAME_LUMINE_CAVE_1F_2_NPC1::
 
 ISLANDGAME_LUMINE_CAVE_1F_2_NPC2::
 	lock
-	faceplayer
 	msgbox ISLANDGAME_LUMINE_CAVE_1F_2_NPC2_Text_0
 	closemessage
 	release
@@ -71,6 +70,8 @@ ISLANDGAME_LUMINE_CAVE_1F_2_NPC2::
 ISLANDGAME_LUMINE_CAVE_1F_2_NPC3::
 	lock
 	msgbox ISLANDGAME_LUMINE_CAVE_1F_2_NPC3_Text_0
+	closemessage
+	release
 	return
 
 
@@ -78,15 +79,18 @@ ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr::
 	lock
 	faceplayer
 	playmoncry SPECIES_GURDURR, CRY_MODE_NORMAL
-	goto_if_unset FLAG_LUMINE_CAVE_GURDURR_GIFT, ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr_1
+	goto_if_unset FLAG_LUMINE_CAVE_GURDURR_GIFT, ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr_2
 	msgbox ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr_Text_1
+ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr_1:
+	closemessage
+	release
 	return
 
-ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr_1:
+ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr_2:
 	msgbox ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr_Text_0
 	giveitem ITEM_FIGHTING_GEM
 	setflag FLAG_LUMINE_CAVE_GURDURR_GIFT
-	return
+	goto ISLANDGAME_LUMINE_CAVE_1F_2_Gurdurr_1
 
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Trainer1::
@@ -160,8 +164,7 @@ ISLANDGAME_LUMINE_CAVE_1F_2_Trainer1_Text_2:
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Trainer2_Text_0:
 	.string "I'm on my way to see Serafina in\n"
-	.string "Aetheria. I hear she's hosting a\l"
-	.string "stream!$"
+	.string "Aetheria. She's hosting a stream!$"
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Trainer2_Text_1:
 	.string "I guess I could just watch it on my\n"

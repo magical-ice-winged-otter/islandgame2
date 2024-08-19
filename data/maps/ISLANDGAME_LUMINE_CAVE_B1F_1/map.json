@@ -15,9 +15,9 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 24,
-      "y": 12,
+      "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 17,
-      "y": 46,
+      "x": 23,
+      "y": 39,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -67,50 +67,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 17,
-      "y": 45,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
-      "x": 18,
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
+      "x": 7,
       "y": 46,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 20,
-      "y": 32,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 4,
-      "y": 44,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_RIGHT_UP_LEFT",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 7,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -120,7 +81,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNION_ROOM_NURSE",
-      "x": 10,
+      "x": 9,
       "y": 36,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -133,7 +94,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_113",
-      "x": 11,
+      "x": 10,
       "y": 36,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -156,6 +117,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 20,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "x": 29,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -172,6 +172,27 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_1F_2",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_B2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_1F_2",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 26,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_B2F",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

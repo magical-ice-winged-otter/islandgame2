@@ -23,9 +23,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "ITEM_HARD_STONE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_LUMINE_CAVE_HARD_STONE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -36,48 +36,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
-      "x": 16,
-      "y": 15,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 16,
-      "y": 19,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 22,
-      "y": 22,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_sight_or_berry_tree_id": "ITEM_ISLANDGAME_PICKAXE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_LUMINE_CAVE_PICKAXE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -89,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -102,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_E"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -115,8 +76,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_D"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -128,8 +89,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -141,8 +102,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_C"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -154,25 +115,45 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_A"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
-      "x": 27,
-      "y": 20,
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_526",
+      "x": 16,
+      "y": 24,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
-      "movement_range_x": 8,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ISLANDGAME_LUMINE_CAVE_B2F_GigalithInteract",
+      "flag": "FLAG_TEMP_1F"
     }
   ],
   "warp_events": [
-
+    {
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_B1F_1",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_B2F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_B1F_1",
+      "dest_warp_id": "4"
+    }
   ],
   "coord_events": [
 

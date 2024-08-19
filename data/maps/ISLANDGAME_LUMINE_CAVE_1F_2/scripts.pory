@@ -117,7 +117,7 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Trainer1 {
 script ISLANDGAME_LUMINE_CAVE_1F_2_Trainer2 {
     trainerbattle_single(TRAINER_LUMINE_CAVE_4,
         format(
-            "I'm on my way to see Serafina in Aetheria. I hear she's hosting a stream!"
+            "I'm on my way to see Serafina in Aetheria. She's hosting a stream!"
         ),
         format(
             "I guess I could just watch it on my\nphone..."

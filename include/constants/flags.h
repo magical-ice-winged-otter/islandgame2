@@ -1271,7 +1271,7 @@
 #define FLAG_ITEM_ROCKY_PATH_GREAT_BALL                             0x4C2
 #define FLAG_ITEM_LUMINE_CAVE_REVIVE                                0x4C3 
 #define FLAG_ITEM_LUMINE_CAVE_TM_ROCK_TOMB                          0x4C4
-#define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
+#define FLAG_ITEM_LUMINE_CAVE_HARD_STONE                            0x4C5 
 #define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
 #define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
 #define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
@@ -1584,8 +1584,8 @@
 #define FLAG_ROCKY_PATH_HAPPINY_GIFT                (SYSTEM_FLAGS + 0xA9) 
 #define FLAG_APPLEVINE_MELISSA_CALL                 (SYSTEM_FLAGS + 0xAA) 
 #define FLAG_LUMINE_CAVE_GURDURR_GIFT               (SYSTEM_FLAGS + 0xAB)
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
+#define FLAG_LUMINE_CAVE_PICKAXE                    (SYSTEM_FLAGS + 0xAC)
+#define FLAG_LUMINE_CAVE_GIGALITH_DEFEATED          (SYSTEM_FLAGS + 0xAD) 
 #define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
 #define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
 #define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
@@ -1646,7 +1646,7 @@
 #define FLAG_DAILY_LUMINE_CAVE_SHELL_1              (DAILY_FLAGS_START + 0x20)
 #define FLAG_DAILY_LUMINE_CAVE_SALT_2               (DAILY_FLAGS_START + 0x21)
 #define FLAG_DAILY_LUMINE_CAVE_SHELL_2              (DAILY_FLAGS_START + 0x22) 
-#define FLAG_UNUSED_0x943                           (DAILY_FLAGS_START + 0x23) // Unused Flag
+#define FLAG_DAILY_LUMINE_CAVE_SHELL_3              (DAILY_FLAGS_START + 0x23)
 #define FLAG_UNUSED_0x944                           (DAILY_FLAGS_START + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x945                           (DAILY_FLAGS_START + 0x25) // Unused Flag
 #define FLAG_UNUSED_0x946                           (DAILY_FLAGS_START + 0x26) // Unused Flag
