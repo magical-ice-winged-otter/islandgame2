@@ -91,6 +91,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract::
 	lock
 	goto_if_unset FLAG_TEMP_2, ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_2
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_1:
+	faceplayer
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_2
 	applymovement 3, Common_Movement_FaceUp
 	waitmovement 0
@@ -103,6 +104,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_2:
 	closemessage
 	playse SE_PIN
 	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
 	faceplayer
 	applymovement 3, Common_Movement_Delay48
 	waitmovement 0
