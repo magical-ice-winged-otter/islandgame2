@@ -79,3 +79,15 @@
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_LumineCave7),
     },
+
+    [TRAINER_LUMINE_CAVE_8] =
+    {
+        .trainerClass = TRAINER_CLASS_CLOWN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CLOWN,
+        .trainerName = _("Boppo"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_LumineCave8),
+    },

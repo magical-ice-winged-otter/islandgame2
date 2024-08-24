@@ -209,10 +209,10 @@
 #define TRAINER_OWEN                         TRAINER_LUMINE_CAVE_6
 #define TRAINER_LUMINE_CAVE_7                84
 #define TRAINER_WILTON_2                     TRAINER_LUMINE_CAVE_7
+#define TRAINER_LUMINE_CAVE_8                85
+#define TRAINER_WILTON_3                     TRAINER_LUMINE_CAVE_8
 
 
-
-#define TRAINER_WILTON_3                     85
 #define TRAINER_WILTON_4                     86
 #define TRAINER_WILTON_5                     87
 #define TRAINER_WARREN                       88

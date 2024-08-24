@@ -1337,3 +1337,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B3F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B4F/scripts.inc"

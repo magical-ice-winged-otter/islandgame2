@@ -217,6 +217,7 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter2::
 	waitmovement 0
 	applymovement 8, Common_Movement_Delay32
 	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_Text_0
 	giveitem ITEM_TOWN_MAP
 	setvar VAR_TEMP_2, 1

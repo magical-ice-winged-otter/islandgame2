@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_LUMINE_CAVE_1F_2",
   "name": "ISLANDGAME_LUMINE_CAVE_1F_2",
   "layout": "LAYOUT_ISLANDGAME_LUMINE_CAVE_1F_2",
-  "music": "MUS_RG_MT_MOON",
+  "music": "MUS_MT_PYRE",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -259,8 +259,8 @@
       "x": 27,
       "y": 15,
       "elevation": 0,
-      "item": "ITEM_FLOAT_STONE",
-      "flag": "FLAG_HIDDEN_ITEM_LUMINE_CAVE_FLOAT_STONE"
+      "item": "ITEM_SUPER_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_LUMINE_CAVE_SUPER_POTION"
     },
     {
       "type": "sign",

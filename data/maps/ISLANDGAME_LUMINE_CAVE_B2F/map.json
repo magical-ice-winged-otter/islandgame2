@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_LUMINE_CAVE_B2F",
   "name": "ISLANDGAME_LUMINE_CAVE_B2F",
   "layout": "LAYOUT_ISLANDGAME_LUMINE_CAVE_B2F",
-  "music": "MUS_RG_MT_MOON",
+  "music": "MUS_MT_PYRE",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -130,6 +130,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_LUMINE_CAVE_B2F_GigalithInteract",
       "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -144,7 +157,7 @@
       "x": 9,
       "y": 2,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_B2F",
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_B3F",
       "dest_warp_id": "0"
     },
     {
@@ -159,6 +172,21 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_LUMINE_CAVE_B2F_Shell"
+    },
+    {
+      "type": "hidden_item",
+      "x": 28,
+      "y": 18,
+      "elevation": 0,
+      "item": "ITEM_IRON",
+      "flag": "FLAG_HIDDEN_ITEM_LUMINE_CAVE_IRON"
+    }
   ]
 }

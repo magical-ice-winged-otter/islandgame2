@@ -93,3 +93,31 @@ static const struct TrainerMon sParty_LumineCave7[] = {
     .species = SPECIES_LIEPARD_MARYAN,
     },
 };
+
+
+static const struct TrainerMon sParty_LumineCave8[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 30,
+    .species = SPECIES_KADABRA,
+    .ability = ABILITY_INNER_FOCUS,
+    .heldItem = ITEM_TWISTED_SPOON,
+    .moves = {MOVE_PSYBEAM, MOVE_KINESIS, MOVE_DISABLE, MOVE_MIRACLE_EYE},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 31,
+    .species = SPECIES_MONFERNO,
+    .ability = ABILITY_BLAZE,
+    .heldItem = ITEM_FIRE_GEM,
+    .moves = {MOVE_MACH_PUNCH, MOVE_FLAME_WHEEL, MOVE_FAKE_OUT, MOVE_THUNDER_PUNCH},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 32,
+    .species = SPECIES_SEALEO,
+    .ability = ABILITY_THICK_FAT,
+    .heldItem = ITEM_CHESTO_BERRY,
+    .moves = {MOVE_REST, MOVE_BRINE, MOVE_AURORA_BEAM, MOVE_BODY_SLAM},
+    },
+};

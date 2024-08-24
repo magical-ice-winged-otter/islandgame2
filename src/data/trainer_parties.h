@@ -991,24 +991,6 @@ static const struct TrainerMon sParty_PromenadePath4[] = {
 
 
 
-static const struct TrainerMon sParty_Wilton3[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
-    .lvl = 29,
-    .species = SPECIES_MANECTRIC,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
-    .lvl = 29,
-    .species = SPECIES_WAILMER,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
-    .lvl = 29,
-    .species = SPECIES_MAKUHITA,
-    }
-};
-
 static const struct TrainerMon sParty_Wilton4[] = {
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),

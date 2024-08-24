@@ -1,1 +1,66 @@
-mapscripts ISLANDGAME_LUMINE_CAVE_B3F_MapScripts {}
+mapscripts ISLANDGAME_LUMINE_CAVE_B3F_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ICE_STEP_COUNT, 0: ISLANDGAME_LUMINE_CAVE_B3F_FallDownHole
+    ]
+    
+    MAP_SCRIPT_ON_TRANSITION {
+        copyvar(VAR_ICE_STEP_COUNT, 1)
+        if(flag(FLAG_LUMINE_CAVE_SABLEYE_DEFEATED)) {
+            setflag(FLAG_TEMP_1)
+        }
+    }
+
+    MAP_SCRIPT_ON_RESUME {
+        setstepcallback(STEP_CB_CRACKED_FLOOR)
+    }
+}
+
+script(local) ISLANDGAME_LUMINE_CAVE_B3F_FallDownHole {
+    lock
+    delay(20)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerFallLumine)
+    waitmovement(0)
+    playse(SE_FALL)
+    delay(60)
+    warphole(MAP_ISLANDGAME_LUMINE_CAVE_B4F)
+    waitstate
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B3F_SableyeInteract {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SABLEYE, 25, ITEM_SABLENITE, NUM_NATURES, 2,,,,,,, 31, 31, 31, 31, 31, 31, MOVE_RECOVER, MOVE_SUCKER_PUNCH, MOVE_SHADOW_SNEAK, MOVE_FLATTER)
+    playmoncry(SPECIES_SABLEYE, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_CAUGHT:
+            setflag(FLAG_LUMINE_CAVE_SABLEYE_DEFEATED)
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B3F_Trainer {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_8,
+        format(
+            "Boo!"
+        ),
+        format(
+            "Boooooo."
+        ))
+    msgbox(format(
+        "Did I scare you?"
+    ), MSGBOX_AUTOCLOSE)
+}

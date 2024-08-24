@@ -866,17 +866,6 @@ const struct Trainer gTrainers[] = {
     #include "trainers/lumine_cave.h"
 
 
-    [TRAINER_WILTON_3] =
-    {
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .trainerName = _("WILTON"),
-        .items = {ITEM_HYPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Wilton3),
-    },
 
     [TRAINER_WILTON_4] =
     {

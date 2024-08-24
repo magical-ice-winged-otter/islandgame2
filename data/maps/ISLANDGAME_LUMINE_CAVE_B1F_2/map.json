@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_LUMINE_CAVE_B1F_2",
   "name": "ISLANDGAME_LUMINE_CAVE_B1F_2",
   "layout": "LAYOUT_ISLANDGAME_LUMINE_CAVE_B1F_2",
-  "music": "MUS_RG_MT_MOON",
+  "music": "MUS_MT_PYRE",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

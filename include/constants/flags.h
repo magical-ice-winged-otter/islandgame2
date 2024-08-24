@@ -706,10 +706,10 @@
 #define FLAG_HIDDEN_ITEM_ROCKY_PATH_FLOAT_STONE     0x295 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_OVAL_STONE     0x296 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_XP_CANDY       0x297
-#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_FLOAT_STONE    0x298 
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_SUPER_POTION   0x298 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_IRON           0x299 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_NUGGET         0x29A
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_DUSK_BALL      0x29B
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag
 #define FLAG_UNUSED_0x29E  0x29E // Unused Flag
@@ -1272,7 +1272,7 @@
 #define FLAG_ITEM_LUMINE_CAVE_REVIVE                                0x4C3 
 #define FLAG_ITEM_LUMINE_CAVE_TM_ROCK_TOMB                          0x4C4
 #define FLAG_ITEM_LUMINE_CAVE_HARD_STONE                            0x4C5 
-#define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
+#define FLAG_ITEM_LUMINE_CAVE_MOON_STONE                            0x4C6
 #define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
 #define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
 #define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
@@ -1586,7 +1586,7 @@
 #define FLAG_LUMINE_CAVE_GURDURR_GIFT               (SYSTEM_FLAGS + 0xAB)
 #define FLAG_LUMINE_CAVE_PICKAXE                    (SYSTEM_FLAGS + 0xAC)
 #define FLAG_LUMINE_CAVE_GIGALITH_DEFEATED          (SYSTEM_FLAGS + 0xAD) 
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
+#define FLAG_LUMINE_CAVE_SABLEYE_DEFEATED           (SYSTEM_FLAGS + 0xAE) 
 #define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
 #define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
 #define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
