@@ -19,6 +19,7 @@
 #include "constants/field_tasks.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "constants/map_types.h"
 #include "constants/metatile_labels.h"
 #include "day_night.h"
 
@@ -888,27 +889,44 @@ enum {
 };
 #define tSlopeAnimTime(i) data[(i) * SLOPE_DATA_SIZE + SLOPE_DATA_START + SLOPE_TIME]
 
-static const u16 sMuddySlopeMetatiles[] = {
-    METATILE_islandgame_oranna_general_MuddySlope,
-    // METATILE_General_MuddySlope_Frame3,
-    // METATILE_General_MuddySlope_Frame2,
-    // METATILE_General_MuddySlope_Frame1
+static const u16 sgeneral_MuddySlopeMetatiles[] = {
+    METATILE_General_MuddySlope_Frame0,
+    METATILE_General_MuddySlope_Frame3,
+    METATILE_General_MuddySlope_Frame2,
+    METATILE_General_MuddySlope_Frame1
+};
+
+static const u16 soranna_general_MuddySlopeMetatiles[] = {
+    METATILE_islandgame_oranna_general_MuddySlope
 };
 
 #define SLOPE_ANIM_TIME 32
-#define SLOPE_ANIM_STEP_TIME (SLOPE_ANIM_TIME / (int)ARRAY_COUNT(sMuddySlopeMetatiles))
+//#define SLOPE_ANIM_STEP_TIME (SLOPE_ANIM_TIME / (int)ARRAY_COUNT(sMuddySlopeMetatiles))
 
 static void SetMuddySlopeMetatile(s16 *data, s16 x, s16 y)
 {
     u16 metatileId;
+    u16 metatile_muddyslope;
+    u8 slope_anim_step_time;
+    const u16 *sMuddySlopeMetatiles;
+
+    if (gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND) { // is in primary tileset, only a clever solution, therefore the solution sucks
+        metatile_muddyslope = METATILE_General_MuddySlope_Frame0;
+        slope_anim_step_time = SLOPE_ANIM_TIME / (int)ARRAY_COUNT(sgeneral_MuddySlopeMetatiles);
+        sMuddySlopeMetatiles = sgeneral_MuddySlopeMetatiles;
+    } else /* if (gMapHeader.mapLayout->primaryTileset == gTileset_IslandgameGeneral) */ {
+        metatile_muddyslope = METATILE_islandgame_oranna_general_MuddySlope;
+        slope_anim_step_time = SLOPE_ANIM_TIME / (int)ARRAY_COUNT(soranna_general_MuddySlopeMetatiles);
+        sMuddySlopeMetatiles = soranna_general_MuddySlopeMetatiles;
+    }
     if ((--data[SLOPE_TIME]) == 0)
-        metatileId = METATILE_islandgame_oranna_general_MuddySlope;
+        metatileId = metatile_muddyslope;
     else
-        metatileId = sMuddySlopeMetatiles[data[SLOPE_TIME] / SLOPE_ANIM_STEP_TIME];
+        metatileId = sMuddySlopeMetatiles[data[SLOPE_TIME] / slope_anim_step_time];
 
     MapGridSetMetatileIdAt(x, y, metatileId);
     CurrentMapDrawMetatileAt(x, y);
-    MapGridSetMetatileIdAt(x, y, METATILE_islandgame_oranna_general_MuddySlope);
+    MapGridSetMetatileIdAt(x, y, metatile_muddyslope);
 }
 
 static void Task_MuddySlope(u8 taskId)
