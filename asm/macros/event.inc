@@ -1890,10 +1890,14 @@
 	ballfollowingmon
 	.ifnb \script
 		loadword 0, \script
+		.set setScript, TRUE
+	.else
+		.set setScript, FALSE
 	.endif
     .byte 0xe5
     .byte \localId
     .2byte \flags
+	.byte setScript
 	updatefollowingmon
     .endm
     
