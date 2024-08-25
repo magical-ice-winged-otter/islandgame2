@@ -73,7 +73,7 @@ static void TurnNPCIntoFollower(u8 localId, u16 followerFlags, u8 setScript);
 static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
 {
     //FORMAT:
-    //{WALKING/RUNNING SPRITE ID, MACH BIKE SPRITE ID, ACRO BIKE SPRITE ID, SURFING SPRITE ID},
+    //{WALKING/RUNNING SPRITE ID, MACH BIKE SPRITE ID, ACRO BIKE SPRITE ID, SURFING SPRITE ID, DIVE SPRITE ID},
     [0] = 
     {
         .normalId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL,
