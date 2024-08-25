@@ -910,17 +910,14 @@ static void SetMuddySlopeMetatile(s16 *data, s16 x, s16 y)
     u8 slope_anim_step_time;
     const u16 *sMuddySlopeMetatiles;
 
-    MgbaPrintf(MGBA_LOG_DEBUG, "CAVE CHECK");
     if (gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND) { // is in primary tileset, only a clever solution, therefore the solution sucks
         metatile_muddyslope = METATILE_General_MuddySlope_Frame0;
         slope_anim_step_time = SLOPE_ANIM_TIME / (int)ARRAY_COUNT(sgeneral_MuddySlopeMetatiles);
         sMuddySlopeMetatiles = sgeneral_MuddySlopeMetatiles;
-        MgbaPrintf(MGBA_LOG_DEBUG, "UNDERGROUND PASS");
     } else /* if (gMapHeader.mapLayout->primaryTileset == gTileset_IslandgameGeneral) */ {
         metatile_muddyslope = METATILE_islandgame_oranna_general_MuddySlope;
         slope_anim_step_time = SLOPE_ANIM_TIME / (int)ARRAY_COUNT(soranna_general_MuddySlopeMetatiles);
         sMuddySlopeMetatiles = soranna_general_MuddySlopeMetatiles;
-        MgbaPrintf(MGBA_LOG_DEBUG, "NOPRMAL PASS");
     }
     if ((--data[SLOPE_TIME]) == 0)
         metatileId = metatile_muddyslope;
