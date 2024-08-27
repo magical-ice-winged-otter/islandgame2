@@ -121,3 +121,80 @@ static const struct TrainerMon sParty_LumineCave8[] = {
     .moves = {MOVE_REST, MOVE_BRINE, MOVE_AURORA_BEAM, MOVE_BODY_SLAM},
     },
 };
+
+
+static const struct TrainerMon sParty_LumineCave9[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 30,
+    .species = SPECIES_GURDURR,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 31,
+    .species = SPECIES_AMPHAROS,
+    },
+};
+
+static const struct TrainerMon sParty_LumineCave10[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 30,
+    .species = SPECIES_MANECTRIC,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 30,
+    .species = SPECIES_MARSHTOMP,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 30,
+    .species = SPECIES_BRELOOM,
+    },
+};
+
+static const struct TrainerMon sParty_LumineCave11[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 30,
+    .species = SPECIES_BINACLE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 31,
+    .species = SPECIES_GASTRODON,
+    },
+};
+
+static const struct TrainerMon sParty_LumineCave12[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 32,
+    .species = SPECIES_VESPIQUEN_MARYAN,
+    .ability = ABILITY_MAGIC_GUARD,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .moves = {MOVE_ATTACK_ORDER, MOVE_HEAL_ORDER, MOVE_PSYCHO_CUT, MOVE_DEFEND_ORDER}
+    }
+};
+
+static const struct TrainerMon sParty_LumineCave13[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 32,
+    .species = SPECIES_AXEW,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 32,
+    .species = SPECIES_DREEPY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 33,
+    .species = SPECIES_DIPPLIN,
+    },
+};
+
+
+

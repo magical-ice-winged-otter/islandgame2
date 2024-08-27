@@ -211,13 +211,19 @@
 #define TRAINER_WILTON_2                     TRAINER_LUMINE_CAVE_7
 #define TRAINER_LUMINE_CAVE_8                85
 #define TRAINER_WILTON_3                     TRAINER_LUMINE_CAVE_8
+#define TRAINER_LUMINE_CAVE_9                86
+#define TRAINER_WILTON_4                     TRAINER_LUMINE_CAVE_9
+#define TRAINER_LUMINE_CAVE_10               87
+#define TRAINER_WILTON_5                     TRAINER_LUMINE_CAVE_10
+#define TRAINER_LUMINE_CAVE_11               88
+#define TRAINER_WARREN                       TRAINER_LUMINE_CAVE_11
+#define TRAINER_LUMINE_CAVE_12               89
+#define TRAINER_MARY                         TRAINER_LUMINE_CAVE_12
+#define TRAINER_LUMINE_CAVE_13               90
+#define TRAINER_ALEXIA                       TRAINER_LUMINE_CAVE_13
 
 
-#define TRAINER_WILTON_4                     86
-#define TRAINER_WILTON_5                     87
-#define TRAINER_WARREN                       88
-#define TRAINER_MARY                         89
-#define TRAINER_ALEXIA                       90
+
 #define TRAINER_JODY                         91
 #define TRAINER_WENDY                        92
 #define TRAINER_KEIRA                        93

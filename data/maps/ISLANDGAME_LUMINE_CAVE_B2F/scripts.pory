@@ -8,6 +8,9 @@ mapscripts ISLANDGAME_LUMINE_CAVE_B2F_MapScripts {
         if(flag(FLAG_DAILY_LUMINE_CAVE_SHELL_3)) {
             setmetatile(14, 2, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
         }
+        if(flag(FLAG_DAILY_LUMINE_CAVE_SALT_3)) {
+            setmetatile(25, 24, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        }
     }
 }
 
@@ -23,6 +26,23 @@ script ISLANDGAME_LUMINE_CAVE_B2F_Shell {
     else {
         msgbox(format(
             "{COLOR RED}(No shells here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B2F_Salt {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SALT_3)) {
+        giveitem(ITEM_SHOAL_SALT)
+        setmetatile(25, 24, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_DAILY_LUMINE_CAVE_SALT_3)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No more salt here.)"
         ))
         closemessage
     }
