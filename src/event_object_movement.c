@@ -198,9 +198,7 @@ static u8 DoJumpSpriteMovement(struct Sprite *);
 static u8 DoJumpSpecialSpriteMovement(struct Sprite *);
 static void CreateLevitateMovementTask(struct ObjectEvent *);
 static void DestroyLevitateMovementTask(u8);
-static bool8 GetFollowerInfo(u16 *species, u8 *form, u8 *shiny);
 static u8 LoadDynamicFollowerPalette(u16 species, u8 form, bool32 shiny);
-static const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, u8 form);
 static bool8 NpcTakeStep(struct Sprite *);
 static bool8 IsElevationMismatchAt(u8, s16, s16);
 static bool8 AreElevationsCompatible(u8, u8);
@@ -1885,7 +1883,7 @@ struct ObjectEvent *GetFollowerObject(void)
 }
 
 // Return graphicsInfo for a pokemon species & form
-static const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, u8 form)
+const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, u8 form)
 {
     const struct ObjectEventGraphicsInfo *graphicsInfo = NULL;
 #if OW_POKEMON_OBJECT_EVENTS
@@ -2070,7 +2068,7 @@ static bool8 GetMonInfo(struct Pokemon *mon, u16 *species, u8 *form, u8 *shiny)
 }
 
 // Retrieve graphic information about the following pokemon, if any
-static bool8 GetFollowerInfo(u16 *species, u8 *form, u8 *shiny)
+bool8 GetFollowerInfo(u16 *species, u8 *form, u8 *shiny)
 {
     return GetMonInfo(GetFirstLiveMon(), species, form, shiny);
 }
@@ -2096,6 +2094,9 @@ void UpdateFollowingPokemon(void)
      || FlagGet(FLAG_TEMP_HIDE_FOLLOWER)
      || gSaveBlock2Ptr->follower.inProgress)
     {
+        if (gSaveBlock2Ptr->follower.inProgress && (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, form)->oam->size > ST_OAM_SIZE_2))
+            return;
+            
         RemoveFollowingPokemon();
         return;
     }
