@@ -469,7 +469,9 @@ static void DoStandardWildBattle(bool32 isDouble)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = 0;
-    if (gSaveBlock2Ptr->follower.battlePartner && (FOLLOWER_FLAG_PARTNER_WILD_BATTLES != 0) && FlagGet(FOLLOWER_FLAG_PARTNER_WILD_BATTLES)) {
+    if (gSaveBlock2Ptr->follower.battlePartner && F_FLAG_PARTNER_WILD_BATTLES != 0
+     && (FlagGet(F_FLAG_PARTNER_WILD_BATTLES) || F_FLAG_PARTNER_WILD_BATTLES == ALWAYS))
+    {
         gBattleTypeFlags |= BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_DOUBLE;
         SavePlayerParty();
         gPartnerTrainerId = TRAINER_PARTNER(gSaveBlock2Ptr->follower.battlePartner);
@@ -549,6 +551,7 @@ static void DoBattlePikeWildBattle(void)
 static void DoTrainerBattle(void)
 {
     if (gSaveBlock2Ptr->follower.battlePartner) {
+        SavePlayerParty();
         gPartnerTrainerId = TRAINER_PARTNER(gSaveBlock2Ptr->follower.battlePartner);
         FillPartnerParty(gPartnerTrainerId);
     }
@@ -726,8 +729,11 @@ static void CB2_EndWildBattle(void)
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
     ResetOamRange(0, 128);
     
-    if (gSaveBlock2Ptr->follower.battlePartner && (FOLLOWER_FLAG_PARTNER_WILD_BATTLES != 0) && FlagGet(FOLLOWER_FLAG_PARTNER_WILD_BATTLES))
+    if (gSaveBlock2Ptr->follower.battlePartner && F_FLAG_PARTNER_WILD_BATTLES != 0
+     && (FlagGet(F_FLAG_PARTNER_WILD_BATTLES) || F_FLAG_PARTNER_WILD_BATTLES == ALWAYS))
+    {
         LoadLastThreeMons();
+    }
 
     if (IsPlayerDefeated(gBattleOutcome) == TRUE && !InBattlePyramid() && !InBattlePike())
     {
@@ -1472,6 +1478,9 @@ static void HandleBattleVariantEndParty(void)
 static void CB2_EndTrainerBattle(void)
 {
     HandleBattleVariantEndParty();
+
+    if (gSaveBlock2Ptr->follower.battlePartner)
+        LoadLastThreeMons();
 
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
     {
