@@ -517,6 +517,7 @@ struct Follower
     /*0x12*/ u16 graphicsId;
     /*0x14*/ u16 flags;
     /*0x15*/ u8 locked;
+    /*0x16*/ u8 battlePartner; // If you have more than 255 total battle partners defined, change this to a u16
 }; /* size = 0x18 */
 
 struct SaveBlock2

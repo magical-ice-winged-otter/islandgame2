@@ -116,6 +116,8 @@ EventScript_ShowTrainerIntroMsg::
 	goto EventScript_DoTrainerBattle
 
 EventScript_DoTrainerBattle::
+	specialvar VAR_RESULT, GetFollowerPartner
+	call_if_ne VAR_RESULT, 0, EventScript_SavePlayerParty
 	dotrainerbattle
 	@ Below battle mode check only needed in FRLG
 	specialvar VAR_RESULT, GetTrainerBattleMode
@@ -125,9 +127,19 @@ EventScript_DoTrainerBattle::
 	goto_if_eq VAR_RESULT, TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE, EventScript_EndTrainerBattle
 	goto_if_eq VAR_RESULT, TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC, EventScript_EndTrainerBattle
 EventScript_EndTrainerBattle::
+	specialvar VAR_RESULT, GetFollowerPartner
+	call_if_ne VAR_RESULT, 0, EventScript_LoadLastThreeMons
 	gotobeatenscript
 	releaseall
 	end
+
+EventScript_SavePlayerParty::
+	special SavePlayerParty
+	return
+
+EventScript_LoadLastThreeMons::
+	special LoadLastThreeMons
+	return
 
 Std_MsgboxAutoclose::
 	message NULL

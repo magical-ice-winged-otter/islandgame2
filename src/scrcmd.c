@@ -2481,13 +2481,16 @@ bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
     u8 localId = ScriptReadByte(ctx);
     u16 flags = ScriptReadHalfword(ctx);
     u8 setScript = ScriptReadByte(ctx);
+    u16 battlePartner = ScriptReadHalfword(ctx);
 
+    gSaveBlock2Ptr->follower.battlePartner = battlePartner;
     SetUpFollowerSprite(localId, flags, setScript);
     return FALSE;
 }
 
 bool8 ScrCmd_destroyfollower(struct ScriptContext *ctx)
 {
+    gSaveBlock2Ptr->follower.battlePartner = 0;
     DestroyFollower();
     if (OW_FOLLOWERS_ENABLED == TRUE) {
         UpdateFollowingPokemon();

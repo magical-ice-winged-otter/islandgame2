@@ -23,6 +23,7 @@
 #include "dma3.h"
 #include "event_data.h"
 #include "evolution_scene.h"
+#include "follow_me.h"
 #include "graphics.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
@@ -441,7 +442,12 @@ void CB2_InitBattle(void)
     AllocateMonSpritesGfx();
     RecordedBattle_ClearFrontierPassFlag();
 
-    if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
+    if (gSaveBlock2Ptr->follower.battlePartner && FOLLOWER_PARTY_PREVIEW == FALSE)
+    {
+        CB2_InitBattleInternal();
+        gBattleCommunication[MULTIUSE_STATE] = 0;
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_MULTI && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
         if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         {
