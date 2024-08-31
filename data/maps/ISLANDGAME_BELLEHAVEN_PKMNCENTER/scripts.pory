@@ -1,1 +1,13 @@
 mapscripts ISLANDGAME_BELLEHAVEN_PKMNCENTER_MapScripts {}
+
+
+script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "In the another region, I've heard a bird that looked exactly like Zapdos, except it was a fighting type instead.\p"
+         "I wonder if you would ever get to see it?"
+        )
+    )
+    release
+}

@@ -1,1 +1,10 @@
 mapscripts ISLANDGAME_BELLEHAVEN_MapScripts {}
+
+script ISLANDGAME_BELLEHAVEN_Interact_Sign {
+    msgbox(format("Bellehaven"), MSGBOX_SIGN)
+}
+script ISLANDGAME_BELLEHAVEN_MapScripts_NPC_1 {
+    lock
+    msgbox("This is a quiet town. Mostly, everyone stays indoors.")
+    release
+}
