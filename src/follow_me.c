@@ -49,7 +49,6 @@ struct FollowerSpriteGraphics
 //EWRAM_DATA struct Follower gSaveBlock2Ptr->follower = {0};
 
 // Function Declarations
-static u8 GetFollowerMapObjId(void);
 static u16 GetFollowerSprite(void);
 static void TryUpdateFollowerSpriteUnderwater(void);
 static void Task_ReallowPlayerMovement(u8 taskId);
@@ -158,7 +157,7 @@ void FollowMe_TryRemoveFollowerOnWhiteOut(void)
     }
 }
 
-static u8 GetFollowerMapObjId(void)
+u8 GetFollowerMapObjId(void)
 {
     return gSaveBlock2Ptr->follower.objId;
 }
@@ -551,18 +550,6 @@ static u8 ReturnFollowerDelayedState(u8 direction)
     u8 newState = gSaveBlock2Ptr->follower.delayedState;
     gSaveBlock2Ptr->follower.delayedState = 0;
 
-    /*
-    #ifdef MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_UP_LEFT
-    switch (newState) 
-    {
-    case MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_UP_LEFT ... MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_DOWN_RIGHT:
-    case MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_UP_LEFT_RUNNING ... MOVEMENT_ACTION_WALK_STAIRS_DIAGONAL_DOWN_RIGHT_RUNNING:
-    case MOVEMENT_ACTION_RIDE_WATER_CURRENT_UP_LEFT ... MOVEMENT_ACTION_RIDE_WATER_CURRENT_DOWN_RIGHT:
-        return newState; //Each its own movement, so don't modify direction
-    }
-    #endif
-    */
-
     return newState + direction;
 }
 
@@ -752,79 +739,6 @@ static void Task_FinishSurfDismount(u8 taskId)
     DestroyTask(taskId);
     gPlayerAvatar.preventStep = FALSE;
 }
-
-/* Consolidated into field_screen_effect.c
-void Task_DoDoorWarp(u8 taskId)
-{
-    struct Task *task = &gTasks[taskId];
-    s16 *x = &task->data[2];
-    s16 *y = &task->data[3];
-    u8 playerObjId = gPlayerAvatar.objectEventId;
-    u8 followerObjId = GetFollowerObjectId();
-    switch (task->data[0])
-    {
-    case 0:
-        if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH))
-            SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Stop running
-        gSaveBlock2Ptr->follower.comeOutDoorStairs = 0; //Just in case came out and when right back in
-        FreezeObjectEvents();
-        PlayerGetDestCoords(x, y);
-        PlaySE(GetDoorSoundEffect(*x, *y - 1));
-        task->data[1] = FieldAnimateDoorOpen(*x, *y - 1);
-        task->data[0] = 1;
-        break;
-    case 1:
-        if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
-        {
-            ObjectEventClearHeldMovementIfActive(&gObjectEvents[playerObjId]);
-            ObjectEventSetHeldMovement(&gObjectEvents[playerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
-            if (gSaveBlock2Ptr->follower.inProgress && !gObjectEvents[followerObjId].invisible)
-            {
-                u8 newState = DetermineFollowerState(&gObjectEvents[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP,
-                                                    DetermineFollowerDirection(&gObjectEvents[playerObjId], &gObjectEvents[followerObjId]));
-                ObjectEventClearHeldMovementIfActive(&gObjectEvents[followerObjId]);
-                ObjectEventSetHeldMovement(&gObjectEvents[followerObjId], newState);
-            }
-            task->data[0] = 2;
-        }
-        break;
-    case 2:
-        if (IsPlayerStandingStill())
-        {
-            if (!gSaveBlock2Ptr->follower.inProgress || gObjectEvents[followerObjId].invisible) //Don't close door on follower
-                task->data[1] = FieldAnimateDoorClose(*x, *y - 1);
-            ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjId]);
-            SetPlayerVisibility(0);
-            task->data[0] = 3;
-        }
-        break;
-    case 3:
-        if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
-        {
-            task->data[0] = 4;
-        }
-        break;
-    case 4:
-        if (gSaveBlock2Ptr->follower.inProgress)
-        {
-            ObjectEventClearHeldMovementIfActive(&gObjectEvents[followerObjId]);
-            ObjectEventSetHeldMovement(&gObjectEvents[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
-        }
-        TryFadeOutOldMapMusic();
-        WarpFadeOutScreen();
-        PlayRainStoppingSoundEffect();
-        task->data[0] = 0;
-        task->func = Task_WarpAndLoadMap;
-        break;
-    case 5:
-        TryFadeOutOldMapMusic();
-        PlayRainStoppingSoundEffect();
-        task->data[0] = 0;
-        task->func = Task_WarpAndLoadMap;
-        break;
-    }
-}
-*/
 
 static u8 GetPlayerFaceToDoorDirection(struct ObjectEvent* player, struct ObjectEvent* follower)
 {
@@ -1382,6 +1296,7 @@ void DestroyFollower(void)
 {
     if (gSaveBlock2Ptr->follower.inProgress)
     {
+        gSaveBlock2Ptr->follower.warpEnd = 0; // In case a follower warp had not yet finished.
         RemoveObjectEvent(&gObjectEvents[gSaveBlock2Ptr->follower.objId]);
         FlagSet(gSaveBlock2Ptr->follower.flag);
         gSaveBlock2Ptr->follower.inProgress = FALSE;
