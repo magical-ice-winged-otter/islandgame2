@@ -1477,6 +1477,7 @@ static void Task_FlyIntoMap(u8 taskId)
         if (gSaveBlock2Ptr->follower.inProgress && ObjectEventClearHeldMovementIfFinished(follower))
         {
             ObjectEventTurn(follower, DIR_NORTH); // Follower faces the player
+            gSaveBlock2Ptr->follower.warpEnd = 0;
             task->data[0]++;
         }
         else if (!gSaveBlock2Ptr->follower.inProgress)
@@ -2733,6 +2734,7 @@ static void TeleportWarpInFieldEffect_SpinGround(struct Task *task)
         {
             ObjectEventTurn(player, DIR_SOUTH); // Player faces the follower
             ObjectEventTurn(follower, DIR_NORTH); // Follower faces the player
+            gSaveBlock2Ptr->follower.warpEnd = 0;
             task->data[3]++;
         }
         else if (!gSaveBlock2Ptr->follower.inProgress)
