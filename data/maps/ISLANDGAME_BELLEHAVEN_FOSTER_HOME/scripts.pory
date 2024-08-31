@@ -12,3 +12,18 @@ script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_NPC_1 {
     msgbox("I like taking care of this CUBONE. It sits still and never causes a mess, mostly because.... nevermind.")
     release
 }
+
+script ISLANDGAME_BELLEHAVEN_MapScripts_Spoink {
+    playmoncry(SPECIES_SPOINK, CRY_MODE_NORMAL)
+    waitmoncry
+}
+
+script ISLANDGAME_BELLEHAVEN_MapScripts_Cubone {
+    playmoncry(SPECIES_CUBONE, CRY_MODE_NORMAL)
+    waitmoncry
+}
+
+script ISLANDGAME_BELLEHAVEN_MapScripts_Phanpy {
+    playmoncry(SPECIES_PHANPY, CRY_MODE_NORMAL)
+    waitmoncry
+}

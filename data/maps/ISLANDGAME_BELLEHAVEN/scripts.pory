@@ -6,5 +6,5 @@ script ISLANDGAME_BELLEHAVEN_Interact_Sign {
 script ISLANDGAME_BELLEHAVEN_MapScripts_NPC_1 {
     lock
     msgbox("This is a quiet town. Mostly, everyone stays indoors.")
-    lock
+    release
 }
