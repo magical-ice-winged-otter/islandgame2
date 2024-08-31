@@ -36,7 +36,7 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive);
 void FollowMe_Ledges(struct ObjectEvent* npc, struct Sprite* obj, u16* ledgeFramesTbl);
 bool8 FollowMe_IsCollisionExempt(struct ObjectEvent* obstacle, struct ObjectEvent* collider);
 void FollowMe_FollowerToWater(void);
-void FollowMe_BindToSurbBlobOnReloadScreen(void);
+void FollowMe_BindToSurfBlobOnReloadScreen(void);
 void PrepareFollowerDismountSurf(void);
 void StairsMoveFollower(void);
 void FollowMe_HandleBike(void);

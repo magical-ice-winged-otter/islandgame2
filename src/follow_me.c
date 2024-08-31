@@ -81,6 +81,14 @@ static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
         .surfId = OBJ_EVENT_GFX_RIVAL_MAY_SURFING,
         .underwaterId = OBJ_EVENT_GFX_MAY_UNDERWATER,
     },
+    [1] = 
+    {
+        .normalId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
+        .machBikeId = OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE,
+        .acroBikeId = OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE,
+        .surfId = OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING,
+        .underwaterId = OBJ_EVENT_GFX_BRENDAN_UNDERWATER,
+    },
 
 };
 
@@ -123,16 +131,6 @@ void HideFollower(void)
 
     gObjectEvents[GetFollowerMapObjId()].invisible = TRUE;
 }
-
-/*
-void IsFollowerStoppingRockClimb(void)
-{
-    gSpecialVar_Result = FALSE;
-    if (!gSaveBlock2Ptr->follower.inProgress)
-        return;
-    gSpecialVar_Result = (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CAN_ROCK_CLIMB) == 0;
-}
-*/
 
 void FollowMe_SetIndicatorToComeOutDoor(void)
 {
@@ -498,10 +496,6 @@ static bool8 IsStateMovement(u8 state)
     case MOVEMENT_ACTION_FACE_UP:
     case MOVEMENT_ACTION_FACE_LEFT:
     case MOVEMENT_ACTION_FACE_RIGHT:
-    //case MOVEMENT_ACTION_FACE_DOWN_FAST:
-    //case MOVEMENT_ACTION_FACE_UP_FAST:
-    //case MOVEMENT_ACTION_FACE_LEFT_FAST:
-    //case MOVEMENT_ACTION_FACE_RIGHT_FAST:
     case MOVEMENT_ACTION_DELAY_1:
     case MOVEMENT_ACTION_DELAY_2:
     case MOVEMENT_ACTION_DELAY_4:
@@ -516,9 +510,6 @@ static bool8 IsStateMovement(u8 state)
     case MOVEMENT_ACTION_EMOTE_EXCLAMATION_MARK:
     case MOVEMENT_ACTION_EMOTE_QUESTION_MARK:
     case MOVEMENT_ACTION_EMOTE_HEART:
-    //case MOVEMENT_ACTION_EMOTE_CROSS:
-    //case MOVEMENT_ACTION_EMOTE_DOUBLE_EXCLAMATION_MARK:
-    //case MOVEMENT_ACTION_EMOTE_HAPPY:
     case MOVEMENT_ACTION_WALK_IN_PLACE_NORMAL_DOWN:
     case MOVEMENT_ACTION_WALK_IN_PLACE_NORMAL_UP:
     case MOVEMENT_ACTION_WALK_IN_PLACE_NORMAL_LEFT:
@@ -555,8 +546,6 @@ static u8 ReturnFollowerDelayedState(u8 direction)
 
 #define LEDGE_FRAMES_MULTIPLIER 2
 
-//extern void (**stepspeeds[5])(struct Sprite*, u8);
-//extern const u16 stepspeed_seq_length[5];
 void FollowMe_Ledges(struct ObjectEvent* npc, struct Sprite* sprite, u16* ledgeFramesTbl)
 {
     u8 speed;
@@ -607,7 +596,7 @@ void FollowMe_FollowerToWater(void)
     gSaveBlock2Ptr->follower.createSurfBlob = 1;
 }
 
-void FollowMe_BindToSurbBlobOnReloadScreen(void)
+void FollowMe_BindToSurfBlobOnReloadScreen(void)
 {
     struct ObjectEvent* follower;
 
@@ -1043,7 +1032,7 @@ void SetFollowerSprite(u8 spriteIndex)
 
     clone = *GetObjectEventTemplateByLocalIdAndMap(gSaveBlock2Ptr->follower.map.id, gSaveBlock2Ptr->follower.map.number, gSaveBlock2Ptr->follower.map.group);
     clone.graphicsId = newGraphicsId;
-    //clone.graphicsIdUpperByte = newGraphicsId >> 8;
+    clone.movementType = 0; // Make sure new follower sprite can't move on its own
     gSaveBlock2Ptr->follower.objId = TrySpawnObjectEventTemplate(&clone, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, clone.x, clone.y);
 
     follower = &gObjectEvents[GetFollowerMapObjId()];
@@ -1088,7 +1077,6 @@ void CreateFollowerAvatar(void)
     clone = *GetObjectEventTemplateByLocalIdAndMap(gSaveBlock2Ptr->follower.map.id, gSaveBlock2Ptr->follower.map.number, gSaveBlock2Ptr->follower.map.group);
 
     clone.graphicsId = GetFollowerSprite();
-    //clone.graphicsIdUpperByte = GetFollowerSprite() >> 8;
     clone.x = player->currentCoords.x - 7;
     clone.y = player->currentCoords.y - 7;
     clone.movementType = 0; //Doesn't get to move on its own

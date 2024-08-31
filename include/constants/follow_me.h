@@ -7,7 +7,6 @@
 #define FOLLOWER_FLAG_CAN_SURF              0x8
 #define FOLLOWER_FLAG_CAN_WATERFALL         0x10
 #define FOLLOWER_FLAG_CAN_DIVE              0x20
-#define FOLLOWER_FLAG_CAN_ROCK_CLIMB        0x40    // need rock climb implemented
 #define FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT    0x80
 
 #define FOLLOWER_FLAG_ALL_WATER             FOLLOWER_FLAG_CAN_SURF | FOLLOWER_FLAG_CAN_WATERFALL | FOLLOWER_FLAG_CAN_DIVE
@@ -21,7 +20,6 @@
 #define CAN_SURF                            FOLLOWER_FLAG_CAN_SURF
 #define CAN_WATERFALL                       FOLLOWER_FLAG_CAN_WATERFALL
 #define CAN_DIVE                            FOLLOWER_FLAG_CAN_DIVE
-#define CAN_ROCK_CLIMB                      FOLLOWER_FLAG_CAN_ROCK_CLIMB        // need rock climb implemented
 #define CLEAR_ON_WHITE_OUT                  FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT
 
 #define ALL_WATER                           FOLLOWER_FLAG_ALL_WATER
