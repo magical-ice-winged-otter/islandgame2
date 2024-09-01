@@ -1,1 +1,16 @@
 mapscripts ISLANDGAME_BELLEHAVEN_HOUSE_1_MapScripts {}
+
+
+script ISLANDGAME_BELLEHAVEN_HOUSE_1_NPC_1 {
+    lock
+    faceplayer
+    msgbox(format("We moved here from Applevine, and we are liking it so far.\p"
+                  "It's much quieter and peaceful compared to there, except we hate moving!"))
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_HOUSE_1_NPC_2 {
+    lock
+    msgbox(format("The building is pretty old.... Looks like we need a water filter."))
+    release
+}
