@@ -86,6 +86,7 @@ ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka::
 	return
 
 ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_1:
+	playbgm MUS_DP_ENCOUNTER_ELITE_FOUR, FALSE
 	lock
 	faceplayer
 	msgbox ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka_Text_0, MSGBOX_NPC
@@ -327,8 +328,8 @@ RukaDefeated_Text_1:
 
 RukaDefeated_Text_2:
 	.string "Inside that TM is my signature move,\n"
-	.string "Hail! With it, you can unleash the true\l"
-	.string "beauty of ice Pokemon!\p"
+	.string "Snowscape! With it, you too can unleash\l"
+	.string "the true beauty of ice Pokemon!\p"
 	.string "Now that you've completed the first\n"
 	.string "step towards the Marya Gym Challenge,\l"
 	.string "I present you with this!$"

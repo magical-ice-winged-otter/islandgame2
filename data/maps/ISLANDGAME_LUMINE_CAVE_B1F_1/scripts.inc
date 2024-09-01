@@ -154,7 +154,7 @@ ISLANDGAME_LUMINE_CAVE_B1F_1_Trainer1_Text_1:
 	.string "Well... maybe ya got what it takes.$"
 
 ISLANDGAME_LUMINE_CAVE_B1F_1_Trainer1_Text_2:
-	.string "I just tryna do a little minin' fer coal\n"
+	.string "I just tryna do a little minin' fer iron\n"
 	.string "when a giant rock Pokémon came outta\l"
 	.string "nowhere and attacked me!\p"
 	.string "I didn't have no choice but to leave my\n"

@@ -10175,6 +10175,18 @@ static const union AnimCmd sAnim_ShadowMightyena_1[] =
 };
 #endif //P_FAMILY_SHADOW_MIGHTYENA
 
+
+#if P_FAMILY_SHADOW_AGGRON
+static const union AnimCmd sAnim_ShadowAggron_1[] =
+{
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 44),
+    ANIMCMD_FRAME(0, 11),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_SHADOW_AGGRON
+
+
 #if P_FAMILY_GOLETT_MARYAN
 static const union AnimCmd sAnim_GolettMaryan_1[] =
 {
@@ -12984,9 +12996,12 @@ SINGLE_ANIMATION(Pecharunt);
 #if P_FAMILY_SHADOW_LUGIA
 SINGLE_ANIMATION(ShadowLugia);
 #endif //P_FAMILY_SHADOW_LUGIA
-#if P_FAMILY_SHADOW_LUGIA
+#if P_FAMILY_SHADOW_MIGHTYENA
 SINGLE_ANIMATION(ShadowMightyena);
-#endif //P_FAMILY_SHADOW_LUGIA
+#endif //P_FAMILY_SHADOW_MIGHTYENA
+#if P_FAMILY_SHADOW_AGGRON
+SINGLE_ANIMATION(ShadowAggron);
+#endif //P_FAMILY_SHADOW_AGGRON
 #if P_FAMILY_GOLETT_MARYAN
 SINGLE_ANIMATION(GolettMaryan);
 SINGLE_ANIMATION(GolurkMaryan);

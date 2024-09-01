@@ -97,6 +97,7 @@ script ISLANDGAME_TIDALCOVE_GYM_Trainer4 {
 
 script ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka {
     if (!defeated(TRAINER_TIDALCOVE_GYM_RUKA)) {
+        playbgm(MUS_DP_ENCOUNTER_ELITE_FOUR, FALSE)
         lock
         faceplayer
         msgbox(format(
@@ -148,7 +149,7 @@ script(local) RukaDefeated {
     , MSGBOX_NPC)
     giveitem(ITEM_TM07)
     msgbox(format(
-        "Inside that TM is my signature move, Hail! With it, you can unleash the true beauty of ice Pokemon!\p"
+        "Inside that TM is my signature move, Snowscape! With it, you too can unleash the true beauty of ice Pokemon!\p"
         "Now that you've completed the first step towards the Marya Gym Challenge, I present you with this!"
         )
     )

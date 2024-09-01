@@ -1588,7 +1588,7 @@
 #define FLAG_LUMINE_CAVE_GIGALITH_DEFEATED          (SYSTEM_FLAGS + 0xAD) 
 #define FLAG_LUMINE_CAVE_SABLEYE_DEFEATED           (SYSTEM_FLAGS + 0xAE) 
 #define FLAG_LUMINE_CAVE_CHANSEY_GIFT               (SYSTEM_FLAGS + 0xAF)
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
+#define FLAG_LUMINE_CAVE_SPOKE_TO_ALBA              (SYSTEM_FLAGS + 0xB0)
 #define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
 #define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
 #define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
@@ -1649,7 +1649,7 @@
 #define FLAG_DAILY_LUMINE_CAVE_SHELL_3              (DAILY_FLAGS_START + 0x23)
 #define FLAG_DAILY_LUMINE_CAVE_SALT_3               (DAILY_FLAGS_START + 0x24) 
 #define FLAG_DAILY_LUMINE_CAVE_SHELL_4              (DAILY_FLAGS_START + 0x25)
-#define FLAG_UNUSED_0x946                           (DAILY_FLAGS_START + 0x26) // Unused Flag
+#define FLAG_DAILY_LUMINE_CAVE_SALT_4               (DAILY_FLAGS_START + 0x26) 
 #define FLAG_UNUSED_0x947                           (DAILY_FLAGS_START + 0x27) // Unused Flag
 #define FLAG_UNUSED_0x948                           (DAILY_FLAGS_START + 0x28) // Unused Flag
 #define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag

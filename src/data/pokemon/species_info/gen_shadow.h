@@ -89,11 +89,14 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .speciesName = _("Mightyena"), 
         .cryId = CRY_SHADOW_MIGHTYENA,
         .natDexNum = NATIONAL_DEX_SHADOW_MIGHTYENA,
-        .categoryName = _("Corrupted"),
+        .categoryName = _("Bite"),
         .height = 10,
         .weight = 370,
         .description = COMPOUND_STRING(
-            "TBD, it is shadow mightyena.\n"), //todo: do we just use normal names and rely on the sprites for recognition?
+            "In the wild, Mightyena live in a pack.\n"
+            "They never defy their leader's orders.\n"
+            "They defeat foes with perfectly\n"
+            "coordinated teamwork."),
         .pokemonScale = 362,
         .pokemonOffset = 9,
         .trainerScale = 256,
@@ -745,7 +748,67 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
     },
 #endif //P_FAMILY_COMBEE_MARYAN
 
-
+#if P_FAMILY_SHADOW_AGGRON
+    [SPECIES_SHADOW_AGGRON] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 110,
+        .baseDefense   = 180,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_SHADOW, TYPE_SHADOW),
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 265,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 239,
+    #else
+        .expYield = 205,
+    #endif
+        .evYield_Defense = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 35,
+        .friendship = 35,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER),
+        .abilities = { ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_HEAVY_METAL },
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Aggron"),
+        .cryId = CRY_AGGRON,
+        .natDexNum = NATIONAL_DEX_SHADOW_AGGRON,
+        .categoryName = _("Iron Armor"),
+        .height = 21,
+        .weight = 3600,
+        .description = COMPOUND_STRING(
+            "Its iron horns grow longer a little at\n"
+            "a time. They are used to determine the\n"
+            "Aggron's age. The gouges in its armor are\n"
+            "worn with pride as mementos from battles."),
+        .pokemonScale = 256,
+        .pokemonOffset = -1,
+        .trainerScale = 350,
+        .trainerOffset = 6,
+        .frontPic = gMonFrontPic_ShadowAggron,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_ShadowAggron,
+        .frontAnimId = ANIM_V_SHAKE_TWICE,
+        .backPic = gMonBackPic_ShadowAggron,
+        .backPicSize = MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = 5,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_ShadowAggron,
+        .shinyPalette = gMonShinyPalette_ShadowAggron,
+        .iconSprite = gMonIcon_ShadowAggron,
+        .iconPalIndex = 2,
+        FOOTPRINT(Aggron)
+        .levelUpLearnset = sAggronLevelUpLearnset,
+        .teachableLearnset = sAggronTeachableLearnset,
+        .formSpeciesIdTable = sAggronFormSpeciesIdTable,
+        .formChangeTable = sAggronFormChangeTable,
+    },
+#endif //P_FAMILY_ARON
 
 
 #ifdef __INTELLISENSE__

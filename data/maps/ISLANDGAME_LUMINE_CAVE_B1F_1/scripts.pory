@@ -106,7 +106,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_1_Trainer1 {
             "Well... maybe ya got what it takes."
         ))
     msgbox(format(
-        "I just tryna do a little minin' fer coal when a giant rock Pokémon came outta nowhere and attacked me!\p"
+        "I just tryna do a little minin' fer iron when a giant rock Pokémon came outta nowhere and attacked me!\p"
         "I didn't have no choice but to leave my pickaxe and haul butt outta there..."
     ), MSGBOX_AUTOCLOSE)
 }
