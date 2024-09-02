@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_ISLANDGAME_PICKAXE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_LUMINE_CAVE_PICKAXE"
+      "flag": "FLAG_ITEM_LUMINE_CAVE_PICKAXE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",

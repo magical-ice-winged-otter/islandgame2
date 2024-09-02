@@ -196,5 +196,51 @@ static const struct TrainerMon sParty_LumineCave13[] = {
     },
 };
 
+static const struct TrainerMon sParty_LumineCaveAlba[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .ev = TRAINER_PARTY_EVS(126, 0, 0, 0, 0, 0),
+    .nature = NATURE_ADAMANT,
+    .lvl = 33,
+    .species = SPECIES_METANG,
+    .ability = ABILITY_CLEAR_BODY,
+    .ball = ITEM_ULTRA_BALL,
+    .heldItem = ITEM_METAL_COAT,
+    .moves = {MOVE_PURSUIT, MOVE_ZEN_HEADBUTT, MOVE_BULLET_PUNCH, MOVE_METAL_CLAW},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .ev = TRAINER_PARTY_EVS(0, 0, 0, 126, 0, 0),
+    .nature = NATURE_MODEST,
+    .lvl = 33,
+    .species = SPECIES_MAGNETON,
+    .ability = ABILITY_STURDY,
+    .ball = ITEM_ULTRA_BALL,
+    .heldItem = ITEM_MAGNET,
+    .moves = {MOVE_FLASH_CANNON, MOVE_SHOCK_WAVE, MOVE_THUNDER_WAVE, MOVE_VOLT_SWITCH},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .ev = TRAINER_PARTY_EVS(0, 0, 0, 126, 0, 0),
+    .nature = NATURE_CALM,
+    .lvl = 33,
+    .species = SPECIES_PORYGON2,
+    .ability = ABILITY_TRACE,
+    .ball = ITEM_ULTRA_BALL,
+    .heldItem = ITEM_EVIOLITE,
+    .moves = {MOVE_RECOVER, MOVE_TRI_ATTACK, MOVE_TOXIC, MOVE_PSYBEAM},
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .ev = TRAINER_PARTY_EVS(0, 0, 0, 126, 0, 0),
+    .nature = NATURE_MODEST,
+    .lvl = 33,
+    .species = SPECIES_ROTOM_MOW,
+    .ability = ABILITY_LEVITATE,
+    .ball = ITEM_ULTRA_BALL,
+    .heldItem = ITEM_WHITE_HERB,
+    .moves = {MOVE_LEAF_STORM, MOVE_CHARGE_BEAM, MOVE_WILL_O_WISP, MOVE_PAIN_SPLIT},
+    },
+};
 
 

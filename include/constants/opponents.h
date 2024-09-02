@@ -221,10 +221,11 @@
 #define TRAINER_MARY                         TRAINER_LUMINE_CAVE_12
 #define TRAINER_LUMINE_CAVE_13               90
 #define TRAINER_ALEXIA                       TRAINER_LUMINE_CAVE_13
+#define TRAINER_LUMINE_CAVE_ALBA             91
+#define TRAINER_JODY                         TRAINER_LUMINE_CAVE_ALBA
+  
 
 
-
-#define TRAINER_JODY                         91
 #define TRAINER_WENDY                        92
 #define TRAINER_KEIRA                        93
 #define TRAINER_BROOKE_1                     94

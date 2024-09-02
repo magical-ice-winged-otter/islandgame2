@@ -1273,7 +1273,7 @@
 #define FLAG_ITEM_LUMINE_CAVE_TM_ROCK_TOMB                          0x4C4
 #define FLAG_ITEM_LUMINE_CAVE_DIRE_HIT                              0x4C5 
 #define FLAG_ITEM_LUMINE_CAVE_MOON_STONE                            0x4C6
-#define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
+#define FLAG_ITEM_LUMINE_CAVE_PICKAXE                               0x4C7 
 #define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
 #define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
 #define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
@@ -1584,12 +1584,12 @@
 #define FLAG_ROCKY_PATH_HAPPINY_GIFT                (SYSTEM_FLAGS + 0xA9) 
 #define FLAG_APPLEVINE_MELISSA_CALL                 (SYSTEM_FLAGS + 0xAA) 
 #define FLAG_LUMINE_CAVE_GURDURR_GIFT               (SYSTEM_FLAGS + 0xAB)
-#define FLAG_LUMINE_CAVE_PICKAXE                    (SYSTEM_FLAGS + 0xAC)
+#define FLAG_LUMINE_CAVE_PICKAXE                    (SYSTEM_FLAGS + 0xAC) // unused
 #define FLAG_LUMINE_CAVE_GIGALITH_DEFEATED          (SYSTEM_FLAGS + 0xAD) 
 #define FLAG_LUMINE_CAVE_SABLEYE_DEFEATED           (SYSTEM_FLAGS + 0xAE) 
 #define FLAG_LUMINE_CAVE_CHANSEY_GIFT               (SYSTEM_FLAGS + 0xAF)
 #define FLAG_LUMINE_CAVE_SPOKE_TO_ALBA              (SYSTEM_FLAGS + 0xB0)
-#define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
+#define FLAG_LUMINE_CAVE_ALBA_DEFEATED              (SYSTEM_FLAGS + 0xB1) 
 #define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
 #define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
 #define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag

@@ -152,4 +152,17 @@
         .party = TRAINER_PARTY(sParty_LumineCave13),
     },
 
+    [TRAINER_LUMINE_CAVE_ALBA] =
+    {
+        .trainerClass = TRAINER_CLASS_SCIENTIST,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST2,
+        .trainerName = _("Alba"),
+        .items = {ITEM_HYPER_POTION, ITEM_X_ATTACK, ITEM_FULL_HEAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_PREFER_STATUS_MOVES,
+        .party = TRAINER_PARTY(sParty_LumineCaveAlba),
+    },
+
+
 
