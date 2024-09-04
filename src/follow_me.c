@@ -749,9 +749,6 @@ static void Task_FollowerOutOfDoor(u8 taskId)
     s16 *x = &task->data[2];
     s16 *y = &task->data[3];
 
-    //if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH) && ObjectEventClearHeldMovementIfFinished(player))
-        //SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT); //Temporarily stop running
-
     if (FACE_FOLLOWER_ON_DOOR_EXIT == TRUE && ObjectEventClearHeldMovementIfFinished(player)) {
         ObjectEventTurn(player, GetPlayerFaceToDoorDirection(player, follower)); //The player should face towards the follow as the exit the door
     }
@@ -1034,7 +1031,6 @@ void SetFollowerSprite(u8 spriteIndex)
     clone.graphicsId = newGraphicsId;
     clone.movementType = 0; // Make sure new follower sprite can't move on its own
     gSaveBlock2Ptr->follower.objId = TrySpawnObjectEventTemplate(&clone, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, clone.x, clone.y);
-
     follower = &gObjectEvents[GetFollowerMapObjId()];
     newSpriteId = follower->spriteId;
     *follower = backupFollower;
@@ -1060,6 +1056,9 @@ void FollowMe_WarpSetEnd(void)
 
     toY = gSaveBlock2Ptr->follower.comeOutDoorStairs == 1 ? (player->currentCoords.y - 1) : player->currentCoords.y;
     MoveObjectEventToMapCoords(follower, player->currentCoords.x, toY);
+
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
+        SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
 
     follower->facingDirection = player->facingDirection;
     follower->movementDirection = player->movementDirection;

@@ -1398,6 +1398,7 @@ static void Task_UseFly(u8 taskId)
     {
         if (ObjectEventClearHeldMovementIfFinished(follower))
         {
+            SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
             follower->invisible = TRUE;
             task->data[3]++;
         }
@@ -2392,6 +2393,7 @@ static void EscapeRopeWarpOutEffect_HideFollower(struct Task *task)
     {
         if (ObjectEventClearHeldMovementIfFinished(follower))
         {
+            SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
             follower->invisible = TRUE;
             task->tState++;
         }

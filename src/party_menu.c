@@ -4065,6 +4065,7 @@ static void Task_HideFollowerForTeleport(u8 taskId)
     {
         if (ObjectEventClearHeldMovementIfFinished(follower))
         {
+            SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
             follower->invisible = TRUE;
             DestroyTask(taskId);
         }
