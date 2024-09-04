@@ -18,8 +18,8 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	setobjectxyperm 1, 10, 11
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm 6, 11, 11
-	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm 2, 9, 11
+	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 
@@ -71,7 +71,7 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_1:
 	return
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_2:
-	playbgm MUS_DP_ENCOUNTER_SUSPICIOUS, FALSE
+	playbgm MUS_DP_ENCOUNTER_SUSPICIOUS, TRUE
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_0
 	closemessage
 	applymovement 1, Common_Movement_FaceLeft
@@ -82,11 +82,13 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_2:
 	waitmovement 0
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_1
 	closemessage
-	applymovement 22, Common_Movement_QuestionMark
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	applymovement 13, Common_Movement_QuestionMark
 	waitmovement 0
-	applymovement 22, Common_Movement_WalkInPlaceFasterRight
+	applymovement 13, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	applymovement 22, Common_Movement_Delay48
+	applymovement 13, Common_Movement_Delay48
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
@@ -100,9 +102,9 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_2:
 	waitmovement 0
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_3
 	closemessage
-	applymovement 22, Common_Movement_WalkInPlaceRight
+	applymovement 13, Common_Movement_WalkInPlaceRight
 	waitmovement 0
-	applymovement 22, Common_Movement_Delay48
+	applymovement 13, Common_Movement_Delay48
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
@@ -131,20 +133,20 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_3:
 	goto ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_1
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_7:
-	playbgm MUS_DP_ENCOUNTER_SUSPICIOUS, TRUE
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_7
 	trainerbattle_no_intro TRAINER_LUMINE_CAVE_ALBA, ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_8
+	playbgm MUS_DP_ENCOUNTER_SUSPICIOUS, TRUE
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_9
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
-	applymovement 6, Common_Movement_WalkLeft
+	applymovement 2, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement 6, Common_Movement_WalkUp
+	applymovement 2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement 6, Common_Movement_FaceDown
+	applymovement 2, Common_Movement_FaceDown
 	waitmovement 0
 	applymovement 1, Common_Movement_FaceDown
 	waitmovement 0
@@ -152,8 +154,8 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_7:
 	waitmovement 0
 	setobjectxyperm 1, 10, 11
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm 6, 11, 11
-	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm 2, 9, 11
+	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
 	setflag FLAG_LUMINE_CAVE_ALBA_DEFEATED
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -166,7 +168,7 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_LittenGirl::
 	goto_if_set FLAG_LUMINE_CAVE_SPOKE_TO_ALBA, ISLANDGAME_LUMINE_CAVE_B1F_2_LittenGirl_2
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_LittenGirl_Text_1
 ISLANDGAME_LUMINE_CAVE_B1F_2_LittenGirl_1:
-	applymovement 22, Common_Movement_FaceRight
+	applymovement 13, Common_Movement_FaceRight
 	waitmovement 0
 	closemessage
 	release
@@ -241,7 +243,7 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_NPC5::
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6::
 	lock
-	goto_if_set ! FLAG_DAILY_LUMINE_CAVE_SALT_4, ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6_2
+	goto_if_unset FLAG_DAILY_LUMINE_CAVE_SALT_4, ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6_2
 	faceplayer
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6_Text_1
 ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6_1:
@@ -254,11 +256,117 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6_2:
 	goto ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6_1
 
 
+ISLANDGAME_LUMINE_CAVE_B1F_2_Litten::
+	lock
+	playmoncry SPECIES_LITTEN, CRY_MODE_WEAK
+	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_Litten_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron::
+	lock
+	faceplayer
+	setflag FLAG_SMART_WILD_AI
+	setflag FLAG_NO_CATCHING
+	setcwildbattle 0, SPECIES_SHADOW_AGGRON, 45, ITEM_SHELL_BELL, NATURE_RELAXED, 2, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_CURSE, MOVE_HEAD_SMASH, MOVE_HEAVY_SLAM
+	setwilddoublebattle TRUE
+	playmoncry SPECIES_AGGRON, CRY_MODE_ENCOUNTER
+	waitmoncry
+	dowildbattle
+	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_NO_CATCHING
+	specialvar VAR_RESULT, GetBattleOutcome
+	switch VAR_RESULT
+	case B_OUTCOME_LOST, ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron_3
+	case B_OUTCOME_RAN, ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron_3
+	goto ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight
+ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron_1:
+	release
+	return
+
+ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron_3:
+	goto ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron_1
+
+
+AlbaWalkToPlayer:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+LittenGirlZoom:
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	step_end
+
+ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight::
+	lock
+	setflag FLAG_LUMINE_CAVE_AGGRON_DEFEATED
+	fadescreen FADE_TO_BLACK
+	removeobject 8
+	removeobject 22
+	removeobject 23
+	removeobject 24
+	removeobject 25
+	removeobject 26
+	removeobject 27
+	removeobject 28
+	addobject 1
+	addobject 2
+	addobject 13
+	setobjectxyperm 8, 47, 0
+	setobjectxyperm 22, 47, 0
+	setobjectxyperm 23, 47, 0
+	setobjectxyperm 24, 47, 0
+	setobjectxyperm 25, 47, 0
+	setobjectxyperm 26, 47, 0
+	setobjectxyperm 27, 47, 0
+	setobjectxyperm 28, 47, 0
+	setobjectxy 1, 26, 12
+	setobjectxy 2, 26, 13
+	setobjectxy 13, 28, 12
+	fadescreen FADE_FROM_BLACK
+	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight_Text_0
+	closemessage
+	playbgm MUS_DP_ENCOUNTER_SUSPICIOUS, TRUE
+	applymovement 1, AlbaWalkToPlayer
+	applymovement 2, AlbaWalkToPlayer
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight_Text_1
+	closemessage
+	applymovement 1, Common_Movement_Delay48
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	applymovement 1, Common_Movement_Delay48
+	waitmovement 0
+	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight_Text_2
+	closemessage
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	applymovement 13, LittenGirlZoom
+	waitmovement 0
+	release
+	return
+
+
 ISLANDGAME_LUMINE_CAVE_B1F_2_SALT_Text_0:
 	.string "{COLOR RED}(No more salt here.)$"
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_PorygonInteract_Text_0:
-	.string "I AM DESIGNATED AS PORYGON:\n"
+	.string "I AM DESIGNATED AS PORYGON2:\n"
 	.string "DEFINITIVE EDITION REMASTERED!\p"
 	.string "WHAT'S QUACKALACKIN'?$"
 
@@ -273,15 +381,15 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_0:
 	.string "as both sword and shield, compounded\l"
 	.string "with their instinctive territorial\l"
 	.string "nature...\p"
-	.string "This mass outbreak has proved quite\n"
-	.string "beneficial in realizing the untapped\l"
-	.string "potential of these Pokémon...\p"
+	.string "Yes...{PAUSE 60} This mass outbreak has proved\n"
+	.string "rather beneficial in realizing the\l"
+	.string "potential of Pokémon...\p"
 	.string "Oh?$"
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_1:
 	.string "Ah,{PAUSE 60} please excuse my ramblings, trainer.{PAUSE 60}\n"
 	.string "I was simply enamored by the majesty\l"
-	.string "of the Aron family.\p"
+	.string "of the Aggron over there.\p"
 	.string "I do advise that you keep a safe\n"
 	.string "distance, however.\p"
 	.string "They have claimed this cavern as their\n"
@@ -310,8 +418,8 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_4:
 ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_5:
 	.string "You still wish to pass to rescue her\n"
 	.string "Litten,{PAUSE 60} despite my warnings?\p"
-	.string "Hm...{PAUSE 60} I in good faith cannot send you in\n"
-	.string "there and risk your own livelihood...\p"
+	.string "Hm...{PAUSE 60} I cannot in good faith let such a\n"
+	.string "young trainer go on alone...\p"
 	.string "But if you are that confident in your\n"
 	.string "abilities, I would like to verify them\l"
 	.string "first in a battle.\p"
@@ -334,14 +442,16 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_8:
 ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_9:
 	.string "{COLOR GREEN}Alba: {COLOR DARK_GRAY}I must applaud you for your\n"
 	.string "tactical prowess, trainer.\p"
-	.string "It has been an long time since I have\n"
-	.string "met someone else with your...{PAUSE 60} expertise.\p"
 	.string "As agreed upon, I will allow you to\n"
-	.string "engage the Aggron by yourself.$"
+	.string "engage the Aggron by yourself.\p"
+	.string "Please do take extreme caution. Your\n"
+	.string "next battle will not be against a\l"
+	.string "trainer, but a truly savage beast.$"
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract_Text_10:
-	.string "Please do be careful. Remember, you will\n"
-	.string "be facing a Pokémon, not a trainer.$"
+	.string "Our battle was fruitful, trainer. I've\n"
+	.string "not many opportunities to face\l"
+	.string "someone of your expertise.$"
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_LittenGirl_Text_0:
 	.string "Please save my litty kitty! D:$"
@@ -394,3 +504,43 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6_Text_0:
 ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6_Text_1:
 	.string "Huh? What do you mean, this isn't the\n"
 	.string "same salt you put on food?$"
+
+ISLANDGAME_LUMINE_CAVE_B1F_2_Litten_Text_0:
+	.string "Mew... {COLOR BLUE}(git mes out)$"
+
+ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight_Text_0:
+	.string "{COLOR RED}(Phew...{PAUSE 60} Seems like defeating the Aggron\n"
+	.string "caused the other Pokémon to flee...)\p"
+	.string "(That Aggron...{PAUSE 60} it was exuding the same\n"
+	.string "shadowy aura as the Mightyena I\l"
+	.string "fought with Melissa...)\p"
+	.string "(What's going on here...?)\p"
+	.string "{COLOR GREEN}Alba: {COLOR DARK_GRAY}Incredible...{PAUSE 60} I cannot believe my\n"
+	.string "very own eyes...$"
+
+ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight_Text_1:
+	.string "My apologies,{PAUSE 30} but I never caught your\n"
+	.string "name.{PAUSE 60} May I ask it by chance?\p"
+	.string "...\p"
+	.string "Ah, {PLAYER},{PAUSE 30} is it? Tell me,\n"
+	.string "{PLAYER},{PAUSE 30} what is it that allows you\l"
+	.string "to bring forth the latent power of your\l"
+	.string "Pokémon?\p"
+	.string "$"
+
+ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight_Text_2:
+	.string "Hm...{PAUSE 60} I see...{PAUSE 60} You believe it is your\n"
+	.string "ability to understand and talk to\l"
+	.string "Pokémon that enables you to form\l"
+	.string "stronger bonds with them, thereby\l"
+	.string "drawing out their maximum potential?\p"
+	.string "An interesting prospect, {PLAYER}.{PAUSE 60}\n"
+	.string "Your response mirrors that of an old\l"
+	.string "colleague I once worked with...\p"
+	.string "I too hypothesize that the power of\n"
+	.string "emotions is the key to unlocking a\l"
+	.string "Pokémon's true strength...\p"
+	.string "But which emotion specifically? I still\n"
+	.string "have yet to figure out...\p"
+	.string "Until then, my research on the mind of\n"
+	.string "different Pokemon continues...$"

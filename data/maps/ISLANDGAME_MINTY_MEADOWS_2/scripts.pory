@@ -1027,7 +1027,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7 {
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
     trainerbattle_single(TRAINER_MINTY_MEADOWS_16, format("{COLOR DARK_GRAY}Shorts are awesome. They're so comfy to wear. Don't you agree?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
-	msgbox(format("Shorts are in the top percentage of pants! They're easily S tier!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Shorts are easily an S tier pick for pants!"), MSGBOX_AUTOCLOSE)
 }
 
 // text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss {

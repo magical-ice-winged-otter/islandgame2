@@ -5506,6 +5506,7 @@ u16 GetBattleBGM(void)
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
         case SPECIES_SHADOW_MIGHTYENA:
+        case SPECIES_SHADOW_AGGRON:
             return MUS_HG_VS_ENTEI;
         case SPECIES_ARTICUNO:
         case SPECIES_ZAPDOS:

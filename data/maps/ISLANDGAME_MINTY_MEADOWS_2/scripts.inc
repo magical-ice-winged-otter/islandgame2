@@ -1292,8 +1292,8 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0:
 	.string "wear. Don't you agree?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1:
-	.string "Shorts are in the top percentage of\n"
-	.string "pants! They're easily S tier!$"
+	.string "Shorts are easily an S tier pick for\n"
+	.string "pants!$"
 
 ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"
