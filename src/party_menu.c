@@ -4067,6 +4067,7 @@ static void Task_HideFollowerForTeleport(u8 taskId)
         {
             SetFollowerSprite(FOLLOWER_SPRITE_INDEX_NORMAL);
             follower->invisible = TRUE;
+            gSaveBlock2Ptr->follower.comeOutDoorStairs = 0; // In case the follower was still coming out of a door.
             DestroyTask(taskId);
         }
     }
