@@ -11,6 +11,9 @@ mapscripts ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts {
             setobjectxyperm(2, 9, 11)
             setobjectmovementtype(2, MOVEMENT_TYPE_FACE_DOWN)
         }
+        if(flag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)) {
+            setflag(FLAG_TEMP_1F)
+        }
     }
 }
 
@@ -31,6 +34,39 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_SALT {
     release
 }
 
+script ISLANDGAME_LUMINE_CAVE_B1F_2_Cringe {
+    lock
+    faceplayer
+    msgbox(format(
+        "STICKING OUT YOUR GYATT FOR THE GRAVELER\p"
+        "YOU'RE SO CARBINK\nYOU'RE SO GIGALITH\p"
+        "I JUST WANNA BE YOUR CRADILY\p"
+        "C'MON, SING IT WITH ME!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_TempNPC1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "We heard there was a mass outbreak blocking the cave, but it seems like it's already been resolved..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_TempNPC2 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_EXCADRILL, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Doryuzu... {COLOR BLUE}(What a shame... I was ready to GROUND POUND that Aggron!)"
+    ))
+    closemessage
+    release
+}
 
 
 // Main Quest Event
@@ -83,11 +119,11 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract {
         savebgm(MUS_DUMMY)
         fadedefaultbgm
 
-        applymovement(13, Common_Movement_QuestionMark)
+        applymovement(11, Common_Movement_QuestionMark)
         waitmovement(0)
-        applymovement(13, Common_Movement_WalkInPlaceFasterRight)
+        applymovement(11, Common_Movement_WalkInPlaceFasterRight)
         waitmovement(0)
-        applymovement(13, Common_Movement_Delay48)
+        applymovement(11, Common_Movement_Delay48)
         waitmovement(0)
         applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
         waitmovement(0)
@@ -110,9 +146,9 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract {
         ))
         closemessage
 
-        applymovement(13, Common_Movement_WalkInPlaceRight)
+        applymovement(11, Common_Movement_WalkInPlaceRight)
         waitmovement(0)
-        applymovement(13, Common_Movement_Delay48)
+        applymovement(11, Common_Movement_Delay48)
         waitmovement(0)
         applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
         waitmovement(0)
@@ -157,7 +193,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract {
             msgbox(format(
                 "{COLOR GREEN}Alba: {COLOR DARK_GRAY}I must applaud you for your tactical prowess, trainer.\p"
                 "As agreed upon, I will allow you to engage the Aggron by yourself.\p"
-                "Please do take extreme caution. Your next battle will not be against a trainer, but a truly savage beast."
+                "Please do take extreme care. Your next battle will not be against a trainer, but a truly savage beast."
             ))
             closemessage
 
@@ -188,7 +224,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract {
     else {
         faceplayer
         msgbox(format(
-            "Our battle was fruitful, trainer. I've not many opportunities to face someone of your expertise."
+            "Please do take extreme care. Your next battle will not be against a trainer, but a truly savage beast."
         ))
     }
     closemessage
@@ -208,7 +244,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_LittenGirl {
             "Waaaah!{PAUSE 30} My Litten is trapped over there with those big bad bullies!"
         ))
     }
-    applymovement(13, Common_Movement_FaceRight)
+    applymovement(11, Common_Movement_FaceRight)
     waitmovement(0)
     closemessage
     release
@@ -313,13 +349,12 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_Litten {
     release
 }
 
-
-
 script ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
     setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
     setcwildbattle(0, SPECIES_SHADOW_AGGRON, 45, ITEM_SHELL_BELL, NATURE_RELAXED, 2, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_CURSE, MOVE_HEAD_SMASH, MOVE_HEAVY_SLAM)
     setwilddoublebattle(TRUE)
     playmoncry(SPECIES_AGGRON, CRY_MODE_ENCOUNTER)
@@ -327,6 +362,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron {
     dowildbattle
     clearflag(FLAG_SMART_WILD_AI)
     clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
     specialvar(VAR_RESULT, GetBattleOutcome)
     
     switch(var(VAR_RESULT)) {
@@ -345,6 +381,25 @@ movement AlbaWalkToPlayer {
 
 movement LittenGirlZoom {
     walk_faster_up * 8
+    jump_in_place_up * 2
+}
+
+movement LittenGirlWalkToPlayer {
+    walk_down * 2
+    walk_left
+}
+
+movement LittenHop {
+    jump_in_place_down * 2
+}
+
+movement LittenWalkToGirl {
+    walk_down * 3
+    face_left
+}
+
+movement LumineCaveWalkAway {
+    walk_down * 9
 }
 
 script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
@@ -352,27 +407,29 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
     setflag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)
     fadescreen(FADE_TO_BLACK)
     removeobject(8)
+    removeobject(20)
+    removeobject(21)
     removeobject(22)
     removeobject(23)
     removeobject(24)
     removeobject(25)
     removeobject(26)
-    removeobject(27)
-    removeobject(28)
     addobject(1)
     addobject(2)
-    addobject(13)
+    addobject(11)
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 26, 6)
     setobjectxyperm(8, 47, 0)  
+    setobjectxyperm(20, 47, 0)  
+    setobjectxyperm(21, 47, 0)  
     setobjectxyperm(22, 47, 0)  
     setobjectxyperm(23, 47, 0)  
     setobjectxyperm(24, 47, 0)  
     setobjectxyperm(25, 47, 0)  
     setobjectxyperm(26, 47, 0)  
-    setobjectxyperm(27, 47, 0)  
-    setobjectxyperm(28, 47, 0)  
     setobjectxy(1, 26, 12)
     setobjectxy(2, 26, 13)
-    setobjectxy(13, 28, 12)
+    setobjectxy(11, 28, 12)
+    setobjectmovementtype(11, MOVEMENT_TYPE_FACE_UP)
     fadescreen(FADE_FROM_BLACK)
 
     msgbox(format(
@@ -393,9 +450,11 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
     waitmovement(0)        
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
     waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)        
 
     msgbox(format(
-        "My apologies,{PAUSE 30} but I never caught your name.{PAUSE 60} May I ask it by chance?\p"
+        "My apologies, but I never caught your name.{PAUSE 60} May I ask it by chance?\p"
         "...\p"
         "Ah, {PLAYER},{PAUSE 30} is it?\p"
         "Tell me, {PLAYER},{PAUSE 30} what is it that allows you to bring forth the latent power of your Pokémon?"
@@ -418,11 +477,105 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
     ))
     closemessage
 
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(1, Common_Movement_QuestionMark)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "Hm? Did I notice anything strange about the Aggron?\p"
+        "Not particularly...{PAUSE 60} Did you happen to see something that I did not?\p"
+        "...\p"
+        "Is that so...?\p"
+        "Hmm...{PAUSE 60} A menacing dark aura emanating from a Pokémon acting unnaturally...{PAUSE 60} Only for it to fade away when they are defeated in battle...\p"
+        "...and you say you encountered a Mightyena with the same traits as well?"
+    ))
+    closemessage
+
+
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "That is rather worrisome, if what you say is true...{PAUSE 60} I was unable to observe anything like that from the Aggron.\p"
+        "Perhaps your ability to perceive its aura is related to your innate ability?\p"
+        "This is all very unorthodox...{PAUSE 60} What could be the cause of such a phenomenon?\p"
+        "Perhaps I should take the Aggron in for further analysis..."
+    ))
+    closemessage
+
     savebgm(MUS_DUMMY)
     fadedefaultbgm
 
-    applymovement(13, LittenGirlZoom)
+    applymovement(11, LittenGirlZoom)
+    waitmovement(0)
+    msgbox(format(
+        "My precious little Litten! I'm never gonna let you out of my sight again!"
+    ))
+    closemessage
+    applymovement(16, LittenHop)
+    waitmovement(0)
+    playmoncry(SPECIES_LITTEN, CRY_MODE_WEAK)
+    waitmoncry
+    applymovement(11, LittenGirlWalkToPlayer)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "Thank you, thank you, thank you, trainer!{PAUSE 60} Here, I know it's not much, but please take it for saving my Litten!"
+    ))
+    giveitem(ITEM_QUICK_CLAW)
+    closemessage
+
+    applymovement(16, LittenWalkToGirl)
+    waitmovement(0)
+    applymovement(11, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "The first thing we'll be doing at Bellehaven is getting you a leash!"
+    ))
+    closemessage
+
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    applymovement(11, LumineCaveWalkAway)
+    applymovement(16, LumineCaveWalkAway)
     waitmovement(0)
 
+    msgbox(format(
+        "{COLOR GREEN}Alba: {COLOR DARK_GRAY}...and with that, I believe it is about time I take my leave as well.\p"
+        "Our battle was quite fruitful, {PLAYER}.{PAUSE 60} I've little opportunities to interact with trainers of your...{PAUSE 60} expertise.\p"
+        "Perhaps we shall meet again in the future.{PAUSE 60} Hopefully by then, I will have found the answer to my hypothesis...{PAUSE 60} as well as the answer to yours."
+    ))
+    closemessage
+
+
+    playbgm(MUS_DP_ENCOUNTER_SUSPICIOUS, FALSE)
+
+    applymovement(1, Common_Movement_WalkDown)
+    applymovement(2, Common_Movement_WalkUp)
+    waitmovement(0)
+    applymovement(1, LumineCaveWalkAway)
+    applymovement(2, LumineCaveWalkAway)
+    waitmovement(0)
+    removeobject(1)
+    removeobject(2)
+    removeobject(11)
+    removeobject(16)
+    setobjectxyperm(1, 47, 0)  
+    setobjectxyperm(2, 47, 0)  
+    setobjectxyperm(11, 47, 0)  
+    setobjectxyperm(16, 47, 0)  
     release
+
+
+    savebgm(MUS_DUMMY)
+    fadedefaultbgm
 }
