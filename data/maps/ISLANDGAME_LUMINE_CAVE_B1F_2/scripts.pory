@@ -3,6 +3,9 @@ mapscripts ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts {
         if(flag(FLAG_DAILY_LUMINE_CAVE_SALT_4)) {
             setmetatile(11, 19, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
         }
+        if(flag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)) {
+            setflag(FLAG_TEMP_1F)
+        }
     }
     MAP_SCRIPT_ON_TRANSITION {
         if(flag(FLAG_LUMINE_CAVE_ALBA_DEFEATED)) {
@@ -10,9 +13,6 @@ mapscripts ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts {
             setobjectmovementtype(1, MOVEMENT_TYPE_FACE_DOWN)
             setobjectxyperm(2, 9, 11)
             setobjectmovementtype(2, MOVEMENT_TYPE_FACE_DOWN)
-        }
-        if(flag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)) {
-            setflag(FLAG_TEMP_1F)
         }
     }
 }
@@ -406,6 +406,11 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
     lock
     setflag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)
     fadescreen(FADE_TO_BLACK)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
+    setvar(VAR_0x8000, 26)
+    setvar(VAR_0x8001, 6)
+    callnative(TeleportCamera)
     removeobject(8)
     removeobject(20)
     removeobject(21)

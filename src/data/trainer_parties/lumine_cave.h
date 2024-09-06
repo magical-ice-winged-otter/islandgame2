@@ -243,4 +243,19 @@ static const struct TrainerMon sParty_LumineCaveAlba[] = {
     },
 };
 
+static const struct TrainerMon sParty_LumineCave14[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 33,
+    .gender = TRAINER_MON_FEMALE,
+    .species = SPECIES_CLOYSTER,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 33,
+    .gender = TRAINER_MON_MALE,
+    .species = SPECIES_STEELIX,
+    .isShiny = TRUE,
+    },
+};
 

@@ -14,12 +14,49 @@ mapscripts ISLANDGAME_LUMINE_CAVE_MapScripts {
 script ISLANDGAME_LUMINE_CAVE_Scout {
     lock
     faceplayer
-    msgbox(format(
-        "I'm trying to get my Handy Helper badge, so I'm trying to help people out!\p"
-        "If you bring me 4 Cave Shells and 4 Cave Salts, I'll make you a Shell Bell!"
-    ))
-    closemessage
-    release
+    if (flag(FLAG_LUMINE_CAVE_SHELL_BELL_RECEIVED)) {
+        msgbox(format(
+            "That's the last badge I needed to promote to a super scout!\p"
+            "Now... what should I get with my newly earned scout credit...\p"
+            "I could spend it on the stuffed Wooper, or on the mystery box...\p"
+            "A stuffed Wooper is a stuffed Wooper, but the mystery box could be anything!\p"
+            "It could even be a stuffed Wooper! I've always wanted one of those!"
+        ))
+        goto(ShellBellScout_End)
+    }
+    checkitem(ITEM_SHOAL_SHELL, 4)
+    if (var(VAR_RESULT) == TRUE) {
+        checkitem(ITEM_SHOAL_SALT, 4)
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox(format(
+                "Wow! You found enough shells and salt! Want me to make you a Shell Bell?"
+            ), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox(format(
+                    "Hooray! It's crafting time!"
+                ))
+                removeitem(ITEM_SHOAL_SALT, 4)
+                removeitem(ITEM_SHOAL_SHELL, 4)
+                giveitem(ITEM_SHELL_BELL)
+                setflag(FLAG_LUMINE_CAVE_SHELL_BELL_RECEIVED)
+            }
+            else {
+                msgbox(format(
+                    "But... I'll never rank up to a super scout if I don't get this last badge..."
+                ))
+            }
+        }
+    } 
+    else {
+        msgbox(format(
+            "I'm trying to get my Handy Helper badge, so I'm trying to help people out!\p"
+            "If you bring me 4 Cave Shells and 4 Cave Salts, I'll make you a Shell Bell!"
+        ))
+    }
+
+    ShellBellScout_End:
+        closemessage
+        release
 }
 
 script ISLANDGAME_LUMINE_CAVE_Salt {

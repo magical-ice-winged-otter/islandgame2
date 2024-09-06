@@ -4,28 +4,28 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts::
 	.byte 0
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD:
-	goto_if_set FLAG_DAILY_LUMINE_CAVE_SALT_4, ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	goto_if_set FLAG_DAILY_LUMINE_CAVE_SALT_4, ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD_2
+ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+	goto_if_set FLAG_LUMINE_CAVE_AGGRON_DEFEATED, ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD_4
 	return
 
-ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 	setmetatile 11, 19, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE
+	goto ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD_1
+
+ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_LOAD_4:
+	setflag FLAG_TEMP_1F
 	return
 
 ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	goto_if_set FLAG_LUMINE_CAVE_ALBA_DEFEATED, ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
-ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	goto_if_set FLAG_LUMINE_CAVE_AGGRON_DEFEATED, ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+	goto_if_set FLAG_LUMINE_CAVE_ALBA_DEFEATED, ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
-ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	setobjectxyperm 1, 10, 11
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
 	setobjectxyperm 2, 9, 11
 	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_DOWN
-	goto ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-
-ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-	setflag FLAG_TEMP_1F
 	return
 
 
@@ -50,6 +50,8 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_Cringe::
 	lock
 	faceplayer
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_Cringe_Text_0
+	closemessage
+	release
 	return
 
 
@@ -379,14 +381,19 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight::
 	lock
 	setflag FLAG_LUMINE_CAVE_AGGRON_DEFEATED
 	fadescreen FADE_TO_BLACK
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	setvar VAR_0x8000, 26
+	setvar VAR_0x8001, 6
+	callnative TeleportCamera
 	removeobject 8
+	removeobject 20
+	removeobject 21
 	removeobject 22
 	removeobject 23
 	removeobject 24
 	removeobject 25
 	removeobject 26
-	removeobject 27
-	removeobject 28
 	addobject 1
 	addobject 2
 	addobject 11
@@ -475,6 +482,7 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight::
 	waitmovement 0
 	msgbox ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight_Text_8
 	closemessage
+	playbgm MUS_DP_ENCOUNTER_SUSPICIOUS, FALSE
 	applymovement 1, Common_Movement_WalkDown
 	applymovement 2, Common_Movement_WalkUp
 	waitmovement 0
@@ -490,6 +498,8 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight::
 	setobjectxyperm 11, 47, 0
 	setobjectxyperm 16, 47, 0
 	release
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	return
 
 
