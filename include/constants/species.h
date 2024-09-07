@@ -1641,8 +1641,9 @@
 #define SPECIES_SHEDINJA_MARYAN                         1534
 #define SPECIES_COMBEE_MARYAN                           1535
 #define SPECIES_VESPIQUEN_MARYAN                        1536
+#define SPECIES_SHADOW_AGGRON                           1537
 
-#define SPECIES_EGG SPECIES_VESPIQUEN_MARYAN + 1
+#define SPECIES_EGG SPECIES_SHADOW_AGGRON + 1
 
 #define NUM_SPECIES SPECIES_EGG
 

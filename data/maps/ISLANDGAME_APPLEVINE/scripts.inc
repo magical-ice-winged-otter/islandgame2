@@ -10,15 +10,21 @@ ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_ge ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 	setflag FLAG_TEMP_2
 ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	goto_if_set FLAG_APPLEVINE_ITEMFINDER_RECEIVED, ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+	goto_if_set FLAG_APPLEVINE_ITEMFINDER_RECEIVED, ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
+ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+	goto_if_set FLAG_APPLEVINE_MELISSA_CALL, ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
 	return
 
 ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	setflag FLAG_TEMP_3
 	goto ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
-ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
 	setvar VAR_TEMP_1, 1
+	goto ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+
+ISLANDGAME_APPLEVINE_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
+	setvar VAR_TEMP_2, 1
 	return
 
 
@@ -44,6 +50,20 @@ ISLANDGAME_APPLEVINE_SierraPathSign::
 
 ISLANDGAME_APPLEVINE_RockyPathSign::
 	msgbox ISLANDGAME_APPLEVINE_RockyPathSign_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_APPLEVINE_MelissaCall::
+	lock
+	playse SE_POKENAV_CALL
+	msgbox ISLANDGAME_APPLEVINE_MelissaCall_Text_0
+	msgbox ISLANDGAME_APPLEVINE_MelissaCall_Text_1
+	playse SE_POKENAV_HANG_UP
+	waitse
+	setflag FLAG_APPLEVINE_MELISSA_CALL
+	setvar VAR_TEMP_2, 1
+	closemessage
+	release
 	return
 
 
@@ -765,6 +785,44 @@ ISLANDGAME_APPLEVINE_SierraPathSign_Text_0:
 ISLANDGAME_APPLEVINE_RockyPathSign_Text_0:
 	.string "ROCKY PATH{RIGHT_ARROW}\n"
 	.string "$"
+
+ISLANDGAME_APPLEVINE_MelissaCall_Text_0:
+	.string "...{PAUSE 60}\p"
+	.string "{COLOR RED}(Hm? It looks like Melissa is calling me.)\p"
+	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Hellooo?{PAUSE 60} Hii, {PLAYER}! How's\n"
+	.string "it been? Did you end up making it to\l"
+	.string "Tidalcove yet?\p"
+	.string "Whaaaat?{PAUSE 60} You've already beaten Ruka\n"
+	.string "and gotten her badge?\p"
+	.string "That's amazing!{PAUSE 60} Her Pokémon really are\n"
+	.string "as glamorous as she is, yeah?\p"
+	.string "It took me like of five tries before I\n"
+	.string "could beat her Milotic. Ice-types\l"
+	.string "really aren't my Gibby's strong suit...$"
+
+ISLANDGAME_APPLEVINE_MelissaCall_Text_1:
+	.string "{COLOR DARK_GRAY}Huh?{PAUSE 60} Where am I right now?{PAUSE 60} I'm in line\n"
+	.string "for a meet-and-greet with some of the\l"
+	.string "members of STARLIGHT at Aetheria!\p"
+	.string "I've been standing here for a while, so I\n"
+	.string "figured I'd check in to see how you're\l"
+	.string "doing!\p"
+	.string "Eeeh?{PAUSE 60} You saw THE Primrose in Oranna?{PAUSE 60}\n"
+	.string "Ugggg, I'm jealous...{PAUSE 60} She's my favorite\l"
+	.string "from STARLIGHT!{PAUSE 60} Shame she's not here\l"
+	.string "though... she's too busy collecting the\l"
+	.string "three gym badges.\p"
+	.string "Anyways, it's been a hot minute since\n"
+	.string "we've seen each other... {PAUSE 60} Wanna meet up\l"
+	.string "here in Aetheria? It's the biggest city\l"
+	.string "in all of the Maryan Isles!\p"
+	.string "You're at Applevine, right? Aetheria is\n"
+	.string "just down south from there. Just take\l"
+	.string "Rocky Path and go through Lumine Cave\l"
+	.string "to get to Bellehaven, and Aetheria will\l"
+	.string "be just to the west!\p"
+	.string "I've got a little surprise to give you\n"
+	.string "when you arrive! See you then!$"
 
 ISLANDGAME_APPLEVINE_CocoInteract_Text_0:
 	.string "{COLOR GREEN}???: {COLOR DARK_GRAY}Oh, hello {PLAYER}! Fancy seeing\n"

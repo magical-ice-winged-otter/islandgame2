@@ -5,7 +5,7 @@ ISLANDGAME_TRAVELERS_TUNNEL_2_MapScripts::
 ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac::
 	lock
 	faceplayer
-	goto_if_unset FLAG_TRAVELERS_TUNNEL_AGGRONITE, ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac_2
+	goto_if_unset FLAG_TRAVELERS_TUNNEL_STEELIXITE, ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac_2
 	msgbox ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac_Text_5
 ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac_1:
 Maniac_End:
@@ -27,8 +27,8 @@ ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac_5:
 	checkmoney 10000
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac_8
-	giveitem ITEM_AGGRONITE
-	setflag FLAG_TRAVELERS_TUNNEL_AGGRONITE
+	giveitem ITEM_STEELIXITE
+	setflag FLAG_TRAVELERS_TUNNEL_STEELIXITE
 	removemoney 10000
 	updatemoneybox
 	msgbox ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac_Text_3
@@ -49,8 +49,8 @@ ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer::
 ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac_Text_0:
 	.string "Hey there trainer. I have a SUPER\n"
 	.string "special item on me. It's VERY rare.\p"
-	.string "It's an Aggronite. If you have an\n"
-	.string "Aggron, it'll MEGA EVOLVE it!\p"
+	.string "It's an Steelixite. If you have an\n"
+	.string "Steelix, it'll MEGA EVOLVE it!\p"
 	.string "It's all yours... if you just slide me a\n"
 	.string "couple buckaroos...$"
 

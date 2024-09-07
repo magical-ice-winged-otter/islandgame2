@@ -1,4 +1,10 @@
-mapscripts ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts {}
+mapscripts ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if(flag(FLAG_S_ORANNA_PATH_ABSOL_DEFEATED)) {
+            setflag(FLAG_TEMP_1)
+        }
+    }
+}
 
 script ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol {
     lock 

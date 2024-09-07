@@ -385,7 +385,7 @@ ISLANDGAME_ROCKY_PATH_Sign_Text_0:
 
 ISLANDGAME_ROCKY_PATH_LumineCaveEntrance_Text_0:
 	.string "LUMINE CAVE\n"
-	.string "Just follow the yellow sand road!$"
+	.string "When in doubt, follow the sand!$"
 
 ISLANDGAME_ROCKY_PATH_Ranger_Text_0:
 	.string "It's easy to get lost in Lumine's\n"

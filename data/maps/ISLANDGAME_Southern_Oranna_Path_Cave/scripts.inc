@@ -1,5 +1,14 @@
 ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	goto_if_set FLAG_S_ORANNA_PATH_ABSOL_DEFEATED, ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_1
+	return
 
 
 ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol::

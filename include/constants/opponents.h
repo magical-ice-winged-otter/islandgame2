@@ -194,22 +194,40 @@
 #define TRAINER_ROCKY_PATHMASTER             77
 #define TRAINER_LEROY                        TRAINER_ROCKY_PATHMASTER
 
+// Lumine Cave
+#define TRAINER_LUMINE_CAVE_1                78
+#define TRAINER_WILTON_1                     TRAINER_LUMINE_CAVE_1
+#define TRAINER_LUMINE_CAVE_2                79
+#define TRAINER_EDGAR                        TRAINER_LUMINE_CAVE_2
+#define TRAINER_LUMINE_CAVE_3                80
+#define TRAINER_ALBERT                       TRAINER_LUMINE_CAVE_3
+#define TRAINER_LUMINE_CAVE_4                81
+#define TRAINER_SAMUEL                       TRAINER_LUMINE_CAVE_4
+#define TRAINER_LUMINE_CAVE_5                82
+#define TRAINER_VITO                         TRAINER_LUMINE_CAVE_5
+#define TRAINER_LUMINE_CAVE_6                83
+#define TRAINER_OWEN                         TRAINER_LUMINE_CAVE_6
+#define TRAINER_LUMINE_CAVE_7                84
+#define TRAINER_WILTON_2                     TRAINER_LUMINE_CAVE_7
+#define TRAINER_LUMINE_CAVE_8                85
+#define TRAINER_WILTON_3                     TRAINER_LUMINE_CAVE_8
+#define TRAINER_LUMINE_CAVE_9                86
+#define TRAINER_WILTON_4                     TRAINER_LUMINE_CAVE_9
+#define TRAINER_LUMINE_CAVE_10               87
+#define TRAINER_WILTON_5                     TRAINER_LUMINE_CAVE_10
+#define TRAINER_LUMINE_CAVE_11               88
+#define TRAINER_WARREN                       TRAINER_LUMINE_CAVE_11
+#define TRAINER_LUMINE_CAVE_12               89
+#define TRAINER_MARY                         TRAINER_LUMINE_CAVE_12
+#define TRAINER_LUMINE_CAVE_13               90
+#define TRAINER_ALEXIA                       TRAINER_LUMINE_CAVE_13
+#define TRAINER_LUMINE_CAVE_ALBA             91
+#define TRAINER_JODY                         TRAINER_LUMINE_CAVE_ALBA
+#define TRAINER_LUMINE_CAVE_14               92
+#define TRAINER_WENDY                        TRAINER_LUMINE_CAVE_14
+  
 
-#define TRAINER_WILTON_1                     78
-#define TRAINER_EDGAR                        79
-#define TRAINER_ALBERT                       80
-#define TRAINER_SAMUEL                       81
-#define TRAINER_VITO                         82
-#define TRAINER_OWEN                         83
-#define TRAINER_WILTON_2                     84
-#define TRAINER_WILTON_3                     85
-#define TRAINER_WILTON_4                     86
-#define TRAINER_WILTON_5                     87
-#define TRAINER_WARREN                       88
-#define TRAINER_MARY                         89
-#define TRAINER_ALEXIA                       90
-#define TRAINER_JODY                         91
-#define TRAINER_WENDY                        92
+
 #define TRAINER_KEIRA                        93
 #define TRAINER_BROOKE_1                     94
 #define TRAINER_JENNIFER                     95

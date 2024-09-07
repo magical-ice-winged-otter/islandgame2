@@ -13189,6 +13189,14 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
 #endif //P_FOOTPRINTS
 #endif //P_FAMILY_COMBEE_MARYAN
 
+#if P_FAMILY_SHADOW_AGGRON
+const u32 gMonFrontPic_ShadowAggron[] = INCBIN_U32("graphics/pokemon/shadow_aggron/anim_front.4bpp.lz");
+const u32 gMonPalette_ShadowAggron[] = INCBIN_U32("graphics/pokemon/shadow_aggron/normal.gbapal.lz");
+const u32 gMonBackPic_ShadowAggron[] = INCBIN_U32("graphics/pokemon/shadow_aggron/back.4bpp.lz");
+const u32 gMonShinyPalette_ShadowAggron[] = INCBIN_U32("graphics/pokemon/shadow_aggron/shiny.gbapal.lz");
+const u8 gMonIcon_ShadowAggron[] = INCBIN_U8("graphics/pokemon/shadow_aggron/icon.4bpp");
+const u8 gMonFootprint_ShadowAggron[] = INCBIN_U8("graphics/pokemon/shadow_aggron/footprint.1bpp");
+#endif //P_FAMILY_SHADOW_AGGRON
 
 
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");

@@ -79,6 +79,7 @@ ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle::
 	lockall
 	call ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage
+	playbgm MUS_DP_ENCOUNTER_SAILOR, TRUE
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleIntro
 	waitmovement 0
 	call ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage
@@ -87,6 +88,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle::
 	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementMiddleOutro
 	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	call ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup
 	return
 
@@ -94,6 +97,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterMiddle::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft::
 	lockall
 	call ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage
+	playbgm MUS_DP_ENCOUNTER_SAILOR, TRUE
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementLeftIntro
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
@@ -103,6 +107,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft::
 	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro
 	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	call ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup
 	return
 
@@ -110,6 +116,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterLeft::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft::
 	lockall
 	call ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage
+	playbgm MUS_DP_ENCOUNTER_SAILOR, TRUE
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarLeftIntro
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
@@ -119,6 +126,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft::
 	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro
 	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	call ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup
 	return
 
@@ -126,6 +135,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarLeft::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight::
 	lockall
 	call ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage
+	playbgm MUS_DP_ENCOUNTER_SAILOR, TRUE
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementRightIntro
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
@@ -135,6 +145,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight::
 	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro
 	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	call ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup
 	return
 
@@ -142,6 +154,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterRight::
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight::
 	lockall
 	call ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasIntroMessage
+	playbgm MUS_DP_ENCOUNTER_SAILOR, TRUE
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementFarRightIntro
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
@@ -151,6 +164,8 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_JonasEncounterFarRight::
 	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_OUTSIDE_WatchJonasLeave
 	applymovement 13, ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasMovementSideOutro
 	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	call ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleCleanup
 	return
 

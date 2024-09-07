@@ -582,6 +582,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
     setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
     setcwildbattle(0, SPECIES_SHADOW_MIGHTYENA, 25, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER)
     setwilddoublebattle(TRUE)
     playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
@@ -589,6 +590,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     dowildbattle
     clearflag(FLAG_SMART_WILD_AI)
     clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
     specialvar(VAR_RESULT, GetBattleOutcome)
     
     switch(var(VAR_RESULT)) {
@@ -1027,7 +1029,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7 {
 
 script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8 {
     trainerbattle_single(TRAINER_MINTY_MEADOWS_16, format("{COLOR DARK_GRAY}Shorts are awesome. They're so comfy to wear. Don't you agree?"), ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss)
-	msgbox(format("Shorts are in the top percentage of pants! They're easily S tier!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("Shorts are easily an S tier pick for pants!"), MSGBOX_AUTOCLOSE)
 }
 
 // text ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1_Loss {

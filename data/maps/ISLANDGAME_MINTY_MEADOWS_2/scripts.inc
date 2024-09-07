@@ -569,6 +569,7 @@ ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 	faceplayer
 	setflag FLAG_SMART_WILD_AI
 	setflag FLAG_NO_CATCHING
+	setflag FLAG_NO_RUNNING
 	setcwildbattle 0, SPECIES_SHADOW_MIGHTYENA, 25, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER
 	setwilddoublebattle TRUE
 	playmoncry SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER
@@ -576,6 +577,7 @@ ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 	dowildbattle
 	clearflag FLAG_SMART_WILD_AI
 	clearflag FLAG_NO_CATCHING
+	clearflag FLAG_NO_RUNNING
 	specialvar VAR_RESULT, GetBattleOutcome
 	switch VAR_RESULT
 	case B_OUTCOME_LOST, ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_3
@@ -1292,8 +1294,8 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0:
 	.string "wear. Don't you agree?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1:
-	.string "Shorts are in the top percentage of\n"
-	.string "pants! They're easily S tier!$"
+	.string "Shorts are easily an S tier pick for\n"
+	.string "pants!$"
 
 ConqueredMightyena_Text::
 	.string "{COLOR DARK_GRAY} gg u won$"

@@ -150,7 +150,7 @@ script ISLANDGAME_ROCKY_PATH_Sign {
 
 script ISLANDGAME_ROCKY_PATH_LumineCaveEntrance {
     msgbox(format(
-        "LUMINE CAVE\nJust follow the yellow sand road!"
+        "LUMINE CAVE\nWhen in doubt, follow the sand!"
     ), MSGBOX_SIGN)
 }
 

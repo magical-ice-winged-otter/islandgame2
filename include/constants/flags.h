@@ -704,16 +704,16 @@
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_PROTEIN       0x293 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_XP_CANDY      0x294 
 #define FLAG_HIDDEN_ITEM_ROCKY_PATH_FLOAT_STONE     0x295 
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
-#define FLAG_UNUSED_0x29C  0x29C // Unused Flag
-#define FLAG_UNUSED_0x29D  0x29D // Unused Flag
-#define FLAG_UNUSED_0x29E  0x29E // Unused Flag
-#define FLAG_UNUSED_0x29F  0x29F // Unused Flag
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_OVAL_STONE     0x296 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_XP_CANDY       0x297
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_SUPER_POTION   0x298 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_IRON           0x299 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_NUGGET         0x29A
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_DUSK_BALL      0x29B
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_X_DEFEND       0x29C 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_FULL_HEAL      0x29D
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_HARD_STONE     0x29E 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_XP_CANDY_M     0x29F 
 #define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
 #define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
 #define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
@@ -1269,13 +1269,13 @@
 #define FLAG_ITEM_ROCKY_PATH_ETHER                                  0x4C0 
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
 #define FLAG_ITEM_ROCKY_PATH_GREAT_BALL                             0x4C2
-#define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
-#define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
-#define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
-#define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
-#define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
-#define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
-#define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
+#define FLAG_ITEM_LUMINE_CAVE_REVIVE                                0x4C3 
+#define FLAG_ITEM_LUMINE_CAVE_TM_ROCK_TOMB                          0x4C4
+#define FLAG_ITEM_LUMINE_CAVE_DIRE_HIT                              0x4C5 
+#define FLAG_ITEM_LUMINE_CAVE_MOON_STONE                            0x4C6
+#define FLAG_ITEM_LUMINE_CAVE_PICKAXE                               0x4C7 
+#define FLAG_ITEM_LUMINE_CAVE_STARDUST                              0x4C8 
+#define FLAG_UNUSED_0x4C9                                           0x4C9 
 #define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
 #define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
 #define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
@@ -1571,7 +1571,7 @@
 #define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
 //applevine: sell ur soul to EA
 #define FLAG_APPLEVINE_COIN_CASE                    (SYSTEM_FLAGS + 0xA2)
-#define FLAG_TRAVELERS_TUNNEL_AGGRONITE             (SYSTEM_FLAGS + 0xA3)
+#define FLAG_TRAVELERS_TUNNEL_STEELIXITE            (SYSTEM_FLAGS + 0xA3)
 //cheriport: im da map
 #define FLAG_RECEIVED_TOWN_MAP                      (SYSTEM_FLAGS + 0xA4) 
 //rosevale: its time 2 dool
@@ -1582,15 +1582,15 @@
 #define FLAG_APPLEVINE_MOVE_TUTOR_FREEBIE           (SYSTEM_FLAGS + 0xA7) 
 #define FLAG_ROCKY_PATH_ESCAPE_ROPE                 (SYSTEM_FLAGS + 0xA8) 
 #define FLAG_ROCKY_PATH_HAPPINY_GIFT                (SYSTEM_FLAGS + 0xA9) 
-#define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
-#define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
-#define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
-#define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
+#define FLAG_APPLEVINE_MELISSA_CALL                 (SYSTEM_FLAGS + 0xAA) 
+#define FLAG_LUMINE_CAVE_GURDURR_GIFT               (SYSTEM_FLAGS + 0xAB)
+#define FLAG_LUMINE_CAVE_AGGRON_DEFEATED            (SYSTEM_FLAGS + 0xAC)
+#define FLAG_LUMINE_CAVE_GIGALITH_DEFEATED          (SYSTEM_FLAGS + 0xAD) 
+#define FLAG_LUMINE_CAVE_SABLEYE_DEFEATED           (SYSTEM_FLAGS + 0xAE) 
+#define FLAG_LUMINE_CAVE_CHANSEY_GIFT               (SYSTEM_FLAGS + 0xAF)
+#define FLAG_LUMINE_CAVE_SPOKE_TO_ALBA              (SYSTEM_FLAGS + 0xB0)
+#define FLAG_LUMINE_CAVE_ALBA_DEFEATED              (SYSTEM_FLAGS + 0xB1) 
+#define FLAG_LUMINE_CAVE_SHELL_BELL_RECEIVED        (SYSTEM_FLAGS + 0xB2)
 #define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
 #define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
 #define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
@@ -1642,14 +1642,14 @@
 #define FLAG_DAILY_APPLEVINE_COIN_BRO               (DAILY_FLAGS_START + 0x1C)
 #define FLAG_DAILY_SS_RAIN_LOBSTER_ROLL             (DAILY_FLAGS_START + 0x1D)
 #define FLAG_DAILY_ROCKY_PATH_ROCKRUFF              (DAILY_FLAGS_START + 0x1E) 
-#define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
-#define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
-#define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x943                           (DAILY_FLAGS_START + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x944                           (DAILY_FLAGS_START + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x945                           (DAILY_FLAGS_START + 0x25) // Unused Flag
-#define FLAG_UNUSED_0x946                           (DAILY_FLAGS_START + 0x26) // Unused Flag
+#define FLAG_DAILY_LUMINE_CAVE_SALT_1               (DAILY_FLAGS_START + 0x1F)
+#define FLAG_DAILY_LUMINE_CAVE_SHELL_1              (DAILY_FLAGS_START + 0x20)
+#define FLAG_DAILY_LUMINE_CAVE_SALT_2               (DAILY_FLAGS_START + 0x21)
+#define FLAG_DAILY_LUMINE_CAVE_SHELL_2              (DAILY_FLAGS_START + 0x22) 
+#define FLAG_DAILY_LUMINE_CAVE_SHELL_3              (DAILY_FLAGS_START + 0x23)
+#define FLAG_DAILY_LUMINE_CAVE_SALT_3               (DAILY_FLAGS_START + 0x24) 
+#define FLAG_DAILY_LUMINE_CAVE_SHELL_4              (DAILY_FLAGS_START + 0x25)
+#define FLAG_DAILY_LUMINE_CAVE_SALT_4               (DAILY_FLAGS_START + 0x26) 
 #define FLAG_UNUSED_0x947                           (DAILY_FLAGS_START + 0x27) // Unused Flag
 #define FLAG_UNUSED_0x948                           (DAILY_FLAGS_START + 0x28) // Unused Flag
 #define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag

@@ -2434,13 +2434,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SHOAL_SALT] =
     {
-        .name = _("Shoal Salt"),
+        .name = _("Cave Salt"),
         .pluralName = _("Shoal Salt"),
         .price = 20,
         .description = COMPOUND_STRING(
             "Salt obtained from\n"
-            "deep inside the\n"
-            "Shoal Cave."),
+            "inside the depths\n"
+            "of Lumine Cave."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -2449,12 +2449,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SHOAL_SHELL] =
     {
-        .name = _("Shoal Shell"),
+        .name = _("Cave Shell"),
         .price = 20,
         .description = COMPOUND_STRING(
             "A seashell found\n"
-            "deep inside the\n"
-            "Shoal Cave."),
+            "inside the depths\n"
+            "of Lumine Cave."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
