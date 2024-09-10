@@ -1096,7 +1096,7 @@ const struct Tileset gTileset_islandgame_ocean_general =
     .palettes = gTilesetPalettes_islandgame_ocean_general,
     .metatiles = gMetatiles_islandgame_ocean_general,
     .metatileAttributes = gMetatileAttributes_islandgame_ocean_general,
-    .callback = NULL,
+    .callback = InitTilesetAnim_islandgame_ocean_general,
 };
 
 const struct Tileset gTileset_islandgame_lumine_applevine =

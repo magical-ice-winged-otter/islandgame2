@@ -41,6 +41,7 @@ void InitTilesetIsland_Anim_Forest(void);
 void InitTilesetAnim_islandgame_oranna_rosevale(void);
 void InitTilesetAnim_islandgame_oranna_maplegrove(void);
 void InitTilesetAnim_islandgame_oranna_mt_aurora(void);
+void InitTilesetAnim_islandgame_ocean_general(void);
 
 
 #endif // GUARD_TILESET_ANIMS_H

@@ -52,6 +52,7 @@ static void TilesetAnim_islandgame_oranna_cheriport(u16);
 static void TilesetAnim_islandgame_oranna_tidalcove(u16);
 static void TilesetAnim_islandgame_oranna_maplegrove(u16);
 static void TilesetAnim_islandgame_oranna_mt_aurora(u16);
+static void TilesetAnim_islandgame_ocean_general(u16);
 
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
@@ -99,6 +100,7 @@ static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_00(u16);
 static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_01(u16);
 static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_02(u16);
 static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_03(u16);
+static void QueueAnimTiles_islandgame_ocean_general_water(u16);
 
 //VANILLA
 
@@ -277,6 +279,26 @@ const u16 *const gTilesetAnims_islandgame_ss_rain_water[] = {
     gTilesetAnims_islandgame_ss_rain_water_Frame5,
     gTilesetAnims_islandgame_ss_rain_water_Frame6,
     gTilesetAnims_islandgame_ss_rain_water_Frame7
+};
+
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame0[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/00.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame1[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/01.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame2[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/02.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame3[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/03.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame4[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/04.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame5[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/05.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame6[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/06.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame7[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/07.4bpp");
+
+const u16 *const gTilesetAnims_islandgame_ocean_general_water[] = {
+    gTilesetAnims_islandgame_ocean_general_water_Frame0,
+    gTilesetAnims_islandgame_ocean_general_water_Frame1,
+    gTilesetAnims_islandgame_ocean_general_water_Frame2,
+    gTilesetAnims_islandgame_ocean_general_water_Frame3,
+    gTilesetAnims_islandgame_ocean_general_water_Frame4,
+    gTilesetAnims_islandgame_ocean_general_water_Frame5,
+    gTilesetAnims_islandgame_ocean_general_water_Frame6,
+    gTilesetAnims_islandgame_ocean_general_water_Frame7
 };
 
 const u16 gTilesetAnims_islandgame_oranna_mt_aurora_water_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_mt_aurora/anim/water/00.4bpp");
@@ -930,6 +952,13 @@ void InitTilesetAnim_islandgame_ss_rain_general(void)
     sPrimaryTilesetAnimCallback = TilesetAnim_islandgame_ss_rain;
 }
 
+void InitTilesetAnim_islandgame_ocean_general(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_islandgame_ocean_general;
+}
+
 void InitTilesetAnim_islandgame_oranna_general(void)
 {
     sPrimaryTilesetAnimCounter = 0;
@@ -1044,6 +1073,12 @@ static void TilesetAnim_islandgame_oranna_mt_aurora(u16 timer)
         QueueAnimTiles_islandgame_oranna_mt_aurora_water(timer / 16);
 }
 
+static void TilesetAnim_islandgame_ocean_general(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_islandgame_ocean_general_water(timer / 16);
+}
+
 static void Island_TilesetAnim_Forest(u16 timer)
 {
     if (timer % 16 == 0)
@@ -1145,6 +1180,12 @@ static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_03(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_maplegrove_flower_03);
     AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_maplegrove_flower_03[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_islandgame_ocean_general_water(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_ocean_general_water);
+    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_ocean_general_water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 2 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_islandgame_oranna_mt_aurora_water(u16 timer)
