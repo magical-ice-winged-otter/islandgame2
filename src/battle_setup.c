@@ -1503,6 +1503,8 @@ static void CB2_End2v2TrainerBattle(void)
         gPlayerParty[i] = gPlayerSavedParty[i];
         ZeroMonData(&gPlayerSavedParty[i]);
     }
+    // Heal the party 
+    HealPlayerParty();
 
     if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
