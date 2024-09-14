@@ -61,7 +61,7 @@ RunAway:
 SS_Rain_EventScript_HasNoWater::
 	applymovement OBJ_EVENT_ID_PLAYER, RunAway
 	waitmovement 0
-	warpdoor MAP_SS_RAIN_HALLWAY, 19, 11
+	warpdoor MAP_SS_RAIN_HALLWAY, 19, 8
 	return
 
 

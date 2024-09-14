@@ -11,4 +11,4 @@ SS_RAIN_STAIRS_NPC::
 
 
 SS_RAIN_STAIRS_NPC_TALK::
-	.string "{COLOR DARK_GRAY}My mom is taking us to the beach later!$"
+	.string "{COLOR DARK_GRAY}My mom is taking me to the beach later!$"

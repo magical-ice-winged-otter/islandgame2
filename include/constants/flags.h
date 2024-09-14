@@ -1511,8 +1511,7 @@
 
 
 // island-game flags
-//ss rain: set when you leave the ship at the beginning of the game
-#define FLAG_LEFT_SHIP                              (SYSTEM_FLAGS + 0x85) 
+#define FLAG_LEFT_SHIP                              (SYSTEM_FLAGS + 0x85)       // not in use
 //ss rain: old man quest
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
 //cheriport: get first mon

@@ -427,7 +427,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     )
 
 
-    startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
+    // startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     waitmovement(0)
     // audrey runs off to look for mareep
@@ -800,7 +800,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     setobjectxyperm(OLD_MAN_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     special(HealPlayerParty)
-    completequest(QUEST_FRESA_FARMS_LOST_MAREEP)
+    // completequest(QUEST_FRESA_FARMS_LOST_MAREEP)
     setflag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)
     setvar(VAR_TEMP_5, 1) // let player go to places that were restricted prior
     release

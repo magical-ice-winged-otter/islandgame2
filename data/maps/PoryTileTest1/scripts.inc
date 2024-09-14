@@ -72,6 +72,15 @@ PoryTileTest2_EventScript_NPC4Talk::
 	return
 
 
+PoryTileTest2_EventScript_Stern::
+	lock
+	faceplayer
+	msgbox PoryTileTest2_EventScript_Stern_Text_0
+	closemessage
+	release
+	return
+
+
 PoryTileTest2_EventScript_NPC4Talk_Text_0:
 	.string "I'M FLYING!!!!!\p"
 	.string "Huh? What do you mean, why am I yelling\n"
@@ -80,6 +89,10 @@ PoryTileTest2_EventScript_NPC4Talk_Text_0:
 	.string "on the golden age of entertainment.\p"
 	.string "Now you're all engrossed in that cringe\n"
 	.string "PokéIdol nonsense or whatever.$"
+
+PoryTileTest2_EventScript_Stern_Text_0:
+	.string "This is quite the impressive vessel, I\n"
+	.string "must say. It's just like our S.S. Tidal.$"
 
 PoryTileTest1_BoyGave_Text::
 	.string "{COLOR DARK_GRAY}Sorry for troubling you. I wanted to\n"

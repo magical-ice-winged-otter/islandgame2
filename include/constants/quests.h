@@ -25,20 +25,49 @@
 
 
 // Custom Quests
-#define QUEST_PERSI_FAVORITE_CARD          0
-#define QUEST_PERSI_BERRY_MANIAC           1
+#define QUEST_POKEDEX_COMPLETION           0
+#define QUEST_MINTY_MEADOWS_MELISSA        1
+#define QUEST_PERSI_FAVORITE_CARD          2
+#define QUEST_PERSI_BERRY_MANIAC           3
 // #define QUEST_VERDANT_FOREST_SKITTY        2
-#define QUEST_MAPLEGROVE_LOVERS            2
-#define QUEST_FRESA_FARMS_LOST_MAREEP      3
-#define QUEST_FRESA_FARMS_TORCHIC_EGG      4
-#define QUEST_ROSEVALE_RESCUE              5
-#define QUEST_APPLEVINE_COUCH_POTATO       6
-#define QUEST_ROCKY_PATH_NURSE             7
-#define QUEST_COUNT                        8 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_MAPLEGROVE_LOVERS            4
+#define QUEST_FRESA_FARMS_TORCHIC_EGG      5
+#define QUEST_ROSEVALE_RESCUE              6
+#define QUEST_APPLEVINE_COUCH_POTATO       7
+#define QUEST_ROCKY_PATH_NURSE             8
+#define QUEST_COUNT                        9 // This number is literally how many to show in the UI (keep it accurate!)
+
+
+
+
+
 
 // Custom Sub-Quests
 
-//Persi Berry
+// Pokedex Completion
+#define SUB_QUEST_POKEDEX_MILESTONE_1      0
+#define SUB_QUEST_POKEDEX_MILESTONE_2      1
+#define SUB_QUEST_POKEDEX_MILESTONE_3      2
+#define SUB_QUEST_POKEDEX_MILESTONE_4      3
+#define SUB_QUEST_POKEDEX_MILESTONE_5      4
+#define SUB_QUEST_POKEDEX_MILESTONE_6      5
+#define SUB_QUEST_POKEDEX_MILESTONE_7      6
+#define SUB_QUEST_POKEDEX_MILESTONE_8      7
+#define SUB_QUEST_POKEDEX_MILESTONE_9      8
+#define SUB_QUEST_POKEDEX_MILESTONE_10     9
+#define SUB_QUEST_POKEDEX_MILESTONE_11     10
+#define SUB_QUEST_POKEDEX_MILESTONE_12     11
+#define SUB_QUEST_POKEDEX_MILESTONE_13     12
+
+#define SUB_QUEST_COUNT_POKEDEX_MILESTONE  13
+
+// Minty Meadows Melissa
+#define SUB_QUEST_MEADOWS_MELISSA          0
+
+#define SUB_QUEST_COUNT_MEADOWS_MELISSA    1
+
+
+// Persi Berry
 #define SUB_QUEST_PERSI_BERRY_1            0
 #define SUB_QUEST_PERSI_BERRY_2            1
 #define SUB_QUEST_PERSI_BERRY_3            2
@@ -65,7 +94,7 @@
 
 #define SUB_QUEST_COUNT_COUCH_POTATO       5
 
-#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_COUCH_POTATO)
+#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_POKEDEX_MILESTONE + SUB_QUEST_COUNT_MEADOWS_MELISSA + SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_COUCH_POTATO)
 
 
 // We want to allocate more space in the saveblock for quests than we need,

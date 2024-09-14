@@ -78,6 +78,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CHERIPORT_LAB_EventScript_CocoTalk",
       "flag": "FLAG_TIDALCOVE_RUKA_DEFEATED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MELISSA",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CHERIPORT_LAB_EventScript_Melissa",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_443",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CHERIPORT_LAB_EventScript_Gible",
+      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [

@@ -403,7 +403,6 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_8
-	startquest QUEST_FRESA_FARMS_LOST_MAREEP
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_9
@@ -728,7 +727,6 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setobjectxyperm 12, -3, 1
 	setobjectxyperm 6, -3, 1
 	special HealPlayerParty
-	completequest QUEST_FRESA_FARMS_LOST_MAREEP
 	setflag FLAG_MINTY_MEADOWS_RIVAL_DEFEATED
 	setvar VAR_TEMP_5, 1
 	release

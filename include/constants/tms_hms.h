@@ -53,7 +53,8 @@
     F(SNATCH) \
     F(OVERHEAT) \
     F(CHARGE_BEAM) \
-    F(STONE_EDGE)
+    F(STONE_EDGE) \
+    F(FALSE_SWIPE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

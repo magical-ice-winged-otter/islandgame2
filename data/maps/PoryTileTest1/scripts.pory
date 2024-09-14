@@ -97,3 +97,13 @@ script PoryTileTest2_EventScript_NPC4Talk {
     closemessage
     release
 }
+
+script PoryTileTest2_EventScript_Stern {
+    lock
+    faceplayer
+    msgbox(format(
+        "This is quite the impressive vessel, I must say. It's just like our S.S. Tidal."
+    ))
+    closemessage
+    release
+}

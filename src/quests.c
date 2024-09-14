@@ -252,7 +252,7 @@ static const u8 sText_AZ[] = _(" A-Z");
 const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
 const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
 const u8 sText_SideQuestMap_Maplegrove[] = _("Maplegrove");
-const u8 sText_SideQuestMap_CentralOrannaPath[] = _("C. Oranna Path");
+const u8 sText_SideQuestMap_Cheriport[] = _("Cheriport");
 const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
 const u8 sText_SideQuestMap_MintyMeadows[] = _("Minty Meadows");
@@ -262,6 +262,61 @@ const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
 const u8 sText_SideQuestMap_Applevine[] = _("Applevine");
 const u8 sText_SideQuestMap_RockyPath[] = _("Rocky Path");
 const u8 sText_SideQuestMap_Unknown[] = _("-");
+
+
+// Pokedex Quest
+const u8 sText_SideQuestName_PokedexCompletion[] = _("Gotta Catch 'Em All!");
+const u8 sText_SideQuestDesc_PokedexCompletion[] = _("You know the deal. Complete the\nPokédex for Professor Palm!");
+const u8 sText_SideQuestDoneDesc_PokedexCompletion[] = _("Thanks for playing! :)");
+
+const u8 sText_SubQuest_PokedexMilestone1_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone1_Desc[] = _("You've completed 30 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone2_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone2_Desc[] = _("You've completed 60 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone3_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone3_Desc[] = _("You've completed 90 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone4_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone4_Desc[] = _("You've completed 120 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone5_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone5_Desc[] = _("You've completed 150 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone6_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone6_Desc[] = _("You've completed 180 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone7_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone7_Desc[] = _("You've completed 210 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone8_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone8_Desc[] = _("You've completed 240 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone9_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone9_Desc[] = _("You've completed 270 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone10_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone10_Desc[] = _("You've completed 300 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone11_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone11_Desc[] = _("You've completed 330 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone12_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone12_Desc[] = _("You've completed 360 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone13_Name[] = _("Pokédex Complete!");
+const u8 sText_SubQuest_PokedexMilestone13_Desc[] = _("You've completed ALL entries!");
+
+
+// Minty Meadows Melissa Quest
+const u8 sText_SideQuestName_MintyMeadowsMelissa[] = _("The Journey Begins!");
+const u8 sText_SideQuestDesc_MintyMeadowsMelissa[] = _("Meet up with Professor Palm's\nassistant, Melissa!");
+const u8 sText_SideQuestDoneDesc_MintyMeadowsMelissa[] = _("That Mightyena... It had\na strange shadowy aura around it...");
+
+const u8 sText_SubQuest_MintyMeadowsMelissa_Name[] = _("Missing Mareep");
+const u8 sText_SubQuest_MintyMeadowsMelissa_Desc[] = _("The owner of Fresa Farms has\nlost one of his Mareep!");
+
 
 // Persi Favorite Card Quest
 const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
@@ -328,10 +383,7 @@ const u8 sText_SideQuestDesc_MaplegroveLovers[] = _("Deliver Roman's love letter
 const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("You've cleared up the confusion\nbetween the two!");
 
 
-// Lost Mareep Quest
-const u8 sText_SideQuestName_FresaFarmsLostMareep[] = _("Missing Mareep");
-const u8 sText_SideQuestDesc_FresaFarmsLostMareep[] = _("The owner of Fresa Farms has\n lost one of his Mareep!");
-const u8 sText_SideQuestDoneDesc_FresaFarmsLostMareep[] = _("You found and returned the\nMareep!");
+
 
 // Torchic Egg Quest
 const u8 sText_SideQuestName_FresaFarmsTorchicEgg[] = _("The Egg");
@@ -368,6 +420,140 @@ const u8 sText_SideQuestName_ROCKY_PATH_NURSE[] = _("The Missing Ingredient");
 const u8 sText_SideQuestDesc_ROCKY_PATH_NURSE[] = _("Nurse Joy needs a Balm Mushroom for\nher newest medicinal breakthrough!");
 const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\nin creating the PokéVial!");
 
+
+static const struct SubQuest sSubQuests_PokedexMilestones[SUB_QUEST_COUNT_POKEDEX_MILESTONE] = 
+{
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_1,
+		sText_SubQuest_PokedexMilestone1_Name,
+		sText_SubQuest_PokedexMilestone1_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM53,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_2,
+		sText_SubQuest_PokedexMilestone2_Name,
+		sText_SubQuest_PokedexMilestone2_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_NEST_BALL,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_3,
+		sText_SubQuest_PokedexMilestone3_Name,
+		sText_SubQuest_PokedexMilestone3_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_RARE_CANDY,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_4,
+		sText_SubQuest_PokedexMilestone4_Name,
+		sText_SubQuest_PokedexMilestone4_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_LEVEL_BALL,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_5,
+		sText_SubQuest_PokedexMilestone5_Name,
+		sText_SubQuest_PokedexMilestone5_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_ABILITY_CAPSULE,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_6,
+		sText_SubQuest_PokedexMilestone6_Name,
+		sText_SubQuest_PokedexMilestone6_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_ULTRA_BALL,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_7,
+		sText_SubQuest_PokedexMilestone7_Name,
+		sText_SubQuest_PokedexMilestone7_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_ABILITY_PATCH,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_8,
+		sText_SubQuest_PokedexMilestone8_Name,
+		sText_SubQuest_PokedexMilestone8_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_QUICK_BALL,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_9,
+		sText_SubQuest_PokedexMilestone9_Name,
+		sText_SubQuest_PokedexMilestone9_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_CATCHING_CHARM,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_10,
+		sText_SubQuest_PokedexMilestone10_Name,
+		sText_SubQuest_PokedexMilestone10_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_EXP_CHARM,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_11,
+		sText_SubQuest_PokedexMilestone11_Name,
+		sText_SubQuest_PokedexMilestone11_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_OVAL_CHARM,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_12,
+		sText_SubQuest_PokedexMilestone12_Name,
+		sText_SubQuest_PokedexMilestone12_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_MASTER_BALL,
+		ITEM,
+		sText_Active
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_13,
+		sText_SubQuest_PokedexMilestone13_Name,
+		sText_SubQuest_PokedexMilestone13_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_AURORA_TICKET,
+		ITEM,
+		sText_Active
+	),
+};
+
+static const struct SubQuest sSubQuests_MintyMeadowsMelissa[SUB_QUEST_COUNT_MEADOWS_MELISSA] =
+{
+	sub_quest(
+		SUB_QUEST_MEADOWS_MELISSA,
+		sText_SubQuest_MintyMeadowsMelissa_Name,
+		sText_SubQuest_MintyMeadowsMelissa_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_MAREEP,
+		PKMN,
+		sText_Active
+	),
+};
 
 
 static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_BERRY] =
@@ -563,8 +749,29 @@ static const struct SubQuest sSubQuests_ApplevineCouchPotato[SUB_QUEST_COUNT_COU
 	),
 };
 
+
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
+	[QUEST_POKEDEX_COMPLETION] = side_quest(
+	      sText_SideQuestName_PokedexCompletion,
+	      sText_SideQuestDesc_PokedexCompletion,
+	      sText_SideQuestDoneDesc_PokedexCompletion,
+	      sText_SideQuestMap_Cheriport,
+	      OBJ_EVENT_GFX_PALM, 
+	      OBJECT,
+	      sSubQuests_PokedexMilestones,
+		  SUB_QUEST_COUNT_POKEDEX_MILESTONE
+	),
+	[QUEST_MINTY_MEADOWS_MELISSA] = side_quest(
+	      sText_SideQuestName_MintyMeadowsMelissa,
+	      sText_SideQuestDesc_MintyMeadowsMelissa,
+	      sText_SideQuestDoneDesc_MintyMeadowsMelissa,
+	      sText_SideQuestMap_MintyMeadows,
+	      OBJ_EVENT_GFX_MELISSA, 
+	      OBJECT,
+	      sSubQuests_MintyMeadowsMelissa,
+		  SUB_QUEST_COUNT_MEADOWS_MELISSA
+	),
 	[QUEST_PERSI_FAVORITE_CARD] = side_quest(
 	      sText_SideQuestName_PersiFavoriteCard,
 	      sText_SideQuestDesc_PersiFavoriteCard,
@@ -602,16 +809,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sText_SideQuestMap_Maplegrove,
 	      ITEM_ISLANDGAME_ROMANS_LETTER, 
 	      ITEM,
-	      NULL,
-              0 
-	),
-	[QUEST_FRESA_FARMS_LOST_MAREEP] = side_quest(
-	      sText_SideQuestName_FresaFarmsLostMareep,
-	      sText_SideQuestDesc_FresaFarmsLostMareep,
-	      sText_SideQuestDoneDesc_FresaFarmsLostMareep,
-	      sText_SideQuestMap_MintyMeadows,
-	      SPECIES_MAREEP, 
-	      PKMN,
 	      NULL,
               0 
 	),
