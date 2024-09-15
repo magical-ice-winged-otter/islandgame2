@@ -764,6 +764,10 @@ static void CB2_End2v2ScriptedWildBattle(void)
     }
     // Heal the party
     HealPlayerParty();
+    if (PlayerHasFollower())
+    {
+        DestroyFollower(TRUE);
+    }
     CB2_EndScriptedWildBattle();
 }
 
