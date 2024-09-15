@@ -2,27 +2,17 @@
 #define GUARD_CONSTANTS_FOLLOW_ME_H
 
 #define FOLLOWER_FLAG_HAS_RUNNING_FRAMES    0x1
-#define FOLLOWER_FLAG_CAN_BIKE              0x2
 #define FOLLOWER_FLAG_CAN_LEAVE_ROUTE       0x4     // teleport, dig, fly, etc
-#define FOLLOWER_FLAG_CAN_SURF              0x8
-#define FOLLOWER_FLAG_CAN_WATERFALL         0x10
-#define FOLLOWER_FLAG_CAN_DIVE              0x20
 #define FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT    0x80
 
-#define FOLLOWER_FLAG_ALL_WATER             FOLLOWER_FLAG_CAN_SURF | FOLLOWER_FLAG_CAN_WATERFALL | FOLLOWER_FLAG_CAN_DIVE
-#define FOLLOWER_FLAG_ALL_LAND              FOLLOWER_FLAG_HAS_RUNNING_FRAMES | FOLLOWER_FLAG_CAN_BIKE | FOLLOWER_FLAG_CAN_LEAVE_ROUTE
-#define FOLLOWER_FLAG_ALL                   FOLLOWER_FLAG_ALL_WATER | FOLLOWER_FLAG_ALL_LAND | FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT
+#define FOLLOWER_FLAG_ALL_LAND              FOLLOWER_FLAG_HAS_RUNNING_FRAMES | FOLLOWER_FLAG_CAN_LEAVE_ROUTE
+#define FOLLOWER_FLAG_ALL                   FOLLOWER_FLAG_ALL_LAND | FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT
 
 //For ease of use in setfollower macro while scripting
 #define RUNNING_FRAMES                      FOLLOWER_FLAG_HAS_RUNNING_FRAMES
-#define CAN_BIKE                            FOLLOWER_FLAG_CAN_BIKE
 #define CAN_LEAVE_ROUTE                     FOLLOWER_FLAG_CAN_LEAVE_ROUTE       // teleport, dig, fly, etc
-#define CAN_SURF                            FOLLOWER_FLAG_CAN_SURF
-#define CAN_WATERFALL                       FOLLOWER_FLAG_CAN_WATERFALL
-#define CAN_DIVE                            FOLLOWER_FLAG_CAN_DIVE
 #define CLEAR_ON_WHITE_OUT                  FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT
 
-#define ALL_WATER                           FOLLOWER_FLAG_ALL_WATER
 #define ALL_LAND                            FOLLOWER_FLAG_ALL_LAND
 #define FOLLOWER_ALL                        FOLLOWER_FLAG_ALL
 
@@ -44,6 +34,16 @@
 
 // If set to TRUE, the player will turn to face the follower when they exit a doorway.
 #define FACE_FOLLOWER_ON_DOOR_EXIT          TRUE
+
+
+
+// These flags are currently bugged and may cause the game to softlock.
+// They have been removed from all of the defines above.
+// Use at your own risk.
+#define FOLLOWER_FLAG_CAN_BIKE              0x2
+#define FOLLOWER_FLAG_CAN_SURF              0x8
+#define FOLLOWER_FLAG_CAN_WATERFALL         0x10
+#define FOLLOWER_FLAG_CAN_DIVE              0x20
 
 
 #endif // GUARD_CONSTANTS_FOLLOW_ME_H
