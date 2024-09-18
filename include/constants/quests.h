@@ -62,35 +62,35 @@
 #define SUB_QUEST_COUNT_POKEDEX_MILESTONE  13
 
 // Minty Meadows Melissa
-#define SUB_QUEST_MEADOWS_MELISSA          0
+#define SUB_QUEST_MEADOWS_MELISSA          13
 
 #define SUB_QUEST_COUNT_MEADOWS_MELISSA    1
 
 
 // Persi Berry
-#define SUB_QUEST_PERSI_BERRY_1            0
-#define SUB_QUEST_PERSI_BERRY_2            1
-#define SUB_QUEST_PERSI_BERRY_3            2
-#define SUB_QUEST_PERSI_BERRY_4            3
-#define SUB_QUEST_PERSI_BERRY_5            4
-#define SUB_QUEST_PERSI_BERRY_6            5
-#define SUB_QUEST_PERSI_BERRY_7            6
-#define SUB_QUEST_PERSI_BERRY_8            7
-#define SUB_QUEST_PERSI_BERRY_9            8
-#define SUB_QUEST_PERSI_BERRY_10           9
-#define SUB_QUEST_PERSI_BERRY_11           10
-#define SUB_QUEST_PERSI_BERRY_12           11
-#define SUB_QUEST_PERSI_BERRY_13           12
-#define SUB_QUEST_PERSI_BERRY_14           13
+#define SUB_QUEST_PERSI_BERRY_1            14
+#define SUB_QUEST_PERSI_BERRY_2            15
+#define SUB_QUEST_PERSI_BERRY_3            16
+#define SUB_QUEST_PERSI_BERRY_4            17
+#define SUB_QUEST_PERSI_BERRY_5            18
+#define SUB_QUEST_PERSI_BERRY_6            19
+#define SUB_QUEST_PERSI_BERRY_7            20
+#define SUB_QUEST_PERSI_BERRY_8            21
+#define SUB_QUEST_PERSI_BERRY_9            22
+#define SUB_QUEST_PERSI_BERRY_10           23
+#define SUB_QUEST_PERSI_BERRY_11           24
+#define SUB_QUEST_PERSI_BERRY_12           25
+#define SUB_QUEST_PERSI_BERRY_13           26
+#define SUB_QUEST_PERSI_BERRY_14           27
 
 #define SUB_QUEST_COUNT_PERSI_BERRY        14
 
 // Applevine Couch Potato
-#define SUB_QUEST_COUCH_POTATO_1           0
-#define SUB_QUEST_COUCH_POTATO_2           1
-#define SUB_QUEST_COUCH_POTATO_3           2
-#define SUB_QUEST_COUCH_POTATO_4           3
-#define SUB_QUEST_COUCH_POTATO_5           4
+#define SUB_QUEST_COUCH_POTATO_1           28
+#define SUB_QUEST_COUCH_POTATO_2           29
+#define SUB_QUEST_COUCH_POTATO_3           30
+#define SUB_QUEST_COUCH_POTATO_4           31
+#define SUB_QUEST_COUCH_POTATO_5           32
 
 #define SUB_QUEST_COUNT_COUCH_POTATO       5
 
