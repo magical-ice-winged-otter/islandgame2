@@ -373,12 +373,12 @@ text ISLANDGAME_CAMP_PERSI_Jonas_PostDefeated_Text2
 text ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro {
     format(
         "{COLOR DARK_GRAY}Are you a new camper by chance? I haven't seen you around here before. \p"
-        "{COLOR DARK_GRAY}Oh?{PAUSE 60} You're a Pokémon trainer visiting the isles from overseas? \p"
-        "{COLOR DARK_GRAY}Pardon my assumption, then.{PAUSE 60} Welcome to the Isles of Marya, {PLAYER}! \p"
-        "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling merchant of {COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}The Silverwing Order. \p"
-        "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The Silverwing Order is in charge of governing the isles. It's our job to make sure everyone here is comfortable and safe! \p"
+        "{COLOR DARK_GRAY}Oh? You're a Pokémon trainer visiting the isles from overseas? \p"
+        "{COLOR DARK_GRAY}Pardon my assumption, then. Welcome to the Isles of Marya, {PLAYER}! \p"
+        "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling merchant of The Silverwing Order. \p"
+        "{COLOR DARK_GRAY}The Silverwing Order is in charge of governing the isles. It's our job to make sure everyone here is comfortable and safe! \p"
         "{COLOR DARK_GRAY}My job in particular is traveling around the islands to provide goods and services to those in need! \p"
-        "{COLOR DARK_GRAY}But that's enough about me.{PAUSE 60} You said you were a Pokémon trainer, right? \p"
+        "{COLOR DARK_GRAY}But that's enough about me. You said you were a Pokémon trainer, right? \p"
         "{COLOR DARK_GRAY}In that case...{PAUSE 60} mind if I trouble you for a little battle?"
     )
 }
@@ -730,7 +730,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl {
     if(!flag(FLAG_RECEIVED_WAILMER_PAIL)) {
         msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk1, MSGBOX_YESNO)    
         if (var(VAR_RESULT) == NO) {
-            msgbox(format("{COLOR DARK_GRAY}Aww. That's a shame. I was going to share this Wailmer Pail with you."))
+            msgbox(format("{COLOR DARK_GRAY}Aww. That's a shame. I was going to share this Squirt Bottle with you."))
             goto(WaterGirl_End)
         }
         msgbox(ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk2)   

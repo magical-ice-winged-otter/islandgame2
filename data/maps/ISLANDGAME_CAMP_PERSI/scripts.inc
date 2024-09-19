@@ -657,7 +657,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag_Text_0:
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_Text_0:
 	.string "{COLOR DARK_GRAY}Aww. That's a shame. I was going to\n"
-	.string "share this Wailmer Pail with you.$"
+	.string "share this Squirt Bottle with you.$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7_Text_0:
 	.string "CHERIPORT{LEFT_ARROW}\nCAMP PERSI{UP_ARROW}$"
@@ -767,7 +767,7 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_JonasIntro::
 	.string "{COLOR DARK_GRAY}Pardon my assumption, then.{PAUSE 60} Welcome to\n"
 	.string "the Isles of Marya, {PLAYER}!\p"
 	.string "{COLOR DARK_GRAY}My name is Jonas. I'm a traveling\n"
-	.string "merchant of {COLOR LIGHT_GRAY}{SHADOW DARK_GRAY}The Silverwing Order.\p"
+	.string "merchant of The Silverwing Order.\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}The Silverwing Order is in charge of\n"
 	.string "governing the isles. It's our job to\l"
 	.string "make sure everyone here is comfortable\l"

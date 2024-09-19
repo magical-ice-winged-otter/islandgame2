@@ -74,7 +74,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         // Give Pokeballs
         giveitem(ITEM_POKE_BALL, 10)
         msgbox(format(
-            "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs.{PAUSE 30} They're a special tool that you can use to catch wild Pokémon!\p"
+            "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs. They're a special tool that you can use to catch wild Pokémon!\p"
             "And with that, {PLAYER}, you're all set to begin your journey!\p"
             "Get out there, explore all that the isles have to offer, and aid me in completing the Maryan Pokédex!"
         ))
@@ -83,7 +83,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             "{COLOR DARK_GRAY}I suggest you meet up with my other student first, though.\p"
             "{COLOR DARK_GRAY}Her name is Melissa, and she's been helping me out for about a week or two!\p"
             "{COLOR DARK_GRAY}She knows her way around Oranna better than me, so she can help you navigate the island and give you some pointers! \p"
-            "{COLOR DARK_GRAY}Melissa should be somewhere in the Minty Meadows right now.{PAUSE 30} It'll be to the east of her hometown of Maplegrove!"
+            "{COLOR DARK_GRAY}Melissa should be somewhere in the Minty Meadows right now. It'll be to the east of her hometown of Maplegrove!"
         ))
         setrespawn(HEAL_LOCATION_CHERIPORT)
         startquest(QUEST_MINTY_MEADOWS_MELISSA)
@@ -94,7 +94,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
     elif (!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
         msgbox(format(
             "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Melissa should be somewhere in the Minty Meadows right now.{PAUSE 30} It'll be to the east of her hometown of Maplegrove!\p"
-            "Oh,{PAUSE 30} did you want me to check on the progress of your Pokédex so far?"
+            "Oh, did you want me to check on the progress of your Pokédex so far?"
         ))
         goto(Palm_CheckPokedex) 
     }
@@ -119,9 +119,9 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
                 // If player defeats Melissa but hasn't defeated Arthur yet.
                 if (flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED) && var(VAR_ROSEVALE_STATE) != 4) {
                     msgbox(format(
-                        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}!{PAUSE 30} It's good to see you again!{PAUSE 60} I see you and Melissa have finally met.\p"
+                        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see you again! I see you and Melissa have finally met.\p"
                         "She told me that the two of you fought a ferocious Mightyena and saved Old Man Paulie's Mareep!\p"
-                        "That must've been very frightening as two trainers just starting their journey.{PAUSE 30} I'm glad you're both alright."
+                        "That must've been very frightening as two trainers just starting their journey. I'm glad you're both alright."
                     ))
                     goto(Palm_CheckPokedex)
                 }
@@ -129,7 +129,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
                 // If player defeats Ruka but hasn't defeated Shadow Aggron yet.
                 elif (flag(FLAG_TIDALCOVE_RUKA_DEFEATED) && !flag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)) {
                     msgbox(format(
-                        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}!{PAUSE 30} It's good to see you again!{PAUSE 60} Congrats on getting your first gym badge in the Marya League!\p"
+                        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see you again! Congrats on getting your first gym badge in the Marya League!\p"
                         "You're growing so fast as a trainer already, I'm thoroughly impressed!\p"
                         "Melissa's already gone ahead to Lumine Island, if you were wondering."
                     ))
@@ -175,8 +175,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_1)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 30 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here,{PAUSE 30} take this Technical Machine as a little reward.{PAUSE 60} It'll be very useful for catching Pokémon!"
+                    "Oh? You've caught at least 30 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take this Technical Machine as a little reward. It'll be very useful for catching Pokémon!"
                 ))
                 giveitem(ITEM_TM53)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_1)
@@ -186,8 +186,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_2)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 60 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here,{PAUSE 30} take some of these Nest Balls as a little reward!"
+                    "Oh? You've caught at least 60 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Nest Balls as a little reward!"
                 ))
                 giveitem(ITEM_NEST_BALL, 15)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_2)
@@ -197,9 +197,9 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_3)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 90 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here,{PAUSE 30} take some of these Rare Candies as a little reward.{PAUSE 60} Each one packs enough power to instantly level your Pokémon up!\p"
-                    "Just don't try and eat one yourself.{PAUSE 60} They're not very delectable to humans."
+                    "Oh? You've caught at least 90 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Rare Candies as a little reward. Each one packs enough power to instantly level your Pokémon up!\p"
+                    "Just don't try and eat one yourself. They're not very delectable to humans."
                 ))
                 giveitem(ITEM_RARE_CANDY, 5)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_3)
@@ -209,8 +209,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_4)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 120 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here,{PAUSE 30} take some of these Level Balls as a little reward."
+                    "Oh? You've caught at least 120 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Level Balls as a little reward."
                 ))
                 giveitem(ITEM_LEVEL_BALL, 30)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_4)
@@ -220,9 +220,9 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_5)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 150 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here,{PAUSE 30} take some of these Ability Capsules as a little reward.{PAUSE 60} When given to a Pokémon, it will change their basic ability to their other possible ability, if they have another one!\p"
-                    "However,{PAUSE 30} they can't be used to change a Pokémon's ability to their hidden one.{PAUSE 60} You'll need another type of item to do that,{PAUSE 30} perhaps one that you'll get as a later reward..."
+                    "Oh? You've caught at least 150 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Ability Capsules as a little reward. When given to a Pokémon, it will change their basic ability to their other possible ability, if they have another one!\p"
+                    "However, they can't be used to change a Pokémon's ability to their hidden one. You'll need another type of item to do that, perhaps one that you'll get as a later reward..."
                 ))
                 giveitem(ITEM_ABILITY_CAPSULE, 7)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_5)
@@ -232,8 +232,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_6)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 180 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here,{PAUSE 30} take some of these Ultra Balls as a little reward."
+                    "Oh? You've caught at least 180 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Ultra Balls as a little reward."
                 ))
                 giveitem(ITEM_ULTRA_BALL, 45)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_6)
@@ -243,8 +243,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_7)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 210 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here,{PAUSE 30} take some of these super rare Ability Patches as a reward.\p"
+                    "Oh? You've caught at least 210 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these super rare Ability Patches as a reward.\p"
                     "By using them on a Pokémon, you'll grant them their hidden ability!"
                 ))
                 giveitem(ITEM_ABILITY_PATCH, 9)
@@ -255,8 +255,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_8)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 240 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here,{PAUSE 30} take some of these Quick Balls as a little reward."
+                    "Oh? You've caught at least 240 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Quick Balls as a little reward."
                 ))
                 giveitem(ITEM_QUICK_BALL, 60)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_8)
@@ -266,8 +266,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_9)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 270 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here, take this charm.{PAUSE 60} It'll increase the chance of a “critical capture” to occur when you use any Pokéball!"
+                    "Oh? You've caught at least 270 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take this charm. It'll increase the chance of a “critical capture” to occur when you use any Pokéball!"
                 ))
                 giveitem(ITEM_CATCHING_CHARM)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_9)
@@ -277,8 +277,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_10)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 300 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here, take this charm.{PAUSE 60} It'll increase the experience your Pokémon gain!"
+                    "Oh? You've caught at least 300 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take this charm. It'll increase the experience your Pokémon gain!"
                 ))
                 giveitem(ITEM_EXP_CHARM)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_10)
@@ -288,8 +288,8 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_11)
             if(!var(VAR_RESULT)) {
                 msgbox(format(
-                    "Oh?{PAUSE 30} You've caught at least 330 Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-                    "Here, take this charm.{PAUSE 60} It'll increase the chances of getting a Pokémon egg from the daycare at Fresa Farms!"
+                    "Oh? You've caught at least 330 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take this charm. It'll increase the chances of getting a Pokémon egg from the daycare at Fresa Farms!"
                 ))
                 giveitem(ITEM_OVAL_CHARM)
                 subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_11)
@@ -359,16 +359,16 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
 
 text ProfTalk_First_Text {
     format(
-        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}!{PAUSE 30} It's a pleasure to finally meet you in person! \p"
-        "{COLOR DARK_GRAY}How are you enjoying the isles so far?{PAUSE 30} Hopefully the trip was smooth sailing. \p"
-        "{COLOR DARK_GRAY}The weather will probably take some getting used to though.{PAUSE 30} It's a lot more humid here than what you're used to, isn't it? \p"
+        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's a pleasure to finally meet you in person! \p"
+        "{COLOR DARK_GRAY}How are you enjoying the isles so far? Hopefully the trip was smooth sailing. \p"
+        "{COLOR DARK_GRAY}The weather will probably take some getting used to though. It's a lot more humid here than what you're used to, isn't it? \p"
         "{COLOR DARK_GRAY}Anyways, I bet you're itching to begin your adventure, so I'll save the small talk for later and present you with your very first companion!"
     )
 }
 
 text ProfTalk_Second_Text {
     format(
-        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Haha,{PAUSE 30} I see it's already taken a liking to you!{PAUSE 30} Treat it with care and respect, and it'll do the same for you! \p"
+        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Haha, I see it's already taken a liking to you! Treat it with care and respect, and it'll do the same for you! \p"
         "{COLOR DARK_GRAY}Along with your new friend, I'll also be entrusting you with this Pokédex!"
     )
 }
@@ -414,7 +414,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk {
     waitmovement(0)
     applymovement(SCIENTIST_ID, Common_Movement_Delay48)
     waitmovement(0)
-    msgbox(format("Huh? You're not the professor...{PAUSE 60} Go away! I'm doing grown-up stuff!"))
+    msgbox(format("Huh? You're not the professor...{PAUSE 60} G-Go away! I'm doing grown-up stuff!"))
     applymovement(SCIENTIST_ID,Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release

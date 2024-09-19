@@ -231,7 +231,7 @@ script ISLANDGAME_PKMNCENTER_2F_MoveRelearner {
     lock
     faceplayer
     msgbox(format(
-        "Hullo! I am the based gigachad of Marya known as the Move Relearner!\p"
+        "Hullo! I am the all-powerful guru known as the Move Relearner!\p"
         "I can help your Pokémon relearn moves they've previously learned!\p"
         "I can even teach them moves that they missed out on!"
     ))

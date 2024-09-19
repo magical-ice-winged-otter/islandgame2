@@ -14394,6 +14394,79 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ISLANDGAME_SOUTHERN_ORANNA_PATH_CAVE",
+          "base_label": "gISLANDGAME_Southern_Oranna_Path_Cave0"
+        },
+        {
+          "map": "MAP_ISLANDGAME_TRAVELERS_TUNNEL_B1F",
+          "base_label": "gISLANDGAME_TRAVELERS_TUNNEL_B1F0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_NACLSTACK"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_JIGGLYPUFF"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_TINKATUFF"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              }
+            ]
+          }
         }
       ]
     },

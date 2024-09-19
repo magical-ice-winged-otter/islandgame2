@@ -146,11 +146,11 @@ script ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact {
         case STATE_POST_FIGHT:               msgbox(format("Phew... I need to take a break after all that running..."), MSGBOX_NPC)
         default:
     }
-    msgbox(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Oh! Are your Pokémon hurt, {PLAYER}? Let me patch them up!"), MSGBOX_AUTOCLOSE)
-    playfanfare(MUS_HEAL)
-    waitfanfare()
-    special(HealPlayerParty)
-    msgbox(format("There we go! They're all fixed up!"))
+    // msgbox(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Oh! Are your Pokémon hurt, {PLAYER}? Let me patch them up!"), MSGBOX_AUTOCLOSE)
+    // playfanfare(MUS_HEAL)
+    // waitfanfare()
+    // special(HealPlayerParty)
+    // msgbox(format("There we go! They're all fixed up!"))
     closemessage
     release
 }
@@ -427,15 +427,17 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     )
 
 
+    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_MINTY_MEADOWS_MELISSA, SUB_QUEST_MEADOWS_MELISSA)
+
     // startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     waitmovement(0)
     // audrey runs off to look for mareep
-    msgbox(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Sounds good! {PLAYER}! Let's head over there immediately!\pIf your Pokémon need healing, just let me know!"))
+    msgbox(format("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Sounds good! {PLAYER}! Let's head over there immediately!"))
     closemessage
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
     waitmovement(0)
-
+    special(HealPlayerParty)
     //follow me
     loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
     setfollower(RIVAL_OW_ID, 100, PARTNER_MEADOWS_RIVAL)
@@ -754,7 +756,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     msgbox(
         format(
             "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}The way you handled that vicious Mightyena with your Pokémon... \p"
-            "{COLOR DARK_GRAY}{PLAYER}! You should enter the Silverwing Festival Tournament!"
+            "{COLOR DARK_GRAY}{PLAYER}!{PAUSE 30} You should enter the Silverwing Festival Tournament!"
         )
     )
     playse(SE_PIN)
@@ -763,7 +765,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     applymovement(RIVAL_OW_ID, Common_Movement_Delay48)
     waitmovement(0)
     msgbox(format(
-            "{COLOR DARK_GRAY}Eeeh!? You don't know about the tournament!? \p"
+            "{COLOR DARK_GRAY}Eeeh!?{PAUSE 60} You don't know about the tournament!? \p"
             "{COLOR DARK_GRAY}It's a tournament hosted during the Silverwing Festival where only the best trainers of Marya assemble to compete for the Silverwing Cup! \p"
             "{COLOR DARK_GRAY}I'm taking part in it, and I think you should to! You'd be a great competitor! \p"
             "{COLOR DARK_GRAY}To qualify, you'll have to complete the Marya Gym Challenge!"
@@ -772,17 +774,17 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
             "{COLOR DARK_GRAY}That is, you'll have to travel across the three main islands of Oranna, Lumine, and Minerva... \p"
             "{COLOR DARK_GRAY}...and challenge their respective gym leaders in battle! \p"
             "{COLOR DARK_GRAY}Ooh... I just can't wait! I just want the festival to begin tomorrow! \p"
-            "{COLOR DARK_GRAY}Huh? Oh, you're right.{PAUSE 30} Neither of us would qualify if it started tomorrow..."
+            "{COLOR DARK_GRAY}Huh?{PAUSE 30} Oh, you're right.{PAUSE 30} Neither of us would qualify if it started tomorrow..."
     ))
     msgbox(format(
             "{COLOR DARK_GRAY}Well, I have to report back to the professor with my findings. \p"
             "{COLOR DARK_GRAY}But {PLAYER}, you should go west of Maplegrove and head up to Tidalcove! \p"
-            "{COLOR DARK_GRAY}That's where you'll find the first gym leader:{PAUSE 30} Ruka! \p"
+            "{COLOR DARK_GRAY}That's where you'll find the first gym leader: Ruka! \p"
             "{COLOR DARK_GRAY}Ruka is really famous around here. On top of being a gym leader, she's used to be a professional swimmer and swimsuit model!"
     ))
     msgbox(format(
             "{COLOR DARK_GRAY}-sigh- I wish I could be as confident as her...\p"
-            "{COLOR DARK_GRAY}Oops, there I go rambling again...{PAUSE 30} Anyways! Bye-bye for now, {PLAYER}! \p"
+            "{COLOR DARK_GRAY}Oops, there I go rambling again... Anyways! Bye-bye for now, {PLAYER}! \p"
             "{COLOR DARK_GRAY}Oh! I almost forgot! Let's exchange phone numbers so we can keep in touch! \p"
             "{COLOR DARK_GRAY}Mhm...{PAUSE 30} Alright...{PAUSE 30} and there we go! All set! \p"
             "{COLOR DARK_GRAY}Okie, goodbye for real now! Let's meet up again soon!"
@@ -801,6 +803,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     setobjectxyperm(MAREEP_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y)
     special(HealPlayerParty)
     // completequest(QUEST_FRESA_FARMS_LOST_MAREEP)
+    completequest(QUEST_MINTY_MEADOWS_MELISSA)
     setflag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)
     setvar(VAR_TEMP_5, 1) // let player go to places that were restricted prior
     release

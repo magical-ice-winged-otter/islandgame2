@@ -32,10 +32,11 @@ ISLANDGAME_APPLEVINE_EventScript_Julie_4:
 	faceplayer
 	applymovement 1, Common_Movement_QuestionMark
 	waitmovement 0
-	applymovement 1, Common_Movement_Delay32
+	applymovement 1, Common_Movement_Delay48
 	waitmovement 0
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Julie_Text_2
 	giveitem ITEM_ISLANDGAME_JULIES_LETTER
+	removeitem ITEM_ISLANDGAME_ROMANS_LETTER
 	goto ISLANDGAME_APPLEVINE_EventScript_Julie_1
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_5:
@@ -65,11 +66,11 @@ ISLANDGAME_APPLEVINE_EventScript_Julie_Text_2:
 	.string "...\p"
 	.string "I see. He sent you all the way from\n"
 	.string "Oranna just to give me this letter?\p"
-	.string "> You hand the letter to Julie, who\n"
+	.string "{COLOR GREEN}> You hand the letter to Julie, who\n"
 	.string "opens it up and reads it to herself.\p"
-	.string "Oh, Roman... {PAUSE 30}What am I going to do with\n"
+	.string "{COLOR DARK_GRAY}Oh, Roman... {PAUSE 30}What am I going to do with\n"
 	.string "you...\p"
-	.string "> Julie begins composing a response\n"
+	.string "{COLOR GREEN}> Julie begins composing a response\n"
 	.string "letter.\p"
 	.string "Sorry to trouble you again, but would\n"
 	.string "you mind giving this to Roman?$"

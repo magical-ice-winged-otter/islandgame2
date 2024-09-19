@@ -29,6 +29,7 @@ mapscripts ISLANDGAME_FRESA_FARMS_MapScripts {
 
         if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
             setflag(FLAG_NIGHT)
+            setobjectxyperm(6, 18, 6)
         }
         else {
             setflag(FLAG_DAY)
@@ -58,63 +59,66 @@ text ISLANDGAME_FRESA_FARMS_Daycare_Mon2_Text {
     format("{STR_VAR_2} stares at you intently.")
 }
 
-script ISLANDGAME_FRESA_FARMS_OldMan_Request {
-    lock
-    applymovement(OLD_MAN_OW_ID, Common_Movement_FaceLeft)
-    waitmovement(OLD_MAN_OW_ID)
-    applymovement(OLD_MAN_OW_ID, Common_Movement_ExclamationMark)
-    waitmovement(OLD_MAN_OW_ID)
-    goto(ISLANDGAME_FRESA_FARMS_OldMan_Talk)
-}
+// script ISLANDGAME_FRESA_FARMS_OldMan_Request {
+//     lock
+//     applymovement(OLD_MAN_OW_ID, Common_Movement_FaceLeft)
+//     waitmovement(OLD_MAN_OW_ID)
+//     applymovement(OLD_MAN_OW_ID, Common_Movement_ExclamationMark)
+//     waitmovement(OLD_MAN_OW_ID)
+//     goto(ISLANDGAME_FRESA_FARMS_OldMan_Talk)
+// }
 
-text ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage {
-    format(
-        "Oh, its you!\p"
-        "I couldn't help but notice your battle earlier.\p"
-        "I was wondering if you could help us with our missing Mareep.\p"
-        "She usually goes off by herself to the center of the plains, but we haven't seen her since."
-    )
-}
+// text ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage {
+//     format(
+//         "Oh, its you!\p"
+//         "I couldn't help but notice your battle earlier.\p"
+//         "I was wondering if you could help us with our missing Mareep.\p"
+//         "She usually goes off by herself to the center of the plains, but we haven't seen her since."
+//     )
+// }
 
-text ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage {
-    format("{COLOR DARK_GRAY}Thank you very much!")
-}
+// text ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage {
+//     format("{COLOR DARK_GRAY}Thank you very much!")
+// }
 
-script ISLANDGAME_FRESA_FARMS_OldMan_Talk {
-    lock
-    switch (var(VAR_MINTY_MEADOWS_STATE)) {
-        case 0: // initial
-            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
-            // startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
-        case 4:
-            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage)
-        default:
-            msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
-    }
-    release
-}
+// script ISLANDGAME_FRESA_FARMS_OldMan_Talk {
+//     lock
+//     switch (var(VAR_MINTY_MEADOWS_STATE)) {
+//         case 0: // initial
+//             msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+//             // startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
+//         case 4:
+//             msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage)
+//         default:
+//             msgbox(ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage)
+//     }
+//     release
+// }
+
 
 script ISLANDGAME_FRESA_FARMS_Sign {
-    msgbox(format("FRESA FARMS\nLeave your Pokémon to us!"), MSGBOX_SIGN)
+    msgbox(format("FRESA FARMS\nPaulie and Marion"), MSGBOX_SIGN)
 }
 
-script ISLANDGAME_FRESA_FARMS_Man {
-    lock
-    faceplayer
-    msgbox(format("My parents established this farm a long time ago.\pOne day, it'll be all mine..."))
-    release
-}
+// script ISLANDGAME_FRESA_FARMS_Man {
+//     lock
+//     faceplayer
+//     msgbox(format("My parents established this farm a long time ago.\pOne day, it'll be all mine..."))
+//     release
+// }
 
 script ISLANDGAME_FRESA_FARMS_Miltank_Interact {
-    lock
-    faceplayer
-    playmoncry(SPECIES_MILTANK, CRY_MODE_NORMAL)
     if(flag(FLAG_NIGHT)) {
-        msgbox(format("Moo. {COLOR BLUE}(If you want some of my milk, you'll have to come here during the day.)"))
+        lock
+        msgbox(format("{COLOR RED}(Miltank is fast asleep.)"))
     }
     else {
+        lock
+        faceplayer
+        playmoncry(SPECIES_MILTANK, CRY_MODE_NORMAL)
         msgbox(format("Moo. {COLOR BLUE}(Moo.)"))
     }
+    closemessage
     release
 }
 
@@ -122,7 +126,7 @@ script ISLANDGAME_FRESA_FARMS_Chansey_Interact {
     lock
     faceplayer
     playmoncry(SPECIES_CHANSEY, CRY_MODE_NORMAL)
-    msgbox(format("Chansey. {COLOR BLUE}(Most humans can't understand us, but some are born with a special ability to comprehend what Pokémon are saying.)\p""Chansey. {COLOR BLUE}(You're one of them, aren't you?)"))
+    msgbox(format("Chansey. {COLOR BLUE}(Most humans can't understand us, but some are born with a special ability to comprehend what Pokémon are saying.)\p""{COLOR DARK_GRAY}Chansey. {COLOR BLUE}(You're one of them,{PAUSE 30} aren't you?)"))
     release
 }
 
@@ -142,7 +146,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep1 {
         waitmovement(0)
     }
     else {
-        msgbox(format("{COLOR DARK_GRAY}Reep... {COLOR BLUE}(Tch, this mutt is a pain in my fluffy behind!)\p{COLOR DARK_GRAY}Reep. {COLOR BLUE}(I got important business to attend to at night!)"))
+        msgbox(format("{COLOR DARK_GRAY}Reep... {COLOR BLUE}(This mutt is a pain in my fluffy behind...)\p{COLOR DARK_GRAY}Reep. {COLOR BLUE}(I got important business to attend to at night!)"))
     }
 
     release
@@ -153,6 +157,7 @@ script ISLANDGAME_FRESA_FARMS_Mareep2 {
     faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
     msgbox(format("Reep. {COLOR BLUE}(I'm just saying man, if it was me against that Mightyena, hoo boy.)\p""{COLOR DARK_GRAY}Reep! {COLOR BLUE}(I would'a messed that Mightyena up real good, ya feel me?)\p""{COLOR DARK_GRAY}Reep? {COLOR BLUE}(Huh? Why are you looking me like that? I'm fo' realzies!)"))
+    closemessage
     release
 }
 
@@ -183,15 +188,76 @@ script ISLANDGAME_FRESA_FARMS_Mareep4 {
     faceplayer
     playmoncry(SPECIES_MAREEP, CRY_MODE_NORMAL)
     msgbox(format("GIRIGIRI WARUKUNAI WATAME!!!"))
+    closemessage
     release
 }
 
 script ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor {
-    msgbox(format("Welcome to Fresa Farms!\pOur milk is sourced from the healthiest Miltanks in Marya!"), MSGBOX_NPC)
-    pokemart(MilkVendorItems)
-    msgbox(format("Thank you for supporting us!"), MSGBOX_NPC)
+    lock
+    faceplayer
+    msgbox(format(
+        "Our milk is sourced from the healthiest Miltank in all of Marya, Lady Moona!"
+    ))
+    showmoneybox(0,0)
+    msgbox(format(
+        "We are selling it in packs of six for only ¥7000! Would you like a pack?{PAUSE 30}"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        checkmoney(7000)
+        if(!var(VAR_RESULT)) {
+            msgbox(format(
+                "Oh dear, you don't have enough money, sweetie."
+            ))
+            goto(MilkVendor_End)
+        }
+        else {
+            removemoney(7000)
+            playse(SE_SHOP)
+            waitse
+            updatemoneybox
+            hidemoneybox
+            giveitem(ITEM_MOOMOO_MILK, 6)
+            msgbox(format(
+                "Thank you for your patronage!"
+            ))
+        }
+    }
+
+    MilkVendor_End:
+        hidemoneybox
+        closemessage
+        release
 }
 
-mart MilkVendorItems {
-    ITEM_MOOMOO_MILK
+script ISLANDGAME_FRESA_FARMS_Torchic {
+    lock
+    faceplayer
+    playmoncry(SPECIES_TORCHIC, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Kikiriki! {COLOR BLUE}(Guten Tag!)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_FRESA_FARMS_Tepig {
+    lock
+    faceplayer
+    playmoncry(SPECIES_TEPIG, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Oink! {COLOR BLUE}(hois im pepa pigi)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_FRESA_FARMS_Mudsdale {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MUDSDALE, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Hee-haw! {COLOR BLUE}(Hee-ho!)"
+    ))
+    closemessage
+    release
 }

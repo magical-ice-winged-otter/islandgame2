@@ -15,6 +15,7 @@ ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 ISLANDGAME_FRESA_FARMS_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	setflag FLAG_TEMP_1
+	setobjectxyperm 6, 18, 6
 	return
 
 
@@ -32,59 +33,24 @@ ISLANDGAME_FRESA_FARMS_Daycare_Mon2::
 	return
 
 
-ISLANDGAME_FRESA_FARMS_OldMan_Request::
-	lock
-	applymovement 12, Common_Movement_FaceLeft
-	waitmovement 12
-	applymovement 12, Common_Movement_ExclamationMark
-	waitmovement 12
-	goto ISLANDGAME_FRESA_FARMS_OldMan_Talk
-	return
-
-
-ISLANDGAME_FRESA_FARMS_OldMan_Talk::
-	lock
-	switch VAR_MINTY_MEADOWS_STATE
-	case 0, ISLANDGAME_FRESA_FARMS_OldMan_Talk_3
-	case 4, ISLANDGAME_FRESA_FARMS_OldMan_Talk_4
-	msgbox ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage
-ISLANDGAME_FRESA_FARMS_OldMan_Talk_1:
-	release
-	return
-
-ISLANDGAME_FRESA_FARMS_OldMan_Talk_3:
-	msgbox ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage
-	goto ISLANDGAME_FRESA_FARMS_OldMan_Talk_1
-
-ISLANDGAME_FRESA_FARMS_OldMan_Talk_4:
-	msgbox ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage
-	goto ISLANDGAME_FRESA_FARMS_OldMan_Talk_1
-
-
 ISLANDGAME_FRESA_FARMS_Sign::
 	msgbox ISLANDGAME_FRESA_FARMS_Sign_Text_0, MSGBOX_SIGN
 	return
 
 
-ISLANDGAME_FRESA_FARMS_Man::
-	lock
-	faceplayer
-	msgbox ISLANDGAME_FRESA_FARMS_Man_Text_0
-	release
-	return
-
-
 ISLANDGAME_FRESA_FARMS_Miltank_Interact::
+	goto_if_set FLAG_TEMP_1, ISLANDGAME_FRESA_FARMS_Miltank_Interact_2
 	lock
 	faceplayer
 	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
-	goto_if_set FLAG_TEMP_1, ISLANDGAME_FRESA_FARMS_Miltank_Interact_2
 	msgbox ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_1
 ISLANDGAME_FRESA_FARMS_Miltank_Interact_1:
+	closemessage
 	release
 	return
 
 ISLANDGAME_FRESA_FARMS_Miltank_Interact_2:
+	lock
 	msgbox ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0
 	goto ISLANDGAME_FRESA_FARMS_Miltank_Interact_1
 
@@ -126,6 +92,7 @@ ISLANDGAME_FRESA_FARMS_Mareep2::
 	faceplayer
 	playmoncry SPECIES_MAREEP, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_FRESA_FARMS_Mareep2_Text_0
+	closemessage
 	release
 	return
 
@@ -159,34 +126,81 @@ ISLANDGAME_FRESA_FARMS_Mareep4::
 	faceplayer
 	playmoncry SPECIES_MAREEP, CRY_MODE_NORMAL
 	msgbox ISLANDGAME_FRESA_FARMS_Mareep4_Text_0
+	closemessage
 	release
 	return
 
 
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor::
-	msgbox ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_0, MSGBOX_NPC
-	pokemart MilkVendorItems
-	msgbox ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_1, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_0
+	showmoneybox 0, 0
+	msgbox ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_2
+ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_1:
+MilkVendor_End:
+	hidemoneybox
+	closemessage
+	release
+	return
+
+ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_2:
+	checkmoney 7000
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_4
+	removemoney 7000
+	playse SE_SHOP
+	waitse
+	updatemoneybox
+	hidemoneybox
+	giveitem ITEM_MOOMOO_MILK, 6
+	msgbox ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_3
+	goto ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_1
+
+ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_4:
+	msgbox ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_2
+	goto MilkVendor_End
+	goto ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_1
+
+
+ISLANDGAME_FRESA_FARMS_Torchic::
+	lock
+	faceplayer
+	playmoncry SPECIES_TORCHIC, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_FRESA_FARMS_Torchic_Text_0
+	closemessage
+	release
 	return
 
 
-	.align 2
-MilkVendorItems:
-	.2byte ITEM_MOOMOO_MILK
-	.2byte ITEM_NONE
+ISLANDGAME_FRESA_FARMS_Tepig::
+	lock
+	faceplayer
+	playmoncry SPECIES_TEPIG, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_FRESA_FARMS_Tepig_Text_0
+	closemessage
+	release
+	return
+
+
+ISLANDGAME_FRESA_FARMS_Mudsdale::
+	lock
+	faceplayer
+	playmoncry SPECIES_MUDSDALE, CRY_MODE_NORMAL
+	msgbox ISLANDGAME_FRESA_FARMS_Mudsdale_Text_0
+	closemessage
+	release
+	return
+
 
 ISLANDGAME_FRESA_FARMS_Sign_Text_0:
 	.string "FRESA FARMS\n"
-	.string "Leave your Pokémon to us!$"
-
-ISLANDGAME_FRESA_FARMS_Man_Text_0:
-	.string "My parents established this farm a long\n"
-	.string "time ago.\p"
-	.string "One day, it'll be all mine...$"
+	.string "Paulie and Marion$"
 
 ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_0:
-	.string "Moo. {COLOR BLUE}(If you want some of my milk, you'll\n"
-	.string "have to come here during the day.)$"
+	.string "{COLOR RED}(Miltank is fast asleep.)$"
 
 ISLANDGAME_FRESA_FARMS_Miltank_Interact_Text_1:
 	.string "Moo. {COLOR BLUE}(Moo.)$"
@@ -196,7 +210,7 @@ ISLANDGAME_FRESA_FARMS_Chansey_Interact_Text_0:
 	.string "us, but some are born with a special\l"
 	.string "ability to comprehend what Pokémon are\l"
 	.string "saying.)\p"
-	.string "Chansey. {COLOR BLUE}(You're one of them, aren't\n"
+	.string "{COLOR DARK_GRAY}Chansey. {COLOR BLUE}(You're one of them,{PAUSE 30} aren't\n"
 	.string "you?)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep1_Text_0:
@@ -215,8 +229,8 @@ ISLANDGAME_FRESA_FARMS_Mareep1_Text_1:
 	.string "me.)$"
 
 ISLANDGAME_FRESA_FARMS_Mareep1_Text_2:
-	.string "{COLOR DARK_GRAY}Reep... {COLOR BLUE}(Tch, this mutt is a pain in my\n"
-	.string "fluffy behind!)\p"
+	.string "{COLOR DARK_GRAY}Reep... {COLOR BLUE}(This mutt is a pain in my fluffy\n"
+	.string "behind...)\p"
 	.string "{COLOR DARK_GRAY}Reep. {COLOR BLUE}(I got important business to\n"
 	.string "attend to at night!)$"
 
@@ -245,28 +259,31 @@ ISLANDGAME_FRESA_FARMS_Mareep4_Text_0:
 	.string "GIRIGIRI WARUKUNAI WATAME!!!$"
 
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_0:
-	.string "Welcome to Fresa Farms!\p"
 	.string "Our milk is sourced from the healthiest\n"
-	.string "Miltanks in Marya!$"
+	.string "Miltank in all of Marya, Lady Moona!$"
 
 ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_1:
-	.string "Thank you for supporting us!$"
+	.string "We are selling it in packs of six for\n"
+	.string "only ¥7000! Would you like a pack?{PAUSE 30}$"
+
+ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_2:
+	.string "Oh dear, you don't have enough money,\n"
+	.string "sweetie.$"
+
+ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_3:
+	.string "Thank you for your patronage!$"
+
+ISLANDGAME_FRESA_FARMS_Torchic_Text_0:
+	.string "Kikiriki! {COLOR BLUE}(Guten Tag!)$"
+
+ISLANDGAME_FRESA_FARMS_Tepig_Text_0:
+	.string "Oink! {COLOR BLUE}(hois im pepa pigi)$"
+
+ISLANDGAME_FRESA_FARMS_Mudsdale_Text_0:
+	.string "Hee-haw! {COLOR BLUE}(Hee-ho!)$"
 
 ISLANDGAME_FRESA_FARMS_Daycare_Mon1_Text::
 	.string "{STR_VAR_1} looks happy!$"
 
 ISLANDGAME_FRESA_FARMS_Daycare_Mon2_Text::
 	.string "{STR_VAR_2} stares at you intently.$"
-
-ISLANDGAME_FRESA_FARMS_OldMan_RequestMessage::
-	.string "Oh, its you!\p"
-	.string "I couldn't help but notice your battle\n"
-	.string "earlier.\p"
-	.string "I was wondering if you could help us\n"
-	.string "with our missing Mareep.\p"
-	.string "She usually goes off by herself to the\n"
-	.string "center of the plains, but we haven't\l"
-	.string "seen her since.$"
-
-ISLANDGAME_FRESA_FARMS_OldMan_RequestFulfilledMessage::
-	.string "{COLOR DARK_GRAY}Thank you very much!$"

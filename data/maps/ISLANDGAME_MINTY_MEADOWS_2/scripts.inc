@@ -132,11 +132,6 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact::
 	case 3, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_4
 	case 4, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_5
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_1:
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_4, MSGBOX_AUTOCLOSE
-	playfanfare MUS_HEAL
-	waitfanfare
-	special HealPlayerParty
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_5
 	closemessage
 	release
 	return
@@ -403,12 +398,14 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay32
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_8
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MINTY_MEADOWS_MELISSA, SUB_QUEST_MEADOWS_MELISSA
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_9
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
+	special HealPlayerParty
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 	setfollower 11, 100, PARTNER_MEADOWS_RIVAL
 	call ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet
@@ -727,6 +724,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 	setobjectxyperm 12, -3, 1
 	setobjectxyperm 6, -3, 1
 	special HealPlayerParty
+	completequest QUEST_MINTY_MEADOWS_MELISSA
 	setflag FLAG_MINTY_MEADOWS_RIVAL_DEFEATED
 	setvar VAR_TEMP_5, 1
 	release
@@ -1021,13 +1019,6 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_3:
 	.string "Phew... I need to take a break after all\n"
 	.string "that running...$"
 
-ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_4:
-	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Oh! Are your Pokémon hurt,\n"
-	.string "{PLAYER}? Let me patch them up!$"
-
-ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact_Text_5:
-	.string "There we go! They're all fixed up!$"
-
 ISLANDGAME_MINTY_MEADOWS_2_FlowerSign_Interact_Text_0:
 	.string "{COLOR DARK_GRAY}MINTY MEADOWS\n"
 	.string "Beware of scary Drifloon at night!$"
@@ -1108,9 +1099,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_8:
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_9:
 	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Sounds good! {PLAYER}! Let's\n"
-	.string "head over there immediately!\p"
-	.string "If your Pokémon need healing, just let\n"
-	.string "me know!$"
+	.string "head over there immediately!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2_Text_0:
 	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}We finally found it!$"
@@ -1165,11 +1154,11 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_7:
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_8:
 	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}The way you handled that\n"
 	.string "vicious Mightyena with your Pokémon...\p"
-	.string "{COLOR DARK_GRAY}{PLAYER}! You should enter the\n"
+	.string "{COLOR DARK_GRAY}{PLAYER}!{PAUSE 30} You should enter the\n"
 	.string "Silverwing Festival Tournament!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_9:
-	.string "{COLOR DARK_GRAY}Eeeh!? You don't know about the\n"
+	.string "{COLOR DARK_GRAY}Eeeh!?{PAUSE 60} You don't know about the\n"
 	.string "tournament!?\p"
 	.string "{COLOR DARK_GRAY}It's a tournament hosted during the\n"
 	.string "Silverwing Festival where only the best\l"
@@ -1186,7 +1175,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_10:
 	.string "Lumine, and Minerva...\p"
 	.string "{COLOR DARK_GRAY}...and challenge their respective gym\n"
 	.string "leaders in battle!\p"
-	.string "{COLOR DARK_GRAY}Ooh... I just can't wait! I just want the\n"
+	.string "{COLOR DARK_GRAY}Ooh...{PAUSE 30} I just can't wait!{PAUSE 30} I just want the\n"
 	.string "festival to begin tomorrow!\p"
 	.string "{COLOR DARK_GRAY}Huh? Oh, you're right.{PAUSE 30} Neither of us\n"
 	.string "would qualify if it started tomorrow...$"
@@ -1194,11 +1183,11 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_10:
 ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_11:
 	.string "{COLOR DARK_GRAY}Well, I have to report back to the\n"
 	.string "professor with my findings.\p"
-	.string "{COLOR DARK_GRAY}But {PLAYER}, you should go west of\n"
+	.string "{COLOR DARK_GRAY}But {PLAYER},{PAUSE 30} you should go west of\n"
 	.string "Maplegrove and head up to Tidalcove!\p"
 	.string "{COLOR DARK_GRAY}That's where you'll find the first gym\n"
 	.string "leader:{PAUSE 30} Ruka!\p"
-	.string "{COLOR DARK_GRAY}Ruka is really famous around here. On\n"
+	.string "{COLOR DARK_GRAY}Ruka is really famous around here.{PAUSE 30} On\n"
 	.string "top of being a gym leader, she's used to\l"
 	.string "be a professional swimmer and swimsuit\l"
 	.string "model!$"
@@ -1208,10 +1197,10 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_12:
 	.string "her...\p"
 	.string "{COLOR DARK_GRAY}Oops, there I go rambling again...{PAUSE 30}\n"
 	.string "Anyways! Bye-bye for now, {PLAYER}!\p"
-	.string "{COLOR DARK_GRAY}Oh! I almost forgot! Let's exchange\n"
+	.string "{COLOR DARK_GRAY}Oh!{PAUSE 30} I almost forgot!{PAUSE 30} Let's exchange\n"
 	.string "phone numbers so we can keep in touch!\p"
 	.string "{COLOR DARK_GRAY}Mhm...{PAUSE 30} Alright...{PAUSE 30} and there we go! All set!\p"
-	.string "{COLOR DARK_GRAY}Okie, goodbye for real now! Let's meet\n"
+	.string "{COLOR DARK_GRAY}Okie, goodbye for real now!{PAUSE 30} Let's meet\n"
 	.string "up again soon!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0:

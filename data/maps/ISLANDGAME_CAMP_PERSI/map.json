@@ -388,6 +388,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_ETHER",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_PERSI_NEST_ETHER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 24,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ABILITY_CAPSULE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_CAMP_PERSI_ABILITY_CAPSULE"
     }
   ],
   "warp_events": [

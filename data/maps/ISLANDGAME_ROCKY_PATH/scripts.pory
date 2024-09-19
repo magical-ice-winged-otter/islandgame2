@@ -20,6 +20,10 @@ mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {
             setobjectxyperm(ROCKRUFF_OW_ID, 0, 72)
         }
 
+        if (flag(FLAG_ROCKY_PATH_ESCAPE_ROPE)) {
+            setvar(VAR_TEMP_0, 1)
+        }
+
     }
 }
 
@@ -173,7 +177,23 @@ script ISLANDGAME_ROCKY_PATH_Ranger {
     release
 }
 
-
+script ISLANDGAME_ROCKY_PATH_RangerTrigger {
+    lock
+    playse(SE_PIN)
+    applymovement(19, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(19, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(19, Common_Movement_FaceRight)
+    waitmovement(0)
+    msgbox(format(
+        "It's easy to get lost in Lumine's enormous cave system, so I'm handing out these handy dandy escape ropes to journeying trainers! Here, take one!"
+    ))
+    giveitem(ITEM_ESCAPE_ROPE)
+    setflag(FLAG_ROCKY_PATH_ESCAPE_ROPE)
+    setvar(VAR_TEMP_0, 1)
+    release
+}
 
 
 // trainers

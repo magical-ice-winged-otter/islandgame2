@@ -389,7 +389,7 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_Gible_Text_0:
 	.string "be stronger! Believe it!)$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_0:
-	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs.{PAUSE 30} They're\n"
+	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs. They're\n"
 	.string "a special tool that you can use to\l"
 	.string "catch wild Pokémon!\p"
 	.string "And with that, {PLAYER}, you're all set\n"
@@ -407,7 +407,7 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_1:
 	.string "than me, so she can help you navigate\l"
 	.string "the island and give you some pointers!\p"
 	.string "{COLOR DARK_GRAY}Melissa should be somewhere in the\n"
-	.string "Minty Meadows right now.{PAUSE 30} It'll be to the\l"
+	.string "Minty Meadows right now. It'll be to the\l"
 	.string "east of her hometown of Maplegrove!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_2:
@@ -415,7 +415,7 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_2:
 	.string "in the Minty Meadows right now.{PAUSE 30} It'll be\l"
 	.string "to the east of her hometown of\l"
 	.string "Maplegrove!\p"
-	.string "Oh,{PAUSE 30} did you want me to check on the\n"
+	.string "Oh, did you want me to check on the\n"
 	.string "progress of your Pokédex so far?$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_3:
@@ -424,19 +424,19 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_3:
 	.string "forever, {PLAYER}.$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_4:
-	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}!{PAUSE 30} It's good to see\n"
-	.string "you again!{PAUSE 60} I see you and Melissa have\l"
+	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see\n"
+	.string "you again! I see you and Melissa have\l"
 	.string "finally met.\p"
 	.string "She told me that the two of you fought\n"
 	.string "a ferocious Mightyena and saved Old\l"
 	.string "Man Paulie's Mareep!\p"
 	.string "That must've been very frightening as\n"
 	.string "two trainers just starting their\l"
-	.string "journey.{PAUSE 30} I'm glad you're both alright.$"
+	.string "journey. I'm glad you're both alright.$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_5:
-	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}!{PAUSE 30} It's good to see\n"
-	.string "you again!{PAUSE 60} Congrats on getting your\l"
+	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see\n"
+	.string "you again! Congrats on getting your\l"
 	.string "first gym badge in the Marya League!\p"
 	.string "You're growing so fast as a trainer\n"
 	.string "already, I'm thoroughly impressed!\p"
@@ -457,85 +457,85 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_8:
 	.string "total of {STR_VAR_2} Pokémon!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_9:
-	.string "Oh?{PAUSE 30} You've caught at least 30 Pokémon?{PAUSE 60}\n"
+	.string "Oh? You've caught at least 30 Pokémon?\n"
 	.string "Fantastic work, {PLAYER}!\p"
-	.string "Here,{PAUSE 30} take this Technical Machine as a\n"
-	.string "little reward.{PAUSE 60} It'll be very useful for\l"
+	.string "Here, take this Technical Machine as a\n"
+	.string "little reward. It'll be very useful for\l"
 	.string "catching Pokémon!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_10:
-	.string "Oh?{PAUSE 30} You've caught at least 60 Pokémon?{PAUSE 60}\n"
+	.string "Oh? You've caught at least 60 Pokémon?\n"
 	.string "Fantastic work, {PLAYER}!\p"
-	.string "Here,{PAUSE 30} take some of these Nest Balls as a\n"
+	.string "Here, take some of these Nest Balls as a\n"
 	.string "little reward!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_11:
-	.string "Oh?{PAUSE 30} You've caught at least 90 Pokémon?{PAUSE 60}\n"
+	.string "Oh? You've caught at least 90 Pokémon?\n"
 	.string "Fantastic work, {PLAYER}!\p"
-	.string "Here,{PAUSE 30} take some of these Rare Candies\n"
-	.string "as a little reward.{PAUSE 60} Each one packs\l"
+	.string "Here, take some of these Rare Candies\n"
+	.string "as a little reward. Each one packs\l"
 	.string "enough power to instantly level your\l"
 	.string "Pokémon up!\p"
-	.string "Just don't try and eat one yourself.{PAUSE 60}\n"
+	.string "Just don't try and eat one yourself.\n"
 	.string "They're not very delectable to humans.$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_12:
-	.string "Oh?{PAUSE 30} You've caught at least 120\n"
-	.string "Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-	.string "Here,{PAUSE 30} take some of these Level Balls as\n"
+	.string "Oh? You've caught at least 120\n"
+	.string "Pokémon? Fantastic work, {PLAYER}!\p"
+	.string "Here, take some of these Level Balls as\n"
 	.string "a little reward.$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_13:
-	.string "Oh?{PAUSE 30} You've caught at least 150\n"
-	.string "Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-	.string "Here,{PAUSE 30} take some of these Ability\n"
-	.string "Capsules as a little reward.{PAUSE 60} When given\l"
+	.string "Oh? You've caught at least 150\n"
+	.string "Pokémon? Fantastic work, {PLAYER}!\p"
+	.string "Here, take some of these Ability\n"
+	.string "Capsules as a little reward. When given\l"
 	.string "to a Pokémon, it will change their basic\l"
 	.string "ability to their other possible ability,\l"
 	.string "if they have another one!\p"
-	.string "However,{PAUSE 30} they can't be used to change a\n"
-	.string "Pokémon's ability to their hidden one.{PAUSE 60}\l"
+	.string "However, they can't be used to change a\n"
+	.string "Pokémon's ability to their hidden one.\l"
 	.string "You'll need another type of item to do\l"
-	.string "that,{PAUSE 30} perhaps one that you'll get as a\l"
+	.string "that, perhaps one that you'll get as a\l"
 	.string "later reward...$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_14:
-	.string "Oh?{PAUSE 30} You've caught at least 180\n"
-	.string "Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-	.string "Here,{PAUSE 30} take some of these Ultra Balls as\n"
+	.string "Oh? You've caught at least 180\n"
+	.string "Pokémon? Fantastic work, {PLAYER}!\p"
+	.string "Here, take some of these Ultra Balls as\n"
 	.string "a little reward.$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_15:
-	.string "Oh?{PAUSE 30} You've caught at least 210\n"
-	.string "Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-	.string "Here,{PAUSE 30} take some of these super rare\n"
+	.string "Oh? You've caught at least 210\n"
+	.string "Pokémon? Fantastic work, {PLAYER}!\p"
+	.string "Here, take some of these super rare\n"
 	.string "Ability Patches as a reward.\p"
 	.string "By using them on a Pokémon, you'll grant\n"
 	.string "them their hidden ability!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_16:
-	.string "Oh?{PAUSE 30} You've caught at least 240\n"
-	.string "Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-	.string "Here,{PAUSE 30} take some of these Quick Balls as\n"
+	.string "Oh? You've caught at least 240\n"
+	.string "Pokémon? Fantastic work, {PLAYER}!\p"
+	.string "Here, take some of these Quick Balls as\n"
 	.string "a little reward.$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_17:
-	.string "Oh?{PAUSE 30} You've caught at least 270\n"
-	.string "Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-	.string "Here, take this charm.{PAUSE 60} It'll increase the\n"
+	.string "Oh? You've caught at least 270\n"
+	.string "Pokémon? Fantastic work, {PLAYER}!\p"
+	.string "Here, take this charm. It'll increase the\n"
 	.string "chance of a “critical capture” to\l"
 	.string "occur when you use any Pokéball!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_18:
-	.string "Oh?{PAUSE 30} You've caught at least 300\n"
-	.string "Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-	.string "Here, take this charm.{PAUSE 60} It'll increase the\n"
+	.string "Oh? You've caught at least 300\n"
+	.string "Pokémon? Fantastic work, {PLAYER}!\p"
+	.string "Here, take this charm. It'll increase the\n"
 	.string "experience your Pokémon gain!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_19:
-	.string "Oh?{PAUSE 30} You've caught at least 330\n"
-	.string "Pokémon?{PAUSE 60} Fantastic work, {PLAYER}!\p"
-	.string "Here, take this charm.{PAUSE 60} It'll increase the\n"
+	.string "Oh? You've caught at least 330\n"
+	.string "Pokémon? Fantastic work, {PLAYER}!\p"
+	.string "Here, take this charm. It'll increase the\n"
 	.string "chances of getting a Pokémon egg from\l"
 	.string "the daycare at Fresa Farms!$"
 
@@ -576,16 +576,16 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_1:
 	.string "doing research!$"
 
 ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk_Text_2:
-	.string "Huh? You're not the professor...{PAUSE 60} Go\n"
+	.string "Huh? You're not the professor...{PAUSE 60} G-Go\n"
 	.string "away! I'm doing grown-up stuff!$"
 
 ProfTalk_First_Text::
-	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}!{PAUSE 30} It's a pleasure\n"
+	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's a pleasure\n"
 	.string "to finally meet you in person!\p"
-	.string "{COLOR DARK_GRAY}How are you enjoying the isles so far?{PAUSE 30}\n"
+	.string "{COLOR DARK_GRAY}How are you enjoying the isles so far?\n"
 	.string "Hopefully the trip was smooth sailing.\p"
 	.string "{COLOR DARK_GRAY}The weather will probably take some\n"
-	.string "getting used to though.{PAUSE 30} It's a lot more\l"
+	.string "getting used to though. It's a lot more\l"
 	.string "humid here than what you're used to,\l"
 	.string "isn't it?\p"
 	.string "{COLOR DARK_GRAY}Anyways, I bet you're itching to begin\n"
@@ -594,8 +594,8 @@ ProfTalk_First_Text::
 	.string "your very first companion!$"
 
 ProfTalk_Second_Text::
-	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Haha,{PAUSE 30} I see it's already\n"
-	.string "taken a liking to you!{PAUSE 30} Treat it with\l"
+	.string "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Haha, I see it's already\n"
+	.string "taken a liking to you! Treat it with\l"
 	.string "care and respect, and it'll do the same\l"
 	.string "for you!\p"
 	.string "{COLOR DARK_GRAY}Along with your new friend, I'll also be\n"

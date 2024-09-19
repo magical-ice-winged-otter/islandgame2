@@ -4,6 +4,7 @@ ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts::
 
 ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_set FLAG_S_ORANNA_PATH_ABSOL_DEFEATED, ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	setflag FLAG_ITEM_SORANNA_PATH_ABSOLITE
 	return
 
 ISLANDGAME_Southern_Oranna_Path_Cave_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
@@ -15,7 +16,7 @@ ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol::
 	lock
 	faceplayer
 	setflag FLAG_SMART_WILD_AI
-	setcwildbattle 0, SPECIES_ABSOL, 25, ITEM_ABSOLITE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PLAY_ROUGH, MOVE_SUCKER_PUNCH, MOVE_MEGAHORN, MOVE_ZEN_HEADBUTT
+	setcwildbattle 0, SPECIES_ABSOL, 25, ITEM_NONE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PLAY_ROUGH, MOVE_SUCKER_PUNCH, MOVE_MEGAHORN, MOVE_ZEN_HEADBUTT
 	playmoncry SPECIES_ABSOL, CRY_MODE_ENCOUNTER
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -28,6 +29,8 @@ ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol::
 	case B_OUTCOME_WON, ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol_5
 	case B_OUTCOME_CAUGHT, ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol_6
 	setflag FLAG_S_ORANNA_PATH_ABSOL_DEFEATED
+	clearflag FLAG_ITEM_SORANNA_PATH_ABSOLITE
+	addobject 2
 	goto Common_EventScript_RemoveStaticPokemon
 ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol_1:
 	release
@@ -45,6 +48,8 @@ ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol_5:
 
 ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol_6:
 	setflag FLAG_S_ORANNA_PATH_ABSOL_DEFEATED
+	clearflag FLAG_ITEM_SORANNA_PATH_ABSOLITE
+	addobject 2
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol_1
 

@@ -36,6 +36,27 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4::
 	return
 
 
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV::
+	lock
+	playse SE_PIN
+	applymovement 3, Common_Movement_ExclamationMark
+	applymovement 2, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 2, Common_Movement_Delay48
+	waitmovement 0
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	return
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Text_0:
+	.string "GET YOUR BIG FAT HEAD OUT OF THE\n"
+	.string "FREAKING WAY!$"
+
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk::
 	.string "{COLOR DARK_GRAY}I sent Hanzo to clean up the camp tree\n"
 	.string "house hours ago.\p"

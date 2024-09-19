@@ -1265,7 +1265,7 @@
 #define FLAG_ITEM_VERDANT_WOODS_POTION                              0x4BC 
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
 #define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE
-#define FLAG_ITEM_MAPLEGROVE_ABILITY_CAPSULE                        0x4BF
+#define FLAG_ITEM_MAPLEGROVE_ABILITY_PATCH                          0x4BF
 #define FLAG_ITEM_ROCKY_PATH_ETHER                                  0x4C0 
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
 #define FLAG_ITEM_ROCKY_PATH_GREAT_BALL                             0x4C2
@@ -1275,8 +1275,8 @@
 #define FLAG_ITEM_LUMINE_CAVE_MOON_STONE                            0x4C6
 #define FLAG_ITEM_LUMINE_CAVE_PICKAXE                               0x4C7 
 #define FLAG_ITEM_LUMINE_CAVE_STARDUST                              0x4C8 
-#define FLAG_UNUSED_0x4C9                                           0x4C9 
-#define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
+#define FLAG_ITEM_SORANNA_PATH_ABSOLITE                             0x4C9 
+#define FLAG_ITEM_CAMP_PERSI_ABILITY_CAPSULE                        0x4CA 
 #define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
 #define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
 #define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
