@@ -36,8 +36,8 @@ script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
             startquest(QUEST_APPLEVINE_COUCH_POTATO)
         case QUEST_ACTIVE:
             faceplayer
-            setvar(LOOP_ITER, SUB_QUEST_COUCH_POTATO_1)
-            setvar(LOOP_BOUND, (SUB_QUEST_COUCH_POTATO_1 + SUB_QUEST_COUNT_COUCH_POTATO))
+            setvar(LOOP_ITER, 0)
+            setvar(LOOP_BOUND, SUB_QUEST_COUNT_COUCH_POTATO)
             setvar(QUEST, QUEST_APPLEVINE_COUCH_POTATO)
             call(Common_NextSubQuest)
             // -> {STR_VAR_1} = quest name
