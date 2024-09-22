@@ -383,8 +383,8 @@ ISLANDGAME_PKMNCENTER_2F_MoveDeleter_Text_8:
 	.string "Move Deleter in this world anymore...$"
 
 ISLANDGAME_PKMNCENTER_2F_MoveRelearner_Text_0:
-	.string "Hullo! I am the based gigachad of Marya\n"
-	.string "known as the Move Relearner!\p"
+	.string "Hullo! I am the all-powerful guru known\n"
+	.string "as the Move Relearner!\p"
 	.string "I can help your Pokémon relearn moves\n"
 	.string "they've previously learned!\p"
 	.string "I can even teach them moves that they\n"

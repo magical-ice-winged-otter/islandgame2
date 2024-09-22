@@ -1341,3 +1341,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B4F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL_B1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS/scripts.inc"

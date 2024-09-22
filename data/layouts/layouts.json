@@ -5720,6 +5720,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL_B1F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_TRAVELERS_TUNNEL_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS",
+      "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS/map.bin"
     }
   ]
 }

@@ -1225,7 +1225,7 @@
 #define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 
 #define FLAG_FRESA_FARMS_POKE_TOY                                   0x495 
 #define FLAG_VERDANT_PATH_TIMER_BALL                                0x496 
-#define FLAG_ITEM_COP_2_ELIXIR                                      0x497
+#define FLAG_ITEM_COP_2_FULL_RESTORE                                0x497
 #define FLAG_ITEM_MINTY_MEADOWS_BRIGHT_POWDER                       0x498
 #define FLAG_ITEM_TM_RETURN                                         0x499 
 #define FLAG_ITEM_CAMP_PERSI_POTION                                 0x49A 
@@ -1649,7 +1649,7 @@
 #define FLAG_DAILY_LUMINE_CAVE_SALT_3               (DAILY_FLAGS_START + 0x24) 
 #define FLAG_DAILY_LUMINE_CAVE_SHELL_4              (DAILY_FLAGS_START + 0x25)
 #define FLAG_DAILY_LUMINE_CAVE_SALT_4               (DAILY_FLAGS_START + 0x26) 
-#define FLAG_UNUSED_0x947                           (DAILY_FLAGS_START + 0x27) // Unused Flag
+#define FLAG_DAILY_COR_GROOMERS                     (DAILY_FLAGS_START + 0x27)
 #define FLAG_UNUSED_0x948                           (DAILY_FLAGS_START + 0x28) // Unused Flag
 #define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag
 #define FLAG_UNUSED_0x94A                           (DAILY_FLAGS_START + 0x2A) // Unused Flag

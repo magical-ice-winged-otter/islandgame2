@@ -775,7 +775,7 @@ ISLANDGAME_APPLEVINE_CitySign_Text_0:
 	.string "CHECK YOUR APPLES FOR APPLIN!$"
 
 ISLANDGAME_APPLEVINE_GameCornerSign_Text_0:
-	.string "Eelektrik Game Corner\p"
+	.string "Eelektrik Game Corner\n"
 	.string "Fun for all ages! :)$"
 
 ISLANDGAME_APPLEVINE_SierraPathSign_Text_0:

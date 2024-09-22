@@ -94,6 +94,7 @@
 #define MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO         (85 | (0 << 8))
 #define MAP_ISLANDGAME_AURORA_PATH_GROTTO                 (86 | (0 << 8))
 #define MAP_ISLANDGAME_TRAVELERS_TUNNEL_B1F               (87 | (0 << 8))
+#define MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS     (88 | (0 << 8))
 
 // gMapGroup_Islandgame2
 #define MAP_ISLANDGAME_APPLEVINE                    (0 | (1 << 8))

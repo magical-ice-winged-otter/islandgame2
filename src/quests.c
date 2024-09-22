@@ -548,7 +548,7 @@ static const struct SubQuest sSubQuests_MintyMeadowsMelissa[SUB_QUEST_COUNT_MEAD
 		SUB_QUEST_MEADOWS_MELISSA,
 		sText_SubQuest_MintyMeadowsMelissa_Name,
 		sText_SubQuest_MintyMeadowsMelissa_Desc,
-		sText_SideQuestMap_Unknown,
+		sText_SideQuestMap_MintyMeadows,
 		SPECIES_MAREEP,
 		PKMN,
 		sText_Active

@@ -21,11 +21,6 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_RestStopSign::
 	return
 
 
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked::
-	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked_Text_0, MSGBOX_SIGN
-	return
-
-
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid::
 	msgbox ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0, MSGBOX_NPC
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
@@ -344,12 +339,8 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_EntranceSign_Text_0:
 	.string "TIDALCOVE{UP_ARROW}$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_RestStopSign_Text_0:
-	.string "KRISSIE'S BEAUTY SALON\p"
+	.string "KRISSIE'S BEAUTY SALON\n"
 	.string "For you and your Pokémon!$"
-
-ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked_Text_0:
-	.string "OUT FOR LUNCH\n"
-	.string "Will be back next update (:$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid_Text_0:
 	.string "My sister wants to be a model just like\n"

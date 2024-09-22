@@ -204,7 +204,7 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine {
         dynmultipush("Fresh Water - ¥500", 35)
         dynmultipush("Soda Pop - ¥800", 36)
         dynmultipush("Lemonade - ¥1200", 37)
-        dynmultistack(0,0,TRUE,4,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        dynmultistack(0,0,TRUE,4,FALSE,0,DYN_MULTICHOICE_CB_NONE)
         switch (var(VAR_RESULT)) {
             case 35:
                 checkmoney(500)

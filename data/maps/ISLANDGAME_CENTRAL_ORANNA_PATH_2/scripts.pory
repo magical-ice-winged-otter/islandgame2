@@ -20,12 +20,12 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_EntranceSign {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_RestStopSign {
-    msgbox(format("KRISSIE'S BEAUTY SALON\pFor you and your Pokémon!"), MSGBOX_SIGN)
+    msgbox(format("KRISSIE'S BEAUTY SALON\nFor you and your Pokémon!"), MSGBOX_SIGN)
 }
 
-script ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked {
-    msgbox(format("OUT FOR LUNCH\nWill be back next update (:"), MSGBOX_SIGN)
-}
+// script ISLANDGAME_CENTRAL_ORANNA_PATH_2_TempLocked {
+//     msgbox(format("OUT FOR LUNCH\nWill be back next update (:"), MSGBOX_SIGN)
+// }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Interact_SwimKid {
     msgbox(format("My sister wants to be a model just like Ruka, so she's training her body."), MSGBOX_NPC)
