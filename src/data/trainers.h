@@ -805,7 +805,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Edea"),
         .items = {ITEM_SUPER_POTION, ITEM_FULL_HEAL},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_MtAuroraEdea),
     },
 

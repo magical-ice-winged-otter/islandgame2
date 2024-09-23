@@ -426,9 +426,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
         )
     )
 
-
-    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_MINTY_MEADOWS_MELISSA, 0)
-
     // startquest(QUEST_FRESA_FARMS_LOST_MAREEP)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     waitmovement(0)
@@ -804,6 +801,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene {
     special(HealPlayerParty)
     // completequest(QUEST_FRESA_FARMS_LOST_MAREEP)
     completequest(QUEST_MINTY_MEADOWS_MELISSA)
+    startquest(QUEST_MARYA_GYM_CHALLENGE)
     setflag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)
     setvar(VAR_TEMP_5, 1) // let player go to places that were restricted prior
     release

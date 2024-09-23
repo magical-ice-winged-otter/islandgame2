@@ -31,11 +31,12 @@
 #define QUEST_PERSI_BERRY_MANIAC           3
 // #define QUEST_VERDANT_FOREST_SKITTY        2
 #define QUEST_MAPLEGROVE_LOVERS            4
-#define QUEST_FRESA_FARMS_TORCHIC_EGG      5
-#define QUEST_ROSEVALE_RESCUE              6
-#define QUEST_APPLEVINE_COUCH_POTATO       7
-#define QUEST_ROCKY_PATH_NURSE             8
-#define QUEST_COUNT                        9 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_MARYA_GYM_CHALLENGE          5
+#define QUEST_FRESA_FARMS_TORCHIC_EGG      6
+#define QUEST_ROSEVALE_RESCUE              7
+#define QUEST_APPLEVINE_COUCH_POTATO       8
+#define QUEST_ROCKY_PATH_NURSE             9
+#define QUEST_COUNT                        10 // This number is literally how many to show in the UI (keep it accurate!)
 
 
 
@@ -61,40 +62,43 @@
 
 #define SUB_QUEST_COUNT_POKEDEX_MILESTONE  13
 
-// Minty Meadows Melissa
-#define SUB_QUEST_MEADOWS_MELISSA          13
-
-#define SUB_QUEST_COUNT_MEADOWS_MELISSA    1
-
 
 // Persi Berry
-#define SUB_QUEST_PERSI_BERRY_1            14
-#define SUB_QUEST_PERSI_BERRY_2            15
-#define SUB_QUEST_PERSI_BERRY_3            16
-#define SUB_QUEST_PERSI_BERRY_4            17
-#define SUB_QUEST_PERSI_BERRY_5            18
-#define SUB_QUEST_PERSI_BERRY_6            19
-#define SUB_QUEST_PERSI_BERRY_7            20
-#define SUB_QUEST_PERSI_BERRY_8            21
-#define SUB_QUEST_PERSI_BERRY_9            22
-#define SUB_QUEST_PERSI_BERRY_10           23
-#define SUB_QUEST_PERSI_BERRY_11           24
-#define SUB_QUEST_PERSI_BERRY_12           25
-#define SUB_QUEST_PERSI_BERRY_13           26
-#define SUB_QUEST_PERSI_BERRY_14           27
+#define SUB_QUEST_PERSI_BERRY_1            13
+#define SUB_QUEST_PERSI_BERRY_2            14
+#define SUB_QUEST_PERSI_BERRY_3            15
+#define SUB_QUEST_PERSI_BERRY_4            16
+#define SUB_QUEST_PERSI_BERRY_5            17
+#define SUB_QUEST_PERSI_BERRY_6            18
+#define SUB_QUEST_PERSI_BERRY_7            19
+#define SUB_QUEST_PERSI_BERRY_8            20
+#define SUB_QUEST_PERSI_BERRY_9            21
+#define SUB_QUEST_PERSI_BERRY_10           22
+#define SUB_QUEST_PERSI_BERRY_11           23
+#define SUB_QUEST_PERSI_BERRY_12           24
+#define SUB_QUEST_PERSI_BERRY_13           25
+#define SUB_QUEST_PERSI_BERRY_14           26
 
 #define SUB_QUEST_COUNT_PERSI_BERRY        14
 
+// Marya Gym Challenge
+#define SUB_QUEST_MARYA_GYM_CHALLENGE_1    27
+#define SUB_QUEST_MARYA_GYM_CHALLENGE_2    28
+#define SUB_QUEST_MARYA_GYM_CHALLENGE_3    29
+
+#define SUB_QUEST_COUNT_GYM_CHALLENGE      3
+
+
 // Applevine Couch Potato
-#define SUB_QUEST_COUCH_POTATO_1           28
-#define SUB_QUEST_COUCH_POTATO_2           29
-#define SUB_QUEST_COUCH_POTATO_3           30
-#define SUB_QUEST_COUCH_POTATO_4           31
-#define SUB_QUEST_COUCH_POTATO_5           32
+#define SUB_QUEST_COUCH_POTATO_1           30
+#define SUB_QUEST_COUCH_POTATO_2           31
+#define SUB_QUEST_COUCH_POTATO_3           32
+#define SUB_QUEST_COUCH_POTATO_4           33
+#define SUB_QUEST_COUCH_POTATO_5           34
 
 #define SUB_QUEST_COUNT_COUCH_POTATO       5
 
-#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_POKEDEX_MILESTONE + SUB_QUEST_COUNT_MEADOWS_MELISSA + SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_COUCH_POTATO)
+#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_POKEDEX_MILESTONE + SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_GYM_CHALLENGE + SUB_QUEST_COUNT_COUCH_POTATO)
 
 
 // We want to allocate more space in the saveblock for quests than we need,

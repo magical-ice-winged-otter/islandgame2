@@ -101,8 +101,8 @@ script ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka {
         lock
         faceplayer
         msgbox(format(
-            "You've finally reached the top, challenger!{PAUSE 60} Congrats on getting this far!\p"
-            "I'm Ruka, Tidalcove's Gym Leader!{PAUSE 60} But I'm sure you knew that already.{PAUSE 60} My face is on everything here after all, aha.\p"
+            "You've finally reached the top, challenger! Congrats on getting this far!\p"
+            "I'm Ruka, Tidalcove's Gym Leader! But I'm sure you knew that already. My face is on everything here after all, aha.\p"
             "Here, your Pokémon must be tired from venturing up here. Let me heal them up."
         ), MSGBOX_NPC)
         closemessage
@@ -112,16 +112,16 @@ script ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka {
         special(HealPlayerParty)
 
         msgbox(format(
-            "You know, it's kind of surreal.{PAUSE 60} For your reputation to precede you.\p"
+            "You know, it's kind of surreal. For your reputation to precede you.\p"
             "For everyone to know everything about you.\p"
             "I've met so many trainers who knew every single little detail about me.\p"
-            "My favorite Pokémon,{PAUSE 30} my battle style,{PAUSE 30} what commercials and billboards I've been on,{PAUSE 30} what competitions I've been a part of.\p"
-            "Some even know exact my height,{PAUSE 30} weight,{PAUSE 30} and body measurements by heart...\p"
-            "Meanwhile,{PAUSE 30} I haven't even learned what their name is yet.{PAUSE 60} Isn't that crazy?\p"
+            "My favorite Pokémon, my battle style, what commercials and billboards I've been on, what competitions I've been a part of.\p"
+            "Some even know exact my height,weight, and body measurements by heart...\p"
+            "Meanwhile, I haven't even learned what their name is yet. Isn't that crazy?\p"
             "Personally, the best way for me to get to know a trainer is through a battle."
         ))
 
-        trainerbattle_single(TRAINER_TIDALCOVE_GYM_RUKA, format("So please, challenger.{PAUSE 60} Show me everything about you,{PAUSE 30} right here!"), format("Ah...{PAUSE 60} It seems that I've learned more\nthan enough about you.\pYour ability to communicate with your\nPokémon...{PAUSE 60} It's almost telepathic!\pYou're quite the special trainer, aren't\nyou,{PAUSE 30} {PLAYER}?\pFor your victory over me, I reward you\nwith the Tidalcove Badge!"), RukaDefeated, NO_MUSIC)
+        trainerbattle_single(TRAINER_TIDALCOVE_GYM_RUKA, format("So please, challenger.{PAUSE 60} Show me everything about you, right here!"), format("Ah...{PAUSE 60} It seems that I've learned more\nthan enough about you.\pYour ability to communicate with your\nPokémon...{PAUSE 60} It's almost telepathic!\pYou're quite the special trainer, aren't\nyou, {PLAYER}?\pFor your victory over me, I reward you\nwith the Tidalcove Badge!"), RukaDefeated, NO_MUSIC)
     }
     else { // we already won
         msgbox(format(
@@ -140,6 +140,7 @@ script(local) RukaDefeated {
     message(format("You received the Tidalcove Badge!"))
     waitmessage
     setflag(FLAG_TIDALCOVE_RUKA_DEFEATED)
+    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_MARYA_GYM_CHALLENGE, 0)
     call(Common_EventScript_PlayGymBadgeFanfare)
     msgbox(format(
         "{COLOR GREEN}Ruka: {COLOR DARK_GRAY}That was an amazing match, {PLAYER}!\p"
