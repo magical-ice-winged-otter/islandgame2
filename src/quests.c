@@ -249,20 +249,21 @@ static const u8 sText_AZ[] = _(" A-Z");
 
 
 // Map Locations
-const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
-const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
-const u8 sText_SideQuestMap_Maplegrove[] = _("Maplegrove");
 const u8 sText_SideQuestMap_Cheriport[] = _("Cheriport");
-const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
-const u8 sText_SideQuestMap_Cantalo[] = _("Cantalo");
-const u8 sText_SideQuestMap_Amberidge[] = _("Amberidge");
+const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
+const u8 sText_SideQuestMap_Maplegrove[] = _("Maplegrove");
 const u8 sText_SideQuestMap_MintyMeadows[] = _("Minty Meadows");
+const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
 const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
-const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
+const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
 const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
+const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
 const u8 sText_SideQuestMap_Applevine[] = _("Applevine");
 const u8 sText_SideQuestMap_RockyPath[] = _("Rocky Path");
+const u8 sText_SideQuestMap_Aetheria[] = _("Aetheria");
+const u8 sText_SideQuestMap_Cantalo[] = _("Cantalo");
+const u8 sText_SideQuestMap_Amberidge[] = _("Amberidge");
 const u8 sText_SideQuestMap_Unknown[] = _("Marya");
 
 
@@ -403,6 +404,11 @@ const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg
 const u8 sText_SideQuestName_RosevaleAzurillRescue[] = _("Rescue Mission");
 const u8 sText_SideQuestDesc_RosevaleAzurillRescue[] = _("A little girl's Azurill has been stolen!\nThe thief is somewhere in Mt. Aurora...");
 const u8 sText_SideQuestDoneDesc_RosevaleAzurillRescue[] = _("You successfully rescued Azurill,\n with some help from Articuno!");
+
+// Aetheria Melissa Quest
+const u8 sText_SideQuestName_AetheriaMelissa[] = _("The City That Never Sleeps");
+const u8 sText_SideQuestDesc_AetheriaMelissa[] = _("Melissa wants to meet up in Aetheria!");
+const u8 sText_SideQuestDoneDesc_AetheriaMelissa[] = _("Looks like Edea got away this time...");
 
 // Couch Potato Quest
 const u8 sText_SideQuestName_APPLEVINE_COUCH_POTATO[] = _("(S) Part-Time Job");
@@ -868,6 +874,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      PKMN,
 	      NULL,
               0 
+	),
+	[QUEST_AETHERIA_MELISSA] = side_quest(
+	      sText_SideQuestName_AetheriaMelissa,
+	      sText_SideQuestDesc_AetheriaMelissa,
+	      sText_SideQuestDoneDesc_AetheriaMelissa,
+	      sText_SideQuestMap_Aetheria,
+	      OBJ_EVENT_GFX_MELISSA, 
+	      OBJECT,
+	      NULL,
+	      0
 	),
 	[QUEST_APPLEVINE_COUCH_POTATO] = side_quest(
 	      sText_SideQuestName_APPLEVINE_COUCH_POTATO,

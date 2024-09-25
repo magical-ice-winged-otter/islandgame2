@@ -56,22 +56,23 @@ script ISLANDGAME_APPLEVINE_MelissaCall {
         "...{PAUSE 60}\p"
         "{COLOR RED}(Hm? It looks like Melissa is calling me.)\p"
         "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Hellooo?{PAUSE 60} Hii, {PLAYER}! How's it been? Did you end up making it to Tidalcove yet?\p"
-        "Whaaaat?{PAUSE 60} You've already beaten Ruka and gotten her badge?\p"
-        "That's amazing!{PAUSE 60} Her Pokémon really are as glamorous as she is, yeah?\p"
-        "It took me like of five tries before I could beat her Milotic. Ice-types really aren't my Gibby's strong suit..."
+        "Whaaaat? You've already beaten Ruka and gotten her badge?\p"
+        "That's amazing! Her Pokémon really are as glamorous as she is, yeah?\p"
+        "It took me like five tries before I could beat her Milotic. Ice-types really aren't Gibby's strong suit..."
     ))
     msgbox(format(
-        "{COLOR DARK_GRAY}Huh?{PAUSE 60} Where am I right now?{PAUSE 60} I'm in line for a meet-and-greet with some of the members of STARLIGHT at Aetheria!\p"
+        "{COLOR DARK_GRAY}Huh? Where am I right now?{PAUSE 60} I'm in line for a meet-and-greet with some of the members of STARLIGHT at Aetheria!\p"
         "I've been standing here for a while, so I figured I'd check in to see how you're doing!\p"
-        "Eeeh?{PAUSE 60} You saw THE Primrose in Oranna?{PAUSE 60} Ugggg, I'm jealous...{PAUSE 60} She's my favorite from STARLIGHT!{PAUSE 60} Shame she's not here though... she's too busy collecting the three gym badges.\p"
-        "Anyways, it's been a hot minute since we've seen each other... {PAUSE 60} Wanna meet up here in Aetheria? It's the biggest city in all of the Maryan Isles!\p"
+        "Eeeh?{PAUSE 60} You saw THE Primrose in Oranna? Ugggg, I'm jealous...{PAUSE 30} She's my favorite from STARLIGHT! Shame she's not here though... she's too busy collecting the three gym badges.\p"
+        "Anyways, it's been a hot minute since we've seen each other... {PAUSE 30} Wanna meet up here in Aetheria? It's the biggest city in all of the Maryan Isles!\p"
         "You're at Applevine, right? Aetheria is just down south from there. Just take Rocky Path and go through Lumine Cave to get to Bellehaven, and Aetheria will be just to the west!\p"
-        "I've got a little surprise to give you when you arrive! See you then!"
+        "I've got a little surprise to give you when you arrive! See you then! Byeeeee!"
     ))
     playse(SE_POKENAV_HANG_UP)
     waitse
     setflag(FLAG_APPLEVINE_MELISSA_CALL)
     setvar(VAR_TEMP_2, 1)
+    startquest(QUEST_AETHERIA_MELISSA)
     closemessage
     release
 }

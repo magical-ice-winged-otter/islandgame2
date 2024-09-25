@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_BELLEHAVEN",
   "name": "ISLANDGAME_BELLEHAVEN",
   "layout": "LAYOUT_ISLANDGAME_BELLEHAVEN",
-  "music": "MUS_HG_VERMILION",
+  "music": "MUS_FALLARBOR",
   "region_map_section": "MAPSEC_BELLEHAVEN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 21,
-      "y": 32,
+      "x": 17,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
@@ -26,47 +26,99 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_BELLEHAVEN_MapScripts_NPC_1",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 20,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JONAS",
+      "x": 21,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_MapScripts_Jonas",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_361",
+      "x": 22,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_MapScripts_Snorunt",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
       "x": 24,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_ISLANDGAME_LUMINE_CAVE_1F_3",
+      "dest_warp_id": "2"
     },
     {
       "x": 26,
-      "y": 32,
+      "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME",
       "dest_warp_id": "0"
     },
     {
       "x": 13,
-      "y": 35,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_PKMNMART",
       "dest_warp_id": "0"
     },
     {
       "x": 21,
-      "y": 39,
+      "y": 26,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_PKMNCENTER",
       "dest_warp_id": "0"
     },
     {
       "x": 13,
-      "y": 42,
+      "y": 29,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_HOUSE_1",
       "dest_warp_id": "0"
     },
     {
       "x": 28,
-      "y": 45,
+      "y": 32,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_HOUSE_2",
       "dest_warp_id": "0"
@@ -78,11 +130,19 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 6,
-      "y": 35,
+      "x": 17,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_BELLEHAVEN_Interact_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_BELLEHAVEN_LumineCave_Sign"
     }
   ]
 }

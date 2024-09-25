@@ -1511,7 +1511,7 @@
 
 
 // island-game flags
-#define FLAG_LEFT_SHIP                              (SYSTEM_FLAGS + 0x85)       // not in use
+#define FLAG_BELLEHAVEN_SPOKE_TO_JONAS              (SYSTEM_FLAGS + 0x85)   
 //ss rain: old man quest
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
 //cheriport: get first mon

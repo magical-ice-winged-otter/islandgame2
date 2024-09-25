@@ -34,9 +34,10 @@
 #define QUEST_MARYA_GYM_CHALLENGE          5
 #define QUEST_FRESA_FARMS_TORCHIC_EGG      6
 #define QUEST_ROSEVALE_RESCUE              7
-#define QUEST_APPLEVINE_COUCH_POTATO       8
-#define QUEST_ROCKY_PATH_NURSE             9
-#define QUEST_COUNT                        10 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_AETHERIA_MELISSA             8
+#define QUEST_APPLEVINE_COUCH_POTATO       9
+#define QUEST_ROCKY_PATH_NURSE             10
+#define QUEST_COUNT                        11 // This number is literally how many to show in the UI (keep it accurate!)
 
 
 
