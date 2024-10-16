@@ -256,7 +256,7 @@ static const u8 sDoorAnimPalettes_islandgame_ss_rain_general_00[] = {2,2,2,2,2,2
 static const u8 sDoorAnimPalettes_islandgame_ss_rain_general_01[] = {2,2,2,2,2,2,2,2};
 static const u8 sDoorAnimPalettes_islandgame_oranna_northern_path[] = {6,6,6,6,6,6,6,6};
 static const u8 sDoorAnimPalettes_islandgame_oranna_cheriport[] = {8,8,8,8,7,7,8,8};
-static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_01[] = {6,6,4,4,4,4,3,3};
+static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_01[] = {6,6,6,6,4,4,3,3};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
