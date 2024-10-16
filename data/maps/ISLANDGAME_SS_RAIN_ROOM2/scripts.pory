@@ -32,8 +32,8 @@ script SS_Rain_EventScript_Intro {
     // delay(30)
     // setflag(FLAG_SET_WALL_CLOCK)
     closemessage
-    setflag(FLAG_RECEIVED_RUNNING_SHOES)
-    setflag(FLAG_SYS_B_DASH)
+    // setflag(FLAG_RECEIVED_RUNNING_SHOES)
+    // setflag(FLAG_SYS_B_DASH)
     releaseall
 }
 
@@ -53,4 +53,30 @@ script ISLANDGAME_SS_RAIN_PLAYER_ROOM_Doll2 {
         "(It's not shiny like hers, though.)"
     ))
     release
+}
+
+script SS_Rain_EventScript_NeedRunningShoes {
+    if (!flag(FLAG_RECEIVED_RUNNING_SHOES)) { # Run trigger script if you have not recieved the running shoes
+        lockall
+        msgbox(format(
+            "{COLOR RED}(I should probably get my shoes before I leave.)"
+        ))
+        waitmessage
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+        waitmovement(0)
+    }
+    releaseall
+}
+
+script SS_Rain_EventScript_ItemRunningShoes {
+    lockall
+    setflag(FLAG_RECEIVED_RUNNING_SHOES)
+    msgbox(format(
+        "You changed into your Running Shoes!\p"
+        "Pro-Tip: You can press the “R” button to toggle auto-running!"
+    ))
+    removeobject(VAR_LAST_TALKED)
+    setflag(FLAG_SYS_B_DASH)
+    releaseall
 }

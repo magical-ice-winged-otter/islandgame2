@@ -5586,8 +5586,8 @@
       "name": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Layout",
       "width": 8,
       "height": 10,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "primary_tileset": "gTileset_islandgame_oranna_general",
+      "secondary_tileset": "gTileset_islandgame_oranna_central_path",
       "border_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO/map.bin"
     },
@@ -5665,9 +5665,9 @@
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_FOSTER_HOME",
       "name": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Layout",
       "width": 15,
-      "height": 14,
+      "height": 15,
       "primary_tileset": "gTileset_islandgame_kanto_building",
-      "secondary_tileset": "gTileset_Unused1",
+      "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/map.bin"
     },

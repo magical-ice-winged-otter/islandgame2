@@ -793,6 +793,9 @@
 // gTileset_islandgame_lumine_general
 #define METATILE_islandgame_lumine_general_MuddySlope  0x063
 
+// gTileset_islandgame_oranna_central_path
+#define METATILE_islandgame_oranna_central_path_door_01  0x21A
+
 // gTileset_islandgame_oranna_cheriport
 #define METATILE_islandgame_oranna_cheriport_door  0x24C
 

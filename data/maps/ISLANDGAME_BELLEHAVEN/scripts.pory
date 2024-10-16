@@ -1,4 +1,19 @@
-mapscripts ISLANDGAME_BELLEHAVEN_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+mapscripts ISLANDGAME_BELLEHAVEN_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+        }
+
+    }
+}
 
 script ISLANDGAME_BELLEHAVEN_Interact_Sign {
     msgbox(format(
@@ -13,12 +28,51 @@ script ISLANDGAME_BELLEHAVEN_LumineCave_Sign {
     ), MSGBOX_SIGN)
 }
 
+script ISLANDGAME_BELLEHAVEN_PokeShelterSign {
+    msgbox(format(
+        "Bellehaven Pokémon Foster Care\nChange a life today!"
+    ), MSGBOX_SIGN)
+}
 
+
+
+
+
+script ISLANDGAME_BELLEHAVEN_MapScripts_Azurill {
+    lock
+    faceplayer
+    playmoncry(SPECIES_AZURILL, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Azu... {COLOR BLUE}(Mr. Herriman is such a killjoy. I can't have any fun around here...)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_MapScripts_Bonsly {
+    lock
+    msgbox(format(
+        "{COLOR RED}(It looks like a small bonsai tree.)"
+        "{COLOR DARK_GRAY}..."
+        "{COLOR RED}(Wait, no. That's a Pokémon.)"
+    ))
+    playmoncry(SPECIES_BONSLY, CRY_MODE_NORMAL)
+    waitmoncry
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_MapScripts_Herriman {
+    lock
+    msgbox(format(
+        "Good heavens, am I exhausted! I had to deal with Master Azurill's tomfoolery all day!\p"
+        "I hope Master Mac comes back from schooling soon. I'm not sure how much of this trouble-maker I can take..."
+    ))
+    closemessage
+    release
+}
 
 script ISLANDGAME_BELLEHAVEN_MapScripts_NPC_1 {
-    lock
-    msgbox("This is a quiet town. Mostly, everyone stays indoors.")
-    release
 }
 
 script ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2 {
@@ -42,6 +96,7 @@ script ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2 {
     closemessage
     release
 }
+
 script ISLANDGAME_BELLEHAVEN_MapScripts_Snorunt {
     lock
     faceplayer
