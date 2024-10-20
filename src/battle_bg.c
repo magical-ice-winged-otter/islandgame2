@@ -614,38 +614,38 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT][TIME_COU
     {
         [TIME_MORNING] = 
         { 
-            .tileset      = gBattleTerrainTiles_SeaDay,              
-            .tilemap      = gBattleTerrainTilemap_SeaDay,            
-            .entryTileset = gBattleTerrainAnimTiles_HDGrass,     
-            .entryTilemap = gBattleTerrainAnimTilemap_HDGrass,   
-            .palette      = gBattleTerrainPalette_SeaDay,
+            .tileset      = gBattleTerrainTiles_GrassDay,              
+            .tilemap      = gBattleTerrainTilemap_GrassDay,            
+            .entryTileset = gBattleTerrainAnimTiles_GrassDay,     
+            .entryTilemap = gBattleTerrainAnimTilemap_GrassDay,   
+            .palette      = gBattleTerrainPalette_GrassDay,
         },
 
         [TIME_DAY] = 
         { 
-            .tileset      = gBattleTerrainTiles_SeaDay,              
-            .tilemap      = gBattleTerrainTilemap_SeaDay,            
-            .entryTileset = gBattleTerrainAnimTiles_HDGrass,     
-            .entryTilemap = gBattleTerrainAnimTilemap_HDGrass,   
-            .palette      = gBattleTerrainPalette_SeaDay,
+            .tileset      = gBattleTerrainTiles_GrassDay,              
+            .tilemap      = gBattleTerrainTilemap_GrassDay,            
+            .entryTileset = gBattleTerrainAnimTilemap_GrassDay,     
+            .entryTilemap = gBattleTerrainAnimTilemap_GrassDay,   
+            .palette      = gBattleTerrainPalette_GrassDay,
         },
 
         [TIME_EVENING] = 
         { 
-            .tileset      = gBattleTerrainTiles_SeaEvening,              
-            .tilemap      = gBattleTerrainTilemap_SeaEvening,            
-            .entryTileset = gBattleTerrainAnimTiles_HDGrass,     
-            .entryTilemap = gBattleTerrainAnimTilemap_HDGrass,   
-            .palette      = gBattleTerrainPalette_SeaEvening,
+            .tileset      = gBattleTerrainTiles_GrassEvening,              
+            .tilemap      = gBattleTerrainTilemap_GrassEvening,            
+            .entryTileset = gBattleTerrainAnimTiles_GrassEvening,     
+            .entryTilemap = gBattleTerrainAnimTilemap_GrassEvening,   
+            .palette      = gBattleTerrainPalette_GrassEvening,
         },
 
         [TIME_NIGHT] = 
         { 
-            .tileset      = gBattleTerrainTiles_SeaNight,              
-            .tilemap      = gBattleTerrainTilemap_SeaNight,            
-            .entryTileset = gBattleTerrainAnimTiles_HDGrass,     
-            .entryTilemap = gBattleTerrainAnimTilemap_HDGrass,   
-            .palette      = gBattleTerrainPalette_SeaNight,
+            .tileset      = gBattleTerrainTiles_GrassNight,              
+            .tilemap      = gBattleTerrainTilemap_GrassNight,            
+            .entryTileset = gBattleTerrainAnimTiles_GrassNight,     
+            .entryTilemap = gBattleTerrainAnimTilemap_GrassNight,   
+            .palette      = gBattleTerrainPalette_GrassNight,
         },
     },
     [BATTLE_TERRAIN_LONG_GRASS] = 

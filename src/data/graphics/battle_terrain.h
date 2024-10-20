@@ -165,3 +165,24 @@ const u32 gBattleTerrainTilemap_SeaEvening[] = INCBIN_U32("graphics/battle_terra
 const u32 gBattleTerrainTiles_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.4bpp.lz");
 const u32 gBattleTerrainPalette_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.gbapal.lz");
 const u32 gBattleTerrainTilemap_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.bin.lz");
+
+//Grass Day
+const u32 gBattleTerrainTiles_GrassDay[] = INCBIN_U32("graphics/battle_terrain/grass_day/grass-day.4bpp.lz");
+const u32 gBattleTerrainPalette_GrassDay[] = INCBIN_U32("graphics/battle_terrain/grass_day/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_GrassDay[] = INCBIN_U32("graphics/battle_terrain/grass_day/grass-day.bin.lz");
+const u32 gBattleTerrainAnimTiles_GrassDay[] = INCBIN_U32("graphics/battle_terrain/grass_day/anim-grass-day.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_GrassDay[] = INCBIN_U32("graphics/battle_terrain/grass_day/anim-grass-day.bin.lz");
+
+//Grass Evening
+const u32 gBattleTerrainTiles_GrassEvening[] = INCBIN_U32("graphics/battle_terrain/grass_evening/grass-evening.4bpp.lz");
+const u32 gBattleTerrainPalette_GrassEvening[] = INCBIN_U32("graphics/battle_terrain/grass_evening/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_GrassEvening[] = INCBIN_U32("graphics/battle_terrain/grass_evening/grass-evening.bin.lz");
+const u32 gBattleTerrainAnimTiles_GrassEvening[] = INCBIN_U32("graphics/battle_terrain/grass_evening/anim-grass-evening.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_GrassEvening[] = INCBIN_U32("graphics/battle_terrain/grass_evening/anim-grass-evening.bin.lz");
+
+//Grass Night
+const u32 gBattleTerrainTiles_GrassNight[] = INCBIN_U32("graphics/battle_terrain/grass_night/grass-night.4bpp.lz");
+const u32 gBattleTerrainPalette_GrassNight[] = INCBIN_U32("graphics/battle_terrain/grass_night/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_GrassNight[] = INCBIN_U32("graphics/battle_terrain/grass_night/grass-night.bin.lz");
+const u32 gBattleTerrainAnimTiles_GrassNight[] = INCBIN_U32("graphics/battle_terrain/grass_night/anim-grass-night.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_GrassNight[] = INCBIN_U32("graphics/battle_terrain/grass_night/anim-grass-night.bin.lz");
