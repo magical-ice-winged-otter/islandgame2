@@ -795,6 +795,7 @@
 
 // gTileset_islandgame_oranna_central_path
 #define METATILE_islandgame_oranna_central_path_door_01  0x21A
+#define METATILE_islandgame_oranna_central_path_door_02  0x263
 
 // gTileset_islandgame_oranna_cheriport
 #define METATILE_islandgame_oranna_cheriport_door  0x24C
@@ -822,8 +823,9 @@
 #define METATILE_islandgame_oranna_rosevale_door  0x259
 
 // gTileset_islandgame_oranna_tidalcove
-#define METATILE_islandgame_oranna_tidalcove_door_00   0x30D
-#define METATILE_islandgame_oranna_tidalcove_door_01   0x252
+#define METATILE_islandgame_oranna_tidalcove_door_00   0x30D // pokemart
+#define METATILE_islandgame_oranna_tidalcove_door_01   0x2ED // pokecenter
+#define METATILE_islandgame_oranna_tidalcove_door_02   0x24E // general houses
 #define METATILE_islandgame_oranna_tidalcove_door_gym  0x295
 
 // gTileset_islandgame_ss_rain_general

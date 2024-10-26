@@ -168,98 +168,100 @@ RukaDefeated:
 # 142 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	setflag FLAG_TIDALCOVE_RUKA_DEFEATED
 # 143 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MARYA_GYM_CHALLENGE, 0
+	setflag FLAG_BADGE01_GET
 # 144 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	call Common_EventScript_PlayGymBadgeFanfare
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MARYA_GYM_CHALLENGE, 0
 # 145 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+	call Common_EventScript_PlayGymBadgeFanfare
+# 146 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	msgbox RukaDefeated_Text_1, MSGBOX_NPC
-# 151 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	giveitem ITEM_TM07
 # 152 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+	giveitem ITEM_TM07
+# 153 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	msgbox RukaDefeated_Text_2
-# 157 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 158 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	giveitem ITEM_BIKE_VOUCHER
-# 159 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 160 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	msgbox RukaDefeated_Text_3
-# 166 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 167 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	closemessage
 	return
 
 
 CheckSetStairMetatiles:
-# 171 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 172 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	compare VAR_ICE_STEP_COUNT, 8
 	goto_if_ge CheckSetStairMetatiles_2
 CheckSetStairMetatiles_1:
-# 175 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 176 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	compare VAR_ICE_STEP_COUNT, 28
 	goto_if_ge CheckSetStairMetatiles_5
 CheckSetStairMetatiles_4:
-# 179 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 180 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	compare VAR_ICE_STEP_COUNT, 67
 	goto_if_ge CheckSetStairMetatiles_7
 	return
 
 CheckSetStairMetatiles_2:
-# 172 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	setmetatile 8, 15, METATILE_SootopolisGym_Stairs, FALSE
 # 173 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+	setmetatile 8, 15, METATILE_SootopolisGym_Stairs, FALSE
+# 174 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	setmetatile 8, 16, METATILE_SootopolisGym_Stairs, FALSE
 	goto CheckSetStairMetatiles_1
 
 CheckSetStairMetatiles_5:
-# 176 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	setmetatile 8, 10, METATILE_SootopolisGym_Stairs, FALSE
 # 177 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+	setmetatile 8, 10, METATILE_SootopolisGym_Stairs, FALSE
+# 178 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	setmetatile 8, 11, METATILE_SootopolisGym_Stairs, FALSE
 	goto CheckSetStairMetatiles_4
 
 CheckSetStairMetatiles_7:
-# 180 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	setmetatile 8, 4, METATILE_SootopolisGym_Stairs, FALSE
 # 181 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+	setmetatile 8, 4, METATILE_SootopolisGym_Stairs, FALSE
+# 182 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	setmetatile 8, 5, METATILE_SootopolisGym_Stairs, FALSE
 	return
 
 
-# 185 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-Movement_PlayerFall:
 # 186 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+Movement_PlayerFall:
+# 187 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	set_invisible
 	step_end
 
 FallThroughIce:
-# 190 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	lock
 # 191 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	delay 20
+	lock
 # 192 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerFall
+	delay 20
 # 193 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_PlayerFall
 # 194 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	playse SE_FALL
+	waitmovement 0
 # 195 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	delay 60
+	playse SE_FALL
 # 196 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	warp MAP_ISLANDGAME_TIDALCOVE, 25, 13
+	delay 60
 # 197 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	waitstate
+	warp MAP_ISLANDGAME_TIDALCOVE, 25, 13
 # 198 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+	waitstate
+# 199 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	release
 	return
 
 
 UnlockNextStairs:
-# 202 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	addvar VAR_ICE_STEP_COUNT, 1
 # 203 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	delay 40
+	addvar VAR_ICE_STEP_COUNT, 1
 # 204 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	playse SE_ICE_STAIRS
+	delay 40
 # 205 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
-	call CheckSetStairMetatiles
+	playse SE_ICE_STAIRS
 # 206 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+	call CheckSetStairMetatiles
+# 207 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	special DrawWholeMapView
 	return
 
@@ -429,7 +431,7 @@ RukaDefeated_Text_0:
 	.string "You received the Tidalcove Badge!$"
 
 RukaDefeated_Text_1:
-# 146 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 147 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	.string "{COLOR GREEN}Ruka: {COLOR DARK_GRAY}That was an amazing match,\n"
 	.string "{PLAYER}!\p"
 	.string "It was enough to make me sweat in this\n"
@@ -439,7 +441,7 @@ RukaDefeated_Text_1:
 	.string "of approval autographed on it!$"
 
 RukaDefeated_Text_2:
-# 153 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 154 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	.string "Inside that TM is my signature move,\n"
 	.string "Snowscape! With it, you too can unleash\l"
 	.string "the true beauty of ice Pokemon!\p"
@@ -448,7 +450,7 @@ RukaDefeated_Text_2:
 	.string "present you with this!$"
 
 RukaDefeated_Text_3:
-# 160 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
+# 161 "data/maps/ISLANDGAME_TIDALCOVE_GYM/scripts.pory"
 	.string "That right there will get you a free\n"
 	.string "bike over at Randy's bike shop!\p"
 	.string "You'll need one in order to ride on the\n"

@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_LUMINE_CAVE_1F_3",
   "layout": "LAYOUT_ISLANDGAME_LUMINE_CAVE_1F_3",
   "music": "MUS_MT_PYRE",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_LUMINE_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

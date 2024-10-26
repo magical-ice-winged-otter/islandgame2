@@ -140,6 +140,7 @@ script(local) RukaDefeated {
     message(format("You received the Tidalcove Badge!"))
     waitmessage
     setflag(FLAG_TIDALCOVE_RUKA_DEFEATED)
+    setflag(FLAG_BADGE01_GET)
     subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_MARYA_GYM_CHALLENGE, 0)
     call(Common_EventScript_PlayGymBadgeFanfare)
     msgbox(format(
