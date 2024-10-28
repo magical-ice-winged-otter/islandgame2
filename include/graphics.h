@@ -361,6 +361,26 @@ extern const u32 gBattleTerrainPalette_GrassNight[];
 extern const u32 gBattleTerrainTilemap_GrassNight[];
 extern const u32 gBattleTerrainAnimTiles_GrassNight[];
 extern const u32 gBattleTerrainAnimTilemap_GrassNight[];
+//Beach Day
+extern const u32 gBattleTerrainTiles_BeachDay[];
+extern const u32 gBattleTerrainPalette_BeachDay[];
+extern const u32 gBattleTerrainTilemap_BeachDay[];
+extern const u32 gBattleTerrainAnimTiles_BeachDay[];
+extern const u32 gBattleTerrainAnimTilemap_BeachDay[];
+//Beach Evening
+extern const u32 gBattleTerrainTiles_BeachEvening[];
+extern const u32 gBattleTerrainPalette_BeachEvening[];
+extern const u32 gBattleTerrainTilemap_BeachEvening[];
+extern const u32 gBattleTerrainAnimTiles_BeachEvening[];
+extern const u32 gBattleTerrainAnimTilemap_BeachEvening[];
+//Beach Night
+extern const u32 gBattleTerrainTiles_BeachNight[];
+extern const u32 gBattleTerrainPalette_BeachNight[];
+extern const u32 gBattleTerrainTilemap_BeachNight[];
+extern const u32 gBattleTerrainAnimTiles_BeachNight[];
+extern const u32 gBattleTerrainAnimTilemap_BeachNight[];
+
+
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];

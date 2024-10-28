@@ -612,41 +612,10 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT][TIME_COU
 {
     [BATTLE_TERRAIN_GRASS] = 
     {
-        [TIME_MORNING] = 
-        { 
-            .tileset      = gBattleTerrainTiles_GrassDay,              
-            .tilemap      = gBattleTerrainTilemap_GrassDay,            
-            .entryTileset = gBattleTerrainAnimTiles_GrassDay,     
-            .entryTilemap = gBattleTerrainAnimTilemap_GrassDay,   
-            .palette      = gBattleTerrainPalette_GrassDay,
-        },
-
-        [TIME_DAY] = 
-        { 
-            .tileset      = gBattleTerrainTiles_GrassDay,              
-            .tilemap      = gBattleTerrainTilemap_GrassDay,            
-            .entryTileset = gBattleTerrainAnimTilemap_GrassDay,     
-            .entryTilemap = gBattleTerrainAnimTilemap_GrassDay,   
-            .palette      = gBattleTerrainPalette_GrassDay,
-        },
-
-        [TIME_EVENING] = 
-        { 
-            .tileset      = gBattleTerrainTiles_GrassEvening,              
-            .tilemap      = gBattleTerrainTilemap_GrassEvening,            
-            .entryTileset = gBattleTerrainAnimTiles_GrassEvening,     
-            .entryTilemap = gBattleTerrainAnimTilemap_GrassEvening,   
-            .palette      = gBattleTerrainPalette_GrassEvening,
-        },
-
-        [TIME_NIGHT] = 
-        { 
-            .tileset      = gBattleTerrainTiles_GrassNight,              
-            .tilemap      = gBattleTerrainTilemap_GrassNight,            
-            .entryTileset = gBattleTerrainAnimTiles_GrassNight,     
-            .entryTilemap = gBattleTerrainAnimTilemap_GrassNight,   
-            .palette      = gBattleTerrainPalette_GrassNight,
-        },
+        [TIME_MORNING] = { TERRAIN_METADATA(GrassDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(GrassDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(GrassEvening) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(GrassNight) },
     },
     [BATTLE_TERRAIN_LONG_GRASS] = 
     {
@@ -657,10 +626,10 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT][TIME_COU
     },
     [BATTLE_TERRAIN_SAND] = 
     {
-        [TIME_MORNING] = { TERRAIN_METADATA(Sand) },
-        [TIME_DAY] = { TERRAIN_METADATA(Sand) },
-        [TIME_EVENING] = { TERRAIN_METADATA(Sand) },
-        [TIME_NIGHT] = { TERRAIN_METADATA(Sand) },
+        [TIME_MORNING] = { TERRAIN_METADATA(BeachDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(BeachDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(BeachEvening) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(BeachNight) },
     },
     [BATTLE_TERRAIN_UNDERWATER] = 
     {

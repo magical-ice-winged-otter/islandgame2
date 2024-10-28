@@ -186,3 +186,25 @@ const u32 gBattleTerrainPalette_GrassNight[] = INCBIN_U32("graphics/battle_terra
 const u32 gBattleTerrainTilemap_GrassNight[] = INCBIN_U32("graphics/battle_terrain/grass_night/grass-night.bin.lz");
 const u32 gBattleTerrainAnimTiles_GrassNight[] = INCBIN_U32("graphics/battle_terrain/grass_night/anim-grass-night.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_GrassNight[] = INCBIN_U32("graphics/battle_terrain/grass_night/anim-grass-night.bin.lz");
+
+
+// Beach Day
+const u32 gBattleTerrainTiles_BeachDay[] = INCBIN_U32("graphics/battle_terrain/beach_day/beach-day.4bpp.lz");
+const u32 gBattleTerrainPalette_BeachDay[] = INCBIN_U32("graphics/battle_terrain/beach_day/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_BeachDay[] = INCBIN_U32("graphics/battle_terrain/beach_day/beach-day.bin.lz");
+const u32 gBattleTerrainAnimTiles_BeachDay[] = INCBIN_U32("graphics/battle_terrain/beach_day/anim-beach-day.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_BeachDay[] = INCBIN_U32("graphics/battle_terrain/beach_day/anim-beach-day.bin.lz");
+
+// Beach Evening
+const u32 gBattleTerrainTiles_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/beach-evening.4bpp.lz");
+const u32 gBattleTerrainPalette_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/beach-evening.bin.lz");
+const u32 gBattleTerrainAnimTiles_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/anim-beach-evening.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/anim-beach-evening.bin.lz");
+
+// Beach Night
+const u32 gBattleTerrainTiles_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/beach-night.4bpp.lz");
+const u32 gBattleTerrainPalette_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/beach-night.bin.lz");
+const u32 gBattleTerrainAnimTiles_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/anim-beach-night.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/anim-beach-night.bin.lz");
