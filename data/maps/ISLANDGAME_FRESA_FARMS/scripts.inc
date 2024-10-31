@@ -263,44 +263,223 @@ ISLANDGAME_FRESA_FARMS_Torchic::
 # 235 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	playmoncry SPECIES_TORCHIC, CRY_MODE_NORMAL
 # 236 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
-	msgbox ISLANDGAME_FRESA_FARMS_Torchic_Text_0
-# 239 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto_if_set FLAG_TEMP_2, ISLANDGAME_FRESA_FARMS_Torchic_2
+ISLANDGAME_FRESA_FARMS_Torchic_1:
+# 241 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	closemessage
-# 240 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 242 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	release
 	return
+
+ISLANDGAME_FRESA_FARMS_Torchic_2:
+# 237 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Torchic_Text_0
+	goto ISLANDGAME_FRESA_FARMS_Torchic_1
 
 
 ISLANDGAME_FRESA_FARMS_Tepig::
-# 244 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
-	lock
-# 245 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
-	faceplayer
 # 246 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
-	playmoncry SPECIES_TEPIG, CRY_MODE_NORMAL
+	lock
 # 247 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
-	msgbox ISLANDGAME_FRESA_FARMS_Tepig_Text_0
-# 250 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto_if_set FLAG_TEMP_2, ISLANDGAME_FRESA_FARMS_Tepig_2
+# 253 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	faceplayer
+# 254 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	playmoncry SPECIES_TEPIG, CRY_MODE_NORMAL
+# 255 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Tepig_Text_1
+ISLANDGAME_FRESA_FARMS_Tepig_1:
+# 259 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	closemessage
-# 251 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 260 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	release
 	return
+
+ISLANDGAME_FRESA_FARMS_Tepig_2:
+# 248 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Tepig_Text_0
+	goto ISLANDGAME_FRESA_FARMS_Tepig_1
 
 
 ISLANDGAME_FRESA_FARMS_Mudsdale::
-# 255 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 264 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	lock
-# 256 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 265 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	faceplayer
-# 257 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 266 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	playmoncry SPECIES_MUDSDALE, CRY_MODE_NORMAL
-# 258 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 267 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_Mudsdale_Text_0
-# 261 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 270 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	closemessage
-# 262 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 271 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	release
 	return
+
+
+ISLANDGAME_FRESA_FARMS_Dude::
+# 275 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	lock
+# 276 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	faceplayer
+# 277 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Dude_Text_0
+# 280 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	closemessage
+# 281 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	release
+	return
+
+
+ISLANDGAME_FRESA_FARMS_Boy::
+# 285 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	lock
+# 286 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Boy_Text_0
+# 291 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	closemessage
+# 292 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	release
+	return
+
+
+ISLANDGAME_FRESA_FARMS_Girl::
+# 297 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	lock
+# 298 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto_if_set FLAG_FRESA_FARMS_TRADE_DONE, ISLANDGAME_FRESA_FARMS_Girl_2
+ISLANDGAME_FRESA_FARMS_Girl_1:
+# 303 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto_if_set FLAG_TEMP_3, ISLANDGAME_FRESA_FARMS_Girl_5
+ISLANDGAME_FRESA_FARMS_Girl_4:
+# 315 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Girl_Text_2
+# 319 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	closemessage
+# 320 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	setvar VAR_0x8000, SPECIES_SQUIRTLE
+# 321 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	callnative CheckPartyMon
+# 322 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_FRESA_FARMS_Girl_8
+ISLANDGAME_FRESA_FARMS_Girl_7:
+# 341 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+FresaFarms_TradeInitiate:
+# 342 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	setvar VAR_0x8008, INGAME_TRADE_FIDOUGH
+# 343 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	copyvar VAR_0x8004, VAR_0x8008
+# 344 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+# 345 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	copyvar VAR_0x8009, VAR_RESULT
+# 346 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	special ChoosePartyMon
+# 347 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	waitstate
+# 348 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	copyvar VAR_0x800A, VAR_0x8004
+# 349 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq ISLANDGAME_FRESA_FARMS_Girl_14
+ISLANDGAME_FRESA_FARMS_Girl_13:
+# 352 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	copyvar VAR_0x8005, VAR_0x800A
+# 353 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	specialvar VAR_RESULT, GetTradeSpecies
+# 354 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	copyvar VAR_0x800B, VAR_RESULT
+# 355 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	compare VAR_RESULT, VAR_0x8009
+	goto_if_ne ISLANDGAME_FRESA_FARMS_Girl_20
+ISLANDGAME_FRESA_FARMS_Girl_19:
+# 361 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	copyvar VAR_0x8004, VAR_0x8008
+# 362 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	copyvar VAR_0x8005, VAR_0x800A
+# 363 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	special CreateInGameTradePokemon
+# 364 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	special DoInGameTradeScene
+# 365 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	waitstate
+# 366 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+# 367 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Girl_Text_4
+# 370 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	setflag FLAG_FRESA_FARMS_TRADE_DONE
+# 372 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+FresaFarms_TradeDecline:
+# 373 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Girl_Text_5
+# 376 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+FresaFarms_TradeEnd:
+# 377 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	closemessage
+# 378 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	release
+	return
+
+ISLANDGAME_FRESA_FARMS_Girl_2:
+# 299 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Girl_Text_0
+	goto ISLANDGAME_FRESA_FARMS_Girl_1
+
+ISLANDGAME_FRESA_FARMS_Girl_5:
+# 304 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Girl_Text_1, MSGBOX_YESNO
+# 308 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_FRESA_FARMS_Girl_10
+# 312 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto FresaFarms_TradeDecline
+	goto ISLANDGAME_FRESA_FARMS_Girl_4
+
+ISLANDGAME_FRESA_FARMS_Girl_8:
+# 323 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	setflag FLAG_TEMP_3
+# 324 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	playse SE_PIN
+# 325 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	applymovement 1, Common_Movement_ExclamationMark
+# 326 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	waitmovement 0
+# 327 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	applymovement 1, Common_Movement_Delay32
+# 328 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	waitmovement 0
+# 329 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Girl_Text_1, MSGBOX_YESNO
+# 333 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_FRESA_FARMS_Girl_16
+# 337 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto FresaFarms_TradeDecline
+	goto ISLANDGAME_FRESA_FARMS_Girl_7
+
+ISLANDGAME_FRESA_FARMS_Girl_10:
+# 309 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto FresaFarms_TradeInitiate
+	goto ISLANDGAME_FRESA_FARMS_Girl_4
+
+ISLANDGAME_FRESA_FARMS_Girl_14:
+# 350 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto FresaFarms_TradeDecline
+	goto ISLANDGAME_FRESA_FARMS_Girl_13
+
+ISLANDGAME_FRESA_FARMS_Girl_16:
+# 334 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto FresaFarms_TradeInitiate
+	goto ISLANDGAME_FRESA_FARMS_Girl_7
+
+ISLANDGAME_FRESA_FARMS_Girl_20:
+# 356 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_Girl_Text_3
+# 359 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	goto FresaFarms_TradeEnd
+	goto ISLANDGAME_FRESA_FARMS_Girl_19
 
 
 ISLANDGAME_FRESA_FARMS_Sign_Text_0:
@@ -398,16 +577,72 @@ ISLANDGAME_FRESA_FARMS_EventScripts_MilkVendor_Text_3:
 	.string "Thank you for your patronage!$"
 
 ISLANDGAME_FRESA_FARMS_Torchic_Text_0:
-# 237 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
-	.string "Kikiriki! {COLOR BLUE}(Guten Tag!)$"
+# 238 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "Kikiriki!$"
 
 ISLANDGAME_FRESA_FARMS_Tepig_Text_0:
-# 248 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
-	.string "Oink! {COLOR BLUE}(hois im pepa pigi)$"
+# 249 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "{COLOR RED}(Tepig is busy chowing down a bowl of\n"
+	.string "well-done berries.)$"
+
+ISLANDGAME_FRESA_FARMS_Tepig_Text_1:
+# 256 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "hois$"
 
 ISLANDGAME_FRESA_FARMS_Mudsdale_Text_0:
-# 259 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+# 268 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
 	.string "Hee-haw! {COLOR BLUE}(Hee-ho!)$"
+
+ISLANDGAME_FRESA_FARMS_Dude_Text_0:
+# 278 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "I wonder what came first... the Pokémon,\n"
+	.string "or the egg?$"
+
+ISLANDGAME_FRESA_FARMS_Boy_Text_0:
+# 287 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "By breeding two Pokémon in the same\n"
+	.string "family together, sometimes its child\l"
+	.string "will inherit one of its parents' moves!\p"
+	.string "These inherited moves are called egg\n"
+	.string "moves, and most of them can't be\l"
+	.string "learned any other way!\p"
+	.string "My Tepig knows a “super powerful” move\n"
+	.string "thanks to its mom! Isn't that awesome?$"
+
+ISLANDGAME_FRESA_FARMS_Girl_Text_0:
+# 300 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "Fidough are real useful to us farmers!\n"
+	.string "When they evolve into Dachsbun, their\l"
+	.string "aroma helps our wheat plants grow!$"
+
+ISLANDGAME_FRESA_FARMS_Girl_Text_1:
+# 305 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "Oh! Is that a Squirtle I see?\p"
+	.string "Are you willing to trade it by chance?\n"
+	.string "I've gotta cute lil doggo right here to\l"
+	.string "make it worth your while!$"
+
+ISLANDGAME_FRESA_FARMS_Girl_Text_2:
+# 316 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "Phew... gardening's a lot tougher than it\n"
+	.string "looks!\p"
+	.string "Wish I had a water Pokémon like a\n"
+	.string "{COLOR LIGHT_BLUE}Squirtle {COLOR DARK_GRAY}to help me do it instead...$"
+
+ISLANDGAME_FRESA_FARMS_Girl_Text_3:
+# 357 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "Eh? That's not a Squirtle.$"
+
+ISLANDGAME_FRESA_FARMS_Girl_Text_4:
+# 368 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "Woooo! Thanks a ton, friend! Hope ya\n"
+	.string "like your new pup as well! Careful not to\l"
+	.string "stick your fingers too close to her\l"
+	.string "mouth though, she's a biter!$"
+
+ISLANDGAME_FRESA_FARMS_Girl_Text_5:
+# 374 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"
+	.string "Aw, shucks.$"
 
 ISLANDGAME_FRESA_FARMS_Daycare_Mon1_Text::
 # 48 "data/maps/ISLANDGAME_FRESA_FARMS/scripts.pory"

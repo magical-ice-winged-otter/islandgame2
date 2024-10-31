@@ -1590,7 +1590,7 @@
 #define FLAG_LUMINE_CAVE_SPOKE_TO_ALBA              (SYSTEM_FLAGS + 0xB0)
 #define FLAG_LUMINE_CAVE_ALBA_DEFEATED              (SYSTEM_FLAGS + 0xB1) 
 #define FLAG_LUMINE_CAVE_SHELL_BELL_RECEIVED        (SYSTEM_FLAGS + 0xB2)
-#define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
+#define FLAG_FRESA_FARMS_TRADE_DONE                 (SYSTEM_FLAGS + 0xB3)
 #define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
 #define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
 #define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag

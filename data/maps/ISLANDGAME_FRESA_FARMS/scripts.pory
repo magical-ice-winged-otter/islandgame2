@@ -233,20 +233,29 @@ script ISLANDGAME_FRESA_FARMS_Torchic {
     lock
     faceplayer
     playmoncry(SPECIES_TORCHIC, CRY_MODE_NORMAL)
-    msgbox(format(
-        "Kikiriki! {COLOR BLUE}(Guten Tag!)"
-    ))
+    if(flag(FLAG_DAY)) {
+        msgbox(format(
+            "Kikiriki!"
+        ))
+    }
     closemessage
     release
 }
 
 script ISLANDGAME_FRESA_FARMS_Tepig {
     lock
-    faceplayer
-    playmoncry(SPECIES_TEPIG, CRY_MODE_NORMAL)
-    msgbox(format(
-        "Oink! {COLOR BLUE}(hois im pepa pigi)"
-    ))
+    if(flag(FLAG_DAY)) {
+        msgbox(format(
+            "{COLOR RED}(Tepig is busy chowing down a bowl of well-done berries.)"
+        ))
+    }
+    else {
+        faceplayer
+        playmoncry(SPECIES_TEPIG, CRY_MODE_NORMAL)
+        msgbox(format(
+            "hois"
+        ))
+    }
     closemessage
     release
 }
@@ -260,4 +269,112 @@ script ISLANDGAME_FRESA_FARMS_Mudsdale {
     ))
     closemessage
     release
+}
+
+script ISLANDGAME_FRESA_FARMS_Dude {
+    lock
+    faceplayer
+    msgbox(format(
+        "I wonder what came first... the Pokémon, or the egg?"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_FRESA_FARMS_Boy {
+    lock
+    faceplayer
+    msgbox(format(
+        "By breeding two Pokémon in the same family together, sometimes its child will inherit one of its parents' moves!\p"
+        "These inherited moves are called egg moves, and most of them can't be learned any other way!\p"
+        "My Tepig knows a “super powerful” move thanks to its mom! Isn't that awesome?"
+    ))
+    closemessage
+    release
+}
+
+
+script ISLANDGAME_FRESA_FARMS_Girl {
+    lock
+    if (flag(FLAG_FRESA_FARMS_TRADE_DONE)) {
+        msgbox(format(
+            "Fidough are real useful to us farmers! When they evolve into Dachsbun, their aroma helps our wheat plants grow!"
+        ))
+    }
+    if (flag(FLAG_TEMP_3)) {
+        msgbox(format(
+            "Oh! Is that a Squirtle I see?\p"
+            "Are you willing to trade it by chance? I've gotta cute lil doggo right here to make it worth your while!"
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            goto(FresaFarms_TradeInitiate)
+        }   
+        else {
+            goto(FresaFarms_TradeDecline)
+        }   
+    }
+    msgbox(format(
+        "Phew... gardening's a lot tougher than it looks!\p"
+        "Wish I had a water Pokémon like a {COLOR LIGHT_BLUE}Squirtle {COLOR DARK_GRAY}to help me do it instead..."
+    ))
+    closemessage
+    setvar(VAR_0x8000, SPECIES_SQUIRTLE)
+    callnative(CheckPartyMon)
+    if (var(VAR_RESULT)) {
+        setflag(FLAG_TEMP_3)
+        playse(SE_PIN)
+        applymovement(1, Common_Movement_ExclamationMark)
+        waitmovement(0)
+        applymovement(1, Common_Movement_Delay32)
+        waitmovement(0)
+        msgbox(format(
+            "Oh! Is that a Squirtle I see?\p"
+            "Are you willing to trade it by chance? I've gotta cute lil doggo right here to make it worth your while!"
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            goto(FresaFarms_TradeInitiate)
+        }   
+        else {
+            goto(FresaFarms_TradeDecline)
+        }   
+    }
+
+    FresaFarms_TradeInitiate:
+        setvar(VAR_0x8008, INGAME_TRADE_FIDOUGH)
+        copyvar(VAR_0x8004, VAR_0x8008)
+        specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
+        copyvar(VAR_0x8009, VAR_RESULT)
+        special(ChoosePartyMon)
+        waitstate
+        copyvar(VAR_0x800A, VAR_0x8004)
+        if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+            goto(FresaFarms_TradeDecline)
+        }
+        copyvar(VAR_0x8005, VAR_0x800A)
+        specialvar(VAR_RESULT, GetTradeSpecies)
+        copyvar(VAR_0x800B, VAR_RESULT)
+        if(var(VAR_RESULT) != VAR_0x8009) {
+            msgbox(format(
+                "Eh? That's not a Squirtle."
+            ))
+            goto(FresaFarms_TradeEnd)
+        }
+        copyvar(VAR_0x8004, VAR_0x8008)
+        copyvar(VAR_0x8005, VAR_0x800A)
+        special(CreateInGameTradePokemon)
+        special(DoInGameTradeScene)
+        waitstate
+        bufferspeciesname(STR_VAR_1, VAR_0x8009)
+        msgbox(format(
+            "Woooo! Thanks a ton, friend! Hope ya like your new pup as well! Careful not to stick your fingers too close to her mouth though, she's a biter!"
+        ))
+        setflag(FLAG_FRESA_FARMS_TRADE_DONE)
+
+    FresaFarms_TradeDecline:
+        msgbox(format(
+            "Aw, shucks."
+        ))
+    FresaFarms_TradeEnd:
+        closemessage
+        release
 }

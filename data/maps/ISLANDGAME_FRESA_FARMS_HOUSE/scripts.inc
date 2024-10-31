@@ -29,64 +29,66 @@ ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1::
 	faceplayer
 # 22 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1_Text_0
-# 23 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+# 25 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2::
-# 27 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
-	lock
-# 28 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
-	faceplayer
 # 29 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2_Text_0
+	lock
 # 30 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+	faceplayer
+# 31 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2_Text_0
+# 32 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+	applymovement 2, Common_Movement_FaceUp
+# 33 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+	waitmovement 0
+# 34 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC3::
-# 34 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+# 38 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	lock
-# 35 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+# 39 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC3_Text_0
-# 36 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+# 40 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC4::
-# 40 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+# 44 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	lock
-# 41 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
-	faceplayer
-# 42 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC4_Text_0
 # 45 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+	faceplayer
+# 46 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC4_Text_0
+# 49 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1_Text_0:
-# 22 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
-	.string "Life on a farm is soooooo boring. I hope\n"
-	.string "something exciting happens soon.\p"
-	.string "I don't care what. It could even be like,\n"
-	.string "some sorta world-ending event.\p"
-	.string "Just SOMETHING!$"
+# 23 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+	.string "Be sure to check our booth out at the\n"
+	.string "Silverwing Festival when the time\l"
+	.string "comes!$"
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2_Text_0:
-# 29 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+# 31 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	.string "I wish we got the good channels. I'm\n"
 	.string "tired of no shows after dark.$"
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC3_Text_0:
-# 35 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+# 39 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	.string "{COLOR RED}(Looks like he's admiring his Torchic\n"
 	.string "plush.)$"
 
 ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC4_Text_0:
-# 43 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
+# 47 "data/maps/ISLANDGAME_FRESA_FARMS_HOUSE/scripts.pory"
 	.string "Hi sweetie! If you're hear for our\n"
 	.string "famous milk, come back during the day.$"

@@ -72,15 +72,15 @@ ISLANDGAME_MINTY_MEADOWS_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_14:
 
 ISLANDGAME_MINTY_MEADOWS_2_InitialRival::
 # 73 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 11, 12, 5
+	setobjectxyperm 8, 12, 5
 # 74 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 12, 32, 10
+	setobjectxyperm 9, 32, 10
 # 75 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 17, 35, 8
+	setobjectxyperm 14, 35, 8
 # 76 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 18, 34, 10
+	setobjectxyperm 15, 34, 10
 # 77 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 19, 33, 12
+	setobjectxyperm 16, 33, 12
 # 78 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxyperm 6, -3, 1
 # 79 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -92,7 +92,7 @@ ISLANDGAME_MINTY_MEADOWS_2_StartedQuest::
 # 84 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setvar VAR_TEMP_4, 1
 # 85 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 12, 10, 9
+	setobjectxyperm 9, 10, 9
 # 86 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxyperm 6, 61, 13
 # 87 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -108,11 +108,11 @@ ISLANDGAME_MINTY_MEADOWS_2_PausedQuest::
 # 95 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setvar VAR_TEMP_4, 1
 # 96 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 11, 34, 10
+	setobjectxyperm 8, 34, 10
 # 97 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 8, MOVEMENT_TYPE_FACE_DOWN
 # 98 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 12, 10, 9
+	setobjectxyperm 9, 10, 9
 # 99 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxyperm 6, 61, 13
 # 100 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -128,7 +128,7 @@ ISLANDGAME_MINTY_MEADOWS_2_SawMareepPreFight::
 # 107 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setvar VAR_TEMP_4, 1
 # 108 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 12, 10, 9
+	setobjectxyperm 9, 10, 9
 # 109 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxyperm 6, 61, 13
 # 110 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -258,15 +258,15 @@ ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival::
 # 180 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	playse SE_PIN
 # 181 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, Common_Movement_ExclamationMark
+	applymovement 9, Common_Movement_ExclamationMark
 # 182 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 183 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, Common_Movement_Delay48
+	applymovement 9, Common_Movement_Delay48
 # 184 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 185 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, Common_Movement_FacePlayer
+	applymovement 9, Common_Movement_FacePlayer
 # 186 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 187 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -274,7 +274,7 @@ ISLANDGAME_MINTY_MEADOWS_2_OldMan_PreRival::
 # 188 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	closemessage
 # 189 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, Common_Movement_FaceOriginalDirection
+	applymovement 9, Common_Movement_FaceOriginalDirection
 # 190 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, ISLANDGAME_MINTY_MEADOWS_2_Player_StepBack
 # 191 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -513,13 +513,13 @@ ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet::
 # 300 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	addobject OBJ_EVENT_ID_PLAYER
 # 301 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	addobject 11
+	addobject 8
 # 303 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxy OBJ_EVENT_ID_PLAYER, 34, 11
 # 304 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 11, 34, 10
+	setobjectxyperm 8, 34, 10
 # 305 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxy 11, 34, 11
+	setobjectxy 8, 34, 11
 # 306 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 	return
@@ -527,7 +527,7 @@ ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet::
 
 ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 # 313 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, ISLANDGAME_MINTY_MEADOWS_2_RivalLookAround
+	applymovement 8, ISLANDGAME_MINTY_MEADOWS_2_RivalLookAround
 # 314 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 315 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -535,23 +535,23 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 # 322 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	closemessage
 # 323 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_QuestionMark
+	applymovement 8, Common_Movement_QuestionMark
 # 324 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 325 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_FaceDown
+	applymovement 8, Common_Movement_FaceDown
 # 326 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 327 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_Delay48
+	applymovement 8, Common_Movement_Delay48
 # 328 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 329 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 # 331 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown
+	applymovement 8, ISLANDGAME_MINTY_MEADOWS_2_RivalWalkDown
 # 332 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 11
+	waitmovement 8
 # 335 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_1
 # 341 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -559,11 +559,11 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 # 342 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	playse SE_PIN
 # 343 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_ExclamationMark
+	applymovement 8, Common_Movement_ExclamationMark
 # 344 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 345 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_Delay48
+	applymovement 8, Common_Movement_Delay48
 # 346 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 347 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -582,23 +582,23 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 # 375 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	fadedefaultbgm
 # 378 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	addobject 12
+	addobject 9
 # 379 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 17, -3, 1
+	setobjectxyperm 14, -3, 1
 # 380 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 18, -3, 1
+	setobjectxyperm 15, -3, 1
 # 381 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 19, -3, 1
+	setobjectxyperm 16, -3, 1
 # 382 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxy 12, 18, 12
+	setobjectxy 9, 18, 12
 # 383 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main_Text_5
 # 384 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	closemessage
 # 385 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
+	applymovement 9, ISLANDGAME_MINTY_MEADOWS_2_OldManWalkUp
 # 386 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 12
+	waitmovement 9
 # 387 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 # 388 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -610,11 +610,11 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 # 399 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	playse SE_PIN
 # 400 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_ExclamationMark
+	applymovement 8, Common_Movement_ExclamationMark
 # 401 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 402 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_Delay48
+	applymovement 8, Common_Movement_Delay48
 # 403 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 404 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -664,7 +664,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 # 439 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 # 440 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setfollower 11, 100, PARTNER_MEADOWS_RIVAL
+	setfollower 8, 100, PARTNER_MEADOWS_RIVAL
 # 443 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	call ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet
 # 445 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -887,15 +887,15 @@ ISLANDGAME_MINTY_MEADOWS_2_SeeMareep_2::
 # 545 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	playse SE_PIN
 # 546 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_ExclamationMark
+	applymovement 8, Common_Movement_ExclamationMark
 # 547 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 548 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_Delay48
+	applymovement 8, Common_Movement_Delay48
 # 549 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 550 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_WalkInPlaceFasterUp
+	applymovement 8, Common_Movement_WalkInPlaceFasterUp
 # 551 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 552 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1061,15 +1061,15 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 641 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	callnative TeleportCamera
 # 642 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	addobject 11
+	addobject 8
 # 643 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_FaceUp
+	applymovement 8, Common_Movement_FaceUp
 # 644 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 645 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxy OBJ_EVENT_ID_PLAYER, 61, 16
 # 646 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxy 11, 60, 16
+	setobjectxy 8, 60, 16
 # 647 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 648 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1083,7 +1083,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 658 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	closemessage
 # 659 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, RivalChecksMareep
+	applymovement 8, RivalChecksMareep
 # 660 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 661 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1099,7 +1099,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 666 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_2
 # 673 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_FaceDown
+	applymovement 8, Common_Movement_FaceDown
 # 674 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 676 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1111,13 +1111,13 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 683 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 684 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, AudreyConfused
+	applymovement 8, AudreyConfused
 # 685 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 686 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_4
 # 692 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, LookBackAtMareep
+	applymovement 8, LookBackAtMareep
 # 693 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 694 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1135,19 +1135,19 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 702 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	addobject OBJ_EVENT_ID_PLAYER
 # 703 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	addobject 11
+	addobject 8
 # 704 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	addobject 12
+	addobject 9
 # 705 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	addobject 6
 # 706 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, Common_Movement_FaceDown
+	applymovement 9, Common_Movement_FaceDown
 # 707 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 12
+	waitmovement 9
 # 708 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_FaceUp
+	applymovement 8, Common_Movement_FaceUp
 # 709 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 11
+	waitmovement 8
 # 710 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 711 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1155,9 +1155,9 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 712 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxy OBJ_EVENT_ID_PLAYER, 11, 8
 # 713 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxy 11, 10, 8
+	setobjectxy 8, 10, 8
 # 714 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxy 12, 11, 6
+	setobjectxy 9, 11, 6
 # 715 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxy 6, 10, 6
 # 716 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1167,21 +1167,21 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 726 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	closemessage
 # 727 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, Phase3_OldManGivesItem_Part1
+	applymovement 9, Phase3_OldManGivesItem_Part1
 # 728 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 12
+	waitmovement 9
 # 729 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	giveitem ITEM_LUCKY_EGG
 # 730 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, Phase3_OldManGivesItem_Part2
+	applymovement 9, Phase3_OldManGivesItem_Part2
 # 731 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 12
+	waitmovement 9
 # 734 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_7
 # 740 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	closemessage
 # 742 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 12, WalkBackToFarm
+	applymovement 9, WalkBackToFarm
 # 743 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 744 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1197,7 +1197,7 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 749 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 750 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_FacePlayer
+	applymovement 8, Common_Movement_FacePlayer
 # 751 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 752 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1207,11 +1207,11 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 759 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	playse SE_PIN
 # 760 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_ExclamationMark
+	applymovement 8, Common_Movement_ExclamationMark
 # 761 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 762 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_Delay48
+	applymovement 8, Common_Movement_Delay48
 # 763 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement 0
 # 764 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1225,23 +1225,23 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene::
 # 790 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	closemessage
 # 791 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Phase3_RivalRunsOff
+	applymovement 8, Phase3_RivalRunsOff
 # 792 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_Delay48
+	applymovement 8, Common_Movement_Delay48
 # 793 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 # 794 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 11
+	waitmovement 8
 # 795 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	removeobject 11
+	removeobject 8
 # 796 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	removeobject 6
 # 797 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	removeobject 12
+	removeobject 9
 # 798 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 11, -3, 1
+	setobjectxyperm 8, -3, 1
 # 799 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setobjectxyperm 12, -3, 1
+	setobjectxyperm 9, -3, 1
 # 800 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setobjectxyperm 6, -3, 1
 # 801 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1355,13 +1355,13 @@ ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey::
 
 ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack::
 # 857 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_WalkInPlaceLeft
+	applymovement 8, Common_Movement_WalkInPlaceLeft
 # 858 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 11
+	waitmovement 8
 # 859 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	playse SE_PIN
 # 860 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_ExclamationMark
+	applymovement 8, Common_Movement_ExclamationMark
 # 861 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	message ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0
 # 862 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1371,7 +1371,7 @@ ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack::
 # 865 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	loadword 0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact
 # 866 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setfollower 11, 100, PARTNER_MEADOWS_RIVAL
+	setfollower 8, 100, PARTNER_MEADOWS_RIVAL
 # 867 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setvar VAR_MINTY_MEADOWS_STATE, 1
 # 868 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1450,21 +1450,21 @@ ISLANDGAME_MINTY_MEADOWS_2_CantLeave_7:
 # 896 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 # 897 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_WalkRight
+	applymovement 8, Common_Movement_WalkRight
 # 898 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 11
+	waitmovement 8
 # 899 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 # 900 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	message ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0
 # 901 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_FaceLeft
+	applymovement 8, Common_Movement_FaceLeft
 # 902 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 903 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 # 904 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 11
+	waitmovement 8
 # 905 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmessage
 # 906 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1490,21 +1490,21 @@ ISLANDGAME_MINTY_MEADOWS_2_CantLeave_10:
 # 921 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 # 922 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_WalkRight
+	applymovement 8, Common_Movement_WalkRight
 # 923 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 11
+	waitmovement 8
 # 924 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 # 925 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	message ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0
 # 926 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 11, Common_Movement_FaceLeft
+	applymovement 8, Common_Movement_FaceLeft
 # 927 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 928 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 # 929 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 11
+	waitmovement 8
 # 930 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmessage
 # 931 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
