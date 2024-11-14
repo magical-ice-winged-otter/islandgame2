@@ -823,14 +823,19 @@
 #define METATILE_islandgame_oranna_rosevale_door  0x259
 
 // gTileset_islandgame_oranna_tidalcove
-#define METATILE_islandgame_oranna_tidalcove_door_00   0x30D // pokemart
-#define METATILE_islandgame_oranna_tidalcove_door_01   0x2ED // pokecenter
-#define METATILE_islandgame_oranna_tidalcove_door_02   0x24E // general houses
+// #define METATILE_islandgame_oranna_tidalcove_door_00   0x30D
+// #define METATILE_islandgame_oranna_tidalcove_door_01   0x2ED
+#define METATILE_islandgame_oranna_tidalcove_door_02   0x24E
 #define METATILE_islandgame_oranna_tidalcove_door_gym  0x295
 
 // gTileset_islandgame_ss_rain_general
 #define METATILE_islandgame_ss_rain_general_door_00  0x0FA
 #define METATILE_islandgame_ss_rain_general_door_01  0x071
+
+// gTileset_islandgame_ocean_general
+#define METATILE_islandgame_ocean_general_door_00  0x04D
+#define METATILE_islandgame_ocean_general_door_01  0x049
+
 
 // Other
 #define METATILE_FireRed_General_Test_Door       0x071

@@ -376,5 +376,6 @@
       "item": "ITEM_HEALTH_FEATHER",
       "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_H_FEATHER"
     }
-  ]
+  ],
+  "night_music": "MUS_HG_ROUTE42"
 }

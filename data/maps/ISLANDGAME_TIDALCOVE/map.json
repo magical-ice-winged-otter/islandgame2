@@ -450,5 +450,6 @@
       "item": "ITEM_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_TIDALCOVE_PEARL"
     }
-  ]
+  ],
+  "night_music": "MUS_HG_VERMILION"
 }
