@@ -4717,7 +4717,7 @@
       "width": 68,
       "height": 40,
       "primary_tileset": "gTileset_islandgame_oranna_general",
-      "secondary_tileset": "gTileset_islandgame_oranna_northern_path",
+      "secondary_tileset": "gTileset_islandgame_oranna_central_path",
       "border_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_NORTHERN_ORANNA_PATH/map.bin"
     },

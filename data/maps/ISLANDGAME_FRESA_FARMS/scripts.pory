@@ -296,6 +296,7 @@ script ISLANDGAME_FRESA_FARMS_Boy {
 
 script ISLANDGAME_FRESA_FARMS_Girl {
     lock
+    faceplayer
     if (flag(FLAG_FRESA_FARMS_TRADE_DONE)) {
         msgbox(format(
             "Fidough are real useful to us farmers! When they evolve into Dachsbun, their aroma helps our wheat plants grow!"
@@ -318,7 +319,7 @@ script ISLANDGAME_FRESA_FARMS_Girl {
         "Wish I had a water Pokémon like a {COLOR LIGHT_BLUE}Squirtle {COLOR DARK_GRAY}to help me do it instead..."
     ))
     closemessage
-    setvar(VAR_0x8000, SPECIES_SQUIRTLE)
+    setvar(VAR_0x8000, SPECIES_EEVEE)
     callnative(CheckPartyMon)
     if (var(VAR_RESULT)) {
         setflag(FLAG_TEMP_3)
@@ -338,6 +339,9 @@ script ISLANDGAME_FRESA_FARMS_Girl {
             goto(FresaFarms_TradeDecline)
         }   
     }
+
+    goto(FresaFarms_TradeEnd)
+    
 
     FresaFarms_TradeInitiate:
         setvar(VAR_0x8008, INGAME_TRADE_FIDOUGH)

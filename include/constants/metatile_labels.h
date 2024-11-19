@@ -793,9 +793,15 @@
 // gTileset_islandgame_lumine_general
 #define METATILE_islandgame_lumine_general_MuddySlope  0x063
 
+// gTileset_islandgame_ocean_general
+#define METATILE_islandgame_ocean_general_door_00  0x04D
+#define METATILE_islandgame_ocean_general_door_01  0x049
+#define METATILE_islandgame_ocean_general_door_02  0x06A
+
 // gTileset_islandgame_oranna_central_path
 #define METATILE_islandgame_oranna_central_path_door_01  0x21A
 #define METATILE_islandgame_oranna_central_path_door_02  0x263
+#define METATILE_islandgame_oranna_central_path_door_03  0x265
 
 // gTileset_islandgame_oranna_cheriport
 #define METATILE_islandgame_oranna_cheriport_door  0x24C
@@ -813,8 +819,6 @@
 #define METATILE_islandgame_oranna_mt_aurora_Ice_Broken   0x2DB
 #define METATILE_islandgame_oranna_mt_aurora_Ice_Cracked  0x2DA
 
-// gTileset_islandgame_oranna_northern_path
-#define METATILE_islandgame_oranna_northern_path_door  0x219
 
 // gTileset_islandgame_oranna_persi
 #define METATILE_islandgame_oranna_persi_door  0x26C
@@ -823,19 +827,12 @@
 #define METATILE_islandgame_oranna_rosevale_door  0x259
 
 // gTileset_islandgame_oranna_tidalcove
-// #define METATILE_islandgame_oranna_tidalcove_door_00   0x30D
-// #define METATILE_islandgame_oranna_tidalcove_door_01   0x2ED
 #define METATILE_islandgame_oranna_tidalcove_door_02   0x24E
 #define METATILE_islandgame_oranna_tidalcove_door_gym  0x295
 
 // gTileset_islandgame_ss_rain_general
 #define METATILE_islandgame_ss_rain_general_door_00  0x0FA
 #define METATILE_islandgame_ss_rain_general_door_01  0x071
-
-// gTileset_islandgame_ocean_general
-#define METATILE_islandgame_ocean_general_door_00  0x04D
-#define METATILE_islandgame_ocean_general_door_01  0x049
-
 
 // Other
 #define METATILE_FireRed_General_Test_Door       0x071

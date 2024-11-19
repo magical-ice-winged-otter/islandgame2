@@ -177,7 +177,7 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaTidalcove[] =
     OVERRIDES_END
 };
 
-//islandgame_oranna_southern_path
+
 
 //islandgame_oranna_northern_path
 
