@@ -71,6 +71,7 @@
 #define POKEDEX_PLUS_HGSS            TRUE    // If TRUE, enables the custom HGSS style Pokedex.
 #define SUMMARY_SCREEN_NATURE_COLORS TRUE    // If TRUE, nature-based stat boosts and reductions will be red and blue in the summary screen.
 #define HQ_RANDOM                    TRUE    // If TRUE, replaces the default RNG with an implementation of SFC32 RNG. May break code that relies on RNG.
+#define USE_BARD_PHONEMES            TRUE   // If TRUE, uses the unique bard phonemes for the direct sound engine. If FALSE, save space by using the default sound.
 
 // Measurement system constants to be used for UNITS
 #define UNITS_IMPERIAL               0       // Inches, feet, pounds
