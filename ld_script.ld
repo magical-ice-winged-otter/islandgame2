@@ -1412,7 +1412,7 @@ SECTIONS {
         sound/songs/midi/mus_dp_title.o(.rodata);
         sound/songs/midi/mus_dp_mystery_gift.o(.rodata);
         sound/songs/midi/mus_dp_wfc.o(.rodata);
-        sound/songs/midi/mus_dp_dance_easy.o(.rodata);
+        sound/songs/midi/mus_dummy.o(.rodata);
         sound/songs/midi/mus_dp_dance_difficult.o(.rodata);
         sound/songs/midi/mus_dp_contest_results.o(.rodata);
         sound/songs/midi/mus_dp_contest_winner.o(.rodata);
@@ -1461,7 +1461,7 @@ SECTIONS {
         sound/songs/midi/mus_hg_evolution.o(.rodata);
         sound/songs/midi/mus_hg_evolution_no_intro.o(.rodata);
         sound/songs/midi/mus_hg_cycling.o(.rodata);
-        sound/songs/midi/mus_hg_surf.o(.rodata);
+        sound/songs/midi/mus_dummy.o(.rodata);
         sound/songs/midi/mus_hg_hall_of_fame.o(.rodata);
         sound/songs/midi/mus_dummy.o(.rodata);
         sound/songs/midi/mus_hg_end.o(.rodata);
@@ -1541,16 +1541,16 @@ SECTIONS {
         sound/songs/midi/mus_hg_encounter_girl_2.o(.rodata);
         sound/songs/midi/mus_hg_encounter_boy_2.o(.rodata);
         sound/songs/midi/mus_hg_encounter_suspicious_2.o(.rodata);
-        sound/songs/midi/mus_hg_vs_wild.o(.rodata);
+        sound/songs/midi/mus_dummy.o(.rodata);
         sound/songs/midi/mus_hg_vs_trainer.o(.rodata);
         sound/songs/midi/mus_hg_vs_gym_leader.o(.rodata);
         sound/songs/midi/mus_hg_vs_rival.o(.rodata);
-        sound/songs/midi/mus_hg_vs_rocket.o(.rodata);
+        sound/songs/midi/mus_dummy.o(.rodata);
         sound/songs/midi/mus_hg_vs_suicune.o(.rodata);
         sound/songs/midi/mus_hg_vs_entei.o(.rodata);
         sound/songs/midi/mus_hg_vs_raikou.o(.rodata);
         sound/songs/midi/mus_hg_vs_champion.o(.rodata);
-        sound/songs/midi/mus_hg_vs_wild_kanto.o(.rodata);
+        sound/songs/midi/mus_dummy.o(.rodata);
         sound/songs/midi/mus_hg_vs_trainer_kanto.o(.rodata);
         sound/songs/midi/mus_hg_vs_gym_leader_kanto.o(.rodata);
         sound/songs/midi/mus_hg_victory_trainer.o(.rodata);

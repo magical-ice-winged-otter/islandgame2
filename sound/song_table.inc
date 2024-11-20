@@ -681,7 +681,7 @@ gSongTable::
 	song mus_dp_title, 0, 0
 	song mus_dp_mystery_gift, 0, 0
 	song mus_dp_wfc, 0, 0
-	song mus_dp_dance_easy, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_dp_dance_easy
 	song mus_dp_dance_difficult, 0, 0
 	song mus_dp_contest_results, 0, 0
 	song mus_dp_contest_winner, 0, 0
@@ -730,7 +730,7 @@ gSongTable::
 	song mus_hg_evolution, 0, 0
 	song mus_hg_evolution_no_intro, 0, 0
 	song mus_hg_cycling, 0, 0
-	song mus_hg_surf, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_hg_surf
 	song mus_hg_hall_of_fame, 0, 0
 	song mus_dummy, 0, 0 						@ song mus_hg_credits
 	song mus_hg_end, 0, 0
@@ -810,16 +810,16 @@ gSongTable::
 	song mus_hg_encounter_girl_2, 0, 0
 	song mus_hg_encounter_boy_2, 0, 0
 	song mus_hg_encounter_suspicious_2, 0, 0
-	song mus_hg_vs_wild, 0, 0
+	song mus_dummy, 0, 0 						@ song song mus_hg_vs_wild
 	song mus_hg_vs_trainer, 0, 0
 	song mus_hg_vs_gym_leader, 0, 0
 	song mus_hg_vs_rival, 0, 0
-	song mus_hg_vs_rocket, 0, 0
+	song mus_dummy, 0, 0 						@ mus_hg_vs_rocket
 	song mus_hg_vs_suicune, 0, 0
 	song mus_hg_vs_entei, 0, 0
 	song mus_hg_vs_raikou, 0, 0
 	song mus_hg_vs_champion, 0, 0
-	song mus_hg_vs_wild_kanto, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_hg_vs_wild_kanto
 	song mus_hg_vs_trainer_kanto, 0, 0
 	song mus_hg_vs_gym_leader_kanto, 0, 0
 	song mus_hg_victory_trainer, 0, 0
