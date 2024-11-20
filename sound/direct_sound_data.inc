@@ -6171,208 +6171,413 @@ DirectSoundWaveData_sd90_special_scream_drive::
 	.incbin "sound/direct_sound_samples/sd90_special_scream_drive.bin"
 
 	.align 2
+
 DirectSoundWaveData_Phoneme_1::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/01.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_2::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/02.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_3::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/03.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_4::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/04.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_5::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/05.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_6::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/06.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_7::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/07.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_8::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/08.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_9::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/09.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_10::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/10.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_11::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/11.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_12::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/12.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_13::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/13.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_14::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/14.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_15::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/15.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_16::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/16.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_17::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/17.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_18::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/18.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_19::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/19.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_20::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/20.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_21::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/21.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_22::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/22.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_23::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_24::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/24.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_25::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/25.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_26::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/26.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_27::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/27.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_28::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/28.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_29::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/29.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_30::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/30.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_31::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/31.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_32::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/32.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_33::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/33.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_34::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/34.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_35::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/35.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_36::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/36.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_37::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/37.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_38::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/38.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_39::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/39.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_40::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/40.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_41::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/41.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_42::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/42.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_43::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/43.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_44::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/44.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_45::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/45.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_46::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/46.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_47::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/47.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_48::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/48.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_49::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/49.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_50::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/50.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_51::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/51.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_sc88pro_accordion_duplicate::
