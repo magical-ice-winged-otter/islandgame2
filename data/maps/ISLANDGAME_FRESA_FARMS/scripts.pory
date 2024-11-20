@@ -233,11 +233,9 @@ script ISLANDGAME_FRESA_FARMS_Torchic {
     lock
     faceplayer
     playmoncry(SPECIES_TORCHIC, CRY_MODE_NORMAL)
-    if(flag(FLAG_DAY)) {
-        msgbox(format(
-            "Kikiriki!"
-        ))
-    }
+    msgbox(format(
+        "Kikiriki!"
+    ))
     closemessage
     release
 }
@@ -295,7 +293,7 @@ script ISLANDGAME_FRESA_FARMS_Boy {
 
 
 script ISLANDGAME_FRESA_FARMS_Girl {
-    lock
+    lockall
     faceplayer
     if (flag(FLAG_FRESA_FARMS_TRADE_DONE)) {
         msgbox(format(
@@ -319,7 +317,8 @@ script ISLANDGAME_FRESA_FARMS_Girl {
         "Wish I had a water Pokémon like a {COLOR LIGHT_BLUE}Squirtle {COLOR DARK_GRAY}to help me do it instead..."
     ))
     closemessage
-    setvar(VAR_0x8000, SPECIES_EEVEE)
+    
+    setvar(VAR_0x8000, SPECIES_SQUIRTLE)
     callnative(CheckPartyMon)
     if (var(VAR_RESULT)) {
         setflag(FLAG_TEMP_3)

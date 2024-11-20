@@ -248,8 +248,8 @@ static const u8 sDoorAnimPalettes_Islandgame_Forest[] = {12,12,12,12,12,12,12,12
 
 static const u8 sDoorAnimPalettes_islandgame_oranna_general_00[] = {3,3,4,4,4,4,3,3};
 static const u8 sDoorAnimPalettes_islandgame_oranna_general_01[] = {3,3,4,4,4,4,3,3};
-static const u8 sDoorAnimPalettes_islandgame_ocean_general_00[] = {4,4,4,4,4,4,4,4};
-static const u8 sDoorAnimPalettes_islandgame_ocean_general_01[] = {4,4,4,4,4,4,4,4};
+static const u8 sDoorAnimPalettes_islandgame_ocean_general_00[] = {3,3,3,3,3,3,3,3};
+static const u8 sDoorAnimPalettes_islandgame_ocean_general_01[] = {2,2,3,3,3,3,3,3};
 static const u8 sDoorAnimPalettes_islandgame_ocean_general_02[] = {4,4,4,4,5,5,5,5};
 static const u8 sDoorAnimPalettes_islandgame_ss_rain_general_00[] = {2,2,2,2,2,2,2,2};
 static const u8 sDoorAnimPalettes_islandgame_ss_rain_general_01[] = {2,2,2,2,2,2,2,2};
@@ -258,10 +258,10 @@ static const u8 sDoorAnimPalettes_islandgame_oranna_maplegrove_00[] = {5,5,7,7,7
 static const u8 sDoorAnimPalettes_islandgame_oranna_maplegrove_01[] = {5,5,8,8,8,8,8,8};
 static const u8 sDoorAnimPalettes_islandgame_oranna_persi[] = {6,6,6,6,6,6,6,6};
 static const u8 sDoorAnimPalettes_islandgame_oranna_rosevale[] = {10,10,10,10,10,10,10,10};
-static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_gym[] = {7,7,6,6,6,6,6,6};
+static const u8 sDoorAnimPalettes_islandgame_oranna_tidalcove_gym[] = {6,6,8,8,8,8,7,7};
 static const u8 sDoorAnimPalettes_islandgame_oranna_cheriport[] = {8,8,8,8,7,7,8,8};
-static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_01[] = {6,6,6,6,4,4,3,3};
-static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_02[] = {7,7,7,7,4,4,7,7};
+static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_01[] = {7,6,7,7,4,4,3,3};
+static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_02[] = {11,11,11,11,4,4,11,11};
 static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_03[] = {6,6,10,10,10,10,10,10};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =

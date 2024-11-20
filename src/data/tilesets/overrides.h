@@ -169,7 +169,7 @@ const struct PaletteOverride gTilesetPalOverrides_Island_OrannaTidalcove[] =
         .palette = sTilesetPalOverride_Island_OrannaTidalcove12
     },
     {
-        .slot = 6,
+        .slot = 8,
         .startHour = NIGHT_HOUR_BEGIN,
         .endHour = NIGHT_HOUR_END,
         .palette = sTilesetPalOverride_Island_OrannaTidalcove6

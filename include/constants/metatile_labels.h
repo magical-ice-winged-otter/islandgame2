@@ -819,7 +819,6 @@
 #define METATILE_islandgame_oranna_mt_aurora_Ice_Broken   0x2DB
 #define METATILE_islandgame_oranna_mt_aurora_Ice_Cracked  0x2DA
 
-
 // gTileset_islandgame_oranna_persi
 #define METATILE_islandgame_oranna_persi_door  0x26C
 
@@ -827,8 +826,7 @@
 #define METATILE_islandgame_oranna_rosevale_door  0x259
 
 // gTileset_islandgame_oranna_tidalcove
-#define METATILE_islandgame_oranna_tidalcove_door_02   0x24E
-#define METATILE_islandgame_oranna_tidalcove_door_gym  0x295
+#define METATILE_islandgame_oranna_tidalcove_door_gym  0x260
 
 // gTileset_islandgame_ss_rain_general
 #define METATILE_islandgame_ss_rain_general_door_00  0x0FA

@@ -31,6 +31,9 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
                 "Thank you, young trainer. Here, take one of my rare stones as a token of my appreciation! Choose wisely!"
             ))      
         }
+        else {
+            goto(Tidalcove_RareStoneEnd)
+        }
         dynmultipush("Fire Stone", 211)
         dynmultipush("Water Stone", 212)
         dynmultipush("Thunder Stone", 213)
@@ -91,6 +94,10 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
         ))
         closemessage
     }
+
+    Tidalcove_RareStoneEnd:
+        closemessage
+        release
 
 }
     // returnqueststate(QUEST_TIDALCOVE_RARE_PKMN)
