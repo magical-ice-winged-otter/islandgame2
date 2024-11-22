@@ -29,15 +29,16 @@
 #define QUEST_MINTY_MEADOWS_MELISSA        1
 #define QUEST_PERSI_FAVORITE_CARD          2
 #define QUEST_PERSI_BERRY_MANIAC           3
+#define QUEST_PERSI_RIGGED_TV              4
 // #define QUEST_VERDANT_FOREST_SKITTY        2
-#define QUEST_MAPLEGROVE_LOVERS            4
-#define QUEST_MARYA_GYM_CHALLENGE          5
-#define QUEST_FRESA_FARMS_TORCHIC_EGG      6
-#define QUEST_ROSEVALE_RESCUE              7
-#define QUEST_AETHERIA_MELISSA             8
-#define QUEST_APPLEVINE_COUCH_POTATO       9
-#define QUEST_ROCKY_PATH_NURSE             10
-#define QUEST_COUNT                        11 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_MAPLEGROVE_LOVERS            5
+#define QUEST_MARYA_GYM_CHALLENGE          6
+#define QUEST_FRESA_FARMS_TORCHIC_EGG      7
+#define QUEST_ROSEVALE_RESCUE              8
+#define QUEST_AETHERIA_MELISSA             9
+#define QUEST_APPLEVINE_COUCH_POTATO       10
+#define QUEST_ROCKY_PATH_NURSE             11
+#define QUEST_COUNT                        12 // This number is literally how many to show in the UI (keep it accurate!)
 
 
 

@@ -14,10 +14,26 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
         }
         faceplayer
         msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_NPCTalk)
-    }
-    else {
+    } else {
         faceplayer
-        msgbox(format("I'm sorry... My mommy doesn't let me have sweets, so I couldn't help myself.\pPlease don't tell on me!"))
+        returnqueststate(QUEST_PERSI_RIGGED_TV)
+        switch (var(VAR_RESULT)) {
+            case QUEST_INACTIVE:
+                msgbox(format("I'm sorry... My mommy doesn't let me have sweets, so I couldn't help myself.\p
+                       Please don't tell on me! \p
+                       ...\p
+                       You're going to?\p
+                       Then, you won't know about what I did to their {COLOR RED}TV at night!"))
+            case QUEST_ACTIVE:
+                msgbox(format("I'm sorry... My mommy doesn't let me have sweets, so I couldn't help myself.\p
+                       Please don't tell on me! \p
+                       ...\p
+                       You're going to?\p
+                       Then, you won't know about what I did to their {COLOR RED}TV at night!"))
+            case QUEST_COMPLETED:
+                msgbox(format("I'm sorry... My mommy doesn't let me have sweets, so I couldn't help myself.\p
+                       Please don't tell on me!"))
+        }
     }
     release
 

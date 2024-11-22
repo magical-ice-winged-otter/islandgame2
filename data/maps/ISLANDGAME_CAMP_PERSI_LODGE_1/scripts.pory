@@ -1,4 +1,14 @@
-mapscripts ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts {}
+const CAMPER = 2
+const PORYGON = 5
+
+mapscripts ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts {
+    MAP_SCRIPT_ON_RESUME {
+        returnqueststate(QUEST_PERSI_RIGGED_TV)
+        if (var(VAR_RESULT) != QUEST_ACTIVE) {
+            setflag(FLAG_TEMP_5)
+        }
+    }
+}
 
 script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster {
     lock
@@ -17,64 +27,217 @@ text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk {
 
 script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1 {
     lock
-    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk)
+    returnqueststate(QUEST_PERSI_RIGGED_TV)
+    switch(var(VAR_RESULT)) {
+        case QUEST_COMPLETED:
+            msgbox(format(
+                "{COLOR DARK_GRAY}Give me the controller! The scoutmaster said it's MY turn!"
+                "Play this set on {COLOR GREEN}1.1x speed{COLOR DARK_GRAY} now!"
+            ), MSGBOX_NPC)
+        default:
+            msgbox(format(
+                "{COLOR DARK_GRAY}Give me the controller! The scoutmaster said it's MY turn now!"
+            ), MSGBOX_NPC)
+    }
     release
-}
-
-text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk {
-    format(
-        "{COLOR DARK_GRAY}Give me the controller! The scoutmaster said it's MY turn now!"
-    )
 }
 
 script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2 {
     lock
-    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk)
+    returnqueststate(QUEST_PERSI_RIGGED_TV)
+    switch(var(VAR_RESULT)) {
+        case QUEST_COMPLETED:
+            msgbox(format(
+                "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense game right now!\p"
+                "It's so {COLOR GREEN}fast{COLOR DARK_GRAY}!"
+            ), MSGBOX_NPC)
+        default:
+            msgbox(format(
+                "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense game right now!"
+            ), MSGBOX_NPC)
+    }
     release
-}
-
-text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk {
-    format(
-        "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense game right now!"
-    )
 }
 
 script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3 {
     lock
-    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk)
+    returnqueststate(QUEST_PERSI_RIGGED_TV)
+    switch(var(VAR_RESULT)) {
+        case QUEST_COMPLETED:
+            msgbox(format(
+                "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-\p
+                You {COLOR GREEN}can't{COLOR DARK_GRAY} see the animation!"
+            ), MSGBOX_NPC)
+        default:
+            msgbox(format(
+                "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-"
+            ), MSGBOX_NPC)
+    }
     release
 }
 
-text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk {
-    format(
-        "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-"
-    )
-}
-
-script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4 {
-    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk, MSGBOX_NPC)
-}
-
-text ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk {
-    format(
-        "{COLOR DARK_GRAY}We only brought 2 controllers...\pSo I get to take over for whoever loses!"
-    )
-}
-
-script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV {
-    lock
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning {
     playse(SE_PIN)
     applymovement(3, Common_Movement_ExclamationMark)
-    applymovement(2, Common_Movement_ExclamationMark)
+    applymovement(CAMPER, Common_Movement_ExclamationMark)
     waitmovement(0)
-    applymovement(2, Common_Movement_Delay48)
+    applymovement(CAMPER, Common_Movement_Delay48)
     waitmovement(0)
     msgbox(format(
         "GET YOUR BIG FAT HEAD OUT OF THE FREAKING WAY!"
     ))
-    closemessage
+    return
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_End {
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
     waitmovement(0)
+    return
+}
+
+movement ISLANDGAME_CAMP_PERSI_LODGE_1_1F_Movement_PorygonAppear {
+    emote_exclamation_mark
+    face_up
+    lock_facing_direction
+    walk_fast_down   
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonCutscene {
+    message(format("Huh?"))
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    applymovement(4, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(30)
+    closemessage
+    clearflag(FLAG_TEMP_5)
+    playmoncry(SPECIES_PORYGON, CRY_MODE_ENCOUNTER)
+    applymovement(CAMPER, Common_Movement_ExclamationMark)
+    applymovement(3, Common_Movement_ExclamationMark)
+    applymovement(4, Common_Movement_ExclamationMark)
+    applymovement(OBJ_EVENT_ID_PLAYER, ISLANDGAME_CAMP_PERSI_LODGE_1_1F_Movement_PorygonAppear)
+    waitmovement(0)
+    return
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_2 {
+    lock
+    gettime
+    copyvar(VAR_TEMP_1, VAR_0x8003)
+    returnqueststate(QUEST_PERSI_RIGGED_TV)
+    if (var(VAR_TEMP_1) == 3 && var(VAR_RESULT) == QUEST_INACTIVE) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp)
+        waitmovement(0)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonCutscene)
+        startquest(QUEST_PERSI_RIGGED_TV)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonFight)
+    } elif (var(VAR_RESULT) == QUEST_COMPLETED) {
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning)
+        // todo
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_End)
+    } elif (var(VAR_RESULT) == QUEST_ACTIVE) {
+        // do nothing
+    } else { // default behavior
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_End)
+    }
+    release
+}
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_1 {
+    lock
+    gettime
+    copyvar(VAR_TEMP_1, VAR_0x8003)
+    returnqueststate(QUEST_PERSI_RIGGED_TV)
+    if (var(VAR_TEMP_1) == 3 && var(VAR_RESULT) == QUEST_INACTIVE) {
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonCutscene)
+        startquest(QUEST_PERSI_RIGGED_TV)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonFight)
+    } elif (var(VAR_RESULT) == QUEST_COMPLETED) {
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BattleSpeed_Menu)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_End)
+    } elif (var(VAR_RESULT) == QUEST_ACTIVE) {
+        // do nothing
+    } else { // default behavior
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning)
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_End)
+    }
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_DramaticFlashing {
+    fadescreen(FADE_TO_WHITE)
+    delay(15)
+    fadescreen(FADE_FROM_WHITE)
+    delay(15)
+    fadescreen(FADE_TO_BLACK)
+    delay(15)
+    fadescreen(FADE_FROM_BLACK)
+    delay(15)
+    return
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonBattle {
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    setvar(VAR_BATTLE_SPEED, OPTIONS_BATTLE_SCENE_4X)
+    setcwildbattle(0, SPECIES_PORYGON, 10, ITEM_LEFTOVERS, NUM_NATURES, 1, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_AGILITY, MOVE_SHARPEN, MOVE_TACKLE, MOVE_NONE)
+    
+    call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_DramaticFlashing)
+    playse(SE_PIN)
+    playmoncry(SPECIES_PORYGON, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    setvar(VAR_BATTLE_SPEED, OPTIONS_BATTLE_SCENE_1X)
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        default:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            clearflag(FLAG_TEMP_5)
+            removeobject(PORYGON)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+            completequest(QUEST_PERSI_RIGGED_TV)
+            call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BattleSpeed_Menu)
+    }
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonFight {
+    lock
+    faceplayer
+    msgbox("Porygon stares at you intently. Fight it?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        call(ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonBattle)
+    }
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BattleSpeed_Menu {
+    dynmultipush("あ¥T3Mß¥Í%¥¥T", OPTIONS_BATTLE_SCENE_1X)
+    // use glitchy pokemon text here
+    dynmultipush("01001100 01001111 01001100", OPTIONS_BATTLE_SCENE_2X)
+    dynmultipush("▶▶▶▶▶ÄÄ▶▶", OPTIONS_BATTLE_SCENE_3X)
+    dynmultipush("<!--FATAL_ERROR-->", OPTIONS_BATTLE_SCENE_4X)
+    dynmultipush("ergo", OPTIONS_BATTLE_SCENE_DISABLED)
+    dynmultistack(20, 8, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
+    if (var(VAR_BATTLE_SPEED) != VAR_RESULT) {
+        copyvar(VAR_BATTLE_SPEED, VAR_RESULT)
+        playmoncry(SPECIES_MAGNEZONE, CRY_MODE_HIGH_PITCH)
+        waitmoncry
+    }
+
+    return
 }

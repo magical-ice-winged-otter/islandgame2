@@ -328,6 +328,11 @@ const u8 sText_SideQuestName_PersiBerryManiac[] = _("(S) Berry Hunting");
 const u8 sText_SideQuestDesc_PersiBerryManiac[] = _("The Berry Maniac from Camp Persi\nyearns for rare berries!");
 const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You've aided the Berry Maniac\n in achieving his full power...");
 
+// Persi TV Glitch Quest
+const u8 sText_SideQuestName_PersiRiggledTV[] = _("Glitchy TV?");
+const u8 sText_SideQuestDesc_PersiRiggledTV[] = _("Some campers from Camp Persi has been playing\n too much video games...");
+const u8 sText_SideQuestDoneDesc_PersiRiggledTV[] = _("You've helped the campers with their unhealthy habits!");
+
 const u8 sText_SubQuest_PersiBerryManiac1_Name[] = _("Liechi Berry");
 const u8 sText_SubQuest_PersiBerryManiac1_Desc[] = _("You found and gave a Liechi Berry\nto the Berry Maniac.");
 
@@ -824,6 +829,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
+	),
+	[QUEST_PERSI_RIGGED_TV] = side_quest(
+	      sText_SideQuestName_PersiRiggledTV,
+	      sText_SideQuestDesc_PersiRiggledTV,
+	      sText_SideQuestDoneDesc_PersiRiggledTV,
+	      sText_SideQuestMap_Persi,
+	      OBJ_EVENT_GFX_CAMPER,
+	      OBJECT,
+	      NULL,
+	      	  0
 	),
 	// [QUEST_VERDANT_FOREST_SKITTY] = side_quest(
 	// 	sText_SideQuestName_VerdantForestSkitty,
