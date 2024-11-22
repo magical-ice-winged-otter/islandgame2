@@ -18,6 +18,7 @@
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
 #include "constants/items.h"
+#include "constants/rtc.h"
 #include "config/save.h"
 
 // Prevent cross-jump optimization.
