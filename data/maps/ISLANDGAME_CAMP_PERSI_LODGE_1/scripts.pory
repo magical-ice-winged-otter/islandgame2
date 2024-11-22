@@ -232,7 +232,7 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BattleSpeed_Menu {
     dynmultipush("▶▶▶▶▶ÄÄ▶▶", OPTIONS_BATTLE_SCENE_3X)
     dynmultipush("<!--FATAL_ERROR-->", OPTIONS_BATTLE_SCENE_4X)
     dynmultipush("ergo", OPTIONS_BATTLE_SCENE_DISABLED)
-    dynmultistack(20, 8, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
+    dynmultistack(20, 8, TRUE, 5, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
     if (var(VAR_BATTLE_SPEED) != VAR_RESULT) {
         copyvar(VAR_BATTLE_SPEED, VAR_RESULT)
         playmoncry(SPECIES_MAGNEZONE, CRY_MODE_HIGH_PITCH)

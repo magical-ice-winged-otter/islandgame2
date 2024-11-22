@@ -400,7 +400,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BattleSpeed_Menu::
 # 234 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	dynmultipush ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BattleSpeed_Menu_Text_4, OPTIONS_BATTLE_SCENE_DISABLED
 # 235 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	dynmultistack 20, 8, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE
+	dynmultistack 20, 8, TRUE, 5, FALSE, NO, DYN_MULTICHOICE_CB_NONE
 # 236 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	compare VAR_BATTLE_SPEED, VAR_RESULT
 	goto_if_ne ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BattleSpeed_Menu_2
