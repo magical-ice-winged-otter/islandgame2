@@ -151,20 +151,26 @@ const u32 gBattleTerrainTilemap_HDStandard[] = INCBIN_U32("graphics/battle_terra
 const u32 gBattleTerrainAnimTiles_HDStandard[] = INCBIN_U32("graphics/battle_terrain/building/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_HDStandard[] = INCBIN_U32("graphics/battle_terrain/building/anim_map.bin.lz");
 
-//Sea Evening
+//Sea Day
 const u32 gBattleTerrainTiles_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/sea-day.4bpp.lz");
-const u32 gBattleTerrainPalette_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/sea-day.gbapal.lz");
+const u32 gBattleTerrainPalette_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/palette.gbapal.lz");
 const u32 gBattleTerrainTilemap_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/sea-day.bin.lz");
+const u32 gBattleTerrainAnimTiles_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/anim-sea-day.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/anim-sea-day.bin.lz");
 
 //Sea Evening
 const u32 gBattleTerrainTiles_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/sea-evening.4bpp.lz");
-const u32 gBattleTerrainPalette_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/sea-evening.gbapal.lz");
+const u32 gBattleTerrainPalette_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/palette.gbapal.lz");
 const u32 gBattleTerrainTilemap_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/sea-evening.bin.lz");
+const u32 gBattleTerrainAnimTiles_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/anim-sea-evening.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/anim-sea-evening.bin.lz");
 
 //Sea Night
 const u32 gBattleTerrainTiles_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.4bpp.lz");
-const u32 gBattleTerrainPalette_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.gbapal.lz");
+const u32 gBattleTerrainPalette_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/palette.gbapal.lz");
 const u32 gBattleTerrainTilemap_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.bin.lz");
+const u32 gBattleTerrainAnimTiles_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/anim-sea-night.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/anim-sea-night.bin.lz");
 
 //Grass Day
 const u32 gBattleTerrainTiles_GrassDay[] = INCBIN_U32("graphics/battle_terrain/grass_day/grass-day.4bpp.lz");

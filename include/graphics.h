@@ -335,14 +335,20 @@ extern const u32 gBattleTerrainAnimTilemap_HDStandard[];
 extern const u32 gBattleTerrainTiles_SeaDay[];
 extern const u32 gBattleTerrainPalette_SeaDay[];
 extern const u32 gBattleTerrainTilemap_SeaDay[];
+extern const u32 gBattleTerrainAnimTiles_SeaDay[];
+extern const u32 gBattleTerrainAnimTilemap_SeaDay[];
 //Sea Evening
 extern const u32 gBattleTerrainTiles_SeaEvening[];
 extern const u32 gBattleTerrainPalette_SeaEvening[];
 extern const u32 gBattleTerrainTilemap_SeaEvening[];
+extern const u32 gBattleTerrainAnimTiles_SeaEvening[];
+extern const u32 gBattleTerrainAnimTilemap_SeaEvening[];
 //Sea Night
 extern const u32 gBattleTerrainTiles_SeaNight[];
 extern const u32 gBattleTerrainPalette_SeaNight[];
 extern const u32 gBattleTerrainTilemap_SeaNight[];
+extern const u32 gBattleTerrainAnimTiles_SeaNight[];
+extern const u32 gBattleTerrainAnimTilemap_SeaNight[];
 //Grass Day
 extern const u32 gBattleTerrainTiles_GrassDay[];
 extern const u32 gBattleTerrainPalette_GrassDay[];
