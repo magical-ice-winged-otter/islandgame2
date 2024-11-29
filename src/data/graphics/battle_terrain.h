@@ -199,12 +199,12 @@ const u32 gBattleTerrainAnimTilemap_BeachDay[] = INCBIN_U32("graphics/battle_ter
 const u32 gBattleTerrainTiles_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/beach-evening.4bpp.lz");
 const u32 gBattleTerrainPalette_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/palette.gbapal.lz");
 const u32 gBattleTerrainTilemap_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/beach-evening.bin.lz");
-const u32 gBattleTerrainAnimTiles_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/anim-beach-evening.4bpp.lz");
-const u32 gBattleTerrainAnimTilemap_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_evening/anim-beach-evening.bin.lz");
+const u32 gBattleTerrainAnimTiles_BeachEvening[] =  INCBIN_U32("graphics/battle_terrain/beach_day/anim-beach-day.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_BeachEvening[] = INCBIN_U32("graphics/battle_terrain/beach_day/anim-beach-day.bin.lz");
 
 // Beach Night
 const u32 gBattleTerrainTiles_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/beach-night.4bpp.lz");
 const u32 gBattleTerrainPalette_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/palette.gbapal.lz");
 const u32 gBattleTerrainTilemap_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/beach-night.bin.lz");
-const u32 gBattleTerrainAnimTiles_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/anim-beach-night.4bpp.lz");
-const u32 gBattleTerrainAnimTilemap_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_night/anim-beach-night.bin.lz");
+const u32 gBattleTerrainAnimTiles_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_day/anim-beach-day.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_BeachNight[] = INCBIN_U32("graphics/battle_terrain/beach_day/anim-beach-day.bin.lz");

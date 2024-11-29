@@ -604,7 +604,6 @@ const struct WindowTemplate * const gBattleWindowTemplates[] =
         .entryTilemap = gBattleTerrainAnimTilemap_## name,   \
         .palette = gBattleTerrainPalette_## name,            
 //LINK include/rtc.h:86
-#define TIME_COUNT 4
 
 //LINK include/constants/battle.h:440
 //LINK src/data/graphics/battle_terrain.h:90
@@ -623,6 +622,13 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT][TIME_COU
         [TIME_DAY] = { TERRAIN_METADATA(HDForest) },
         [TIME_EVENING] = { TERRAIN_METADATA(HDForest) },
         [TIME_NIGHT] = { TERRAIN_METADATA(HDForest) },
+    },
+    [BATTLE_TERRAIN_BEACH] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(BeachDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(BeachDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(BeachEvening) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(BeachNight) },
     },
     [BATTLE_TERRAIN_SAND] = 
     {
