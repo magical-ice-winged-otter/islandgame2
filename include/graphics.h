@@ -385,6 +385,12 @@ extern const u32 gBattleTerrainPalette_BeachNight[];
 extern const u32 gBattleTerrainTilemap_BeachNight[];
 extern const u32 gBattleTerrainAnimTiles_BeachNight[];
 extern const u32 gBattleTerrainAnimTilemap_BeachNight[];
+//Lake Day
+extern const u32 gBattleTerrainTiles_LakeDay[];
+extern const u32 gBattleTerrainPalette_LakeDay[];
+extern const u32 gBattleTerrainTilemap_LakeDay[];
+extern const u32 gBattleTerrainAnimTiles_LakeDay[];
+extern const u32 gBattleTerrainAnimTilemap_LakeDay[];
 
 
 

@@ -653,10 +653,10 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT][TIME_COU
     },
     [BATTLE_TERRAIN_POND] = 
     {
-        [TIME_MORNING] = { TERRAIN_METADATA(HDWater) },
-        [TIME_DAY] = { TERRAIN_METADATA(HDWater) },
-        [TIME_EVENING] = { TERRAIN_METADATA(HDWater) },
-        [TIME_NIGHT] = { TERRAIN_METADATA(HDWater) },
+        [TIME_MORNING] = { TERRAIN_METADATA(LakeDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(LakeDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(LakeDay) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(LakeDay) },
     },
     [BATTLE_TERRAIN_MOUNTAIN] = 
     {
