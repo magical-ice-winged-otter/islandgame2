@@ -1222,7 +1222,7 @@
 
 //island-game : Pokeball Items
 #define FLAG_ROOM3_ITEM                                             0x493 
-#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494 
+#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494   // not in use
 #define FLAG_FRESA_FARMS_POKE_TOY                                   0x495 
 #define FLAG_VERDANT_PATH_TIMER_BALL                                0x496 
 #define FLAG_ITEM_COP_2_FULL_RESTORE                                0x497
@@ -1512,7 +1512,7 @@
 
 // island-game flags
 #define FLAG_BELLEHAVEN_SPOKE_TO_JONAS              (SYSTEM_FLAGS + 0x85)   
-//ss rain: old man quest
+//ss rain: old man "quest"
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
 //cheriport: get first mon
 #define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87)
@@ -1542,8 +1542,7 @@
 #define FLAG_SSRAIN_ICECREAM_RECEIVED               (SYSTEM_FLAGS + 0x93) 
 //southern oranna path: beat up sussy absol
 #define FLAG_S_ORANNA_PATH_ABSOL_DEFEATED           (SYSTEM_FLAGS + 0x94) 
-//camp persi: become a cop
-#define FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED          (SYSTEM_FLAGS + 0x95)
+#define FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED          (SYSTEM_FLAGS + 0x95) // not in use
 //maplegrove: steal from pekora
 #define FLAG_MAPLEGROVE_BUNEARY_GIFT                (SYSTEM_FLAGS + 0x96)
 //fresa farms: steal from watame

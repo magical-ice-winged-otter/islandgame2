@@ -73,5 +73,5 @@ ISLANDGAME_CAMP_PERSI_LODGE_2_NPC3Talk::
 
 ISLANDGAME_CAMP_PERSI_LODGE_2_DollInteract::
 # 52 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_2/scripts.pory"
-	.string "{COLOR RED}(It's a doll of an Azurill. It looks\n"
+	.string "{COLOR RED}(It's a doll of a Chikorita. It looks\n"
 	.string "neglected.)$"

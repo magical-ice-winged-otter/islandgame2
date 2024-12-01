@@ -29,15 +29,15 @@
 #define QUEST_MINTY_MEADOWS_MELISSA        1
 #define QUEST_PERSI_FAVORITE_CARD          2
 #define QUEST_PERSI_BERRY_MANIAC           3
-#define QUEST_PERSI_RIGGED_TV              4
 // #define QUEST_VERDANT_FOREST_SKITTY        2
-#define QUEST_MAPLEGROVE_LOVERS            5
-#define QUEST_MARYA_GYM_CHALLENGE          6
-#define QUEST_FRESA_FARMS_TORCHIC_EGG      7
-#define QUEST_ROSEVALE_RESCUE              8
-#define QUEST_AETHERIA_MELISSA             9
-#define QUEST_APPLEVINE_COUCH_POTATO       10
-#define QUEST_ROCKY_PATH_NURSE             11
+#define QUEST_MAPLEGROVE_LOVERS            4
+#define QUEST_MARYA_GYM_CHALLENGE          5
+#define QUEST_FRESA_FARMS_TORCHIC_EGG      6
+#define QUEST_ROSEVALE_RESCUE              7
+#define QUEST_AETHERIA_MELISSA             8
+#define QUEST_APPLEVINE_COUCH_POTATO       9
+#define QUEST_ROCKY_PATH_NURSE             10
+#define QUEST_MISSINGNO                    11
 #define QUEST_COUNT                        12 // This number is literally how many to show in the UI (keep it accurate!)
 
 
@@ -100,7 +100,17 @@
 
 #define SUB_QUEST_COUNT_COUCH_POTATO       5
 
-#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_POKEDEX_MILESTONE + SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_GYM_CHALLENGE + SUB_QUEST_COUNT_COUCH_POTATO)
+// MissingNo Quest
+#define SUB_QUEST_MISSINGNO_1              35
+#define SUB_QUEST_MISSINGNO_2              36
+#define SUB_QUEST_MISSINGNO_3              37
+#define SUB_QUEST_MISSINGNO_4              38
+#define SUB_QUEST_MISSINGNO_5              39
+#define SUB_QUEST_MISSINGNO_6              40
+
+#define SUB_QUEST_COUNT_MISSINGNO          6
+
+#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_POKEDEX_MILESTONE + SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_GYM_CHALLENGE + SUB_QUEST_COUNT_COUCH_POTATO + SUB_QUEST_COUNT_MISSINGNO)
 
 
 // We want to allocate more space in the saveblock for quests than we need,

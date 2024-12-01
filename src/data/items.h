@@ -12741,14 +12741,15 @@ const struct Item gItemsInfo[] =
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
     [ITEM_ISLANDGAME_TRADING_CARD] =
     {
         .name = _("Trading Card"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Wow, this is a really\n"
-            "rare card! Do I have\n"
-            "to return it...?"
+            "rare card! Shame that it's\n"
+            "not in good condition..."
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -12791,7 +12792,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Julie's response to\n"
             "Roman's confession.\n"
-            "No peekies!"
+            "No peeksies!"
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -12814,4 +12815,19 @@ const struct Item gItemsInfo[] =
         .effect = gItemEffect_LobsterRoll,
         .flingPower = 30,
     },
+
+    [ITEM_ISLANDGAME_STRANGE_DISC] =
+    {
+        .name = _("Strange Disc"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "“Pokémon Lost Silver”\n"
+            "is written on the\n"
+            "disc."
+        ),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
+    },
+
 };

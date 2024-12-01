@@ -733,191 +733,191 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14::
 	switch VAR_RESULT
 # 685 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	case QUEST_INACTIVE, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_3
-# 695 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 700 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	case QUEST_ACTIVE, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_4
-# 710 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 717 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	case QUEST_COMPLETED, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_5
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1:
-# 714 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 725 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_3:
 # 686 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_0, MSGBOX_YESNO
-# 688 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 693 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_6
-# 693 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 698 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_2
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_4:
-# 696 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 701 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	checkitem ITEM_ISLANDGAME_TRADING_CARD
-# 698 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 703 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_9
-# 708 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 715 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_4
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_5:
-# 711 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 718 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_5
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_6:
-# 689 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 694 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_1
-# 690 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 695 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	startquest QUEST_PERSI_FAVORITE_CARD
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_9:
-# 699 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
-	removeitem ITEM_ISLANDGAME_TRADING_CARD
-# 700 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_3
 # 704 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
-	giveitem ITEM_SOOTHE_BELL
+	removeitem ITEM_ISLANDGAME_TRADING_CARD
 # 705 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_3
+# 711 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+	giveitem ITEM_SOOTHE_BELL
+# 712 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	completequest QUEST_PERSI_FAVORITE_CARD
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_1
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag::
-# 718 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 729 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 719 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 730 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	faceplayer
-# 720 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 731 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
-# 721 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 732 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag_Text_0
-# 722 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 733 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-# 723 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 734 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	waitmovement 0
-# 724 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 735 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl::
-# 728 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 739 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 729 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 740 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	faceplayer
-# 730 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
-	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_2
 # 741 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_2
+# 752 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk3
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_1:
-# 744 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 755 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 WaterGirl_End:
-# 745 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 756 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_2:
-# 731 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 742 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk1, MSGBOX_YESNO
-# 732 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 743 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_6
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_5:
-# 736 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 747 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk2
-# 737 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 748 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	giveitem ITEM_WAILMER_PAIL
-# 738 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 749 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	setflag FLAG_RECEIVED_WAILMER_PAIL
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_1
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_6:
-# 733 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 744 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_Text_0
-# 734 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 745 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	goto WaterGirl_End
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_5
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN1::
-# 772 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 783 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 773 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 784 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC
-# 774 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 785 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN2::
-# 785 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 796 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 786 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 797 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC
-# 787 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 798 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN3::
-# 798 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 809 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 799 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 810 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC
-# 800 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 811 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN4::
-# 810 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 821 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 811 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 822 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC
-# 812 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 823 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN5::
-# 823 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 834 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 824 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 835 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN5_DESC
-# 825 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 836 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7::
-# 835 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 846 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 836 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 847 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7_Text_0
-# 837 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 848 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance::
-# 841 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 852 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	lock
-# 842 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 853 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_Text_0, MSGBOX_YESNO
-# 844 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 855 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_2
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_1:
-# 848 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 859 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	release
 	return
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_2:
-# 845 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 856 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	warp MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 0
 	goto ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_1
 
@@ -974,51 +974,59 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_CandyBoy_Text_4:
 	.string "{COLOR DARK_GRAY}Woohoo! Thanks for your support!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_0:
-# 686 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
-	.string "WAAAAAH!\p"
-	.string "I lost my favorite Charizard trading\n"
-	.string "card in Verdant Woods!\p"
-	.string "Please help me find it!$"
+# 687 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+	.string "WAAAAAAH!\p"
+	.string "I lost my super rare Charizard trading\n"
+	.string "card!\p"
+	.string "It was in my deck this morning, but now\n"
+	.string "it's gone!\p"
+	.string "I've looked everywhere for it, but I\n"
+	.string "can't find it anywhere! Please help me!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_1:
-# 689 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
-	.string "Yay! That card means everything to me!\n"
-	.string "I need it back!$"
+# 694 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+	.string "My deck won't work without that\n"
+	.string "Charizard card!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_2:
-# 693 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 698 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "PLZZZZZZZZZ$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_3:
-# 701 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
-	.string "You found my card! Thank you so much!\p"
-	.string "I bought this Soothe Bell to help me\n"
-	.string "calm down...\p"
-	.string "But now I don't need it, so here!$"
+# 706 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+	.string "Yaaaay! You found it! Where was it?\p"
+	.string "...\p"
+	.string "Huh? It was just under my bed? But I\n"
+	.string "checked under there a million times...\p"
+	.string "Oh well. All that matters is I have my\n"
+	.string "card back!\p"
+	.string "Here, take this. I made it during arts\n"
+	.string "and crafts!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_4:
-# 708 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 715 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "Have you found it yet?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14_Text_5:
-# 711 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
-	.string "I'm never taking my card outside again...$"
+# 720 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+	.string "Now I'm ready for my duel! Do you like\n"
+	.string "playing the trading card game too?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_Zigzag_Text_0:
-# 721 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 732 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR RED}It's just staring at me... menacingly?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WaterGirl_Text_0:
-# 733 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 744 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR DARK_GRAY}Aww. That's a shame. I was going to\n"
 	.string "share this Squirt Bottle with you.$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN7_Text_0:
-# 836 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 847 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "CHERIPORT{LEFT_ARROW}\nCAMP PERSI{UP_ARROW}$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance_Text_0:
-# 842 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 853 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "There's a slight opening in the tree!\n"
 	.string "Want to climb inside?$"
 
@@ -1248,41 +1256,41 @@ ISLANDGAME_CAMP_PERSI_OUTSIDE_NPC13Talk::
 	.string "how to build a tent with just sticks!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk1::
-# 748 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 759 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR DARK_GRAY}I really like gardening. Do you like\n"
 	.string "gardening too?$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk2::
-# 754 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 765 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR DARK_GRAY}Hooray! Here, take one of these and we\n"
 	.string "can become gardening buddies!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk3::
-# 760 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 771 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR DARK_GRAY}It's important to give your plants\n"
 	.string "water! Remember to take care of them!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN1_DESC::
-# 777 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 788 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR DARK_GRAY}CAMP PERSI\n"
 	.string "{COLOR DARK_GRAY}The greatest summer camp in Marya!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN2_DESC::
-# 790 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 801 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR DARK_GRAY}THE WILD SIDE\n"
 	.string "{COLOR DARK_GRAY}! SUPERVISION REQUIRED !$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN3_DESC::
-# 803 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 814 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR DARK_GRAY}PERSI LAKE\n"
 	.string "NO SWIMMING WITHOUT A COUNSELOR!!$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN4_DESC::
-# 815 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 826 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR DARK_GRAY}THE BERRY GOOD BERRY SHOP\n"
 	.string "{COLOR DARK_GRAY}Contribute to our garden! (Please)$"
 
 ISLANDGAME_CAMP_PERSI_OUTSIDE_SIGN5_DESC::
-# 828 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
+# 839 "data/maps/ISLANDGAME_CAMP_PERSI/scripts.pory"
 	.string "{COLOR RED}(What is this music? It sounds like\n"
 	.string "dududududududuDUDUDUDUDU...)$"

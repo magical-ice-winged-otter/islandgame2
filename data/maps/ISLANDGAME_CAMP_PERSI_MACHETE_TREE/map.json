@@ -34,10 +34,12 @@
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
-      "dest_warp_id": "2"
+      "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

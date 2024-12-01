@@ -24,6 +24,12 @@ mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
         else {
             setflag(FLAG_DAY)
         }
+
+        returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+        switch (var(VAR_RESULT)) {
+            case QUEST_COMPLETED: setflag(FLAG_TEMP_3)
+            default: 
+        }
     }
     // MAP_SCRIPT_ON_FRAME_TABLE [
     //     VAR_TEMP_C, 0 {
@@ -682,11 +688,16 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
     returnqueststate(QUEST_PERSI_FAVORITE_CARD)
 
     switch (var(VAR_RESULT)) {
-        case QUEST_INACTIVE: // INACTIVE
-            msgbox(format("WAAAAAH!\pI lost my favorite Charizard trading card in Verdant Woods!\pPlease help me find it!"), MSGBOX_YESNO)
+        case QUEST_INACTIVE: 
+            msgbox(format(
+                "WAAAAAAH!\p"
+                "I lost my super rare Charizard trading card!\p"
+                "It was in my deck this morning, but now it's gone!\p"
+                "I've looked everywhere for it, but I can't find it anywhere! Please help me!"
+            ), MSGBOX_YESNO)
 
             if (var(VAR_RESULT) == YES) {
-                msgbox(format("Yay! That card means everything to me! I need it back!"))
+                msgbox(format("My deck won't work without that Charizard card!"))
                 startquest(QUEST_PERSI_FAVORITE_CARD)
             }
             else {
@@ -698,17 +709,23 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14 {
             if (var(VAR_RESULT)) {
                 removeitem(ITEM_ISLANDGAME_TRADING_CARD)
                 msgbox(format(
-                    "You found my card! Thank you so much!\p"
-                    "I bought this Soothe Bell to help me calm down...\p"
-                    "But now I don't need it, so here!"))
+                    "Yaaaay! You found it! Where was it?\p"
+                    "...\p"
+                    "Huh? It was just under my bed? But I checked under there a million times...\p"
+                    "Oh well. All that matters is I have my card back!\p"
+                    "Here, take this. I made it during arts and crafts!"))
                 giveitem(ITEM_SOOTHE_BELL)
                 completequest(QUEST_PERSI_FAVORITE_CARD)
             }
             else {
                 msgbox(format("Have you found it yet?"))
             }
-        case QUEST_COMPLETED: // COMPLETED
-            msgbox("I'm never taking my card outside again...")
+        case QUEST_COMPLETED:
+            msgbox(
+                format(
+                    "Now I'm ready for my duel! Do you like playing the trading card game too?"
+                )
+            )
     }
 
     release

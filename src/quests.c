@@ -318,20 +318,15 @@ const u8 sText_SideQuestDesc_MintyMeadowsMelissa[] = _("Meet up with Professor P
 const u8 sText_SideQuestDoneDesc_MintyMeadowsMelissa[] = _("You helped rescue Old Man\nPaulie's Mareep!");
 
 // Persi Favorite Card Quest
-const u8 sText_SideQuestName_PersiFavoriteCard[] = _("(S) Lost Card");
-const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A camper from Camp Persi lost his\nfavorite trading card in Verdant Woods!");
-const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You found and returned the camper's\nfavorite card!");
+const u8 sText_SideQuestName_PersiFavoriteCard[] = _("(S) Missing Card");
+const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A little camper has lost his\nfavorite trading card!");
+const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You returned the camper's\nfavorite card!");
 
 
 // Berry Maniac Quest
 const u8 sText_SideQuestName_PersiBerryManiac[] = _("(S) Berry Hunting");
 const u8 sText_SideQuestDesc_PersiBerryManiac[] = _("The Berry Maniac from Camp Persi\nyearns for rare berries!");
 const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You've aided the Berry Maniac\n in achieving his full power...");
-
-// Persi TV Glitch Quest
-const u8 sText_SideQuestName_PersiRiggledTV[] = _("Glitchy TV?");
-const u8 sText_SideQuestDesc_PersiRiggledTV[] = _("Some campers from Camp Persi has been playing\n too much video games...");
-const u8 sText_SideQuestDoneDesc_PersiRiggledTV[] = _("You've helped the campers with their unhealthy habits!");
 
 const u8 sText_SubQuest_PersiBerryManiac1_Name[] = _("Liechi Berry");
 const u8 sText_SubQuest_PersiBerryManiac1_Desc[] = _("You found and gave a Liechi Berry\nto the Berry Maniac.");
@@ -440,6 +435,29 @@ const u8 sText_SideQuestName_ROCKY_PATH_NURSE[] = _("(S) The Missing Ingredient"
 const u8 sText_SideQuestDesc_ROCKY_PATH_NURSE[] = _("Nurse Joy needs a Balm Mushroom for\nher newest medicinal breakthrough!");
 const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\nin creating the PokéVial!");
 
+
+// MissingNo Quest
+const u8 sText_SideQuestName_MissingNo[] = _("(Z) À GlitŒh エñ tHœ MあtrÏx");
+const u8 sText_SideQuestDesc_MissingNo[] = _("▶▶WARNいNG▶▶ アN ANおMAL¥ HAS BえEN D♀TÊCTéD WITH♂N YöUr $àVê FイLE!");
+const u8 sText_SideQuestDoneDesc_MissingNo[] = _("01000100 01010010 01000101 01000001 01001101");
+
+const u8 sText_SubQuest_MissingNo1_Name[] = _("けつばん-01");
+const u8 sText_SubQuest_MissingNo1_Desc[] = _("01010111");
+
+const u8 sText_SubQuest_MissingNo2_Name[] = _("けつばん-02");
+const u8 sText_SubQuest_MissingNo2_Desc[] = _("01000001");
+
+const u8 sText_SubQuest_MissingNo3_Name[] = _("けつばん-03");
+const u8 sText_SubQuest_MissingNo3_Desc[] = _("01001011");
+
+const u8 sText_SubQuest_MissingNo4_Name[] = _("けつばん-04");
+const u8 sText_SubQuest_MissingNo4_Desc[] = _("01000101");
+
+const u8 sText_SubQuest_MissingNo5_Name[] = _("けつばん-05");
+const u8 sText_SubQuest_MissingNo5_Desc[] = _("01010101");
+
+const u8 sText_SubQuest_MissingNo6_Name[] = _("けつばん-06");
+const u8 sText_SubQuest_MissingNo6_Desc[] = _("01010000");
 
 static const struct SubQuest sSubQuests_PokedexMilestones[SUB_QUEST_COUNT_POKEDEX_MILESTONE] = 
 {
@@ -787,6 +805,63 @@ static const struct SubQuest sSubQuests_ApplevineCouchPotato[SUB_QUEST_COUNT_COU
 	),
 };
 
+static const struct SubQuest sSubQuests_MissingNo[SUB_QUEST_COUNT_MISSINGNO] = 
+{
+	sub_quest(
+		SUB_QUEST_MISSINGNO_1,
+		sText_SubQuest_MissingNo1_Name,
+		sText_SubQuest_MissingNo1_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_MISSINGNO_2,
+		sText_SubQuest_MissingNo2_Name,
+		sText_SubQuest_MissingNo2_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_MISSINGNO_3,
+		sText_SubQuest_MissingNo3_Name,
+		sText_SubQuest_MissingNo3_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_MISSINGNO_4,
+		sText_SubQuest_MissingNo4_Name,
+		sText_SubQuest_MissingNo4_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_MISSINGNO_5,
+		sText_SubQuest_MissingNo5_Name,
+		sText_SubQuest_MissingNo5_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_MISSINGNO_6,
+		sText_SubQuest_MissingNo6_Name,
+		sText_SubQuest_MissingNo6_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
+	),
+};
 
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
@@ -829,16 +904,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
-	),
-	[QUEST_PERSI_RIGGED_TV] = side_quest(
-	      sText_SideQuestName_PersiRiggledTV,
-	      sText_SideQuestDesc_PersiRiggledTV,
-	      sText_SideQuestDoneDesc_PersiRiggledTV,
-	      sText_SideQuestMap_Persi,
-	      OBJ_EVENT_GFX_CAMPER,
-	      OBJECT,
-	      NULL,
-	      	  0
 	),
 	// [QUEST_VERDANT_FOREST_SKITTY] = side_quest(
 	// 	sText_SideQuestName_VerdantForestSkitty,
@@ -919,6 +984,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM,
 		  NULL,
 		  	   0
+	),
+	[QUEST_MISSINGNO] = side_quest(
+	      sText_SideQuestName_MissingNo,
+	      sText_SideQuestDesc_MissingNo,
+	      sText_SideQuestDoneDesc_MissingNo,
+	      sText_SideQuestMap_Unknown,
+	      ITEM_ISLANDGAME_STRANGE_DISC,
+	      ITEM,
+	      sSubQuests_MissingNo,
+	      SUB_QUEST_COUNT_MISSINGNO
 	),
 };
 

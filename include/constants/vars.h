@@ -115,7 +115,7 @@
 #define VAR_ROCKY_PATH_STATE                             0x405F // island-game: used for rocky paths rockruff
 #define VAR_ROUTE101_STATE                               0x4060
 #define VAR_ROUTE102_STATE                               0x4061 // island-game: used for custom terrains
-#define VAR_ROUTE103_STATE                               0x4062 // Unused Var
+#define VAR_CAMP_PERSI_STATE                             0x4062 // island-game: used for missingno encounter
 #define VAR_ROUTE104_STATE                               0x4063
 #define VAR_ROUTE105_STATE                               0x4064 // Unused Var
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var

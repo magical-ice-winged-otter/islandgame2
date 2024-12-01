@@ -65,7 +65,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 50,
       "y": 29,
       "elevation": 0,
@@ -348,7 +348,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_NPC14",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
@@ -432,13 +432,6 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 8,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 38,
       "y": 26,
       "elevation": 0,
@@ -450,6 +443,13 @@
       "y": 27,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_LODGE_2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE",
       "dest_warp_id": "0"
     }
   ],

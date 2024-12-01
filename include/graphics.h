@@ -3451,6 +3451,8 @@ extern const u32 gItemIcon_IslandgameSquirtBottle[];
 extern const u32 gItemIconPalette_IslandgameSquirtBottle[];
 extern const u32 gItemIcon_IslandgameLobsterRoll[];
 extern const u32 gItemIconPalette_IslandgameLobsterRoll[];
+extern const u32 gItemIcon_IslandgameStrangeDisc[];
+extern const u32 gItemIconPalette_IslandgameStrangeDisc[];
 
 
 // frlg_tm_case_port

@@ -1,76 +1,113 @@
-mapscripts ISLANDGAME_CAMP_PERSI_LODGE_1_2F_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
 
-const THIEF_ID = 1
+mapscripts ISLANDGAME_CAMP_PERSI_LODGE_1_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
 
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+            returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+            switch (var(VAR_RESULT)) {
+                case QUEST_COMPLETED:
+                    break
+                default: setflag(FLAG_TEMP_5)
+            }
+
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+            setflag(FLAG_TEMP_5)
+            returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+            switch (var(VAR_RESULT)) {
+                case QUEST_COMPLETED: setflag(FLAG_TEMP_4)
+                default: 
+            }
+        }
+    }    
+}
 
 script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
     lock
-    if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)) {
-        if(!flag(FLAG_TEMP_1)) {
-            msgbox(format("I can't believe those kids didn't see me swipe those cookies and candy bars!"))
+    switch(var(VAR_CAMP_PERSI_STATE)) {
+        case 1:
+            faceplayer
+            msgbox(format(
+                "I-I was just joking about the stealing stuff, okay? And besides, there's no proof that I am anyways, so don't go snooping around camp!"
+            ))
+        case 2:
+            faceplayer
+            msgbox(format(
+                "Ever since our battle, I've really learned a lot.\p"
+                "I now realize that battles aren't all about power, and that a good strategy is a lot more important.\p"
+                "Thank you for teaching that to me, and also keeping the whole thing a secret between us...\p"
+                "Here, I know it doesn't mean much, but I want you to have this as thanks.\p"
+            ))
+            giveitem(ITEM_ISLANDGAME_STRANGE_DISC)
+            msgbox(format(
+                "It's a video game I got for free from some strange old man in Verdant Woods.\p"
+                "But when I told everyone where I got it, they told me that the old man living there hasn't been around for years...\p"
+                "I know it sounds like some lame ghost story, but it's true!\p"
+                "I thought I'd be able to play it on my Game Boy, but it looks like you need a computer or something..."
+                "{PLAYER}▶▶▶▶▶▶ÇÀÑ▶▶▶¥ÔÚ▶▶▶▶▶▶\n▶サÊÁR▶▶▶▶▶▶ぬヨ?▶▶エT$▶▶▶▶▶ぬヨ▶▶"
+            ))
+            setvar(VAR_CAMP_PERSI_STATE, 3)
+        case 3:
+            faceplayer
+            msgbox(format(
+                "I'll figure out a way to beat that kid's Charizard fair and square!\p"
+            ))
+        default:
+            msgbox(format(
+                "That was just too easy! It was literally like stealing candy from a baby!"
+                ))
             playse(SE_PIN)
-            applymovement(THIEF_ID, ExclaimFacePlayer)
-            setflag(FLAG_TEMP_1)
-        }
-        faceplayer
-        msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_NPCTalk)
-    } else {
-        faceplayer
-        returnqueststate(QUEST_PERSI_RIGGED_TV)
-        switch (var(VAR_RESULT)) {
-            case QUEST_INACTIVE:
-                msgbox(format("I'm sorry... My mommy doesn't let me have sweets, so I couldn't help myself.\p
-                       Please don't tell on me! \p
-                       ...\p
-                       You're going to?\p
-                       Then, you won't know about what I did to their {COLOR RED}TV at night!"))
-            case QUEST_ACTIVE:
-                msgbox(format("I'm sorry... My mommy doesn't let me have sweets, so I couldn't help myself.\p
-                       Please don't tell on me! \p
-                       ...\p
-                       You're going to?\p
-                       Then, you won't know about what I did to their {COLOR RED}TV at night!"))
-            case QUEST_COMPLETED:
-                msgbox(format("I'm sorry... My mommy doesn't let me have sweets, so I couldn't help myself.\p
-                       Please don't tell on me!"))
-        }
+            applymovement(1, ExclaimFacePlayer)
+            faceplayer
+            msgbox(format(
+                "Aiiiiiie! Where did you come from!? How long have you been listening!?\p"
+                "I-I was just joking about the stealing stuff, okay? And besides, there's no proof that I am anyways, so don't go snooping around camp!"
+            ))
+            setvar(VAR_CAMP_PERSI_STATE, 1)
     }
     release
-
 }
 
-text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_NPCTalk {
-    format(
-        "W-Where did you come from? I was just kidding! I don't have anything on me! \p"
-        "There's nothing in this room either, so go away!"
-    )
-}
-
-script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_GulpinDoll {
+script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC2 {
     lock
-    if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED) && flag(FLAG_TEMP_1)) {
-        msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect, MSGBOX_YESNO)
-        if(var(VAR_RESULT) == NO) {
-            msgbox(format("Wow. Really? You're gonna let him get away with it?"))
-            goto(GulpinDollInspect_End)
-        }
+    faceplayer
+    msgbox(format(
+        "I'm not good at remembering type match-ups, so the card game helps me learn them a lot better!"
+    ))
+    release
+}
+
+// script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_GulpinDoll {
+//     lock
+//     if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED) && flag(FLAG_TEMP_1)) {
+//         msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect, MSGBOX_YESNO)
+//         if(var(VAR_RESULT) == NO) {
+//             msgbox(format("Wow. Really? You're gonna let him get away with it?"))
+//             goto(GulpinDollInspect_End)
+//         }
         
-        giveitem(ITEM_LAVA_COOKIE, 3)
-        giveitem(ITEM_RAGE_CANDY_BAR, 3)
-        setflag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)
-    }
-    else {
-        msgbox(format("{COLOR RED}(It looks like a regular old Guplin doll.)"))
-    }
+//         giveitem(ITEM_LAVA_COOKIE, 3)
+//         giveitem(ITEM_RAGE_CANDY_BAR, 3)
+//         setflag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)
+//     }
+//     else {
+//         msgbox(format("{COLOR RED}(It looks like a regular old Guplin doll.)"))
+//     }
 
-    GulpinDollInspect_End:
-        release
-}
+//     GulpinDollInspect_End:
+//         release
+// }
 
-text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect {
-    format(
-        "{COLOR RED}(It looks like a regular old Guplin doll.) \p"
-        "{COLOR RED}(Huh? Instead of stuffing, there's a bunch of smuggled goods inside of it.) \p"
-        "{COLOR DARK_GRAY}Take them?"
-    )
-}
+// text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect {
+//     format(
+//         "{COLOR RED}(It looks like a regular old Guplin doll.) \p"
+//         "{COLOR RED}(Huh? Instead of stuffing, there's a bunch of smuggled goods inside of it.) \p"
+//         "{COLOR DARK_GRAY}Take them?"
+//     )
+// }
+
