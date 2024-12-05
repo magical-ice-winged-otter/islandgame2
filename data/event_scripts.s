@@ -1343,3 +1343,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL_B1F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ANOMALY01_1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ANOMALY02_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.inc"

@@ -1,0 +1,3 @@
+ISLANDGAME_ANOMALY02_2F_MapScripts::
+	.byte 0
+

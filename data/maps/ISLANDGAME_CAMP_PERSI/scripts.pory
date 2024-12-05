@@ -53,7 +53,22 @@ mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
 // Ninja Boy Hanzo
 script ISLANDGAME_CAMP_PERSI_TrainerBattle1 {
     trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_1, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text)
-    msgbox(ISLANDGAME_CAMP_PERSI_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
+    checkitem(ITEM_ISLANDGAME_MACHETE)
+    if(var(VAR_RESULT)) {
+        msgbox(format(
+            "I may not be worthy of my blade now, but I will be back for it later! Believe it!"
+            ))
+    }
+    else {
+        msgbox(format(
+            "Naruhodo... It appears I still have a lot to learn...\p"
+            "{PLAYER}-san! As my first battle and only loss, please take my ka-ta-na.\p"
+            "It will serve you well in your journey, I know of it!"
+        ))
+        giveitem(ITEM_ISLANDGAME_MACHETE)
+    }
+    closemessage
+    release
 }
 
 text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text {
@@ -68,10 +83,6 @@ text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text
     "Bakana... I lost!?"
 }
 
-text ISLANDGAME_CAMP_PERSI_TrainerBattle1_PostDefeated_Text
-{
-    format("{COLOR DARK_GRAY}You may have beaten me now, but I'll get stronger! Believe it!")
-}
 
 // Camper Edward
 script ISLANDGAME_CAMP_PERSI_TrainerBattle2 {
