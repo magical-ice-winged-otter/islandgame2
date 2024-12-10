@@ -1542,7 +1542,7 @@
 #define FLAG_SSRAIN_ICECREAM_RECEIVED               (SYSTEM_FLAGS + 0x93) 
 //southern oranna path: beat up sussy absol
 #define FLAG_S_ORANNA_PATH_ABSOL_DEFEATED           (SYSTEM_FLAGS + 0x94) 
-#define FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED          (SYSTEM_FLAGS + 0x95) // not in use
+#define FLAG_ANOMALY01_ITEM                         (SYSTEM_FLAGS + 0x95)
 //maplegrove: steal from pekora
 #define FLAG_MAPLEGROVE_BUNEARY_GIFT                (SYSTEM_FLAGS + 0x96)
 //fresa farms: steal from watame

@@ -5509,6 +5509,8 @@ u16 GetBattleBGM(void)
         case SPECIES_SHADOW_MIGHTYENA:
         case SPECIES_SHADOW_AGGRON:
             return MUS_HG_VS_ENTEI;
+        case SPECIES_ANOMALY_01:
+            return MUS_NONE;
         case SPECIES_ARTICUNO:
         case SPECIES_ZAPDOS:
         case SPECIES_MOLTRES:

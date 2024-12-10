@@ -81,7 +81,7 @@ ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_Laptop_Text_2:
 # 21 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	.string "> You booted up the laptop and inserted\n"
 	.string "the disc.\p"
-	.string "LostSilver.exe” is automatically\n"
+	.string "“LostSilver.exe” is automatically\n"
 	.string "installed and opened.\p"
 	.string "It's loading...{PAUSE 60} loading...{PAUSE 60} loading...{PAUSE 60}\p"
 	.string "{COLOR RED}(Huh? It seems like the laptop froze\n"

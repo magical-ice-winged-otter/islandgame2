@@ -19,7 +19,7 @@ script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_Laptop {
             waitstate
             msgbox(format(
                 "> You booted up the laptop and inserted the disc.\p"
-                "LostSilver.exe” is automatically installed and opened.\p"
+                "“LostSilver.exe” is automatically installed and opened.\p"
                 "It's loading...{PAUSE 60} loading...{PAUSE 60} loading...{PAUSE 60}\p"
                 "{COLOR RED}(Huh? It seems like the laptop froze while attempting to run the game.)"
             ))

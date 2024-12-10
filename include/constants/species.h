@@ -1642,8 +1642,9 @@
 #define SPECIES_COMBEE_MARYAN                           1535
 #define SPECIES_VESPIQUEN_MARYAN                        1536
 #define SPECIES_SHADOW_AGGRON                           1537
+#define SPECIES_ANOMALY_01                              1538
 
-#define SPECIES_EGG SPECIES_SHADOW_AGGRON + 1
+#define SPECIES_EGG SPECIES_ANOMALY_01 + 1
 
 #define NUM_SPECIES SPECIES_EGG
 
