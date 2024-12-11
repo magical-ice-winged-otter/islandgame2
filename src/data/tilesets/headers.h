@@ -889,7 +889,6 @@ const struct Tileset gTileset_IslandgameGeneral =
     .palettes = gTilesetPalettes_IslandgameGeneral,
     .metatiles = gMetatiles_IslandgameGeneral,
     .metatileAttributes = gMetatileAttributes_IslandgameGeneral,
-    .paletteOverrides = gTilesetPalOverrides_Island_General,
     .callback = InitTilesetAnim_islandgame_oranna_general, // island todo, this is wrong
 };
 
@@ -923,7 +922,6 @@ const struct Tileset gTileset_islandgame_oranna_cheriport =
     .palettes = gTilesetPalettes_islandgame_oranna_cheriport,
     .metatiles = gMetatiles_islandgame_oranna_cheriport,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_cheriport,
-    .paletteOverrides = gTilesetPalOverrides_Island_OrannaCheriport,
     .callback = InitTilesetAnim_islandgame_oranna_cheriport,
 };
 
@@ -970,7 +968,6 @@ const struct Tileset gTileset_islandgame_oranna_maplegrove =
     .palettes = gTilesetPalettes_islandgame_oranna_maplegrove,
     .metatiles = gMetatiles_islandgame_oranna_maplegrove,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_maplegrove,
-    .paletteOverrides = gTilesetPalOverrides_Island_OrannaMaplegrove,
     .callback = InitTilesetAnim_islandgame_oranna_maplegrove,
 };
 
@@ -982,7 +979,6 @@ const struct Tileset gTileset_islandgame_oranna_rosevale =
     .palettes = gTilesetPalettes_islandgame_oranna_rosevale,
     .metatiles = gMetatiles_islandgame_oranna_rosevale,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_rosevale,
-    .paletteOverrides = gTilesetPalOverrides_Island_OrannaRosevale,
     .callback = InitTilesetAnim_islandgame_oranna_rosevale,
 };
 
@@ -994,7 +990,6 @@ const struct Tileset gTileset_islandgame_oranna_tidalcove =
     .palettes = gTilesetPalettes_islandgame_oranna_tidalcove,
     .metatiles = gMetatiles_islandgame_oranna_tidalcove,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_tidalcove,
-    .paletteOverrides = gTilesetPalOverrides_Island_OrannaTidalcove,
     .callback = InitTilesetAnim_islandgame_oranna_tidalcove,
 };
 
@@ -1006,7 +1001,6 @@ const struct Tileset gTileset_islandgame_oranna_general =
     .palettes = gTilesetPalettes_islandgame_oranna_general,
     .metatiles = gMetatiles_islandgame_oranna_general,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_general,
-    .paletteOverrides = gTilesetPalOverrides_Island_OrannaGeneral,
     .callback = InitTilesetAnim_islandgame_oranna_general,
 };
 
@@ -1020,7 +1014,6 @@ const struct Tileset gTileset_islandgame_oranna_central_path =
     .palettes = gTilesetPalettes_islandgame_oranna_central_path,
     .metatiles = gMetatiles_islandgame_oranna_central_path,
     .metatileAttributes = gMetatileAttributes_islandgame_oranna_central_path,
-    .paletteOverrides = gTilesetPalOverrides_Island_OrannaCentralPath,
     .callback = NULL,
 };
 
