@@ -141,15 +141,6 @@ extern struct Weather gWeather;
 extern struct Weather *const gWeatherPtr;
 extern const u16 gFogPalette[];
 
-enum
-{
-    GAMMA_NONE,
-    GAMMA_NORMAL,
-    GAMMA_ALT,
-};
-
-void UpdatePaletteGammaType(u8 index, u8 gammaType);
-
 // field_weather_effect.c
 extern const u8 gWeatherFogHorizontalTiles[];
 

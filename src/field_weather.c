@@ -156,7 +156,7 @@ void StartWeather(void)
 {
     if (!FuncIsActiveTask(Task_WeatherMain))
     {
-        u8 index = 15;
+        u8 index = AllocSpritePalette(PALTAG_WEATHER);
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[OBJ_PLTT_ID(index)], PLTT_SIZE_4BPP);
         BuildColorMaps();
         gWeatherPtr->contrastColorMapSpritePalIndex = index;
@@ -861,10 +861,10 @@ static bool8 UNUSED IsFirstFrameOfWeatherFadeIn(void)
         return FALSE;
 }
 
-void LoadCustomWeatherSpritePalette(const struct SpritePalette *palette)
+void LoadCustomWeatherSpritePalette(const u16 *palette)
 {
-    LoadSpritePalette(palette);
-    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(palette->tag));
+    LoadPalette(palette, 0x100 + gWeatherPtr->weatherPicSpritePalIndex * 16, 32);
+    UpdateSpritePaletteWithWeather(gWeatherPtr->weatherPicSpritePalIndex);
 }
 
 static void LoadDroughtWeatherPalette(u8 *palsIndex, u8 *palsOffset)
@@ -1105,18 +1105,4 @@ void PreservePaletteInWeather(u8 preservedPalIndex)
 void ResetPreservedPalettesInWeather(void)
 {
     sPaletteColorMapTypes = sBasePaletteColorMapTypes;
-}
-
-void UpdatePaletteGammaType(u8 index, u8 gammaType)
-{
-    if (index != 0xFF)
-        sBasePaletteColorMapTypes[index + 16] = gammaType;
-}
-
-bool8 IsWeatherAlphaBlend(void)
-{
-    return gWeatherPtr->currWeather == WEATHER_FOG_HORIZONTAL || 
-           gWeatherPtr->currWeather == WEATHER_FOG_DIAGONAL   ||
-           gWeatherPtr->currWeather == WEATHER_UNDERWATER_BUBBLES ||
-           gWeatherPtr->currWeather == WEATHER_UNDERWATER;
 }
