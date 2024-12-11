@@ -359,7 +359,6 @@ SECTIONS {
         src/international_string_util.o(.text);
         src/pokemon_debug.o(.text);
         src/expansion_intro.o(.text);
-        src/day_night.o(.text);
         src/tm_case.o(.text);
         src/quests.o(.text);
         src/follow_me.o(.text);
@@ -731,7 +730,6 @@ SECTIONS {
         data/sound_data.o(.rodata);
         src/pokemon_debug.o(.rodata);
         src/expansion_intro.o(.rodata);
-        src/day_night.o(.rodata);
         src/tm_case.o(.rodata);
         src/quests.o(.rodata);
         src/follow_me.o(.rodata);

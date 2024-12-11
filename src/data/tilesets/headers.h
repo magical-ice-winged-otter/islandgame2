@@ -7,7 +7,6 @@ const struct Tileset gTileset_General =
     .metatiles = gMetatiles_General,
     .metatileAttributes = gMetatileAttributes_General,
     .callback = InitTilesetAnim_General,
-    .paletteOverrides = gTilesetPalOverrides_General,
 };
 
 const struct Tileset gTileset_Petalburg =
@@ -19,7 +18,6 @@ const struct Tileset gTileset_Petalburg =
     .metatiles = gMetatiles_Petalburg,
     .metatileAttributes = gMetatileAttributes_Petalburg,
     .callback = InitTilesetAnim_Petalburg,
-    .paletteOverrides = gTilesetPalOverrides_Petalburg,
 };
 
 const struct Tileset gTileset_Rustboro =

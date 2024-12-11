@@ -33,7 +33,6 @@
 #include "constants/trainer_types.h"
 #include "constants/union_room.h"
 #include "dynamic_objects.h"
-#include "day_night.h"
 #include "constants/metatile_behaviors.h"
 
 // this file was known as evobjmv.c in Game Freak's original source
@@ -4028,7 +4027,6 @@ static void UNUSED LoadObjectEventPaletteSet(u16 *paletteTags)
         LoadObjectEventPalette(paletteTags[i]);
 }
 
-// NOTE: Does not use LoadSpritePaletteDayNight because of naming screen
 static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette)
 {
     if (IndexOfSpritePaletteTag(spritePalette->tag) != 0xFF)
@@ -4041,7 +4039,7 @@ void PatchObjectPalette(u16 paletteTag, u8 paletteSlot)
 {
     u32 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
 
-    LoadPaletteDayNight(sObjectEventSpritePalettes[paletteIndex].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
+    LoadPalette(sObjectEventSpritePalettes[paletteIndex].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
 }
 
 void PatchObjectPaletteRange(const u16 *paletteTags, u8 minSlot, u8 maxSlot)
