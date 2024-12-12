@@ -21,8 +21,9 @@
 
 	.macro object_event index:req, gfx:req, x:req, y:req, elevation:req, movement_type:req, x_radius:req, y_radius:req, trainer_type:req, sight_radius_tree_etc:req, script:req, event_flag:req
 	.byte \index
+	.byte \gfx
 	.byte OBJ_KIND_NORMAL
-	.2byte \gfx
+	.space 1  @ Padding
 	.2byte \x, \y
 	.byte \elevation
 	.byte \movement_type
