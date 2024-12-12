@@ -5235,7 +5235,7 @@
       "id": "LAYOUT_ISLANDGAME_AETHERIA",
       "name": "ISLANDGAME_AETHERIA_Layout",
       "width": 80,
-      "height": 55,
+      "height": 70,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_aetheria",
       "border_filepath": "data/layouts/ISLANDGAME_AETHERIA/border.bin",
