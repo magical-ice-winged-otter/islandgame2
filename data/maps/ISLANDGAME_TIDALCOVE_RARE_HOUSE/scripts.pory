@@ -13,7 +13,7 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
         msgbox(format(
             "Years ago, I came to the Maryan Isles in search of a particular rare Pokémon.\p"
             "But alas, all I could find during my ventures were these rare stones.\p"
-            "If only I could catch a glimpse of an {COLOR LIGHT_GRAY}Eevee{COLOR DARK_GRAY}. I'm convinced there aren't any left in the wild anymore..."
+            "If only I could catch a glimpse of an Eevee. I'm convinced there aren't any left in the wild anymore..."
         ))
         closemessage
         setvar(VAR_0x8000, SPECIES_EEVEE)
@@ -30,6 +30,9 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
                 "Ooh... What a majestic specimen indeed! And just when I thought I would never see a real one in my lifetime!\p"
                 "Thank you, young trainer. Here, take one of my rare stones as a token of my appreciation! Choose wisely!"
             ))      
+        }
+        else {
+            goto(Tidalcove_RareStoneEnd)
         }
         dynmultipush("Fire Stone", 211)
         dynmultipush("Water Stone", 212)
@@ -91,6 +94,10 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
         ))
         closemessage
     }
+
+    Tidalcove_RareStoneEnd:
+        closemessage
+        release
 
 }
     // returnqueststate(QUEST_TIDALCOVE_RARE_PKMN)

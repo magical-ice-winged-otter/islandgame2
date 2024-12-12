@@ -273,11 +273,11 @@ EventScript_EggHatch::
 	end
 
 Route117_Text_SeeWifeIfYoudLikeMeToRaiseMon:
-	.string "I'm the DAY-CARE MAN.\p"
-	.string "I help take care of the precious\n"
-	.string "POKéMON of TRAINERS.\p"
-	.string "If you'd like me to raise your POKéMON,\n"
-	.string "have a word with my wife.$"
+	.string "Howdy there, trainer. Welcome to Fresa\n"
+	.string "Farms!\p"
+	.string "Right behind me is our Pokémon Daycare.\n"
+	.string "If you'd like us to take care of your\p"
+	.string "Pokemon, go right inside!$" 
 
 Route117_Text_DoYouWantEgg:
 	.string "Ah, it's you!\p"
@@ -301,8 +301,7 @@ Route117_Text_YouHaveNoRoomForIt:
 	.string "Come back when you've made room.$"
 
 Route117_Text_ReceivedEgg:
-	.string "{PLAYER} received the EGG from\n"
-	.string "the DAY-CARE MAN.$"
+	.string "{PLAYER} received the EGG !$"
 
 Route117_Text_TakeGoodCareOfIt:
 	.string "Take good care of it.$"
@@ -328,8 +327,9 @@ Route117_Text_IWillKeepDoYouWantIt:
 	.string "You do want this, yes?$"
 
 Route117_PokemonDayCare_Text_WouldYouLikeUsToRaiseAMon:
-	.string "I'm the DAY-CARE LADY.\p"
-	.string "We can raise POKéMON for you.\p"
+	.string "Hello dear! I'm Marion. I run the\n"
+	.string "Pokémon Daycare!\p"
+	.string "We can raise POKéMON for you.\n"
 	.string "Would you like us to raise one?$"
 
 Route117_PokemonDayCare_Text_WhichMonShouldWeRaise:
@@ -346,7 +346,7 @@ Route117_PokemonDayCare_Text_WeCanRaiseOneMore:
 	.string "Would you like us to raise one more?$"
 
 Route117_PokemonDayCare_Text_HusbandWasLookingForYou:
-	.string "My husband was looking for you.$"
+	.string "Ah... my son was looking for you.$"
 
 Route117_PokemonDayCare_Text_FineThenComeAgain:
 	.string "Oh, fine, then.\n"
@@ -389,7 +389,7 @@ Route117_PokemonDayCare_Text_HeresYourMon:
 
 Route117_PokemonDayCare_Text_TookBackMon:
 	.string "{PLAYER} took back {STR_VAR_1} from\n"
-	.string "the DAY-CARE LADY.$"
+	.string "Marion.$"
 
 Route117_PokemonDayCare_Text_YouHaveJustOneMon:
 	.string "Oh? But you have just one\n"

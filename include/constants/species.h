@@ -1636,8 +1636,15 @@
 #define SPECIES_MILOTIC_MARYAN                          1529
 #define SPECIES_PURRLOIN_MARYAN                         1530
 #define SPECIES_LIEPARD_MARYAN                          1531
+#define SPECIES_NINCADA_MARYAN                          1532
+#define SPECIES_NINJASK_MARYAN                          1533
+#define SPECIES_SHEDINJA_MARYAN                         1534
+#define SPECIES_COMBEE_MARYAN                           1535
+#define SPECIES_VESPIQUEN_MARYAN                        1536
+#define SPECIES_SHADOW_AGGRON                           1537
+#define SPECIES_ANOMALY_01                              1538
 
-#define SPECIES_EGG SPECIES_LIEPARD_MARYAN + 1
+#define SPECIES_EGG SPECIES_ANOMALY_01 + 1
 
 #define NUM_SPECIES SPECIES_EGG
 

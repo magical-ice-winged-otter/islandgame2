@@ -1,62 +1,194 @@
 ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts::
+# 13 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
+ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 14 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	gettime
+# 16 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+# 16 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+# 21 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	setflag FLAG_TEMP_2
+# 22 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	returnqueststate QUEST_PERSI_FAVORITE_CARD
+# 23 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	switch VAR_RESULT
+# 24 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	case QUEST_COMPLETED, ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+# 26 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	setflag FLAG_TEMP_4
+	return
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster::
-	lock
-	faceplayer
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk
-	release
+ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 17 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	setflag FLAG_TEMP_3
+# 18 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	setflag FLAG_TEMP_4
+	return
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 	return
 
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1::
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster::
+# 33 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	lock
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk
+# 34 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	faceplayer
+# 35 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	goto_if_set FLAG_TEMP_2, ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_2
+# 45 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_Text_1
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_1:
+# 50 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	release
+	return
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_2:
+# 36 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_Text_0
+	goto ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_1
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1::
+# 55 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	lock
+# 56 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1_Text_0, MSGBOX_NPC
+# 59 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2::
+# 63 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	lock
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk
+# 64 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2_Text_0, MSGBOX_NPC
+# 67 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3::
+# 71 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	lock
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk
+# 72 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3_Text_0, MSGBOX_NPC
+# 75 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning::
+# 79 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	playse SE_PIN
+# 80 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	applymovement 3, Common_Movement_ExclamationMark
+# 81 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	applymovement 2, Common_Movement_ExclamationMark
+# 82 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	waitmovement 0
+# 83 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	applymovement 2, Common_Movement_Delay48
+# 84 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	waitmovement 0
+# 85 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning_Text_0
+# 88 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	closemessage
+# 89 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+# 90 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	waitmovement 0
+# 91 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+# 92 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	waitmovement 0
+# 93 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	return
+# 94 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4::
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk, MSGBOX_NPC
+# 98 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	lock
+# 99 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4_Text_0
+# 102 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	release
 	return
 
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_1F_ScoutmasterTalk::
-	.string "{COLOR DARK_GRAY}I sent Hanzo to clean up the camp tree\n"
-	.string "house hours ago.\p"
-	.string "{COLOR DARK_GRAY}What could be taking him so long!? He\n"
-	.string "better not be horsing around with that\l"
-	.string "machete in there like last time...\p"
-	.string "{COLOR DARK_GRAY}-sigh- I don't get paid enough for this.\n"
-	.string "This is a CAMP, not a DAYCARE!$"
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC5::
+# 106 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	lock
+# 107 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC5_Text_0
+# 110 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	release
+	return
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC1Talk::
+
+# 115 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_Movement_PorygonAppear:
+# 116 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	emote_exclamation_mark
+# 117 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	face_up
+# 118 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	lock_facing_direction
+# 119 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	walk_fast_down
+	step_end
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_Text_0:
+# 38 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	.string "Where did that rapscallion Hanzo run\n"
+	.string "off to now!?\p"
+	.string "He better not be horsing around with\n"
+	.string "that machete of his again. I don't care\l"
+	.string "if it's an “agricultural tool”, there's\l"
+	.string "no reason a CHILD should have one!!\l"
+	.string "-sigh- I'm starting to think I was\l"
+	.string "better off in the slammer than here...$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_Text_1:
+# 46 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	.string "I wish parents would stop dropping\n"
+	.string "their brats here like it's a daycare.\p"
+	.string "This is a CAMP for Lugia's sake!$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1_Text_0:
+# 57 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	.string "{COLOR DARK_GRAY}Give me the controller! The scoutmaster\n"
 	.string "said it's MY turn now!$"
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC2Talk::
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2_Text_0:
+# 65 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	.string "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense\n"
 	.string "game right now!$"
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC3Talk::
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3_Text_0:
+# 73 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	.string "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-$"
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_1F_NPC4Talk::
-	.string "{COLOR DARK_GRAY}We only brought 2 controllers...\p"
-	.string "So I get to take over for whoever\n"
-	.string "loses!$"
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_BlockingTV_Beginning_Text_0:
+# 86 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	.string "MOVE YOUR BIG FAT HEAD OUT OF THE\n"
+	.string "FREAKING WAY!$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4_Text_0:
+# 100 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	.string "Charizard! Use Fire Spin!$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC5_Text_0:
+# 108 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
+	.string "Argh... if I only had one more turn...$"

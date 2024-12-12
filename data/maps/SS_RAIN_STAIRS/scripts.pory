@@ -9,5 +9,5 @@ script SS_RAIN_STAIRS_NPC {
 }
 
 text SS_RAIN_STAIRS_NPC_TALK {
-    format("{COLOR DARK_GRAY}My mom is taking us to the beach later!")
+    format("{COLOR DARK_GRAY}My mom is taking me to the beach later!")
 }

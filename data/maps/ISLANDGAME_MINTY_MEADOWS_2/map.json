@@ -127,45 +127,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES",
-      "x": 26,
-      "y": 9,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_MINTY_CHESTO_1",
-      "script": "BerryTreeScript",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES",
-      "x": 27,
-      "y": 9,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_MINTY_CHESTO_2",
-      "script": "BerryTreeScript",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES",
-      "x": 28,
-      "y": 9,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_MINTY_PECHA_3",
-      "script": "BerryTreeScript",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_MELISSA",
       "x": -4,
       "y": 4,

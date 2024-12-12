@@ -121,6 +121,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract {
         closemessage
         playse(SE_PIN)
         applymovement(3, Common_Movement_ExclamationMark)
+        waitmovement(0)
         faceplayer
         applymovement(3, Common_Movement_Delay48)
         waitmovement(0)
@@ -131,6 +132,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract {
         ))
         setflag(FLAG_TEMP_2)
     }
+    faceplayer
     msgbox(format(
         "If you're interested in being my little Minccino, I'll let you know when it's ready to be tested!"
     ))

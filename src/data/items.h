@@ -803,7 +803,7 @@ const struct Item gItemsInfo[] =
     [ITEM_REVIVAL_HERB] =
     {
         .name = _("Revival Herb"),
-        .price = 2800,
+        .price = 10000, // modded price
         .description = COMPOUND_STRING(
             "A very bitter herb\n"
             "that revives a\n"
@@ -2434,13 +2434,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SHOAL_SALT] =
     {
-        .name = _("Shoal Salt"),
+        .name = _("Cave Salt"),
         .pluralName = _("Shoal Salt"),
         .price = 20,
         .description = COMPOUND_STRING(
             "Salt obtained from\n"
-            "deep inside the\n"
-            "Shoal Cave."),
+            "inside the depths\n"
+            "of Lumine Cave."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -2449,12 +2449,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SHOAL_SHELL] =
     {
-        .name = _("Shoal Shell"),
+        .name = _("Cave Shell"),
         .price = 20,
         .description = COMPOUND_STRING(
             "A seashell found\n"
-            "deep inside the\n"
-            "Shoal Cave."),
+            "inside the depths\n"
+            "of Lumine Cave."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -7276,7 +7276,7 @@ const struct Item gItemsInfo[] =
     [ITEM_WHITE_HERB] =
     {
         .name = _("White Herb"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : ((I_PRICE >= GEN_7) ? 4000 : 100),
+        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 3000 : 3000),
         .holdEffect = HOLD_EFFECT_RESTORE_STATS,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -7345,7 +7345,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MENTAL_HERB] =
     {
         .name = _("Mental Herb"),
-        .price = (I_PRICE >= GEN_9) ? 10000 : ((I_PRICE >= GEN_7) ? 4000 : 100),
+        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 3000 : 3000), //modded
         .holdEffect = HOLD_EFFECT_MENTAL_HERB,
         .description = COMPOUND_STRING(
         #if B_MENTAL_HERB >= GEN_5
@@ -7596,7 +7596,7 @@ const struct Item gItemsInfo[] =
     [ITEM_POWER_HERB] =
     {
         .name = _("Power Herb"),
-        .price = (I_PRICE >= GEN_9) ? 30000 : ((I_PRICE >= GEN_7) ? 4000 : 100),
+        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 3000 : 3000),
         .holdEffect = HOLD_EFFECT_POWER_HERB,
         .description = COMPOUND_STRING(
             "Allows immediate\n"
@@ -9336,19 +9336,19 @@ const struct Item gItemsInfo[] =
         .secondaryId = MOVE_TOXIC,
     },
 
-    [ITEM_TM_HAIL] =
+    [ITEM_TM_HAIL] = // Changed to Snowscape
     {
         .name = _("TM07"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Creates a hailstorm\n"
-            "that damages all\n"
-            "types except Ice."),
+            "Creates a snowstorm\n"
+            "that boosts the Defense\n"
+            "of Ice-type Pokémon."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_HAIL,
+        .secondaryId = MOVE_SNOWSCAPE,
     },
 
     [ITEM_TM_BULK_UP] =
@@ -10011,37 +10011,42 @@ const struct Item gItemsInfo[] =
         .name = _("TM51"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Deals more damage\n"
-            "if used consecutively.\n"), 
+            "May boost the user's\n"
+            "Special Attack.\n"), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_ECHOED_VOICE, // Todo
+        .secondaryId = MOVE_CHARGE_BEAM,
     },
 
     [ITEM_TM52] =
     {
         .name = _("TM52"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "Critical hits land\n"
+            "more easily.\n"), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_STONE_EDGE,
     },
 
     [ITEM_TM53] =
     {
         .name = _("TM53"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "An attack that\n"
+            "leaves the foe\n"
+            "with at least 1 HP."), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_FALSE_SWIPE, // Todo
     },
 
     [ITEM_TM54] =
@@ -11869,7 +11874,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MIRROR_HERB] =
     {
         .name = _("Mirror Herb"),
-        .price = 30000,
+        .price = 3000,
         .holdEffect = HOLD_EFFECT_MIRROR_HERB,
         .description = COMPOUND_STRING(
             "Mirrors an enemy's\n"
@@ -12736,14 +12741,15 @@ const struct Item gItemsInfo[] =
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
     [ITEM_ISLANDGAME_TRADING_CARD] =
     {
         .name = _("Trading Card"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Wow, this is a really\n"
-            "rare card! Do I have\n"
-            "to return it...?"
+            "rare card! Shame that it's\n"
+            "not in good condition..."
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -12752,11 +12758,11 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POKEVIAL] =
     {
-        .name = _("POKéVIAL"),
+        .name = _("PokéVial"),
         .price = 0,
         .description = COMPOUND_STRING(
             "Restores all\n"
-            "POKéMON to full\n"
+            "Pokémon to full\n"
             "health."
         ),
         .importance = 1,
@@ -12786,10 +12792,42 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Julie's response to\n"
             "Roman's confession.\n"
-            "No peekies!"
+            "No peeksies!"
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1,
     },
+
+    [ITEM_ISLANDGAME_LOBSTER_ROLL] =
+    {
+        .name = _("Lobster Roll"),
+        .price = 3000,
+        .holdEffectParam = 200,
+        .description = COMPOUND_STRING(
+            "Restores the HP of\n"
+            "a Pokémon by\n"
+            "200 points."),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_LobsterRoll,
+        .flingPower = 30,
+    },
+
+    [ITEM_ISLANDGAME_STRANGE_DISC] =
+    {
+        .name = _("Strange Disc"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "“Pokémon Lost Silver”\n"
+            "is written on the\n"
+            "disc."
+        ),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
+    },
+
 };

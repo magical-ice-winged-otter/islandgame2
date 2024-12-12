@@ -12,11 +12,7 @@ script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_OnTransition {
 
 script ISLANDGAME_CHERIPORT_PKMNCENTER_EventScript_NPC1_EventScript_Nurse {
     if (flag(FLAG_PROF_GAVE_EEVEE)) {
-        setvar(VAR_0x800B, LOCALID_NURSE)
-        call(Common_EventScript_PkmnCenterNurse)
-        waitmessage
-        waitbuttonpress
-        release
+        call(IslandGame_Common_PokemonCenter_1F_EventScript_Nurse)
     } else {
         lock
         msgbox(format("I'm sorry, you don't have any Pokemon!\pIf you visit Professor Palm, he might be able to give you one."))

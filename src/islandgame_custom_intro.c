@@ -43,14 +43,14 @@ void IslandGameCustomStartup()
         ScriptGiveMon(species, level, item);
         
         //debug 1: give all badges to raise our obedienceLevel
-        FlagToggle(FLAG_BADGE01_GET);
-        FlagToggle(FLAG_BADGE02_GET);
-        FlagToggle(FLAG_BADGE03_GET);
-        FlagToggle(FLAG_BADGE04_GET);
-        FlagToggle(FLAG_BADGE05_GET);
-        FlagToggle(FLAG_BADGE06_GET);
-        FlagToggle(FLAG_BADGE07_GET);
-        FlagToggle(FLAG_BADGE08_GET);
+        // FlagToggle(FLAG_BADGE01_GET);
+        // FlagToggle(FLAG_BADGE02_GET);
+        // FlagToggle(FLAG_BADGE03_GET);
+        // FlagToggle(FLAG_BADGE04_GET);
+        // FlagToggle(FLAG_BADGE05_GET);
+        // FlagToggle(FLAG_BADGE06_GET);
+        // FlagToggle(FLAG_BADGE07_GET);
+        // FlagToggle(FLAG_BADGE08_GET);
 
         FlagToggle(FLAG_RECEIVED_HM_CUT);
         FlagToggle(FLAG_RECEIVED_HM_FLY);
@@ -64,11 +64,12 @@ void IslandGameCustomStartup()
         //debug 2: SS RAIN LOCATION
         FlagToggle(FLAG_RECEIVED_RUNNING_SHOES);
         FlagToggle(FLAG_SYS_B_DASH);
-        FlagToggle(FLAG_LEFT_SHIP);
-        //debug 3: CHERIPORT LOCATION
-        FlagToggle(FLAG_PROF_GAVE_EEVEE);
-        FlagToggle(FLAG_SYS_POKEDEX_GET);
-        FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
+        // //debug 3: CHERIPORT LOCATION
+        // FlagToggle(FLAG_PROF_GAVE_EEVEE);
+        // FlagToggle(FLAG_SYS_POKEDEX_GET);
+        // FlagToggle(FLAG_SYS_NATIONAL_DEX);
+        // FlagToggle(FLAG_RECEIVED_POKEDEX_FROM_BIRCH);
+        EnableNationalPokedex();
         
 
         //debug sidequest:

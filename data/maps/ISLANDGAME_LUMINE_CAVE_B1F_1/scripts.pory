@@ -1,0 +1,167 @@
+mapscripts ISLANDGAME_LUMINE_CAVE_B1F_1_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ICE_STEP_COUNT, 0: ISLANDGAME_LUMINE_CAVE_B1F_1_FallDownHole
+    ]
+    
+    MAP_SCRIPT_ON_TRANSITION {
+        copyvar(VAR_ICE_STEP_COUNT, 1)
+    }
+
+    MAP_SCRIPT_ON_RESUME {
+        setstepcallback(STEP_CB_CRACKED_FLOOR)
+    }
+
+    MAP_SCRIPT_ON_LOAD {
+        if(flag(FLAG_DAILY_LUMINE_CAVE_SHELL_4)) {
+            setmetatile(3, 29, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        }
+    }
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_1_Shell {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SHELL_4)) {
+        giveitem(ITEM_SHOAL_SHELL)
+        setmetatile(3, 29, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_DAILY_LUMINE_CAVE_SHELL_4)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No shells here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_1_Nurse {
+    lock
+    faceplayer
+    msgbox(format(
+        "Your Pokémon look tired. Would you like me to nurse them back to full health?"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        playfanfare(MUS_HEAL)
+        waitfanfare()
+        special(HealPlayerParty)
+        msgbox(format(
+            "Remember to exercise caution while roaming the cave."
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_1_Chansey {
+    lock
+    faceplayer
+    playmoncry(SPECIES_CHANSEY, CRY_MODE_NORMAL)
+    if(!flag(FLAG_LUMINE_CAVE_CHANSEY_GIFT)) {
+        msgbox(format(
+            "Chansey! {COLOR BLUE}(You're halfway there, trainer! Here, take this!)"
+        ))
+        giveitem(ITEM_MAX_REPEL)
+        setflag(FLAG_LUMINE_CAVE_CHANSEY_GIFT)
+    }
+    else {
+        msgbox(format(
+            "Chansey! {COLOR BLUE}(Hopefully that'll keep those pesky Zubats at bay for a while. :D)"
+        ))
+    }
+    closemessage
+    release
+}
+
+movement Movement_PlayerFallLumine {
+    set_invisible
+}
+
+script(local) ISLANDGAME_LUMINE_CAVE_B1F_1_FallDownHole {
+    lock
+    delay(20)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_PlayerFallLumine)
+    waitmovement(0)
+    playse(SE_FALL)
+    delay(60)
+    warphole(MAP_ISLANDGAME_LUMINE_CAVE_B2F)
+    waitstate
+    release
+}
+
+
+
+
+
+
+
+
+
+script ISLANDGAME_LUMINE_CAVE_B1F_1_Trainer1 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_9,
+        format(
+            "Oi, I wouldn't go down there if I were you, sport."
+        ),
+        format(
+            "Well... maybe ya got what it takes."
+        ))
+    msgbox(format(
+        "I just tryna do a little minin' fer iron when a giant rock Pokémon came outta nowhere and attacked me!\p"
+        "I didn't have no choice but to leave my pickaxe and haul butt outta there..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_1_Trainer2 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_10,
+        format(
+            "-tweet!-\p"
+            "NO RUNNING IN THE CAVES!!"
+        ),
+        format(
+            "No gloating in victory either!"
+        ))
+    msgbox(format(
+        "And don't even THINK about using your bike in here!\p"
+        "Do you have ANY idea how dangerous that is!?"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_1_Trainer3 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_11,
+        format(
+            "Underground lakes are where all the exotic water Pokémon are!"
+        ),
+        format(
+            "Binacles..."
+        ))
+    msgbox(format(
+        "I wish people would stop tossing their garbage in the lake.\p"
+        "Earlier today someone threw away a perfectly fine unopened can of soda!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_1_Trainer4 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_12,
+        format(
+            "Ah ah ah!{PAUSE 60} Where do you think you're going?{PAUSE 30} Trying to escape destiny?"
+        ),
+        format(
+            "This was not the future I foresaw..."
+        ))
+    msgbox(format(
+        "Well, ya got me. By all accounts it doesn't make sense."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_1_Trainer5 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_13,
+        format(
+            "Dragons are the best!"
+        ),
+        format(
+            "Dragons are the best...?"
+        ))
+    msgbox(format(
+        "Just you wait until my dragons reach their final form!"
+    ), MSGBOX_AUTOCLOSE)
+}

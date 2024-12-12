@@ -1,0 +1,56 @@
+mapscripts ISLANDGAME_ANOMALY01_3F_MapScripts {}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractDoll {
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    msgbox(format(
+        "He died...{PAUSE 60}\p"
+        "...but you'll soon be joining him...{PAUSE 60}"
+    ))
+
+    setcwildbattle(0, SPECIES_ANOMALY_01, 25, ITEM_GHOSTIUM_Z, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_INFERNAL_PARADE, MOVE_CONFUSE_RAY, MOVE_PAIN_SPLIT, MOVE_FIRE_SPIN)
+    
+    playmoncry(SPECIES_UNOWN, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        default:
+            removeobject(1)
+    }
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractGrave {
+    lock
+    msgbox(format(
+        "R.I.P\n..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractLaptop {
+    lock
+    msgbox(format(
+        "▶▶▶5Tïい▶▶▶▶▶▶▶▶▶▶WÌTH▶▶▶▶▶▶▶ÜS▶▶▶▶▶▶▶{PLAYER}?▶▶▶▶▶▶▶▶▶"
+    ))
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    setvar(VAR_RESULT, 0)
+    playse(SE_ORB)
+    special(DoOrbEffect)
+    delay(300)
+    special(FadeOutOrbEffect)
+    applymovement(OBJ_EVENT_ID_PLAYER, spookySpin)
+    waitmovement(0)
+    warp(MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 1,3)
+}

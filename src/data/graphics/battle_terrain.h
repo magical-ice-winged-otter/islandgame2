@@ -150,3 +150,18 @@ const u32 gBattleTerrainPalette_HDStandard[] = INCBIN_U32("graphics/battle_terra
 const u32 gBattleTerrainTilemap_HDStandard[] = INCBIN_U32("graphics/battle_terrain/new_standard/map.bin.lz");
 const u32 gBattleTerrainAnimTiles_HDStandard[] = INCBIN_U32("graphics/battle_terrain/building/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_HDStandard[] = INCBIN_U32("graphics/battle_terrain/building/anim_map.bin.lz");
+
+//Sea Evening
+const u32 gBattleTerrainTiles_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/sea-day.4bpp.lz");
+const u32 gBattleTerrainPalette_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/sea-day.gbapal.lz");
+const u32 gBattleTerrainTilemap_SeaDay[] = INCBIN_U32("graphics/battle_terrain/sea_day/sea-day.bin.lz");
+
+//Sea Evening
+const u32 gBattleTerrainTiles_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/sea-evening.4bpp.lz");
+const u32 gBattleTerrainPalette_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/sea-evening.gbapal.lz");
+const u32 gBattleTerrainTilemap_SeaEvening[] = INCBIN_U32("graphics/battle_terrain/sea_evening/sea-evening.bin.lz");
+
+//Sea Night
+const u32 gBattleTerrainTiles_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.4bpp.lz");
+const u32 gBattleTerrainPalette_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.gbapal.lz");
+const u32 gBattleTerrainTilemap_SeaNight[] = INCBIN_U32("graphics/battle_terrain/sea_night/sea-night.bin.lz");

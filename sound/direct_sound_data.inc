@@ -399,7 +399,7 @@ Cry_Ivysaur::
 Cry_Venusaur::
 	.incbin "sound/direct_sound_samples/cries/venusaur.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_VenusaurMega::
 	.incbin "sound/direct_sound_samples/cries/venusaur_mega.bin"
@@ -419,7 +419,7 @@ Cry_Charmeleon::
 Cry_Charizard::
 	.incbin "sound/direct_sound_samples/cries/charizard.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_CharizardMegaX::
 	.incbin "sound/direct_sound_samples/cries/charizard_mega_x.bin"
@@ -443,7 +443,7 @@ Cry_Wartortle::
 Cry_Blastoise::
 	.incbin "sound/direct_sound_samples/cries/blastoise.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_BlastoiseMega::
 	.incbin "sound/direct_sound_samples/cries/blastoise_mega.bin"
@@ -477,7 +477,7 @@ Cry_Kakuna::
 Cry_Beedrill::
 	.incbin "sound/direct_sound_samples/cries/beedrill.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_BeedrillMega::
 	.incbin "sound/direct_sound_samples/cries/beedrill_mega.bin"
@@ -497,7 +497,7 @@ Cry_Pidgeotto::
 Cry_Pidgeot::
 	.incbin "sound/direct_sound_samples/cries/pidgeot.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_PidgeotMega::
 	.incbin "sound/direct_sound_samples/cries/pidgeot_mega.bin"
@@ -780,7 +780,7 @@ Cry_Kadabra::
 Cry_Alakazam::
 	.incbin "sound/direct_sound_samples/cries/alakazam.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_AlakazamMega::
 	.incbin "sound/direct_sound_samples/cries/alakazam_mega.bin"
@@ -863,7 +863,7 @@ Cry_Slowbro::
 Cry_Slowking::
 	.incbin "sound/direct_sound_samples/cries/slowking.bin"
 .endif @ P_GEN_2_CROSS_EVOS
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_SlowbroMega::
 	.incbin "sound/direct_sound_samples/cries/slowbro_mega.bin"
@@ -958,7 +958,7 @@ Cry_Haunter::
 Cry_Gengar::
 	.incbin "sound/direct_sound_samples/cries/gengar.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_GengarMega::
 	.incbin "sound/direct_sound_samples/cries/gengar_mega.bin"
@@ -975,7 +975,7 @@ Cry_Onix::
 Cry_Steelix::
 	.incbin "sound/direct_sound_samples/cries/steelix.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_SteelixMega::
 	.incbin "sound/direct_sound_samples/cries/steelix_mega.bin"
@@ -1128,7 +1128,7 @@ Cry_Tangrowth::
 Cry_Kangaskhan::
 	.incbin "sound/direct_sound_samples/cries/kangaskhan.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_KangaskhanMega::
 	.incbin "sound/direct_sound_samples/cries/kangaskhan_mega.bin"
@@ -1200,7 +1200,7 @@ Cry_Scyther::
 Cry_Scizor::
 	.incbin "sound/direct_sound_samples/cries/scizor.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_ScizorMega::
 	.incbin "sound/direct_sound_samples/cries/scizor_mega.bin"
@@ -1266,7 +1266,7 @@ Cry_Magmortar::
 Cry_Pinsir::
 	.incbin "sound/direct_sound_samples/cries/pinsir.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_PinsirMega::
 	.incbin "sound/direct_sound_samples/cries/pinsir_mega.bin"
@@ -1288,7 +1288,7 @@ Cry_Magikarp::
 Cry_Gyarados::
 	.incbin "sound/direct_sound_samples/cries/gyarados.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_GyaradosMega::
 	.incbin "sound/direct_sound_samples/cries/gyarados_mega.bin"
@@ -1392,7 +1392,7 @@ Cry_Kabutops::
 Cry_Aerodactyl::
 	.incbin "sound/direct_sound_samples/cries/aerodactyl.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_AerodactylMega::
 	.incbin "sound/direct_sound_samples/cries/aerodactyl_mega.bin"
@@ -1448,7 +1448,7 @@ Cry_Dragonite::
 Cry_Mewtwo::
 	.incbin "sound/direct_sound_samples/cries/mewtwo.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_MewtwoMegaX::
 	.incbin "sound/direct_sound_samples/cries/mewtwo_mega_x.bin"
@@ -1596,7 +1596,7 @@ Cry_Flaaffy::
 Cry_Ampharos::
 	.incbin "sound/direct_sound_samples/cries/ampharos.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_AmpharosMega::
 	.incbin "sound/direct_sound_samples/cries/ampharos_mega.bin"
@@ -1810,7 +1810,7 @@ Cry_Shuckle::
 Cry_Heracross::
 	.incbin "sound/direct_sound_samples/cries/heracross.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_HeracrossMega::
 	.incbin "sound/direct_sound_samples/cries/heracross_mega.bin"
@@ -1933,7 +1933,7 @@ Cry_Houndour::
 Cry_Houndoom::
 	.incbin "sound/direct_sound_samples/cries/houndoom.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_HoundoomMega::
 	.incbin "sound/direct_sound_samples/cries/houndoom_mega.bin"
@@ -2005,7 +2005,7 @@ Cry_Pupitar::
 Cry_Tyranitar::
 	.incbin "sound/direct_sound_samples/cries/tyranitar.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_TyranitarMega::
 	.incbin "sound/direct_sound_samples/cries/tyranitar_mega.bin"
@@ -2043,7 +2043,7 @@ Cry_Grovyle::
 Cry_Sceptile::
 	.incbin "sound/direct_sound_samples/cries/sceptile.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_SceptileMega::
 	.incbin "sound/direct_sound_samples/cries/sceptile_mega.bin"
@@ -2063,7 +2063,7 @@ Cry_Combusken::
 Cry_Blaziken::
 	.incbin "sound/direct_sound_samples/cries/blaziken.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_BlazikenMega::
 	.incbin "sound/direct_sound_samples/cries/blaziken_mega.bin"
@@ -2083,7 +2083,7 @@ Cry_Marshtomp::
 Cry_Swampert::
 	.incbin "sound/direct_sound_samples/cries/swampert.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_SwampertMega::
 	.incbin "sound/direct_sound_samples/cries/swampert_mega.bin"
@@ -2200,7 +2200,7 @@ Cry_Kirlia::
 Cry_Gardevoir::
 	.incbin "sound/direct_sound_samples/cries/gardevoir.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_GardevoirMega::
 	.incbin "sound/direct_sound_samples/cries/gardevoir_mega.bin"
@@ -2210,7 +2210,7 @@ Cry_GardevoirMega::
 Cry_Gallade::
 	.incbin "sound/direct_sound_samples/cries/gallade.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_GalladeMega::
 	.incbin "sound/direct_sound_samples/cries/gallade_mega.bin"
@@ -2317,7 +2317,7 @@ Cry_Delcatty::
 Cry_Sableye::
 	.incbin "sound/direct_sound_samples/cries/sableye.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_SableyeMega::
 	.incbin "sound/direct_sound_samples/cries/sableye_mega.bin"
@@ -2329,7 +2329,7 @@ Cry_SableyeMega::
 Cry_Mawile::
 	.incbin "sound/direct_sound_samples/cries/mawile.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_MawileMega::
 	.incbin "sound/direct_sound_samples/cries/mawile_mega.bin"
@@ -2349,7 +2349,7 @@ Cry_Lairon::
 Cry_Aggron::
 	.incbin "sound/direct_sound_samples/cries/aggron.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_AggronMega::
 	.incbin "sound/direct_sound_samples/cries/aggron_mega.bin"
@@ -2365,7 +2365,7 @@ Cry_Meditite::
 Cry_Medicham::
 	.incbin "sound/direct_sound_samples/cries/medicham.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_MedichamMega::
 	.incbin "sound/direct_sound_samples/cries/medicham_mega.bin"
@@ -2381,7 +2381,7 @@ Cry_Electrike::
 Cry_Manectric::
 	.incbin "sound/direct_sound_samples/cries/manectric.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_ManectricMega::
 	.incbin "sound/direct_sound_samples/cries/manectric_mega.bin"
@@ -2447,7 +2447,7 @@ Cry_Carvanha::
 Cry_Sharpedo::
 	.incbin "sound/direct_sound_samples/cries/sharpedo.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_SharpedoMega::
 	.incbin "sound/direct_sound_samples/cries/sharpedo_mega.bin"
@@ -2473,7 +2473,7 @@ Cry_Numel::
 Cry_Camerupt::
 	.incbin "sound/direct_sound_samples/cries/camerupt.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_CameruptMega::
 	.incbin "sound/direct_sound_samples/cries/camerupt_mega.bin"
@@ -2535,7 +2535,7 @@ Cry_Swablu::
 Cry_Altaria::
 	.incbin "sound/direct_sound_samples/cries/altaria.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_AltariaMega::
 	.incbin "sound/direct_sound_samples/cries/altaria_mega.bin"
@@ -2647,7 +2647,7 @@ Cry_Shuppet::
 Cry_Banette::
 	.incbin "sound/direct_sound_samples/cries/banette.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_BanetteMega::
 	.incbin "sound/direct_sound_samples/cries/banette_mega.bin"
@@ -2693,7 +2693,7 @@ Cry_Chimecho::
 Cry_Absol::
 	.incbin "sound/direct_sound_samples/cries/absol.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_AbsolMega::
 	.incbin "sound/direct_sound_samples/cries/absol_mega.bin"
@@ -2709,7 +2709,7 @@ Cry_Snorunt::
 Cry_Glalie::
 	.incbin "sound/direct_sound_samples/cries/glalie.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_GlalieMega::
 	.incbin "sound/direct_sound_samples/cries/glalie_mega.bin"
@@ -2774,7 +2774,7 @@ Cry_Shelgon::
 Cry_Salamence::
 	.incbin "sound/direct_sound_samples/cries/salamence.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_SalamenceMega::
 	.incbin "sound/direct_sound_samples/cries/salamence_mega.bin"
@@ -2794,7 +2794,7 @@ Cry_Metang::
 Cry_Metagross::
 	.incbin "sound/direct_sound_samples/cries/metagross.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_MetagrossMega::
 	.incbin "sound/direct_sound_samples/cries/metagross_mega.bin"
@@ -2824,7 +2824,7 @@ Cry_Registeel::
 Cry_Latias::
 	.incbin "sound/direct_sound_samples/cries/latias.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_LatiasMega::
 	.incbin "sound/direct_sound_samples/cries/latias_mega.bin"
@@ -2836,7 +2836,7 @@ Cry_LatiasMega::
 Cry_Latios::
 	.incbin "sound/direct_sound_samples/cries/latios.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_LatiosMega::
 	.incbin "sound/direct_sound_samples/cries/latios_mega.bin"
@@ -2874,7 +2874,7 @@ Cry_GroudonPrimal::
 Cry_Rayquaza::
 	.incbin "sound/direct_sound_samples/cries/rayquaza.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_RayquazaMega::
 	.incbin "sound/direct_sound_samples/cries/rayquaza_mega.bin"
@@ -3082,7 +3082,7 @@ Cry_Buneary::
 Cry_Lopunny::
 	.incbin "sound/direct_sound_samples/cries/lopunny.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_LopunnyMega::
 	.incbin "sound/direct_sound_samples/cries/lopunny_mega.bin"
@@ -3144,7 +3144,7 @@ Cry_Gabite::
 Cry_Garchomp::
 	.incbin "sound/direct_sound_samples/cries/garchomp.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_GarchompMega::
 	.incbin "sound/direct_sound_samples/cries/garchomp_mega.bin"
@@ -3160,7 +3160,7 @@ Cry_Riolu::
 Cry_Lucario::
 	.incbin "sound/direct_sound_samples/cries/lucario.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_LucarioMega::
 	.incbin "sound/direct_sound_samples/cries/lucario_mega.bin"
@@ -3222,7 +3222,7 @@ Cry_Snover::
 Cry_Abomasnow::
 	.incbin "sound/direct_sound_samples/cries/abomasnow.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_AbomasnowMega::
 	.incbin "sound/direct_sound_samples/cries/abomasnow_mega.bin"
@@ -3506,7 +3506,7 @@ Cry_Excadrill::
 Cry_Audino::
 	.incbin "sound/direct_sound_samples/cries/audino.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_AudinoMega::
 	.incbin "sound/direct_sound_samples/cries/audino_mega.bin"
@@ -4523,7 +4523,7 @@ Cry_ZygardeComplete::
 Cry_Diancie::
 	.incbin "sound/direct_sound_samples/cries/diancie.bin"
 
-.if P_MEGA_EVOLUTIONS == TRUE
+.if P_MEGA_EVOLUTIONS == TRUE && P_USE_EXTRA_MEGA_CRY == TRUE
 	.align 2
 Cry_DiancieMega::
 	.incbin "sound/direct_sound_samples/cries/diancie_mega.bin"
@@ -6182,208 +6182,413 @@ DirectSoundWaveData_sd90_special_scream_drive::
 	.incbin "sound/direct_sound_samples/sd90_special_scream_drive.bin"
 
 	.align 2
+
 DirectSoundWaveData_Phoneme_1::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/01.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_2::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/02.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_3::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/03.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_4::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/04.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_5::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/05.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_6::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/06.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_7::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/07.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_8::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/08.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_9::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/09.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_10::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/10.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_11::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/11.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_12::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/12.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_13::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/13.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_14::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/14.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_15::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/15.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_16::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/16.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_17::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/17.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_18::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/18.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_19::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/19.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_20::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/20.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_21::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/21.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_22::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/22.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_23::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_24::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/24.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_25::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/25.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_26::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/26.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_27::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/27.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_28::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/28.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_29::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/29.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_30::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/30.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_31::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/31.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_32::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/32.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_33::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/33.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_34::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/34.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_35::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/35.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_36::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/36.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_37::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/37.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_38::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/38.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_39::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/39.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_40::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/40.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_41::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/41.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_42::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/42.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_43::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/43.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_44::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/44.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_45::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/45.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_46::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/46.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_47::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/47.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_48::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/48.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_49::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/49.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_50::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/50.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_Phoneme_51::
+	.if USE_BARD_PHONEMES == TRUE
 	.incbin "sound/direct_sound_samples/phonemes/51.bin"
+	.else
+	.incbin "sound/direct_sound_samples/phonemes/23.bin"
+	.endif
 
 	.align 2
 DirectSoundWaveData_steinway_b_piano::

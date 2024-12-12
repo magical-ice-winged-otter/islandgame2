@@ -52,6 +52,7 @@ static void TilesetAnim_islandgame_oranna_cheriport(u16);
 static void TilesetAnim_islandgame_oranna_tidalcove(u16);
 static void TilesetAnim_islandgame_oranna_maplegrove(u16);
 static void TilesetAnim_islandgame_oranna_mt_aurora(u16);
+static void TilesetAnim_islandgame_ocean_general(u16);
 
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
@@ -99,6 +100,90 @@ static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_00(u16);
 static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_01(u16);
 static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_02(u16);
 static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_03(u16);
+static void QueueAnimTiles_islandgame_ocean_general_water(u16);
+
+//VANILLA
+
+//VANILLA: FLOWERS
+const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
+const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
+const u16 gTilesetAnims_General_Flower_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/2.4bpp");
+
+const u16 *const gTilesetAnims_General_Flower[] = {
+    gTilesetAnims_General_Flower_Frame0,
+    gTilesetAnims_General_Flower_Frame1,
+    gTilesetAnims_General_Flower_Frame0,
+    gTilesetAnims_General_Flower_Frame2
+};
+
+//VANILLA: WATER
+const u16 gTilesetAnims_General_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/water/0.4bpp");
+const u16 gTilesetAnims_General_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/water/1.4bpp");
+const u16 gTilesetAnims_General_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/water/2.4bpp");
+const u16 gTilesetAnims_General_Water_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/water/3.4bpp");
+const u16 gTilesetAnims_General_Water_Frame4[] = INCBIN_U16("data/tilesets/primary/general/anim/water/4.4bpp");
+const u16 gTilesetAnims_General_Water_Frame5[] = INCBIN_U16("data/tilesets/primary/general/anim/water/5.4bpp");
+const u16 gTilesetAnims_General_Water_Frame6[] = INCBIN_U16("data/tilesets/primary/general/anim/water/6.4bpp");
+const u16 gTilesetAnims_General_Water_Frame7[] = INCBIN_U16("data/tilesets/primary/general/anim/water/7.4bpp");
+
+const u16 *const gTilesetAnims_General_Water[] = {
+    gTilesetAnims_General_Water_Frame0,
+    gTilesetAnims_General_Water_Frame1,
+    gTilesetAnims_General_Water_Frame2,
+    gTilesetAnims_General_Water_Frame3,
+    gTilesetAnims_General_Water_Frame4,
+    gTilesetAnims_General_Water_Frame5,
+    gTilesetAnims_General_Water_Frame6,
+    gTilesetAnims_General_Water_Frame7
+};
+
+//VANILLA: SAND WATER EDGE
+const u16 gTilesetAnims_General_SandWaterEdge_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/0.4bpp");
+const u16 gTilesetAnims_General_SandWaterEdge_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/1.4bpp");
+const u16 gTilesetAnims_General_SandWaterEdge_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/2.4bpp");
+const u16 gTilesetAnims_General_SandWaterEdge_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/3.4bpp");
+const u16 gTilesetAnims_General_SandWaterEdge_Frame4[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/4.4bpp");
+const u16 gTilesetAnims_General_SandWaterEdge_Frame5[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/5.4bpp");
+const u16 gTilesetAnims_General_SandWaterEdge_Frame6[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/6.4bpp");
+
+const u16 *const gTilesetAnims_General_SandWaterEdge[] = {
+    gTilesetAnims_General_SandWaterEdge_Frame0,
+    gTilesetAnims_General_SandWaterEdge_Frame1,
+    gTilesetAnims_General_SandWaterEdge_Frame2,
+    gTilesetAnims_General_SandWaterEdge_Frame3,
+    gTilesetAnims_General_SandWaterEdge_Frame4,
+    gTilesetAnims_General_SandWaterEdge_Frame5,
+    gTilesetAnims_General_SandWaterEdge_Frame6,
+    gTilesetAnims_General_SandWaterEdge_Frame0
+};
+
+//VANILLA: WATERFALL
+const u16 gTilesetAnims_General_Waterfall_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/waterfall/0.4bpp");
+const u16 gTilesetAnims_General_Waterfall_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/waterfall/1.4bpp");
+const u16 gTilesetAnims_General_Waterfall_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/waterfall/2.4bpp");
+const u16 gTilesetAnims_General_Waterfall_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/waterfall/3.4bpp");
+
+const u16 *const gTilesetAnims_General_Waterfall[] = {
+    gTilesetAnims_General_Waterfall_Frame0,
+    gTilesetAnims_General_Waterfall_Frame1,
+    gTilesetAnims_General_Waterfall_Frame2,
+    gTilesetAnims_General_Waterfall_Frame3
+};
+
+//VANILLA: Land Water Edge
+const u16 gTilesetAnims_General_LandWaterEdge_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/land_water_edge/0.4bpp");
+const u16 gTilesetAnims_General_LandWaterEdge_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/land_water_edge/1.4bpp");
+const u16 gTilesetAnims_General_LandWaterEdge_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/land_water_edge/2.4bpp");
+const u16 gTilesetAnims_General_LandWaterEdge_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/land_water_edge/3.4bpp");
+
+const u16 *const gTilesetAnims_General_LandWaterEdge[] = {
+    gTilesetAnims_General_LandWaterEdge_Frame0,
+    gTilesetAnims_General_LandWaterEdge_Frame1,
+    gTilesetAnims_General_LandWaterEdge_Frame2,
+    gTilesetAnims_General_LandWaterEdge_Frame3
+};
+
+
 
 // todos
 // static void QueueAnimTiles_islandgame_oranna_maplegrove_flower(u16);
@@ -194,6 +279,26 @@ const u16 *const gTilesetAnims_islandgame_ss_rain_water[] = {
     gTilesetAnims_islandgame_ss_rain_water_Frame5,
     gTilesetAnims_islandgame_ss_rain_water_Frame6,
     gTilesetAnims_islandgame_ss_rain_water_Frame7
+};
+
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame0[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/00.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame1[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/01.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame2[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/02.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame3[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/03.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame4[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/04.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame5[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/05.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame6[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/06.4bpp");
+const u16 gTilesetAnims_islandgame_ocean_general_water_Frame7[] = INCBIN_U16("data/tilesets/primary/islandgame_ocean_general/anim/water/07.4bpp");
+
+const u16 *const gTilesetAnims_islandgame_ocean_general_water[] = {
+    gTilesetAnims_islandgame_ocean_general_water_Frame0,
+    gTilesetAnims_islandgame_ocean_general_water_Frame1,
+    gTilesetAnims_islandgame_ocean_general_water_Frame2,
+    gTilesetAnims_islandgame_ocean_general_water_Frame3,
+    gTilesetAnims_islandgame_ocean_general_water_Frame4,
+    gTilesetAnims_islandgame_ocean_general_water_Frame5,
+    gTilesetAnims_islandgame_ocean_general_water_Frame6,
+    gTilesetAnims_islandgame_ocean_general_water_Frame7
 };
 
 const u16 gTilesetAnims_islandgame_oranna_mt_aurora_water_Frame0[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_mt_aurora/anim/water/00.4bpp");
@@ -358,49 +463,6 @@ const u16 *const gTilesetAnims_islandgame_oranna_rosevale_flower[] = {
 };
 
 //end
-
-const u16 gTilesetAnims_General_SandWaterEdge_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/0.4bpp");
-const u16 gTilesetAnims_General_SandWaterEdge_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/1.4bpp");
-const u16 gTilesetAnims_General_SandWaterEdge_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/2.4bpp");
-const u16 gTilesetAnims_General_SandWaterEdge_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/3.4bpp");
-const u16 gTilesetAnims_General_SandWaterEdge_Frame4[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/4.4bpp");
-const u16 gTilesetAnims_General_SandWaterEdge_Frame5[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/5.4bpp");
-const u16 gTilesetAnims_General_SandWaterEdge_Frame6[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/6.4bpp");
-
-const u16 *const gTilesetAnims_General_SandWaterEdge[] = {
-    gTilesetAnims_General_SandWaterEdge_Frame0,
-    gTilesetAnims_General_SandWaterEdge_Frame1,
-    gTilesetAnims_General_SandWaterEdge_Frame2,
-    gTilesetAnims_General_SandWaterEdge_Frame3,
-    gTilesetAnims_General_SandWaterEdge_Frame4,
-    gTilesetAnims_General_SandWaterEdge_Frame5,
-    gTilesetAnims_General_SandWaterEdge_Frame6,
-    gTilesetAnims_General_SandWaterEdge_Frame0
-};
-
-const u16 gTilesetAnims_General_Waterfall_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/waterfall/0.4bpp");
-const u16 gTilesetAnims_General_Waterfall_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/waterfall/1.4bpp");
-const u16 gTilesetAnims_General_Waterfall_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/waterfall/2.4bpp");
-const u16 gTilesetAnims_General_Waterfall_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/waterfall/3.4bpp");
-
-const u16 *const gTilesetAnims_General_Waterfall[] = {
-    gTilesetAnims_General_Waterfall_Frame0,
-    gTilesetAnims_General_Waterfall_Frame1,
-    gTilesetAnims_General_Waterfall_Frame2,
-    gTilesetAnims_General_Waterfall_Frame3
-};
-
-const u16 gTilesetAnims_General_LandWaterEdge_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/land_water_edge/0.4bpp");
-const u16 gTilesetAnims_General_LandWaterEdge_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/land_water_edge/1.4bpp");
-const u16 gTilesetAnims_General_LandWaterEdge_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/land_water_edge/2.4bpp");
-const u16 gTilesetAnims_General_LandWaterEdge_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/land_water_edge/3.4bpp");
-
-const u16 *const gTilesetAnims_General_LandWaterEdge[] = {
-    gTilesetAnims_General_LandWaterEdge_Frame0,
-    gTilesetAnims_General_LandWaterEdge_Frame1,
-    gTilesetAnims_General_LandWaterEdge_Frame2,
-    gTilesetAnims_General_LandWaterEdge_Frame3
-};
 
 const u16 gTilesetAnims_Lavaridge_Steam_Frame0[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/0.4bpp");
 const u16 gTilesetAnims_Lavaridge_Steam_Frame1[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/1.4bpp");
@@ -890,6 +952,13 @@ void InitTilesetAnim_islandgame_ss_rain_general(void)
     sPrimaryTilesetAnimCallback = TilesetAnim_islandgame_ss_rain;
 }
 
+void InitTilesetAnim_islandgame_ocean_general(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_islandgame_ocean_general;
+}
+
 void InitTilesetAnim_islandgame_oranna_general(void)
 {
     sPrimaryTilesetAnimCounter = 0;
@@ -1004,6 +1073,12 @@ static void TilesetAnim_islandgame_oranna_mt_aurora(u16 timer)
         QueueAnimTiles_islandgame_oranna_mt_aurora_water(timer / 16);
 }
 
+static void TilesetAnim_islandgame_ocean_general(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_islandgame_ocean_general_water(timer / 16);
+}
+
 static void Island_TilesetAnim_Forest(u16 timer)
 {
     if (timer % 16 == 0)
@@ -1020,8 +1095,8 @@ static void TilesetAnim_islandgame_oranna_rosevale(u16 timer)
 
 static void QueueAnimTiles_General_Flower(u16 timer)
 {
-    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_general_flower_00);
-    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_general_flower_00[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
 }
 
 //island-game
@@ -1107,6 +1182,12 @@ static void QueueAnimTiles_islandgame_oranna_maplegrove_flower_03(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_maplegrove_flower_03[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 4 * TILE_SIZE_4BPP);
 }
 
+static void QueueAnimTiles_islandgame_ocean_general_water(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_ocean_general_water);
+    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_ocean_general_water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1)), 2 * TILE_SIZE_4BPP);
+}
+
 static void QueueAnimTiles_islandgame_oranna_mt_aurora_water(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_mt_aurora_water);
@@ -1118,8 +1199,8 @@ static void QueueAnimTiles_islandgame_oranna_mt_aurora_water(u16 timer)
 
 static void QueueAnimTiles_General_Water(u16 timer)
 {
-    u8 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_general_water);
-    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_general_water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(432)), 30 * TILE_SIZE_4BPP);
+    u8 i = timer % ARRAY_COUNT(gTilesetAnims_Island_General_Water);
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(432)), 30 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_General_SandWaterEdge(u16 timer)

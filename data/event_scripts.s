@@ -1272,6 +1272,16 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.inc"
 
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_1F_3/scripts.inc"
+	
 	.include "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_APPLEVINE_PKMNCENTER/scripts.inc"
@@ -1315,3 +1325,27 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_AETHERIA_MUSEUM_2F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_AETHERIA_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_HOUSE_1/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_HOUSE_2/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B3F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_LUMINE_CAVE_B4F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_TRAVELERS_TUNNEL_B1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ANOMALY01_1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ANOMALY02_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.inc"

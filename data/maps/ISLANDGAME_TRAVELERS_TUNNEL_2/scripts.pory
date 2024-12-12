@@ -3,10 +3,10 @@ mapscripts ISLANDGAME_TRAVELERS_TUNNEL_2_MapScripts {}
 script ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac {
     lock
     faceplayer
-    if(!flag(FLAG_TRAVELERS_TUNNEL_AGGRONITE)) {
+    if(!flag(FLAG_TRAVELERS_TUNNEL_STEELIXITE)) {
         msgbox(format(
             "Hey there trainer. I have a SUPER special item on me. It's VERY rare. \p"
-            "It's an Aggronite. If you have an Aggron, it'll MEGA EVOLVE it! \p"
+            "It's an Steelixite. If you have an Steelix, it'll MEGA EVOLVE it! \p"
             "It's all yours... if you just slide me a couple buckaroos..."
         ))
         showmoneybox(0,0)
@@ -21,8 +21,8 @@ script ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac {
                 ))
             }
             else {
-                giveitem(ITEM_AGGRONITE)
-                setflag(FLAG_TRAVELERS_TUNNEL_AGGRONITE)
+                giveitem(ITEM_STEELIXITE)
+                setflag(FLAG_TRAVELERS_TUNNEL_STEELIXITE)
                 removemoney(10000)
                 updatemoneybox
                 msgbox(format(

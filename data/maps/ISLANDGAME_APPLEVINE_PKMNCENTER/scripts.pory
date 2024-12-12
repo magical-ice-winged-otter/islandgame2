@@ -7,14 +7,6 @@ mapscripts ISLANDGAME_APPLEVINE_PKMNCENTER_MapScripts {
     }
 }
 
-script ISLANDGAME_APPLEVINE_PKMNCENTER_Interact_Nurse {
-    setvar(VAR_0x800B, LOCALID_NURSE)
-    call(Common_EventScript_PkmnCenterNurse)
-    waitmessage
-    waitbuttonpress
-    release
-}
-
 script ISLANDGAME_APPLEVINE_PKMNCENTER_NPC1 {
     lock
     faceplayer
@@ -111,11 +103,11 @@ script ISLANDGAME_APPLEVINE_PKMNCENTER_MoveTutor {
             dynmultipush("Spite", 7)
             dynmultipush("Grass Knot", 8)
             dynmultipush("Bulldoze", 9)
-            dynmultipush("Defog", 10)
+            dynmultipush("Secret Power", 10)
             dynmultipush("Icy Wind", 11)
             dynmultipush("False Swipe", 12)
             dynmultipush("Venoshock", 13)
-            dynmultipush("Covet", 14)
+            dynmultipush("Recycle", 14)
             dynmultipush("Rock Polish", 15)
             dynmultipush("Work Up", 16)
             dynmultipush("Worry Seed", 17)
@@ -130,11 +122,11 @@ script ISLANDGAME_APPLEVINE_PKMNCENTER_MoveTutor {
                     case 7: setvar(VAR_0x8005, MOVE_SPITE)
                     case 8: setvar(VAR_0x8005, MOVE_GRASS_KNOT)
                     case 9: setvar(VAR_0x8005, MOVE_BULLDOZE)
-                    case 10: setvar(VAR_0x8005, MOVE_DEFOG)
+                    case 10: setvar(VAR_0x8005, MOVE_SECRET_POWER)
                     case 11: setvar(VAR_0x8005, MOVE_ICY_WIND)
                     case 12: setvar(VAR_0x8005, MOVE_FALSE_SWIPE)
                     case 13: setvar(VAR_0x8005, MOVE_VENOSHOCK)
-                    case 14: setvar(VAR_0x8005, MOVE_COVET)
+                    case 14: setvar(VAR_0x8005, MOVE_RECYCLE)
                     case 15: setvar(VAR_0x8005, MOVE_ROCK_POLISH)
                     case 16: setvar(VAR_0x8005, MOVE_WORK_UP)
                     case 17: setvar(VAR_0x8005, MOVE_WORRY_SEED)

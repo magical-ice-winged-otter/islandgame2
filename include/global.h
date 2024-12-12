@@ -18,6 +18,7 @@
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
 #include "constants/items.h"
+#include "constants/rtc.h"
 #include "config/save.h"
 
 // Prevent cross-jump optimization.
@@ -538,7 +539,6 @@ struct SaveBlock2
              //u16 padding1:4;
              //u16 padding2;
     /*0x18*/ struct Pokedex pokedex;
-    /*0x90*/ u8 filler_90[0x8];
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;
     /*0xA8*/ u32 gcnLinkFlags; // Read by Pokémon Colosseum/XD
@@ -1082,14 +1082,14 @@ struct SaveBlock1
     /*0x1A9C*/ struct SecretBase secretBases[SECRET_BASES_COUNT];
     /*0x271C*/ u8 playerRoomDecorations[DECOR_MAX_PLAYERS_HOUSE];
     /*0x2728*/ u8 playerRoomDecorationPositions[DECOR_MAX_PLAYERS_HOUSE];
-    /*0x2734*/ u8 decorationDesks[10];
-    /*0x273E*/ u8 decorationChairs[10];
-    /*0x2748*/ u8 decorationPlants[10];
-    /*0x2752*/ u8 decorationOrnaments[30];
-    /*0x2770*/ u8 decorationMats[30];
-    /*0x278E*/ u8 decorationPosters[10];
-    /*0x2798*/ u8 decorationDolls[40];
-    /*0x27C0*/ u8 decorationCushions[10];
+    /*0x2734*/ u8 decorationDesks[1];
+    /*0x273E*/ u8 decorationChairs[1];
+    /*0x2748*/ u8 decorationPlants[1];
+    /*0x2752*/ u8 decorationOrnaments[1];
+    /*0x2770*/ u8 decorationMats[1];
+    /*0x278E*/ u8 decorationPosters[1];
+    /*0x2798*/ u8 decorationDolls[1];
+    /*0x27C0*/ u8 decorationCushions[1];
     /*0x27CC*/ TVShow tvShows[TV_SHOWS_COUNT];
     /*0x27CA*/ //u8 padding4[2];
     /*0x2B50*/ PokeNews pokeNews[POKE_NEWS_COUNT];

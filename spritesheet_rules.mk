@@ -179,7 +179,8 @@ $(OBJEVENTGFXDIR)/people/woman_8.4bpp: graphics/object_events/pics/people/woman_
 $(OBJEVENTGFXDIR)/people/school_kid_f.4bpp: graphics/object_events/pics/people/school_kid_f.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-
+$(OBJEVENTGFXDIR)/pokemon/maryan/shiny_azurill.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 	
 
 

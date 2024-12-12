@@ -11758,7 +11758,7 @@
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_COMBEE"
+                "species": "SPECIES_COMBEE_MARYAN"
               },
               {
                 "min_level": 6,
@@ -11866,7 +11866,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_NINCADA"
+                "species": "SPECIES_NINCADA_MARYAN"
               },
               {
                 "min_level": 4,
@@ -12155,12 +12155,12 @@
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_FROAKIE"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_FROAKIE"
               }
             ]
           }
@@ -12199,7 +12199,7 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_NINCADA"
+                "species": "SPECIES_NINCADA_MARYAN"
               },
               {
                 "min_level": 6,
@@ -13435,6 +13435,1104 @@
                 "min_level": 21,
                 "max_level": 21,
                 "species": "SPECIES_POPPLIO"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_ROCKY_PATH",
+          "base_label": "gISLANDGAME_ROCKY_PATH0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MILCERY"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_SWIRLIX"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_ELECTRIKE"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_TAILLOW"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_LITTEN"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_MUDBRAY"
+              },
+              {
+                "min_level": 19,
+                "max_level": 19,
+                "species": "SPECIES_MAKUHITA"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_SHUCKLE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_SHUCKLE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_SHUCKLE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_SHUCKLE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_SHUCKLE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_FROGADIER"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_FROGADIER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_LUMINE_CAVE",
+          "base_label": "gISLANDGAME_LUMINE_CAVE0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_ROGGENROLA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_NACLI"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MEDITITE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_BINACLE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SHELLOS"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_MUDKIP"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_MUDKIP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_LUMINE_CAVE_1F_2",
+          "base_label": "gISLANDGAME_LUMINE_CAVE_1F_20",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_ROGGENROLA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_NACLI"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MEDITITE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_BINACLE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SHELLOS"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_MUDKIP"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_MUDKIP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_LUMINE_CAVE_B1F_1",
+          "base_label": "gISLANDGAME_LUMINE_CAVE_B1F_10",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ROGGENROLA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ARON"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MEDITITE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_BINACLE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SHELLOS"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_MUDKIP"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_MUDKIP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_LUMINE_CAVE_B2F",
+          "base_label": "gISLANDGAME_LUMINE_CAVE_B2F0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_ROGGENROLA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_NACLI"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MEDITITE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_NACLSTACK"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_LUMINE_CAVE_B3F",
+          "base_label": "gISLANDGAME_LUMINE_CAVE_B3F0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ROGGENROLA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ARON"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MEDITITE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_LUMINE_CAVE_B4F",
+          "base_label": "gISLANDGAME_LUMINE_CAVE_B4F0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ROGGENROLA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ARON"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MEDITITE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_LUMINE_CAVE_B1F_2",
+          "base_label": "gISLANDGAME_LUMINE_CAVE_B1F_20",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ROGGENROLA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ARON"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MEDITITE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              },
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_AXEW"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 24,
+                "species": "SPECIES_NACLSTACK"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_BINACLE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_SHELLOS"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_MUDKIP"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_MUDKIP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_LUMINE_CAVE_1F_3",
+          "base_label": "gISLANDGAME_LUMINE_CAVE_1F_30",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 22,
+                "max_level": 22,
+                "species": "SPECIES_SABLEYE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_ROGGENROLA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_NACLI"
+              },
+              {
+                "min_level": 23,
+                "max_level": 23,
+                "species": "SPECIES_LARVITAR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_MEDITITE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 20,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 21,
+                "species": "SPECIES_MAWILE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_SOUTHERN_ORANNA_PATH_CAVE",
+          "base_label": "gISLANDGAME_Southern_Oranna_Path_Cave0"
+        },
+        {
+          "map": "MAP_ISLANDGAME_TRAVELERS_TUNNEL_B1F",
+          "base_label": "gISLANDGAME_TRAVELERS_TUNNEL_B1F0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 27,
+                "max_level": 27,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_DRILBUR"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_NACLSTACK"
+              },
+              {
+                "min_level": 28,
+                "max_level": 28,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_JIGGLYPUFF"
+              },
+              {
+                "min_level": 25,
+                "max_level": 25,
+                "species": "SPECIES_TINKATUFF"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 26,
+                "species": "SPECIES_CARBINK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_ANOMALY01_1F",
+          "base_label": "gISLANDGAME_ANOMALY01_1F0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
               }
             ]
           }

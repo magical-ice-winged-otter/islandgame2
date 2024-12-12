@@ -3,7 +3,7 @@ const FLAG_NIGHTTIME = FLAG_TEMP_3
 const COCO_OW_ID = 19
 
 mapscripts ISLANDGAME_APPLEVINE_MapScripts {
-        MAP_SCRIPT_ON_TRANSITION {
+    MAP_SCRIPT_ON_TRANSITION {
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
@@ -15,6 +15,10 @@ mapscripts ISLANDGAME_APPLEVINE_MapScripts {
 
         if (flag(FLAG_APPLEVINE_ITEMFINDER_RECEIVED)) {
             setvar(VAR_TEMP_1, 1)
+        }
+
+        if (flag(FLAG_APPLEVINE_MELISSA_CALL)) {
+            setvar(VAR_TEMP_2, 1)
         }
     }
 }
@@ -30,21 +34,48 @@ script ISLANDGAME_APPLEVINE_CitySign {
 }
 
 script ISLANDGAME_APPLEVINE_GameCornerSign {
-    msgbox(format("Eelektrik Game Corner\pFun for all ages! :)"), MSGBOX_SIGN)
+    msgbox(format("Eelektrik Game Corner\nFun for all ages! :)"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_APPLEVINE_SierraPathSign {
-    msgbox(format("SIERRA PATH\n"), MSGBOX_SIGN)
+    msgbox(format("SIERRA PATH{UP_ARROW}\n"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_APPLEVINE_RockyPathSign {
-    msgbox(format("ROCKY PATH\n"), MSGBOX_SIGN)
+    msgbox(format("ROCKY PATH{RIGHT_ARROW}\n"), MSGBOX_SIGN)
 }
 
 
 
 
-
+// melissa event
+script ISLANDGAME_APPLEVINE_MelissaCall {
+    lock
+    playse(SE_POKENAV_CALL)
+    msgbox(format(
+        "...{PAUSE 60}\p"
+        "{COLOR RED}(Hm? It looks like Melissa is calling me.)\p"
+        "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Hellooo?{PAUSE 60} Hii, {PLAYER}! How's it been? Did you end up making it to Tidalcove yet?\p"
+        "Whaaaat? You've already beaten Ruka and gotten her badge?\p"
+        "That's amazing! Her Pokémon really are as glamorous as she is, yeah?\p"
+        "It took me like five tries before I could beat her Milotic. Ice-types really aren't Gibby's strong suit..."
+    ))
+    msgbox(format(
+        "{COLOR DARK_GRAY}Huh? Where am I right now?{PAUSE 60} I'm in line for a meet-and-greet with some of the members of STARLIGHT at Aetheria!\p"
+        "I've been standing here for a while, so I figured I'd check in to see how you're doing!\p"
+        "Eeeh?{PAUSE 60} You saw THE Primrose in Oranna? Ugggg, I'm jealous...{PAUSE 30} She's my favorite from STARLIGHT! Shame she's not here though... she's too busy collecting the three gym badges.\p"
+        "Anyways, it's been a hot minute since we've seen each other... {PAUSE 30} Wanna meet up here in Aetheria? It's the biggest city in all of the Maryan Isles!\p"
+        "You're at Applevine, right? Aetheria is just down south from there. Just take Rocky Path and go through Lumine Cave to get to Bellehaven, and Aetheria will be just to the west!\p"
+        "I've got a little surprise to give you when you arrive! See you then! Byeeeee!"
+    ))
+    playse(SE_POKENAV_HANG_UP)
+    waitse
+    setflag(FLAG_APPLEVINE_MELISSA_CALL)
+    setvar(VAR_TEMP_2, 1)
+    startquest(QUEST_AETHERIA_MELISSA)
+    closemessage
+    release
+}
 
 
 
@@ -582,7 +613,7 @@ script ISLANDGAME_APPLEVINE_NPC14 {
         "I became an officer to get in the line of action, but all the chief's been having me do is lame paperwork.\p"
         "I should've just joined my friend in the merchant guild instead...\p"
         "They get to travel all around the isles, meanwhile I'm stuck listening to a jaded old man complain about the Game Corner for three hours.\p"
-        "What's even the big deal? It's not like there's anything illegal going on inside or anything. They're broken no laws!"
+        "What's even the big deal? It's not like there's anything illegal going on inside or anything. They've broken no laws!"
     ))
     closemessage
     release

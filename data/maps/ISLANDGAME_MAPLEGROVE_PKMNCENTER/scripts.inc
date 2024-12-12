@@ -1,73 +1,92 @@
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_MapScripts::
+# 5 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_MAPLEGROVE_PKMNCENTER_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 8 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 6 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	setrespawn HEAL_LOCATION_ISLANDGAME_MAPLEGROVE
 	return
 
 
-ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_Nurse::
-	setvar VAR_0x800B, 1
-	call Common_EventScript_PkmnCenterNurse
-	waitmessage
-	waitbuttonpress
-	release
-	return
-
-
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN1::
+# 12 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	lock
+# 13 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	faceplayer
+# 14 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	playmoncry SPECIES_CHIKORITA, CRY_MODE_NORMAL
+# 15 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN1Talk
+# 16 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN2::
+# 26 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	lock
+# 27 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	faceplayer
+# 28 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	playmoncry SPECIES_MINCCINO, CRY_MODE_NORMAL
+# 29 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN2Talk
+# 30 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1::
+# 40 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	lock
+# 41 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	faceplayer
+# 42 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	goto_if_unset FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1_2
+# 46 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1_Text_0
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1_1:
+# 48 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	applymovement 2, Common_Movement_FaceOriginalDirection
+# 49 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	waitmovement 0
+# 50 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	release
 	return
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1_2:
+# 43 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk
 	goto ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1_1
 
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_Ball::
+# 62 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	lock
+# 63 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_PKMNCENTER_BallText
+# 64 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1_Text_0:
+# 46 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	.string "$"
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN1Talk::
+# 19 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	.string "{COLOR DARK_GRAY}Chika Chika! {COLOR BLUE}(Boom Boom!)$"
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN2Talk::
+# 33 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	.string "{COLOR DARK_GRAY}Squeak!$"
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk::
+# 53 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	.string "{COLOR DARK_GRAY}Waaah! Those Mightyena are a bunch of\n"
 	.string "mean bullies!\p"
 	.string "{COLOR DARK_GRAY}They beat my precious Pokémon up!\p"
@@ -75,5 +94,6 @@ ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk::
 	.string "wasn't for Mr. Pokémon Ranger!$"
 
 ISLANDGAME_MAPLEGROVE_PKMNCENTER_BallText::
+# 67 "data/maps/ISLANDGAME_MAPLEGROVE_PKMNCENTER/scripts.pory"
 	.string "{COLOR DARK_GRAY}A Pokémon seems to be resting inside\n"
 	.string "the Pokéball. It seems hurt.$"

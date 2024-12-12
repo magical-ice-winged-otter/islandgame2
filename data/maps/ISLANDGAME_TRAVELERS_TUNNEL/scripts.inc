@@ -3,15 +3,21 @@ ISLANDGAME_TRAVELERS_TUNNEL_MapScripts::
 
 
 ISLANDGAME_TRAVELERS_TUNNEL_Hiker::
+# 6 "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.pory"
 	lock
+# 7 "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.pory"
 	faceplayer
+# 8 "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.pory"
 	msgbox ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk
+# 9 "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.pory"
 	applymovement 6, Common_Movement_FaceRight
+# 10 "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_TRAVELERS_TUNNEL_HikerTalk::
+# 13 "data/maps/ISLANDGAME_TRAVELERS_TUNNEL/scripts.pory"
 	.string "Man, what's up with all this pink swirly\n"
 	.string "mist in here?\p"
 	.string "I think it's coming from deeper in the\n"

@@ -8,14 +8,6 @@ mapscripts ISLANDGAME_MAPLEGROVE_PKMNCENTER_MapScripts {
     MAP_SCRIPT_ON_RESUME: CableClub_OnResume
 }
 
-script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_Nurse {
-    setvar(VAR_0x800B, LOCALID_NURSE)
-    call(Common_EventScript_PkmnCenterNurse)
-    waitmessage
-    waitbuttonpress
-    release
-}
-
 script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN1 {
     lock
     faceplayer

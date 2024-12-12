@@ -67,7 +67,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_661",
@@ -145,7 +145,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC1",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -156,9 +156,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_ABILITY_CAPSULE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ABILITY_PATCH",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MAPLEGROVE_ABILITY_CAPSULE"
+      "flag": "FLAG_ITEM_MAPLEGROVE_ABILITY_PATCH"
     }
   ],
   "warp_events": [
