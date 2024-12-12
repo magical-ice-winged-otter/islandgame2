@@ -12,7 +12,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractDoll::
 # 7 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractDoll_Text_0
 # 12 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
-	setcwildbattle 0, SPECIES_ANOMALY_01, 25, ITEM_FLAME_ORB, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_INFERNAL_PARADE, MOVE_CONFUSE_RAY, MOVE_PAIN_SPLIT, MOVE_FIRE_SPIN
+	setcwildbattle 0, SPECIES_ANOMALY_01, 25, ITEM_GHOSTIUM_Z, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_INFERNAL_PARADE, MOVE_CONFUSE_RAY, MOVE_PAIN_SPLIT, MOVE_FIRE_SPIN
 # 14 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
 	playmoncry SPECIES_UNOWN, CRY_MODE_ENCOUNTER
 # 15 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
@@ -44,8 +44,54 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractDoll_3:
 	return
 
 
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractGrave::
+# 34 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	lock
+# 35 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractGrave_Text_0
+# 38 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	closemessage
+# 39 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	release
+	return
+
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractLaptop::
+# 43 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	lock
+# 44 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractLaptop_Text_0
+# 47 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 48 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	setvar VAR_RESULT, 0
+# 49 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	playse SE_ORB
+# 50 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	special DoOrbEffect
+# 51 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	delay 300
+# 52 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	special FadeOutOrbEffect
+# 53 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, spookySpin
+# 54 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	waitmovement 0
+# 55 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	warp MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 1, 3
+	return
+
+
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractDoll_Text_0:
 # 8 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
 	.string "He died...{PAUSE 60}\p"
-	.string "...but you'll soon be joining him...{PAUSE 60}\p"
-	.string "$"
+	.string "...but you'll soon be joining him...{PAUSE 60}$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractGrave_Text_0:
+# 36 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	.string "R.I.P\n"
+	.string "...$"
+
+ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractLaptop_Text_0:
+# 45 "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.pory"
+	.string "▶▶▶5Tïい▶▶▶▶▶▶▶▶▶▶WÌTH▶▶▶▶▶▶▶ÜS▶▶▶▶▶▶▶{PLAYER}?▶▶▶▶▶▶▶▶▶$"
