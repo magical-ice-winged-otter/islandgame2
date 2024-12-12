@@ -1,7 +1,6 @@
 #include "global.h"
 #include "rtc.h"
 #include "string_util.h"
-#include "strings.h"
 #include "text.h"
 
 // iwram bss
