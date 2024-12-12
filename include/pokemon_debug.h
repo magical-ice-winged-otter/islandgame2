@@ -61,8 +61,8 @@ struct PokemonDebugMenu
     struct PokemonSpriteOffsets offsetsSpriteValues;
     u8 animIdBack;
     u8 animIdFront;
-    u8 battleBgType;
     u16 battleTerrain;
+    u8 time;
     u8 currentSubmenu;
     u8 submenuYpos[3];
 };
