@@ -101,7 +101,7 @@ extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 extern const u8 gReflectionEffectPaletteMap[];
 
 extern const struct SpriteFrameImage *const gBerryTreePicTablePointers[];
-extern const u16 *const gBerryTreePaletteTagTablePointers[];
+extern const u8 *const gBerryTreePaletteSlotTablePointers[];
 
 void ResetObjectEvents(void);
 u8 GetMoveDirectionAnimNum(u8 direction);
