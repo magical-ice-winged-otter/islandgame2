@@ -1059,7 +1059,7 @@ static void TilesetAnim_Building(u16 timer)
 }
 //island-game
 
-#define QUEUE_ANIM_SECONDARY(timer, array, tileCount, tileOffset) \ 
+#define QUEUE_ANIM_SECONDARY(timer, array, tileCount, tileOffset) \
     AppendTilesetAnimToBuffer(array[timer % ARRAY_COUNT(array)], (u16*)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + tileOffset)), tileCount * TILE_SIZE_4BPP)
 
 static void TilesetAnim_islandgame_ss_rain(u16 timer)
@@ -1187,13 +1187,6 @@ static void QueueAnimTiles_islandgame_oranna_cheriport_sandwateredge(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_cheriport_sandwateredge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 8 * TILE_SIZE_4BPP);
 }
 
-static void QueueAnimTiles_islandgame_oranna_tidalcove_sandwateredge(u16 timer)
-{
-    //u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge);
-    // todo: fix anims here later
-    //AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_tidalcove_sandwateredge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 8 * TILE_SIZE_4BPP);
-}
-
 static void QueueAnimTiles_islandgame_oranna_rosevale_flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_rosevale_flower);
@@ -1231,12 +1224,6 @@ static void QueueAnimTiles_islandgame_oranna_mt_aurora_water(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_oranna_mt_aurora_water);
     AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_oranna_mt_aurora_water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 2 * TILE_SIZE_4BPP);
-}
-
-static void QueueAnimTiles_islandgame_oranna_tidalcove_flower(u16 timer) 
-{
-    u16 i = timer % ARRAY_COUNT(gTilesetAnims_islandgame_tidalcove_flower);
-    AppendTilesetAnimToBuffer(gTilesetAnims_islandgame_tidalcove_flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 8 * TILE_SIZE_4BPP);
 }
 
 //end
