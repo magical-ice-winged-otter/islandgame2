@@ -12,7 +12,6 @@ void CopyItemIconPicTo4x4Buffer(const void *src, void *dest);
 u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId);
 u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y, void * paletteDest);
 u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u16 tilesTag, u16 paletteTag, u16 itemId);
-u8 AddBallIconSprite(u16 tilesTag, u16 paletteTag, u8 ballId);
 const void *GetItemIconPic(u16 itemId);
 const void *GetItemIconPalette(u16 itemId);
 

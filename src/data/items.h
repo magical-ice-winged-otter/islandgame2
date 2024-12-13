@@ -14103,7 +14103,7 @@ const struct Item gItemsInfo[] =
     },
 
     // Islandgame Custom Items
-    [ITEM_ISLANDGAME_MACHETE] = 
+    [ITEM_ISLANDGAME_MACHETE] =
     {
         .name = _("Machete"),
         .price = 0,
@@ -14115,8 +14115,10 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_IslandgameMachete,
+        .iconPalette = gItemIconPalette_IslandgameMachete,
     },
-    [ITEM_ISLANDGAME_LANTERN] = 
+    [ITEM_ISLANDGAME_LANTERN] =
     {
         .name = _("Lantern"),
         .price = 0,
@@ -14129,8 +14131,10 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_Flash,
+        .iconPic = gItemIcon_IslandgameLantern,
+        .iconPalette = gItemIconPalette_IslandgameLantern,
     },
-    [ITEM_ISLANDGAME_WHISTLE] = 
+    [ITEM_ISLANDGAME_WHISTLE] =
     {
         .name = _("Whistle"),
         .price = 0,
@@ -14143,8 +14147,10 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_Fly,
+        .iconPic = gItemIcon_PokeFlute,
+        .iconPalette = gItemIconPalette_PokeFlute,
     },
-    [ITEM_ISLANDGAME_RAFT] = 
+    [ITEM_ISLANDGAME_RAFT] =
     {
         .name = _("Wailmerine"),
         .price = 0,
@@ -14157,8 +14163,10 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_WailmerPail,
+        .iconPalette = gItemIconPalette_WailmerPail,
     },
-    [ITEM_ISLANDGAME_PICKAXE] = 
+    [ITEM_ISLANDGAME_PICKAXE] =
     {
         .name = _("Pickaxe"),
         .price = 0,
@@ -14170,8 +14178,10 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_IslandgamePickaxe,
+        .iconPalette = gItemIconPalette_IslandgamePickaxe,
     },
-    [ITEM_ISLANDGAME_POWERGLOVE] = 
+    [ITEM_ISLANDGAME_POWERGLOVE] =
     {
         .name = _("Power Glove"),
         .price = 0,
@@ -14184,6 +14194,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .importance = 1, // honestly idk what this does
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_PunchingGlove,
+        .iconPalette = gItemIconPalette_PunchingGlove,
     },
 
     [ITEM_ISLANDGAME_TRADING_CARD] =
@@ -14198,6 +14210,8 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1,
+        .iconPic = gItemIcon_IslandgameTradingCard,
+        .iconPalette = gItemIconPalette_IslandgameTradingCard,
     },
 
     [ITEM_POKEVIAL] =
@@ -14213,6 +14227,8 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokevial,
+        .iconPic = gItemIcon_Pokevial,
+        .iconPalette = gItemIconPalette_Pokevial,
     },
 
     [ITEM_ISLANDGAME_ROMANS_LETTER] =
@@ -14227,6 +14243,8 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1,
+        .iconPic = gItemIcon_WaveMail,
+        .iconPalette = gItemIconPalette_WaveMail,
     },
 
     [ITEM_ISLANDGAME_JULIES_LETTER] =
@@ -14241,6 +14259,8 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1,
+        .iconPic = gItemIcon_FabMail,
+        .iconPalette = gItemIconPalette_FabMail,
     },
 
     [ITEM_ISLANDGAME_LOBSTER_ROLL] =
@@ -14258,6 +14278,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_LobsterRoll,
         .flingPower = 30,
+        .iconPic = gItemIcon_IslandgameLobsterRoll,
+        .iconPalette = gItemIconPalette_IslandgameLobsterRoll,
     },
 
     [ITEM_ISLANDGAME_STRANGE_DISC] =
@@ -14272,6 +14294,8 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .importance = 1,
+        .iconPic = gItemIcon_IslandgameStrangeDisc,
+        .iconPalette = gItemIconPalette_IslandgameStrangeDisc,
     },
 
 };

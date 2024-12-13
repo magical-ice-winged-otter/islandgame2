@@ -937,4 +937,9 @@ extern const u8 Move_G_MAX_DEPLETION[];
 extern const u8 Move_G_MAX_ONE_BLOW[];
 extern const u8 Move_G_MAX_RAPID_FLOW[];
 
+// islandgame-start
+extern const u8 Move_SHADOW_BLAST[];
+extern const u8 Move_BERSERK[];
+// islandgame-end
+
 #endif // GUARD_BATTLE_ANIM_SCRIPTS_H

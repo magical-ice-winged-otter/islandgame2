@@ -158,17 +158,17 @@ u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y, void * paletteDes
     if (!AllocItemIconTemporaryBuffers())
         return 16;
 
-    LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+    LZDecompressWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
     CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
     BlitBitmapToWindow(windowId, gItemIcon4x4Buffer, x, y, 32, 32);
 
     // if paletteDest is nonzero, copies the decompressed palette directly into it
     // otherwise, loads the compressed palette into the windowId's BG palette ID
     if (paletteDest) {
-        LZDecompressWram(GetItemIconPicOrPalette(itemId, 1), gPaletteDecompressionBuffer);
+        LZDecompressWram(GetItemIconPalette(itemId), gPaletteDecompressionBuffer);
         CpuFastCopy(gPaletteDecompressionBuffer, paletteDest, PLTT_SIZE_4BPP);
     } else {
-        LoadCompressedPalette(GetItemIconPicOrPalette(itemId, 1), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
+        LoadCompressedPalette(GetItemIconPalette(itemId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
     }
     FreeItemIconTemporaryBuffers();
     return 0;
@@ -242,40 +242,4 @@ const void *GetItemIconPalette(u16 itemId)
         return gTypesInfo[gMovesInfo[gItemsInfo[itemId].secondaryId].type].paletteTMHM;
 
     return gItemsInfo[itemId].iconPalette;
-}
-
-u8 AddBallIconSprite(u16 tilesTag, u16 paletteTag, u8 ballId)
-{
-    if (!AllocItemIconTemporaryBuffers())
-    {
-        return MAX_SPRITES;
-    }
-    else
-    {
-        u8 spriteId;
-        struct SpriteSheet spriteSheet;
-        struct CompressedSpritePalette spritePalette;
-        struct SpriteTemplate *spriteTemplate;
-
-        if (ballId > ARRAY_COUNT(gBallIconTable) - 1)
-            ballId = 0;
-
-        LZDecompressWram(gBallIconTable[ballId][0], gItemIconDecompressionBuffer);
-        CpuCopy16(gItemIconDecompressionBuffer, gItemIcon4x4Buffer, 0x100);
-        spriteSheet.data = gItemIcon4x4Buffer;
-        spriteSheet.size = 0x100;
-        spriteSheet.tag = tilesTag;
-        LoadSpriteSheet(&spriteSheet);
-        spritePalette.data = gBallIconTable[ballId][1];
-        spritePalette.tag = paletteTag;
-        LoadCompressedSpritePalette(&spritePalette);
-        spriteTemplate = Alloc(sizeof(*spriteTemplate));
-        CpuCopy16(&gBallIconSpriteTemplate, spriteTemplate, sizeof(*spriteTemplate));
-        spriteTemplate->tileTag = tilesTag;
-        spriteTemplate->paletteTag = paletteTag;
-        spriteId = CreateSprite(spriteTemplate, 0, 0, 0);
-        FreeItemIconTemporaryBuffers();
-        Free(spriteTemplate);
-        return spriteId;
-    }
 }
