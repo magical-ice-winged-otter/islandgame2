@@ -37,6 +37,7 @@ void InitTilesetAnim_islandgame_ss_rain_general(void);
 void InitTilesetAnim_islandgame_oranna_general(void);
 void InitTilesetAnim_islandgame_oranna_cheriport(void);
 void InitTilesetAnim_islandgame_oranna_tidalcove(void);
+void InitTilesetAnim_islandgame_lumine_applevine(void);
 void InitTilesetIsland_Anim_Forest(void);
 void InitTilesetAnim_islandgame_oranna_rosevale(void);
 void InitTilesetAnim_islandgame_oranna_maplegrove(void);
