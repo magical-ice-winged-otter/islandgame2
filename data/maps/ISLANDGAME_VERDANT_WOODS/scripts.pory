@@ -204,34 +204,25 @@ text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text
 // Camper Raj
 script ISLANDGAME_VERDANT_WOODS_TrainerBattle5 {
     trainerbattle_single(TRAINER_VERDANT_WOODS_5, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text)
-    if(flag(FLAG_CAMP_PERSI_TRADING_CARD_ITEM)) {
-        msgbox(format(
-            "Hey! You found it! You've got pretty sharp eyes."
-        ), MSGBOX_AUTOCLOSE)
-    }
-    else {
-        msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
-    }
+
+    msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text {
     format(
-        "{COLOR DARK_GRAY}Trying to find this trading card is like looking for a needle in a haystack... \p"
-        "{COLOR DARK_GRAY}I'm taking a break from all this searching! Let's battle!"
+        "Sic 'em, boy!"
     )
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text
 {
-    "Wow... Maybe you could help me find my \n"
-    "friend's trading card?"
+    "Yo! Chill out! It was just a prank, bro!"
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}His trading card should be around here somewhere. \p"
-        "{COLOR DARK_GRAY}Me and Poochyena have been looking for an hour!"
+        "I'm just tryna go viral on PikPok, man."
         )
 }
 

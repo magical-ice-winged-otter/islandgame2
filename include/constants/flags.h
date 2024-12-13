@@ -1222,7 +1222,7 @@
 
 //island-game : Pokeball Items
 #define FLAG_ROOM3_ITEM                                             0x493 
-#define FLAG_CAMP_PERSI_TRADING_CARD_ITEM                           0x494   // not in use
+#define FLAG_ANOMALY01_ITEM                                         0x494
 #define FLAG_FRESA_FARMS_POKE_TOY                                   0x495 
 #define FLAG_VERDANT_PATH_TIMER_BALL                                0x496 
 #define FLAG_ITEM_COP_2_FULL_RESTORE                                0x497
@@ -1542,7 +1542,7 @@
 #define FLAG_SSRAIN_ICECREAM_RECEIVED               (SYSTEM_FLAGS + 0x93) 
 //southern oranna path: beat up sussy absol
 #define FLAG_S_ORANNA_PATH_ABSOL_DEFEATED           (SYSTEM_FLAGS + 0x94) 
-#define FLAG_ANOMALY01_ITEM                         (SYSTEM_FLAGS + 0x95)
+#define FLAG_ANOMALY01_DEFEATED                     (SYSTEM_FLAGS + 0x95) 
 //maplegrove: steal from pekora
 #define FLAG_MAPLEGROVE_BUNEARY_GIFT                (SYSTEM_FLAGS + 0x96)
 //fresa farms: steal from watame

@@ -1,6 +1,6 @@
 mapscripts ISLANDGAME_ANOMALY01_3F_MapScripts {}
 
-script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractDoll {
+script ISLANDGAME_ANOMALY01_3F_EventScript_InteractDoll {
     setflag(FLAG_SMART_WILD_AI)
     setflag(FLAG_NO_CATCHING)
     setflag(FLAG_NO_RUNNING)
@@ -27,10 +27,11 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractDoll {
             break
         default:
             removeobject(1)
+            setflag(FLAG_ANOMALY01_DEFEATED)
     }
 }
 
-script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractGrave {
+script ISLANDGAME_ANOMALY01_3F_EventScript_InteractGrave {
     lock
     msgbox(format(
         "R.I.P\n..."
@@ -39,11 +40,12 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractGrave {
     release
 }
 
-script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractLaptop {
+script ISLANDGAME_ANOMALY01_3F_EventScript_InteractLaptop {
     lock
     msgbox(format(
-        "▶▶▶5Tïい▶▶▶▶▶▶▶▶▶▶WÌTH▶▶▶▶▶▶▶ÜS▶▶▶▶▶▶▶{PLAYER}?▶▶▶▶▶▶▶▶▶"
+        "▶▶▶5TïLL▶▶▶▶▶▶▶▶▶▶WÌTH▶▶▶▶▶▶\n▶ÜS▶▶▶▶▶▶▶{PLAYER}?▶▶▶▶▶▶▶▶▶"
     ))
+    closemessage
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     setvar(VAR_RESULT, 0)
     playse(SE_ORB)
@@ -52,5 +54,6 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractLaptop {
     special(FadeOutOrbEffect)
     applymovement(OBJ_EVENT_ID_PLAYER, spookySpin)
     waitmovement(0)
-    warp(MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 1,3)
+    warp(MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 1, 3)
+    release
 }

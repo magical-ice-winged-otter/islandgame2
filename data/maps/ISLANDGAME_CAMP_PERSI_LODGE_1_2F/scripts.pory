@@ -48,8 +48,9 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
                 "It's a video game I got for free from some strange old man in Verdant Woods.\p"
                 "But when I told everyone where I got it, they told me that the old man living there hasn't been around for years...\p"
                 "I know it sounds like some lame ghost story, but it's true!\p"
-                "I thought I'd be able to play it on my Game Boy, but it looks like you need a computer or something..."
-                "{PLAYER}▶▶▶▶▶▶ÇÀÑ▶▶▶¥ÔÚ▶▶▶▶▶▶\n▶サÊÁR▶▶▶▶▶▶ぬヨ?▶▶エT$▶▶▶▶▶ぬヨ▶▶"
+                "I thought I'd be able to play it on my Game Boy, but it looks like you need a computer or something. I think there's a laptop in the treehouse you could use!\p"
+                "..."
+                "{PLAYER}▶▶▶▶ÇÀÑ▶▶▶¥ÔÚ▶▶▶▶▶▶\n▶サÊÁR▶▶▶▶▶▶Mヨ?▶▶エT$▶▶▶▶▶Mヨ"
             ))
             setvar(VAR_CAMP_PERSI_STATE, 3)
         case 3:
@@ -81,33 +82,4 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC2 {
     ))
     release
 }
-
-// script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_GulpinDoll {
-//     lock
-//     if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED) && flag(FLAG_TEMP_1)) {
-//         msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect, MSGBOX_YESNO)
-//         if(var(VAR_RESULT) == NO) {
-//             msgbox(format("Wow. Really? You're gonna let him get away with it?"))
-//             goto(GulpinDollInspect_End)
-//         }
-        
-//         giveitem(ITEM_LAVA_COOKIE, 3)
-//         giveitem(ITEM_RAGE_CANDY_BAR, 3)
-//         setflag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)
-//     }
-//     else {
-//         msgbox(format("{COLOR RED}(It looks like a regular old Guplin doll.)"))
-//     }
-
-//     GulpinDollInspect_End:
-//         release
-// }
-
-// text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect {
-//     format(
-//         "{COLOR RED}(It looks like a regular old Guplin doll.) \p"
-//         "{COLOR RED}(Huh? Instead of stuffing, there's a bunch of smuggled goods inside of it.) \p"
-//         "{COLOR DARK_GRAY}Take them?"
-//     )
-// }
 
