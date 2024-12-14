@@ -704,6 +704,7 @@ static const s8 sFriendshipEventModifiers[][3] =
     [FRIENDSHIP_EVENT_FAINT_SMALL]     = {-1, -1, -1},
     [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {-5, -5, -10},
     [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-5, -5, -10},
+    [FRIENDSHIP_EVENT_MASSAGE]         = { 50,  50,  50 },
 };
 
 #define HM_MOVES_END 0xFFFF
@@ -5506,7 +5507,10 @@ u16 GetBattleBGM(void)
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
         case SPECIES_SHADOW_MIGHTYENA:
+        case SPECIES_SHADOW_AGGRON:
             return MUS_HG_VS_ENTEI;
+        case SPECIES_ANOMALY_01:
+            return MUS_NONE;
         case SPECIES_ARTICUNO:
         case SPECIES_ZAPDOS:
         case SPECIES_MOLTRES:

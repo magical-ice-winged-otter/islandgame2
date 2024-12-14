@@ -33,7 +33,7 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
         case 1: // INACTIVE
             msgbox(
                 format(
-                    "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Ah, young trainer! It's good to see you again! \p"
+                    "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Ah, young trainer! It's good to see you again! \p"
                     "I actually have another favor I wish to ask of you. Fret not, it is a relatively simple and easy one! \p"
                     "I have a very special egg that I'd like you to take along on your journey! \p"
                     "All I ask is for you to help me hatch and show it to me later. Is that alright?"
@@ -54,7 +54,7 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
             if (var(VAR_RESULT)) {
                 msgbox(
                     format(
-                        "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh! It finally hatched? Let me take a closer look at it... \p"
+                        "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Oh! It finally hatched? Let me take a closer look at it... \p"
                         "Ah, so it hatched into a Torchic? Welcome to parenthood, young trainer! \p"
                         "That Torchic you have is no ordinary one either. It has a hidden ability! \p"
                         "Take good care of Torchic! If you come back to me when it's fully evolved, I'll give you a little something special!"
@@ -67,7 +67,7 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
             if (var(VAR_RESULT)) {
                 msgbox(
                     format(
-                        "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Waha, that little Torchic has grown up into a Combusken already?\p"
+                        "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Waha, that little Torchic has grown up into a Combusken already?\p"
                         "Childhood really just zooms right by, doesn't it? I'm looking forward to seeing it fully evolved!"
                     )
                 )
@@ -79,14 +79,14 @@ script ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder {
                 goto(Torchic_Reward)
             }
             else {
-                msgbox(format("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Let me know what the egg hatches into later, young trainer!"))
+                msgbox(format("{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Let me know what the egg hatches into later, young trainer!"))
             }
             goto(Torchic_End)
 
 Torchic_Reward:
             msgbox(
                 format(
-                    "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Young trainer! It's been quite a while! Since you're here, I assume your Torchic has matured into a fully-fledged Blaziken now, hm? \p"
+                    "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Young trainer! It's been quite a while! Since you're here, I assume your Torchic has matured into a fully-fledged Blaziken now, hm? \p"
                     "Wow... Magnificent. Simply magnificent. Quite the majestic Pokémon, isn't it? \p"
                     "Well, a promise is a promise! Here is something I've been holding onto for a few years, just waiting for the right trainer to give it to, and I see no better recipient than you!"
                 )
@@ -94,7 +94,7 @@ Torchic_Reward:
             giveitem(ITEM_BLAZIKENITE)
             msgbox(
                 format(
-                    "{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}You certainly are something special, young trainer. It hadn't even occurred to me that I never even learned your name.\p"
+                    "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}You certainly are something special, young trainer. It hadn't even occurred to me that I never even learned your name.\p"
                     "Ah... {PLAYER} is it? Well, you have my sincerest of gratitudes, {PLAYER}.\p"
                     "I wish you the best of luck on the rest of your adventure. If you ever need a place to stay, our gate is always open."
                 )
@@ -105,7 +105,7 @@ Torchic_End:
         // no cleanup needed
 
         case 4: // COMPLETED
-            msgbox(format("{COLOR GREEN}Farm Owner: {COLOR DARK_GRAY}Oh, how rude of me! You still don't even know my name! It's Paulie."))
+            msgbox(format("{COLOR GREEN}Paulie: {COLOR DARK_GRAY}I wish you the best of luck on the rest of your adventure. If you ever need a place to stay, our gate is always open."))
     }
 
     release

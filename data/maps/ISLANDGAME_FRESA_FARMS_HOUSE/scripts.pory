@@ -19,7 +19,9 @@ mapscripts ISLANDGAME_FRESA_FARMS_HOUSE_MapScripts {
 script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1 {
     lock
     faceplayer
-    msgbox(format("Life on a farm is soooooo boring. I hope something exciting happens soon.\pI don't care what. It could even be like, some sorta world-ending event.\pJust SOMETHING!")) 
+    msgbox(format(
+        "Be sure to check our booth out at the Silverwing Festival when the time comes!"
+    )) 
     release
 }
 
@@ -27,6 +29,8 @@ script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2 {
     lock
     faceplayer
     msgbox(format("I wish we got the good channels. I'm tired of no shows after dark.")) 
+    applymovement(2, Common_Movement_FaceUp)
+    waitmovement(0)
     release
 }
 

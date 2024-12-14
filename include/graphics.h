@@ -331,6 +331,18 @@ extern const u32 gBattleTerrainPalette_HDStandard[];
 extern const u32 gBattleTerrainTilemap_HDStandard[];
 extern const u32 gBattleTerrainAnimTiles_HDStandard[];
 extern const u32 gBattleTerrainAnimTilemap_HDStandard[];
+//Sea Day
+extern const u32 gBattleTerrainTiles_SeaDay[];
+extern const u32 gBattleTerrainPalette_SeaDay[];
+extern const u32 gBattleTerrainTilemap_SeaDay[];
+//Sea Evening
+extern const u32 gBattleTerrainTiles_SeaEvening[];
+extern const u32 gBattleTerrainPalette_SeaEvening[];
+extern const u32 gBattleTerrainTilemap_SeaEvening[];
+//Sea Night
+extern const u32 gBattleTerrainTiles_SeaNight[];
+extern const u32 gBattleTerrainPalette_SeaNight[];
+extern const u32 gBattleTerrainTilemap_SeaNight[];
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
@@ -2934,6 +2946,11 @@ extern const u32 gBattleAnimSpriteGfx_SyrupShell[];
 extern const u32 gBattleAnimSpriteGfx_SyrupSplat[];
 extern const u32 gBattleAnimSpritePal_SyrupRed[];
 extern const u32 gBattleAnimSpritePal_SyrupYellow[];
+extern const u32 gBattleAnimSpriteGfx_IvyCudgel[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelGrass[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelFire[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelRock[];
+extern const u32 gBattleAnimSpritePal_IvyCudgelWater[];
 
 extern const u32 gBattleAnimBgImage_Dark[];
 extern const u32 gBattleAnimBgImage_Ghost[];
@@ -3432,6 +3449,10 @@ extern const u32 gItemIcon_IslandgameTradingCard[];
 extern const u32 gItemIconPalette_IslandgameTradingCard[];
 extern const u32 gItemIcon_IslandgameSquirtBottle[];
 extern const u32 gItemIconPalette_IslandgameSquirtBottle[];
+extern const u32 gItemIcon_IslandgameLobsterRoll[];
+extern const u32 gItemIconPalette_IslandgameLobsterRoll[];
+extern const u32 gItemIcon_IslandgameStrangeDisc[];
+extern const u32 gItemIconPalette_IslandgameStrangeDisc[];
 
 
 // frlg_tm_case_port

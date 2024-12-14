@@ -51,6 +51,6 @@ script ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_Doll {
 
 text ISLANDGAME_CAMP_PERSI_LODGE_2_DollInteract {
     format(
-        "{COLOR RED}(It's a doll of an Azurill. It looks neglected.)"
+        "{COLOR RED}(It's a doll of a Chikorita. It looks neglected.)"
     )
 }

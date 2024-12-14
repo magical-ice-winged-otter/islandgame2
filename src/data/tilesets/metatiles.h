@@ -235,8 +235,6 @@ const u16 gMetatileAttributes_Forest[] = INCBIN_U16("data/tilesets/secondary/for
 const u16 gMetatiles_islandgame_oranna_cheriport[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_oranna_cheriport[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_cheriport/metatile_attributes.bin");
 
-const u16 gMetatiles_islandgame_oranna_southern_path[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_southern_path/metatiles.bin");
-const u16 gMetatileAttributes_islandgame_oranna_southern_path[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_southern_path/metatile_attributes.bin");
 
 const u16 gMetatiles_islandgame_oranna_verdant[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_verdant/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_oranna_verdant[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_verdant/metatile_attributes.bin");
@@ -259,8 +257,6 @@ const u16 gMetatileAttributes_islandgame_oranna_tidalcove[] = INCBIN_U16("data/t
 const u16 gMetatiles_islandgame_oranna_general[] = INCBIN_U16("data/tilesets/primary/islandgame_oranna_general/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_oranna_general[] = INCBIN_U16("data/tilesets/primary/islandgame_oranna_general/metatile_attributes.bin");
 
-const u16 gMetatiles_islandgame_oranna_northern_path[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_northern_path/metatiles.bin");
-const u16 gMetatileAttributes_islandgame_oranna_northern_path[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_northern_path/metatile_attributes.bin");
 
 const u16 gMetatiles_islandgame_oranna_central_path[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_central_path/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_oranna_central_path[] = INCBIN_U16("data/tilesets/secondary/islandgame_oranna_central_path/metatile_attributes.bin");

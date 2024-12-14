@@ -1,0 +1,97 @@
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+mapscripts ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+        }
+
+    }    
+}
+
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuDay {
+    lock
+    faceplayer
+    playmoncry(SPECIES_PICHU, CRY_MODE_NORMAL)
+    msgbox(format(
+        "I LIEK CEREAL!!!!!!!!!!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuNight {
+    lock
+    faceplayer
+    playmoncry(SPECIES_PICHU, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Mmmmmm...{PAUSE 60} chocolat melk"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Happiny {
+    lock
+    faceplayer
+    playmoncry(SPECIES_HAPPINY, CRY_MODE_NORMAL)
+    msgbox(format(
+        "COCO COCO COCO COCO!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster {
+    lock
+    faceplayer
+    if(!flag(FLAG_TEMP_3)) {
+        msgbox(format(
+            "Oh-ho-ho, these baby Pokémon are always so full of energy. I envy it."
+        ))
+    }
+    else {
+        msgbox(format(
+            "Hello dearie! All of the Pokémon have gone to bed.\p"
+            "I'm afraid you'll have to come back during the day if you'd like to adopt."
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie {
+    lock
+    msgbox(format(
+        "BLOO!!!{PAUSE 30} GET YOUR BOUNCY BEHIND OVER HERE AND CLEAN UP THE MESS YOU MADE!!!"
+    ))
+    closemessage
+    release
+}
+
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Sudowoodo {
+    lock
+    msgbox(format(
+        "{COLOR RED}(Contrary to its appearance, it's just a toy that looks like a Sudowoodo.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman {
+    lock
+    faceplayer
+    msgbox(format(
+        ""
+    ))
+    closemessage
+    release
+}

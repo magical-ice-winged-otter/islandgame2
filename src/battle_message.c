@@ -827,7 +827,6 @@ static const u8 sText_TeamGainedEXP[] = _("The rest of your team gained EXP.\nPo
 static const u8 sText_CurrentMoveCantSelect[] = _("{B_BUFF1} cannot be used!\p");
 static const u8 sText_TargetIsBeingSaltCured[] = _("{B_DEF_NAME_WITH_PREFIX} is being salt cured!");
 static const u8 sText_TargetIsHurtBySaltCure[] = _("{B_DEF_NAME_WITH_PREFIX} is hurt by {B_BUFF1}!");
-static const u8 sText_OpportunistCopied[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} copied its\nopponent's stat changes!");
 static const u8 sText_TargetCoveredInStickyCandySyrup[] = _("{B_DEF_NAME_WITH_PREFIX} got covered\nin sticky syrup!");
 static const u8 sText_PkmnTellChillingReceptionJoke[] = _("{B_ATK_NAME_WITH_PREFIX} is preparing to tell a\nchillingly bad joke!");
 static const u8 sText_ZeroToHeroTransformation[] = _("{B_ATK_NAME_WITH_PREFIX} underwent a heroic\ntransformation!");
@@ -847,7 +846,7 @@ static const u8 sText_AttackerLostItsType[] = _("{B_ATK_NAME_WITH_PREFIX} lost\n
 static const u8 sText_ShedItsTail[] = _("{B_ATK_NAME_WITH_PREFIX} shed its tail\nto create a decoy!");
 static const u8 sText_SupersweetAromaWafts[] = _("A supersweet aroma is wafting from\nthe syrup covering {B_ATK_NAME_WITH_PREFIX}!");
 static const u8 sText_TidyingUpComplete[] = _("Tidying up complete!");
-static const u8 sText_CantEscapeWildMon[] = _("You can't flee from this fight!");
+static const u8 sText_CantEscapeWildMon[] = _("You can't flee from this fight!{PAUSE_UNTIL_PRESS}");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -868,7 +867,6 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ZEROTOHEROTRANSFORMATION - BATTLESTRINGS_TABLE_START] = sText_ZeroToHeroTransformation,
     [STRINGID_PKMNTELLCHILLINGRECEPTIONJOKE - BATTLESTRINGS_TABLE_START] = sText_PkmnTellChillingReceptionJoke,
     [STRINGID_MOVEBLOCKEDBYDYNAMAX - BATTLESTRINGS_TABLE_START] = sText_MoveBlockedByDynamax,
-    [STRINGID_OPPORTUNISTCOPIED - BATTLESTRINGS_TABLE_START] = sText_OpportunistCopied,
     [STRINGID_TARGETISHURTBYSALTCURE - BATTLESTRINGS_TABLE_START] = sText_TargetIsHurtBySaltCure,
     [STRINGID_TARGETISBEINGSALTCURED - BATTLESTRINGS_TABLE_START] = sText_TargetIsBeingSaltCured,
     [STRINGID_CURRENTMOVECANTSELECT - BATTLESTRINGS_TABLE_START] = sText_CurrentMoveCantSelect,
@@ -4045,7 +4043,12 @@ static const u8 sText_RukaIntro[] = _("I hope you don't mind if I enhance\nour a
 
 static const u8 sText_EdeaLastSwitchIn[] = _("W-What? How am I the one backed up in a\ncorner here!?{PAUSE_UNTIL_PRESS}");
 static const u8 sText_EdeaCriticalHit[] = _("Tch... lucky shot in the dark!{PAUSE_UNTIL_PRESS}");
-static const u8 sText_EdeaNoEffect[] = _("Bahaha! Nice move, kid!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_EdeaNoEffect[] = _("Bahaha! Nice one, idiot!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sText_AlbaLastSwitchIn[] = _("Hmm...{PAUSE 60} this is admittedly an\nunforeseen circumstance...{PAUSE_UNTIL_PRESS}");
+static const u8 sText_AlbaNoEffect[] = _("You'll have to try much harder\nthan that if you wish to pass!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_AlbaFirstDown[] = _("You show promise, trainer, but how long\nwill you maintain it?{PAUSE_UNTIL_PRESS}");
+static const u8 sText_AlbaCriticalHit[] = _("How unexpected...{PAUSE 60} my calculations\nwill need a little adjusting...{PAUSE_UNTIL_PRESS}");
 
 static const struct TrainerSlide sTrainerSlides[] =
 {
@@ -4081,6 +4084,13 @@ static const struct TrainerSlide sTrainerSlides[] =
     .msgLastSwitchIn = sText_EdeaLastSwitchIn,
     .msgFirstCriticalHit = sText_EdeaCriticalHit,
     .msgPlayerMonUnaffected = sText_EdeaNoEffect,
+   },
+   {
+    .trainerId = TRAINER_LUMINE_CAVE_ALBA,
+    .msgLastSwitchIn = sText_AlbaLastSwitchIn,
+    .msgPlayerMonUnaffected = sText_AlbaNoEffect,
+    .msgFirstDown = sText_AlbaFirstDown,
+    .msgFirstCriticalHit = sText_AlbaCriticalHit,
    }
 };
 

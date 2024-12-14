@@ -97,6 +97,7 @@ script ISLANDGAME_TIDALCOVE_GYM_Trainer4 {
 
 script ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka {
     if (!defeated(TRAINER_TIDALCOVE_GYM_RUKA)) {
+        playbgm(MUS_DP_ENCOUNTER_ELITE_FOUR, FALSE)
         lock
         faceplayer
         msgbox(format(
@@ -115,12 +116,12 @@ script ISLANDGAME_TIDALCOVE_GYM_Interact_Ruka {
             "For everyone to know everything about you.\p"
             "I've met so many trainers who knew every single little detail about me.\p"
             "My favorite Pokémon, my battle style, what commercials and billboards I've been on, what competitions I've been a part of.\p"
-            "Some even know exact my height, weight, and body measurements by heart...\p"
+            "Some even know exact my height,weight, and body measurements by heart...\p"
             "Meanwhile, I haven't even learned what their name is yet. Isn't that crazy?\p"
             "Personally, the best way for me to get to know a trainer is through a battle."
         ))
 
-        trainerbattle_single(TRAINER_TIDALCOVE_GYM_RUKA, format("So please, challenger. Show me everything about you, right here!"), format("Ah... It seems that I've learned more\nthan enough about you.\pYour ability to communicate with your\nPokémon... It's almost telepathic!\pYou're quite the special trainer, aren't\nyou, {PLAYER}?\pFor your victory over me, I reward you\nwith the Tidalcove Badge!"), RukaDefeated, NO_MUSIC)
+        trainerbattle_single(TRAINER_TIDALCOVE_GYM_RUKA, format("So please, challenger.{PAUSE 60} Show me everything about you, right here!"), format("Ah...{PAUSE 60} It seems that I've learned more\nthan enough about you.\pYour ability to communicate with your\nPokémon...{PAUSE 60} It's almost telepathic!\pYou're quite the special trainer, aren't\nyou, {PLAYER}?\pFor your victory over me, I reward you\nwith the Tidalcove Badge!"), RukaDefeated, NO_MUSIC)
     }
     else { // we already won
         msgbox(format(
@@ -139,6 +140,8 @@ script(local) RukaDefeated {
     message(format("You received the Tidalcove Badge!"))
     waitmessage
     setflag(FLAG_TIDALCOVE_RUKA_DEFEATED)
+    setflag(FLAG_BADGE01_GET)
+    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_MARYA_GYM_CHALLENGE, 0)
     call(Common_EventScript_PlayGymBadgeFanfare)
     msgbox(format(
         "{COLOR GREEN}Ruka: {COLOR DARK_GRAY}That was an amazing match, {PLAYER}!\p"
@@ -148,7 +151,7 @@ script(local) RukaDefeated {
     , MSGBOX_NPC)
     giveitem(ITEM_TM07)
     msgbox(format(
-        "Inside that TM is my signature move, Hail! With it, you can unleash the true beauty of ice Pokemon!\p"
+        "Inside that TM is my signature move, Snowscape! With it, you too can unleash the true beauty of ice Pokemon!\p"
         "Now that you've completed the first step towards the Marya Gym Challenge, I present you with this!"
         )
     )

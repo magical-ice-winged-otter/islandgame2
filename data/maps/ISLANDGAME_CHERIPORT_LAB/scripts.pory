@@ -2,19 +2,51 @@
 const I_MOVES_COUNT = 831
 const SCIENTIST_ID = 3
 
-mapscripts ISLANDGAME_CHERIPORT_LAB_MapScripts {}
+mapscripts ISLANDGAME_CHERIPORT_LAB_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED) || var(VAR_ROSEVALE_STATE) == 4) {
+            setflag(FLAG_TEMP_1)
+        }
+
+    }
+}
+
+
+// temp melissa & gible cameo
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Melissa {
+    lock
+    faceplayer
+    msgbox(format(
+        "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Hiya, {PLAYER}!{PAUSE 60} You wanted to come see us before taking on Ruka?"
+    )) 
+    closemessage
+    release
+}
+
+script ISLANDGAME_CHERIPORT_LAB_EventScript_Gible {
+    lock
+    faceplayer
+    playmoncry(SPECIES_GIBLE, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Gib-dayo! {COLOR BLUE}(The next time we fight, I'll be stronger! Believe it!)"
+    ))
+    closemessage
+    release
+}
+
 
 // professor
 script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
     lock
     faceplayer
+
     // the first time player interacts with prof
     if (!flag(FLAG_PROF_GAVE_EEVEE)) {
         msgbox(ProfTalk_First_Text)
         setflag(FLAG_PROF_GAVE_EEVEE)
         setflag(FLAG_SYS_POKEMON_GET)
         // givemon(SPECIES_EEVEE, 5, ITEM_NONE, ITEM_PREMIER_BALL, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 32, 32, 32, 32, 32, 32, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_SAND_ATTACK, MOVE_HELPING_HAND, FALSE)
-        givemon(SPECIES_EEVEE,5,ITEM_NONE,ITEM_CHERISH_BALL,NUM_NATURES,1,,,,,,,,,,,,,,MOVE_TACKLE,MOVE_MUD_SLAP,MOVE_SAND_ATTACK,MOVE_TAIL_WHIP,FALSE)
+        givemon(SPECIES_EEVEE,5,ITEM_NONE,ITEM_CHERISH_BALL,NUM_NATURES,1,,,,,,,,,,,,,,MOVE_TACKLE,MOVE_MUD_SLAP,MOVE_WORK_UP,MOVE_REFRESH,FALSE)
         playfanfare(MUS_OBTAIN_ITEM)
         bufferspeciesname(STR_VAR_1, SPECIES_EEVEE)
         msgbox(ReceivedEevee_Text)
@@ -34,26 +66,296 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         waitfanfare
         setflag(FLAG_SYS_POKEDEX_GET)
         special(SetUnlockedPokedexFlags)
+        setflag(FLAG_SYS_NATIONAL_DEX)
+        special(EnableNationalPokedex)
         setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
         
         msgbox(ProfTalk_Third_Text)
         // Give Pokeballs
-        giveitem(ITEM_POKE_BALL, 5)
-        msgbox(ProfTalk_Fourth_Text)
+        giveitem(ITEM_POKE_BALL, 10)
+        msgbox(format(
+            "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs. They're a special tool that you can use to catch wild Pokémon!\p"
+            "And with that, {PLAYER}, you're all set to begin your journey!\p"
+            "Get out there, explore all that the isles have to offer, and aid me in completing the Maryan Pokédex!"
+        ))
+        startquest(QUEST_POKEDEX_COMPLETION)
+        msgbox(format(
+            "{COLOR DARK_GRAY}I suggest you meet up with my other student first, though.\p"
+            "{COLOR DARK_GRAY}Her name is Melissa, and she's been helping me out for about a week or two!\p"
+            "{COLOR DARK_GRAY}She knows her way around Oranna better than me, so she can help you navigate the island and give you some pointers! \p"
+            "{COLOR DARK_GRAY}Melissa should be somewhere in the Minty Meadows right now. It'll be to the east of her hometown of Maplegrove!"
+        ))
         setrespawn(HEAL_LOCATION_CHERIPORT)
-        setflag(FLAG_BADGE01_GET) // temporary until trade disobedience fixed
+        startquest(QUEST_MINTY_MEADOWS_MELISSA)
+        goto(Palm_End)
     } 
-    // Before player defeats Audrey for the first time.
-    if(!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
-        msgbox(ProfTalk_AudreyNotDefeated)
+
+    // Before player defeats Melissa for the first time.
+    elif (!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+        msgbox(format(
+            "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Melissa should be somewhere in the Minty Meadows right now.{PAUSE 30} It'll be to the east of her hometown of Maplegrove!\p"
+            "Oh, did you want me to check on the progress of your Pokédex so far?"
+        ))
+        goto(Palm_CheckPokedex) 
     }
-    // everything else; check how many Pokemon you've caught
+
+
+    // All other pokedex rating conversations
     else {
-        msgbox(ProfTalk_CheckPokedex)
+        
+        returnqueststate(QUEST_POKEDEX_COMPLETION)
+
+        // u have beaten game gg
+        if (var(VAR_RESULT) == QUEST_COMPLETED) {
+            msgbox(format(
+                "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}Your name will be etched in Marya's history, as well as our hearts, forever, {PLAYER}."
+            ))
+        }
+
+        else {
+            if(!flag(FLAG_TEMP_10)){
+                setflag(FLAG_TEMP_10)
+
+                // If player defeats Melissa but hasn't defeated Arthur yet.
+                if (flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED) && var(VAR_ROSEVALE_STATE) != 4) {
+                    msgbox(format(
+                        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see you again! I see you and Melissa have finally met.\p"
+                        "She told me that the two of you fought a ferocious Mightyena and saved Old Man Paulie's Mareep!\p"
+                        "That must've been very frightening as two trainers just starting their journey. I'm glad you're both alright."
+                    ))
+                    goto(Palm_CheckPokedex)
+                }
+
+                // If player defeats Ruka but hasn't defeated Shadow Aggron yet.
+                elif (flag(FLAG_TIDALCOVE_RUKA_DEFEATED) && !flag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)) {
+                    msgbox(format(
+                        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see you again! Congrats on getting your first gym badge in the Marya League!\p"
+                        "You're growing so fast as a trainer already, I'm thoroughly impressed!\p"
+                        "Melissa's already gone ahead to Lumine Island, if you were wondering."
+                    ))
+                    goto(Palm_CheckPokedex)
+                }
+
+                // any other random unhandled case I didn't think of
+                else {
+                    msgbox(format(
+                        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see you again!"
+                    ))
+                    goto(Palm_CheckPokedex)              
+                }
+            }
+
+            // so you don't have to hear Palm yap about your story progress again
+            else {
+                msgbox(format(
+                    "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see you again!"
+                ))
+                goto(Palm_CheckPokedex)
+            }
+        }
     }
+
+
+    Palm_CheckPokedex: 
+        msgbox(format(
+            "Let's see how you're doing with your Pokédex..."
+        ))
+        setvar(VAR_0x8004, 1)
+        specialvar(VAR_RESULT, ScriptGetPokedexInfo)
+        copyvar(VAR_0x8008, VAR_0x8005)
+        copyvar(VAR_0x8009, VAR_0x8006)
+        buffernumberstring(STR_VAR_1, VAR_0x8008) // # seen
+        buffernumberstring(STR_VAR_2, VAR_0x8009) // # caught
+        msgbox(format(
+            "It looks like you've seen a total of {STR_VAR_1} Pokémon, and caught a total of {STR_VAR_2} Pokémon!"
+        ))
+        
+        // check quest rewards
+        if (var(VAR_0x8009) >= 30) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_1)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 30 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take this Technical Machine as a little reward. It'll be very useful for catching Pokémon!"
+                ))
+                giveitem(ITEM_TM53)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_1)
+            }
+        }
+        if (var(VAR_0x8009) >= 60) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_2)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 60 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Nest Balls as a little reward!"
+                ))
+                giveitem(ITEM_NEST_BALL, 15)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_2)
+            }
+        }
+        if (var(VAR_0x8009) >= 90) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_3)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 90 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Rare Candies as a little reward. Each one packs enough power to instantly level your Pokémon up!\p"
+                    "Just don't try and eat one yourself. They're not very delectable to humans."
+                ))
+                giveitem(ITEM_RARE_CANDY, 5)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_3)
+            }
+        }
+        if (var(VAR_0x8009) >= 120) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_4)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 120 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Level Balls as a little reward."
+                ))
+                giveitem(ITEM_LEVEL_BALL, 30)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_4)
+            }
+        }
+        if (var(VAR_0x8009) >= 150) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_5)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 150 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Ability Capsules as a little reward. When given to a Pokémon, it will change their basic ability to their other possible ability, if they have another one!\p"
+                    "However, they can't be used to change a Pokémon's ability to their hidden one. You'll need another type of item to do that, perhaps one that you'll get as a later reward..."
+                ))
+                giveitem(ITEM_ABILITY_CAPSULE, 7)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_5)
+            }
+        }
+        if (var(VAR_0x8009) >= 180) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_6)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 180 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Ultra Balls as a little reward."
+                ))
+                giveitem(ITEM_ULTRA_BALL, 45)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_6)
+            }
+        }
+        if (var(VAR_0x8009) >= 210) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_7)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 210 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these super rare Ability Patches as a reward.\p"
+                    "By using them on a Pokémon, you'll grant them their hidden ability!"
+                ))
+                giveitem(ITEM_ABILITY_PATCH, 9)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_7)
+            }
+        }
+        if (var(VAR_0x8009) >= 240) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_8)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 240 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take some of these Quick Balls as a little reward."
+                ))
+                giveitem(ITEM_QUICK_BALL, 60)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_8)
+            }
+        }
+        if (var(VAR_0x8009) >= 270) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_9)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 270 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take this charm. It'll increase the chance of a “critical capture” to occur when you use any Pokéball!"
+                ))
+                giveitem(ITEM_CATCHING_CHARM)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_9)
+            }
+        }
+        if (var(VAR_0x8009) >= 300) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_10)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 300 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take this charm. It'll increase the experience your Pokémon gain!"
+                ))
+                giveitem(ITEM_EXP_CHARM)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_10)
+            }
+        }
+        if (var(VAR_0x8009) >= 330) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_11)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 330 Pokémon? Fantastic work, {PLAYER}!\p"
+                    "Here, take this charm. It'll increase the chances of getting a Pokémon egg from the daycare at Fresa Farms!"
+                ))
+                giveitem(ITEM_OVAL_CHARM)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_11)
+            }
+        }
+        if (var(VAR_0x8009) >= 360) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_12)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Oh? You've caught at least 360 Pokémon now? Amazing work, {PLAYER}! You're nearing completion of the Pokédex!"
+                    "Here, this Master Ball was gifted to me by Poe Industries. I'm sure a seasoned trainer such as yourself will be able to make use of it!"
+                ))
+                giveitem(ITEM_MASTER_BALL)
+                msgbox(format(
+                    "You're nearly there, {PLAYER}! I know you can do it!"
+                ))
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_12)
+            }
+        }
+        // temp until we know for sure the pokedex size
+        if (var(VAR_0x8009) == 400) {
+            subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_13)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "I cannot believe my aging eyes... You've done it! You've seen and caught all {STR_VAR_1} Pokémon, {PLAYER}!\p"
+                    "At last... my lifelong dream of completing the Pokédex has come true.\p"
+                    "I'm not quite sure what to say, {PLAYER}. I truly can't thank you enough for your help.\p"
+                    "Here, please take this as your final reward. A mysterious stranger handed it to me many years ago. He told me to give it to the world's strongest trainer, and I see no other recipient more worthy of that title than you!"
+                ))
+                giveitem(ITEM_AURORA_TICKET)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_POKEDEX_COMPLETION, SUB_QUEST_POKEDEX_MILESTONE_12)            
+                completequest(QUEST_PERSI_BERRY_MANIAC)
+            }
+        }
+        
     
-    release
+    Palm_End:
+        closemessage
+        release
 }
+
+// ProfBirch_EventScript_RatePokedex::
+// 	setvar VAR_0x8004, 0
+// 	specialvar VAR_RESULT, ScriptGetPokedexInfo
+// 	copyvar VAR_0x8008, VAR_0x8005
+// 	copyvar VAR_0x8009, VAR_0x8006
+// 	copyvar VAR_0x800A, VAR_RESULT
+// 	buffernumberstring STR_VAR_1, VAR_0x8008  @ Num Hoenn seen
+// 	buffernumberstring STR_VAR_2, VAR_0x8009  @ Num Hoenn caught
+// 	msgbox gBirchDexRatingText_SoYouveSeenAndCaught, MSGBOX_DEFAULT
+// 	call ProfBirch_EventScript_ShowRatingMessage
+// 	goto_if_eq VAR_0x800A, 0, Common_EventScript_NopReturn  @ National dex not enabled
+// 	setvar VAR_0x8004, 1
+// 	specialvar VAR_RESULT, ScriptGetPokedexInfo
+// 	copyvar VAR_0x8008, VAR_0x8005
+// 	copyvar VAR_0x8009, VAR_0x8006
+// 	buffernumberstring STR_VAR_1, VAR_0x8008  @ Num National seen
+// 	buffernumberstring STR_VAR_2, VAR_0x8009  @ Num National caught
+// 	msgbox gBirchDexRatingText_OnANationwideBasis, MSGBOX_DEFAULT
+// 	return
+
+	// copyvar VAR_0x8004, VAR_0x8009
+	// special ShowPokedexRatingMessage
+	// waitmessage
+	// waitbuttonpress
+
 
 text ProfTalk_First_Text {
     format(
@@ -85,33 +387,6 @@ text ProfTalk_Third_Text {
     )
 }
 
-text ProfTalk_Fourth_Text {
-    format(
-        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs. They're a special tool that you can use to catch wild Pokémon! \p"
-        "{COLOR DARK_GRAY}And with that, {PLAYER}, you're all set to begin your journey! \p"
-        "{COLOR DARK_GRAY}I suggest you meet up with my other student first, though. \p"
-        "{COLOR DARK_GRAY}Her name is Melissa, and she's been helping me out for about a week or two. \p"
-        "{COLOR DARK_GRAY}She knows her way around Oranna better than me, so she can help you navigate the island and give you some pointers! \p"
-        "{COLOR DARK_GRAY}Melissa should be somewhere near her hometown, Maplegrove, right now."
-    )
-}
-
-text ProfTalk_AudreyNotDefeated {
-    format("{COLOR DARK_GRAY}Melissa should be somewhere near her hometown, Maplegrove, right now.")
-}
-
-text ProfTalk_CheckPokedex {
-    format(
-        "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}{PLAYER}! It's good to see you again. How have you been? \p"
-        "Let's see the progress you've made on completing your Pokédex... \p"
-        "You've seen a total of {COLOR RED}(X) Pokémon... and caught a total of {COLOR RED}(Y) of them! \p"
-        "Not too shabby at all, {PLAYER}! Keep up the good work!"
-        )
-}
-
-
-
-
 
 
 
@@ -139,7 +414,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_Scientist2Talk {
     waitmovement(0)
     applymovement(SCIENTIST_ID, Common_Movement_Delay48)
     waitmovement(0)
-    msgbox(format("Huh? You're not the professor...{PAUSE 60} Go away! I'm doing grown-up stuff!"))
+    msgbox(format("Huh? You're not the professor...{PAUSE 60} G-Go away! I'm doing grown-up stuff!"))
     applymovement(SCIENTIST_ID,Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release

@@ -1,41 +1,51 @@
 mapscripts ISLANDGAME_CAMP_PERSI_MACHETE_TREE_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-        checkitem(ITEM_ISLANDGAME_MACHETE)
-
-        if (var(VAR_RESULT)) {
-            setflag(FLAG_TEMP_1) // removes the machete pokeball if we already have it
-        }
-    }
 }
 
-script ISLANDGAME_CAMP_PERSI_MACHETE_TREE_EventScript_PickupMachete {
-    lock
-    finditem(ITEM_ISLANDGAME_MACHETE)
-    release
-} 
+
 
 script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_Laptop {
     lock
-    msgbox(ISLANDGAME_CAMP_PERSI_TREEHOUSE_LaptopInspect)
+    msgbox(format(
+        "It's a dusty old laptop. It looks like it's been here for years.\p"
+        "There seems to still be some power in it. You could probably still use it."
+    ))
+    checkitem(ITEM_ISLANDGAME_STRANGE_DISC)
+    if(var(VAR_RESULT)) {
+        msgbox(format(
+            "Insert the strange disc into the laptop?"
+        ), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES) {
+            special(Script_FadeOutMapMusic)
+            waitstate
+            msgbox(format(
+                "> You booted up the laptop and inserted the disc.\p"
+                "“LostSilver.exe” is automatically installed and opened.\p"
+                "It's loading...{PAUSE 60} loading...{PAUSE 60} loading...{PAUSE 60}\p"
+                "{COLOR RED}(Huh? It seems like the laptop froze while attempting to run the game.)"
+            ))
+            closemessage
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+            setvar(VAR_RESULT, 0)
+            playse(SE_ORB)
+            special(DoOrbEffect)
+            delay(300)
+            special(FadeOutOrbEffect)
+            applymovement(OBJ_EVENT_ID_PLAYER, spookySpin)
+            waitmovement(0)
+            warp(MAP_ISLANDGAME_ANOMALY01_1F, 8, 15)
+        }
+    }
     release
 }
 
-text ISLANDGAME_CAMP_PERSI_TREEHOUSE_LaptopInspect {
-    format(
-        "{COLOR RED}(It's a dusty old laptop. It looks like it's been here for years.) \p"
-        "You tried to turn it on, but there was no power."
-    )
-}
+
 
 script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_TV {
     lock
-    msgbox(ISLANDGAME_CAMP_PERSI_TREEHOUSE_TVInspect)
+    msgbox(format(
+        "It's a really old television set riddled with cobwebs.\p"
+        "You tried to turn it on, but nothing happened."
+    ))
     release
 }
 
-text ISLANDGAME_CAMP_PERSI_TREEHOUSE_TVInspect {
-    format(
-        "{COLOR RED}(It's a really old television set riddled with cobwebs.) \p"
-        "You tried to turn it on, but there was no power."
-    )
-}

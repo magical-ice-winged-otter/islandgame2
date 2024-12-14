@@ -281,72 +281,58 @@ script ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac {
             // final check if all subquests have been complete
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14)
             if(!var(VAR_RESULT)) {
-                msgbox(format("NOW GET ME THE OTHER REMAINING BERRIES!!!\pTIME IS WASTING AWAY, MY FRIEND!"))
                 goto(BerryManiac_End)   
             }
             completequest(QUEST_PERSI_BERRY_MANIAC)

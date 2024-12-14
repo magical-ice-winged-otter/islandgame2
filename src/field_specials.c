@@ -1659,6 +1659,13 @@ bool8 BufferTMHMMoveName(void)
     return FALSE;
 }
 
+// salon massage function
+void SalonMassageServices(void)
+{
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);
+}
+
+
 bool8 IsBadEggInParty(void)
 {
     u8 partyCount = CalculatePlayerPartyCount();

@@ -1,6 +1,16 @@
 mapscripts ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_MapScripts {}
 
 
+script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Bed {
+    lock
+    msgbox(format(
+        "{COLOR RED}(...I shouldn't be sleeping here.)"
+    ))
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+    waitmovement(0)
+    release
+}
+
 script ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_WailmerDoll {
     lock
     msgbox(ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_WailmerInspect)

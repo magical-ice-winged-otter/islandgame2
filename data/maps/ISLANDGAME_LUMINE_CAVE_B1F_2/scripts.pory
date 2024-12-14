@@ -1,0 +1,586 @@
+mapscripts ISLANDGAME_LUMINE_CAVE_B1F_2_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if(flag(FLAG_DAILY_LUMINE_CAVE_SALT_4)) {
+            setmetatile(11, 19, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        }
+        if(flag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)) {
+            setflag(FLAG_TEMP_1F)
+        }
+    }
+    MAP_SCRIPT_ON_TRANSITION {
+        if(flag(FLAG_LUMINE_CAVE_ALBA_DEFEATED)) {
+            setobjectxyperm(1, 10, 11)
+            setobjectmovementtype(1, MOVEMENT_TYPE_FACE_DOWN)
+            setobjectxyperm(2, 9, 11)
+            setobjectmovementtype(2, MOVEMENT_TYPE_FACE_DOWN)
+        }
+    }
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_SALT {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SALT_4)) {
+        giveitem(ITEM_SHOAL_SALT)
+        setmetatile(11, 19, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_DAILY_LUMINE_CAVE_SALT_4)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No more salt here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_Cringe {
+    lock
+    faceplayer
+    msgbox(format(
+        "STICKING OUT YOUR GYATT FOR THE GRAVELER\p"
+        "YOU'RE SO CARBINK\nYOU'RE SO GIGALITH\p"
+        "I JUST WANNA BE YOUR CRADILY\p"
+        "C'MON, SING IT WITH ME!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_TempNPC1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "We heard there was a mass outbreak blocking the cave, but it seems like it's already been resolved..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_TempNPC2 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_EXCADRILL, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Doryuzu... {COLOR BLUE}(What a shame... I was ready to GROUND POUND that Aggron!)"
+    ))
+    closemessage
+    release
+}
+
+
+// Main Quest Event
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_PorygonInteract {
+    lock
+    faceplayer
+    if(!defeated(TRAINER_LUMINE_CAVE_ALBA)) {
+        playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
+        msgbox(format(
+            "I AM DESIGNATED AS PORYGON2: DEFINITIVE EDITION REMASTERED!\p"
+            "WHAT'S QUACKALACKIN'?"
+        ))
+    }
+    else {
+        playmoncry(SPECIES_PORYGON2, CRY_MODE_WEAK)
+        msgbox(format(
+            "YOU REALLY DUCKED US UP, TRAINER! I WILL REMEMBER OUR FIGHT!"
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract {
+    lock
+    if(!flag(FLAG_LUMINE_CAVE_SPOKE_TO_ALBA)) { // initial interaction
+        playbgm(MUS_DP_ENCOUNTER_SUSPICIOUS, TRUE)
+        msgbox(format(
+            "Fascinating...{PAUSE 60} the sheer ferocity of an Aggron is truly without parallel...\p"
+            "Their adamantine iron hide that serves as both sword and shield, compounded with their instinctive territorial nature...\p"
+            "Yes...{PAUSE 60} This mass outbreak has proved rather beneficial in realizing the potential of Pokémon...\p"
+            "Oh?"
+        ))
+        closemessage
+        applymovement(1, Common_Movement_FaceLeft)
+        waitmovement(0)
+        applymovement(1, Common_Movement_QuestionMark)
+        waitmovement(0)
+        applymovement(1, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(format(
+            "Ah,{PAUSE 60} please excuse my ramblings, trainer.{PAUSE 60} I was simply enamored by the majesty of the Aggron over there.\p"
+            "I do advise that you keep a safe distance, however.\p"
+            "They have claimed this cavern as their home, and will not show mercy to those who dare trespass it.\p"
+            "It is in everyone's best interest to stay put until the authorities arrive."
+        ))
+        closemessage
+    
+        savebgm(MUS_DUMMY)
+        fadedefaultbgm
+
+        applymovement(11, Common_Movement_QuestionMark)
+        waitmovement(0)
+        applymovement(11, Common_Movement_WalkInPlaceFasterRight)
+        waitmovement(0)
+        applymovement(11, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        waitmovement(0)
+        msgbox(format(
+            "Eeeh?{PAUSE 60} But my poor little Litten is getting picked on by those meanies!\p"
+            "Please, can't you save her?"
+        ))
+        closemessage
+
+        applymovement(1, Common_Movement_WalkInPlaceLeft)
+        waitmovement(0)
+        applymovement(1, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        waitmovement(0)
+        msgbox(format(
+            "I understand your frustrations, but it is too dangerous for any of us to tread onto their territory.\p"
+            "Even I do not possess the capabilities to surmount a mighty Aggron.\p"
+            "All we can do is hope for the best and await the Silverwing Order."
+        ))
+        closemessage
+
+        applymovement(11, Common_Movement_WalkInPlaceRight)
+        waitmovement(0)
+        applymovement(11, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+        waitmovement(0)
+        msgbox(format(
+            "B-But!..."
+        ))
+        closemessage
+        
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+        waitmovement(0)    
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48)
+        waitmovement(0)
+        msgbox(format(
+            "You still wish to pass to rescue her Litten,{PAUSE 60} despite my warnings?\p"
+            "Hm...{PAUSE 60} I cannot in good faith let such a young trainer go on alone...\p"
+            "But if you are that confident in your abilities, I would like to verify them first in a battle.\p"
+            "If you can best me, I will grant you passage to save her Pokémon.\p"
+            "I will give you a moment to prepare. Speak to me when you are ready."
+        ))
+        setflag(FLAG_LUMINE_CAVE_SPOKE_TO_ALBA)
+        fadedefaultbgm
+    }
+    elif (!defeated(TRAINER_LUMINE_CAVE_ALBA)) {
+        faceplayer
+        msgbox(format(
+            "Have you made the necessary preparations for our battle?"
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format(
+                "Very well. Prove to me that you have what it takes!"
+            ))
+            trainerbattle_no_intro(TRAINER_LUMINE_CAVE_ALBA, "Intriguing...\pYou've exceeded my expectations,{PAUSE 60}\nthat's for sure...")
+
+            playbgm(MUS_DP_ENCOUNTER_SUSPICIOUS, TRUE)
+
+            msgbox(format(
+                "{COLOR GREEN}Alba: {COLOR DARK_GRAY}I must applaud you for your tactical prowess, trainer.\p"
+                "As agreed upon, I will allow you to engage the Aggron by yourself.\p"
+                "Please do take extreme care. Your next battle will not be against a trainer, but a truly savage beast."
+            ))
+            closemessage
+
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            waitmovement(0)
+            applymovement(2, Common_Movement_WalkLeft)
+            waitmovement(0)
+            applymovement(2, Common_Movement_WalkUp)
+            waitmovement(0)
+            applymovement(2, Common_Movement_FaceDown)
+            waitmovement(0)
+            applymovement(1, Common_Movement_FaceDown)
+            waitmovement(0)
+            applymovement(1, Common_Movement_Delay48)
+            waitmovement(0)
+            setobjectxyperm(1, 10, 11)
+            setobjectmovementtype(1, MOVEMENT_TYPE_FACE_DOWN)
+            setobjectxyperm(2, 9, 11)
+            setobjectmovementtype(2, MOVEMENT_TYPE_FACE_DOWN)
+            setflag(FLAG_LUMINE_CAVE_ALBA_DEFEATED)
+        
+            savebgm(MUS_DUMMY)
+            fadedefaultbgm
+        }
+    }
+    else {
+        faceplayer
+        msgbox(format(
+            "Please do take extreme care. Your next battle will not be against a trainer, but a truly savage beast."
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_LittenGirl {
+    lock
+    faceplayer
+    if (flag(FLAG_LUMINE_CAVE_SPOKE_TO_ALBA)) {
+        msgbox(format(
+            "Please save my litty kitty! D:"
+        ))
+    }
+    else {
+        msgbox(format(
+            "Waaaah!{PAUSE 30} My Litten is trapped over there with those big bad bullies!"
+        ))
+    }
+    applymovement(11, Common_Movement_FaceRight)
+    waitmovement(0)
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_NPC1 {
+    lock
+    msgbox(format(
+        "See that big strong Aggron, buddy? That's what you're gonna grow up to be!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_Aron {
+    lock
+    faceplayer
+    playmoncry(SPECIES_ARON, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Ron... {COLOR BLUE}(I'm glad to be owned by a trainer. The wild Pokémon world is scary.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_Swampert {
+    lock
+    playmoncry(SPECIES_SWAMPERT, CRY_MODE_WEAK)
+    msgbox(format(
+        "{COLOR RED}(Looks like Swampert is out of commission.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_NPC2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "The horns of an Aggron are strong enough to pierce steel with ease, while their claws can shred through the strongest of bedrock.\p"
+        "It's believed that ancient generals used to wear armor made from the plating of an Aggron as a symbol of strength."
+    ))
+    closemessage
+    release    
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_NPC3 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I could easily take down an Aggron by myself.{PAUSE 60} Just give me enough prep time!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_NPC4 {
+    lock
+    msgbox(format(
+        "Swampert! Are you alright?\p"
+        "Argh... We couldn't even put a dent on that Aggron...\p"
+        "It doesn't add up. Why weren't water or ground moves super effective on it...?"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_NPC5 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Heck... I'm gonna miss out on meeting STARLIGHT cause of this DUMB Aggron!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_NPC6 {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SALT_4)) {
+        msgbox(format(
+            "Eureka! A deposit of Sodium Chloride! This will go great with my french fries!"
+        ))
+    }
+    else {
+        faceplayer
+        msgbox(format(
+            "Huh? What do you mean, this isn't the same salt you put on food?"
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_Litten {
+    lock
+    playmoncry(SPECIES_LITTEN, CRY_MODE_WEAK)
+    msgbox(format(
+        "Mew... {COLOR BLUE}(git mes out)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    setcwildbattle(0, SPECIES_SHADOW_AGGRON, 45, ITEM_SHELL_BELL, NATURE_RELAXED, 2, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_CURSE, MOVE_HEAD_SMASH, MOVE_HEAVY_SLAM)
+    setwilddoublebattle(TRUE)
+    playmoncry(SPECIES_AGGRON, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+        case B_OUTCOME_RAN:
+            break
+        default:
+            goto(ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight)
+    }
+    release
+}
+
+movement AlbaWalkToPlayer {
+    walk_up * 5
+}
+
+movement LittenGirlZoom {
+    walk_faster_up * 8
+    jump_in_place_up * 2
+}
+
+movement LittenGirlWalkToPlayer {
+    walk_down * 2
+    walk_left
+}
+
+movement LittenHop {
+    jump_in_place_down * 2
+}
+
+movement LittenWalkToGirl {
+    walk_down * 3
+    face_left
+}
+
+movement LumineCaveWalkAway {
+    walk_down * 9
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
+    lock
+    setflag(FLAG_LUMINE_CAVE_AGGRON_DEFEATED)
+    fadescreen(FADE_TO_BLACK)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
+    setvar(VAR_0x8000, 26)
+    setvar(VAR_0x8001, 6)
+    callnative(TeleportCamera)
+    removeobject(8)
+    removeobject(20)
+    removeobject(21)
+    removeobject(22)
+    removeobject(23)
+    removeobject(24)
+    removeobject(25)
+    removeobject(26)
+    addobject(1)
+    addobject(2)
+    addobject(11)
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 26, 6)
+    setobjectxyperm(8, 47, 0)  
+    setobjectxyperm(20, 47, 0)  
+    setobjectxyperm(21, 47, 0)  
+    setobjectxyperm(22, 47, 0)  
+    setobjectxyperm(23, 47, 0)  
+    setobjectxyperm(24, 47, 0)  
+    setobjectxyperm(25, 47, 0)  
+    setobjectxyperm(26, 47, 0)  
+    setobjectxy(1, 26, 12)
+    setobjectxy(2, 26, 13)
+    setobjectxy(11, 28, 12)
+    setobjectmovementtype(11, MOVEMENT_TYPE_FACE_UP)
+    fadescreen(FADE_FROM_BLACK)
+
+    msgbox(format(
+        "{COLOR RED}(Phew...{PAUSE 60} Seems like defeating the Aggron caused the other Pokémon to flee...)\p"
+        "(That Aggron...{PAUSE 60} it was exuding the same shadowy aura as the Mightyena I fought with Melissa...)\p"
+        "(What's going on here...?){PAUSE 60}\p"
+        "{COLOR GREEN}Alba: {COLOR DARK_GRAY}Incredible...{PAUSE 60} I cannot believe my very own eyes..."
+    ))
+    closemessage
+
+    
+    playbgm(MUS_DP_ENCOUNTER_SUSPICIOUS, TRUE)
+
+    applymovement(1, AlbaWalkToPlayer)
+    applymovement(2, AlbaWalkToPlayer)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)        
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)        
+
+    msgbox(format(
+        "My apologies, but I never caught your name.{PAUSE 60} May I ask it by chance?\p"
+        "...\p"
+        "Ah, {PLAYER},{PAUSE 30} is it?\p"
+        "Tell me, {PLAYER},{PAUSE 30} what is it that allows you to bring forth the latent power of your Pokémon?"
+    ))
+    closemessage
+
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+
+    msgbox(format(
+        "Hm...{PAUSE 60} I see...{PAUSE 60} You believe it is your ability to understand and talk to Pokémon that enables you to form stronger bonds with them, thereby drawing out their maximum potential?\p"
+        "An interesting prospect, {PLAYER}.{PAUSE 60} Your response mirrors that of an old colleague I once worked with...\p"
+        "I too hypothesize that the power of emotions is the key to unlocking a Pokémon's true strength...\p"
+        "But which emotion specifically? I still have yet to figure out...\p"
+        "Until then, my research on the mind of Pokémon continues..."
+    ))
+    closemessage
+
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(1, Common_Movement_QuestionMark)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "Hm? Did I notice anything strange about the Aggron?\p"
+        "Not particularly...{PAUSE 60} Did you happen to see something that I did not?\p"
+        "...\p"
+        "Is that so...?\p"
+        "Hmm...{PAUSE 60} A menacing dark aura emanating from a Pokémon acting unnaturally...{PAUSE 60} Only for it to fade away when they are defeated in battle...\p"
+        "...and you say you encountered a Mightyena with the same traits as well?"
+    ))
+    closemessage
+
+
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "That is rather worrisome, if what you say is true...{PAUSE 60} I was unable to observe anything like that from the Aggron.\p"
+        "Perhaps your ability to perceive its aura is related to your innate ability?\p"
+        "This is all very unorthodox...{PAUSE 60} What could be the cause of such a phenomenon?\p"
+        "Perhaps I should take the Aggron in for further analysis..."
+    ))
+    closemessage
+
+    savebgm(MUS_DUMMY)
+    fadedefaultbgm
+
+    applymovement(11, LittenGirlZoom)
+    waitmovement(0)
+    msgbox(format(
+        "My precious little Litten! I'm never gonna let you out of my sight again!"
+    ))
+    closemessage
+    applymovement(16, LittenHop)
+    waitmovement(0)
+    playmoncry(SPECIES_LITTEN, CRY_MODE_WEAK)
+    waitmoncry
+    applymovement(11, LittenGirlWalkToPlayer)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "Thank you, thank you, thank you, trainer!{PAUSE 60} Here, I know it's not much, but please take it for saving my Litten!"
+    ))
+    giveitem(ITEM_QUICK_CLAW)
+    closemessage
+
+    applymovement(16, LittenWalkToGirl)
+    waitmovement(0)
+    applymovement(11, Common_Movement_FaceRight)
+    waitmovement(0)
+    applymovement(1, Common_Movement_Delay48)
+    waitmovement(0)
+    msgbox(format(
+        "The first thing we'll be doing at Bellehaven is getting you a leash!"
+    ))
+    closemessage
+
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    applymovement(11, LumineCaveWalkAway)
+    applymovement(16, LumineCaveWalkAway)
+    waitmovement(0)
+
+    msgbox(format(
+        "{COLOR GREEN}Alba: {COLOR DARK_GRAY}...and with that, I believe it is about time I take my leave as well.\p"
+        "Our battle was quite fruitful, {PLAYER}.{PAUSE 60} I've little opportunities to interact with trainers of your...{PAUSE 60} expertise.\p"
+        "Perhaps we shall meet again in the future.{PAUSE 60} Hopefully by then, I will have found the answer to my hypothesis...{PAUSE 60} as well as the answer to yours."
+    ))
+    closemessage
+
+
+    playbgm(MUS_DP_ENCOUNTER_SUSPICIOUS, FALSE)
+
+    applymovement(1, Common_Movement_WalkDown)
+    applymovement(2, Common_Movement_WalkUp)
+    waitmovement(0)
+    applymovement(1, LumineCaveWalkAway)
+    applymovement(2, LumineCaveWalkAway)
+    waitmovement(0)
+    removeobject(1)
+    removeobject(2)
+    removeobject(11)
+    removeobject(16)
+    setobjectxyperm(1, 47, 0)  
+    setobjectxyperm(2, 47, 0)  
+    setobjectxyperm(11, 47, 0)  
+    setobjectxyperm(16, 47, 0)  
+    release
+
+
+    savebgm(MUS_DUMMY)
+    fadedefaultbgm
+}
