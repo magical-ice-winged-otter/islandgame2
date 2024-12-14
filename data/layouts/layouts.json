@@ -5225,7 +5225,7 @@
       "id": "LAYOUT_ISLANDGAME_PLEASANT_AVENUE",
       "name": "ISLANDGAME_PLEASANT_AVENUE_Layout",
       "width": 50,
-      "height": 30,
+      "height": 35,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_pleasant_avenue",
       "border_filepath": "data/layouts/ISLANDGAME_PLEASANT_AVENUE/border.bin",
