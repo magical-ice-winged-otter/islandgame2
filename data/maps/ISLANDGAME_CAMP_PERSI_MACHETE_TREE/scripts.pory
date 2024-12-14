@@ -1,5 +1,6 @@
 const FLAG_DAYTIME = FLAG_TEMP_2
 const FLAG_NIGHTTIME = FLAG_TEMP_3
+const THIEF_ID = 2
 
 mapscripts ISLANDGAME_CAMP_PERSI_MACHETE_TREE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -104,43 +105,115 @@ script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_TV {
 }
 
 
-script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_GulpinDoll {
+script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll {
     lock
     switch(var(VAR_CAMP_PERSI_STATE)) {
         case 1:
             msgbox(format(
                 "{COLOR RED}(It's just a regular old Gulpin doll.)\p"
-                "(Huh? There seems to be something stashed inside it...)"
+                "(Oh? There seems to be something stashed inside it...)"
             ))
+            closemessage
+            delay(10)
+            playse(SE_EXIT)
+            addobject(THIEF_ID)
+            setobjectxy(THIEF_ID, 4, 4)
+            delay(30)
+            applymovement(THIEF_ID, Common_Movement_QuestionMark)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            waitmovement(0)
+            delay(30)
+            msgbox(format(
+                "Huh? What're you doing here?"
+            ))
+            closemessage
+            delay(30)
+            applymovement(THIEF_ID, Common_Movement_ExclamationMark)
+            waitmovement(0)
+            applymovement(THIEF_ID, Common_Movement_WalkInPlaceFasterUp)
+            waitmovement(0)
+            delay(30)
+            msgbox(format(
+                "H-Hey! You were snooping around in my secret base, weren't you!?\p"
+                "Mrgrgr... {PAUSE 30}Fine! You got me! I stole it! I'm the one who took that camper's card!\p"
+                "It's not fair! I've been using up my allowance for WEEKS trying to get one, and he pulls it from his FIRST pack?\p"
+                "A card with THAT much power shouldn't be allowed! There's no reason a newbie should be able to beat me so easily!\p"
+                "I'm just leveling the playing field, is all! You understand, right!?\p"
+                "...\p"
+                "-sigh- Now that you know the truth, you're gonna tattle on me, aren't you?"
+            ))
+            closemessage
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+            waitmovement(0)
+            delay(30)
+            applymovement(THIEF_ID, Common_Movement_QuestionMark)
+            waitmovement(0)
+            msgbox(format(
+                "H-Huh? You'll let me go if I just beat you in a Pokémon battle?\p"
+                "Well... I have no choice but to oblige. I'll show you the power of Bug Pokémon!"
+            ))
+            applymovement(THIEF_ID, Common_Movement_WalkUp)
+            waitmovement(0)
+            trainerbattle_no_intro(TRAINER_CAMP_PERSI_THIEF, "T-This isn't right! I should've won!")
+            applymovement(THIEF_ID, ISLANDGAME_CAMP_PERSI_TREEHOUSE_Backoff)
+            waitmovement(0)
+            msgbox(format(
+                "I don't get it... My Pokémon should've won! They're statistically better!\p"
+                "Is... power not all there is to battling? Can weaker Pokémon still beat stronger Pokémon with the right strategy?"
+            ))
+            closemessage
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+            waitmovement(0)
+            delay(30)
+            msgbox(format(
+                "I... I see. That's what you were trying to teach me with that battle, wasn't it?\p"
+                "Heh... I sure feel like a real big stupid jerk now...\p"
+                "Well, I guess it's time for me pay for my crimes..."
+            ))
+            closemessage
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            waitmovement(0)
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+            waitmovement(0)
+            msgbox(format(
+                "Huh? You won't tell on me? B-But, I lost...\p"
+                "...\p"
+                "O-Okay. Thank you so much! I won't forget your kindness, trainer! I promise to never steal ever again!"
+            ))
+            closemessage
+            applymovement(THIEF_ID, ISLANDGAME_CAMP_PERSI_TREEHOUSE_Unlock)
+            applymovement(THIEF_ID, Common_Movement_WalkDown)
+            waitmovement(0)
+            playse(SE_EXIT)
+            waitse
+            setobjectxyperm(THIEF_ID, -1, -1)
+            removeobject(THIEF_ID)
+            setvar(VAR_CAMP_PERSI_STATE, 2)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            waitmovement(0)
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+            waitmovement(0)
+            delay(30)
+            giveitem(ITEM_ISLANDGAME_TRADING_CARD)
         default:
             msgbox(format("{COLOR RED}(It's just a regular old Gulpin doll.)"))
     }
     closemessage
     release
-
-    if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED) && flag(FLAG_TEMP_1)) {
-        msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect, MSGBOX_YESNO)
-        if(var(VAR_RESULT) == NO) {
-            msgbox(format("Wow. Really? You're gonna let him get away with it?"))
-            goto(GulpinDollInspect_End)
-        }
-        
-        giveitem(ITEM_LAVA_COOKIE, 3)
-        giveitem(ITEM_RAGE_CANDY_BAR, 3)
-        setflag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)
-    }
-    else {
-    }
-
-    GulpinDollInspect_End:
-        release
 }
 
-// text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect {
-//     format(
-//         "{COLOR RED}(It looks like a regular old Guplin doll.) \p"
-//         "{COLOR RED}(Huh? Instead of stuffing, there's a bunch of smuggled goods inside of it.) \p"
-//         "{COLOR DARK_GRAY}Take them?"
-//     )
-// }
+movement ISLANDGAME_CAMP_PERSI_TREEHOUSE_Backoff {
+    face_up
+    lock_facing_direction
+    walk_fast_down   
+}
 
+movement ISLANDGAME_CAMP_PERSI_TREEHOUSE_Unlock {
+    unlock_facing_direction
+}

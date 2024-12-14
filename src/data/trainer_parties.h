@@ -107,6 +107,19 @@ static const struct TrainerMon sParty_CampPersiJonas[] = {
     },
 };
 
+static const struct TrainerMon sParty_CampPersiThief[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 10,
+    .species = SPECIES_KRICKETUNE,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 10,
+    .species = SPECIES_BEEDRILL,
+    }
+};
+
 
 
 
@@ -189,12 +202,12 @@ static const struct TrainerMon sParty_VerdantWoodsTrainer1[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 10,
-    .species = SPECIES_KRICKETUNE,
+    .species = SPECIES_YANMA,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 10,
-    .species = SPECIES_BEEDRILL,
+    .species = SPECIES_VIVILLON,
     }
 };
 
@@ -214,11 +227,6 @@ static const struct TrainerMon sParty_VerdantWoodsTrainer2[] = {
     .lvl = 9,
     .species = SPECIES_JOLTIK,
     },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 9,
-    .species = SPECIES_YANMA,
-    }
 };
 
 static const struct TrainerMon sParty_VerdantWoodsTrainer3[] = {
@@ -987,18 +995,6 @@ static const struct TrainerMon sParty_PromenadePath4[] = {
 
 
 
-static const struct TrainerMon sParty_Keira[] = {
-    {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 45,
-    .species = SPECIES_LAIRON,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
-    .lvl = 45,
-    .species = SPECIES_MANECTRIC,
-    }
-};
 
 static const struct TrainerMon sParty_Brooke1[] = {
     {

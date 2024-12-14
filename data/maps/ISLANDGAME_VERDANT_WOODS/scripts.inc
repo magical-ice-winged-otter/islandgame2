@@ -97,186 +97,186 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_9:
 
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1::
-# 98 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 97 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	trainerbattle_double TRAINER_VERDANT_WOODS_1, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_NotEnoughMons
-# 99 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 98 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle2::
-# 130 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 128 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	trainerbattle_single TRAINER_VERDANT_WOODS_2, ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Defeated_Text
-# 131 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 129 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle2_PostDefeated_Text, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle3::
-# 156 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 154 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	trainerbattle_single TRAINER_VERDANT_WOODS_3, ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text
-# 157 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 155 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4::
-# 181 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 178 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	trainerbattle_single TRAINER_VERDANT_WOODS_4, ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Defeated_Text
-# 182 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 179 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle5::
-# 206 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 203 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	trainerbattle_single TRAINER_VERDANT_WOODS_5, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text
-# 208 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 205 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC1::
-# 235 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 232 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	lock
-# 236 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 233 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	faceplayer
-# 237 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 234 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_NPC1Talk
-# 238 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 235 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC2::
-# 250 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 247 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	lock
-# 251 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 248 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	faceplayer
-# 252 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 249 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	goto_if_unset FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED, ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_2
-# 257 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 254 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_Text_0
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_1:
-# 259 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 256 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	release
 	return
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_2:
-# 253 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 250 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_NPC2Talk
-# 254 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 251 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	playmoncry SPECIES_MIMIKYU, CRY_MODE_ENCOUNTER
-# 255 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 252 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	waitmoncry
 	goto ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_1
 
 
-# 268 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 265 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement:
-# 269 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 266 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	face_left
-# 270 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 267 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_4
-# 271 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 268 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	face_right
-# 272 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 269 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_8
+# 270 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	face_up
+# 271 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	delay_4
+# 272 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	face_left
 # 273 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	face_up
-# 274 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	delay_4
-# 275 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	face_left
-# 276 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 276 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 273 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
 	step_end
 
-# 279 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 276 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_2:
+# 277 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	face_left
+# 278 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	delay_4
+# 278 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	delay_4
+# 279 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	emote_exclamation_mark
 # 280 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	face_left
-# 281 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	delay_4
-# 281 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	delay_4
-# 282 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	emote_exclamation_mark
-# 283 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 284 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 281 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	jump_in_place_left
-# 284 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 281 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	jump_in_place_left
 	step_end
 
-# 287 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 284 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 ISLANDGAME_VERDANT_WOODS_EventScript_SkittyMovement_3:
-# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 285 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	face_up
-# 289 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 286 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	emote_exclamation_mark
-# 290 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 287 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 290 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 287 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 290 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 287 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
-# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 288 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 294 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 291 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 ISLANDGAME_VERDANT_WOODS_EventScript_HaunterMovement_4:
-# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 292 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
-# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 292 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
-# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 292 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
-# 296 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 293 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	face_left
-# 297 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 294 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 297 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 294 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 297 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 294 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 297 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 294 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 297 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 294 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	delay_16
-# 298 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
-# 298 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
-# 298 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
-# 298 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
-# 298 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
-# 298 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 295 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	walk_down
 	step_end
 
@@ -305,61 +305,61 @@ ISLANDGAME_VERDANT_WOODS_EventScript_ObtainSkitty::
 
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC3::
-# 484 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 481 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	lock
-# 485 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 482 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	faceplayer
-# 486 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 483 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	goto_if_set FLAG_VERDANT_WOODS_SEED_RECEIVED, ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven
-# 487 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 484 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_NPC3Talk
-# 488 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 485 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	giveitem ITEM_MIRACLE_SEED
-# 489 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 486 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-# 490 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 487 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	setflag FLAG_VERDANT_WOODS_SEED_RECEIVED
-# 491 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 488 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven::
-# 495 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 492 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0
-# 496 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 493 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_EventScript_SIGN1::
-# 511 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 508 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	lock
-# 512 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 509 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_SIGN1_DESC
-# 513 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 510 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2::
-# 524 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 521 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	lock
-# 525 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 522 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	goto_if_unset FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED, ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_2
-# 531 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 528 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_Text_0
 ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_1:
-# 533 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 530 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	release
 	return
 
 ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_2:
-# 526 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 523 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_WOODS_SIGN2_DESC
-# 527 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 524 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	playmoncry SPECIES_MIMIKYU, CRY_MODE_ENCOUNTER
-# 528 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 525 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	waitmoncry
 	goto ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_1
 
@@ -376,100 +376,94 @@ ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_1:
 	.string "{COLOR DARK_GRAY}Water the strange-looking tree?$"
 
 ISLANDGAME_VERDANT_WOODS_EventScript_NPC2_Text_0:
-# 257 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 254 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "Owww, my head, it hurts...$"
 
 ISLANDGAME_VERDANT_WOODS_NPC3_MiracleSeedGiven_Text_0:
-# 495 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 492 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}That's a Miracle Seed. It's not good for\n"
 	.string "cooking, but it's great for powering up\l"
 	.string "grass-type Pokémon in a battle!$"
 
 ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_Text_0:
-# 531 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 528 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "NO TRESPASSING$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Text::
-# 102 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	.string "{COLOR DARK_GRAY}Bug Pokémon are the best! They evolve\n"
-	.string "early, so they become powerful fast!$"
+# 101 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	.string "Yay! My Spewpa finally evolved!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text::
-# 108 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	.string "I guess bug Pokémon aren't very strong, \n"
-	.string "so evolving early doesn't matter.$"
+# 107 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	.string "Waaah!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text::
-# 114 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	.string "{COLOR DARK_GRAY}Even still, I think bug Pokémon are\n"
-	.string "awesome!$"
+# 112 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	.string "Bug Pokémon are really fragile...$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle1_NotEnoughMons::
-# 121 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 119 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}Huh? You need at least two Pokémon to\n"
 	.string "face me!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Text::
-# 134 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	.string "{COLOR DARK_GRAY}Mark my words, I will become the Bug\n"
+# 132 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	.string "{COLOR DARK_GRAY}Mark my words, I WILL become the Bug\n"
 	.string "King!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Defeated_Text::
-# 140 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 138 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "I guess I'll just be the Bug Prince for  \n"
 	.string "now.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle2_PostDefeated_Text::
-# 146 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 144 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}To become the Bug King, I have to\n"
 	.string "capture that giant bug Pokémon first.\p"
 	.string "{COLOR DARK_GRAY}I hear it's the only one of its kind\n"
 	.string "here, which makes it perfect for a king!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Text::
-# 160 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	.string "{COLOR DARK_GRAY}I'm tired of battling my brother. It's so\n"
-	.string "boring.$"
+# 158 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	.string "Give me a challenge!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text::
-# 166 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	.string "On second thought, battling him wasn't \n"
-	.string "THAT bad...$"
+# 164 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	.string "Finally... a worthy opponent...$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text::
-# 172 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	.string "{COLOR DARK_GRAY}I just wish he would use a Pokémon that\n"
-	.string "wasn't a bug for once.$"
+# 169 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	.string "Our battle was legendary!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text::
-# 185 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 182 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}Ugh... I hate forests. They're dirty and\n"
 	.string "full of icky bugs.$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Defeated_Text::
-# 191 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 188 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "The only thing I hate more than forests \n"
-	.string "is losing.$"
+	.string "is losing...$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text::
-# 197 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 194 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "This place gives me the\n"
 	.string "heebie-jeebies...$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text::
-# 211 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 208 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "Sic 'em, boy!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text::
-# 217 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 214 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "Yo! Chill out! It was just a prank, bro!$"
 
 ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text::
-# 222 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 219 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "I'm just tryna go viral on PikPok, man.$"
 
 ISLANDGAME_VERDANT_WOODS_NPC1Talk::
-# 241 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 238 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}When I was trying to find a Joltik here,\n"
 	.string "I came across this HUGE bug Pokémon.\p"
 	.string "{COLOR DARK_GRAY}It was blue, had big muscles, and had a\n"
@@ -478,21 +472,21 @@ ISLANDGAME_VERDANT_WOODS_NPC1Talk::
 	.string "There's no way I'd fight that thing!$"
 
 ISLANDGAME_VERDANT_WOODS_NPC2Talk::
-# 262 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 259 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}get out of my head get out of my head\n"
 	.string "get out of my head GeT oUT oF mY hEaD$"
 
 ISLANDGAME_VERDANT_WOODS_NPC3Talk::
-# 499 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 496 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}Oh, are you a trainer? I found this while\n"
 	.string "foraging for herbs. Take it!$"
 
 ISLANDGAME_VERDANT_WOODS_SIGN1_DESC::
-# 516 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 513 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}VERDANT WOODS\n"
 	.string "{COLOR DARK_GRAY}Watch out for creepy crawlies!$"
 
 ISLANDGAME_VERDANT_WOODS_SIGN2_DESC::
-# 536 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 533 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	.string "{COLOR DARK_GRAY}KeEp OuT stAy oUt ThiS is mY hOuSE!! gO\n"
 	.string "aaWAy Go aWAY LeAve me AlOnE grAWuhgh$"

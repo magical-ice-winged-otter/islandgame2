@@ -137,18 +137,6 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC5::
 	return
 
 
-# 115 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-ISLANDGAME_CAMP_PERSI_LODGE_1_1F_Movement_PorygonAppear:
-# 116 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	emote_exclamation_mark
-# 117 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	face_up
-# 118 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	lock_facing_direction
-# 119 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	walk_fast_down
-	step_end
-
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_Scoutmaster_Text_0:
 # 38 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	.string "Where did that rapscallion Hanzo run\n"
@@ -191,4 +179,5 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4_Text_0:
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC5_Text_0:
 # 108 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	.string "Argh... if I only had one more turn...$"
+	.string "Ugh, if I only had one more turn! I would\n"
+	.string "have won!$"

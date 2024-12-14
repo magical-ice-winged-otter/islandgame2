@@ -1089,7 +1089,7 @@ const struct Tileset gTileset_islandgame_lumine_applevine =
     .palettes = gTilesetPalettes_islandgame_lumine_applevine,
     .metatiles = gMetatiles_islandgame_lumine_applevine,
     .metatileAttributes = gMetatileAttributes_islandgame_lumine_applevine,
-    .callback = NULL,
+    .callback = InitTilesetAnim_islandgame_lumine_applevine,
 };
 
 const struct Tileset gTileset_islandgame_lumine_power_plant_interior =
