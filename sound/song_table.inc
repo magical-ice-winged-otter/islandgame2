@@ -416,8 +416,8 @@ gSongTable::
 	song mus_contest, 0, 0
 	song mus_encounter_magma, 0, 0
 	song mus_intro_battle, 0, 0
-	song mus_weather_kyogre, 0, 0
-	song mus_weather_groudon, 0, 0
+	song mus_dummy, 0, 0 						@ mus_weather_kyogre
+	song mus_dummy, 0, 0 						@ mus_weather_groudon
 	song mus_sootopolis, 0, 0
 	song mus_contest_results, 0, 0
 	song mus_hall_of_fame_room, 0, 0
@@ -458,14 +458,14 @@ gSongTable::
 	song mus_rg_viridian_forest, 0, 0
 	song mus_rg_mt_moon, 0, 0
 	song mus_rg_poke_mansion, 0, 0
-	song mus_rg_credits, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_rg_credits
 	song mus_rg_route1, 0, 0
 	song mus_rg_route24, 0, 0
 	song mus_rg_route3, 0, 0
 	song mus_rg_route11, 0, 0
 	song mus_rg_victory_road, 0, 0
 	song mus_rg_vs_gym_leader, 0, 0
-	song mus_rg_vs_trainer, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_rg_vs_trainer
 	song mus_rg_vs_wild, 0, 0
 	song mus_rg_vs_champion, 0, 0
 	song mus_rg_pallet, 0, 0
@@ -666,7 +666,7 @@ gSongTable::
 	song mus_dp_evolved, 2, 2
 	song mus_dp_obtain_key_item, 2, 2
 	song mus_dp_obtain_item, 2, 2
-	song mus_dp_caught_intro, 2, 2
+	song mus_dummy, 0, 0 						@ song mus_dp_caught_intro
 	song mus_dp_dex_rating, 2, 2
 	song mus_dp_obtain_badge, 2, 2
 	song mus_dp_poketch, 2, 2
@@ -677,23 +677,23 @@ gSongTable::
 	song mus_dp_obtain_berry, 2, 2
 	song mus_dp_contest_dress_up, 0, 0
 	song mus_dp_hall_of_fame, 0, 0
-	song mus_dp_intro, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_dp_intro
 	song mus_dp_title, 0, 0
 	song mus_dp_mystery_gift, 0, 0
 	song mus_dp_wfc, 0, 0
-	song mus_dp_dance_easy, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_dp_dance_easy
 	song mus_dp_dance_difficult, 0, 0
 	song mus_dp_contest_results, 0, 0
 	song mus_dp_contest_winner, 0, 0
 	song mus_dp_poffins, 0, 0
 	song mus_dp_slots_win, 0, 0
 	song mus_dp_slots_jackpot, 0, 0
-	song mus_dp_credits, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_dp_credits
 	song mus_dp_slots_unused, 0, 0
 	song mus_pl_fight_area_day, 0, 0
 	song mus_pl_tv_broadcast, 0, 0
 	song mus_pl_tv_end, 2, 2
-	song mus_pl_intro, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_pl_intro
 	song mus_pl_title, 0, 0
 	song mus_pl_distortion_world, 0, 0
 	song mus_pl_b_arcade, 0, 0
@@ -724,15 +724,15 @@ gSongTable::
 	song mus_pl_obtain_castle_points, 2, 2
 	song mus_pl_obtain_b_points, 2, 2
 	song mus_pl_win_minigame, 2, 2
-	song mus_hg_intro, 0, 0
-	song mus_hg_title, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_hg_intro
+	song mus_dummy, 0, 0 						@ song mus_hg_title
 	song mus_hg_new_game, 0, 0
 	song mus_hg_evolution, 0, 0
 	song mus_hg_evolution_no_intro, 0, 0
 	song mus_hg_cycling, 0, 0
-	song mus_hg_surf, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_hg_surf
 	song mus_hg_hall_of_fame, 0, 0
-	song mus_hg_credits, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_hg_credits
 	song mus_hg_end, 0, 0
 	song mus_hg_new_bark, 0, 0
 	song mus_hg_cherrygrove, 0, 0
@@ -810,16 +810,16 @@ gSongTable::
 	song mus_hg_encounter_girl_2, 0, 0
 	song mus_hg_encounter_boy_2, 0, 0
 	song mus_hg_encounter_suspicious_2, 0, 0
-	song mus_hg_vs_wild, 0, 0
+	song mus_dummy, 0, 0 						@ song song mus_hg_vs_wild
 	song mus_hg_vs_trainer, 0, 0
 	song mus_hg_vs_gym_leader, 0, 0
 	song mus_hg_vs_rival, 0, 0
-	song mus_hg_vs_rocket, 0, 0
+	song mus_dummy, 0, 0 						@ mus_hg_vs_rocket
 	song mus_hg_vs_suicune, 0, 0
 	song mus_hg_vs_entei, 0, 0
 	song mus_hg_vs_raikou, 0, 0
 	song mus_hg_vs_champion, 0, 0
-	song mus_hg_vs_wild_kanto, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_hg_vs_wild_kanto
 	song mus_hg_vs_trainer_kanto, 0, 0
 	song mus_hg_vs_gym_leader_kanto, 0, 0
 	song mus_hg_victory_trainer, 0, 0
@@ -840,7 +840,7 @@ gSongTable::
 	song mus_hg_b_hall, 0, 0
 	song mus_hg_b_arcade, 0, 0
 	song mus_hg_b_castle, 0, 0
-	song mus_hg_vs_frontier_brain, 0, 0
+	song mus_dummy, 0, 0 						@ song mus_hg_vs_frontier_brain
 	song mus_hg_victory_frontier_brain, 0, 0
 	song mus_hg_wfc, 0, 0
 	song mus_hg_mystery_gift, 0, 0

@@ -1,0 +1,3 @@
+ISLANDGAME_TRAVELERS_TUNNEL_B1F_MapScripts::
+	.byte 0
+

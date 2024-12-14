@@ -3,25 +3,61 @@ mapscripts ISLANDGAME_TRAVELERS_TUNNEL_2_MapScripts {}
 script ISLANDGAME_TRAVELERS_TUNNEL_2_Maniac {
     lock
     faceplayer
-    msgbox(ISLANDGAME_TRAVELERS_TUNNEL_2_ManiacTalk)
-    release
+    if(!flag(FLAG_TRAVELERS_TUNNEL_STEELIXITE)) {
+        msgbox(format(
+            "Hey there trainer. I have a SUPER special item on me. It's VERY rare. \p"
+            "It's an Steelixite. If you have an Steelix, it'll MEGA EVOLVE it! \p"
+            "It's all yours... if you just slide me a couple buckaroos..."
+        ))
+        showmoneybox(0,0)
+        msgbox(format(
+            "How does ¥10,000 sound? A pretty snazzy deal, ye?"
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            checkmoney(10000)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Wuh? You don't have the money! Shoo! Serious buyers ONLY!"
+                ))
+            }
+            else {
+                giveitem(ITEM_STEELIXITE)
+                setflag(FLAG_TRAVELERS_TUNNEL_STEELIXITE)
+                removemoney(10000)
+                updatemoneybox
+                msgbox(format(
+                    "Heh, pleasure doin' business, stranger!"
+                ))
+                goto(Maniac_End)
+            }
+        }
+        else {
+            msgbox(format(
+                "Humph. Your loss! I'll just find someone more WORTHY of it!"
+            ))
+        }
+    }
+    else {
+        msgbox(format(
+            "Ho-ho, this money'll get me a year's subscription on Serafina's PokéFans...\p"
+            "H-Huh? Stop snooping, you nosy teenager!"
+        ))
+    }
+    Maniac_End:
+        hidemoneybox
+        closemessage
+        release
 }
 
-text ISLANDGAME_TRAVELERS_TUNNEL_2_ManiacTalk {
-    format(
-        "Hey there trainer. I have a SUPER special item on me. It's VERY rare. \p"
-        "It's an Aggronite. If you have an Aggron, it'll MEGA EVOLVE it! \p"
-        "It's all yours... if you just slide me a couple buckaroos... \p"
-        "How does ¥50,000 sound? \p"
-        "Huh? You don't have the money? Go away then! Shoo! Serious buyers ONLY!"
-        )
-}
 
 script ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer {
-    trainerbattle_single(TRAINER_TRAVELERS_TUNNEL_1, format("Boo!"), ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer_Loss)
-	msgbox(format("Did I startle you?"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_TRAVELERS_TUNNEL_1, format("Oof! Sorry, I didn't see you there!\pBut now that we're this close... we may as well have a battle!"), ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer_Loss)
+	msgbox(format("Maybe it wasn't such a good idea to go crawling in this cave..."), MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_TRAVELERS_TUNNEL_2_Trainer_Loss {
-    "Booooo."
+    "Gah, it's too hard to battle in this\nmist."
 }
+
+
+        // "Huh? You don't have the money? Go away then! Shoo! Serious buyers ONLY!"

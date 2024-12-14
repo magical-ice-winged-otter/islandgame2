@@ -18,7 +18,7 @@ script ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_NPC1 {
 
 text ISLANDGAME_MAPLEGROVE_PKMNMART_NPC1Talk {
     format(
-        "{COLOR DARK_GRAY}Achoooo! -sniff- Oops, sorry. I didn't mean to sneeze all over you."
+        "{COLOR DARK_GRAY}Achoooo!{PAUSE 60} -sniff-{PAUSE 60} Oops, sorry.{PAUSE 30} I didn't mean to sneeze all over you."
     )
 }
 
@@ -30,8 +30,7 @@ script ISLANDGAME_MAPLEGROVE_PKMNMART_EventScript_NPC2 {
 
 text ISLANDGAME_MAPLEGROVE_PKMNMART_NPC2Talk {
     format(
-        "{COLOR RED}(It seems like this Audino is actually an employee at the shop.) \p"
-        "{COLOR RED}(It's diligently restocking the shelves. I should just let it do its job.)"
+        "{COLOR RED}(It seems like this Audino is actually an employee at the shop.)"
     )
 }
 

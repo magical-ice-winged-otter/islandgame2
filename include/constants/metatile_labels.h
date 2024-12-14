@@ -187,9 +187,6 @@
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
 #define METATILE_Fallarbor_RedRockWall               0x269
 
-// gTileset_FireRed
-#define METATILE_FireRed_General_Test_Door  0x071
-
 // gTileset_Forest
 #define METATILE_Forest_Door  0x294
 
@@ -274,16 +271,6 @@
 #define METATILE_IslandgameGeneral_Door            0x021
 #define METATILE_IslandgameGeneral_DoorPokeCenter  0x061
 #define METATILE_IslandgameGeneral_DoorPokeMart    0x041
-
-// gTileset_IslandgameTidalcove
-#define METATILE_IslandgameTidalcove_Door01  0x22A
-#define METATILE_IslandgameTidalcove_Door02  0x252
-
-// gTileset_Islandgame
-#define METATILE_Islandgame_Door                 0x021
-#define METATILE_Islandgame_Door_PokeCenter      0x061
-#define METATILE_Islandgame_icecave_Ice_Broken   0x2DB
-#define METATILE_Islandgame_icecave_Ice_Cracked  0x2DA
 
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
@@ -409,9 +396,6 @@
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalBottom       0x262
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
 
-// gTileset_Persi
-#define METATILE_Persi_Door  0x26C
-
 // gTileset_Petalburg
 #define METATILE_Petalburg_Door_BirchsLab   0x249
 #define METATILE_Petalburg_Door_Littleroot  0x248
@@ -457,14 +441,6 @@
 
 // gTileset_PorytilesPrimaryTest
 #define METATILE_PorytilesPrimaryTest_Door_PokeCenter  0x025
-
-// gTileset_RSMossdeepGym
-#define METATILE_RSMossdeepGym_RedArrow_Down   0x205
-#define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
-#define METATILE_RSMossdeepGym_RedArrow_Right  0x204
-#define METATILE_RSMossdeepGym_RedArrow_Up     0x20D
-#define METATILE_RSMossdeepGym_Switch_Down     0x239
-#define METATILE_RSMossdeepGym_Switch_Up       0x238
 
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
@@ -814,31 +790,65 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
-// gTileset_islandgame
-#define METATILE_islandgame_maplegrove_Door01          0x248
-#define METATILE_islandgame_maplegrove_Door02          0x287
-#define METATILE_islandgame_oranna_cheriport_door      0x24C
+// gTileset_islandgame_lumine_general
+#define METATILE_islandgame_lumine_general_MuddySlope  0x063
+
+// gTileset_islandgame_ocean_general
+#define METATILE_islandgame_ocean_general_door_00  0x04D
+#define METATILE_islandgame_ocean_general_door_01  0x049
+#define METATILE_islandgame_ocean_general_door_02  0x06A
+
+// gTileset_islandgame_oranna_central_path
+#define METATILE_islandgame_oranna_central_path_door_01  0x21A
+#define METATILE_islandgame_oranna_central_path_door_02  0x263
+#define METATILE_islandgame_oranna_central_path_door_03  0x265
+
+// gTileset_islandgame_oranna_cheriport
+#define METATILE_islandgame_oranna_cheriport_door  0x24C
+
+// gTileset_islandgame_oranna_general
 #define METATILE_islandgame_oranna_general_MuddySlope  0x082
 #define METATILE_islandgame_oranna_general_door_00     0x0C1
 #define METATILE_islandgame_oranna_general_door_01     0x0A1
+
+// gTileset_islandgame_oranna_maplegrove
 #define METATILE_islandgame_oranna_maplegrove_door_00  0x244
 #define METATILE_islandgame_oranna_maplegrove_door_01  0x22C
-#define METATILE_islandgame_oranna_northern_path_door  0x219
-#define METATILE_islandgame_oranna_persi_door          0x26C
-#define METATILE_islandgame_oranna_rosevale_door       0x259
-#define METATILE_islandgame_oranna_tidalcove_door_00   0x22A
-#define METATILE_islandgame_oranna_tidalcove_door_01   0x252
-#define METATILE_islandgame_oranna_tidalcove_door_gym  0x295
-#define METATILE_islandgame_rosevale_Door              0x3A1
-#define METATILE_islandgame_ss_rain_general_door_00    0x0FA
-#define METATILE_islandgame_ss_rain_general_door_01    0x071
+
+// gTileset_islandgame_oranna_mt_aurora
+#define METATILE_islandgame_oranna_mt_aurora_Ice_Broken   0x2DB
+#define METATILE_islandgame_oranna_mt_aurora_Ice_Cracked  0x2DA
+
+// gTileset_islandgame_oranna_persi
+#define METATILE_islandgame_oranna_persi_door  0x26C
+
+// gTileset_islandgame_oranna_rosevale
+#define METATILE_islandgame_oranna_rosevale_door  0x259
+
+// gTileset_islandgame_oranna_tidalcove
+#define METATILE_islandgame_oranna_tidalcove_door_gym  0x260
+
+// gTileset_islandgame_ss_rain_general
+#define METATILE_islandgame_ss_rain_general_door_00  0x0FA
+#define METATILE_islandgame_ss_rain_general_door_01  0x071
 
 // Other
-#define METATILE_RSMossdeepGym_RedArrow_Down   0x205
-#define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
-#define METATILE_RSMossdeepGym_RedArrow_Right  0x204
-#define METATILE_RSMossdeepGym_RedArrow_Up     0x20D
-#define METATILE_RSMossdeepGym_Switch_Down     0x239
-#define METATILE_RSMossdeepGym_Switch_Up       0x238
+#define METATILE_FireRed_General_Test_Door       0x071
+#define METATILE_IslandgameTidalcove_Door01      0x22A
+#define METATILE_IslandgameTidalcove_Door02      0x252
+#define METATILE_Islandgame_Door                 0x021
+#define METATILE_Islandgame_Door_PokeCenter      0x061
+#define METATILE_Islandgame_icecave_Ice_Broken   0x2DB
+#define METATILE_Islandgame_icecave_Ice_Cracked  0x2DA
+#define METATILE_Persi_Door                      0x26C
+#define METATILE_RSMossdeepGym_RedArrow_Down     0x205
+#define METATILE_RSMossdeepGym_RedArrow_Left     0x20C
+#define METATILE_RSMossdeepGym_RedArrow_Right    0x204
+#define METATILE_RSMossdeepGym_RedArrow_Up       0x20D
+#define METATILE_RSMossdeepGym_Switch_Down       0x239
+#define METATILE_RSMossdeepGym_Switch_Up         0x238
+#define METATILE_islandgame_maplegrove_Door01    0x248
+#define METATILE_islandgame_maplegrove_Door02    0x287
+#define METATILE_islandgame_rosevale_Door        0x3A1
 
 #endif // GUARD_METATILE_LABELS_H

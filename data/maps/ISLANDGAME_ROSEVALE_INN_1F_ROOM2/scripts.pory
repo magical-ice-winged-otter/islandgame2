@@ -6,6 +6,17 @@ script ISLANDGAME_ROSEVALE_INN_1F_ROOM1_RED {
     msgbox(format(
         "..."
     ))
+    if(!flag(FLAG_ROSEVALE_RED)) {
+        trainerbattle_no_intro(TRAINER_ROSEVALE_RED, "...")
+        msgbox(
+            format(
+                "..."
+            )
+        )
+        giveitem(ITEM_LIGHT_BALL)
+        setflag(FLAG_ROSEVALE_RED)
+    }
+    closemessage
     release
 }
 

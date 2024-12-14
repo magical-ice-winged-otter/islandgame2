@@ -1049,20 +1049,40 @@ static const struct InGameTrade sIngameTrades[] =
         .requestedSpecies = SPECIES_SKITTY
     },
 
-    // ISLANDGAME TRADES
+
+
+
+
+    // island-game trades
     [INGAME_TRADE_STARYU] =
     {
         .nickname = _("Suisei"),
         .species = SPECIES_STARYU,
         .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 1,
-        .otId = 32218,
-        .conditions = {5, 5, 30, 5, 5},
+        .otId = 00322,
+        .conditions = {5, 30, 5, 5, 5},
         .personality = NATURE_TIMID,
         .heldItem = ITEM_STAR_PIECE,
         .otName = _("Yomi"),
         .sheen = 10,
-        .requestedSpecies = SPECIES_BARBOACH
+        .requestedSpecies = SPECIES_HORSEA
+    },
+
+    [INGAME_TRADE_FIDOUGH] =
+    {
+        .nickname = _("Korone"),
+        .species = SPECIES_FIDOUGH,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 0,
+        .otId = 32218,
+        .conditions = {5, 5, 5, 5, 30},
+        .personality = NATURE_IMPISH,
+        .heldItem = ITEM_RARE_BONE,
+        .otName = _("Dorothy"),
+        .sheen = 10,
+        .otGender = FEMALE,
+        .requestedSpecies = SPECIES_SQUIRTLE
     },
 };
 

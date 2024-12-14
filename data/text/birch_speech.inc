@@ -45,11 +45,10 @@ gText_Birch_MainSpeech::
 	.string "younger, so I've decided to pass my \l"
 	.string "dreams and aspirations onto young \l"
 	.string "and ambitious trainers like you! \p"
-	.string "Speaking of which, that's\nenough about me.\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "I want to hear more\n"
+	.string "I want to learn more\n"
 	.string "about you!$"
 
 gText_Birch_BoyOrGirl::
@@ -80,8 +79,8 @@ gText_Birch_AreYouReady::
 	.string "week at the port town of Cheriport. \p"
 	.string "Until then, enjoy the all-expense paid \n"
 	.string "cruise I've included for you! \p"
-	.string "If you have a chance, try their lobster. \n"
-	.string "It's amazing! \p"
+	.string "If you have a chance, you should try\n"
+	.string "their lobster. I hear It's amazing! \p"
 	.string "I look forward to seeing you in-person, \n"
 	.string "{PLAYER}. \p"
 	.string "May your voyage be safe and sound.\p"

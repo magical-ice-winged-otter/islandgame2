@@ -249,281 +249,641 @@ static const u8 sText_AZ[] = _(" A-Z");
 
 
 // Map Locations
+const u8 sText_SideQuestMap_Cheriport[] = _("Cheriport");
 const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
-const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
-const u8 sText_SideQuestMap_NorthernOrannaPath[] = _("N. Oranna Path");
-const u8 sText_SideQuestMap_CentralOrannaPath[] = _("C. Oranna Path");
-const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
+const u8 sText_SideQuestMap_Maplegrove[] = _("Maplegrove");
+const u8 sText_SideQuestMap_MintyMeadows[] = _("Minty Meadows");
+const u8 sText_SideQuestMap_FresaFarms[] = _("Fresa Farms");
 const u8 sText_SideQuestMap_TravelersTunnel[] = _("Traveler's Tunnel");
+const u8 sText_SideQuestMap_Tidalcove[] = _("Tidalcove");
+const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
 const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
+const u8 sText_SideQuestMap_Applevine[] = _("Applevine");
+const u8 sText_SideQuestMap_RockyPath[] = _("Rocky Path");
+const u8 sText_SideQuestMap_Aetheria[] = _("Aetheria");
+const u8 sText_SideQuestMap_Cantalo[] = _("Cantalo");
+const u8 sText_SideQuestMap_Amberidge[] = _("Amberidge");
+const u8 sText_SideQuestMap_Unknown[] = _("Marya");
+
+
+// Pokedex Quest
+const u8 sText_SideQuestName_PokedexCompletion[] = _("Gotta Catch 'Em All!");
+const u8 sText_SideQuestDesc_PokedexCompletion[] = _("You know the deal. Complete the\nPokédex for Professor Palm!");
+const u8 sText_SideQuestDoneDesc_PokedexCompletion[] = _("Thanks for playing! :)");
+
+const u8 sText_SubQuest_PokedexMilestone1_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone1_Desc[] = _("You've completed 30 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone2_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone2_Desc[] = _("You've completed 60 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone3_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone3_Desc[] = _("You've completed 90 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone4_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone4_Desc[] = _("You've completed 120 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone5_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone5_Desc[] = _("You've completed 150 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone6_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone6_Desc[] = _("You've completed 180 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone7_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone7_Desc[] = _("You've completed 210 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone8_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone8_Desc[] = _("You've completed 240 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone9_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone9_Desc[] = _("You've completed 270 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone10_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone10_Desc[] = _("You've completed 300 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone11_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone11_Desc[] = _("You've completed 330 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone12_Name[] = _("Milestone Reached!");
+const u8 sText_SubQuest_PokedexMilestone12_Desc[] = _("You've completed 360 entries!");
+
+const u8 sText_SubQuest_PokedexMilestone13_Name[] = _("Pokédex Complete!");
+const u8 sText_SubQuest_PokedexMilestone13_Desc[] = _("You've completed ALL entries!");
+
+
+// Minty Meadows Melissa Quest
+const u8 sText_SideQuestName_MintyMeadowsMelissa[] = _("The Journey Begins!");
+const u8 sText_SideQuestDesc_MintyMeadowsMelissa[] = _("Meet up with Professor Palm's\nassistant, Melissa!");
+const u8 sText_SideQuestDoneDesc_MintyMeadowsMelissa[] = _("You helped rescue Old Man\nPaulie's Mareep!");
 
 // Persi Favorite Card Quest
-const u8 sText_SideQuestName_PersiFavoriteCard[] = _("Lost Card");
-const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A camper from Camp Persi lost their\nfavorite trading card in Verdant Woods!");
-const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You found and returned the campers\nfavorite card!");
+const u8 sText_SideQuestName_PersiFavoriteCard[] = _("(S) Missing Card");
+const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A little camper has lost his\nfavorite trading card!");
+const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You returned the camper's\nfavorite card!");
+
 
 // Berry Maniac Quest
-const u8 sText_SideQuestName_PersiBerryManiac[] = _("Berry Quest");
-const u8 sText_SideQuestDesc_PersiBerryManiac[] = _("The berry maniac from Camp Persi\nneeds more berries!");
-const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You found berries from all\nover Marya!");
-// - Subquests
-const u8 sText_SubQuest_PersiBerryManiac1_Name[] = _("Cheri Berry");
-const u8 sText_SubQuest_PersiBerryManiac1_Desc[] = _("Find and return a Cheri Berry\nto the Berry Maniac");
-const u8 sText_SubQuest_PersiBerryManiac2_Name[] = _("Aspear Berry");
-const u8 sText_SubQuest_PersiBerryManiac2_Desc[] = _("Find and return an Aspear Berry\nto the Berry Maniac");
-const u8 sText_SubQuest_PersiBerryManiac3_Name[] = _("Leppa Berry");
-const u8 sText_SubQuest_PersiBerryManiac3_Desc[] = _("Find and return a Leppa Berry\nto the Berry Maniac");
-const u8 sText_SubQuest_PersiBerryManiac4_Name[] = _("Sitrus Berry");
-const u8 sText_SubQuest_PersiBerryManiac4_Desc[] = _("Find and return a Sitrus Berry\nto the Berry Maniac");
-const u8 sText_SubQuest_PersiBerryManiac5_Name[] = _("Lum Berry");
-const u8 sText_SubQuest_PersiBerryManiac5_Desc[] = _("Find and return a Lum Berry\nto the Berry Maniac");
-const u8 sText_SubQuest_PersiBerryManiac6_Name[] = _("Liechi Berry");
-const u8 sText_SubQuest_PersiBerryManiac6_Desc[] = _("Find and return a Liechi Berry\nto the Berry Maniac");
+const u8 sText_SideQuestName_PersiBerryManiac[] = _("(S) Berry Hunting");
+const u8 sText_SideQuestDesc_PersiBerryManiac[] = _("The Berry Maniac from Camp Persi\nyearns for rare berries!");
+const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You've aided the Berry Maniac\n in achieving his full power...");
 
-// Lost Mareep Quest
-const u8 sText_SideQuestName_FresaFarmsLostMareep[] = _("Missing Mareep");
-const u8 sText_SideQuestDesc_FresaFarmsLostMareep[] = _("A Mareep has gone missing from\nFresa Farms!");
-const u8 sText_SideQuestDoneDesc_FresaFarmsLostMareep[] = _("You found and returned the\nMareep back to Fresa Farms.");
+const u8 sText_SubQuest_PersiBerryManiac1_Name[] = _("Liechi Berry");
+const u8 sText_SubQuest_PersiBerryManiac1_Desc[] = _("You found and gave a Liechi Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac2_Name[] = _("Ganlon Berry");
+const u8 sText_SubQuest_PersiBerryManiac2_Desc[] = _("You found and gave a Ganlon Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac3_Name[] = _("Salac Berry");
+const u8 sText_SubQuest_PersiBerryManiac3_Desc[] = _("You found and gave a Salac Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac4_Name[] = _("Petaya Berry");
+const u8 sText_SubQuest_PersiBerryManiac4_Desc[] = _("You found and gave a Petaya Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac5_Name[] = _("Apicot Berry");
+const u8 sText_SubQuest_PersiBerryManiac5_Desc[] = _("You found and gave an Apicot Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac6_Name[] = _("Kee Berry");
+const u8 sText_SubQuest_PersiBerryManiac6_Desc[] = _("You found and gave a Kee Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac7_Name[] = _("Maranga Berry");
+const u8 sText_SubQuest_PersiBerryManiac7_Desc[] = _("You found and gave a Maranga Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac8_Name[] = _("Lansat Berry");
+const u8 sText_SubQuest_PersiBerryManiac8_Desc[] = _("You found and gave a Lansat Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac9_Name[] = _("Enigma Berry");
+const u8 sText_SubQuest_PersiBerryManiac9_Desc[] = _("You found and gave an Enigma Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac10_Name[] = _("Micle Berry");
+const u8 sText_SubQuest_PersiBerryManiac10_Desc[] = _("You found and gave a Micle Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac11_Name[] = _("Custap Berry");
+const u8 sText_SubQuest_PersiBerryManiac11_Desc[] = _("You found and gave a Custap Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac12_Name[] = _("Jaboca Berry");
+const u8 sText_SubQuest_PersiBerryManiac12_Desc[] = _("You found and gave a Jaboca Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac13_Name[] = _("Rowap Berry");
+const u8 sText_SubQuest_PersiBerryManiac13_Desc[] = _("You found and gave a Rowap Berry\nto the Berry Maniac.");
+
+const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
+const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
+
+
+// Verdant Forest Pokemon Quest
+// const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
+// const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
+// const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
+
+// Maplegrove Lovers Quest
+const u8 sText_SideQuestName_MaplegroveLovers[] = _("(S) A Star-crossed Lover");
+const u8 sText_SideQuestDesc_MaplegroveLovers[] = _("Deliver Roman's love letter\nto Julie in Applevine!");
+const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("You've cleared up the confusion\nbetween the two!");
+
+// Marya Gym Challenge Quest
+const u8 sText_SideQuestName_MaryaGymChallenge[] = _("The Marya League");
+const u8 sText_SideQuestDesc_MaryaGymChallenge[] = _("Acquire the gym badges of Oranna,\nLumine, and Minerva Island!");
+const u8 sText_SideQuestDoneDesc_MaryaGymChallenge[] = _("All that's left is the\nFestival Tournament...");
+
+const u8 sText_SubQuest_MaryaGymChallenge1_Name[] = _("Tidalcove Badge");
+const u8 sText_SubQuest_MaryaGymChallenge1_Desc[] = _("“Your Pokémon were cool as a\nCryogonal! Stay frosty!” -Ruka");
+
+const u8 sText_SubQuest_MaryaGymChallenge2_Name[] = _("Cantalo Badge");
+const u8 sText_SubQuest_MaryaGymChallenge2_Desc[] = _("“Your passion for battle is\nan inspiration.” -Avi");
+
+const u8 sText_SubQuest_MaryaGymChallenge3_Name[] = _("Amberidge Badge");
+const u8 sText_SubQuest_MaryaGymChallenge3_Desc[] = _("“Keep that win streak hot hot hot!” -Javier");
 
 // Torchic Egg Quest
-const u8 sText_SideQuestName_FresaFarmsTorchicEgg[] = _("The Egg");
-const u8 sText_SideQuestDesc_FresaFarmsTorchicEgg[] = _("A farmer from Fresa Farms needs\nyou to hatch an egg.");
-const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg, and raised\na Torchic!");
+const u8 sText_SideQuestName_FresaFarmsTorchicEgg[] = _("(S) The Egg");
+const u8 sText_SideQuestDesc_FresaFarmsTorchicEgg[] = _("The owner of Fresa Farms wants you\n to hatch and evolve this egg!");
+const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg and fully\n evolved the Pokémon!");
 
-// Fitness Freak Quest
-const u8 sText_SideQuestName_FitnessFreak[] = _("Vitamin Search");
-const u8 sText_SideQuestDesc_FitnessFreak[] = _("The Fitness Freak can't afford\nvitamins! Bring him some\nfor fitness-related rewards!");
-const u8 sText_SideQuestDoneDesc_FitnessFreak[] = _("You have gathered vitamins\nfrom all over Marya!\nThe Fitness Freak is stronger\nthan ever!");
-// - Subquests
-const u8 sText_SubQuest_FitnessFreak_HpUp_Name[] = _("HP Up");
-const u8 sText_SubQuest_FitnessFreak_HpUp_Desc[] = _("Find and return an HP up\nto the Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Protein_Name[] = _("Protein");
-const u8 sText_SubQuest_FitnessFreak_Protein_Desc[] = _("Find and return a Protein\nto the Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Iron_Name[] = _("Iron");
-const u8 sText_SubQuest_FitnessFreak_Iron_Desc[] = _("Find and return an Iron\nto the Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Calcium_Name[] = _("Calcium");
-const u8 sText_SubQuest_FitnessFreak_Calcium_Desc[] = _("Find and return a Calcium\nto the Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Zinc_Name[] = _("Zinc");
-const u8 sText_SubQuest_FitnessFreak_Zinc_Desc[] = _("Find and return a Zinc\nto the Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_Carbos_Name[] = _("Carbos");
-const u8 sText_SubQuest_FitnessFreak_Carbos_Desc[] = _("Find and return a Carbos\nto the Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_PpUp_Name[] = _("PP Up");
-const u8 sText_SubQuest_FitnessFreak_PpUp_Desc[] = _("Find and return a PP Up\nto the Fitness Freak.");
-const u8 sText_SubQuest_FitnessFreak_PpMax_Name[] = _("PP Max");
-const u8 sText_SubQuest_FitnessFreak_PpMax_Desc[] = _("Find and return a PP Max\nto the Fitness Freak.");
+// Lost Azurill Quest
+const u8 sText_SideQuestName_RosevaleAzurillRescue[] = _("Rescue Mission");
+const u8 sText_SideQuestDesc_RosevaleAzurillRescue[] = _("A little girl's Azurill has been stolen!\nThe thief is somewhere in Mt. Aurora...");
+const u8 sText_SideQuestDoneDesc_RosevaleAzurillRescue[] = _("You successfully rescued Azurill,\n with some help from Articuno!");
 
-// Tidalcove Rare Pokemon Quest
-const u8 sText_SideQuestName_TidalcoveRarePkmn[] = _("Rare Pokemon");
-const u8 sText_SideQuestDesc_TidalcoveRarePkmn[] = _("A collector from Tidalcove\nwant's to see rare Pokemon\nfrom Oranna!");
-const u8 sText_SideQuestDoneDesc_TidalcoveRarePkmn[] = _("You discovered and caught\nrare Pokemon from all over\nOranna.");
-// - Subquests
-const u8 sText_SubQuest_TidalcoveRarePkmn_Pikachu_Name[] = _("Pikachu");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Pikachu_Desc[] = _("Capture and show a Pikachu to the collector.");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Squirtle_Name[] = _("Squirtle");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Squirtle_Desc[] = _("Capture and show a Squirtle to the collector.");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Rowlet_Name[] = _("Rowlet");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Rowlet_Desc[] = _("Capture and show a Rowlet to the collector.");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Tepig_Name[] = _("Tepig");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Tepig_Desc[] = _("Capture and show a Tepig to the collector.");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Delibird_Name[] = _("Delibird");
-const u8 sText_SubQuest_TidalcoveRarePkmn_Delibird_Desc[] = _("Capture and show a Delibird to the collector.");
+// Aetheria Melissa Quest
+const u8 sText_SideQuestName_AetheriaMelissa[] = _("The City That Never Sleeps");
+const u8 sText_SideQuestDesc_AetheriaMelissa[] = _("Melissa wants to meet up in Aetheria!");
+const u8 sText_SideQuestDoneDesc_AetheriaMelissa[] = _("Looks like Edea got away this time...");
 
-static const struct SubQuest sSubQuests_TidalcoveRarePkmn[SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN] =
+// Couch Potato Quest
+const u8 sText_SideQuestName_APPLEVINE_COUCH_POTATO[] = _("(S) Part-Time Job");
+const u8 sText_SideQuestDesc_APPLEVINE_COUCH_POTATO[] = _("You probably weren't expecting to get\none.");
+const u8 sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO[] = _("Looks like you've been laid off.\nAt least you were compensated...?");
+
+const u8 sText_SubQuest_CouchPotato1_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You know Sweet Hearts have a serving\nsize of two people, right?");
+
+const u8 sText_SubQuest_CouchPotato2_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("They should just set up a scout camp\nat this guy's house...");
+
+const u8 sText_SubQuest_CouchPotato3_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato3_Desc[] 	  = _("Pancakes are just dessert pizzas.");
+
+const u8 sText_SubQuest_CouchPotato4_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("Imagine if you brought him a rice\nball instead.");
+
+const u8 sText_SubQuest_CouchPotato5_Name[] 	  = _("Delivery Complete!");
+const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("Man, Sera's fans are down bad.");
+
+// PokeVial Nurse Quest 
+const u8 sText_SideQuestName_ROCKY_PATH_NURSE[] = _("(S) The Missing Ingredient");
+const u8 sText_SideQuestDesc_ROCKY_PATH_NURSE[] = _("Nurse Joy needs a Balm Mushroom for\nher newest medicinal breakthrough!");
+const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\nin creating the PokéVial!");
+
+
+// MissingNo Quest
+const u8 sText_SideQuestName_MissingNo[] = _("(Z) À GlitŒh エñ tHœ MあtrÏx");
+const u8 sText_SideQuestDesc_MissingNo[] = _("▶▶WARNいNG▶▶ アN ANおMAL¥ HAS BえEN D♀TÊCTéD WITH♂N YöUr $àVê FイLE!");
+const u8 sText_SideQuestDoneDesc_MissingNo[] = _("01000100 01010010 01000101 01000001 01001101");
+
+const u8 sText_SubQuest_MissingNo1_Name[] = _("けつばん-01");
+const u8 sText_SubQuest_MissingNo1_Desc[] = _("01010111");
+
+const u8 sText_SubQuest_MissingNo2_Name[] = _("けつばん-02");
+const u8 sText_SubQuest_MissingNo2_Desc[] = _("01000001");
+
+const u8 sText_SubQuest_MissingNo3_Name[] = _("けつばん-03");
+const u8 sText_SubQuest_MissingNo3_Desc[] = _("01001011");
+
+const u8 sText_SubQuest_MissingNo4_Name[] = _("けつばん-04");
+const u8 sText_SubQuest_MissingNo4_Desc[] = _("01000101");
+
+const u8 sText_SubQuest_MissingNo5_Name[] = _("けつばん-05");
+const u8 sText_SubQuest_MissingNo5_Desc[] = _("01010101");
+
+const u8 sText_SubQuest_MissingNo6_Name[] = _("けつばん-06");
+const u8 sText_SubQuest_MissingNo6_Desc[] = _("01010000");
+
+static const struct SubQuest sSubQuests_PokedexMilestones[SUB_QUEST_COUNT_POKEDEX_MILESTONE] = 
 {
-    sub_quest(
-          SUB_QUEST_TIDALCOVE_RARE_PKMN_PIKACHU,
-          sText_SubQuest_TidalcoveRarePkmn_Pikachu_Name,
-          sText_SubQuest_TidalcoveRarePkmn_Pikachu_Desc,
-          sText_SideQuestMap_TravelersTunnel,
-          SPECIES_PIKACHU,
-          PKMN,
-          sText_Found
-    ),
-    sub_quest(
-          SUB_QUEST_TIDALCOVE_RARE_PKMN_SQUIRTLE,
-          sText_SubQuest_TidalcoveRarePkmn_Squirtle_Name,
-          sText_SubQuest_TidalcoveRarePkmn_Squirtle_Desc,
-          sText_SideQuestMap_CentralOrannaPath,
-          SPECIES_SQUIRTLE,
-          PKMN,
-          sText_Found
-    ),
-    sub_quest(
-          SUB_QUEST_TIDALCOVE_RARE_PKMN_ROWLET,
-          sText_SubQuest_TidalcoveRarePkmn_Rowlet_Name,
-          sText_SubQuest_TidalcoveRarePkmn_Rowlet_Desc,
-          sText_SideQuestMap_Persi,
-          SPECIES_ROWLET,
-          PKMN,
-          sText_Found
-    ),
-    sub_quest(
-          SUB_QUEST_TIDALCOVE_RARE_PKMN_TEPIG,
-          sText_SubQuest_TidalcoveRarePkmn_Tepig_Name,
-          sText_SubQuest_TidalcoveRarePkmn_Tepig_Desc,
-          sText_SideQuestMap_VerdantWoods,
-          SPECIES_TEPIG,
-          PKMN,
-          sText_Found
-    ),
-    sub_quest(
-          SUB_QUEST_TIDALCOVE_RARE_PKMN_DELIBIRD,
-          sText_SubQuest_TidalcoveRarePkmn_Delibird_Name,
-          sText_SubQuest_TidalcoveRarePkmn_Delibird_Desc,
-          sText_SideQuestMap_MtAurora,
-          SPECIES_DELIBIRD,
-          PKMN,
-          sText_Found
-    ),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_1,
+		sText_SubQuest_PokedexMilestone1_Name,
+		sText_SubQuest_PokedexMilestone1_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM53,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_2,
+		sText_SubQuest_PokedexMilestone2_Name,
+		sText_SubQuest_PokedexMilestone2_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_NEST_BALL,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_3,
+		sText_SubQuest_PokedexMilestone3_Name,
+		sText_SubQuest_PokedexMilestone3_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_RARE_CANDY,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_4,
+		sText_SubQuest_PokedexMilestone4_Name,
+		sText_SubQuest_PokedexMilestone4_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_LEVEL_BALL,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_5,
+		sText_SubQuest_PokedexMilestone5_Name,
+		sText_SubQuest_PokedexMilestone5_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_ABILITY_CAPSULE,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_6,
+		sText_SubQuest_PokedexMilestone6_Name,
+		sText_SubQuest_PokedexMilestone6_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_ULTRA_BALL,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_7,
+		sText_SubQuest_PokedexMilestone7_Name,
+		sText_SubQuest_PokedexMilestone7_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_ABILITY_PATCH,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_8,
+		sText_SubQuest_PokedexMilestone8_Name,
+		sText_SubQuest_PokedexMilestone8_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_QUICK_BALL,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_9,
+		sText_SubQuest_PokedexMilestone9_Name,
+		sText_SubQuest_PokedexMilestone9_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_CATCHING_CHARM,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_10,
+		sText_SubQuest_PokedexMilestone10_Name,
+		sText_SubQuest_PokedexMilestone10_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_EXP_CHARM,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_11,
+		sText_SubQuest_PokedexMilestone11_Name,
+		sText_SubQuest_PokedexMilestone11_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_OVAL_CHARM,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_12,
+		sText_SubQuest_PokedexMilestone12_Name,
+		sText_SubQuest_PokedexMilestone12_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_MASTER_BALL,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_POKEDEX_MILESTONE_13,
+		sText_SubQuest_PokedexMilestone13_Name,
+		sText_SubQuest_PokedexMilestone13_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_AURORA_TICKET,
+		ITEM,
+		sText_Complete
+	),
 };
-
 
 static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_BERRY] =
 {
 	sub_quest(
-	      SUB_QUEST_PERSI_BERRY_1,
-	      sText_SubQuest_PersiBerryManiac1_Name,
-	      sText_SubQuest_PersiBerryManiac1_Desc,
-	      sText_SideQuestMap_Persi,
-	      ITEM_CHERI_BERRY,
-	      ITEM,
-	      sText_Active
+		SUB_QUEST_PERSI_BERRY_1,
+		sText_SubQuest_PersiBerryManiac1_Name,
+		sText_SubQuest_PersiBerryManiac1_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_LIECHI_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_2,
+		sText_SubQuest_PersiBerryManiac2_Name,
+		sText_SubQuest_PersiBerryManiac2_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_GANLON_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_3,
+		sText_SubQuest_PersiBerryManiac3_Name,
+		sText_SubQuest_PersiBerryManiac3_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_SALAC_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_4,
+		sText_SubQuest_PersiBerryManiac4_Name,
+		sText_SubQuest_PersiBerryManiac4_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_PETAYA_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_5,
+		sText_SubQuest_PersiBerryManiac5_Name,
+		sText_SubQuest_PersiBerryManiac5_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_APICOT_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_6,
+		sText_SubQuest_PersiBerryManiac6_Name,
+		sText_SubQuest_PersiBerryManiac6_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_KEE_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_7,
+		sText_SubQuest_PersiBerryManiac7_Name,
+		sText_SubQuest_PersiBerryManiac7_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_MARANGA_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_8,
+		sText_SubQuest_PersiBerryManiac8_Name,
+		sText_SubQuest_PersiBerryManiac8_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_LANSAT_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_9,
+		sText_SubQuest_PersiBerryManiac9_Name,
+		sText_SubQuest_PersiBerryManiac9_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_ENIGMA_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_10,
+		sText_SubQuest_PersiBerryManiac10_Name,
+		sText_SubQuest_PersiBerryManiac10_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_MICLE_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_11,
+		sText_SubQuest_PersiBerryManiac11_Name,
+		sText_SubQuest_PersiBerryManiac11_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_CUSTAP_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_12,
+		sText_SubQuest_PersiBerryManiac12_Name,
+		sText_SubQuest_PersiBerryManiac12_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_JABOCA_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_13,
+		sText_SubQuest_PersiBerryManiac13_Name,
+		sText_SubQuest_PersiBerryManiac13_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_ROWAP_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+	sub_quest(
+		SUB_QUEST_PERSI_BERRY_14,
+		sText_SubQuest_PersiBerryManiac14_Name,
+		sText_SubQuest_PersiBerryManiac14_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_STARF_BERRY,
+		ITEM,
+		sText_Complete
+	),
+
+};
+
+
+static const struct SubQuest sSubQuests_MaryaGymChallenge[SUB_QUEST_COUNT_GYM_CHALLENGE] = 
+{
+	sub_quest(
+		SUB_QUEST_MARYA_GYM_CHALLENGE_1,
+		sText_SubQuest_MaryaGymChallenge1_Name,
+		sText_SubQuest_MaryaGymChallenge1_Desc,
+		sText_SideQuestMap_Tidalcove,
+		OBJ_EVENT_GFX_RUKA, 
+		OBJECT,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_PERSI_BERRY_2,
-	      sText_SubQuest_PersiBerryManiac2_Name,
-	      sText_SubQuest_PersiBerryManiac2_Desc,
-	      sText_SideQuestMap_Persi,
-	      ITEM_ASPEAR_BERRY,
-	      ITEM,
-	      sText_Active
+		SUB_QUEST_MARYA_GYM_CHALLENGE_2,
+		sText_SubQuest_MaryaGymChallenge2_Name,
+		sText_SubQuest_MaryaGymChallenge2_Desc,
+		sText_SideQuestMap_Cantalo,
+		OBJ_EVENT_GFX_MAN_4,
+		OBJECT,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_PERSI_BERRY_3,
-	      sText_SubQuest_PersiBerryManiac3_Name,
-	      sText_SubQuest_PersiBerryManiac3_Desc,
-	      sText_SideQuestMap_Persi,
-	      ITEM_LEPPA_BERRY,
-	      ITEM,
-	      sText_Active
-	),
-	sub_quest(
-	      SUB_QUEST_PERSI_BERRY_4,
-	      sText_SubQuest_PersiBerryManiac4_Name,
-	      sText_SubQuest_PersiBerryManiac4_Desc,
-	      sText_SideQuestMap_Persi,
-	      ITEM_SITRUS_BERRY,
-	      ITEM,
-	      sText_Active
-	),
-	sub_quest(
-	      SUB_QUEST_PERSI_BERRY_5,
-	      sText_SubQuest_PersiBerryManiac5_Name,
-	      sText_SubQuest_PersiBerryManiac5_Desc,
-	      sText_SideQuestMap_Persi,
-	      ITEM_LUM_BERRY,
-	      ITEM,
-	      sText_Active
-	),
-	sub_quest(
-	      SUB_QUEST_PERSI_BERRY_6,
-	      sText_SubQuest_PersiBerryManiac6_Name,
-	      sText_SubQuest_PersiBerryManiac6_Desc,
-	      sText_SideQuestMap_Persi,
-	      ITEM_LIECHI_BERRY,
-	      ITEM,
-	      sText_Active
+		SUB_QUEST_MARYA_GYM_CHALLENGE_3,
+		sText_SubQuest_MaryaGymChallenge3_Name,
+		sText_SubQuest_MaryaGymChallenge3_Desc,
+		sText_SideQuestMap_Amberidge,
+		OBJ_EVENT_GFX_MAN_5,
+		OBJECT,
+		sText_Complete
 	),
 };
 
-static const struct SubQuest sSubQuests_FitnessFreak[SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK] =
+static const struct SubQuest sSubQuests_ApplevineCouchPotato[SUB_QUEST_COUNT_COUCH_POTATO] = 
 {
 	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_PPMAX,
-	      sText_SubQuest_FitnessFreak_PpMax_Name,
-	      sText_SubQuest_FitnessFreak_PpMax_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_PP_MAX,
-	      ITEM,
-	      sText_Found
+		SUB_QUEST_COUCH_POTATO_1,
+		sText_SubQuest_CouchPotato1_Name,
+		sText_SubQuest_CouchPotato1_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_SWEET_HEART,
+		ITEM,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_PPUP,
-	      sText_SubQuest_FitnessFreak_PpUp_Name,
-	      sText_SubQuest_FitnessFreak_PpUp_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_PP_UP,
-	      ITEM,
-	      sText_Found
+		SUB_QUEST_COUCH_POTATO_2,
+		sText_SubQuest_CouchPotato2_Name,
+		sText_SubQuest_CouchPotato2_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_RAGE_CANDY_BAR,
+		ITEM,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_CARBOS,
-	      sText_SubQuest_FitnessFreak_Carbos_Name,
-	      sText_SubQuest_FitnessFreak_Carbos_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_CARBOS,
-	      ITEM,
-	      sText_Found
+		SUB_QUEST_COUCH_POTATO_3,
+		sText_SubQuest_CouchPotato3_Name,
+		sText_SubQuest_CouchPotato3_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_LUMIOSE_GALETTE,
+		ITEM,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_ZINC,
-	      sText_SubQuest_FitnessFreak_Zinc_Name,
-	      sText_SubQuest_FitnessFreak_Zinc_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_ZINC,
-	      ITEM,
-	      sText_Found
+		SUB_QUEST_COUCH_POTATO_4,
+		sText_SubQuest_CouchPotato4_Name,
+		sText_SubQuest_CouchPotato4_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_BIG_MALASADA,
+		ITEM,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_CALCIUM,
-	      sText_SubQuest_FitnessFreak_Calcium_Name,
-	      sText_SubQuest_FitnessFreak_Calcium_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_CALCIUM,
-	      ITEM,
-	      sText_Found
+		SUB_QUEST_COUCH_POTATO_5,
+		sText_SubQuest_CouchPotato5_Name,
+		sText_SubQuest_CouchPotato5_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_PEWTER_CRUNCHIES,
+		ITEM,
+		sText_Complete
+	),
+};
+
+static const struct SubQuest sSubQuests_MissingNo[SUB_QUEST_COUNT_MISSINGNO] = 
+{
+	sub_quest(
+		SUB_QUEST_MISSINGNO_1,
+		sText_SubQuest_MissingNo1_Name,
+		sText_SubQuest_MissingNo1_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_HPUP,
-	      sText_SubQuest_FitnessFreak_HpUp_Name,
-	      sText_SubQuest_FitnessFreak_HpUp_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_HP_UP,
-	      ITEM,
-	      sText_Found
+		SUB_QUEST_MISSINGNO_2,
+		sText_SubQuest_MissingNo2_Name,
+		sText_SubQuest_MissingNo2_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_PROTEIN,
-	      sText_SubQuest_FitnessFreak_Protein_Name,
-	      sText_SubQuest_FitnessFreak_Protein_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_PROTEIN,
-	      ITEM,
-	      sText_Found
+		SUB_QUEST_MISSINGNO_3,
+		sText_SubQuest_MissingNo3_Name,
+		sText_SubQuest_MissingNo3_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
 	),
 	sub_quest(
-	      SUB_QUEST_NORANNA_FITNESS_FREAK_IRON,
-	      sText_SubQuest_FitnessFreak_Iron_Name,
-	      sText_SubQuest_FitnessFreak_Iron_Desc,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      ITEM_IRON,
-	      ITEM,
-	      sText_Found
+		SUB_QUEST_MISSINGNO_4,
+		sText_SubQuest_MissingNo4_Name,
+		sText_SubQuest_MissingNo4_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_MISSINGNO_5,
+		sText_SubQuest_MissingNo5_Name,
+		sText_SubQuest_MissingNo5_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_MISSINGNO_6,
+		sText_SubQuest_MissingNo6_Name,
+		sText_SubQuest_MissingNo6_Desc,
+		sText_SideQuestMap_Unknown,
+		ITEM_TM05,
+		ITEM,
+		sText_Complete
 	),
 };
 
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
-	[QUEST_NORANNA_FITNESS_FREAK] = side_quest(
-	      sText_SideQuestName_FitnessFreak,
-	      sText_SideQuestDesc_FitnessFreak,
-	      sText_SideQuestDoneDesc_FitnessFreak,
-	      sText_SideQuestMap_NorthernOrannaPath,
-	      OBJ_EVENT_GFX_BLACK_BELT, 
+	[QUEST_POKEDEX_COMPLETION] = side_quest(
+	      sText_SideQuestName_PokedexCompletion,
+	      sText_SideQuestDesc_PokedexCompletion,
+	      sText_SideQuestDoneDesc_PokedexCompletion,
+	      sText_SideQuestMap_Cheriport,
+	      OBJ_EVENT_GFX_PALM, 
 	      OBJECT,
-	      sSubQuests_FitnessFreak,
-	      SUB_QUEST_COUNT_NORANNA_FITNESS_FREAK
+	      sSubQuests_PokedexMilestones,
+		  SUB_QUEST_COUNT_POKEDEX_MILESTONE
+	),
+	[QUEST_MINTY_MEADOWS_MELISSA] = side_quest(
+	      sText_SideQuestName_MintyMeadowsMelissa,
+	      sText_SideQuestDesc_MintyMeadowsMelissa,
+	      sText_SideQuestDoneDesc_MintyMeadowsMelissa,
+	      sText_SideQuestMap_MintyMeadows,
+	      OBJ_EVENT_GFX_MELISSA, 
+	      OBJECT,
+	      NULL,
+	      0
 	),
 	[QUEST_PERSI_FAVORITE_CARD] = side_quest(
 	      sText_SideQuestName_PersiFavoriteCard,
@@ -545,15 +905,35 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
 	),
-	[QUEST_FRESA_FARMS_LOST_MAREEP] = side_quest(
-	      sText_SideQuestName_FresaFarmsLostMareep,
-	      sText_SideQuestDesc_FresaFarmsLostMareep,
-	      sText_SideQuestDoneDesc_FresaFarmsLostMareep,
-	      sText_SideQuestMap_FresaFarms,
-	      SPECIES_MAREEP, 
-	      PKMN,
+	// [QUEST_VERDANT_FOREST_SKITTY] = side_quest(
+	// 	sText_SideQuestName_VerdantForestSkitty,
+	// 	sText_SideQuestDesc_VerdantForestSkitty,
+	// 	sText_SideQuestDoneDesc_VerdantForestSkitty,
+	// 	sText_SideQuestMap_VerdantWoods,
+	// 	OBJ_EVENT_GFX_GIRL_2,
+	// 	OBJECT,
+	// 	NULL,
+	// 		0
+	// ),
+	[QUEST_MAPLEGROVE_LOVERS] = side_quest(
+	      sText_SideQuestName_MaplegroveLovers,
+	      sText_SideQuestDesc_MaplegroveLovers,
+	      sText_SideQuestDoneDesc_MaplegroveLovers,
+	      sText_SideQuestMap_Maplegrove,
+	      ITEM_ISLANDGAME_ROMANS_LETTER, 
+	      ITEM,
 	      NULL,
               0 
+	),
+	[QUEST_MARYA_GYM_CHALLENGE] = side_quest(
+	      sText_SideQuestName_MaryaGymChallenge,
+	      sText_SideQuestDesc_MaryaGymChallenge,
+	      sText_SideQuestDoneDesc_MaryaGymChallenge,
+	      sText_SideQuestMap_Unknown,
+	      ITEM_POKE_BALL, 
+	      ITEM,
+	      sSubQuests_MaryaGymChallenge,
+		  SUB_QUEST_COUNT_GYM_CHALLENGE
 	),
 	[QUEST_FRESA_FARMS_TORCHIC_EGG] = side_quest(
 	      sText_SideQuestName_FresaFarmsTorchicEgg,
@@ -565,16 +945,56 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
               0 
 	),
-        [QUEST_TIDALCOVE_RARE_PKMN] = side_quest(
-              sText_SideQuestName_TidalcoveRarePkmn,
-              sText_SideQuestDesc_TidalcoveRarePkmn,
-              sText_SideQuestDoneDesc_TidalcoveRarePkmn,
-              sText_SideQuestMap_FresaFarms,
-              OBJ_EVENT_GFX_GENTLEMAN,
-              OBJECT,
-              sSubQuests_TidalcoveRarePkmn,
-              SUB_QUEST_COUNT_TIDALCOVE_RARE_PKMN
-        )
+	[QUEST_ROSEVALE_RESCUE] = side_quest(
+	      sText_SideQuestName_RosevaleAzurillRescue,
+	      sText_SideQuestDesc_RosevaleAzurillRescue,
+	      sText_SideQuestDoneDesc_RosevaleAzurillRescue,
+	      sText_SideQuestMap_Rosevale,
+	      SPECIES_AZURILL, 
+	      PKMN,
+	      NULL,
+              0 
+	),
+	[QUEST_AETHERIA_MELISSA] = side_quest(
+	      sText_SideQuestName_AetheriaMelissa,
+	      sText_SideQuestDesc_AetheriaMelissa,
+	      sText_SideQuestDoneDesc_AetheriaMelissa,
+	      sText_SideQuestMap_Aetheria,
+	      OBJ_EVENT_GFX_MELISSA, 
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	[QUEST_APPLEVINE_COUCH_POTATO] = side_quest(
+	      sText_SideQuestName_APPLEVINE_COUCH_POTATO,
+	      sText_SideQuestDesc_APPLEVINE_COUCH_POTATO,
+	      sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO,
+	      sText_SideQuestMap_Applevine,
+	      ITEM_LEFTOVERS, 
+	      ITEM,
+	      sSubQuests_ApplevineCouchPotato,
+          SUB_QUEST_COUNT_COUCH_POTATO 
+	),
+	[QUEST_ROCKY_PATH_NURSE] = side_quest(
+	      sText_SideQuestName_ROCKY_PATH_NURSE,
+	      sText_SideQuestDesc_ROCKY_PATH_NURSE,
+	      sText_SideQuestDoneDesc_ROCKY_PATH_NURSE,
+	      sText_SideQuestMap_RockyPath,
+	      ITEM_POKEVIAL, 
+	      ITEM,
+		  NULL,
+		  	   0
+	),
+	[QUEST_MISSINGNO] = side_quest(
+	      sText_SideQuestName_MissingNo,
+	      sText_SideQuestDesc_MissingNo,
+	      sText_SideQuestDoneDesc_MissingNo,
+	      sText_SideQuestMap_Unknown,
+	      ITEM_ISLANDGAME_STRANGE_DISC,
+	      ITEM,
+	      sSubQuests_MissingNo,
+	      SUB_QUEST_COUNT_MISSINGNO
+	),
 };
 
 //BG layer defintions
@@ -2509,6 +2929,27 @@ void QuestMenu_CopyQuestName(u8 *dst, u8 questId)
 void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId)
 {
 	StringCopy(dst, sSideQuests[parentId].subquests[childId].name);
+}
+
+u16 QuestMenu_Subquest_Sprite(u8 parentId, u8 childId)
+{
+	return sSideQuests[parentId].subquests[childId].sprite;
+}
+
+void QuestMenu_CopySubquestType(u8 *dst, u8 parentId, u8 childId)
+{
+	struct SubQuest sub_quest = sSideQuests[parentId].subquests[childId];
+	switch (sub_quest.spritetype) 
+	{
+		case OBJECT:
+			break;
+		case ITEM:
+			CopyItemName(sub_quest.sprite, dst);
+			break;
+		case PKMN:
+			StringCopy(dst, GetSpeciesName(sub_quest.sprite));
+			break;
+	}
 }
 
 void QuestMenu_ResetMenuSaveData(void)

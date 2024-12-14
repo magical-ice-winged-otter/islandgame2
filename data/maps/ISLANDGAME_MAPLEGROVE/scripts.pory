@@ -1,4 +1,18 @@
-mapscripts ISLANDGAME_MAPLEGROVE_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+mapscripts ISLANDGAME_MAPLEGROVE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hide daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hide nighttime npcs
+        }
+    }
+}
 
 
 
@@ -6,25 +20,25 @@ mapscripts ISLANDGAME_MAPLEGROVE_MapScripts {}
 script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1 {
     lock
     faceplayer
-    playmoncry(SPECIES_ODDISH,CRY_MODE_NORMAL)
+    playmoncry(SPECIES_BUNEARY,CRY_MODE_NORMAL)
     
-    if(!flag(FLAG_MAPLEGROVE_ODDISH_GIFT)) {
+    if(!flag(FLAG_MAPLEGROVE_BUNEARY_GIFT)) {
         msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk, MSGBOX_YESNO)
         if (var(VAR_RESULT) == NO) {
             goto(PKMN1Event_End)
         }
 
-        checkitemspace(ITEM_GRASS_GEM)
+        checkitemspace(ITEM_NORMAL_GEM)
         if (!var(VAR_RESULT)) {
             msgbox(format("{COLOR RED}(I don't have enough space to carry it.)"))
             goto(PKMN1Event_End)
         }
 
-        giveitem(ITEM_GRASS_GEM)
-        setflag(FLAG_MAPLEGROVE_ODDISH_GIFT)
+        giveitem(ITEM_NORMAL_GEM)
+        setflag(FLAG_MAPLEGROVE_BUNEARY_GIFT)
     }
     else {
-        msgbox(format("{COLOR DARK_GRAY}Oddish!"))
+        msgbox(format("{COLOR DARK_GRAY}Konpeko Konpeko Konpeko!"))
     }
     
     
@@ -34,7 +48,7 @@ script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1 {
 
 text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk {
     format(
-        "{COLOR RED}(Huh? It looks like Oddish is trying to give me something.) \p"
+        "{COLOR RED}(Huh? It looks like Buneary is trying to give me something.) \p"
         "{COLOR RED}(Should I take it?)"
     )
 }
@@ -71,15 +85,18 @@ text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN3Talk {
 script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN4 {
     lock
     faceplayer
-    playmoncry(SPECIES_PACHIRISU,CRY_MODE_WEAK)
+    playmoncry(SPECIES_COTTONEE,CRY_MODE_WEAK)
     msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk)
     release
 }
 
 text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk {
     format(
-        "{COLOR DARK_GRAY}Chitter chitter... \p"
-        "{COLOR RED}(Pachirisu seems kind of disappointed with the crumbs it's being fed.)"
+        "{COLOR DARK_GRAY}Nee...\p"
+        "{COLOR RED}(It seems like Cottonee is trying to tell me something.) \p"
+        "{COLOR RED}(She says her name is CJ and that she hates the Fletchling over there.)\p"
+        "{COLOR RED}(She says it's because she stole her boyfriend from her.)\p"
+        "{COLOR RED}(...How does that even work?)"
     )
 }
 
@@ -93,9 +110,11 @@ script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN5 {
 
 text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN5Talk {
     format(
-        "{COLOR DARK_GRAY}Chirp chirp! \p"
+        "{COLOR DARK_GRAY}Chirp chirp...\p"
         "{COLOR RED}(It seems like Fletchling is trying to tell me something.) \p"
-        "{COLOR RED}(She says her name is Margaret, and that Pachirisu over there is her friend Eileen.)"
+        "{COLOR RED}(She says her name is Margaret and that she hates the Cottonee over there.)\p"
+        "{COLOR RED}(She says it's because she stole her boyfriend from her.)\p"
+        "{COLOR RED}(...How does that even work?)"
     )
 }
 
@@ -133,7 +152,14 @@ text ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC2Talk {
 
 script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3 {
     lock
-    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk)
+    if(!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+        msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk)
+    }
+    else {
+        msgbox(format(
+            "These two Pokémon don't get along at all. I don't know why."
+        ))
+    }
     release
 }
 

@@ -1,37 +1,92 @@
+const VAR_CURRENT_HOUR = VAR_0x8000
+
 mapscripts SS_RAIN_CAFETERIA_MapScripts {}
 
 
 script SS_RAIN_CAFETERIA_NPC1_TALK {
     lock
+    faceplayer
     msgbox(SS_RAIN_CAFETERIA_NPC1_TEXT)
     waitmessage
     release
 }
 
 text SS_RAIN_CAFETERIA_NPC1_TEXT {
-    format("Today's menu choices are great! I love the burgers here!")
+    format("I can't believe meals aren't paid for with the ticket!\pThese prices are highway robbery!")
 }
 
 script SS_RAIN_CAFETERIA_NPC2_TALK {
     lock
-    msgbox(SS_RAIN_CAFETERIA_NPC2_TEXT)
-    waitmessage
-    release
-}
+    faceplayer
+    gettime
+    if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+        if (!flag(FLAG_DAILY_SS_RAIN_LOBSTER_ROLL)) {
+            msgbox(format(
+                "Our famous lobster roll is made with only the freshest lobster."
+            ))
+            showmoneybox(0,0)
+            msgbox(format(
+                "Would you like to try one? It is ¥3000 for a roll."
+            ), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                checkmoney(3000)
+                if (!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "Sorry, you do not have enough money."
+                    ))
+                    hidemoneybox
+                    goto(LobsterRoll_End)
+                }
+                else {
+                    removemoney(3000)
+                    updatemoneybox
+                    playse(SE_SHOP)
+                    waitse
+                    hidemoneybox
+                    giveitem(ITEM_ISLANDGAME_LOBSTER_ROLL)
+                    setflag(FLAG_DAILY_SS_RAIN_LOBSTER_ROLL)
+                    goto(LobsterRoll_End)
+                }
+            }
+            else {
+                goto(LobsterRoll_End)
+                hidemoneybox
+            }
 
-text SS_RAIN_CAFETERIA_NPC2_TEXT {
-    format("An extra large pinap... Who puts pinap berries on a PIZZA?\pWhat has this world come to?")
+        }
+        else {
+            msgbox(format(
+                "Sorry, due to the high popularity of our lobster roll, only one may be purchased per customer every night.\p"
+                "If you would like another one, please come back tomorrow."
+            ))
+        }
+    }
+    else {
+        msgbox(format(
+            "If you would like to try our famous lobster roll, you will have to come back later tonight."
+        ))
+    }
+
+    LobsterRoll_End:
+        closemessage
+        release
 }
 
 script SS_RAIN_CAFETERIA_NPC3_TALK {
     lock
+    faceplayer
     msgbox(SS_RAIN_CAFETERIA_NPC3_TEXT)
     waitmessage
     release
 }
 
 text SS_RAIN_CAFETERIA_NPC3_TEXT {
-    format("I swear to Arceus, if I get another room service request on the top floor...")
+    format(
+        "Contrary to popular belief, our famous lobster roll is not made from Pokémon.\p"
+        "We actually just use regular ol' lobster.\p"
+        "Yeah, you heard that right. Normal animals exist in the Pokémon world.\p"
+        "Now you can stop accusing me of committing Pokémon cruelty!"
+        )
 }
 
 script SS_RAIN_CAFETERIA_IceCreamGirl {

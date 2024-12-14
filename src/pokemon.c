@@ -80,6 +80,7 @@ void TrySpecialOverworldEvo();
 EWRAM_DATA static u8 sLearningMoveTableID = 0;
 EWRAM_DATA u8 gPlayerPartyCount = 0;
 EWRAM_DATA u8 gEnemyPartyCount = 0;
+EWRAM_DATA struct Pokemon gPlayerSavedParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct Pokemon gPlayerParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct Pokemon gEnemyParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct SpriteTemplate gMultiuseSpriteTemplate = {0};
@@ -622,6 +623,37 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
         .affineAnims = gAffineAnims_BattleSpritePlayerSide,
         .callback = SpriteCB_BattleSpriteStartSlideLeft,
     },
+
+    // island-game
+    // [TRAINER_BACK_PIC_OLIVER] = {
+    //     .tileTag = TAG_NONE,
+    //     .paletteTag = 0,
+    //     .oam = &gOamData_BattleSpritePlayerSide,
+    //     .anims = NULL,
+    //     .images = gTrainerBackPicTable_Oliver,
+    //     .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+    //     .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    // },
+
+    // [TRAINER_BACK_PIC_OLIVIA] = {
+    //     .tileTag = TAG_NONE,
+    //     .paletteTag = 0,
+    //     .oam = &gOamData_BattleSpritePlayerSide,
+    //     .anims = NULL,
+    //     .images = gTrainerBackPicTable_Olivia,
+    //     .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+    //     .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    // },
+
+    // [TRAINER_BACK_PIC_MELISSA] = {
+    //     .tileTag = TAG_NONE,
+    //     .paletteTag = 0,
+    //     .oam = &gOamData_BattleSpritePlayerSide,
+    //     .anims = NULL,
+    //     .images = gTrainerBackPicTable_Melissa,
+    //     .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+    //     .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    // },
 };
 
 #define NUM_SECRET_BASE_CLASSES 5
@@ -672,6 +704,7 @@ static const s8 sFriendshipEventModifiers[][3] =
     [FRIENDSHIP_EVENT_FAINT_SMALL]     = {-1, -1, -1},
     [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {-5, -5, -10},
     [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-5, -5, -10},
+    [FRIENDSHIP_EVENT_MASSAGE]         = { 50,  50,  50 },
 };
 
 #define HM_MOVES_END 0xFFFF
@@ -3399,6 +3432,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->type1 = gSpeciesInfo[dst->species].types[0];
     dst->type2 = gSpeciesInfo[dst->species].types[1];
     dst->type3 = TYPE_MYSTERY;
+    dst->isShiny = IsMonShiny(src);
     dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy_Nickname(dst->nickname, nickname);
@@ -4181,6 +4215,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     switch (mode)
     {
     case EVO_MODE_NORMAL:
+    case EVO_MODE_BATTLE_ONLY:
         level = GetMonData(mon, MON_DATA_LEVEL, 0);
         friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, 0);
 
@@ -4269,11 +4304,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEVEL_FAMILY_OF_FOUR:
-                if (evolutions[i].param <= level && (personality % 100) != 0)
+                if (mode == EVO_MODE_BATTLE_ONLY && evolutions[i].param <= level && (personality % 100) != 0)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEVEL_FAMILY_OF_THREE:
-                if (evolutions[i].param <= level && (personality % 100) == 0)
+                if (mode == EVO_MODE_BATTLE_ONLY && evolutions[i].param <= level && (personality % 100) == 0)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_BEAUTY:
@@ -5441,12 +5476,18 @@ u16 GetBattleBGM(void)
             return MUS_HG_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
+        case TRAINER_CLASS_LEGEND:
+            return MUS_HG_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_VS_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(gTrainerBattleOpponent_A), gText_BattleWallyName))
                 return MUS_VS_TRAINER;
             return MUS_HG_VS_TRAINER_KANTO;
+        case TRAINER_CLASS_PATHMASTER:
+            return MUS_HG_VS_TRAINER;
+        case TRAINER_CLASS_THIEF:
+            return MUS_DP_VS_GALACTIC_COMMANDER;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
         case TRAINER_CLASS_SALON_MAIDEN:
@@ -5466,7 +5507,10 @@ u16 GetBattleBGM(void)
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
         case SPECIES_SHADOW_MIGHTYENA:
+        case SPECIES_SHADOW_AGGRON:
             return MUS_HG_VS_ENTEI;
+        case SPECIES_ANOMALY_01:
+            return MUS_NONE;
         case SPECIES_ARTICUNO:
         case SPECIES_ZAPDOS:
         case SPECIES_MOLTRES:
@@ -5846,9 +5890,9 @@ const u8 *GetTrainerPartnerName(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
     {
-        if (gPartnerTrainerId == TRAINER_PARTNER(PARTNER_STEVEN))
+        if (gPartnerTrainerId < TRAINER_PARTNER(PARTNER_END))
         {
-            return GetTrainerNameFromId(TRAINER_STEVEN);
+            return GetTrainerNameFromId(gPartnerTrainerId - MAX_TRAINERS_COUNT);
         }
         else
         {
@@ -6049,9 +6093,9 @@ u16 FacilityClassToPicIndex(u16 facilityClass)
 u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 {
     if (playerGender != MALE)
-        return FacilityClassToPicIndex(FACILITY_CLASS_MAY);
+        return FacilityClassToPicIndex(FACILITY_CLASS_OLIVIA);
     else
-        return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);
+        return FacilityClassToPicIndex(FACILITY_CLASS_OLIVER);
 }
 
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
@@ -6320,20 +6364,24 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 
                 case FORM_CHANGE_ITEM_USE:
                     if (arg == formChanges[i].param1)
                     {
+                        bool32 pass = TRUE;
                         switch (formChanges[i].param2)
                         {
                         case DAY:
-                            if (GetTimeOfDay() != TIME_NIGHT)
-                                targetSpecies = formChanges[i].targetSpecies;
+                            if (GetTimeOfDay() == TIME_NIGHT)
+                                pass = FALSE;
                             break;
                         case NIGHT:
-                            if (GetTimeOfDay() == TIME_NIGHT)
-                                targetSpecies = formChanges[i].targetSpecies;
-                            break;
-                        default:
-                            targetSpecies = formChanges[i].targetSpecies;
+                            if (GetTimeOfDay() != TIME_NIGHT)
+                                pass = FALSE;
                             break;
                         }
+
+                        if (formChanges[i].param3 != STATUS1_NONE && GetBoxMonData(boxMon, MON_DATA_STATUS, NULL) & formChanges[i].param3)
+                            pass = FALSE;
+
+                        if (pass)
+                            targetSpecies = formChanges[i].targetSpecies;
                     }
                     break;
                 case FORM_CHANGE_ITEM_USE_MULTICHOICE:

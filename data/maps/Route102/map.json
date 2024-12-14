@@ -19,7 +19,7 @@
       "direction": "left"
     },
     {
-      "map": "MAP_OLDALE_TOWN",
+      "map": "MAP_LITTLEROOT_TOWN",
       "offset": 0,
       "direction": "right"
     }
@@ -143,8 +143,12 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

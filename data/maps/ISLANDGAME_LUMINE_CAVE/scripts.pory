@@ -1,1 +1,121 @@
-mapscripts ISLANDGAME_LUMINE_CAVE_MapScripts {}
+mapscripts ISLANDGAME_LUMINE_CAVE_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if(flag(FLAG_DAILY_LUMINE_CAVE_SALT_1)) {
+            setmetatile(44, 8, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        }
+        if(flag(FLAG_DAILY_LUMINE_CAVE_SHELL_1)) {
+            setmetatile(8, 16, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        }
+    }
+}
+
+
+
+script ISLANDGAME_LUMINE_CAVE_Scout {
+    lock
+    faceplayer
+    if (flag(FLAG_LUMINE_CAVE_SHELL_BELL_RECEIVED)) {
+        msgbox(format(
+            "That's the last badge I needed to promote to a super scout!\p"
+            "Now... what should I get with my newly earned scout credit...\p"
+            "I could spend it on the stuffed Wooper, or on the mystery box...\p"
+            "A stuffed Wooper is a stuffed Wooper, but the mystery box could be anything!\p"
+            "It could even be a stuffed Wooper! I've always wanted one of those!"
+        ))
+        goto(ShellBellScout_End)
+    }
+    checkitem(ITEM_SHOAL_SHELL, 4)
+    if (var(VAR_RESULT) == TRUE) {
+        checkitem(ITEM_SHOAL_SALT, 4)
+        if(var(VAR_RESULT) == TRUE) {
+            msgbox(format(
+                "Wow! You found enough shells and salt! Want me to make you a Shell Bell?"
+            ), MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox(format(
+                    "Hooray! It's crafting time!"
+                ))
+                removeitem(ITEM_SHOAL_SALT, 4)
+                removeitem(ITEM_SHOAL_SHELL, 4)
+                giveitem(ITEM_SHELL_BELL)
+                setflag(FLAG_LUMINE_CAVE_SHELL_BELL_RECEIVED)
+            }
+            else {
+                msgbox(format(
+                    "But... I'll never rank up to a super scout if I don't get this last badge..."
+                ))
+            }
+        }
+    } 
+    else {
+        msgbox(format(
+            "I'm trying to get my Handy Helper badge, so I'm trying to help people out!\p"
+            "If you bring me 4 Cave Shells and 4 Cave Salts, I'll make you a Shell Bell!"
+        ))
+    }
+
+    ShellBellScout_End:
+        closemessage
+        release
+}
+
+script ISLANDGAME_LUMINE_CAVE_Salt {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SALT_1)) {
+        giveitem(ITEM_SHOAL_SALT)
+        setmetatile(44, 8, METATILE_Cave_ShoalCave_DirtPile_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_DAILY_LUMINE_CAVE_SALT_1)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No more salt here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_Shell {
+    lock
+    if(!flag(FLAG_DAILY_LUMINE_CAVE_SHELL_1)) {
+        giveitem(ITEM_SHOAL_SHELL)
+        setmetatile(8, 16, METATILE_Cave_ShoalCave_BlueStone_Small, FALSE)
+        special(DrawWholeMapView)
+        setflag(FLAG_DAILY_LUMINE_CAVE_SHELL_1)
+    }
+    else {
+        msgbox(format(
+            "{COLOR RED}(No shells here.)"
+        ))
+        closemessage
+    }
+    release
+}
+
+
+script ISLANDGAME_LUMINE_CAVE_Trainer1 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_1,
+        format(
+            "Roll out, my rocky comrades!"
+        ),
+        format(
+            "Nooo, my precious pebbles!"
+        ))
+    msgbox(format(
+        "Are you also looking for a Larvitar? I've been trying to find one for hours."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_Trainer2 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_2,
+        format(
+            "READY? FIGHT!"
+        ),
+        format(
+            "DEFEATED..."
+        ))
+    msgbox(format(
+        "CONTINUE...?{PAUSE 60} NO...{PAUSE 60} GAME OVER!"
+    ), MSGBOX_AUTOCLOSE)
+}

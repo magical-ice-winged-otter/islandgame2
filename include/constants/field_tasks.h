@@ -9,5 +9,6 @@
 #define STEP_CB_TRUCK               5
 #define STEP_CB_SECRET_BASE         6
 #define STEP_CB_CRACKED_FLOOR       7
+#define STEP_CB_ICE                 8 // island-game
 
 #endif // GUARD_CONSTANTS_FIELD_TASKS_H

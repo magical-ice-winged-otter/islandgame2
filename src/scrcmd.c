@@ -2531,7 +2531,7 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
     u8 caseId = ScriptReadByte(ctx);
     u8 parentId = VarGet(ScriptReadHalfword(ctx));
     u8 childId = VarGet(ScriptReadHalfword(ctx));
-
+    
     switch (caseId)
     {
         case QUEST_MENU_COMPLETE_QUEST:
@@ -2544,7 +2544,9 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
                 gSpecialVar_Result = FALSE;
             break;
         case QUEST_MENU_BUFFER_QUEST_NAME:
-            QuestMenu_CopySubquestName(gStringVar1,parentId,childId);
+            QuestMenu_CopySubquestName(gStringVar1, parentId, childId);
+            QuestMenu_CopySubquestType(gStringVar2, parentId, childId);
+            gSpecialVar_Result = QuestMenu_Subquest_Sprite(parentId, childId);
             break;
     }
 

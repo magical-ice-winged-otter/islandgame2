@@ -16,23 +16,23 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
-      "x": 10,
-      "y": 7,
+      "x": 7,
+      "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_ROSEVALE_PKMNCENTER_EventScript_Nurse",
+      "script": "IslandGame_Common_PokemonCenter_1F_EventScript_Nurse",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 5,
-      "y": 11,
+      "x": 1,
+      "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 2,
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -41,9 +41,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
-      "x": 13,
-      "y": 11,
+      "graphics_id": "OBJ_EVENT_GFX_SILVERWING_M",
+      "x": 10,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -54,9 +54,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_546",
-      "x": 13,
-      "y": 12,
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_220",
+      "x": 10,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -69,20 +69,31 @@
   ],
   "warp_events": [
     {
-      "x": 10,
-      "y": 13,
+      "x": 7,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_ROSEVALE",
       "dest_warp_id": "1"
     },
     {
-      "x": 9,
-      "y": 13,
+      "x": 6,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_ROSEVALE",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_ROSEVALE_PKMNCENTER_2F",
+      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

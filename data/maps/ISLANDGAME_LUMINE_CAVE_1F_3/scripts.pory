@@ -1,0 +1,37 @@
+mapscripts ISLANDGAME_LUMINE_CAVE_1F_3_MapScripts {}
+
+script ISLANDGAME_LUMINE_CAVE_1F_3_Trainer1 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_14,
+        format(
+            "Oi! Can a young couple get a li'l privacy here!?"
+        ),
+        format(
+            "Great... Now you've spoiled the mood."
+        ))
+    msgbox(format(
+        "This was my one chance, and you ruined for me!\p"
+        "After all these years... I was finally gonna do it! I was finally going to show off my new shiny Steelix, but now it's limp and unconscious!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_3_Trainer2 {
+    trainerbattle_single(TRAINER_LUMINE_CAVE_14,
+        format(
+            "Eeeeep!{PAUSE 60} Who's there!?"
+        ),
+        format(
+            "D-Do you mind!?"
+        ))
+    msgbox(format(
+        "I'm feel so embarrassed... I can't believe someone saw me fawning over a shiny Steelix..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_3_NPC {
+    lock
+    msgbox(format(
+        "Oh-ho-ho! What have we here? Two youngins sneaking into a cave to do Lugia knows what? How taboo!"
+    ))
+    closemessage
+    release
+}

@@ -1,0 +1,47 @@
+mapscripts ISLANDGAME_BELLEHAVEN_HOUSE_2_MapScripts {}
+
+
+script ISLANDGAME_BELLEHAVEN_HOUSE_2_Merchant {
+    lock
+    faceplayer
+    msgbox(format("I sell incenses here, have a look at my collection."))
+
+    dynmultipush("Sea Incense", ITEM_SEA_INCENSE)
+    dynmultipush("Lax Incense", ITEM_LAX_INCENSE)
+    dynmultipush("Odd Incense", ITEM_ODD_INCENSE)
+    dynmultipush("Rock Incense", ITEM_ROCK_INCENSE)
+    dynmultipush("Full Incense", ITEM_FULL_INCENSE)
+    dynmultipush("Wave Incense", ITEM_WAVE_INCENSE)
+    dynmultipush("Rose Incense", ITEM_ROSE_INCENSE)
+    dynmultipush("Luck Incense", ITEM_LUCK_INCENSE)
+    dynmultipush("Pure Incense", ITEM_PURE_INCENSE)
+    dynmultistack(0, 0, FALSE, 6, FALSE, FALSE, DYN_MULTICHOICE_CB_SHOW_ITEM)
+
+    bufferitemname(STR_VAR_1, VAR_RESULT)
+    msgbox("Would you like to buy {STR_VAR_1} for ¥1000?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        showmoneybox(18, 7)
+        msgbox("Much obliged!")
+        checkmoney(1000)
+        if(!var(VAR_RESULT)) {
+            msgbox("Oh, you don't seem to have money to pay for it. Please come back when you do!")
+        } else {
+            removemoney(1000)
+            playse(SE_SHOP)
+            updatemoneybox
+            waitse
+            msgbox("If you want to buy more from me, please speak to me again!")
+        }
+    } else {
+        msgbox("I see.... Well, do come again!")
+    }
+    release
+}
+
+
+script ISLANDGAME_BELLEHAVEN_HOUSE_2_NPC_2 {
+    lock
+    faceplayer
+    msgbox(format("Shh! I'm hiding the remote from my grandma!"))
+    release
+}

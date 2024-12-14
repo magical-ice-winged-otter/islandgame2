@@ -10,8 +10,8 @@ script ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign {
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer1 {
-    trainerbattle_double(TRAINER_MINTY_MEADOWS_1, format("{COLOR DARK_GRAY}Hey, let's battle together!"), "Oh no, we lost!", format("{COLOR DARK_GRAY}You don't have enough Pokemon to fight us."))
-	msgbox(format("{COLOR DARK_GRAY}We'll get you next time!"), MSGBOX_AUTOCLOSE)
+    trainerbattle_double(TRAINER_MINTY_MEADOWS_1, format("{COLOR DARK_GRAY}Oi! You're ruining our romantic excursion!"), "Lizzy: Ugh! Worst date ever!\pOwen: W-Wait! Don't leave!", format("{COLOR DARK_GRAY}Go away! We're having a touching moment!"))
+	msgbox(format("{COLOR DARK_GRAY}Ugh, now we have to take our Pokémon to Nurse Joy.\pThanks a lot."), MSGBOX_AUTOCLOSE)
 }
 
 // script ISLANDGAME_MINTY_MEADOWS_Trainer2 {
@@ -24,8 +24,8 @@ script ISLANDGAME_MINTY_MEADOWS_Trainer1 {
 // }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer3 {
-    trainerbattle_single(TRAINER_MINTY_MEADOWS_3, format("Oi! Get out of my way! I'm trying to keep up my pace here!"), "I couldn't keep up the momentum...")
-	msgbox(format("I need to get stronger... Fight, Jack... Fight!"), MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_MINTY_MEADOWS_3, format("Hey! Get out of my way! I'm trying to keep up my pace here!"), "I couldn't keep up the momentum...")
+	msgbox(format("I need to get stronger... Fight, Jack... Fight! TATAKAE!!!"), MSGBOX_AUTOCLOSE)
 }
 
 
@@ -46,7 +46,7 @@ script ISLANDGAME_MINTY_MEADOWS_Trainer4 {
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer6 {
     trainerbattle_single(TRAINER_MINTY_MEADOWS_6, format("I will find you my queen... I'll stop at nothing to see your beauty!"), "How dare you come between me and Her\nMajesty!")
-	msgbox(format("You'll pay for this... Delaying my search for my lovely Queen Combee!"), MSGBOX_AUTOCLOSE)
+	msgbox(format("You'll pay for this... Delaying my search for my lovely Vespiquen!"), MSGBOX_AUTOCLOSE)
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Trainer7 {

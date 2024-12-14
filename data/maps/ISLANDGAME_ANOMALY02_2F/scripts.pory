@@ -1,0 +1,24 @@
+mapscripts ISLANDGAME_ANOMALY02_2F_MapScripts {}
+
+
+script ISLANDGAME_ANOMALY02_2F_Interact1 {
+    lock
+    msgbox(format(
+        "Turn back now...{PAUSE 60}"
+    ))
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    warp(MAP_ISLANDGAME_ANOMALY01_1F, 15, 4)
+
+    release
+}
+
+script ISLANDGAME_ANOMALY02_2F_Interact2 {
+    lock
+    msgbox(format(
+        "No more...{PAUSE 60}"
+    ))
+    playmoncry(SPECIES_UNOWN, CRY_MODE_WEAK)
+    warp(MAP_ISLANDGAME_ANOMALY01_3F, 8, 14)
+
+    release
+}

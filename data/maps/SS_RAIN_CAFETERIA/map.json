@@ -80,6 +80,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "item": "ITEM_ORAN_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_SS_RAIN_ORAN_BERRY"
+    }
   ]
 }

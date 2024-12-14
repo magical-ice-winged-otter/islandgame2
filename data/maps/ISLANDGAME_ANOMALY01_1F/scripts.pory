@@ -1,0 +1,24 @@
+mapscripts ISLANDGAME_ANOMALY01_1F_MapScripts {}
+
+
+script ISLANDGAME_ANOMALY01_1F_Interact1 {
+    lock
+    msgbox(format(
+        "Hurry...{PAUSE 60}\nLeave...{PAUSE 60}"
+    ))
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    warp(MAP_ISLANDGAME_ANOMALY02_2F, 4, 5)
+
+    release
+}
+
+script ISLANDGAME_ANOMALY01_1F_Interact2 {
+    lock
+    msgbox(format(
+        "Dying... {PAUSE 60}Dying... {PAUSE 60}Dying...{PAUSE 60}"
+    ))
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    warp(MAP_ISLANDGAME_ANOMALY02_2F, 0, 7)
+
+    release
+}

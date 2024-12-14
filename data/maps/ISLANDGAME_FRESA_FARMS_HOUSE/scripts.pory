@@ -1,10 +1,27 @@
+const FLAG_NIGHT = FLAG_TEMP_1
+const FLAG_DAY = FLAG_TEMP_2
+const VAR_CURRENT_HOUR = VAR_0x8000
+
 mapscripts ISLANDGAME_FRESA_FARMS_HOUSE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+
+        gettime
+
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
+            setflag(FLAG_NIGHT)
+        }
+        else {
+            setflag(FLAG_DAY)
+        }
+    }
 }
 
 script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC1 {
     lock
     faceplayer
-    msgbox(format("Life on a farm is soooooo boring. I hope something exciting happens soon.\pI don't care what. It could even be like, some sorta world-ending event.\pJust SOMETHING!")) 
+    msgbox(format(
+        "Be sure to check our booth out at the Silverwing Festival when the time comes!"
+    )) 
     release
 }
 
@@ -12,11 +29,22 @@ script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC2 {
     lock
     faceplayer
     msgbox(format("I wish we got the good channels. I'm tired of no shows after dark.")) 
+    applymovement(2, Common_Movement_FaceUp)
+    waitmovement(0)
     release
 }
 
 script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC3 {
     lock
     msgbox(format("{COLOR RED}(Looks like he's admiring his Torchic plush.)")) 
+    release
+}
+
+script ISLANDGAME_FRESA_FARMS_HOUSE_EventScripts_NPC4 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hi sweetie! If you're hear for our famous milk, come back during the day."
+    ))
     release
 }

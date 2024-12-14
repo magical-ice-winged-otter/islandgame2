@@ -1,1 +1,179 @@
-mapscripts ISLANDGAME_APPLEVINE_PKMNCENTER_MapScripts {}
+const LOCALID_NURSE = 1
+
+mapscripts ISLANDGAME_APPLEVINE_PKMNCENTER_MapScripts {
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_ISLANDGAME_APPLEVINE)
+    }
+}
+
+script ISLANDGAME_APPLEVINE_PKMNCENTER_NPC1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Man, the news channel sucks! Who cares about this politics crap? Where are the hot babes and cool explosions?"
+    ))
+    applymovement(2, Common_Movement_FaceUp)
+    waitmovement(0)
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_PKMNCENTER_NPC2 {
+    lock
+    msgbox(format(
+        "Hmm. Yes... Shallow and pedantic..."
+    ))
+    closemessage
+    applymovement(3, Common_Movement_WalkInPlaceFasterUp)
+    waitmovement(0)
+    applymovement(3,Common_Movement_Delay48)
+    waitmovement(0)
+    faceplayer
+    msgbox(format(
+        "Hey, trainer! Your Pokémon are shallow and pedantic!\p"
+        "...\p"
+        "Huh? I shouldn't use words that I just learned on TV and don't know the meaning of yet?\p"
+        "You must be one of those conspiracy theorists!"
+    ))
+    applymovement(3, Common_Movement_FaceUp)
+    waitmovement(0)
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_PKMNCENTER_NPC3 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hmm...{PAUSE 60} Very interesting!\p"
+        "Hi there! Wanna hear a cool trainer tip I just learned from this book?"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(format(
+            "When building your Pokémon team, you should make sure each of them cover's the weaknesses of another!\p"
+            "So if you have a Pokémon that's weak to electric moves, you should put a ground-type Pokémon on your team so you can switch into it and get a free turn!\p"
+            "“The most powerful move in Pokemon is switching.”\p"
+            "Wow... Zeale truly has a way with words. No wonder he's been League Champion for three consecutive years!"
+        ))
+
+    }
+    else {
+        msgbox(format(
+            "Aww. I wanted to flex my newfound knowledge."
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_APPLEVINE_PKMNCENTER_MoveTutor {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hiya trainer! I'm one of Marya's legendary all-purpose Move Tutors!"
+    ))
+    if (!flag(FLAG_APPLEVINE_MOVE_TUTOR_FREEBIE)) {
+        msgbox(format(
+            "Normally I'd like a heart scale for my services, but since you're a new customer, you get your first move taught for free! Isn't that swell?\p"
+            "Would you like me to teach one of your Pokémon a move?"
+        ), MSGBOX_YESNO)
+    }
+    else {
+        msgbox(format(
+            "I'll teach your Pokémon a variety of moves just for a heart scale!\p"
+            "How's that sound?"
+        ), MSGBOX_YESNO)
+    }
+
+
+    if (var(VAR_RESULT) == YES) {
+        checkitem(ITEM_HEART_SCALE)
+        if (var(VAR_RESULT) || !flag(FLAG_APPLEVINE_MOVE_TUTOR_FREEBIE)) {
+            msgbox(format(
+                "Splendid! Which move would you like to teach?"
+            ))
+            dynmultipush("I'll decide later!", 0)
+            dynmultipush("Bug Bite", 1)
+            dynmultipush("Snarl", 2)
+            dynmultipush("Thunder Wave", 3)
+            dynmultipush("Low Kick", 4)
+            dynmultipush("Flame Charge", 5)
+            dynmultipush("Defog", 6)
+            dynmultipush("Spite", 7)
+            dynmultipush("Grass Knot", 8)
+            dynmultipush("Bulldoze", 9)
+            dynmultipush("Secret Power", 10)
+            dynmultipush("Icy Wind", 11)
+            dynmultipush("False Swipe", 12)
+            dynmultipush("Venoshock", 13)
+            dynmultipush("Recycle", 14)
+            dynmultipush("Rock Polish", 15)
+            dynmultipush("Work Up", 16)
+            dynmultipush("Worry Seed", 17)
+            dynmultistack(0,0,TRUE,6,FALSE,0,DYN_MULTICHOICE_CB_NONE)
+            switch (var(VAR_RESULT)) {
+                    case 1: setvar(VAR_0x8005, MOVE_BUG_BITE)
+                    case 2: setvar(VAR_0x8005, MOVE_SNARL)
+                    case 3: setvar(VAR_0x8005, MOVE_THUNDER_WAVE)
+                    case 4: setvar(VAR_0x8005, MOVE_LOW_KICK)
+                    case 5: setvar(VAR_0x8005, MOVE_FLAME_CHARGE)
+                    case 6: setvar(VAR_0x8005, MOVE_DEFOG)
+                    case 7: setvar(VAR_0x8005, MOVE_SPITE)
+                    case 8: setvar(VAR_0x8005, MOVE_GRASS_KNOT)
+                    case 9: setvar(VAR_0x8005, MOVE_BULLDOZE)
+                    case 10: setvar(VAR_0x8005, MOVE_SECRET_POWER)
+                    case 11: setvar(VAR_0x8005, MOVE_ICY_WIND)
+                    case 12: setvar(VAR_0x8005, MOVE_FALSE_SWIPE)
+                    case 13: setvar(VAR_0x8005, MOVE_VENOSHOCK)
+                    case 14: setvar(VAR_0x8005, MOVE_RECYCLE)
+                    case 15: setvar(VAR_0x8005, MOVE_ROCK_POLISH)
+                    case 16: setvar(VAR_0x8005, MOVE_WORK_UP)
+                    case 17: setvar(VAR_0x8005, MOVE_WORRY_SEED)
+                default:
+                    msgbox(format(
+                        "Aw, alright. You should totally come to me if you change your mind though!"
+                    ))   
+                    goto(Applevine_TutorEnd)
+            }
+            msgbox(format(
+                "Okie. Which Pokémon do you want to learn this move?"
+            ))
+            special(ChooseMonForMoveTutor)
+            waitstate
+            if (var(VAR_RESULT) == 0) {
+                msgbox(format(
+                    "Aw, alright. You should totally come to me if you change your mind though!"
+                ))   
+                goto(Applevine_TutorEnd)
+            }
+            if (!flag(FLAG_APPLEVINE_MOVE_TUTOR_FREEBIE)) {
+                msgbox(format(
+                    "Hope you enjoy your free move! Definitely come back if you have a heart scale, though!"
+                ))
+                setflag(FLAG_APPLEVINE_MOVE_TUTOR_FREEBIE)
+            }
+            else {
+                msgbox(format(
+                    "> You handed a heart scale in exchange for her services."
+                ))
+                removeitem(ITEM_HEART_SCALE)
+            }
+        }
+        else {
+            msgbox(format(
+                "Sorry, I will need a heart scale from you.\pI'm sure you can find a Luvdisc swimming around town with one!"
+            ))
+        }
+    }
+    else {
+        msgbox(format(
+            "Aw, alright. You should totally come to me if you change your mind though!"
+        ))   
+        goto(Applevine_TutorEnd)
+    }
+
+    Applevine_TutorEnd:
+        closemessage
+        release
+}

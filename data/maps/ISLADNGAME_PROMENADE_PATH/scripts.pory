@@ -1,1 +1,58 @@
 mapscripts ISLADNGAME_PROMENADE_PATH_MapScripts {}
+
+// trainers
+script ISLANDGAME_PROMENADE_PATH_TrainerBattle1 {
+    trainerbattle_single(TRAINER_PROMENADE_1, 
+        format("GOING FAST, MAKES ME FEEL ALIVE!"), 
+        "MY HEART BEATS, IN HYPER DRIVE!"
+    )
+    msgbox(format("I'm cosplaying as my favorite Pokémon trainer! Can you guess who he is?"), MSGBOX_NPC)
+}
+
+script ISLANDGAME_PROMENADE_PATH_TrainerBattle2 {
+    trainerbattle_single(TRAINER_PROMENADE_2, 
+        format("My boyfriend dragged me along him on the bike path so he can reenact a scene from his favorite anime...\pCan we battle, please? I'm so bored out of my mind."), 
+        "Thank you, that was rather refreshing."
+    )
+    msgbox(format("When my boyfriend asked me if I wanted to roleplay with him, this wasn't really what I was expecting...\pBut I envy his child-like innocence. It's kind of why I fell in love with him."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_PROMENADE_PATH_TrainerBattle3 {
+    trainerbattle_single(TRAINER_PROMENADE_3, 
+        format("GOTTA GO FAST!\pGOTTA GO FAST!\pGOTTA GO FASTER FASTER FA-FA-FA-FASTER!!!"), 
+        "Darn, guess I was too slow."
+    )
+    msgbox(format("I'm gonna have to step up my game if I want to have a shot at winning the festival triathlon."), MSGBOX_NPC)
+}
+
+script ISLANDGAME_PROMENADE_PATH_TrainerBattle4 {
+    trainerbattle_single(TRAINER_PROMENADE_4, 
+        format("Yeah that's right. I'm on the bike path without a bike! I'm different, man!"), 
+        "B-B-But I'm so quirky..."
+    )
+    msgbox(format("Okay, I admit it. I'm not riding a bike because I never learned how to.\pI only pretended to be riding on one to get past the guard."), MSGBOX_NPC)
+}
+
+// npcs
+script ISLANDGAME_PROMENADE_PATH_OldLady {
+    lock
+    faceplayer
+    msgbox(format(
+        "My legs are no good, so I had my trusty Abra teleport me onto the path."
+    ), MSGBOX_NPC)
+    applymovement(11, Common_Movement_FaceRight)
+    waitmovement(0)
+    release
+}
+
+script ISLANDGAME_PROMENADE_PATH_Abra {
+    lock
+    faceplayer
+    playmoncry(SPECIES_ABRA, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Abra... {COLOR BLUE}(I wish I knew other moves, but this old hag doesn't teach me any.)"
+    ), MSGBOX_NPC)
+    applymovement(12, Common_Movement_FaceRight)
+    waitmovement(0)
+    release
+}

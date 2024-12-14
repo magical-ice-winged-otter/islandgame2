@@ -133,7 +133,7 @@
 #define TRAINER_PIC_CLOWN                115
 #define TRAINER_PIC_COOLTRAINERSNOWF     116
 #define TRAINER_PIC_COOLTRAINERSNOWM     117
-#define TRAINER_PIC_COWBOY               118
+#define TRAINER_PIC_RANCHER              118
 #define TRAINER_PIC_COWGIRL              119
 #define TRAINER_PIC_CYNTHIA              120
 #define TRAINER_PIC_FARMERDUO            121
@@ -156,12 +156,18 @@
 // island-game
 #define TRAINER_PIC_ARTHUR                136
 #define TRAINER_PIC_EDEA                  137
-#define TRAINER_PIC_AUDREY                138
+#define TRAINER_PIC_MELISSA               138
 #define TRAINER_PIC_JONAS                 139
 #define TRAINER_PIC_RUKA                  140
 #define TRAINER_PIC_OLIVIA                141
 #define TRAINER_PIC_OLIVER                142
-#define TRAINER_PIC_COUNT                 143
+#define TRAINER_PIC_SCOUT_M               143
+#define TRAINER_PIC_SCOUT_F               144
+#define TRAINER_PIC_BUG_CATCHER_F         145
+#define TRAINER_PIC_NERD                  146
+#define TRAINER_PIC_BIRD_KEEPER_F         147
+#define TRAINER_PIC_SCIENTIST2            148
+#define TRAINER_PIC_COUNT                 149
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -172,6 +178,10 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
+// #define TRAINER_BACK_PIC_OLIVER                 8
+// #define TRAINER_BACK_PIC_OLIVIA                 9
+// #define TRAINER_BACK_PIC_MELISSA                10
+
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1
@@ -255,8 +265,14 @@
 #define FACILITY_CLASS_LEAF                  0x4f
 #define FACILITY_CLASS_RS_BRENDAN            0x50
 #define FACILITY_CLASS_RS_MAY                0x51
+#define FACILITY_CLASS_OLIVER                0x52
+#define FACILITY_CLASS_OLIVER_2              0x53
+#define FACILITY_CLASS_OLIVER_3              0x54
+#define FACILITY_CLASS_OLIVIA                0x55
+#define FACILITY_CLASS_OLIVIA_2              0x56
+#define FACILITY_CLASS_OLIVIA_3              0x57
 
-#define FACILITY_CLASSES_COUNT               0x52
+#define FACILITY_CLASSES_COUNT               0x58
 
 #define RS_FACILITY_CLASS_AQUA_LEADER_ARCHIE    0x0
 #define RS_FACILITY_CLASS_AQUA_GRUNT_M          0x1
@@ -404,7 +420,20 @@
 #define TRAINER_CLASS_PIKE_QUEEN     0x3f
 #define TRAINER_CLASS_PYRAMID_KING   0x40
 #define TRAINER_CLASS_RS_PROTAG      0x41
-#define TRAINER_CLASS_COUNT          0x42
+
+// island-game
+
+#define TRAINER_CLASS_SCOUT          0x42
+#define TRAINER_CLASS_NERD           0x43
+#define TRAINER_CLASS_COWGIRL        0x44
+#define TRAINER_CLASS_RANCHER        0x45
+#define TRAINER_CLASS_PATHMASTER     0x46
+#define TRAINER_CLASS_THIEF          0x47
+#define TRAINER_CLASS_LEGEND         0x48
+#define TRAINER_CLASS_CLOWN          0x49
+#define TRAINER_CLASS_WORKER         0x4a
+#define TRAINER_CLASS_SCIENTIST      0x4b
+#define TRAINER_CLASS_COUNT          0x4c
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

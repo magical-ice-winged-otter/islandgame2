@@ -929,16 +929,7 @@ const struct Tileset gTileset_islandgame_oranna_cheriport =
     .callback = InitTilesetAnim_islandgame_oranna_cheriport,
 };
 
-const struct Tileset gTileset_islandgame_oranna_southern_path =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_islandgame_oranna_southern_path,
-    .palettes = gTilesetPalettes_islandgame_oranna_southern_path,
-    .metatiles = gMetatiles_islandgame_oranna_southern_path,
-    .metatileAttributes = gMetatileAttributes_islandgame_oranna_southern_path,
-    .callback = NULL,
-};
+
 
 const struct Tileset gTileset_islandgame_oranna_verdant =
 {
@@ -1021,16 +1012,7 @@ const struct Tileset gTileset_islandgame_oranna_general =
     .callback = InitTilesetAnim_islandgame_oranna_general,
 };
 
-const struct Tileset gTileset_islandgame_oranna_northern_path =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_islandgame_oranna_northern_path,
-    .palettes = gTilesetPalettes_islandgame_oranna_northern_path,
-    .metatiles = gMetatiles_islandgame_oranna_northern_path,
-    .metatileAttributes = gMetatileAttributes_islandgame_oranna_northern_path,
-    .callback = NULL,
-};
+
 
 const struct Tileset gTileset_islandgame_oranna_central_path =
 {
@@ -1086,6 +1068,28 @@ const struct Tileset gTileset_islandgame_houses =
     .metatiles = gMetatiles_islandgame_houses,
     .metatileAttributes = gMetatileAttributes_islandgame_houses,
     .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_ocean_general =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_ocean_general,
+    .palettes = gTilesetPalettes_islandgame_ocean_general,
+    .metatiles = gMetatiles_islandgame_ocean_general,
+    .metatileAttributes = gMetatileAttributes_islandgame_ocean_general,
+    .callback = InitTilesetAnim_islandgame_ocean_general,
+};
+
+const struct Tileset gTileset_islandgame_lumine_applevine =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_lumine_applevine,
+    .palettes = gTilesetPalettes_islandgame_lumine_applevine,
+    .metatiles = gMetatiles_islandgame_lumine_applevine,
+    .metatileAttributes = gMetatileAttributes_islandgame_lumine_applevine,
+    .callback = InitTilesetAnim_islandgame_lumine_applevine,
 };
 
 const struct Tileset gTileset_islandgame_lumine_power_plant_interior =
@@ -1228,5 +1232,60 @@ const struct Tileset gTileset_islandgame_lumine_pleasant_avenue =
     .palettes = gTilesetPalettes_islandgame_lumine_pleasant_avenue,
     .metatiles = gMetatiles_islandgame_lumine_pleasant_avenue,
     .metatileAttributes = gMetatileAttributes_islandgame_lumine_pleasant_avenue,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_coastalcave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_coastalcave,
+    .palettes = gTilesetPalettes_coastalcave,
+    .metatiles = gMetatiles_coastalcave,
+    .metatileAttributes = gMetatileAttributes_coastalcave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_dojointerior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_dojointerior,
+    .palettes = gTilesetPalettes_dojointerior,
+    .metatiles = gMetatiles_dojointerior,
+    .metatileAttributes = gMetatileAttributes_dojointerior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_shadyforest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_shadyforest,
+    .palettes = gTilesetPalettes_shadyforest,
+    .metatiles = gMetatiles_shadyforest,
+    .metatileAttributes = gMetatileAttributes_shadyforest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_kanto_building =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_islandgame_kanto_building,
+    .palettes = gTilesetPalettes_islandgame_kanto_building,
+    .metatiles = gMetatiles_islandgame_kanto_building,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_building,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_kanto_powerplant =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_kanto_powerplant,
+    .palettes = gTilesetPalettes_islandgame_kanto_powerplant,
+    .metatiles = gMetatiles_islandgame_kanto_powerplant,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_powerplant,
     .callback = NULL,
 };

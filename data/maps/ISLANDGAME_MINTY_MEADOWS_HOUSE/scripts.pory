@@ -5,14 +5,130 @@ mapscripts ISLANDGAME_MINTY_MEADOWS_HOUSE_MapScripts {}
 script ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1 {
     lock
     faceplayer
-    msgbox(ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText)
-    waitmessage
-    release
+    if(!flag(FLAG_MINTY_MEADOWS_FREE_MINT)) {
+        msgbox(format(
+            "Salutations! My name is Pops. Would you like to try one of our Meadow Mints?\p"
+            "They can be used to change the nature of your Pokémon!"
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(format(
+                "Good show! Which scent would you like? The first one you get is free!"
+            ))
+            goto(OpenMintShop)
+        }
+        else {
+            msgbox(format(
+                "Oh... bad show..."
+            ))
+            goto(MintShopEnd)
+        }
+    }
+    else {
+        msgbox(format(
+            "Welcome back, trainer! Here to try another of our fresh mints?"
+        ))
+        showmoneybox(18,0)
+        msgbox(format(
+            "For the price of ¥1000, I will happily sell you one of them!"
+        ), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            checkmoney(1000)
+            if (!var(VAR_RESULT)) {
+                msgbox(format("Oh dear... I'm afraid I can't give you a mint if you don't have enough money."))
+                goto(HPTutor_End)
+            }
+            else {
+                hidemoneybox
+                goto(OpenMintShop)
+            }
+        }
+        else {
+            msgbox(format(
+                "Oh... bad show..."
+            ))
+            goto(MintShopEnd)
+        }
+    }
+
+    OpenMintShop:
+        dynmultipush("I'll decide later!", 0)
+        dynmultipush("Lonely Mint", 81)
+        dynmultipush("Adamant Mint", 82)
+        dynmultipush("Naughty Mint", 83)
+        dynmultipush("Brave Mint", 84)
+        dynmultipush("Bold Mint", 85)
+        dynmultipush("Impish Mint", 86)
+        dynmultipush("Lax Mint", 87)
+        dynmultipush("Relaxed Mint", 88)
+        dynmultipush("Modest Mint", 89)
+        dynmultipush("Mild Mint", 90)
+        dynmultipush("Rash Mint", 91)
+        dynmultipush("Quiet Mint", 92)
+        dynmultipush("Calm Mint", 93)
+        dynmultipush("Gentle Mint", 94)
+        dynmultipush("Careful Mint", 95)
+        dynmultipush("Sassy Mint", 96)
+        dynmultipush("Timid Mint", 97)
+        dynmultipush("Hasty Mint", 98)
+        dynmultipush("Jolly Mint", 99)
+        dynmultipush("Naive Mint", 100)
+        dynmultipush("Serious Mint", 101)
+        dynmultistack(0,0,TRUE,5,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+        switch(var(VAR_RESULT)) {
+            case 81: giveitem(ITEM_LONELY_MINT)
+            case 82: giveitem(ITEM_ADAMANT_MINT)
+            case 83: giveitem(ITEM_NAUGHTY_MINT)
+            case 84: giveitem(ITEM_BRAVE_MINT)
+            case 85: giveitem(ITEM_BOLD_MINT)
+            case 86: giveitem(ITEM_IMPISH_MINT)
+            case 87: giveitem(ITEM_LAX_MINT)
+            case 88: giveitem(ITEM_RELAXED_MINT)
+            case 89: giveitem(ITEM_MODEST_MINT)
+            case 90: giveitem(ITEM_MILD_MINT)
+            case 91: giveitem(ITEM_RASH_MINT)
+            case 92: giveitem(ITEM_QUIET_MINT)
+            case 93: giveitem(ITEM_CALM_MINT)
+            case 94: giveitem(ITEM_GENTLE_MINT)
+            case 95: giveitem(ITEM_CAREFUL_MINT)
+            case 96: giveitem(ITEM_SASSY_MINT)
+            case 97: giveitem(ITEM_TIMID_MINT)
+            case 98: giveitem(ITEM_HASTY_MINT)
+            case 99: giveitem(ITEM_JOLLY_MINT)
+            case 100: giveitem(ITEM_NAIVE_MINT)
+            case 101: giveitem(ITEM_SERIOUS_MINT)
+            default:
+        }
+        if(var(VAR_RESULT) == 0) {
+            msgbox(format(
+                "Alright. Come back when you've made a decision!"
+            ))
+            goto(MintShopEnd)
+        }
+        if(flag(FLAG_MINTY_MEADOWS_FREE_MINT)) {
+            showmoneybox(18,0)
+            msgbox(format(
+                "Jolly good show! Thank you for your patronage!"
+            ))
+            removemoney(1000)
+            updatemoneybox
+            playse(SE_SHOP)
+            waitse
+            hidemoneybox
+            goto(MintShopEnd)
+        }
+        else {
+            setflag(FLAG_MINTY_MEADOWS_FREE_MINT)
+            msgbox(format(
+                "Jolly good show! I hope your Pokémon likes it!"
+            ))
+        }
+
+
+    MintShopEnd:
+        closemessage
+        release
 }
 
-text ISLANDGAME_MINTY_MEADOWS_HOUSE_PersonText {
-    format("{COLOR DARK_GRAY}Salutations! My name is Pops. Me and my Pokémon manage the meadows.")
-}
 
 script ISLANDGAME_MINTY_MEADOWS_HOUSE_Mordecai {
     lock
@@ -78,14 +194,13 @@ text ISLANDGAME_MINTY_MEADOWS_HOUSE_SkipsTalk {
 
 script ISLANDGAME_MINTY_MEADOWS_HOUSE_Benson {
     lock
+    faceplayer
     playmoncry(SPECIES_BLACEPHALON,CRY_MODE_NORMAL)
-    msgbox(format("Do you like gumballs?"), MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES) {
-        msgbox(format("Me too. They are yummy. I especially like blue raspberry."))
-    }
-    else {
-        msgbox(format("Huh? Why are you looking at me like that?"))
-    }
+    msgbox(format(
+        "MORDECAI AND RIGBY GO AND GET US SOME FRESH MINTS OR YOU'RE BOTH FIRED!!!\p"
+        "Huh? Oh, sorry. I didn't mean to startle you.\p"
+        "I'm Benson, the manager of Minty Meadows. Please enjoy your stay!"
+    ))
     closemessage
     release
 }

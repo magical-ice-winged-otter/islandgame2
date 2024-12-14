@@ -1,83 +1,82 @@
 mapscripts ISLANDGAME_SS_RAIN_ROOM2_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (!flag(FLAG_SET_WALL_CLOCK)) {
+        if (!flag(FLAG_RECEIVED_RUNNING_SHOES)) {
             setvar(VAR_TEMP_1, 7)
+        }
+
+        if (!flag(FLAG_ROSEVALE_AMULET_COIN_GIFT)) {
+            setflag(FLAG_TEMP_1)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_1, 7: SS_Rain_EventScript_SetClock
+        VAR_TEMP_1, 7: SS_Rain_EventScript_Intro
     ]
 }
-script SS_Rain_EventScript_NeedRunningShoes {
-    if (!flag(FLAG_RECEIVED_RUNNING_SHOES)) { # Run trigger script if you have not recieved the running shoes
-        lockall
-        msgbox(NeedRunningShoes_Text)
-        waitmessage
-        closemessage
-        applymovement(OBJ_EVENT_ID_PLAYER, NeedRunningShoes_Movement)
-        waitmovement(0)
-    }
+
+
+script SS_Rain_EventScript_Intro {
+    lockall
+    playse(SE_DING_DONG)
+    waitse
+    setvar(VAR_TEMP_1, 3)
+    msgbox(format(
+        "Ladies and gentlemen, this is your devilishly handsome captain speaking!\p"
+        "I'm delighted to announce that we've finally reached our destination!\p"
+        "On behalf of the entire crew, I'd like to thank you for choosing to sail with us.\p"
+        "Now, go out there and explore all that the Maryan Isles has to offer!\p"
+        "We'll be patiently waiting here for your return! Until next time, buh-bye!"
+    ))
+    waitmessage
+	// special(StartWallClock)
+	// waitstate
+    // delay(30)
+    // setflag(FLAG_SET_WALL_CLOCK)
+    closemessage
+    // setflag(FLAG_RECEIVED_RUNNING_SHOES)
+    // setflag(FLAG_SYS_B_DASH)
     releaseall
 }
 
-script SS_Rain_EventScript_SetClock {
-    lockall
-    setvar(VAR_TEMP_1, 3)
-    fadescreen(FADE_TO_BLACK)
-    msgbox(ArrivedAtCheriport_Text)
-    waitmessage
-	special(StartWallClock)
-	waitstate
-    delay(30)
-    setflag(FLAG_SET_WALL_CLOCK)
-    closemessage
+script ISLANDGAME_SS_RAIN_PLAYER_ROOM_Doll1 {
+    lock
+    msgbox(format(
+        "{COLOR RED}(It's the Pikachu Doll I got when I was only six years old.)\p"
+        "(I can't believe it's already been ten years...)"
+    ))
+    release
+}
+
+script ISLANDGAME_SS_RAIN_PLAYER_ROOM_Doll2 {
+    lock
+    msgbox(format(
+        "{COLOR RED}(It's the Azurill Doll I got from Arthur's Sister during the night I stayed over at their inn.)\p"
+        "(It's not shiny like hers, though.)"
+    ))
+    release
+}
+
+script SS_Rain_EventScript_NeedRunningShoes {
+    if (!flag(FLAG_RECEIVED_RUNNING_SHOES)) { # Run trigger script if you have not recieved the running shoes
+        lockall
+        msgbox(format(
+            "{COLOR RED}(I should probably get my shoes before I leave.)"
+        ))
+        waitmessage
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+        waitmovement(0)
+    }
     releaseall
 }
 
 script SS_Rain_EventScript_ItemRunningShoes {
     lockall
     setflag(FLAG_RECEIVED_RUNNING_SHOES)
-    msgbox(SwitchedRunningShoes_Text)
+    msgbox(format(
+        "You changed into your Running Shoes!\p"
+        "Pro-Tip: You can press the “R” button to toggle auto-running!"
+    ))
     removeobject(VAR_LAST_TALKED)
     setflag(FLAG_SYS_B_DASH)
     releaseall
-}
-
-movement NeedRunningShoes_Movement {
-    walk_down
-    face_down
-}
-
-text NeedRunningShoes_Text {
-    format(
-        "{COLOR RED}(I should also change into my Running Shoes before I leave.)"
-    )
-}
-
-text SwitchedRunningShoes_Text {
-    format(
-        "{COLOR DARK_GRAY}You switched into your Running Shoes!"
-    )
-}
-
-text ArrivedAtCheriport_Text {
-    format(
-        "{COLOR DARK_GRAY}Ladies and gentleman, this is your captain speaking! \p"
-        "{COLOR DARK_GRAY}I'm happy to announce to you that we've finally reached our destination! \p"
-        "{COLOR DARK_GRAY}On behalf of the entire crew, I'd like to thank you for choosing to sail with us. \p"
-        "{COLOR DARK_GRAY}Now, set forth and explore the Maryan Isles! Until next time. Buh-bye! \p"
-        "{COLOR RED}(I've finally arrived. I should set my watch to the correct time.)"
-    )
-}
-
-script ISLANDGAME_SS_RAIN_PLAYER_ROOM_Plush {
-    lock
-    msgbox(ISLANDGAME_SS_RAIN_PLAYER_ROOM_PlushInspect)
-    release
-}
-text ISLANDGAME_SS_RAIN_PLAYER_ROOM_PlushInspect {
-    format(
-        "{COLOR RED}(Farewell, stuffed Pikachu. My Pokémon adventure starts today!) \p"
-        "{COLOR RED}(Don't worry though, I'll be back. Look after my room in the meantime.)"
-        )
 }

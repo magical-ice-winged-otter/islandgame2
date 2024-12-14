@@ -16,23 +16,23 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
-      "x": 12,
-      "y": 10,
+      "x": 7,
+      "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_PERSI_PKMNCENTER_EventScript_Nurse",
+      "script": "IslandGame_Common_PokemonCenter_1F_EventScript_Nurse",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 6,
-      "y": 11,
+      "x": 1,
+      "y": 2,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -42,8 +42,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
-      "x": 7,
-      "y": 12,
+      "x": 1,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 17,
-      "y": 15,
+      "x": 12,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -69,20 +69,31 @@
   ],
   "warp_events": [
     {
-      "x": 12,
-      "y": 16,
+      "x": 7,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "0"
     },
     {
-      "x": 11,
-      "y": 16,
+      "x": 6,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_CAMP_PERSI",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_CAMP_PERSI_PKMNCENTER_2F",
+      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

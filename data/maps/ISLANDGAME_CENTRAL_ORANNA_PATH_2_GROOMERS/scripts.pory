@@ -1,0 +1,103 @@
+mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS_MapScripts {
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS_Groomer {
+    lock
+    faceplayer
+    if(!flag(FLAG_DAILY_COR_GROOMERS)) {
+        showmoneybox(0,0)
+        msgbox(format(
+            "Hiyoooo! Welcome to my salooooon! I'm Krissiiiiiiiie!\p"
+            "For ¥1,500, I'll give your Pokémon a relaaaaaxing massaaaaage!"
+        ), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES) {
+            checkmoney(1500)
+            if(!var(VAR_RESULT)) {
+                msgbox(format(
+                    "Noooooo, you don't have enough moneyyyyy!"
+                ))
+            }
+            else {
+                msgbox(format(
+                    "Okiiiiiie! Who's gonna be the lucky Ducklett?"
+                ))
+                special(ChoosePartyMon)
+                waitstate
+                if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+                    msgbox(format(
+                        "Eeeeeeeeeh? You should pamper your Pokémon once in a whileeeee!"
+                    ))
+                    goto(Groomer_End)
+                }
+                specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+                if(var(VAR_RESULT) == SPECIES_EGG) {
+                    msgbox(format(
+                        "You silly Bidoooooof. I can't massage that!"
+                    ))
+                    goto(Groomer_End)
+                }
+                showmoneybox(0,0)
+                removemoney(1500)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                msgbox(format(
+                    "Righty-hooooooo! It's grooooooming tiiiiiime!"
+                ))
+                closemessage
+                fadescreen(FADE_TO_BLACK)
+                playfanfare(MUS_HEAL)
+                waitfanfare
+                special(SalonMassageServices)
+                fadescreen(FADE_FROM_BLACK)
+                msgbox(format(
+                    "Alllllll dooone! Your Pokémon looks a LOT happier noooooow!"
+                ))
+                setflag(FLAG_DAILY_COR_GROOMERS)
+
+            }
+        }
+        else {
+            msgbox(format(
+                "Eeeeeeeeeh? You should pamper your Pokémon once in a whileeeee!"
+            ))
+            goto(Groomer_End)
+
+        }
+    }
+    else {
+        msgbox(format(
+            "I'm too tireeeeeeed. Come back tomorrow pleaaaaaaase."
+        ))
+    }
+
+    Groomer_End:
+        hidemoneybox
+        closemessage
+        release
+}
+
+
+
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS_Growlithe {
+    lock
+    faceplayer
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    msgbox(format(
+        "YUBI YUBI"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_2_GROOMERS_Purrloin {
+    lock
+    faceplayer
+    playmoncry(SPECIES_PURRLOIN, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Mogu mogu..."
+    ))
+    closemessage
+    release
+}

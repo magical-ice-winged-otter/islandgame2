@@ -13,11 +13,14 @@ mapscripts ISLANDGAME_CHERIPORT_MapScripts {
         if (flag(FLAG_PROF_GAVE_EEVEE)) {
             setvar(VAR_TEMP_1, 1)
         }
+        if (flag(FLAG_RECEIVED_TOWN_MAP)) {
+            setvar(VAR_TEMP_2, 1)
+        }
 
         // todo: I want to turn this into a single macro - setnightflag(FLAG_NIGHT)
         gettime
 
-        if (var(VAR_CURRENT_HOUR) < 12 + 6) {
+        if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
             setflag(FLAG_NIGHT)
         }
         else {
@@ -94,7 +97,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles {
 
 
 text ISLANDGAME_CHERIPORT_OUTSIDE_StayHere {
-    format("{COLOR RED}(There's no reason for me to leave the isles.)")
+    format("{COLOR RED}(There's nothing past here but the vast ocean.)")
 }
 
 movement WalkBack2 {
@@ -138,7 +141,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4 {
 
 text NPCBoy_Talk {
     format("{COLOR DARK_GRAY}While I was exploring the Southern Oranna Path at night, I was attacked by a Pokémon on the mountains. \p"
-           "{COLOR DARK_GRAY}I've never seen anything like it... and I'm too scared to see it again."
+           "{COLOR DARK_GRAY}I've never seen anything like it...{PAUSE 60} and I'm too scared to see it again."
         )
 }
 
@@ -155,7 +158,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko {
 }
 
 text PeekoTalk {
-    format("Peeko: {COLOR DARK_GRAY}Wrooooar!")
+    format("Wrooooar! {COLOR BLUE}(I'm Peeko. Ahoy!)")
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC1 {
@@ -198,19 +201,6 @@ text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC4_TALK {
     format("{COLOR DARK_GRAY}Left! Right! Left! Right! Huh? I'm in the middle of my training! Shoo!")
 }
 
-script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC5 {
-    lock
-    faceplayer
-    msgbox(ISLAND_GAME_CHERIPORT_OUTSIDE_NPC5_TALK)
-    release
-}
-
-text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC5_TALK {
-    format(
-        "{COLOR DARK_GRAY}Welcome to the island of Oranna, traveler. \p"
-        "{COLOR DARK_GRAY}We, The Silverwing Order, pray you have a pleasant stay."
-    )
-}
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC6 {
     lock
@@ -234,7 +224,7 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC7 {
 
 text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK {
     format(
-        "{COLOR DARK_GRAY}Come on... Come on... Argh! Not another Magikarp! I need a Barboach!")
+        "{COLOR DARK_GRAY}Come on...{PAUSE 30} Come on...{PAUSE 30} Argh! Not another Magikarp! I need a Horsea!")
 }
 
 script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC8 {
@@ -259,12 +249,50 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC9 {
 
 text ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK {
     format(
-        "{COLOR DARK_GRAY}-sigh- If only you were still here with us..."
+        "{COLOR DARK_GRAY}-sigh-{PAUSE 30} If only you were still here with us..."
     )
 }
 
 
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter {
+    lock
+    faceplayer
+    if(!flag(FLAG_RECEIVED_TOWN_MAP)) {
+        msgbox(format(
+            "Welcome to the Maryan Isles, traveler.\p"
+            "Please take this map. It will aid you in traversing the region."
+        ))
+        giveitem(ITEM_TOWN_MAP)
+    }
+    else {
+        msgbox(format(
+            "We, The Silverwing Order, pray you have a pleasant stay."
+        ))
+    }
+    closemessage
+    setvar(VAR_TEMP_2, 1)
+    setflag(FLAG_RECEIVED_TOWN_MAP)
+    release
+}
 
+script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter2 {
+    lock
+    playse(SE_PIN)
+    applymovement(8, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(8, Common_Movement_Delay32)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    msgbox(format(
+        "Welcome to the Maryan Isles, traveler.\p"
+        "Please take this map. It will aid you in traversing the region."
+    ))
+    giveitem(ITEM_TOWN_MAP)
+    setvar(VAR_TEMP_2, 1)
+    setflag(FLAG_RECEIVED_TOWN_MAP)
+    closemessage
+    release
+}
 
 
 
