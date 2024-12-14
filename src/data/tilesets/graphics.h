@@ -2285,25 +2285,6 @@ const u16 gTilesetPalettes_islandgame_lumine_therion_path[][16] =
 
 const u32 gTilesetTiles_islandgame_lumine_therion_path[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_therion_path/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_islandgame_lumine_valley_of_peace[][16] =
-{
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/islandgame_lumine_valley_of_peace/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_islandgame_lumine_valley_of_peace[] = INCBIN_U32("data/tilesets/secondary/islandgame_lumine_valley_of_peace/tiles.4bpp.lz");
-
 const u16 gTilesetPalettes_islandgame_lumine_pleasant_avenue[][16] =
 {
     INCBIN_U16("data/tilesets/secondary/islandgame_lumine_pleasant_avenue/palettes/00.gbapal"),
