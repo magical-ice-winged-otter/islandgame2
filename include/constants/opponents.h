@@ -31,8 +31,8 @@
 //#define TRAINER_GRUNT_PETALBURG_WOODS      10
 #define TRAINER_CAMP_PERSI_JONAS             11
 //#define TRAINER_MARCEL                     11
-
-
+#define TRAINER_CAMP_PERSI_THIEF             93
+#define TRAINER_KEIRA                        TRAINER_CAMP_PERSI_THIEF
 
 
 // Verdant Path
@@ -228,7 +228,6 @@
   
 
 
-#define TRAINER_KEIRA                        93
 #define TRAINER_BROOKE_1                     94
 #define TRAINER_JENNIFER                     95
 #define TRAINER_HOPE                         96

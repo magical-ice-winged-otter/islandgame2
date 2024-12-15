@@ -39,17 +39,17 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
             faceplayer
             msgbox(format(
                 "Ever since our battle, I've really learned a lot.\p"
-                "I now realize that battles aren't all about power, and that a good strategy is a lot more important.\p"
+                "I now realize that winning takes more than just the stronger Pokémon to win.\p"
                 "Thank you for teaching that to me, and also keeping the whole thing a secret between us...\p"
                 "Here, I know it doesn't mean much, but I want you to have this as thanks.\p"
             ))
             giveitem(ITEM_ISLANDGAME_STRANGE_DISC)
             msgbox(format(
-                "It's a video game I got for free from some strange old man in Verdant Woods.\p"
-                "But when I told everyone where I got it, they told me that the old man living there hasn't been around for years...\p"
-                "I know it sounds like some lame ghost story, but it's true!\p"
-                "I thought I'd be able to play it on my Game Boy, but it looks like you need a computer or something..."
-                "{PLAYER}▶▶▶▶▶▶ÇÀÑ▶▶▶¥ÔÚ▶▶▶▶▶▶\n▶サÊÁR▶▶▶▶▶▶ぬヨ?▶▶エT$▶▶▶▶▶ぬヨ▶▶"
+                "It's a video game I got for free from some strange old man passing by camp.\p"
+                "I tried playing it using the laptop in the tree house, but it was too scary.\p"
+                "You're super old though, so I bet it won't faze you at all!\p"
+                "...\p"
+                "{PLAYER}▶▶▶▶ÇÀÑ▶▶▶¥ÔÚ▶▶▶▶▶▶\n▶サÊÁR▶▶▶▶▶▶Mヨ?▶▶エT$▶▶▶▶▶Mヨ"
             ))
             setvar(VAR_CAMP_PERSI_STATE, 3)
         case 3:
@@ -81,33 +81,4 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC2 {
     ))
     release
 }
-
-// script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_GulpinDoll {
-//     lock
-//     if(!flag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED) && flag(FLAG_TEMP_1)) {
-//         msgbox(ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect, MSGBOX_YESNO)
-//         if(var(VAR_RESULT) == NO) {
-//             msgbox(format("Wow. Really? You're gonna let him get away with it?"))
-//             goto(GulpinDollInspect_End)
-//         }
-        
-//         giveitem(ITEM_LAVA_COOKIE, 3)
-//         giveitem(ITEM_RAGE_CANDY_BAR, 3)
-//         setflag(FLAG_CAMP_PERSI_SNACK_THIEF_BUSTED)
-//     }
-//     else {
-//         msgbox(format("{COLOR RED}(It looks like a regular old Guplin doll.)"))
-//     }
-
-//     GulpinDollInspect_End:
-//         release
-// }
-
-// text ISLANDGAME_CAMP_PERSI_LODGE_1_2F_GulpinDollInspect {
-//     format(
-//         "{COLOR RED}(It looks like a regular old Guplin doll.) \p"
-//         "{COLOR RED}(Huh? Instead of stuffing, there's a bunch of smuggled goods inside of it.) \p"
-//         "{COLOR DARK_GRAY}Take them?"
-//     )
-// }
 

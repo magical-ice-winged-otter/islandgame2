@@ -872,6 +872,7 @@ script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_MacheteTreeEntrance {
     if (var(VAR_RESULT)) {
         warp(MAP_ISLANDGAME_CAMP_PERSI_MACHETE_TREE, 0)
     }
-
-    release
+    else {
+        release
+    }
 }

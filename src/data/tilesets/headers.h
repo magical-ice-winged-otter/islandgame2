@@ -1089,7 +1089,7 @@ const struct Tileset gTileset_islandgame_lumine_applevine =
     .palettes = gTilesetPalettes_islandgame_lumine_applevine,
     .metatiles = gMetatiles_islandgame_lumine_applevine,
     .metatileAttributes = gMetatileAttributes_islandgame_lumine_applevine,
-    .callback = NULL,
+    .callback = InitTilesetAnim_islandgame_lumine_applevine,
 };
 
 const struct Tileset gTileset_islandgame_lumine_power_plant_interior =
@@ -1210,17 +1210,6 @@ const struct Tileset gTileset_islandgame_lumine_therion_path =
     .palettes = gTilesetPalettes_islandgame_lumine_therion_path,
     .metatiles = gMetatiles_islandgame_lumine_therion_path,
     .metatileAttributes = gMetatileAttributes_islandgame_lumine_therion_path,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_islandgame_lumine_valley_of_peace =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_islandgame_lumine_valley_of_peace,
-    .palettes = gTilesetPalettes_islandgame_lumine_valley_of_peace,
-    .metatiles = gMetatiles_islandgame_lumine_valley_of_peace,
-    .metatileAttributes = gMetatileAttributes_islandgame_lumine_valley_of_peace,
     .callback = NULL,
 };
 
