@@ -421,4 +421,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .paletteTMHM = gItemIconPalette_NormalTMHM, // failsafe
         // .teraShard = ITEM_STELLAR_TERA_SHARD,
     },
+    [TYPE_SHADOW] = 
+    {
+        .name = HANDLE_EXPANDED_TYPE_NAME("Shadow", "Shadow"),
+        .generic = _("a SHADOW move"),
+        .palette = 13,
+        .zMove = MOVE_BREAKNECK_BLITZ,
+        .maxMove = MOVE_MAX_STRIKE,
+        .teraTypeRGBValue = RGB(10, 18, 27),
+        .paletteTMHM = gItemIconPalette_NormalTMHM, // failsafe
+        // .teraShard = ITEM_STELLAR_TERA_SHARD,
+    }
 };

@@ -27,14 +27,14 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SEQUENCE_SWITCHING: AI will always switch after a
         }
     } SCENE {
         if (aiSequenceSwitchingFlag) {
-            MESSAGE("{PKMN} TRAINER LEAF sent out Machoke!");
-            MESSAGE("{PKMN} TRAINER LEAF sent out Machamp!");
-            MESSAGE("{PKMN} TRAINER LEAF sent out Mankey!");
-            MESSAGE("{PKMN} TRAINER LEAF sent out Primeape!");
-            MESSAGE("{PKMN} TRAINER LEAF sent out Magnezone!");
+            MESSAGE("{PKMN} Trainer LEAF sent out Machoke!");
+            MESSAGE("{PKMN} Trainer LEAF sent out Machamp!");
+            MESSAGE("{PKMN} Trainer LEAF sent out Mankey!");
+            MESSAGE("{PKMN} Trainer LEAF sent out Primeape!");
+            MESSAGE("{PKMN} Trainer LEAF sent out Magnezone!");
         }
         else {
-            MESSAGE("{PKMN} TRAINER LEAF sent out Magnezone!");
+            MESSAGE("{PKMN} Trainer LEAF sent out Magnezone!");
         }
     }
 }

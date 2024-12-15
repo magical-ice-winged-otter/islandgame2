@@ -5837,9 +5837,9 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
                      | ((gBattleMons[battlerAtk].spAttackIV & 1) << 4)
                      | ((gBattleMons[battlerAtk].spDefenseIV & 1) << 5);
 
-        // Subtract 6 instead of 1 below because 5 types are excluded (TYPE_NONE, TYPE_NORMAL, TYPE_MYSTERY, TYPE_FAIRY and TYPE_STELLAR)
+        // Subtract 7 instead of 1 below because 6 types are excluded (TYPE_NONE, TYPE_NORMAL, TYPE_MYSTERY, TYPE_FAIRY, TYPE_STELLAR and TYPE_SHADOW)
         // The final + 2 skips past TYPE_NONE and Normal.
-        gBattleStruct->dynamicMoveType = ((NUMBER_OF_MON_TYPES - 6) * typeBits) / 63 + 2;
+        gBattleStruct->dynamicMoveType = ((NUMBER_OF_MON_TYPES - 7) * typeBits) / 63 + 2;
         if (gBattleStruct->dynamicMoveType >= TYPE_MYSTERY)
             gBattleStruct->dynamicMoveType++;
         gBattleStruct->dynamicMoveType |= F_DYNAMIC_TYPE_IGNORE_PHYSICALITY | F_DYNAMIC_TYPE_SET;

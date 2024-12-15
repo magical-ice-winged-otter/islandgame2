@@ -1159,8 +1159,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_PEWTER_CRUNCHIES] =
     {
-        .name = _("Sera-Snaxx"),
-        .pluralName = _("Sera-Snaxx"),
+        .name = _("Sera Snaxx"),
+        .pluralName = _("Sera Snaxx"),
         .price = 250,
         .description = COMPOUND_STRING(
             "A yummy treat\n"
