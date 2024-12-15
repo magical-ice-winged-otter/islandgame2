@@ -987,10 +987,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantGoYet {
     }
 }
 
-movement Movement_WalkDown {
-    walk_down
-}
-
 ///TRAINERS
 
 // script ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer1 {

@@ -1618,56 +1618,50 @@ ISLANDGAME_MINTY_MEADOWS_2_CantGoYet_1:
 	return
 
 
-# 990 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-Movement_WalkDown:
-# 991 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	walk_down
-	step_end
-
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3::
-# 1007 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1003 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	trainerbattle_single TRAINER_MINTY_MEADOWS_11, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss
-# 1008 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1004 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4::
-# 1012 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1008 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	trainerbattle_single TRAINER_MINTY_MEADOWS_12, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss
-# 1013 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1009 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5::
-# 1017 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1013 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	trainerbattle_single TRAINER_MINTY_MEADOWS_13, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss
-# 1018 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1014 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6::
-# 1022 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1018 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	trainerbattle_single TRAINER_MINTY_MEADOWS_14, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss
-# 1023 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1019 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7::
-# 1027 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1023 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	trainerbattle_single TRAINER_MINTY_MEADOWS_15, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss
-# 1028 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1024 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_1, MSGBOX_AUTOCLOSE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8::
-# 1032 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1028 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	trainerbattle_single TRAINER_MINTY_MEADOWS_16, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss
-# 1033 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1029 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	msgbox ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1, MSGBOX_AUTOCLOSE
 	return
 
@@ -1960,33 +1954,33 @@ ISLANDGAME_MINTY_MEADOWS_2_CantGoYet_Text_0:
 	.string "find his Mareep first...)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_0:
-# 1007 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1003 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "{COLOR DARK_GRAY}Howdy pardner! Howsabout we get a\n"
 	.string "quick scrap in?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Text_1:
-# 1008 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1004 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "A mighty fine party of Pokes ya got on\n"
 	.string "ya.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_0:
-# 1012 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1008 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "{COLOR DARK_GRAY}My Pokemans are purty cute. Wanna take\n"
 	.string "a gander?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Text_1:
-# 1013 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1009 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "I love my darlin' lil ball of cotton\n"
 	.string "candy. Even if she don't fight too well.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_0:
-# 1017 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1013 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "{COLOR DARK_GRAY}I have a super special Bug Pokémon. You\n"
 	.string "literally can't get it.\p"
 	.string "How jealous are you?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_1:
-# 1018 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1014 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "Okay, maybe I should be more specific.\p"
 	.string "You can't catch a Vivillon with the same\n"
 	.string "pattern as mine here in Marya.\p"
@@ -1994,30 +1988,30 @@ ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Text_1:
 	.string "dependent on where it lives!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_0:
-# 1022 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1018 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "{COLOR DARK_GRAY}Hi!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Text_1:
-# 1023 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1019 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "I'm not a very interesting person, so I\n"
 	.string "don't really say much.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_0:
-# 1027 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1023 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "{COLOR DARK_GRAY}POKÉMON IS LOVE! POKÉMON IS LIFE!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Text_1:
-# 1028 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1024 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "I was only nine years old when I met my\n"
 	.string "Riolu. It's the coolest Pokémon ever.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_0:
-# 1032 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1028 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "{COLOR DARK_GRAY}Shorts are awesome. They're so comfy to\n"
 	.string "wear. Don't you agree?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Text_1:
-# 1033 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1029 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "Shorts are easily an S tier pick for\n"
 	.string "pants!$"
 
@@ -2030,25 +2024,25 @@ MareepHelp_Text::
 	.string "{COLOR DARK_GRAY}Reep! Reep! {COLOR BLUE}(BRO HELP ME PLZ)$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer3_Loss::
-# 1044 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1040 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "Well I'll be.$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer4_Loss::
-# 1047 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1043 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "Ain't she just the sweetest lil thang\n you've eva laid yer eyes on?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer5_Loss::
-# 1050 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1046 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "Ack! My super special bug Pokémon!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer6_Loss::
-# 1054 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1050 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "Heck!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer7_Loss::
-# 1058 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1054 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "It's all Kyogre now...$"
 
 ISLANDGAME_MINTY_MEADOWS_2_Rival_Trainer8_Loss::
-# 1062 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 1058 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "I think I'm going to need a new pair of\nshorts...$"
