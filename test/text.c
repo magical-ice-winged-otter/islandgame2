@@ -143,9 +143,9 @@ TEST("Item names fit on Pokemon Storage System")
     switch (item)
     {
     case ITEM_ENERGY_POWDER:
-    case ITEM_PEWTER_CRUNCHIES:
-    case ITEM_RAGE_CANDY_BAR:
-    case ITEM_LUMIOSE_GALETTE:
+    // case ITEM_PEWTER_CRUNCHIES: islandgame: the new name fits now so it's ok
+    // case ITEM_RAGE_CANDY_BAR: islandgame: same
+    // case ITEM_LUMIOSE_GALETTE: islandgame: same
     case ITEM_HEALTH_FEATHER:
     case ITEM_MUSCLE_FEATHER:
     case ITEM_RESIST_FEATHER:
@@ -198,7 +198,7 @@ TEST("Item names fit on Pokemon Storage System")
     case ITEM_MASTERPIECE_TEACUP:
     case ITEM_FRESH_START_MOCHI:
     case ITEM_STELLAR_TERA_SHARD:
-    case ITEM_JUBILIFE_MUFFIN:
+    // case ITEM_JUBILIFE_MUFFIN: islandgame: same
     case ITEM_SUPERB_REMEDY:
     case ITEM_AUX_POWERGUARD:
     case ITEM_CHOICE_DUMPLING:
