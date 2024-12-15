@@ -36,23 +36,6 @@ static const struct OamData sOamData_ItemIcon =
     .affineParam = 0
 };
 
-static const struct OamData sOamData_BallIcon =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = 0,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(16x16),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(16x16),
-    .tileNum = 0,
-    .priority = 1,
-    .paletteNum = 2,
-    .affineParam = 0
-};
-
 static const union AnimCmd sSpriteAnim_ItemIcon[] =
 {
     ANIMCMD_FRAME(0, 0),
@@ -69,17 +52,6 @@ const struct SpriteTemplate gItemIconSpriteTemplate =
     .tileTag = 0,
     .paletteTag = 0,
     .oam = &sOamData_ItemIcon,
-    .anims = sSpriteAnimTable_ItemIcon,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
-};
-
-const struct SpriteTemplate gBallIconSpriteTemplate =
-{
-    .tileTag = 0,
-    .paletteTag = 0,
-    .oam = &sOamData_BallIcon,
     .anims = sSpriteAnimTable_ItemIcon,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
