@@ -93,7 +93,6 @@ script ISLANDGAME_VERDANT_WOODS_Sudowoodo {
 }
 
 /// trainers
-// Bug Catcher Owen
 script ISLANDGAME_VERDANT_WOODS_TrainerBattle1 {
     trainerbattle_double(TRAINER_VERDANT_WOODS_1, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle1_NotEnoughMons)
     msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text, MSGBOX_AUTOCLOSE)
@@ -101,20 +100,19 @@ script ISLANDGAME_VERDANT_WOODS_TrainerBattle1 {
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Text {
     format(
-        "{COLOR DARK_GRAY}Bug Pokémon are the best! They evolve early, so they become powerful fast!"
+        "Yay! My Spewpa finally evolved!"
     )
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_Defeated_Text
 {
-    "I guess bug Pokémon aren't very strong, \n"
-    "so evolving early doesn't matter."
+    "Waaah!"
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle1_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}Even still, I think bug Pokémon are awesome!"
+        "Bug Pokémon are really fragile..."
         )
 }
 
@@ -133,7 +131,7 @@ script ISLANDGAME_VERDANT_WOODS_TrainerBattle2 {
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle2_Text {
     format(
-        "{COLOR DARK_GRAY}Mark my words, I will become the Bug King!"
+        "{COLOR DARK_GRAY}Mark my words, I WILL become the Bug King!"
     )
 }
 
@@ -159,20 +157,19 @@ script ISLANDGAME_VERDANT_WOODS_TrainerBattle3 {
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Text {
     format(
-        "{COLOR DARK_GRAY}I'm tired of battling my brother. It's so boring."
+        "Give me a challenge!"
     )
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_Defeated_Text
 {
-    "On second thought, battling him wasn't \n"
-    "THAT bad..."
+    "Finally... a worthy opponent..."
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle3_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}I just wish he would use a Pokémon that wasn't a bug for once."
+        "Our battle was legendary!"
         )
 }
 
@@ -191,7 +188,7 @@ text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Text {
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_Defeated_Text
 {
     "The only thing I hate more than forests \n"
-    "is losing."
+    "is losing..."
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text
@@ -204,34 +201,25 @@ text ISLANDGAME_VERDANT_WOODS_TrainerBattle4_PostDefeated_Text
 // Camper Raj
 script ISLANDGAME_VERDANT_WOODS_TrainerBattle5 {
     trainerbattle_single(TRAINER_VERDANT_WOODS_5, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text, ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text)
-    if(flag(FLAG_CAMP_PERSI_TRADING_CARD_ITEM)) {
-        msgbox(format(
-            "Hey! You found it! You've got pretty sharp eyes."
-        ), MSGBOX_AUTOCLOSE)
-    }
-    else {
-        msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
-    }
+
+    msgbox(ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text, MSGBOX_AUTOCLOSE)
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Text {
     format(
-        "{COLOR DARK_GRAY}Trying to find this trading card is like looking for a needle in a haystack... \p"
-        "{COLOR DARK_GRAY}I'm taking a break from all this searching! Let's battle!"
+        "Sic 'em, boy!"
     )
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_Defeated_Text
 {
-    "Wow... Maybe you could help me find my \n"
-    "friend's trading card?"
+    "Yo! Chill out! It was just a prank, bro!"
 }
 
 text ISLANDGAME_VERDANT_WOODS_TrainerBattle5_PostDefeated_Text
 {
     format(
-        "{COLOR DARK_GRAY}His trading card should be around here somewhere. \p"
-        "{COLOR DARK_GRAY}Me and Poochyena have been looking for an hour!"
+        "I'm just tryna go viral on PikPok, man."
         )
 }
 

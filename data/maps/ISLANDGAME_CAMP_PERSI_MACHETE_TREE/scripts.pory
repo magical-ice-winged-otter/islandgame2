@@ -1,44 +1,99 @@
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+const THIEF_ID = 2
+
 mapscripts ISLANDGAME_CAMP_PERSI_MACHETE_TREE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+        }
+
+        setvar(VAR_TEMP_0, 0)
+
+    }
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_ReturnFromHell 
+    ]
 }
 
-
+script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_ReturnFromHell {
+    lockall
+    setvar(VAR_TEMP_0, 1)
+    checkitem(ITEM_ISLANDGAME_STRANGE_DISC)
+    if (var(VAR_RESULT) && flag(FLAG_ANOMALY01_DEFEATED)) {
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+        waitmovement(0)
+        delay(60)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark)
+        waitmovement(0)
+        msgbox(format(
+            "...\p"
+            "{COLOR RED}(Augh... my head...)\p"
+            "(What in the world was all of that? Was it all just a dream?)\p"
+            "(Seems like the program's deleted itself as well...)\p"
+            "(That voice... who was that?)"
+        ))
+        returnqueststate(QUEST_MISSINGNO)
+        switch(var(VAR_RESULT)) {
+            case QUEST_INACTIVE:
+                startquest(QUEST_MISSINGNO)
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_MISSINGNO, 0)
+            default:
+                subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_MISSINGNO, 0)
+        }
+        closemessage
+        release
+    }
+}
 
 script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_Laptop {
     lock
-    msgbox(format(
-        "It's a dusty old laptop. It looks like it's been here for years.\p"
-        "There seems to still be some power in it. You could probably still use it."
-    ))
-    checkitem(ITEM_ISLANDGAME_STRANGE_DISC)
-    if(var(VAR_RESULT)) {
+    if (flag(FLAG_ANOMALY01_DEFEATED)) {
         msgbox(format(
-            "Insert the strange disc into the laptop?"
-        ), MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES) {
-            special(Script_FadeOutMapMusic)
-            waitstate
+            "> You try to open “LostSilver.exe”, but it just results in an error."
+        ))
+    }
+    else {
+        msgbox(format(
+            "It's a dusty old laptop. It looks like it's been here for years.\p"
+            "There seems to still be some power in it. You could probably still use it."
+        ))
+        checkitem(ITEM_ISLANDGAME_STRANGE_DISC)
+        if(var(VAR_RESULT)) {
             msgbox(format(
-                "> You booted up the laptop and inserted the disc.\p"
-                "“LostSilver.exe” is automatically installed and opened.\p"
-                "It's loading...{PAUSE 60} loading...{PAUSE 60} loading...{PAUSE 60}\p"
-                "{COLOR RED}(Huh? It seems like the laptop froze while attempting to run the game.)"
-            ))
-            closemessage
-            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
-            setvar(VAR_RESULT, 0)
-            playse(SE_ORB)
-            special(DoOrbEffect)
-            delay(300)
-            special(FadeOutOrbEffect)
-            applymovement(OBJ_EVENT_ID_PLAYER, spookySpin)
-            waitmovement(0)
-            warp(MAP_ISLANDGAME_ANOMALY01_1F, 8, 15)
+                "Insert the strange disc into the laptop?"
+            ), MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES) {
+                special(Script_FadeOutMapMusic)
+                waitstate
+                msgbox(format(
+                    "> You booted up the laptop and inserted the disc.\p"
+                    "“LostSilver.exe” is automatically installed and opened.\p"
+                    "It's loading...{PAUSE 60} loading...{PAUSE 60} loading...{PAUSE 60}\p"
+                    "{COLOR RED}(Huh? It seems like the laptop froze while attempting to run the game.)"
+                ))
+                closemessage
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+                setvar(VAR_RESULT, 0)
+                playse(SE_ORB)
+                special(DoOrbEffect)
+                delay(300)
+                special(FadeOutOrbEffect)
+                applymovement(OBJ_EVENT_ID_PLAYER, spookySpin)
+                waitmovement(0)
+                warp(MAP_ISLANDGAME_ANOMALY01_1F, 8, 15)
+            }
         }
     }
     release
 }
-
-
 
 script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_TV {
     lock
@@ -49,3 +104,116 @@ script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_TV {
     release
 }
 
+
+script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll {
+    lock
+    switch(var(VAR_CAMP_PERSI_STATE)) {
+        case 1:
+            msgbox(format(
+                "{COLOR RED}(It's just a regular old Gulpin doll.)\p"
+                "(Oh? There seems to be something stashed inside it...)"
+            ))
+            closemessage
+            delay(10)
+            playse(SE_EXIT)
+            addobject(THIEF_ID)
+            setobjectxy(THIEF_ID, 4, 4)
+            delay(30)
+            applymovement(THIEF_ID, Common_Movement_QuestionMark)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            waitmovement(0)
+            delay(30)
+            msgbox(format(
+                "Huh? What're you doing here?"
+            ))
+            closemessage
+            delay(30)
+            applymovement(THIEF_ID, Common_Movement_ExclamationMark)
+            waitmovement(0)
+            applymovement(THIEF_ID, Common_Movement_WalkInPlaceFasterUp)
+            waitmovement(0)
+            delay(30)
+            msgbox(format(
+                "H-Hey! You were snooping around in my secret base, weren't you!?\p"
+                "Mrgrgr... {PAUSE 30}Fine! You got me! I stole it! I'm the one who took that camper's card!\p"
+                "It's not fair! I've been using up my allowance for WEEKS trying to get one, and he pulls it from his FIRST pack?\p"
+                "A card with THAT much power shouldn't be allowed! There's no reason a newbie should be able to beat me so easily!\p"
+                "I'm just leveling the playing field, is all! You understand, right!?\p"
+                "...\p"
+                "-sigh- Now that you know the truth, you're gonna tattle on me, aren't you?"
+            ))
+            closemessage
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+            waitmovement(0)
+            delay(30)
+            applymovement(THIEF_ID, Common_Movement_QuestionMark)
+            waitmovement(0)
+            msgbox(format(
+                "H-Huh? You'll let me go if I just beat you in a Pokémon battle?\p"
+                "Well... I have no choice but to oblige. I'll show you the power of Bug Pokémon!"
+            ))
+            applymovement(THIEF_ID, Common_Movement_WalkUp)
+            waitmovement(0)
+            trainerbattle_no_intro(TRAINER_CAMP_PERSI_THIEF, "T-This isn't right! I should've won!")
+            applymovement(THIEF_ID, ISLANDGAME_CAMP_PERSI_TREEHOUSE_Backoff)
+            waitmovement(0)
+            msgbox(format(
+                "I don't get it... My Pokémon should've won! They're statistically better!\p"
+                "Is... power not all there is to battling? Can weaker Pokémon still beat stronger Pokémon with the right strategy?"
+            ))
+            closemessage
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+            waitmovement(0)
+            delay(30)
+            msgbox(format(
+                "I... I see. That's what you were trying to teach me with that battle, wasn't it?\p"
+                "Heh... I sure feel like a real big stupid jerk now...\p"
+                "Well, I guess it's time for me pay for my crimes..."
+            ))
+            closemessage
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            waitmovement(0)
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+            waitmovement(0)
+            msgbox(format(
+                "Huh? You won't tell on me? B-But, I lost...\p"
+                "...\p"
+                "O-Okay. Thank you so much! I won't forget your kindness, trainer! I promise to never steal ever again!"
+            ))
+            closemessage
+            applymovement(THIEF_ID, ISLANDGAME_CAMP_PERSI_TREEHOUSE_Unlock)
+            applymovement(THIEF_ID, Common_Movement_WalkDown)
+            waitmovement(0)
+            playse(SE_EXIT)
+            waitse
+            setobjectxyperm(THIEF_ID, -1, -1)
+            removeobject(THIEF_ID)
+            setvar(VAR_CAMP_PERSI_STATE, 2)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            waitmovement(0)
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+            waitmovement(0)
+            delay(30)
+            giveitem(ITEM_ISLANDGAME_TRADING_CARD)
+        default:
+            msgbox(format("{COLOR RED}(It's just a regular old Gulpin doll.)"))
+    }
+    closemessage
+    release
+}
+
+movement ISLANDGAME_CAMP_PERSI_TREEHOUSE_Backoff {
+    face_up
+    lock_facing_direction
+    walk_fast_down   
+}
+
+movement ISLANDGAME_CAMP_PERSI_TREEHOUSE_Unlock {
+    unlock_facing_direction
+}

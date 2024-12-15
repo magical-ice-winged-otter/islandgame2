@@ -438,7 +438,7 @@ const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\
 
 // MissingNo Quest
 const u8 sText_SideQuestName_MissingNo[] = _("(Z) À GlitŒh エñ tHœ MあtrÏx");
-const u8 sText_SideQuestDesc_MissingNo[] = _("▶▶WARNいNG▶▶ アN ANおMAL¥ HAS BえEN D♀TÊCTéD WITH♂N YöUr $àVê FイLE!");
+const u8 sText_SideQuestDesc_MissingNo[] = _("▶▶WARNいNG▶▶ アN ANおMAL¥ HAS BえEN\nD♀TÊCTéD WITH♂N YöUr $àVê FイLE!");
 const u8 sText_SideQuestDoneDesc_MissingNo[] = _("01000100 01010010 01000101 01000001 01001101");
 
 const u8 sText_SubQuest_MissingNo1_Name[] = _("けつばん-01");
@@ -812,7 +812,7 @@ static const struct SubQuest sSubQuests_MissingNo[SUB_QUEST_COUNT_MISSINGNO] =
 		sText_SubQuest_MissingNo1_Name,
 		sText_SubQuest_MissingNo1_Desc,
 		sText_SideQuestMap_Unknown,
-		ITEM_TM05,
+		ITEM_ISLANDGAME_STRANGE_DISC,
 		ITEM,
 		sText_Complete
 	),

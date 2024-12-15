@@ -430,14 +430,6 @@
     },
     {
       "type": "hidden_item",
-      "x": 10,
-      "y": 15,
-      "elevation": 0,
-      "item": "ITEM_ISLANDGAME_TRADING_CARD",
-      "flag": "FLAG_CAMP_PERSI_TRADING_CARD_ITEM"
-    },
-    {
-      "type": "hidden_item",
       "x": 45,
       "y": 42,
       "elevation": 0,

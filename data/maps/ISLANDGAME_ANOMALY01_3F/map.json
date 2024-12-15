@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractDoll",
-      "flag": "0"
+      "script": "ISLANDGAME_ANOMALY01_3F_EventScript_InteractDoll",
+      "flag": "FLAG_ANOMALY01_DEFEATED"
     }
   ],
   "warp_events": [
@@ -41,7 +41,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_ANOMALY01_3F_EventScript_InteractLaptop"
     },
     {
       "type": "sign",
@@ -49,7 +49,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_InteractGrave"
+      "script": "ISLANDGAME_ANOMALY01_3F_EventScript_InteractGrave"
     }
   ]
 }

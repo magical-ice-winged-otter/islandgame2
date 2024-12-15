@@ -12,6 +12,7 @@ const struct Trainer gTrainers[] = {
         .party = NULL,
     },
 
+    // soranna path
     [TRAINER_S_ORANNA_PATH_TRAINER_1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
@@ -50,9 +51,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_S_ORANNA_PATH_TRAINER_4] =
     {
-        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
         .trainerName = _("Logan"),
         .items = {},
         .doubleBattle = FALSE,
@@ -143,6 +144,17 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_CampPersiJonas),
     },
 
+    [TRAINER_CAMP_PERSI_THIEF] =
+    {
+        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerName = _("Weevil"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_CampPersiThief),
+    },
 
 
 
@@ -865,18 +877,6 @@ const struct Trainer gTrainers[] = {
     #include "trainers/rocky_path.h"
     #include "trainers/lumine_cave.h"
 
-
-    [TRAINER_KEIRA] =
-    {
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .trainerName = _("KEIRA"),
-        .items = {ITEM_FULL_RESTORE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SETUP_FIRST_TURN,
-        .party = TRAINER_PARTY(sParty_Keira),
-    },
 
     [TRAINER_BROOKE_1] =
     {

@@ -1213,17 +1213,6 @@ const struct Tileset gTileset_islandgame_lumine_therion_path =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_islandgame_lumine_valley_of_peace =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_islandgame_lumine_valley_of_peace,
-    .palettes = gTilesetPalettes_islandgame_lumine_valley_of_peace,
-    .metatiles = gMetatiles_islandgame_lumine_valley_of_peace,
-    .metatileAttributes = gMetatileAttributes_islandgame_lumine_valley_of_peace,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_islandgame_lumine_pleasant_avenue =
 {
     .isCompressed = TRUE,

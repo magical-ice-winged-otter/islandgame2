@@ -1,1 +1,0 @@
-tools/porytiles/porytiles compile-secondary -output=data/tilesets/secondary/islandgame_lumine_valley_of_peace -tiles-output-pal=greyscale -target-base-game=pokeemerald -transparency-color=24,40,80 -default-behavior=MB_NORMAL porytiles/islandgame_lumine_valley_of_peace porytiles/islandgame_lumine_general porytiles/metatile_behaviors.h
