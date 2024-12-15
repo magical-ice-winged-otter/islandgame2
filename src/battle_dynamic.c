@@ -230,7 +230,7 @@ static bool8 handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u
         )
     {
         *type = ateType | F_DYNAMIC_TYPE_SET;
-        if (!IsDynamaxed(battlerAtk))
+        if (GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
             gBattleStruct->ateBoost[battlerAtk] = 1;
         return TRUE;
     } else if (gMovesInfo[move].type != TYPE_NORMAL
@@ -239,7 +239,7 @@ static bool8 handleAteAbilty(u8* type, u32 battlerAtk, u32 moveType, u16 move, u
         && attackerAbility == ABILITY_NORMALIZE)
     {
         *type = TYPE_NORMAL | F_DYNAMIC_TYPE_SET;
-        if (!IsDynamaxed(battlerAtk))
+        if (GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
             gBattleStruct->ateBoost[battlerAtk] = 1;
         return TRUE;
     }
