@@ -174,7 +174,7 @@ static void SetPlayerAvatarObjectEventIdAndObjectId(u8, u8);
 static u8 UpdateSpritePalette(const struct SpritePalette *spritePalette, struct Sprite *sprite);
 static void ResetObjectEventFldEffData(struct ObjectEvent *);
 static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *);
-static u8 FindObjectEventPaletteIndexByTag(u16);
+static u32 FindObjectEventPaletteIndexByTag(u16);
 static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *, u8);
 static void SpriteCB_CameraObject(struct Sprite *);
 static void CameraObject_Init(struct Sprite *);
