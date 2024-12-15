@@ -197,7 +197,7 @@ const void *GetItemIconPic(u16 itemId)
     }
 
     // Start Pokevial Branch
-    if (itemId == ITEM_POKEVIAL && which == 0)
+    if (itemId == ITEM_POKEVIAL)
         return PokevialGetDoseIcon();
     // End Pokevial Branch
 
