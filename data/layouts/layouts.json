@@ -5194,7 +5194,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN",
       "name": "ISLANDGAME_BELLEHAVEN_Layout",
-      "width": 40,
+      "width": 32,
       "height": 42,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_bellehaven",
@@ -5205,7 +5205,7 @@
       "id": "LAYOUT_ISLANDGAME_VALLEY_OF_PEACE",
       "name": "ISLANDGAME_VALLEY_OF_PEACE_Layout",
       "width": 60,
-      "height": 50,
+      "height": 54,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_bellehaven",
       "border_filepath": "data/layouts/ISLANDGAME_VALLEY_OF_PEACE/border.bin",
@@ -5224,8 +5224,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_PLEASANT_AVENUE",
       "name": "ISLANDGAME_PLEASANT_AVENUE_Layout",
-      "width": 50,
-      "height": 35,
+      "width": 44,
+      "height": 40,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_pleasant_avenue",
       "border_filepath": "data/layouts/ISLANDGAME_PLEASANT_AVENUE/border.bin",
