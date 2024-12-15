@@ -14,6 +14,10 @@ Note: the changes to make in this file differ for primary
 vs. secondary tilesets! Make sure you look at the correct
 one for reference.
 
+You also need to visit `src/data/tilesets/headers.h` and
+register the init callback for your tileset (which is
+defined in `src/tileset_anims.c` and `include/tileset_anims.h`).
+
 The most complicated part is the `QueueAnimTiles` function you write. 
 
 The tile size is the number of tiles in a single animation frame.

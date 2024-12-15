@@ -1,0 +1,43 @@
+{
+  "id": "MAP_ISLANDGAME_ANOMALY01_1F",
+  "name": "ISLANDGAME_ANOMALY01_1F",
+  "layout": "LAYOUT_ISLANDGAME_ANOMALY01_1F",
+  "music": "MUS_NONE",
+  "region_map_section": "MAPSEC_PERSI",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_ANOMALY01_1F_Interact1"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_ANOMALY01_1F_Interact2"
+    }
+  ]
+}

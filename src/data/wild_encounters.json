@@ -12172,23 +12172,23 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 7,
-                "max_level": 7,
+                "min_level": 6,
+                "max_level": 6,
                 "species": "SPECIES_PARAS"
               },
               {
-                "min_level": 6,
-                "max_level": 6,
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_SCATTERBUG"
               },
               {
-                "min_level": 6,
-                "max_level": 6,
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_WEEDLE"
               },
               {
-                "min_level": 6,
-                "max_level": 6,
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_SPINARAK"
               },
               {
@@ -12197,38 +12197,38 @@
                 "species": "SPECIES_ROWLET"
               },
               {
-                "min_level": 6,
-                "max_level": 6,
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_NINCADA_MARYAN"
               },
               {
-                "min_level": 6,
-                "max_level": 6,
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_EKANS"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 7,
+                "max_level": 7,
                 "species": "SPECIES_JOLTIK"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 7,
+                "max_level": 7,
                 "species": "SPECIES_JOLTIK"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 7,
+                "max_level": 7,
                 "species": "SPECIES_JOLTIK"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 7,
+                "max_level": 7,
                 "species": "SPECIES_JOLTIK"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 7,
+                "max_level": 7,
                 "species": "SPECIES_JOLTIK"
               }
             ]
@@ -14464,6 +14464,75 @@
                 "min_level": 26,
                 "max_level": 26,
                 "species": "SPECIES_CARBINK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLANDGAME_ANOMALY01_1F",
+          "base_label": "gISLANDGAME_ANOMALY01_1F0",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
               }
             ]
           }

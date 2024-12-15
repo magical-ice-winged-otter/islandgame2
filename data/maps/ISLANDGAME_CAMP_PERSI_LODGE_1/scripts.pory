@@ -105,19 +105,12 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC4 {
 script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC5 {
     lock
     msgbox(format(
-        "Argh... if I only had one more turn..."
+        "Ugh, if I only had one more turn! I would have won!"
     ))
     release
 }
 
 
-
-movement ISLANDGAME_CAMP_PERSI_LODGE_1_1F_Movement_PorygonAppear {
-    emote_exclamation_mark
-    face_up
-    lock_facing_direction
-    walk_fast_down   
-}
 
 // script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonCutscene {
 //     message(format("Huh?"))

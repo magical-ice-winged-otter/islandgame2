@@ -22134,6 +22134,13 @@ const u8 gMonIcon_ShadowAggron[] = INCBIN_U8("graphics/pokemon/shadow_aggron/ico
 const u8 gMonFootprint_ShadowAggron[] = INCBIN_U8("graphics/pokemon/shadow_aggron/footprint.1bpp");
 #endif //P_FAMILY_SHADOW_AGGRON
 
+#if P_FAMILY_ANOMALY_01
+const u32 gMonFrontPic_Anomaly01[] = INCBIN_U32("graphics/pokemon/maryan_anomalies/anomaly01/front.4bpp.lz");
+const u32 gMonBackPic_Anomaly[] = INCBIN_U32("graphics/pokemon/maryan_anomalies/back.4bpp.lz");
+const u32 gMonPalette_Anomaly[] = INCBIN_U32("graphics/pokemon/maryan_anomalies/normal.gbapal.lz");
+const u32 gMonShinyPalette_Anomaly[] = INCBIN_U32("graphics/pokemon/maryan_anomalies/shiny.gbapal.lz");
+#endif //P_FAMILY_ANOMALY01
+
 
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
