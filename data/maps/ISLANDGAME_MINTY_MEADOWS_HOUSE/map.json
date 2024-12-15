@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_396",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(STARLY)",
       "x": 0,
       "y": 2,
       "elevation": 0,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_263",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
       "x": 6,
       "y": 2,
       "elevation": 0,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_806",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BLACEPHALON)",
       "x": 8,
       "y": 6,
       "elevation": 0,

@@ -54,7 +54,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_427",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BUNEARY)",
       "x": 0,
       "y": 3,
       "elevation": 0,

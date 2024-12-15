@@ -203,7 +203,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_419",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLOATZEL)",
       "x": 34,
       "y": 30,
       "elevation": 0,
@@ -255,7 +255,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_278",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 38,
       "y": 43,
       "elevation": 0,
@@ -268,7 +268,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_090",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHELLDER)",
       "x": 39,
       "y": 47,
       "elevation": 0,
@@ -281,7 +281,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_007",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SQUIRTLE)",
       "x": 23,
       "y": 7,
       "elevation": 0,

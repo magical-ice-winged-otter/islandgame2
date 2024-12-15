@@ -143,7 +143,7 @@
       "flag": "FLAG_ITEM_MINTY_MEADOWS_HP_UP"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 11,
       "y": 32,
       "elevation": 0,
@@ -156,7 +156,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 39,
       "y": 14,
       "elevation": 0,
@@ -169,7 +169,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 18,
       "y": 15,
       "elevation": 0,
@@ -182,7 +182,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 18,
       "y": 0,
       "elevation": 0,
@@ -195,7 +195,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 47,
       "y": 3,
       "elevation": 0,
