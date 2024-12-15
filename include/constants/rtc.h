@@ -6,4 +6,6 @@
 #define TIME_EVENING           2
 #define TIME_NIGHT             3
 
+#define TIME_COUNT 4
+
 #endif // GUARD_CONSTANTS_RTC_H 

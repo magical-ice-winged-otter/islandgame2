@@ -15,6 +15,7 @@
 #include "menu.h"
 #include "overworld.h"
 #include "palette.h"
+#include "rtc.h"
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
@@ -602,131 +603,500 @@ const struct WindowTemplate * const gBattleWindowTemplates[] =
         .entryTileset = gBattleTerrainAnimTiles_## name,     \
         .entryTilemap = gBattleTerrainAnimTilemap_## name,   \
         .palette = gBattleTerrainPalette_## name,            
+//LINK include/rtc.h:86
 
 //LINK include/constants/battle.h:440
 //LINK src/data/graphics/battle_terrain.h:90
-const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
+const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT][TIME_COUNT] =
 {
-    [BATTLE_TERRAIN_GRASS] = { TERRAIN_METADATA(HDGrass) },
-    [BATTLE_TERRAIN_LONG_GRASS] = { TERRAIN_METADATA(HDForest) },
-    [BATTLE_TERRAIN_SAND] = { TERRAIN_METADATA(Sand) },
-    [BATTLE_TERRAIN_UNDERWATER] = { TERRAIN_METADATA(HDDepths) },
-    [BATTLE_TERRAIN_WATER] = { TERRAIN_METADATA(HDWater) },
-    [BATTLE_TERRAIN_POND] = { TERRAIN_METADATA(HDWater) },
-    [BATTLE_TERRAIN_MOUNTAIN] = { TERRAIN_METADATA(HDMountain) },
-    [BATTLE_TERRAIN_CAVE] = { TERRAIN_METADATA(HDMountain) },
-    [BATTLE_TERRAIN_BUILDING] = { TERRAIN_METADATA(HDStandard) },
-    [BATTLE_TERRAIN_PLAIN] = { TERRAIN_METADATA(HDPlains) },
-    [BATTLE_TERRAIN_FRONTIER] =
+    [BATTLE_TERRAIN_GRASS] = 
     {
-        .tileset = gBattleTerrainTiles_Building,
-        .tilemap = gBattleTerrainTilemap_Building,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_Frontier,
+        [TIME_MORNING] = { TERRAIN_METADATA(GrassDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(GrassDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(GrassEvening) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(GrassNight) },
+    },
+    [BATTLE_TERRAIN_LONG_GRASS] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(HDForest) },
+        [TIME_DAY] = { TERRAIN_METADATA(HDForest) },
+        [TIME_EVENING] = { TERRAIN_METADATA(HDForest) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(HDForest) },
+    },
+    [BATTLE_TERRAIN_BEACH] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(BeachDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(BeachDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(BeachEvening) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(BeachNight) },
+    },
+    [BATTLE_TERRAIN_SAND] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(BeachDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(BeachDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(BeachEvening) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(BeachNight) },
+    },
+    [BATTLE_TERRAIN_UNDERWATER] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(HDDepths) },
+        [TIME_DAY] = { TERRAIN_METADATA(HDDepths) },
+        [TIME_EVENING] = { TERRAIN_METADATA(HDDepths) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(HDDepths) },
+    },
+    [BATTLE_TERRAIN_WATER] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(SeaDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(SeaDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(SeaEvening) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(SeaNight) },
+    },
+    [BATTLE_TERRAIN_POND] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(LakeDay) },
+        [TIME_DAY] = { TERRAIN_METADATA(LakeDay) },
+        [TIME_EVENING] = { TERRAIN_METADATA(LakeDay) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(LakeDay) },
+    },
+    [BATTLE_TERRAIN_MOUNTAIN] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(HDMountain) },
+        [TIME_DAY] = { TERRAIN_METADATA(HDMountain) },
+        [TIME_EVENING] = { TERRAIN_METADATA(HDMountain) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(HDMountain) },
+    },
+    [BATTLE_TERRAIN_CAVE] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(HDMountain) },
+        [TIME_DAY] = { TERRAIN_METADATA(HDMountain) },
+        [TIME_EVENING] = { TERRAIN_METADATA(HDMountain) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(HDMountain) },
+    },
+    [BATTLE_TERRAIN_BUILDING] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_DAY] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_EVENING] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(HDStandard) },
+    },
+    [BATTLE_TERRAIN_PLAIN] = 
+    {
+        [TIME_MORNING] = { TERRAIN_METADATA(HDPlains) },
+        [TIME_DAY] = { TERRAIN_METADATA(HDPlains) },
+        [TIME_EVENING] = { TERRAIN_METADATA(HDPlains) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(HDPlains) },
+    },
+    [BATTLE_TERRAIN_FRONTIER] = 
+    {
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Building,
+            .tilemap      = gBattleTerrainTilemap_Building,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_Frontier,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Building,
+            .tilemap      = gBattleTerrainTilemap_Building,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_Frontier,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Building,
+            .tilemap      = gBattleTerrainTilemap_Building,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_Frontier,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Building,
+            .tilemap      = gBattleTerrainTilemap_Building,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_Frontier,
+        },
     },
 
-    [BATTLE_TERRAIN_GYM] = { TERRAIN_METADATA(HDStandard) },
-
-    [BATTLE_TERRAIN_LEADER] = { TERRAIN_METADATA(HDStandard) },
-
-    [BATTLE_TERRAIN_MAGMA] =
+    [BATTLE_TERRAIN_GYM] = 
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumMagma,
+        [TIME_MORNING] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_DAY] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_EVENING] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(HDStandard) },
     },
 
-    [BATTLE_TERRAIN_AQUA] =
+    [BATTLE_TERRAIN_LEADER] = 
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumAqua,
+        [TIME_MORNING] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_DAY] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_EVENING] = { TERRAIN_METADATA(HDStandard) },
+        [TIME_NIGHT] = { TERRAIN_METADATA(HDStandard) },
+    },
+    [BATTLE_TERRAIN_MAGMA] = 
+    {
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumMagma,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumMagma,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumMagma,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumMagma,
+        },
     },
 
-    [BATTLE_TERRAIN_SIDNEY] =
+    [BATTLE_TERRAIN_AQUA] = 
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumSidney,
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumAqua,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumAqua,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumAqua,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumAqua,
+        },
     },
 
-    [BATTLE_TERRAIN_PHOEBE] =
+    [BATTLE_TERRAIN_SIDNEY] = 
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumPhoebe,
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumSidney,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumSidney,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumSidney,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumSidney,
+        },
     },
 
-    [BATTLE_TERRAIN_GLACIA] =
+    [BATTLE_TERRAIN_PHOEBE] = 
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumGlacia,
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumPhoebe,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumPhoebe,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumPhoebe,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumPhoebe,
+        },
     },
 
-    [BATTLE_TERRAIN_DRAKE] =
+    [BATTLE_TERRAIN_GLACIA] = 
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumDrake,
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumGlacia,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumGlacia,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumGlacia,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumGlacia,
+        },
     },
 
-    [BATTLE_TERRAIN_CHAMPION] =
+    [BATTLE_TERRAIN_DRAKE] = 
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumWallace,
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumDrake,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumDrake,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumDrake,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumDrake,
+        },
     },
 
-    [BATTLE_TERRAIN_GROUDON] =
+    [BATTLE_TERRAIN_CHAMPION] = 
     {
-        .tileset = gBattleTerrainTiles_Cave,
-        .tilemap = gBattleTerrainTilemap_Cave,
-        .entryTileset = gBattleTerrainAnimTiles_Cave,
-        .entryTilemap = gBattleTerrainAnimTilemap_Cave,
-        .palette = gBattleTerrainPalette_Groudon,
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumWallace,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumWallace,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumWallace,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Stadium,
+            .tilemap      = gBattleTerrainTilemap_Stadium,
+            .entryTileset = gBattleTerrainAnimTiles_Building,
+            .entryTilemap = gBattleTerrainAnimTilemap_Building,
+            .palette      = gBattleTerrainPalette_StadiumWallace,
+        },
     },
 
-    [BATTLE_TERRAIN_KYOGRE] =
+    [BATTLE_TERRAIN_GROUDON] = 
     {
-        .tileset = gBattleTerrainTiles_Water,
-        .tilemap = gBattleTerrainTilemap_Water,
-        .entryTileset = gBattleTerrainAnimTiles_Underwater,
-        .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
-        .palette = gBattleTerrainPalette_Kyogre,
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Cave,
+            .tilemap      = gBattleTerrainTilemap_Cave,
+            .entryTileset = gBattleTerrainAnimTiles_Cave,
+            .entryTilemap = gBattleTerrainAnimTilemap_Cave,
+            .palette      = gBattleTerrainPalette_Groudon,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Cave,
+            .tilemap      = gBattleTerrainTilemap_Cave,
+            .entryTileset = gBattleTerrainAnimTiles_Cave,
+            .entryTilemap = gBattleTerrainAnimTilemap_Cave,
+            .palette      = gBattleTerrainPalette_Groudon,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Cave,
+            .tilemap      = gBattleTerrainTilemap_Cave,
+            .entryTileset = gBattleTerrainAnimTiles_Cave,
+            .entryTilemap = gBattleTerrainAnimTilemap_Cave,
+            .palette      = gBattleTerrainPalette_Groudon,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Cave,
+            .tilemap      = gBattleTerrainTilemap_Cave,
+            .entryTileset = gBattleTerrainAnimTiles_Cave,
+            .entryTilemap = gBattleTerrainAnimTilemap_Cave,
+            .palette      = gBattleTerrainPalette_Groudon,
+        },
     },
 
-    [BATTLE_TERRAIN_RAYQUAZA] =
+    [BATTLE_TERRAIN_KYOGRE] = 
     {
-        .tileset = gBattleTerrainTiles_Rayquaza,
-        .tilemap = gBattleTerrainTilemap_Rayquaza,
-        .entryTileset = gBattleTerrainAnimTiles_Rayquaza,
-        .entryTilemap = gBattleTerrainAnimTilemap_Rayquaza,
-        .palette = gBattleTerrainPalette_Rayquaza,
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Water,
+            .tilemap      = gBattleTerrainTilemap_Water,
+            .entryTileset = gBattleTerrainAnimTiles_Underwater,
+            .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
+            .palette      = gBattleTerrainPalette_Kyogre,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Water,
+            .tilemap      = gBattleTerrainTilemap_Water,
+            .entryTileset = gBattleTerrainAnimTiles_Underwater,
+            .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
+            .palette      = gBattleTerrainPalette_Kyogre,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Water,
+            .tilemap      = gBattleTerrainTilemap_Water,
+            .entryTileset = gBattleTerrainAnimTiles_Underwater,
+            .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
+            .palette      = gBattleTerrainPalette_Kyogre,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Water,
+            .tilemap      = gBattleTerrainTilemap_Water,
+            .entryTileset = gBattleTerrainAnimTiles_Underwater,
+            .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
+            .palette      = gBattleTerrainPalette_Kyogre,
+        },
     },
-    [BATTLE_TERRAIN_HD_GRASS] = { TERRAIN_METADATA(HDGrass) },
-    [BATTLE_TERRAIN_HD_PLAINS] = { TERRAIN_METADATA(HDPlains) },
-    [BATTLE_TERRAIN_HD_FOREST] = { TERRAIN_METADATA(HDForest) },
-    [BATTLE_TERRAIN_HD_CAVE2] = { TERRAIN_METADATA(HDCave2) },
-    [BATTLE_TERRAIN_HD_DEPTHS] = { TERRAIN_METADATA(HDDepths) },
-    [BATTLE_TERRAIN_HD_SNOW] = { TERRAIN_METADATA(HDSnow) },
-    [BATTLE_TERRAIN_HD_MOUNTAIN] = { TERRAIN_METADATA(HDMountain) },
-    [BATTLE_TERRAIN_HD_STANDARD] = { TERRAIN_METADATA(HDStandard) },
+
+    [BATTLE_TERRAIN_RAYQUAZA] = 
+    {
+        [TIME_MORNING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Rayquaza,
+            .tilemap      = gBattleTerrainTilemap_Rayquaza,
+            .entryTileset = gBattleTerrainAnimTiles_Rayquaza,
+            .entryTilemap = gBattleTerrainAnimTilemap_Rayquaza,
+            .palette      = gBattleTerrainPalette_Rayquaza,
+        },
+        [TIME_DAY] = 
+        {
+            .tileset      = gBattleTerrainTiles_Rayquaza,
+            .tilemap      = gBattleTerrainTilemap_Rayquaza,
+            .entryTileset = gBattleTerrainAnimTiles_Rayquaza,
+            .entryTilemap = gBattleTerrainAnimTilemap_Rayquaza,
+            .palette      = gBattleTerrainPalette_Rayquaza,
+        },
+        [TIME_EVENING] = 
+        {
+            .tileset      = gBattleTerrainTiles_Rayquaza,
+            .tilemap      = gBattleTerrainTilemap_Rayquaza,
+            .entryTileset = gBattleTerrainAnimTiles_Rayquaza,
+            .entryTilemap = gBattleTerrainAnimTilemap_Rayquaza,
+            .palette      = gBattleTerrainPalette_Rayquaza,
+        },
+        [TIME_NIGHT] = 
+        {
+            .tileset      = gBattleTerrainTiles_Rayquaza,
+            .tilemap      = gBattleTerrainTilemap_Rayquaza,
+            .entryTileset = gBattleTerrainAnimTiles_Rayquaza,
+            .entryTilemap = gBattleTerrainAnimTilemap_Rayquaza,
+            .palette      = gBattleTerrainPalette_Rayquaza,
+        },
+    },
+
 };
 
 static const struct {
@@ -746,12 +1116,15 @@ static const struct {
 // Loads the initial battle terrain.
 void LoadBattleTerrainGfx(u16 terrain)
 {
+    DebugPrintf("terrain: %d", terrain);
     if (terrain >= NELEMS(sBattleTerrainTable))
         terrain = BATTLE_TERRAIN_PLAIN;  // If higher than the number of entries in sBattleTerrainTable, use the default.
+    u8 time = GetTimeOfDay();
+    DebugPrintf("terrain: %d, time: %d", terrain, time);
     // Copy to bg3
-    LZDecompressVram(sBattleTerrainTable[terrain].tileset, (void *)BG_CHAR_ADDR(2));
-    LZDecompressVram(sBattleTerrainTable[terrain].tilemap, (void *)BG_SCREEN_ADDR(26));
-    LoadCompressedPalette(sBattleTerrainTable[terrain].palette, 0x20, 0x60);
+    LZDecompressVram(sBattleTerrainTable[terrain][time].tileset, (void *)BG_CHAR_ADDR(2));
+    LZDecompressVram(sBattleTerrainTable[terrain][time].tilemap, (void *)BG_SCREEN_ADDR(26));
+    LoadCompressedPalette(sBattleTerrainTable[terrain][time].palette, 0x20, 0x60);
 }
 
 // If current map scene equals any of the values in sMapBattleSceneMapping,
@@ -771,11 +1144,14 @@ u8 GetBattleTerrainByMapScene(u8 mapBattleScene)
 // This can be the grass moving on the screen at the start of a wild encounter in tall grass.
 static void LoadBattleTerrainEntryGfx(u16 terrain)
 {
+    DebugPrintf("terrain 2: %d", terrain);
     if (terrain >= NELEMS(sBattleTerrainTable))
         terrain = BATTLE_TERRAIN_PLAIN;
+    u8 time = GetTimeOfDay();
+    DebugPrintf("terrain 2: %d, time: %d, gentime: %d", terrain, time, OW_TIMES_OF_DAY);
     // Copy to bg1
-    LZDecompressVram(sBattleTerrainTable[terrain].entryTileset, (void *)BG_CHAR_ADDR(1));
-    LZDecompressVram(sBattleTerrainTable[terrain].entryTilemap, (void *)BG_SCREEN_ADDR(28));
+    LZDecompressVram(sBattleTerrainTable[terrain][time].entryTileset, (void *)BG_CHAR_ADDR(1));
+    LZDecompressVram(sBattleTerrainTable[terrain][time].entryTilemap, (void *)BG_SCREEN_ADDR(28));
 }
 
 // Gets the battle terrain value if conditions are met.
@@ -1261,13 +1637,13 @@ bool8 LoadChosenBattleElement(u8 caseId)
         LoadCompressedPalette(gBattleTextboxPalette, 0, 0x40);
         break;
     case 3:
-        LZDecompressVram(sBattleTerrainTable[GetBattleTerrainOverride()].tileset, (void *)BG_CHAR_ADDR(2));
+        LZDecompressVram(sBattleTerrainTable[GetBattleTerrainOverride()][GetTimeOfDay()].tileset, (void *)BG_CHAR_ADDR(2));
         break;
     case 4:
-        LZDecompressVram(sBattleTerrainTable[GetBattleTerrainOverride()].tilemap, (void *)BG_SCREEN_ADDR(26));
+        LZDecompressVram(sBattleTerrainTable[GetBattleTerrainOverride()][GetTimeOfDay()].tilemap, (void *)BG_SCREEN_ADDR(26));
         break;
     case 5:
-        LoadCompressedPalette(sBattleTerrainTable[GetBattleTerrainOverride()].palette, 0x20, 0x60);
+        LoadCompressedPalette(sBattleTerrainTable[GetBattleTerrainOverride()][GetTimeOfDay()].palette, 0x20, 0x60);
         break;
     case 6:
         LoadBattleMenuWindowGfx();

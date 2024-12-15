@@ -335,14 +335,64 @@ extern const u32 gBattleTerrainAnimTilemap_HDStandard[];
 extern const u32 gBattleTerrainTiles_SeaDay[];
 extern const u32 gBattleTerrainPalette_SeaDay[];
 extern const u32 gBattleTerrainTilemap_SeaDay[];
+extern const u32 gBattleTerrainAnimTiles_SeaDay[];
+extern const u32 gBattleTerrainAnimTilemap_SeaDay[];
 //Sea Evening
 extern const u32 gBattleTerrainTiles_SeaEvening[];
 extern const u32 gBattleTerrainPalette_SeaEvening[];
 extern const u32 gBattleTerrainTilemap_SeaEvening[];
+extern const u32 gBattleTerrainAnimTiles_SeaEvening[];
+extern const u32 gBattleTerrainAnimTilemap_SeaEvening[];
 //Sea Night
 extern const u32 gBattleTerrainTiles_SeaNight[];
 extern const u32 gBattleTerrainPalette_SeaNight[];
 extern const u32 gBattleTerrainTilemap_SeaNight[];
+extern const u32 gBattleTerrainAnimTiles_SeaNight[];
+extern const u32 gBattleTerrainAnimTilemap_SeaNight[];
+//Grass Day
+extern const u32 gBattleTerrainTiles_GrassDay[];
+extern const u32 gBattleTerrainPalette_GrassDay[];
+extern const u32 gBattleTerrainTilemap_GrassDay[];
+extern const u32 gBattleTerrainAnimTiles_GrassDay[];
+extern const u32 gBattleTerrainAnimTilemap_GrassDay[];
+//Grass Evening
+extern const u32 gBattleTerrainTiles_GrassEvening[];
+extern const u32 gBattleTerrainPalette_GrassEvening[];
+extern const u32 gBattleTerrainTilemap_GrassEvening[];
+extern const u32 gBattleTerrainAnimTiles_GrassEvening[];
+extern const u32 gBattleTerrainAnimTilemap_GrassEvening[];
+//Grass Night
+extern const u32 gBattleTerrainTiles_GrassNight[];
+extern const u32 gBattleTerrainPalette_GrassNight[];
+extern const u32 gBattleTerrainTilemap_GrassNight[];
+extern const u32 gBattleTerrainAnimTiles_GrassNight[];
+extern const u32 gBattleTerrainAnimTilemap_GrassNight[];
+//Beach Day
+extern const u32 gBattleTerrainTiles_BeachDay[];
+extern const u32 gBattleTerrainPalette_BeachDay[];
+extern const u32 gBattleTerrainTilemap_BeachDay[];
+extern const u32 gBattleTerrainAnimTiles_BeachDay[];
+extern const u32 gBattleTerrainAnimTilemap_BeachDay[];
+//Beach Evening
+extern const u32 gBattleTerrainTiles_BeachEvening[];
+extern const u32 gBattleTerrainPalette_BeachEvening[];
+extern const u32 gBattleTerrainTilemap_BeachEvening[];
+extern const u32 gBattleTerrainAnimTiles_BeachEvening[];
+extern const u32 gBattleTerrainAnimTilemap_BeachEvening[];
+//Beach Night
+extern const u32 gBattleTerrainTiles_BeachNight[];
+extern const u32 gBattleTerrainPalette_BeachNight[];
+extern const u32 gBattleTerrainTilemap_BeachNight[];
+extern const u32 gBattleTerrainAnimTiles_BeachNight[];
+extern const u32 gBattleTerrainAnimTilemap_BeachNight[];
+//Lake Day
+extern const u32 gBattleTerrainTiles_LakeDay[];
+extern const u32 gBattleTerrainPalette_LakeDay[];
+extern const u32 gBattleTerrainTilemap_LakeDay[];
+extern const u32 gBattleTerrainAnimTiles_LakeDay[];
+extern const u32 gBattleTerrainAnimTilemap_LakeDay[];
+
+
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
