@@ -3105,6 +3105,38 @@ const u32 gObjectEventPic_Pokemon_Species_904[] = INCBIN_U32("graphics/object_ev
 const u16 gObjectEventPalette_Pokemon_Species_904[] = INCBIN_U16("graphics/object_events/pics/pokemon/species/904.gbapal");
 
 #if OW_FOLLOWERS_POKEBALLS
+const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");
+const u32 gObjectEventPic_UltraBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_ultra.4bpp");
+const u32 gObjectEventPic_GreatBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_great.4bpp");
+const u32 gObjectEventPic_SafariBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_safari.4bpp");
+const u32 gObjectEventPic_NetBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_net.4bpp");
+const u32 gObjectEventPic_DiveBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_dive.4bpp");
+const u32 gObjectEventPic_NestBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_nest.4bpp");
+const u32 gObjectEventPic_RepeatBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_repeat.4bpp");
+const u32 gObjectEventPic_TimerBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_timer.4bpp");
+const u32 gObjectEventPic_LuxuryBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_luxury.4bpp");
+const u32 gObjectEventPic_PremierBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_premier.4bpp");
+const u32 gObjectEventPic_DuskBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_dusk.4bpp");
+const u32 gObjectEventPic_HealBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_heal.4bpp");
+const u32 gObjectEventPic_QuickBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_quick.4bpp");
+const u32 gObjectEventPic_CherishBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_cherish.4bpp");
+const u32 gObjectEventPic_ParkBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_park.4bpp");
+const u32 gObjectEventPic_FastBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_fast.4bpp");
+const u32 gObjectEventPic_LevelBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_level.4bpp");
+const u32 gObjectEventPic_LureBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_lure.4bpp");
+const u32 gObjectEventPic_HeavyBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_heavy.4bpp");
+const u32 gObjectEventPic_LoveBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_love.4bpp");
+const u32 gObjectEventPic_FriendBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_friend.4bpp");
+const u32 gObjectEventPic_MoonBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_moon.4bpp");
+const u32 gObjectEventPic_SportBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_sport.4bpp");
+const u32 gObjectEventPic_DreamBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_dream.4bpp");
+const u32 gObjectEventPic_BeastBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_beast.4bpp");
+#ifdef ITEM_STRANGE_BALL
+const u32 gObjectEventPic_StrangeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_strange.4bpp");
+#endif //ITEM_STRANGE_BALL
+#endif //OW_FOLLOWERS_POKEBALLS
+
+#if OW_FOLLOWERS_POKEBALLS
 // Palettes are small, so always include all of the palettes (no #ifdef)
 // Vanilla
 const u16 gObjectEventPal_MasterBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_master.gbapal");
