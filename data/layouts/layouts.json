@@ -5224,7 +5224,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_PLEASANT_AVENUE",
       "name": "ISLANDGAME_PLEASANT_AVENUE_Layout",
-      "width": 44,
+      "width": 36,
       "height": 40,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_pleasant_avenue",
@@ -5234,7 +5234,7 @@
     {
       "id": "LAYOUT_ISLANDGAME_AETHERIA",
       "name": "ISLANDGAME_AETHERIA_Layout",
-      "width": 80,
+      "width": 78,
       "height": 70,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_aetheria",
