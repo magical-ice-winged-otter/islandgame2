@@ -4558,6 +4558,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_Pumpkaboo,
         .iconPalIndex = 2,
         FOOTPRINT(Pumpkaboo)
+        OVERWORLD(
+            sPicTable_PumpkabooSmall,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Pumpkaboo,
+            gShinyOverworldPalette_Pumpkaboo
+        )
         .levelUpLearnset = sPumpkabooLevelUpLearnset,
         .teachableLearnset = sPumpkabooTeachableLearnset,
         .eggMoveLearnset = sPumpkabooEggMoveLearnset,
@@ -4614,6 +4622,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_Pumpkaboo,
         .iconPalIndex = 2,
         FOOTPRINT(Pumpkaboo)
+        OVERWORLD(
+            sPicTable_PumpkabooLarge,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Pumpkaboo,
+            gShinyOverworldPalette_Pumpkaboo
+        )
         .levelUpLearnset = sPumpkabooLevelUpLearnset,
         .teachableLearnset = sPumpkabooTeachableLearnset,
         .eggMoveLearnset = sPumpkabooEggMoveLearnset,
@@ -4672,6 +4688,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_Pumpkaboo,
         .iconPalIndex = 2,
         FOOTPRINT(Pumpkaboo)
+        OVERWORLD(
+            sPicTable_PumpkabooSuper,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Pumpkaboo,
+            gShinyOverworldPalette_Pumpkaboo
+        )
         .levelUpLearnset = sPumpkabooLevelUpLearnset,
         .teachableLearnset = sPumpkabooTeachableLearnset,
         .eggMoveLearnset = sPumpkabooEggMoveLearnset,
@@ -4790,6 +4814,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_Gourgeist,
         .iconPalIndex = 2,
         FOOTPRINT(Gourgeist)
+        OVERWORLD(
+            sPicTable_GourgeistSmall,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Gourgeist,
+            gShinyOverworldPalette_Gourgeist
+        )
         .levelUpLearnset = sGourgeistLevelUpLearnset,
         .teachableLearnset = sGourgeistTeachableLearnset,
         .formSpeciesIdTable = sGourgeistFormSpeciesIdTable,
@@ -4843,6 +4875,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_Gourgeist,
         .iconPalIndex = 2,
         FOOTPRINT(Gourgeist)
+        OVERWORLD(
+            sPicTable_GourgeistLarge,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Gourgeist,
+            gShinyOverworldPalette_Gourgeist
+        )
         .levelUpLearnset = sGourgeistLevelUpLearnset,
         .teachableLearnset = sGourgeistTeachableLearnset,
         .formSpeciesIdTable = sGourgeistFormSpeciesIdTable,
@@ -4898,6 +4938,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_Gourgeist,
         .iconPalIndex = 2,
         FOOTPRINT(Gourgeist)
+        OVERWORLD(
+            sPicTable_GourgeistSuper,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Gourgeist,
+            gShinyOverworldPalette_Gourgeist
+        )
         .levelUpLearnset = sGourgeistLevelUpLearnset,
         .teachableLearnset = sGourgeistTeachableLearnset,
         .formSpeciesIdTable = sGourgeistFormSpeciesIdTable,
@@ -5585,6 +5633,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_Zygarde10,
         .iconPalIndex = 1,
         FOOTPRINT(Zygarde)
+        OVERWORLD(
+            sPicTable_Zygarde10,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Zygarde10,
+            gShinyOverworldPalette_Zygarde10
+        )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sZygardeLevelUpLearnset,
@@ -5638,6 +5694,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_Zygarde10,
         .iconPalIndex = 1,
         FOOTPRINT(Zygarde)
+        OVERWORLD(
+            sPicTable_Zygarde10,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Zygarde10,
+            gShinyOverworldPalette_Zygarde10
+        )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sZygardeLevelUpLearnset,
@@ -5695,6 +5759,14 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconSprite = gMonIcon_ZygardeComplete,
         .iconPalIndex = 1,
         FOOTPRINT(Zygarde)
+        OVERWORLD(
+            sPicTable_ZygardeComplete,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_ZygardeComplete,
+            gShinyOverworldPalette_ZygardeComplete
+        )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sZygardeLevelUpLearnset,
