@@ -11,7 +11,6 @@
 #include "battle_pyramid.h"
 #include "battle_scripts.h"
 #include "battle_setup.h"
-#include "battle_dynamic.h"
 #include "battle_tower.h"
 #include "battle_util.h"
 #include "battle_z_move.h"

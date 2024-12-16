@@ -8,7 +8,6 @@
 #include "battle_message.h"
 #include "battle_setup.h"
 #include "battle_tv.h"
-#include "battle_dynamic.h"
 #include "battle_z_move.h"
 #include "battle_gimmick.h"
 #include "bg.h"
