@@ -52,7 +52,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_004",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHARMANDER)",
       "x": 12,
       "y": 7,
       "elevation": 0,
@@ -143,7 +143,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_663",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TALONFLAME)",
       "x": 29,
       "y": 16,
       "elevation": 0,

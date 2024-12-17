@@ -5,8 +5,8 @@
 #endif
 
 // IWRAM common
-rng_value_t gRngValue;
-rng_value_t gRng2Value;
+COMMON_DATA rng_value_t gRngValue = {0};
+COMMON_DATA rng_value_t gRng2Value = {0};
 
 #if HQ_RANDOM == TRUE
 
@@ -238,4 +238,23 @@ u32 RandomWeightedArrayDefault(enum RandomTag tag, u32 sum, u32 n, const u8 *wei
 const void *RandomElementArrayDefault(enum RandomTag tag, const void *array, size_t size, size_t count)
 {
     return (const u8 *)array + size * RandomUniformDefault(tag, 0, count - 1);
+}
+
+// Returns a random index according to a list of weights
+u8 RandomWeightedIndex(u8 *weights, u8 length)
+{
+    u32 i;
+    u16 randomValue;
+    u16 weightSum = 0;
+    for (i = 0; i < length; i++)
+        weightSum += weights[i];
+    randomValue = weightSum > 0 ? Random() % weightSum : 0;
+    weightSum = 0;
+    for (i = 0; i < length; i++)
+    {
+        weightSum += weights[i];
+        if (randomValue <= weightSum)
+            return i;
+    }
+    return 0;
 }

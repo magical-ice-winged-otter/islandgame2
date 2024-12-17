@@ -28,7 +28,7 @@
       "flag": "FLAG_TEMP_4"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_572",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINCCINO)",
       "x": 4,
       "y": 7,
       "elevation": 0,
@@ -41,7 +41,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_167",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPINARAK)",
       "x": 4,
       "y": 7,
       "elevation": 0,
@@ -54,7 +54,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_661",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLETCHLING)",
       "x": 4,
       "y": 7,
       "elevation": 0,

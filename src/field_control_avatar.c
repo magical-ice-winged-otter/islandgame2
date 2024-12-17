@@ -41,7 +41,7 @@
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
 
-u8 gSelectedObjectEvent;
+COMMON_DATA u8 gSelectedObjectEvent = 0;
 
 static void GetPlayerPosition(struct MapPosition *);
 static void GetInFrontOfPlayerPosition(struct MapPosition *);
@@ -71,6 +71,7 @@ static bool8 TryStartMiscWalkingScripts(u16);
 static bool8 EnableAutoRun(void);
 static bool8 TryStartStepCountScript(u16);
 static void UpdateFriendshipStepCounter(void);
+static void UpdateFollowerStepCounter(void);
 #if OW_POISON_DAMAGE < GEN_5
 static bool8 UpdatePoisonStepCounter(void);
 #endif // OW_POISON_DAMAGE
@@ -610,6 +611,7 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     IncrementRematchStepCounter();
     UpdateFriendshipStepCounter();
     UpdateFarawayIslandStepCounter();
+    UpdateFollowerStepCounter();
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {
@@ -701,6 +703,12 @@ static void UpdateFriendshipStepCounter(void)
             mon++;
         }
     }
+}
+
+static void UpdateFollowerStepCounter(void)
+{
+    if (gPlayerPartyCount > 0 && gFollowerSteps < (u16)-1)
+        gFollowerSteps++;
 }
 
 void ClearPoisonStepCounter(void)
@@ -953,6 +961,16 @@ static s8 GetWarpEventAtPosition(struct MapHeader *mapHeader, u16 x, u16 y, u8 e
     return WARP_ID_NONE;
 }
 
+static bool32 ShouldTriggerScriptRun(const struct CoordEvent *coordEvent)
+{
+    u16 *varPtr = GetVarPointer(coordEvent->trigger);
+    // Treat non Vars as flags
+    if (varPtr == NULL)
+        return (FlagGet(coordEvent->trigger) == coordEvent->index);
+    else
+        return (*varPtr == coordEvent->index);
+}
+
 static const u8 *TryRunCoordEventScript(const struct CoordEvent *coordEvent)
 {
     if (coordEvent != NULL)
@@ -967,7 +985,7 @@ static const u8 *TryRunCoordEventScript(const struct CoordEvent *coordEvent)
             RunScriptImmediately(coordEvent->script);
             return NULL;
         }
-        if (VarGet(coordEvent->trigger) == (u8)coordEvent->index)
+        if (ShouldTriggerScriptRun(coordEvent))
             return coordEvent->script;
     }
     return NULL;

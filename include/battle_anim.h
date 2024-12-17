@@ -253,6 +253,7 @@ void AnimParticleBurst(struct Sprite *);
 void AnimPowerAbsorptionOrb(struct Sprite *sprite);
 void AnimNeedleArmSpike(struct Sprite *);
 void AnimTask_CompressTargetHorizontally(u8 taskId);
+void AnimTask_CompressTargetHorizontallyFast(u8 taskId);
 void AnimSporeParticle(struct Sprite *sprite);
 void AnimAbsorptionOrb(struct Sprite *sprite);
 void AnimPetalDanceSmallFlower(struct Sprite *sprite);
@@ -346,7 +347,6 @@ extern const union AnimCmd *const gAnims_WaterPulseBubble[];
 
 // battle_anim_flying.c
 void DestroyAnimSpriteAfterTimer(struct Sprite *sprite);
-void sub_810E2C8(struct Sprite *sprite);
 void AnimAirWaveCrescent(struct Sprite *sprite);
 void AnimFlyBallUp(struct Sprite *sprite);
 void AnimFlyBallAttack(struct Sprite *sprite);
@@ -537,6 +537,9 @@ extern const union AnimCmd *const gAnims_WillOWispOrb[];
 extern const union AnimCmd *const gAnims_FirePlume[];
 
 // battle_anim_dragon.c
+extern const union AnimCmd *const gAnims_DreepyMissilePlayer[];
+extern const union AnimCmd *const gAnims_DreepyMissileOpponent[];
+extern const union AnimCmd *const gAnims_DreepyMissileOpponentNotDrag[];
 extern const union AnimCmd *const gAnims_DragonBreathFire[];
 extern const union AnimCmd *const gAnims_DragonRageFirePlume[];
 extern const union AffineAnimCmd *const gAffineAnims_DragonRageFire[];

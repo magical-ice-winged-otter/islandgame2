@@ -212,7 +212,6 @@ static bool8 AngledWipes_TryEnd(struct Task *);
 static bool8 AngledWipes_StartNext(struct Task *);
 static bool8 ShredSplit_Init(struct Task *);
 static bool8 ShredSplit_Main(struct Task *);
-static bool8 ShredSplit_BrokenCheck(struct Task *);
 static bool8 ShredSplit_End(struct Task *);
 static bool8 Blackhole_Init(struct Task *);
 static bool8 Blackhole_Vibrate(struct Task *);
@@ -561,7 +560,6 @@ static const TransitionStateFunc sShredSplit_Funcs[] =
 {
     ShredSplit_Init,
     ShredSplit_Main,
-    ShredSplit_BrokenCheck,
     ShredSplit_End
 };
 
@@ -1875,7 +1873,11 @@ static bool8 ClockwiseWipe_TopRight(struct Task *task)
 {
     sTransitionData->VBlank_DMA = FALSE;
 
+#ifdef UBFIX
+    InitBlackWipe(sTransitionData->data, DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2, sTransitionData->tWipeEndX, 0, 1, 1);
+#else
     InitBlackWipe(sTransitionData->data, DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2, sTransitionData->tWipeEndX, -1, 1, 1);
+#endif
     do
     {
         gScanlineEffectRegBuffers[0][sTransitionData->tWipeCurrY] = (sTransitionData->tWipeCurrX + 1) | ((DISPLAY_WIDTH / 2) << 8);
@@ -2925,29 +2927,6 @@ static bool8 ShredSplit_Main(struct Task *task)
         task->tState++;
 
     sTransitionData->VBlank_DMA++;
-    return FALSE;
-}
-
-// This function never increments the state counter, because the loop condition
-// is always false, resulting in the game being stuck in an infinite loop.
-// It's possible this transition is only partially
-// done and the second part was left out.
-// In any case removing or bypassing this state allows the transition to finish.
-static bool8 ShredSplit_BrokenCheck(struct Task *task)
-{
-    u16 i;
-    bool32 done = TRUE;
-    u16 checkVar2 = 0xFF10;
-
-    for (i = 0; i < DISPLAY_HEIGHT; i++)
-    {
-        if (gScanlineEffectRegBuffers[1][i] != DISPLAY_WIDTH && gScanlineEffectRegBuffers[1][i] != checkVar2)
-            done = FALSE;
-    }
-
-    if (done == TRUE)
-        task->tState++;
-
     return FALSE;
 }
 

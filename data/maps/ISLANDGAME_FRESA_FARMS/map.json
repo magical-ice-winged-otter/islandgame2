@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_507",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HERDIER)",
       "x": 5,
       "y": 18,
       "elevation": 0,
@@ -34,7 +34,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAREEP)",
       "x": 8,
       "y": 18,
       "elevation": 0,
@@ -47,7 +47,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAREEP)",
       "x": 10,
       "y": 19,
       "elevation": 0,
@@ -60,7 +60,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAREEP)",
       "x": 13,
       "y": 20,
       "elevation": 0,
@@ -73,7 +73,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_179",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAREEP)",
       "x": 13,
       "y": 17,
       "elevation": 0,
@@ -86,7 +86,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_241",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
       "x": 24,
       "y": 10,
       "elevation": 0,
@@ -99,7 +99,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_113",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
       "x": 13,
       "y": 6,
       "elevation": 0,
@@ -190,7 +190,7 @@
       "flag": "FLAG_FRESA_FARMS_POKE_TOY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_255",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TORCHIC)",
       "x": 14,
       "y": 9,
       "elevation": 0,
@@ -203,7 +203,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_498",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TEPIG)",
       "x": 16,
       "y": 8,
       "elevation": 0,
@@ -216,7 +216,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_750",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDSDALE)",
       "x": 26,
       "y": 14,
       "elevation": 0,
@@ -242,7 +242,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_255",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TORCHIC)",
       "x": 26,
       "y": 19,
       "elevation": 0,
@@ -268,7 +268,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_498",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TEPIG)",
       "x": 9,
       "y": 14,
       "elevation": 0,

@@ -93,7 +93,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_443",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GIBLE)",
       "x": 6,
       "y": 6,
       "elevation": 0,

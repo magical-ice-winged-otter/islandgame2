@@ -28,7 +28,7 @@
       "flag": "FLAG_TEMP_4"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_585",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DEERLING)",
       "x": 15,
       "y": 4,
       "elevation": 0,
@@ -41,7 +41,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_532",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TIMBURR)",
       "x": 15,
       "y": 4,
       "elevation": 0,
@@ -54,7 +54,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_543",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VENIPEDE)",
       "x": 15,
       "y": 4,
       "elevation": 0,

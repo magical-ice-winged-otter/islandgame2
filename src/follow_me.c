@@ -36,9 +36,6 @@ Known Issues:
         -inherits incorrect palette, may get directionally confused
 */
 
-// Defines
-#define PLAYER_AVATAR_FLAG_BIKE    PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE
-
 struct FollowerSpriteGraphics
 {
     u16 normalId;

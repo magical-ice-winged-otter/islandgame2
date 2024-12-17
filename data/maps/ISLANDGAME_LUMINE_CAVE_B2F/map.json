@@ -119,7 +119,7 @@
       "flag": "FLAG_TEMP_A"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_526",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GIGALITH)",
       "x": 16,
       "y": 24,
       "elevation": 0,
@@ -132,7 +132,7 @@
       "flag": "FLAG_TEMP_1F"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZUBAT)",
       "x": 7,
       "y": 5,
       "elevation": 0,

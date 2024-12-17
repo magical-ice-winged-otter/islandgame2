@@ -15,7 +15,29 @@
 #include "pokeball.h"
 #include "battle_debug.h"
 #include "battle_dynamax.h"
+#include "battle_terastal.h"
+#include "battle_gimmick.h"
 #include "random.h" // for rng_value_t
+
+// Helper for accessing command arguments and advancing gBattlescriptCurrInstr.
+//
+// For example accuracycheck is defined as:
+//
+//     .macro accuracycheck failInstr:req, move:req
+//     .byte 0x1
+//     .4byte \failInstr
+//     .2byte \move
+//     .endm
+//
+// Which corresponds to:
+//
+//     CMD_ARGS(const u8 *failInstr, u16 move);
+//
+// The arguments can be accessed as cmd->failInstr and cmd->move.
+// gBattlescriptCurrInstr = cmd->nextInstr; advances to the next instruction.
+#define CMD_ARGS(...) const struct __attribute__((packed)) { u8 opcode; RECURSIVELY(R_FOR_EACH(APPEND_SEMICOLON, __VA_ARGS__)) const u8 nextInstr[0]; } *const cmd UNUSED = (const void *)gBattlescriptCurrInstr
+#define VARIOUS_ARGS(...) CMD_ARGS(u8 battler, u8 id, ##__VA_ARGS__)
+#define NATIVE_ARGS(...) CMD_ARGS(void (*func)(void), ##__VA_ARGS__)
 
 // Used to exclude moves learned temporarily by Transform or Mimic
 #define MOVE_IS_PERMANENT(battler, moveSlot)                        \
@@ -71,7 +93,7 @@ struct ResourceFlags
 #define RESOURCE_FLAG_ROOST             0x2
 #define RESOURCE_FLAG_UNBURDEN          0x4
 #define RESOURCE_FLAG_UNUSED            0x8
-#define RESOURCE_FLAG_TRACED            0x10
+#define RESOURCE_FLAG_UNUSED_2          0x10
 #define RESOURCE_FLAG_EMERGENCY_EXIT    0x20
 #define RESOURCE_FLAG_NEUTRALIZING_GAS  0x40
 #define RESOURCE_FLAG_ICE_FACE          0x80
@@ -93,17 +115,15 @@ struct DisableStruct
     u8 disableTimer:4;
     u8 encoreTimer:4;
     u8 perishSongTimer:4;
-    u8 furyCutterCounter;
     u8 rolloutTimer:4;
     u8 rolloutTimerStartValue:4;
-    u8 chargeTimer:4;
     u8 tauntTimer:4;
+    u8 furyCutterCounter;
     u8 battlerPreventingEscape;
     u8 battlerWithSureHit;
     u8 isFirstTurn;
-    u8 truantCounter:1;
-    u8 truantSwitchInHack:1;
     u8 mimickedMoves:4;
+    u8 chargeTimer:4;
     u8 rechargeTimer;
     u8 autotomizeCount;
     u8 slowStartTimer;
@@ -116,6 +136,8 @@ struct DisableStruct
     u8 wrapTurns;
     u8 tormentTimer:4; // used for G-Max Meltdown
     u8 usedMoves:4;
+    u8 truantCounter:1;
+    u8 truantSwitchInHack:1;
     u8 noRetreat:1;
     u8 tarShot:1;
     u8 octolock:1;
@@ -162,9 +184,9 @@ struct ProtectStruct
     u32 powderSelfDmg:1;
     u32 usedThroatChopPreventedMove:1;
     u32 statRaised:1;
-    u32 usedMicleBerry:1;
     u32 usedCustapBerry:1;    // also quick claw
     u32 touchedProtectLike:1;
+    u32 unused:1;
     // End of 32-bit bitfield
     u16 disableEjectPack:1;
     u16 statFell:1;
@@ -199,7 +221,7 @@ struct SpecialStatus
     u8 faintedHasReplacement:1;
     u8 focusBanded:1;
     u8 focusSashed:1;
-    u8 unused:1;
+    u8 unused:2;
     // End of byte
     u8 sturdied:1;
     u8 stormDrainRedirected:1;
@@ -291,7 +313,8 @@ struct AI_SavedBattleMon
     u16 ability;
     u16 moves[MAX_MON_MOVES];
     u16 heldItem;
-    u16 species;
+    u16 species:15;
+    u16 saved:1;
     u8 types[3];
 };
 
@@ -322,6 +345,12 @@ struct SwitchinCandidate
     bool8 hypotheticalStatus;
 };
 
+struct SimulatedDamage
+{
+    s32 expected;
+    s32 minimum;
+};
+
 // Ai Data used when deciding which move to use, computed only once before each turn's start.
 struct AiLogicData
 {
@@ -333,7 +362,7 @@ struct AiLogicData
     u8 hpPercents[MAX_BATTLERS_COUNT];
     u16 partnerMove;
     u16 speedStats[MAX_BATTLERS_COUNT]; // Speed stats for all battles, calculated only once, same way as damages
-    s32 simulatedDmg[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT][MAX_MON_MOVES]; // attacker, target, moveIndex
+    struct SimulatedDamage simulatedDmg[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT][MAX_MON_MOVES]; // attacker, target, moveIndex
     u8 effectiveness[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT][MAX_MON_MOVES]; // attacker, target, moveIndex
     u8 moveAccuracy[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT][MAX_MON_MOVES]; // attacker, target, moveIndex
     u8 moveLimitations[MAX_BATTLERS_COUNT];
@@ -528,24 +557,6 @@ struct LinkBattlerHeader
     struct BattleEnigmaBerry battleEnigmaBerry;
 };
 
-struct MegaEvolutionData
-{
-    u8 toEvolve; // As flags using gBitTable.
-    bool8 alreadyEvolved[4]; // Array id is used for mon position.
-    u8 battlerId;
-    bool8 playerSelect;
-    u8 triggerSpriteId;
-};
-
-struct UltraBurstData
-{
-    u8 toBurst; // As flags using gBitTable.
-    bool8 alreadyBursted[4]; // Array id is used for mon position.
-    u8 battlerId;
-    bool8 playerSelect;
-    u8 triggerSpriteId;
-};
-
 struct Illusion
 {
     u8 on;
@@ -557,37 +568,30 @@ struct Illusion
 
 struct ZMoveData
 {
-    u8 viable:1;    // current move can become a z move
+    u8 viable:1;   // current move can become a z move
     u8 viewing:1;  // if player is viewing the z move name instead of regular moves
-    u8 active:1;   // is z move being used this turn
-    u8 zStatusActive:1;
-    u8 healReplacement:1;
-    u8 activeCategory:2;  // active z move category
-    u8 zUnused:1;
-    u8 triggerSpriteId;
+    u8 healReplacement:6;
     u8 possibleZMoves[MAX_BATTLERS_COUNT];
-    u16 chosenZMove;  // z move of move cursor is on
-    u8 effect;
-    u8 used[MAX_BATTLERS_COUNT];   //one per bank for multi-battles
-    u16 toBeUsed[MAX_BATTLERS_COUNT];  // z moves per battler to be used
     u16 baseMoves[MAX_BATTLERS_COUNT];
-    u8 categories[MAX_BATTLERS_COUNT];
 };
 
 struct DynamaxData
 {
-    bool8 playerSelect;
-    u8 triggerSpriteId;
-    u8 toDynamax; // flags using gBitTable
-    bool8 alreadyDynamaxed[NUM_BATTLE_SIDES];
-    bool8 dynamaxed[MAX_BATTLERS_COUNT];
     u8 dynamaxTurns[MAX_BATTLERS_COUNT];
-    u8 usingMaxMove[MAX_BATTLERS_COUNT];
-    u8 activeCategory;
-    u8 categories[MAX_BATTLERS_COUNT];
-    u16 baseMove[MAX_BATTLERS_COUNT]; // base move of Max Move
+    u16 baseMoves[MAX_BATTLERS_COUNT]; // base move of Max Move
     u16 lastUsedBaseMove;
     u16 levelUpHP;
+};
+
+struct BattleGimmickData
+{
+    u8 usableGimmick[MAX_BATTLERS_COUNT];                // first usable gimmick that can be selected for each battler
+    bool8 playerSelect;                                  // used to toggle trigger and update battle UI
+    u8 triggerSpriteId;
+    u8 indicatorSpriteId[MAX_BATTLERS_COUNT];
+    u8 toActivate;                                       // stores whether a battler should transform at start of turn as bitfield
+    u8 activeGimmick[NUM_BATTLE_SIDES][PARTY_SIZE];      // stores the active gimmick for each party member
+    bool8 activated[MAX_BATTLERS_COUNT][GIMMICKS_COUNT]; // stores whether a trainer has used gimmick
 };
 
 struct LostItem
@@ -673,6 +677,7 @@ struct BattleStruct
     u16 chosenItem[MAX_BATTLERS_COUNT];
     u16 choicedMove[MAX_BATTLERS_COUNT];
     u16 changedItems[MAX_BATTLERS_COUNT];
+    u8 canPickupItem;
     u8 switchInBattlerCounter;
     u8 arenaTurnCounter;
     u8 turnSideTracker;
@@ -688,6 +693,7 @@ struct BattleStruct
     } multiBuffer;
     u8 wishPerishSongState;
     u8 wishPerishSongBattlerId;
+    u8 aiCalcInProgress:1;
     u8 overworldWeatherDone:1;
     u8 startingStatusDone:1;
     u8 isAtkCancelerForCalledMove:1; // Certain cases in atk canceler should only be checked once, when the original move is called, however others need to be checked the twice.
@@ -708,15 +714,17 @@ struct BattleStruct
     u8 magnitudeBasePower;
     u8 presentBasePower;
     u8 roostTypes[MAX_BATTLERS_COUNT][2];
-    u8 savedBattlerTarget;
+    u8 savedBattlerTarget[5];
+    u8 savedBattlerAttacker[5];
+    u8 savedTargetCount:4;
+    u8 savedAttackerCount:4;
     bool8 ateBoost[MAX_BATTLERS_COUNT];
     u8 activeAbilityPopUps; // as bits for each battler
     u8 abilityPopUpSpriteIds[MAX_BATTLERS_COUNT][2];    // two per battler
     bool8 throwingPokeBall;
-    struct MegaEvolutionData mega;
-    struct UltraBurstData burst;
     struct ZMoveData zmove;
     struct DynamaxData dynamax;
+    struct BattleGimmickData gimmick;
     const u8 *trainerSlideMsg;
     bool8 trainerSlideLowHpMsgDone;
     u8 introState;
@@ -744,6 +752,10 @@ struct BattleStruct
     u8 blunderPolicy:1; // should blunder policy activate
     u8 swapDamageCategory:1; // Photon Geyser, Shell Side Arm, Light That Burns the Sky
     u8 bouncedMoveIsUsed:1;
+    u8 snatchedMoveIsUsed:1;
+    u8 descriptionSubmenu:1; // For Move Description window in move selection screen
+    u8 ackBallUseBtn:1; // Used for the last used ball feature
+    u8 ballSwapped:1; // Used for the last used ball feature
     u8 ballSpriteIds[2];    // item gfx, window gfx
     u8 appearedInBattle; // Bitfield to track which Pokemon appeared in battle. Used for Burmy's form change
     u8 skyDropTargets[MAX_BATTLERS_COUNT]; // For Sky Drop, to account for if multiple Pokemon use Sky Drop in a double battle.
@@ -754,7 +766,6 @@ struct BattleStruct
     bool8 effectsBeforeUsingMoveDone:1; // Mega Evo and Focus Punch/Shell Trap effects.
     u8 targetsDone[MAX_BATTLERS_COUNT]; // Each battler as a bit.
     u16 overwrittenAbilities[MAX_BATTLERS_COUNT];    // abilities overwritten during battle (keep separate from battle history in case of switching)
-    bool8 allowedToChangeFormInWeather[PARTY_SIZE][NUM_BATTLE_SIDES]; // For each party member and side, used by Ice Face.
     u8 battleBondTransformed[NUM_BATTLE_SIDES]; // Bitfield for each party.
     u8 storedHealingWish:4; // Each battler as a bit.
     u8 storedLunarDance:4; // Each battler as a bit.
@@ -772,6 +783,7 @@ struct BattleStruct
     u8 trainerSlideDynamaxMsgDone:1;
     u8 pledgeMove:1;
     u8 isSkyBattle:1;
+    u8 poisonPuppeteerConfusion:1;
     u32 aiDelayTimer; // Counts number of frames AI takes to choose an action.
     u32 aiDelayFrames; // Number of frames it took to choose an action.
     u8 timesGotHit[NUM_BATTLE_SIDES][PARTY_SIZE];
@@ -785,6 +797,15 @@ struct BattleStruct
     u8 quickClawRandom[MAX_BATTLERS_COUNT];
     u8 quickDrawRandom[MAX_BATTLERS_COUNT];
     u8 shellSideArmCategory[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT];
+    u8 speedTieBreaks; // MAX_BATTLERS_COUNT! values.
+    u8 boosterEnergyActivates;
+    u8 distortedTypeMatchups;
+    u8 categoryOverride; // for Z-Moves and Max Moves
+    u32 stellarBoostFlags[NUM_BATTLE_SIDES]; // stored as a bitfield of flags for all types for each side
+    u8 fickleBeamBoosted:1;
+    u8 redCardActivates:1;
+    u8 padding:6;
+    u8 usedMicleBerry;
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,
@@ -811,24 +832,24 @@ STATIC_ASSERT(sizeof(((struct BattleStruct *)0)->palaceFlags) * 8 >= MAX_BATTLER
 
 #define BATTLER_MAX_HP(battlerId)(gBattleMons[battlerId].hp == gBattleMons[battlerId].maxHP)
 #define TARGET_TURN_DAMAGED ((gSpecialStatuses[gBattlerTarget].physicalDmg != 0 || gSpecialStatuses[gBattlerTarget].specialDmg != 0) || (gBattleStruct->enduredDamage & gBitTable[gBattlerTarget]))
-#define BATTLER_TURN_DAMAGED(battlerId) ((gSpecialStatuses[battlerId].physicalDmg != 0 || gSpecialStatuses[battlerId].specialDmg != 0) || (gBattleStruct->enduredDamage & gBitTable[battler]))
+#define BATTLER_TURN_DAMAGED(battlerId) ((gSpecialStatuses[battlerId].physicalDmg != 0 || gSpecialStatuses[battlerId].specialDmg != 0) || (gBattleStruct->enduredDamage & gBitTable[battlerId]))
 
-#define IS_BATTLER_OF_TYPE(battlerId, type)((GetBattlerType(battlerId, 0) == type || GetBattlerType(battlerId, 1) == type || (GetBattlerType(battlerId, 2) != TYPE_MYSTERY && GetBattlerType(battlerId, 2) == type)))
+#define IS_BATTLER_OF_TYPE(battlerId, type)((GetBattlerType(battlerId, 0, FALSE) == type || GetBattlerType(battlerId, 1, FALSE) == type || (GetBattlerType(battlerId, 2, FALSE) != TYPE_MYSTERY && GetBattlerType(battlerId, 2, FALSE) == type)))
+#define IS_BATTLER_OF_BASE_TYPE(battlerId, type)((GetBattlerType(battlerId, 0, TRUE) == type || GetBattlerType(battlerId, 1, TRUE) == type || (GetBattlerType(battlerId, 2, TRUE) != TYPE_MYSTERY && GetBattlerType(battlerId, 2, TRUE) == type)))
+#define IS_BATTLER_TYPELESS(battlerId)(GetBattlerType(battlerId, 0, FALSE) == TYPE_MYSTERY && GetBattlerType(battlerId, 1, FALSE) == TYPE_MYSTERY && GetBattlerType(battlerId, 2, FALSE) == TYPE_MYSTERY)
 
-#define IS_BATTLER_TYPELESS(battlerId)(GetBattlerType(battlerId, 0) == TYPE_MYSTERY && GetBattlerType(battlerId, 1) == TYPE_MYSTERY && GetBattlerType(battlerId, 2) == TYPE_MYSTERY)
-
-#define SET_BATTLER_TYPE(battlerId, type)           \
-{                                                   \
-    gBattleMons[battlerId].type1 = type;            \
-    gBattleMons[battlerId].type2 = type;            \
-    gBattleMons[battlerId].type3 = TYPE_MYSTERY;    \
+#define SET_BATTLER_TYPE(battlerId, type)              \
+{                                                      \
+    gBattleMons[battlerId].types[0] = type;            \
+    gBattleMons[battlerId].types[1] = type;            \
+    gBattleMons[battlerId].types[2] = TYPE_MYSTERY;    \
 }
 
-#define RESTORE_BATTLER_TYPE(battlerId)                                                     \
-{                                                                                           \
-    gBattleMons[battlerId].type1 = gSpeciesInfo[gBattleMons[battlerId].species].types[0];   \
-    gBattleMons[battlerId].type2 = gSpeciesInfo[gBattleMons[battlerId].species].types[1];   \
-    gBattleMons[battlerId].type3 = TYPE_MYSTERY;                                            \
+#define RESTORE_BATTLER_TYPE(battlerId)                                                        \
+{                                                                                              \
+    gBattleMons[battlerId].types[0] = gSpeciesInfo[gBattleMons[battlerId].species].types[0];   \
+    gBattleMons[battlerId].types[1] = gSpeciesInfo[gBattleMons[battlerId].species].types[1];   \
+    gBattleMons[battlerId].types[2] = TYPE_MYSTERY;                                            \
 }
 
 #define IS_BATTLER_PROTECTED(battlerId)(gProtectStructs[battlerId].protected                                           \
@@ -843,14 +864,14 @@ STATIC_ASSERT(sizeof(((struct BattleStruct *)0)->palaceFlags) * 8 >= MAX_BATTLER
                                         || gProtectStructs[battlerId].obstructed                                       \
                                         || gProtectStructs[battlerId].silkTrapped)
 
-#define GET_STAT_BUFF_ID(n)((n & 7))              // first three bits 0x1, 0x2, 0x4
-#define GET_STAT_BUFF_VALUE_WITH_SIGN(n)((n & 0xF8))
-#define GET_STAT_BUFF_VALUE(n)(((n >> 3) & 0xF))      // 0x8, 0x10, 0x20, 0x40
+#define GET_STAT_BUFF_ID(n) ((n & 7))              // first three bits 0x1, 0x2, 0x4
+#define GET_STAT_BUFF_VALUE_WITH_SIGN(n) ((n & 0xF8))
+#define GET_STAT_BUFF_VALUE(n) (((n >> 3) & 0xF))      // 0x8, 0x10, 0x20, 0x40
 #define STAT_BUFF_NEGATIVE 0x80                     // 0x80, the sign bit
 
-#define SET_STAT_BUFF_VALUE(n)((((n) << 3) & 0xF8))
+#define SET_STAT_BUFF_VALUE(n) ((((n) << 3) & 0xF8))
 
-#define SET_STATCHANGER(statId, stage, goesDown)(gBattleScripting.statChanger = (statId) + ((stage) << 3) + (goesDown << 7))
+#define SET_STATCHANGER(statId, stage, goesDown) (gBattleScripting.statChanger = (statId) + ((stage) << 3) + (goesDown << 7))
 #define SET_STATCHANGER2(dst, statId, stage, goesDown)(dst = (statId) + ((stage) << 3) + (goesDown << 7))
 
 // NOTE: The members of this struct have hard-coded offsets
@@ -1051,6 +1072,7 @@ extern u16 gLastPrintedMoves[MAX_BATTLERS_COUNT];
 extern u16 gLastMoves[MAX_BATTLERS_COUNT];
 extern u16 gLastLandedMoves[MAX_BATTLERS_COUNT];
 extern u16 gLastHitByType[MAX_BATTLERS_COUNT];
+extern u16 gLastUsedMoveType[MAX_BATTLERS_COUNT];
 extern u16 gLastResultingMoves[MAX_BATTLERS_COUNT];
 extern u16 gLockedMoves[MAX_BATTLERS_COUNT];
 extern u16 gLastUsedMove;
@@ -1111,6 +1133,7 @@ extern u16 gLastThrownBall;
 extern u16 gBallToDisplay;
 extern bool8 gLastUsedBallMenuPresent;
 extern u8 gPartyCriticalHits[PARTY_SIZE];
+extern u8 gCategoryIconSpriteId;
 
 static inline u32 GetBattlerPosition(u32 battler)
 {

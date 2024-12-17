@@ -164,12 +164,12 @@ ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll::
 	switch VAR_CAMP_PERSI_STATE
 # 111 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	case 1, ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll_3
-# 203 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+# 205 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll_Text_8
 ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll_1:
-# 205 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+# 207 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	closemessage
-# 206 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+# 208 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	release
 	return
 
@@ -275,42 +275,52 @@ ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll_3:
 # 188 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	closemessage
 # 189 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	applymovement 2, Common_Movement_WalkDown
+	applymovement 2, ISLANDGAME_CAMP_PERSI_TREEHOUSE_Unlock
 # 190 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	waitmovement 0
+	applymovement 2, Common_Movement_WalkDown
 # 191 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	playse SE_EXIT
+	waitmovement 0
 # 192 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	waitse
+	playse SE_EXIT
 # 193 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	setobjectxyperm 2, -1, -1
+	waitse
 # 194 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	setvar VAR_CAMP_PERSI_STATE, 2
+	setobjectxyperm 2, -1, -1
 # 195 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	removeobject 2
 # 196 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	waitmovement 0
+	setvar VAR_CAMP_PERSI_STATE, 2
 # 197 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 # 198 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-# 199 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	waitmovement 0
-# 200 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+# 199 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	delay 30
+# 200 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 # 201 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+	waitmovement 0
+# 202 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+	delay 30
+# 203 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	giveitem ITEM_ISLANDGAME_TRADING_CARD
 	goto ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll_1
 
 
-# 209 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-ISLANDGAME_CAMP_PERSI_TREEHOUSE_Backoff:
-# 210 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	face_up
 # 211 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
-	lock_facing_direction
+ISLANDGAME_CAMP_PERSI_TREEHOUSE_Backoff:
 # 212 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+	face_up
+# 213 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+	lock_facing_direction
+# 214 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	walk_fast_down
+	step_end
+
+# 217 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+ISLANDGAME_CAMP_PERSI_TREEHOUSE_Unlock:
+# 218 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+	unlock_facing_direction
 	step_end
 
 ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_ReturnFromHell_Text_0:
@@ -423,5 +433,5 @@ ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll_Text_7:
 	.string "promise to never steal ever again!$"
 
 ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll_Text_8:
-# 203 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
+# 205 "data/maps/ISLANDGAME_CAMP_PERSI_MACHETE_TREE/scripts.pory"
 	.string "{COLOR RED}(It's just a regular old Gulpin doll.)$"

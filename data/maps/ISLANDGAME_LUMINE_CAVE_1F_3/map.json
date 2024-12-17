@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZUBAT)",
       "x": 24,
       "y": 24,
       "elevation": 0,
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZUBAT)",
       "x": 22,
       "y": 4,
       "elevation": 0,
