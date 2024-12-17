@@ -3312,6 +3312,11 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
              && !(gHitMarker & HITMARKER_NO_PPDEDUCT) // Don't check obedience after first hit of multi target move or multi hit moves
              && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS))
             {
+                if (isMonShadowBerserk(gBattlerAttacker))
+                {
+                    gHitMarker |= HITMARKER_OBEYS;
+                    break;
+                }
                 switch (obedienceResult)
                 {
                 case DISOBEYS_LOAFS:
