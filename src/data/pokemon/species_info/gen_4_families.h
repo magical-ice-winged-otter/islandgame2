@@ -5083,8 +5083,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .weight = 3,
         .description = COMPOUND_STRING(
             "The first appliance developed that Rotom\n"
-            "could possess was the electric fan. It uses\n"
-            "its power over wind in its pranks, happily\n"
+            "could inspirit was the electric fan.\n"
+            "It uses its power over wind in its pranks,\n"
             "blowing any important documents it finds."),
         .pokemonScale = 530,
         .pokemonOffset = 13,

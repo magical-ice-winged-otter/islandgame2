@@ -10508,9 +10508,9 @@ const struct Item gItemsInfo[] =
         .name = _("TM07"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Creates a snowstorm\n"
-            "that boosts the Defense\n"
-            "of Ice-type Pokémon."),
+            "Casts a snowstorm\n"
+            "boosting Defense\n"
+            "for Ice-types."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11178,8 +11178,8 @@ const struct Item gItemsInfo[] =
         .name = _("TM51"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "May boost the user's\n"
-            "Special Attack.\n"), 
+            "May boost the\n"
+            "user's Sp. Atk.\n"), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -14193,8 +14193,8 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "A handy gauntlet\n"
-            "that helps you push\n"
-            "large boulders."
+            "that helps you\n"
+            "push large objects."
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -14209,9 +14209,9 @@ const struct Item gItemsInfo[] =
         .name = _("Trading Card"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Wow, this is a really\n"
-            "rare card! Shame that it's\n"
-            "not in good condition..."
+            "A really rare\n"
+            "card! It's in\n"
+            "poor condition."
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -14258,8 +14258,8 @@ const struct Item gItemsInfo[] =
         .name = _("Reply Letter"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Julie's response to\n"
-            "Roman's confession.\n"
+            "Julie's response\n"
+            "to Roman.\n"
             "No peeksies!"
         ),
         .pocket = POCKET_KEY_ITEMS,
@@ -14293,7 +14293,7 @@ const struct Item gItemsInfo[] =
         .name = _("Strange Disc"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "“Pokémon Lost Silver”\n"
+            "“{PKMN} Lost Silver”\n"
             "is written on the\n"
             "disc."
         ),
