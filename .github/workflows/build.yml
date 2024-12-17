@@ -35,8 +35,6 @@ jobs:
           MODERN: 1
           COMPARE: 0
         run: |
-          make tools
-          ./tools/mapjson/mapjson groups emerald data/maps/map_groups.json
           make -j${nproc} -O all
 
       - name: Test
