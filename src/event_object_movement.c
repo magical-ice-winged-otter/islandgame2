@@ -1810,7 +1810,7 @@ static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEven
     return objectEventId;
 }
 
-static u8 TrySpawnObjectEventTemplate(const struct ObjectEventTemplate *objectEventTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY)
+u8 TrySpawnObjectEventTemplate(const struct ObjectEventTemplate *objectEventTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY)
 {
     u8 objectEventId;
     u16 graphicsId = objectEventTemplate->graphicsId;
@@ -11102,53 +11102,6 @@ u8 MovementAction_Fly_Finish(struct ObjectEvent *objectEvent, struct Sprite *spr
     return TRUE;
 }
 
-
-// running slow
-static void StartSlowRunningAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction)
-{
-    InitNpcForWalkSlow(objectEvent, sprite, direction);
-    SetStepAnimHandleAlternation(objectEvent, sprite, GetRunningDirectionAnimNum(objectEvent->facingDirection));
-}
-
-bool8 MovementActionFunc_RunSlowDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    StartSlowRunningAnim(objectEvent, sprite, DIR_SOUTH);
-    return MovementActionFunc_RunSlow_Step1(objectEvent, sprite);
-}
-
-bool8 MovementActionFunc_RunSlowUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    StartSlowRunningAnim(objectEvent, sprite, DIR_NORTH);
-    return MovementActionFunc_RunSlow_Step1(objectEvent, sprite);
-}
-
-bool8 MovementActionFunc_RunSlowLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    if (objectEvent->directionOverwrite)
-        StartSlowRunningAnim(objectEvent, sprite, objectEvent->directionOverwrite);
-    else
-        StartSlowRunningAnim(objectEvent, sprite, DIR_WEST);
-    return MovementActionFunc_RunSlow_Step1(objectEvent, sprite);
-}
-
-bool8 MovementActionFunc_RunSlowRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    if (objectEvent->directionOverwrite)
-        StartSlowRunningAnim(objectEvent, sprite, objectEvent->directionOverwrite);
-    else
-        StartSlowRunningAnim(objectEvent, sprite, DIR_EAST);
-    return MovementActionFunc_RunSlow_Step1(objectEvent, sprite);
-}
-
-bool8 MovementActionFunc_RunSlow_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    if (UpdateMovementNormal(objectEvent, sprite))
-    {
-        sprite->sActionFuncId = 2;
-        return TRUE;
-    }
-    return FALSE;
-}
 // NEW
 u16 GetMiniStepCount(u8 speed)
 {
