@@ -2721,6 +2721,7 @@ extern const u8 gText_PlantBerry[];
 // Map name pop-up
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
+extern const u8 gText_ContinueMenuTime[];
 
 // FRLG whiteout
 extern const u8 gText_PlayerScurriedToCenter[];

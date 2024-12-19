@@ -1029,28 +1029,6 @@ u32 GetItemStatus2Mask(u16 itemId)
         return 0;
 }
 
-// Item Description Header
-bool8 GetSetItemObtained(u16 item, u8 caseId)
-{
-    u8 index;
-    u8 bit;
-    u8 mask;
-
-    index = item / 8;
-    bit = item % 8;
-    mask = 1 << bit;
-    switch (caseId)
-    {
-    case FLAG_GET_OBTAINED:
-        return gSaveBlock2Ptr->itemFlags[index] & mask;
-    case FLAG_SET_OBTAINED:
-        gSaveBlock2Ptr->itemFlags[index] |= mask;
-        return TRUE;
-    }
-
-    return FALSE;
-}
-
 static u8 ReformatItemDescription(u16 item, u8 *dest)
 {
     u8 count = 0;
@@ -1112,7 +1090,7 @@ void DrawHeaderBox(void)
     else
         dst = gStringVar1;
 
-    if (GetSetItemObtained(item, FLAG_GET_OBTAINED))
+    if (GetSetItemObtained(item, FLAG_GET_ITEM_OBTAINED))
     {
         ShowItemIconSprite(item, FALSE, handleFlash);
         return; //no box if item obtained previously
@@ -1139,10 +1117,10 @@ void HideHeaderBox(void)
 {
     DestroyItemIconSprite();
 
-    if (!GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_OBTAINED))
+    if (!GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_ITEM_OBTAINED))
     {
         //header box only exists if haven't seen item before
-        GetSetItemObtained(gSpecialVar_0x8006, FLAG_SET_OBTAINED);
+        GetSetItemObtained(gSpecialVar_0x8006, FLAG_SET_ITEM_OBTAINED);
         ClearStdWindowAndFrameToTransparent(sHeaderBoxWindowId, FALSE);
         CopyWindowToVram(sHeaderBoxWindowId, 3);
         RemoveWindow(sHeaderBoxWindowId);
