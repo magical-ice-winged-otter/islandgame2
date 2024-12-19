@@ -830,8 +830,8 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     // TRAINER_BACK_SPRITE(OLIVER, 5, Oliver, BackPicPalette_Oliver, Kanto),
     // TRAINER_BACK_SPRITE(OLIVIA, 5, Olivia, BackPicPalette_Olivia, Kanto),
     // TRAINER_BACK_SPRITE(MELISSA, 5, Melissa, BackPicPalette_Melissa, Kanto),
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_BRENDAN, 5, gTrainerBackPic_Oliver, BackPicPalette_Oliver, gTrainerPalette_Oliver, sBackAnims_Kanto), // oliver
-    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_MAY, 5, g5TrainerBackPic_Olivia, gTrainerBackPicTable_Olivia, gTrainerPalette_Olivia, sBackAnims_Kanto), // olivia
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_BRENDAN, 5, gTrainerBackPic_Oliver, gTrainerBackPicTable_Oliver, gTrainerBackPicPalette_Oliver, sBackAnims_Kanto), // oliver
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_MAY, 5, gTrainerBackPic_Olivia, gTrainerBackPicTable_Olivia, gTrainerBackPicPalette_Olivia, sBackAnims_Kanto), // olivia
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RED, 5, gTrainerBackPic_Red, gTrainerBackPicTable_Red, gTrainerBackPicPalette_Red, sBackAnims_Kanto), // TBD
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_LEAF, 5, gTrainerBackPic_Leaf, gTrainerBackPicTable_Leaf, gTrainerBackPicPalette_Leaf, sBackAnims_Kanto), // prim placeholder
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, 4, gTrainerBackPic_RubySapphireBrendan, gTrainerBackPicTable_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan, sBackAnims_Hoenn), // TBD
