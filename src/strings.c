@@ -1229,6 +1229,7 @@ const u8 gText_FloorsCleared[] = _("Floors cleared: {STR_VAR_1}");
 //island game start: start-clock
 const u8 gText_AM[] = _("AM");
 const u8 gText_PM[] = _("PM");
+const u8 gText_ContinueMenuTime[] = _("TIME");
 
 ALIGNED(4) const u8 gText_RecordsLv50[] = _("LV. 50");
 ALIGNED(4) const u8 gText_RecordsOpenLevel[] = _("OPEN LEVEL");
@@ -1593,7 +1594,5 @@ const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all 
 const u8 gText_Fertilize[] = _("FERTILIZE");
 const u8 gText_PlantBerry[] = _("PLANT BERRY");
 
-const u8 gText_AM[] = _("AM");
-const u8 gText_PM[] = _("PM");
 const u8 gText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: don't decap this, because it mimics the summary screen BG graphics which will not get decapped
 const u8 gText_Rename[] = _("RENAME");
