@@ -1,5 +1,5 @@
 === PARTNER_NONE ===
-Name:
+Name: None
 Class: Pkmn Trainer 1
 Pic: Brendan
 Gender: Male
@@ -41,3 +41,37 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+=== PARTNER_MEADOWS_RIVAL ===
+Name: Melissa
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Female
+
+Rockruff (M)
+Level: 15
+Ability: Vital Spirit
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Tomb
+- Sand Attack
+- Fire Fang
+- Thunder Fang
+
+Drilbur (M)
+Level: 15
+Ability: Sand Rush
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Metal Claw
+- Mud Slap
+- Hone Claws
+- Rapid Spin
+
+Gible (F)
+Level: 15
+Ability: Sand Veil
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sand Tomb
+- Dragon Rage
+- Sand Attack
+- Metal Claw
