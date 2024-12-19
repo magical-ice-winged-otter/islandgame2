@@ -48,7 +48,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         //.footprint = gMonFootprint_None,
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
-        .allPerfectIVs = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .frontPic = gMonFrontPic_ShadowLugia,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
@@ -125,7 +125,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .iconSprite = gMonIcon_ShadowMightyena,
         .iconPalIndex = 0,
         //FOOTPRINT(ShadowMightyena)
-        .allPerfectIVs = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sShadowMightyenaLevelUpLearnset,
         .teachableLearnset = sShadowMightyenaTeachableLearnset,
     },
@@ -803,7 +803,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .iconSprite = gMonIcon_ShadowAggron,
         .iconPalIndex = 2,
         FOOTPRINT(Aggron)
-        .allPerfectIVs = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sAggronLevelUpLearnset,
         .teachableLearnset = sAggronTeachableLearnset,
         .formSpeciesIdTable = sAggronFormSpeciesIdTable,
@@ -856,7 +856,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sTyphlosionLevelUpLearnset,
         .teachableLearnset = sTyphlosionTeachableLearnset,
-        .allPerfectIVs = TRUE,
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
     },
 #endif //P_FAMILY_ANOMALY01
 
