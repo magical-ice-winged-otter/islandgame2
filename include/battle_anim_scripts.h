@@ -1016,8 +1016,8 @@ extern const u8 gBattleAnimSpecial_CriticalCaptureBallThrow[];
 
 
 // islandgame-start
-extern const u8 Move_SHADOW_BLAST[];
-extern const u8 Move_BERSERK[];
+extern const u8 gBattleAnimMove_ShadowBlast[];
+extern const u8 gBattleAnimMove_Berserk[];
 // islandgame-end
 
 #endif // GUARD_BATTLE_ANIM_SCRIPTS_H

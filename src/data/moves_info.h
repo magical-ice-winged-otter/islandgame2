@@ -20696,7 +20696,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_FOES_AND_ALLY,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .battleAnimScript = Move_SHADOW_BLAST,
+        .battleAnimScript = gBattleAnimMove_ShadowBlast,
     },
 
     [MOVE_BERSERK] = //shadow mon random move
@@ -20711,7 +20711,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .type = TYPE_SHADOW,
         .accuracy = 100,
         .pp = 5, // doesn't matter
-        .battleAnimScript = Move_BERSERK,
+        .battleAnimScript = gBattleAnimMove_Berserk,
     },
 
     // Z-Moves
