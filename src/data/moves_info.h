@@ -20683,7 +20683,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     //islandgame-add: shadow lugia signature move
     [MOVE_SHADOW_BLAST] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("ShadowBlast", "Shadow Blast"),
+        .name = COMPOUND_STRING("Shadow Blast"),
         .description = COMPOUND_STRING( //add shadow blast description, source: https://bulbapedia.bulbagarden.net/wiki/Shadow_Blast_(move)
             "A wicked blade of air is\n"
             "formed using a shadowy aura."

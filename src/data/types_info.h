@@ -459,7 +459,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     },
     [TYPE_SHADOW] = 
     {
-        .name = HANDLE_EXPANDED_TYPE_NAME("Shadow", "Shadow"),
+        .name = _("Shadow"),
         .generic = _("a SHADOW move"),
         .palette = 13,
         .zMove = MOVE_BREAKNECK_BLITZ,
