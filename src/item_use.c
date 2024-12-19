@@ -1672,13 +1672,6 @@ void ItemUseOutOfBattle_Pokevial(u8 taskId)
 }
 //End Pokevial Branch
 
-void FieldShowRegionMap(void);
-
-void ItemUseOutOfBattle_TownMap(u8 taskId)
-{
-    FieldShowRegionMap();
-}
-
 static void Task_DisplayPokeFluteMessage(u8 taskId)
 {
     if (WaitFanfare(FALSE))
