@@ -5825,9 +5825,9 @@ u16 GetBattleBGM(void)
         case SPECIES_ZAPDOS:
         case SPECIES_MOLTRES:
         #ifdef POKEMON_EXPANSION
-        case SPECIES_ARTICUNO_GALARIAN:
-        case SPECIES_ZAPDOS_GALARIAN:
-        case SPECIES_MOLTRES_GALARIAN:
+        case SPECIES_ARTICUNO_GALAR:
+        case SPECIES_ZAPDOS_GALAR:
+        case SPECIES_MOLTRES_GALAR:
         #endif
             return MUS_RG_VS_LEGEND;
         case SPECIES_MEWTWO:
