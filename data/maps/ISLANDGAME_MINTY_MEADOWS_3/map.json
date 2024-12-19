@@ -60,6 +60,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 16,
+      "elevation": 0,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_MAX_REVIVE"
+    }
   ]
 }

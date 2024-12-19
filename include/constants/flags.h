@@ -718,7 +718,7 @@
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_FULL_HEAL      0x29D
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_HARD_STONE     0x29E 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_XP_CANDY_M     0x29F 
-#define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_MAX_REVIVE   0x2A0
 #define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
 #define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
 #define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
@@ -1242,7 +1242,7 @@
 #define FLAG_ITEM_ROSEVALE_REPEL                                    0x4A1 
 #define FLAG_ITEM_TIDALCOVE_CALCIUM                                 0x4A2
 #define FLAG_ITEM_AURORA_PATH_IRON                                  0x4A3 
-#define FLAG_ITEM_AP_COMET_SHARD                                    0x4A4 
+#define FLAG_ITEM_AP_GANLON_BERRY                                   0x4A4 
 #define FLAG_ITEM_ROCKY_PATH_CARBOS                                 0x4A5 
 #define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7

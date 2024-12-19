@@ -1139,10 +1139,10 @@
     {
       "map_section": "MAPSEC_POWER_PLANT",
       "name": "POWER PLANT",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
+      "x": 11,
+      "y": 7,
+      "width": 2,
+      "height": 2
     },
     {
       "map_section": "MAPSEC_ONE_ISLAND",
@@ -1835,40 +1835,40 @@
     {
       "map_section": "MAPSEC_APPLEVINE",
       "name": "Applevine",
-      "x": 0,
-      "y": 0,
+      "x": 9,
+      "y": 10,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ROCKY_PATH",
       "name": "Rocky Path",
-      "x": 0,
-      "y": 0,
-      "width": 1,
+      "x": 10,
+      "y": 10,
+      "width": 3,
       "height": 1
     },
     {
       "map_section": "MAPSEC_LUMINE_CAVE",
       "name": "Lumine Cave",
-      "x": 0,
-      "y": 0,
+      "x": 12,
+      "y": 11,
       "width": 1,
-      "height": 1
+      "height": 2
     },
     {
       "map_section": "MAPSEC_BELLEHAVEN",
       "name": "Bellehaven",
-      "x": 0,
-      "y": 0,
+      "x": 12,
+      "y": 13,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_VALLEY_OF_PEACE",
       "name": "Valley of Peace",
-      "x": 0,
-      "y": 0,
+      "x": 13,
+      "y": 13,
       "width": 1,
       "height": 1
     },
@@ -1883,57 +1883,57 @@
     {
       "map_section": "MAPSEC_PLEASANT_AVENUE",
       "name": "Pleasant Avenue",
-      "x": 0,
-      "y": 0,
+      "x": 11,
+      "y": 13,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_AETHERIA",
       "name": "Aetheria",
-      "x": 0,
-      "y": 0,
-      "width": 1,
+      "x": 9,
+      "y": 13,
+      "width": 2,
       "height": 1
     },
     {
       "map_section": "MAPSEC_AZURE_PATH",
       "name": "Azure Path",
-      "x": 0,
-      "y": 0,
-      "width": 1,
+      "x": 12,
+      "y": 15,
+      "width": 3,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ARBORIA",
       "name": "Arboria",
-      "x": 0,
-      "y": 0,
+      "x": 15,
+      "y": 15,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_ARBORIA_THICKET",
       "name": "Arboria Thicket",
-      "x": 0,
-      "y": 0,
+      "x": 15,
+      "y": 14,
       "width": 1,
       "height": 1
     },
     {
       "map_section": "MAPSEC_SIERRA_PATH",
       "name": "Sierra Path",
-      "x": 0,
-      "y": 0,
+      "x": 9,
+      "y": 6,
       "width": 1,
-      "height": 1
+      "height": 4
     },
     {
       "map_section": "MAPSEC_CANTALO",
       "name": "Cantalo",
-      "x": 0,
-      "y": 0,
-      "width": 1,
+      "x": 11,
+      "y": 6,
+      "width": 2,
       "height": 1
     },
     {
@@ -1947,16 +1947,24 @@
     {
       "map_section": "MAPSEC_THERION_PATH",
       "name": "Therion Path",
-      "x": 0,
-      "y": 0,
-      "width": 1,
+      "x": 13,
+      "y": 6,
+      "width": 2,
       "height": 1
     },
     {
       "map_section": "MAPSEC_PROMENADE_PATH",
       "name": "Promenade Path",
-      "x": 0,
-      "y": 0,
+      "x": 4,
+      "y": 10,
+      "width": 5,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MT_THERION",
+      "name": "Mt. Therion",
+      "x": 14,
+      "y": 7,
       "width": 1,
       "height": 1
     }

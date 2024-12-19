@@ -268,7 +268,7 @@ const u8 sText_SideQuestMap_Unknown[] = _("Marya");
 
 
 // Pokedex Quest
-const u8 sText_SideQuestName_PokedexCompletion[] = _("Gotta Catch 'Em All!");
+const u8 sText_SideQuestName_PokedexCompletion[] = _("<!> Gotta Catch 'Em All!");
 const u8 sText_SideQuestDesc_PokedexCompletion[] = _("You know the deal. Complete the\nPokédex for Professor Palm!");
 const u8 sText_SideQuestDoneDesc_PokedexCompletion[] = _("Thanks for playing! :)");
 
@@ -313,18 +313,18 @@ const u8 sText_SubQuest_PokedexMilestone13_Desc[] = _("You've completed ALL entr
 
 
 // Minty Meadows Melissa Quest
-const u8 sText_SideQuestName_MintyMeadowsMelissa[] = _("The Journey Begins!");
+const u8 sText_SideQuestName_MintyMeadowsMelissa[] = _("<!> The Journey Begins!");
 const u8 sText_SideQuestDesc_MintyMeadowsMelissa[] = _("Meet up with Professor Palm's\nassistant, Melissa!");
 const u8 sText_SideQuestDoneDesc_MintyMeadowsMelissa[] = _("You helped rescue Old Man\nPaulie's Mareep!");
 
 // Persi Favorite Card Quest
-const u8 sText_SideQuestName_PersiFavoriteCard[] = _("(S) Missing Card");
+const u8 sText_SideQuestName_PersiFavoriteCard[] = _("The Ultra Rare Charizard");
 const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A little camper has lost his\nfavorite trading card!");
-const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("You returned the camper's\nfavorite card!");
+const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("I'm just saying, that card\nis going for hundreds online.");
 
 
 // Berry Maniac Quest
-const u8 sText_SideQuestName_PersiBerryManiac[] = _("(S) Berry Hunting");
+const u8 sText_SideQuestName_PersiBerryManiac[] = _("Berry Hunting");
 const u8 sText_SideQuestDesc_PersiBerryManiac[] = _("The Berry Maniac from Camp Persi\nyearns for rare berries!");
 const u8 sText_SideQuestDoneDesc_PersiBerryManiac[] = _("You've aided the Berry Maniac\n in achieving his full power...");
 
@@ -377,12 +377,12 @@ const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Star
 // const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
 
 // Maplegrove Lovers Quest
-const u8 sText_SideQuestName_MaplegroveLovers[] = _("(S) A Star-crossed Lover");
+const u8 sText_SideQuestName_MaplegroveLovers[] = _("A Star-crossed Lover");
 const u8 sText_SideQuestDesc_MaplegroveLovers[] = _("Deliver Roman's love letter\nto Julie in Applevine!");
-const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("You've cleared up the confusion\nbetween the two!");
+const u8 sText_SideQuestDoneDesc_MaplegroveLovers[] = _("You've succeeded in being\n a messenger of love!");
 
 // Marya Gym Challenge Quest
-const u8 sText_SideQuestName_MaryaGymChallenge[] = _("The Marya League");
+const u8 sText_SideQuestName_MaryaGymChallenge[] = _("<!> The Marya League");
 const u8 sText_SideQuestDesc_MaryaGymChallenge[] = _("Acquire the gym badges of Oranna,\nLumine, and Minerva Island!");
 const u8 sText_SideQuestDoneDesc_MaryaGymChallenge[] = _("All that's left is the\nFestival Tournament...");
 
@@ -396,22 +396,22 @@ const u8 sText_SubQuest_MaryaGymChallenge3_Name[] = _("Amberidge Badge");
 const u8 sText_SubQuest_MaryaGymChallenge3_Desc[] = _("“Keep that win streak hot hot hot!” -Javier");
 
 // Torchic Egg Quest
-const u8 sText_SideQuestName_FresaFarmsTorchicEgg[] = _("(S) The Egg");
-const u8 sText_SideQuestDesc_FresaFarmsTorchicEgg[] = _("The owner of Fresa Farms wants you\n to hatch and evolve this egg!");
-const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("You hatched the egg and fully\n evolved the Pokémon!");
+const u8 sText_SideQuestName_FresaFarmsTorchicEgg[] = _("Parenting 101");
+const u8 sText_SideQuestDesc_FresaFarmsTorchicEgg[] = _("Paulie from Fresa Farms has\nchosen you to raise this egg!");
+const u8 sText_SideQuestDoneDesc_FresaFarmsTorchicEgg[] = _("They just grow up so fast,\n don't they?");
 
 // Lost Azurill Quest
-const u8 sText_SideQuestName_RosevaleAzurillRescue[] = _("Rescue Mission");
+const u8 sText_SideQuestName_RosevaleAzurillRescue[] = _("<!> Rescue Mission");
 const u8 sText_SideQuestDesc_RosevaleAzurillRescue[] = _("A little girl's Azurill has been stolen!\nThe thief is somewhere in Mt. Aurora...");
 const u8 sText_SideQuestDoneDesc_RosevaleAzurillRescue[] = _("You successfully rescued Azurill,\n with some help from Articuno!");
 
 // Aetheria Melissa Quest
-const u8 sText_SideQuestName_AetheriaMelissa[] = _("The City That Never Sleeps");
+const u8 sText_SideQuestName_AetheriaMelissa[] = _("<!> The City That Never Sleeps");
 const u8 sText_SideQuestDesc_AetheriaMelissa[] = _("Melissa wants to meet up in Aetheria!");
 const u8 sText_SideQuestDoneDesc_AetheriaMelissa[] = _("Looks like Edea got away this time...");
 
 // Couch Potato Quest
-const u8 sText_SideQuestName_APPLEVINE_COUCH_POTATO[] = _("(S) Part-Time Job");
+const u8 sText_SideQuestName_APPLEVINE_COUCH_POTATO[] = _("Part-Time Job");
 const u8 sText_SideQuestDesc_APPLEVINE_COUCH_POTATO[] = _("You probably weren't expecting to get\none.");
 const u8 sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO[] = _("Looks like you've been laid off.\nAt least you were compensated...?");
 
@@ -431,13 +431,13 @@ const u8 sText_SubQuest_CouchPotato5_Name[] 	  = _("Delivery Complete!");
 const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("Man, Sera's fans are down bad.");
 
 // PokeVial Nurse Quest 
-const u8 sText_SideQuestName_ROCKY_PATH_NURSE[] = _("(S) The Missing Ingredient");
+const u8 sText_SideQuestName_ROCKY_PATH_NURSE[] = _("The Missing Ingredient");
 const u8 sText_SideQuestDesc_ROCKY_PATH_NURSE[] = _("Nurse Joy needs a Balm Mushroom for\nher newest medicinal breakthrough!");
 const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\nin creating the PokéVial!");
 
 
 // MissingNo Quest
-const u8 sText_SideQuestName_MissingNo[] = _("(Z) À GlitŒh エñ tHœ MあtrÏx");
+const u8 sText_SideQuestName_MissingNo[] = _("<?> À GlitŒh エñ tHœ MあtrÏx");
 const u8 sText_SideQuestDesc_MissingNo[] = _("▶▶WARNいNG▶▶ アN ANおMAL¥ HAS BえEN\nD♀TÊCTéD WITH♂N YöUr $àVê FイLE!");
 const u8 sText_SideQuestDoneDesc_MissingNo[] = _("01000100 01010010 01000101 01000001 01001101");
 
