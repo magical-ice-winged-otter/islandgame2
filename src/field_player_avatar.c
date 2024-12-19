@@ -6,6 +6,7 @@
 #include "field_camera.h"
 #include "field_effect.h"
 #include "field_effect_helpers.h"
+#include "field_screen_effect.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
 #include "menu.h"
@@ -149,8 +150,9 @@ static bool32 Fishing_EndNoMon(struct Task *);
 static void AlignFishingAnimationFrames(void);
 static bool32 DoesFishingMinigameAllowCancel(void);
 static bool32 Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold(void);
-static bool32 Fishing_RollForBite(bool32);
-static u32 CalculateFishingBiteOdds(bool32);
+static bool32 Fishing_RollForBite(u32, bool32);
+static u32 CalculateFishingBiteOdds(u32, bool32);
+static u32 CalculateFishingFollowerBoost(void);
 static u32 CalculateFishingProximityBoost(u32 odds);
 static void GetCoordinatesAroundBobber(s16[], s16[][AXIS_COUNT], u32);
 static u32 CountQualifyingTiles(s16[][AXIS_COUNT], s16 player[], u8 facingDirection, struct ObjectEvent *objectEvent, bool32 isTileLand[]);
@@ -463,7 +465,6 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
 {
     struct PlayerAvatar *playerAvatar = &gPlayerAvatar;
     u8 collision;
-    
     // Check for sideways stairs onto ice movement.
     switch (direction)
     {
@@ -476,7 +477,6 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
         direction = DIR_EAST;
         break;
     }
-    
     collision = CheckForPlayerAvatarCollision(direction);
 
     playerAvatar->flags |= PLAYER_AVATAR_FLAG_FORCED_MOVE;
@@ -655,6 +655,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerNotOnBikeCollideWithFarawayIslandMew(direction);
             return;
         }
+        else if (collision == COLLISION_STAIR_WARP)
+        {
+            PlayerFaceDirection(direction);
+        }
         else
         {
             u8 adjustedCollision = collision - COLLISION_STOP_SURFING;
@@ -677,16 +681,8 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
             PlayerRunSlow(direction);
         else
-            if (heldKeys & B_BUTTON && gSaveBlock1Ptr->autoRun == TRUE)
-            {
-                PlayerWalkNormal(direction);
-            }
-            else
-            {
-                PlayerRun(direction);
-                gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
-            }
-        
+            PlayerRun(direction);
+
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
     }
@@ -706,7 +702,9 @@ static u8 CheckForPlayerAvatarCollision(u8 direction)
 
     x = playerObjEvent->currentCoords.x;
     y = playerObjEvent->currentCoords.y;
-    
+    if (IsDirectionalStairWarpMetatileBehavior(MapGridGetMetatileBehaviorAt(x, y), direction))
+        return COLLISION_STAIR_WARP;
+
     MoveCoords(direction, &x, &y);
     return CheckForObjectEventCollision(playerObjEvent, x, y, direction, MapGridGetMetatileBehaviorAt(x, y));
 }
@@ -725,8 +723,6 @@ static u8 CheckForPlayerAvatarStaticCollision(u8 direction)
 u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatileBehavior)
 {
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
-    //u8 currentBehavior = MapGridGetMetatileBehaviorAt(objectEvent->currentCoords.x, objectEvent->currentCoords.y);
-    
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
 
@@ -744,22 +740,6 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
             return COLLISION_ROTATING_GATE;
         CheckAcroBikeCollision(x, y, metatileBehavior, &collision);
     }
-    
-    //sideways stairs logic
-    /*
-    if (MetatileBehavior_IsSidewaysStairsLeftSideTop(metatileBehavior) && direction == DIR_EAST)
-        return COLLISION_IMPASSABLE;    //moving onto left-side top edge east from ground -> cannot move
-    else if (MetatileBehavior_IsSidewaysStairsRightSideTop(metatileBehavior) && direction == DIR_WEST)
-        return COLLISION_IMPASSABLE;    //moving onto left-side top edge east from ground -> cannot move
-    else if (MetatileBehavior_IsSidewaysStairsRightSideBottom(metatileBehavior) && (direction == DIR_EAST || direction == DIR_SOUTH))
-        return COLLISION_IMPASSABLE;
-    else if (MetatileBehavior_IsSidewaysStairsLeftSideBottom(metatileBehavior) && (direction == DIR_WEST || direction == DIR_SOUTH))
-        return COLLISION_IMPASSABLE;
-    else if ((MetatileBehavior_IsSidewaysStairsLeftSideTop(currentBehavior) || MetatileBehavior_IsSidewaysStairsRightSideTop(currentBehavior))
-     && direction == DIR_NORTH && collision == COLLISION_NONE)
-        return COLLISION_IMPASSABLE;    //trying to move north off of top-most tile onto same level doesn't work
-    */
-        
     return collision;
 }
 
@@ -1750,7 +1730,20 @@ static void Task_WaitStopSurfing(u8 taskId)
 
 #define FISHING_PROXIMITY_BOOST 4
 #define FISHING_STICKY_BOOST    36
-#define FISHING_DEFAULT_ODDS    50
+
+#if I_FISHING_BITE_ODDS >= GEN_4
+    #define FISHING_OLD_ROD_ODDS 75
+    #define FISHING_GOOD_ROD_ODDS 50
+    #define FISHING_SUPER_ROD_ODDS 25
+#elif I_FISHING_BITE_ODDS >= GEN_3
+    #define FISHING_OLD_ROD_ODDS 50
+    #define FISHING_GOOD_ROD_ODDS 50
+    #define FISHING_SUPER_ROD_ODDS 50
+#else
+    #define FISHING_OLD_ROD_ODDS 0
+    #define FISHING_GOOD_ROD_ODDS 33
+    #define FISHING_SUPER_ROD_ODDS 50
+#endif
 
 enum
 {
@@ -1927,10 +1920,10 @@ static bool32 Fishing_CheckForBite(struct Task *task)
     firstMonHasSuctionOrSticky = Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold();
 
     if(firstMonHasSuctionOrSticky)
-        bite = Fishing_RollForBite(firstMonHasSuctionOrSticky);
+        bite = Fishing_RollForBite(task->tFishingRod, firstMonHasSuctionOrSticky);
 
     if (!bite)
-        bite = Fishing_RollForBite(FALSE);
+        bite = Fishing_RollForBite(task->tFishingRod, FALSE);
 
     if (!bite)
         task->tStep = FISHING_NOT_EVEN_NIBBLE;
@@ -2152,20 +2145,56 @@ static bool32 Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold(void)
     return (ability == ABILITY_SUCTION_CUPS || ability == ABILITY_STICKY_HOLD);
 }
 
-static bool32 Fishing_RollForBite(bool32 isStickyHold)
+static bool32 Fishing_RollForBite(u32 rod, bool32 isStickyHold)
 {
-    return ((Random() % 100) > CalculateFishingBiteOdds(isStickyHold));
+    return ((Random() % 100) > CalculateFishingBiteOdds(rod, isStickyHold));
 }
 
-static u32 CalculateFishingBiteOdds(bool32 isStickyHold)
+static u32 CalculateFishingBiteOdds(u32 rod, bool32 isStickyHold)
 {
-    u32 odds = FISHING_DEFAULT_ODDS;
+    u32 odds;
+
+    if (rod == OLD_ROD)
+        odds = FISHING_OLD_ROD_ODDS;
+    if (rod == GOOD_ROD)
+        odds = FISHING_GOOD_ROD_ODDS;
+    if (rod == SUPER_ROD)
+        odds = FISHING_SUPER_ROD_ODDS;
+
+    odds -= CalculateFishingFollowerBoost();
 
     if (isStickyHold)
-        odds -= FISHING_STICKY_BOOST;
+    {
+        if (I_FISHING_STICKY_BOOST >= GEN_4)
+            odds -= (100 - odds);
+        else
+            odds -= FISHING_STICKY_BOOST;
+    }
 
     odds -= CalculateFishingProximityBoost(odds);
+
     return odds;
+}
+
+static u32 CalculateFishingFollowerBoost()
+{
+    u32 friendship;
+    struct Pokemon *mon = GetFirstLiveMon();
+
+    if (!I_FISHING_FOLLOWER_BOOST || !mon)
+        return 0;
+
+    friendship = GetMonData(mon, MON_DATA_FRIENDSHIP);
+    if (friendship >= 250)
+        return 50;
+    else if (friendship >= 200)
+        return 40;
+    else if (friendship >= 150)
+        return 30;
+    else if (friendship >= 100)
+        return 20;
+    else
+        return 0;
 }
 
 static u32 CalculateFishingProximityBoost(u32 odds)
@@ -2505,9 +2534,8 @@ u8 GetRightSideStairsDirection(u8 direction)
     default:
         if (direction > DIR_EAST)
             direction -= DIR_EAST;
-        
         return direction;
-    }           
+    }
 }
 
 u8 GetLeftSideStairsDirection(u8 direction)
@@ -2521,22 +2549,20 @@ u8 GetLeftSideStairsDirection(u8 direction)
     default:
         if (direction > DIR_EAST)
             direction -= DIR_EAST;
-        
         return direction;
     }
 }
 
 bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
 {
-    #if SLOW_MOVEMENT_ON_STAIRS
+    #if SLOW_MOVEMENT_ON_STAIRS == TRUE
         s16 x = objectEvent->currentCoords.x;
         s16 y = objectEvent->currentCoords.y;
-        
-        #if FOLLOW_ME_IMPLEMENTED
-            if (PlayerHasFollower() && (objectEvent->isPlayer || objectEvent->localId == GetFollowerLocalId()))
-                return FALSE;
-        #endif
-        
+
+        // TODO followers on sideways stairs
+        if (IsFollowerVisible() && GetFollowerObject() != NULL && (objectEvent->isPlayer || objectEvent->localId == OBJ_EVENT_ID_FOLLOWER))
+            return FALSE;
+
         switch (direction)
         {
         case DIR_NORTH:

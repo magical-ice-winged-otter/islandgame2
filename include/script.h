@@ -65,5 +65,7 @@ void SetMovingNpcId(u16 npcId);
 
 // NEW
 u8* ReadWord(u8 index);
+extern u8 gMsgIsSignPost;
+extern u8 gMsgBoxIsCancelable;
 
 #endif // GUARD_SCRIPT_H

@@ -177,7 +177,7 @@ BerryTree_EventScript_PickBerry::
 	special ObjectEventInteractionRemoveBerryTree
 	message BerryTree_Text_PickedTheBerry
 	delay 10
-	showberrydesc
+	showberrydescription
 	playfanfare MUS_OBTAIN_BERRY
 	waitmessage
 	waitfanfare
@@ -185,7 +185,7 @@ BerryTree_EventScript_PickBerry::
 	message BerryTree_Text_PutAwayBerry
 	waitmessage
 	waitbuttonpress
-	hideitemdesc
+	hideitemdescription
 	release
 	end
 
