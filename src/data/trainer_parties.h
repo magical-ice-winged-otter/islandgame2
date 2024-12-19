@@ -503,10 +503,11 @@ static const struct TrainerMon sParty_CampPersiTrainer5[] = {
 static const struct TrainerMon sParty_CampPersiJonas[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 9,
+    .lvl = 11,
     .species = SPECIES_SNORUNT,
-    .ability = ABILITY_INNER_FOCUS,
-    .moves = {MOVE_POWDER_SNOW, MOVE_BITE, MOVE_DISABLE, MOVE_ICE_SHARD},
+    .ability = ABILITY_MOODY,
+    .heldItem = ITEM_STARF_BERRY,
+    .moves = {MOVE_ICY_WIND, MOVE_DOUBLE_TEAM, MOVE_DISABLE, MOVE_ICE_SHARD},
     .gender = TRAINER_MON_FEMALE,
     },
 };
@@ -580,7 +581,7 @@ static const struct TrainerMon sParty_VerdantPathTrainer5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),  
     .lvl = 10,
-    .species = SPECIES_MARILL,
+    .species = SPECIES_WOOPER,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),  
@@ -714,7 +715,7 @@ static const struct TrainerMon sParty_MintyMeadows3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 12,
-    .species = SPECIES_RIOLU,
+    .species = SPECIES_CHARMANDER,
     }
 };
 
@@ -1181,42 +1182,30 @@ static const struct TrainerMon sParty_TidalcoveGym2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 23,
-    .species = SPECIES_SWINUB,
+    .species = SPECIES_SNOVER,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 23,
-    .species = SPECIES_SPHEAL,
+    .species = SPECIES_GOLETT_MARYAN,
     }
 };
 
 static const struct TrainerMon sParty_TidalcoveGym3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_GOLETT_MARYAN,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 24,
-    .ability = ABILITY_ICE_SCALES,
-    .species = SPECIES_FROSMOTH,
+    .species = SPECIES_CRYOGONAL,
     }
 };
 
 static const struct TrainerMon sParty_TidalcoveGym4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
-    .lvl = 23,
-    .species = SPECIES_SNOVER,
-    .ability = ABILITY_SNOW_WARNING,
-    },
-    {
-    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 24,
-    .ability = ABILITY_SNOW_CLOAK,
-    .species = SPECIES_FROSLASS,
-    },
+    .ability = ABILITY_ICE_SCALES,
+    .species = SPECIES_FROSMOTH,
+    }
 };
 
 static const struct TrainerMon sParty_TidalcoveGymRuka[] = {

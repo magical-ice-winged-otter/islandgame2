@@ -348,7 +348,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
         format(
             "{COLOR DARK_GRAY}You're {PLAYER}? The professor told me about you earlier today! \p"
             "{COLOR DARK_GRAY}It's good to meet you! I'm Melissa, a rising Pokémon trainer just like you! \p"
-            "{COLOR DARK_GRAY}I was trying to fill out my Pokédex here, but I just couldn't find a Riolu... \p"
+            "{COLOR DARK_GRAY}I was trying to fill out my Pokédex here, but I just couldn't find a Scorbunny... \p"
             "{COLOR DARK_GRAY}How are you enjoying the isles so far? Isn't it awesome here? \p"
             "{COLOR DARK_GRAY}Eh? It's too hot and humid? Um, well, you'll get used to it eventually! \p"
             "{COLOR DARK_GRAY}Oh! Now that you're here, let's have a Pokémon battle! I need some action! \p"
