@@ -11763,27 +11763,27 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_FLABEBE_RED_FLOWER"
+                "species": "SPECIES_FLABEBE_RED"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_FLABEBE_ORANGE_FLOWER"
+                "species": "SPECIES_FLABEBE_ORANGE"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_FLABEBE_BLUE_FLOWER"
+                "species": "SPECIES_FLABEBE_BLUE"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_FLABEBE_WHITE_FLOWER"
+                "species": "SPECIES_FLABEBE_WHITE"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_FLABEBE_YELLOW_FLOWER"
+                "species": "SPECIES_FLABEBE_YELLOW"
               }
             ]
           }
