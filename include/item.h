@@ -105,7 +105,5 @@ enum
 };
 #undef ENUM_TM
 #undef ENUM_HM
-void DrawHeaderBox(void);
-void HideHeaderBox(void);
 
 #endif // GUARD_ITEM_H
