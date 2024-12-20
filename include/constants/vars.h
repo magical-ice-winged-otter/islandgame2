@@ -117,7 +117,7 @@
 #define VAR_ROUTE102_STATE                               0x4061 // island-game: used for custom terrains
 #define VAR_CAMP_PERSI_STATE                             0x4062 // island-game: used for missingno encounter
 #define VAR_ROUTE104_STATE                               0x4063
-#define VAR_ROUTE105_STATE                               0x4064 // Unused Var
+#define VAR_APPLEVINE_STATE                              0x4064 // island-game: used to track how many coins you've given to the coin girl
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var
 #define VAR_ROUTE107_STATE                               0x4066 // Unused Var
 #define VAR_ROUTE108_STATE                               0x4067 // Unused Var

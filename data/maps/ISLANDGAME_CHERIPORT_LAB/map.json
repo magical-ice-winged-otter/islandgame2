@@ -133,6 +133,85 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
+    }
   ]
 }

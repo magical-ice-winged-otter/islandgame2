@@ -1594,7 +1594,7 @@
 #define FLAG_LUMINE_CAVE_ALBA_DEFEATED              (SYSTEM_FLAGS + 0xB1) 
 #define FLAG_LUMINE_CAVE_SHELL_BELL_RECEIVED        (SYSTEM_FLAGS + 0xB2)
 #define FLAG_FRESA_FARMS_TRADE_DONE                 (SYSTEM_FLAGS + 0xB3)
-#define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
+#define FLAG_CANTALO_AVI_DEFEATED                   (SYSTEM_FLAGS + 0xB4)
 #define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
 #define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
 #define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag

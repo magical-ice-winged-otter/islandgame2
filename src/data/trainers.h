@@ -1888,10 +1888,11 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_PIKACHU,
+            .species = SPECIES_PIKACHU_PARTNER,
             .gender = TRAINER_MON_MALE,
             .heldItem = ITEM_LIGHT_BALL,
-            .ev = TRAINER_PARTY_EVS(0, 252, 0, 6, 0, 252),
+            .friendship = 255,
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .ability = ABILITY_STATIC,
             .lvl = 25,
@@ -1899,10 +1900,10 @@ F_TRAINER_FEMALE |
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-                MOVE_EXTREME_SPEED,
-                MOVE_VOLT_TACKLE,
-                MOVE_SURF,
-                MOVE_IRON_TAIL,
+                MOVE_PIKA_PAPOW,
+                MOVE_ZIPPY_ZAP,
+                MOVE_SPLISHY_SPLASH,
+                MOVE_FLOATY_FALL,
             },
             },
         },

@@ -75,15 +75,21 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC4 {
 script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5 {
     lock
     faceplayer
+    if (var(VAR_APPLEVINE_STATE) == 70) {
+        msgbox(format(
+            "i gotz nufin els 2 gif u maen GITOFMES"
+        ))
+        goto(GameCornerNPC_End)
+    }
     if(!flag(FLAG_APPLEVINE_COIN_CASE)) {
         msgbox(format(
-            "halp need coin"
+            "halp ned koin"
         ))
         goto(GameCornerNPC_End)
     }
     showcoinsbox(18,1)
     msgbox(format(
-        "gib coin pls"
+        "gib koin pls"
     ), MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
         checkcoins(VAR_TEMP_D)
@@ -97,9 +103,20 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5 {
         updatecoinsbox(18,1)
         playse(SE_SHOP)
         waitse
-        msgbox(format(
-            "thx"
-        ))
+        if (var(VAR_APPLEVINE_STATE) < 69) {
+            addvar(VAR_APPLEVINE_STATE, 1)
+            msgbox(format(
+                "thx"
+            ))
+        } 
+        if (var(VAR_APPLEVINE_STATE) == 69) {
+            msgbox(format(
+                "omigawd blud aktuali gaef me 69 koinz :weri:\p"
+                "taek wan of deez et maeks ur pp go maks :hotfaec:"
+            ))
+            giveitem(ITEM_PP_MAX)
+            addvar(VAR_APPLEVINE_STATE, 1)
+        }
     }
     else {
         msgbox(format(
@@ -124,7 +141,7 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC6 {
 script ISLANDGAME_APPLEVINE_EventScript_Gambler0 {
     lock
     msgbox(format(
-        "BRO WHAT DO YOU MEAN I MISSED?? MY INPUT WAS FRAME PERFECT DUDE"
+        "BRO WHAT DO YOU MEAN I MISSED?? MY INPUT WAS FRAME PERFECT BRO"
     ))
     release
 }

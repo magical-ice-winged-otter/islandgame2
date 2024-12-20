@@ -16,195 +16,232 @@ ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC::
 # 11 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_0, MSGBOX_SIGN
-	return
-
-
-ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC2::
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_0
+# 14 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_1, OPTIONS_BATTLE_SCENE_DISABLED
+# 15 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_2, OPTIONS_BATTLE_SCENE_1X
+# 16 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_3, OPTIONS_BATTLE_SCENE_2X
 # 17 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC2_Text_0, MSGBOX_SIGN
+	dynmultipush ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_4, OPTIONS_BATTLE_SCENE_3X
+# 18 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_5, OPTIONS_BATTLE_SCENE_4X
+# 19 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	dynmultistack 0, 0, TRUE, 5, FALSE, NO, DYN_MULTICHOICE_CB_NONE
+# 20 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	compare VAR_BATTLE_SPEED, VAR_RESULT
+	goto_if_ne ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_2
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_1:
 	return
 
-
-ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC3::
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_2:
+# 21 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	copyvar VAR_BATTLE_SPEED, VAR_RESULT
+# 22 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	playmoncry SPECIES_MAGNEZONE, CRY_MODE_HIGH_PITCH
 # 23 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC3_Text_0, MSGBOX_SIGN
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_6
+	goto ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_1
+
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPCCase::
+# 33 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPCCase_Text_0, MSGBOX_SIGN
 	return
 
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract::
-# 29 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 39 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	lock
-# 30 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 40 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_0, MSGBOX_YESNO
-# 34 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 44 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_2
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_1:
-# 98 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 108 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	closemessage
-# 99 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 109 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	release
 	return
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_2:
-# 36 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 46 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	random 100
-# 38 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 48 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	compare VAR_RESULT, 20
 	goto_if_lt ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_4
-# 48 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 58 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	compare VAR_RESULT, 40
 	goto_if_lt ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_5
-# 61 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 71 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	compare VAR_RESULT, 60
 	goto_if_lt ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_6
-# 74 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 84 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	compare VAR_RESULT, 80
 	goto_if_lt ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_7
-# 87 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 97 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_9
-# 90 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 100 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
-# 91 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 101 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_10
 	goto ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_1
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_4:
-# 39 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 49 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_1
-# 42 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 52 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
-# 43 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 53 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_2
 	goto ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_1
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_5:
-# 49 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 59 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_3
-# 52 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 62 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
-# 53 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 63 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_4
 	goto ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_1
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_6:
-# 62 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 72 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_5
-# 65 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 75 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
-# 66 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 76 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_6
 	goto ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_1
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_7:
-# 75 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 85 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_7
-# 78 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 88 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
-# 79 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 89 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_8
 	goto ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_1
 
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract::
-# 103 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 113 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	lock
-# 104 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 114 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	playmoncry SPECIES_PIKACHU, CRY_MODE_NORMAL
-# 105 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 115 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	faceplayer
-# 106 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 116 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract_Text_0
-# 110 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 120 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	applymovement 2, Common_Movement_FaceLeft
-# 111 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 121 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	closemessage
-# 112 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 122 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract::
-# 116 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 126 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	lock
-# 117 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 127 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	goto_if_unset FLAG_TEMP_2, ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_2
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_1:
-# 135 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 145 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	faceplayer
-# 136 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 146 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_2
-# 139 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 149 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	applymovement 3, Common_Movement_FaceUp
-# 140 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 150 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	waitmovement 0
-# 141 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 151 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	closemessage
-# 142 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 152 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	release
 	return
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_2:
-# 118 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_0
-# 121 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	closemessage
-# 122 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	playse SE_PIN
-# 123 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	applymovement 3, Common_Movement_ExclamationMark
-# 124 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	waitmovement 0
-# 125 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	faceplayer
-# 126 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	applymovement 3, Common_Movement_Delay48
-# 127 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	waitmovement 0
 # 128 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_0
+# 131 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	closemessage
+# 132 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	playse SE_PIN
 # 133 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	applymovement 3, Common_Movement_ExclamationMark
+# 134 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	waitmovement 0
+# 135 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	faceplayer
+# 136 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	applymovement 3, Common_Movement_Delay48
+# 137 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	waitmovement 0
+# 138 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1
+# 143 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	setflag FLAG_TEMP_2
 	goto ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_1
 
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_0:
 # 12 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	.string "{COLOR RED}(It's Coco's gaming setup. This looks\n"
-	.string "like it cost a lot of money.)$"
+	.string "> SET BATTLE SPEED:$"
 
-ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC2_Text_0:
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_1:
+# 14 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "Default$"
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_2:
+# 15 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "1x$"
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_3:
+# 16 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "2x$"
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_4:
+# 17 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "3x$"
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_5:
 # 18 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	.string "{COLOR RED}(Wow, there are like, fifty tabs open on\n"
-	.string "this computer.)$"
+	.string "4x$"
 
-ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC3_Text_0:
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC_Text_6:
 # 24 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	.string "{COLOR RED}(It's a really fancy PC see-through\n"
-	.string "tower case with RGB lights.)$"
+	.string "> SPEED SET!$"
+
+ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPCCase_Text_0:
+# 34 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "{COLOR RED}(It's Coco's fancy new PC. It's big\n"
+	.string "enough to fit her Pikachu inside.)$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_0:
-# 31 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 41 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "{COLOR RED}(It's some sort of smart speaker shaped\n"
 	.string "like a Porygon2.)\p"
 	.string "(Its name is apparently Subaru. Should\n"
 	.string "I give it a request?)$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_1:
-# 40 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	.string "{COLOR GREEN}> You asked if Subaru is a duck.$"
+# 50 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "> You asked if Subaru is a duck.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_2:
-# 44 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 54 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}NO DUCK!!! AM ROBOT!!!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_3:
-# 50 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	.string "{COLOR GREEN}> You asked Subaru about STARLIGHT.$"
+# 60 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "> You asked Subaru about STARLIGHT.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_4:
-# 54 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 64 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}STARLIGHT is an idol group\n"
 	.string "based in the Maryan Isles consisting of\l"
 	.string "five members: Lucia as its front and\l"
@@ -219,11 +256,11 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_4:
 	.string "topped by Paldea's very own Iono!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_5:
-# 63 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	.string "{COLOR GREEN}> You asked Subaru about Ruka.$"
+# 73 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "> You asked Subaru about Ruka.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_6:
-# 67 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 77 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Ruka, colloqially known as\n"
 	.string "Tidalcove's Precious Pearl, is a Maryan\l"
 	.string "Gym Leader and supermodel.\p"
@@ -243,11 +280,11 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_6:
 	.string "display them here: B90, W56, H86.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_7:
-# 76 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	.string "{COLOR GREEN}> You asked Subaru to tell you a joke.$"
+# 86 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "> You asked Subaru to tell you a joke.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_8:
-# 80 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 90 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}Sure. What Pokemon does Swalot\n"
 	.string "evolve from?\p"
 	.string "...\p"
@@ -255,11 +292,11 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_8:
 	.string "to respond to complete my joke!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_9:
-# 88 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
-	.string "{COLOR GREEN}> You asked Subaru for trainer tips.$"
+# 98 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+	.string "> You asked Subaru for trainer tips.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_10:
-# 92 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 102 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}If you're not sure how to build\n"
 	.string "your Pokémon team, you might want to\l"
 	.string "try and form a three-type core!\p"
@@ -270,19 +307,19 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract_Text_10:
 	.string "Psychic-Fighting-Dark. Hope I helped!$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract_Text_0:
-# 107 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 117 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "Pika Pika! {COLOR BLUE}(I'm helping my trainer build a\n"
 	.string "new PC!)\p"
-	.string "{COLOR DARK_GRAY}Pika Pi... {COLOR BLUE}(I could really use some help. I\n"
-	.string "have no idea where anything goes.)$"
+	.string "{COLOR DARK_GRAY}Pika Pi... {COLOR BLUE}(I could really use some help.\n"
+	.string "The motherboard keeps shocking me.)$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_0:
-# 119 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 129 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Hm...{PAUSE 60} this goes here...{PAUSE 60} and that\n"
 	.string "goes there...{PAUSE 60}$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1:
-# 129 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 139 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "{COLOR GREEN}Coco: {COLOR DARK_GRAY}Oh! Hiya {PLAYER}! Sorry, I was\n"
 	.string "too engrossed in my work to see you.\p"
 	.string "I'm currently working on another one of\n"
@@ -292,7 +329,7 @@ ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_1:
 	.string "development though.$"
 
 ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract_Text_2:
-# 137 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
+# 147 "data/maps/ISLANDGAME_APPLEVINE_NAME_RATER/scripts.pory"
 	.string "If you're interested in being my little\n"
 	.string "Minccino, I'll let you know when it's\l"
 	.string "ready to be tested!$"

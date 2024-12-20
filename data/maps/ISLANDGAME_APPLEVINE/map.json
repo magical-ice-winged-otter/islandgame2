@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_APPLEVINE",
   "name": "ISLANDGAME_APPLEVINE",
   "layout": "LAYOUT_ISLANDGAME_APPLEVINE",
-  "music": "MUS_HG_VERMILION",
+  "music": "MUS_RG_SEVII_67",
   "region_map_section": "MAPSEC_APPLEVINE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -537,5 +537,6 @@
       "item": "ITEM_EXP_CANDY_M",
       "flag": "FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY"
     }
-  ]
+  ],
+  "night_music": "MUS_HG_VIOLET"
 }
