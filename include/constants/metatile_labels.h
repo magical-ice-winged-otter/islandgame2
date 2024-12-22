@@ -815,6 +815,7 @@
 #define METATILE_Underwater_RockWall     0x21E
 
 // gTileset_islandgame
+#define METATILE_islandgame_lumine_bellehaven_door_00     0x23D
 #define METATILE_islandgame_lumine_general_MuddySlope     0x063
 #define METATILE_islandgame_lumine_rocky_path_door_00     0x239
 #define METATILE_islandgame_maplegrove_Door01             0x248

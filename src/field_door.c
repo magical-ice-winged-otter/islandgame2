@@ -154,6 +154,7 @@ static const u8 sDoorAnimTiles_islandgame_oranna_central_path_01[] = INCBIN_U8("
 static const u8 sDoorAnimTiles_islandgame_oranna_central_path_02[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_central_path_02.4bpp");
 static const u8 sDoorAnimTiles_islandgame_oranna_central_path_03[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_central_path_03.4bpp");
 static const u8 sDoorAnimTiles_islandgame_lumine_rocky_path_00[] = INCBIN_U8("graphics/door_anims/islandgame_lumine_rocky_path_00.4bpp");
+static const u8 sDoorAnimTiles_islandgame_lumine_bellehaven_00[] = INCBIN_U8("graphics/door_anims/islandgame_lumine_bellehaven_00.4bpp");
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -265,6 +266,8 @@ static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_01[] = {7,6,7,7
 static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_02[] = {11,11,11,11,4,4,11,11};
 static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_03[] = {6,6,10,10,10,10,10,10};
 static const u8 sDoorAnimPalettes_islandgame_lumine_rocky_path_00[] = {6,6,6,6,6,6,6,6};
+// static const u8 sDoorAnimPalettes_islandgame_lumine_bellehaven_00[] = {8,8,8,8,6,6,6,6};
+static const u8 sDoorAnimPalettes_islandgame_lumine_bellehaven_00[] = {6,6,6,6,8,8,8,8};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -292,6 +295,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_islandgame_oranna_central_path_door_02,            DOOR_SOUND_SLIDING,  1, sDoorAnimTiles_islandgame_oranna_central_path_02, sDoorAnimPalettes_islandgame_oranna_central_path_02},
     {METATILE_islandgame_oranna_central_path_door_03,            DOOR_SOUND_NORMAL,   1, sDoorAnimTiles_islandgame_oranna_central_path_03, sDoorAnimPalettes_islandgame_oranna_central_path_03},
     {METATILE_islandgame_lumine_rocky_path_door_00,              DOOR_SOUND_NORMAL,   1, sDoorAnimTiles_islandgame_lumine_rocky_path_00, sDoorAnimPalettes_islandgame_lumine_rocky_path_00},
+    {METATILE_islandgame_lumine_bellehaven_door_00,              DOOR_SOUND_NORMAL,   1, sDoorAnimTiles_islandgame_lumine_bellehaven_00, sDoorAnimPalettes_islandgame_lumine_bellehaven_00},
 
     {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
     {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},

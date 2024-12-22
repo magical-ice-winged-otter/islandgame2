@@ -16,3 +16,5 @@ is to create a new image for each palette, and merge them together in the end. I
 
 For an example of multi-palette door animations, looks at `islandgame_maplegrove_01` and `islandgame_maplegrove_02`.
 
+NOTE: make sure your metatile label is unique. That is, no other tileset in the _whole game_ has a door on that same tile.
+Its dumb. Thats just how gamefreak does it. 
