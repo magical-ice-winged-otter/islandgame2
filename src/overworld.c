@@ -21,6 +21,7 @@
 #include "field_weather.h"
 #include "fieldmap.h"
 #include "fldeff.h"
+#include "follow_me.h"
 #include "gpu_regs.h"
 #include "heal_location.h"
 #include "io_reg.h"
@@ -67,6 +68,7 @@
 #include "islandgame.h"
 #include "follow_me.h"
 #include "constants/abilities.h"
+#include "constants/event_object_movement.h"
 #include "constants/layouts.h"
 #include "constants/map_types.h"
 #include "constants/region_map_sections.h"
@@ -449,7 +451,6 @@ static void Overworld_ResetStateAfterWhiteOut(void)
         VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 0);
         VarSet(VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_NONE);
     }
-    
     FollowMe_TryRemoveFollowerOnWhiteOut();
 }
 
@@ -2075,7 +2076,7 @@ static bool32 ReturnToFieldLocal(u8 *state)
         // I have no clue why. Moving it inside of InitViewGraphics breaks again.
         // It literally has to be right here for things to not break.
         TryLoadTrainerHillEReaderPalette();
-        FollowMe_BindToSurbBlobOnReloadScreen();
+        FollowMe_BindToSurfBlobOnReloadScreen();
         (*state)++;
         break;
     case 2:
@@ -2276,7 +2277,6 @@ static void InitObjectEventsLocal(void)
     TrySpawnObjectEvents(0, 0);
     UpdateFollowingPokemon();
     TryRunOnWarpIntoMapScript();
-    
     FollowMe_HandleSprite();
 }
 

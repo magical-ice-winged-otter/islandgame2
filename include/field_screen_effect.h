@@ -46,5 +46,6 @@ void SetPlayerVisibility(bool8 visible);
 void Task_WarpAndLoadMap(u8 taskId);
 void DoStairWarp(u16 metatileBehavior, u16 delay);
 bool32 IsDirectionalStairWarpMetatileBehavior(u16 metatileBehavior, u8 playerDirection);
+void Task_DoDoorWarp(u8 taskId);
 
 #endif // GUARD_FIELD_SCREEN_EFFECT_H

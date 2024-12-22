@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "load_save.h"
 #include "battle_setup.h"
+#include "battle_tower.h"
 #include "battle_transition.h"
 #include "main.h"
 #include "task.h"
@@ -11,6 +12,7 @@
 #include "metatile_behavior.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
+#include "follow_me.h"
 #include "random.h"
 #include "starter_choose.h"
 #include "script_pokemon_util.h"
@@ -80,7 +82,6 @@ static void DoSafariBattle(void);
 static void DoStandardWildBattle(bool32 isDouble);
 static void CB2_EndWildBattle(void);
 static void CB2_EndScriptedWildBattle(void);
-static void CB2_End2v2ScriptedWildBattle(void); // islandgame-start
 static void TryUpdateGymLeaderRematchFromWild(void);
 static void TryUpdateGymLeaderRematchFromTrainer(void);
 static void CB2_GiveStarter(void);
@@ -89,7 +90,6 @@ static void CB2_EndFirstBattle(void);
 static void SaveChangesToPlayerParty(void);
 static void HandleBattleVariantEndParty(void);
 static void CB2_EndTrainerBattle(void);
-static void CB2_End2v2TrainerBattle(void); // islandgame-start
 static bool8 BattleHasNoWhiteout(void);
 static bool32 IsPlayerDefeated(u32 battleOutcome);
 #if FREE_MATCH_CALL == FALSE
@@ -471,14 +471,17 @@ static void DoStandardWildBattle(bool32 isDouble)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = 0;
-    if (isDouble) {
+    if (gSaveBlock2Ptr->follower.battlePartner && F_FLAG_PARTNER_WILD_BATTLES != 0
+     && (FlagGet(F_FLAG_PARTNER_WILD_BATTLES) || F_FLAG_PARTNER_WILD_BATTLES == ALWAYS))
+    {
+        gBattleTypeFlags |= BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_DOUBLE;
+        SavePlayerParty();
+        gPartnerTrainerId = TRAINER_PARTNER(gSaveBlock2Ptr->follower.battlePartner);
+        FillPartnerParty(gPartnerTrainerId);
+    }
+    if (isDouble)
+    {
         gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
-        /*
-        if (PlayerHasFollower()) {
-            gBattleTypeFlags |= BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
-            FillDuoParty(gSaveBlock2Ptr->follower.party);
-        }
-        */
     }
     if (InBattlePyramid())
     {
@@ -551,6 +554,11 @@ static void DoBattlePikeWildBattle(void)
 
 static void DoTrainerBattle(void)
 {
+    if (gSaveBlock2Ptr->follower.battlePartner) {
+        SavePlayerParty();
+        gPartnerTrainerId = TRAINER_PARTNER(gSaveBlock2Ptr->follower.battlePartner);
+        FillPartnerParty(gPartnerTrainerId);
+    }
     CreateBattleStartTask(GetTrainerBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_TRAINER_BATTLES);
@@ -582,8 +590,19 @@ void StartWallyTutorialBattle(void)
 void BattleSetup_StartScriptedWildBattle(void)
 {
     LockPlayerFieldControls();
+    if (gSaveBlock2Ptr->follower.battlePartner && F_FLAG_PARTNER_WILD_BATTLES != 0
+     && (FlagGet(F_FLAG_PARTNER_WILD_BATTLES) || F_FLAG_PARTNER_WILD_BATTLES == ALWAYS))
+    {
+        gBattleTypeFlags |= BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_DOUBLE;
+        SavePlayerParty();
+        gPartnerTrainerId = TRAINER_PARTNER(gSaveBlock2Ptr->follower.battlePartner);
+        FillPartnerParty(gPartnerTrainerId);
+    } 
+    else 
+    {
+        gBattleTypeFlags = 0;
+    }
     gMain.savedCallback = CB2_EndScriptedWildBattle;
-    gBattleTypeFlags = 0;
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -594,19 +613,18 @@ void BattleSetup_StartScriptedWildBattle(void)
 void BattleSetup_StartScriptedDoubleWildBattle(void)
 {
     LockPlayerFieldControls();
-
-    if (VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE)
+    if (gSaveBlock2Ptr->follower.battlePartner && F_FLAG_PARTNER_WILD_BATTLES != 0
+     && (FlagGet(F_FLAG_PARTNER_WILD_BATTLES) || F_FLAG_PARTNER_WILD_BATTLES == ALWAYS))
     {
-        gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
-        gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
+        gBattleTypeFlags |= BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_DOUBLE;
+        SavePlayerParty();
+        gPartnerTrainerId = TRAINER_PARTNER(gSaveBlock2Ptr->follower.battlePartner);
         FillPartnerParty(gPartnerTrainerId);
-        gMain.savedCallback = CB2_End2v2ScriptedWildBattle;
-    } else 
+    } else
     {
         gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
-        gMain.savedCallback = CB2_EndScriptedWildBattle;
     }
-    
+    gMain.savedCallback = CB2_EndScriptedWildBattle;
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -735,13 +753,17 @@ static void CB2_EndWildBattle(void)
 {
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
     ResetOamRange(0, 128);
+    
+    if (gSaveBlock2Ptr->follower.battlePartner && F_FLAG_PARTNER_WILD_BATTLES != 0
+     && (FlagGet(F_FLAG_PARTNER_WILD_BATTLES) || F_FLAG_PARTNER_WILD_BATTLES == ALWAYS))
+    {
+        LoadLastThreeMons();
+    }
 
     if (IsPlayerDefeated(gBattleOutcome) == TRUE && !InBattlePyramid() && !InBattlePike())
-    {
-        if (PlayerHasFollower())
-        {
-            DestroyFollower(TRUE);
-        }
+    { 
+        if (gSaveBlock2Ptr->follower.battlePartner)
+            DestroyFollower();
         SetMainCallback2(CB2_WhiteOut);
     }
     else
@@ -762,7 +784,11 @@ static void CB2_EndScriptedWildBattle(void)
         if (InBattlePyramid())
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         else
+        {
+            if (gSaveBlock2Ptr->follower.battlePartner)
+                DestroyFollower();
             SetMainCallback2(CB2_WhiteOut);
+        }
     }
     else
     {
@@ -770,25 +796,6 @@ static void CB2_EndScriptedWildBattle(void)
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
 }
-
-static void CB2_End2v2ScriptedWildBattle(void)
-{
-    s32 i;
-    for (i = 3; i < PARTY_SIZE; i++)
-    { // restore back the original party 
-        gPlayerParty[i] = gPlayerSavedParty[i];
-        ZeroMonData(&gPlayerSavedParty[i]);
-    }
-    // Heal the party
-    HealPlayerParty();
-    if (PlayerHasFollower())
-    {
-        DestroyFollower(TRUE);
-    }
-    CB2_EndScriptedWildBattle();
-}
-
-
 
 u8 BattleSetup_GetTerrainId(void)
 {
@@ -1355,6 +1362,11 @@ u8 GetTrainerBattleMode(void)
     return sTrainerBattleMode;
 }
 
+bool8 GetFollowerPartner(void)
+{
+    return gSaveBlock2Ptr->follower.battlePartner;
+}
+
 bool8 GetTrainerFlag(void)
 {
     if (InBattlePyramid())
@@ -1394,10 +1406,23 @@ void ClearTrainerFlag(u16 trainerId)
 
 void BattleSetup_StartTrainerBattle(void)
 {
-    if (gNoOfApproachingTrainers == 2)
-        gBattleTypeFlags = (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TRAINER);
-    else
-        gBattleTypeFlags = (BATTLE_TYPE_TRAINER);
+    if (gNoOfApproachingTrainers == 2) {
+        if (gSaveBlock2Ptr->follower.battlePartner) {
+            gBattleTypeFlags = (BATTLE_TYPE_MULTI | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TRAINER);
+        }
+        else {
+            gBattleTypeFlags = (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TRAINER);
+        }
+    }
+    else {
+        if (gSaveBlock2Ptr->follower.battlePartner) {
+            gBattleTypeFlags = (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TRAINER);
+            gTrainerBattleOpponent_B = 0xFFFF;
+        }
+        else {
+            gBattleTypeFlags = (BATTLE_TYPE_TRAINER);
+        }
+    }
 
     if (InBattlePyramid())
     {
@@ -1437,19 +1462,9 @@ void BattleSetup_StartTrainerBattle(void)
     gNoOfApproachingTrainers = 0;
     sShouldCheckTrainerBScript = FALSE;
     gWhichTrainerToFaceAfterBattle = 0;
+    gMain.savedCallback = CB2_EndTrainerBattle;
 
-    //decide what callback to use
-    if (sNoOfPossibleTrainerRetScripts == 2 && VarGet(VAR_TEAM_PARTNER) != PARTNER_NONE) {
-        // sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers
-        gBattleTypeFlags |= (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER);
-        gPartnerTrainerId = VarGet(VAR_TEAM_PARTNER) + TRAINER_PARTNER(PARTNER_NONE);
-        FillPartnerParty(gPartnerTrainerId);
-        gMain.savedCallback = CB2_End2v2TrainerBattle; // make a custom end function that handles restoring the player party. We just use a modification of EndTrainerBattle.
-    } else {
-        gMain.savedCallback = CB2_EndTrainerBattle;
-    }
-
-    if (InBattlePyramid() || InTrainerHillChallenge() || BattleHasNoWhiteout())
+    if (InBattlePyramid() || InTrainerHillChallenge())
         DoBattlePyramidTrainerHillBattle();
     else
         DoTrainerBattle();
@@ -1497,6 +1512,9 @@ static void CB2_EndTrainerBattle(void)
 {
     HandleBattleVariantEndParty();
 
+    if (gSaveBlock2Ptr->follower.battlePartner)
+        LoadLastThreeMons();
+
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
     {
         DowngradeBadPoison();
@@ -1506,8 +1524,12 @@ static void CB2_EndTrainerBattle(void)
     {
         if (InBattlePyramid() || InTrainerHillChallenge() || (!NoAliveMonsForPlayer()) || BattleHasNoWhiteout())
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
-        else
+        else 
+        {
+            if (gSaveBlock2Ptr->follower.battlePartner)
+                DestroyFollower();
             SetMainCallback2(CB2_WhiteOut);
+        }
     }
     else
     {
@@ -1519,27 +1541,6 @@ static void CB2_EndTrainerBattle(void)
             SetBattledTrainersFlags();
         }
     }
-}
-
-static void CB2_End2v2TrainerBattle(void)
-{
-    s32 i;
-    for (i = 3; i < PARTY_SIZE; i++)
-    { // restore back the original party 
-        gPlayerParty[i] = gPlayerSavedParty[i];
-        ZeroMonData(&gPlayerSavedParty[i]);
-    }
-    // Heal the party 
-    HealPlayerParty();
-
-    if (IsPlayerDefeated(gBattleOutcome) == TRUE)
-    {
-        if (PlayerHasFollower())
-        {
-            DestroyFollower(TRUE);
-        }
-    }
-    CB2_EndTrainerBattle();
 }
 
 static bool8 BattleHasNoWhiteout()
