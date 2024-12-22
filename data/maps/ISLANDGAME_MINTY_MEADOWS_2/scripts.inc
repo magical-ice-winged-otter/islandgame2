@@ -978,7 +978,7 @@ ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena::
 # 598 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	case B_OUTCOME_RAN, ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_4
 # 601 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	destroyfollower TRUE
+	destroyfollower
 # 602 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	goto ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene
 ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_1:
@@ -988,7 +988,7 @@ ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_1:
 
 ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_3:
 # 597 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	destroyfollower TRUE
+	destroyfollower
 	goto ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_1
 
 ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena_4:
@@ -1349,7 +1349,7 @@ ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey::
 # 850 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setvar VAR_MINTY_MEADOWS_STATE, 2
 # 851 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	destroyfollower FALSE
+	destroyfollower
 	return
 
 

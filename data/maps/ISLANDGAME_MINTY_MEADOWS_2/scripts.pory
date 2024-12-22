@@ -437,7 +437,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     special(HealPlayerParty)
     //follow me
     loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-    setfollower(RIVAL_OW_ID, 100, PARTNER_MEADOWS_RIVAL)
+    setfollower(RIVAL_OW_ID, FOLLOWER_ALL, 100, PARTNER_MEADOWS_RIVAL)
 
     //teleport
     call(ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet)
@@ -594,11 +594,11 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
-            destroyfollower(TRUE)
+            destroyfollower()
         case B_OUTCOME_RAN:
             break
         default:
-            destroyfollower(TRUE)
+            destroyfollower()
             goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release
@@ -848,7 +848,7 @@ text MareepHelp_Text {
 script ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey {
     //pause quest
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST) 
-    destroyfollower(FALSE)
+    destroyfollower()
 
     return
 }
@@ -862,8 +862,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
     waitbuttonpress
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
     
-    loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-    setfollower(RIVAL_OW_ID, 100, PARTNER_MEADOWS_RIVAL)
+    setfollower(RIVAL_OW_ID, 100, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL)
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     waitmovement(OBJ_EVENT_ID_PLAYER)
     closemessage
