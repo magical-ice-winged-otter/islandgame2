@@ -184,7 +184,7 @@ text ISLANDGAME_Southern_Oranna_Path_SIGN_DESC {
 }
 
 //seen absol event
-const ABSOL_OW_ID = 9
+const ABSOL_OW_ID = 7
 
 movement SOP_WalkRight {
     walk_right
