@@ -756,10 +756,10 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                     waitse
                     random(10)
                     switch(var(VAR_RESULT)) {
-                        case 0: giveitem(ITEM_TM32)
-                        case 1: giveitem(ITEM_EXP_CANDY_XL)
+                        case 0: giveitem(ITEM_ABILITY_PATCH)
+                        case 1: giveitem(ITEM_ABILITY_CAPSULE)
                         case 2: giveitem(ITEM_BIG_NUGGET)
-                        case 3: giveitem(ITEM_TM21)
+                        case 3: giveitem(ITEM_LEFTOVERS)
                         case 4: giveitem(ITEM_LIFE_ORB)
                         case 5: giveitem(ITEM_MAX_REVIVE)
                         case 6: giveitem(ITEM_EXP_CANDY_XL)

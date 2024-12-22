@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
   "name": "ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
   "layout": "LAYOUT_ISLANDGAME_APPLEVINE_BIKE_PATH_BUILDING",
-  "music": "MUS_HG_VERMILION",
+  "music": "MUS_RG_SEVII_67",
   "region_map_section": "MAPSEC_APPLEVINE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -93,5 +93,6 @@
   ],
   "bg_events": [
 
-  ]
+  ],
+  "night_music": "MUS_HG_VIOLET"
 }

@@ -790,6 +790,9 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+// gTileset_islandgame_lumine_applevine
+#define METATILE_islandgame_lumine_applevine_door  0x2D7
+
 // gTileset_islandgame_lumine_general
 #define METATILE_islandgame_lumine_general_MuddySlope  0x063
 

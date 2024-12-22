@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_APPLEVINE_NAME_RATER",
   "name": "ISLANDGAME_APPLEVINE_NAME_RATER",
   "layout": "LAYOUT_ISLANDGAME_APPLEVINE_NAME_RATER",
-  "music": "MUS_HG_VERMILION",
+  "music": "MUS_RG_SEVII_67",
   "region_map_section": "MAPSEC_APPLEVINE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -130,5 +130,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC"
     }
-  ]
+  ],
+  "night_music": "MUS_HG_VIOLET"
 }

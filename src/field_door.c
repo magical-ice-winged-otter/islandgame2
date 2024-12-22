@@ -154,6 +154,9 @@ static const u8 sDoorAnimTiles_islandgame_oranna_central_path_01[] = INCBIN_U8("
 static const u8 sDoorAnimTiles_islandgame_oranna_central_path_02[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_central_path_02.4bpp");
 static const u8 sDoorAnimTiles_islandgame_oranna_central_path_03[] = INCBIN_U8("graphics/door_anims/islandgame_oranna_central_path_03.4bpp");
 
+
+static const u8 sDoorAnimTiles_islandgame_lumine_applevine[] = INCBIN_U8("graphics/door_anims/islandgame_lumine_applevine.4bpp");
+
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
     {4, -1},
@@ -264,6 +267,9 @@ static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_01[] = {7,6,7,7
 static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_02[] = {11,11,11,11,4,4,11,11};
 static const u8 sDoorAnimPalettes_islandgame_oranna_central_path_03[] = {6,6,10,10,10,10,10,10};
 
+
+static const u8 sDoorAnimPalettes_islandgame_lumine_applevine[] = {12,12,12,12,3,3,12,12};
+
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
     //note: the search does not look for the tileset first, it only looks up via metatiles.
@@ -289,6 +295,9 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_islandgame_oranna_central_path_door_01,            DOOR_SOUND_SLIDING,  1, sDoorAnimTiles_islandgame_oranna_central_path_01, sDoorAnimPalettes_islandgame_oranna_central_path_01},
     {METATILE_islandgame_oranna_central_path_door_02,            DOOR_SOUND_SLIDING,  1, sDoorAnimTiles_islandgame_oranna_central_path_02, sDoorAnimPalettes_islandgame_oranna_central_path_02},
     {METATILE_islandgame_oranna_central_path_door_03,            DOOR_SOUND_NORMAL,   1, sDoorAnimTiles_islandgame_oranna_central_path_03, sDoorAnimPalettes_islandgame_oranna_central_path_03},
+
+    {METATILE_islandgame_lumine_applevine_door,                  DOOR_SOUND_SLIDING,   1, sDoorAnimTiles_islandgame_lumine_applevine, sDoorAnimPalettes_islandgame_lumine_applevine},
+
 
     {METATILE_General_Door,                                 DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_General, sDoorAnimPalettes_General},
     {METATILE_General_Door_PokeCenter,                      DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PokeCenter, sDoorAnimPalettes_PokeCenter},

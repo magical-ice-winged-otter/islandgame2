@@ -24,13 +24,29 @@ mapscripts ISLANDGAME_APPLEVINE_MapScripts {
 }
 
 
+script ISLANDGAME_APPLEVINE_TempBlockade1 {
+    lock
+    msgbox(format(
+        "Noooo! You can't just use the same move over and over again! You need to use strategy!"
+    ))
+    closemessage
+}
+
+script ISLANDGAME_APPLEVINE_TempBlockade2 {
+    lock
+    msgbox(format(
+        "haha extreme speed go brrr"
+    ))
+    closemessage
+}
+
 // signs
 script ISLANDGAME_APPLEVINE_StoreSign {
     msgbox(format("LA CUCINA DOLCHE\nGive your Milcery a makeover!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_APPLEVINE_CitySign {
-    msgbox(format("APPLEVINE\nCHECK YOUR APPLES FOR APPLIN!"), MSGBOX_SIGN)
+    msgbox(format("APPLEVINE\nCHECK YOUR APPLES FOR POKÉMON!"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_APPLEVINE_GameCornerSign {

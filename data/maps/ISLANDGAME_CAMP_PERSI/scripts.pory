@@ -210,7 +210,7 @@ script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage {
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_WON:
             msgbox(format(
-                "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Thank you for the exciting battle, {PLAYER}. You're exceptionally talented for a beginner!\p"
+                "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Thank you for the exciting battle, {PLAYER}. You possess exceptional talent for a beginner!\p"
                 "Here, allow me to heal our Pokémon."
             ))
             closemessage
@@ -219,7 +219,7 @@ script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage {
             special(HealPlayerParty)
         default: // loss 
             msgbox(format(
-                "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Thank you for the exciting battle, {PLAYER}. Your Pokémon fought as hard, despite the odds!\p"
+                "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Thank you for the battle, {PLAYER}. Your Pokémon fought as hard as they could!\p"
                 "Here, allow me to heal our Pokémon."
             ))
             closemessage
@@ -227,7 +227,7 @@ script ISLANDGAME_CAMP_PERSI_EventScript_JonasBattleEngage {
             waitfanfare
             special(HealPlayerParty)
             msgbox(format(
-                "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}I'd also like to give you this. It'll be of much use for a beginner!"
+                "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}I'd also like to give you this. It'll be of great use to you as a beginner!"
             ))
             giveitem(ITEM_ENERGY_POWDER)
     }
@@ -815,6 +815,17 @@ text ISLANDGAME_CAMP_PERSI_OUTSIDE_WaterGirlTalk3 {
 
 
 /// signs
+
+script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_WARNING {
+    lock
+    msgbox(format(
+        "Hi! I'm a sentient sign. I'm here to warn you about the dangers of Nuzlocke.\p"
+        "I uh, I just wouldn't try it. Trust me, it's not going to end well...\p"
+        "...but if you think you've got what it takes hotshot, prove me wrong...\p"
+        "- Billy The Board"
+    ), MSGBOX_SIGN)
+    release
+}
 
 script ISLANDGAME_CAMP_PERSI_OUTSIDE_EventScript_SIGN1 {
     lock
