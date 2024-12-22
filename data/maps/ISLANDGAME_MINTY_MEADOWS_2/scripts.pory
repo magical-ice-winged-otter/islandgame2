@@ -436,7 +436,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     waitmovement(0)
     special(HealPlayerParty)
     //follow me
-    setfollower(RIVAL_OW_ID, FOLLOWER_ALL, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL)
+    setfollower(RIVAL_OW_ID, 0x100, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL)
 
     //teleport
     call(ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet)
@@ -847,6 +847,8 @@ text MareepHelp_Text {
 script ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey {
     //pause quest
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST) 
+    applymovement(RIVAL_OW_ID, Common_Movement_WalkRight)
+    waitmovement(RIVAL_OW_ID)
     destroyfollower()
 
     return
@@ -861,7 +863,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
     waitbuttonpress
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
     
-    setfollower(RIVAL_OW_ID, FOLLOWER_ALL, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL)
+    setfollower(RIVAL_OW_ID, 0x100, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL)
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     waitmovement(OBJ_EVENT_ID_PLAYER)
     closemessage
@@ -892,8 +894,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
                     call(ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey)
 
                     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-                    applymovement(RIVAL_OW_ID, Common_Movement_WalkRight)
-                    waitmovement(RIVAL_OW_ID)
                     waitmovement(OBJ_EVENT_ID_PLAYER)
                     message(format("Okay... Please come back as soon as you can!"))
                     applymovement(RIVAL_OW_ID, Common_Movement_FaceLeft)

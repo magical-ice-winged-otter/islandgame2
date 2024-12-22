@@ -662,7 +662,7 @@ ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main::
 # 437 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	special HealPlayerParty
 # 439 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setfollower 8, FOLLOWER_ALL, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL
+	setfollower 8, 0x100, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL
 # 442 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	call ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet
 # 444 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1347,60 +1347,64 @@ ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey::
 # 849 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	setvar VAR_MINTY_MEADOWS_STATE, 2
 # 850 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	applymovement 8, Common_Movement_WalkRight
+# 851 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	waitmovement 8
+# 852 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	destroyfollower
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack::
-# 856 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 8, Common_Movement_WalkInPlaceLeft
-# 857 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 8
 # 858 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	playse SE_PIN
+	applymovement 8, Common_Movement_WalkInPlaceLeft
 # 859 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 8, Common_Movement_ExclamationMark
+	waitmovement 8
 # 860 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	message ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0
+	playse SE_PIN
 # 861 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitbuttonpress
+	applymovement 8, Common_Movement_ExclamationMark
 # 862 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	message ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0
+# 863 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	waitbuttonpress
 # 864 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setfollower 8, FOLLOWER_ALL, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL
-# 865 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	setvar VAR_MINTY_MEADOWS_STATE, 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 # 866 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement OBJ_EVENT_ID_PLAYER
+	setfollower 8, 0x100, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL
 # 867 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	setvar VAR_MINTY_MEADOWS_STATE, 1
+# 868 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	waitmovement OBJ_EVENT_ID_PLAYER
+# 869 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	closemessage
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage::
-# 872 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	msgbox ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_0
-# 873 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	message ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_1
 # 874 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmessage
+	msgbox ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_0
 # 875 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	dynmultipush ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_2, YES
+	message ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_1
 # 876 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	dynmultipush ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_3, NO
+	waitmessage
 # 877 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_2, YES
+# 878 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	dynmultipush ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_3, NO
+# 879 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	dynmultistack 20, 8, TRUE, 3, FALSE, NO, DYN_MULTICHOICE_CB_NONE
 	return
 
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave::
-# 883 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	lock
-# 884 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	switch VAR_MINTY_MEADOWS_STATE
 # 885 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	case 2, ISLANDGAME_MINTY_MEADOWS_2_CantLeave_3
+	lock
+# 886 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	switch VAR_MINTY_MEADOWS_STATE
 # 887 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	case 2, ISLANDGAME_MINTY_MEADOWS_2_CantLeave_3
+# 889 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	case 3, ISLANDGAME_MINTY_MEADOWS_2_CantLeave_4
 # 912 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	case 1, ISLANDGAME_MINTY_MEADOWS_2_CantLeave_5
@@ -1410,18 +1414,18 @@ ISLANDGAME_MINTY_MEADOWS_2_CantLeave_1:
 	return
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_3:
-# 886 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 888 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	call ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack
 	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave_1
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_4:
-# 888 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	facefollower
-# 889 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	call ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage
 # 890 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	switch VAR_RESULT
+	facefollower
 # 891 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	call ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage
+# 892 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+	switch VAR_RESULT
+# 893 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	case YES, ISLANDGAME_MINTY_MEADOWS_2_CantLeave_7
 # 906 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	case NO, ISLANDGAME_MINTY_MEADOWS_2_CantLeave_8
@@ -1441,14 +1445,10 @@ ISLANDGAME_MINTY_MEADOWS_2_CantLeave_5:
 	goto ISLANDGAME_MINTY_MEADOWS_2_CantLeave_1
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_7:
-# 892 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	call ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey
 # 894 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-# 895 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	applymovement 8, Common_Movement_WalkRight
+	call ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey
 # 896 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
-	waitmovement 8
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 # 897 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	waitmovement OBJ_EVENT_ID_PLAYER
 # 898 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
@@ -1911,25 +1911,25 @@ ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene_Text_12:
 	.string "up again soon!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack_Text_0:
-# 860 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 862 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Welcome back! Let's go get\n"
 	.string "that Mareep!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_0:
-# 872 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 874 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Eh? We can't leave yet! We told\n"
 	.string "the old-timer we'd help find his Mareep!$"
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_1:
-# 873 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 875 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "Do you really have to leave?$"
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_2:
-# 875 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 877 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "Yes$"
 
 ISLANDGAME_MINTY_MEADOWS_2_LeaveMessage_Text_3:
-# 876 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
+# 878 "data/maps/ISLANDGAME_MINTY_MEADOWS_2/scripts.pory"
 	.string "No$"
 
 ISLANDGAME_MINTY_MEADOWS_2_CantLeave_Text_0:
