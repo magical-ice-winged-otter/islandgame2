@@ -399,60 +399,6 @@
       "var": "VAR_TEMP_5",
       "var_value": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     }
   ],
   "bg_events": [
