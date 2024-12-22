@@ -80,7 +80,7 @@
     {
         .trainerName = _("Melissa"),
         .trainerClass = TRAINER_CLASS_RIVAL,
-        .trainerPic = TRAINER_BACK_PIC_STEVEN,
+        .trainerPic = TRAINER_BACK_PIC_MELISSA,
         .encounterMusic_gender = 
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .partySize = 3,

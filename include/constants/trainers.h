@@ -178,9 +178,9 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
-// #define TRAINER_BACK_PIC_OLIVER                 8
-// #define TRAINER_BACK_PIC_OLIVIA                 9
-// #define TRAINER_BACK_PIC_MELISSA                10
+#define TRAINER_BACK_PIC_OLIVER                 8
+#define TRAINER_BACK_PIC_OLIVIA                 9
+#define TRAINER_BACK_PIC_MELISSA                10
 
 
 #define FACILITY_CLASS_HIKER                 0x0
