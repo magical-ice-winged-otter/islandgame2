@@ -1601,7 +1601,7 @@ u8 LoadSpritePalette(const struct SpritePalette *palette)
     }
 }
 
-u8 LoadSpritePaletteDouble(const struct SpritePalette *palette)
+UNUSED u8 LoadSpritePaletteDouble(const struct SpritePalette *palette)
 {
     u8 index = IndexOfSpritePaletteTag(palette->tag);
 
