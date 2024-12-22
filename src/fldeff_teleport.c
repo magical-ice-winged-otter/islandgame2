@@ -2,6 +2,7 @@
 #include "field_effect.h"
 #include "field_player_avatar.h"
 #include "fldeff.h"
+#include "follow_me.h"
 #include "party_menu.h"
 #include "overworld.h"
 #include "task.h"
@@ -15,7 +16,7 @@ bool8 SetUpFieldMove_Teleport(void)
 {
     if (!CheckFollowerFlag(FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
         return FALSE;
-
+        
     if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInForTeleport;

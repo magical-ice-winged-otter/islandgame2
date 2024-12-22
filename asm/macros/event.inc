@@ -2113,35 +2113,6 @@
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
 	
-@ sets an NPC up to follow the player
-	.macro setfollower localId:req, flags:req, party
-	.byte 0xe9
-	.byte \localId
-	.2byte \flags
-	.ifb \party
-        .2byte 0
-    .else
-        .2byte \party
-    .endif
-    .endm
-    
-    @ remove the following NPC (assumes there will only ever be one)
-	@ set remove=FALSE if you don't want to destroy the object.
-    .macro destroyfollower remove=TRUE
-	.byte 0xea
-	.byte \remove
-    .endm
-    
-    @ makes the player and follower face one another
-    .macro facefollower
-	.byte 0xeb
-    .endm
-    
-    @ checks if you have a follower. returns the result to VAR_RESULT
-    .macro checkfollower
-	.byte 0xec
-	.endm
-	
 	@sets the flag AFTER you declare the wildbattle.
 	.macro setwilddoublebattle setDouble:req
 	.byte 0xed
@@ -2256,6 +2227,63 @@
     .else
         .byte \isShiny
     .endif
+	.endm
+
+
+	@ Sets an NPC up to follow the player.
+	@ If you want to specify a battle partner without specifying a custom script, you can set the script parameter to 0.
+    .macro setfollower localId:req, flags:req, script, battlePartner
+	checkfollower
+	goto_if_eq VAR_RESULT, TRUE, 1f
+	ballfollowingmon
+	.ifnb \script
+		.if \script == 0
+			.set setScript, FALSE
+		.else
+			loadword 0, \script
+			.set setScript, TRUE
+		.endif
+	.else
+		.set setScript, FALSE
+	.endif
+    .byte 0xe9
+    .byte \localId
+    .2byte \flags
+	.byte setScript
+	.ifb \battlePartner
+		.set battlePartner, 0
+		.2byte battlePartner
+	.else
+		.2byte \battlePartner
+	.endif
+	updatefollowingmon
+	1:
+    .endm
+    
+    @ Remove the following NPC (assumes there will only ever be one).
+    .macro destroyfollower
+    .byte 0xea
+    .endm
+    
+    @ Makes the player and follower face one another.
+    .macro facefollower
+    .byte 0xeb
+    .endm
+    
+    @ Checks if you have a follower. returns the result to VAR_RESULT.
+    .macro checkfollower
+    .byte 0xec
+    .endm
+
+	@ Updates Pokemon follower.
+	.macro updatefollowingmon
+    .byte 0xef
+    .endm
+
+	@ Returns Pokemon follower to ball.
+	.macro ballfollowingmon
+	.byte 0xf0
+	delay 16
 	.endm
 
 

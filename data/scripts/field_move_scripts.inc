@@ -290,10 +290,10 @@ EventScript_UseWaterfall::
 	msgbox Text_WantToWaterfall, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
-    call FollowerIntoPlayerScript
+	call FollowerIntoPlayerScript
     callnative HideFollower
 	dofieldeffect FLDEFF_USE_WATERFALL
-    callnative FollowMe_WarpSetEnd
+	callnative FollowMe_WarpSetEnd
 	goto EventScript_EndWaterfall
 
 EventScript_CannotUseWaterfall::
@@ -328,6 +328,8 @@ EventScript_UseDive::
 	setfieldeffectargument 1, 1
 	msgbox Text_WantToDive, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
+	call FollowerIntoPlayerScript
+	callnative HideFollower
 	dofieldeffect FLDEFF_USE_DIVE
 	goto EventScript_EndDive
 	end

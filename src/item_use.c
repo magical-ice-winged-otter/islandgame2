@@ -20,6 +20,7 @@
 #include "field_specials.h"
 #include "field_weather.h"
 #include "fldeff.h"
+#include "follow_me.h"
 #include "item.h"
 #include "item_menu.h"
 #include "item_use.h"
