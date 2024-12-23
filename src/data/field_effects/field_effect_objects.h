@@ -1,6 +1,5 @@
 const struct SpritePalette gSpritePalette_GeneralFieldEffect0 = {gFieldEffectObjectPalette0, FLDEFF_PAL_TAG_GENERAL_0};
 const struct SpritePalette gSpritePalette_GeneralFieldEffect1 = {gFieldEffectObjectPalette1, FLDEFF_PAL_TAG_GENERAL_1};
-const struct SpritePalette gSpritePalette_TallGrassEffect     = {gFieldEffectPal_TallGrass, FLDEFF_PAL_TAG_TALL_GRASS};
 
 static const union AnimCmd sAnim_Shadow[] =
 {

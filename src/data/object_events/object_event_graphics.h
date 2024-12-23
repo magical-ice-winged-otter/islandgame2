@@ -176,7 +176,6 @@ const u16 gObjectEventPal_Man1[] = INCBIN_U16("graphics/object_events/pics/peopl
 //LINK - data/field_effect_scripts.s
 //tall grass
 const u32 gFieldEffectObjectPic_TallGrass[] = INCBIN_U32("graphics/field_effects/pics/tall_grass.4bpp");
-const u16 gFieldEffectPal_TallGrass[] = INCBIN_U16("graphics/field_effects/pics/tall_grass.gbapal");
 
 // islandgame-end
 
