@@ -816,6 +816,7 @@
 
 // gTileset_islandgame
 #define METATILE_islandgame_lumine_applevine_door         0x2D7
+#define METATILE_islandgame_lumine_bellehaven_door_00     0x23D
 #define METATILE_islandgame_lumine_general_MuddySlope     0x063
 #define METATILE_islandgame_lumine_general_TallGrass      0x026
 #define METATILE_islandgame_lumine_rocky_path_door_00     0x239
