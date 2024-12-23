@@ -4,7 +4,7 @@
 #include "sprite.h"
 #include "constants/field_weather.h"
 
-#define TAG_WEATHER_START 0x1200
+#define TAG_WEATHER_START 0x1300
 enum {
     GFXTAG_CLOUD = TAG_WEATHER_START,
     GFXTAG_FOG_H,
