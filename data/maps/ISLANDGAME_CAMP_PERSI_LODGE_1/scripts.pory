@@ -55,7 +55,7 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1 {
     lock
     msgbox(format(
         "{COLOR DARK_GRAY}Give me the controller! The scoutmaster said it's MY turn now!"
-    ), MSGBOX_NPC)
+    ))
     release
 }
 
@@ -63,7 +63,7 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2 {
     lock
     msgbox(format(
         "{COLOR DARK_GRAY}Quit bothering me! I'm in an intense game right now!"
-    ), MSGBOX_NPC)
+    ))
     release
 }
 
@@ -71,7 +71,7 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3 {
     lock
     msgbox(format(
         "{COLOR DARK_GRAY}Dude stop spamming that move!!! -.-"
-    ), MSGBOX_NPC)
+    ))
     release
 }
 

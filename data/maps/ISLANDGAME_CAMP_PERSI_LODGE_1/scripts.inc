@@ -59,7 +59,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1::
 # 55 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	lock
 # 56 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1_Text_0, MSGBOX_NPC
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1_Text_0
 # 59 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	release
 	return
@@ -69,7 +69,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2::
 # 63 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	lock
 # 64 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2_Text_0, MSGBOX_NPC
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2_Text_0
 # 67 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	release
 	return
@@ -79,7 +79,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3::
 # 71 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	lock
 # 72 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3_Text_0, MSGBOX_NPC
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3_Text_0
 # 75 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1/scripts.pory"
 	release
 	return

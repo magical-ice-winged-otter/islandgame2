@@ -21,7 +21,7 @@ mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts {
                 setobjectxyperm(LOCALID_MIGHTYENA_1, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_MIGHTYENA_2, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_MIGHTYENA_3, POS_HIDDEN_X, POS_HIDDEN_Y)
-                setobjectxyperm(LOCALID_ENTRANCE_RANGER_1, 37, 27)
+                setobjectxyperm(LOCALID_ENTRANCE_RANGER_1, 46, 37)
                 setobjectxyperm(LOCALID_ENTRANCE_RANGER_3, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ENTRANCE_RANGER_2, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_PKMN1, POS_HIDDEN_X, POS_HIDDEN_Y)

@@ -21,6 +21,7 @@ const MIGHTYENA_OW_ID = 7
 const MAREEP_EXTRA1 = 14
 const MAREEP_EXTRA2 = 15
 const MAREEP_EXTRA3 = 16
+const DRIFLOON_OW_ID = 17
 
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
@@ -45,7 +46,7 @@ mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
         }
         else {
             setflag(FLAG_DAY)
-            setobjectxyperm(20, POS_HIDDEN_X, POS_HIDDEN_Y) // drifloon can only appear at night
+            setobjectxyperm(DRIFLOON_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y) // drifloon can only appear at night
         }
 
         switch (var(VAR_MINTY_MEADOWS_STATE)) {
