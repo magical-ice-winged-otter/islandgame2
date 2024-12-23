@@ -34,6 +34,17 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_SALT {
     release
 }
 
+script ISLANDGAME_LUMINE_CAVE_B1F_2_Temp {
+    lock
+    msgbox(format(
+        "{COLOR RED}(...It appears a blockade of giant Wailmer dolls is impedeing my ability to progress.)\p"
+        "(Huh? There's a note attached to one of them.)\p"
+        "{COLOR BLUE}Thanks for playing the 1.5 release of our Pokémon hack! Unfortunately, this is where the road ends for now. Be sure to check our forum page for future updates. :)"
+    ))
+    closemessage
+    release
+}
+
 script ISLANDGAME_LUMINE_CAVE_B1F_2_Cringe {
     lock
     faceplayer
