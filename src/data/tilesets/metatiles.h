@@ -329,3 +329,9 @@ const u16 gMetatileAttributes_islandgame_kanto_building[] = INCBIN_U16("data/til
 
 const u16 gMetatiles_islandgame_kanto_powerplant[] = INCBIN_U16("data/tilesets/secondary/islandgame_kanto_powerplant/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_kanto_powerplant[] = INCBIN_U16("data/tilesets/secondary/islandgame_kanto_powerplant/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_cave_1[] = INCBIN_U16("data/tilesets/secondary/islandgame_cave_1/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_cave_1[] = INCBIN_U16("data/tilesets/secondary/islandgame_cave_1/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_cave_2[] = INCBIN_U16("data/tilesets/secondary/islandgame_cave_2/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_cave_2[] = INCBIN_U16("data/tilesets/secondary/islandgame_cave_2/metatile_attributes.bin");

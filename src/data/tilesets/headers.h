@@ -1269,3 +1269,25 @@ const struct Tileset gTileset_islandgame_kanto_powerplant =
     .metatileAttributes = gMetatileAttributes_islandgame_kanto_powerplant,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_cave_1 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_cave_1,
+    .palettes = gTilesetPalettes_islandgame_cave_1,
+    .metatiles = gMetatiles_islandgame_cave_1,
+    .metatileAttributes = gMetatileAttributes_islandgame_cave_1,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_islandgame_cave_2 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_cave_2,
+    .palettes = gTilesetPalettes_islandgame_cave_2,
+    .metatiles = gMetatiles_islandgame_cave_2,
+    .metatileAttributes = gMetatileAttributes_islandgame_cave_2,
+    .callback = NULL,
+};
