@@ -444,7 +444,7 @@ u32 FldEff_TallGrass(void)
 
     struct SpritePalette palette = {metatilePalette->paletteData, FLDEFF_PAL_TAG_TALL_GRASS};
     u8 index = LoadSpritePalette(&palette);
-    UpdateSpritePaletteWithWeather(index);
+    UpdateSpritePaletteWithWeather(index, FALSE);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_TALL_GRASS], x, y, 0);
     // end
 

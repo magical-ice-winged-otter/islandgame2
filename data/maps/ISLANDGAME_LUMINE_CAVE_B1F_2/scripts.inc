@@ -894,7 +894,7 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_Temp_Text_0:
 	.string "progress.)\p"
 	.string "(Huh? There's a note attached to one of\n"
 	.string "them.)\p"
-	.string "Thanks for playing the 1.5 release of\n"
+	.string "{COLOR BLUE}Thanks for playing the 1.5 release of\n"
 	.string "our Pokémon hack! Unfortunately, this\l"
 	.string "is where the road ends for now. Be sure\l"
 	.string "to check our forum page for future\l"
