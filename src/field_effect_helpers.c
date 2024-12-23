@@ -416,13 +416,38 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
 #define sCurrentMap  data[5]
 #define sObjectMoved data[7]
 
+#include "constants/metatile_labels.h"
+#include "constants/field_effects.h"
+#include "data/field_effects/tall_grass_palettes.h"
+
 u32 FldEff_TallGrass(void)
 {
     u8 spriteId;
     s16 x = gFieldEffectArguments[0];
     s16 y = gFieldEffectArguments[1];
     SetSpritePosToOffsetMapCoords(&x, &y, 8, 8);
+
+    // island-game
+    s16 posX = gFieldEffectArguments[0];
+    s16 posY = gFieldEffectArguments[1];
+    u32 metatileId = MapGridGetMetatileIdAt(posX, posY);
+    const struct GrassMetatilePalette* metatilePalette = &sGrassFieldEffects[0];
+
+    for (int i = 0; i < ARRAY_COUNT(sGrassFieldEffects); i++) 
+    {
+        if (sGrassFieldEffects[i].metatileId == metatileId) 
+        {
+            metatilePalette = &sGrassFieldEffects[i];
+            break;
+        }
+    }
+
+    struct SpritePalette palette = {metatilePalette->paletteData, FLDEFF_PAL_TAG_TALL_GRASS};
+    u8 index = LoadSpritePalette(&palette);
+    UpdateSpritePaletteWithWeather(index);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_TALL_GRASS], x, y, 0);
+    // end
+
     if (spriteId != MAX_SPRITES)
     {
         struct Sprite *sprite = &gSprites[spriteId];
