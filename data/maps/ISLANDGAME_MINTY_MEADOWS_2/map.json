@@ -37,10 +37,10 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 53,
-      "y": 24,
+      "x": 64,
+      "y": 30,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -76,8 +76,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
-      "x": 47,
-      "y": 24,
+      "x": 57,
+      "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -399,60 +399,6 @@
       "var": "VAR_TEMP_5",
       "var_value": "0",
       "script": "ISLANDGAME_MINTY_MEADOWS_2_CantLeave2"
-    },
-    {
-      "type": "trigger",
-      "x": 8,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 9,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 10,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 12,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_5",
-      "var_value": "0",
-      "script": "ISLANDGAME_MINTY_MEADOWS_2_CantGoYet"
     }
   ],
   "bg_events": [

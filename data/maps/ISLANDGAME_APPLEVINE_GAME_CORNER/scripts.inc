@@ -1340,12 +1340,12 @@ ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_144:
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_148:
 # 759 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_TM32
+	giveitem ITEM_ABILITY_PATCH
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_149:
 # 760 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_EXP_CANDY_XL
+	giveitem ITEM_ABILITY_CAPSULE
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_150:
@@ -1355,7 +1355,7 @@ ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_150:
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_151:
 # 762 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_TM21
+	giveitem ITEM_LEFTOVERS
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_152:

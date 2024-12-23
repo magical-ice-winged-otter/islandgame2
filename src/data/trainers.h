@@ -239,7 +239,7 @@ F_TRAINER_FEMALE |
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .items = { ITEM_ENERGY_POWDER, ITEM_HEAL_POWDER },
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -249,13 +249,13 @@ F_TRAINER_FEMALE |
             .heldItem = ITEM_STARF_BERRY,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .ability = ABILITY_MOODY,
-            .lvl = 11,
+            .lvl = 10,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-                MOVE_ICY_WIND,
+                MOVE_POWDER_SNOW,
                 MOVE_DOUBLE_TEAM,
-                MOVE_DISABLE,
+                MOVE_PROTECT,
                 MOVE_ICE_SHARD,
             },
             },

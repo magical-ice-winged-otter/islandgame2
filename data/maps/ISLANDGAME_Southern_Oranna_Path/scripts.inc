@@ -271,37 +271,37 @@ ISLANDGAME_Southern_Oranna_Path_EventScript_SeenAbsol::
 # 260 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
 	playmoncry SPECIES_ABSOL, CRY_MODE_ENCOUNTER
 # 261 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	applymovement 9, SOP_Absol_Surprised
+	applymovement 7, SOP_Absol_Surprised
 # 262 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	waitmovement 9
+	waitmovement 7
 # 264 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	applymovement 9, SOP_Absol_Run_1
+	applymovement 7, SOP_Absol_Run_1
 # 265 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	waitmovement 9
+	waitmovement 7
 # 266 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
 	playse SE_LEDGE
 # 267 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	applymovement 9, SOP_Absol_Jump
+	applymovement 7, SOP_Absol_Jump
 # 268 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	waitmovement 9
+	waitmovement 7
 # 269 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
 	playse SE_LEDGE
 # 270 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	applymovement 9, SOP_Absol_Jump
+	applymovement 7, SOP_Absol_Jump
 # 271 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	waitmovement 9
+	waitmovement 7
 # 272 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	applymovement 9, SOP_Absol_Run_2
+	applymovement 7, SOP_Absol_Run_2
 # 273 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	waitmovement 9
+	waitmovement 7
 # 275 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 # 276 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	applymovement 9, SOP_Absol_Run_3
+	applymovement 7, SOP_Absol_Run_3
 # 277 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	waitmovement 9
+	waitmovement 7
 # 279 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	removeobject 9
+	removeobject 7
 # 280 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
 # 281 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
