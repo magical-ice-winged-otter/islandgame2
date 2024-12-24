@@ -6216,7 +6216,7 @@ const u8 *GetTrainerPartnerName(void)
     {
         if (gPartnerTrainerId < TRAINER_PARTNER(PARTNER_END))
         {
-            return GetTrainerNameFromId(gPartnerTrainerId - MAX_TRAINERS_COUNT);
+            return GetTrainerNameFromId(gPartnerTrainerId);
         }
         else
         {
