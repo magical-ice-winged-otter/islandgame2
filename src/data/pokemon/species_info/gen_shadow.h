@@ -70,12 +70,12 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
     [SPECIES_SHADOW_MIGHTYENA] =
     {
         .baseHP        = 70,
-        .baseAttack    = 100,
-        .baseDefense   = 80,
-        .baseSpeed     = 90,
+        .baseAttack    = 95,
+        .baseDefense   = 70,
+        .baseSpeed     = 95,
         .baseSpAttack  = 60,
-        .baseSpDefense = 70,
-        .types = { TYPE_DARK, TYPE_DARK },
+        .baseSpDefense = 60,
+        .types = { TYPE_SHADOW, TYPE_SHADOW },
         .catchRate = 127,
         .expYield = 147,
         .evYield_Attack = 2,

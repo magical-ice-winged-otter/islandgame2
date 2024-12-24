@@ -5,10 +5,9 @@ const VAR_CURRENT_HOUR = VAR_0x8000
 mapscripts ISLANDGAME_CHERIPORT_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
 
-        // if (!flag(FLAG_LEFT_SHIP)) {
-        //     setflag(FLAG_LEFT_SHIP)
-        //     setflag(FLAG_ROOM3_ITEM)
-        // }
+        if (!flag(FLAG_LEFT_SS_RAIN)) {
+            setflag(FLAG_LEFT_SS_RAIN)
+        }
 
         if (flag(FLAG_PROF_GAVE_EEVEE)) {
             setvar(VAR_TEMP_1, 1)

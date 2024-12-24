@@ -428,8 +428,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 57,
-      "y": 33,
+      "x": 30,
+      "y": 31,
       "elevation": 0,
       "item": "ITEM_CLEVER_FEATHER",
       "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_C_FEATHER"

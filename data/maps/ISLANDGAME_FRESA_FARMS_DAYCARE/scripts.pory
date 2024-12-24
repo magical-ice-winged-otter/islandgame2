@@ -7,6 +7,9 @@ mapscripts ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts {
 
         gettime
 
+        if (!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
+            setflag(FLAG_TEMP_3)
+        }
         if (var(VAR_CURRENT_HOUR) < 6 || var(VAR_CURRENT_HOUR) >= 18) {
             setflag(FLAG_NIGHT)
         }

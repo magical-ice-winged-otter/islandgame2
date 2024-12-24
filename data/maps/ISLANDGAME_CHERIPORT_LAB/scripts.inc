@@ -190,7 +190,7 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_10:
 # 73 "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.pory"
 	msgbox ProfTalk_Third_Text
 # 75 "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.pory"
-	giveitem ITEM_POKE_BALL, 10
+	giveitem ITEM_POKE_BALL, 30
 # 76 "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.pory"
 	msgbox ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_Text_0
 # 81 "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.pory"
