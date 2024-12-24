@@ -590,6 +590,7 @@ void StartWallyTutorialBattle(void)
 void BattleSetup_StartScriptedWildBattle(void)
 {
     LockPlayerFieldControls();
+    gBattleTypeFlags = 0;
     if (gSaveBlock2Ptr->follower.battlePartner && F_FLAG_PARTNER_WILD_BATTLES != 0
      && (FlagGet(F_FLAG_PARTNER_WILD_BATTLES) || F_FLAG_PARTNER_WILD_BATTLES == ALWAYS))
     {
@@ -597,10 +598,6 @@ void BattleSetup_StartScriptedWildBattle(void)
         SavePlayerParty();
         gPartnerTrainerId = TRAINER_PARTNER(gSaveBlock2Ptr->follower.battlePartner);
         FillPartnerParty(gPartnerTrainerId);
-    } 
-    else 
-    {
-        gBattleTypeFlags = 0;
     }
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     CreateBattleStartTask(GetWildBattleTransition(), 0);
@@ -613,6 +610,7 @@ void BattleSetup_StartScriptedWildBattle(void)
 void BattleSetup_StartScriptedDoubleWildBattle(void)
 {
     LockPlayerFieldControls();
+    gBattleTypeFlags = 0;
     if (gSaveBlock2Ptr->follower.battlePartner && F_FLAG_PARTNER_WILD_BATTLES != 0
      && (FlagGet(F_FLAG_PARTNER_WILD_BATTLES) || F_FLAG_PARTNER_WILD_BATTLES == ALWAYS))
     {
@@ -622,7 +620,7 @@ void BattleSetup_StartScriptedDoubleWildBattle(void)
         FillPartnerParty(gPartnerTrainerId);
     } else
     {
-        gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
+        gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
     }
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     CreateBattleStartTask(GetWildBattleTransition(), 0);
