@@ -360,16 +360,94 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_Litten {
     release
 }
 
-script ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron {
-    lock 
-    faceplayer
+movement LaironApproach {
+    walk_up * 4
+}
+
+movement LaironStepBack {
+    lock_facing_direction
+    walk_down
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_LaironAssemble {
+    lock
+    playmoncry(SPECIES_LAIRON, CRY_MODE_NORMAL)
+    waitmoncry
+    playmoncry(SPECIES_LAIRON, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    delay(30)
+    addobject(20)
+    addobject(21)
+    setobjectxy(20, 25,13)
+    setobjectxy(21, 27,13)
+    applymovement(20, LaironApproach)
+    applymovement(21, LaironApproach)
+    waitmovement(0)
     setflag(FLAG_SMART_WILD_AI)
     setflag(FLAG_NO_CATCHING)
     setflag(FLAG_NO_RUNNING)
-    setcwildbattle(0, SPECIES_SHADOW_AGGRON, 45, ITEM_SHELL_BELL, NATURE_RELAXED, 2, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_CURSE, MOVE_HEAD_SMASH, MOVE_HEAVY_SLAM)
+    setcwildbattle(0, SPECIES_LAIRON, 40, ITEM_STEEL_GEM, NATURE_RELAXED, 0, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_ROCK_SLIDE, MOVE_ENDEAVOR, MOVE_REVERSAL)
+    setcwildbattle(1, SPECIES_LAIRON, 40, ITEM_ROCK_GEM, NATURE_RELAXED, 0, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_ROCK_SLIDE, MOVE_ENDEAVOR, MOVE_REVERSAL)
     setwilddoublebattle(TRUE)
+    playmoncry(SPECIES_LAIRON, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+        case B_OUTCOME_RAN:
+            break
+        default:
+            goto(ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron)
+    }
+}
+
+script ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron {
+    lock 
+    fadescreen(FADE_TO_BLACK)
+    setvar(VAR_0x8000, 26)
+    setvar(VAR_0x8001, 6)
+    callnative(TeleportCamera)
+    setobjectxy(OBJ_EVENT_ID_PLAYER, 26, 7)
+    fadescreen(FADE_FROM_BLACK)
+    playmoncry(SPECIES_LAIRON, CRY_MODE_WEAK)
+    waitmoncry
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    applymovement(20, LaironStepBack)
+    delay(60)
+    applymovement(21, LaironStepBack)
+    delay(60)
+    applymovement(8, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+    waitmovement(0)
+    delay(30)
+    applymovement(8, Common_Movement_WalkInPlaceDown)
+    waitmovement(0)
+    delay(30)
     playmoncry(SPECIES_AGGRON, CRY_MODE_ENCOUNTER)
     waitmoncry
+    applymovement(8, Common_Movement_WalkDown)
+    waitmovement(0)
+    delay(30)
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    setcwildbattle(0, SPECIES_SHADOW_AGGRON, 45, ITEM_LUM_BERRY, NATURE_RELAXED, 2, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_IRON_TAIL, MOVE_BULLDOZE, MOVE_ROCK_SLIDE, MOVE_REST)
+    setwilddoublebattle(TRUE)
     dowildbattle
     clearflag(FLAG_SMART_WILD_AI)
     clearflag(FLAG_NO_CATCHING)
@@ -387,7 +465,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron {
 }
 
 movement AlbaWalkToPlayer {
-    walk_up * 5
+    walk_up * 4
 }
 
 movement LittenGirlZoom {
@@ -396,7 +474,7 @@ movement LittenGirlZoom {
 }
 
 movement LittenGirlWalkToPlayer {
-    walk_down * 2
+    walk_down * 4
     walk_left
 }
 
@@ -405,7 +483,7 @@ movement LittenHop {
 }
 
 movement LittenWalkToGirl {
-    walk_down * 3
+    walk_down * 4
     face_left
 }
 
@@ -419,9 +497,6 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
     fadescreen(FADE_TO_BLACK)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     waitmovement(0)
-    setvar(VAR_0x8000, 26)
-    setvar(VAR_0x8001, 6)
-    callnative(TeleportCamera)
     removeobject(8)
     removeobject(20)
     removeobject(21)
@@ -433,7 +508,6 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
     addobject(1)
     addobject(2)
     addobject(11)
-    setobjectxy(OBJ_EVENT_ID_PLAYER, 26, 6)
     setobjectxyperm(8, 47, 0)  
     setobjectxyperm(20, 47, 0)  
     setobjectxyperm(21, 47, 0)  
