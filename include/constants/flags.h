@@ -1246,7 +1246,7 @@
 #define FLAG_ITEM_ROCKY_PATH_CARBOS                                 0x4A5 
 #define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
-#define FLAG_MINTY_MEADOWS_X_SP_ATK                                 0x4A8 
+#define FLAG_MINTY_MEADOWS_X_ATK                                    0x4A8 
 #define FLAG_MINTY_MEADOWS_X_DEF                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_REVIVE                                           0x4AB 

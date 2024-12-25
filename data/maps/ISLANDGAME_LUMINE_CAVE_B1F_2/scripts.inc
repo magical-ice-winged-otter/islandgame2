@@ -742,6 +742,8 @@ LittenGirlWalkToPlayer:
 	walk_down
 # 477 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	walk_down
+# 477 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
+	walk_down
 # 478 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	walk_left
 	step_end
@@ -756,6 +758,8 @@ LittenHop:
 
 # 485 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 LittenWalkToGirl:
+# 486 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
+	walk_down
 # 486 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	walk_down
 # 486 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"

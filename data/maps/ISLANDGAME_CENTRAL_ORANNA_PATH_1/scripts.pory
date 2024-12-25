@@ -9,7 +9,7 @@ const LOCALID_PKMN2 = 15
 const LOCALID_PKMN3 = 16
 
 const POS_HIDDEN_X = 0
-const POS_HIDDEN_Y = 0
+const POS_HIDDEN_Y = 55
 
 const VAR_MIGHTYENA_HIDDEN = VAR_TEMP_0
 

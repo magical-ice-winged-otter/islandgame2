@@ -12174,7 +12174,7 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_PARAS"
+                "species": "SPECIES_SIZZLIPEDE"
               },
               {
                 "min_level": 6,
@@ -12392,7 +12392,7 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_ROOKIDEE"
+                "species": "SPECIES_VULPIX"
               },
               {
                 "min_level": 13,
@@ -12516,7 +12516,7 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_ROOKIDEE"
+                "species": "SPECIES_VULPIX"
               },
               {
                 "min_level": 13,
