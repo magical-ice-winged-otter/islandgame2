@@ -1717,19 +1717,32 @@ void ItemUseOutOfBattle_PokeFlute(u8 taskId)
     }
 }
 
-static void ItemUseOnFieldCB_TownMap(u8 taskId)
+UNUSED static void ItemUseOnFieldCB_TownMap(u8 taskId)
 {
     LockPlayerFieldControls();
     ScriptContext_SetupScript(EventScript_RegionMap);
     DestroyTask(taskId);
 }
 
+void FieldShowRegionMap(void);
+
 void ItemUseOutOfBattle_TownMap(u8 taskId)
 {
-    sItemUseOnFieldCB = ItemUseOnFieldCB_TownMap;
-    gFieldCallback = FieldCB_UseItemOnField;
-    gBagMenu->newScreenCallback = CB2_ReturnToField;
-    Task_FadeAndCloseBagMenu(taskId);
+    /*
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_TownMap;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        // TODO: handle key items with callbacks to menus allow to be used by registering them.
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
+    */
+   FieldShowRegionMap();
 }
 
 #undef tUsingRegisteredKeyItem

@@ -12427,8 +12427,8 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_WailmerPail,
-        .iconPic = gItemIcon_WailmerPail,
-        .iconPalette = gItemIconPalette_WailmerPail,
+        .iconPic = gItemIcon_IslandgameSquirtBottle,
+        .iconPalette = gItemIconPalette_IslandgameSquirtBottle,
     },
 
     [ITEM_POKE_RADAR] =
@@ -14309,9 +14309,9 @@ const struct Item gItemsInfo[] =
         .name = _("Strange Disc"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "“{PKMN} Lost Silver”\n"
-            "is written on the\n"
-            "disc."
+            "Huh? When did I”\n"
+            "get this? Wonder\n"
+            "what's inside..."
         ),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

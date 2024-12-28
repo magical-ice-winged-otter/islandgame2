@@ -109,7 +109,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon3 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_FLETCHLING, 15, ITEM_CHARTI_BERRY, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    setcwildbattle(0, SPECIES_FLETCHLING, 15, ITEM_CHARTI_BERRY, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
     playmoncry(SPECIES_FLETCHLING, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)

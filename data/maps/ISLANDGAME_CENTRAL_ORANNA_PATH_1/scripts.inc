@@ -14,23 +14,23 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 20 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
 	setvar VAR_TEMP_0, 1
 # 21 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 4, 0, 0
+	setobjectxyperm 4, 0, 55
 # 22 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 5, 0, 0
+	setobjectxyperm 5, 0, 55
 # 23 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 6, 0, 0
+	setobjectxyperm 6, 0, 55
 # 24 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 1, 37, 27
+	setobjectxyperm 1, 46, 37
 # 25 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 3, 0, 0
+	setobjectxyperm 3, 0, 55
 # 26 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 2, 0, 0
+	setobjectxyperm 2, 0, 55
 # 27 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 14, 0, 0
+	setobjectxyperm 14, 0, 55
 # 28 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 15, 0, 0
+	setobjectxyperm 15, 0, 55
 # 29 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 16, 0, 0
+	setobjectxyperm 16, 0, 55
 # 30 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
 	return

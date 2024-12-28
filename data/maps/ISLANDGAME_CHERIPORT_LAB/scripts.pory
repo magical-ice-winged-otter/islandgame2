@@ -72,7 +72,7 @@ script ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk {
         
         msgbox(ProfTalk_Third_Text)
         // Give Pokeballs
-        giveitem(ITEM_POKE_BALL, 10)
+        giveitem(ITEM_POKE_BALL, 30)
         msgbox(format(
             "{COLOR GREEN}Prof. Palm: {COLOR DARK_GRAY}These are Pokéballs. They're a special tool that you can use to catch wild Pokémon!\p"
             "And with that, {PLAYER}, you're all set to begin your journey!\p"

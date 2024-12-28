@@ -39,7 +39,7 @@ movement RockyPath_RunAway2 {
 }
 
 movement RockyPath_RunAway3 {
-    walk_fast_right * 4
+    walk_fast_right * 22
 }
 
 movement RockyPath_RunAway4 {
@@ -48,10 +48,9 @@ movement RockyPath_RunAway4 {
 }
 
 movement RockyPath_RunAway5 {
-    jump_2_up
     walk_fast_left
     walk_fast_up
-    walk_fast_left * 8
+    walk_fast_left * 15
 }
 
 movement RockyPath_RunAway6 {
@@ -89,9 +88,6 @@ script ISLANDGAME_ROCKY_PATH_Rockruff {
             waitmoncry
             applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway3)
             waitmovement(0)
-            playse(SE_LEDGE)
-            applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway2)
-            waitmovement(0)
             setobjectxyperm(ROCKRUFF_OW_ID, 72, 64)
             setvar(VAR_ROCKY_PATH_STATE, 2)
         case 2:
@@ -104,7 +100,6 @@ script ISLANDGAME_ROCKY_PATH_Rockruff {
             waitmoncry
             applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway4)
             waitmovement(0)
-            playse(SE_LEDGE)
             applymovement(ROCKRUFF_OW_ID, RockyPath_RunAway5)
             waitmovement(0)
             setobjectxyperm(ROCKRUFF_OW_ID, 14, 65)

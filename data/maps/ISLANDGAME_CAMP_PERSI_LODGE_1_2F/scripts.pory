@@ -41,16 +41,9 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
                 "Ever since our battle, I've really learned a lot.\p"
                 "I now realize that winning takes more than just the stronger Pokémon to win.\p"
                 "Thank you for teaching that to me, and also keeping the whole thing a secret between us...\p"
-                "Here, I know it doesn't mean much, but I want you to have this as thanks.\p"
+                "Here, I know it doesn't mean much, but I want you to have these as thanks. I found 'em around camp.\p"
             ))
-            giveitem(ITEM_ISLANDGAME_STRANGE_DISC)
-            msgbox(format(
-                "It's a video game I got for free from some strange old man passing by camp.\p"
-                "I tried playing it using the laptop in the tree house, but it was too scary.\p"
-                "You're super old though, so I bet it won't faze you at all!\p"
-                "...\p"
-                "{PLAYER}▶▶▶▶ÇÀÑ▶▶▶¥ÔÚ▶▶▶▶▶▶\n▶サÊÁR▶▶▶▶▶▶Mヨ?▶▶エT$▶▶▶▶▶Mヨ"
-            ))
+            giveitem(ITEM_EXP_CANDY_XS, 3)
             setvar(VAR_CAMP_PERSI_STATE, 3)
         case 3:
             faceplayer

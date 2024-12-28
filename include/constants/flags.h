@@ -1246,7 +1246,7 @@
 #define FLAG_ITEM_ROCKY_PATH_CARBOS                                 0x4A5 
 #define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
-#define FLAG_MINTY_MEADOWS_X_SP_ATK                                 0x4A8 
+#define FLAG_MINTY_MEADOWS_X_ATK                                    0x4A8 
 #define FLAG_MINTY_MEADOWS_X_DEF                                    0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_REVIVE                                           0x4AB 
@@ -1515,28 +1515,20 @@
 
 
 // island-game flags
-#define FLAG_BELLEHAVEN_SPOKE_TO_JONAS              (SYSTEM_FLAGS + 0x85)   
-//ss rain: old man "quest"
+#define FLAG_LEFT_SS_RAIN                           (SYSTEM_FLAGS + 0x85)   
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
 //cheriport: get first mon
 #define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87)
-//southern oranna path: bro gives u some pot
 #define FLAG_S_ORANNA_PATH_NPC                      (SYSTEM_FLAGS + 0x88)
 //southern oranna path: witness sussy absol
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
-//camp persi: first battle with totally-not-secret-true-villain
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
-//minty meadows: free mint 
 #define FLAG_MINTY_MEADOWS_FREE_MINT                (SYSTEM_FLAGS + 0x8B)
 //minty meadows: beat up mel, fight a dog w rabies, rescue watame
 #define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
-//verdant woods: miracle seed
 #define FLAG_VERDANT_WOODS_SEED_RECEIVED            (SYSTEM_FLAGS + 0x8D)
-//verdant woods: beat fake tree
 #define FLAG_VERDANT_WOODS_SUDOWOODO_DEFEATED       (SYSTEM_FLAGS + 0x8E)
-//verdant path: trade with fisherdood
 #define FLAG_VERDANT_PATH_TRADE_DONE                (SYSTEM_FLAGS + 0x8F) 
-//verdant path: obtain big long rod
 #define FLAG_VERDANT_PATH_ROD_RECEIVED              (SYSTEM_FLAGS + 0x90) 
 //verdant path: old lady gives you insect repellent
 #define FLAG_VERDANT_PATH_NPC                       (SYSTEM_FLAGS + 0x91) 
@@ -1595,7 +1587,7 @@
 #define FLAG_LUMINE_CAVE_SHELL_BELL_RECEIVED        (SYSTEM_FLAGS + 0xB2)
 #define FLAG_FRESA_FARMS_TRADE_DONE                 (SYSTEM_FLAGS + 0xB3)
 #define FLAG_CANTALO_AVI_DEFEATED                   (SYSTEM_FLAGS + 0xB4)
-#define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
+#define FLAG_BELLEHAVEN_SPOKE_TO_JONAS              (SYSTEM_FLAGS + 0xB5)
 #define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
 #define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
 #define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
@@ -1653,7 +1645,7 @@
 #define FLAG_DAILY_LUMINE_CAVE_SHELL_4              (DAILY_FLAGS_START + 0x25)
 #define FLAG_DAILY_LUMINE_CAVE_SALT_4               (DAILY_FLAGS_START + 0x26) 
 #define FLAG_DAILY_COR_GROOMERS                     (DAILY_FLAGS_START + 0x27)
-#define FLAG_UNUSED_0x948                           (DAILY_FLAGS_START + 0x28) // Unused Flag
+#define FLAG_DAILY_PERSI_GIRL_SCOUT                 (DAILY_FLAGS_START + 0x28)
 #define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag
 #define FLAG_UNUSED_0x94A                           (DAILY_FLAGS_START + 0x2A) // Unused Flag
 #define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag

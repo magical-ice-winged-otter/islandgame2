@@ -17,16 +17,30 @@ text ISLANDGAME_CAMP_PERSI_LODGE_2_NPC1Talk {
 script ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_NPC2 {
     lock
     faceplayer
-    msgbox(ISLANDGAME_CAMP_PERSI_LODGE_2_NPC2Talk)
+    if (flag(FLAG_DAILY_PERSI_GIRL_SCOUT)) {
+        msgbox(format(
+            "If you want another one, come back tomorrow! :D"
+        ))
+        closemessage
+        return
+    }
+    msgbox(format(
+        "I made an extra one of these during arts and crafts! You can have it!"
+    ))
+    random(7)
+    switch(var(VAR_RESULT)) {
+        case 1: giveitem(ITEM_HEAVY_BALL)
+        case 2: giveitem(ITEM_LURE_BALL)
+        case 3: giveitem(ITEM_FRIEND_BALL)
+        case 4: giveitem(ITEM_LOVE_BALL)
+        case 5: giveitem(ITEM_LEVEL_BALL)
+        case 6: giveitem(ITEM_FAST_BALL)
+        default: giveitem(ITEM_MOON_BALL)
+    }
+    setflag(FLAG_DAILY_PERSI_GIRL_SCOUT)
     release
 }
 
-text ISLANDGAME_CAMP_PERSI_LODGE_2_NPC2Talk {
-    format(
-        "Camp is lame, nature is gross, and we don't even have air conditioning here! \p"
-        "They took away my phone too! How am I going to stay up to date on my shows!?"
-    )
-}
 
 script ISLANDGAME_CAMP_PERSI_LODGE_2_EventScript_NPC3 {
     lock

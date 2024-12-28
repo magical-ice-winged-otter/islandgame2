@@ -27,7 +27,8 @@ script PoryTileTest1_EventScript_BoyTalk {
     checkitem(ITEM_FRESH_WATER, 1)
     if (flag(FLAG_ROOM3_GAVE_WATER)) {
         msgbox(PoryTileTest1_BoyGave_Text)
-    } else {
+    }
+    else {
         if (var(VAR_RESULT) == 0) {
             msgbox(PoryTileTest1_BoyTalk_Text1)   
             giveitem(ITEM_FRESH_WATER, 1)

@@ -8,24 +8,24 @@ mapscripts ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts {
 
 
 script ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC {
-    msgbox(format(
-        "> SET BATTLE SPEED:"
-    ))
-    dynmultipush("Default", OPTIONS_BATTLE_SCENE_DISABLED)
-    dynmultipush("1x", OPTIONS_BATTLE_SCENE_1X)
-    dynmultipush("2x", OPTIONS_BATTLE_SCENE_2X)
-    dynmultipush("3x", OPTIONS_BATTLE_SCENE_3X)
-    dynmultipush("4x", OPTIONS_BATTLE_SCENE_4X)
-    dynmultistack(0, 0, TRUE, 5, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
-    if (var(VAR_BATTLE_SPEED) != VAR_RESULT) {
-        copyvar(VAR_BATTLE_SPEED, VAR_RESULT)
-        playmoncry(SPECIES_MAGNEZONE, CRY_MODE_HIGH_PITCH)
-        msgbox(format(
-            "> SPEED SET!"
-        ))
-    }
+    // msgbox(format(
+    //     "> SET BATTLE SPEED:"
+    // ))
+    // dynmultipush("Default", OPTIONS_BATTLE_SCENE_DISABLED)
+    // dynmultipush("1x", OPTIONS_BATTLE_SCENE_1X)
+    // dynmultipush("2x", OPTIONS_BATTLE_SCENE_2X)
+    // dynmultipush("3x", OPTIONS_BATTLE_SCENE_3X)
+    // dynmultipush("4x", OPTIONS_BATTLE_SCENE_4X)
+    // dynmultistack(0, 0, TRUE, 5, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
+    // if (var(VAR_BATTLE_SPEED) != VAR_RESULT) {
+    //     copyvar(VAR_BATTLE_SPEED, VAR_RESULT)
+    //     playmoncry(SPECIES_MAGNEZONE, CRY_MODE_HIGH_PITCH)
+    //     msgbox(format(
+    //         "> SPEED SET!"
+    //     ))
+    // }
 
-    return
+    // return
 }
 
 

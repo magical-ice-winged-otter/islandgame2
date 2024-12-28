@@ -55,22 +55,22 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC::
 	case 1, ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_3
 # 38 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	case 2, ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_4
-# 55 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 48 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	case 3, ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_5
-# 61 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 54 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_3
+# 57 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+	playse SE_PIN
+# 58 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+	applymovement 1, ExclaimFacePlayer
+# 59 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+	faceplayer
+# 60 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_4
 # 64 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	playse SE_PIN
-# 65 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	applymovement 1, ExclaimFacePlayer
-# 66 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	faceplayer
-# 67 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_5
-# 71 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	setvar VAR_CAMP_PERSI_STATE, 1
 ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_1:
-# 73 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 66 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	release
 	return
 
@@ -87,29 +87,27 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_4:
 # 40 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_1
 # 46 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	giveitem ITEM_ISLANDGAME_STRANGE_DISC
+	giveitem ITEM_EXP_CANDY_XS, 3
 # 47 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_2
-# 54 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	setvar VAR_CAMP_PERSI_STATE, 3
 	goto ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_1
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_5:
-# 56 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 49 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	faceplayer
-# 57 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_3
+# 50 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_2
 	goto ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_1
 
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC2::
-# 77 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 70 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	lock
-# 78 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 71 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	faceplayer
-# 79 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 72 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC2_Text_0
-# 82 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 75 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	release
 	return
 
@@ -131,34 +129,23 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_1:
 	.string "also keeping the whole thing a secret\l"
 	.string "between us...\p"
 	.string "Here, I know it doesn't mean much, but I\n"
-	.string "want you to have this as thanks.\p"
+	.string "want you to have these as thanks. I\l"
+	.string "found 'em around camp.\p"
 	.string "$"
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_2:
-# 48 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	.string "It's a video game I got for free from\n"
-	.string "some strange old man passing by camp.\p"
-	.string "I tried playing it using the laptop in\n"
-	.string "the tree house, but it was too scary.\p"
-	.string "You're super old though, so I bet it\n"
-	.string "won't faze you at all!\p"
-	.string "...\p"
-	.string "{PLAYER}▶▶▶▶ÇÀÑ▶▶▶¥ÔÚ▶▶▶▶▶▶\n"
-	.string "▶サÊÁR▶▶▶▶▶▶Mヨ?▶▶エT$▶▶▶▶▶Mヨ$"
-
-ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_3:
-# 58 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 51 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	.string "I'll figure out a way to beat that kid's\n"
 	.string "Charizard fair and square!\p"
 	.string "$"
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_4:
-# 62 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_3:
+# 55 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	.string "That was just too easy! It was literally\n"
 	.string "like stealing candy from a baby!$"
 
-ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_5:
-# 68 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_4:
+# 61 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	.string "Aiiiiiie! Where did you come from!? How\n"
 	.string "long have you been listening!?\p"
 	.string "I-I was just joking about the stealing\n"
@@ -167,7 +154,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_5:
 	.string "snooping around camp!$"
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC2_Text_0:
-# 80 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
+# 73 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	.string "I'm not good at remembering type\n"
 	.string "match-ups, so the card game helps me\l"
 	.string "learn them a lot better!$"

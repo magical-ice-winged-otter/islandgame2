@@ -170,16 +170,16 @@
 #define TRAINER_PIC_COUNT                 149
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
-#define TRAINER_BACK_PIC_BRENDAN                0
-#define TRAINER_BACK_PIC_MAY                    1
-#define TRAINER_BACK_PIC_RED                    2
-#define TRAINER_BACK_PIC_LEAF                   3
-#define TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN  4
-#define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
-#define TRAINER_BACK_PIC_WALLY                  6
-#define TRAINER_BACK_PIC_STEVEN                 7
-#define TRAINER_BACK_PIC_OLIVER                 8
-#define TRAINER_BACK_PIC_OLIVIA                 9
+#define TRAINER_BACK_PIC_OLIVER                 0
+#define TRAINER_BACK_PIC_OLIVIA                 1
+#define TRAINER_BACK_PIC_BRENDAN                2
+#define TRAINER_BACK_PIC_MAY                    3
+#define TRAINER_BACK_PIC_RED                    4
+#define TRAINER_BACK_PIC_LEAF                   5
+#define TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN  6
+#define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      7
+#define TRAINER_BACK_PIC_WALLY                  8
+#define TRAINER_BACK_PIC_STEVEN                 9
 #define TRAINER_BACK_PIC_MELISSA                10
 
 

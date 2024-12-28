@@ -36,6 +36,8 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_Touch {
 
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast {
+    lock
+    faceplayer
     msgbox(format(
         "My buddy across the lake thinks he can catch more Pokémon than me!\p"
         "I've been fishing in this lake since I was a little Tympole. He's toast!"
@@ -47,6 +49,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast {
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest {
     lock
+    faceplayer
     msgbox(format(
         "I challenged my mate to a fishing contest today.\p"
         "He doesn't know I have a super special fishing rod from Arnie's.\p"

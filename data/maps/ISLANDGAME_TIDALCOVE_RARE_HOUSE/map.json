@@ -54,7 +54,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Stone"
     }
   ],
   "night_music": "MUS_HG_VERMILION"

@@ -49,8 +49,8 @@ script SS_RAIN_CAFETERIA_NPC2_TALK {
                 }
             }
             else {
-                goto(LobsterRoll_End)
                 hidemoneybox
+                goto(LobsterRoll_End)
             }
 
         }
