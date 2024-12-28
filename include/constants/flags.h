@@ -662,50 +662,50 @@
 #define FLAG_HIDDEN_ITEM_TIDALCOVE_PEARL            0x265 
 #define FLAG_HIDDEN_ITEM_ROSEVALE_EXP_CANDY         0x266
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_EXP_CANDY      0x267 
-#define FLAG_HIDDEN_ITEM_AURORA_PATH_GUARD_SPEC     0x268
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_X_SPEED        0x268
 #define FLAG_HIDDEN_ITEM_MT_AURORA_NEVERMELTICE     0x269
 #define FLAG_HIDDEN_ITEM_MT_AURORA_SNOWBALL         0x26A 
 #define FLAG_HIDDEN_ITEM_SS_RAIN_EXP_CANDY          0x26B 
 #define FLAG_HIDDEN_ITEM_CHERIPORT_EXP_CANDY        0x26C 
 #define FLAG_HIDDEN_ITEM_SORANNA_PATH_EXP_CANDY     0x26D 
-#define FLAG_HIDDEN_ITEM_SORANNA_PATH_PARA_HEAL     0x26E 
+#define FLAG_HIDDEN_ITEM_SORANNA_PATH_PARA_HEAL     0x26E // unused
 #define FLAG_HIDDEN_ITEM_CAMP_PERSI_EXP_CANDY       0x26F 
 #define FLAG_HIDDEN_ITEM_VERDANT_PATH_EXP_CANDY     0x270 
 #define FLAG_HIDDEN_ITEM_VERDANT_WOODS_TANGA        0x271
 #define FLAG_HIDDEN_ITEM_VERDANT_WOODS_BIGSHROOM    0x272 
 #define FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY       0x273 
 #define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_EXP_CANDY    0x274 
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_S_FEATHER     0x275 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_S_FEATHER     0x275 // unused
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY_2   0x276
 #define FLAG_HIDDEN_ITEM_TIDALCOVE_EXP_CANDY        0x277 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_PRETTY_FEATHER   0x278 
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY     0x279
 #define FLAG_HIDDEN_ITEM_MT_AURORA_EXP_CANDY        0x27A 
-#define FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL         0x27B   
+#define FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL2        0x27B  // unused
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_REVIVE        0x27C
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_H_FEATHER     0x27D 
-#define FLAG_HIDDEN_ITEM_NORANNA_PATH_H_FEATHER     0x27E 
-#define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F
-#define FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER      0x280  
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_X_DEF         0x27D 
+#define FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL         0x27E 
+#define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F // unused
+#define FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER      0x280 // unused
 #define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE      0x282 
 #define FLAG_HIDDEN_ITEM_ROCKY_PATH_EXP_CANDY_S     0x283
 #define FLAG_HIDDEN_ITEM_ROCKY_PATH_H_FEATHER       0x284 
 #define FLAG_HIDDEN_ITEM_SS_RAIN_ORAN_BERRY         0x285 
-#define FLAG_HIDDEN_ITEM_CHERIPORT_H_FEATHER        0x286 
+#define FLAG_HIDDEN_ITEM_CHERIPORT_H_FEATHER        0x286 // unused
 #define FLAG_HIDDEN_ITEM_CAMP_PERSI_BERRY_JUICE     0x287
-#define FLAG_HIDDEN_ITEM_CAMP_PERSI_MUSCLE_FEATHER  0x288 
-#define FLAG_HIDDEN_ITEM_VERDANT_PATH_G_FEATHER     0x289 
+#define FLAG_HIDDEN_ITEM_CAMP_PERSI_MUSCLE_FEATHER  0x288 // unused
+#define FLAG_HIDDEN_ITEM_VERDANT_PATH_G_FEATHER     0x289 // unused
 #define FLAG_HIDDEN_ITEM_VERDANT_WOODS_TINYSHROOM   0x28A 
-#define FLAG_HIDDEN_ITEM_MAPLEGROVE_FEATHER         0x28B
+#define FLAG_HIDDEN_ITEM_MAPLEGROVE_FEATHER         0x28B // unused
 #define FLAG_HIDDEN_ITEM_MAPLEGROVE_REVIVE          0x28C
 #define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_REPEL        0x28D 
-#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_R_FEATHER    0x28E
-#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_C_FEATHER    0x28F
-#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_ETHER        0x290 
-#define FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_DIREHIT   0x291 
-#define FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_EVERSTONE 0x292 
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_PROTEIN       0x293 
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_R_FEATHER    0x28E // unused
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_SHROOM       0x28F
+#define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_SUPER_POTION 0x290 
+#define FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_CANDY     0x291 
+#define FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_MOONSTONE 0x292 
+#define FLAG_HIDDEN_ITEM_CORANNA_PATH_IRON          0x293 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_XP_CANDY      0x294 
 #define FLAG_HIDDEN_ITEM_ROCKY_PATH_FLOAT_STONE     0x295 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_OVAL_STONE     0x296 
@@ -1227,34 +1227,34 @@
 //island-game : Pokeball Items
 #define FLAG_ROOM3_ITEM                                             0x493 
 #define FLAG_ANOMALY01_ITEM                                         0x494
-#define FLAG_FRESA_FARMS_POKE_TOY                                   0x495 
+#define FLAG_FRESA_FARMS_MILK                                       0x495 
 #define FLAG_VERDANT_PATH_TIMER_BALL                                0x496 
-#define FLAG_ITEM_COP_2_FULL_RESTORE                                0x497
+#define FLAG_ITEM_COP_2_SUN_STONE                                   0x497
 #define FLAG_ITEM_MINTY_MEADOWS_BRIGHT_POWDER                       0x498
 #define FLAG_ITEM_TM_RETURN                                         0x499 
 #define FLAG_ITEM_CAMP_PERSI_POTION                                 0x49A 
 #define FLAG_ITEM_PERSI_NEST_ETHER                                  0x49B
-#define FLAG_ITEM_FRESA_FARMS_REVIVE                                0x49C 
+#define FLAG_ITEM_FRESA_FARMS_CARBOS                                0x49C 
 #define FLAG_ITEM_MOUNT_AURORA_BIG_PEARL                            0x49D 
 #define FLAG_ITEM_COP_1_RARE_CANDY                                  0x49E
 #define FLAG_ITEM_NOR_QUICK_BALL                                    0x49F  
 #define FLAG_ITEM_COP_2_TM_BULLET_SEED                              0x4A0 
 #define FLAG_ITEM_ROSEVALE_REPEL                                    0x4A1 
-#define FLAG_ITEM_TIDALCOVE_CALCIUM                                 0x4A2
-#define FLAG_ITEM_AURORA_PATH_IRON                                  0x4A3 
+#define FLAG_ITEM_TIDALCOVE_ZINC                                    0x4A2
+#define FLAG_ITEM_AURORA_PATH_SHINY_STONE                           0x4A3 
 #define FLAG_ITEM_AP_GANLON_BERRY                                   0x4A4 
 #define FLAG_ITEM_ROCKY_PATH_CARBOS                                 0x4A5 
 #define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
 #define FLAG_MINTY_MEADOWS_X_ATK                                    0x4A8 
-#define FLAG_MINTY_MEADOWS_X_DEF                                    0x4A9
+#define FLAG_MINTY_MEADOWS_DIRE_HIT                                 0x4A9
 #define FLAG_TRAVELERS_TUNNEL_DUSK_BALL                             0x4AA 
 #define FLAG_COP_1_REVIVE                                           0x4AB 
 #define FLAG_SS_RAIN_TM_CHARGE_BEAM                                 0x4AC 
 #define FLAG_SS_RAIN_MAX_REVIVE                                     0x4AD
 #define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
-#define FLAG_ITEM_COP_1_X_SP_ATK                                    0x4AF  
-#define FLAG_ITEM_MINTY_MEADOWS_HP_UP                               0x4B0 
+#define FLAG_ITEM_COP_FULL_HEAL                                     0x4AF  
+#define FLAG_ITEM_COP_REPEAT_BALL                                   0x4B0
 #define FLAG_ROCKY_PATH_TM                                          0x4B1
 #define FLAG_ITEM_COP_2_REPEAT_BALL                                 0x4B2 
 #define FLAG_ITEM_TIDALCOVE_DIVE_BALL                               0x4B3
@@ -1263,12 +1263,12 @@
 #define FLAG_ITEM_APPLEVINE_ZINC                                    0x4B6
 #define FLAG_ITEM_SORANNA_PATH_POKEBALL                             0x4B7
 #define FLAG_ITEM_VERDANT_PATH_ANTIDOTE                             0x4B8
-#define FLAG_ITEM_VERDANT_PATH_SILK_SCARF                           0x4B9 
+#define FLAG_ITEM_VERDANT_PATH_CALCIUM                              0x4B9
 #define FLAG_ITEM_VERDANT_WOODS_NET_BALL                            0x4BA
 #define FLAG_ITEM_VERDANT_WOODS_BUG_GEM                             0x4BB
-#define FLAG_ITEM_VERDANT_WOODS_POTION                              0x4BC 
+#define FLAG_ITEM_VERDANT_WOODS_POTION                              0x4BC // unused 
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
-#define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE
+#define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE // unused
 #define FLAG_ITEM_MAPLEGROVE_ABILITY_PATCH                          0x4BF
 #define FLAG_ITEM_ROCKY_PATH_ETHER                                  0x4C0 
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
@@ -1280,8 +1280,8 @@
 #define FLAG_ITEM_LUMINE_CAVE_PICKAXE                               0x4C7 
 #define FLAG_ITEM_LUMINE_CAVE_STARDUST                              0x4C8 
 #define FLAG_ITEM_SORANNA_PATH_ABSOLITE                             0x4C9 
-#define FLAG_ITEM_CAMP_PERSI_ABILITY_CAPSULE                        0x4CA 
-#define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
+#define FLAG_ITEM_CAMP_PERSI_PROTEIN                                0x4CA 
+#define FLAG_ITEM_CHERIPORT_HP_UP                                   0x4CB 
 #define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
 #define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
 #define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
@@ -1588,7 +1588,7 @@
 #define FLAG_FRESA_FARMS_TRADE_DONE                 (SYSTEM_FLAGS + 0xB3)
 #define FLAG_CANTALO_AVI_DEFEATED                   (SYSTEM_FLAGS + 0xB4)
 #define FLAG_BELLEHAVEN_SPOKE_TO_JONAS              (SYSTEM_FLAGS + 0xB5)
-#define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
+#define FLAG_CAMP_PERSI_PORYGON_DEFEATED            (SYSTEM_FLAGS + 0xB6)
 #define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
 #define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
 #define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag

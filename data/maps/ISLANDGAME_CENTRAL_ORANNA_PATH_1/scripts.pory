@@ -87,7 +87,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3 {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4 {
     trainerbattle_single(TRAINER_CORANNA_1_NPC4,
-        format("Argh! Not again! Why do these Abra keep teleporting away!?\pTime to take my frustration on you!"),
+        format("Argh! Not again! Why do these damn Ralts keep teleporting away!?\pTime to take my frustration on you!"),
         "Mrgrgrgr..."
     )
     msgbox(format("I'm sorry. It was rude of me to subject you to my anger."), MSGBOX_NPC)

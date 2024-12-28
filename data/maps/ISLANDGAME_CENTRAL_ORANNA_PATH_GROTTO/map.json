@@ -41,7 +41,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPINARAK)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VENIPEDE)",
       "x": 4,
       "y": 7,
       "elevation": 0,
@@ -54,7 +54,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLETCHLING)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ESPURR)",
       "x": 4,
       "y": 7,
       "elevation": 0,

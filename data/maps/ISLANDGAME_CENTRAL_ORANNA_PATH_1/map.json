@@ -242,9 +242,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_X_SP_ATK",
+      "trainer_sight_or_berry_tree_id": "ITEM_FULL_HEAL",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_COP_1_X_SP_ATK"
+      "flag": "FLAG_ITEM_COP_FULL_HEAL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
@@ -364,8 +364,8 @@
       "x": 33,
       "y": 11,
       "elevation": 0,
-      "item": "ITEM_PROTEIN",
-      "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_PROTEIN"
+      "item": "ITEM_IRON",
+      "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_IRON"
     },
     {
       "type": "hidden_item",
@@ -374,14 +374,6 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_XS",
       "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_XP_CANDY"
-    },
-    {
-      "type": "hidden_item",
-      "x": 15,
-      "y": 32,
-      "elevation": 0,
-      "item": "ITEM_SWIFT_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_CORANNA_PATH_S_FEATHER"
     },
     {
       "type": "sign",

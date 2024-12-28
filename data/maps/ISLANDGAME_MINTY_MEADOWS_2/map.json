@@ -174,9 +174,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_X_DEFENSE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DIRE_HIT",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_MINTY_MEADOWS_X_DEF"
+      "flag": "FLAG_MINTY_MEADOWS_DIRE_HIT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -423,16 +423,16 @@
       "x": 57,
       "y": 7,
       "elevation": 0,
-      "item": "ITEM_ETHER",
-      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_ETHER"
+      "item": "ITEM_SUPER_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_SUPER_POTION"
     },
     {
       "type": "hidden_item",
-      "x": 30,
-      "y": 31,
+      "x": 37,
+      "y": 27,
       "elevation": 0,
-      "item": "ITEM_CLEVER_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_C_FEATHER"
+      "item": "ITEM_TINY_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_SHROOM"
     },
     {
       "type": "sign",

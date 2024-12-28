@@ -1069,12 +1069,12 @@ static const struct InGameTrade sIngameTrades[] =
         .requestedSpecies = SPECIES_HORSEA
     },
 
-    [INGAME_TRADE_FIDOUGH] =
+    [INGAME_TRADE_RIOLU] =
     {
         .nickname = _("Korone"),
-        .species = SPECIES_FIDOUGH,
+        .species = SPECIES_RIOLU,
         .ivs = {31, 31, 31, 31, 31, 31},
-        .abilityNum = 0,
+        .abilityNum = 2,
         .otId = 32218,
         .conditions = {5, 5, 5, 5, 30},
         .personality = NATURE_IMPISH,
@@ -1082,7 +1082,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("Dorothy"),
         .sheen = 10,
         .otGender = FEMALE,
-        .requestedSpecies = SPECIES_SQUIRTLE
+        .requestedSpecies = SPECIES_FIDOUGH
     },
 };
 

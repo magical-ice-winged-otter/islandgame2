@@ -332,16 +332,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 64,
-      "y": 12,
-      "elevation": 0,
-      "item": "ITEM_HEALTH_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_NORANNA_PATH_H_FEATHER"
-    },
-    {
-      "type": "hidden_item",
-      "x": 27,
-      "y": 17,
+      "x": 44,
+      "y": 8,
       "elevation": 0,
       "item": "ITEM_REPEL",
       "flag": "FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL"

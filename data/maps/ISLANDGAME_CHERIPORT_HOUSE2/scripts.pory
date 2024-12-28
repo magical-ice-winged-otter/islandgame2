@@ -43,38 +43,36 @@ script ISLANDGAME_CHERIPORT_HOUSE2_EventScript_NPC3 {
             goto(PriestessDrinkGiver_End)
         }
 
-        checkitemspace(ITEM_SODA_POP)
-
         if (!var(VAR_RESULT)) {
             msgbox(format("Oh dear, you don't have enough room for a drink."))
             goto(PriestessDrinkGiver_End)
         }
         setflag(FLAG_DAILY_CHERIPORT_RECEIVED_DRINK)
-        giveitem(ITEM_FRESH_WATER)
+
         // Randomly select some item to give the player.
         // random(100)
 
-
-        // if (var(VAR_RESULT) < 30)
-        // {
-        //     giveitem(ITEM_FRESH_WATER)
-        // }
-        // elif (var(VAR_RESULT) < 30 + 25)
-        // {
-        //     giveitem(ITEM_LEMONADE)
-        // }
-        // elif (var(VAR_RESULT) < 30 + 25 + 20)
-        // {
-        //     giveitem(ITEM_SODA_POP)
-        // }
-        // elif (var(VAR_RESULT) < 30 + 25 + 20 + 15)
-        // {
-        //     giveitem(ITEM_MOOMOO_MILK)
-        // }
-        // else
-        // {
-        //     giveitem(ITEM_BERRY_JUICE)
-        // }
+        random(100)
+        if (var(VAR_RESULT) < 30)
+        {
+            giveitem(ITEM_FRESH_WATER)
+        }
+        elif (var(VAR_RESULT) < 30 + 25)
+        {
+            giveitem(ITEM_LEMONADE)
+        }
+        elif (var(VAR_RESULT) < 30 + 25 + 20)
+        {
+            giveitem(ITEM_SODA_POP)
+        }
+        elif (var(VAR_RESULT) < 30 + 25 + 20 + 15)
+        {
+            giveitem(ITEM_MOOMOO_MILK)
+        }
+        else
+        {
+            giveitem(ITEM_BERRY_JUICE)
+        }
     }
     else
     {

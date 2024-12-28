@@ -89,7 +89,7 @@ ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Gamecube::
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_Bed_Text_0:
 # 7 "data/maps/ISLANDGAME_MAPLEGROVE_AudreysHouse_2F/scripts.pory"
-	.string "{COLOR RED}(...I shouldn't be sleeping here.)$"
+	.string "{COLOR RED}(...This seems wrong.)$"
 
 ISLANDGAME_MAPLEGROVE_AudreysHouse_2F_EventScript_WooperDoll_Text_0:
 # 33 "data/maps/ISLANDGAME_MAPLEGROVE_AudreysHouse_2F/scripts.pory"

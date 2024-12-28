@@ -66,26 +66,20 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_1:
 	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_5
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_4:
 # 49 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
-	checkitemspace ITEM_SODA_POP
-# 51 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_8
-ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_7:
-# 56 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	removemoney 600
-# 57 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 50 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	updatemoneybox
-# 58 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
-	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4
-# 59 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 51 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3
+# 52 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	hidemoneybox
-# 60 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 53 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	giveitem ITEM_SODA_POP
-# 62 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 55 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 NightBeachSodaVendor_End:
-# 63 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 56 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	hidemoneybox
-# 64 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 57 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
@@ -103,291 +97,284 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_5:
 	goto NightBeachSodaVendor_End
 	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_4
 
-ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_8:
-# 52 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
-	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3
-# 53 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
-	goto NightBeachSodaVendor_End
-	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_7
-
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning::
-# 68 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 61 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	goto_if_unset FLAG_PROF_GAVE_EEVEE, ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning_1
 	return
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Eevee_Warning_1:
-# 69 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 62 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 70 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 63 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox NeedPokemon_Text
-# 71 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 64 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	waitmessage
-# 72 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 65 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
-# 73 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 66 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, WalkBack
-# 74 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 67 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	waitmovement 0
 	return
 
 
-# 83 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 76 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 WalkBack:
-# 84 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 77 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	walk_left
-# 85 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 78 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	step_end
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_LeaveIsles::
-# 89 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 82 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 90 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 83 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_StayHere
-# 91 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 84 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	waitmessage
-# 92 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 85 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
-# 93 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 86 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, WalkBack2
-# 94 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 87 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	waitmovement 0
 	return
 
 
-# 102 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 95 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 WalkBack2:
-# 103 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 96 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	walk_right
-# 104 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 97 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	step_end
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_MrBriney::
-# 118 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 111 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 119 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 112 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox MrBrineyTalk
-# 120 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 113 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Girl3::
-# 124 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 117 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 125 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 118 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	faceplayer
-# 126 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 119 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox NPCGirl_Talk
-# 127 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 120 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Boy4::
-# 135 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 128 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 136 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 129 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	faceplayer
-# 137 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 130 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox NPCBoy_Talk
-# 138 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 131 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Peeko::
-# 152 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 145 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 153 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 146 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	faceplayer
-# 154 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 147 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
-# 155 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 148 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox PeekoTalk
-# 156 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 149 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC1::
-# 164 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 157 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 165 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 158 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC1_TALK
-# 166 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 159 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC2::
-# 174 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 167 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 175 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 168 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC2_TALK
-# 176 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 169 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC3::
-# 184 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 177 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 185 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 178 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC3_TALK
-# 186 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 179 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC4::
-# 194 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 187 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 195 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 188 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC4_TALK
-# 196 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 189 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC6::
-# 205 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 198 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 206 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 199 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	faceplayer
-# 207 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 200 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC6_TALK
-# 208 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 201 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC7::
-# 219 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 212 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 220 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 213 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK
-# 221 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 214 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC8::
-# 230 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 223 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 231 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 224 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	faceplayer
-# 232 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 225 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC8_TALK
-# 233 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 226 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NPC9::
-# 244 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 237 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 245 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 238 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK
-# 246 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 239 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter::
-# 257 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 250 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 258 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 251 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	faceplayer
-# 259 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 252 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_TOWN_MAP, ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_2
-# 267 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 260 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_Text_1
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_1:
-# 271 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 264 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	closemessage
-# 272 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 265 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	setvar VAR_TEMP_2, 1
-# 273 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 266 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	setflag FLAG_RECEIVED_TOWN_MAP
-# 274 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 267 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_2:
-# 260 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 253 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_Text_0
-# 264 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 257 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	giveitem ITEM_TOWN_MAP
 	goto ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_1
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter2::
-# 278 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 271 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 279 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 272 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	playse SE_PIN
-# 280 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 273 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	applymovement 8, Common_Movement_ExclamationMark
-# 281 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 274 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	waitmovement 0
-# 282 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 275 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	applymovement 8, Common_Movement_Delay32
-# 283 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 276 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	waitmovement 0
-# 284 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 277 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-# 285 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 278 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_Text_0
-# 289 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 282 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	giveitem ITEM_TOWN_MAP
-# 290 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 283 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	setvar VAR_TEMP_2, 1
-# 291 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 284 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	setflag FLAG_RECEIVED_TOWN_MAP
-# 292 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 285 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	closemessage
-# 293 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 286 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN1::
-# 305 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 298 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 306 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 299 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC
-# 307 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 300 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN2::
-# 318 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 311 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 319 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 312 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN2_DESC
-# 320 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 313 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN3::
-# 330 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 323 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 331 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 324 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN3_DESC
-# 332 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 325 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_SIGN4::
-# 343 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 336 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	lock
-# 344 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 337 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	msgbox ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN4_DESC
-# 345 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 338 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	release
 	return
 
@@ -407,44 +394,39 @@ ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_2:
 	.string "afford it, then beat it!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_3:
-# 52 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
-	.string "{COLOR DARK_GRAY}Oi, you need to make some space for this\n"
-	.string "PREMIUM soda.$"
-
-ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor_Text_4:
-# 58 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 51 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "Here ya go, friend!$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_Text_0:
-# 261 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 254 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "Welcome to the Maryan Isles, traveler.\p"
 	.string "Please take this map. It will aid you in\n"
 	.string "traversing the region.$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_Greeter_Text_1:
-# 268 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 261 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "We, The Silverwing Order, pray you have\n"
 	.string "a pleasant stay.$"
 
 NeedPokemon_Text::
-# 79 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 72 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR RED}(I should go see Professor Palm before\n"
 	.string "I leave the city.)$"
 
 ISLANDGAME_CHERIPORT_OUTSIDE_StayHere::
-# 98 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 91 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR RED}(There's nothing past here but the vast\n"
 	.string "ocean.)$"
 
 NPCGirl_Talk::
-# 130 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 123 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}The islands are known for their tropical\n"
 	.string "weather, though at times there have\l"
 	.string "been bad storms that have even scared\l"
 	.string "POKéMON.$"
 
 NPCBoy_Talk::
-# 141 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 134 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}While I was exploring the Southern\n"
 	.string "Oranna Path at night, I was attacked by\l"
 	.string "a Pokémon on the mountains.\p"
@@ -452,71 +434,71 @@ NPCBoy_Talk::
 	.string "I'm too scared to see it again.$"
 
 MrBrineyTalk::
-# 147 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 140 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}This beach reminds you a lot of\n"
 	.string "Slateport, doesn't it, Peeko?$"
 
 PeekoTalk::
-# 159 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 152 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "Wrooooar! {COLOR BLUE}(I'm Peeko. Ahoy!)$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC1_TALK::
-# 169 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 162 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}Nuh-uh! Nuh-uh!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC2_TALK::
-# 179 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 172 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}Hey! I tagged you!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC3_TALK::
-# 189 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 182 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}Ugh... I can't see anything on my Game\n"
 	.string "Boy because of the sun!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC4_TALK::
-# 199 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 192 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}Left! Right! Left! Right! Huh? I'm in the\n"
 	.string "middle of my training! Shoo!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC6_TALK::
-# 211 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 204 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}Hiya! This is Cheriport. We get a lot of\n"
 	.string "visitors from other regions here.\p"
 	.string "{COLOR DARK_GRAY}I actually moved here from the Johto\n"
 	.string "region not too long ago.$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC7_TALK::
-# 224 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 217 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}Come on...{PAUSE 30} Come on...{PAUSE 30} Argh! Not another\n"
 	.string "Magikarp! I need a Horsea!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC8_TALK::
-# 236 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 229 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}Cheriport is home to the Cheri Berry!\p"
 	.string "{COLOR DARK_GRAY}They may not taste good to us, but\n"
 	.string "Pokémon sure love them!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_NPC9_TALK::
-# 249 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 242 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}-sigh-{PAUSE 30} If only you were still here with\n"
 	.string "us...$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN1_DESC::
-# 310 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 303 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}WELCOME TO CHERIPORT\n"
 	.string "{COLOR DARK_GRAY}Take a rest on our soft and sandy\l"
 	.string "beach!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN2_DESC::
-# 323 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 316 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}PROFESSOR PALM'S LABORATORY$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN3_DESC::
-# 335 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 328 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}SEASIDE SERVICES\n"
 	.string "{COLOR DARK_GRAY}Have a drink, it's on us!$"
 
 ISLAND_GAME_CHERIPORT_OUTSIDE_SIGN4_DESC::
-# 348 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
+# 341 "data/maps/ISLANDGAME_CHERIPORT/scripts.pory"
 	.string "{COLOR DARK_GRAY}! WARNING !\n"
 	.string "{COLOR DARK_GRAY}NO LIFEGUARD; SWIM AT YOUR OWN RISK!$"

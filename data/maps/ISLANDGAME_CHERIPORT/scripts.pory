@@ -46,13 +46,6 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
         goto(NightBeachSodaVendor_End)
     }
 
-    checkitemspace(ITEM_SODA_POP)
-
-    if (!var(VAR_RESULT)) {
-        msgbox(format("{COLOR DARK_GRAY}Oi, you need to make some space for this PREMIUM soda."))
-        goto(NightBeachSodaVendor_End)
-    }
-
     removemoney(600)
     updatemoneybox
     msgbox("Here ya go, friend!")
