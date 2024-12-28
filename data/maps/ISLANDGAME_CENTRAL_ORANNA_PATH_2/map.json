@@ -310,7 +310,7 @@
   "warp_events": [
     {
       "x": 62,
-      "y": 4,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_TIDALCOVE",
       "dest_warp_id": "9"
