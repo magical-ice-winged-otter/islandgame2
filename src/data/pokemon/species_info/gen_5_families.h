@@ -7252,7 +7252,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gOverworldPalette_SawsbuckSpring,
             gShinyOverworldPalette_SawsbuckSpring
         )
-        .levelUpLearnset = sSawsbuckLevelUpLearnset,
+        .levelUpLearnset = sSawsbuckSpringLevelUpLearnset,
         .teachableLearnset = sSawsbuckTeachableLearnset,
         .formSpeciesIdTable = sSawsbuckFormSpeciesIdTable,
     },
@@ -7438,7 +7438,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gOverworldPalette_SawsbuckWinter,
             gShinyOverworldPalette_SawsbuckWinter
         )
-        .levelUpLearnset = sSawsbuckLevelUpLearnset,
+        .levelUpLearnset = sSawsbuckWinterLevelUpLearnset,
         .teachableLearnset = sSawsbuckTeachableLearnset,
         .formSpeciesIdTable = sSawsbuckFormSpeciesIdTable,
     },

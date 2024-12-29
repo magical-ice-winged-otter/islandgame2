@@ -215,14 +215,6 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "item": "ITEM_PRETTY_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_MAPLEGROVE_FEATHER"
-    },
-    {
-      "type": "hidden_item",
-      "x": 25,
-      "y": 7,
-      "elevation": 0,
       "item": "ITEM_EXP_CANDY_XS",
       "flag": "FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY"
     },

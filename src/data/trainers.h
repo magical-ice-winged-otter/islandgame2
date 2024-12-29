@@ -166,7 +166,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_PIDGEY,
+            .species = SPECIES_CHIMCHAR,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 7,
@@ -334,7 +334,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_ZIGZAGOON,
+            .species = SPECIES_FROAKIE,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 8,
@@ -493,7 +493,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_SIZZLIPEDE,
+            .species = SPECIES_NINCADA_MARYAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 9,
@@ -531,7 +531,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_EKANS,
+            .species = SPECIES_ZIGZAGOON,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 10,
@@ -554,8 +554,8 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_FROAKIE,
-            .gender = TRAINER_MON_RANDOM_GENDER,
+            .species = SPECIES_ESPURR,
+            .gender = TRAINER_MON_FEMALE,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 10,
             .nature = NATURE_HARDY,
@@ -616,7 +616,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_DRILBUR,
             .gender = TRAINER_MON_MALE,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-            .ability = ABILITY_SAND_RUSH,
+            .ability = ABILITY_MOLD_BREAKER,
             .lvl = 15,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -631,13 +631,13 @@ F_TRAINER_FEMALE |
             .species = SPECIES_GIBLE,
             .gender = TRAINER_MON_FEMALE,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-            .ability = ABILITY_SAND_VEIL,
+            .ability = ABILITY_ROUGH_SKIN,
             .lvl = 15,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
                 MOVE_SAND_TOMB,
-                MOVE_DRAGON_RAGE,
+                MOVE_OUTRAGE,
                 MOVE_SAND_ATTACK,
                 MOVE_METAL_CLAW,
             },
@@ -687,7 +687,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_STARLY,
+            .species = SPECIES_WINGULL,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 11,
@@ -695,7 +695,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
-            .species = SPECIES_CHARMANDER,
+            .species = SPECIES_ZUBAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 12,
@@ -718,7 +718,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_BUDEW,
+            .species = SPECIES_FLABEBE,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 11,
@@ -726,7 +726,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
-            .species = SPECIES_FLABEBE,
+            .species = SPECIES_ROSELIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 12,
@@ -978,7 +978,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_ROCKRUFF,
+            .species = SPECIES_FIDOUGH,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 15,
@@ -986,7 +986,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
-            .species = SPECIES_RIOLU,
+            .species = SPECIES_MONFERNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 16,
@@ -1069,7 +1069,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_GROWLITHE,
+            .species = SPECIES_TIMBURR,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 21,
@@ -1100,7 +1100,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_NIDORINA,
+            .species = SPECIES_DEERLING_SPRING,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 22,
@@ -1201,7 +1201,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_PIDGEOTTO,
+            .species = SPECIES_STARAVIA,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 23,
@@ -1414,7 +1414,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
-            .species = SPECIES_CROAGUNK,
+            .species = SPECIES_GULPIN,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 17,
@@ -1422,7 +1422,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
-            .species = SPECIES_VULPIX,
+            .species = SPECIES_HOUNDOUR,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 17,
@@ -2042,15 +2042,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_ROSELIA,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-            .lvl = 24,
-            .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            },
-            {
-            .species = SPECIES_BAYLEEF,
+            .species = SPECIES_ROSERADE,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 25,

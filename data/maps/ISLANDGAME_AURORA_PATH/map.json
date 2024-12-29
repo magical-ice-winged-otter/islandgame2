@@ -61,19 +61,6 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 38,
-      "y": 21,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_1"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 1,
       "y": 46,
       "elevation": 0,
@@ -107,9 +94,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_IRON",
+      "trainer_sight_or_berry_tree_id": "ITEM_SHINY_STONE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_AURORA_PATH_IRON"
+      "flag": "FLAG_ITEM_AURORA_PATH_SHINY_STONE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -169,8 +156,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 34,
-      "y": 52,
+      "x": 42,
+      "y": 32,
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_EXP_CANDY"
@@ -180,16 +167,8 @@
       "x": 21,
       "y": 46,
       "elevation": 0,
-      "item": "ITEM_GUARD_SPEC",
-      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_GUARD_SPEC"
-    },
-    {
-      "type": "hidden_item",
-      "x": 42,
-      "y": 32,
-      "elevation": 0,
-      "item": "ITEM_RESIST_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER"
+      "item": "ITEM_X_SPEED",
+      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_X_SPEED"
     }
   ]
 }

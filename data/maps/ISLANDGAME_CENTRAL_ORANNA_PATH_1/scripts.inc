@@ -334,8 +334,8 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3_Text_2:
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_0:
 # 90 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	.string "Argh! Not again! Why do these Abra keep\n"
-	.string "teleporting away!?\p"
+	.string "Argh! Not again! Why do these damn\n"
+	.string "Ralts keep teleporting away!?\p"
 	.string "Time to take my frustration on you!$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4_Text_1:

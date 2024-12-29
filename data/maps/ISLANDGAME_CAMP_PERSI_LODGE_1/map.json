@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC2",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCOUT_M",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC3",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC1",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_CAMPER",
@@ -91,6 +91,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_NPC5",
       "flag": "FLAG_TEMP_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_5"
     }
   ],
   "warp_events": [
@@ -137,6 +150,13 @@
     }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_CAMP_PERSI_LODGE_1_1F_EventScript_PorygonTrigger"
+    }
   ]
 }

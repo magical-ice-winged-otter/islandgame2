@@ -323,14 +323,6 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_ROSEVALE_EXP_CANDY"
-    },
-    {
-      "type": "hidden_item",
-      "x": 13,
-      "y": 2,
-      "elevation": 0,
-      "item": "ITEM_GENIUS_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER"
     }
   ]
 }

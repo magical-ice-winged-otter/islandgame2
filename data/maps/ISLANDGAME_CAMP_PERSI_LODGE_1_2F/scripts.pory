@@ -41,22 +41,24 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
                 "Ever since our battle, I've really learned a lot.\p"
                 "I now realize that winning takes more than just the stronger Pokémon to win.\p"
                 "Thank you for teaching that to me, and also keeping the whole thing a secret between us...\p"
-                "Here, I know it doesn't mean much, but I want you to have these as thanks. I found 'em around camp.\p"
+                "Here, I know it doesn't mean much, but I want you to have these as thanks. I found 'em around camp."
             ))
             giveitem(ITEM_EXP_CANDY_XS, 3)
             setvar(VAR_CAMP_PERSI_STATE, 3)
         case 3:
             faceplayer
             msgbox(format(
-                "I'll figure out a way to beat that kid's Charizard fair and square!\p"
+                "I'll figure out a way to beat that kid's Charizard fair and square!"
             ))
         default:
             msgbox(format(
                 "That was just too easy! It was literally like stealing candy from a baby!"
                 ))
+            closemessage
             playse(SE_PIN)
             applymovement(1, ExclaimFacePlayer)
             faceplayer
+            delay(15)
             msgbox(format(
                 "Aiiiiiie! Where did you come from!? How long have you been listening!?\p"
                 "I-I was just joking about the stealing stuff, okay? And besides, there's no proof that I am anyways, so don't go snooping around camp!"
