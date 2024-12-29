@@ -753,7 +753,6 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
                 else
                 {
                     //FreeSpriteTilesByTag(TAG_HEALTHBOX_PLAYER1_TILE);
-                    MgbaPrintf(MGBA_LOG_DEBUG, "TEST");
                     LoadCompressedSpriteSheet(&sSpriteSheet_SinglesPlayerHealthbox);
                 }
             }
