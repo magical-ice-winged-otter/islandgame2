@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_LUMINE_CAVE_B1F_2",
   "layout": "LAYOUT_ISLANDGAME_LUMINE_CAVE_B1F_2",
   "music": "MUS_MT_PYRE",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_LUMINE_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -418,45 +418,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BIG_WAILMER_DOLL",
-      "x": 5,
-      "y": 26,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_LUMINE_CAVE_B1F_2_Temp",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BIG_WAILMER_DOLL",
-      "x": 7,
-      "y": 26,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_LUMINE_CAVE_B1F_2_Temp",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BIG_WAILMER_DOLL",
-      "x": 6,
-      "y": 27,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_LUMINE_CAVE_B1F_2_Temp",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ARON)",
       "x": 42,
       "y": 11,
@@ -494,6 +455,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_LUMINE_CAVE_B1F_2_AlbaInteract",
       "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 36,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_ROCK_TOMB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_LUMINE_CAVE_TM_ROCK_TOMB"
     }
   ],
   "warp_events": [
@@ -581,14 +555,6 @@
     }
   ],
   "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 36,
-      "y": 7,
-      "elevation": 0,
-      "item": "ITEM_HARD_STONE",
-      "flag": "FLAG_HIDDEN_ITEM_LUMINE_CAVE_HARD_STONE"
-    },
     {
       "type": "sign",
       "x": 11,

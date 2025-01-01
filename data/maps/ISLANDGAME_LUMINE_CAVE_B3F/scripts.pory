@@ -8,6 +8,9 @@ mapscripts ISLANDGAME_LUMINE_CAVE_B3F_MapScripts {
         if(flag(FLAG_LUMINE_CAVE_SABLEYE_DEFEATED)) {
             setflag(FLAG_TEMP_1)
         }
+        else {
+            setflag(FLAG_ITEM_LUMINE_CAVE_SABLENITE)
+        }
     }
 
     MAP_SCRIPT_ON_RESUME {
@@ -31,7 +34,7 @@ script ISLANDGAME_LUMINE_CAVE_B3F_SableyeInteract {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_SABLEYE, 25, ITEM_SABLENITE, NUM_NATURES, 2,,,,,,, 31, 31, 31, 31, 31, 31, MOVE_RECOVER, MOVE_SUCKER_PUNCH, MOVE_SHADOW_SNEAK, MOVE_FLATTER)
+    setcwildbattle(0, SPECIES_SABLEYE, 25, ITEM_NONE, NUM_NATURES, 2,,,,,,, 31, 31, 31, 31, 31, 31, MOVE_RECOVER, MOVE_SUCKER_PUNCH, MOVE_SHADOW_SNEAK, MOVE_FLATTER)
     playmoncry(SPECIES_SABLEYE, CRY_MODE_ENCOUNTER)
     waitmoncry
     dowildbattle
@@ -43,10 +46,17 @@ script ISLANDGAME_LUMINE_CAVE_B3F_SableyeInteract {
             break
         case B_OUTCOME_RAN:
             break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
             setflag(FLAG_LUMINE_CAVE_SABLEYE_DEFEATED)
+            clearflag(FLAG_ITEM_LUMINE_CAVE_SABLENITE)
+            addobject(2)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_LUMINE_CAVE_SABLEYE_DEFEATED)
+            clearflag(FLAG_ITEM_LUMINE_CAVE_SABLENITE)
+            addobject(2)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release

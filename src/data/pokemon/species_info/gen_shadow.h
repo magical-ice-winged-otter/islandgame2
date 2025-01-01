@@ -751,12 +751,12 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
 #if P_FAMILY_SHADOW_AGGRON
     [SPECIES_SHADOW_AGGRON] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 110,
-        .baseDefense   = 180,
+        .baseHP        = 90,
+        .baseAttack    = 90,
+        .baseDefense   = 130,
         .baseSpeed     = 50,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 60,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 130,
         .types = MON_TYPES(TYPE_SHADOW, TYPE_SHADOW),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
