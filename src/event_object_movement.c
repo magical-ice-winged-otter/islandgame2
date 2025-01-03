@@ -335,6 +335,7 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
+    [MOVEMENT_TYPE_WANDER_IN_GRASS] = MovementType_WanderInGrass,
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -379,6 +380,7 @@ static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
     [MOVEMENT_TYPE_COPY_PLAYER_OPPOSITE_IN_GRASS] = TRUE,
     [MOVEMENT_TYPE_COPY_PLAYER_COUNTERCLOCKWISE_IN_GRASS] = TRUE,
     [MOVEMENT_TYPE_COPY_PLAYER_CLOCKWISE_IN_GRASS] = TRUE,
+    [MOVEMENT_TYPE_WANDER_IN_GRASS] = TRUE,
 };
 
 const u8 gInitialMovementTypeFacingDirections[] = {
@@ -463,6 +465,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP] = DIR_NORTH,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = DIR_WEST,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
+    [MOVEMENT_TYPE_WANDER_IN_GRASS] = DIR_SOUTH,
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -5988,6 +5991,24 @@ bool8 MovementType_Invisible_Step2(struct ObjectEvent *objectEvent, struct Sprit
     objectEvent->singleMovementActive = FALSE;
     return FALSE;
 }
+
+movement_type_def(MovementType_WanderInGrass, gMovementTypeFuncs_WanderInGrass)
+
+bool8 MovementType_WanderInGrass_Step4(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    u8 directions[4];
+    u8 chosenDirection;
+
+    memcpy(directions, gStandardDirections, sizeof directions);
+    chosenDirection = directions[Random() & 3];
+    SetObjectEventDirection(objectEvent, chosenDirection);
+    sprite->sTypeFuncId = 5;
+    if (!MetatileBehavior_IsPokeGrass(MapGridGetMetatileBehaviorAt(objectEvent->currentCoords.x + gDirectionToVectors[chosenDirection].x, objectEvent->currentCoords.y + gDirectionToVectors[chosenDirection].y))
+        || GetCollisionInDirection(objectEvent, chosenDirection))
+         sprite->sTypeFuncId = 1;
+
+     return TRUE;
+ }
 
 void ClearObjectEventMovement(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
