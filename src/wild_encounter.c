@@ -1244,8 +1244,14 @@ bool8 ScrCmd_SetObjectAsWildEncounter(struct ScriptContext *ctx)
 static u16 ReturnFixedSpeciesEncounter(void)
 {
     u16 shinyTag = GeneratedOverworldMonShinyRoll() ? SPECIES_SHINY_TAG : 0;
-    u16 species = SPECIES_CHIMCHAR;
-    
+    u16 species = SPECIES_KRICKETUNE;
+    //islandgame add
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ISLANDGAME_MINTY_MEADOWS) &&
+        gSaveBlock1Ptr->location.mapNum == MAP_NUM(ISLANDGAME_MINTY_MEADOWS))
+    {
+        species = SPECIES_ROSELIA;
+    }
+    //islandgame end
     return species + OBJ_EVENT_GFX_SPECIES(NONE) + shinyTag;
 }
 

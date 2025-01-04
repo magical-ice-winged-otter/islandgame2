@@ -315,3 +315,9 @@ script ISLANDGAME_PKMNCENTER_2F_MoveRelearner {
         closemessage
         release
 }
+
+script Common_EventScript_OverworldPokemon {
+    lock
+    startoverworldencounter(5)
+    release
+}

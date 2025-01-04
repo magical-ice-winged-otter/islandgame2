@@ -433,6 +433,16 @@ ISLANDGAME_PKMNCENTER_2F_MoveRelearner_18:
 	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_17
 
 
+Common_EventScript_OverworldPokemon::
+# 321 "data/scripts/islandgame_common.pory"
+	lock
+# 322 "data/scripts/islandgame_common.pory"
+	startoverworldencounter 5
+# 323 "data/scripts/islandgame_common.pory"
+	release
+	return
+
+
 IslandGame_Common_PokemonCenter_1F_EventScript_Nurse_Text_0:
 # 48 "data/scripts/islandgame_common.pory"
 	.string "Welcome to the Maryan isles, trainer!\n"

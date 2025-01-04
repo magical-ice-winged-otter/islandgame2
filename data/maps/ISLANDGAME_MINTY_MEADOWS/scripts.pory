@@ -2,7 +2,12 @@
 const MAREEP_OW_ID = 11
 const MIGHTYENA_OW_ID = 12
 
+const OW_MON_ID_1 = 19
+
 mapscripts ISLANDGAME_MINTY_MEADOWS_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setobjectaswildencounter(OW_MON_ID_1, ENCOUNTER_FIXED)
+    }
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign {
