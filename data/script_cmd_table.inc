@@ -242,6 +242,7 @@ gScriptCmdTable::
     .4byte ScrCmd_setcwildbattle                    @ 0xed
 	.4byte ScrCmd_updatefollowingmon				@ 0xee
 	.4byte ScrCmd_ballfollowingmon					@ 0xef
+	.4byte ScrCmd_SetObjectAsWildEncounter			@ 0xf0
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

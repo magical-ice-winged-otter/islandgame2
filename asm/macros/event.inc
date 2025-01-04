@@ -2280,6 +2280,13 @@
 	delay 16
 	.endm
 
+	@ Sets a variable object event to an overworld mon for a wild encounter.
+	.macro setobjectaswildencounter localId:req, encounterType=ENCOUNTER_FIXED
+	.byte 0xf0
+	.2byte \localId
+	.byte \encounterType
+	release
+	.endm
 
 @ Supplementary
 
@@ -2899,4 +2906,3 @@
 	.2byte \localId
 	.2byte \dest
 	.endm
-
