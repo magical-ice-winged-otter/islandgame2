@@ -24,7 +24,7 @@ ISLANDGAME_Southern_Oranna_Path_Cave_BattleAbsol::
 # 15 "data/maps/ISLANDGAME_Southern_Oranna_Path_Cave/scripts.pory"
 	setflag FLAG_SMART_WILD_AI
 # 16 "data/maps/ISLANDGAME_Southern_Oranna_Path_Cave/scripts.pory"
-	setcwildbattle 0, SPECIES_ABSOL, 25, ITEM_NONE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PLAY_ROUGH, MOVE_SUCKER_PUNCH, MOVE_MEGAHORN, MOVE_ZEN_HEADBUTT
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_ABSOL, 25, ITEM_NONE, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PLAY_ROUGH, MOVE_SUCKER_PUNCH, MOVE_MEGAHORN, MOVE_ZEN_HEADBUTT
 # 17 "data/maps/ISLANDGAME_Southern_Oranna_Path_Cave/scripts.pory"
 	playmoncry SPECIES_ABSOL, CRY_MODE_ENCOUNTER
 # 18 "data/maps/ISLANDGAME_Southern_Oranna_Path_Cave/scripts.pory"

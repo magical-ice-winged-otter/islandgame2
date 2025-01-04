@@ -137,7 +137,7 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
-	setcwildbattle 0, SPECIES_SNEASEL, 5, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_THIEF, MOVE_THIEF, MOVE_THIEF, MOVE_THIEF
+	createmon 0, SPECIES_SNEASEL, 5, ITEM_SITRUS_BERRY, NUM_NATURES, 0, MON_GENDERLESS, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_THIEF, MOVE_THIEF, MOVE_THIEF, MOVE_THIEF
 	dowildbattle
 	end
 
@@ -146,7 +146,7 @@ Debug_EventScript_Script_2::
 	end
 
 Debug_EventScript_Script_3::
-	release
+	call(ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena)
 	end
 
 Debug_EventScript_Script_4::
