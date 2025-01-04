@@ -2789,6 +2789,15 @@
 	callnative Script_ToggleFakeRtc
 	.endm
 
+	@ Begins a wild battle against an overworld mon object event with a defined level.
+	.macro startoverworldencounter level=req
+	callnative GetOverworldMonSpecies
+	playmoncry VAR_0x8004, CRY_MODE_ENCOUNTER
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, VAR_0x8004, \level, isShiny=VAR_0x8005
+	waitmoncry
+	dowildbattle
+	.endm
+
 	@ ============================ @
 	@ ITEM DESCRIPTION HEADER MACROS
 	@ Used with OW_SHOW_ITEM_DESCRIPTIONS config
