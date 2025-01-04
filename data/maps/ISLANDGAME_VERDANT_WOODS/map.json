@@ -310,7 +310,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1",
+      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract",
       "flag": "FLAG_TEMP_4"
     },
     {
@@ -323,7 +323,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2",
+      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract",
       "flag": "FLAG_TEMP_5"
     },
     {
@@ -336,7 +336,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3",
+      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract",
       "flag": "FLAG_TEMP_6"
     },
     {
@@ -349,7 +349,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1",
+      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -362,7 +362,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2",
+      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract",
       "flag": "FLAG_TEMP_2"
     },
     {
@@ -375,7 +375,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3",
+      "script": "ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract",
       "flag": "FLAG_TEMP_3"
     }
   ],

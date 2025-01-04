@@ -392,7 +392,7 @@ ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_2:
 	goto ISLANDGAME_VERDANT_WOODS_EventScript_SIGN2_1
 
 
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1::
+ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract::
 # 562 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	lock
 # 563 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
@@ -400,326 +400,43 @@ ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1::
 # 564 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	setflag FLAG_SMART_WILD_AI
 # 565 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setcwildbattle 0, SPECIES_JOLTIK, 7, ITEM_NONE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
+	startoverworldencounter 7
 # 566 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	playmoncry SPECIES_JOLTIK, CRY_MODE_ENCOUNTER
-# 567 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	waitmoncry
-# 568 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 569 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	dowildbattle
-# 570 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	clearflag FLAG_SMART_WILD_AI
-# 571 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 567 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 573 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+# 569 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	switch VAR_RESULT
+# 570 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_3
+# 572 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_4
 # 574 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_3
+	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_5
 # 576 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_4
-# 578 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_5
-# 580 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_6
-# 583 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_1:
-# 585 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	release
-	return
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_3:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_4:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_5:
+	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_6
 # 579 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_6:
+ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_1:
 # 581 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1_1
-
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2::
-# 589 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	lock
-# 590 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	faceplayer
-# 591 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 592 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setcwildbattle 0, SPECIES_JOLTIK, 7, ITEM_NONE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0
-# 593 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	playmoncry SPECIES_JOLTIK, CRY_MODE_ENCOUNTER
-# 594 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	waitmoncry
-# 595 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 596 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	dowildbattle
-# 597 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 598 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 600 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	switch VAR_RESULT
-# 601 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_3
-# 603 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_4
-# 605 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_5
-# 607 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_6
-# 610 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_1:
-# 612 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	release
 	return
 
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_3:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_1
+ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_3:
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_1
 
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_4:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_1
+ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_4:
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_1
 
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_5:
-# 606 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_5:
+# 575 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_1
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_1
 
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_6:
-# 608 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
+ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_6:
+# 577 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2_1
-
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3::
-# 616 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	lock
-# 617 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	faceplayer
-# 618 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 619 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setcwildbattle 0, SPECIES_JOLTIK, 8, ITEM_NONE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
-# 620 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	playmoncry SPECIES_JOLTIK, CRY_MODE_ENCOUNTER
-# 621 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	waitmoncry
-# 622 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 623 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	dowildbattle
-# 624 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 625 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 627 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	switch VAR_RESULT
-# 628 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_3
-# 630 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_4
-# 632 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_5
-# 634 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_6
-# 637 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_1:
-# 639 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	release
-	return
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_3:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_4:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_5:
-# 633 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_6:
-# 635 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3_1
-
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1::
-# 644 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	lock
-# 645 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	faceplayer
-# 646 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 647 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setcwildbattle 0, SPECIES_SPINARAK, 7, ITEM_NONE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
-# 648 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	playmoncry SPECIES_SPINARAK, CRY_MODE_ENCOUNTER
-# 649 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	waitmoncry
-# 650 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 651 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	dowildbattle
-# 652 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 653 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 655 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	switch VAR_RESULT
-# 656 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_3
-# 658 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_4
-# 660 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_5
-# 662 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_6
-# 665 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_1:
-# 667 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	release
-	return
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_3:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_4:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_5:
-# 661 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_6:
-# 663 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1_1
-
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2::
-# 672 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	lock
-# 673 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	faceplayer
-# 674 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 675 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setcwildbattle 0, SPECIES_SPINARAK, 7, ITEM_NONE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0
-# 676 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	playmoncry SPECIES_SPINARAK, CRY_MODE_ENCOUNTER
-# 677 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	waitmoncry
-# 678 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 679 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	dowildbattle
-# 680 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 681 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 683 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	switch VAR_RESULT
-# 684 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_3
-# 686 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_4
-# 688 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_5
-# 690 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_6
-# 693 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_1:
-# 695 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	release
-	return
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_3:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_4:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_5:
-# 689 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_6:
-# 691 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2_1
-
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3::
-# 700 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	lock
-# 701 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	faceplayer
-# 702 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 703 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setcwildbattle 0, SPECIES_SPINARAK, 8, ITEM_CHESTO_BERRY, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_TWINEEDLE, MOVE_TOXIC_SPIKES, MOVE_RAGE_POWDER, MOVE_PURSUIT
-# 704 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	playmoncry SPECIES_SPINARAK, CRY_MODE_ENCOUNTER
-# 705 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	waitmoncry
-# 706 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 707 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	dowildbattle
-# 708 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 709 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 711 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	switch VAR_RESULT
-# 712 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_3
-# 714 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_4
-# 716 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_WON, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_5
-# 718 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_6
-# 721 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_1:
-# 723 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	release
-	return
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_3:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_4:
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_5:
-# 717 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_1
-
-ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_6:
-# 719 "data/maps/ISLANDGAME_VERDANT_WOODS/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3_1
+	goto ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract_1
 
 
 ISLANDGAME_VERDANT_WOODS_Sudowoodo_Text_0:

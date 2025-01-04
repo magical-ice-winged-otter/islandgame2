@@ -177,72 +177,11 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Trainer5 {
 
 
 
-script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1 {
+script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola {
     lock
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_ROGGENROLA, 23, ITEM_NONE, NUM_NATURES, 0)
-    playmoncry(SPECIES_ROGGENROLA, CRY_MODE_ENCOUNTER)
-    waitmoncry
-    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
-    dowildbattle
-    setflag(FLAG_TEMP_1)
-    clearflag(FLAG_SMART_WILD_AI)
-    specialvar(VAR_RESULT, GetBattleOutcome)
-        
-    switch(var(VAR_RESULT)) {
-        case B_OUTCOME_LOST:
-            break
-        case B_OUTCOME_RAN:
-            break
-        case B_OUTCOME_WON:
-            goto(Common_EventScript_RemoveStaticPokemon)
-        case B_OUTCOME_CAUGHT:
-            goto(Common_EventScript_RemoveStaticPokemon)
-        default:
-            goto(Common_EventScript_RemoveStaticPokemon)
-    }
-    release
-}
-
-script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2 {
-    lock 
-    faceplayer
-    setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_ROGGENROLA, 23, ITEM_NONE, NUM_NATURES, 1)
-    playmoncry(SPECIES_ROGGENROLA, CRY_MODE_ENCOUNTER)
-    waitmoncry
-    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
-    dowildbattle
-    setflag(FLAG_TEMP_2)
-    clearflag(FLAG_SMART_WILD_AI)
-    specialvar(VAR_RESULT, GetBattleOutcome)
-        
-    switch(var(VAR_RESULT)) {
-        case B_OUTCOME_LOST:
-            break
-        case B_OUTCOME_RAN:
-            break
-        case B_OUTCOME_WON:
-            goto(Common_EventScript_RemoveStaticPokemon)
-        case B_OUTCOME_CAUGHT:
-            goto(Common_EventScript_RemoveStaticPokemon)
-        default:
-            goto(Common_EventScript_RemoveStaticPokemon)
-    }
-    release
-}
-
-script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3 {
-    lock 
-    faceplayer
-    setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_ROGGENROLA, 23, ITEM_HARD_STONE, NUM_NATURES, 2)
-    playmoncry(SPECIES_ROGGENROLA, CRY_MODE_ENCOUNTER)
-    waitmoncry
-    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
-    dowildbattle
-    setflag(FLAG_TEMP_3)
+    startoverworldencounter(23)
     clearflag(FLAG_SMART_WILD_AI)
     specialvar(VAR_RESULT, GetBattleOutcome)
         
