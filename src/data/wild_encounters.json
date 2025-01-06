@@ -11679,7 +11679,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHIMCHAR"
+                "species": "SPECIES_CHIKORITA"
               },
               {
                 "min_level": 3,
@@ -12392,7 +12392,7 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_GULPIN"
+                "species": "SPECIES_EKANS"
               },
               {
                 "min_level": 13,

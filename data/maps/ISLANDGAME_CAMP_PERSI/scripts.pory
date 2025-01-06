@@ -53,23 +53,10 @@ mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
 /// trainers
 // Ninja Boy Hanzo
 script ISLANDGAME_CAMP_PERSI_TrainerBattle1 {
-    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_1, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text)
-    checkitem(ITEM_ISLANDGAME_MACHETE)
-    if(var(VAR_RESULT)) {
-        msgbox(format(
-            "I may not be worthy of my blade now, but I will be back for it later! Believe it!"
-            ))
-    }
-    else {
-        msgbox(format(
-            "Naruhodo... It appears I still have a lot to learn...\p"
-            "{PLAYER}-san! As my first battle and only loss, please take my ka-ta-na.\p"
-            "It will serve you well in your journey, I know of it!"
+    trainerbattle_single(TRAINER_CAMP_PERSI_TRAINER_1, ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text, "Bakana... I lost!?", ISLANDGAME_CAMP_PERSI_HanzoKatana)
+    msgbox(format(
+        "I may not be worthy of my blade now, but I will be back for it later! Believe it!"
         ))
-        giveitem(ITEM_ISLANDGAME_MACHETE)
-    }
-    closemessage
-    release
 }
 
 text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text {
@@ -79,9 +66,17 @@ text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text {
     )
 }
 
-text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Defeated_Text
-{
-    "Bakana... I lost!?"
+script ISLANDGAME_CAMP_PERSI_HanzoKatana {
+    lock
+    checkitem(ITEM_ISLANDGAME_MACHETE)
+    msgbox(format(
+        "Naruhodo... It appears I still have a lot to learn...\p"
+        "{PLAYER}-san! As my first battle and only loss, please take my ka-ta-na.\p"
+        "It will serve you well in your journey, I know of it!"
+    ))
+    giveitem(ITEM_ISLANDGAME_MACHETE)
+    closemessage
+    release
 }
 
 

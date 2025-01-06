@@ -81,10 +81,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeRed {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -108,10 +111,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeOrange {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -135,10 +141,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeYellow {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -162,10 +171,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeBlue {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_4)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_4)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_4)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -189,10 +201,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeWhite {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_5)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_5)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_5)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release

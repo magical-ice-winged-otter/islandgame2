@@ -196,25 +196,25 @@ ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1::
 # 188 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	dowildbattle
 # 189 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setflag FLAG_TEMP_1
-# 190 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	clearflag FLAG_SMART_WILD_AI
-# 191 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 190 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 193 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 192 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	switch VAR_RESULT
-# 194 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 193 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_LOST, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_3
-# 196 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 195 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_RAN, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_4
-# 198 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 197 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_WON, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_5
 # 200 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_CAUGHT, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_6
-# 203 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 204 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_1
+# 205 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_1:
-# 205 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 207 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	release
 	return
 
@@ -225,53 +225,57 @@ ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_4:
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_1
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_5:
+# 198 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_1
 # 199 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_1
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_6:
 # 201 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_1
+# 202 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1_1
 
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2::
-# 209 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	lock
-# 210 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	faceplayer
 # 211 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
+	lock
 # 212 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setcwildbattle 0, SPECIES_ROGGENROLA, 23, ITEM_NONE, NUM_NATURES, 1
+	faceplayer
 # 213 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	playmoncry SPECIES_ROGGENROLA, CRY_MODE_ENCOUNTER
+	setflag FLAG_SMART_WILD_AI
 # 214 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	waitmoncry
+	setcwildbattle 0, SPECIES_ROGGENROLA, 23, ITEM_NONE, NUM_NATURES, 1
 # 215 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	playmoncry SPECIES_ROGGENROLA, CRY_MODE_ENCOUNTER
 # 216 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	dowildbattle
+	waitmoncry
 # 217 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setflag FLAG_TEMP_2
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 218 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
+	dowildbattle
 # 219 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 220 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 221 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	switch VAR_RESULT
 # 222 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	switch VAR_RESULT
+# 223 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_LOST, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_3
-# 224 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 225 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_RAN, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_4
-# 226 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 227 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_WON, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_5
-# 228 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 230 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_CAUGHT, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_6
-# 231 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 234 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_2
+# 235 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_1:
-# 233 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 237 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	release
 	return
 
@@ -282,53 +286,57 @@ ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_4:
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_1
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_5:
-# 227 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 228 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_2
+# 229 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_1
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_6:
-# 229 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 231 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_2
+# 232 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2_1
 
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3::
-# 237 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	lock
-# 238 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	faceplayer
-# 239 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 240 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setcwildbattle 0, SPECIES_ROGGENROLA, 23, ITEM_HARD_STONE, NUM_NATURES, 2
 # 241 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	playmoncry SPECIES_ROGGENROLA, CRY_MODE_ENCOUNTER
+	lock
 # 242 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	waitmoncry
+	faceplayer
 # 243 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_SMART_WILD_AI
 # 244 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	dowildbattle
+	setcwildbattle 0, SPECIES_ROGGENROLA, 23, ITEM_HARD_STONE, NUM_NATURES, 2
 # 245 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	setflag FLAG_TEMP_3
+	playmoncry SPECIES_ROGGENROLA, CRY_MODE_ENCOUNTER
 # 246 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
+	waitmoncry
 # 247 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 248 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	dowildbattle
 # 249 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	switch VAR_RESULT
+	clearflag FLAG_SMART_WILD_AI
 # 250 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_3
+	specialvar VAR_RESULT, GetBattleOutcome
 # 252 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	switch VAR_RESULT
+# 253 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	case B_OUTCOME_LOST, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_3
+# 255 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_RAN, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_4
-# 254 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 257 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_WON, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_5
-# 256 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 260 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	case B_OUTCOME_CAUGHT, ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_6
-# 259 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 264 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_3
+# 265 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_1:
-# 261 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 267 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	release
 	return
 
@@ -339,12 +347,16 @@ ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_4:
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_1
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_5:
-# 255 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 258 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_3
+# 259 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_1
 
 ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_6:
-# 257 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+# 261 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
+	setflag FLAG_TEMP_3
+# 262 "data/maps/ISLANDGAME_LUMINE_CAVE_1F_2/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
 	goto ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3_1
 

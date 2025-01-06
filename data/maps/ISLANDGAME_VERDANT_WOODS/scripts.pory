@@ -87,6 +87,7 @@ script ISLANDGAME_VERDANT_WOODS_Sudowoodo {
                 case NO:
                     break
                 case YES:
+                    closemessage
                     special(DoWateringBerryTreeAnim)
                     waitstate
                     waitse
@@ -562,7 +563,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_JOLTIK, 7, ITEM_NONE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+    setcwildbattle(0, SPECIES_JOLTIK, 7, ITEM_NONE, NUM_NATURES, 0)
     playmoncry(SPECIES_JOLTIK, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -589,7 +590,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_JOLTIK, 7, ITEM_NONE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+    setcwildbattle(0, SPECIES_JOLTIK, 7, ITEM_NONE, NUM_NATURES, 1)
     playmoncry(SPECIES_JOLTIK, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -616,7 +617,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_JOLTIK, 8, ITEM_NONE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    setcwildbattle(0, SPECIES_JOLTIK, 8, ITEM_NONE, NUM_NATURES, 2)
     playmoncry(SPECIES_JOLTIK, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -644,7 +645,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_SPINARAK, 7, ITEM_NONE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+    setcwildbattle(0, SPECIES_SPINARAK, 7, ITEM_NONE, NUM_NATURES, 0)
     playmoncry(SPECIES_SPINARAK, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -672,7 +673,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_SPINARAK, 7, ITEM_NONE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+    setcwildbattle(0, SPECIES_SPINARAK, 7, ITEM_NONE, NUM_NATURES, 1)
     playmoncry(SPECIES_SPINARAK, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -700,7 +701,7 @@ script ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_SPINARAK, 8, ITEM_CHESTO_BERRY, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_TWINEEDLE, MOVE_TOXIC_SPIKES, MOVE_RAGE_POWDER, MOVE_PURSUIT)
+    setcwildbattle(0, SPECIES_SPINARAK, 8, ITEM_CHESTO_BERRY, NUM_NATURES, 2,,,,,,,,,,,,, MOVE_TWINEEDLE, MOVE_TOXIC_SPIKES, MOVE_RAGE_POWDER, MOVE_PURSUIT)
     playmoncry(SPECIES_SPINARAK, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)

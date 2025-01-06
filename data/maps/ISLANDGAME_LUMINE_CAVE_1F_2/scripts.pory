@@ -186,7 +186,6 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1 {
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     dowildbattle
-    setflag(FLAG_TEMP_1)
     clearflag(FLAG_SMART_WILD_AI)
     specialvar(VAR_RESULT, GetBattleOutcome)
         
@@ -196,10 +195,13 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola1 {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -214,7 +216,6 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2 {
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     dowildbattle
-    setflag(FLAG_TEMP_2)
     clearflag(FLAG_SMART_WILD_AI)
     specialvar(VAR_RESULT, GetBattleOutcome)
         
@@ -224,10 +225,13 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola2 {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -242,7 +246,6 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3 {
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     dowildbattle
-    setflag(FLAG_TEMP_3)
     clearflag(FLAG_SMART_WILD_AI)
     specialvar(VAR_RESULT, GetBattleOutcome)
         
@@ -252,10 +255,13 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Roggenrola3 {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release

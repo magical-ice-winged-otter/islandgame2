@@ -20,7 +20,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 23 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
 	setobjectxyperm 6, 0, 55
 # 24 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectxyperm 1, 46, 37
+	setobjectxyperm 1, 41, 38
 # 25 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
 	setobjectxyperm 3, 0, 55
 # 26 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
@@ -32,7 +32,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 29 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
 	setobjectxyperm 16, 0, 55
 # 30 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"
-	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 
