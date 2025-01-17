@@ -2112,16 +2112,10 @@
     subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
-	
-	@sets the flag AFTER you declare the wildbattle.
-	.macro setwilddoublebattle setDouble:req
-	.byte 0xed
-	.byte \setDouble
-	.endm
 
 	@sets the flag AFTER you declare the wildbattle.
 	.macro setcwildbattle spot:req, species:req, level:req, item, nature, abilityNum, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny
-	.byte 0xee
+	.byte 0xed
 	.byte \spot
 	.2byte \species
 	.byte \level
@@ -2277,15 +2271,22 @@
 
 	@ Updates Pokemon follower.
 	.macro updatefollowingmon
-    .byte 0xef
+    .byte 0xee
     .endm
 
 	@ Returns Pokemon follower to ball.
 	.macro ballfollowingmon
-	.byte 0xf0
+	.byte 0xef
 	delay 16
 	.endm
 
+	@ Sets a variable object event to an overworld mon for a wild encounter.
+	.macro setobjectaswildencounter localId:req, encounterType=ENCOUNTER_FIXED
+	.byte 0xf0
+	.2byte \localId
+	.byte \encounterType
+	release
+	.endm
 
 @ Supplementary
 
@@ -2789,6 +2790,15 @@
 	callnative Script_ToggleFakeRtc
 	.endm
 
+	@ Begins a wild battle against an overworld mon object event with a defined level.
+	.macro startoverworldencounter level=req
+	callnative GetOverworldMonSpecies
+	playmoncry VAR_0x8004, CRY_MODE_ENCOUNTER
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, VAR_0x8004, \level, isShiny=VAR_0x8005
+	waitmoncry
+	dowildbattle
+	.endm
+
 	@ ============================ @
 	@ ITEM DESCRIPTION HEADER MACROS
 	@ Used with OW_SHOW_ITEM_DESCRIPTIONS config
@@ -2896,4 +2906,3 @@
 	.2byte \localId
 	.2byte \dest
 	.endm
-

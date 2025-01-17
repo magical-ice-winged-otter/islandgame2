@@ -1242,9 +1242,9 @@
 #define FLAG_ITEM_ROSEVALE_REPEL                                    0x4A1 
 #define FLAG_ITEM_TIDALCOVE_ZINC                                    0x4A2
 #define FLAG_ITEM_AURORA_PATH_SHINY_STONE                           0x4A3 
-#define FLAG_ITEM_AP_GANLON_BERRY                                   0x4A4 
+#define FLAG_ITEM_AP_GANLON_BERRY                                   0x4A4       
 #define FLAG_ITEM_ROCKY_PATH_CARBOS                                 0x4A5 
-#define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
+#define FLAG_ITEM_NOR_WATER_STONE                                   0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
 #define FLAG_MINTY_MEADOWS_X_ATK                                    0x4A8 
 #define FLAG_MINTY_MEADOWS_DIRE_HIT                                 0x4A9

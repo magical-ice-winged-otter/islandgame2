@@ -909,37 +909,37 @@ ISLANDGAME_APPLEVINE_NPC15::
 	return
 
 
-ISLANDGAME_APPLEVINE_AppleRoll1::
+ISLANDGAME_APPLEVINE_AppleRoll::
 # 655 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	random 10
 # 656 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	switch VAR_RESULT
 # 657 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 0, ISLANDGAME_APPLEVINE_AppleRoll1_3
+	case 0, ISLANDGAME_APPLEVINE_AppleRoll_3
 # 674 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 1, ISLANDGAME_APPLEVINE_AppleRoll1_4
+	case 1, ISLANDGAME_APPLEVINE_AppleRoll_4
 # 691 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 2, ISLANDGAME_APPLEVINE_AppleRoll1_5
+	case 2, ISLANDGAME_APPLEVINE_AppleRoll_5
 # 708 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 3, ISLANDGAME_APPLEVINE_AppleRoll1_6
+	case 3, ISLANDGAME_APPLEVINE_AppleRoll_6
 # 709 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 4, ISLANDGAME_APPLEVINE_AppleRoll1_6
+	case 4, ISLANDGAME_APPLEVINE_AppleRoll_6
 # 710 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 5, ISLANDGAME_APPLEVINE_AppleRoll1_6
+	case 5, ISLANDGAME_APPLEVINE_AppleRoll_6
 # 711 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 6, ISLANDGAME_APPLEVINE_AppleRoll1_6
+	case 6, ISLANDGAME_APPLEVINE_AppleRoll_6
 # 712 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	finditem ITEM_SWEET_APPLE
-ISLANDGAME_APPLEVINE_AppleRoll1_1:
+ISLANDGAME_APPLEVINE_AppleRoll_1:
 # 714 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	release
 	return
 
-ISLANDGAME_APPLEVINE_AppleRoll1_3:
+ISLANDGAME_APPLEVINE_AppleRoll_3:
 # 658 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	setflag FLAG_SMART_WILD_AI
 # 659 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_APPLIN, 20, ITEM_TART_APPLE, ITEM_POKE_BALL, NUM_NATURES, 0
 # 660 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
 # 661 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
@@ -955,21 +955,21 @@ ISLANDGAME_APPLEVINE_AppleRoll1_3:
 # 667 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	switch VAR_RESULT
 # 668 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll1_9
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll_9
 # 669 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_9
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll_9
 # 670 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_9
-ISLANDGAME_APPLEVINE_AppleRoll1_9:
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll_9
+ISLANDGAME_APPLEVINE_AppleRoll_9:
 # 672 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
+	goto ISLANDGAME_APPLEVINE_AppleRoll_1
 
-ISLANDGAME_APPLEVINE_AppleRoll1_4:
+ISLANDGAME_APPLEVINE_AppleRoll_4:
 # 675 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	setflag FLAG_SMART_WILD_AI
 # 676 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, ITEM_POKE_BALL, NUM_NATURES, 1
 # 677 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
 # 678 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
@@ -985,21 +985,21 @@ ISLANDGAME_APPLEVINE_AppleRoll1_4:
 # 684 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	switch VAR_RESULT
 # 685 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll1_11
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll_11
 # 686 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_11
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll_11
 # 687 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_11
-ISLANDGAME_APPLEVINE_AppleRoll1_11:
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll_11
+ISLANDGAME_APPLEVINE_AppleRoll_11:
 # 689 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
+	goto ISLANDGAME_APPLEVINE_AppleRoll_1
 
-ISLANDGAME_APPLEVINE_AppleRoll1_5:
+ISLANDGAME_APPLEVINE_AppleRoll_5:
 # 692 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	setflag FLAG_SMART_WILD_AI
 # 693 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, ITEM_POKE_BALL, NUM_NATURES, 2
 # 694 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
 # 695 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
@@ -1015,264 +1015,20 @@ ISLANDGAME_APPLEVINE_AppleRoll1_5:
 # 701 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	switch VAR_RESULT
 # 702 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll1_13
+	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll_13
 # 703 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll1_13
+	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll_13
 # 704 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll1_13
-ISLANDGAME_APPLEVINE_AppleRoll1_13:
+	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll_13
+ISLANDGAME_APPLEVINE_AppleRoll_13:
 # 706 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
+	goto ISLANDGAME_APPLEVINE_AppleRoll_1
 
-ISLANDGAME_APPLEVINE_AppleRoll1_6:
+ISLANDGAME_APPLEVINE_AppleRoll_6:
 # 711 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
 	finditem ITEM_TART_APPLE
-	goto ISLANDGAME_APPLEVINE_AppleRoll1_1
-
-
-ISLANDGAME_APPLEVINE_AppleRoll2::
-# 718 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	random 10
-# 719 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	switch VAR_RESULT
-# 720 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 0, ISLANDGAME_APPLEVINE_AppleRoll2_3
-# 737 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 1, ISLANDGAME_APPLEVINE_AppleRoll2_4
-# 754 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 2, ISLANDGAME_APPLEVINE_AppleRoll2_5
-# 771 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 3, ISLANDGAME_APPLEVINE_AppleRoll2_6
-# 772 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 4, ISLANDGAME_APPLEVINE_AppleRoll2_6
-# 773 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 5, ISLANDGAME_APPLEVINE_AppleRoll2_6
-# 774 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 6, ISLANDGAME_APPLEVINE_AppleRoll2_6
-# 775 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	finditem ITEM_SWEET_APPLE
-ISLANDGAME_APPLEVINE_AppleRoll2_1:
-# 777 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	release
-	return
-
-ISLANDGAME_APPLEVINE_AppleRoll2_3:
-# 721 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 722 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
-# 723 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
-# 724 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	waitmoncry
-# 725 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 726 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	dowildbattle
-# 727 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 728 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 730 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	switch VAR_RESULT
-# 731 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll2_9
-# 732 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_9
-# 733 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_9
-ISLANDGAME_APPLEVINE_AppleRoll2_9:
-# 735 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
-
-ISLANDGAME_APPLEVINE_AppleRoll2_4:
-# 738 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 739 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0
-# 740 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
-# 741 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	waitmoncry
-# 742 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 743 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	dowildbattle
-# 744 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 745 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 747 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	switch VAR_RESULT
-# 748 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll2_11
-# 749 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_11
-# 750 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_11
-ISLANDGAME_APPLEVINE_AppleRoll2_11:
-# 752 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
-
-ISLANDGAME_APPLEVINE_AppleRoll2_5:
-# 755 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 756 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0
-# 757 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
-# 758 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	waitmoncry
-# 759 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 760 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	dowildbattle
-# 761 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 762 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 764 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	switch VAR_RESULT
-# 765 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll2_13
-# 766 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll2_13
-# 767 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll2_13
-ISLANDGAME_APPLEVINE_AppleRoll2_13:
-# 769 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
-
-ISLANDGAME_APPLEVINE_AppleRoll2_6:
-# 774 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	finditem ITEM_TART_APPLE
-	goto ISLANDGAME_APPLEVINE_AppleRoll2_1
-
-
-ISLANDGAME_APPLEVINE_AppleRoll3::
-# 781 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	random 10
-# 782 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	switch VAR_RESULT
-# 783 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 0, ISLANDGAME_APPLEVINE_AppleRoll3_3
-# 800 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 1, ISLANDGAME_APPLEVINE_AppleRoll3_4
-# 817 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 2, ISLANDGAME_APPLEVINE_AppleRoll3_5
-# 834 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 3, ISLANDGAME_APPLEVINE_AppleRoll3_6
-# 835 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 4, ISLANDGAME_APPLEVINE_AppleRoll3_6
-# 836 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 5, ISLANDGAME_APPLEVINE_AppleRoll3_6
-# 837 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case 6, ISLANDGAME_APPLEVINE_AppleRoll3_6
-# 838 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	finditem ITEM_SWEET_APPLE
-ISLANDGAME_APPLEVINE_AppleRoll3_1:
-# 840 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	release
-	return
-
-ISLANDGAME_APPLEVINE_AppleRoll3_3:
-# 784 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 785 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_TART_APPLE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
-# 786 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
-# 787 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	waitmoncry
-# 788 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 789 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	dowildbattle
-# 790 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 791 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 793 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	switch VAR_RESULT
-# 794 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll3_9
-# 795 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_9
-# 796 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_9
-ISLANDGAME_APPLEVINE_AppleRoll3_9:
-# 798 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
-
-ISLANDGAME_APPLEVINE_AppleRoll3_4:
-# 801 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 802 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0
-# 803 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
-# 804 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	waitmoncry
-# 805 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 806 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	dowildbattle
-# 807 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 808 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 810 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	switch VAR_RESULT
-# 811 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll3_11
-# 812 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_11
-# 813 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_11
-ISLANDGAME_APPLEVINE_AppleRoll3_11:
-# 815 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
-
-ISLANDGAME_APPLEVINE_AppleRoll3_5:
-# 818 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 819 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setcwildbattle 0, SPECIES_APPLIN, 20, ITEM_SWEET_APPLE, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0
-# 820 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	playmoncry SPECIES_APPLIN, CRY_MODE_ENCOUNTER
-# 821 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	waitmoncry
-# 822 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-# 823 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	dowildbattle
-# 824 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 825 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 827 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	switch VAR_RESULT
-# 828 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_LOST, ISLANDGAME_APPLEVINE_AppleRoll3_13
-# 829 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_RAN, ISLANDGAME_APPLEVINE_AppleRoll3_13
-# 830 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	case B_OUTCOME_CAUGHT, ISLANDGAME_APPLEVINE_AppleRoll3_13
-ISLANDGAME_APPLEVINE_AppleRoll3_13:
-# 832 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	goto Common_EventScript_RemoveStaticPokemon
-	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
-
-ISLANDGAME_APPLEVINE_AppleRoll3_6:
-# 837 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	finditem ITEM_TART_APPLE
-	goto ISLANDGAME_APPLEVINE_AppleRoll3_1
+	goto ISLANDGAME_APPLEVINE_AppleRoll_1
 
 
 ISLANDGAME_APPLEVINE_TempBlockade1_Text_0:

@@ -313,6 +313,7 @@ void MovementType_RunInPlace(struct Sprite *);
 void MovementType_Invisible(struct Sprite *);
 void MovementType_WalkSlowlyInPlace(struct Sprite *);
 void MovementType_FollowPlayer(struct Sprite *);
+void MovementType_WanderInGrass(struct Sprite *);
 u8 GetSlideMovementAction(u32);
 u8 GetJump2MovementAction(u32);
 u8 CopySprite(struct Sprite *sprite, s16 x, s16 y, u8 subpriority);
@@ -486,6 +487,7 @@ u8 MovementType_RunInPlace_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_Invisible_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_Invisible_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_Invisible_Step2(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_WanderInGrass_Step4(struct ObjectEvent *, struct Sprite *);
 
 u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, u8 direction);
 void TurnVirtualObject(u8 virtualObjId, u8 direction);
@@ -514,5 +516,7 @@ void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 
 void ReturnFollowingMonToBall(void);
+u16 GetObjectEventFlagIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
+u16 GetObjectEventGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
 
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

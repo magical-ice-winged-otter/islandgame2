@@ -92,7 +92,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu1 {
 
     // battle
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_MIMIKYU, 30, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,MOVE_SHADOW_SNEAK,MOVE_MIMIC,MOVE_COPYCAT,MOVE_FEINT_ATTACK)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_MIMIKYU, 30, 0, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SHADOW_SNEAK, MOVE_MIMIC, MOVE_COPYCAT, MOVE_FEINT_ATTACK)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(0)
@@ -153,7 +153,7 @@ script ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Mimikyu2 {
 
     // battle
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_MIMIKYU, 30, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,MOVE_SHADOW_SNEAK,MOVE_MIMIC,MOVE_COPYCAT,MOVE_FEINT_ATTACK)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_MIMIKYU, 30, 0, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SHADOW_SNEAK, MOVE_MIMIC, MOVE_COPYCAT, MOVE_FEINT_ATTACK)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(0)

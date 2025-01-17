@@ -68,6 +68,7 @@
 #include "islandgame.h"
 #include "follow_me.h"
 #include "constants/abilities.h"
+#include "constants/event_objects.h"
 #include "constants/event_object_movement.h"
 #include "constants/layouts.h"
 #include "constants/map_types.h"
@@ -3326,6 +3327,150 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
         sprite->invisible = ((sprite->data[7] & 4) >> 2);
         sprite->data[7]++;
     }
+}
+
+static u16 GetOverworldMonSpeciesFromDoll(u16 graphicsId)
+{
+    switch (graphicsId)
+    {
+        case OBJ_EVENT_GFX_RAYQUAZA_STILL:
+        case OBJ_EVENT_GFX_RAYQUAZA:
+            return SPECIES_RAYQUAZA;
+        case OBJ_EVENT_GFX_UNUSED_NATU_DOLL:
+            return SPECIES_NATU;
+        case OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL:
+            return SPECIES_SQUIRTLE;
+        case OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL:
+            return SPECIES_WOOPER;
+        case OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL:
+        case OBJ_EVENT_GFX_PIKACHU_DOLL:
+        case OBJ_EVENT_GFX_PIKACHU:
+            return SPECIES_PIKACHU;
+        case OBJ_EVENT_GFX_UNUSED_PORYGON2_DOLL:
+            return SPECIES_PORYGON2;
+        case OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX:
+        case OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY:
+            return SPECIES_VIGOROTH;
+        case OBJ_EVENT_GFX_ZIGZAGOON_1:
+        case OBJ_EVENT_GFX_ZIGZAGOON_2:
+            return SPECIES_ZIGZAGOON;
+        case OBJ_EVENT_GFX_PICHU_DOLL:
+            return SPECIES_PICHU;
+        case OBJ_EVENT_GFX_MARILL_DOLL:
+            return SPECIES_MARILL;
+        case OBJ_EVENT_GFX_TOGEPI_DOLL:
+            return SPECIES_TOGEPI;
+        case OBJ_EVENT_GFX_CYNDAQUIL_DOLL:
+            return SPECIES_CYNDAQUIL;
+        case OBJ_EVENT_GFX_CHIKORITA_DOLL:
+            return SPECIES_CHIKORITA;
+        case OBJ_EVENT_GFX_TOTODILE_DOLL:
+            return SPECIES_TOTODILE;
+        case OBJ_EVENT_GFX_JIGGLYPUFF_DOLL:
+            return SPECIES_JIGGLYPUFF;
+        case OBJ_EVENT_GFX_MEOWTH_DOLL:
+            return SPECIES_MEOWTH;
+        case OBJ_EVENT_GFX_CLEFAIRY_DOLL:
+            return SPECIES_CLEFAIRY;
+        case OBJ_EVENT_GFX_DITTO_DOLL:
+            return SPECIES_DITTO;
+        case OBJ_EVENT_GFX_SMOOCHUM_DOLL:
+            return SPECIES_SMOOCHUM;
+        case OBJ_EVENT_GFX_TREECKO_DOLL:
+            return SPECIES_TREECKO;
+        case OBJ_EVENT_GFX_TORCHIC_DOLL:
+            return SPECIES_TORCHIC;
+        case OBJ_EVENT_GFX_MUDKIP_DOLL:
+            return SPECIES_MUDKIP;
+        case OBJ_EVENT_GFX_DUSKULL_DOLL:
+            return SPECIES_DUSKULL;
+        case OBJ_EVENT_GFX_WYNAUT_DOLL:
+            return SPECIES_WYNAUT;
+        case OBJ_EVENT_GFX_BALTOY_DOLL:
+            return SPECIES_BALTOY;
+        case OBJ_EVENT_GFX_KECLEON_DOLL:
+        case OBJ_EVENT_GFX_KECLEON:
+        case OBJ_EVENT_GFX_KECLEON_BRIDGE_SHADOW:
+            return SPECIES_KECLEON;
+        case OBJ_EVENT_GFX_AZURILL_DOLL:
+            return SPECIES_AZURILL;
+        case OBJ_EVENT_GFX_SKITTY_DOLL:
+        case OBJ_EVENT_GFX_SKITTY:
+            return SPECIES_SKITTY;
+        case OBJ_EVENT_GFX_SWABLU_DOLL:
+            return SPECIES_SWABLU;
+        case OBJ_EVENT_GFX_GULPIN_DOLL:
+            return SPECIES_GULPIN;
+        case OBJ_EVENT_GFX_LOTAD_DOLL:
+            return SPECIES_LOTAD;
+        case OBJ_EVENT_GFX_SEEDOT_DOLL:
+            return SPECIES_SEEDOT;
+        case OBJ_EVENT_GFX_BIG_SNORLAX_DOLL:
+            return SPECIES_SNORLAX;
+        case OBJ_EVENT_GFX_BIG_RHYDON_DOLL:
+            return SPECIES_RHYDON;
+        case OBJ_EVENT_GFX_BIG_LAPRAS_DOLL:
+            return SPECIES_LAPRAS;
+        case OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL:
+            return SPECIES_VENUSAUR;
+        case OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL:
+            return SPECIES_CHARIZARD;
+        case OBJ_EVENT_GFX_BIG_BLASTOISE_DOLL:
+            return SPECIES_BLASTOISE;
+        case OBJ_EVENT_GFX_BIG_WAILMER_DOLL:
+            return SPECIES_WAILMER;
+        case OBJ_EVENT_GFX_BIG_REGIROCK_DOLL:
+        case OBJ_EVENT_GFX_REGIROCK:
+            return SPECIES_REGIROCK;
+        case OBJ_EVENT_GFX_BIG_REGICE_DOLL:
+        case OBJ_EVENT_GFX_REGICE:
+            return SPECIES_REGICE;
+        case OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL:
+        case OBJ_EVENT_GFX_REGISTEEL:
+            return SPECIES_REGISTEEL;
+        case OBJ_EVENT_GFX_LATIAS:
+            return SPECIES_LATIAS;
+        case OBJ_EVENT_GFX_LATIOS:
+            return SPECIES_LATIOS;
+        case OBJ_EVENT_GFX_KYOGRE_FRONT:
+        case OBJ_EVENT_GFX_KYOGRE_ASLEEP:
+        case OBJ_EVENT_GFX_KYOGRE_SIDE:
+            return SPECIES_KYOGRE;
+        case OBJ_EVENT_GFX_GROUDON_FRONT:
+        case OBJ_EVENT_GFX_GROUDON_ASLEEP:
+        case OBJ_EVENT_GFX_GROUDON_SIDE:
+            return SPECIES_GROUDON;
+        case OBJ_EVENT_GFX_AZUMARILL:
+            return SPECIES_AZUMARILL;
+        case OBJ_EVENT_GFX_WINGULL:
+            return SPECIES_WINGULL;
+        case OBJ_EVENT_GFX_POOCHYENA:
+            return SPECIES_POOCHYENA;
+        case OBJ_EVENT_GFX_KIRLIA:
+            return SPECIES_KIRLIA;
+        case OBJ_EVENT_GFX_DUSCLOPS:
+            return SPECIES_DUSCLOPS;
+        case OBJ_EVENT_GFX_SUDOWOODO:
+            return SPECIES_SUDOWOODO;
+        case OBJ_EVENT_GFX_MEW:
+            return SPECIES_MEW;
+        case OBJ_EVENT_GFX_DEOXYS:
+            return SPECIES_DEOXYS;
+        case OBJ_EVENT_GFX_LUGIA:
+            return SPECIES_LUGIA;
+        case OBJ_EVENT_GFX_HOOH:
+            return SPECIES_HO_OH;
+    }
+    return SPECIES_NONE;
+}
+
+void GetOverworldMonSpecies(void)
+{
+    gSpecialVar_0x8005 = gObjectEvents[gSelectedObjectEvent].shiny;
+    if (gObjectEvents[gSelectedObjectEvent].graphicsId > OBJ_EVENT_GFX_SPECIES(NONE) && gObjectEvents[gSelectedObjectEvent].graphicsId < OBJ_EVENT_GFX_SPECIES(EGG))
+        gSpecialVar_0x8004 = gObjectEvents[gSelectedObjectEvent].graphicsId - OBJ_EVENT_GFX_SPECIES(NONE);    
+    else
+        gSpecialVar_0x8004 = GetOverworldMonSpeciesFromDoll(gObjectEvents[gSelectedObjectEvent].graphicsId);
 }
 
 // ----------------
