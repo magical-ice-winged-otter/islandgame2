@@ -708,7 +708,7 @@
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_IRON          0x293 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_XP_CANDY      0x294 
 #define FLAG_HIDDEN_ITEM_ROCKY_PATH_FLOAT_STONE     0x295 
-#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_OVAL_STONE     0x296 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_ROCK_GEM       0x296 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_XP_CANDY       0x297
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_SUPER_POTION   0x298 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_IRON           0x299 
@@ -716,7 +716,7 @@
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_DUSK_BALL      0x29B
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_X_DEFEND       0x29C 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_FULL_HEAL      0x29D
-#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_HARD_STONE     0x29E 
+#define FLAG_HIDDEN_ITEM_LUMINE_CAVE_HARD_STONE     0x29E  // unused 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_XP_CANDY_M     0x29F 
 #define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_MAX_REVIVE   0x2A0
 #define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
@@ -1242,9 +1242,9 @@
 #define FLAG_ITEM_ROSEVALE_REPEL                                    0x4A1 
 #define FLAG_ITEM_TIDALCOVE_ZINC                                    0x4A2
 #define FLAG_ITEM_AURORA_PATH_SHINY_STONE                           0x4A3 
-#define FLAG_ITEM_AP_GANLON_BERRY                                   0x4A4 
+#define FLAG_ITEM_AP_GANLON_BERRY                                   0x4A4       
 #define FLAG_ITEM_ROCKY_PATH_CARBOS                                 0x4A5 
-#define FLAG_ITEM_NOR_MYSTIC_WATER                                  0x4A6
+#define FLAG_ITEM_NOR_WATER_STONE                                   0x4A6
 #define FLAG_MAPLEGROVE_HEAL_BALL                                   0x4A7
 #define FLAG_MINTY_MEADOWS_X_ATK                                    0x4A8 
 #define FLAG_MINTY_MEADOWS_DIRE_HIT                                 0x4A9
@@ -1266,7 +1266,7 @@
 #define FLAG_ITEM_VERDANT_PATH_CALCIUM                              0x4B9
 #define FLAG_ITEM_VERDANT_WOODS_NET_BALL                            0x4BA
 #define FLAG_ITEM_VERDANT_WOODS_BUG_GEM                             0x4BB
-#define FLAG_ITEM_VERDANT_WOODS_POTION                              0x4BC // unused 
+#define FLAG_ITEM_LUMINE_CAVE_SABLENITE                             0x4BC 
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
 #define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE // unused
 #define FLAG_ITEM_MAPLEGROVE_ABILITY_PATCH                          0x4BF
@@ -1275,7 +1275,7 @@
 #define FLAG_ITEM_ROCKY_PATH_GREAT_BALL                             0x4C2
 #define FLAG_ITEM_LUMINE_CAVE_REVIVE                                0x4C3 
 #define FLAG_ITEM_LUMINE_CAVE_TM_ROCK_TOMB                          0x4C4
-#define FLAG_ITEM_LUMINE_CAVE_DIRE_HIT                              0x4C5 
+#define FLAG_ITEM_LUMINE_CAVE_HEART_SCALE                           0x4C5 
 #define FLAG_ITEM_LUMINE_CAVE_MOON_STONE                            0x4C6
 #define FLAG_ITEM_LUMINE_CAVE_PICKAXE                               0x4C7 
 #define FLAG_ITEM_LUMINE_CAVE_STARDUST                              0x4C8 

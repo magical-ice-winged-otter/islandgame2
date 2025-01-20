@@ -2,7 +2,12 @@
 const MAREEP_OW_ID = 11
 const MIGHTYENA_OW_ID = 12
 
+const OW_MON_ID_1 = 19
+
 mapscripts ISLANDGAME_MINTY_MEADOWS_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setobjectaswildencounter(OW_MON_ID_1, ENCOUNTER_FIXED)
+    }
 }
 
 script ISLANDGAME_MINTY_MEADOWS_Interact_EntranceSign {
@@ -81,10 +86,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeRed {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_1)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -108,10 +116,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeOrange {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_2)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -135,10 +146,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeYellow {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_3)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -162,10 +176,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeBlue {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_4)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_4)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_4)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release
@@ -189,10 +206,13 @@ script ISLANDGAME_MINTY_MEADOWS_FlabebeWhite {
         case B_OUTCOME_RAN:
             break
         case B_OUTCOME_WON:
+            setflag(FLAG_TEMP_5)
             goto(Common_EventScript_RemoveStaticPokemon)
         case B_OUTCOME_CAUGHT:
+            setflag(FLAG_TEMP_5)
             goto(Common_EventScript_RemoveStaticPokemon)
         default:
+            setflag(FLAG_TEMP_5)
             goto(Common_EventScript_RemoveStaticPokemon)
     }
     release

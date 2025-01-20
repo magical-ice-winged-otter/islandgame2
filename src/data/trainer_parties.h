@@ -1182,7 +1182,7 @@ static const struct TrainerMon sParty_TidalcoveGym2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 23,
-    .species = SPECIES_SNOVER,
+    .species = SPECIES_SPHEAL,
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
@@ -1195,11 +1195,17 @@ static const struct TrainerMon sParty_TidalcoveGym3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 24,
-    .species = SPECIES_CRYOGONAL,
+    .species = SPECIES_FROSLASS,
     }
 };
 
 static const struct TrainerMon sParty_TidalcoveGym4[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
+    .lvl = 23,
+    .species = SPECIES_SNOVER,
+    .ability = ABILITY_SNOW_WARNING,
+    },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 24,

@@ -102,6 +102,16 @@
 #define B_OUTCOME_MON_TELEPORTED       10
 #define B_OUTCOME_LINK_BATTLE_RAN      (1 << 7) // 128
 
+// Wild Encounter Types
+#define ENCOUNTER_FIXED         0
+#define ENCOUNTER_LAND          1
+#define ENCOUNTER_SURF          2
+#define ENCOUNTER_ROCK_SMASH    3
+#define ENCOUNTER_OLD_ROD       4
+#define ENCOUNTER_GOOD_ROD      5
+#define ENCOUNTER_SUPER_ROD     6
+#define ENCOUNTER_TYPES         7
+
 // Non-volatile status conditions
 // These remain outside of battle and after switching out.
 // If a new STATUS1 is added here, it should also be added to

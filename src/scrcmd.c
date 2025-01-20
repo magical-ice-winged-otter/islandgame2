@@ -2618,14 +2618,6 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
     return TRUE;
 }
 
-bool8 ScrCmd_setwilddoublebattle(struct ScriptContext *ctx)
-{
-    bool8 isDouble = ScriptReadByte(ctx);
-    sIsScriptedWildDouble = isDouble ? TRUE : FALSE;
-
-    return FALSE;
-}
-
 bool8 ScrCmd_setcwildbattle(struct ScriptContext *ctx)
 {
     u8 spot = ScriptReadByte(ctx);

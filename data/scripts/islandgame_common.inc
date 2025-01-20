@@ -433,6 +433,63 @@ ISLANDGAME_PKMNCENTER_2F_MoveRelearner_18:
 	goto ISLANDGAME_PKMNCENTER_2F_MoveRelearner_17
 
 
+Common_EventScript_OverworldPokemon::
+# 320 "data/scripts/islandgame_common.pory"
+	lock
+# 321 "data/scripts/islandgame_common.pory"
+	startoverworldencounter 5
+# 322 "data/scripts/islandgame_common.pory"
+	release
+	return
+
+
+Common_EventScript_OverworldPokemon_Level::
+# 326 "data/scripts/islandgame_common.pory"
+	lock
+# 327 "data/scripts/islandgame_common.pory"
+	faceplayer
+# 328 "data/scripts/islandgame_common.pory"
+	setflag FLAG_SMART_WILD_AI
+# 329 "data/scripts/islandgame_common.pory"
+	startoverworldencounter 23
+# 330 "data/scripts/islandgame_common.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 331 "data/scripts/islandgame_common.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 333 "data/scripts/islandgame_common.pory"
+	switch VAR_RESULT
+# 334 "data/scripts/islandgame_common.pory"
+	case B_OUTCOME_LOST, Common_EventScript_OverworldPokemon_Level_3
+# 336 "data/scripts/islandgame_common.pory"
+	case B_OUTCOME_RAN, Common_EventScript_OverworldPokemon_Level_4
+# 338 "data/scripts/islandgame_common.pory"
+	case B_OUTCOME_WON, Common_EventScript_OverworldPokemon_Level_5
+# 340 "data/scripts/islandgame_common.pory"
+	case B_OUTCOME_CAUGHT, Common_EventScript_OverworldPokemon_Level_6
+# 343 "data/scripts/islandgame_common.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+Common_EventScript_OverworldPokemon_Level_1:
+# 345 "data/scripts/islandgame_common.pory"
+	release
+	return
+
+Common_EventScript_OverworldPokemon_Level_3:
+	goto Common_EventScript_OverworldPokemon_Level_1
+
+Common_EventScript_OverworldPokemon_Level_4:
+	goto Common_EventScript_OverworldPokemon_Level_1
+
+Common_EventScript_OverworldPokemon_Level_5:
+# 339 "data/scripts/islandgame_common.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto Common_EventScript_OverworldPokemon_Level_1
+
+Common_EventScript_OverworldPokemon_Level_6:
+# 341 "data/scripts/islandgame_common.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto Common_EventScript_OverworldPokemon_Level_1
+
+
 IslandGame_Common_PokemonCenter_1F_EventScript_Nurse_Text_0:
 # 48 "data/scripts/islandgame_common.pory"
 	.string "Welcome to the Maryan isles, trainer!\n"
