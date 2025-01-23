@@ -75,6 +75,8 @@ static struct WildPokemon ReturnFixedSpeciesEncounter();
 static struct WildPokemon ReturnHeaderSpeciesEncounter(u8 encounterType);
 static bool8 GeneratedOverworldMonShinyRoll(void);
 
+// ow-encounters: store data based on the object event graphics ids
+EWRAM_DATA struct WildPokemon activeOverworldEncounters[(OBJ_EVENT_GFX_LAST - OBJ_EVENT_GFX_VARS)] = {0};
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
 EWRAM_DATA static u32 sFeebasRngValue = 0;
 EWRAM_DATA bool8 gIsFishingEncounter = 0;
@@ -523,6 +525,28 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
 
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
+}
+
+static bool8 TryGenerateOverworldWildMon(const struct WildPokemon* wildMon)
+{
+    u8 level;
+    
+    if (wildMon->species == SPECIES_NONE)
+        return FALSE;
+
+    level = wildMon->minLevel + Random() % (wildMon->maxLevel - wildMon->minLevel + 1);
+    MgbaPrintf(MGBA_LOG_INFO,"Overworld wild mon: %d, %d, %d", level, wildMon->minLevel, wildMon->maxLevel);
+    CreateWildMon(wildMon->species, level);
+    return TRUE;
+}
+
+void GenerateOverworldWildMon(void)
+{
+    u16 graphicsId = GetObjectEventGraphicsIdByLocalIdAndMap(gSelectedObjectEvent, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    u16 variableOffset = (graphicsId >= OBJ_EVENT_GFX_VAR_0) ? graphicsId - OBJ_EVENT_GFX_VAR_0 : 0;
+    struct WildPokemon wildMon = activeOverworldEncounters[variableOffset];
+    MgbaPrintf(MGBA_LOG_INFO,"From GenerateOverworldWildMon: %d, %d, %d on %d", wildMon.minLevel, wildMon.maxLevel, wildMon.species, variableOffset);
+    TryGenerateOverworldWildMon(&wildMon);
 }
 
 static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 rod)
@@ -1241,6 +1265,9 @@ bool8 ScrCmd_SetObjectAsWildEncounter(struct ScriptContext *ctx)
     {
         shinyTag = GeneratedOverworldMonShinyRoll() ? SPECIES_SHINY_TAG : 0;
         VarSet(objectEventVariable, wildMon.species + OBJ_EVENT_GFX_SPECIES(NONE) + shinyTag);
+        MgbaPrintf(MGBA_LOG_INFO,"[OLD] Set Overworld wild mon: %d, %d, %d on %d", activeOverworldEncounters[variableOffset].minLevel, activeOverworldEncounters[variableOffset].maxLevel, activeOverworldEncounters[variableOffset].species, variableOffset);
+        activeOverworldEncounters[variableOffset] = wildMon;
+        MgbaPrintf(MGBA_LOG_INFO,"Set Overworld wild mon: %d, %d, %d on %d", activeOverworldEncounters[variableOffset].minLevel, activeOverworldEncounters[variableOffset].maxLevel, activeOverworldEncounters[variableOffset].species, variableOffset);
     }
     else
     {

@@ -2799,6 +2799,15 @@
 	dowildbattle
 	.endm
 
+	@ Begins a wild battle against an overworld mon object event with an automatic level.
+	.macro startwildoverworldencounter
+	callnative GetOverworldMonSpecies
+	playmoncry VAR_0x8004, CRY_MODE_ENCOUNTER
+	callnative GenerateOverworldWildMon
+	waitmoncry
+	dowildbattle
+	.endm
+
 	@ ============================ @
 	@ ITEM DESCRIPTION HEADER MACROS
 	@ Used with OW_SHOW_ITEM_DESCRIPTIONS config
