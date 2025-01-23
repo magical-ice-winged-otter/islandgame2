@@ -318,7 +318,24 @@ script ISLANDGAME_PKMNCENTER_2F_MoveRelearner {
 
 script Common_EventScript_OverworldPokemon {
     lock
-    startoverworldencounter(5)
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    startwildoverworldencounter
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
     release
 }
 
