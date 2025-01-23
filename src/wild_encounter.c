@@ -1234,15 +1234,8 @@ bool8 ScrCmd_SetObjectAsWildEncounter(struct ScriptContext *ctx)
     }
 
     encounterType = (encounterType < ENCOUNTER_TYPES) ? encounterType : ENCOUNTER_LAND;
-
-    if (headerId == HEADER_NONE || encounterType == ENCOUNTER_FIXED)
-    {
-        wildMon = ReturnFixedSpeciesEncounter();
-    } 
-    else if (Random() < SPAWN_ODDS)
-    {
-        wildMon = ReturnHeaderSpeciesEncounter(encounterType);
-    }
+    wildMon = (headerId == HEADER_NONE || encounterType == ENCOUNTER_FIXED) ? ReturnFixedSpeciesEncounter() : 
+        (Random() < SPAWN_ODDS) ? ReturnHeaderSpeciesEncounter(encounterType) : NULL_POKEMON;
     
     if (wildMon.species != SPECIES_NONE)
     {
@@ -1258,64 +1251,37 @@ bool8 ScrCmd_SetObjectAsWildEncounter(struct ScriptContext *ctx)
 
 static struct WildPokemon ReturnFixedSpeciesEncounter(void)
 {
-    // u16 shinyTag = GeneratedOverworldMonShinyRoll() ? SPECIES_SHINY_TAG : 0;
     struct WildPokemon species = {
         .minLevel = 5,
         .maxLevel = 5,
         .species = SPECIES_KRICKETUNE
     };
-    //islandgame add
-    // if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ISLANDGAME_MINTY_MEADOWS) &&
-    //     gSaveBlock1Ptr->location.mapNum == MAP_NUM(ISLANDGAME_MINTY_MEADOWS))
-    // {
-    //     species = SPECIES_ROSELIA;
-    // }
-    //islandgame end
     return species;
 }
 
 static struct WildPokemon ReturnHeaderSpeciesEncounter(u8 encounterType)
 {
-    //u16 shinyTag = GeneratedOverworldMonShinyRoll() ? SPECIES_SHINY_TAG : 0;
-    struct WildPokemon wildMon = {0};
-    //u16 species = SPECIES_NONE;
-
     switch (encounterType)
     {
     case ENCOUNTER_LAND:
-        wildMon = GetLocalLandMon();
-        break;
+        return GetLocalLandMon();
 
     case ENCOUNTER_SURF:
-        wildMon = GetLocalWaterMon();
-        break;
+        return GetLocalWaterMon();
 
     case ENCOUNTER_ROCK_SMASH:
-        wildMon = GetLocalRockSmashMon();
-        break;
+        return GetLocalRockSmashMon();
 
     case ENCOUNTER_OLD_ROD:
-        wildMon = GetLocalFishingMon(OLD_ROD);
-        break;
+        return GetLocalFishingMon(OLD_ROD);
 
     case ENCOUNTER_GOOD_ROD:
-        wildMon = GetLocalFishingMon(GOOD_ROD);
-        break;
+        return GetLocalFishingMon(GOOD_ROD);
 
     case ENCOUNTER_SUPER_ROD:
-        wildMon = GetLocalFishingMon(SUPER_ROD);
-        break;
+        return GetLocalFishingMon(SUPER_ROD);
     }
-    return wildMon;
-    // if (wildMon != NULL)
-    // {
-    //     species = wildMon->species;
-    // }
-
-    // if (species != SPECIES_NONE)
-    //     return species + OBJ_EVENT_GFX_SPECIES(NONE) + shinyTag;
-    // else
-    //     return ReturnFixedSpeciesEncounter();
+    return NULL_POKEMON;
 }
 
 static bool8 GeneratedOverworldMonShinyRoll(void) // Replicated partly from CreateBoxMon in pokemon.c
