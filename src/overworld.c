@@ -1403,7 +1403,7 @@ static void ChooseAmbientCrySpecies(void)
         // Only play water Pokémon cries on this route
         // when Mirage Island is not present
         sIsAmbientCryWaterMon = TRUE;
-        sAmbientCrySpecies = GetLocalWaterMon();
+        sAmbientCrySpecies = GetLocalWaterMon().species;
     }
     else
     {
