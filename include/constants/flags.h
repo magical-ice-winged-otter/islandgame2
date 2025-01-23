@@ -1268,7 +1268,7 @@
 #define FLAG_ITEM_VERDANT_WOODS_BUG_GEM                             0x4BB
 #define FLAG_ITEM_LUMINE_CAVE_SABLENITE                             0x4BC 
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
-#define FLAG_ITEM_VERDANT_WOODS_SILVER_POWDER                       0x4BE // unused
+#define FLAG_ITEM_BELLEHAVEN_BIG_MUSHROOM                           0x4BE 
 #define FLAG_ITEM_MAPLEGROVE_ABILITY_PATCH                          0x4BF
 #define FLAG_ITEM_ROCKY_PATH_ETHER                                  0x4C0 
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
@@ -1646,7 +1646,7 @@
 #define FLAG_DAILY_LUMINE_CAVE_SALT_4               (DAILY_FLAGS_START + 0x26) 
 #define FLAG_DAILY_COR_GROOMERS                     (DAILY_FLAGS_START + 0x27)
 #define FLAG_DAILY_PERSI_GIRL_SCOUT                 (DAILY_FLAGS_START + 0x28)
-#define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag
+#define FLAG_DAILY_BELLEHAVEN_ADOPTION              (DAILY_FLAGS_START + 0x29)
 #define FLAG_UNUSED_0x94A                           (DAILY_FLAGS_START + 0x2A) // Unused Flag
 #define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag

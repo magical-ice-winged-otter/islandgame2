@@ -5760,6 +5760,16 @@
       "secondary_tileset": "gTileset_SecretBaseTree",
       "border_filepath": "data/layouts/ISLANDGAME_ANOMALY01_3F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ANOMALY01_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
+      "name": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_Layout",
+      "width": 6,
+      "height": 8,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/map.bin"
     }
   ]
 }

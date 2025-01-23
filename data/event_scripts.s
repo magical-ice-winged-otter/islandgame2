@@ -1428,3 +1428,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_ANOMALY02_2F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.inc"

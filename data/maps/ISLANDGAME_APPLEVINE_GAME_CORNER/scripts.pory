@@ -237,6 +237,7 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine {
                 waitse
                 playse(SE_VEND)
                 waitse
+                hidemoneybox
                 giveitem(ITEM_FRESH_WATER)
                 goto(Applevine_VendingMachine)
             case 36:
@@ -270,6 +271,7 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine {
                 waitse
                 playse(SE_VEND)
                 waitse
+                hidemoneybox
                 giveitem(ITEM_LEMONADE)
                 goto(Applevine_VendingMachine)
             default: goto(ApplevineVending_End)

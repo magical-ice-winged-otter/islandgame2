@@ -11,7 +11,6 @@ mapscripts ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts {
         else {
             setflag(FLAG_DAYTIME) // controls nighttime npcs
         }
-
     }    
 }
 
@@ -23,6 +22,8 @@ script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuDay {
     msgbox(format(
         "I LIEK CEREAL!!!!!!!!!!"
     ))
+    applymovement(6, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
     closemessage
     release
 }
@@ -34,6 +35,8 @@ script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuNight {
     msgbox(format(
         "Mmmmmm...{PAUSE 60} chocolat melk"
     ))
+    applymovement(7, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
     closemessage
     release
 }
@@ -89,9 +92,182 @@ script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Sudowoodo {
 script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman {
     lock
     faceplayer
+    if(flag(FLAG_DAILY_BELLEHAVEN_ADOPTION)) {
+        msgbox(format(
+            "Our policy is one adoption per customer per day. Please come back tomorrow if you would like to adopt another."
+        ))
+        goto(MrHerriman_End)
+    }
+
     msgbox(format(
-        ""
-    ))
-    closemessage
-    release
+        "Good day, young trainer. I am Mr. Herriman, the head of this foster home.\p"
+        "Are you looking to adopt a Pokémon? The fee is ¥10,000."
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        msgbox(format(
+            "Splendid! Who shall be your choice?"
+        ))   
+    }
+    else {
+        msgbox(format(
+            "Righty oh. Inform me when you have made a decision."
+        ))
+        goto(MrHerriman_End)
+    }
+
+    MrHerriman_AdoptionList:
+        showmoneybox(17,1)
+        dynmultipush("I'll choose later!", 0)
+        dynmultipush("Pichu", 1)
+        dynmultipush("Azurill", 2)
+        dynmultipush("Togepi", 3)
+        dynmultipush("Wynaut", 4)
+        dynmultipush("Tyrogue", 5)
+        dynmultistack(0,0,FALSE,4,FALSE,0,DYN_MULTICHOICE_CB_NONE)
+        switch (var(VAR_RESULT)) {
+            case 1:
+                checkmoney(10000)
+                if(!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "My apologies, but you must have the necessary funds to pay the fee."
+                    ))
+                    goto(MrHerriman_End)
+                }
+                removemoney(10000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                playse(SE_VEND)
+                waitse
+                hidemoneybox
+                givemon(SPECIES_PICHU,1,ITEM_ORAN_BERRY,,NUM_NATURES,2,,,,,,,,31,31,31,31,31,31, MOVE_EXTREME_SPEED, MOVE_VOLT_TACKLE, MOVE_SURF, MOVE_FLY)
+                playfanfare(MUS_OBTAIN_ITEM)
+                bufferspeciesname(STR_VAR_1, SPECIES_PICHU)
+                msgbox(format("You adopted a Pichu!"))
+                waitfanfare 
+                msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+
+                msgbox(format(
+                    "I wish all the best for you and your new companion, young trainer."
+                ))
+                setflag(FLAG_DAILY_BELLEHAVEN_ADOPTION)
+                goto(MrHerriman_End)
+            case 2:
+                checkmoney(10000)
+                if(!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "My apologies, but you must have the necessary funds to pay the fee."
+                    ))
+                    goto(MrHerriman_End)
+                }
+                removemoney(10000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                playse(SE_VEND)
+                waitse
+                hidemoneybox
+                givemon(SPECIES_AZURILL,1,ITEM_LEPPA_BERRY,,NUM_NATURES,1,,,,,,,,31,31,31,31,31,31, MOVE_AQUA_JET, MOVE_BELLY_DRUM, MOVE_SUPERPOWER, MOVE_WATER_GUN)
+                playfanfare(MUS_OBTAIN_ITEM)
+                bufferspeciesname(STR_VAR_1, SPECIES_AZURILL)
+                msgbox(format("You adopted an Azurill!"))
+                waitfanfare 
+                msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+
+                msgbox(format(
+                    "I wish all the best for you and your new companion, young trainer."
+                ))
+                setflag(FLAG_DAILY_BELLEHAVEN_ADOPTION)
+                goto(MrHerriman_End)
+            case 3:
+                checkmoney(10000)
+                if(!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "My apologies, but you must have the necessary funds to pay the fee."
+                    ))
+                    goto(MrHerriman_End)
+                }
+                removemoney(10000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                playse(SE_VEND)
+                waitse
+                hidemoneybox
+                givemon(SPECIES_TOGEPI,1,ITEM_RAGE_CANDY_BAR,,NUM_NATURES,1,,,,,,,,31,31,31,31,31,31, MOVE_NASTY_PLOT, MOVE_GROWL, MOVE_CHARM, MOVE_NONE)
+                playfanfare(MUS_OBTAIN_ITEM)
+                bufferspeciesname(STR_VAR_1, SPECIES_TOGEPI)
+                msgbox(format("You adopted a Togepi!"))
+                waitfanfare 
+                msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+
+                msgbox(format(
+                    "I wish all the best for you and your new companion, young trainer."
+                ))
+                setflag(FLAG_DAILY_BELLEHAVEN_ADOPTION)
+                goto(MrHerriman_End)
+            case 4:
+                checkmoney(10000)
+                if(!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "My apologies, but you must have the necessary funds to pay the fee."
+                    ))
+                    goto(MrHerriman_End)
+                }
+                removemoney(10000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                playse(SE_VEND)
+                waitse
+                hidemoneybox
+                givemon(SPECIES_WYNAUT,1,ITEM_LIECHI_BERRY,,NUM_NATURES,0,,,,,,,,,,,,,,)
+                playfanfare(MUS_OBTAIN_ITEM)
+                bufferspeciesname(STR_VAR_1, SPECIES_WYNAUT)
+                msgbox(format("You adopted a Wynaut!"))
+                waitfanfare 
+                msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+
+                msgbox(format(
+                    "I wish all the best for you and your new companion, young trainer."
+                ))
+                setflag(FLAG_DAILY_BELLEHAVEN_ADOPTION)
+                goto(MrHerriman_End)
+            case 5:
+                checkmoney(10000)
+                if(!var(VAR_RESULT)) {
+                    msgbox(format(
+                        "My apologies, but you must have the necessary funds to pay the fee."
+                    ))
+                    goto(MrHerriman_End)
+                }
+                removemoney(10000)
+                updatemoneybox
+                playse(SE_SHOP)
+                waitse
+                playse(SE_VEND)
+                waitse
+                hidemoneybox
+                givemon(SPECIES_TYROGUE,1,ITEM_FOCUS_BAND,,NUM_NATURES,1,,,,,,,,31,31,31,31,31,31, MOVE_HIGH_JUMP_KICK, MOVE_BULLET_PUNCH, MOVE_MACH_PUNCH, MOVE_RAPID_SPIN)
+                playfanfare(MUS_OBTAIN_ITEM)
+                bufferspeciesname(STR_VAR_1, SPECIES_TYROGUE)
+                msgbox(format("You adopted a Tyrogue!"))
+                waitfanfare 
+                msgbox(gText_NicknameThisPokemon, MSGBOX_YESNO)
+                msgbox(format(
+                    "I wish all the best for you and your new companion, young trainer."
+                ))
+                setflag(FLAG_DAILY_BELLEHAVEN_ADOPTION)
+                goto(MrHerriman_End)
+            default: // case 0
+                msgbox(format(
+                    "Righty oh. Inform me when you have made a decision."
+                ))
+                goto(MrHerriman_End)
+        }
+
+    MrHerriman_End:
+        hidemoneybox
+        closemessage
+        release
 }
