@@ -34,7 +34,7 @@
 extern const u8 EventScript_SprayWoreOff[];
 
 #define MAX_ENCOUNTER_RATE 2880
-#define SPAWN_ODDS         SPAWN_ODDS_MAX         // Actual probability is SPAWN_ODDS/65536
+#define SPAWN_ODDS         32218         // Actual probability is SPAWN_ODDS/65536
 #define SPAWN_ODDS_MAX     65536
 
 #define NUM_FEEBAS_SPOTS 6
