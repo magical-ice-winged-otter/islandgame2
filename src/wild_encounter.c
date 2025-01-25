@@ -552,6 +552,7 @@ void GenerateOverworldWildMon(void)
     {
         SetMonData(&gEnemyParty[0], MON_DATA_IS_SHINY, &shiny);
     }
+    memset(&activeOverworldEncounters[variableOffset], 0, sizeof(struct WildPokemon));
 }
 
 static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 rod)
