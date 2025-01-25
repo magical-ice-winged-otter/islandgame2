@@ -140,7 +140,7 @@ ISLANDGAME_BELLEHAVEN_MapScripts_Litten::
 # 109 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_MapScripts_Litten_Text_0
 # 112 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
-	applymovement 8, Common_Movement_FaceOriginalDirection
+	applymovement 9, Common_Movement_FaceOriginalDirection
 # 113 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	waitmovement 0
 # 114 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
@@ -191,7 +191,7 @@ ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2_2:
 
 ISLANDGAME_BELLEHAVEN_Interact_Sign_Text_0:
 # 21 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
-	.string "BELLEHAVEN\p"
+	.string "BELLEHAVEN\n"
 	.string "Peace and Tranquility$"
 
 ISLANDGAME_BELLEHAVEN_LumineCave_Sign_Text_0:
@@ -221,8 +221,8 @@ ISLANDGAME_BELLEHAVEN_MapScripts_Azurill_Text_0:
 
 ISLANDGAME_BELLEHAVEN_MapScripts_Tyrogue_Text_0:
 # 66 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
-	.string "Tyro! {COLOR BLUE}(I'm sorry, but I'm busy training. I\n"
-	.string "need to focus, is that okay?)$"
+	.string "Tyro! {COLOR BLUE}(Heya! My name's Wilt. How's it\n"
+	.string "hangin'?)$"
 
 ISLANDGAME_BELLEHAVEN_MapScripts_Herriman_Text_0:
 # 75 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
