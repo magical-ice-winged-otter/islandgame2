@@ -2,8 +2,19 @@ const FLAG_NIGHT = FLAG_TEMP_1
 const FLAG_DAY = FLAG_TEMP_2
 const VAR_CURRENT_HOUR = VAR_0x8000
 
+const LOCAL_ID_ENCOUNTER_1 = 10 
+const LOCAL_ID_ENCOUNTER_2 = 11
+const LOCAL_ID_ENCOUNTER_3 = 12
+const LOCAL_ID_ENCOUNTER_4 = 13
+const LOCAL_ID_ENCOUNTER_5 = 14
+
 mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_4, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_5, ENCOUNTER_LAND)
         setvar(VAR_TEMP_1, 0)
         goto(ISLANDGAME_Southern_Oranna_Path_OnLoad)
 
