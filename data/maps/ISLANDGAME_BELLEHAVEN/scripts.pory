@@ -41,7 +41,7 @@ script ISLANDGAME_BELLEHAVEN_MapScripts_Frankie {
     lock
     faceplayer
     msgbox(format(
-        "Excuse me, have you seen a Cubone anywhere by chance? We took one in earlier this morning, but I couldn't find it anywhere when it came dinner time!\p"
+        "Excuse me, have you seen a Cubone anywhere by chance?\pWe took one in earlier this morning, but I couldn't find it anywhere when it came dinner time!\p"
         "Ooh, I hope he's alright. I found him weeping alone in the Valley of Peace. Maybe he's returned there to look for his parents?"
     ))
     closemessage
@@ -107,7 +107,7 @@ script ISLANDGAME_BELLEHAVEN_MapScripts_Litten {
     faceplayer
     playmoncry(SPECIES_LITTEN, CRY_MODE_NORMAL)
     msgbox(format(
-        "Mreow... (I hate mondays.)"
+        "Mreow... {COLOR BLUE}(I hate mondays.)"
     ))
     applymovement(9, Common_Movement_FaceOriginalDirection)
     waitmovement(0)

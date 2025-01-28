@@ -3,6 +3,11 @@ const FLAG_NIGHTTIME = FLAG_TEMP_3
 
 mapscripts ISLANDGAME_CAMP_PERSI_LODGE_1_2F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+        if(var(VAR_RESULT) == QUEST_INACTIVE) {
+            setflag(FLAG_TEMP_4)
+        }
+
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
@@ -41,9 +46,9 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
                 "Ever since our battle, I've really learned a lot.\p"
                 "I now realize that winning takes more than just the stronger Pokémon to win.\p"
                 "Thank you for teaching that to me, and also keeping the whole thing a secret between us...\p"
-                "Here, I know it doesn't mean much, but I want you to have these as thanks. I found 'em around camp."
+                "Here, take this Technical Machine as thanks. It's my favorite move, and I know a trainer like you will make good use of it."
             ))
-            giveitem(ITEM_EXP_CANDY_XS, 3)
+            giveitem(ITEM_TM54)
             setvar(VAR_CAMP_PERSI_STATE, 3)
         case 3:
             faceplayer
@@ -58,9 +63,9 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
             playse(SE_PIN)
             applymovement(1, ExclaimFacePlayer)
             faceplayer
-            delay(15)
+            delay(30)
             msgbox(format(
-                "Aiiiiiie! Where did you come from!? How long have you been listening!?\p"
+                "Aiiiiiie! {PAUSE 30} Where did you come from!? How long have you been listening!?\p"
                 "I-I was just joking about the stealing stuff, okay? And besides, there's no proof that I am anyways, so don't go snooping around camp!"
             ))
             setvar(VAR_CAMP_PERSI_STATE, 1)

@@ -25,71 +25,73 @@ ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV::
 # 18 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV_Text_0, MSGBOX_SIGN
+# 32 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV_Text_1, MSGBOX_SIGN
 	return
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_BlooInteract::
-# 41 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	lock
-# 42 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	faceplayer
 # 43 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	lock
+# 44 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	faceplayer
+# 45 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_BlooInteract_Text_0
-# 47 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	applymovement 1, Common_Movement_FaceOriginalDirection
-# 48 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	waitmovement 0
 # 49 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	closemessage
+	applymovement 1, Common_Movement_FaceOriginalDirection
 # 50 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	waitmovement 0
+# 51 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	closemessage
+# 52 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_CocoInteract::
-# 54 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	lock
-# 55 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	faceplayer
 # 56 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	playmoncry SPECIES_HAPPINY, CRY_MODE_NORMAL
+	lock
 # 57 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	faceplayer
+# 58 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	playmoncry SPECIES_HAPPINY, CRY_MODE_NORMAL
+# 59 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_CocoInteract_Text_0
-# 60 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 62 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	closemessage
-# 61 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 63 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_EduardoInteract::
-# 65 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	lock
-# 66 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	faceplayer
 # 67 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	playmoncry SPECIES_MUNCHLAX, CRY_MODE_NORMAL
+	lock
 # 68 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	faceplayer
+# 69 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	playmoncry SPECIES_MUNCHLAX, CRY_MODE_NORMAL
+# 70 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_EduardoInteract_Text_0
-# 71 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 73 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	closemessage
-# 72 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 74 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_WiltInteract::
-# 76 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	lock
-# 77 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	faceplayer
 # 78 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	playmoncry SPECIES_TYROGUE, CRY_MODE_NORMAL
+	lock
 # 79 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	faceplayer
+# 80 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	playmoncry SPECIES_TYROGUE, CRY_MODE_NORMAL
+# 81 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_WiltInteract_Text_0
-# 83 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 85 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	closemessage
-# 84 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 86 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	release
 	return
 
@@ -120,8 +122,12 @@ ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV_Text_0:
 	.string "“Come on Misty, you act like this is the\n"
 	.string "first time I've done something stupid.\l"
 	.string "You remember when I was supposed to\l"
-	.string "get that full art Pikachu?”\p"
-	.string "... “A full art Pikachu is a full art\n"
+	.string "get that full art Pikachu?”$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV_Text_1:
+# 33 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	.string "...\p"
+	.string "“A full art Pikachu is a full art\n"
 	.string "Pikachu, but the booster pack could\l"
 	.string "have anything!”\p"
 	.string "“It could even have the full art\n"
@@ -134,23 +140,23 @@ ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV_Text_0:
 	.string "ago.”$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_BlooInteract_Text_0:
-# 44 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 46 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	.string "Azu... {COLOR BLUE}(Uggggghhhhh. Would it kill for\n"
 	.string "them to give us some video games?)\p"
 	.string "{COLOR BLUE}(I'm getting real bored of watching\n"
 	.string "reruns of Pallet Guy.)$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_CocoInteract_Text_0:
-# 58 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 60 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	.string "Coco Coco Coco Coco...$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_EduardoInteract_Text_0:
-# 69 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
-	.string "¡Lax! (¡Hola entrenador! Soy Eduardo. Me\n"
+# 71 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+	.string "¡Lax! {COLOR BLUE}(¡Hola entrenador! Soy Eduardo. Me\n"
 	.string "gusta papas.)$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_WiltInteract_Text_0:
-# 80 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
+# 82 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.pory"
 	.string "Tyro!{COLOR BLUE} (My trainer is a professional\n"
 	.string "basketball player in Unova!)\p"
 	.string "(I hope he comes back soon.)$"

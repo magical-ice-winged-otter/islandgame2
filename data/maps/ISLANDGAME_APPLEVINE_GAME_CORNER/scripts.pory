@@ -327,9 +327,9 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
         dynmultipush("Loaded Dice (2400)", 762)
         dynmultipush("TM06 (3200)", 587)
         dynmultipush("TM12 (3200)", 593)
+        dynmultipush("TM32 (3200)", 613)
         dynmultipush("TM46 (3200)", 627)
         dynmultipush("TM48 (3200)", 629)
-        dynmultipush("TM49 (3200)", 630)
         dynmultipush("Gimmighoul (4800)", 370)
         dynmultipush("Eevee (6400)", 376)
         dynmultipush("Porygon (8000)", 357)
@@ -631,7 +631,7 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                     goto(PrizeClerk_Exchange)
                 }
                 msgbox(format(
-                    "Would you like to exchange 3200 coins for TM49 - Snatch?"
+                    "Would you like to exchange 3200 coins for TM32 - Double Team?"
                 ), MSGBOX_YESNO)
                 if(var(VAR_RESULT) == YES) {
                     removecoins(3200)

@@ -11228,19 +11228,22 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_FALSE_SWIPE, // Todo
+        .secondaryId = MOVE_FALSE_SWIPE, 
     },
 
     [ITEM_TM54] =
     {
         .name = _("TM54"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "Foe cannot escape\n"
+            "and takes damage for\n"
+            "4-5 turns."), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_INFESTATION,
     },
 
     [ITEM_TM55] =

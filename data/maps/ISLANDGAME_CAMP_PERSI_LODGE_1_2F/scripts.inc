@@ -91,7 +91,7 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_4:
 # 40 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_1
 # 46 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
-	giveitem ITEM_EXP_CANDY_XS, 3
+	giveitem ITEM_TM54
 # 47 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"
 	setvar VAR_CAMP_PERSI_STATE, 3
 	goto ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_1
@@ -132,9 +132,10 @@ ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_1:
 	.string "Thank you for teaching that to me, and\n"
 	.string "also keeping the whole thing a secret\l"
 	.string "between us...\p"
-	.string "Here, I know it doesn't mean much, but I\n"
-	.string "want you to have these as thanks. I\l"
-	.string "found 'em around camp.$"
+	.string "Here, take this Technical Machine as\n"
+	.string "thanks. It's my favorite move, and I\l"
+	.string "know a trainer like you will make good\l"
+	.string "use of it.$"
 
 ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC_Text_2:
 # 51 "data/maps/ISLANDGAME_CAMP_PERSI_LODGE_1_2F/scripts.pory"

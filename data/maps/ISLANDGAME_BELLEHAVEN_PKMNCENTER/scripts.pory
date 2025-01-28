@@ -1,13 +1,29 @@
-mapscripts ISLANDGAME_BELLEHAVEN_PKMNCENTER_MapScripts {}
+const LOCALID_NURSE = 1
+
+mapscripts ISLANDGAME_BELLEHAVEN_PKMNCENTER_MapScripts {
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_ISLANDGAME_APPLEVINE)
+    }
+
+}
 
 
 script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_1 {
     lock
     faceplayer
     msgbox(format(
-        "In the another region, I've heard a bird that looked exactly like Zapdos, except it was a fighting type instead.\p"
-         "I wonder if you would ever get to see it?"
+        "Many other regions in the world have their own Articuno, Zapdos, and Moltres.\p"
+        "In Galar, they even look completely different then ours!\p"
+        "I wonder what other legendary Pokémon other regions share with us...\p"
+        "Do you think... there could even be another Lugia elsewhere?\p"
+        "No... that couldn't be. Our lord and savior is a one-of-a-kind being!"
         )
     )
+    closemessage
     release
+}
+
+script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_2 {
+    lock
 }
