@@ -1430,3 +1430,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_ANOMALY01_3F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLE_CATACOMBS_1F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLE_CATACOMBS_2F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLE_CATACOMBS_3F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_BELLE_CATACOMBS_4F/scripts.inc"
