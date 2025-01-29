@@ -48,8 +48,10 @@ script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_3 {
     lock
     faceplayer
     msgbox(format(
-        "Lumine is home to two of Marya's oldest civilizations. One of them is the town you're standing in right now, and the other is Arboria, which is southeast from here!"
+        "Lumine is home to two of Marya's oldest civilizations!\p One of them is the town you're standing in right now, and the other is Arboria, which is southeast from here!"
     ))
+    closemessage
+    release
 }
 
 script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM {
