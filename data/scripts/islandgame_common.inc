@@ -530,8 +530,8 @@ Common_EventScript_OverworldPokemon_Level_6:
 IslandGame_Common_PokemonCenter_1F_EventScript_Nurse_Text_0:
 # 48 "data/scripts/islandgame_common.pory"
 	.string "Welcome to the Maryan isles, trainer!\n"
-	.string "This is a Pokemon center.\p"
-	.string "You don't have any Pokemon right now,\n"
+	.string "This is a Pokémon Center.\p"
+	.string "You don't have any Pokémon right now,\n"
 	.string "but when you do we can heal them.$"
 
 ISLANDGAME_PKMNCENTER_2F_TimeNPC_Text_0:

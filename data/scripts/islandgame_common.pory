@@ -45,8 +45,8 @@ script IslandGame_Common_PokemonCenter_1F_EventScript_Nurse {
     if (!flag(FLAG_PROF_GAVE_EEVEE)) {
         lock
         msgbox(format(
-            "Welcome to the Maryan isles, trainer! This is a Pokemon center.\p"
-            "You don't have any Pokemon right now, but when you do we can heal them."
+            "Welcome to the Maryan isles, trainer! This is a Pokémon Center.\p"
+            "You don't have any Pokémon right now, but when you do we can heal them."
         ))
         closemessage
         release

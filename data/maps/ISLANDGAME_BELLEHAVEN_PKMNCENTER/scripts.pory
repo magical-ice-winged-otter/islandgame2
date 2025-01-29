@@ -1,4 +1,6 @@
 const LOCALID_NURSE = 1
+const CURRENT_MARBLES = VAR_TEMP_A
+const OPTIMAL_MOVE = VAR_TEMP_B
 
 mapscripts ISLANDGAME_BELLEHAVEN_PKMNCENTER_MapScripts {
     MAP_SCRIPT_ON_RESUME: CableClub_OnResume
@@ -26,4 +28,204 @@ script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_1 {
 
 script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_2 {
     lock
+    special(Script_FadeOutMapMusic)
+    waitstate
+    delay(180)
+    faceplayer
+    playmoncry(SPECIES_GOTHITELLE, CRY_MODE_NORMAL)
+    waitmoncry
+    setflag(FLAG_BELLEHAVEN_CREEPY_GIRL)
+    setfollower(3, 0x100, ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_2_Interact, PARTNER_NONE)
+}
+
+script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_2_Interact {
+    faceplayer
+    playmoncry(SPECIES_GOTHITELLE, CRY_MODE_WEAK)
+    waitmoncry
+}
+
+script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_3 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Lumine is home to two of Marya's oldest civilizations. One of them is the town you're standing in right now, and the other is Arboria, which is southeast from here!"
+    ))
+}
+
+script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM {
+    lock
+    faceplayer
+    if(flag(FLAG_BELLEHAVEN_SQUID_GAME)) {
+        msgbox(format(
+            "Thank you for spending time with an ailing old man, young trainer..."
+        ))
+        goto(SquidGame_End)
+    }
+    msgbox(format(
+        "Ooh... young trainer... would you like to play a game of marbles with me...?"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format(
+            "Ooh... What a shame... I was hoping to relive my childhood one last time..."
+        ))
+        goto(SquidGame_End)
+    }
+    msgbox(format(
+        "Ah... Splendid... For our game, we will take turns taking 1, 2, or 3 marbles away from a pile of 21 marbles...\p"
+        "The player who takes the last marble is the winner...! Pretty simple, isn't it?"
+    ))
+    showmoneybox(0,0)
+    msgbox(format(
+        "Now... let's make the game a little more interesting... We'll both bet ¥10,000, and whoever wins the game will get ¥20,000! What do you say, gganbu?"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+        msgbox(format(
+            "Ooh... What a shame... I was hoping to relive my childhood one last time..."
+        ))
+        hidemoneybox
+        goto(SquidGame_End)
+    }
+    checkmoney(10000)
+    if (!var(VAR_RESULT)) {
+        msgbox(format(
+            "Aaah... Come back when you have the money... Our game cannot be played without the thrill of stakes!"
+        ))
+        hidemoneybox
+        goto(SquidGame_End)
+    }
+    removemoney(10000)
+    updatemoneybox()
+    playse(SE_SHOP)
+    waitse
+    msgbox(format(
+        "Ho-ho... Let us begin the game!\p"
+        "As your elder, I shall give you the choice of going first or second...\p"
+        "Would you like to go first?"
+    ), MSGBOX_YESNO)
+    hidemoneybox
+    if (var(VAR_RESULT) == YES) {
+        setvar(CURRENT_MARBLES, 21)
+        goto(NIM_YourTurn)
+    }
+    else {
+        msgbox(format(
+            "Ah... how generous of you! I shall start by taking 1 marble."
+        ))
+        setvar(CURRENT_MARBLES, 20)
+        copyvar(VAR_0x8008, CURRENT_MARBLES)
+        buffernumberstring(STR_VAR_1, VAR_0x8008)
+        goto(NIM_YourTurn)
+    }
+
+    NIM_YourTurn:
+        copyvar(VAR_0x8008, CURRENT_MARBLES)
+        buffernumberstring(STR_VAR_1, VAR_0x8008)
+        msgbox(format(
+            "Your Turn! Take away 1, 2, or 3 marbles.\nMarbles Left: {STR_VAR_1}"
+        ))
+        if(var(CURRENT_MARBLES) > 0) {
+            dynmultipush("1", 1)
+        }
+        if(var(CURRENT_MARBLES) > 1) {
+            dynmultipush("2", 2)
+        }
+        if(var(CURRENT_MARBLES) > 2) {
+            dynmultipush("3", 3)
+        }
+        dynmultistack(0,0,TRUE,4,FALSE,0,DYN_MULTICHOICE_CB_NONE)
+        switch (var(VAR_RESULT)) {
+            case 1:
+                subvar(CURRENT_MARBLES, 1)
+                msgbox(format(
+                    "> You took 1 marble."
+                ))
+                if(var(CURRENT_MARBLES) == 0) {
+                    goto(NIM_YouWin)
+                }
+                goto(NIM_AITurn)
+            case 2:
+                subvar(CURRENT_MARBLES, 2)
+                msgbox(format(
+                    "> You took 2 marbles."
+                ))
+                if(var(CURRENT_MARBLES) == 0) {
+                    goto(NIM_YouWin)
+                }
+                goto(NIM_AITurn)
+            default: // case 3
+                subvar(CURRENT_MARBLES, 3)
+                msgbox(format(
+                    "> You took 3 marbles."
+                ))
+                if(var(CURRENT_MARBLES) == 0) {
+                    goto(NIM_YouWin)
+                }
+                goto(NIM_AITurn)
+        }
+
+    NIM_AITurn: 
+        copyvar(OPTIMAL_MOVE, CURRENT_MARBLES)
+        while(var(OPTIMAL_MOVE) > 4) {
+            subvar(OPTIMAL_MOVE, 4)
+        }
+
+        switch(var(OPTIMAL_MOVE)) {
+            case 2:
+                msgbox(format(
+                    "Hm... {PAUSE 30}I shall take 2 marbles!"
+                ))
+                if(var(CURRENT_MARBLES) == 2) {
+                    goto(NIM_YouLose)
+                }
+                subvar(CURRENT_MARBLES, 2)
+                goto(NIM_YourTurn)
+            case 3:
+                msgbox(format(
+                    "Hm... {PAUSE 30}I shall take 3 marbles!"
+                ))
+                if(var(CURRENT_MARBLES) == 3) {
+                    goto(NIM_YouLose)
+                }
+                subvar(CURRENT_MARBLES, 3)
+                goto(NIM_YourTurn)
+            default: // pick 1 marble
+                msgbox(format(
+                    "Hm... {PAUSE 30}I shall take 1 marble!"
+                ))
+                if(var(CURRENT_MARBLES) == 1) {
+                    goto(NIM_YouLose)
+                }
+                subvar(CURRENT_MARBLES, 1)
+                goto(NIM_YourTurn)
+        }
+    
+    NIM_YouWin:
+        msgbox(format(
+            "Ah...{PAUSE 30} It seems like I have lost...{PAUSE 30} That was an enjoyable game, young trainer...\p"
+            "It reminded me of the days when I would play marbles with my friends all day..."
+        ))
+        showmoneybox(0,0)
+        msgbox(format(
+            "Here is your reward, as promised..."
+        ))
+        addmoney(20000)
+        updatemoneybox
+        playse(SE_SHOP)
+        waitse
+        hidemoneybox
+        msgbox(format(
+            "If you would like to continue participating in high-stake games like this, you should consider playing in the High Limit Area at Applevine's Game Corner...\p"
+            "Here...{PAUSE 30} you may take my VIP Pass. I will soon no longer have a need for it..."
+        ))
+        setflag(FLAG_BELLEHAVEN_SQUID_GAME)
+        giveitem(ITEM_MYSTIC_TICKET)
+
+    NIM_YouLose:
+        msgbox(format(
+            "Ah...{PAUSE 30} It seems that I have won...{PAUSE 30} Better luck next time, young trainer..."
+        ))
+
+    SquidGame_End:
+        closemessage
+        release
 }

@@ -12566,14 +12566,14 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_EonTicket,
     },
 
-    [ITEM_MYSTIC_TICKET] =
+    [ITEM_MYSTIC_TICKET] = // islandgame temp - vip pass
     {
-        .name = _("Mystic Ticket"),
+        .name = _("VIP Pass"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A ticket required\n"
-            "to board the ship\n"
-            "to Navel Rock."),
+            "Grants access to\n"
+            "the Game Corner's\n"
+            "High Limit Area."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

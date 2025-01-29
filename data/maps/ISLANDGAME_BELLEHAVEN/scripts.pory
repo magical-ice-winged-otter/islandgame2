@@ -12,7 +12,7 @@ mapscripts ISLANDGAME_BELLEHAVEN_MapScripts {
             setflag(FLAG_DAYTIME) // controls nighttime npcs
             setflag(FLAG_TEMP_4) // frankie
         }
-
+        destroyfollower()
     }
 }
 

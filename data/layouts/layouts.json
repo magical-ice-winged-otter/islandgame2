@@ -5770,6 +5770,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F",
+      "name": "ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F/map.bin"
     }
   ]
 }

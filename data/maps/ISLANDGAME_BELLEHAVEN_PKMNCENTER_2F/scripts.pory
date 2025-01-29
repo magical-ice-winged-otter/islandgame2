@@ -1,0 +1,5 @@
+mapscripts ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        destroyfollower()
+    }
+}
