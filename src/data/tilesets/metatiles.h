@@ -335,3 +335,6 @@ const u16 gMetatileAttributes_islandgame_cave_1[] = INCBIN_U16("data/tilesets/se
 
 const u16 gMetatiles_islandgame_cave_2[] = INCBIN_U16("data/tilesets/secondary/islandgame_cave_2/metatiles.bin");
 const u16 gMetatileAttributes_islandgame_cave_2[] = INCBIN_U16("data/tilesets/secondary/islandgame_cave_2/metatile_attributes.bin");
+
+const u16 gMetatiles_islandgame_kanto_pokemontower[] = INCBIN_U16("data/tilesets/secondary/islandgame_kanto_pokemontower/metatiles.bin");
+const u16 gMetatileAttributes_islandgame_kanto_pokemontower[] = INCBIN_U16("data/tilesets/secondary/islandgame_kanto_pokemontower/metatile_attributes.bin");

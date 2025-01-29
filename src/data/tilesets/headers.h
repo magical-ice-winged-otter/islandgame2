@@ -1291,3 +1291,14 @@ const struct Tileset gTileset_islandgame_cave_2 =
     .metatileAttributes = gMetatileAttributes_islandgame_cave_2,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_islandgame_kanto_pokemontower =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_islandgame_kanto_pokemontower,
+    .palettes = gTilesetPalettes_islandgame_kanto_pokemontower,
+    .metatiles = gMetatiles_islandgame_kanto_pokemontower,
+    .metatileAttributes = gMetatileAttributes_islandgame_kanto_pokemontower,
+    .callback = NULL,
+};

@@ -5216,8 +5216,8 @@
       "name": "ISLANDGAME_BELLE_CATACOMBS_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_islandgame_empty_primary",
-      "secondary_tileset": "gTileset_islandgame_lumine_belle_catacombs",
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
       "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS/map.bin"
     },
@@ -5780,6 +5780,46 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_1F",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_powerplant",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_2F",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_2F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_3F",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_3F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_3F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_4F",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_4F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_4F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_4F/map.bin"
     }
   ]
 }
