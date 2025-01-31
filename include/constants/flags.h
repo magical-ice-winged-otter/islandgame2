@@ -1268,7 +1268,7 @@
 #define FLAG_ITEM_VERDANT_WOODS_BUG_GEM                             0x4BB
 #define FLAG_ITEM_LUMINE_CAVE_SABLENITE                             0x4BC 
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
-#define FLAG_ITEM_BELLEHAVEN_BIG_MUSHROOM                           0x4BE 
+#define FLAG_ITEM_BELLEHAVEN_QUICK_BALL                             0x4BE 
 #define FLAG_ITEM_MAPLEGROVE_ABILITY_PATCH                          0x4BF
 #define FLAG_ITEM_ROCKY_PATH_FULL_HEAL                              0x4C0 
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
@@ -1282,7 +1282,7 @@
 #define FLAG_ITEM_SORANNA_PATH_ABSOLITE                             0x4C9 
 #define FLAG_ITEM_CAMP_PERSI_PROTEIN                                0x4CA 
 #define FLAG_ITEM_CHERIPORT_HP_UP                                   0x4CB 
-#define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
+#define FLAG_ITEM_BELLEHAVEN_CALCIUM                                0x4CC
 #define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
 #define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
 #define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
