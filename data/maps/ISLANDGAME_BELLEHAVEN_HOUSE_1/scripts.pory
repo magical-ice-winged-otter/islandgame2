@@ -1,16 +1,104 @@
 mapscripts ISLANDGAME_BELLEHAVEN_HOUSE_1_MapScripts {}
 
-
-script ISLANDGAME_BELLEHAVEN_HOUSE_1_NPC_1 {
+script ISLANDGAME_BELLEHAVEN_HOUSE_1_Snorunt {
     lock
     faceplayer
-    msgbox(format("We moved here from Applevine, and we are liking it so far.\p"
-                  "It's much quieter and peaceful compared to there, except we hate moving!"))
+    playmoncry(SPECIES_SNORUNT, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Sno!{COLOR BLUE} (You're a special trainer, just like my owner!)"
+    ))
+    closemessage
     release
 }
 
-script ISLANDGAME_BELLEHAVEN_HOUSE_1_NPC_2 {
+
+script ISLANDGAME_BELLEHAVEN_HOUSE_1_Jonas {
     lock
-    msgbox(format("The building is pretty old.... Looks like we need a water filter."))
+    faceplayer
+    if(!flag(FLAG_BELLEHAVEN_SPOKE_TO_JONAS)) {
+        msgbox(format(
+            "{COLOR GREEN}Jonas:{COLOR DARK_GRAY} Ah, fancy seeing you here, {PLAYER}! How's your Pokémon journey been going along?\p"
+            "...\p"
+            "Oh? You're completing Marya's Gym Challenge to qualify for the Silverwing Festival Tournament?\p"
+            "I see. I take it you've already gotten your first badge by the looks of it?\p"
+            "Hah. You're growing at quite the accelerated pace, {PLAYER}. I knew there was something about you that intrigued me when we first met."
+        ))
+        msgbox(format(
+            "I'm currently just doing my rounds around Lumine, selling herbs and medicine. Perhaps you'd like to take a look at my wares?"
+        ))
+        setflag(FLAG_BELLEHAVEN_SPOKE_TO_JONAS)
+    }
+    else {
+        msgbox(format(
+            "{COLOR GREEN}Jonas: {COLOR DARK_GRAY}Looking to purchase some herbs or medicine, {PLAYER}?"
+        ))
+    }
+    pokemart(Bellehaven_JonasMart)
+    msgbox(format(
+        "May Lugia be with you, {PLAYER}."
+    ))
+    closemessage
+    release
+}
+
+mart Bellehaven_JonasMart {
+    ITEM_HEAL_POWDER
+    ITEM_ENERGY_POWDER
+    ITEM_MENTAL_HERB
+    ITEM_MIRROR_HERB
+    ITEM_POWER_HERB
+    ITEM_WHITE_HERB
+    ITEM_HP_UP
+    ITEM_PROTEIN
+    ITEM_IRON
+    ITEM_CALCIUM
+    ITEM_ZINC
+    ITEM_CARBOS
+    ITEM_PP_UP
+}
+
+script ISLANDGAME_BELLEHAVEN_HOUSE_1_IncenseNPC {
+    lock
+    faceplayer
+    msgbox(format(
+        "Welcome, trainer. Would you like to purchase some incense?"
+    ))
+    pokemart(Bellehaven_IncenseMart)
+    msgbox(format(
+        "May Lugia be with you."
+    ))
+    closemessage
+    release
+}
+
+mart Bellehaven_IncenseMart {
+    ITEM_FULL_INCENSE
+    ITEM_LAX_INCENSE
+    ITEM_LUCK_INCENSE
+    ITEM_ODD_INCENSE
+    ITEM_PURE_INCENSE
+    ITEM_ROCK_INCENSE
+    ITEM_ROSE_INCENSE
+    ITEM_SEA_INCENSE
+    ITEM_WAVE_INCENSE
+}
+
+script ISLANDGAME_BELLEHAVEN_HOUSE_1_NPC {
+    lock
+    faceplayer
+    if(flag(FLAG_BELLEHAVEN_CHARCOAL)) {
+        msgbox(format(
+            "Charcoal is also helpful in creating herbal medicine, and even in combat when held by your fire Pokémon."
+        ))
+    }
+    else {
+        msgbox(format(
+            "If you visit the Valley of Peace, it is customary to burn some incense at the shrine in honor of the fallen.\p"
+            "Here, take this. It will help you with burning incense."
+        ))
+        giveitem(ITEM_CHARCOAL)
+        setflag(FLAG_BELLEHAVEN_CHARCOAL)
+    }
+    closemessage
     release
 }

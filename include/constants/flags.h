@@ -1579,7 +1579,7 @@
 #define FLAG_CAMP_PERSI_PORYGON_DEFEATED            (SYSTEM_FLAGS + 0xB6)
 #define FLAG_BELLEHAVEN_CREEPY_GIRL                 (SYSTEM_FLAGS + 0xB7)
 #define FLAG_BELLEHAVEN_SQUID_GAME                  (SYSTEM_FLAGS + 0xB8)
-#define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag
+#define FLAG_BELLEHAVEN_CHARCOAL                    (SYSTEM_FLAGS + 0xB9)
 #define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
 #define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
 #define FLAG_UNUSED_0x91C                           (SYSTEM_FLAGS + 0xBC) // Unused Flag

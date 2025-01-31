@@ -5645,9 +5645,9 @@
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_1",
       "name": "ISLANDGAME_BELLEHAVEN_HOUSE_1_Layout",
       "width": 11,
-      "height": 10,
-      "primary_tileset": "gTileset_islandgame_kanto_building",
-      "secondary_tileset": "gTileset_Unused1",
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_1/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_1/map.bin"
     },

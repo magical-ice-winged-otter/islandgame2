@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_BELLEHAVEN_HOUSE_1",
   "name": "ISLANDGAME_BELLEHAVEN_HOUSE_1",
   "layout": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_1",
-  "music": "MUS_HG_VERMILION",
+  "music": "MUS_FALLARBOR",
   "region_map_section": "MAPSEC_BELLEHAVEN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,21 +15,47 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_7",
-      "x": 1,
+      "graphics_id": "OBJ_EVENT_GFX_SILVERWING_F",
+      "x": 4,
       "y": 2,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_BELLEHAVEN_HOUSE_1_NPC_2",
+      "script": "ISLANDGAME_BELLEHAVEN_HOUSE_1_IncenseNPC",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 9,
+      "graphics_id": "OBJ_EVENT_GFX_JONAS",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_HOUSE_1_Jonas",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNORUNT)",
+      "x": 1,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_HOUSE_1_Snorunt",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+      "x": 7,
       "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -37,14 +63,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_BELLEHAVEN_HOUSE_1_NPC_1",
+      "script": "ISLANDGAME_BELLEHAVEN_HOUSE_1_NPC",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 8,
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 3,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_BELLEHAVEN",
       "dest_warp_id": "4"

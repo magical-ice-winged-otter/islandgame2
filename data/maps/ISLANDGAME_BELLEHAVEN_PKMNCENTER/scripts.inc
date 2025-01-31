@@ -385,10 +385,10 @@ ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_1_Text_0:
 ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_3_Text_0:
 # 51 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	.string "Lumine is home to two of Marya's oldest\n"
-	.string "civilizations. One of them is the town\l"
-	.string "you're standing in right now, and the\l"
-	.string "other is Arboria, which is southeast\l"
-	.string "from here!$"
+	.string "civilizations!\p"
+	.string "One of them is the town you're standing\n"
+	.string "in right now, and the other is Arboria,\l"
+	.string "which is southeast from here!$"
 
 ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_0:
 # 62 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"

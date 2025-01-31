@@ -1973,8 +1973,9 @@ ISLANDGAME_APPLEVINE_EventScript_Gambler3_Text_0:
 
 ISLANDGAME_APPLEVINE_EventScript_Bouncer_Text_0:
 # 203 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "Sorry, you must have a VIP Pass in order\n"
-	.string "to enter the High Limit Area.$"
+	.string "The High Limit Area is currently\n"
+	.string "undergoing renovations. We apologize\l"
+	.string "for the inconvenience.$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_0:
 # 217 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"

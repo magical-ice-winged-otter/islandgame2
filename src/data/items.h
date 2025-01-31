@@ -1169,7 +1169,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_PEWTER_CRUNCHIES] =
     {
-        .name = _("Sera Snaxx"),
+        .name = _("Sera-Snaxx"),
         .price = 250,
         .description = COMPOUND_STRING(
             "A yummy treat\n"
@@ -12572,7 +12572,7 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "Grants access to\n"
-            "the Game Corner's\n"
+            "the Game Corner\n"
             "High Limit Area."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,

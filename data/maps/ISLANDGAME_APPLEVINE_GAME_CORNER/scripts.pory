@@ -200,7 +200,7 @@ script ISLANDGAME_APPLEVINE_EventScript_Bouncer {
     lock
     faceplayer
     msgbox(format(
-        "Sorry, you must have a VIP Pass in order to enter the High Limit Area."
+        "The High Limit Area is currently undergoing renovations. We apologize for the inconvenience."
     ))
     release
 }
