@@ -10,7 +10,7 @@ ISLANDGAME_SS_RAIN_BASEMENT_BattleRotom::
 # 6 "data/maps/ISLANDGAME_SS_RAIN_BASEMENT/scripts.pory"
 	setflag FLAG_SMART_WILD_AI
 # 7 "data/maps/ISLANDGAME_SS_RAIN_BASEMENT/scripts.pory"
-	setcwildbattle 0, SPECIES_ROTOM, 25, 0, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_ROTOM, 25, 0, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0
 # 8 "data/maps/ISLANDGAME_SS_RAIN_BASEMENT/scripts.pory"
 	playmoncry SPECIES_ROTOM, CRY_MODE_ENCOUNTER
 # 9 "data/maps/ISLANDGAME_SS_RAIN_BASEMENT/scripts.pory"

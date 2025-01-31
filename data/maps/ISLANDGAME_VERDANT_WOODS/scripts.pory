@@ -1,24 +1,42 @@
-// SKITTY SIDE QUEST : START
-const GIRL_NPC = 5
-const BALL_NPC = 23
-const SKITTY_NPC = 24
-const HAUNTER_NPC = 25
+// // SKITTY SIDE QUEST : START
+// const GIRL_NPC = 5
+// const BALL_NPC = 23
+// const SKITTY_NPC = 24
+// const HAUNTER_NPC = 25
 
-const BALL_FLAG = FLAG_TEMP_1
-const SKITTY_FLAG = FLAG_TEMP_2
-const HAUNTER_FLAG = FLAG_TEMP_3
+// const BALL_FLAG = FLAG_TEMP_1
+// const SKITTY_FLAG = FLAG_TEMP_2
+// const HAUNTER_FLAG = FLAG_TEMP_3
 
-const TIME_24 = 0 //18 by default
-const SKITTY_VAR = VAR_TEMP_0 // controls if the trigger script should run
-const SKITTY_IN_PROGRESS = 2
-const SKITTY_ACTIVE = 1
-const SKITTY_INACTIVE = 0
+// const TIME_24 = 0 //18 by default
+// const SKITTY_VAR = VAR_TEMP_0 // controls if the trigger script should run
+// const SKITTY_IN_PROGRESS = 2
+// const SKITTY_ACTIVE = 1
+// const SKITTY_INACTIVE = 0
 
-const ABILITY_NORMALIZE = 1
-
+// const ABILITY_NORMALIZE = 1
 
 // SKITTY SIDE QUEST : END
+
+
 mapscripts ISLANDGAME_VERDANT_WOODS_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        // hide daytime mons
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_TEMP_4) 
+            setflag(FLAG_TEMP_5) 
+            setflag(FLAG_TEMP_6) 
+        }
+        // hide nighttime mons
+        else {
+            setflag(FLAG_TEMP_1) 
+            setflag(FLAG_TEMP_2) 
+            setflag(FLAG_TEMP_3) 
+        }
+    }
+
     MAP_SCRIPT_ON_RESUME: ISLANDGAME_VERDANT_WOODS_OnResume
     // MAP_SCRIPT_ON_TRANSITION {
     //     // Skitty quest
@@ -69,6 +87,7 @@ script ISLANDGAME_VERDANT_WOODS_Sudowoodo {
                 case NO:
                     break
                 case YES:
+                    closemessage
                     special(DoWateringBerryTreeAnim)
                     waitstate
                     waitse
@@ -382,7 +401,7 @@ script ISLANDGAME_VERDANT_WOODS_FightHaunter {
     // setflag(FLAG_NO_CATCHING)
     // setflag(FLAG_NO_RUNNING)
     // setcwildbattle(0, SPECIES_HAUNTER, 16, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_SHADOW_BALL, MOVE_HYPNOSIS)
-    // setwilddoublebattle(TRUE)
+    // setwilddoubleflag
     // playmoncry(SPECIES_HAUNTER, CRY_MODE_ENCOUNTER)
     // waitmoncry
     // dowildbattle
@@ -534,4 +553,173 @@ text ISLANDGAME_VERDANT_WOODS_SIGN2_DESC {
     format(
         "{COLOR DARK_GRAY}KeEp OuT stAy oUt ThiS is mY hOuSE!! gO aaWAy Go aWAY LeAve me AlOnE grAWuhgh"
     )
+}
+
+
+
+
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract1 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_JOLTIK, 7, ITEM_NONE, NUM_NATURES, 0)
+    playmoncry(SPECIES_JOLTIK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract2 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_JOLTIK, 7, ITEM_NONE, NUM_NATURES, 1)
+    playmoncry(SPECIES_JOLTIK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_JoltikInteract3 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_JOLTIK, 8, ITEM_NONE, NUM_NATURES, 2)
+    playmoncry(SPECIES_JOLTIK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract1 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SPINARAK, 7, ITEM_NONE, NUM_NATURES, 0)
+    playmoncry(SPECIES_SPINARAK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract2 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SPINARAK, 7, ITEM_NONE, NUM_NATURES, 1)
+    playmoncry(SPECIES_SPINARAK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+
+script ISLANDGAME_VERDANT_WOODS_EventScript_SpinarakInteract3 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SPINARAK, 8, ITEM_CHESTO_BERRY, NUM_NATURES, 2,,,,,,,,,,,,, MOVE_TWINEEDLE, MOVE_TOXIC_SPIKES, MOVE_RAGE_POWDER, MOVE_PURSUIT)
+    playmoncry(SPECIES_SPINARAK, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
 }

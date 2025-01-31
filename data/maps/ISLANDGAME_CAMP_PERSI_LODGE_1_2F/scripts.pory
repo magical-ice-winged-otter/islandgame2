@@ -3,6 +3,11 @@ const FLAG_NIGHTTIME = FLAG_TEMP_3
 
 mapscripts ISLANDGAME_CAMP_PERSI_LODGE_1_2F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+        if(var(VAR_RESULT) == QUEST_INACTIVE) {
+            setflag(FLAG_TEMP_4)
+        }
+
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
@@ -41,31 +46,26 @@ script ISLANDGAME_CAMP_PERSI_LODGE_1_2F_EventScript_NPC {
                 "Ever since our battle, I've really learned a lot.\p"
                 "I now realize that winning takes more than just the stronger Pokémon to win.\p"
                 "Thank you for teaching that to me, and also keeping the whole thing a secret between us...\p"
-                "Here, I know it doesn't mean much, but I want you to have this as thanks.\p"
+                "Here, take this Technical Machine as thanks. It's my favorite move, and I know a trainer like you will make good use of it."
             ))
-            giveitem(ITEM_ISLANDGAME_STRANGE_DISC)
-            msgbox(format(
-                "It's a video game I got for free from some strange old man passing by camp.\p"
-                "I tried playing it using the laptop in the tree house, but it was too scary.\p"
-                "You're super old though, so I bet it won't faze you at all!\p"
-                "...\p"
-                "{PLAYER}▶▶▶▶ÇÀÑ▶▶▶¥ÔÚ▶▶▶▶▶▶\n▶サÊÁR▶▶▶▶▶▶Mヨ?▶▶エT$▶▶▶▶▶Mヨ"
-            ))
+            giveitem(ITEM_TM54)
             setvar(VAR_CAMP_PERSI_STATE, 3)
         case 3:
             faceplayer
             msgbox(format(
-                "I'll figure out a way to beat that kid's Charizard fair and square!\p"
+                "I'll figure out a way to beat that kid's Charizard fair and square!"
             ))
         default:
             msgbox(format(
                 "That was just too easy! It was literally like stealing candy from a baby!"
                 ))
+            closemessage
             playse(SE_PIN)
             applymovement(1, ExclaimFacePlayer)
             faceplayer
+            delay(30)
             msgbox(format(
-                "Aiiiiiie! Where did you come from!? How long have you been listening!?\p"
+                "Aiiiiiie! {PAUSE 30} Where did you come from!? How long have you been listening!?\p"
                 "I-I was just joking about the stealing stuff, okay? And besides, there's no proof that I am anyways, so don't go snooping around camp!"
             ))
             setvar(VAR_CAMP_PERSI_STATE, 1)

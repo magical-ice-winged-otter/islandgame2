@@ -17,16 +17,12 @@
 #include "sound.h"
 #include "string_util.h"
 #include "strings.h"
+#include "script.h"
 #include "task.h"
 #include "text_window.h"
 #include "window.h"
+#include "config/overworld.h"
 #include "constants/songs.h"
-
-#define DLG_WINDOW_PALETTE_NUM 15
-#define DLG_WINDOW_BASE_TILE_NUM 0x200
-#define STD_WINDOW_PALETTE_NUM 14
-#define STD_WINDOW_PALETTE_SIZE PLTT_SIZEOF(10)
-#define STD_WINDOW_BASE_TILE_NUM 0x214
 
 struct MenuInfoIcon
 {
@@ -52,6 +48,8 @@ struct Menu
 };
 
 static void WindowFunc_DrawStandardFrame(u8, u8, u8, u8, u8, u8);
+static void WindowFunc_DrawSignFrame(u8, u8, u8, u8, u8, u8);
+static inline void *GetWindowFunc_DialogueFrame(void);
 static void WindowFunc_DrawDialogueFrame(u8, u8, u8, u8, u8, u8);
 static void WindowFunc_ClearStdWindowAndFrame(u8, u8, u8, u8, u8, u8);
 static void WindowFunc_ClearDialogWindowAndFrame(u8, u8, u8, u8, u8, u8);
@@ -61,10 +59,8 @@ static void WindowFunc_DrawStdFrameWithCustomTileAndPalette(u8, u8, u8, u8, u8, 
 static void WindowFunc_ClearStdWindowAndFrameToTransparent(u8, u8, u8, u8, u8, u8);
 static void task_free_buf_after_copying_tile_data_to_vram(u8 taskId);
 
-EWRAM_DATA u8 gPopupTaskId = 0;
-
 static EWRAM_DATA u8 sStartMenuWindowId = 0;
-static EWRAM_DATA u8 sPrimaryPopupWindowId = 0;
+static EWRAM_DATA u8 sMapNamePopupWindowId = 0;
 static EWRAM_DATA u8 sSecondaryPopupWindowId = 0;
 static EWRAM_DATA struct Menu sMenu = {0};
 static EWRAM_DATA u16 sTileNum = 0;
@@ -116,6 +112,7 @@ static const u8 sTextColors[] = { TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_C
 static const struct MenuInfoIcon sMenuInfoIcons[] =
 {   // { width, height, offset }
     { 12, 12, 0x00 },  // Unused
+    [TYPE_NONE + 1]     = { 32, 12, 0xA4 }, // Copy of TYPE_MYSTERY's
     [TYPE_NORMAL + 1]   = { 32, 12, 0x20 },
     [TYPE_FIGHTING + 1] = { 32, 12, 0x64 },
     [TYPE_FLYING + 1]   = { 32, 12, 0x60 },
@@ -148,8 +145,9 @@ void InitStandardTextBoxWindows(void)
 {
     InitWindows(sStandardTextBox_WindowTemplates);
     sStartMenuWindowId = WINDOW_NONE;
-    sPrimaryPopupWindowId = WINDOW_NONE;
-    sSecondaryPopupWindowId = WINDOW_NONE;
+    sMapNamePopupWindowId = WINDOW_NONE;
+    if (OW_POPUP_GENERATION == GEN_5)
+        sSecondaryPopupWindowId = WINDOW_NONE;
 }
 
 void FreeAllOverworldWindowBuffers(void)
@@ -218,9 +216,123 @@ void LoadMessageBoxAndBorderGfx(void)
     LoadUserWindowBorderGfx(0, STD_WINDOW_BASE_TILE_NUM, BG_PLTT_ID(STD_WINDOW_PALETTE_NUM));
 }
 
+void LoadSignPostWindowFrameGfx(void)
+{
+    Menu_LoadStdPal();
+    LoadSignBoxGfx(0, DLG_WINDOW_BASE_TILE_NUM, BG_PLTT_ID(DLG_WINDOW_PALETTE_NUM));
+    LoadUserWindowBorderGfx(0, STD_WINDOW_BASE_TILE_NUM, BG_PLTT_ID(STD_WINDOW_PALETTE_NUM));
+}
+
+static void WindowFunc_DrawSignFrame(u8 bg, u8 tilemapLeft, u8 tilemapTop, u8 width, u8 height, u8 paletteNum)
+{
+    FillBgTilemapBufferRect(bg,
+            DLG_WINDOW_BASE_TILE_NUM + 0,
+            tilemapLeft - 2,
+            tilemapTop - 1,
+            1,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            DLG_WINDOW_BASE_TILE_NUM + 1,
+            tilemapLeft - 1,
+            tilemapTop - 1,
+            1,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            DLG_WINDOW_BASE_TILE_NUM + 2,
+            tilemapLeft - 2,
+            tilemapTop,
+            1,
+            4,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            DLG_WINDOW_BASE_TILE_NUM + 3,
+            tilemapLeft - 1,
+            tilemapTop,
+            1,
+            4,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 0),
+            tilemapLeft - 2,
+            tilemapTop + 4,
+            1,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 1),
+            tilemapLeft - 1,
+            tilemapTop + 4,
+            1,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            DLG_WINDOW_BASE_TILE_NUM + 4,
+            tilemapLeft,
+            tilemapTop - 1,
+            26,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_H_FLIP(DLG_WINDOW_BASE_TILE_NUM + 0),
+            tilemapLeft + 27,
+            tilemapTop - 1,
+            1,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_H_FLIP(DLG_WINDOW_BASE_TILE_NUM + 1),
+            tilemapLeft + 26,
+            tilemapTop - 1,
+            1,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_H_FLIP(DLG_WINDOW_BASE_TILE_NUM + 2),
+            tilemapLeft + 27,
+            tilemapTop,
+            1,
+            4,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_H_FLIP(DLG_WINDOW_BASE_TILE_NUM + 3),
+            tilemapLeft + 26,
+            tilemapTop,
+            1,
+            4,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_V_FLIP(BG_TILE_H_FLIP(DLG_WINDOW_BASE_TILE_NUM + 0)),
+            tilemapLeft + 27,
+            tilemapTop + 4,
+            1,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_V_FLIP(BG_TILE_H_FLIP(DLG_WINDOW_BASE_TILE_NUM + 1)),
+            tilemapLeft + 26,
+            tilemapTop + 4,
+            1,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+    FillBgTilemapBufferRect(bg,
+            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 4),
+            tilemapLeft,
+            tilemapTop + 4,
+            26,
+            1,
+            DLG_WINDOW_PALETTE_NUM);
+}
+
+static inline void *GetWindowFunc_DialogueFrame(void)
+{
+    return (gMsgIsSignPost ? WindowFunc_DrawSignFrame : WindowFunc_DrawDialogueFrame);
+}
+
 void DrawDialogueFrame(u8 windowId, bool8 copyToVram)
 {
-    CallWindowFunction(windowId, WindowFunc_DrawDialogueFrame);
+    CallWindowFunction(windowId, GetWindowFunc_DialogueFrame());
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
     PutWindowTilemap(windowId);
     if (copyToVram == TRUE)
@@ -523,24 +635,29 @@ static u16 UNUSED GetStandardFrameBaseTileNum(void)
     return STD_WINDOW_BASE_TILE_NUM;
 }
 
-u8 AddPrimaryPopUpWindow(void)
+u8 AddMapNamePopUpWindow(void)
 {
-    if (sPrimaryPopupWindowId == WINDOW_NONE)
-        sPrimaryPopupWindowId = AddWindowParameterized(0, 0, 0, 30, 3, 14, 0x107);
-    return sPrimaryPopupWindowId;
-}
-
-u8 GetPrimaryPopUpWindowId(void)
-{
-    return sPrimaryPopupWindowId;
-}
-
-void RemovePrimaryPopUpWindow(void)
-{
-    if (sPrimaryPopupWindowId   != WINDOW_NONE)
+    if (sMapNamePopupWindowId == WINDOW_NONE)
     {
-        RemoveWindow(sPrimaryPopupWindowId);
-        sPrimaryPopupWindowId = WINDOW_NONE;
+        if (OW_POPUP_GENERATION == GEN_5)
+            sMapNamePopupWindowId = AddWindowParameterized(0, 0, 0, 30, 3, 14, 0x107);
+        else
+            sMapNamePopupWindowId = AddWindowParameterized(0, 1, 1, 10, 3, 14, 0x107);
+    }
+    return sMapNamePopupWindowId;
+}
+
+u8 GetMapNamePopUpWindowId(void)
+{
+    return sMapNamePopupWindowId;
+}
+
+void RemoveMapNamePopUpWindow(void)
+{
+    if (sMapNamePopupWindowId != WINDOW_NONE)
+    {
+        RemoveWindow(sMapNamePopupWindowId);
+        sMapNamePopupWindowId = WINDOW_NONE;
     }
 }
 
@@ -1961,37 +2078,6 @@ void AddTextPrinterParameterized4(u8 windowId, u8 fontId, u8 left, u8 top, u8 le
     AddTextPrinter(&printer, speed, NULL);
 }
 
-void AddTextPrinterParameterized4Signed(u8 windowId, u8 fontId, u8 left, s8 top, u8 letterSpacing, u8 lineSpacing, const u8 *color, s8 speed, const u8 *str)
-{
-    struct TextPrinterTemplate printer;
-
-    printer.currentChar = str;
-    printer.windowId = windowId;
-    printer.fontId = fontId;
-    printer.x = left;
-    printer.currentX = printer.x;
-
-    if (top < 0)
-    {
-        printer.y = top * -1;
-        printer.unk = 1;
-    }
-    else
-    {
-        printer.y = top;
-        printer.unk = 0;
-    }
-
-    printer.currentY = printer.y;
-    printer.letterSpacing = letterSpacing;
-    printer.lineSpacing = lineSpacing;
-    printer.fgColor = color[1];
-    printer.bgColor = color[0];
-    printer.shadowColor = color[2];
-
-    AddTextPrinter(&printer, speed, NULL);
-}
-
 void AddTextPrinterParameterized5(u8 windowId, u8 fontId, const u8 *str, u8 left, u8 top, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 letterSpacing, u8 lineSpacing)
 {
     struct TextPrinterTemplate printer;
@@ -2182,7 +2268,7 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
     }
 }
 
-// BSBob map pop-ups
+// BW map pop-ups
 u8 AddSecondaryPopUpWindow(void)
 {
     if (sSecondaryPopupWindowId == WINDOW_NONE)
@@ -2212,7 +2298,7 @@ void HBlankCB_DoublePopupWindow(void)
     if (scanline < 80 || scanline > 160)
     {
         REG_BG0VOFS = offset;
-        if(MAPPOPUP_ALPHA_BLEND && !IsWeatherAlphaBlend())
+        if(OW_POPUP_BW_ALPHA_BLEND && !IsWeatherAlphaBlend())
             REG_BLDALPHA = BLDALPHA_BLEND(15, 5);
     }
     else

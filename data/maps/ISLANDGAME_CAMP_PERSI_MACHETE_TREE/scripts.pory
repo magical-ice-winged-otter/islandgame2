@@ -129,6 +129,7 @@ script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll {
             ))
             closemessage
             delay(30)
+            playse(SE_PIN)
             applymovement(THIEF_ID, Common_Movement_ExclamationMark)
             waitmovement(0)
             applymovement(THIEF_ID, Common_Movement_WalkInPlaceFasterUp)
@@ -153,11 +154,14 @@ script ISLANDGAME_CAMP_PERSI_TREEHOUSE_EventScript_GulpinDoll {
                 "H-Huh? You'll let me go if I just beat you in a Pokémon battle?\p"
                 "Well... I have no choice but to oblige. I'll show you the power of Bug Pokémon!"
             ))
+            closemessage
             applymovement(THIEF_ID, Common_Movement_WalkUp)
             waitmovement(0)
+            delay(15)
             trainerbattle_no_intro(TRAINER_CAMP_PERSI_THIEF, "T-This isn't right! I should've won!")
             applymovement(THIEF_ID, ISLANDGAME_CAMP_PERSI_TREEHOUSE_Backoff)
             waitmovement(0)
+            delay(30)
             msgbox(format(
                 "I don't get it... My Pokémon should've won! They're statistically better!\p"
                 "Is... power not all there is to battling? Can weaker Pokémon still beat stronger Pokémon with the right strategy?"

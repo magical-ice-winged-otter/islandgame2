@@ -1,0 +1,87 @@
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+mapscripts ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hides daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hides nighttime npcs
+        }
+    }  
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV {
+    msgbox(format(
+        "“Woah, hey now, we're not going to buy your lousy overpriced bike, alright?”\p"
+        "“Now where's my full art Pikachu!?”\p"
+        "“Woah now, hold on. You have a choice!”\p"
+        "“You can have the full art Pikachu... or this booster pack.”\p"
+        "“What're ya, crazy? We'll take the Pikachu!”\p"
+        "“Hey now, not so fast Misty, a full art Pikachu is a full art Pikachu, but the booster pack could have anything!”\p"
+        "“It could even have the full art Pikachu! You know how much we've wanted one of those!”\p"
+        "“Then let's just take the-”\n“We'll take the booster pack!”\p"
+        "...\p"
+        "“Oh we'll take the booster pack, you said.”\p"
+        "“You gave up a guaranteed full art Pikachu for a bunch of bulk garbage!”\p"
+        "“Come on Misty, you act like this is the first time I've done something stupid. You remember when I was supposed to get that full art Pikachu?”"
+    ), MSGBOX_SIGN)
+    msgbox(format(
+        "...\p"
+        "“A full art Pikachu is a full art Pikachu, but the booster pack could have anything!”\p"
+        "“It could even have the full art Pikachu! You know how much we've wanted one of those!”\p"
+        "“Then let's just take the-”\n“We'll take the booster pack!”\p"
+        "...\p"
+        "“Ash, that just happened ten minutes ago.”"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_BlooInteract {
+    lock
+    faceplayer
+    msgbox(format(
+        "Azu... {COLOR BLUE}(Uggggghhhhh. Would it kill for them to give us some video games?)\p"
+        "{COLOR BLUE}(I'm getting real bored of watching reruns of Pallet Guy.)"
+    ))
+    applymovement(1, Common_Movement_FaceOriginalDirection)
+    waitmovement(0)
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_CocoInteract {
+    lock
+    faceplayer
+    playmoncry(SPECIES_HAPPINY, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Coco Coco Coco Coco..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_EduardoInteract {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MUNCHLAX, CRY_MODE_NORMAL)
+    msgbox(format(
+        "¡Lax! {COLOR BLUE}(¡Hola entrenador! Soy Eduardo. Me gusta papas.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_WiltInteract {
+    lock
+    faceplayer
+    playmoncry(SPECIES_TYROGUE, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Tyro!{COLOR BLUE} (My trainer is a professional basketball player in Unova!)\p"
+        "(I hope he comes back soon.)"
+    ))
+    closemessage
+    release
+}

@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 45,
-      "y": 62,
+      "x": 41,
+      "y": 61,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -106,7 +106,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_744",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ROCKRUFF)",
       "x": 31,
       "y": 44,
       "elevation": 0,
@@ -171,7 +171,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_749",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDBRAY)",
       "x": 34,
       "y": 27,
       "elevation": 0,
@@ -210,7 +210,7 @@
       "flag": "FLAG_ROCKY_PATH_TM"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_276",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAILLOW)",
       "x": 59,
       "y": 39,
       "elevation": 0,
@@ -224,19 +224,19 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 75,
-      "y": 45,
+      "x": 59,
+      "y": 52,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_ETHER",
+      "trainer_sight_or_berry_tree_id": "ITEM_FULL_HEAL",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROCKY_PATH_ETHER"
+      "flag": "FLAG_ITEM_ROCKY_PATH_FULL_HEAL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_296",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAKUHITA)",
       "x": 50,
       "y": 65,
       "elevation": 0,
@@ -276,16 +276,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 59,
-      "y": 52,
+      "x": 77,
+      "y": 50,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_GREAT_BALL",
+      "trainer_sight_or_berry_tree_id": "ITEM_LEMONADE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROCKY_PATH_GREAT_BALL"
+      "flag": "FLAG_ITEM_ROCKY_PATH_LEMONADE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -367,27 +367,27 @@
     },
     {
       "type": "hidden_item",
-      "x": 40,
-      "y": 37,
+      "x": 39,
+      "y": 39,
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_ROCKY_PATH_EXP_CANDY_S"
     },
     {
       "type": "hidden_item",
-      "x": 61,
-      "y": 42,
+      "x": 25,
+      "y": 66,
       "elevation": 0,
-      "item": "ITEM_HEALTH_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_ROCKY_PATH_H_FEATHER"
+      "item": "ITEM_ETHER",
+      "flag": "FLAG_HIDDEN_ITEM_ROCKY_PATH_ETHER"
     },
     {
       "type": "hidden_item",
-      "x": 77,
-      "y": 50,
+      "x": 70,
+      "y": 44,
       "elevation": 0,
-      "item": "ITEM_FLOAT_STONE",
-      "flag": "FLAG_HIDDEN_ITEM_ROCKY_PATH_FLOAT_STONE"
+      "item": "ITEM_CHARTI_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_ROCKY_PATH_CHARTI_BERRY"
     }
   ]
 }

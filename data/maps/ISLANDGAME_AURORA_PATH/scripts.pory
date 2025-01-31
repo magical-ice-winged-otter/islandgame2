@@ -1,4 +1,20 @@
-mapscripts ISLANDGAME_AURORA_PATH_MapScripts {}
+mapscripts ISLANDGAME_AURORA_PATH_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+    gettime
+
+    // hide daytime mons
+    if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+        setflag(FLAG_TEMP_5) 
+        setflag(FLAG_TEMP_6) 
+        setflag(FLAG_TEMP_7) 
+    }
+    // hide nighttime mons
+    else {
+        setflag(FLAG_TEMP_8) 
+        setflag(FLAG_TEMP_9) 
+    }
+}
+}
 
 script ISLANDGAME_AURORA_PATH_Interact_EntranceSign {
     msgbox(format("AURORA PATH\n{UP_ARROW}MT. AURORA"), MSGBOX_SIGN)
@@ -6,4 +22,139 @@ script ISLANDGAME_AURORA_PATH_Interact_EntranceSign {
 
 script ISLANDGAME_AURORA_PATH_Interact_WeatherInstitute {
     msgbox(format("MT. AURORA WEATHER INSTITUTE\nPlease visit, I'm very lonely"), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_AURORA_PATH_Interact_Swinub1 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SWINUB, 17, ITEM_NONE, NUM_NATURES, 0)
+    playmoncry(SPECIES_SWINUB, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_AURORA_PATH_Interact_Swinub2 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SWINUB, 17, ITEM_NONE, NUM_NATURES, 1)
+    playmoncry(SPECIES_SWINUB, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_AURORA_PATH_Interact_Swinub3 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SWINUB, 17, ITEM_NONE, NUM_NATURES, 2)
+    playmoncry(SPECIES_SWINUB, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_AURORA_PATH_Interact_Snom1 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SNOM, 17, ITEM_NONE, NUM_NATURES, 0)
+    playmoncry(SPECIES_SNOM, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_AURORA_PATH_Interact_Snom2 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SNOM, 17, ITEM_NONE, NUM_NATURES, 2)
+    playmoncry(SPECIES_SNOM, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
 }

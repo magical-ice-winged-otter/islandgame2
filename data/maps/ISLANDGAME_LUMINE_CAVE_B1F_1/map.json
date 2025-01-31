@@ -3,7 +3,7 @@
   "name": "ISLANDGAME_LUMINE_CAVE_B1F_1",
   "layout": "LAYOUT_ISLANDGAME_LUMINE_CAVE_B1F_1",
   "music": "MUS_MT_PYRE",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_LUMINE_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_610",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AXEW)",
       "x": 29,
       "y": 40,
       "elevation": 0,
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_113",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
       "x": 13,
       "y": 40,
       "elevation": 0,
@@ -106,7 +106,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZUBAT)",
       "x": 8,
       "y": 5,
       "elevation": 0,
@@ -119,7 +119,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZUBAT)",
       "x": 29,
       "y": 5,
       "elevation": 0,
@@ -145,7 +145,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZUBAT)",
       "x": 3,
       "y": 33,
       "elevation": 0,
@@ -158,7 +158,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_041",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZUBAT)",
       "x": 17,
       "y": 48,
       "elevation": 0,

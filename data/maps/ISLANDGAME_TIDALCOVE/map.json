@@ -203,7 +203,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_419",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLOATZEL)",
       "x": 34,
       "y": 30,
       "elevation": 0,
@@ -224,9 +224,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_CALCIUM",
+      "trainer_sight_or_berry_tree_id": "ITEM_ZINC",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_TIDALCOVE_CALCIUM"
+      "flag": "FLAG_ITEM_TIDALCOVE_ZINC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -255,7 +255,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_278",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
       "x": 38,
       "y": 43,
       "elevation": 0,
@@ -268,7 +268,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_090",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHELLDER)",
       "x": 39,
       "y": 47,
       "elevation": 0,
@@ -281,7 +281,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_007",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SQUIRTLE)",
       "x": 23,
       "y": 7,
       "elevation": 0,

@@ -5,10 +5,11 @@
 // Comment out this line to strip debugging tools from the build.
 #define ISLANDGAME_DEBUG TRUE
 
+#include "config/general.h"
 #include "config/battle.h"
 #include "config/debug.h"
 #include "config/item.h"
-#include "config/level_caps.h"
+#include "config/caps.h"
 #include "config/pokemon.h"
 #include "config/overworld.h"
 
@@ -86,6 +87,8 @@
 
 #define MAX_REGISTERED_ITEMS 4
 
+#define ROAMER_COUNT 1 // Number of maximum concurrent active roamers
+
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.
 // Excludes link modes. See RANKING_HALL_* in include/constants/battle_frontier.h
@@ -112,22 +115,23 @@
 #define CONTEST_CATEGORIES_COUNT  5
 
 // string lengths
-#define ITEM_NAME_LENGTH 14
+#define ITEM_NAME_LENGTH 20
 #define ITEM_NAME_PLURAL_LENGTH ITEM_NAME_LENGTH + 2 // 2 is used for the instance where a word's suffix becomes y->ies
-#define POKEMON_NAME_LENGTH 10
+#define POKEMON_NAME_LENGTH 12
+#define VANILLA_POKEMON_NAME_LENGTH 10
 #define POKEMON_NAME_BUFFER_SIZE max(20, POKEMON_NAME_LENGTH + 1) // Frequently used buffer size. Larger than necessary
 #define PLAYER_NAME_LENGTH 7
 #define MAIL_WORDS_COUNT 9
 #define EASY_CHAT_BATTLE_WORDS_COUNT 6
-#define MOVE_NAME_LENGTH ((B_EXPANDED_MOVE_NAMES == TRUE) ? 16 : 12)
+#define MOVE_NAME_LENGTH 16
 #define NUM_QUESTIONNAIRE_WORDS 4
 #define QUIZ_QUESTION_LEN 9
 #define WONDER_CARD_TEXT_LENGTH 40
 #define WONDER_NEWS_TEXT_LENGTH 40
 #define WONDER_CARD_BODY_TEXT_LINES 4
 #define WONDER_NEWS_BODY_TEXT_LINES 10
-#define TYPE_NAME_LENGTH 6
-#define ABILITY_NAME_LENGTH ((B_EXPANDED_ABILITY_NAMES == TRUE) ? 16 : 12)
+#define TYPE_NAME_LENGTH 8
+#define ABILITY_NAME_LENGTH 16
 #define TRAINER_NAME_LENGTH 13
 
 #define MAX_STAMP_CARD_STAMPS 7
@@ -172,6 +176,11 @@
 #define DIR_SOUTHEAST   6
 #define DIR_NORTHWEST   7
 #define DIR_NORTHEAST   8
+#define CARDINAL_DIRECTION_COUNT DIR_SOUTHWEST
+
+#define AXIS_X     0
+#define AXIS_Y     1
+#define AXIS_COUNT 2
 
 #define CONNECTION_INVALID -1
 #define CONNECTION_NONE     0
@@ -182,9 +191,11 @@
 #define CONNECTION_DIVE     5
 #define CONNECTION_EMERGE   6
 
-#define SLOW_MOVEMENT_ON_STAIRS         TRUE
-#define FOLLOW_ME_IMPLEMENTED           TRUE    //for stairs movement. see ObjectMovingOnRockStairs in src/field_player_avatar.c
 #define SIDEWAYS_STAIRS_IMPLEMENTED     TRUE
 #define POST_BATTLE_FOLLOWER_FIX        FALSE   //if you experience the follower de-syncing with the player after battle, set to TRUE
+
+#if TESTING
+#include "config/test.h"
+#endif
 
 #endif // GUARD_CONSTANTS_GLOBAL_H

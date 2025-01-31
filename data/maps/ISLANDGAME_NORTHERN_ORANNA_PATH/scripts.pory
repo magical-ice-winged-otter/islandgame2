@@ -36,6 +36,8 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_Touch {
 
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast {
+    lock
+    faceplayer
     msgbox(format(
         "My buddy across the lake thinks he can catch more Pokémon than me!\p"
         "I've been fishing in this lake since I was a little Tympole. He's toast!"
@@ -47,6 +49,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherEast {
 
 script ISLANDGAME_NORTHERN_ORANNA_PATH_Interact_FisherWest {
     lock
+    faceplayer
     msgbox(format(
         "I challenged my mate to a fishing contest today.\p"
         "He doesn't know I have a super special fishing rod from Arnie's.\p"
@@ -131,7 +134,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Average {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_PUMPKABOO_AVERAGE, 18, ITEM_NONE, NUM_NATURES, 0, 0, 0, 0, 0, 0, 0)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_PUMPKABOO_AVERAGE, 18, ITEM_NONE, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0)
     playmoncry(SPECIES_PUMPKABOO_AVERAGE, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -158,7 +161,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Large {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_PUMPKABOO_LARGE, 19, ITEM_NONE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_PUMPKABOO_LARGE, 19, ITEM_NONE, NUM_NATURES, 1, MON_GENDERLESS, 0, 0, 0, 0, 0, 0)
     playmoncry(SPECIES_PUMPKABOO_LARGE, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -185,7 +188,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Small {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_PUMPKABOO_SMALL, 17, ITEM_NONE, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_PUMPKABOO_SMALL, 17, ITEM_NONE, NUM_NATURES, 1, MON_GENDERLESS, 0, 0, 0, 0, 0, 0)
     playmoncry(SPECIES_PUMPKABOO_SMALL, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -212,7 +215,7 @@ script ISLANDGAME_NORTHERN_ORANNA_PATH_PumpkabooInteract_Super {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_PUMPKABOO_SUPER, 20, ITEM_COLBUR_BERRY, NUM_NATURES, 2, 0, 0, 0, 0, 0, 0)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_PUMPKABOO_SUPER, 20, ITEM_COLBUR_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0)
     playmoncry(SPECIES_PUMPKABOO_SUPER, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)

@@ -18,11 +18,15 @@ struct Item
     u8 pluralName[ITEM_NAME_PLURAL_LENGTH];
     u8 holdEffect;
     u8 holdEffectParam;
-    u8 importance;
+    u8 importance:2;
+    u8 notConsumed:1;
+    u8 padding:5;
     u8 pocket;
     u8 type;
     u8 battleUsage;
     u8 flingPower;
+    const u32 *iconPic;
+    const u32 *iconPalette;
 };
 
 struct BagPocket
@@ -37,11 +41,12 @@ extern struct BagPocket gBagPockets[];
 void ApplyNewEncryptionKeyToBagItems(u32 newKey);
 void ApplyNewEncryptionKeyToBagItems_(u32 newKey);
 void SetBagItemsPointers(void);
-void CopyItemName(u16 itemId, u8 *dst);
-void CopyItemNameHandlePlural(u16 itemId, u8 *dst, u32 quantity);
+u8 *CopyItemName(u16 itemId, u8 *dst);
+u8 *CopyItemNameHandlePlural(u16 itemId, u8 *dst, u32 quantity);
 bool8 IsBagPocketNonEmpty(u8 pocket);
 bool8 CheckBagHasItem(u16 itemId, u16 count);
 bool8 HasAtLeastOneBerry(void);
+bool8 HasAtLeastOnePokeBall(void);
 bool8 CheckBagHasSpace(u16 itemId, u16 count);
 u32 GetFreeSpaceForItemInBag(u16 itemId);
 bool8 AddBagItem(u16 itemId, u16 count);
@@ -70,11 +75,12 @@ u32 ItemId_GetHoldEffect(u32 itemId);
 u32 ItemId_GetHoldEffectParam(u32 itemId);
 const u8 *ItemId_GetDescription(u16 itemId);
 u8 ItemId_GetImportance(u16 itemId);
+u8 ItemId_GetConsumability(u16 itemId);
 u8 ItemId_GetPocket(u16 itemId);
 u8 ItemId_GetType(u16 itemId);
 ItemUseFunc ItemId_GetFieldFunc(u16 itemId);
 u8 ItemId_GetBattleUsage(u16 itemId);
-u8 ItemId_GetSecondaryId(u16 itemId);
+u32 ItemId_GetSecondaryId(u32 itemId);
 u32 ItemId_GetFlingPower(u32 itemId);
 u32 GetItemStatus1Mask(u16 itemId);
 u32 GetItemStatus2Mask(u16 itemId);
@@ -99,14 +105,5 @@ enum
 };
 #undef ENUM_TM
 #undef ENUM_HM
-void DrawHeaderBox(void);
-void HideHeaderBox(void);
-
-enum ItemObtainFlags
-{
-    FLAG_GET_OBTAINED,
-    FLAG_SET_OBTAINED,
-};
-bool8 GetSetItemObtained(u16 item, u8 caseId);
 
 #endif // GUARD_ITEM_H

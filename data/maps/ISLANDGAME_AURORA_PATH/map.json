@@ -47,35 +47,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 4,
-      "y": 33,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_COMET_SHARD",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_AP_COMET_SHARD"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 38,
-      "y": 21,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_1"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 1,
-      "y": 46,
+      "y": 44,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -107,9 +81,100 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_IRON",
+      "trainer_sight_or_berry_tree_id": "ITEM_SHINY_STONE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_AURORA_PATH_IRON"
+      "flag": "FLAG_ITEM_AURORA_PATH_SHINY_STONE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 22,
+      "y": 29,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWINUB)",
+      "x": 22,
+      "y": 47,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_AURORA_PATH_Interact_Swinub1",
+      "flag": "FLAG_TEMP_5"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWINUB)",
+      "x": 2,
+      "y": 50,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_AURORA_PATH_Interact_Swinub2",
+      "flag": "FLAG_TEMP_6"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWINUB)",
+      "x": 4,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_AURORA_PATH_Interact_Swinub3",
+      "flag": "FLAG_TEMP_7"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 4,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GANLON_BERRY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_AP_GANLON_BERRY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNOM)",
+      "x": 14,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_AURORA_PATH_Interact_Snom1",
+      "flag": "FLAG_TEMP_8"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNOM)",
+      "x": 6,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_AURORA_PATH_Interact_Snom2",
+      "flag": "FLAG_TEMP_9"
     }
   ],
   "warp_events": [
@@ -156,27 +221,19 @@
     },
     {
       "type": "hidden_item",
-      "x": 34,
-      "y": 52,
+      "x": 42,
+      "y": 32,
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_S",
       "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_EXP_CANDY"
     },
     {
       "type": "hidden_item",
-      "x": 21,
-      "y": 46,
+      "x": 9,
+      "y": 18,
       "elevation": 0,
-      "item": "ITEM_GUARD_SPEC",
-      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_GUARD_SPEC"
-    },
-    {
-      "type": "hidden_item",
-      "x": 42,
-      "y": 32,
-      "elevation": 0,
-      "item": "ITEM_RESIST_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER"
+      "item": "ITEM_X_SPEED",
+      "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_X_SPEED"
     }
   ]
 }

@@ -46,6 +46,7 @@ script ISLANDGAME_MINTY_MEADOWS_HOUSE_Person1 {
             msgbox(format(
                 "Oh... bad show..."
             ))
+            hidemoneybox
             goto(MintShopEnd)
         }
     }

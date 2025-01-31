@@ -98,7 +98,7 @@ static EWRAM_DATA struct {
 EWRAM_DATA struct ScrollArrowsTemplate gTempScrollArrowTemplate = {0};
 
 // IWRAM common
-struct {
+COMMON_DATA struct {
     u8 cursorPal:4;
     u8 fillValue:4;
     u8 cursorShadowPal:4;
@@ -106,9 +106,9 @@ struct {
     u8 field_2_2:6; // unused
     u8 fontId:7;
     bool8 enabled:1;
-} gListMenuOverride;
+} gListMenuOverride = {0};
 
-struct ListMenuTemplate gMultiuseListMenuTemplate;
+COMMON_DATA struct ListMenuTemplate gMultiuseListMenuTemplate = {0};
 
 // const rom data
 static const struct
@@ -609,11 +609,14 @@ static void ListMenuPrint(struct ListMenu *list, const u8 *str, u8 x, u8 y)
     u8 colors[3];
     if (gListMenuOverride.enabled)
     {
+        u32 fontId = gListMenuOverride.fontId;
+        if (list->template.textNarrowWidth)
+            fontId = GetFontIdToFit(str, fontId, gListMenuOverride.lettersSpacing, list->template.textNarrowWidth);
         colors[0] = gListMenuOverride.fillValue;
         colors[1] = gListMenuOverride.cursorPal;
         colors[2] = gListMenuOverride.cursorShadowPal;
         AddTextPrinterParameterized4(list->template.windowId,
-                                     gListMenuOverride.fontId,
+                                     fontId,
                                      x, y,
                                      gListMenuOverride.lettersSpacing,
                                      0, colors, TEXT_SKIP_DRAW, str);
@@ -622,11 +625,14 @@ static void ListMenuPrint(struct ListMenu *list, const u8 *str, u8 x, u8 y)
     }
     else
     {
+        u32 fontId = list->template.fontId;
+        if (list->template.textNarrowWidth)
+            fontId = GetFontIdToFit(str, fontId, list->template.lettersSpacing, list->template.textNarrowWidth);
         colors[0] = list->template.fillValue;
         colors[1] = list->template.cursorPal;
         colors[2] = list->template.cursorShadowPal;
         AddTextPrinterParameterized4(list->template.windowId,
-                                     list->template.fontId,
+                                     fontId,
                                      x, y,
                                      list->template.lettersSpacing,
                                      0, colors, TEXT_SKIP_DRAW, str);

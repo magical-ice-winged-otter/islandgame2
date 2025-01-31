@@ -118,19 +118,6 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 6,
-      "y": 3,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_X_SP_ATK",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_MINTY_MEADOWS_X_SP_ATK"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 43,
       "y": 9,
       "elevation": 0,
@@ -138,12 +125,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_HP_UP",
+      "trainer_sight_or_berry_tree_id": "ITEM_X_ATTACK",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MINTY_MEADOWS_HP_UP"
+      "flag": "FLAG_MINTY_MEADOWS_X_ATK"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 11,
       "y": 32,
       "elevation": 0,
@@ -156,7 +143,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 39,
       "y": 14,
       "elevation": 0,
@@ -169,7 +156,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 18,
       "y": 15,
       "elevation": 0,
@@ -182,7 +169,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 18,
       "y": 0,
       "elevation": 0,
@@ -195,7 +182,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_415",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 47,
       "y": 3,
       "elevation": 0,
@@ -206,6 +193,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_RED)",
+      "x": 18,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_FlabebeRed",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_ORANGE)",
+      "x": 30,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_FlabebeOrange",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_YELLOW)",
+      "x": 7,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_FlabebeYellow",
+      "flag": "FLAG_TEMP_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_BLUE)",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_FlabebeBlue",
+      "flag": "FLAG_TEMP_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_WHITE)",
+      "x": 42,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_MINTY_MEADOWS_FlabebeWhite",
+      "flag": "FLAG_TEMP_5"
     }
   ],
   "warp_events": [
@@ -230,14 +282,6 @@
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_XS",
       "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_EXP_CANDY"
-    },
-    {
-      "type": "hidden_item",
-      "x": 42,
-      "y": 5,
-      "elevation": 0,
-      "item": "ITEM_RESIST_FEATHER",
-      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_R_FEATHER"
     }
   ]
 }

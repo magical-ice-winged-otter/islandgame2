@@ -1,23 +1,506 @@
 ISLANDGAME_BELLEHAVEN_PKMNCENTER_MapScripts::
+# 6 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+# 7 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_BELLEHAVEN_PKMNCENTER_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 8 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	setrespawn HEAL_LOCATION_ISLANDGAME_APPLEVINE
+	return
 
 
 ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_1::
-# 5 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 15 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	lock
-# 6 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 16 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	faceplayer
-# 7 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 17 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_1_Text_0
-# 12 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 25 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	closemessage
+# 26 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	release
 	return
 
 
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_2::
+# 30 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	lock
+# 31 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	special Script_FadeOutMapMusic
+# 32 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	waitstate
+# 33 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	delay 180
+# 34 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	faceplayer
+# 35 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	playmoncry SPECIES_GOTHITELLE, CRY_MODE_NORMAL
+# 36 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	waitmoncry
+# 37 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	setflag FLAG_BELLEHAVEN_CREEPY_GIRL
+# 38 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	setfollower 3, 0x100, ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_2_Interact, PARTNER_NONE
+	return
+
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_2_Interact::
+# 42 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	faceplayer
+# 43 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	playmoncry SPECIES_GOTHITELLE, CRY_MODE_WEAK
+# 44 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	waitmoncry
+	return
+
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_3::
+# 48 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	lock
+# 49 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	faceplayer
+# 50 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_3_Text_0
+# 53 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	closemessage
+# 54 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	release
+	return
+
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM::
+# 58 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	lock
+# 59 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	faceplayer
+# 60 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto_if_set FLAG_BELLEHAVEN_SQUID_GAME, ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_2
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_1:
+# 66 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_1, MSGBOX_YESNO
+# 69 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_5
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_4:
+# 75 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_3
+# 79 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	showmoneybox 0, 0
+# 80 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_4, MSGBOX_YESNO
+# 83 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_RESULT, NO
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_8
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_7:
+# 90 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	checkmoney 10000
+# 91 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_11
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_10:
+# 98 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	removemoney 10000
+# 99 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	updatemoneybox
+# 100 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	playse SE_SHOP
+# 101 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	waitse
+# 102 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_6, MSGBOX_YESNO
+# 107 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	hidemoneybox
+# 108 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_14
+# 113 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_7
+# 116 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	setvar VAR_TEMP_A, 20
+# 117 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	copyvar VAR_0x8008, VAR_TEMP_A
+# 118 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_0x8008
+# 119 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YourTurn
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_13:
+# 122 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+NIM_YourTurn:
+# 123 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	copyvar VAR_0x8008, VAR_TEMP_A
+# 124 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_0x8008
+# 125 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_8
+# 128 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 0
+	goto_if_gt ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_18
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_17:
+# 131 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 1
+	goto_if_gt ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_21
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_20:
+# 134 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 2
+	goto_if_gt ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_24
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_23:
+# 137 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+# 138 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	switch VAR_RESULT
+# 139 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	case 1, ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_28
+# 148 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	case 2, ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_29
+# 158 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	subvar VAR_TEMP_A, 3
+# 159 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_14
+# 162 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 0
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_42
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_41:
+# 165 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_AITurn
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_26:
+# 168 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+NIM_AITurn:
+# 169 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	copyvar VAR_TEMP_B, VAR_TEMP_A
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_32:
+# 170 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_B, 4
+	goto_if_gt ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_33
+# 174 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	switch VAR_TEMP_B
+# 175 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	case 2, ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_46
+# 184 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	case 3, ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_47
+# 194 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_17
+# 197 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 1
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_56
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_55:
+# 200 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	subvar VAR_TEMP_A, 1
+# 201 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YourTurn
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_44:
+# 204 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+NIM_YouWin:
+# 205 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_18
+# 209 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	showmoneybox 0, 0
+# 210 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_19
+# 213 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	addmoney 20000
+# 214 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	updatemoneybox
+# 215 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	playse SE_SHOP
+# 216 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	waitse
+# 217 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	hidemoneybox
+# 218 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_20
+# 222 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	setflag FLAG_BELLEHAVEN_SQUID_GAME
+# 223 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	giveitem ITEM_MYSTIC_TICKET
+# 225 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+NIM_YouLose:
+# 226 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_21
+# 230 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+SquidGame_End:
+# 231 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	closemessage
+# 232 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	release
+	return
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_2:
+# 61 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_0
+# 64 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto SquidGame_End
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_1
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_5:
+# 70 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_2
+# 73 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto SquidGame_End
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_4
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_8:
+# 84 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_2
+# 87 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	hidemoneybox
+# 88 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto SquidGame_End
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_7
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_11:
+# 92 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_5
+# 95 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	hidemoneybox
+# 96 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto SquidGame_End
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_10
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_14:
+# 109 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	setvar VAR_TEMP_A, 21
+# 110 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YourTurn
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_13
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_18:
+# 129 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	dynmultipush ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_9, 1
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_17
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_21:
+# 132 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	dynmultipush ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_10, 2
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_20
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_24:
+# 135 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	dynmultipush ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_11, 3
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_23
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_28:
+# 140 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	subvar VAR_TEMP_A, 1
+# 141 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_12
+# 144 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 0
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_36
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_35:
+# 147 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_AITurn
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_26
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_29:
+# 149 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	subvar VAR_TEMP_A, 2
+# 150 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_13
+# 153 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 0
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_39
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_38:
+# 156 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_AITurn
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_26
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_33:
+# 171 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	subvar VAR_TEMP_B, 4
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_32
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_36:
+# 145 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YouWin
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_35
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_39:
+# 154 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YouWin
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_38
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_42:
+# 163 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YouWin
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_41
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_46:
+# 176 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_15
+# 179 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 2
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_50
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_49:
+# 182 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	subvar VAR_TEMP_A, 2
+# 183 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YourTurn
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_44
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_47:
+# 185 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_16
+# 188 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	compare VAR_TEMP_A, 3
+	goto_if_eq ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_53
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_52:
+# 191 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	subvar VAR_TEMP_A, 3
+# 192 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YourTurn
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_44
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_50:
+# 180 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YouLose
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_49
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_53:
+# 189 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YouLose
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_52
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_56:
+# 198 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	goto NIM_YouLose
+	goto ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_55
+
+
 ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_1_Text_0:
-# 8 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	.string "In the another region, I've heard a bird\n"
-	.string "that looked exactly like Zapdos, except\l"
-	.string "it was a fighting type instead.\p"
-	.string "I wonder if you would ever get to see\n"
-	.string "it?$"
+# 18 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Many other regions in the world have\n"
+	.string "their own Articuno, Zapdos, and Moltres.\p"
+	.string "In Galar, they even look completely\n"
+	.string "different then ours!\p"
+	.string "I wonder what other legendary Pokémon\n"
+	.string "other regions share with us...\p"
+	.string "Do you think... there could even be\n"
+	.string "another Lugia elsewhere?\p"
+	.string "No... that couldn't be. Our lord and\n"
+	.string "savior is a one-of-a-kind being!$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NPC_3_Text_0:
+# 51 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Lumine is home to two of Marya's oldest\n"
+	.string "civilizations!\p"
+	.string "One of them is the town you're standing\n"
+	.string "in right now, and the other is Arboria,\l"
+	.string "which is southeast from here!$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_0:
+# 62 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Thank you for spending time with an\n"
+	.string "ailing old man, young trainer...$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_1:
+# 67 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Ooh... young trainer... would you like to\n"
+	.string "play a game of marbles with me...?$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_2:
+# 71 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Ooh... What a shame... I was hoping to\n"
+	.string "relive my childhood one last time...$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_3:
+# 76 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Ah... Splendid... For our game, we will\n"
+	.string "take turns taking 1, 2, or 3 marbles\l"
+	.string "away from a pile of 21 marbles...\p"
+	.string "The player who takes the last marble is\n"
+	.string "the winner...! Pretty simple, isn't it?$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_4:
+# 81 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Now... let's make the game a little more\n"
+	.string "interesting... We'll both bet ¥10,000,\l"
+	.string "and whoever wins the game will get\l"
+	.string "¥20,000! What do you say, gganbu?$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_5:
+# 93 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Aaah... Come back when you have the\n"
+	.string "money... Our game cannot be played\l"
+	.string "without the thrill of stakes!$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_6:
+# 103 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Ho-ho... Let us begin the game!\p"
+	.string "As your elder, I shall give you the\n"
+	.string "choice of going first or second...\p"
+	.string "Would you like to go first?$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_7:
+# 114 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Ah... how generous of you! I shall start\n"
+	.string "by taking 1 marble.$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_8:
+# 126 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Your Turn! Take away 1, 2, or 3 marbles.\n"
+	.string "Marbles Left: {STR_VAR_1}$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_9:
+# 129 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "1$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_10:
+# 132 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "2$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_11:
+# 135 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "3$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_12:
+# 142 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "> You took 1 marble.$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_13:
+# 151 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "> You took 2 marbles.$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_14:
+# 160 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "> You took 3 marbles.$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_15:
+# 177 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Hm... {PAUSE 30}I shall take 2 marbles!$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_16:
+# 186 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Hm... {PAUSE 30}I shall take 3 marbles!$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_17:
+# 195 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Hm... {PAUSE 30}I shall take 1 marble!$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_18:
+# 206 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Ah...{PAUSE 30} It seems like I have lost...{PAUSE 30} That\n"
+	.string "was an enjoyable game, young trainer...\p"
+	.string "It reminded me of the days when I would\n"
+	.string "play marbles with my friends all day...$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_19:
+# 211 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Here is your reward, as promised...$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_20:
+# 219 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "If you would like to continue\n"
+	.string "participating in high-stake games like\l"
+	.string "this, you should consider playing in the\l"
+	.string "High Limit Area at Applevine's Game\l"
+	.string "Corner...\p"
+	.string "Here...{PAUSE 30} you may take my VIP Pass. I will\n"
+	.string "soon no longer have a need for it...$"
+
+ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_21:
+# 227 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Ah...{PAUSE 30} It seems that I have won...{PAUSE 30} Better\n"
+	.string "luck next time, young trainer...$"

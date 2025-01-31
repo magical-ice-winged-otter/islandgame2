@@ -3,7 +3,7 @@
 #include "battle.h"
 #include "daycare.h"
 #include "string_util.h"
-#include "level_caps.h"
+#include "caps.h"
 #include "mail.h"
 #include "pokemon_storage_system.h"
 #include "event_data.h"
@@ -43,8 +43,6 @@ EWRAM_DATA static u16 sHatchedEggFatherMoves[MAX_MON_MOVES] = {0};
 EWRAM_DATA static u16 sHatchedEggFinalMoves[MAX_MON_MOVES] = {0};
 EWRAM_DATA static u16 sHatchedEggEggMoves[EGG_MOVES_ARRAY_COUNT] = {0};
 EWRAM_DATA static u16 sHatchedEggMotherMoves[MAX_MON_MOVES] = {0};
-
-#include "data/pokemon/egg_moves.h"
 
 static const struct WindowTemplate sDaycareLevelMenuWindowTemplate =
 {
@@ -116,11 +114,11 @@ static const u8 *const sCompatibilityMessages[] =
 
 static const u8 sJapaneseEggNickname[] = _("タマゴ"); // "tamago" ("egg" in Japanese)
 
-u8 *GetMonNickname2(struct Pokemon *mon, u8 *dest)
+u8 *GetMonNicknameVanilla(struct Pokemon *mon, u8 *dest)
 {
     u8 nickname[POKEMON_NAME_BUFFER_SIZE];
     GetMonData(mon, MON_DATA_NICKNAME, nickname);
-    return StringCopy_Nickname(dest, nickname);
+    return StringCopyN(dest, nickname, VANILLA_POKEMON_NAME_LENGTH);
 }
 
 u8 *GetBoxMonNickname(struct BoxPokemon *mon, u8 *dest)
@@ -254,7 +252,7 @@ static void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycar
         u8 mailId;
 
         StringCopy(daycareMon->mail.otName, gSaveBlock2Ptr->playerName);
-        GetMonNickname2(mon, daycareMon->mail.monName);
+        GetMonNicknameVanilla(mon, daycareMon->mail.monName);
         StripExtCtrlCodes(daycareMon->mail.monName);
         daycareMon->mail.gameLanguage = GAME_LANGUAGE;
         daycareMon->mail.monLanguage = GetMonData(mon, MON_DATA_LANGUAGE);
@@ -454,7 +452,7 @@ static void ClearDaycareMonMail(struct DaycareMail *mail)
 
     for (i = 0; i < PLAYER_NAME_LENGTH + 1; i++)
         mail->otName[i] = 0;
-    for (i = 0; i < POKEMON_NAME_LENGTH + 1; i++)
+    for (i = 0; i < VANILLA_POKEMON_NAME_LENGTH + 1; i++)
         mail->monName[i] = 0;
 
     ClearMail(&mail->message);
@@ -719,17 +717,17 @@ static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
 
 static void InheritPokeball(struct Pokemon *egg, struct BoxPokemon *father, struct BoxPokemon *mother)
 {
-    u16 inheritBall = ITEM_POKE_BALL;
-    u16 fatherBall = GetBoxMonData(father, MON_DATA_POKEBALL);
-    u16 motherBall = GetBoxMonData(mother, MON_DATA_POKEBALL);
+    enum PokeBall inheritBall = BALL_POKE;
+    enum PokeBall fatherBall = GetBoxMonData(father, MON_DATA_POKEBALL);
+    enum PokeBall motherBall = GetBoxMonData(mother, MON_DATA_POKEBALL);
     u16 fatherSpecies = GetBoxMonData(father, MON_DATA_SPECIES);
     u16 motherSpecies = GetBoxMonData(mother, MON_DATA_SPECIES);
 
-    if (fatherBall == ITEM_MASTER_BALL || fatherBall == ITEM_CHERISH_BALL)
-        fatherBall = ITEM_POKE_BALL;
+    if (fatherBall == BALL_MASTER || fatherBall == BALL_CHERISH || fatherBall == BALL_STRANGE)
+        fatherBall = BALL_POKE;
 
-    if (motherBall == ITEM_MASTER_BALL || motherBall == ITEM_CHERISH_BALL)
-        motherBall = ITEM_POKE_BALL;
+    if (motherBall == BALL_MASTER || motherBall == BALL_CHERISH || motherBall == BALL_STRANGE)
+        motherBall = BALL_POKE;
 
     if (P_BALL_INHERITING >= GEN_7)
     {
@@ -777,29 +775,18 @@ static void InheritAbility(struct Pokemon *egg, struct BoxPokemon *father, struc
 // the given array.
 static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
 {
-    u16 eggMoveIdx;
     u16 numEggMoves;
     u16 species;
-    u16 i;
+    u32 i;
+    const u16 *eggMoveLearnset;
 
     numEggMoves = 0;
-    eggMoveIdx = 0;
     species = GetMonData(pokemon, MON_DATA_SPECIES);
-    for (i = 0; i < ARRAY_COUNT(gEggMoves) - 1; i++)
-    {
-        if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
-        {
-            eggMoveIdx = i + 1;
-            break;
-        }
-    }
+    eggMoveLearnset = GetSpeciesEggMoves(species);
 
-    for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+    for (i = 0; eggMoveLearnset[i] != MOVE_UNAVAILABLE; i++)
     {
-        if (gEggMoves[eggMoveIdx + i] > EGG_MOVES_SPECIES_OFFSET)
-            break;
-
-        eggMoves[i] = gEggMoves[eggMoveIdx + i];
+        eggMoves[i] = eggMoveLearnset[i];
         numEggMoves++;
     }
 
@@ -808,30 +795,16 @@ static u8 GetEggMoves(struct Pokemon *pokemon, u16 *eggMoves)
 
 u8 GetEggMovesBySpecies(u16 species, u16 *eggMoves)
 {
-    u16 eggMoveIdx;
     u16 numEggMoves;
-    u16 i;
+    const u16 *eggMoveLearnset;
+    u32 i;
 
     numEggMoves = 0;
-    eggMoveIdx = 0;
-    for (i = 0; i < ARRAY_COUNT(gEggMoves) - 1; i++)
-    {
-        if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
-        {
-            eggMoveIdx = i + 1;
-            break;
-        }
-    }
+    eggMoveLearnset = GetSpeciesEggMoves(species);
 
-    for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+    for (i = 0; eggMoveLearnset[i] != MOVE_UNAVAILABLE; i++)
     {
-        if (gEggMoves[eggMoveIdx + i] > EGG_MOVES_SPECIES_OFFSET)
-        {
-            // TODO: the curly braces around this if statement are required for a matching build.
-            break;
-        }
-
-        eggMoves[i] = gEggMoves[eggMoveIdx + i];
+        eggMoves[i] = eggMoveLearnset[i];
         numEggMoves++;
     }
 
@@ -840,26 +813,15 @@ u8 GetEggMovesBySpecies(u16 species, u16 *eggMoves)
 
 bool8 SpeciesCanLearnEggMove(u16 species, u16 move) //Move search PokedexPlus HGSS_Ui
 {
-    u16 eggMoveIdx;
-    u16 i;
-    eggMoveIdx = 0;
-    for (i = 0; i < ARRAY_COUNT(gEggMoves) - 1; i++)
-    {
-        if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
-        {
-            eggMoveIdx = i + 1;
-            break;
-        }
-    }
+    u32 i;
+    const u16 *eggMoveLearnset = GetSpeciesEggMoves(species);
 
-    for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+    for (i = 0; eggMoveLearnset[i] != MOVE_UNAVAILABLE; i++)
     {
-        if (gEggMoves[eggMoveIdx + i] > EGG_MOVES_SPECIES_OFFSET)
-            return FALSE;
-
-        if (move == gEggMoves[eggMoveIdx + i])
+        if (eggMoveLearnset[i] == move)
             return TRUE;
     }
+
     return FALSE;
 }
 
@@ -1035,6 +997,8 @@ static void GiveMoveIfItem(struct Pokemon *mon, struct DayCare *daycare)
     }
 }
 
+STATIC_ASSERT(P_SCATTERBUG_LINE_FORM_BREED == SPECIES_SCATTERBUG_ICY_SNOW || (P_SCATTERBUG_LINE_FORM_BREED >= SPECIES_SCATTERBUG_POLAR && P_SCATTERBUG_LINE_FORM_BREED <= SPECIES_SCATTERBUG_POKEBALL), ScatterbugLineFormBreedMustBeAValidScatterbugForm);
+
 static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parentSlots)
 {
     u16 i;
@@ -1069,6 +1033,8 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
         eggSpecies = SPECIES_PHIONE;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)
         eggSpecies = SPECIES_ROTOM;
+    else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_SCATTERBUG)
+        eggSpecies = P_SCATTERBUG_LINE_FORM_BREED;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_FURFROU)
         eggSpecies = SPECIES_FURFROU;
     else if (eggSpecies == SPECIES_SINISTEA_ANTIQUE)
@@ -1122,14 +1088,14 @@ static void _GiveEggFromDaycare(struct DayCare *daycare)
 void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
 {
     u8 metLevel;
-    u16 ball;
+    enum PokeBall ball;
     u8 language;
     u8 metLocation;
     u8 isEgg;
 
     CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
     metLevel = 0;
-    ball = ITEM_POKE_BALL;
+    ball = BALL_POKE;
     language = LANGUAGE_JAPANESE;
     SetMonData(mon, MON_DATA_POKEBALL, &ball);
     SetMonData(mon, MON_DATA_NICKNAME, sJapaneseEggNickname);
@@ -1149,14 +1115,14 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
 static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *daycare)
 {
     u32 personality;
-    u16 ball;
+    enum PokeBall ball;
     u8 metLevel;
     u8 language;
 
     personality = daycare->offspringPersonality;
     CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
     metLevel = 0;
-    ball = ITEM_POKE_BALL;
+    ball = BALL_POKE;
     language = LANGUAGE_JAPANESE;
     SetMonData(mon, MON_DATA_POKEBALL, &ball);
     SetMonData(mon, MON_DATA_NICKNAME, sJapaneseEggNickname);
@@ -1189,7 +1155,7 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
     }
 
     // Try to hatch Egg
-    if (++daycare->stepCounter == 255)
+    if (++daycare->stepCounter == ((P_EGG_CYCLE_LENGTH >= GEN_8) ? 127 : 255))
     {
         u32 eggCycles;
         u8 toSub = GetEggCyclesToSubtract();
@@ -1393,7 +1359,9 @@ u8 GetDaycareCompatibilityScore(struct DayCare *daycare)
 
 static u8 GetDaycareCompatibilityScoreFromSave(void)
 {
-    return GetDaycareCompatibilityScore(&gSaveBlock1Ptr->daycare);
+    // Changed to also store result for scripts
+    gSpecialVar_Result = GetDaycareCompatibilityScore(&gSaveBlock1Ptr->daycare);
+    return gSpecialVar_Result;
 }
 
 void SetDaycareCompatibilityString(void)

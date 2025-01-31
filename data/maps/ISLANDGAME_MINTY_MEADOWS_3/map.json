@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_681",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AEGISLASH_SHIELD)",
       "x": 20,
       "y": 15,
       "elevation": 0,
@@ -60,6 +60,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 16,
+      "elevation": 0,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_MINTY_MEADOWS_MAX_REVIVE"
+    }
   ]
 }

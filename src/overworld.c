@@ -21,9 +21,12 @@
 #include "field_weather.h"
 #include "fieldmap.h"
 #include "fldeff.h"
+#include "follow_me.h"
 #include "gpu_regs.h"
 #include "heal_location.h"
 #include "io_reg.h"
+#include "item.h"
+#include "item_icon.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "load_save.h"
@@ -51,6 +54,7 @@
 #include "secret_base.h"
 #include "sound.h"
 #include "start_menu.h"
+#include "string_util.h"
 #include "task.h"
 #include "tileset_anims.h"
 #include "time_events.h"
@@ -64,6 +68,8 @@
 #include "islandgame.h"
 #include "follow_me.h"
 #include "constants/abilities.h"
+#include "constants/event_objects.h"
+#include "constants/event_object_movement.h"
 #include "constants/layouts.h"
 #include "constants/map_types.h"
 #include "constants/region_map_sections.h"
@@ -185,14 +191,14 @@ static u16 (*sPlayerKeyInterceptCallback)(u32);
 static bool8 sReceivingFromLink;
 static u8 sRfuKeepAliveTimer;
 
-u16 *gOverworldTilemapBuffer_Bg2;
-u16 *gOverworldTilemapBuffer_Bg1;
-u16 *gOverworldTilemapBuffer_Bg3;
-u16 gHeldKeyCodeToSend;
-void (*gFieldCallback)(void);
-bool8 (*gFieldCallback2)(void);
-u8 gLocalLinkPlayerId; // This is our player id in a multiplayer mode.
-u8 gFieldLinkPlayerCount;
+COMMON_DATA u16 *gOverworldTilemapBuffer_Bg2 = NULL;
+COMMON_DATA u16 *gOverworldTilemapBuffer_Bg1 = NULL;
+COMMON_DATA u16 *gOverworldTilemapBuffer_Bg3 = NULL;
+COMMON_DATA u16 gHeldKeyCodeToSend = 0;
+COMMON_DATA void (*gFieldCallback)(void) = NULL;
+COMMON_DATA bool8 (*gFieldCallback2)(void) = NULL;
+COMMON_DATA u8 gLocalLinkPlayerId = 0; // This is our player id in a multiplayer mode.
+COMMON_DATA u8 gFieldLinkPlayerCount = 0;
 
 EWRAM_DATA static u8 sObjectEventLoadFlag = 0;
 EWRAM_DATA struct WarpData gLastUsedWarp = {0};
@@ -204,6 +210,7 @@ EWRAM_DATA static struct InitialPlayerAvatarState sInitialPlayerAvatarState = {0
 EWRAM_DATA static u16 sAmbientCrySpecies = 0;
 EWRAM_DATA static bool8 sIsAmbientCryWaterMon = FALSE;
 EWRAM_DATA struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4] = {0};
+EWRAM_DATA bool8 gExitStairsMovementDisabled = FALSE;
 
 static const struct WarpData sDummyWarpData =
 {
@@ -422,6 +429,7 @@ void Overworld_ResetBattleFlagsAndVars(void)
     FlagClear(B_SMART_WILD_AI_FLAG);
     FlagClear(B_FLAG_NO_BAG_USE);
     FlagClear(B_FLAG_NO_CATCHING);
+    FlagClear(B_FLAG_NO_RUNNING);
     FlagClear(B_FLAG_DYNAMAX_BATTLE);
     FlagClear(B_FLAG_SKY_BATTLE);
 }
@@ -444,7 +452,6 @@ static void Overworld_ResetStateAfterWhiteOut(void)
         VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 0);
         VarSet(VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_NONE);
     }
-    
     FollowMe_TryRemoveFollowerOnWhiteOut();
 }
 
@@ -454,7 +461,7 @@ static void UpdateMiscOverworldStates(void)
     ChooseAmbientCrySpecies();
     ResetCyclingRoadChallengeData();
     UpdateLocationHistoryForRoamer();
-    RoamerMoveToOtherLocationSet();
+    MoveAllRoamersToOtherLocationSets();
 }
 
 void ResetGameStats(void)
@@ -629,7 +636,7 @@ static void LoadCurrentMapData(void)
 static void LoadSaveblockMapHeader(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
-    gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
+    gMapHeader.mapLayout = GetMapLayout(gSaveBlock1Ptr->mapLayoutId);
 }
 
 static void SetPlayerCoordsFromWarp(void)
@@ -694,9 +701,19 @@ void SetWarpDestinationToHealLocation(u8 healLocationId)
         SetWarpDestination(healLocation->group, healLocation->map, WARP_ID_NONE, healLocation->x, healLocation->y);
 }
 
+static bool32 IsFRLGWhiteout(void)
+{
+    if (!OW_FRLG_WHITEOUT)
+        return FALSE;
+    return GetHealNpcLocalId(GetHealLocationIndexByWarpData(&gSaveBlock1Ptr->lastHealLocation)) > 0;
+}
+
 void SetWarpDestinationToLastHealLocation(void)
 {
-    sWarpDestination = gSaveBlock1Ptr->lastHealLocation;
+    if (IsFRLGWhiteout())
+        SetWhiteoutRespawnWarpAndHealerNPC(&sWarpDestination);
+    else
+        sWarpDestination = gSaveBlock1Ptr->lastHealLocation;
 }
 
 void SetLastHealLocationWarp(u8 healLocationId)
@@ -852,14 +869,22 @@ if (I_VS_SEEKER_CHARGING != 0)
 
     InitSecondaryTilesetAnimation();
     UpdateLocationHistoryForRoamer();
-    RoamerMove();
+    MoveAllRoamers();
     DoCurrentWeather();
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
 
-    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
-     || gMapHeader.regionMapSectionId != sLastMapSectionId)
-        ShowMapNamePopup();
+    if (OW_HIDE_REPEAT_MAP_POPUP)
+    {
+        if (gMapHeader.regionMapSectionId != sLastMapSectionId)
+            ShowMapNamePopup();
+    }
+    else
+    {
+        if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
+         || gMapHeader.regionMapSectionId != sLastMapSectionId)
+            ShowMapNamePopup();
+    }
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -903,7 +928,8 @@ if (I_VS_SEEKER_CHARGING != 0)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     UpdateLocationHistoryForRoamer();
-    RoamerMoveToOtherLocationSet();
+    MoveAllRoamersToOtherLocationSets();
+    gChainFishingDexNavStreak = 0;
     if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
         InitBattlePyramidMap(FALSE);
     else if (InTrainerHill())
@@ -986,6 +1012,10 @@ static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStr
         return DIR_EAST;
     else if (MetatileBehavior_IsEastArrowWarp(metatileBehavior) == TRUE)
         return DIR_WEST;
+    else if (MetatileBehavior_IsDirectionalUpRightStairWarp(metatileBehavior) == TRUE || MetatileBehavior_IsDirectionalDownRightStairWarp(metatileBehavior) == TRUE)
+        return DIR_WEST;
+    else if (MetatileBehavior_IsDirectionalUpLeftStairWarp(metatileBehavior) == TRUE || MetatileBehavior_IsDirectionalDownLeftStairWarp(metatileBehavior) == TRUE)
+        return DIR_EAST;
     else if ((playerStruct->transitionFlags == PLAYER_AVATAR_FLAG_UNDERWATER  && transitionFlags == PLAYER_AVATAR_FLAG_SURFING)
           || (playerStruct->transitionFlags == PLAYER_AVATAR_FLAG_SURFING && transitionFlags == PLAYER_AVATAR_FLAG_UNDERWATER))
         return playerStruct->direction;
@@ -1373,7 +1403,7 @@ static void ChooseAmbientCrySpecies(void)
         // Only play water Pokémon cries on this route
         // when Mirage Island is not present
         sIsAmbientCryWaterMon = TRUE;
-        sAmbientCrySpecies = GetLocalWaterMon();
+        sAmbientCrySpecies = GetLocalWaterMon().species;
     }
     else
     {
@@ -1492,6 +1522,7 @@ static void DoCB1_Overworld(u16 newKeys, u16 heldKeys)
     UpdatePlayerAvatarTransitionState();
     FieldClearPlayerInput(&inputStruct);
     FieldGetPlayerInput(&inputStruct, newKeys, heldKeys);
+    CancelSignPostMessageBox(&inputStruct);
     if (!ArePlayerFieldControlsLocked())
     {
         if (ProcessPlayerFieldInput(&inputStruct) == 1)
@@ -1542,7 +1573,10 @@ void CB2_Overworld(void)
         SetVBlankCallback(NULL);
     OverworldBasic();
     if (fading)
+    {
         SetFieldVBlankCallback();
+        return;
+    }
 }
 
 void SetMainCallback1(MainCallback cb)
@@ -1616,7 +1650,10 @@ void CB2_WhiteOut(void)
         ResetInitialPlayerAvatarState();
         ScriptContext_Init();
         UnlockPlayerFieldControls();
-        gFieldCallback = FieldCB_WarpExitFadeFromBlack;
+        if (IsFRLGWhiteout())
+            gFieldCallback = FieldCB_RushInjuredPokemonToCenter;
+        else
+            gFieldCallback = FieldCB_WarpExitFadeFromBlack;
         state = 0;
         DoMapLoadLoop(&state);
         SetFieldVBlankCallback();
@@ -1791,6 +1828,7 @@ void CB2_ContinueSavedGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
+    gExitStairsMovementDisabled = TRUE;
     InitMatchCallCounters();
     if (UseContinueGameWarp() == TRUE)
     {
@@ -1876,6 +1914,7 @@ static bool32 LoadMapInStepsLink(u8 *state)
         (*state)++;
         break;
     case 1:
+        gExitStairsMovementDisabled = FALSE;
         LoadMapFromWarp(TRUE);
         (*state)++;
         break;
@@ -2023,6 +2062,10 @@ static bool32 ReturnToFieldLocal(u8 *state)
         ResetScreenForMapLoad();
         ResumeMap(FALSE);
         InitObjectEventsReturnToField();
+        if (gFieldCallback == FieldCallback_UseFly)
+            RemoveFollowingPokemon();
+        else
+            UpdateFollowingPokemon();
         SetCameraToTrackPlayer();
         (*state)++;
         break;
@@ -2034,7 +2077,7 @@ static bool32 ReturnToFieldLocal(u8 *state)
         // I have no clue why. Moving it inside of InitViewGraphics breaks again.
         // It literally has to be right here for things to not break.
         TryLoadTrainerHillEReaderPalette();
-        FollowMe_BindToSurbBlobOnReloadScreen();
+        FollowMe_BindToSurfBlobOnReloadScreen();
         (*state)++;
         break;
     case 2:
@@ -2233,8 +2276,8 @@ static void InitObjectEventsLocal(void)
     SetPlayerAvatarTransitionFlags(player->transitionFlags);
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
+    UpdateFollowingPokemon();
     TryRunOnWarpIntoMapScript();
-    
     FollowMe_HandleSprite();
 }
 
@@ -3024,7 +3067,7 @@ static void InitLinkPlayerObjectEventPos(struct ObjectEvent *objEvent, s16 x, s1
     objEvent->previousCoords.y = y;
     SetSpritePosToMapCoords(x, y, &objEvent->initialCoords.x, &objEvent->initialCoords.y);
     objEvent->initialCoords.x += 8;
-    ObjectEventUpdateElevation(objEvent);
+    ObjectEventUpdateElevation(objEvent, NULL);
 }
 
 static void UNUSED SetLinkPlayerObjectRange(u8 linkPlayerId, u8 dir)
@@ -3164,7 +3207,7 @@ static bool8 FacingHandler_DpadMovement(struct LinkPlayerObjectEvent *linkPlayer
     {
         objEvent->directionSequenceIndex = 16;
         ShiftObjectEventCoords(objEvent, x, y);
-        ObjectEventUpdateElevation(objEvent);
+        ObjectEventUpdateElevation(objEvent, NULL);
         return TRUE;
     }
 }
@@ -3285,3 +3328,351 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
         sprite->data[7]++;
     }
 }
+
+static u16 GetOverworldMonSpeciesFromDoll(u16 graphicsId)
+{
+    switch (graphicsId)
+    {
+        case OBJ_EVENT_GFX_RAYQUAZA_STILL:
+        case OBJ_EVENT_GFX_RAYQUAZA:
+            return SPECIES_RAYQUAZA;
+        case OBJ_EVENT_GFX_UNUSED_NATU_DOLL:
+            return SPECIES_NATU;
+        case OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL:
+            return SPECIES_SQUIRTLE;
+        case OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL:
+            return SPECIES_WOOPER;
+        case OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL:
+        case OBJ_EVENT_GFX_PIKACHU_DOLL:
+        case OBJ_EVENT_GFX_PIKACHU:
+            return SPECIES_PIKACHU;
+        case OBJ_EVENT_GFX_UNUSED_PORYGON2_DOLL:
+            return SPECIES_PORYGON2;
+        case OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX:
+        case OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY:
+            return SPECIES_VIGOROTH;
+        case OBJ_EVENT_GFX_ZIGZAGOON_1:
+        case OBJ_EVENT_GFX_ZIGZAGOON_2:
+            return SPECIES_ZIGZAGOON;
+        case OBJ_EVENT_GFX_PICHU_DOLL:
+            return SPECIES_PICHU;
+        case OBJ_EVENT_GFX_MARILL_DOLL:
+            return SPECIES_MARILL;
+        case OBJ_EVENT_GFX_TOGEPI_DOLL:
+            return SPECIES_TOGEPI;
+        case OBJ_EVENT_GFX_CYNDAQUIL_DOLL:
+            return SPECIES_CYNDAQUIL;
+        case OBJ_EVENT_GFX_CHIKORITA_DOLL:
+            return SPECIES_CHIKORITA;
+        case OBJ_EVENT_GFX_TOTODILE_DOLL:
+            return SPECIES_TOTODILE;
+        case OBJ_EVENT_GFX_JIGGLYPUFF_DOLL:
+            return SPECIES_JIGGLYPUFF;
+        case OBJ_EVENT_GFX_MEOWTH_DOLL:
+            return SPECIES_MEOWTH;
+        case OBJ_EVENT_GFX_CLEFAIRY_DOLL:
+            return SPECIES_CLEFAIRY;
+        case OBJ_EVENT_GFX_DITTO_DOLL:
+            return SPECIES_DITTO;
+        case OBJ_EVENT_GFX_SMOOCHUM_DOLL:
+            return SPECIES_SMOOCHUM;
+        case OBJ_EVENT_GFX_TREECKO_DOLL:
+            return SPECIES_TREECKO;
+        case OBJ_EVENT_GFX_TORCHIC_DOLL:
+            return SPECIES_TORCHIC;
+        case OBJ_EVENT_GFX_MUDKIP_DOLL:
+            return SPECIES_MUDKIP;
+        case OBJ_EVENT_GFX_DUSKULL_DOLL:
+            return SPECIES_DUSKULL;
+        case OBJ_EVENT_GFX_WYNAUT_DOLL:
+            return SPECIES_WYNAUT;
+        case OBJ_EVENT_GFX_BALTOY_DOLL:
+            return SPECIES_BALTOY;
+        case OBJ_EVENT_GFX_KECLEON_DOLL:
+        case OBJ_EVENT_GFX_KECLEON:
+        case OBJ_EVENT_GFX_KECLEON_BRIDGE_SHADOW:
+            return SPECIES_KECLEON;
+        case OBJ_EVENT_GFX_AZURILL_DOLL:
+            return SPECIES_AZURILL;
+        case OBJ_EVENT_GFX_SKITTY_DOLL:
+        case OBJ_EVENT_GFX_SKITTY:
+            return SPECIES_SKITTY;
+        case OBJ_EVENT_GFX_SWABLU_DOLL:
+            return SPECIES_SWABLU;
+        case OBJ_EVENT_GFX_GULPIN_DOLL:
+            return SPECIES_GULPIN;
+        case OBJ_EVENT_GFX_LOTAD_DOLL:
+            return SPECIES_LOTAD;
+        case OBJ_EVENT_GFX_SEEDOT_DOLL:
+            return SPECIES_SEEDOT;
+        case OBJ_EVENT_GFX_BIG_SNORLAX_DOLL:
+            return SPECIES_SNORLAX;
+        case OBJ_EVENT_GFX_BIG_RHYDON_DOLL:
+            return SPECIES_RHYDON;
+        case OBJ_EVENT_GFX_BIG_LAPRAS_DOLL:
+            return SPECIES_LAPRAS;
+        case OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL:
+            return SPECIES_VENUSAUR;
+        case OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL:
+            return SPECIES_CHARIZARD;
+        case OBJ_EVENT_GFX_BIG_BLASTOISE_DOLL:
+            return SPECIES_BLASTOISE;
+        case OBJ_EVENT_GFX_BIG_WAILMER_DOLL:
+            return SPECIES_WAILMER;
+        case OBJ_EVENT_GFX_BIG_REGIROCK_DOLL:
+        case OBJ_EVENT_GFX_REGIROCK:
+            return SPECIES_REGIROCK;
+        case OBJ_EVENT_GFX_BIG_REGICE_DOLL:
+        case OBJ_EVENT_GFX_REGICE:
+            return SPECIES_REGICE;
+        case OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL:
+        case OBJ_EVENT_GFX_REGISTEEL:
+            return SPECIES_REGISTEEL;
+        case OBJ_EVENT_GFX_LATIAS:
+            return SPECIES_LATIAS;
+        case OBJ_EVENT_GFX_LATIOS:
+            return SPECIES_LATIOS;
+        case OBJ_EVENT_GFX_KYOGRE_FRONT:
+        case OBJ_EVENT_GFX_KYOGRE_ASLEEP:
+        case OBJ_EVENT_GFX_KYOGRE_SIDE:
+            return SPECIES_KYOGRE;
+        case OBJ_EVENT_GFX_GROUDON_FRONT:
+        case OBJ_EVENT_GFX_GROUDON_ASLEEP:
+        case OBJ_EVENT_GFX_GROUDON_SIDE:
+            return SPECIES_GROUDON;
+        case OBJ_EVENT_GFX_AZUMARILL:
+            return SPECIES_AZUMARILL;
+        case OBJ_EVENT_GFX_WINGULL:
+            return SPECIES_WINGULL;
+        case OBJ_EVENT_GFX_POOCHYENA:
+            return SPECIES_POOCHYENA;
+        case OBJ_EVENT_GFX_KIRLIA:
+            return SPECIES_KIRLIA;
+        case OBJ_EVENT_GFX_DUSCLOPS:
+            return SPECIES_DUSCLOPS;
+        case OBJ_EVENT_GFX_SUDOWOODO:
+            return SPECIES_SUDOWOODO;
+        case OBJ_EVENT_GFX_MEW:
+            return SPECIES_MEW;
+        case OBJ_EVENT_GFX_DEOXYS:
+            return SPECIES_DEOXYS;
+        case OBJ_EVENT_GFX_LUGIA:
+            return SPECIES_LUGIA;
+        case OBJ_EVENT_GFX_HOOH:
+            return SPECIES_HO_OH;
+    }
+    return SPECIES_NONE;
+}
+
+void GetOverworldMonSpecies(void)
+{
+    gSpecialVar_0x8005 = gObjectEvents[gSelectedObjectEvent].shiny;
+    if (gObjectEvents[gSelectedObjectEvent].graphicsId > OBJ_EVENT_GFX_SPECIES(NONE) && gObjectEvents[gSelectedObjectEvent].graphicsId < OBJ_EVENT_GFX_SPECIES(EGG))
+        gSpecialVar_0x8004 = gObjectEvents[gSelectedObjectEvent].graphicsId - OBJ_EVENT_GFX_SPECIES(NONE);    
+    else
+        gSpecialVar_0x8004 = GetOverworldMonSpeciesFromDoll(gObjectEvents[gSelectedObjectEvent].graphicsId);
+}
+
+// ----------------
+// Item Header Descriptions
+// Item Description Header
+
+#define ITEM_ICON_X     26
+#define ITEM_ICON_Y     24
+#define ITEM_TAG        0x2722 //same as money label
+
+bool8 GetSetItemObtained(u16 item, enum ItemObtainFlags caseId)
+{
+#if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
+    u8 index = item / 8;
+    u8 bit = item % 8;
+    u8 mask = 1 << bit;
+    switch (caseId)
+    {
+    case FLAG_GET_ITEM_OBTAINED:
+        return gSaveBlock3Ptr->itemFlags[index] & mask;
+    case FLAG_SET_ITEM_OBTAINED:
+        gSaveBlock3Ptr->itemFlags[index] |= mask;
+        return TRUE;
+    }
+#endif
+    return FALSE;
+}
+
+#if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
+
+EWRAM_DATA static u8 sHeaderBoxWindowId = 0;
+EWRAM_DATA u8 sItemIconSpriteId = 0;
+EWRAM_DATA u8 sItemIconSpriteId2 = 0;
+
+static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash);
+static void DestroyItemIconSprite(void);
+
+static u8 ReformatItemDescription(u16 item, u8 *dest)
+{
+    u8 count = 0;
+    u8 numLines = 1;
+    u8 maxChars = 32;
+    u8 *desc = (u8 *)gItemsInfo[item].description;
+
+    while (*desc != EOS)
+    {
+        if (count >= maxChars)
+        {
+            while (*desc != CHAR_SPACE && *desc != CHAR_NEWLINE)
+            {
+                *dest = *desc;  //finish word
+                dest++;
+                desc++;
+            }
+
+            *dest = CHAR_NEWLINE;
+            count = 0;
+            numLines++;
+            dest++;
+            desc++;
+            continue;
+        }
+
+        *dest = *desc;
+        if (*desc == CHAR_NEWLINE)
+        {
+            *dest = CHAR_SPACE;
+        }
+
+        dest++;
+        desc++;
+        count++;
+    }
+
+    // finish string
+    *dest = EOS;
+    return numLines;
+}
+
+void ScriptShowItemDescription(struct ScriptContext *ctx)
+{
+    u8 headerType = ScriptReadByte(ctx);
+    struct WindowTemplate template;
+    u16 item = gSpecialVar_0x8006;
+    u8 textY;
+    u8 *dst;
+    bool8 handleFlash = FALSE;
+
+    if (GetFlashLevel() > 0 || InBattlePyramid_())
+        handleFlash = TRUE;
+
+    if (headerType == 1) // berry
+        dst = gStringVar3;
+    else
+        dst = gStringVar1;
+
+    if (GetSetItemObtained(item, FLAG_GET_ITEM_OBTAINED))
+    {
+        ShowItemIconSprite(item, FALSE, handleFlash);
+        return; //no box if item obtained previously
+    }
+
+    SetWindowTemplateFields(&template, 0, 1, 1, 28, 3, 15, 8);
+    sHeaderBoxWindowId = AddWindow(&template);
+    FillWindowPixelBuffer(sHeaderBoxWindowId, PIXEL_FILL(0));
+    PutWindowTilemap(sHeaderBoxWindowId);
+    CopyWindowToVram(sHeaderBoxWindowId, 3);
+    SetStandardWindowBorderStyle(sHeaderBoxWindowId, FALSE);
+    DrawStdFrameWithCustomTileAndPalette(sHeaderBoxWindowId, FALSE, 0x214, 14);
+
+    if (ReformatItemDescription(item, dst) == 1)
+        textY = 4;
+    else
+        textY = 0;
+
+    ShowItemIconSprite(item, TRUE, handleFlash);
+    AddTextPrinterParameterized(sHeaderBoxWindowId, 0, dst, ITEM_ICON_X + 2, textY, 0, NULL);
+}
+
+void ScriptHideItemDescription(struct ScriptContext *ctx)
+{
+    DestroyItemIconSprite();
+
+    if (!GetSetItemObtained(gSpecialVar_0x8006, FLAG_GET_ITEM_OBTAINED))
+    {
+        //header box only exists if haven't seen item before
+        GetSetItemObtained(gSpecialVar_0x8006, FLAG_SET_ITEM_OBTAINED);
+        ClearStdWindowAndFrameToTransparent(sHeaderBoxWindowId, FALSE);
+        CopyWindowToVram(sHeaderBoxWindowId, 3);
+        RemoveWindow(sHeaderBoxWindowId);
+    }
+}
+
+static void ShowItemIconSprite(u16 item, bool8 firstTime, bool8 flash)
+{
+    s16 x = 0, y = 0;
+    u8 iconSpriteId;
+    u8 spriteId2 = MAX_SPRITES;
+
+    if (flash)
+    {
+        SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
+        SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
+    }
+
+    iconSpriteId = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
+    if (flash)
+        spriteId2 = AddItemIconSprite(ITEM_TAG, ITEM_TAG, item);
+    if (iconSpriteId != MAX_SPRITES)
+    {
+        if (!firstTime)
+        {
+            //show in message box
+            x = 213;
+            y = 140;
+        }
+        else
+        {
+            // show in header box
+            x = ITEM_ICON_X;
+            y = ITEM_ICON_Y;
+        }
+
+        gSprites[iconSpriteId].x2 = x;
+        gSprites[iconSpriteId].y2 = y;
+        gSprites[iconSpriteId].oam.priority = 0;
+    }
+
+    if (spriteId2 != MAX_SPRITES)
+    {
+        gSprites[spriteId2].x2 = x;
+        gSprites[spriteId2].y2 = y;
+        gSprites[spriteId2].oam.priority = 0;
+        gSprites[spriteId2].oam.objMode = ST_OAM_OBJ_WINDOW;
+        sItemIconSpriteId2 = spriteId2;
+    }
+
+    sItemIconSpriteId = iconSpriteId;
+}
+
+static void DestroyItemIconSprite(void)
+{
+    FreeSpriteTilesByTag(ITEM_TAG);
+    FreeSpritePaletteByTag(ITEM_TAG);
+    FreeSpriteOamMatrix(&gSprites[sItemIconSpriteId]);
+    DestroySprite(&gSprites[sItemIconSpriteId]);
+
+    if ((GetFlashLevel() > 0 || InBattlePyramid_()) && sItemIconSpriteId2 != MAX_SPRITES)
+    {
+        FreeSpriteOamMatrix(&gSprites[sItemIconSpriteId2]);
+        DestroySprite(&gSprites[sItemIconSpriteId2]);
+    }
+}
+
+#else
+void ScriptShowItemDescription(struct ScriptContext *ctx)
+{
+    (void) ScriptReadByte(ctx);
+}
+void ScriptHideItemDescription(struct ScriptContext *ctx)
+{
+}
+#endif // OW_SHOW_ITEM_DESCRIPTIONS
+
+

@@ -5,10 +5,9 @@
 #endif
 
 // IWRAM common
-rng_value_t gRngValue;
-rng_value_t gRng2Value;
+COMMON_DATA rng_value_t gRngValue = {0};
+COMMON_DATA rng_value_t gRng2Value = {0};
 
-#if HQ_RANDOM == TRUE
 
 EWRAM_DATA static volatile bool8 sRngLoopUnlocked;
 
@@ -112,39 +111,6 @@ void AdvanceRandom(void)
 
 #define LOOP_RANDOM ((u16)(_SFC32_Next(state) >> 16))
 
-#else
-EWRAM_DATA static u32 sRandCount = 0;
-
-u16 Random(void)
-{
-    gRngValue = ISO_RANDOMIZE1(gRngValue);
-    sRandCount++;
-    return gRngValue >> 16;
-}
-
-void SeedRng(u16 seed)
-{
-    gRngValue = seed;
-}
-
-void SeedRng2(u16 seed)
-{
-    gRng2Value = seed;
-}
-
-u16 Random2(void)
-{
-    gRng2Value = ISO_RANDOMIZE1(gRng2Value);
-    return gRng2Value >> 16;
-}
-
-#define LOOP_RANDOM_START
-#define LOOP_RANDOM_END
-
-#define LOOP_RANDOM (Random())
-
-#endif
-
 #define SHUFFLE_IMPL \
     u32 tmp; \
     LOOP_RANDOM_START; \
@@ -238,4 +204,23 @@ u32 RandomWeightedArrayDefault(enum RandomTag tag, u32 sum, u32 n, const u8 *wei
 const void *RandomElementArrayDefault(enum RandomTag tag, const void *array, size_t size, size_t count)
 {
     return (const u8 *)array + size * RandomUniformDefault(tag, 0, count - 1);
+}
+
+// Returns a random index according to a list of weights
+u8 RandomWeightedIndex(u8 *weights, u8 length)
+{
+    u32 i;
+    u16 randomValue;
+    u16 weightSum = 0;
+    for (i = 0; i < length; i++)
+        weightSum += weights[i];
+    randomValue = weightSum > 0 ? Random() % weightSum : 0;
+    weightSum = 0;
+    for (i = 0; i < length; i++)
+    {
+        weightSum += weights[i];
+        if (randomValue <= weightSum)
+            return i;
+    }
+    return 0;
 }

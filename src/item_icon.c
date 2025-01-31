@@ -9,6 +9,8 @@
 #include "constants/items.h"
 #include "pokeball.h"
 #include "pokevial.h" // Pokevial Branch
+#include "item.h"
+#include "battle_main.h"
 
 // EWRAM vars
 EWRAM_DATA u8 *gItemIconDecompressionBuffer = NULL;
@@ -34,23 +36,6 @@ static const struct OamData sOamData_ItemIcon =
     .affineParam = 0
 };
 
-static const struct OamData sOamData_BallIcon =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = 0,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(16x16),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(16x16),
-    .tileNum = 0,
-    .priority = 1,
-    .paletteNum = 2,
-    .affineParam = 0
-};
-
 static const union AnimCmd sSpriteAnim_ItemIcon[] =
 {
     ANIMCMD_FRAME(0, 0),
@@ -67,17 +52,6 @@ const struct SpriteTemplate gItemIconSpriteTemplate =
     .tileTag = 0,
     .paletteTag = 0,
     .oam = &sOamData_ItemIcon,
-    .anims = sSpriteAnimTable_ItemIcon,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
-};
-
-const struct SpriteTemplate gBallIconSpriteTemplate =
-{
-    .tileTag = 0,
-    .paletteTag = 0,
-    .oam = &sOamData_BallIcon,
     .anims = sSpriteAnimTable_ItemIcon,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -128,14 +102,14 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId)
         struct CompressedSpritePalette spritePalette;
         struct SpriteTemplate *spriteTemplate;
 
-        LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+        LZDecompressWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
         CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
         spriteSheet.data = gItemIcon4x4Buffer;
         spriteSheet.size = 0x200;
         spriteSheet.tag = tilesTag;
         LoadSpriteSheet(&spriteSheet);
 
-        spritePalette.data = GetItemIconPicOrPalette(itemId, 1);
+        spritePalette.data = GetItemIconPalette(itemId);
         spritePalette.tag = paletteTag;
         LoadCompressedSpritePalette(&spritePalette);
 
@@ -156,17 +130,17 @@ u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y, void * paletteDes
     if (!AllocItemIconTemporaryBuffers())
         return 16;
 
-    LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+    LZDecompressWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
     CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
     BlitBitmapToWindow(windowId, gItemIcon4x4Buffer, x, y, 32, 32);
 
     // if paletteDest is nonzero, copies the decompressed palette directly into it
     // otherwise, loads the compressed palette into the windowId's BG palette ID
     if (paletteDest) {
-        LZDecompressWram(GetItemIconPicOrPalette(itemId, 1), gPaletteDecompressionBuffer);
-        CpuFastCopy(gPaletteDecompressionBuffer, paletteDest, PLTT_SIZE_4BPP);
+        LZDecompressWram(GetItemIconPalette(itemId), gDecompressionBuffer);
+        CpuFastCopy(gDecompressionBuffer, paletteDest, PLTT_SIZE_4BPP);
     } else {
-        LoadCompressedPalette(GetItemIconPicOrPalette(itemId, 1), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
+        LoadCompressedPalette(GetItemIconPalette(itemId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
     }
     FreeItemIconTemporaryBuffers();
     return 0;
@@ -185,14 +159,14 @@ u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u1
         struct CompressedSpritePalette spritePalette;
         struct SpriteTemplate *spriteTemplate;
 
-        LZDecompressWram(GetItemIconPicOrPalette(itemId, 0), gItemIconDecompressionBuffer);
+        LZDecompressWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
         CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
         spriteSheet.data = gItemIcon4x4Buffer;
         spriteSheet.size = 0x200;
         spriteSheet.tag = tilesTag;
         LoadSpriteSheet(&spriteSheet);
 
-        spritePalette.data = GetItemIconPicOrPalette(itemId, 1);
+        spritePalette.data = GetItemIconPalette(itemId);
         spritePalette.tag = paletteTag;
         LoadCompressedSpritePalette(&spritePalette);
 
@@ -209,53 +183,35 @@ u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u1
     }
 }
 
-const void *GetItemIconPicOrPalette(u16 itemId, u8 which)
+const void *GetItemIconPic(u16 itemId)
 {
     if (itemId == ITEM_LIST_END)
-        itemId = ITEMS_COUNT; // Use last icon, the "return to field" arrow
-    else if (itemId >= ITEMS_COUNT)
-        itemId = 0;
+        return gItemIcon_ReturnToFieldArrow; // Use last icon, the "return to field" arrow
+    if (itemId >= ITEMS_COUNT)
+        return gItemsInfo[0].iconPic;
+    if (itemId >= ITEM_TM01 && itemId < ITEM_HM01 + NUM_HIDDEN_MACHINES)
+    {
+        if (itemId < ITEM_TM01 + NUM_TECHNICAL_MACHINES)
+            return gItemIcon_TM;
+        return gItemIcon_HM;
+    }
 
     // Start Pokevial Branch
-    if (itemId == ITEM_POKEVIAL && which == 0)
+    if (itemId == ITEM_POKEVIAL)
         return PokevialGetDoseIcon();
     // End Pokevial Branch
 
-    return gItemIconTable[itemId][which];
+    return gItemsInfo[itemId].iconPic;
 }
 
-u8 AddBallIconSprite(u16 tilesTag, u16 paletteTag, u8 ballId)
+const void *GetItemIconPalette(u16 itemId)
 {
-    if (!AllocItemIconTemporaryBuffers())
-    {
-        return MAX_SPRITES;
-    }
-    else
-    {
-        u8 spriteId;
-        struct SpriteSheet spriteSheet;
-        struct CompressedSpritePalette spritePalette;
-        struct SpriteTemplate *spriteTemplate;
+    if (itemId == ITEM_LIST_END)
+        return gItemIconPalette_ReturnToFieldArrow;
+    if (itemId >= ITEMS_COUNT)
+        return gItemsInfo[0].iconPalette;
+    if (itemId >= ITEM_TM01 && itemId < ITEM_HM01 + NUM_HIDDEN_MACHINES)
+        return gTypesInfo[gMovesInfo[gItemsInfo[itemId].secondaryId].type].paletteTMHM;
 
-        if (ballId > ARRAY_COUNT(gBallIconTable) - 1)
-            ballId = 0;
-
-        LZDecompressWram(gBallIconTable[ballId][0], gItemIconDecompressionBuffer);
-        CpuCopy16(gItemIconDecompressionBuffer, gItemIcon4x4Buffer, 0x100);
-        spriteSheet.data = gItemIcon4x4Buffer;
-        spriteSheet.size = 0x100;
-        spriteSheet.tag = tilesTag;
-        LoadSpriteSheet(&spriteSheet);
-        spritePalette.data = gBallIconTable[ballId][1];
-        spritePalette.tag = paletteTag;
-        LoadCompressedSpritePalette(&spritePalette);
-        spriteTemplate = Alloc(sizeof(*spriteTemplate));
-        CpuCopy16(&gBallIconSpriteTemplate, spriteTemplate, sizeof(*spriteTemplate));
-        spriteTemplate->tileTag = tilesTag;
-        spriteTemplate->paletteTag = paletteTag;
-        spriteId = CreateSprite(spriteTemplate, 0, 0, 0);
-        FreeItemIconTemporaryBuffers();
-        Free(spriteTemplate);
-        return spriteId;
-    }
+    return gItemsInfo[itemId].iconPalette;
 }

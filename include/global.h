@@ -3,7 +3,7 @@
 
 #include <string.h>
 #include <limits.h>
-#include "config.h" // we need to define config before gba headers as print stuff needs the functions nulled before defines.
+#include "config/general.h" // we need to define config before gba headers as print stuff needs the functions nulled before defines.
 #include "gba/gba.h"
 #include "fpmath.h"
 #include "metaprogram.h"
@@ -40,6 +40,7 @@
 #define INCBIN_S8   INCBIN
 #define INCBIN_S16  INCBIN
 #define INCBIN_S32  INCBIN
+#define INCBIN_COMP INCBIN
 #endif // IDE support
 
 #define ARRAY_COUNT(array) (size_t)(sizeof(array) / sizeof((array)[0]))
@@ -70,11 +71,13 @@
 #define SAFE_DIV(a, b) ((a) / (b))
 #endif
 
+#define IS_POW_OF_TWO(n) (((n) & ((n)-1)) == 0)
+
 // The below macro does a%n, but (to match) will switch to a&(n-1) if n is a power of 2.
 // There are cases where GF does a&(n-1) where we would really like to have a%n, because
 // if n is changed to a value that isn't a power of 2 then a&(n-1) is unlikely to work as
 // intended, and a%n for powers of 2 isn't always optimized to use &.
-#define MOD(a, n)(((n) & ((n)-1)) ? ((a) % (n)) : ((a) & ((n)-1)))
+#define MOD(a, n) (((n) & ((n)-1)) ? ((a) % (n)) : ((a) & ((n)-1)))
 
 // Extracts the upper 16 bits of a 32-bit number
 #define HIHALF(n) (((n) & 0xFFFF0000) >> 16)
@@ -115,7 +118,7 @@
     f;                       \
 })
 
-#define DIV_ROUND_UP(val, roundBy)(((val) / (roundBy)) + (((val) % (roundBy)) ? 1 : 0))
+#define DIV_ROUND_UP(val, roundBy) (((val) / (roundBy)) + (((val) % (roundBy)) ? 1 : 0))
 
 #define ROUND_BITS_TO_BYTES(numBits) DIV_ROUND_UP(numBits, 8)
 
@@ -128,6 +131,31 @@
 #define STATIC_ASSERT(expr, id) typedef char id[(expr) ? 1 : -1];
 
 #define FEATURE_FLAG_ASSERT(flag, id) STATIC_ASSERT(flag > TEMP_FLAGS_END || flag == 0, id)
+
+#ifndef NDEBUG
+static inline void CycleCountStart()
+{
+    REG_TM2CNT_H = 0;
+    REG_TM3CNT_H = 0;
+
+    REG_TM2CNT_L = 0;
+    REG_TM3CNT_L = 0;
+
+    // init timers (tim3 count up mode, tim2 every clock cycle)
+    REG_TM3CNT_H = TIMER_ENABLE | TIMER_COUNTUP;
+    REG_TM2CNT_H = TIMER_1CLK | TIMER_ENABLE;
+}
+
+static inline u32 CycleCountEnd()
+{
+    // stop timers
+    REG_TM2CNT_H = 0;
+    REG_TM3CNT_H = 0;
+
+    // return result
+    return REG_TM2CNT_L | (REG_TM3CNT_L << 16u);
+}
+#endif
 
 struct Coords8
 {
@@ -165,12 +193,6 @@ struct UCoords32
     u32 y;
 };
 
-struct SaveBlock3
-{
-};
-
-extern struct SaveBlock3 *gSaveBlock3Ptr;
-
 struct Time
 {
     /*0x00*/ s16 days;
@@ -178,6 +200,21 @@ struct Time
     /*0x03*/ s8 minutes;
     /*0x04*/ s8 seconds;
 };
+
+#include "constants/items.h"
+#define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
+
+struct SaveBlock3
+{
+#if OW_USE_FAKE_RTC
+    struct Time fakeRTC;
+#endif
+#if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
+    u8 itemFlags[ITEM_FLAGS_COUNT];
+#endif
+};
+
+extern struct SaveBlock3 *gSaveBlock3Ptr;
 
 struct Pokedex
 {
@@ -283,7 +320,7 @@ struct BattleTowerPokemon
     u32 gap:1;
     u32 abilityNum:1;
     u32 personality;
-    u8 nickname[POKEMON_NAME_LENGTH + 1];
+    u8 nickname[VANILLA_POKEMON_NAME_LENGTH + 1];
     u8 friendship;
 };
 
@@ -308,7 +345,7 @@ struct BattleTowerInterview
     u16 playerSpecies;
     u16 opponentSpecies;
     u8 opponentName[PLAYER_NAME_LENGTH + 1];
-    u8 opponentMonNickname[POKEMON_NAME_LENGTH + 1];
+    u8 opponentMonNickname[VANILLA_POKEMON_NAME_LENGTH + 1];
     u8 opponentLanguage;
 };
 
@@ -516,7 +553,7 @@ struct Follower
     /*0x12*/ u16 graphicsId;
     /*0x14*/ u16 flags;
     /*0x15*/ u8 locked;
-    /*0x17*/ u16 party;
+    /*0x17*/ u16 battlePartner; // If you have more than 255 total battle partners defined, change this to a u16
 }; /* size = 0x18 */
 
 struct SaveBlock2
@@ -781,7 +818,7 @@ struct ContestWinner
     u32 trainerId;
     u16 species;
     u8 contestCategory;
-    u8 monName[POKEMON_NAME_LENGTH + 1];
+    u8 monName[VANILLA_POKEMON_NAME_LENGTH + 1];
     u8 trainerName[PLAYER_NAME_LENGTH + 1];
     u8 contestRank:7;
     bool8 isShiny:1;
@@ -801,7 +838,7 @@ struct DaycareMail
 {
     struct Mail message;
     u8 otName[PLAYER_NAME_LENGTH + 1];
-    u8 monName[POKEMON_NAME_LENGTH + 1];
+    u8 monName[VANILLA_POKEMON_NAME_LENGTH + 1];
     u8 gameLanguage:4;
     u8 monLanguage:4;
 };
@@ -1121,7 +1158,7 @@ struct SaveBlock1
     /*0x31A8*/ u8 giftRibbons[GIFT_RIBBONS_COUNT];
     /*0x31B3*/ struct ExternalEventData externalEventData;
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
-    /*0x31DC*/ struct Roamer roamer;
+    /*0x31DC*/ struct Roamer roamer[ROAMER_COUNT];
 #if FREE_ENIGMA_BERRY == FALSE
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;
 #endif //FREE_ENIGMA_BERRY

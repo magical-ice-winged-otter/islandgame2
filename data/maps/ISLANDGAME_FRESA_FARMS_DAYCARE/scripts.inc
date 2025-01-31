@@ -7,155 +7,163 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 8 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	gettime
 # 10 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	goto_if_unset FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 13 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	compare VAR_0x8000, 6
-	goto_if_lt ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-# 10 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	goto_if_lt ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+# 13 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	compare VAR_0x8000, 18
-	goto_if_ge ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-# 14 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	goto_if_ge ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
+# 17 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	setflag FLAG_TEMP_2
 	return
 
-ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 11 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	setflag FLAG_TEMP_3
+	goto ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_FRESA_FARMS_DAYCARE_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
+# 14 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	setflag FLAG_TEMP_1
 	return
 
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder::
-# 20 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
-	lock
-# 21 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
-	faceplayer
 # 23 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	lock
+# 24 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	faceplayer
+# 26 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	specialvar VAR_RESULT, GetDaycareState
-# 25 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 28 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	compare VAR_RESULT, DAYCARE_EGG_WAITING
 	goto_if_eq ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_2
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1:
-# 30 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
-	returnqueststate QUEST_FRESA_FARMS_TORCHIC_EGG
-# 32 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
-	switch VAR_RESULT
 # 33 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	returnqueststate QUEST_FRESA_FARMS_TORCHIC_EGG
+# 35 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	switch VAR_RESULT
+# 36 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	case 1, ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_6
-# 51 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 54 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	case 2, ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_7
-# 107 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 110 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	case 4, ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_8
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_4:
-# 111 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 114 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	release
 	return
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_2:
-# 26 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 29 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	goto Route117_EventScript_DaycareEggWaiting
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_1
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_6:
-# 34 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 37 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_0, MSGBOX_YESNO
-# 43 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 46 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	switch VAR_RESULT
-# 44 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 47 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	case TRUE, ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_10
-# 48 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 51 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	case FALSE, ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_11
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_4
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_7:
-# 52 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 55 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	setvar VAR_0x8000, SPECIES_TORCHIC
-# 53 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 56 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	callnative CheckPartyMon
-# 54 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 57 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_13
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_12:
-# 65 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 68 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	setvar VAR_0x8000, SPECIES_COMBUSKEN
-# 66 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 69 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	callnative CheckPartyMon
-# 67 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 70 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_16
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_15:
-# 76 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 79 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	setvar VAR_0x8000, SPECIES_BLAZIKEN
-# 77 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 80 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	callnative CheckPartyMon
-# 78 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 81 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_19
-# 82 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 85 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_5
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_18:
-# 84 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
-	goto Torchic_End
-# 86 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
-Torchic_Reward:
 # 87 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	goto Torchic_End
+# 89 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+Torchic_Reward:
+# 90 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_6
-# 94 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 97 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	giveitem ITEM_BLAZIKENITE
-# 95 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 98 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_7
-# 102 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 105 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	completequest QUEST_FRESA_FARMS_TORCHIC_EGG
-# 104 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 107 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 Torchic_End:
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_4
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_8:
-# 108 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 111 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_8
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_4
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_10:
-# 45 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 48 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_1
-# 46 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 49 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	giveegg SPECIES_TORCHIC, NUM_NATURES, 2, 18, 18, 18, 18, 18, 18
-# 47 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 50 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	startquest QUEST_FRESA_FARMS_TORCHIC_EGG
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_4
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_11:
-# 49 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 52 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_2
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_4
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_13:
-# 55 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 58 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_3
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_12
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_16:
-# 68 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 71 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_4
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_15
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_19:
-# 79 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 82 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	goto Torchic_Reward
 	goto ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_18
 
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_NPC::
-# 116 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 119 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	lock
-# 117 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 120 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	faceplayer
-# 118 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
-	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_NPC_Text_0
 # 121 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+	msgbox ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_NPC_Text_0
+# 124 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_0:
-# 36 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 39 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Ah, young trainer! It's good to\n"
 	.string "see you again!\p"
 	.string "I actually have another favor I wish to\n"
@@ -167,17 +175,17 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_0:
 	.string "show it to me later. Is that alright?$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_1:
-# 45 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 48 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "Excellent! The Pokémon will be yours to\n"
 	.string "keep, of course!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_2:
-# 49 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 52 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "Ah, I understand. If you ever change\n"
 	.string "your mind though, I'll always be here!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_3:
-# 57 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 60 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Oh! It finally hatched? Let me\n"
 	.string "take a closer look at it...\p"
 	.string "Ah, so it hatched into a Torchic?\n"
@@ -189,7 +197,7 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_3:
 	.string "give you a little something special!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_4:
-# 70 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 73 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Waha, that little Torchic has\n"
 	.string "grown up into a Combusken already?\p"
 	.string "Childhood really just zooms right by,\n"
@@ -197,12 +205,12 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_4:
 	.string "seeing it fully evolved!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_5:
-# 82 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 85 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Let me know what the egg\n"
 	.string "hatches into later, young trainer!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_6:
-# 89 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 92 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}Young trainer! It's been quite a\n"
 	.string "while! Since you're here, I assume your\l"
 	.string "Torchic has matured into a\l"
@@ -216,7 +224,7 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_6:
 	.string "better recipient than you!$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_7:
-# 97 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 100 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}You certainly are something\n"
 	.string "special, young trainer. It hadn't even\l"
 	.string "occurred to me that I never even\l"
@@ -228,14 +236,14 @@ ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_7:
 	.string "place to stay, our gate is always open.$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_TorchicBreeder_Text_8:
-# 108 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 111 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "{COLOR GREEN}Paulie: {COLOR DARK_GRAY}I wish you the best of luck on\n"
 	.string "the rest of your adventure. If you ever\l"
 	.string "need a place to stay, our gate is always\l"
 	.string "open.$"
 
 ISLANDGAME_FRESA_FARMS_DAYCARE_EventScripts_NPC_Text_0:
-# 119 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
+# 122 "data/maps/ISLANDGAME_FRESA_FARMS_DAYCARE/scripts.pory"
 	.string "The farm life is pretty alright.\p"
 	.string "Might be a lotta hard work, but you\n"
 	.string "don't gotta worry 'bout much.$"

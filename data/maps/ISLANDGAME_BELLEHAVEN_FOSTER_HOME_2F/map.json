@@ -1,0 +1,92 @@
+{
+  "id": "MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
+  "name": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
+  "layout": "LAYOUT_ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
+  "music": "MUS_FALLARBOR",
+  "region_map_section": "MAPSEC_BELLEHAVEN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZURILL)",
+      "x": 5,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_BlooInteract",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAPPINY)",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_CocoInteract",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUNCHLAX)",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_EduardoInteract",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TYROGUE)",
+      "x": 0,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_WiltInteract",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV"
+    }
+  ]
+}

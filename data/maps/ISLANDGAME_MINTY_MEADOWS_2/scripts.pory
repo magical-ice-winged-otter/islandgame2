@@ -21,6 +21,7 @@ const MIGHTYENA_OW_ID = 7
 const MAREEP_EXTRA1 = 14
 const MAREEP_EXTRA2 = 15
 const MAREEP_EXTRA3 = 16
+const DRIFLOON_OW_ID = 17
 
 const POS_HIDDEN_X = -3
 const POS_HIDDEN_Y = 1
@@ -45,7 +46,7 @@ mapscripts ISLANDGAME_MINTY_MEADOWS_2_MapScripts {
         }
         else {
             setflag(FLAG_DAY)
-            setobjectxyperm(20, POS_HIDDEN_X, POS_HIDDEN_Y) // drifloon can only appear at night
+            setobjectxyperm(DRIFLOON_OW_ID, POS_HIDDEN_X, POS_HIDDEN_Y) // drifloon can only appear at night
         }
 
         switch (var(VAR_MINTY_MEADOWS_STATE)) {
@@ -348,7 +349,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
         format(
             "{COLOR DARK_GRAY}You're {PLAYER}? The professor told me about you earlier today! \p"
             "{COLOR DARK_GRAY}It's good to meet you! I'm Melissa, a rising Pokémon trainer just like you! \p"
-            "{COLOR DARK_GRAY}I was trying to fill out my Pokédex here, but I just couldn't find a Riolu... \p"
+            "{COLOR DARK_GRAY}I was trying to fill out my Pokédex here, but I just couldn't find a Scorbunny... \p"
             "{COLOR DARK_GRAY}How are you enjoying the isles so far? Isn't it awesome here? \p"
             "{COLOR DARK_GRAY}Eh? It's too hot and humid? Um, well, you'll get used to it eventually! \p"
             "{COLOR DARK_GRAY}Oh! Now that you're here, let's have a Pokémon battle! I need some action! \p"
@@ -436,8 +437,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_RivalFight_Main {
     waitmovement(0)
     special(HealPlayerParty)
     //follow me
-    loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-    setfollower(RIVAL_OW_ID, 100, PARTNER_MEADOWS_RIVAL)
+    setfollower(RIVAL_OW_ID, 0x100, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL)
 
     //teleport
     call(ISLANDGAME_MINTY_MEADOWS_2_TeleportGauntlet)
@@ -582,8 +582,8 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     setflag(FLAG_SMART_WILD_AI)
     setflag(FLAG_NO_CATCHING)
     setflag(FLAG_NO_RUNNING)
-    setcwildbattle(0, SPECIES_SHADOW_MIGHTYENA, 25, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER)
-    setwilddoublebattle(TRUE)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_SHADOW_MIGHTYENA, 25, ITEM_SITRUS_BERRY, NUM_NATURES, 0, MON_GENDERLESS, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SNARL, MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_SWAGGER)
+    setwilddoubleflag
     playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
     waitmoncry
     dowildbattle
@@ -594,11 +594,11 @@ script ISLANDGAME_MINTY_MEADOWS_2_BattleMightyena {
     
     switch(var(VAR_RESULT)) {
         case B_OUTCOME_LOST:
-            destroyfollower(TRUE)
+            destroyfollower()
         case B_OUTCOME_RAN:
             break
         default:
-            destroyfollower(TRUE)
+            destroyfollower()
             goto(ISLANDGAME_MINTY_MEADOWS_2_PostFightCutscene)
     }
     release
@@ -848,7 +848,9 @@ text MareepHelp_Text {
 script ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey {
     //pause quest
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_PAUSED_QUEST) 
-    destroyfollower(FALSE)
+    applymovement(RIVAL_OW_ID, Common_Movement_WalkRight)
+    waitmovement(RIVAL_OW_ID)
+    destroyfollower()
 
     return
 }
@@ -862,8 +864,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_WelcomeBack {
     waitbuttonpress
     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
     
-    loadword(0, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact)
-    setfollower(RIVAL_OW_ID, 100, PARTNER_MEADOWS_RIVAL)
+    setfollower(RIVAL_OW_ID, 0x100, ISLANDGAME_MINTY_MEADOWS_2_Rival_Interact, PARTNER_MEADOWS_RIVAL)
     setvar(VAR_MINTY_MEADOWS_STATE, STATE_STARTED_QUEST)
     waitmovement(OBJ_EVENT_ID_PLAYER)
     closemessage
@@ -894,8 +895,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantLeave {
                     call(ISLANDGAME_MINTY_MEADOWS_2_Mark_Audrey)
 
                     applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
-                    applymovement(RIVAL_OW_ID, Common_Movement_WalkRight)
-                    waitmovement(RIVAL_OW_ID)
                     waitmovement(OBJ_EVENT_ID_PLAYER)
                     message(format("Okay... Please come back as soon as you can!"))
                     applymovement(RIVAL_OW_ID, Common_Movement_FaceLeft)
@@ -953,7 +952,7 @@ script ISLANDGAME_MINTY_MEADOWS_2_DrifloonBattle {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    setcwildbattle(0, SPECIES_DRIFLOON, 13)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_DRIFLOON, 13, 0, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0)
     playmoncry(SPECIES_DRIFLOON, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
@@ -985,10 +984,6 @@ script ISLANDGAME_MINTY_MEADOWS_2_CantGoYet {
         waitmovement(OBJ_EVENT_ID_PLAYER)
         closemessage
     }
-}
-
-movement Movement_WalkDown {
-    walk_down
 }
 
 ///TRAINERS

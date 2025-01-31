@@ -15,7 +15,6 @@ jobs:
       GAME_VERSION: EMERALD
       GAME_REVISION: 0
       GAME_LANGUAGE: ENGLISH
-      MODERN: 0
       COMPARE: 0
       UNUSED_ERROR: 1
     steps:
@@ -26,25 +25,18 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y build-essential libpng-dev libelf-dev
-        # build-essential, git, and libpng-dev are already installed
+        # build-essential and git are already installed
         # gcc-arm-none-eabi is only needed for the modern build
         # as an alternative to dkP
 
-      - name: Modern
+      - name: ROM
         env:
-          MODERN: 1
           COMPARE: 0
         run: |
-          make tools
-          ./tools/mapjson/mapjson groups emerald data/maps/map_groups.json
           make -j${nproc} -O all
 
       - name: Test
         env:
-          MODERN: 1
           TEST: 1
         run: |
-          make tools
-          ./tools/mapjson/mapjson groups emerald data/maps/map_groups.json
-          make -j${nproc} -O pokeemerald-test.elf
           make -j${nproc} check

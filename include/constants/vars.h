@@ -117,7 +117,7 @@
 #define VAR_ROUTE102_STATE                               0x4061 // island-game: used for custom terrains
 #define VAR_CAMP_PERSI_STATE                             0x4062 // island-game: used for missingno encounter
 #define VAR_ROUTE104_STATE                               0x4063
-#define VAR_ROUTE105_STATE                               0x4064 // Unused Var
+#define VAR_APPLEVINE_STATE                              0x4064 // island-game: used to track how many coins you've given to the coin girl
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var
 #define VAR_ROUTE107_STATE                               0x4066 // Unused Var
 #define VAR_ROUTE108_STATE                               0x4067 // Unused Var
@@ -264,7 +264,7 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_TEAM_PARTNER                                 0x40F7 // island-game: Used to track a double battle with another trainer's party. Set it to the id of a trainer to use.
+#define VAR_TEAM_PARTNER_UNUSED                          0x40F7 // island-game: Used to track a double battle with another trainer's party. Set it to the id of a trainer to use.
 #define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
 #define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
 #define VAR_UNUSED_0x40FA                                0x40FA // Unused Var

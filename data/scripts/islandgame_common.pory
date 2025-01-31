@@ -42,11 +42,22 @@ script Common_NextSubQuest {
 }
 
 script IslandGame_Common_PokemonCenter_1F_EventScript_Nurse {
-	setvar(VAR_0x800B, LOCALID_NURSE)
-	call(Common_EventScript_PkmnCenterNurse)
-	waitmessage
-	waitbuttonpress
-	release
+    if (!flag(FLAG_PROF_GAVE_EEVEE)) {
+        lock
+        msgbox(format(
+            "Welcome to the Maryan isles, trainer! This is a Pokémon Center.\p"
+            "You don't have any Pokémon right now, but when you do we can heal them."
+        ))
+        closemessage
+        release
+    }
+    else {
+        setvar(VAR_0x800B, LOCALID_NURSE)
+        call(Common_EventScript_PkmnCenterNurse)
+        waitmessage
+        waitbuttonpress
+        release
+    }
 }
 
 
@@ -303,4 +314,50 @@ script ISLANDGAME_PKMNCENTER_2F_MoveRelearner {
         hidemoneybox
         closemessage
         release
+}
+
+script Common_EventScript_OverworldPokemon {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    startwildoverworldencounter
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script Common_EventScript_OverworldPokemon_Level {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    startoverworldencounter(23)
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
 }

@@ -40,6 +40,8 @@ enum
 #define MON_SPRITE_X_OFF -32
 #define MON_SPRITE_Y     104
 
+static const u8 gText_RibbonsF700[] = _("RIBBONS {DYNAMIC 0}");
+
 struct Pokenav_RibbonsSummaryList
 {
     u8 unused1[8];
@@ -878,7 +880,6 @@ static void PrintRibbbonsSummaryMonInfo(struct Pokenav_RibbonsSummaryMenu *menu)
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
     GetMonNicknameLevelGender(gStringVar3, &level, &gender);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar3, 0, 1, TEXT_SKIP_DRAW, NULL);
     switch (gender)
     {
     case MON_MALE:
@@ -891,6 +892,7 @@ static void PrintRibbbonsSummaryMonInfo(struct Pokenav_RibbonsSummaryMenu *menu)
         genderTxt = sGenderlessIconString;
         break;
     }
+    AddTextPrinterParameterized(windowId, GetFontIdToFit(gStringVar3, FONT_NORMAL, 0, 60), gStringVar3, 0, 1, TEXT_SKIP_DRAW, NULL);
 
     txtPtr = StringCopy(gStringVar1, genderTxt);
     *(txtPtr++) = CHAR_SLASH;
@@ -1082,7 +1084,7 @@ enum {
     RIBBONGFX_GIFT_3,
 };
 
-#define TO_PAL_OFFSET(palNum)((palNum) - PALTAG_RIBBON_ICONS_1)
+#define TO_PAL_OFFSET(palNum) ((palNum) - PALTAG_RIBBON_ICONS_1)
 
 struct
 {

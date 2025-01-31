@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_058",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROWLITHE)",
       "x": 8,
       "y": 4,
       "elevation": 0,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEMON_509",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PURRLOIN)",
       "x": 2,
       "y": 2,
       "elevation": 0,

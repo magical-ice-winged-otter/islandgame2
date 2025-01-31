@@ -58,9 +58,9 @@ SS_RAIN_CAFETERIA_NPC2_TALK_7:
 	compare VAR_RESULT, YES
 	goto_if_eq SS_RAIN_CAFETERIA_NPC2_TALK_10
 # 52 "data/maps/SS_RAIN_CAFETERIA/scripts.pory"
-	goto LobsterRoll_End
-# 53 "data/maps/SS_RAIN_CAFETERIA/scripts.pory"
 	hidemoneybox
+# 53 "data/maps/SS_RAIN_CAFETERIA/scripts.pory"
+	goto LobsterRoll_End
 	goto SS_RAIN_CAFETERIA_NPC2_TALK_1
 
 SS_RAIN_CAFETERIA_NPC2_TALK_10:

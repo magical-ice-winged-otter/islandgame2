@@ -5156,7 +5156,7 @@
       "name": "ISLANDGAME_MT_AURORA_2F_3_Layout",
       "width": 25,
       "height": 29,
-      "primary_tileset": "gTileset_islandgame_empty_primary",
+      "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_islandgame_oranna_mt_aurora",
       "border_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_MT_AURORA_2F_3/map.bin"
@@ -5194,8 +5194,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN",
       "name": "ISLANDGAME_BELLEHAVEN_Layout",
-      "width": 32,
-      "height": 42,
+      "width": 40,
+      "height": 43,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_bellehaven",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN/border.bin",
@@ -5216,8 +5216,8 @@
       "name": "ISLANDGAME_BELLE_CATACOMBS_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_islandgame_empty_primary",
-      "secondary_tileset": "gTileset_islandgame_lumine_belle_catacombs",
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
       "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS/map.bin"
     },
@@ -5376,8 +5376,8 @@
       "name": "ISLANDGAME_LUMINE_CAVE_1F_2_Layout",
       "width": 48,
       "height": 40,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_islandgame_cave_1",
       "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_1F_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_1F_2/map.bin"
     },
@@ -5386,8 +5386,8 @@
       "name": "ISLANDGAME_LUMINE_CAVE_B1F_1_Layout",
       "width": 32,
       "height": 52,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_islandgame_cave_1",
       "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B1F_1/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B1F_1/map.bin"
     },
@@ -5396,8 +5396,8 @@
       "name": "ISLANDGAME_LUMINE_CAVE_B2F_Layout",
       "width": 32,
       "height": 30,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_islandgame_cave_1",
       "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B2F/map.bin"
     },
@@ -5406,8 +5406,8 @@
       "name": "ISLANDGAME_LUMINE_CAVE_B1F_2_Layout",
       "width": 48,
       "height": 40,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_islandgame_cave_1",
       "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B1F_2/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_B1F_2/map.bin"
     },
@@ -5416,8 +5416,8 @@
       "name": "ISLANDGAME_LUMINE_CAVE_1F_3_Layout",
       "width": 35,
       "height": 28,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_IslandgameGeneral",
+      "secondary_tileset": "gTileset_islandgame_cave_1",
       "border_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_1F_3/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_LUMINE_CAVE_1F_3/map.bin"
     },
@@ -5645,17 +5645,17 @@
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_1",
       "name": "ISLANDGAME_BELLEHAVEN_HOUSE_1_Layout",
       "width": 11,
-      "height": 10,
-      "primary_tileset": "gTileset_islandgame_kanto_building",
-      "secondary_tileset": "gTileset_Unused1",
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_1/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_1/map.bin"
     },
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_2",
       "name": "ISLANDGAME_BELLEHAVEN_HOUSE_2_Layout",
-      "width": 14,
-      "height": 10,
+      "width": 11,
+      "height": 9,
       "primary_tileset": "gTileset_islandgame_kanto_building",
       "secondary_tileset": "gTileset_Unused1",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_2/border.bin",
@@ -5760,6 +5760,66 @@
       "secondary_tileset": "gTileset_SecretBaseTree",
       "border_filepath": "data/layouts/ISLANDGAME_ANOMALY01_3F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ANOMALY01_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
+      "name": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_Layout",
+      "width": 6,
+      "height": 8,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F",
+      "name": "ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_1F",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_powerplant",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_2F",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_2F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_3F",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_3F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_3F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_4F",
+      "name": "ISLANDGAME_BELLE_CATACOMBS_4F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_islandgame_kanto_building",
+      "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_4F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_4F/map.bin"
     }
   ]
 }

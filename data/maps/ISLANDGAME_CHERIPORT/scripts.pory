@@ -5,10 +5,9 @@ const VAR_CURRENT_HOUR = VAR_0x8000
 mapscripts ISLANDGAME_CHERIPORT_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
 
-        // if (!flag(FLAG_LEFT_SHIP)) {
-        //     setflag(FLAG_LEFT_SHIP)
-        //     setflag(FLAG_ROOM3_ITEM)
-        // }
+        if (!flag(FLAG_LEFT_SS_RAIN)) {
+            setflag(FLAG_LEFT_SS_RAIN)
+        }
 
         if (flag(FLAG_PROF_GAVE_EEVEE)) {
             setvar(VAR_TEMP_1, 1)
@@ -44,13 +43,6 @@ script ISLANDGAME_CHERIPORT_OUTSIDE_EventScript_NightBeachSodaVendor {
 
     if (!var(VAR_RESULT)) {
         msgbox(format("{COLOR DARK_GRAY}Oi, this is PREMIUM soda. If you can't afford it, then beat it!"))
-        goto(NightBeachSodaVendor_End)
-    }
-
-    checkitemspace(ITEM_SODA_POP)
-
-    if (!var(VAR_RESULT)) {
-        msgbox(format("{COLOR DARK_GRAY}Oi, you need to make some space for this PREMIUM soda."))
         goto(NightBeachSodaVendor_End)
     }
 

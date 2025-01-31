@@ -793,6 +793,16 @@
 	trainerbattle TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, \trainer, 0, \lose_text
 	.endm
 
+	@ Starts a double battle with the player against two trainers
+	@ Takes two trainers and defeat text for each
+	.macro trainerbattle_two_trainers trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
+	.byte 0x5c
+	.byte TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO
+	.2byte \trainer_a
+	.4byte \lose_text_a
+	.2byte \trainer_b
+	.4byte \lose_text_b
+	.endm
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by the scripts in trainer_battle.inc, which
 	@ are run by trainerbattle), and blocks script execution until the battle finishes.
@@ -1004,7 +1014,69 @@
 	@ Gives the player a Pokémon of the specified species and level, and allows to customize extra parameters.
 	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_GIVEN_TO_PC, or MON_CANT_GIVE depending on the outcome.
 	.macro givemon species:req, level:req, item, ball, nature, abilityNum, gender, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, ggMaxFactor, teraType
-	callnative ScrCmd_givemon
+	callnative ScrCmd_createmon
+	.byte 0
+	.byte 6	@ PARTY_SIZE - assign to first empty slot
+	.set givemon_flags, 0
+	.2byte \species
+	.2byte \level
+	.ifnb \item; .set givemon_flags, givemon_flags | (1 << 0); .endif
+	.ifnb \ball; .set givemon_flags, givemon_flags | (1 << 1); .endif
+	.ifnb \nature; .set givemon_flags, givemon_flags | (1 << 2); .endif
+	.ifnb \abilityNum; .set givemon_flags, givemon_flags | (1 << 3); .endif
+	.ifnb \gender; .set givemon_flags, givemon_flags | (1 << 4); .endif
+	.ifnb \hpEv; .set givemon_flags, givemon_flags | (1 << 5); .endif
+	.ifnb \atkEv; .set givemon_flags, givemon_flags | (1 << 6); .endif
+	.ifnb \defEv; .set givemon_flags, givemon_flags | (1 << 7); .endif
+	.ifnb \speedEv; .set givemon_flags, givemon_flags | (1 << 8); .endif
+	.ifnb \spAtkEv; .set givemon_flags, givemon_flags | (1 << 9); .endif
+	.ifnb \spDefEv; .set givemon_flags, givemon_flags | (1 << 10); .endif
+	.ifnb \hpIv; .set givemon_flags, givemon_flags | (1 << 11); .endif
+	.ifnb \atkIv; .set givemon_flags, givemon_flags | (1 << 12); .endif
+	.ifnb \defIv; .set givemon_flags, givemon_flags | (1 << 13); .endif
+	.ifnb \speedIv; .set givemon_flags, givemon_flags | (1 << 14); .endif
+	.ifnb \spAtkIv; .set givemon_flags, givemon_flags | (1 << 15); .endif
+	.ifnb \spDefIv; .set givemon_flags, givemon_flags | (1 << 16); .endif
+	.ifnb \move1; .set givemon_flags, givemon_flags | (1 << 17); .endif
+	.ifnb \move2; .set givemon_flags, givemon_flags | (1 << 18); .endif
+	.ifnb \move3; .set givemon_flags, givemon_flags | (1 << 19); .endif
+	.ifnb \move4; .set givemon_flags, givemon_flags | (1 << 20); .endif
+	.ifnb \isShiny; .set givemon_flags, givemon_flags | (1 << 21); .endif
+	.ifnb \ggMaxFactor; .set givemon_flags, givemon_flags | (1 << 22); .endif
+	.ifnb \teraType; .set givemon_flags, givemon_flags | (1 << 23); .endif
+	.4byte givemon_flags
+	.ifnb \item; .2byte \item; .endif
+	.ifnb \ball; .2byte \ball; .endif
+	.ifnb \nature; .2byte \nature; .endif
+	.ifnb \abilityNum; .2byte \abilityNum; .endif
+	.ifnb \gender; .2byte \gender; .endif
+	.ifnb \hpEv; .2byte \hpEv; .endif
+	.ifnb \atkEv; .2byte \atkEv; .endif
+	.ifnb \defEv; .2byte \defEv; .endif
+	.ifnb \speedEv; .2byte \speedEv; .endif
+	.ifnb \spAtkEv; .2byte \spAtkEv; .endif
+	.ifnb \spDefEv; .2byte \spDefEv; .endif
+	.ifnb \hpIv; .2byte \hpIv; .endif
+	.ifnb \atkIv; .2byte \atkIv; .endif
+	.ifnb \defIv; .2byte \defIv; .endif
+	.ifnb \speedIv; .2byte \speedIv; .endif
+	.ifnb \spAtkIv; .2byte \spAtkIv; .endif
+	.ifnb \spDefIv; .2byte \spDefIv; .endif
+	.ifnb \move1; .2byte \move1; .endif
+	.ifnb \move2; .2byte \move2; .endif
+	.ifnb \move3; .2byte \move3; .endif
+	.ifnb \move4; .2byte \move4; .endif
+	.ifnb \isShiny; .2byte \isShiny; .endif
+	.ifnb \ggMaxFactor; .2byte \ggMaxFactor; .endif
+	.ifnb \teraType; .2byte \teraType; .endif
+	.endm
+
+	@ creates a mon for a given party and slot
+	@ otherwise
+	.macro createmon side:req, slot:req, species:req, level:req, item, ball, nature, abilityNum, gender, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, ggMaxFactor, teraType
+	callnative ScrCmd_createmon
+	.byte \side	 @ 0 - player, 1 - opponent
+	.byte \slot	 @ 0-5
 	.set givemon_flags, 0
 	.2byte \species
 	.2byte \level
@@ -1802,7 +1874,7 @@
 	.4byte \text
 	.endm
 
-	@ Equivalent to fadescreen but copies gPlttBufferUnfaded to gPaletteDecompressionBuffer on the fade out
+	@ Equivalent to fadescreen but copies gPlttBufferUnfaded to gDecompressionBuffer on the fade out
 	@ and the reverse on the fade in, in effect saving gPlttBufferUnfaded to restore it.
 	.macro fadescreenswapbuffers mode:req
 	.byte 0xdc
@@ -1857,26 +1929,38 @@
 	.2byte \quantity
 	.endm
 
-	@ NOTE 0xe3 IS OPEN!
-	
-	.macro showdescription
+	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req argv:vararg
+	.byte 0xe3
+	.2byte \left
+	.2byte \top
+	.byte \ignoreBPress
+	.byte \maxBeforeScroll
+	.byte \shouldSort
+	.2byte \initialSelected
+	.byte \callbacks
+	.byte (.Ldynmultichoice_\@_2 - .Ldynmultichoice_\@_1) / 4
+.Ldynmultichoice_\@_1:
+	.4byte \argv
+.Ldynmultichoice_\@_2:
+	.endm
+
+	@ Displays a multichoice box from which the user can choose a selection, and blocks script execution until a selection is made.
+	@ Lists of options are provided in argv.
+	@ If ignoreBPress is set to a non-zero value, then the user will not be allowed to back out of the multichoice with the B button.
+	.macro dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, initialSelected:req, callbacks:req argv:vararg
+	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, FALSE, \initialSelected, \callbacks, \argv
+	.endm
+
+	.macro dynmultipush name:req, id:req
 	.byte 0xe4
+	.4byte \name
+	.2byte \id
 	.endm
 
-	.macro showitemdesc
-	setvar VAR_0x8009, 0
-	showdescription
+	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
+	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
-
-	.macro showberrydesc
-	setvar VAR_0x8009, 1
-	showdescription
-	.endm
-
-	.macro hideitemdesc
-	.byte 0xe5
-	.endm
-
+	
 	.macro questmenu case:req, questId:req
     .byte 0xe6
     .byte \case
@@ -2028,45 +2112,10 @@
     subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
-	
-@ sets an NPC up to follow the player
-	.macro setfollower localId:req, flags:req, party
-	.byte 0xe9
-	.byte \localId
-	.2byte \flags
-	.ifb \party
-        .2byte 0
-    .else
-        .2byte \party
-    .endif
-    .endm
-    
-    @ remove the following NPC (assumes there will only ever be one)
-	@ set remove=FALSE if you don't want to destroy the object.
-    .macro destroyfollower remove=TRUE
-	.byte 0xea
-	.byte \remove
-    .endm
-    
-    @ makes the player and follower face one another
-    .macro facefollower
-	.byte 0xeb
-    .endm
-    
-    @ checks if you have a follower. returns the result to VAR_RESULT
-    .macro checkfollower
-	.byte 0xec
-	.endm
-	
-	@sets the flag AFTER you declare the wildbattle.
-	.macro setwilddoublebattle setDouble:req
-	.byte 0xed
-	.byte \setDouble
-	.endm
 
 	@sets the flag AFTER you declare the wildbattle.
 	.macro setcwildbattle spot:req, species:req, level:req, item, nature, abilityNum, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny
-	.byte 0xee
+	.byte 0xed
 	.byte \spot
 	.2byte \species
 	.byte \level
@@ -2173,40 +2222,71 @@
         .byte \isShiny
     .endif
 	.endm
-	
 
-	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req argv:vararg
-	.byte 0xcb
-	.2byte \left
-	.2byte \top
-	.byte \ignoreBPress
-	.byte \maxBeforeScroll
-	.byte \shouldSort
-	.2byte \initialSelected
-	.byte \callbacks
-	.byte (.Ldynmultichoice_\@_2 - .Ldynmultichoice_\@_1) / 4
-.Ldynmultichoice_\@_1:
-	.4byte \argv
-.Ldynmultichoice_\@_2:
+
+	@ Sets an NPC up to follow the player.
+	@ If you want to specify a battle partner without specifying a custom script, you can set the script parameter to 0.
+    .macro setfollower localId:req, flags:req, script, battlePartner
+	checkfollower
+	goto_if_eq VAR_RESULT, TRUE, 1f
+	ballfollowingmon
+	.ifnb \script
+		.if \script == 0
+			.set setScript, FALSE
+		.else
+			loadword 0, \script
+			.set setScript, TRUE
+		.endif
+	.else
+		.set setScript, FALSE
+	.endif
+    .byte 0xe9
+    .byte \localId
+    .2byte \flags
+	.byte setScript
+	.ifb \battlePartner
+		.set battlePartner, 0
+		.2byte battlePartner
+	.else
+		.2byte \battlePartner
+	.endif
+	updatefollowingmon
+	1:
+    .endm
+    
+    @ Remove the following NPC (assumes there will only ever be one).
+    .macro destroyfollower
+    .byte 0xea
+    .endm
+    
+    @ Makes the player and follower face one another.
+    .macro facefollower
+    .byte 0xeb
+    .endm
+    
+    @ Checks if you have a follower. returns the result to VAR_RESULT.
+    .macro checkfollower
+    .byte 0xec
+    .endm
+
+	@ Updates Pokemon follower.
+	.macro updatefollowingmon
+    .byte 0xee
+    .endm
+
+	@ Returns Pokemon follower to ball.
+	.macro ballfollowingmon
+	.byte 0xef
+	delay 16
 	.endm
 
-	@ Displays a multichoice box from which the user can choose a selection, and blocks script execution until a selection is made.
-	@ Lists of options are provided in argv.
-	@ If ignoreBPress is set to a non-zero value, then the user will not be allowed to back out of the multichoice with the B button.
-	.macro dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, initialSelected:req, callbacks:req argv:vararg
-	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, FALSE, \initialSelected, \callbacks, \argv
+	@ Sets a variable object event to an overworld mon for a wild encounter.
+	.macro setobjectaswildencounter localId:req, encounterType=ENCOUNTER_FIXED
+	.byte 0xf0
+	.2byte \localId
+	.byte \encounterType
+	release
 	.endm
-
-	.macro dynmultipush name:req, id:req
-	.byte 0xcc
-	.4byte \name
-	.2byte \id
-	.endm
-
-	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
-	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
-	.endm
-
 
 @ Supplementary
 
@@ -2418,20 +2498,25 @@
 	special CreateEnemyEventMon
 	.endm
 
+	.macro setdynamicaifunc func:req
+	callnative ScriptSetDynamicAiFunc
+	.4byte \func
+	.endm
+
 	@ Set up a totem boost for the next battle.
 	@ 'battler' is the position of the mon you want to gain a boost. see B_POSITION_xx in include/constants/battle.h.
 	@ The rest of the arguments are the stat change values to each stat.
 	@ For example, giving the first opponent +1 to atk and -2 to speed would be: settotemboost B_POSITION_OPPONENT_LEFT, 1, 0, -2
 	.macro settotemboost battler:req, atk=0,def=0,speed=0,spatk=0,spdef=0,acc=0,evas=0
-	setvar VAR_0x8000, \battler
-	setvar VAR_0x8001, \atk
-	setvar VAR_0x8002, \def
-	setvar VAR_0x8003, \speed
-	setvar VAR_0x8004, \spatk
-	setvar VAR_0x8005, \spdef
-	setvar VAR_0x8006, \acc
-	setvar VAR_0x8007, \evas
-	special SetTotemBoost
+	callnative ScriptSetTotemBoost
+	.2byte \battler
+	.2byte \atk
+	.2byte \def
+	.2byte \speed
+	.2byte \spatk
+	.2byte \spdef
+	.2byte \acc
+	.2byte \evas
 	.endm
 
 	@ useful totem boost macros
@@ -2490,7 +2575,7 @@
 	setvar VAR_0x8002, \tryMultiple
 	special TrySpecialOverworldEvo
 	.endm
-	
+
 	.macro ai_vs_ai_battle trainer1:req, trainer2:req
 	setflag B_FLAG_AI_VS_AI_BATTLE
 	setvar VAR_0x8004, \trainer1
@@ -2511,7 +2596,7 @@
     @ When parameter is empty, it assumes VIAL_SIZE.
     @ When amount is empty, it assumes 1.
 	.macro pokevial mode:req, parameter=VIAL_SIZE, amount=1
-	.byte 0xe3
+	.byte 0xe5
     .byte \mode
     .byte \parameter
     .byte \amount
@@ -2630,4 +2715,203 @@
 	callnative Script_SetStatus1
 	.2byte \status1
 	.2byte \slot
+	.endm
+
+	@ Sets VAR_RESULT to the Pokémon in \slot's Tera Type
+	.macro checkteratype slot:req
+	callnative CheckTeraType
+	.2byte \slot
+	.endm
+
+	@ Sets the Pokémon in \slot's Tera Type
+	.macro setteratype type:req, slot:req
+	callnative SetTeraType
+	.byte \type
+	.2byte \slot
+	.endm
+
+	@ Saves species and forms of Daycare Pokémon to specific vars. Saves the amount of Daycare mon to VAR_RESULT.
+	.macro getdaycaregfx varSpecies1:req varSpecies2:req varForm1:req varForm2:req
+	callnative GetDaycareGraphics
+	.2byte \varSpecies1
+	.2byte \varSpecies2
+	.2byte \varForm1
+	.2byte \varForm2
+	.endm
+
+	@ Plays the cry of the first alive party member.
+	.macro playfirstmoncry
+	callnative PlayFirstMonCry
+	.endm
+
+	@ Buffers the nickname of the first alive party member.
+	.macro bufferlivemonnickname out:req
+	callnative BufferFirstLiveMonNickname
+	.byte \out
+	.endm
+
+	@ Executes Follower actions
+	.macro getfolloweraction
+	callnative GetFollowerAction
+	.endm
+
+	@ Checks if Field move is being used by the current follower.
+	.macro isfollowerfieldmoveuser var:req
+	callnative IsFollowerFieldMoveUser
+	.2byte \var
+	.endm
+
+	@ Saves the direction from where source object event would need to turn to to face the target into the specified var.
+	.macro getdirectiontoface var:req, sourceId:req, targetId:req
+	callnative GetDirectionToFaceScript
+	.2byte \var
+	.byte \sourceId
+	.byte \targetId
+	.endm
+
+	@ set the wild double battle flag
+	@ can be used in conjunection with createmon to set up a wild battle with 2 player mons vs. 1 enemy mon
+	.macro setwilddoubleflag
+	callnative ScriptSetDoubleBattleFlag
+	.endm
+
+	@ When OW_USE_FAKE_RTC and OW_FLAG_PAUSE_TIME is assigned, this macro will stop the flow of time.
+	.macro pausefakertc
+	callnative Script_PauseFakeRtc
+	.endm
+
+	@ When OW_USE_FAKE_RTC and OW_FLAG_PAUSE_TIME is assigned, this macro will resume the flow of time.
+	.macro resumefakertc
+	callnative Script_ResumeFakeRtc
+	.endm
+
+	@ When OW_USE_FAKE_RTC and OW_FLAG_PAUSE_TIME is assigned, this macro will resume the flow of time if paused, and stop the flow of time otherwise.
+	.macro togglefakertc
+	callnative Script_ToggleFakeRtc
+	.endm
+
+	@ Begins a wild battle against an overworld mon object event with a defined level.
+	.macro startoverworldencounter level=req
+	callnative GetOverworldMonSpecies
+	playmoncry VAR_0x8004, CRY_MODE_ENCOUNTER
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, VAR_0x8004, \level, isShiny=VAR_0x8005
+	waitmoncry
+	dowildbattle
+	.endm
+
+	@ Begins a wild battle against an overworld mon object event with an automatic level.
+	.macro startwildoverworldencounter
+	callnative GetOverworldMonSpecies
+	playmoncry VAR_0x8004, CRY_MODE_ENCOUNTER
+	callnative GenerateOverworldWildMon
+	waitmoncry
+	dowildbattle
+	.endm
+
+	@ ============================ @
+	@ ITEM DESCRIPTION HEADER MACROS
+	@ Used with OW_SHOW_ITEM_DESCRIPTIONS config
+	.macro showitemdescription
+	callnative ScriptShowItemDescription
+	.byte 0
+	.endm
+
+	.macro showberrydescription
+	callnative ScriptShowItemDescription
+	.byte 1
+	.endm
+
+	.macro hideitemdescription
+	callnative ScriptHideItemDescription
+	.endm
+
+	@ Remove all of specified item from the player's bag and return the number of removed items to VAR_RESULT
+	.macro removeallitem itemId:req
+	callnative ScrCmd_removeallitem
+	.2byte \itemId
+	.endm
+
+	@ Stores the position of the given object in destX and destY. Mode CURRENT_POSITION will take the object's current position. Mode TEMPLATE_POSITION will take the object's template position.
+	.macro getobjectxy localId:req, posType:req, destX:req, destY:req
+	callnative ScrCmd_getobjectxy
+	.2byte \localId
+	.2byte \posType
+	.2byte \destX
+	.2byte \destY
+	.endm
+
+	.macro getobjecttemplatexy localId:req, posType = TEMPLATE_POSITION, destX:req, destY:req
+	callnative ScrCmd_getobjectxy
+	.2byte \localId
+	.2byte \posType
+	.2byte \destX
+	.2byte \destY
+	.endm
+
+	.macro getobjectcurrentxy localId:req, posType = CURRENT_POSITION, destX:req, destY:req
+	callnative ScrCmd_getobjectxy
+	.2byte \localId
+	.2byte \posType
+	.2byte \destX
+	.2byte \destY
+	.endm
+
+	@ Return TRUE to dest if there is an object at the position x and y.
+	.macro checkobjectat x:req, y:req, dest = VAR_RESULT
+	callnative ScrCmd_checkobjectat
+	.2byte \x
+	.2byte \y
+	.2byte \dest
+	.endm
+
+	@ Returns the state of the Pokedex Seen Flag to VAR_RESULT for the Pokemon with speciesId
+	.macro getseenmon species:req
+	callnative Scrcmd_getsetpokedexflag
+	.2byte \species
+	.2byte FLAG_GET_SEEN
+	.endm
+
+	@ Returns the state of the Pokedex Caught Flag to VAR_RESULT for the Pokemon with speciesId
+	.macro getcaughtmon species:req
+	callnative Scrcmd_getsetpokedexflag
+	.2byte \species
+	.2byte FLAG_GET_CAUGHT
+	.endm
+
+	@ Sets the Pokedex Seen Flag for the Pokemon with speciesId
+	.macro setseenmon species:req
+	callnative Scrcmd_getsetpokedexflag
+	.2byte \species
+	.2byte FLAG_SET_SEEN
+	.endm
+
+	@ Sets the Pokedex Caught Flag for the Pokemon with speciesId
+	.macro setcaughtmon species:req
+	callnative Scrcmd_getsetpokedexflag
+	.2byte \species
+	.2byte FLAG_SET_CAUGHT
+	.endm
+
+	@ Check if the Player has speciesId in their party. OPEN_PARTY_SCREEN will have the player select a mon from their party. NO_PARTY_SCREEN will automatically check every mon in the player's party.
+	.macro checkspecies speciesId:req, mode=NO_PARTY_SCREEN
+	.if \mode == OPEN_PARTY_SCREEN
+		special ChoosePartyMon
+		waitstate
+		callnative Scrcmd_checkspecies_choose
+		.2byte \speciesId
+	.else
+		callnative Scrcmd_checkspecies
+		.2byte \speciesId
+	.endif
+	.endm
+
+	.macro checkspecies_choose speciesId:req
+	checkspecies \speciesId, OPEN_PARTY_SCREEN
+	.endm
+
+	@ Gets the facing direction of a given event object and stores it in the variable dest.
+	.macro getobjectfacingdirection localId:req, dest:req
+	callnative Scrcmd_getobjectfacingdirection
+	.2byte \localId
+	.2byte \dest
 	.endm

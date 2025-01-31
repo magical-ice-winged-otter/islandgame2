@@ -5,6 +5,12 @@
 #include "text.h"
 #include "window.h"
 
+#define DLG_WINDOW_PALETTE_NUM 15
+#define DLG_WINDOW_BASE_TILE_NUM 0x200
+#define STD_WINDOW_PALETTE_NUM 14
+#define STD_WINDOW_PALETTE_SIZE PLTT_SIZEOF(10)
+#define STD_WINDOW_BASE_TILE_NUM 0x214
+
 #define MENU_NOTHING_CHOSEN -2
 #define MENU_B_PRESSED -1
 
@@ -82,7 +88,6 @@ s8 ProcessMenuInput_other(void);
 void DoScheduledBgTilemapCopiesToVram(void);
 void ClearScheduledBgCopiesToVram(void);
 void AddTextPrinterParameterized4(u8 windowId, u8 fontId, u8 x, u8 y, u8 letterSpacing, u8 lineSpacing, const u8 *color, s8 speed, const u8 *str);
-void AddTextPrinterParameterized4Signed(u8 windowId, u8 fontId, u8 x, s8 y, u8 letterSpacing, u8 lineSpacing, const u8 *color, s8 speed, const u8 *str);
 void DrawDialogFrameWithCustomTileAndPalette(u8 windowId, bool8 copyToVram, u16 tileNum, u8 paletteNum);
 void PrintMenuActionTextsInUpperLeftCorner(u8 windowId, u8 optionsNo, const struct MenuAction *actions, const u8 *actionIds);
 void ClearDialogWindowAndFrameToTransparent(u8 windowId, bool8 copyToVram);
@@ -105,9 +110,9 @@ void AddTextPrinterForMessage_2(bool8 allowSkippingDelayWithButtonPress);
 void RemoveStartMenuWindow(void);
 void DisplayYesNoMenuWithDefault(u8 initialCursorPos);
 void BufferSaveMenuText(u8 textId, u8 *dest, u8 color);
-void RemovePrimaryPopUpWindow(void);
-u8 GetPrimaryPopUpWindowId(void);
-u8 AddPrimaryPopUpWindow(void);
+void RemoveMapNamePopUpWindow(void);
+u8 GetMapNamePopUpWindowId(void);
+u8 AddMapNamePopUpWindow(void);
 u16 AddWindowParameterized(u8, u8, u8, u8, u8, u8, u16);
 void AddTextPrinterParameterized5(u8 windowId, u8 fontId, const u8 *str, u8 left, u8 top, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 letterSpacing, u8 lineSpacing);
 void SetBgTilemapPalette(u8 bgId, u8 left, u8 top, u8 width, u8 height, u8 palette);

@@ -1,6 +1,5 @@
 const FLAG_HIDE_THIEF = FLAG_TEMP_1
 
-
 const LOCALID_ARTICUNO = 2
 const LOCALID_THIEF = 3
 const LOCALID_AZURILL = 4
@@ -105,8 +104,10 @@ script ISLANDGAME_MT_AURORA_2F_3_EdeaInteract {
 }
 
 movement Movement_AzurillOutOfWay {
-    walk_faster_left
     face_right
+    lock_facing_direction
+    walk_left
+    unlock_facing_direction
 }
 
 movement Movement_ThiefRunAway {
@@ -120,6 +121,15 @@ movement Movement_AzurillHappy {
     walk_fast_right
     walk_fast_down * 2
     face_right
+}
+
+movement Movement_ArticunoDescend {
+	walk_slow_down * 4
+}
+
+movement Movement_ArticunoAscend {
+    lock_facing_direction
+	walk_slow_up * 4
 }
 
 script(local) ThiefDefeated {
@@ -159,9 +169,10 @@ script(local) ThiefDefeated {
     // articuno swoops down
     fadescreen(FADE_TO_WHITE)
     addobject(LOCALID_ARTICUNO)
-    setobjectxy(LOCALID_ARTICUNO, 12, 11)
+    setobjectxy(LOCALID_ARTICUNO, 12, 9)
     fadescreen(FADE_FROM_WHITE)
-    delay(30)
+    applymovement(LOCALID_ARTICUNO, Movement_ArticunoDescend)
+    waitmovement(0)
 
     // articuno scares thief and they run
     playmoncry(SPECIES_ARTICUNO, CRY_MODE_NORMAL)
@@ -216,6 +227,8 @@ script(local) ThiefDefeated {
 
     // articuno leaves
     delay(30)
+    applymovement(LOCALID_ARTICUNO, Movement_ArticunoAscend)
+    waitmovement(0)
     fadescreen(FADE_TO_WHITE)
     removeobject(LOCALID_ARTICUNO)
     fadescreen(FADE_FROM_WHITE)

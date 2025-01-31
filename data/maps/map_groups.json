@@ -175,7 +175,13 @@
     "ISLANDGAME_BELLEHAVEN_PKMNCENTER",
     "ISLANDGAME_BELLEHAVEN_PKMNMART",
     "ISLANDGAME_LUMINE_CAVE_B3F",
-    "ISLANDGAME_LUMINE_CAVE_B4F"
+    "ISLANDGAME_LUMINE_CAVE_B4F",
+    "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
+    "ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F",
+    "ISLANDGAME_BELLE_CATACOMBS_1F",
+    "ISLANDGAME_BELLE_CATACOMBS_2F",
+    "ISLANDGAME_BELLE_CATACOMBS_3F",
+    "ISLANDGAME_BELLE_CATACOMBS_4F"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -741,8 +747,8 @@
     "Route110_TrickHousePuzzle6",
     "Route110_TrickHousePuzzle7",
     "Route110_TrickHousePuzzle8",
-    "Route110_SeasideCyclingRoadNorthEntrance",
-    "Route110_SeasideCyclingRoadSouthEntrance"
+    "Route110_SeasideCyclingRoadSouthEntrance",
+    "Route110_SeasideCyclingRoadNorthEntrance"
   ],
   "gMapGroup_IndoorRoute113": [
     "Route113_GlassWorkshop"

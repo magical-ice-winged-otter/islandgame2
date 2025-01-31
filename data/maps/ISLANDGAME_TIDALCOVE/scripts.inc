@@ -315,6 +315,8 @@ ISLANDGAME_TIDALCOVE_Interact_Squirtle_1:
 # 251 "data/maps/ISLANDGAME_TIDALCOVE/scripts.pory"
 SquirtleGiftEvent_End:
 # 252 "data/maps/ISLANDGAME_TIDALCOVE/scripts.pory"
+	waitmoncry
+# 253 "data/maps/ISLANDGAME_TIDALCOVE/scripts.pory"
 	release
 	return
 

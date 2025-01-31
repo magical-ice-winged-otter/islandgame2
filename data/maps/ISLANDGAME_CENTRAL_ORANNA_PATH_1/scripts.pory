@@ -9,7 +9,7 @@ const LOCALID_PKMN2 = 15
 const LOCALID_PKMN3 = 16
 
 const POS_HIDDEN_X = 0
-const POS_HIDDEN_Y = 0
+const POS_HIDDEN_Y = 55
 
 const VAR_MIGHTYENA_HIDDEN = VAR_TEMP_0
 
@@ -21,13 +21,13 @@ mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts {
                 setobjectxyperm(LOCALID_MIGHTYENA_1, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_MIGHTYENA_2, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_MIGHTYENA_3, POS_HIDDEN_X, POS_HIDDEN_Y)
-                setobjectxyperm(LOCALID_ENTRANCE_RANGER_1, 37, 27)
+                setobjectxyperm(LOCALID_ENTRANCE_RANGER_1, 41, 38)
                 setobjectxyperm(LOCALID_ENTRANCE_RANGER_3, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_ENTRANCE_RANGER_2, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_PKMN1, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_PKMN2, POS_HIDDEN_X, POS_HIDDEN_Y)
                 setobjectxyperm(LOCALID_PKMN3, POS_HIDDEN_X, POS_HIDDEN_Y)
-                setobjectmovementtype(LOCALID_ENTRANCE_RANGER_1, MOVEMENT_TYPE_FACE_DOWN)
+                setobjectmovementtype(LOCALID_ENTRANCE_RANGER_1, MOVEMENT_TYPE_FACE_RIGHT)
         }
     }
 }
@@ -87,7 +87,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC3 {
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Battle_NPC4 {
     trainerbattle_single(TRAINER_CORANNA_1_NPC4,
-        format("Argh! Not again! Why do these Abra keep teleporting away!?\pTime to take my frustration on you!"),
+        format("Argh! Not again! Why do these damn Ralts keep teleporting away!?\pTime to take my frustration on you!"),
         "Mrgrgrgr..."
     )
     msgbox(format("I'm sorry. It was rude of me to subject you to my anger."), MSGBOX_NPC)

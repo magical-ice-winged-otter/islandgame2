@@ -79,11 +79,11 @@ void Test_ExitWithResult(enum TestResult, u32 stopLine, const char *fmt, ...);
 u32 SourceLine(u32 sourceLineOffset);
 u32 SourceLineOffset(u32 sourceLine);
 
-s32 MgbaPrintf_(const char *fmt, ...);
+s32 Test_MgbaPrintf(const char *fmt, ...);
 
 #define TEST(_name) \
     static void CAT(Test, __LINE__)(void); \
-    __attribute__((section(".tests"))) static const struct Test CAT(sTest, __LINE__) = \
+    __attribute__((section(".tests"), used)) static const struct Test CAT(sTest, __LINE__) = \
     { \
         .name = _name, \
         .filename = __FILE__, \
@@ -95,7 +95,7 @@ s32 MgbaPrintf_(const char *fmt, ...);
 
 #define ASSUMPTIONS \
     static void Assumptions(void); \
-    __attribute__((section(".tests"))) static const struct Test sAssumptions = \
+    __attribute__((section(".tests"), used)) static const struct Test sAssumptions = \
     { \
         .name = "ASSUMPTIONS: " __FILE__, \
         .filename = __FILE__, \
@@ -199,7 +199,7 @@ static inline struct Benchmark BenchmarkStop(void)
     do \
     { \
         u32 a_ = (a).ticks; u32 b_ = (b).ticks; \
-        MgbaPrintf_(#a ": %d ticks, " #b ": %d ticks", a_, b_); \
+        Test_MgbaPrintf(#a ": %d ticks, " #b ": %d ticks", a_, b_); \
         if (((a_ - BENCHMARK_ABS) * BENCHMARK_REL) >= (b_ * 100)) \
             Test_ExitWithResult(TEST_RESULT_FAIL, __LINE__, ":L%s:%d: EXPECT_FASTER(" #a ", " #b ") failed", gTestRunnerState.test->filename, __LINE__); \
     } while (0)
@@ -208,7 +208,7 @@ static inline struct Benchmark BenchmarkStop(void)
     do \
     { \
         u32 a_ = (a).ticks; u32 b_ = (b).ticks; \
-        MgbaPrintf_(#a ": %d ticks, " #b ": %d ticks", a_, b_); \
+        Test_MgbaPrintf(#a ": %d ticks, " #b ": %d ticks", a_, b_); \
         if ((a_ * 100) <= ((b_ - BENCHMARK_ABS) * BENCHMARK_REL)) \
             Test_ExitWithResult(TEST_RESULT_FAIL, __LINE__, ":L%s:%d: EXPECT_SLOWER(" #a ", " #b ") failed", gTestRunnerState.test->filename, __LINE__); \
     } while (0)
@@ -220,6 +220,8 @@ static inline struct Benchmark BenchmarkStop(void)
     Test_ExpectLeaks(TRUE)
 
 #define PARAMETRIZE if (gFunctionTestRunnerState->parameters++ == gFunctionTestRunnerState->runParameter)
+
+#define PARAMETRIZE_LABEL(f, label) if (gFunctionTestRunnerState->parameters++ == gFunctionTestRunnerState->runParameter && (Test_MgbaPrintf(":N%s: " f " (%d/%d)", gTestRunnerState.test->name, label, gFunctionTestRunnerState->runParameter + 1, gFunctionTestRunnerState->parameters), 1))
 
 #define TO_DO \
     do { \

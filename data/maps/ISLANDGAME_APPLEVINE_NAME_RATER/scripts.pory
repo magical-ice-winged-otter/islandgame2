@@ -8,20 +8,30 @@ mapscripts ISLANDGAME_APPLEVINE_NAME_RATER_MapScripts {
 
 
 script ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC {
-    msgbox(format(
-        "{COLOR RED}(It's Coco's gaming setup. This looks like it cost a lot of money.)"
-    ), MSGBOX_SIGN)
+    // msgbox(format(
+    //     "> SET BATTLE SPEED:"
+    // ))
+    // dynmultipush("Default", OPTIONS_BATTLE_SCENE_DISABLED)
+    // dynmultipush("1x", OPTIONS_BATTLE_SCENE_1X)
+    // dynmultipush("2x", OPTIONS_BATTLE_SCENE_2X)
+    // dynmultipush("3x", OPTIONS_BATTLE_SCENE_3X)
+    // dynmultipush("4x", OPTIONS_BATTLE_SCENE_4X)
+    // dynmultistack(0, 0, TRUE, 5, FALSE, NO, DYN_MULTICHOICE_CB_NONE)
+    // if (var(VAR_BATTLE_SPEED) != VAR_RESULT) {
+    //     copyvar(VAR_BATTLE_SPEED, VAR_RESULT)
+    //     playmoncry(SPECIES_MAGNEZONE, CRY_MODE_HIGH_PITCH)
+    //     msgbox(format(
+    //         "> SPEED SET!"
+    //     ))
+    // }
+
+    // return
 }
 
-script ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC2 {
-    msgbox(format(
-        "{COLOR RED}(Wow, there are like, fifty tabs open on this computer.)"
-    ), MSGBOX_SIGN)
-}
 
-script ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPC3 {
+script ISLANDGAME_APPLEVINE_COCOS_HOUSE_InspectPCCase {
     msgbox(format(
-        "{COLOR RED}(It's a really fancy PC see-through tower case with RGB lights.)"
+        "{COLOR RED}(It's Coco's fancy new PC. It's big enough to fit her Pikachu inside.)"
     ), MSGBOX_SIGN)
 }
 
@@ -37,7 +47,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         if (var(VAR_RESULT) < 20) {
             msgbox(format(
-                "{COLOR GREEN}> You asked if Subaru is a duck."
+                "> You asked if Subaru is a duck."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -47,7 +57,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         elif (var(VAR_RESULT) < 40) {
             msgbox(format(
-                "{COLOR GREEN}> You asked Subaru about STARLIGHT."
+                "> You asked Subaru about STARLIGHT."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -60,7 +70,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         elif (var(VAR_RESULT) < 60) {
             msgbox(format(
-                "{COLOR GREEN}> You asked Subaru about Ruka."
+                "> You asked Subaru about Ruka."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -73,7 +83,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         elif (var(VAR_RESULT) < 80) {
             msgbox(format(
-                "{COLOR GREEN}> You asked Subaru to tell you a joke."
+                "> You asked Subaru to tell you a joke."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -85,7 +95,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
 
         else {
             msgbox(format(
-                "{COLOR GREEN}> You asked Subaru for trainer tips."
+                "> You asked Subaru for trainer tips."
             ))
             playmoncry(SPECIES_PORYGON2, CRY_MODE_NORMAL)
             msgbox(format(
@@ -105,7 +115,7 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_PikachuInteract {
     faceplayer
     msgbox(format(
         "Pika Pika! {COLOR BLUE}(I'm helping my trainer build a new PC!)\p"
-        "{COLOR DARK_GRAY}Pika Pi... {COLOR BLUE}(I could really use some help. I have no idea where anything goes.)"
+        "{COLOR DARK_GRAY}Pika Pi... {COLOR BLUE}(I could really use some help. The motherboard keeps shocking me.)"
     ))
     applymovement(2, Common_Movement_FaceLeft)
     closemessage
