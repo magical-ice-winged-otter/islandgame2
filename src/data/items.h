@@ -11237,8 +11237,8 @@ const struct Item gItemsInfo[] =
         .price = 3000,
         .description = COMPOUND_STRING(
             "Foe cannot escape\n"
-            "and takes damage for\n"
-            "4-5 turns."), 
+            "and takes damage\n"
+            "for 4-5 turns."), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
