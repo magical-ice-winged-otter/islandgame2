@@ -26796,12 +26796,29 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
     const u8 gMonIcon_PurrloinMaryan[] = INCBIN_U8("graphics/pokemon/maryan_purrloin/icon.4bpp");
     const u8 gMonFootprint_PurrloinMaryan[] = INCBIN_U8("graphics/pokemon/maryan_purrloin/footprint.1bpp");
 
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_PurrloinMaryan[] = INCBIN_COMP("graphics/pokemon/maryan_purrloin/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_PurrloinMaryan[] = INCBIN_U32("graphics/pokemon/maryan_purrloin/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_PurrloinMaryan[] = INCBIN_U32("graphics/pokemon/maryan_purrloin/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
     const u32 gMonFrontPic_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/anim_front.4bpp.lz");
     const u32 gMonPalette_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/normal.gbapal.lz");
     const u32 gMonBackPic_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/back.4bpp.lz");
     const u32 gMonShinyPalette_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/shiny.gbapal.lz");
     const u8 gMonIcon_LiepardMaryan[] = INCBIN_U8("graphics/pokemon/maryan_liepard/icon.4bpp");
     const u8 gMonFootprint_LiepardMaryan[] = INCBIN_U8("graphics/pokemon/maryan_liepard/footprint.1bpp");
+
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_LiepardMaryan[] = INCBIN_COMP("graphics/pokemon/maryan_liepard/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_LiepardMaryan[] = INCBIN_U32("graphics/pokemon/maryan_liepard/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
 #endif //P_FAMILY_PURRLOIN_MARYAN
 
 #if P_FAMILY_NINCADA_MARYAN
@@ -26871,6 +26888,53 @@ const u32 gMonBackPic_Anomaly[] = INCBIN_U32("graphics/pokemon/maryan_anomalies/
 const u32 gMonPalette_Anomaly[] = INCBIN_U32("graphics/pokemon/maryan_anomalies/normal.gbapal.lz");
 const u32 gMonShinyPalette_Anomaly[] = INCBIN_U32("graphics/pokemon/maryan_anomalies/shiny.gbapal.lz");
 #endif //P_FAMILY_ANOMALY01
+
+#if P_FAMILY_SHELLOS_MARYAN
+    const u32 gMonFrontPic_ShellosMaryan[] = INCBIN_U32("graphics/pokemon/maryan_shellos/anim_front.4bpp.lz");
+    const u32 gMonPalette_ShellosMaryan[] = INCBIN_U32("graphics/pokemon/maryan_shellos/normal.gbapal.lz");
+    const u32 gMonBackPic_ShellosMaryan[] = INCBIN_U32("graphics/pokemon/maryan_shellos/back.4bpp.lz");
+    const u32 gMonShinyPalette_ShellosMaryan[] = INCBIN_U32("graphics/pokemon/maryan_shellos/shiny.gbapal.lz");
+    const u8 gMonIcon_ShellosMaryan[] = INCBIN_U8("graphics/pokemon/maryan_shellos/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_ShellosMaryan[] = INCBIN_U8("graphics/pokemon/maryan_shellos/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+// #if OW_POKEMON_OBJECT_EVENTS
+//     const u32 gObjectEventPic_ShellosWestSea[] = INCBIN_COMP("graphics/pokemon/shellos/overworld.4bpp");
+//     const u32 gObjectEventPic_ShellosEast[] = INCBIN_COMP("graphics/pokemon/shellos/east/overworld.4bpp");
+// #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+//     const u32 gOverworldPalette_ShellosWestSea[] = INCBIN_U32("graphics/pokemon/shellos/overworld_normal.gbapal.lz");
+//     const u32 gOverworldPalette_ShellosEast[] = INCBIN_U32("graphics/pokemon/shellos/east/overworld_normal.gbapal.lz");
+//     const u32 gShinyOverworldPalette_ShellosWestSea[] = INCBIN_U32("graphics/pokemon/shellos/overworld_shiny.gbapal.lz");
+//     const u32 gShinyOverworldPalette_ShellosEast[] = INCBIN_U32("graphics/pokemon/shellos/east/overworld_shiny.gbapal.lz");
+// #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+// #endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_GastrodonMaryan[] = INCBIN_U32("graphics/pokemon/maryan_gastrodon/anim_front.4bpp.lz");
+    const u32 gMonPalette_GastrodonMaryan[] = INCBIN_U32("graphics/pokemon/maryan_gastrodon/normal.gbapal.lz");
+    const u32 gMonBackPic_GastrodonMaryan[] = INCBIN_U32("graphics/pokemon/maryan_gastrodon/back.4bpp.lz");
+    const u32 gMonShinyPalette_GastrodonMaryan[] = INCBIN_U32("graphics/pokemon/maryan_gastrodon/shiny.gbapal.lz");
+    const u8 gMonIcon_GastrodonMaryan[] = INCBIN_U8("graphics/pokemon/maryan_gastrodon/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_GastrodonMaryan[] = INCBIN_U8("graphics/pokemon/maryan_gastrodon/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+//     const u32 gMonFrontPic_GastrodonEast[] = INCBIN_U32("graphics/pokemon/gastrodon/east/anim_front.4bpp.lz");
+//     const u32 gMonPalette_GastrodonEast[] = INCBIN_U32("graphics/pokemon/gastrodon/east/normal.gbapal.lz");
+//     const u32 gMonBackPic_GastrodonEast[] = INCBIN_U32("graphics/pokemon/gastrodon/east/back.4bpp.lz");
+//     const u32 gMonShinyPalette_GastrodonEast[] = INCBIN_U32("graphics/pokemon/gastrodon/east/shiny.gbapal.lz");
+//     const u8 gMonIcon_GastrodonEast[] = INCBIN_U8("graphics/pokemon/gastrodon/east/icon.4bpp");
+// #if OW_POKEMON_OBJECT_EVENTS
+//     const u32 gObjectEventPic_GastrodonWestSea[] = INCBIN_COMP("graphics/pokemon/gastrodon/overworld.4bpp");
+//     const u32 gObjectEventPic_GastrodonEast[] = INCBIN_COMP("graphics/pokemon/gastrodon/east/overworld.4bpp");
+// #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+//     const u32 gOverworldPalette_GastrodonWestSea[] = INCBIN_U32("graphics/pokemon/gastrodon/overworld_normal.gbapal.lz");
+//     const u32 gOverworldPalette_GastrodonEast[] = INCBIN_U32("graphics/pokemon/gastrodon/east/overworld_normal.gbapal.lz");
+//     const u32 gShinyOverworldPalette_GastrodonWestSea[] = INCBIN_U32("graphics/pokemon/gastrodon/overworld_shiny.gbapal.lz");
+//     const u32 gShinyOverworldPalette_GastrodonEast[] = INCBIN_U32("graphics/pokemon/gastrodon/east/overworld_shiny.gbapal.lz");
+// #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+// #endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_FAMILY_SHELLOS
 
 
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");

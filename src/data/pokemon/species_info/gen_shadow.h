@@ -406,8 +406,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .palette = gMonPalette_PurrloinMaryan,
         .shinyPalette = gMonShinyPalette_PurrloinMaryan,
         .iconSprite = gMonIcon_PurrloinMaryan,
-        .iconPalIndex = 0,
+        .iconPalIndex = 2,
+        SHADOW(0, 2, SHADOW_SIZE_S)
         FOOTPRINT(Purrloin)
+        OVERWORLD(
+            sPicTable_PurrloinMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_PurrloinMaryan,
+            gShinyOverworldPalette_PurrloinMaryan
+        )
         .levelUpLearnset = sPurrloinMaryanLevelUpLearnset,
         .teachableLearnset = sPurrloinMaryanTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_LIEPARD_MARYAN}),
@@ -459,8 +468,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .palette = gMonPalette_LiepardMaryan,
         .shinyPalette = gMonShinyPalette_LiepardMaryan,
         .iconSprite = gMonIcon_LiepardMaryan,
-        .iconPalIndex = 0,
+        .iconPalIndex = 2,
+        SHADOW(-1, 11, SHADOW_SIZE_M)
         FOOTPRINT(Liepard)
+        OVERWORLD(
+            sPicTable_LiepardMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_LiepardMaryan,
+            gShinyOverworldPalette_LiepardMaryan
+        )
         .levelUpLearnset = sLiepardMaryanLevelUpLearnset,
         .teachableLearnset = sLiepardMaryanTeachableLearnset,
     },
@@ -860,6 +878,135 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
     },
 #endif //P_FAMILY_ANOMALY01
+
+
+#if P_FAMILY_SHELLOS_MARYAN
+    [SPECIES_SHELLOS_MARYAN] =
+    {
+        .baseHP        = 76,
+        .baseAttack    = 48,
+        .baseDefense   = 48,
+        .baseSpeed     = 34,
+        .baseSpAttack  = 57,
+        .baseSpDefense = 62,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 190,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 65 : 73,
+        .evYield_HP = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_RAIN_DISH, ABILITY_STORM_DRAIN, ABILITY_SAP_SIPPER },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Shellos"),
+        .cryId = CRY_SHELLOS,
+        .natDexNum = NATIONAL_DEX_SHELLOS_MARYAN,
+        .categoryName = _("Sea Slug"),
+        .height = 3,
+        .weight = 63,
+        .description = COMPOUND_STRING(
+            "It used to have a shell on its back long ago.\n"
+            "This species is closely related to Shellder.\n"
+            "Unlike West and East Sea, South Sea Shellos\n"
+            "dwell in caves rather than on seashores."),
+        .pokemonScale = 530,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_ShellosMaryan,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 13,
+        .frontAnimFrames = sAnims_ShellosMaryan,
+        .frontAnimId = ANIM_V_STRETCH,
+        .backPic = gMonBackPic_ShellosMaryan,
+        .backPicSize = MON_COORDS_SIZE(40, 56),
+        .backPicYOffset = 8,
+        .backAnimId = BACK_ANIM_H_SPRING,
+        .palette = gMonPalette_ShellosMaryan,
+        .shinyPalette = gMonShinyPalette_ShellosMaryan,
+        .iconSprite = gMonIcon_ShellosMaryan,
+        .iconPalIndex = 0,
+        // SHADOW(1, 0, SHADOW_SIZE_S)
+        FOOTPRINT(ShellosMaryan)
+        // OVERWORLD(
+        //     sPicTable_ShellosWestSea,
+        //     SIZE_32x32,
+        //     SHADOW_SIZE_M,
+        //     TRACKS_FOOT,
+        //     gOverworldPalette_ShellosWestSea,
+        //     gShinyOverworldPalette_ShellosWestSea
+        // )
+        .levelUpLearnset = sShellosMaryanLevelUpLearnset,
+        .teachableLearnset = sShellosTeachableLearnset,
+        .eggMoveLearnset = sShellosEggMoveLearnset,
+        // .formSpeciesIdTable = sShellosFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GASTRODON_MARYAN}),
+    },
+
+    [SPECIES_GASTRODON_MARYAN] =
+    {
+        .baseHP        = 111,
+        .baseAttack    = 83,
+        .baseDefense   = 68,
+        .baseSpeed     = 39,
+        .baseSpAttack  = 92,
+        .baseSpDefense = 82,
+        .types = MON_TYPES(TYPE_WATER, TYPE_GROUND),
+        .catchRate = 75,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 166 : 176,
+        .evYield_HP = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_RAIN_DISH, ABILITY_STORM_DRAIN, ABILITY_SAP_SIPPER },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Gastrodon"),
+        .cryId = CRY_GASTRODON,
+        .natDexNum = NATIONAL_DEX_GASTRODON_MARYAN,
+        .categoryName = _("Sea Slug"),
+        .height = 9,
+        .weight = 299,
+        .description = COMPOUND_STRING(
+            "It appears around underground lakes to\n"
+            "eat plankton for nourishment. Should one\n"
+            "Gastrodon encounter another of a\n"
+            "different color, a fierce battle will ensue."),
+        .pokemonScale = 338,
+        .pokemonOffset = 8,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_GastrodonMaryan,
+        .frontPicSize = MON_COORDS_SIZE(48, 48),
+        .frontPicYOffset = 8,
+        .frontAnimFrames = sAnims_GastrodonMaryan,
+        .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
+        .backPic = gMonBackPic_GastrodonMaryan,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_GastrodonMaryan,
+        .shinyPalette = gMonShinyPalette_GastrodonMaryan,
+        .iconSprite = gMonIcon_GastrodonMaryan,
+        .iconPalIndex = 0,
+        // SHADOW(1, 3, SHADOW_SIZE_M)
+        FOOTPRINT(GastrodonMaryan)
+        // OVERWORLD(
+        //     sPicTable_GastrodonWestSea,
+        //     SIZE_32x32,
+        //     SHADOW_SIZE_M,
+        //     TRACKS_FOOT,
+        //     gOverworldPalette_GastrodonWestSea,
+        //     gShinyOverworldPalette_GastrodonWestSea
+        // )
+        .levelUpLearnset = sGastrodonMaryanLevelUpLearnset,
+        .teachableLearnset = sGastrodonTeachableLearnset,
+        // .formSpeciesIdTable = sGastrodonFormSpeciesIdTable,
+    },
+#endif //P_FAMILY_SHELLOS
 
 
 #ifdef __INTELLISENSE__

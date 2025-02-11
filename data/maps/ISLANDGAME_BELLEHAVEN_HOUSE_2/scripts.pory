@@ -9,4 +9,6 @@ script ISLANDGAME_BELLEHAVEN_HOUSE_2_NPC {
         "The last thing he told me before he left the house was that he was going to find a way to pay for my surgery...\p"
         "Oh Lugia... please bring my little boy back to me safe and sound...\p"
     ))
+    closemessage
+    release
 }

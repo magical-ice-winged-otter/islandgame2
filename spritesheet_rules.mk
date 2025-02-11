@@ -3,7 +3,7 @@ OBJEVENTGFXDIR := graphics/object_events/pics
 FLDEFFGFXDIR := graphics/field_effects/pics
 MISCGFXDIR := graphics/misc
 
-# island-game
+# island-game trainers
 $(OBJEVENTGFXDIR)/people/little_boy_camper.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
@@ -188,7 +188,13 @@ $(OBJEVENTGFXDIR)/pokemon/maryan/shiny_azurill.4bpp: %.4bpp: %.png
 
 # end
 
+# island-game overworld pokemon
+$(POKEMONGFXDIR)/maryan_purrloin/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+$(POKEMONGFXDIR)/maryan_liepard/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+# end
 
 
 

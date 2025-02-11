@@ -6629,4 +6629,17 @@ static const struct SpriteFrameImage sPicTable_Pecharunt[] = {
 };
 #endif //P_FAMILY_PECHARUNT
 
+
+
+// island-game overworld sprites
+
+#if P_FAMILY_PURRLOIN_MARYAN
+static const struct SpriteFrameImage sPicTable_PurrloinMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_PurrloinMaryan, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_LiepardMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_LiepardMaryan, 4, 4),
+};
+#endif //P_FAMILY_PURRLOIN
+
 #endif //OW_POKEMON_OBJECT_EVENTS
