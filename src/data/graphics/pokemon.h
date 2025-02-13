@@ -26779,6 +26779,13 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
     const u32 gMonShinyPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/maryan_feebas/shiny.gbapal.lz");
     const u8 gMonIcon_FeebasMaryan[] = INCBIN_U8("graphics/pokemon/maryan_feebas/icon.4bpp");
     const u8 gMonFootprint_FeebasMaryan[] = INCBIN_U8("graphics/pokemon/maryan_feebas/footprint.1bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_FeebasMaryan[] = INCBIN_COMP("graphics/pokemon/maryan_feebas/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/maryan_feebas/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_FeebasMaryan[] = INCBIN_U32("graphics/pokemon/maryan_feebas/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/anim_front.4bpp.lz");
     const u32 gMonPalette_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/normal.gbapal.lz");
@@ -26786,6 +26793,13 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
     const u32 gMonShinyPalette_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/shiny.gbapal.lz");
     const u8 gMonIcon_MiloticMaryan[] = INCBIN_U8("graphics/pokemon/maryan_milotic/icon.4bpp");
     const u8 gMonFootprint_MiloticMaryan[] = INCBIN_U8("graphics/pokemon/maryan_milotic/footprint.1bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_MiloticMaryan[] = INCBIN_COMP("graphics/pokemon/maryan_milotic/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_MiloticMaryan[] = INCBIN_U32("graphics/pokemon/maryan_milotic/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_FEEBAS_MARYAN
 
 #if P_FAMILY_PURRLOIN_MARYAN
@@ -26859,9 +26873,22 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
 #if P_FOOTPRINTS
     const u8 gMonFootprint_CombeeMaryan[] = INCBIN_U8("graphics/pokemon/combee/footprint.1bpp");
 #endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_CombeeMaryan[] = INCBIN_COMP("graphics/pokemon/combee/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_CombeeMaryan[] = INCBIN_U32("graphics/pokemon/combee/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_CombeeMaryan[] = INCBIN_U32("graphics/pokemon/combee/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 
-    const u32 gMonPalette_CombeeMaryanF[] = INCBIN_U32("graphics/pokemon/combee/normalf.gbapal.lz");
-    const u32 gMonShinyPalette_CombeeMaryanF[] = INCBIN_U32("graphics/pokemon/combee/shinyf.gbapal.lz");
+#if P_GENDER_DIFFERENCES
+    const u32 gMonPalette_CombeeFMaryan[] = INCBIN_U32("graphics/pokemon/combee/normalf.gbapal.lz");
+    const u32 gMonShinyPalette_CombeeFMaryan[] = INCBIN_U32("graphics/pokemon/combee/shinyf.gbapal.lz");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_CombeeFMaryan[] = INCBIN_COMP("graphics/pokemon/combee/overworldf.4bpp");
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_GENDER_DIFFERENCES
+
 
     const u32 gMonFrontPic_VespiquenMaryan[] = INCBIN_U32("graphics/pokemon/maryan_vespiquen/anim_front.4bpp.lz");
     const u32 gMonPalette_VespiquenMaryan[] = INCBIN_U32("graphics/pokemon/maryan_vespiquen/normal.gbapal.lz");
@@ -26871,6 +26898,13 @@ const u8 gMonFootprint_ShadowMightyena[] = INCBIN_U8("graphics/pokemon/shadow_mi
 #if P_FOOTPRINTS
     const u8 gMonFootprint_VespiquenMaryan[] = INCBIN_U8("graphics/pokemon/maryan_vespiquen/footprint.1bpp");
 #endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_VespiquenMaryan[] = INCBIN_COMP("graphics/pokemon/maryan_vespiquen/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_VespiquenMaryan[] = INCBIN_U32("graphics/pokemon/maryan_vespiquen/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_VespiquenMaryan[] = INCBIN_U32("graphics/pokemon/maryan_vespiquen/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_COMBEE_MARYAN
 
 #if P_FAMILY_SHADOW_AGGRON

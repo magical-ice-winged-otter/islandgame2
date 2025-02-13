@@ -193,7 +193,12 @@ $(POKEMONGFXDIR)/maryan_purrloin/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 $(POKEMONGFXDIR)/maryan_liepard/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
-
+$(POKEMONGFXDIR)/maryan_feebas/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+$(POKEMONGFXDIR)/maryan_milotic/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+$(POKEMONGFXDIR)/maryan_vespiquen/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 # end
 
 

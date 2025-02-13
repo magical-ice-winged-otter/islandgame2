@@ -292,8 +292,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .palette = gMonPalette_FeebasMaryan,
         .shinyPalette = gMonShinyPalette_FeebasMaryan,
         .iconSprite = gMonIcon_FeebasMaryan,
-        .iconPalIndex = 2,
+        .iconPalIndex = 0,
+        SHADOW(-2, 2, SHADOW_SIZE_S)
         FOOTPRINT(Feebas)
+        OVERWORLD(
+            sPicTable_FeebasMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SPOT,
+            gOverworldPalette_FeebasMaryan,
+            gShinyOverworldPalette_FeebasMaryan
+        )
         .levelUpLearnset = sFeebasMaryanLevelUpLearnset,
         .teachableLearnset = sFeebasMaryanTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM_HOLD, ITEM_PRISM_SCALE, SPECIES_MILOTIC_MARYAN}),
@@ -351,7 +360,16 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_MiloticMaryan,
         .iconSprite = gMonIcon_MiloticMaryan,
         .iconPalIndex = 2,
-        FOOTPRINT(Milotic)
+        SHADOW(0, 12, SHADOW_SIZE_M)
+        FOOTPRINT(MiloticMaryan)
+        OVERWORLD(
+            sPicTable_MiloticMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SLITHER,
+            gOverworldPalette_MiloticMaryan,
+            gShinyOverworldPalette_MiloticMaryan
+        )
         .levelUpLearnset = sMiloticMaryanLevelUpLearnset,
         .teachableLearnset = sMiloticMaryanTeachableLearnset,
     },
@@ -698,12 +716,29 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .backPicYOffset = 22,
         .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
         .palette = gMonPalette_Combee,
-        .paletteFemale = gMonPalette_CombeeF,
         .shinyPalette = gMonShinyPalette_Combee,
-        .shinyPaletteFemale = gMonShinyPalette_CombeeF,
         .iconSprite = gMonIcon_Combee,
         .iconPalIndex = 0,
+        #if P_GENDER_DIFFERENCES
+        .paletteFemale = gMonPalette_CombeeFMaryan,
+        .shinyPaletteFemale = gMonShinyPalette_CombeeFMaryan,
+#endif //P_GENDER_DIFFERENCES
+        SHADOW(-4, 10, SHADOW_SIZE_S)
         FOOTPRINT(Combee)
+        OVERWORLD(
+            sPicTable_CombeeMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_CombeeMaryan,
+            gShinyOverworldPalette_CombeeMaryan
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_CombeeFMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCombeeMaryanLevelUpLearnset,
         .teachableLearnset = sCombeeMaryanTeachableLearnset,
@@ -760,7 +795,16 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_VespiquenMaryan,
         .iconSprite = gMonIcon_VespiquenMaryan,
         .iconPalIndex = 0,
-        FOOTPRINT(VespiquenMaryan)
+        SHADOW(-1, 11, SHADOW_SIZE_L)
+        FOOTPRINT(Vespiquen)
+        OVERWORLD(
+            sPicTable_VespiquenMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_VespiquenMaryan,
+            gShinyOverworldPalette_VespiquenMaryan
+        )
         .levelUpLearnset = sVespiquenMaryanLevelUpLearnset,
         .teachableLearnset = sVespiquenMaryanTeachableLearnset,
     },
@@ -973,8 +1017,8 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .description = COMPOUND_STRING(
             "It appears around underground lakes to\n"
             "eat plankton for nourishment. Should one\n"
-            "Gastrodon encounter another of a\n"
-            "different color, a fierce battle will ensue."),
+            "encounter another of a different color,\n"
+            "a fierce battle will ensue."),
         .pokemonScale = 338,
         .pokemonOffset = 8,
         .trainerScale = 256,
