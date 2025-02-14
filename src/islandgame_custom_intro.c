@@ -25,9 +25,6 @@ void IslandGameCustomStartup()
     // This flag makes sure the exp share is toggled on by default
     FlagSet(FLAG_EXP_SHARE);
 
-    // I'm honestly not sure why you need the weird syntax around string literals,
-    // but it breaks pretty badly w/out it so...
-
     #if ISLANDGAME_DEBUG == TRUE
         SetPlayerName(sName);
         //put all debug tools here
