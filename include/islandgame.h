@@ -27,100 +27,59 @@ typedef struct Location
     s8 map_num;
     s8 start_x;
     s8 start_y;
+    const u8* display_name;
 } Location;
 
 // An internal utility to reduce boilerplate from location definitions.
-#define SET_LOC(identifier, x, y)           \
+#define LOCATION(name, identifier, x, y)     \
     {                                       \
         .map_group = MAP_GROUP(identifier), \
         .map_num = MAP_NUM(identifier),     \
         .start_x = x,                       \
-        .start_y = y                        \
+        .start_y = y,                       \
+        .display_name = name,               \
     }
 
-#define FRONT_LAWN 0
-#define JUNGLE_ROUTE_1 1
-#define SS_RAIN 2
-#define CHERIPORT 3
-#define MINTY_MEADOWS 4
-#define TRAVELERS_TUNNEL 5
-#define CAMP_PERSI 6
-#define VERDANT_PATH 7
-#define VERDANT_WOODS 8
-#define FRESA_FARMS 9
-#define NORTHERN_ORANNA 10
-#define CENTRAL_ORANNA 11
-#define TIDALCOVE 12
-#define ROSEVALE 13
-#define APPLEVINE 14
-#define ROCKY_PATH 15
-#define BELLEHAVEN 16
+static const u8 nameSsRain[]   = _("SS RAIN"); 
+static const u8 nameCheriport[] = _("CHERIPORT");
+static const u8 nameMintyMeadows[] = _("MINTY MEADOWS");
+static const u8 nameTravelersTunnel[] = _("TravelTunnel");
+static const u8 nameCampPersi[] = _("CAMP PERSI");
+static const u8 nameVerdantPath[] = _("VerdantPath");
+static const u8 nameVerdantWood[] = _("VerdantWood");
+static const u8 nameFresaFarms[] = _("FresaFarm");
+static const u8 nameNorthernOranna[] = _("NorthernOranna");
+static const u8 nameCentralOranna[] = _("CentralOranna");
+static const u8 nameTidalcove[] = _("Tidalcove");
+static const u8 nameRosevale[] = _("Rosevale");
+static const u8 nameApplevine[] = _("Applevine");
+static const u8 nameRockyPath[] = _("Rocky Path");
+static const u8 nameBellehaven[] = _("Bellehaven");
+static const u8 nameAetheria[] = _("Aetheria");
 
-/// @brief Map loading information for each custom location. Contains spawn locations and map ids.
-// Get the set_loc first argument from map_groups.h
 static const Location LOCATION_DATA[] = {
-    [FRONT_LAWN] = SET_LOC(FOREST_BASE_CAMP_FRONT_LAWN, 10, 15),
-    [JUNGLE_ROUTE_1] = SET_LOC(ISLAND_JUNGLE_ROUTE1, 10, 54),
-    [SS_RAIN] = SET_LOC(ISLANDGAME_SS_RAIN_ROOM2, 6, 7), //I can't figure out how to change the name on porymap
-    [CHERIPORT] = SET_LOC(ISLANDGAME_CHERIPORT, 10, 26),
-    [MINTY_MEADOWS] = SET_LOC(ISLANDGAME_MINTY_MEADOWS, 1, 26),
-    [TRAVELERS_TUNNEL] = SET_LOC(ISLANDGAME_TRAVELERS_TUNNEL, 10, 16),
-    [CAMP_PERSI] = SET_LOC(ISLANDGAME_CAMP_PERSI, 1, 24),
-    [VERDANT_PATH] = SET_LOC(ISLANDGAME_VERDANT_PATH, 10, 10),
-    [VERDANT_WOODS] = SET_LOC(ISLANDGAME_VERDANT_WOODS, 35, 17),
-    [FRESA_FARMS] = SET_LOC(ISLANDGAME_FRESA_FARMS, 10, 10),
-    [TIDALCOVE] = SET_LOC(ISLANDGAME_TIDALCOVE, 18, 21),
-    [NORTHERN_ORANNA] = SET_LOC(ISLANDGAME_NORTHERN_ORANNA_PATH, 33, 19),
-    [CENTRAL_ORANNA] = SET_LOC(ISLANDGAME_CENTRAL_ORANNA_PATH_1, 18, 1),
-    [ROSEVALE] = SET_LOC(ISLANDGAME_ROSEVALE, 19, 13),
-    [APPLEVINE] = SET_LOC(ISLANDGAME_APPLEVINE, 47, 28),
-    [ROCKY_PATH] = SET_LOC(ISLANDGAME_ROCKY_PATH, 10, 9),
-    [BELLEHAVEN] = SET_LOC(ISLANDGAME_BELLEHAVEN, 21, 40),
+    // oranna
+    /*  0 */ LOCATION(nameSsRain, ISLANDGAME_SS_RAIN_ROOM2, 6, 7),
+    /*  1 */ LOCATION(nameCheriport, ISLANDGAME_CHERIPORT, 10, 26),
+    /*  2 */ LOCATION(nameMintyMeadows, ISLANDGAME_MINTY_MEADOWS, 1, 26),
+    /*  3 */ LOCATION(nameTravelersTunnel, ISLANDGAME_TRAVELERS_TUNNEL, 10, 16),
+    /*  4 */ LOCATION(nameCampPersi, ISLANDGAME_CAMP_PERSI, 1, 24),
+    /*  5 */ LOCATION(nameVerdantPath, ISLANDGAME_VERDANT_PATH, 10, 10),
+    /*  6 */ LOCATION(nameVerdantWood, ISLANDGAME_VERDANT_WOODS, 35, 17),
+    /*  7 */ LOCATION(nameFresaFarms, ISLANDGAME_FRESA_FARMS, 10, 10),
+    /*  8 */ LOCATION(nameNorthernOranna, ISLANDGAME_TIDALCOVE, 18, 21),
+    /*  9 */ LOCATION(nameCentralOranna, ISLANDGAME_NORTHERN_ORANNA_PATH, 33, 19),
+    /* 10 */ LOCATION(nameTidalcove, ISLANDGAME_CENTRAL_ORANNA_PATH_1, 18, 1),
+    /* 11 */ LOCATION(nameRosevale, ISLANDGAME_ROSEVALE, 19, 13),
+
+    // lumine
+    /* 12 */ LOCATION(nameApplevine, ISLANDGAME_APPLEVINE, 39, 17),
+    /* 13 */ LOCATION(nameRockyPath, ISLANDGAME_ROCKY_PATH, 63, 40),
+    /* 14 */ LOCATION(nameBellehaven, ISLANDGAME_BELLEHAVEN, 21, 28),
+    /* 15 */ LOCATION(nameAetheria, ISLANDGAME_AETHERIA, 60, 26),
 };
 
-static const u8 frontLawnName[] = _("Front Lawn");
-static const u8 route1Name[]    = _("Route 1");
-static const u8 testMapName[]   = _("SS RAIN"); 
-static const u8 cheriportName[] = _("CHERIPORT");
-static const u8 mintyMeadowsName[] = _("MINTY MEADOWS");
-static const u8 travelersTunnelName[] = _("TravelTunnel");
-static const u8 campPersiName[] = _("CAMP PERSI");
-static const u8 verdantPathName[] = _("VerdantPath");
-static const u8 verdantWoodName[] = _("VerdantWood");
-static const u8 fresaFarmName[] = _("FresaFarm");
-static const u8 northernOrannaName[] = _("NorthernOranna");
-static const u8 centralOrannaName[] = _("CentralOranna");
-static const u8 tidalcoveName[] = _("Tidalcove");
-static const u8 rosevaleName[] = _("Rosevale");
-static const u8 applevineName[] = _("Applevine");
-static const u8 rockypathName[] = _("Rocky Path");
-static const u8 bellehavenName[] = _("Bellehaven");
-
-/// @brief A human-readable name for each custom location in the game.
-static const u8 *const LOCATION_NAMES[] = { 
-    [FRONT_LAWN] = frontLawnName,
-    [JUNGLE_ROUTE_1] = route1Name,
-    [SS_RAIN] = testMapName,
-    [CHERIPORT] = cheriportName,
-    [MINTY_MEADOWS] = mintyMeadowsName,
-    [TRAVELERS_TUNNEL] = travelersTunnelName,
-    [CAMP_PERSI] = campPersiName,
-    [VERDANT_PATH] = verdantPathName,
-    [VERDANT_WOODS] = verdantWoodName,
-    [FRESA_FARMS] = fresaFarmName,
-    [NORTHERN_ORANNA] = northernOrannaName,
-    [CENTRAL_ORANNA] = centralOrannaName,
-    [TIDALCOVE] = tidalcoveName,
-    [ROSEVALE] = rosevaleName,
-    [APPLEVINE] = applevineName,
-    [ROCKY_PATH] = rockypathName,
-    [BELLEHAVEN] = bellehavenName,
-};
-// The actual string values must be defined outside the array, or crashes will follow.
-
-
-/// @brief Gets the total amout of locations in the game: the count of LOCATION_DATA and LOCATION_NAMES.
-#define LOCATION_COUNT sizeof(LOCATION_DATA) / sizeof(Location)
+#define LOCATION_COUNT (sizeof(LOCATION_DATA)/sizeof(Location))
 
 /// @brief Hooks into the new-game logic, allowing us to perform hack-specific setup.
 void IslandGameCustomStartup();
@@ -143,7 +102,7 @@ void IslandGameCustomStartup();
 
 #if ISLANDGAME_DEBUG == TRUE
 
-#define START_LOC_GAME LOCATION_DATA[APPLEVINE]
+#define START_LOC_GAME LOCATION_DATA[12] // applevine
 #define ISLANDGAME_STARTING_MON SPECIES_SHADOW_LUGIA
 #define ISLANDGAME_STARTING_MON_LEVEL 100
 #define ISLANDGAME_STARTING_MON_ITEM ITEM_NONE
@@ -151,7 +110,7 @@ void IslandGameCustomStartup();
 
 #else // Final Game, Production Build
 
-#define START_LOC_GAME LOCATION_DATA[SS_RAIN]
+#define START_LOC_GAME LOCATION_DATA[0] // ss rain
 #define ISLANDGAME_PLAYER_NAME "Rain"
 
 #endif
