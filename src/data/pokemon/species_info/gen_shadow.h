@@ -182,7 +182,16 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_GolettMaryan,
         .iconSprite = gMonIcon_GolettMaryan,
         .iconPalIndex = 0,
+        SHADOW(-1, 7, SHADOW_SIZE_M)
         FOOTPRINT(Golett)
+        OVERWORLD(
+            sPicTable_GolettMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_GolettMaryan,
+            gShinyOverworldPalette_GolettMaryan
+        )
         .levelUpLearnset = sGolettMaryanLevelUpLearnset,
         .teachableLearnset = sGolettMaryanTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_GOLURK_MARYAN}),
@@ -237,7 +246,16 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_GolurkMaryan,
         .iconSprite = gMonIcon_GolurkMaryan,
         .iconPalIndex = 0,
+        SHADOW(-1, 14, SHADOW_SIZE_L)
         FOOTPRINT(Golurk)
+        OVERWORLD(
+            sPicTable_GolurkMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_GolurkMaryan,
+            gShinyOverworldPalette_GolurkMaryan
+        )
         .levelUpLearnset = sGolurkMaryanLevelUpLearnset,
         .teachableLearnset = sGolurkMaryanTeachableLearnset,
     },
@@ -553,7 +571,16 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_NincadaMaryan,
         .iconSprite = gMonIcon_NincadaMaryan,
         .iconPalIndex = 1,
-        FOOTPRINT(NincadaMaryan)
+        SHADOW(2, -3, SHADOW_SIZE_M)
+        FOOTPRINT(Nincada)
+        OVERWORLD(
+            sPicTable_NincadaMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_BUG,
+            gOverworldPalette_NincadaMaryan,
+            gShinyOverworldPalette_NincadaMaryan
+        )
         .levelUpLearnset = sNincadaMaryanLevelUpLearnset,
         .teachableLearnset = sNincadaMaryanTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL_NINJASK, 20, SPECIES_NINJASK_MARYAN},
@@ -608,7 +635,16 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_NinjaskMaryan,
         .iconSprite = gMonIcon_NinjaskMaryan,
         .iconPalIndex = 1,
-        FOOTPRINT(NinjaskMaryan)
+        SHADOW(-2, 10, SHADOW_SIZE_S)
+        FOOTPRINT(Ninjask)
+        OVERWORLD(
+            sPicTable_NinjaskMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            gOverworldPalette_NinjaskMaryan,
+            gShinyOverworldPalette_NinjaskMaryan
+        )
         .levelUpLearnset = sNinjaskMaryanLevelUpLearnset,
         .teachableLearnset = sNinjaskMaryanTeachableLearnset,
     },
@@ -660,8 +696,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .palette = gMonPalette_ShedinjaMaryan,
         .shinyPalette = gMonShinyPalette_ShedinjaMaryan,
         .iconSprite = gMonIcon_ShedinjaMaryan,
-        .iconPalIndex = 1,
-        FOOTPRINT(ShedinjaMaryan)
+        .iconPalIndex = 0,
+        SHADOW(-2, 9, SHADOW_SIZE_S)
+        FOOTPRINT(Shedinja)
+        OVERWORLD(
+            sPicTable_ShedinjaMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            gOverworldPalette_ShedinjaMaryan,
+            gShinyOverworldPalette_ShedinjaMaryan
+        )
         .levelUpLearnset = sShedinjaMaryanLevelUpLearnset,
         .teachableLearnset = sShedinjaMaryanTeachableLearnset,
     },
@@ -951,10 +996,10 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .height = 3,
         .weight = 63,
         .description = COMPOUND_STRING(
-            "It used to have a shell on its back long ago.\n"
             "This species is closely related to Shellder.\n"
-            "Unlike West and East Sea, South Sea Shellos\n"
-            "dwell in caves rather than on seashores."),
+            "and used to have a shell long ago. Unlike\n"
+            "other Shellos, South Sea Shellos dwell\n"
+            "in caves."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -972,16 +1017,16 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_ShellosMaryan,
         .iconSprite = gMonIcon_ShellosMaryan,
         .iconPalIndex = 0,
-        // SHADOW(1, 0, SHADOW_SIZE_S)
-        FOOTPRINT(ShellosMaryan)
-        // OVERWORLD(
-        //     sPicTable_ShellosWestSea,
-        //     SIZE_32x32,
-        //     SHADOW_SIZE_M,
-        //     TRACKS_FOOT,
-        //     gOverworldPalette_ShellosWestSea,
-        //     gShinyOverworldPalette_ShellosWestSea
-        // )
+        SHADOW(1, 0, SHADOW_SIZE_S)
+        FOOTPRINT(Shellos)
+        OVERWORLD(
+            sPicTable_ShellosMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_ShellosMaryan,
+            gShinyOverworldPalette_ShellosMaryan
+        )
         .levelUpLearnset = sShellosMaryanLevelUpLearnset,
         .teachableLearnset = sShellosTeachableLearnset,
         .eggMoveLearnset = sShellosEggMoveLearnset,
@@ -1036,16 +1081,16 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_GastrodonMaryan,
         .iconSprite = gMonIcon_GastrodonMaryan,
         .iconPalIndex = 0,
-        // SHADOW(1, 3, SHADOW_SIZE_M)
-        FOOTPRINT(GastrodonMaryan)
-        // OVERWORLD(
-        //     sPicTable_GastrodonWestSea,
-        //     SIZE_32x32,
-        //     SHADOW_SIZE_M,
-        //     TRACKS_FOOT,
-        //     gOverworldPalette_GastrodonWestSea,
-        //     gShinyOverworldPalette_GastrodonWestSea
-        // )
+        SHADOW(1, 3, SHADOW_SIZE_M)
+        FOOTPRINT(Gastrodon)
+        OVERWORLD(
+            sPicTable_GastrodonMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_GastrodonMaryan,
+            gShinyOverworldPalette_GastrodonMaryan
+        )
         .levelUpLearnset = sGastrodonMaryanLevelUpLearnset,
         .teachableLearnset = sGastrodonTeachableLearnset,
         // .formSpeciesIdTable = sGastrodonFormSpeciesIdTable,

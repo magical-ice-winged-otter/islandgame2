@@ -6665,4 +6665,34 @@ static const struct SpriteFrameImage sPicTable_VespiquenMaryan[] = {
 };
 #endif //P_FAMILY_COMBEE_MARYAN
 
+#if P_FAMILY_NINCADA_MARYAN
+static const struct SpriteFrameImage sPicTable_NincadaMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_NincadaMaryan, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_NinjaskMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_NinjaskMaryan, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_ShedinjaMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_ShedinjaMaryan, 4, 4),
+};
+#endif //P_FAMILY_NINCADA_MARYAN
+
+#if P_FAMILY_GOLETT_MARYAN
+static const struct SpriteFrameImage sPicTable_GolettMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_GolettMaryan, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_GolurkMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_GolurkMaryan, 4, 4),
+};
+#endif //P_FAMILY_GOLETT_MARYAN
+
+#if P_FAMILY_SHELLOS_MARYAN
+static const struct SpriteFrameImage sPicTable_ShellosMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_ShellosMaryan, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_GastrodonMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_GastrodonMaryan, 4, 4),
+};
+#endif //P_FAMILY_SHELLOS_MARYAN
+
 #endif //OW_POKEMON_OBJECT_EVENTS
