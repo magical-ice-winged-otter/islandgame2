@@ -18,10 +18,10 @@
   ],
   "warp_events": [
     {
-      "x": 5,
+      "x": 12,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_ISLANDGAME_BELLE_CATACOMBS",
+      "dest_map": "MAP_ISLANDGAME_BELLE_CATACOMBS_1F",
       "dest_warp_id": "0"
     }
   ],
