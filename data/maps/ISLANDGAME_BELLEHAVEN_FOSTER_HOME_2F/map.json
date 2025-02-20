@@ -68,7 +68,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME",
+      "dest_warp_id": "2"
+    }
   ],
   "coord_events": [
 

@@ -8,20 +8,23 @@ ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	gettime
 # 8 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	compare VAR_0x8000, 6
-	goto_if_lt ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_lt ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 # 8 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	compare VAR_0x8000, 18
-	goto_if_ge ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_ge ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 # 12 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	setflag FLAG_TEMP_2
 # 13 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	setflag FLAG_TEMP_4
+ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 15 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
+	destroyfollower
 	return
 
-ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 9 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	setflag FLAG_TEMP_3
-	return
+	goto ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 
 ISLANDGAME_BELLEHAVEN_Interact_Sign::
@@ -206,9 +209,10 @@ ISLANDGAME_BELLEHAVEN_PokeShelterSign_Text_0:
 ISLANDGAME_BELLEHAVEN_MapScripts_Frankie_Text_0:
 # 44 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	.string "Excuse me, have you seen a Cubone\n"
-	.string "anywhere by chance? We took one in\l"
-	.string "earlier this morning, but I couldn't find\l"
-	.string "it anywhere when it came dinner time!\p"
+	.string "anywhere by chance?\p"
+	.string "We took one in earlier this morning, but\n"
+	.string "I couldn't find it anywhere when it came\l"
+	.string "dinner time!\p"
 	.string "Ooh, I hope he's alright. I found him\n"
 	.string "weeping alone in the Valley of Peace.\l"
 	.string "Maybe he's returned there to look for\l"
@@ -249,7 +253,7 @@ ISLANDGAME_BELLEHAVEN_MapScripts_NPC_3_Text_0:
 
 ISLANDGAME_BELLEHAVEN_MapScripts_Litten_Text_0:
 # 110 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
-	.string "Mreow... (I hate mondays.)$"
+	.string "Mreow... {COLOR BLUE}(I hate mondays.)$"
 
 ISLANDGAME_BELLEHAVEN_MapScripts_NPC_4_Text_0:
 # 122 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"

@@ -6629,4 +6629,40 @@ static const struct SpriteFrameImage sPicTable_Pecharunt[] = {
 };
 #endif //P_FAMILY_PECHARUNT
 
+
+
+// island-game overworld sprites
+
+#if P_FAMILY_PURRLOIN_MARYAN
+static const struct SpriteFrameImage sPicTable_PurrloinMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_PurrloinMaryan, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_LiepardMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_LiepardMaryan, 4, 4),
+};
+#endif //P_FAMILY_PURRLOIN_MARYAN
+
+#if P_FAMILY_FEEBAS_MARYAN
+static const struct SpriteFrameImage sPicTable_FeebasMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_FeebasMaryan, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_MiloticMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_MiloticMaryan, 4, 4),
+};
+#endif //P_FAMILY_FEEBAS_MARYAN
+
+#if P_FAMILY_COMBEE_MARYAN
+static const struct SpriteFrameImage sPicTable_CombeeMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_Combee, 4, 4),
+};
+#if P_GENDER_DIFFERENCES
+static const struct SpriteFrameImage sPicTable_CombeeFMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_CombeeF, 4, 4),
+};
+#endif //P_GENDER_DIFFERENCES
+static const struct SpriteFrameImage sPicTable_VespiquenMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_VespiquenMaryan, 4, 4),
+};
+#endif //P_FAMILY_COMBEE_MARYAN
+
 #endif //OW_POKEMON_OBJECT_EVENTS

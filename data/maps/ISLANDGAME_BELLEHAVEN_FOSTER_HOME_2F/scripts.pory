@@ -27,8 +27,10 @@ script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV {
         "...\p"
         "“Oh we'll take the booster pack, you said.”\p"
         "“You gave up a guaranteed full art Pikachu for a bunch of bulk garbage!”\p"
-        "“Come on Misty, you act like this is the first time I've done something stupid. You remember when I was supposed to get that full art Pikachu?”\p"
-        "..."
+        "“Come on Misty, you act like this is the first time I've done something stupid. You remember when I was supposed to get that full art Pikachu?”"
+    ), MSGBOX_SIGN)
+    msgbox(format(
+        "...\p"
         "“A full art Pikachu is a full art Pikachu, but the booster pack could have anything!”\p"
         "“It could even have the full art Pikachu! You know how much we've wanted one of those!”\p"
         "“Then let's just take the-”\n“We'll take the booster pack!”\p"
@@ -66,7 +68,7 @@ script ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_EduardoInteract {
     faceplayer
     playmoncry(SPECIES_MUNCHLAX, CRY_MODE_NORMAL)
     msgbox(format(
-        "¡Lax! (¡Hola entrenador! Soy Eduardo. Me gusta papas.)"
+        "¡Lax! {COLOR BLUE}(¡Hola entrenador! Soy Eduardo. Me gusta papas.)"
     ))
     closemessage
     release

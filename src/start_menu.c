@@ -1004,7 +1004,7 @@ void BuildTeleportMenu(void)
 
     for (i = 0; i < LOCATION_COUNT; i++) {
         u8 *nameBuffer = Alloc(100);
-        const u8 *name = LOCATION_NAMES[i];
+        const u8 *name = LOCATION_DATA[i].display_name;
         u32 id = i;
         struct ListMenuItem item;
         StringExpandPlaceholders(nameBuffer, name);

@@ -10320,12 +10320,26 @@ static const union AnimCmd sAnim_VespiquenMaryan_1[] =
 };
 #endif //P_FAMILY_COMBEE_MARYAN
 
+#if P_FAMILY_SHELLOS_MARYAN
+static const union AnimCmd sAnim_ShellosMaryan_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(1, 36),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
 
-
-
-
-
-
+static const union AnimCmd sAnim_GastrodonMaryan_1[] =
+{
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+#endif //P_FAMILY_SHELLOS_MARYAN
 
 
 #define SINGLE_ANIMATION(name)                      \
@@ -13022,5 +13036,9 @@ SINGLE_ANIMATION(ShedinjaMaryan);
 SINGLE_ANIMATION(CombeeMaryan);
 SINGLE_ANIMATION(VespiquenMaryan);
 #endif //P_FAMILY_COMBEE_MARYAN
+#if P_FAMILY_SHELLOS_MARYAN
+SINGLE_ANIMATION(ShellosMaryan);
+SINGLE_ANIMATION(GastrodonMaryan);
+#endif //P_FAMILY_SHELLOS_MARYAN
 
 SINGLE_ANIMATION(Egg);

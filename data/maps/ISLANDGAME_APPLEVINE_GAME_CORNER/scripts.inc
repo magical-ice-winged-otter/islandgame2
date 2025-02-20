@@ -463,11 +463,11 @@ PrizeClerk_Exchange:
 # 329 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_14, 593
 # 330 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_15, 627
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_15, 613
 # 331 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_16, 629
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_16, 627
 # 332 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_17, 630
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_17, 629
 # 333 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_18, 370
 # 334 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
@@ -1973,8 +1973,9 @@ ISLANDGAME_APPLEVINE_EventScript_Gambler3_Text_0:
 
 ISLANDGAME_APPLEVINE_EventScript_Bouncer_Text_0:
 # 203 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "Sorry, you must have a VIP Pass in order\n"
-	.string "to enter the High Limit Area.$"
+	.string "The High Limit Area is currently\n"
+	.string "undergoing renovations. We apologize\l"
+	.string "for the inconvenience.$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine_Text_0:
 # 217 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
@@ -2068,15 +2069,15 @@ ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_14:
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_15:
 # 330 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "TM46 (3200)$"
+	.string "TM32 (3200)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_16:
 # 331 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "TM48 (3200)$"
+	.string "TM46 (3200)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_17:
 # 332 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "TM49 (3200)$"
+	.string "TM48 (3200)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_18:
 # 333 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
@@ -2171,7 +2172,7 @@ ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_36:
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_37:
 # 634 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 3200 coins\n"
-	.string "for TM49 - Snatch?$"
+	.string "for TM32 - Double Team?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_38:
 # 656 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"

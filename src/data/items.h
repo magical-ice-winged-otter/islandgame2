@@ -1169,7 +1169,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_PEWTER_CRUNCHIES] =
     {
-        .name = _("Sera Snaxx"),
+        .name = _("Sera-Snaxx"),
         .price = 250,
         .description = COMPOUND_STRING(
             "A yummy treat\n"
@@ -11228,19 +11228,22 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_FALSE_SWIPE, // Todo
+        .secondaryId = MOVE_FALSE_SWIPE, 
     },
 
     [ITEM_TM54] =
     {
         .name = _("TM54"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "Foe cannot escape\n"
+            "and takes damage\n"
+            "for 4-5 turns."), 
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_INFESTATION,
     },
 
     [ITEM_TM55] =
@@ -12563,14 +12566,14 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_EonTicket,
     },
 
-    [ITEM_MYSTIC_TICKET] =
+    [ITEM_MYSTIC_TICKET] = // islandgame temp - vip pass
     {
-        .name = _("Mystic Ticket"),
+        .name = _("VIP Pass"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A ticket required\n"
-            "to board the ship\n"
-            "to Navel Rock."),
+            "Grants access to\n"
+            "the Game Corner\n"
+            "High Limit Area."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

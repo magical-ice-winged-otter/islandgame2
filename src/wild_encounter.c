@@ -540,7 +540,8 @@ static bool8 TryGenerateOverworldWildMon(const struct WildPokemon* wildMon)
 
 void GenerateOverworldWildMon(void)
 {
-    u16 graphicsId = GetObjectEventGraphicsIdByLocalIdAndMap(gSelectedObjectEvent, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    u8 localId = gObjectEvents[gSelectedObjectEvent].localId;
+    u16 graphicsId = GetObjectEventGraphicsIdByLocalIdAndMap(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     u16 variableOffset = (graphicsId >= OBJ_EVENT_GFX_VAR_0) ? graphicsId - OBJ_EVENT_GFX_VAR_0 : 0;
     u16 objectEventVariable = VAR_OBJ_GFX_ID_0 + variableOffset;
     struct WildPokemon wildMon = activeOverworldEncounters[variableOffset];
@@ -552,7 +553,6 @@ void GenerateOverworldWildMon(void)
     {
         SetMonData(&gEnemyParty[0], MON_DATA_IS_SHINY, &shiny);
     }
-    memset(&activeOverworldEncounters[variableOffset], 0, sizeof(struct WildPokemon));
 }
 
 static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 rod)
@@ -1275,7 +1275,10 @@ bool8 ScrCmd_SetObjectAsWildEncounter(struct ScriptContext *ctx)
     }
     else
     {
+        VarSet(objectEventVariable, 0);
         FlagSet(GetObjectEventFlagIdByLocalIdAndMap(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup));
+        memset(&activeOverworldEncounters[variableOffset], 0, sizeof(struct WildPokemon));
+        return TRUE;
     }
     return FALSE;
 }

@@ -13,8 +13,8 @@ script ISLANDGAME_BELLEHAVEN_PKMNMART_Interact_Employee {
 mart Bellehaven_MartItems {
     ITEM_POKE_BALL
     ITEM_GREAT_BALL
-    ITEM_DIVE_BALL
-    ITEM_NEST_BALL
+    ITEM_HEAL_BALL
+    ITEM_TIMER_BALL
     ITEM_POTION
     ITEM_SUPER_POTION
     ITEM_PARALYZE_HEAL
@@ -24,6 +24,37 @@ mart Bellehaven_MartItems {
     ITEM_ICE_HEAL
     ITEM_REPEL
     ITEM_SUPER_REPEL
-    ITEM_SWEET_APPLE
-    ITEM_TART_APPLE
+}
+
+movement ISLANDGAME_BELLEHAVEN_PKMNMART_SkittyHeart {
+    emote_heart
+}
+
+script ISLANDGAME_BELLEHAVEN_PKMNMART_Skitty {
+    lock
+    faceplayer
+    applymovement(2, ISLANDGAME_BELLEHAVEN_PKMNMART_SkittyHeart)
+    playmoncry(SPECIES_SKITTY, CRY_MODE_NORMAL)
+    waitmoncry
+}
+
+script ISLANDGAME_BELLEHAVEN_PKMNMART_NPC1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Unbelievable. I can't even get a pack of Poké Puffs for a reasonable price 'cause of this economy.\p"
+        "Thanks a lot, Silverwing Ding-a-lings."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_BELLEHAVEN_PKMNMART_NPC2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Ooooh the rizzory... How I wish I had a Fezanskibidi..."
+    ))
+    closemessage
+    release
 }

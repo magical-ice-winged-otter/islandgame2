@@ -690,7 +690,7 @@
 #define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE      0x282 
 #define FLAG_HIDDEN_ITEM_ROCKY_PATH_EXP_CANDY_S     0x283
-#define FLAG_HIDDEN_ITEM_ROCKY_PATH_H_FEATHER       0x284 
+#define FLAG_HIDDEN_ITEM_ROCKY_PATH_ETHER           0x284 
 #define FLAG_HIDDEN_ITEM_SS_RAIN_ORAN_BERRY         0x285 
 #define FLAG_HIDDEN_ITEM_CHERIPORT_H_FEATHER        0x286 // unused
 #define FLAG_HIDDEN_ITEM_CAMP_PERSI_BERRY_JUICE     0x287
@@ -707,7 +707,7 @@
 #define FLAG_HIDDEN_ITEM_TRAVELERS_TUNNEL_MOONSTONE 0x292 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_IRON          0x293 
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_XP_CANDY      0x294 
-#define FLAG_HIDDEN_ITEM_ROCKY_PATH_FLOAT_STONE     0x295 
+#define FLAG_HIDDEN_ITEM_ROCKY_PATH_CHARTI_BERRY    0x295 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_ROCK_GEM       0x296 
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_XP_CANDY       0x297
 #define FLAG_HIDDEN_ITEM_LUMINE_CAVE_SUPER_POTION   0x298 
@@ -1268,11 +1268,11 @@
 #define FLAG_ITEM_VERDANT_WOODS_BUG_GEM                             0x4BB
 #define FLAG_ITEM_LUMINE_CAVE_SABLENITE                             0x4BC 
 #define FLAG_ITEM_VERDANT_WOODS_BALM_MUSHROOM                       0x4BD
-#define FLAG_ITEM_BELLEHAVEN_BIG_MUSHROOM                           0x4BE 
+#define FLAG_ITEM_BELLEHAVEN_QUICK_BALL                             0x4BE 
 #define FLAG_ITEM_MAPLEGROVE_ABILITY_PATCH                          0x4BF
-#define FLAG_ITEM_ROCKY_PATH_ETHER                                  0x4C0 
+#define FLAG_ITEM_ROCKY_PATH_FULL_HEAL                              0x4C0 
 #define FLAG_ITEM_MOUNT_AURORA_ICE_GEM                              0x4C1 
-#define FLAG_ITEM_ROCKY_PATH_GREAT_BALL                             0x4C2
+#define FLAG_ITEM_ROCKY_PATH_LEMONADE                               0x4C2
 #define FLAG_ITEM_LUMINE_CAVE_REVIVE                                0x4C3 
 #define FLAG_ITEM_LUMINE_CAVE_TM_ROCK_TOMB                          0x4C4
 #define FLAG_ITEM_LUMINE_CAVE_HEART_SCALE                           0x4C5 
@@ -1282,7 +1282,7 @@
 #define FLAG_ITEM_SORANNA_PATH_ABSOLITE                             0x4C9 
 #define FLAG_ITEM_CAMP_PERSI_PROTEIN                                0x4CA 
 #define FLAG_ITEM_CHERIPORT_HP_UP                                   0x4CB 
-#define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
+#define FLAG_ITEM_BELLEHAVEN_CALCIUM                                0x4CC
 #define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
 #define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
 #define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
@@ -1517,37 +1517,25 @@
 // island-game flags
 #define FLAG_LEFT_SS_RAIN                           (SYSTEM_FLAGS + 0x85)   
 #define FLAG_ROOM3_GAVE_WATER                       (SYSTEM_FLAGS + 0x86) 
-//cheriport: get first mon
 #define FLAG_PROF_GAVE_EEVEE                        (SYSTEM_FLAGS + 0x87)
 #define FLAG_S_ORANNA_PATH_NPC                      (SYSTEM_FLAGS + 0x88)
-//southern oranna path: witness sussy absol
 #define FLAG_SEEN_ABSOL                             (SYSTEM_FLAGS + 0x89) 
 #define FLAG_CAMP_PERSI_JONAS_DEFEATED              (SYSTEM_FLAGS + 0x8A) 
 #define FLAG_MINTY_MEADOWS_FREE_MINT                (SYSTEM_FLAGS + 0x8B)
-//minty meadows: beat up mel, fight a dog w rabies, rescue watame
 #define FLAG_MINTY_MEADOWS_RIVAL_DEFEATED           (SYSTEM_FLAGS + 0x8C) 
 #define FLAG_VERDANT_WOODS_SEED_RECEIVED            (SYSTEM_FLAGS + 0x8D)
 #define FLAG_VERDANT_WOODS_SUDOWOODO_DEFEATED       (SYSTEM_FLAGS + 0x8E)
 #define FLAG_VERDANT_PATH_TRADE_DONE                (SYSTEM_FLAGS + 0x8F) 
 #define FLAG_VERDANT_PATH_ROD_RECEIVED              (SYSTEM_FLAGS + 0x90) 
-//verdant path: old lady gives you insect repellent
 #define FLAG_VERDANT_PATH_NPC                       (SYSTEM_FLAGS + 0x91) 
-//central oranna path: watch egirl girlboss on noob
 #define FLAG_NORANNA_PRIM_CUTSCENE_FINISHED         (SYSTEM_FLAGS + 0x92)
-//ss rain: steal ice cream from little girl
 #define FLAG_SSRAIN_ICECREAM_RECEIVED               (SYSTEM_FLAGS + 0x93) 
-//southern oranna path: beat up sussy absol
 #define FLAG_S_ORANNA_PATH_ABSOL_DEFEATED           (SYSTEM_FLAGS + 0x94) 
 #define FLAG_ANOMALY01_DEFEATED                     (SYSTEM_FLAGS + 0x95) 
-//maplegrove: steal from pekora
 #define FLAG_MAPLEGROVE_BUNEARY_GIFT                (SYSTEM_FLAGS + 0x96)
-//fresa farms: steal from watame
 #define FLAG_FRESA_FARMS_MAREEP_GIFT                (SYSTEM_FLAGS + 0x97) 
-//tidalcove: extort local child for expensive technology
 #define FLAG_TIDALCOVE_LUXBALL_GIFT                 (SYSTEM_FLAGS + 0x98)
-//rosevale: simp for a girl in inn
 #define FLAG_ROSEVALE_TM_GIFT                       (SYSTEM_FLAGS + 0x99)
-//tidalcove: get complementary water
 #define FLAG_TIDALCOVE_GYM_SPONSOR_TALK             (SYSTEM_FLAGS + 0x9A)
 //rosevale: arthur's sister gives u a crappily made good-luck charm that ur not allowed to reject because it would be really mean
 #define FLAG_ROSEVALE_AMULET_COIN_GIFT              (SYSTEM_FLAGS + 0x9B)
@@ -1589,9 +1577,9 @@
 #define FLAG_CANTALO_AVI_DEFEATED                   (SYSTEM_FLAGS + 0xB4)
 #define FLAG_BELLEHAVEN_SPOKE_TO_JONAS              (SYSTEM_FLAGS + 0xB5)
 #define FLAG_CAMP_PERSI_PORYGON_DEFEATED            (SYSTEM_FLAGS + 0xB6)
-#define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
-#define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
-#define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag
+#define FLAG_BELLEHAVEN_CREEPY_GIRL                 (SYSTEM_FLAGS + 0xB7)
+#define FLAG_BELLEHAVEN_SQUID_GAME                  (SYSTEM_FLAGS + 0xB8)
+#define FLAG_BELLEHAVEN_CHARCOAL                    (SYSTEM_FLAGS + 0xB9)
 #define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
 #define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
 #define FLAG_UNUSED_0x91C                           (SYSTEM_FLAGS + 0xBC) // Unused Flag

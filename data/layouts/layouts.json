@@ -5195,7 +5195,7 @@
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN",
       "name": "ISLANDGAME_BELLEHAVEN_Layout",
       "width": 40,
-      "height": 42,
+      "height": 43,
       "primary_tileset": "gTileset_islandgame_lumine_general",
       "secondary_tileset": "gTileset_islandgame_lumine_bellehaven",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN/border.bin",
@@ -5645,17 +5645,17 @@
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_1",
       "name": "ISLANDGAME_BELLEHAVEN_HOUSE_1_Layout",
       "width": 11,
-      "height": 10,
-      "primary_tileset": "gTileset_islandgame_kanto_building",
-      "secondary_tileset": "gTileset_Unused1",
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_1/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_1/map.bin"
     },
     {
       "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_2",
       "name": "ISLANDGAME_BELLEHAVEN_HOUSE_2_Layout",
-      "width": 14,
-      "height": 10,
+      "width": 11,
+      "height": 9,
       "primary_tileset": "gTileset_islandgame_kanto_building",
       "secondary_tileset": "gTileset_Unused1",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_HOUSE_2/border.bin",
@@ -5770,6 +5770,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F",
+      "name": "ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_BELLEHAVEN_PKMNCENTER_2F/map.bin"
     },
     {
       "id": "LAYOUT_ISLANDGAME_BELLE_CATACOMBS_1F",

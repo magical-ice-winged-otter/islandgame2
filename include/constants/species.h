@@ -1652,8 +1652,10 @@
 #define SPECIES_VESPIQUEN_MARYAN                        1536
 #define SPECIES_SHADOW_AGGRON                           1537
 #define SPECIES_ANOMALY_01                              1538
+#define SPECIES_SHELLOS_MARYAN                          1539
+#define SPECIES_GASTRODON_MARYAN                        1540
 
-#define SPECIES_EGG                                     (SPECIES_ANOMALY_01 + 1)
+#define SPECIES_EGG                                     (SPECIES_GASTRODON_MARYAN + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

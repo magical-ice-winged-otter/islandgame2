@@ -516,12 +516,16 @@ static const struct TrainerMon sParty_CampPersiThief[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 10,
+    .ability = ABILITY_TECHNICIAN,
     .species = SPECIES_KRICKETUNE,
+    .moves = {MOVE_FURY_CUTTER, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 10,
     .species = SPECIES_BEEDRILL,
+    .ability = ABILITY_SWARM,
+    .moves = {MOVE_TWINEEDLE, MOVE_FURY_ATTACK, MOVE_INFESTATION, MOVE_NONE}
     }
 };
 
