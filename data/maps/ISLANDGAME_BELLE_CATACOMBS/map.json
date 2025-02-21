@@ -23,6 +23,13 @@
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_BELLE_CATACOMBS_1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_ISLANDGAME_VALLEY_OF_PEACE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
