@@ -433,7 +433,8 @@
 #define TRAINER_CLASS_CLOWN          0x49
 #define TRAINER_CLASS_WORKER         0x4a
 #define TRAINER_CLASS_SCIENTIST      0x4b
-#define TRAINER_CLASS_COUNT          0x4c
+#define TRAINER_CLASS_JANITOR        0x4c
+#define TRAINER_CLASS_COUNT          0x4d
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
