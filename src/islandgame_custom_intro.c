@@ -34,10 +34,12 @@ void IslandGameCustomStartup()
         FlagSet(FLAG_SYS_POKEMON_GET);
         // LINK data/scripts/islandgame_debug.pory#debug-pokemon-give
         
-        u16 species = ISLANDGAME_STARTING_MON;
-        u8 level = ISLANDGAME_STARTING_MON_LEVEL;
-        u16 item = ISLANDGAME_STARTING_MON_ITEM;
-        ScriptGiveMon(species, level, item);
+        for (int i = 0; i < ARRAY_COUNT(ISLANDGAME_STARTING_TEAM); i++) {
+          u16 species = ISLANDGAME_STARTING_TEAM[i];
+          u8 level = ISLANDGAME_STARTING_LEVEL;
+          u16 item = ITEM_NONE;
+          ScriptGiveMon(species, level, item);
+        }
         
         //debug 1: give all badges to raise our obedienceLevel
         // FlagToggle(FLAG_BADGE01_GET);

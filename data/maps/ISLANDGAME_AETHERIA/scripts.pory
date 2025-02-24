@@ -1,1 +1,66 @@
 mapscripts ISLANDGAME_AETHERIA_MapScripts {}
+
+script ISLANDGAME_AETHERIA_BattleRival {
+    trainerbattle_single(TRAINER_AETHERIA_RIVAL,
+        format(
+            "Intro Text Here"
+        ),
+        format(
+            "Win Text Here"
+        ))
+    msgbox(format(
+        "Post Text Here"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_AETHERIA_BattleEdea {
+    trainerbattle_single(TRAINER_AETHERIA_EDEA,
+        format(
+            "Intro Text Here"
+        ),
+        format(
+            "Win Text Here"
+        ))
+    msgbox(format(
+        "Post Text Here"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_AETHERIA_BattleSewer1 {
+    trainerbattle_single(TRAINER_AETHERIA_SEWER_1,
+        format(
+            "Intro Text Here"
+        ),
+        format(
+            "Win Text Here"
+        ))
+    msgbox(format(
+        "Post Text Here"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_AETHERIA_BattleSewer2 {
+    trainerbattle_single(TRAINER_AETHERIA_SEWER_2,
+        format(
+            "Intro Text Here"
+        ),
+        format(
+            "Win Text Here"
+        ))
+    msgbox(format(
+        "Post Text Here"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_AETHERIA_BattleSewer3 {
+    trainerbattle_single(TRAINER_AETHERIA_SEWER_3,
+        format(
+            "Intro Text Here"
+        ),
+        format(
+            "Win Text Here"
+        ))
+    msgbox(format(
+        "Post Text Here"
+    ), MSGBOX_AUTOCLOSE)
+}
