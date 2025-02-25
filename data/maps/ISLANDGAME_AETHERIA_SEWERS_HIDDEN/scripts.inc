@@ -1,0 +1,3 @@
+ISLANDGAME_AETHERIA_SEWERS_HIDDEN_MapScripts::
+	.byte 0
+

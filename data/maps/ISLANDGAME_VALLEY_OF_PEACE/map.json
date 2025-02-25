@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_VALLEY_OF_PEACE",
   "name": "ISLANDGAME_VALLEY_OF_PEACE",
   "layout": "LAYOUT_ISLANDGAME_VALLEY_OF_PEACE",
-  "music": "MUS_HG_VERMILION",
+  "music": "MUS_DP_LAKE",
   "region_map_section": "MAPSEC_VALLEY_OF_PEACE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -73,11 +73,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
+      "graphics_id": "OBJ_EVENT_GFX_PRIMROSE",
       "x": 18,
-      "y": 23,
+      "y": 22,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",

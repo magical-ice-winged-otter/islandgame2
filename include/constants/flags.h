@@ -1635,7 +1635,7 @@
 #define FLAG_DAILY_COR_GROOMERS                     (DAILY_FLAGS_START + 0x27)
 #define FLAG_DAILY_PERSI_GIRL_SCOUT                 (DAILY_FLAGS_START + 0x28)
 #define FLAG_DAILY_BELLEHAVEN_ADOPTION              (DAILY_FLAGS_START + 0x29)
-#define FLAG_UNUSED_0x94A                           (DAILY_FLAGS_START + 0x2A) // Unused Flag
+#define FLAG_DAILY_APPLEVINE_COIN_CARD              (DAILY_FLAGS_START + 0x2A)
 #define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag
 #define FLAG_UNUSED_0x94D                           (DAILY_FLAGS_START + 0x2D) // Unused Flag

@@ -12897,14 +12897,14 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_GoldTeeth,
     },
 
-    [ITEM_CARD_KEY] =
+    [ITEM_CARD_KEY] = // island-game temp: credit card
     {
-        .name = _("Card Key"),
+        .name = _("Coin Card"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A card-type door\n"
-            "key used in Silph\n"
-            "Co's office."),
+            "EELEKTRONIKARTZ\n"
+            "KOIN KARD\n"
+            "PLAYER 001"),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
