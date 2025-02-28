@@ -202,7 +202,6 @@ static u8 DoJumpSpriteMovement(struct Sprite *);
 static u8 DoJumpSpecialSpriteMovement(struct Sprite *);
 static void CreateLevitateMovementTask(struct ObjectEvent *);
 static void DestroyLevitateMovementTask(u8);
-static bool8 GetFollowerInfo(u32 *species, bool32 *shiny, bool32 *female);
 static u32 LoadDynamicFollowerPalette(u32 species, bool32 shiny, bool32 female);
 static const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u32 species, bool32 shiny, bool32 female);
 static bool8 NpcTakeStep(struct Sprite *);
