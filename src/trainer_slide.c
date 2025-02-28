@@ -56,6 +56,26 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 {
     [DIFFICULTY_NORMAL] =
     {
+        [TRAINER_TIDALCOVE_GYM_RUKA] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("You've done well so far, but me and my\nPokémon still aren't finished yet!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_SUPER_EFFECTIVE_HIT] = COMPOUND_STRING("Ah, I can tell you're a trainer who is\nalways well-prepared for a battle!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Bravo! That was a nice hit!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_BEFORE_FIRST_TURN] = COMPOUND_STRING("I hope you don't mind if I enhance\nour arena with a little Ruka magic!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_MT_AURORA_EDEA] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("W-What? How am I the one backed up in a\ncorner here!?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("Tch... lucky shot in the dark!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("Bahaha! Nice one, idiot!{PAUSE_UNTIL_PRESS}"),
+        },
+        [TRAINER_LUMINE_CAVE_ALBA] =
+        {
+            [TRAINER_SLIDE_LAST_SWITCHIN] = COMPOUND_STRING("Hmm...{PAUSE 60} this is admittedly an\nunforeseen circumstance...{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_ENEMY_MON_UNAFFECTED] = COMPOUND_STRING("You'll have to try much harder\nthan that if you wish to pass!{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_DOWN] = COMPOUND_STRING("You show promise, trainer, but how long\nwill you maintain it?{PAUSE_UNTIL_PRESS}"),
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("How unexpected...{PAUSE 60} my calculations\nwill need a little adjusting...{PAUSE_UNTIL_PRESS}"),
+        }
     },
 };
 

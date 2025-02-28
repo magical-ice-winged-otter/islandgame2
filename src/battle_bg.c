@@ -823,11 +823,11 @@ static u8 GetBattleTerrainOverride(void)
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
-        if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_LEADER)
+        if (gTrainers[TRAINER_BATTLE_PARAM.opponentA].trainerClass == TRAINER_CLASS_LEADER)
         {
             return BATTLE_TERRAIN_LEADER;
         }
-        else if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION)
+        else if (gTrainers[TRAINER_BATTLE_PARAM.opponentA].trainerClass == TRAINER_CLASS_CHAMPION)
         {
             return BATTLE_TERRAIN_CHAMPION;
         }

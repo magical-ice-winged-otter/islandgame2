@@ -489,6 +489,9 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_STRIKE,
         .teraTypeRGBValue = RGB(10, 18, 27),
         .paletteTMHM = gItemIconPalette_NormalTMHM, // failsafe
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = TRUE,
+        .isHiddenPowerType = FALSE,
         // .teraShard = ITEM_STELLAR_TERA_SHARD,
     }
 };
