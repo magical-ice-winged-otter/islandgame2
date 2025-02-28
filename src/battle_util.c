@@ -8618,34 +8618,36 @@ u32 GetBattleMoveTarget(u16 move, u8 setTarget)
 
 //islandgame-add: 3 is shadow mon and will disobey
 // FALSE means it is a normal mon or it will use a normal move
-bool32 isMonShadowBerserk(u8 battlerId)
-{
-    s32 rnd;
+// islandgame: currently broken/unused, will fix later once the methodlogies are revealed. 
+bool32 IsMonShadowBerserk(u8 battlerId);
+// bool32 isMonShadowBerserk(u8 battlerId)
+// {
+//     s32 rnd;
 
-    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_SHADOW)) 
-    {
-        return FALSE;
-    }
+//     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_SHADOW)) 
+//     {
+//         return FALSE;
+//     }
 
-    rnd = (Random() % 4); //modulo bias?
-    if (rnd == 1)
-    {
-        #ifndef NDEBUG
-            DebugPrintf("shadow mon rolled berserk move");
-        #endif
-        gCalledMove = MOVE_BERSERK;
-        gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesBerserk;
-        gBattlerTarget = GetMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
-        gHitMarker |= HITMARKER_DISOBEDIENT_MOVE;
-        return TRUE;
-    } else 
-    {
-        #ifndef NDEBUG
-            DebugPrintf("shadow mon use normal move");
-        #endif
-        return FALSE;
-    }
-}
+//     rnd = (Random() % 4); //modulo bias?
+//     if (rnd == 1)
+//     {
+//         #ifndef NDEBUG
+//             DebugPrintf("shadow mon rolled berserk move");
+//         #endif
+//         gCalledMove = MOVE_BERSERK;
+//         gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesBerserk;
+//         gBattlerTarget = GetMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
+//         gHitMarker |= HITMARKER_DISOBEDIENT_MOVE;
+//         return TRUE;
+//     } else 
+//     {
+//         #ifndef NDEBUG
+//             DebugPrintf("shadow mon use normal move");
+//         #endif
+//         return FALSE;
+//     }
+//}
 
 u8 GetAttackerObedienceForAction()
 {
