@@ -5157,7 +5157,7 @@ static void Cmd_getexp(void)
                         && (B_SPLIT_EXP < GEN_6 || gBattleStruct->battlerExpReward == 0)) // only give exp share bonus in later gens if the mon wasn't sent out
                     {
                         s32 defaultGain = holdEffect == HOLD_EFFECT_EXP_SHARE ? EXP_MULTIPLIER * gBattleStruct->expShareExpValue : gBattleStruct->expShareExpValue;
-                        gBattleStruct->battlerExpReward += GetSoftLevelCapExpValue(gPlayerParty[*expMonId].level, gBattleStruct->expShareExpValue);;
+                        gBattleStruct->battlerExpReward += GetSoftLevelCapExpValue(gPlayerParty[*expMonId].level, defaultGain);
                     }
 
                     ApplyExperienceMultipliers(&gBattleStruct->battlerExpReward, *expMonId, gBattlerFainted);
