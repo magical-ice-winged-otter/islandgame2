@@ -1,1 +1,24 @@
-mapscripts ISLANDGAME_VALLEY_OF_PEACE_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+mapscripts ISLANDGAME_VALLEY_OF_PEACE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // controls nighttime npcs
+        }
+    }
+}
+
+
+script ISLANDGAME_VALLEY_OF_PEACE_Sign {
+    msgbox(format(
+        "VALLEY OF PEACE\n"
+        "May the departed find tranquility"
+    ), MSGBOX_SIGN)
+}
+

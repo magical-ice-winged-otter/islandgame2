@@ -668,14 +668,14 @@
 #define FLAG_HIDDEN_ITEM_SS_RAIN_EXP_CANDY          0x26B 
 #define FLAG_HIDDEN_ITEM_CHERIPORT_EXP_CANDY        0x26C 
 #define FLAG_HIDDEN_ITEM_SORANNA_PATH_EXP_CANDY     0x26D 
-#define FLAG_HIDDEN_ITEM_SORANNA_PATH_PARA_HEAL     0x26E // unused
+#define FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_EXP_CANDY  0x26E
 #define FLAG_HIDDEN_ITEM_CAMP_PERSI_EXP_CANDY       0x26F 
 #define FLAG_HIDDEN_ITEM_VERDANT_PATH_EXP_CANDY     0x270 
 #define FLAG_HIDDEN_ITEM_VERDANT_WOODS_TANGA        0x271
 #define FLAG_HIDDEN_ITEM_VERDANT_WOODS_BIGSHROOM    0x272 
 #define FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY       0x273 
 #define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_EXP_CANDY    0x274 
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_S_FEATHER     0x275 // unused
+#define FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_SHROOM     0x275
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY_2   0x276
 #define FLAG_HIDDEN_ITEM_TIDALCOVE_EXP_CANDY        0x277 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_PRETTY_FEATHER   0x278 
@@ -1252,7 +1252,7 @@
 #define FLAG_COP_1_REVIVE                                           0x4AB 
 #define FLAG_SS_RAIN_TM_CHARGE_BEAM                                 0x4AC 
 #define FLAG_SS_RAIN_MAX_REVIVE                                     0x4AD
-#define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
+#define FLAG_VERDANT_WOODS_ADRENALINE_ORB                           0x4AE
 #define FLAG_ITEM_COP_FULL_HEAL                                     0x4AF  
 #define FLAG_ITEM_COP_REPEAT_BALL                                   0x4B0
 #define FLAG_ROCKY_PATH_TM                                          0x4B1
@@ -1283,7 +1283,7 @@
 #define FLAG_ITEM_CAMP_PERSI_PROTEIN                                0x4CA 
 #define FLAG_ITEM_CHERIPORT_HP_UP                                   0x4CB 
 #define FLAG_ITEM_BELLEHAVEN_CALCIUM                                0x4CC
-#define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
+#define FLAG_ITEM_VALLEY_OF_PEACE_SPELL_TAG                         0x4CD
 #define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
 #define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
 #define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
