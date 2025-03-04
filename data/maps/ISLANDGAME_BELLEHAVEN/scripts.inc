@@ -195,7 +195,7 @@ ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2_2:
 ISLANDGAME_BELLEHAVEN_Interact_Sign_Text_0:
 # 21 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	.string "BELLEHAVEN\n"
-	.string "Peace and Tranquility$"
+	.string "Peace and Harmony$"
 
 ISLANDGAME_BELLEHAVEN_LumineCave_Sign_Text_0:
 # 28 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
