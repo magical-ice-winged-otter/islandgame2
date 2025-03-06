@@ -1062,7 +1062,6 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
     {
     case TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT:
     case TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT:
-        TrainerBattleLoadArgs(sOrdinaryNoIntroBattleParams, data);
         return EventScript_DoNoIntroTrainerBattle;
     case TRAINER_BATTLE_DOUBLE:
         SetMapVarsToTrainerA();
@@ -1362,12 +1361,11 @@ static void CB2_EndTrainerBattle(void)
 
 static bool8 BattleHasNoWhiteout()
 {
-    if (sTrainerBattleMode == TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT || sTrainerBattleMode == TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT)
+    if (GetTrainerBattleMode() == TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT || GetTrainerBattleMode() == TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT)
         return TRUE;
     else
         return FALSE;
 }
-
 
 static void CB2_EndRematchBattle(void)
 {
