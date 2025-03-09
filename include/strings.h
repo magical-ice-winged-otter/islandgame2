@@ -462,9 +462,6 @@ extern const u8 gText_BagIsFull[];
 
 extern const u8 gText_MailToBagMessageErased[];
 extern const u8 gText_GoBackPrevMenu[];
-extern const u8 gText_TossHowManyVar1s[];
-extern const u8 gText_ThrewAwayVar2Var1s[];
-extern const u8 gText_ConfirmTossItems[];
 extern const u8 gText_MoveVar1Where[];
 
 extern const u8 gText_ColorLightShadowDarkGray[];
