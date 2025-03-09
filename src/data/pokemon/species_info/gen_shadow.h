@@ -181,7 +181,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_GolettMaryan,
         .frontPicSize = MON_COORDS_SIZE(56, 56),
         .frontPicYOffset = 7,
-        .frontAnimFrames = sAnims_GolettMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 44),
+            ANIMCMD_FRAME(0, 20),
+        ),
         .frontAnimId = ANIM_V_SHAKE,
         .backPic = gMonBackPic_GolettMaryan,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -198,6 +202,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_GolettMaryan,
             gShinyOverworldPalette_GolettMaryan
         )
@@ -265,6 +270,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_GolurkMaryan,
             gShinyOverworldPalette_GolurkMaryan
         )
@@ -338,6 +344,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_SPOT,
+            sAnimTable_Following,
             gOverworldPalette_FeebasMaryan,
             gShinyOverworldPalette_FeebasMaryan
         )
@@ -413,6 +420,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_SLITHER,
+            sAnimTable_Following,
             gOverworldPalette_MiloticMaryan,
             gShinyOverworldPalette_MiloticMaryan
         )
@@ -482,6 +490,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_PurrloinMaryan,
             gShinyOverworldPalette_PurrloinMaryan
         )
@@ -548,6 +557,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_LiepardMaryan,
             gShinyOverworldPalette_LiepardMaryan
         )
@@ -620,6 +630,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_BUG,
+            sAnimTable_Following,
             gOverworldPalette_NincadaMaryan,
             gShinyOverworldPalette_NincadaMaryan
         )
@@ -703,6 +714,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
+            sAnimTable_Following,
             gOverworldPalette_NinjaskMaryan,
             gShinyOverworldPalette_NinjaskMaryan
         )
@@ -771,6 +783,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
+            sAnimTable_Following,
             gOverworldPalette_ShedinjaMaryan,
             gShinyOverworldPalette_ShedinjaMaryan
         )
@@ -850,6 +863,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_CombeeMaryan,
             gShinyOverworldPalette_CombeeMaryan
         )
@@ -857,7 +871,8 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             sPicTable_CombeeFMaryan,
             SIZE_32x32,
             SHADOW_SIZE_M,
-            TRACKS_FOOT
+            TRACKS_FOOT,
+            sAnimTable_Following,
         )
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCombeeMaryanLevelUpLearnset,
@@ -932,6 +947,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_VespiquenMaryan,
             gShinyOverworldPalette_VespiquenMaryan
         )
@@ -1117,6 +1133,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_ShellosMaryan,
             gShinyOverworldPalette_ShellosMaryan
         )
@@ -1188,6 +1205,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_GastrodonMaryan,
             gShinyOverworldPalette_GastrodonMaryan
         )
