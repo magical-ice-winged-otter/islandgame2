@@ -1342,6 +1342,7 @@ SoundMainRAM_End:
 	.syntax unified
 	thumb_func_end SoundMainRAM
 
+	.text
 	thumb_func_start SoundMainBTM
 SoundMainBTM:
 	mov r12, r4
