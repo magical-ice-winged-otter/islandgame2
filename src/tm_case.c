@@ -13,6 +13,7 @@
 #include "item_menu.h"
 #include "link.h"
 #include "money.h"
+#include "move.h"
 #include "palette.h"
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
