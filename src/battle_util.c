@@ -3632,7 +3632,7 @@ static void CancellerProtean(u32 *effect)
     u32 moveType = GetBattleMoveType(gCurrentMove);
     if (ProteanTryChangeType(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), gCurrentMove, moveType))
     {
-        if (B_PROTEAN_LIBERO == GEN_9)
+        if (B_PROTEAN_LIBERO >= GEN_9)
             gDisableStructs[gBattlerAttacker].usedProteanLibero = TRUE;
         PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
         gBattlerAbility = gBattlerAttacker;
