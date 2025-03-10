@@ -1,3 +1,34 @@
 ISLANDGAME_VALLEY_OF_PEACE_MapScripts::
+# 5 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_VALLEY_OF_PEACE_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
+ISLANDGAME_VALLEY_OF_PEACE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 6 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	gettime
+# 8 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_VALLEY_OF_PEACE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+# 8 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_VALLEY_OF_PEACE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+# 12 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	setflag FLAG_TEMP_2
+	return
+
+ISLANDGAME_VALLEY_OF_PEACE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 9 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	setflag FLAG_TEMP_3
+	return
+
+
+ISLANDGAME_VALLEY_OF_PEACE_Sign::
+# 19 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	msgbox ISLANDGAME_VALLEY_OF_PEACE_Sign_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_VALLEY_OF_PEACE_Sign_Text_0:
+# 20 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	.string "VALLEY OF PEACE\n"
+	.string "May the departed find tranquility$"

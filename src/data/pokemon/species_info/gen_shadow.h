@@ -1102,9 +1102,8 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .weight = 63,
         .description = COMPOUND_STRING(
             "This species is closely related to Shellder\n"
-            "and used to have a shell long ago. Unlike\n"
-            "other Shellos, South Sea Shellos dwell\n"
-            "in caves."),
+            "It used to have a shell long ago. South\n"
+            "Sea Shellos typically dwell in caves."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
