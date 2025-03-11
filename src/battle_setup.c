@@ -981,6 +981,13 @@ static bool32 IsPlayerDefeated(u32 battleOutcome)
     }
 }
 
+void Cmd_GetTrainerBattleMode(void)
+{
+    NATIVE_ARGS();
+    gSpecialVar_Result = TRAINER_BATTLE_PARAM.mode;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void ResetTrainerOpponentIds(void)
 {
     TRAINER_BATTLE_PARAM.opponentA = 0;

@@ -5608,23 +5608,25 @@ BattleScript_LocalBattleLostPrintWhiteOut::
 	printstring STRINGID_PLAYERWHITEOUT
 	waitmessage B_WAIT_TIME_LONG
 	getmoneyreward
-	@ temp: jumpifhalfword CMP_EQUAL, ((gTrainerBattleParameter >> 8) & 0xF), TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, BattleScript_LocalBattleLostPrintNoWhiteout
-	@ temp: jumpifhalfword CMP_EQUAL, ((gTrainerBattleParameter >> 8) & 0xF), TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, BattleScript_LocalBattleLostPrintNoWhiteout
 	printstring STRINGID_PLAYERWHITEOUT2
 	waitmessage B_WAIT_TIME_LONG
 	end2
 BattleScript_LocalBattleLostEnd::
 	printstring STRINGID_PLAYERLOSTTOENEMYTRAINER
 	waitmessage B_WAIT_TIME_LONG
+	callnative Cmd_GetTrainerBattleMode
+	jumpifhalfword CMP_EQUAL, gSpecialVar_Result, TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, BattleScript_LocalBattleLostPrintNoWhiteout
+	jumpifhalfword CMP_EQUAL, gSpecialVar_Result, TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, BattleScript_LocalBattleLostPrintNoWhiteout
 	getmoneyreward
 	printstring STRINGID_PLAYERPAIDPRIZEMONEY
 	waitmessage B_WAIT_TIME_LONG
 	end2
 .else
-	printstring STRINGID_PLAYERWHITEOUT
+	printstring STRINGID_SPIKESSCATTERED
 	waitmessage B_WAIT_TIME_LONG
-	@ temp: jumpifhalfword CMP_EQUAL, ((gTrainerBattleParameter >> 8) & 0xF), TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, BattleScript_LocalBattleLostPrintNoWhiteout
-	@ temp: jumpifhalfword CMP_EQUAL, ((gTrainerBattleParameter >> 8) & 0xF), TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, BattleScript_LocalBattleLostPrintNoWhiteout
+	callnative Cmd_GetTrainerBattleMode
+	jumpifhalfword CMP_EQUAL, gSpecialVar_Result, TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, BattleScript_LocalBattleLostPrintNoWhiteout
+	jumpifhalfword CMP_EQUAL, gSpecialVar_Result, TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, BattleScript_LocalBattleLostPrintNoWhiteout
 	printstring STRINGID_PLAYERWHITEOUT2
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_LocalBattleLostEnd::
