@@ -6,8 +6,7 @@
 // Use sed -i '/^#line/d' 'src/data/battle_partners.h' to remove #line markers.
 //
 
-
-    [PARTNER_NONE] =
+    [DIFFICULTY_NORMAL][PARTNER_NONE] =
     {
         .trainerName = _("None"),
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
@@ -19,7 +18,7 @@
         {
         },
     },
-    [PARTNER_STEVEN] =
+    [DIFFICULTY_NORMAL][PARTNER_STEVEN] =
     {
         .trainerName = _("STEVEN"),
         .trainerClass = TRAINER_CLASS_RIVAL,
@@ -76,7 +75,7 @@
             },
         },
     },
-    [PARTNER_MEADOWS_RIVAL] =
+    [DIFFICULTY_NORMAL][PARTNER_MEADOWS_RIVAL] =
     {
         .trainerName = _("Melissa"),
         .trainerClass = TRAINER_CLASS_RIVAL,
