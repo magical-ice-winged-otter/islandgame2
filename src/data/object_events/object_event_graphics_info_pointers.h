@@ -60,6 +60,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman8;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Apple;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShinyAzurill;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcherF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OfficerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OfficerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerM_2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerF_2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerSnow;
 
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
@@ -347,7 +353,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CHANNELER] =                &gObjectEventGraphicsInfo_Channeler,
     [OBJ_EVENT_GFX_NERD] =                     &gObjectEventGraphicsInfo_Nerd,
     [OBJ_EVENT_GFX_RANCHER] =                  &gObjectEventGraphicsInfo_Rancher,
-    [OBJ_EVENT_GFX_SCHOOL_KID_M_2] =            &gObjectEventGraphicsInfo_SchoolKidM2,
+    [OBJ_EVENT_GFX_SCHOOL_KID_M_2] =           &gObjectEventGraphicsInfo_SchoolKidM2,
     [OBJ_EVENT_GFX_SCOUT_M] =                  &gObjectEventGraphicsInfo_ScoutM,
     [OBJ_EVENT_GFX_SCOUT_F] =                  &gObjectEventGraphicsInfo_ScoutF,
     [OBJ_EVENT_GFX_SILVERWING_M] =             &gObjectEventGraphicsInfo_SilverwingM,
@@ -358,6 +364,21 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
     [OBJ_EVENT_GFX_APPLE] =                    &gObjectEventGraphicsInfo_Apple,
     [OBJ_EVENT_GFX_SHINY_AZURILL] =            &gObjectEventGraphicsInfo_ShinyAzurill,
+    [OBJ_EVENT_GFX_BUG_CATCHER_F] =            &gObjectEventGraphicsInfo_BugCatcherF,
+    [OBJ_EVENT_GFX_OFFICER_M] =                &gObjectEventGraphicsInfo_OfficerM,
+    [OBJ_EVENT_GFX_OFFICER_F] =                &gObjectEventGraphicsInfo_OfficerF,
+    [OBJ_EVENT_GFX_ACE_TRAINER_M_2] =          &gObjectEventGraphicsInfo_AceTrainerM_2,
+    [OBJ_EVENT_GFX_ACE_TRAINER_F_2] =          &gObjectEventGraphicsInfo_AceTrainerF_2,
+    [OBJ_EVENT_GFX_ACE_TRAINER_SNOW] =         &gObjectEventGraphicsInfo_AceTrainerSnow,
+
+
+
+
+
+
+
+
+
 
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
