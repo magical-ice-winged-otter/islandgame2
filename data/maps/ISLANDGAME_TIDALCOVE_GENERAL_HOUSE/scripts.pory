@@ -15,8 +15,8 @@ script ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_NPC {
 script ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_Pumpkaboo {
     lock
     faceplayer
-    playmoncry(SPECIES_PUMPKABOO, CRY_MODE_NORMAL)
-    msgbox(format("{COLOR RED}(This Pumpkaboo is pretty chubby.)"))
+    playmoncry(SPECIES_PUMPKABOO_SUPER, CRY_MODE_NORMAL)
+    msgbox(format("{COLOR RED}(This Pumpkaboo is pretty chonky.)"))
     closemessage
     release
 }
