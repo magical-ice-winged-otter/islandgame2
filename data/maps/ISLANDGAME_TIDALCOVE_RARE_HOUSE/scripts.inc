@@ -16,19 +16,19 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector::
 # 12 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	compare VAR_TIDALCOVE_STATE, 0
 	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_2
-# 62 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+# 64 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	compare VAR_TIDALCOVE_STATE, 1
 	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_3
-# 92 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_10
-# 95 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	closemessage
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1:
-# 98 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-Tidalcove_RareStoneEnd:
+# 96 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_11
 # 99 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	closemessage
-# 100 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1:
+# 102 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+Tidalcove_RareStoneEnd:
+# 103 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	closemessage
+# 104 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	release
 	return
 
@@ -58,63 +58,71 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_7:
 # 41 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6, 215
 # 42 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_7, 0
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_7, 494
 # 43 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_8, 0
 # 44 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	switch VAR_RESULT
+	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
 # 45 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 211, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_20
+	switch VAR_RESULT
 # 46 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 212, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_21
+	case 211, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_21
 # 47 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 213, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_22
+	case 212, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_22
 # 48 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 214, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23
+	case 213, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23
 # 49 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 215, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_24
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18:
-# 52 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	case 214, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_24
+# 50 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	case 215, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_25
+# 51 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	case 494, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_26
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19:
+# 54 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_28
-# 59 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_30
+# 61 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	setvar VAR_TIDALCOVE_STATE, 2
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_3:
-# 63 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_9
-# 66 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2, 211
-# 67 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3, 212
+# 65 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_10
 # 68 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4, 213
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_2, 211
 # 69 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5, 214
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_3, 212
 # 70 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6, 215
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_4, 213
 # 71 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_7, 0
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_5, 214
 # 72 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6, 215
 # 73 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	switch VAR_RESULT
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_7, 494
 # 74 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 211, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_13
+	dynmultipush ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_8, 0
 # 75 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 212, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14
+	dynmultistack 0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_SHOW_ITEM
 # 76 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 213, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_15
+	switch VAR_RESULT
 # 77 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 214, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16
+	case 211, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_13
 # 78 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	case 215, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_17
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11:
+	case 212, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14
+# 79 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	case 213, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_15
+# 80 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	case 214, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16
 # 81 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	case 215, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_17
+# 82 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	case 494, ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11:
+# 85 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_25
-# 88 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	goto_if_eq ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_27
+# 92 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	setvar VAR_TIDALCOVE_STATE, 2
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
 
@@ -136,66 +144,76 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_8:
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_7
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_13:
-# 74 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+# 77 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	giveitem ITEM_FIRE_STONE
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_14:
-# 75 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+# 78 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	giveitem ITEM_WATER_STONE
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_15:
-# 76 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+# 79 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	giveitem ITEM_THUNDER_STONE
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_16:
-# 77 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+# 80 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	giveitem ITEM_LEAF_STONE
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_17:
-# 78 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+# 81 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	giveitem ITEM_ICE_STONE
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_20:
-# 45 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	giveitem ITEM_FIRE_STONE
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18:
+# 82 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	giveitem ITEM_EVIOLITE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_11
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_21:
 # 46 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	giveitem ITEM_WATER_STONE
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
+	giveitem ITEM_FIRE_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_22:
 # 47 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	giveitem ITEM_THUNDER_STONE
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
+	giveitem ITEM_WATER_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_23:
 # 48 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	giveitem ITEM_LEAF_STONE
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
+	giveitem ITEM_THUNDER_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_24:
 # 49 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	giveitem ITEM_ICE_STONE
-	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_18
+	giveitem ITEM_LEAF_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_25:
-# 82 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_8
-# 85 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+# 50 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	giveitem ITEM_ICE_STONE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_26:
+# 51 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	giveitem ITEM_EVIOLITE
+	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_19
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_27:
+# 86 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_9
+# 89 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	closemessage
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_28:
-# 53 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_8
-# 56 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_30:
+# 55 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_9
+# 58 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	closemessage
 	goto ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_1
 
@@ -248,18 +266,22 @@ ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_6:
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_7:
 # 42 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
-	.string "I'll decide later!$"
+	.string "Eeveeolite$"
 
 ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_8:
-# 54 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+# 43 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+	.string "I'll decide later!$"
+
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_9:
+# 56 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	.string "Alright. Just let me know when you would\n"
 	.string "like your rare stone!$"
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_9:
-# 64 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_10:
+# 66 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	.string "Welcome back! Have you decided which of\n"
 	.string "my rare stones you want?$"
 
-ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_10:
-# 93 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
+ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector_Text_11:
+# 97 "data/maps/ISLANDGAME_TIDALCOVE_RARE_HOUSE/scripts.pory"
 	.string "Ah... if only I had an Eevee of my own.$"
