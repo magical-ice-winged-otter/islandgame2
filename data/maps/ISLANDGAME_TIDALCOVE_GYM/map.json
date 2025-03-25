@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_TIDALCOVE_GYM",
   "name": "ISLANDGAME_TIDALCOVE_GYM",
   "layout": "LAYOUT_ISLANDGAME_TIDALCOVE_GYM",
-  "music": "MUS_GYM",
+  "music": "MUS_HG_GYM",
   "region_map_section": "MAPSEC_TIDALCOVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

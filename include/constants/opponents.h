@@ -227,16 +227,26 @@
 #define TRAINER_WENDY                        TRAINER_LUMINE_CAVE_14
   
 
+// Valley of Peace
+#define TRAINER_VALLEY_OF_PEACE_1            94
+#define TRAINER_BROOKE_1                     TRAINER_VALLEY_OF_PEACE_1
+#define TRAINER_VALLEY_OF_PEACE_2            95
+#define TRAINER_JENNIFER                     TRAINER_VALLEY_OF_PEACE_2
+#define TRAINER_VALLEY_OF_PEACE_3            96
+#define TRAINER_HOPE                         TRAINER_VALLEY_OF_PEACE_3
+#define TRAINER_VALLEY_OF_PEACE_4            97
+#define TRAINER_SHANNON                      TRAINER_VALLEY_OF_PEACE_4
+#define TRAINER_VALLEY_OF_PEACE_5            98
+#define TRAINER_MICHELLE                     TRAINER_VALLEY_OF_PEACE_5
+#define TRAINER_VALLEY_OF_PEACE_6            99
+#define TRAINER_CAROLINE                     TRAINER_VALLEY_OF_PEACE_6
+#define TRAINER_VALLEY_OF_PEACE_7           100
+#define TRAINER_JULIE                       TRAINER_VALLEY_OF_PEACE_7
+#define TRAINER_VALLEY_OF_PEACE_8           101
+#define TRAINER_BROOKE_2                    TRAINER_VALLEY_OF_PEACE_8
+#define TRAINER_VALLEY_OF_PEACE_9           102
+#define TRAINER_BROOKE_3                    TRAINER_VALLEY_OF_PEACE_9
 
-#define TRAINER_BROOKE_1                     94
-#define TRAINER_JENNIFER                     95
-#define TRAINER_HOPE                         96
-#define TRAINER_SHANNON                      97
-#define TRAINER_MICHELLE                     98
-#define TRAINER_CAROLINE                     99
-#define TRAINER_JULIE                       100
-#define TRAINER_BROOKE_2                    101
-#define TRAINER_BROOKE_3                    102
 #define TRAINER_BROOKE_4                    103
 #define TRAINER_BROOKE_5                    104
 #define TRAINER_PATRICIA                    105

@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_ROSEVALE_PKMNCENTER_2F",
   "name": "ISLANDGAME_ROSEVALE_PKMNCENTER_2F",
   "layout": "LAYOUT_ISLANDGAME_ROSEVALE_PKMNCENTER_2F",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_DP_POKE_CENTER_DAY",
   "region_map_section": "MAPSEC_ROSEVALE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -81,5 +81,6 @@
   ],
   "bg_events": [
 
-  ]
+  ],
+  "night_music": "MUS_DP_POKE_CENTER_NIGHT"
 }

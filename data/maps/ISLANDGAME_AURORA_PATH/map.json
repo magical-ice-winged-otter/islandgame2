@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_AURORA_PATH",
   "name": "ISLANDGAME_AURORA_PATH",
   "layout": "LAYOUT_ISLANDGAME_AURORA_PATH",
-  "music": "MUS_ROUTE101",
+  "music": "MUS_DP_ROUTE216_DAY",
   "region_map_section": "MAPSEC_AURORA_PATH",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",
@@ -235,5 +235,6 @@
       "item": "ITEM_X_SPEED",
       "flag": "FLAG_HIDDEN_ITEM_AURORA_PATH_X_SPEED"
     }
-  ]
+  ],
+  "night_music": "MUS_DP_ROUTE216_NIGHT"
 }

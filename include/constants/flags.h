@@ -49,10 +49,10 @@
 #define FLAG_FORCE_DOUBLE_WILD 0x23 
 #define FLAG_SMART_WILD_AI    0x24 
 #define FLAG_NO_CATCHING    0x25 
-#define FLAG_NO_RUNNING      0x26 
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+#define FLAG_NO_RUNNING      0x26
+#define FLAG_DEXNAV_SEARCHING        0x27 
+#define FLAG_DEXNAV_GET              0x28 
+#define FLAG_DEXNAV_DETECTOR_MODE    0x29 
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
@@ -668,24 +668,24 @@
 #define FLAG_HIDDEN_ITEM_SS_RAIN_EXP_CANDY          0x26B 
 #define FLAG_HIDDEN_ITEM_CHERIPORT_EXP_CANDY        0x26C 
 #define FLAG_HIDDEN_ITEM_SORANNA_PATH_EXP_CANDY     0x26D 
-#define FLAG_HIDDEN_ITEM_SORANNA_PATH_PARA_HEAL     0x26E // unused
+#define FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_EXP_CANDY  0x26E
 #define FLAG_HIDDEN_ITEM_CAMP_PERSI_EXP_CANDY       0x26F 
 #define FLAG_HIDDEN_ITEM_VERDANT_PATH_EXP_CANDY     0x270 
 #define FLAG_HIDDEN_ITEM_VERDANT_WOODS_TANGA        0x271
 #define FLAG_HIDDEN_ITEM_VERDANT_WOODS_BIGSHROOM    0x272 
 #define FLAG_HIDDEN_ITEM_MAPLEGROVE_EXP_CANDY       0x273 
 #define FLAG_HIDDEN_ITEM_MINTY_MEADOWS_EXP_CANDY    0x274 
-#define FLAG_HIDDEN_ITEM_CORANNA_PATH_S_FEATHER     0x275 // unused
+#define FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_SHROOM     0x275
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_EXP_CANDY_2   0x276
 #define FLAG_HIDDEN_ITEM_TIDALCOVE_EXP_CANDY        0x277 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_PRETTY_FEATHER   0x278 
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY     0x279
 #define FLAG_HIDDEN_ITEM_MT_AURORA_EXP_CANDY        0x27A 
-#define FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL2        0x27B  // unused
+#define FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_HP_UP      0x27B
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_REVIVE        0x27C
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_X_DEF         0x27D 
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL         0x27E 
-#define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F // unused
+#define FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_REPEL      0x27F
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER      0x280 // unused
 #define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE      0x282 
@@ -1252,7 +1252,7 @@
 #define FLAG_COP_1_REVIVE                                           0x4AB 
 #define FLAG_SS_RAIN_TM_CHARGE_BEAM                                 0x4AC 
 #define FLAG_SS_RAIN_MAX_REVIVE                                     0x4AD
-#define FLAG_VERDANT_WOODS_SPELL_TAG                                0x4AE
+#define FLAG_VERDANT_WOODS_ADRENALINE_ORB                           0x4AE
 #define FLAG_ITEM_COP_FULL_HEAL                                     0x4AF  
 #define FLAG_ITEM_COP_REPEAT_BALL                                   0x4B0
 #define FLAG_ROCKY_PATH_TM                                          0x4B1
@@ -1283,9 +1283,9 @@
 #define FLAG_ITEM_CAMP_PERSI_PROTEIN                                0x4CA 
 #define FLAG_ITEM_CHERIPORT_HP_UP                                   0x4CB 
 #define FLAG_ITEM_BELLEHAVEN_CALCIUM                                0x4CC
-#define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
-#define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
-#define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
+#define FLAG_ITEM_VALLEY_OF_PEACE_SPELL_TAG                         0x4CD
+#define FLAG_ITEM_VALLEY_OF_PEACE_REVIVE                            0x4CE
+#define FLAG_ITEM_VALLEY_OF_PEACE_DUSK_STONE                        0x4CF 
 #define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
 #define FLAG_UNUSED_0x4D1                                           0x4D1 // Unused Flag
 #define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
@@ -1635,8 +1635,8 @@
 #define FLAG_DAILY_COR_GROOMERS                     (DAILY_FLAGS_START + 0x27)
 #define FLAG_DAILY_PERSI_GIRL_SCOUT                 (DAILY_FLAGS_START + 0x28)
 #define FLAG_DAILY_BELLEHAVEN_ADOPTION              (DAILY_FLAGS_START + 0x29)
-#define FLAG_UNUSED_0x94A                           (DAILY_FLAGS_START + 0x2A) // Unused Flag
-#define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
+#define FLAG_DAILY_APPLEVINE_COIN_CARD              (DAILY_FLAGS_START + 0x2A)
+#define FLAG_DAILY_VALLEY_OF_PEACE_GROTTO_ROLL      (DAILY_FLAGS_START + 0x2B)
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag
 #define FLAG_UNUSED_0x94D                           (DAILY_FLAGS_START + 0x2D) // Unused Flag
 #define FLAG_UNUSED_0x94E                           (DAILY_FLAGS_START + 0x2E) // Unused Flag
@@ -1670,6 +1670,7 @@
 #define FLAG_SPECIAL_FLAG_UNUSED_0x4003         (SPECIAL_FLAGS_START + 0x3) // Unused Flag
 #define FLAG_STORING_ITEMS_IN_PYRAMID_BAG       (SPECIAL_FLAGS_START + 0x4)
 #define FLAG_SAFE_FOLLOWER_MOVEMENT             (SPECIAL_FLAGS_START + 0x5) // When set, applymovement does not put the follower inside a pokeball
+                                                                            // Also, scripted movements on the player will move follower(s), too
 // FLAG_SPECIAL_FLAG_0x4005 - 0x407F also exist and are unused
 #define SPECIAL_FLAGS_END                       (SPECIAL_FLAGS_START + 0x7F)
 #define NUM_SPECIAL_FLAGS                       (SPECIAL_FLAGS_END - SPECIAL_FLAGS_START + 1)
@@ -1680,5 +1681,17 @@
 #define FLAG_TEMP_REGICE_PUZZLE_FAILED          FLAG_TEMP_3
 #define FLAG_TEMP_HIDE_FOLLOWER                 FLAG_TEMP_E
 #define FLAG_TEMP_HIDE_MIRAGE_ISLAND_BERRY_TREE FLAG_TEMP_11
+
+#if TESTING
+#define TESTING_FLAGS_START                     0x5000
+#define TESTING_FLAG_SLEEP_CLAUSE               (TESTING_FLAGS_START + 0x0)
+#define TESTING_FLAG_UNUSED_1                   (TESTING_FLAGS_START + 0x1)
+#define TESTING_FLAG_UNUSED_2                   (TESTING_FLAGS_START + 0x2)
+#define TESTING_FLAG_UNUSED_3                   (TESTING_FLAGS_START + 0x3)
+#define TESTING_FLAG_UNUSED_4                   (TESTING_FLAGS_START + 0x4)
+#define TESTING_FLAG_UNUSED_5                   (TESTING_FLAGS_START + 0x5)
+#define TESTING_FLAG_UNUSED_6                   (TESTING_FLAGS_START + 0x6)
+#define TESTING_FLAG_UNUSED_7                   (TESTING_FLAGS_START + 0x7)
+#endif // TESTING
 
 #endif // GUARD_CONSTANTS_FLAGS_H

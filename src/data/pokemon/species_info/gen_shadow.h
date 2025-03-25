@@ -7,11 +7,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
     [SPECIES_SHADOW_LUGIA] =
     {
         .baseHP        = 106,
-        .baseAttack    = 130,
-        .baseDefense   = 90,
+        .baseAttack    = 90,
+        .baseDefense   = 130,
         .baseSpeed     = 110,
-        .baseSpAttack  = 154,
-        .baseSpDefense = 90,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 154,
         .types = { TYPE_SHADOW, TYPE_FLYING },
         .catchRate = 3,
         .expYield = 306,
@@ -23,7 +23,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_MULTISCALE },
         .bodyColor = BODY_COLOR_BLACK,
-        .speciesName = _("Lugia"),
+        .speciesName = _("S. Lugia"),
         .cryId = CRY_SHADOW_LUGIA,
         .natDexNum = NATIONAL_DEX_NONE,
         .categoryName = _("Corrupted"),
@@ -37,7 +37,10 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .trainerOffset = 19,
         //FRONT_PIC_FEMALE(CircledQuestionMark, 64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_ShadowLugia,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 10),
+        ),
         .frontAnimId = ANIM_GROW_VIBRATE,
         .enemyMonElevation = 5,
         //BACK_PIC_FEMALE(CircledQuestionMark, 64, 64),
@@ -103,7 +106,13 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .trainerOffset = 0,
         //FRONT_PIC_FEMALE(CircledQuestionMark, 64, 64),
         .frontPicYOffset = 3,
-        .frontAnimFrames = sAnims_ShadowMightyena,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 27),
+            ANIMCMD_FRAME(1, 6),
+            ANIMCMD_FRAME(0, 6),
+            ANIMCMD_FRAME(1, 6),
+            ANIMCMD_FRAME(0, 6),
+        ),
         .frontAnimId = ANIM_GROW_VIBRATE,
         .enemyMonElevation = 5,
         //BACK_PIC_FEMALE(CircledQuestionMark, 64, 64),
@@ -172,7 +181,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_GolettMaryan,
         .frontPicSize = MON_COORDS_SIZE(56, 56),
         .frontPicYOffset = 7,
-        .frontAnimFrames = sAnims_GolettMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 44),
+            ANIMCMD_FRAME(0, 20),
+        ),
         .frontAnimId = ANIM_V_SHAKE,
         .backPic = gMonBackPic_GolettMaryan,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -182,7 +195,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_GolettMaryan,
         .iconSprite = gMonIcon_GolettMaryan,
         .iconPalIndex = 0,
+        SHADOW(-1, 7, SHADOW_SIZE_M)
         FOOTPRINT(Golett)
+        OVERWORLD(
+            sPicTable_GolettMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_GolettMaryan,
+            gShinyOverworldPalette_GolettMaryan
+        )
         .levelUpLearnset = sGolettMaryanLevelUpLearnset,
         .teachableLearnset = sGolettMaryanTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_GOLURK_MARYAN}),
@@ -227,7 +250,10 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_GolurkMaryan,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_GolurkMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 45),
+            ANIMCMD_FRAME(0, 10),
+        ),
         .frontAnimId = ANIM_V_SHAKE_TWICE,
         .backPic = gMonBackPic_GolurkMaryan,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -237,7 +263,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_GolurkMaryan,
         .iconSprite = gMonIcon_GolurkMaryan,
         .iconPalIndex = 0,
+        SHADOW(-1, 14, SHADOW_SIZE_L)
         FOOTPRINT(Golurk)
+        OVERWORLD(
+            sPicTable_GolurkMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_GolurkMaryan,
+            gShinyOverworldPalette_GolurkMaryan
+        )
         .levelUpLearnset = sGolurkMaryanLevelUpLearnset,
         .teachableLearnset = sGolurkMaryanTeachableLearnset,
     },
@@ -283,7 +319,15 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_FeebasMaryan,
         .frontPicSize = MON_COORDS_SIZE(40, 48),
         .frontPicYOffset = 10,
-        .frontAnimFrames = sAnims_FeebasMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
         .backPic = gMonBackPic_FeebasMaryan,
         .backPicSize = MON_COORDS_SIZE(48, 56),
@@ -300,6 +344,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_SPOT,
+            sAnimTable_Following,
             gOverworldPalette_FeebasMaryan,
             gShinyOverworldPalette_FeebasMaryan
         )
@@ -347,7 +392,15 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 2,
-        .frontAnimFrames = sAnims_MiloticMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
         .frontAnimDelay = 45,
         .backPic = gMonBackPic_MiloticMaryan,
@@ -367,6 +420,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_SLITHER,
+            sAnimTable_Following,
             gOverworldPalette_MiloticMaryan,
             gShinyOverworldPalette_MiloticMaryan
         )
@@ -415,7 +469,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_PurrloinMaryan,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 11,
-        .frontAnimFrames = sAnims_PurrloinMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 9),
+            ANIMCMD_FRAME(1, 54),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_GROW_VIBRATE,
         .backPic = gMonBackPic_PurrloinMaryan,
         .backPicSize = MON_COORDS_SIZE(56, 48),
@@ -432,6 +490,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_PurrloinMaryan,
             gShinyOverworldPalette_PurrloinMaryan
         )
@@ -477,7 +536,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_LiepardMaryan,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 4,
-        .frontAnimFrames = sAnims_LiepardMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 45),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_GROW_VIBRATE,
         .backPic = gMonBackPic_LiepardMaryan,
         .backPicSize = MON_COORDS_SIZE(56, 48),
@@ -494,6 +557,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_LiepardMaryan,
             gShinyOverworldPalette_LiepardMaryan
         )
@@ -543,7 +607,13 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_NincadaMaryan,
         .frontPicSize = MON_COORDS_SIZE(56, 32),
         .frontPicYOffset = 16,
-        .frontAnimFrames = sAnims_NincadaMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 22),
+            ANIMCMD_FRAME(0, 11),
+            ANIMCMD_FRAME(1, 33),
+            ANIMCMD_FRAME(0, 11),
+        ),
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_NincadaMaryan,
         .backPicSize = MON_COORDS_SIZE(64, 32),
@@ -553,7 +623,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_NincadaMaryan,
         .iconSprite = gMonIcon_NincadaMaryan,
         .iconPalIndex = 1,
-        FOOTPRINT(NincadaMaryan)
+        SHADOW(2, -3, SHADOW_SIZE_M)
+        FOOTPRINT(Nincada)
+        OVERWORLD(
+            sPicTable_NincadaMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_BUG,
+            sAnimTable_Following,
+            gOverworldPalette_NincadaMaryan,
+            gShinyOverworldPalette_NincadaMaryan
+        )
         .levelUpLearnset = sNincadaMaryanLevelUpLearnset,
         .teachableLearnset = sNincadaMaryanTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL_NINJASK, 20, SPECIES_NINJASK_MARYAN},
@@ -597,7 +677,26 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_NinjaskMaryan,
         .frontPicSize = MON_COORDS_SIZE(64, 48),
         .frontPicYOffset = 11,
-        .frontAnimFrames = sAnims_NinjaskMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 33),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 11),
+        ),
         .frontAnimId = ANIM_H_SLIDE_SLOW,
         .enemyMonElevation = 10,
         .backPic = gMonBackPic_NinjaskMaryan,
@@ -608,7 +707,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_NinjaskMaryan,
         .iconSprite = gMonIcon_NinjaskMaryan,
         .iconPalIndex = 1,
-        FOOTPRINT(NinjaskMaryan)
+        SHADOW(-2, 10, SHADOW_SIZE_S)
+        FOOTPRINT(Ninjask)
+        OVERWORLD(
+            sPicTable_NinjaskMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            sAnimTable_Following,
+            gOverworldPalette_NinjaskMaryan,
+            gShinyOverworldPalette_NinjaskMaryan
+        )
         .levelUpLearnset = sNinjaskMaryanLevelUpLearnset,
         .teachableLearnset = sNinjaskMaryanTeachableLearnset,
     },
@@ -630,7 +739,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_CURSED_BODY, ABILITY_SHELL_ARMOR, ABILITY_FILTER },
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_SHELL_ARMOR, ABILITY_PERISH_BODY },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Shedinja"),
         .cryId = CRY_SHEDINJA,
@@ -650,7 +759,13 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_ShedinjaMaryan,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 10,
-        .frontAnimFrames = sAnims_ShedinjaMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 33),
+            ANIMCMD_FRAME(1, 33),
+            ANIMCMD_FRAME(0, 33),
+            ANIMCMD_FRAME(1, 33),
+            ANIMCMD_FRAME(0, 11),
+        ),
         .frontAnimId = ANIM_V_SLIDE_WOBBLE,
         .enemyMonElevation = 8,
         .backPic = gMonBackPic_ShedinjaMaryan,
@@ -660,8 +775,18 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .palette = gMonPalette_ShedinjaMaryan,
         .shinyPalette = gMonShinyPalette_ShedinjaMaryan,
         .iconSprite = gMonIcon_ShedinjaMaryan,
-        .iconPalIndex = 1,
-        FOOTPRINT(ShedinjaMaryan)
+        .iconPalIndex = 0,
+        SHADOW(-2, 9, SHADOW_SIZE_S)
+        FOOTPRINT(Shedinja)
+        OVERWORLD(
+            sPicTable_ShedinjaMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_NONE,
+            sAnimTable_Following,
+            gOverworldPalette_ShedinjaMaryan,
+            gShinyOverworldPalette_ShedinjaMaryan
+        )
         .levelUpLearnset = sShedinjaMaryanLevelUpLearnset,
         .teachableLearnset = sShedinjaMaryanTeachableLearnset,
     },
@@ -708,7 +833,15 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_Combee,
         .frontPicSize = MON_COORDS_SIZE(64, 40),
         .frontPicYOffset = 16,
-        .frontAnimFrames = sAnims_Combee,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 1),
+        ),
         .frontAnimId = ANIM_V_SLIDE_WOBBLE,
         .enemyMonElevation = 15,
         .backPic = gMonBackPic_Combee,
@@ -730,6 +863,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_CombeeMaryan,
             gShinyOverworldPalette_CombeeMaryan
         )
@@ -737,7 +871,8 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             sPicTable_CombeeFMaryan,
             SIZE_32x32,
             SHADOW_SIZE_M,
-            TRACKS_FOOT
+            TRACKS_FOOT,
+            sAnimTable_Following,
         )
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCombeeMaryanLevelUpLearnset,
@@ -784,7 +919,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_VespiquenMaryan,
         .frontPicSize = MON_COORDS_SIZE(48, 56),
         .frontPicYOffset = 4,
-        .frontAnimFrames = sAnims_VespiquenMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 8),
+        ),
         .frontAnimId = ANIM_LUNGE_GROW,
         .enemyMonElevation = 4,
         .backPic = gMonBackPic_VespiquenMaryan,
@@ -802,6 +947,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_VespiquenMaryan,
             gShinyOverworldPalette_VespiquenMaryan
         )
@@ -854,7 +1000,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_ShadowAggron,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_ShadowAggron,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 44),
+            ANIMCMD_FRAME(0, 11),
+        ),
         .frontAnimId = ANIM_V_SHAKE_TWICE,
         .backPic = gMonBackPic_ShadowAggron,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -906,7 +1056,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 10,
         .enemyMonElevation = 8,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Anomaly,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -951,10 +1101,9 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .height = 3,
         .weight = 63,
         .description = COMPOUND_STRING(
-            "It used to have a shell on its back long ago.\n"
-            "This species is closely related to Shellder.\n"
-            "Unlike West and East Sea, South Sea Shellos\n"
-            "dwell in caves rather than on seashores."),
+            "This species is closely related to Shellder\n"
+            "It used to have a shell long ago. South\n"
+            "Sea Shellos typically dwell in caves."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -962,7 +1111,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_ShellosMaryan,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_ShellosMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 36),
+            ANIMCMD_FRAME(0, 10),
+        ),
         .frontAnimId = ANIM_V_STRETCH,
         .backPic = gMonBackPic_ShellosMaryan,
         .backPicSize = MON_COORDS_SIZE(40, 56),
@@ -972,16 +1125,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_ShellosMaryan,
         .iconSprite = gMonIcon_ShellosMaryan,
         .iconPalIndex = 0,
-        // SHADOW(1, 0, SHADOW_SIZE_S)
-        FOOTPRINT(ShellosMaryan)
-        // OVERWORLD(
-        //     sPicTable_ShellosWestSea,
-        //     SIZE_32x32,
-        //     SHADOW_SIZE_M,
-        //     TRACKS_FOOT,
-        //     gOverworldPalette_ShellosWestSea,
-        //     gShinyOverworldPalette_ShellosWestSea
-        // )
+        SHADOW(1, 0, SHADOW_SIZE_S)
+        FOOTPRINT(Shellos)
+        OVERWORLD(
+            sPicTable_ShellosMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_ShellosMaryan,
+            gShinyOverworldPalette_ShellosMaryan
+        )
         .levelUpLearnset = sShellosMaryanLevelUpLearnset,
         .teachableLearnset = sShellosTeachableLearnset,
         .eggMoveLearnset = sShellosEggMoveLearnset,
@@ -1026,7 +1180,14 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_GastrodonMaryan,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 8,
-        .frontAnimFrames = sAnims_GastrodonMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
         .backPic = gMonBackPic_GastrodonMaryan,
         .backPicSize = MON_COORDS_SIZE(56, 64),
@@ -1036,16 +1197,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .shinyPalette = gMonShinyPalette_GastrodonMaryan,
         .iconSprite = gMonIcon_GastrodonMaryan,
         .iconPalIndex = 0,
-        // SHADOW(1, 3, SHADOW_SIZE_M)
-        FOOTPRINT(GastrodonMaryan)
-        // OVERWORLD(
-        //     sPicTable_GastrodonWestSea,
-        //     SIZE_32x32,
-        //     SHADOW_SIZE_M,
-        //     TRACKS_FOOT,
-        //     gOverworldPalette_GastrodonWestSea,
-        //     gShinyOverworldPalette_GastrodonWestSea
-        // )
+        SHADOW(1, 3, SHADOW_SIZE_M)
+        FOOTPRINT(Gastrodon)
+        OVERWORLD(
+            sPicTable_GastrodonMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_GastrodonMaryan,
+            gShinyOverworldPalette_GastrodonMaryan
+        )
         .levelUpLearnset = sGastrodonMaryanLevelUpLearnset,
         .teachableLearnset = sGastrodonTeachableLearnset,
         // .formSpeciesIdTable = sGastrodonFormSpeciesIdTable,

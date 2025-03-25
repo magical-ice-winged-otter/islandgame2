@@ -19,7 +19,7 @@ mapscripts ISLANDGAME_BELLEHAVEN_MapScripts {
 script ISLANDGAME_BELLEHAVEN_Interact_Sign {
     msgbox(format(
         "BELLEHAVEN\n"
-        "Peace and Tranquility"
+        "Peace and Harmony"
     ), MSGBOX_SIGN)
 }
 

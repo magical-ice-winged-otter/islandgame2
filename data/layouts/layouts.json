@@ -5574,10 +5574,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROCKY_PATH_PKMNCENTER",
       "name": "ISLANDGAME_ROCKY_PATH_PKMNCENTER_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokemonCenter",
+      "width": 13,
+      "height": 13,
+      "primary_tileset": "gTileset_islandgame_lumine_general",
+      "secondary_tileset": "gTileset_islandgame_lumine_bellehaven",
       "border_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH_PKMNCENTER/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH_PKMNCENTER/map.bin"
     },
@@ -5820,6 +5820,26 @@
       "secondary_tileset": "gTileset_islandgame_kanto_pokemontower",
       "border_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_4F/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_BELLE_CATACOMBS_4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AETHERIA_SEWERS_MAIN",
+      "name": "ISLANDGAME_AETHERIA_SEWERS_MAIN_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_AETHERIA_SEWERS_MAIN/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AETHERIA_SEWERS_MAIN/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLANDGAME_AETHERIA_SEWERS_HIDDEN",
+      "name": "ISLANDGAME_AETHERIA_SEWERS_HIDDEN_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ISLANDGAME_AETHERIA_SEWERS_HIDDEN/border.bin",
+      "blockdata_filepath": "data/layouts/ISLANDGAME_AETHERIA_SEWERS_HIDDEN/map.bin"
     }
   ]
 }

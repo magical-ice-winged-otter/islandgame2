@@ -50,7 +50,7 @@ script ISLANDGAME_APPLEVINE_CitySign {
 }
 
 script ISLANDGAME_APPLEVINE_GameCornerSign {
-    msgbox(format("Eelektrik Game Corner\nFun for all ages! :)"), MSGBOX_SIGN)
+    msgbox(format("EelektronikArtz Game Corner\nFun for all ages! :)"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_APPLEVINE_SierraPathSign {

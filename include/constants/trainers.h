@@ -167,7 +167,8 @@
 #define TRAINER_PIC_NERD                  146
 #define TRAINER_PIC_BIRD_KEEPER_F         147
 #define TRAINER_PIC_SCIENTIST2            148
-#define TRAINER_PIC_COUNT                 149
+#define TRAINER_PIC_BIKER                 149
+#define TRAINER_PIC_COUNT                 150
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_OLIVER                 0
@@ -433,7 +434,9 @@
 #define TRAINER_CLASS_CLOWN          0x49
 #define TRAINER_CLASS_WORKER         0x4a
 #define TRAINER_CLASS_SCIENTIST      0x4b
-#define TRAINER_CLASS_COUNT          0x4c
+#define TRAINER_CLASS_FARMERDUO      0x4c
+#define TRAINER_CLASS_BIKER          0x4d
+#define TRAINER_CLASS_COUNT          0x4e
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
