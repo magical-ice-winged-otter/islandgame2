@@ -114,7 +114,7 @@ static const u16 TEAM_1[] = {
 };
 
 #define ISLANDGAME_STARTING_TEAM TEAM_1
-#define ISLANDGAME_STARTING_LEVEL 33
+#define ISLANDGAME_STARTING_LEVEL 100
 #define ISLANDGAME_PLAYER_NAME "Rain"
 
 #else // Final Game, Production Build

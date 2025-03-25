@@ -3045,7 +3045,7 @@ F_TRAINER_FEMALE |
             | AI_FLAG_ACE_POKEMON 
             | AI_FLAG_SMART_SWITCHING
             ,
-        .partySize = 4,
+        .partySize = 3,
         .party = (const struct TrainerMon[])
         {
             {
