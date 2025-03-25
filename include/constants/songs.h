@@ -281,6 +281,8 @@
 #define SE_DUMMY_1                        270 // nothing, corresponds to a dummy entry in the song table
 
 // Bard SFX
+// These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
+// Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.
 #define PH_TRAP_BLEND                     271
 #define PH_TRAP_HELD                      272
 #define PH_TRAP_SOLO                      273
