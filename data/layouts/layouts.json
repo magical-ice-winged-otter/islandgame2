@@ -5574,10 +5574,10 @@
     {
       "id": "LAYOUT_ISLANDGAME_ROCKY_PATH_PKMNCENTER",
       "name": "ISLANDGAME_ROCKY_PATH_PKMNCENTER_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokemonCenter",
+      "width": 13,
+      "height": 13,
+      "primary_tileset": "gTileset_islandgame_lumine_general",
+      "secondary_tileset": "gTileset_islandgame_lumine_bellehaven",
       "border_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH_PKMNCENTER/border.bin",
       "blockdata_filepath": "data/layouts/ISLANDGAME_ROCKY_PATH_PKMNCENTER/map.bin"
     },

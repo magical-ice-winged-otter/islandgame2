@@ -184,6 +184,23 @@ $(OBJEVENTGFXDIR)/people/school_kid_f.4bpp: graphics/object_events/pics/people/s
 $(OBJEVENTGFXDIR)/pokemon/maryan/shiny_azurill.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 	
+$(OBJEVENTGFXDIR)/people/bug_catcher_f.4bpp: graphics/object_events/pics/people/bug_catcher_f.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/officer_m.4bpp: graphics/object_events/pics/people/officer_m.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/officer_f.4bpp: graphics/object_events/pics/people/officer_f.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/xtra_ace_trainer_m.4bpp: graphics/object_events/pics/people/xtra_ace_trainer_m.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/xtra_ace_trainer_f.4bpp: graphics/object_events/pics/people/xtra_ace_trainer_f.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/xtra_ace_trainer_snow.4bpp: graphics/object_events/pics/people/xtra_ace_trainer_snow.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 
 # end

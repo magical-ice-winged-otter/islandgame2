@@ -681,11 +681,11 @@
 #define FLAG_HIDDEN_ITEM_APPLEVINE_PRETTY_FEATHER   0x278 
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_EXP_CANDY     0x279
 #define FLAG_HIDDEN_ITEM_MT_AURORA_EXP_CANDY        0x27A 
-#define FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL2        0x27B  // unused
+#define FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_HP_UP      0x27B
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_REVIVE        0x27C
 #define FLAG_HIDDEN_ITEM_CORANNA_PATH_X_DEF         0x27D 
 #define FLAG_HIDDEN_ITEM_NORANNA_PATH_REPEL         0x27E 
-#define FLAG_HIDDEN_ITEM_ROSEVALE_G_FEATHER         0x27F // unused
+#define FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_REPEL      0x27F
 #define FLAG_HIDDEN_ITEM_AURORA_PATH_R_FEATHER      0x280 // unused
 #define FLAG_HIDDEN_ITEM_APPLEVINE_EXP_CANDY        0x281 
 #define FLAG_HIDDEN_ITEM_APPLEVINE_HEART_SCALE      0x282 
@@ -1284,8 +1284,8 @@
 #define FLAG_ITEM_CHERIPORT_HP_UP                                   0x4CB 
 #define FLAG_ITEM_BELLEHAVEN_CALCIUM                                0x4CC
 #define FLAG_ITEM_VALLEY_OF_PEACE_SPELL_TAG                         0x4CD
-#define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
-#define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
+#define FLAG_ITEM_VALLEY_OF_PEACE_REVIVE                            0x4CE
+#define FLAG_ITEM_VALLEY_OF_PEACE_DUSK_STONE                        0x4CF 
 #define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
 #define FLAG_UNUSED_0x4D1                                           0x4D1 // Unused Flag
 #define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
@@ -1636,7 +1636,7 @@
 #define FLAG_DAILY_PERSI_GIRL_SCOUT                 (DAILY_FLAGS_START + 0x28)
 #define FLAG_DAILY_BELLEHAVEN_ADOPTION              (DAILY_FLAGS_START + 0x29)
 #define FLAG_DAILY_APPLEVINE_COIN_CARD              (DAILY_FLAGS_START + 0x2A)
-#define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
+#define FLAG_DAILY_VALLEY_OF_PEACE_GROTTO_ROLL      (DAILY_FLAGS_START + 0x2B)
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag
 #define FLAG_UNUSED_0x94D                           (DAILY_FLAGS_START + 0x2D) // Unused Flag
 #define FLAG_UNUSED_0x94E                           (DAILY_FLAGS_START + 0x2E) // Unused Flag

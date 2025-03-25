@@ -6,10 +6,14 @@ mapscripts ISLANDGAME_VALLEY_OF_PEACE_MapScripts {
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
-            setflag(FLAG_NIGHTTIME) // controls daytime npcs
+            setflag(FLAG_NIGHTTIME) // hides daytime npcs
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
         }
         else {
-            setflag(FLAG_DAYTIME) // controls nighttime npcs
+            setflag(FLAG_DAYTIME) // hides nighttime npcs
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
         }
     }
 }
@@ -22,3 +26,274 @@ script ISLANDGAME_VALLEY_OF_PEACE_Sign {
     ), MSGBOX_SIGN)
 }
 
+script ISLANDGAME_VALLEY_OF_PEACE_NPC1 {
+    lock
+    msgbox(format(
+        "{COLOR RED}(He's mourning the loss of his wife it seems. I should leave him be.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_NPC2 {
+    lock
+    msgbox(format(
+        "My darling Clefable...{PAUSE 30} Sometimes I still see your shadows around the valley."
+    ))
+    closemessage
+    release
+}
+
+
+
+// trainers
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer1 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_1,
+        format(
+            "This valley exudes a powerful aura... Do not interrupt my aura farming!"
+        ),
+        format(
+            "No... my precious aura...!"
+        ))
+    msgbox(format(
+        "I don't actually know what aura is. I just heard kids talking about it and I wanted to get with the times."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer2 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_2,
+        format(
+            "Knowledge is power, and I know a lot."
+        ),
+        format(
+            "Even in defeat, my knowledge increases!"
+        ))
+    msgbox(format(
+        "Every loss is an opportunity to learn."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer3 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_3,
+        format(
+            "Have you also come here to pay respects to your fallen comrades?"
+        ),
+        format(
+            "This battle was for you, Aquilla."
+        ))
+    msgbox(format(
+        "Aquilla was the name of my Staraptor. I bet she's flying in the heavens now."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer4 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_4,
+        format(
+            "Yoooo chat, y'all won't believe what I found in the woods!\p"
+            "AN UN-ALIVED TRAINER!!!\p"
+            "Huh? Outta my way! Can't you see I'm tryna record a video!?"
+        ),
+        format(
+            "Bro! Relax! It's not that serious! It's just a Pokémon battle!"
+        ))
+    msgbox(format(
+        "S-Shut up, chat! Stop spamming that I got destroyed!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer5 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_5,
+        format(
+            "We're here to honor our ol' Miltank for providin' milk to our family fer decades."
+        ),
+        format(
+            "Heh... yer as tough of a fighter as she was."
+        ))
+    msgbox(format(
+        "Remember to cherish the time you spend with yer Pokémon. You never know when that time will end."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer5_2 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_5,
+        format(
+            "I miss our Miltank already... Maybe a battle will get my mind off her..."
+        ),
+        format(
+            "-sniff-\nWell now I just feel even worse..."
+        ))
+    msgbox(format(
+        "I've known our Miltank since I was just a wee li'l sprout... I used to ride on top o' her every day. Good times..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer6 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_6,
+        format(
+            "This is MY territory, punk! I'll teach you to come here uninvited!"
+        ),
+        format(
+            "Tch... you got lucky, punk!"
+        ))
+    msgbox(format(
+        "Those jerks from the Goon Gang didn't let me join their gang 'cause my bike wasn't “hip” enough...\p"
+        "W-Well, I'll show those Gooners! I'll just start my own gang, one where ALL bikes are allowed!"
+    ), MSGBOX_AUTOCLOSE)  
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer7 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_7,
+        format(
+            "Heehee... do you see something unique about my adorable little ceramics?"
+        ),
+        format(
+            "Mhm! They're both a hundred percent authentic!"
+        ))
+    msgbox(format(
+        "Despite the similarities between Sinistea and Poltchageist, they are actually completely different species!\p"
+        "Both of these species also have a “fake” and “authentic” form, depending on if they have a special seal or not!\p"
+        "And that's not the only thing special about authentic ones..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer8 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_8,
+        format(
+            "Young trainer-san! I have brought great dishonor to my Pokémon!\p"
+            "Please! Face me in a duel so that I may claim redemption!"
+        ),
+        format(
+            "A shameful performance..."
+        ))
+    msgbox(format(
+        "I am no longer worthy to wield Pokémon...\p"
+        "I am sorry, my Gallade. Your master has failed you, just like he has failed his Bisharp.\p"
+        "It is time for you to seek a new master. One with the strength to protect you.\p"
+        "Those scoundrels... I will never forgive them!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer9 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_9,
+        format(
+            "Aiiiiiiiiiiiiiiiie!{PAUSE 30}\nA g-g-g-g-g-g-g-g-g-GHOOOOOOST!"
+        ),
+        format(
+            "Zoinks!"
+        ))
+    msgbox(format(
+        "Like, you just totally scared the pants off of me, man!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+
+
+
+// wild encounters
+script ISLANDGAME_LUMINE_CAVE_1F_2_Sinistea1 {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SINISTEA_PHONY, 27, ITEM_NONE, NUM_NATURES, 0)
+    playmoncry(SPECIES_SINISTEA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Sinistea2 {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SINISTEA_PHONY, 27, ITEM_NONE, NUM_NATURES, 1)
+    playmoncry(SPECIES_SINISTEA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Poltchageist1 {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_POLTCHAGEIST_COUNTERFEIT, 27, ITEM_NONE, NUM_NATURES, 0)
+    playmoncry(SPECIES_POLTCHAGEIST, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Poltchageist2 {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_POLTCHAGEIST_COUNTERFEIT, 27, ITEM_NONE, NUM_NATURES, 1)
+    playmoncry(SPECIES_POLTCHAGEIST, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}

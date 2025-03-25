@@ -39,6 +39,7 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
         dynmultipush("Thunder Stone", 213)
         dynmultipush("Leaf Stone", 214)
         dynmultipush("Ice Stone", 215)
+        dynmultipush("Eeveeolite", 494)
         dynmultipush("I'll decide later!", 0)
         dynmultistack(0,0,TRUE,6,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
         switch(var(VAR_RESULT)) {
@@ -47,6 +48,7 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
             case 213: giveitem(ITEM_THUNDER_STONE)
             case 214: giveitem(ITEM_LEAF_STONE)
             case 215: giveitem(ITEM_ICE_STONE)
+            case 494: giveitem(ITEM_EVIOLITE)
             default:
         }
         if(var(VAR_RESULT) == 0) {
@@ -68,6 +70,7 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
         dynmultipush("Thunder Stone", 213)
         dynmultipush("Leaf Stone", 214)
         dynmultipush("Ice Stone", 215)
+        dynmultipush("Eeveeolite", 494)
         dynmultipush("I'll decide later!", 0)
         dynmultistack(0,0,TRUE,6,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
         switch(var(VAR_RESULT)) {
@@ -76,6 +79,7 @@ script ISLANDGAME_TIDALCOVE_RARE_HOUSE_Interact_Collector {
             case 213: giveitem(ITEM_THUNDER_STONE)
             case 214: giveitem(ITEM_LEAF_STONE)
             case 215: giveitem(ITEM_ICE_STONE)
+            case 494: giveitem(ITEM_EVIOLITE)
             default:
         }
         if(var(VAR_RESULT) == 0) {

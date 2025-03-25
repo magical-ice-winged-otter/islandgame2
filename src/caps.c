@@ -10,9 +10,9 @@ u32 GetCurrentLevelCap(void)
     static const u32 sLevelCapFlagMap[][2] =
     {
         {FLAG_CAMP_PERSI_JONAS_DEFEATED, 10},
-        {FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, 20},
+        {FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, 18},
         {FLAG_TIDALCOVE_RUKA_DEFEATED, 25},
-        {FLAG_LUMINE_CAVE_ALBA_DEFEATED, 35},
+        {FLAG_LUMINE_CAVE_ALBA_DEFEATED, 33},
     };
 
     u32 i;

@@ -23572,6 +23572,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 
 #if P_FAMILY_SINISTEA
     const u32 gMonFrontPic_Sinistea[] = INCBIN_U32("graphics/pokemon/sinistea/front.4bpp.lz");
+    const u32 gMonFrontPic_SinisteaAntique[] = INCBIN_U32("graphics/pokemon/sinistea/front_antique.4bpp.lz");
     const u32 gMonPalette_Sinistea[] = INCBIN_U32("graphics/pokemon/sinistea/normal.gbapal.lz");
     const u32 gMonBackPic_Sinistea[] = INCBIN_U32("graphics/pokemon/sinistea/back.4bpp.lz");
     const u32 gMonShinyPalette_Sinistea[] = INCBIN_U32("graphics/pokemon/sinistea/shiny.gbapal.lz");
@@ -23588,6 +23589,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_Polteageist[] = INCBIN_U32("graphics/pokemon/polteageist/front.4bpp.lz");
+    const u32 gMonFrontPic_PolteageistAntique[] = INCBIN_U32("graphics/pokemon/polteageist/front_antique.4bpp.lz");
     const u32 gMonPalette_Polteageist[] = INCBIN_U32("graphics/pokemon/polteageist/normal.gbapal.lz");
     const u32 gMonBackPic_Polteageist[] = INCBIN_U32("graphics/pokemon/polteageist/back.4bpp.lz");
     const u32 gMonShinyPalette_Polteageist[] = INCBIN_U32("graphics/pokemon/polteageist/shiny.gbapal.lz");
@@ -26429,6 +26431,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 
 #if P_FAMILY_POLTCHAGEIST
     const u32 gMonFrontPic_Poltchageist[] = INCBIN_U32("graphics/pokemon/poltchageist/front.4bpp.lz");
+    const u32 gMonFrontPic_PoltchageistArtisan[] = INCBIN_U32("graphics/pokemon/poltchageist/front_artisan.4bpp.lz");
     const u32 gMonPalette_Poltchageist[] = INCBIN_U32("graphics/pokemon/poltchageist/normal.gbapal.lz");
     const u32 gMonBackPic_Poltchageist[] = INCBIN_U32("graphics/pokemon/poltchageist/back.4bpp.lz");
     const u32 gMonShinyPalette_Poltchageist[] = INCBIN_U32("graphics/pokemon/poltchageist/shiny.gbapal.lz");
@@ -26445,6 +26448,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
     const u32 gMonFrontPic_Sinistcha[] = INCBIN_U32("graphics/pokemon/sinistcha/front.4bpp.lz");
+    const u32 gMonFrontPic_SinistchaArtisan[] = INCBIN_U32("graphics/pokemon/sinistcha/front_artisan.4bpp.lz");
     const u32 gMonPalette_Sinistcha[] = INCBIN_U32("graphics/pokemon/sinistcha/normal.gbapal.lz");
     const u32 gMonBackPic_Sinistcha[] = INCBIN_U32("graphics/pokemon/sinistcha/back.4bpp.lz");
     const u32 gMonShinyPalette_Sinistcha[] = INCBIN_U32("graphics/pokemon/sinistcha/shiny.gbapal.lz");

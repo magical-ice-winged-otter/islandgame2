@@ -1,36 +1,80 @@
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+
 mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hides daytime encounters
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hides nighttime encounters
+        }
+
         if (!flag(FLAG_DAILY_COR_HIDDEN_GROTTO_ROLL)) {
             random(10)
             copyvar(VAR_COR_HIDDEN_GROTTO_STATE, VAR_RESULT)
             setflag(FLAG_DAILY_COR_HIDDEN_GROTTO_ROLL) 
         }
+
         // put item or Pokemon on map.
-        if (var(VAR_COR_HIDDEN_GROTTO_STATE) <= 4) { 
-            setflag(FLAG_TEMP_1) // hide all pokemon GFX
-            setflag(FLAG_TEMP_2)
-            setflag(FLAG_TEMP_3)
+        if (var(VAR_COR_HIDDEN_GROTTO_STATE) <= 4) { // hide all pokemon GFX, did not roll an encounter
+            setflag(FLAG_TEMP_4) // Minccino, Daytime
+            setflag(FLAG_TEMP_5) // Scorbunny, Daytime
+            setflag(FLAG_TEMP_6) // Wooper, Daytime
+            setflag(FLAG_TEMP_7) // Scraggy, Nighttime
+            setflag(FLAG_TEMP_8) // Venipede, Nighttime 
+            setflag(FLAG_TEMP_9) // Espurr, Nighttime
         }
-        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 5) {
-            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
-            setflag(FLAG_TEMP_2)
-            setflag(FLAG_TEMP_3)
+        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 5) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_4) // Minccino, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_7) // Scraggy, Nighttime
+            }
+            setflag(FLAG_TEMP_5) // Scorbunny, Daytime
+            setflag(FLAG_TEMP_6) // Wooper, Daytime
+            setflag(FLAG_TEMP_8) // Venipede, Nighttime 
+            setflag(FLAG_TEMP_9) // Espurr, Nighttime
         }
-        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 6) {
-            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
-            setflag(FLAG_TEMP_1)
-            setflag(FLAG_TEMP_3)
+        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 6) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_5) // Scorbunny, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_8) // Venipede, Nighttime 
+            }
+            setflag(FLAG_TEMP_4) // Minccino, Daytime
+            setflag(FLAG_TEMP_6) // Wooper, Daytime
+            setflag(FLAG_TEMP_7) // Scraggy, Nighttime
+            setflag(FLAG_TEMP_9) // Espurr, Nighttime
         }
-        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 7) {
-            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
-            setflag(FLAG_TEMP_1)
-            setflag(FLAG_TEMP_2)
+        elif (var(VAR_COR_HIDDEN_GROTTO_STATE) == 7) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_6) // Wooper, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_9) // Espurr, Nighttime
+            }
+            setflag(FLAG_TEMP_4) // Minccino, Daytime
+            setflag(FLAG_TEMP_5) // Scorbunny, Daytime
+            setflag(FLAG_TEMP_7) // Scraggy, Nighttime
+            setflag(FLAG_TEMP_8) // Venipede, Nighttime 
         }
-        else {
-            setflag(FLAG_TEMP_1) // hide everything
-            setflag(FLAG_TEMP_2)
-            setflag(FLAG_TEMP_3)
-            setflag(FLAG_TEMP_4)
+        else { // hide everything
+            setflag(FLAG_TEMP_A) // item
+            setflag(FLAG_TEMP_4) // Minccino, Daytime
+            setflag(FLAG_TEMP_5) // Scorbunny, Daytime
+            setflag(FLAG_TEMP_6) // Wooper, Daytime
+            setflag(FLAG_TEMP_7) // Scraggy, Nighttime
+            setflag(FLAG_TEMP_8) // Venipede, Nighttime 
+            setflag(FLAG_TEMP_9) // Espurr, Nighttime
         }
     }
 }
@@ -80,6 +124,94 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon2 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_SCORBUNNY, 15, ITEM_NONE, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SUCKER_PUNCH, MOVE_HIGH_JUMP_KICK, MOVE_SAND_ATTACK, MOVE_SUPER_FANG)
+    playmoncry(SPECIES_SCORBUNNY, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon3 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_WOOPER, 15, ITEM_NONE, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_RECOVER, MOVE_DOUBLE_KICK, MOVE_CURSE, MOVE_BODY_SLAM)
+    playmoncry(SPECIES_WOOPER, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon4 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_SCRAGGY, 15, ITEM_SHED_SHELL, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_DRAGON_DANCE, MOVE_DRAIN_PUNCH, MOVE_FAKE_OUT, MOVE_ICE_PUNCH)
+    playmoncry(SPECIES_SCRAGGY, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_COR_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+
+script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon5 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
     createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_VENIPEDE, 15, ITEM_PECHA_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_TWINEEDLE, MOVE_TOXIC_SPIKES, MOVE_SPIKES, MOVE_POISON_STING)
     playmoncry(SPECIES_VENIPEDE, CRY_MODE_ENCOUNTER)
     waitmoncry
@@ -105,7 +237,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon2 {
     release
 }
 
-script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon3 {
+script ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon6 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)

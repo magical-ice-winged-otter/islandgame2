@@ -310,7 +310,13 @@
 #define OBJ_EVENT_GFX_SCHOOL_KID_F               ISLAND_START + 58
 #define OBJ_EVENT_GFX_APPLE                      ISLAND_START + 59
 #define OBJ_EVENT_GFX_SHINY_AZURILL              ISLAND_START + 60
-#define ISLAND_END                               OBJ_EVENT_GFX_SHINY_AZURILL
+#define OBJ_EVENT_GFX_BUG_CATCHER_F              ISLAND_START + 61
+#define OBJ_EVENT_GFX_OFFICER_M                  ISLAND_START + 62
+#define OBJ_EVENT_GFX_OFFICER_F                  ISLAND_START + 63
+#define OBJ_EVENT_GFX_ACE_TRAINER_M_2            ISLAND_START + 64
+#define OBJ_EVENT_GFX_ACE_TRAINER_F_2            ISLAND_START + 65
+#define OBJ_EVENT_GFX_ACE_TRAINER_SNOW           ISLAND_START + 66
+#define ISLAND_END                               OBJ_EVENT_GFX_ACE_TRAINER_SNOW
 
 #define NUM_OBJ_EVENT_GFX                        (ISLAND_END + 1)
 
@@ -602,6 +608,12 @@
 #define OBJ_EVENT_PAL_TAG_APPLE                   0x1266
 #define OBJ_EVENT_PAL_TAG_SHINY_AZURILL           0x1267
 #define OBJ_EVENT_PAL_TAG_HEX_MANIAC              0x1268
+#define OBJ_EVENT_PAL_TAG_BUG_CATCHER_F           0x1269
+#define OBJ_EVENT_PAL_TAG_OFFICER_M               0x126A
+#define OBJ_EVENT_PAL_TAG_OFFICER_F               0x126B
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_M_2         0x126C
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_F_2         0x126D
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_SNOW        0x127E
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

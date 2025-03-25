@@ -120,7 +120,7 @@
 #define VAR_APPLEVINE_STATE                              0x4064 // island-game: used to track how many coins you've given to the coin girl
 #define VAR_DEXNAV_SPECIES                               0x4065 
 #define VAR_DEXNAV_STEP_COUNTER                          0x4066 
-#define VAR_ROUTE108_STATE                               0x4067 // Unused Var
+#define VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE          0x4067 // island-game: used for valley of peace's hidden grotto
 #define VAR_ROUTE109_STATE                               0x4068 // Unused Var
 #define VAR_ROUTE110_STATE                               0x4069
 #define VAR_ROUTE111_STATE                               0x406A // Unused Var

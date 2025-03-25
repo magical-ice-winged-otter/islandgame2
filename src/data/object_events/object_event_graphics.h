@@ -125,9 +125,23 @@ const u32 gObjectEventPic_SchoolKidF[] = INCBIN_U32("graphics/object_events/pics
 const u16 gObjectEventPal_SchoolKidF[] = INCBIN_U16("graphics/object_events/pics/people/school_kid_f.gbapal");
 const u16 gObjectEventPal_HexManiac[] = INCBIN_U16("graphics/object_events/pics/people/hex_maniac.gbapal");
 
+const u32 gObjectEventPic_BugCatcherF[] = INCBIN_U32("graphics/object_events/pics/people/bug_catcher_f.4bpp");
+const u16 gObjectEventPal_BugCatcherF[] = INCBIN_U16("graphics/object_events/pics/people/bug_catcher_f.gbapal");
+const u32 gObjectEventPic_OfficerM[] = INCBIN_U32("graphics/object_events/pics/people/officer_m.4bpp");
+const u16 gObjectEventPal_OfficerM[] = INCBIN_U16("graphics/object_events/pics/people/officer_m.gbapal");
+const u32 gObjectEventPic_OfficerF[] = INCBIN_U32("graphics/object_events/pics/people/officer_f.4bpp");
+const u16 gObjectEventPal_OfficerF[] = INCBIN_U16("graphics/object_events/pics/people/officer_f.gbapal");
+const u32 gObjectEventPic_AceTrainerM_2[] = INCBIN_U32("graphics/object_events/pics/people/xtra_ace_trainer_m.4bpp");
+const u16 gObjectEventPal_AceTrainerM_2[] = INCBIN_U16("graphics/object_events/pics/people/xtra_ace_trainer_m.gbapal");
+const u32 gObjectEventPic_AceTrainerF_2[] = INCBIN_U32("graphics/object_events/pics/people/xtra_ace_trainer_f.4bpp");
+const u16 gObjectEventPal_AceTrainerF_2[] = INCBIN_U16("graphics/object_events/pics/people/xtra_ace_trainer_f.gbapal");
+const u32 gObjectEventPic_AceTrainerSnow[] = INCBIN_U32("graphics/object_events/pics/people/xtra_ace_trainer_snow.4bpp");
+const u16 gObjectEventPal_AceTrainerSnow[] = INCBIN_U16("graphics/object_events/pics/people/xtra_ace_trainer_snow.gbapal");
+
+
+
 const u32 gObjectEventPic_Apple[] = INCBIN_U32("graphics/object_events/pics/misc/apple.4bpp");
 const u16 gObjectEventPal_Apple[] = INCBIN_U16("graphics/items/icon_palettes/sweet_apple.gbapal");
-
 const u32 gObjectEventPic_IslandgamePKMN_ShinyAzurill[] = INCBIN_U32("graphics/object_events/pics/pokemon/maryan/shiny_azurill.4bpp");
 const u16 gObjectEventPalette_IslandgamePKMN_ShinyAzurill[] = INCBIN_U16("graphics/object_events/pics/pokemon/maryan/shiny_azurill.gbapal");
 
