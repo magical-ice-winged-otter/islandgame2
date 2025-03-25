@@ -383,6 +383,12 @@ static void BuildIslandStartMenu(void)
     {
         AddStartMenuAction(MENU_ACTION_POKEDEX);
     }
+
+    if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE)
+    {
+        AddStartMenuAction(MENU_ACTION_DEXNAV);
+    }   
+
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
     {
         AddStartMenuAction(MENU_ACTION_POKEMON);
