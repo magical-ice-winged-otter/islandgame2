@@ -14323,4 +14323,18 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_IslandgameStrangeDisc,
     },
 
+    [ITEM_ISLANDGAME_CUBONES_POKEBALL] =
+    {
+        .name = _("Cubone's Ball"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Cuu!"
+        ),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
+        .iconPic = gItemIcon_PokeBall,
+        .iconPalette = gItemIconPalette_PokeBall,
+    },
+
 };

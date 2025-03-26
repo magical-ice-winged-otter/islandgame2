@@ -299,7 +299,11 @@ ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_10:
 	.string "jelly-filled donut.\p"
 	.string "Yo, mind snagging me one of those Jelly\n"
 	.string "Donuts from Cantalo? Be sure to get\l"
-	.string "strawberry, it's my favorite!$"
+	.string "strawberry, it's my favorite!\p"
+	.string "...\p"
+	.string "Huh? I said a Jelly Donut, not a Rice\n"
+	.string "Ball, dum-dum! How did you get THAT from\l"
+	.string "what I said!?$"
 
 ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak_Text_11:
 # 112 "data/maps/ISLANDGAME_APPLEVINE_COUCH_POTATO/scripts.pory"

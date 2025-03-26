@@ -24,5 +24,4 @@ ISLANDGAME_BELLEHAVEN_HOUSE_2_NPC_Text_0:
 	.string "the house was that he was going to find\l"
 	.string "a way to pay for my surgery...\p"
 	.string "Oh Lugia... please bring my little boy\n"
-	.string "back to me safe and sound...\p"
-	.string "$"
+	.string "back to me safe and sound...$"

@@ -105,7 +105,7 @@ script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
                         ))
                     case 3:
                         msgbox(format(
-                            "Man, I haven't had a good donut in years. When I lived in Cantalo with my mom, she would always bring me home a jelly-filled donut.\pYo, mind snagging me one of those Jelly Donuts from Cantalo? Be sure to get strawberry, it's my favorite!"
+                            "Man, I haven't had a good donut in years. When I lived in Cantalo with my mom, she would always bring me home a jelly-filled donut.\pYo, mind snagging me one of those Jelly Donuts from Cantalo? Be sure to get strawberry, it's my favorite!\p...\pHuh? I said a Jelly Donut, not a Rice Ball, dum-dum! How did you get THAT from what I said!?"
                         ))
                     case 4:
                         msgbox(format(

@@ -7,12 +7,17 @@ mapscripts ISLANDGAME_BELLEHAVEN_MapScripts {
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
             setflag(FLAG_NIGHTTIME) // controls daytime npcs
+            returnqueststate(QUEST_VALLEY_OF_PEACE_CUBONE)
+            switch (var(VAR_RESULT)) {
+                case QUEST_INACTIVE: break
+                default: setflag(FLAG_TEMP_4) // frankie
+            }
         }
         else {
             setflag(FLAG_DAYTIME) // controls nighttime npcs
             setflag(FLAG_TEMP_4) // frankie
         }
-        destroyfollower()
+        destroyfollower() // kill easter egg spooky girl from pkmn center
     }
 }
 
@@ -42,7 +47,7 @@ script ISLANDGAME_BELLEHAVEN_MapScripts_Frankie {
     faceplayer
     msgbox(format(
         "Excuse me, have you seen a Cubone anywhere by chance?\pWe took one in earlier this morning, but I couldn't find it anywhere when it came dinner time!\p"
-        "Ooh, I hope he's alright. I found him weeping alone in the Valley of Peace. Maybe he's returned there to look for his parents?"
+        "Ooh, I hope he's alright... I found him wandering around the Valley of Peace all by himself at night.\pMaybe he's returned there to look for his parents?"
     ))
     closemessage
     release

@@ -61,8 +61,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PRIMROSE",
-      "x": 18,
-      "y": 22,
+      "x": 15,
+      "y": -3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -147,8 +147,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ISLANDGAME_VALLEY_OF_PEACE_CuboneInteract",
+      "flag": "FLAG_TEMP_9"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(POLTCHAGEIST_COUNTERFEIT)",
@@ -360,8 +360,73 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DELCATTY)",
-      "x": 17,
-      "y": 22,
+      "x": 16,
+      "y": -3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 27,
+      "y": 46,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_VOP_1",
+      "script": "BerryTreeScript",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 28,
+      "y": 46,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_VOP_2",
+      "script": "BerryTreeScript",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
+      "x": 38,
+      "y": 44,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GENGAR)",
+      "x": 13,
+      "y": -3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_VALLEY_OF_PEACE_GengarInteract",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_5",
+      "x": 14,
+      "y": -3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -369,7 +434,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_3"
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -396,7 +461,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_VALLEY_OF_PEACE_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_VALLEY_OF_PEACE_CuboneTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_VALLEY_OF_PEACE_STATE",
+      "var_value": "0",
+      "script": "ISLANDGAME_VALLEY_OF_PEACE_CuboneTrigger"
+    }
   ],
   "bg_events": [
     {
@@ -438,6 +520,14 @@
       "elevation": 0,
       "item": "ITEM_MAX_REPEL",
       "flag": "FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_REPEL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 20,
+      "elevation": 0,
+      "item": "ITEM_CLEANSE_TAG",
+      "flag": "FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_CLEANSETAG"
     }
   ]
 }

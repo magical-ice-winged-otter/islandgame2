@@ -1,551 +1,943 @@
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts::
 # 5 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION
+# 36 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 6 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	compare VAR_VALLEY_OF_PEACE_STATE, 2
+	goto_if_eq ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 20 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	gettime
-# 8 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 22 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	compare VAR_0x8000, 6
-	goto_if_lt ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-# 8 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	goto_if_lt ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+# 22 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	compare VAR_0x8000, 18
-	goto_if_ge ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-# 12 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	goto_if_ge ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+# 33 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	setflag FLAG_TEMP_2
 	return
 
-ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-# 9 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 7 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	setflag FLAG_TEMP_3
+# 8 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setflag FLAG_TEMP_2
+# 10 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectxyperm 8, 1, 2
+# 11 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectmovementtype 8, MOVEMENT_TYPE_FACE_UP
+# 12 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	addobject 8
+# 13 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectxyperm 4, 18, 14
+# 14 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	showobjectat 8, MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME
+# 15 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_LEFT
+	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
+# 23 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setflag FLAG_TEMP_3
+# 25 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	returnqueststate QUEST_VALLEY_OF_PEACE_CUBONE
+# 26 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	switch VAR_RESULT
+# 27 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	case 1, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
+	return
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
+# 27 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setflag FLAG_TEMP_4
+	return
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 37 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	map_script_2 VAR_VALLEY_OF_PEACE_STATE, 2, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0
+	.2byte 0
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
+# 38 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+# 39 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 40 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_WalkInPlaceFasterUp
+# 41 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 42 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	playse SE_M_RAIN_DANCE
+# 43 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitse
+# 44 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_FrankieMovement1
+# 45 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 46 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	playse SE_SLIDING_DOOR
+# 47 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitse
+# 48 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_FrankieMovement2
+# 49 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 50 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 51 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0
+# 56 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	closemessage
+# 57 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 58 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_WalkInPlaceRight
+# 59 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 60 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 61 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1
+# 69 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	closemessage
+# 70 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 71 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_WalkInPlaceRight
+# 72 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 73 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 74 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2
+# 80 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 81 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3
+# 84 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	closemessage
+# 85 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setvar VAR_0x8000, 4
+# 86 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setvar VAR_0x8001, 12
+# 87 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	callnative TeleportCamera
+# 88 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectxy OBJ_EVENT_ID_PLAYER, 4, 12
+# 89 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectxy 8, 4, 10
+# 92 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 93 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_FaceDown
+# 94 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+# 98 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 60
+# 99 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+# 100 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 101 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 102 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_4
+# 107 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	closemessage
+# 108 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 109 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 110 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 20
+# 111 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+# 112 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 113 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	playmoncry SPECIES_CUBONE, CRY_MODE_NORMAL
+# 114 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
+# 115 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_QuestionMark
+# 116 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmoncry
+# 118 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectxyperm 9, 7, 7
+# 119 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	addobject 9
+# 120 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	showobjectat 9, MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME
+# 121 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 9, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_CuboneMovement
+# 122 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 20
+# 125 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_FaceRight
+# 126 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 127 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 9
+# 128 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_FaceDown
+# 129 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 130 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 131 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_5
+# 136 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	closemessage
+# 137 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_WalkInPlaceDown
+# 138 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 139 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 20
+# 140 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 141 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 142 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_6
+# 147 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	closemessage
+# 148 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+# 149 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 150 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 151 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight
+# 152 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	playse SE_BALL
+# 154 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	showobjectat 10, MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME
+# 155 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	addobject 10
+# 156 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectxy 10, 5, 13
+# 158 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitse
+# 159 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	playse SE_BALL_OPEN
+# 160 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitse
+# 161 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectxy 9, 18, 14
+# 163 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	giveitem ITEM_ISLANDGAME_CUBONES_POKEBALL
+# 164 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	startquest QUEST_VALLEY_OF_PEACE_CUBONE
+# 165 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	completesubquest QUEST_VALLEY_OF_PEACE_CUBONE, SUB_QUEST_CUBONE_1
+# 166 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	removeobject 10
+# 167 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setobjectxy 10, 18, 14
+# 168 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement 8, Common_Movement_WalkInPlaceDown
+# 169 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 170 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 171 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+# 172 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 173 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	delay 30
+# 174 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_7
+# 177 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	closemessage
+# 178 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+# 179 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	waitmovement 0
+# 180 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	setvar VAR_VALLEY_OF_PEACE_STATE, 3
+# 181 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	warp MAP_ISLANDGAME_BELLEHAVEN, 26, 21
 	return
 
 
+# 188 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_FrankieMovement1:
+# 189 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_right
+# 189 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_right
+# 190 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	face_up
+	step_end
+
+# 193 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_FrankieMovement2:
+# 194 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_left
+# 195 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_down
+# 195 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_down
+# 195 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_down
+# 196 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	face_right
+	step_end
+
+# 199 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_CuboneMovement:
+# 200 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_fast_down
+# 200 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_fast_down
+# 200 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_fast_down
+# 200 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_fast_down
+# 200 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_fast_down
+# 200 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_fast_down
+# 201 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_fast_left
+# 201 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	walk_fast_left
+# 202 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	jump_in_place_left
+# 202 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	jump_in_place_left
+	step_end
+
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuDay::
-# 19 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 210 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	lock
-# 20 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 211 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	faceplayer
-# 21 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 212 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playmoncry SPECIES_PICHU, CRY_MODE_NORMAL
-# 22 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 213 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuDay_Text_0
-# 25 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 216 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	applymovement 6, Common_Movement_FaceOriginalDirection
-# 26 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 217 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitmovement 0
-# 27 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 218 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	closemessage
-# 28 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 219 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuNight::
-# 32 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 223 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	lock
-# 33 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 224 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	faceplayer
-# 34 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 225 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playmoncry SPECIES_PICHU, CRY_MODE_NORMAL
-# 35 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 226 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuNight_Text_0
-# 38 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 229 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	applymovement 7, Common_Movement_FaceOriginalDirection
-# 39 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 230 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitmovement 0
-# 40 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 231 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	closemessage
-# 41 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 232 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Happiny::
-# 45 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 236 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	lock
-# 46 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 237 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	faceplayer
-# 47 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 238 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playmoncry SPECIES_HAPPINY, CRY_MODE_NORMAL
-# 48 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 239 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Happiny_Text_0
-# 51 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 242 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	closemessage
-# 52 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 243 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster::
-# 56 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 247 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	lock
-# 57 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 248 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	faceplayer
-# 58 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 249 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto_if_unset FLAG_TEMP_3, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster_2
-# 64 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 255 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster_Text_1
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster_1:
-# 69 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 260 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	closemessage
-# 70 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 261 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	release
 	return
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster_2:
-# 59 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 250 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster_Text_0
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster_1
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie::
-# 74 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 265 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	lock
-# 75 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
-	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_Text_0
-# 78 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 266 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	goto_if_set FLAG_TEMP_3, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_2
+# 273 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_Text_1
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_1:
+# 277 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	closemessage
-# 79 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 278 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	release
 	return
 
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_2:
+# 267 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	faceplayer
+# 268 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_Text_0
+	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_1
+
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Sudowoodo::
-# 84 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 283 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	lock
-# 85 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 284 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Sudowoodo_Text_0
-# 88 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 287 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	closemessage
-# 89 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 288 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman::
-# 93 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 292 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	lock
-# 94 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 293 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	faceplayer
-# 95 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 294 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto_if_set FLAG_DAILY_BELLEHAVEN_ADOPTION, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_2
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_1:
-# 102 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 301 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_1, MSGBOX_YESNO
-# 106 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 305 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_5
-# 112 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 311 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_3
-# 115 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 314 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_4:
-# 118 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 317 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 MrHerriman_AdoptionList:
-# 119 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 318 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	showmoneybox 17, 1
-# 120 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 319 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	dynmultipush ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_4, 0
-# 121 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 320 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	dynmultipush ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_5, 1
-# 122 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 321 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	dynmultipush ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_6, 2
-# 123 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 322 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	dynmultipush ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_7, 3
-# 124 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 323 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	dynmultipush ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_8, 4
-# 125 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 324 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	dynmultipush ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_9, 5
-# 126 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 325 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	dynmultistack 0, 0, FALSE, 4, FALSE, 0, DYN_MULTICHOICE_CB_NONE
-# 127 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 326 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	switch VAR_RESULT
-# 128 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 327 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	case 1, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_10
-# 155 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 354 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	case 2, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_11
-# 182 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 381 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	case 3, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_12
-# 209 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 408 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	case 4, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_13
-# 236 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 435 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	case 5, ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_14
-# 263 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 462 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_3
-# 266 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 465 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_8:
-# 269 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 468 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 MrHerriman_End:
-# 270 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 469 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	hidemoneybox
-# 271 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 470 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	closemessage
-# 272 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 471 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	release
 	return
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_2:
-# 96 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 295 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_0
-# 99 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 298 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_1
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_5:
-# 107 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 306 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_2
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_4
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_10:
-# 129 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 328 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	checkmoney 10000
-# 130 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 329 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_17
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_16:
-# 136 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 335 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	removemoney 10000
-# 137 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 336 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	updatemoneybox
-# 138 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 337 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_SHOP
-# 139 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 338 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 140 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 339 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_VEND
-# 141 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 340 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 142 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 341 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	hidemoneybox
-# 143 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 342 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	givemon SPECIES_PICHU, 1, ITEM_ORAN_BERRY, , NUM_NATURES, 2, , , , , , , , 31, 31, 31, 31, 31, 31, MOVE_EXTREME_SPEED, MOVE_VOLT_TACKLE, MOVE_SURF, MOVE_FLY
-# 144 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 343 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 145 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 344 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_PICHU
-# 146 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 345 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_11
-# 147 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 346 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitfanfare
-# 148 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 347 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 150 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 349 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_12
-# 153 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 352 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	setflag FLAG_DAILY_BELLEHAVEN_ADOPTION
-# 154 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 353 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_8
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_11:
-# 156 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 355 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	checkmoney 10000
-# 157 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 356 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_20
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_19:
-# 163 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 362 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	removemoney 10000
-# 164 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 363 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	updatemoneybox
-# 165 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 364 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_SHOP
-# 166 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 365 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 167 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 366 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_VEND
-# 168 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 367 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 169 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 368 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	hidemoneybox
-# 170 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 369 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	givemon SPECIES_AZURILL, 1, ITEM_LEPPA_BERRY, , NUM_NATURES, 1, , , , , , , , 31, 31, 31, 31, 31, 31, MOVE_AQUA_JET, MOVE_BELLY_DRUM, MOVE_SUPERPOWER, MOVE_WATER_GUN
-# 171 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 370 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 172 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 371 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_AZURILL
-# 173 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 372 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_13
-# 174 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 373 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitfanfare
-# 175 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 374 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 177 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 376 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_12
-# 180 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 379 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	setflag FLAG_DAILY_BELLEHAVEN_ADOPTION
-# 181 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 380 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_8
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_12:
-# 183 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 382 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	checkmoney 10000
-# 184 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 383 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_23
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_22:
-# 190 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 389 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	removemoney 10000
-# 191 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 390 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	updatemoneybox
-# 192 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 391 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_SHOP
-# 193 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 392 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 194 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 393 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_VEND
-# 195 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 394 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 196 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 395 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	hidemoneybox
-# 197 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 396 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	givemon SPECIES_TOGEPI, 1, ITEM_RAGE_CANDY_BAR, , NUM_NATURES, 1, , , , , , , , 31, 31, 31, 31, 31, 31, MOVE_NASTY_PLOT, MOVE_GROWL, MOVE_CHARM, MOVE_NONE
-# 198 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 397 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 199 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 398 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TOGEPI
-# 200 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 399 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_14
-# 201 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 400 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitfanfare
-# 202 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 401 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 204 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 403 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_12
-# 207 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 406 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	setflag FLAG_DAILY_BELLEHAVEN_ADOPTION
-# 208 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 407 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_8
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_13:
-# 210 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 409 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	checkmoney 10000
-# 211 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 410 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_26
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_25:
-# 217 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 416 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	removemoney 10000
-# 218 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 417 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	updatemoneybox
-# 219 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 418 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_SHOP
-# 220 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 419 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 221 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 420 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_VEND
-# 222 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 421 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 223 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 422 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	hidemoneybox
-# 224 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 423 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	givemon SPECIES_WYNAUT, 1, ITEM_LIECHI_BERRY, , NUM_NATURES, 0, , , , , , , , , , , , , 
-# 225 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 424 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 226 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 425 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_WYNAUT
-# 227 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 426 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_15
-# 228 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 427 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitfanfare
-# 229 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 428 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 231 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 430 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_12
-# 234 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 433 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	setflag FLAG_DAILY_BELLEHAVEN_ADOPTION
-# 235 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 434 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_8
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_14:
-# 237 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 436 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	checkmoney 10000
-# 238 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 437 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_29
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_28:
-# 244 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 443 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	removemoney 10000
-# 245 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 444 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	updatemoneybox
-# 246 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 445 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_SHOP
-# 247 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 446 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 248 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 447 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playse SE_VEND
-# 249 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 448 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitse
-# 250 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 449 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	hidemoneybox
-# 251 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 450 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	givemon SPECIES_TYROGUE, 1, ITEM_FOCUS_BAND, , NUM_NATURES, 1, , , , , , , , 31, 31, 31, 31, 31, 31, MOVE_HIGH_JUMP_KICK, MOVE_BULLET_PUNCH, MOVE_MACH_PUNCH, MOVE_RAPID_SPIN
-# 252 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 451 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 253 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 452 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	bufferspeciesname STR_VAR_1, SPECIES_TYROGUE
-# 254 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 453 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_16
-# 255 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 454 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	waitfanfare
-# 256 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 455 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 257 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 456 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_12
-# 260 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 459 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	setflag FLAG_DAILY_BELLEHAVEN_ADOPTION
-# 261 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 460 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_8
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_17:
-# 131 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 330 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_10
-# 134 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 333 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_16
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_20:
-# 158 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 357 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_10
-# 161 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 360 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_19
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_23:
-# 185 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 384 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_10
-# 188 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 387 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_22
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_26:
-# 212 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 411 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_10
-# 215 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 414 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_25
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_29:
-# 239 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 438 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_10
-# 242 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 441 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	goto MrHerriman_End
 	goto ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_28
 
 
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
+# 52 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "Good grief...{PAUSE 30} this job's a real handful\n"
+	.string "sometimes. I really do envy trainers\l"
+	.string "like you.\p"
+	.string "Getting to explore the world, meeting\n"
+	.string "all kinds of people and Pokémon, not\l"
+	.string "having to deal with boring chores and a\l"
+	.string "bossy old man who'll never acknowledge\l"
+	.string "all the work you do around here...\p"
+	.string "Heh...{PAUSE 30} but I guess I can't complain too\n"
+	.string "much. I chose to do this, after all.$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
+# 62 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "I used to have a Vulpix of my own when I\n"
+	.string "was younger. We were inseparable.\p"
+	.string "But one night, she was taken from me by\n"
+	.string "a group of poachers while we were\l"
+	.string "taking a stroll down Aetheria, and that\l"
+	.string "was the last time I ever saw her. So I\l"
+	.string "started working here, hoping that one\l"
+	.string "day, I might see her again.\p"
+	.string "The same thing happened to that poor\n"
+	.string "Cubone's mother. I found him crying out\l"
+	.string "for her after hearing that a group of\l"
+	.string "poachers invaded the valley.\p"
+	.string "Those rotten poachers...{PAUSE 30} It boils my\n"
+	.string "blood just thinking about them...\p"
+	.string "-sigh- But this is all I can do. Taking\n"
+	.string "care of orphaned Pokémon and helping\l"
+	.string "them reunite with their owners, or\l"
+	.string "finding them a new home.\p"
+	.string "$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
+# 75 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "Ah, it's getting late. {PAUSE 30}Thanks for lending\n"
+	.string "an ear, {PLAYER}. You should go\l"
+	.string "upstairs and rest.$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_3:
+# 82 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "{COLOR RED}(I spent the rest of the night at the\n"
+	.string "foster home.)$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_4:
+# 103 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "Ah, leaving already? That's a shame. It\n"
+	.string "was nice chatting with someone my age.\p"
+	.string "But I shouldn't hold you hostage here.\n"
+	.string "I'm sure you've more important matters\l"
+	.string "to attend to as a trainer.\p"
+	.string "Feel free to stop by once in a while, if\n"
+	.string "you've ever the time. Hehe.$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_5:
+# 132 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "Cuu! {COLOR BLUE}(Hooman! Take Cubone with you!\n"
+	.string "Please!)\p"
+	.string "{COLOR DARK_GRAY}Cuu... {COLOR BLUE}(Hooman is powerful trainer.\n"
+	.string "Trainer travel around Marya. Trainer\l"
+	.string "might find Mama...)\p"
+	.string "{COLOR DARK_GRAY}...Cuu? {COLOR BLUE}(...Can hooman help Cubone find\n"
+	.string "Mama?)$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_6:
+# 143 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "Haha, I see Cubone's taken quite a\n"
+	.string "liking to you, {PLAYER}.\p"
+	.string "I take it he'll be tagging along with you\n"
+	.string "from now on?\p"
+	.string "Normally I have to charge you an\n"
+	.string "adoption fee... but I think I'll give your\l"
+	.string "little friend an exception just this one\l"
+	.string "time.\p"
+	.string "Just don't tell Mr. Herriman, or he'll\n"
+	.string "give me an earful about it!$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_7:
+# 175 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "Best of luck to you and your new friend,\n"
+	.string "{PLAYER}!$"
+
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuDay_Text_0:
-# 23 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 214 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "I LIEK CEREAL!!!!!!!!!!$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_PichuNight_Text_0:
-# 36 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 227 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Mmmmmm...{PAUSE 60} chocolat melk$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Happiny_Text_0:
-# 49 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 240 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "COCO COCO COCO COCO!$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster_Text_0:
-# 60 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 251 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Oh-ho-ho, these baby Pokémon are\n"
 	.string "always so full of energy. I envy it.$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MadameFoster_Text_1:
-# 65 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 256 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Hello dearie! All of the Pokémon have\n"
 	.string "gone to bed.\p"
 	.string "I'm afraid you'll have to come back\n"
 	.string "during the day if you'd like to adopt.$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_Text_0:
-# 76 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 269 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+	.string "{PLAYER}! How're things with Cubone?$"
+
+ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Frankie_Text_1:
+# 274 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "BLOO!!!{PAUSE 30} GET YOUR BOUNCY BEHIND OVER\n"
 	.string "HERE AND CLEAN UP THE MESS YOU MADE!!!$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_Sudowoodo_Text_0:
-# 86 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 285 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "{COLOR RED}(Contrary to its appearance, it's just a\n"
 	.string "toy that looks like a Sudowoodo.)$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_0:
-# 97 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 296 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Our policy is one adoption per customer\n"
 	.string "per day. Please come back tomorrow if\l"
 	.string "you would like to adopt another.$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_1:
-# 103 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 302 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Good day, young trainer. I am Mr.\n"
 	.string "Herriman, the head of this foster home.\p"
 	.string "Are you looking to adopt a Pokémon? The\n"
 	.string "fee is ¥10,000.$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_2:
-# 108 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 307 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Splendid! Who shall be your choice?$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_3:
-# 113 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 312 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Righty oh. Inform me when you have made\n"
 	.string "a decision.$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_4:
-# 120 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 319 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "I'll choose later!$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_5:
-# 121 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 320 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Pichu$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_6:
-# 122 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 321 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Azurill$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_7:
-# 123 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 322 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Togepi$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_8:
-# 124 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 323 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Wynaut$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_9:
-# 125 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 324 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "Tyrogue$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_10:
-# 132 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 331 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "My apologies, but you must have the\n"
 	.string "necessary funds to pay the fee.$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_11:
-# 146 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 345 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "You adopted a Pichu!$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_12:
-# 151 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 350 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "I wish all the best for you and your new\n"
 	.string "companion, young trainer.$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_13:
-# 173 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 372 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "You adopted an Azurill!$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_14:
-# 200 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 399 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "You adopted a Togepi!$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_15:
-# 227 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 426 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "You adopted a Wynaut!$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MrHerriman_Text_16:
-# 254 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
+# 453 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	.string "You adopted a Tyrogue!$"

@@ -119,7 +119,7 @@
 #define VAR_ROUTE104_STATE                               0x4063
 #define VAR_APPLEVINE_STATE                              0x4064 // island-game: used to track how many coins you've given to the coin girl
 #define VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE          0x4065 // island-game: used for valley of peace's hidden grotto
-#define VAR_ROUTE107_STATE                               0x4066 // Unused Var
+#define VAR_VALLEY_OF_PEACE_STATE                        0x4066 // island-game: used for valley of peace appearances
 #define VAR_ROUTE108_STATE                               0x4067 // Unused Var
 #define VAR_ROUTE109_STATE                               0x4068 // Unused Var
 #define VAR_ROUTE110_STATE                               0x4069

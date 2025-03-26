@@ -20119,7 +20119,6 @@ static const struct LevelUpMove sPolteageistLevelUpLearnset[] = {
     LEVEL_UP_MOVE(54, MOVE_MEMENTO),
     LEVEL_UP_MOVE(60, MOVE_SHELL_SMASH),
     LEVEL_UP_MOVE(66, MOVE_CURSE),
-    LEVEL_UP_MOVE(72, MOVE_HYDRO_PUMP),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_SINISTEA

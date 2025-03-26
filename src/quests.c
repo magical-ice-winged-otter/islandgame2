@@ -261,10 +261,15 @@ const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
 const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
 const u8 sText_SideQuestMap_Applevine[] = _("Applevine");
 const u8 sText_SideQuestMap_RockyPath[] = _("Rocky Path");
+const u8 sText_SideQuestMap_ValleyofPeace[] = _("Valley of Peace");
 const u8 sText_SideQuestMap_Aetheria[] = _("Aetheria");
 const u8 sText_SideQuestMap_Cantalo[] = _("Cantalo");
+
 const u8 sText_SideQuestMap_Amberidge[] = _("Amberidge");
 const u8 sText_SideQuestMap_Unknown[] = _("Marya");
+const u8 sText_SideQuestMap_Oranna[] = _("Oranna");
+const u8 sText_SideQuestMap_Lumine[] = _("Lumine");
+const u8 sText_SideQuestMap_Minerva[] = _("Minerva");
 
 
 // Pokedex Quest
@@ -387,7 +392,7 @@ const u8 sText_SideQuestDesc_MaryaGymChallenge[] = _("Acquire the gym badges of 
 const u8 sText_SideQuestDoneDesc_MaryaGymChallenge[] = _("All that's left is the\nFestival Tournament...");
 
 const u8 sText_SubQuest_MaryaGymChallenge1_Name[] = _("Tidalcove Badge");
-const u8 sText_SubQuest_MaryaGymChallenge1_Desc[] = _("“Your Pokémon were cool as a\nCryogonal! Stay frosty!” -Ruka");
+const u8 sText_SubQuest_MaryaGymChallenge1_Desc[] = _("“Stay frosty!” -Ruka");
 
 const u8 sText_SubQuest_MaryaGymChallenge2_Name[] = _("Cantalo Badge");
 const u8 sText_SubQuest_MaryaGymChallenge2_Desc[] = _("“Your passion for battle is\nan inspiration.” -Avi");
@@ -416,25 +421,38 @@ const u8 sText_SideQuestDesc_APPLEVINE_COUCH_POTATO[] = _("You probably weren't 
 const u8 sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO[] = _("Looks like you've been laid off.\nAt least you were compensated...?");
 
 const u8 sText_SubQuest_CouchPotato1_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You know Sweet Hearts have a serving\nsize of two people, right?");
+const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You delivered his\nSweet Heart!");
 
 const u8 sText_SubQuest_CouchPotato2_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("They should just set up a scout camp\nat this guy's house...");
+const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("You delivered his\nCandy Bar!");
 
 const u8 sText_SubQuest_CouchPotato3_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato3_Desc[] 	  = _("Pancakes are just dessert pizzas.");
+const u8 sText_SubQuest_CouchPotato3_Desc[] 	  = _("You delivered his\nPancake!");
 
 const u8 sText_SubQuest_CouchPotato4_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("Imagine if you brought him a rice\nball instead.");
+const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("You delivered his\nJelly Donut!");
 
 const u8 sText_SubQuest_CouchPotato5_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("Man, Sera's fans are down bad.");
+const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("You delivered his\nSera-Snaxx!");
 
 // PokeVial Nurse Quest 
 const u8 sText_SideQuestName_ROCKY_PATH_NURSE[] = _("The Missing Ingredient");
 const u8 sText_SideQuestDesc_ROCKY_PATH_NURSE[] = _("Nurse Joy needs a Balm Mushroom for\nher newest medicinal breakthrough!");
 const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\nin creating the PokéVial!");
 
+// Cubone Quest
+const u8 sText_SideQuestName_VALLEY_OF_PEACE_CUBONE[] = _("The Hunters Become The Hunted");
+const u8 sText_SideQuestDesc_VALLEY_OF_PEACE_CUBONE[] = _("Track down the hunters\nwho took Cubone's mother!");
+const u8 sText_SideQuestDoneDesc_VALLEY_OF_PEACE_CUBONE[] = _("Righteous retribution\nhas been inflicted.");
+
+const u8 sText_SubQuest_Cubone1_Name[] = _("Part I");
+const u8 sText_SubQuest_Cubone1_Desc[] = _("Hmm... Maybe I can find\nthe hunters around Lumine...");
+
+const u8 sText_SubQuest_Cubone2_Name[] = _("Part II");
+const u8 sText_SubQuest_Cubone2_Desc[] = _("TBD");
+
+const u8 sText_SubQuest_Cubone3_Name[] = _("Part III");
+const u8 sText_SubQuest_Cubone3_Desc[] = _("TBD");
 
 // MissingNo Quest
 const u8 sText_SideQuestName_MissingNo[] = _("<?> À GlitŒh エñ tHœ MあtrÏx");
@@ -805,6 +823,38 @@ static const struct SubQuest sSubQuests_ApplevineCouchPotato[SUB_QUEST_COUNT_COU
 	),
 };
 
+static const struct SubQuest sSubQuests_ValleyOfPeaceCubone[SUB_QUEST_COUNT_CUBONE] = 
+{
+	sub_quest(
+		SUB_QUEST_CUBONE_1,
+		sText_SubQuest_Cubone1_Name,
+		sText_SubQuest_Cubone1_Desc,
+		sText_SideQuestMap_ValleyofPeace,
+		SPECIES_GENGAR, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_CUBONE_2,
+		sText_SubQuest_Cubone2_Name,
+		sText_SubQuest_Cubone2_Desc,
+		sText_SideQuestMap_Lumine,
+		OBJ_EVENT_GFX_MAN_5,
+		OBJECT,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_CUBONE_3,
+		sText_SubQuest_Cubone3_Name,
+		sText_SubQuest_Cubone3_Desc,
+		sText_SideQuestMap_Minerva,
+		OBJ_EVENT_GFX_MAN_5,
+		OBJECT,
+		sText_Complete
+	),
+};
+
+
 static const struct SubQuest sSubQuests_MissingNo[SUB_QUEST_COUNT_MISSINGNO] = 
 {
 	sub_quest(
@@ -984,6 +1034,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM,
 		  NULL,
 		  	   0
+	),
+	[QUEST_VALLEY_OF_PEACE_CUBONE] = side_quest(
+	      sText_SideQuestName_VALLEY_OF_PEACE_CUBONE,
+	      sText_SideQuestDesc_VALLEY_OF_PEACE_CUBONE,
+	      sText_SideQuestDoneDesc_VALLEY_OF_PEACE_CUBONE,
+	      sText_SideQuestMap_RockyPath,
+	      SPECIES_CUBONE, 
+	      PKMN,
+	      sSubQuests_ValleyOfPeaceCubone,
+          SUB_QUEST_COUNT_CUBONE 
 	),
 	[QUEST_MISSINGNO] = side_quest(
 	      sText_SideQuestName_MissingNo,

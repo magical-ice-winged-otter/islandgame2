@@ -84,7 +84,7 @@ script ISLANDGAME_AURORA_PATH_GROTTO_ItemBall {
         case 0: finditem(ITEM_SNOWBALL)
         case 1: finditem(ITEM_ICE_GEM)
         case 2: finditem(ITEM_STARDUST)
-        case 3: finditem(ITEM_YACHE_BERRY)
+        case 3: finditem(ITEM_GANLON_BERRY)
         case 4: finditem(ITEM_MOOMOO_MILK)
         default:
     }
