@@ -378,7 +378,7 @@ static const struct SpriteTemplate sSpriteTemplate_HeartIcon =
 static const struct SpriteTemplate sSpriteTemplate_TalkingIcon =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MAY,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_TalkingIcon,
@@ -388,8 +388,9 @@ static const struct SpriteTemplate sSpriteTemplate_TalkingIcon =
 
 static const struct SpriteTemplate sSpriteTemplate_ThinkingIcon =
 {
+    
     .tileTag = TAG_NONE,
-    .paletteTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MAY,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_ThinkingIcon,
@@ -1069,20 +1070,30 @@ u8 FldEff_HeartIcon(void)
 
 u8 FldEff_TalkingIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_TalkingIcon, 0, 0, 0x52);
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_TalkingIcon, 0, 0, 0x53);
 
     if (spriteId != MAX_SPRITES)
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_TALKING_ICON, 0);
+    {
+        struct Sprite *sprite = &gSprites[spriteId];
+
+        SetIconSpriteData(sprite, FLDEFF_TALKING_ICON, 0);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_TalkingIcon, sprite);
+    }
 
     return 0;
 }
 
 u8 FldEff_ThinkingIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ThinkingIcon, 0, 0, 0x52);
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ThinkingIcon, 0, 0, 0x53);
 
     if (spriteId != MAX_SPRITES)
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_THINKING_ICON, 0);
+    {
+        struct Sprite *sprite = &gSprites[spriteId];
+
+        SetIconSpriteData(sprite, FLDEFF_THINKING_ICON, 0);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ThinkingIcon, sprite);
+    }
 
     return 0;
 }
