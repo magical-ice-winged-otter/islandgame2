@@ -5980,19 +5980,15 @@ movement_type_def(MovementType_EmoteThinking, gMovementTypeFuncs_EmoteThinking)
 
 bool8 MovementType_EmoteThinking_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 { // sprite creation
-    if (sprite->animTimer == 0)
-    {
-        ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
-        FieldEffectStart(FLDEFF_THINKING_ICON);
-        sprite->animTimer = 90; // frames until to spawn the next one
-        sprite->sTypeFuncId = 1;
-        return FALSE;
-    }
-    return TRUE;
+    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+    FieldEffectStart(FLDEFF_THINKING_ICON);
+    sprite->animTimer = 90; // frames until to spawn the next one
+    sprite->sTypeFuncId = 1;
+    return FALSE;
 }
 
 bool8 MovementType_EmoteThinking_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{ // handle when to respawn the sprite
+{ // handle when to respawn the sprite, we are stuck in this step until we either break (via talking to npc, etc) or enough frames passed.
     if (sprite->animTimer == 0)
     {
         sprite->sTypeFuncId = 0;
