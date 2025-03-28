@@ -5974,7 +5974,6 @@ bool8 MovementType_WanderInGrass_Step4(struct ObjectEvent *objectEvent, struct S
      return TRUE;
  }
 
-#define animTimer data[4]
 
 movement_type_def(MovementType_EmoteThinking, gMovementTypeFuncs_EmoteThinking)
 
@@ -5982,26 +5981,18 @@ bool8 MovementType_EmoteThinking_Step0(struct ObjectEvent *objectEvent, struct S
 { // sprite creation
     ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
     FieldEffectStart(FLDEFF_THINKING_ICON);
-    sprite->animTimer = 90; // frames until to spawn the next one
     sprite->sTypeFuncId = 1;
     return FALSE;
 }
 
 bool8 MovementType_EmoteThinking_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 { // handle when to respawn the sprite, we are stuck in this step until we either break (via talking to npc, etc) or enough frames passed.
-    if (sprite->animTimer == 0)
+    if (!FieldEffectActiveListContains(FLDEFF_THINKING_ICON))
     {
         sprite->sTypeFuncId = 0;
-        return FALSE;
-    }
-    else
-    {
-        sprite->animTimer--;
     }
     return FALSE;
 }
-
-#undef animTimer
 
 void ClearObjectEventMovement(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
