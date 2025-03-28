@@ -439,7 +439,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Common_EventScript_OverworldPokemon",
-      "flag": "0"
+      "flag": "FLAG_TEMP_8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
@@ -452,7 +452,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Common_EventScript_OverworldPokemon",
-      "flag": "0"
+      "flag": "FLAG_TEMP_9"
     }
   ],
   "warp_events": [
