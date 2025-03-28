@@ -5974,17 +5974,38 @@ bool8 MovementType_WanderInGrass_Step4(struct ObjectEvent *objectEvent, struct S
      return TRUE;
  }
 
+#define animTimer data[4]
+
 movement_type_def(MovementType_EmoteThinking, gMovementTypeFuncs_EmoteThinking)
 
 bool8 MovementType_EmoteThinking_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
-    FieldEffectStart(FLDEFF_THINKING_ICON);
-    sprite->animPaused = TRUE;
-    // MgbaPrintf(MGBA_LOG_INFO, "EmoteThinking_Step0, RETURNING FALSE");
+{ // sprite creation
+    if (sprite->animTimer == 0)
+    {
+        ObjectEventGetLocalIdAndMap(objectEvent, &gFieldEffectArguments[0], &gFieldEffectArguments[1], &gFieldEffectArguments[2]);
+        FieldEffectStart(FLDEFF_THINKING_ICON);
+        sprite->animTimer = 90; // frames until to spawn the next one
+        sprite->sTypeFuncId = 1;
+        return FALSE;
+    }
+    return TRUE;
+}
 
+bool8 MovementType_EmoteThinking_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{ // handle when to respawn the sprite
+    if (sprite->animTimer == 0)
+    {
+        sprite->sTypeFuncId = 0;
+        return FALSE;
+    }
+    else
+    {
+        sprite->animTimer--;
+    }
     return FALSE;
 }
+
+#undef animTimer
 
 void ClearObjectEventMovement(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
