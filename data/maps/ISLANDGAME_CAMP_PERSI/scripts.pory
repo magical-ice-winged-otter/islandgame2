@@ -21,6 +21,12 @@ mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
         setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+
+        // give quest npcs the proper movement type
+        returnqueststate(QUEST_PERSI_FAVORITE_CARD)
+        setvar(VAR_0x800B, QUEST_FAVORITE_CARD_NPC)
+        call(Common_QuestEmoteOnWarp)
+
         if (flag(FLAG_CAMP_PERSI_JONAS_DEFEATED)) {
             setvar(VAR_TEMP_1, 1)
         }
@@ -40,16 +46,6 @@ mapscripts ISLANDGAME_CAMP_PERSI_MapScripts {
             default: 
         }
     }
-    MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_C, 0 {
-            returnqueststate(QUEST_PERSI_FAVORITE_CARD)
-            setvar(VAR_0x800B, QUEST_FAVORITE_CARD_NPC)
-            call(Common_QuestEmoteOnWarp)
-
-
-            setvar(VAR_TEMP_C, 1)
-        }
-    ]
 }
 
 
