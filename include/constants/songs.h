@@ -954,8 +954,9 @@
 
 #define HG_MUSIC_END                      MUS_HG_WIN_MINIGAME
 
-#define SONGS_END                         HG_MUSIC_END
-#define END_MUS                           SONGS_END
+#define MUS_TH_HEAVEN_OF_SCARLET_PERCEPTION     899
+#define SONGS_END                               MUS_TH_HEAVEN_OF_SCARLET_PERCEPTION 
+#define END_MUS                                 SONGS_END
 
 #define MUS_ROUTE118                      0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

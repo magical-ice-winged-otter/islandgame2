@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_CAMP_PERSI",
   "name": "ISLANDGAME_CAMP_PERSI",
   "layout": "LAYOUT_ISLANDGAME_CAMP_PERSI",
-  "music": "MUS_FORTREE",
+  "music": "MUS_TH_HEAVEN_OF_SCARLET_PERCEPTION",
   "region_map_section": "MAPSEC_PERSI",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
