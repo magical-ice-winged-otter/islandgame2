@@ -1894,3 +1894,9 @@ static void UpdateGrassFieldEffectSubpriority(struct Sprite *sprite, u8 elevatio
     }
 }
 
+// FLDEFF_HOT_SPRINGS_WATER
+
+static void FldEff_ShockWave(void)
+{
+
+}
