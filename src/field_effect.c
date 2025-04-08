@@ -4238,7 +4238,39 @@ static void UseVsSeeker_CleanUpFieldEffect(struct Task *task)
     FieldEffectActiveListRemove(FLDEFF_USE_VS_SEEKER);
     DestroyTask(FindTaskIdByFunc(Task_FldEffUseVsSeeker));
 }
+
+#define tState      data[0]
+#define tTargetX    data[1]
+#define tTargetY    data[2]
+
 bool8 FldEff_ShockWave(void)
 {
+    u8 taskId = CreateTask(Task_ShockWaveEffect, 0xff);
+
+    s16 playerX;
+    s16 playerY;
+
+    PlayerGetDestCoords(&playerX, &playerY);
+    // Use relative coordinates to the player
+    // The +8 centers the sprite.
+    gTasks[taskId].tTargetX = playerX + (gFieldEffectArguments[0]) + 8;
+    gTasks[taskId].tTargetY = playerY + (gFieldEffectArguments[1]) + 8;
+    
+
     return FALSE;
 }
+
+static void (*const sShockWaveFieldEffectFuncs[])(struct Task *) = {
+    ShockWaveFieldEffect_End
+;
+
+static void Task_ShockWaveEffect(u8 taskId)
+{
+    sShockWaveFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId])
+}
+
+static void ShockWaveFieldEffect_End(struct Task *task)
+{
+  FieldEffectActiveListRemove(FLDEFF_SHOCK_WAVE);
+  DestroyTask(FindTaskIdByFunc(Task_ShockWaveEffect));
+
