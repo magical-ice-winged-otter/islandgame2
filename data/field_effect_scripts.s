@@ -82,7 +82,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_CaveDust                  @ FLDEFF_CAVE_DUST
 	.4byte gFieldEffectScript_TalkingIcon               @ FLDEFF_TALKING_ICON
 	.4byte gFieldEffectScript_ThinkingIcon              @ FLDEFF_THINKING_ICON
-
+	.4byte gFieldEffectScript_ShockWave                 @ FLDEFF_SHOCK_WAVE
 	
     
 gFieldEffectScript_ExclamationMarkIcon1::
@@ -389,4 +389,8 @@ gFieldEffectScript_TracksSlither::
 
 gFieldEffectScript_CaveDust::
 	field_eff_loadfadedpal_callnative gSpritePalette_CaveDust FldEff_CaveDust
+	field_eff_end
+
+gFieldEffectScript_ShockWave::
+	field_eff_loadfadedpal_callnative gSpritePalette_ShockWave FldEff_ShockWave
 	field_eff_end

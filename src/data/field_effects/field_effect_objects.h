@@ -1356,3 +1356,26 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_CaveDust = {
 };
 
 const struct SpritePalette gSpritePalette_CaveDust = {gFieldEffectObjectPalette_CaveDust, FLDEFF_PAL_TAG_CAVE_DUST};
+
+
+// shock wave
+
+static const struct SpriteFrameImage sPicTable_ShockWave[] =
+{
+    overworld_frame(gFieldEffectObjectPic_ShockWave, 2, 2, 0),
+    overworld_frame(gFieldEffectObjectPic_ShockWave, 2, 2, 1),
+    overworld_frame(gFieldEffectObjectPic_ShockWave, 2, 2, 2),
+    overworld_frame(gFieldEffectObjectPic_ShockWave, 2, 2, 3),
+    overworld_frame(gFieldEffectObjectPic_ShockWave, 2, 2, 4),
+};
+const struct SpriteTemplate gFieldEffectObjectTemplate_ShockWave = {
+    .tileTag = 0xFFFF,
+    .paletteTag = FLDEFF_PAL_TAG_SHOCK_WAVE,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_WaterSurfacing,
+    .images = sPicTable_ShockWave,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = WaitFieldEffectSpriteAnim,
+};
+
+const struct SpritePalette gSpritePalette_ShockWave = {gFieldEffectObjectPalette_ShockWave, FLDEFF_PAL_TAG_SHOCK_WAVE};

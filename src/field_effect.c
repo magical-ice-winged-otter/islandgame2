@@ -4238,3 +4238,7 @@ static void UseVsSeeker_CleanUpFieldEffect(struct Task *task)
     FieldEffectActiveListRemove(FLDEFF_USE_VS_SEEKER);
     DestroyTask(FindTaskIdByFunc(Task_FldEffUseVsSeeker));
 }
+bool8 FldEff_ShockWave(void)
+{
+    return FALSE;
+}
