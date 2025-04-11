@@ -123,7 +123,7 @@
 #define VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE          0x4067 // island-game: used for valley of peace's hidden grotto
 #define VAR_VALLEY_OF_PEACE_STATE                        0x4068 // island-game: used for valley of peace cubone quest
 #define VAR_ROUTE110_STATE                               0x4069
-#define VAR_ROUTE111_STATE                               0x406A // Unused Var
+#define VAR_VERDANT_PATH_STATE                           0x406A // island-game: used for Verdant Path's Fishing Club
 #define VAR_ROUTE112_STATE                               0x406B // Unused Var
 #define VAR_ROUTE113_STATE                               0x406C // Unused Var
 #define VAR_ROUTE114_STATE                               0x406D // Unused Var

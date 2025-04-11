@@ -5821,7 +5821,7 @@ u16 GetBattleBGM(void)
         case SPECIES_GROUDON_PRIMAL:
             return MUS_VS_KYOGRE_GROUDON;
         case SPECIES_JIRACHI:
-            return MUS_VS_WILD;
+            return MUS_DP_VS_WILD;
         case SPECIES_DEOXYS:
         case SPECIES_DEOXYS_ATTACK:
         case SPECIES_DEOXYS_DEFENSE:
@@ -5872,7 +5872,7 @@ u16 GetBattleBGM(void)
         case SPECIES_ARCEUS_FAIRY:
             return MUS_DP_VS_ARCEUS;
         default:
-            return MUS_VS_WILD;
+            return MUS_DP_VS_WILD;
         }
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
@@ -5932,7 +5932,7 @@ u16 GetBattleBGM(void)
     }
     else
     {
-        return MUS_VS_WILD;
+        return MUS_DP_VS_WILD;
     }
 }
 

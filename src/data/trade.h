@@ -1063,10 +1063,10 @@ static const struct InGameTrade sIngameTrades[] =
         .otId = 00322,
         .conditions = {5, 30, 5, 5, 5},
         .personality = NATURE_TIMID,
-        .heldItem = ITEM_STAR_PIECE,
+        .heldItem = ITEM_COMET_SHARD,
         .otName = _("Yomi"),
         .sheen = 10,
-        .requestedSpecies = SPECIES_HORSEA,
+        .requestedSpecies = SPECIES_GYARADOS,
     },
 
     [INGAME_TRADE_RIOLU] =

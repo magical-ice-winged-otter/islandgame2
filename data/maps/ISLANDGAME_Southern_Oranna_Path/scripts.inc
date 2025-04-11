@@ -381,8 +381,8 @@ TrainerBattle4_PostDefeated_Text::
 
 ISLANDGAME_Southern_Oranna_Path_NPC1Talk::
 # 144 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"
-	.string "{COLOR DARK_GRAY}Have you seen any Charmander yet? I\n"
-	.string "like that Pokémon.$"
+	.string "{COLOR DARK_GRAY}Have you seen a Chikorita yet? I like\n"
+	.string "that Pokémon.$"
 
 ISLANDGAME_Southern_Oranna_Path_NPC2Talk1::
 # 169 "data/maps/ISLANDGAME_Southern_Oranna_Path/scripts.pory"

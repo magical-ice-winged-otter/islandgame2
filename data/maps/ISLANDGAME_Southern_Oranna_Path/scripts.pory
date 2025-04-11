@@ -143,7 +143,7 @@ script ISLANDGAME_Southern_Oranna_Path_EventScript_NPC1 {
 
 text ISLANDGAME_Southern_Oranna_Path_NPC1Talk {
     format(
-        "{COLOR DARK_GRAY}Have you seen any Charmander yet? I like that Pokémon."
+        "{COLOR DARK_GRAY}Have you seen a Chikorita yet? I like that Pokémon."
     )
 }
 
