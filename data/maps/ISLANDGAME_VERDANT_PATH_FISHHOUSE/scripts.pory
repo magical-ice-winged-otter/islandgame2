@@ -2,8 +2,12 @@
 // 1 = Wishiwashi
 // 2 = Slowpoke
 // 3 = Shellder
-const CATCH_OF_THE_DAY = VAR_TEMP_A
+const CATCH_OF_THE_DAY = VAR_TEMP_E
 
+const LOOP_BOUND = VAR_TEMP_A
+const LOOP_ITER  = VAR_TEMP_B
+const QUEST      = VAR_TEMP_C
+const QUEST_VAR  = VAR_TEMP_D
 
 mapscripts ISLANDGAME_VERDANT_PATH_FISHHOUSE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -33,6 +37,8 @@ mapscripts ISLANDGAME_VERDANT_PATH_FISHHOUSE_MapScripts {
         else {
             setvar(CATCH_OF_THE_DAY, VAR_VERDANT_PATH_STATE)
         }
+        
+        quest_emote_on_warp(3, QUEST_ARNIE_FISHING_QUESTS)
 
     }
 }
@@ -66,7 +72,7 @@ script ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived {
             "How's it hangin'?"
         ))
         dynmultipush("Catch of the Day", 1)
-        dynmultipush("Fishing Quests", 2)
+        dynmultipush("Fishing Quest", 2)
         dynmultipush("Trading", 3)
         dynmultipush("How to fish", 4)
         dynmultipush("Later, dude", 5)
@@ -76,10 +82,29 @@ script ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived {
             case 1:
                 goto(ArnieCatchOfTheDay)
             case 2:
-                msgbox(format(
-                    "blah"
-                ))
-                goto(ArnieServices)
+                returnqueststate(QUEST_ARNIE_FISHING_QUESTS)
+                if(var(VAR_RESULT) == 1) {
+                    msgbox(format(
+                        "Ah, so you think you're ready to take on my famous fishing challenge, do ye?\p"
+                        "The format is pretty simple. I ask you for a specific Pokémon, and you show me it. I'll even throw in a little reward for each one you show!\p"
+                        "So how 'bout it? Think you're up to the task?"
+                    ), MSGBOX_YESNO)
+                    if(var(VAR_RESULT) == YES) {
+                        startquest(QUEST_ARNIE_FISHING_QUESTS)
+                        msgbox(format(
+                            "Heh. I like your enthusiasm, kiddo! Let's kick this gauntlet off with something sweet and simple!\p"
+                            "Your first trial will be... to catch and show me a Mudkip! I hear many trainers are quite fond of them.\p"
+                            "They're pretty rare sights in the wild, but you might be able to find one in the ponds of Oranna."
+                        ))
+                        goto(ArnieServices_End)
+                    }
+                    else {
+                        goto(ArnieServices)
+                    }
+                }
+                else {
+                    goto(ArnieFishingQuest)
+                }
             case 3:
                 msgbox(format(
                     "This club is a great place to trade with other fellow fishing fanatics!\p"
@@ -87,10 +112,94 @@ script ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived {
                 ))
                 goto(ArnieServices)
             case 4:
-                msgbox(format("The second you get a bite, you gotta reel it in only once so you don't break your line.\pThen keep at it every time 'till a Pokémon's on the line!\pIt takes a lot of practice and a little bit of luck, but with enough time, you'll become a master baiter!"))                    
+                msgbox(format("The second you get a bite, you gotta reel it in only once so you don't break your line.\pThen keep at it every time 'till a Pokémon's on the line!\pIt takes a lot of practice and a little bit of luck, but with enough time, you'll become a master hooker!"))                    
                 goto(ArnieServices)
             default:
                 goto(ArnieServices_End)
+        }
+
+    ArnieFishingQuest:
+        setvar(LOOP_ITER, 0)
+        setvar(LOOP_BOUND, SUB_QUEST_COUNT_ARNIE)
+        setvar(QUEST, QUEST_ARNIE_FISHING_QUESTS)
+        call(Common_NextSubQuest)
+        // -> {STR_VAR_1} = quest name
+        // -> {STR_VAR_2} = item/pokemon name
+        // -> var(VAR_RESULT) = the actual id
+        // -> var(LOOP_ITER)  = the subquest that wasn't complete
+        // -> var(LOOP_BOUND) = the index that represents the number of subquests
+        // copyvar(QUEST_VAR, VAR_RESULT)
+        switch(var(LOOP_ITER)) {
+            case 0: setvar(VAR_0x8000, SPECIES_MUDKIP)
+            case 1: setvar(VAR_0x8000, SPECIES_FEEBAS_MARYAN)
+            case 2: setvar(VAR_0x8000, SPECIES_LUMINEON)
+            case 3: setvar(VAR_0x8000, SPECIES_SEADRA)
+            case 4: setvar(VAR_0x8000, SPECIES_PALAFIN)
+            case 5: setvar(VAR_0x8000, SPECIES_CLAMPERL)
+            default: setvar(VAR_0x8000, SPECIES_RELICANTH)
+        }
+        callnative(CheckPartyMon)
+        if (var(VAR_RESULT)) {
+            switch(var(LOOP_ITER)) {
+                case 0:
+                    msgbox(format(
+                        "Ah, looks like you found a Kipperino! Not too bad for a rookie.\p"
+                        "Here's your reward for completing the trial!"
+                    ))
+                    giveitem(ITEM_MYSTIC_WATER)
+                    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_ARNIE_FISHING_QUESTS, LOOP_ITER)
+                    addvar(LOOP_ITER, 1) 
+                    msgbox(format(
+                        "Now that you've gotten your feet wet, why don't we swim out a little farther?\p"
+                        "For your next trial, you'll need to venture into the subzero caves of Mt. Aurora, where you'll find and show me the shabbiest swimmer of them all, Feebas!\p"
+                        "Don't be too quick to judge it by its appearance... like many Pokémon in the world, they can be quite deceiving!"
+                    ))
+                case 1:
+                    msgbox(format(
+                        "Heh, looks like you're startin' to get the hang of things! That's a pretty darn ugly lookin' Feebas, ain't it?\p"
+                        "Here's your reward for completing the trial!"
+                    ))
+                    giveitem(ITEM_PRISM_SCALE)
+                    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_ARNIE_FISHING_QUESTS, LOOP_ITER)
+                    addvar(LOOP_ITER, 1) 
+                    msgbox(format(
+                        "Don't get too comfortable yet... You're still a ways away from the finish line!\p"
+                        "Your next hunt will be the Maryan fish of the forest, Lumineon!\p"
+                        "Their home lies in the freshwater lakes of the lush Arborian Thicket, found only on Lumine Island."
+                    ))
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                default:
+            }
+            goto(ArnieServices_End)
+        }
+        else {
+            switch(var(LOOP_ITER)) {
+                case 0:
+                    msgbox(format(
+                        "Your first trial will be... to catch and show me a Mudkip! I hear many trainers are quite fond of them.\p"
+                        "They're pretty rare sights in the wild, but you might be able to find one in the ponds of Oranna."
+                    ))
+                case 1:
+                    msgbox(format(
+                        "For your next trial, you'll need to venture into the subzero caves of Mt. Aurora, where you'll find and show me Marya's shabbiest swimmer, Feebas!\p"
+                        "Don't be too quick to judge it by its appearance... like many Pokémon in the world, they can be quite deceiving!"
+                    ))
+                case 2:
+                    msgbox(format(
+                        "Your next hunt will be the Maryan fish of the forest, Lumineon!\p"
+                        "Their home lies in the freshwater lakes of the lush Arborian Thicket on Lumine Island."
+                    ))
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                default:
+            }
+            goto(ArnieServices)
         }
 
     ArnieCatchOfTheDay:
@@ -242,7 +351,6 @@ script ISLANDGAME_VERDANT_PATH_FISHHOUSE_RodReceived {
                     goto(ArnieServices)
                 }
         }
-
     ArnieServices_End:
         msgbox(format(
             "Tight lines!"

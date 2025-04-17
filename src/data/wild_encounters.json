@@ -11610,12 +11610,12 @@
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_HORSEA"
+                "species": "SPECIES_SQUIRTLE"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_HORSEA"
+                "species": "SPECIES_SQUIRTLE"
               }
             ]
           }
@@ -12278,7 +12278,7 @@
               {
                 "min_level": 18,
                 "max_level": 18,
-                "species": "SPECIES_POLIWAG"
+                "species": "SPECIES_WISHIWASHI"
               },
               {
                 "min_level": 18,
@@ -12856,7 +12856,7 @@
               {
                 "min_level": 19,
                 "max_level": 19,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_POLIWAG"
               },
               {
                 "min_level": 19,

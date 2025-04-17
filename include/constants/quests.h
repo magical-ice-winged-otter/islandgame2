@@ -29,16 +29,17 @@
 #define QUEST_MINTY_MEADOWS_MELISSA        1
 #define QUEST_PERSI_FAVORITE_CARD          2
 #define QUEST_PERSI_BERRY_MANIAC           3
-#define QUEST_MAPLEGROVE_LOVERS            4
-#define QUEST_MARYA_GYM_CHALLENGE          5
-#define QUEST_FRESA_FARMS_TORCHIC_EGG      6
-#define QUEST_ROSEVALE_RESCUE              7
-#define QUEST_AETHERIA_MELISSA             8
-#define QUEST_APPLEVINE_COUCH_POTATO       9
-#define QUEST_ROCKY_PATH_NURSE             10
-#define QUEST_VALLEY_OF_PEACE_CUBONE       11
-#define QUEST_MISSINGNO                    12 // this should always be the last quest 
-#define QUEST_COUNT                        13 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_ARNIE_FISHING_QUESTS         4  
+#define QUEST_MAPLEGROVE_LOVERS            5
+#define QUEST_MARYA_GYM_CHALLENGE          6
+#define QUEST_FRESA_FARMS_TORCHIC_EGG      7
+#define QUEST_ROSEVALE_RESCUE              8
+#define QUEST_AETHERIA_MELISSA             9
+#define QUEST_APPLEVINE_COUCH_POTATO       10
+#define QUEST_ROCKY_PATH_NURSE             11
+#define QUEST_VALLEY_OF_PEACE_CUBONE       12
+#define QUEST_MISSINGNO                    13 // this should always be the last quest 
+#define QUEST_COUNT                        14 // This number is literally how many to show in the UI (keep it accurate!)
 
 
 
@@ -117,7 +118,18 @@
 
 #define SUB_QUEST_COUNT_CUBONE             3
 
-#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_POKEDEX_MILESTONE + SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_GYM_CHALLENGE + SUB_QUEST_COUNT_COUCH_POTATO + SUB_QUEST_COUNT_CUBONE + SUB_QUEST_COUNT_MISSINGNO)
+// Arnie's Fishing Quests
+#define SUB_QUEST_ARNIE_FISHING_QUEST_1    44
+#define SUB_QUEST_ARNIE_FISHING_QUEST_2    45
+#define SUB_QUEST_ARNIE_FISHING_QUEST_3    46
+#define SUB_QUEST_ARNIE_FISHING_QUEST_4    47
+#define SUB_QUEST_ARNIE_FISHING_QUEST_5    48
+#define SUB_QUEST_ARNIE_FISHING_QUEST_6    49
+#define SUB_QUEST_ARNIE_FISHING_QUEST_7    50
+
+#define SUB_QUEST_COUNT_ARNIE              7
+
+#define SUB_QUEST_COUNT (SUB_QUEST_COUNT_POKEDEX_MILESTONE + SUB_QUEST_COUNT_PERSI_BERRY + SUB_QUEST_COUNT_GYM_CHALLENGE + SUB_QUEST_COUNT_COUCH_POTATO + SUB_QUEST_COUNT_CUBONE + SUB_QUEST_COUNT_MISSINGNO + SUB_QUEST_COUNT_ARNIE)
 
 
 // We want to allocate more space in the saveblock for quests than we need,

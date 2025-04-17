@@ -11,7 +11,7 @@
 #include "item_menu_icons.h"
 #include "list_menu.h"
 #include "item_use.h"
-#include "main.h"
+#include "main.h"nur
 #include "malloc.h"
 #include "menu.h"
 #include "menu_helpers.h"
@@ -251,6 +251,7 @@ static const u8 sText_AZ[] = _(" A-Z");
 // Map Locations
 const u8 sText_SideQuestMap_Cheriport[] = _("Cheriport");
 const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
+const u8 sText_SideQuestMap_VerdantPath[] = _("Verdant Path");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
 const u8 sText_SideQuestMap_Maplegrove[] = _("Maplegrove");
 const u8 sText_SideQuestMap_MintyMeadows[] = _("Minty Meadows");
@@ -375,11 +376,31 @@ const u8 sText_SubQuest_PersiBerryManiac13_Desc[] = _("You found and gave a Rowa
 const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
 const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
 
+// Verdant Path Arnie's Fishing Quests
+const u8 sText_SideQuestName_ArnieFishingQuests[] = _("Arnie's Fishing Challenge");
+const u8 sText_SideQuestDesc_ArnieFishingQuests[] = _("Do you have what it takes to be\na fishing master?");
+const u8 sText_SideQuestDoneDesc_ArnieFishingQuests[] = _("“The title of master hooker\nbelongs to you!” -Arnie");
 
-// Verdant Forest Pokemon Quest
-// const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
-// const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
-// const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
+const u8 sText_SubQuest_FishingQuest1_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest1_Desc[] = _("You caught and showed Arnie a Mudkip!");
+
+const u8 sText_SubQuest_FishingQuest2_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest2_Desc[] = _("You caught and showed Arnie a Feebas!");
+
+const u8 sText_SubQuest_FishingQuest3_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest3_Desc[] = _("You caught and showed Arnie a Lumineon!");
+
+const u8 sText_SubQuest_FishingQuest4_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest4_Desc[] = _("You caught and showed Arnie a Seadra!");
+
+const u8 sText_SubQuest_FishingQuest5_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest5_Desc[] = _("You caught and showed Arnie a Palafin!");
+
+const u8 sText_SubQuest_FishingQuest6_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest6_Desc[] = _("You caught and showed Arnie a Clamperl!");
+
+const u8 sText_SubQuest_FishingQuest7_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest7_Desc[] = _("You caught and showed Arnie a Relicanth!");
 
 // Maplegrove Lovers Quest
 const u8 sText_SideQuestName_MaplegroveLovers[] = _("A Star-crossed Lover");
@@ -742,6 +763,72 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 
 };
 
+static const struct SubQuest sSubQuests_ArnieFishingQuests[SUB_QUEST_COUNT_ARNIE] = 
+{
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_1,
+		sText_SubQuest_FishingQuest1_Name,
+		sText_SubQuest_FishingQuest1_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_MUDKIP, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_2,
+		sText_SubQuest_FishingQuest2_Name,
+		sText_SubQuest_FishingQuest2_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_FEEBAS, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_3,
+		sText_SubQuest_FishingQuest3_Name,
+		sText_SubQuest_FishingQuest3_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_LUMINEON, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_4,
+		sText_SubQuest_FishingQuest4_Name,
+		sText_SubQuest_FishingQuest4_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_SEADRA, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_5,
+		sText_SubQuest_FishingQuest5_Name,
+		sText_SubQuest_FishingQuest5_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_PALAFIN, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_6,
+		sText_SubQuest_FishingQuest6_Name,
+		sText_SubQuest_FishingQuest6_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_CLAMPERL, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_7,
+		sText_SubQuest_FishingQuest7_Name,
+		sText_SubQuest_FishingQuest7_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_RELICANTH, 
+		PKMN,
+		sText_Complete
+	),
+};
 
 static const struct SubQuest sSubQuests_MaryaGymChallenge[SUB_QUEST_COUNT_GYM_CHALLENGE] = 
 {
@@ -955,16 +1042,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
 	),
-	// [QUEST_VERDANT_FOREST_SKITTY] = side_quest(
-	// 	sText_SideQuestName_VerdantForestSkitty,
-	// 	sText_SideQuestDesc_VerdantForestSkitty,
-	// 	sText_SideQuestDoneDesc_VerdantForestSkitty,
-	// 	sText_SideQuestMap_VerdantWoods,
-	// 	OBJ_EVENT_GFX_GIRL_2,
-	// 	OBJECT,
-	// 	NULL,
-	// 		0
-	// ),
+	[QUEST_ARNIE_FISHING_QUESTS] = side_quest(
+	      sText_SideQuestName_ArnieFishingQuests,
+	      sText_SideQuestDesc_ArnieFishingQuests,
+	      sText_SideQuestDoneDesc_ArnieFishingQuests,
+	      sText_SideQuestMap_VerdantPath,
+	      OBJ_EVENT_GFX_MAN_1, 
+	      OBJECT,
+	      sSubQuests_ArnieFishingQuests,
+		  SUB_QUEST_COUNT_ARNIE
+	),
 	[QUEST_MAPLEGROVE_LOVERS] = side_quest(
 	      sText_SideQuestName_MaplegroveLovers,
 	      sText_SideQuestDesc_MaplegroveLovers,

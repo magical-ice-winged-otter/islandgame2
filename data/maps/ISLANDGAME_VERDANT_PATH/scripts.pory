@@ -252,7 +252,7 @@ script ISLANDGAME_VERDANT_PATH_EventScript_SIGN2 {
 text ISLANDGAME_VERDANT_PATH_SIGN2_DESC {
     format(
         "{COLOR DARK_GRAY}ARNIE'S FISHING CLUB\n"
-        "{COLOR DARK_GRAY}Buying, Selling, and Trading!"
+        "{COLOR DARK_GRAY}Home of The Hookers!"
     )
 }
 
