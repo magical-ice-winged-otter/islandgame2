@@ -1537,30 +1537,18 @@
 #define FLAG_TIDALCOVE_LUXBALL_GIFT                 (SYSTEM_FLAGS + 0x98)
 #define FLAG_ROSEVALE_TM_GIFT                       (SYSTEM_FLAGS + 0x99)
 #define FLAG_TIDALCOVE_GYM_SPONSOR_TALK             (SYSTEM_FLAGS + 0x9A)
-//rosevale: arthur's sister gives u a crappily made good-luck charm that ur not allowed to reject because it would be really mean
 #define FLAG_ROSEVALE_AMULET_COIN_GIFT              (SYSTEM_FLAGS + 0x9B)
-//tidalcove: death by glamour
 #define FLAG_TIDALCOVE_RUKA_DEFEATED                (SYSTEM_FLAGS + 0x9C)
-//ss rain: have the memory of an elephant and have the foresight to check back at the ship arbitrarily after beating Ruka
 #define FLAG_SS_RAIN_ROTOM_DEFEATED                 (SYSTEM_FLAGS + 0x9D)
-//verdant woods: gwAurGh!!!
 #define FLAG_VERDANT_WOODS_MIMIKYU_DEFEATED         (SYSTEM_FLAGS + 0x9E)
-//tidalcove: steal from a turtle
 #define FLAG_TIDALCOVE_SQUIRTLE_GIFT                (SYSTEM_FLAGS + 0x9F)
-//applevine: get hit on by a min-wage employee
 #define FLAG_APPLEVINE_SWEETHEART_GIFT              (SYSTEM_FLAGS + 0xA0)
-//applevine: become coco's lab rat
 #define FLAG_APPLEVINE_ITEMFINDER_RECEIVED          (SYSTEM_FLAGS + 0xA1)
-//applevine: sell ur soul to EA
 #define FLAG_APPLEVINE_COIN_CASE                    (SYSTEM_FLAGS + 0xA2)
 #define FLAG_TRAVELERS_TUNNEL_STEELIXITE            (SYSTEM_FLAGS + 0xA3)
-//cheriport: im da map
 #define FLAG_RECEIVED_TOWN_MAP                      (SYSTEM_FLAGS + 0xA4) 
-//rosevale: its time 2 dool
 #define FLAG_ROSEVALE_GALLADITE                     (SYSTEM_FLAGS + 0xA5)
-//rosevale: ...
 #define FLAG_ROSEVALE_RED                           (SYSTEM_FLAGS + 0xA6) 
-//applevine: fwee move tutor
 #define FLAG_APPLEVINE_MOVE_TUTOR_FREEBIE           (SYSTEM_FLAGS + 0xA7) 
 #define FLAG_ROCKY_PATH_ESCAPE_ROPE                 (SYSTEM_FLAGS + 0xA8) 
 #define FLAG_ROCKY_PATH_HAPPINY_GIFT                (SYSTEM_FLAGS + 0xA9) 
@@ -1580,7 +1568,7 @@
 #define FLAG_BELLEHAVEN_CREEPY_GIRL                 (SYSTEM_FLAGS + 0xB7)
 #define FLAG_BELLEHAVEN_SQUID_GAME                  (SYSTEM_FLAGS + 0xB8)
 #define FLAG_BELLEHAVEN_CHARCOAL                    (SYSTEM_FLAGS + 0xB9)
-#define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
+#define FLAG_VERDANT_PATH_TRADE_2                   (SYSTEM_FLAGS + 0xBA)
 #define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
 #define FLAG_UNUSED_0x91C                           (SYSTEM_FLAGS + 0xBC) // Unused Flag
 #define FLAG_UNUSED_0x91D                           (SYSTEM_FLAGS + 0xBD) // Unused Flag
