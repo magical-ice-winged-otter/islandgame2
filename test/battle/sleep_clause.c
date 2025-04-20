@@ -836,7 +836,7 @@ SINGLE_BATTLE_TEST("Sleep Clause: Sleep clause is deactivated when a sleeping mo
 
 DOUBLE_BATTLE_TEST("Sleep Clause: Sleep clause is deactivated when a sleeping mon is woken up by Healer")
 {
-    PASSES_RANDOMLY(30, 100, RNG_HEALER);
+    PASSES_RANDOMLY(50, 100, RNG_HEALER);
     GIVEN {
         FLAG_SET(B_FLAG_SLEEP_CLAUSE);
         ASSUME(GetMoveEffect(MOVE_SPORE) == EFFECT_SLEEP);
