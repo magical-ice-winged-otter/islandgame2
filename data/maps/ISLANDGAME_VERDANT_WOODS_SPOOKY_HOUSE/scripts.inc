@@ -307,28 +307,24 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4::
 # 169 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
 	waitmovement 0
 # 170 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4_Text_0
+	playmoncry SPECIES_GOTHITELLE, CRY_MODE_NORMAL
 # 171 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
-	closemessage
+	waitmoncry
 # 172 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
-	playse SE_M_NIGHTMARE
-# 173 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
-	waitse
-# 174 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
 	applymovement 4, spookySpin
+# 173 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
+	waitmovement 0
+# 174 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
+	applymovement 4, spookyTP
 # 175 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
 	waitmovement 0
 # 176 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
-	applymovement 4, spookyTP
-# 177 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
-	waitmovement 0
-# 178 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
 	removeobject 4
-# 179 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
+# 177 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
 	setobjectxyperm 4, -3, 1
-# 180 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
+# 178 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
 	setvar VAR_SPOOKY_HOUSE_STATE, 4
-# 181 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
+# 179 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
 	release
 	return
 
@@ -346,7 +342,3 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook1_Text_0:
 ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook3_Text_0:
 # 154 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
 	.string "{COLOR RED}(Huh...?)$"
-
-ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE_Spook4_Text_0:
-# 170 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE/scripts.pory"
-	.string "> She stares into your soul ominously.$"

@@ -78,106 +78,106 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN2::
 # 58 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	faceplayer
 # 59 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
-	playmoncry SPECIES_BUIZEL, CRY_MODE_NORMAL
+	playmoncry SPECIES_MUDKIP, CRY_MODE_NORMAL
 # 60 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
-	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN2Talk
+	waitmoncry
 # 61 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN3::
-# 72 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 66 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	lock
-# 73 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 67 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	faceplayer
-# 74 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 68 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	playmoncry SPECIES_SURSKIT, CRY_MODE_NORMAL
-# 75 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 69 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN3Talk
-# 76 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 70 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN4::
-# 86 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 80 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	lock
-# 87 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 81 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	faceplayer
-# 88 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 82 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	playmoncry SPECIES_COTTONEE, CRY_MODE_WEAK
-# 89 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 83 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk
-# 90 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 84 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN5::
-# 104 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 98 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	lock
-# 105 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 99 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	faceplayer
-# 106 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 100 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	playmoncry SPECIES_FLETCHLING, CRY_MODE_NORMAL
-# 107 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 101 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN5Talk
-# 108 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 102 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC1::
-# 126 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 120 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	lock
-# 127 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 121 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	faceplayer
-# 128 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 122 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC1Talk
-# 129 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 123 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC2::
-# 140 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 134 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	lock
-# 141 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 135 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	faceplayer
-# 142 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 136 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC2Talk
-# 143 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 137 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3::
-# 154 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 148 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	lock
-# 155 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 149 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	goto_if_unset FLAG_MINTY_MEADOWS_RIVAL_DEFEATED, ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_2
-# 159 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 153 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_Text_0
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_1:
-# 163 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 157 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	release
 	return
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_2:
-# 156 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 150 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk
 	goto ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_1
 
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_SIGN::
-# 177 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 171 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	lock
-# 178 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 172 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	faceplayer
-# 179 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 173 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	msgbox ISLANDGAME_MAPLEGROVE_OUTSIDE_SIGNText
-# 180 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 174 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	release
 	return
 
@@ -191,7 +191,7 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN1_Text_1:
 	.string "{COLOR DARK_GRAY}Konpeko Konpeko Konpeko!$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_NPC3_Text_0:
-# 160 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 154 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	.string "These two Pokémon don't get along at\n"
 	.string "all. I don't know why.$"
 
@@ -201,16 +201,12 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk::
 	.string "give me something.)\p"
 	.string "{COLOR RED}(Should I take it?)$"
 
-ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN2Talk::
-# 64 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
-	.string "{COLOR DARK_GRAY}Bui-bui!$"
-
 ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN3Talk::
-# 79 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 73 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	.string "{COLOR DARK_GRAY}A$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk::
-# 93 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 87 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	.string "{COLOR DARK_GRAY}Nee...\p"
 	.string "{COLOR RED}(It seems like Cottonee is trying to\n"
 	.string "tell me something.)\p"
@@ -221,7 +217,7 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN4Talk::
 	.string "{COLOR RED}(...How does that even work?)$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN5Talk::
-# 111 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 105 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	.string "{COLOR DARK_GRAY}Chirp chirp...\p"
 	.string "{COLOR RED}(It seems like Fletchling is trying to\n"
 	.string "tell me something.)\p"
@@ -232,21 +228,21 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN5Talk::
 	.string "{COLOR RED}(...How does that even work?)$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC1Talk::
-# 132 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 126 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	.string "{COLOR DARK_GRAY}Be kind to Pokémon, and they'll be kind\n"
 	.string "to you.\p"
 	.string "{COLOR DARK_GRAY}That's what my big sister told me. Now\n"
 	.string "I'm friends with all the Pokémon here!$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC2Talk::
-# 146 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 140 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	.string "{COLOR DARK_GRAY}Maplegrove has been one with nature\n"
 	.string "since its construction many years ago.\p"
 	.string "{COLOR DARK_GRAY}Our bond with the Pokémon here is\n"
 	.string "unbreakable.$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk::
-# 166 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 160 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	.string "{COLOR DARK_GRAY}Hrm... Only two of you little ones here\n"
 	.string "today?\p"
 	.string "{COLOR DARK_GRAY}That pack of savage Mightyena must be\n"
@@ -256,6 +252,6 @@ ISLANDGAME_MAPLEGROVE_OUTSIDE_NPC3Talk::
 	.string "terrorizing this place for long enough!$"
 
 ISLANDGAME_MAPLEGROVE_OUTSIDE_SIGNText::
-# 183 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
+# 177 "data/maps/ISLANDGAME_MAPLEGROVE/scripts.pory"
 	.string "{COLOR DARK_GRAY}MAPLEGROVE\n"
 	.string "{COLOR DARK_GRAY}The Sylvan Sanctuary$"

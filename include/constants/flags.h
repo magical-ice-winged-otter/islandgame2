@@ -1252,7 +1252,7 @@
 #define FLAG_COP_1_REVIVE                                           0x4AB 
 #define FLAG_SS_RAIN_TM_CHARGE_BEAM                                 0x4AC 
 #define FLAG_SS_RAIN_MAX_REVIVE                                     0x4AD
-#define FLAG_VERDANT_WOODS_ADRENALINE_ORB                           0x4AE
+#define FLAG_VERDANT_WOODS_MIMIKIUM_Z                               0x4AE
 #define FLAG_ITEM_COP_FULL_HEAL                                     0x4AF  
 #define FLAG_ITEM_COP_REPEAT_BALL                                   0x4B0
 #define FLAG_ROCKY_PATH_TM                                          0x4B1

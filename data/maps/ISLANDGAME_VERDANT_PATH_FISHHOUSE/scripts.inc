@@ -697,43 +697,47 @@ ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_5:
 # 497 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	goto_if_ne VAR_RESULT, VAR_0x8009, VerdantPath_FishHouse_Trade2_End2
 # 498 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+	lock
+# 499 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_2, MSGBOX_YESNO
-# 502 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+# 503 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_9
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_8:
-# 508 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	copyvar VAR_0x8004, VAR_0x8008
 # 509 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	copyvar VAR_0x8005, VAR_0x800A
+	copyvar VAR_0x8004, VAR_0x8008
 # 510 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	special CreateInGameTradePokemon
+	copyvar VAR_0x8005, VAR_0x800A
 # 511 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	special DoInGameTradeScene
+	special CreateInGameTradePokemon
 # 512 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	waitstate
+	special DoInGameTradeScene
 # 513 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	bufferspeciesname STR_VAR_1, VAR_0x8009
+	waitstate
 # 514 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	lock
+	bufferspeciesname STR_VAR_1, VAR_0x8009
 # 515 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_0
+	lock
 # 516 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_0
+# 517 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	setflag FLAG_VERDANT_PATH_TRADE_2
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_1:
-# 518 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+# 519 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	goto VerdantPath_FishHouse_Trade2_End
-# 520 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-VerdantPath_FishHouse_Trade2_End2:
 # 521 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+VerdantPath_FishHouse_Trade2_End2:
+# 522 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+	lock
+# 523 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_4
-# 524 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	goto VerdantPath_FishHouse_Trade2_End
 # 526 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-VerdantPath_FishHouse_Trade2_End:
-# 527 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
-	closemessage
+	goto VerdantPath_FishHouse_Trade2_End
 # 528 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+VerdantPath_FishHouse_Trade2_End:
+# 529 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+	closemessage
+# 530 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	release
 	return
 
@@ -748,9 +752,9 @@ ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_6:
 	goto ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_5
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_9:
-# 503 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+# 504 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	msgbox ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_3
-# 506 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+# 507 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	goto VerdantPath_FishHouse_Trade2_End
 	goto ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_8
 
@@ -998,18 +1002,18 @@ ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_1:
 	.string "willin' to swap for an arctic one?$"
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_2:
-# 499 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+# 500 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	.string "Yo-ho! So ye do got one of yer own! It\n"
 	.string "looks just like the ones from me port!\p"
 	.string "Well, whaddaya say? Care to swap fer me\n"
 	.string "native Qwilfish?$"
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_3:
-# 504 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+# 505 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	.string "Ah, ye got me hopes up.$"
 
 ISLANDGAME_VERDANT_PATH_FISHHOUSE_EventScript_Trade2_Text_4:
-# 522 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
+# 524 "data/maps/ISLANDGAME_VERDANT_PATH_FISHHOUSE/scripts.pory"
 	.string "Aye, that don't look like no Qwilfish to\n"
 	.string "me, bub.$"
 

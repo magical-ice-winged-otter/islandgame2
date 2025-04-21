@@ -12019,36 +12019,6 @@
               }
             ]
           },
-          "water_mons": {
-            "encounter_rate": 10,
-            "mons": [
-              {
-                "min_level": 22,
-                "max_level": 25,
-                "species": "SPECIES_BUIZEL"
-              },
-              {
-                "min_level": 22,
-                "max_level": 25,
-                "species": "SPECIES_AZUMARILL"
-              },
-              {
-                "min_level": 22,
-                "max_level": 25,
-                "species": "SPECIES_MASQUERAIN"
-              },
-              {
-                "min_level": 22,
-                "max_level": 25,
-                "species": "SPECIES_MASQUERAIN"
-              },
-              {
-                "min_level": 22,
-                "max_level": 25,
-                "species": "SPECIES_MASQUERAIN"
-              }
-            ]
-          },
           "fishing_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -12129,7 +12099,7 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_SCRAGGY"
               },
               {
                 "min_level": 8,
@@ -12178,7 +12148,7 @@
           "map": "MAP_ISLANDGAME_NORTHERN_ORANNA_PATH",
           "base_label": "gISLANDGAME_NORTHERN_ORANNA_PATH0",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 15,
