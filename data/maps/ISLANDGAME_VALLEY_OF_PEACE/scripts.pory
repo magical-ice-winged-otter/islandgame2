@@ -1,15 +1,33 @@
 const FLAG_DAYTIME = FLAG_TEMP_2
 const FLAG_NIGHTTIME = FLAG_TEMP_3
+const FLAG_PRIMROSE = FLAG_TEMP_1A
 const OW_CUBONE = 10
 const OW_GENGAR = 31
 // const GENGAR_FLAG = FLAG_TEMP_8
 const CUBONE_FLAG = FLAG_TEMP_9
 
+const LOCAL_ID_ENCOUNTER_1 = 33
+const LOCAL_ID_ENCOUNTER_2 = 34
+const LOCAL_ID_ENCOUNTER_3 = 35
+const LOCAL_ID_ENCOUNTER_4 = 36
+
 mapscripts ISLANDGAME_VALLEY_OF_PEACE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        // don't show special NPCs if condition met
         if (var(VAR_VALLEY_OF_PEACE_STATE) == 3) {
             setflag(CUBONE_FLAG)
         }
+        if(flag(FLAG_VALLEY_OF_PEACE_PRIMROSE)) {
+            setflag(FLAG_PRIMROSE)
+            setvar(VAR_TEMP_0, 1)
+        }
+
+
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_4, ENCOUNTER_LAND)
+
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
@@ -66,6 +84,19 @@ script ISLANDGAME_VALLEY_OF_PEACE_NPC2 {
     closemessage
     release
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -212,6 +243,21 @@ script ISLANDGAME_VALLEY_OF_PEACE_Trainer9 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // wild encounters
 script ISLANDGAME_LUMINE_CAVE_1F_2_Sinistea1 {
     lock
@@ -320,6 +366,28 @@ script ISLANDGAME_LUMINE_CAVE_1F_2_Poltchageist2 {
     }
     release
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 movement ISLANDGAME_VALLEY_OF_PEACE_CuboneMovement1 {
@@ -559,4 +627,45 @@ script ISLANDGAME_VALLEY_OF_PEACE_GengarInteract {
             break
     }
     release
+}
+
+
+
+
+script ISLANDGAME_VALLEY_OF_PEACE_Primrose {
+    lock
+    delay(60)
+    applymovement(4, ISLANDGAME_VALLEY_OF_PEACE_Primrose1)
+    waitmovement(0)
+    applymovement(4, Common_Movement_FaceRight)
+    applymovement(27, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(60)
+    applymovement(4, ISLANDGAME_VALLEY_OF_PEACE_Primrose2)
+    applymovement(27, ISLANDGAME_VALLEY_OF_PEACE_Primrose2)
+    waitmovement(0)
+    release
+    setvar(VAR_TEMP_0, 1)
+    setflag(FLAG_TEMP_1A)
+    removeobject(4)
+    removeobject(27)
+    setflag(FLAG_VALLEY_OF_PEACE_PRIMROSE)
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_Primrose1 {
+    emote_thinking
+    delay_16 * 4
+    lock_facing_direction
+    walk_up
+    delay_16 * 3
+    walk_in_place_up
+    delay_16 * 3
+    walk_down
+    unlock_facing_direction
+    delay_16 * 3
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_Primrose2 {
+    walk_down * 3
+    walk_left * 6
 }

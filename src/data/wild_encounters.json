@@ -13324,7 +13324,7 @@
               {
                 "min_level": 21,
                 "max_level": 21,
-                "species": "SPECIES_TENTACOOL"
+                "species": "SPECIES_FRILLISH"
               },
               {
                 "min_level": 21,
@@ -13334,7 +13334,7 @@
               {
                 "min_level": 21,
                 "max_level": 21,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_QWILFISH"
               },
               {
                 "min_level": 21,
@@ -13448,12 +13448,12 @@
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_MAGIKARP"
+                "species": "SPECIES_BARBOACH"
               },
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_POLIWHIRL"
+                "species": "SPECIES_BUIZEL"
               },
               {
                 "min_level": 22,
@@ -13463,12 +13463,12 @@
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_FROGADIER"
+                "species": "SPECIES_SOBBLE"
               },
               {
                 "min_level": 22,
                 "max_level": 22,
-                "species": "SPECIES_FROGADIER"
+                "species": "SPECIES_SOBBLE"
               }
             ]
           }
@@ -13572,7 +13572,7 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_BINACLE"
+                "species": "SPECIES_BARBOACH"
               },
               {
                 "min_level": 23,
@@ -13587,12 +13587,12 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_MARSHTOMP"
               },
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_MARSHTOMP"
               }
             ]
           }
@@ -13696,7 +13696,7 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_BINACLE"
+                "species": "SPECIES_BARBOACH"
               },
               {
                 "min_level": 23,
@@ -13711,12 +13711,12 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_MARSHTOMP"
               },
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_MARSHTOMP"
               }
             ]
           }
@@ -13820,7 +13820,7 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_BINACLE"
+                "species": "SPECIES_BARBOACH"
               },
               {
                 "min_level": 23,
@@ -13835,12 +13835,12 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_MARSHTOMP"
               },
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_MARSHTOMP"
               }
             ]
           }
@@ -14211,7 +14211,7 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_BINACLE"
+                "species": "SPECIES_BARBOACH"
               },
               {
                 "min_level": 23,
@@ -14226,12 +14226,12 @@
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_MARSHTOMP"
               },
               {
                 "min_level": 23,
                 "max_level": 23,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_MARSHTOMP"
               }
             ]
           }
@@ -14481,12 +14481,12 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PALPITOAD"
+                "species": "SPECIES_TYMPOLE"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_POLIWHIRL"
               },
               {
                 "min_level": 25,
@@ -14496,12 +14496,12 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_QUAXLY"
+                "species": "SPECIES_FROGADIER"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_QUAXLY"
+                "species": "SPECIES_FROGADIER"
               }
             ]
           }
@@ -14605,12 +14605,12 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_PALPITOAD"
+                "species": "SPECIES_TYMPOLE"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_BUIZEL"
+                "species": "SPECIES_POLIWHIRL"
               },
               {
                 "min_level": 25,
@@ -14620,12 +14620,12 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_QUAXLY"
+                "species": "SPECIES_FROGADIER"
               },
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_QUAXLY"
+                "species": "SPECIES_FROGADIER"
               }
             ]
           }
