@@ -56,15 +56,9 @@ text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN1Talk {
 script ISLANDGAME_MAPLEGROVE_OUTSIDE_EventScript_PKMN2 {
     lock
     faceplayer
-    playmoncry(SPECIES_BUIZEL,CRY_MODE_NORMAL)
-    msgbox(ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN2Talk)
+    playmoncry(SPECIES_MUDKIP,CRY_MODE_NORMAL)
+    waitmoncry
     release
-}
-
-text ISLANDGAME_MAPLEGROVE_OUTSIDE_PKMN2Talk {
-    format(
-        "{COLOR DARK_GRAY}Bui-bui!"
-    )
 }
 
 

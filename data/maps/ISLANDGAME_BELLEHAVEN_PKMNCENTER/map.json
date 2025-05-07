@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_BELLEHAVEN_PKMNCENTER",
   "name": "ISLANDGAME_BELLEHAVEN_PKMNCENTER",
   "layout": "LAYOUT_ISLANDGAME_BELLEHAVEN_PKMNCENTER",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_DP_POKE_CENTER_DAY",
   "region_map_section": "MAPSEC_BELLEHAVEN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -108,5 +108,6 @@
   ],
   "bg_events": [
 
-  ]
+  ],
+  "night_music": "MUS_DP_POKE_CENTER_NIGHT"
 }

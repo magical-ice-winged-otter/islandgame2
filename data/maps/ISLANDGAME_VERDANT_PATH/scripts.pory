@@ -1,4 +1,16 @@
-mapscripts ISLANDGAME_VERDANT_PATH_MapScripts {}
+const LOCAL_ID_ENCOUNTER_1 = 13 
+const LOCAL_ID_ENCOUNTER_2 = 14
+const LOCAL_ID_ENCOUNTER_3 = 15
+const LOCAL_ID_ENCOUNTER_4 = 16
+
+mapscripts ISLANDGAME_VERDANT_PATH_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_4, ENCOUNTER_LAND)
+    }
+}
 
 /// trainers
 // Birdkeeper Felix
@@ -239,8 +251,8 @@ script ISLANDGAME_VERDANT_PATH_EventScript_SIGN2 {
 
 text ISLANDGAME_VERDANT_PATH_SIGN2_DESC {
     format(
-        "{COLOR DARK_GRAY}ARNIE'S \n"
-        "{COLOR DARK_GRAY}Club For Fishing Fanatics!"
+        "{COLOR DARK_GRAY}ARNIE'S FISHING CLUB\n"
+        "{COLOR DARK_GRAY}Home of The Hookers!"
     )
 }
 

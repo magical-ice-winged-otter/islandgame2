@@ -20,6 +20,7 @@
 #include "constants/contest.h"
 #include "constants/daycare.h"
 #include "constants/decorations.h"
+#include "constants/difficulty.h"
 #include "constants/easy_chat.h"
 #include "constants/event_objects.h"
 #include "constants/event_object_movement.h"
@@ -69,6 +70,7 @@
 
 	.section script_data, "aw", %progbits
 
+	.set ALLOCATE_SCRIPT_CMD_TABLE, 1
 	.include "data/script_cmd_table.inc"
 
 gSpecialVars::
@@ -93,7 +95,7 @@ gSpecialVars::
 	.4byte gSpecialVar_MonBoxId
 	.4byte gSpecialVar_MonBoxPos
 	.4byte gSpecialVar_0x8014
-	.4byte gTrainerBattleOpponent_A
+	.4byte gTrainerBattleParameter + 2 // gTrainerBattleParameter.params.opponentA
 
 	.include "data/specials.inc"
 
@@ -1151,7 +1153,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/follower.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
-
+	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/islandgame_debug.inc"
 	.include "data/scripts/islandgame_common.inc"
 	.include "data/scripts/islandgame_menu.inc"
@@ -1440,3 +1442,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ISLANDGAME_BELLE_CATACOMBS_3F/scripts.inc"
 
 	.include "data/maps/ISLANDGAME_BELLE_CATACOMBS_4F/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AETHERIA_SEWERS_MAIN/scripts.inc"
+
+	.include "data/maps/ISLANDGAME_AETHERIA_SEWERS_HIDDEN/scripts.inc"

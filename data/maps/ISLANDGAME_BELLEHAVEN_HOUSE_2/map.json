@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_BELLEHAVEN_HOUSE_2",
   "name": "ISLANDGAME_BELLEHAVEN_HOUSE_2",
   "layout": "LAYOUT_ISLANDGAME_BELLEHAVEN_HOUSE_2",
-  "music": "MUS_HG_VERMILION",
+  "music": "MUS_DP_TWINLEAF_DAY",
   "region_map_section": "MAPSEC_BELLEHAVEN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -42,5 +42,6 @@
   ],
   "bg_events": [
 
-  ]
+  ],
+  "night_music": "MUS_DP_TWINLEAF_NIGHT"
 }

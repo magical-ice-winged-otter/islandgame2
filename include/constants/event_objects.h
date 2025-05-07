@@ -310,7 +310,13 @@
 #define OBJ_EVENT_GFX_SCHOOL_KID_F               ISLAND_START + 58
 #define OBJ_EVENT_GFX_APPLE                      ISLAND_START + 59
 #define OBJ_EVENT_GFX_SHINY_AZURILL              ISLAND_START + 60
-#define ISLAND_END                               OBJ_EVENT_GFX_SHINY_AZURILL
+#define OBJ_EVENT_GFX_BUG_CATCHER_F              ISLAND_START + 61
+#define OBJ_EVENT_GFX_OFFICER_M                  ISLAND_START + 62
+#define OBJ_EVENT_GFX_OFFICER_F                  ISLAND_START + 63
+#define OBJ_EVENT_GFX_ACE_TRAINER_M_2            ISLAND_START + 64
+#define OBJ_EVENT_GFX_ACE_TRAINER_F_2            ISLAND_START + 65
+#define OBJ_EVENT_GFX_ACE_TRAINER_SNOW           ISLAND_START + 66
+#define ISLAND_END                               OBJ_EVENT_GFX_ACE_TRAINER_SNOW
 
 #define NUM_OBJ_EVENT_GFX                        (ISLAND_END + 1)
 
@@ -338,19 +344,23 @@
 #define OBJ_EVENT_GFX_VAR_F  (OBJ_EVENT_GFX_VARS + 0xF)
 #define OBJ_EVENT_GFX_LAST   OBJ_EVENT_GFX_VAR_F
 
-#define OBJ_EVENT_GFX_MON_BASE  0x200 // 512
-#define OBJ_EVENT_GFX_SPECIES_BITS 12 // This will need to be updated when NUM_SPECIES is > ~3.5k
-#define OBJ_EVENT_GFX_SPECIES_MASK ((1 << OBJ_EVENT_GFX_SPECIES_BITS) - 1)
+#define OBJ_EVENT_MON               (1u << 14)
+#define OBJ_EVENT_MON_SHINY         (1u << 13)
+#define OBJ_EVENT_MON_FEMALE        (1u << 12)
+#define OBJ_EVENT_MON_SPECIES_MASK  (~(7u << 12))
 
 // Used to call a specific species' follower graphics. Useful for static encounters.
-#define OBJ_EVENT_GFX_SPECIES(name)       (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE)
-#define OBJ_EVENT_GFX_SPECIES_SHINY(name) (SPECIES_##name + OBJ_EVENT_GFX_MON_BASE + SPECIES_SHINY_TAG)
+#define OBJ_EVENT_GFX_SPECIES(name)                 (SPECIES_##name + OBJ_EVENT_MON)
+#define OBJ_EVENT_GFX_SPECIES_SHINY(name)           (SPECIES_##name + OBJ_EVENT_MON + OBJ_EVENT_MON_SHINY)
+#define OBJ_EVENT_GFX_SPECIES_FEMALE(name)          (SPECIES_##name + OBJ_EVENT_MON + OBJ_EVENT_MON_FEMALE)
+#define OBJ_EVENT_GFX_SPECIES_SHINY_FEMALE(name)    (SPECIES_##name + OBJ_EVENT_MON + OBJ_EVENT_MON_SHINY + OBJ_EVENT_MON_FEMALE)
 
-#define OW_SPECIES(x) (((x)->graphicsId & OBJ_EVENT_GFX_SPECIES_MASK) - OBJ_EVENT_GFX_MON_BASE)
-#define OW_FORM(x) ((x)->graphicsId >> OBJ_EVENT_GFX_SPECIES_BITS)
+#define OW_SPECIES(x) ((x)->graphicsId & OBJ_EVENT_MON_SPECIES_MASK)
+#define OW_SHINY(x) ((x)->graphicsId & OBJ_EVENT_MON_SHINY)
+#define OW_FEMALE(x) ((x)->graphicsId & OBJ_EVENT_MON_FEMALE)
 
 // Whether Object Event is an OW pokemon
-#define IS_OW_MON_OBJ(obj) ((obj)->graphicsId >= OBJ_EVENT_GFX_MON_BASE)
+#define IS_OW_MON_OBJ(obj) ((obj)->graphicsId & OBJ_EVENT_MON)
 
 #define SHADOW_SIZE_S       0
 #define SHADOW_SIZE_M       1
@@ -598,6 +608,12 @@
 #define OBJ_EVENT_PAL_TAG_APPLE                   0x1266
 #define OBJ_EVENT_PAL_TAG_SHINY_AZURILL           0x1267
 #define OBJ_EVENT_PAL_TAG_HEX_MANIAC              0x1268
+#define OBJ_EVENT_PAL_TAG_BUG_CATCHER_F           0x1269
+#define OBJ_EVENT_PAL_TAG_OFFICER_M               0x126A
+#define OBJ_EVENT_PAL_TAG_OFFICER_F               0x126B
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_M_2         0x126C
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_F_2         0x126D
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_SNOW        0x127E
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

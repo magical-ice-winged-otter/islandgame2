@@ -84,7 +84,8 @@
 #define MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT       0x50
 #define MOVEMENT_TYPE_FOLLOW_PLAYER                    0x51
 #define MOVEMENT_TYPE_WANDER_IN_GRASS                  0x52
-#define NUM_MOVEMENT_TYPES                             0x53
+#define MOVEMENT_TYPE_EMOTE_THINKING                   0x53
+#define NUM_MOVEMENT_TYPES                             0x54
 
 #define MOVEMENT_ACTION_FACE_DOWN                       0x0
 #define MOVEMENT_ACTION_FACE_UP                         0x1
@@ -252,8 +253,12 @@
 #define MOVEMENT_ACTION_RUN_UP_SLOW                     0xA3
 #define MOVEMENT_ACTION_RUN_LEFT_SLOW                   0xA4
 #define MOVEMENT_ACTION_RUN_RIGHT_SLOW                  0xA5
-#define MOVEMENT_ACTION_EMOTE_TALKING                   0xA6
-#define MOVEMENT_ACTION_EMOTE_THINKING                  0xA7
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN           0xA6
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP             0xA7
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT           0xA8
+#define MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT          0xA9
+#define MOVEMENT_ACTION_EMOTE_TALKING                   0xAA
+#define MOVEMENT_ACTION_EMOTE_THINKING                  0xAB
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF

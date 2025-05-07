@@ -474,6 +474,10 @@ const u32 gTrainerPalette_BirdKeeperF[] = INCBIN_U32("graphics/trainers/front_pi
 const u32 gTrainerFrontPic_Scientist2[] = INCBIN_U32("graphics/trainers/front_pics/scientist_2.4bpp.lz");
 const u32 gTrainerPalette_Scientist2[] = INCBIN_U32("graphics/trainers/front_pics/scientist_2.gbapal.lz");
 
+const u32 gTrainerFrontPic_Biker[] = INCBIN_U32("graphics/trainers/front_pics/biker.4bpp.lz");
+const u32 gTrainerPalette_Biker[] = INCBIN_U32("graphics/trainers/front_pics/biker.gbapal.lz");
+
+
 // island-game: playable / important
 const u32 gTrainerFrontPic_Olivia[] = INCBIN_U32("graphics/trainers/front_pics/olivia.4bpp.lz");
 const u32 gTrainerPalette_Olivia[] = INCBIN_U32("graphics/trainers/front_pics/olivia.gbapal.lz");
@@ -658,6 +662,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_NERD, gTrainerFrontPic_Nerd, gTrainerPalette_Nerd),
     TRAINER_SPRITE(TRAINER_PIC_BIRD_KEEPER_F, gTrainerFrontPic_BirdKeeperF, gTrainerPalette_BirdKeeperF),
     TRAINER_SPRITE(TRAINER_PIC_SCIENTIST2, gTrainerFrontPic_Scientist2, gTrainerPalette_Scientist2),
+    TRAINER_SPRITE(TRAINER_PIC_BIKER, gTrainerFrontPic_Biker, gTrainerPalette_Biker),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

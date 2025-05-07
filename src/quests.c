@@ -251,6 +251,7 @@ static const u8 sText_AZ[] = _(" A-Z");
 // Map Locations
 const u8 sText_SideQuestMap_Cheriport[] = _("Cheriport");
 const u8 sText_SideQuestMap_Persi[] = _("Camp Persi");
+const u8 sText_SideQuestMap_VerdantPath[] = _("Verdant Path");
 const u8 sText_SideQuestMap_VerdantWoods[] = _("Verdant Woods");
 const u8 sText_SideQuestMap_Maplegrove[] = _("Maplegrove");
 const u8 sText_SideQuestMap_MintyMeadows[] = _("Minty Meadows");
@@ -261,10 +262,15 @@ const u8 sText_SideQuestMap_Rosevale[] = _("Rosevale");
 const u8 sText_SideQuestMap_MtAurora[] = _("Mt. Aurora");
 const u8 sText_SideQuestMap_Applevine[] = _("Applevine");
 const u8 sText_SideQuestMap_RockyPath[] = _("Rocky Path");
+const u8 sText_SideQuestMap_ValleyofPeace[] = _("Valley of Peace");
 const u8 sText_SideQuestMap_Aetheria[] = _("Aetheria");
 const u8 sText_SideQuestMap_Cantalo[] = _("Cantalo");
+
 const u8 sText_SideQuestMap_Amberidge[] = _("Amberidge");
 const u8 sText_SideQuestMap_Unknown[] = _("Marya");
+const u8 sText_SideQuestMap_Oranna[] = _("Oranna");
+const u8 sText_SideQuestMap_Lumine[] = _("Lumine");
+const u8 sText_SideQuestMap_Minerva[] = _("Minerva");
 
 
 // Pokedex Quest
@@ -370,11 +376,31 @@ const u8 sText_SubQuest_PersiBerryManiac13_Desc[] = _("You found and gave a Rowa
 const u8 sText_SubQuest_PersiBerryManiac14_Name[] = _("Starf Berry");
 const u8 sText_SubQuest_PersiBerryManiac14_Desc[] = _("You found and gave a Starf Berry\nto the Berry Maniac.");
 
+// Verdant Path Arnie's Fishing Quests
+const u8 sText_SideQuestName_ArnieFishingQuests[] = _("Arnie's Fishing Challenge");
+const u8 sText_SideQuestDesc_ArnieFishingQuests[] = _("Do you have what it takes to be\na fishing master?");
+const u8 sText_SideQuestDoneDesc_ArnieFishingQuests[] = _("“The title of master hooker\nbelongs to you!” -Arnie");
 
-// Verdant Forest Pokemon Quest
-// const u8 sText_SideQuestName_VerdantForestSkitty[] = _("Possessed Girl");
-// const u8 sText_SideQuestDesc_VerdantForestSkitty[] = _("A girl in the Verdant Forest seems strange..?");
-// const u8 sText_SideQuestDoneDesc_VerdantForestSkitty[] = _("You rescued the possessed girl in\nVerdant Woods! At least for now...");
+const u8 sText_SubQuest_FishingQuest1_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest1_Desc[] = _("You caught and showed Arnie a Mudkip!");
+
+const u8 sText_SubQuest_FishingQuest2_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest2_Desc[] = _("You caught and showed Arnie a Feebas!");
+
+const u8 sText_SubQuest_FishingQuest3_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest3_Desc[] = _("You caught and showed Arnie a Lumineon!");
+
+const u8 sText_SubQuest_FishingQuest4_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest4_Desc[] = _("You caught and showed Arnie a Seadra!");
+
+const u8 sText_SubQuest_FishingQuest5_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest5_Desc[] = _("You caught and showed Arnie a Palafin!");
+
+const u8 sText_SubQuest_FishingQuest6_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest6_Desc[] = _("You caught and showed Arnie a Clamperl!");
+
+const u8 sText_SubQuest_FishingQuest7_Name[] = _("Quest Complete!");
+const u8 sText_SubQuest_FishingQuest7_Desc[] = _("You caught and showed Arnie a Relicanth!");
 
 // Maplegrove Lovers Quest
 const u8 sText_SideQuestName_MaplegroveLovers[] = _("A Star-crossed Lover");
@@ -387,7 +413,7 @@ const u8 sText_SideQuestDesc_MaryaGymChallenge[] = _("Acquire the gym badges of 
 const u8 sText_SideQuestDoneDesc_MaryaGymChallenge[] = _("All that's left is the\nFestival Tournament...");
 
 const u8 sText_SubQuest_MaryaGymChallenge1_Name[] = _("Tidalcove Badge");
-const u8 sText_SubQuest_MaryaGymChallenge1_Desc[] = _("“Your Pokémon were cool as a\nCryogonal! Stay frosty!” -Ruka");
+const u8 sText_SubQuest_MaryaGymChallenge1_Desc[] = _("“Stay frosty!” -Ruka");
 
 const u8 sText_SubQuest_MaryaGymChallenge2_Name[] = _("Cantalo Badge");
 const u8 sText_SubQuest_MaryaGymChallenge2_Desc[] = _("“Your passion for battle is\nan inspiration.” -Avi");
@@ -416,25 +442,38 @@ const u8 sText_SideQuestDesc_APPLEVINE_COUCH_POTATO[] = _("You probably weren't 
 const u8 sText_SideQuestDoneDesc_APPLEVINE_COUCH_POTATO[] = _("Looks like you've been laid off.\nAt least you were compensated...?");
 
 const u8 sText_SubQuest_CouchPotato1_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You know Sweet Hearts have a serving\nsize of two people, right?");
+const u8 sText_SubQuest_CouchPotato1_Desc[] 	  = _("You delivered his\nSweet Heart!");
 
 const u8 sText_SubQuest_CouchPotato2_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("They should just set up a scout camp\nat this guy's house...");
+const u8 sText_SubQuest_CouchPotato2_Desc[] 	  = _("You delivered his\nCandy Bar!");
 
 const u8 sText_SubQuest_CouchPotato3_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato3_Desc[] 	  = _("Pancakes are just dessert pizzas.");
+const u8 sText_SubQuest_CouchPotato3_Desc[] 	  = _("You delivered his\nPancake!");
 
 const u8 sText_SubQuest_CouchPotato4_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("Imagine if you brought him a rice\nball instead.");
+const u8 sText_SubQuest_CouchPotato4_Desc[] 	  = _("You delivered his\nJelly Donut!");
 
 const u8 sText_SubQuest_CouchPotato5_Name[] 	  = _("Delivery Complete!");
-const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("Man, Sera's fans are down bad.");
+const u8 sText_SubQuest_CouchPotato5_Desc[] 	  = _("You delivered his\nSera-Snaxx!");
 
 // PokeVial Nurse Quest 
 const u8 sText_SideQuestName_ROCKY_PATH_NURSE[] = _("The Missing Ingredient");
 const u8 sText_SideQuestDesc_ROCKY_PATH_NURSE[] = _("Nurse Joy needs a Balm Mushroom for\nher newest medicinal breakthrough!");
 const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\nin creating the PokéVial!");
 
+// Cubone Quest
+const u8 sText_SideQuestName_VALLEY_OF_PEACE_CUBONE[] = _("The Hunters Become The Hunted");
+const u8 sText_SideQuestDesc_VALLEY_OF_PEACE_CUBONE[] = _("Track down the hunters\nwho took Cubone's mother!");
+const u8 sText_SideQuestDoneDesc_VALLEY_OF_PEACE_CUBONE[] = _("Righteous retribution\nhas been inflicted.");
+
+const u8 sText_SubQuest_Cubone1_Name[] = _("Part I");
+const u8 sText_SubQuest_Cubone1_Desc[] = _("Hmm... Maybe I can find\nthe hunters around Lumine...");
+
+const u8 sText_SubQuest_Cubone2_Name[] = _("Part II");
+const u8 sText_SubQuest_Cubone2_Desc[] = _("TBD");
+
+const u8 sText_SubQuest_Cubone3_Name[] = _("Part III");
+const u8 sText_SubQuest_Cubone3_Desc[] = _("TBD");
 
 // MissingNo Quest
 const u8 sText_SideQuestName_MissingNo[] = _("<?> À GlitŒh エñ tHœ MあtrÏx");
@@ -724,6 +763,72 @@ static const struct SubQuest sSubQuests_PersiBerryManiac[SUB_QUEST_COUNT_PERSI_B
 
 };
 
+static const struct SubQuest sSubQuests_ArnieFishingQuests[SUB_QUEST_COUNT_ARNIE] = 
+{
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_1,
+		sText_SubQuest_FishingQuest1_Name,
+		sText_SubQuest_FishingQuest1_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_MUDKIP, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_2,
+		sText_SubQuest_FishingQuest2_Name,
+		sText_SubQuest_FishingQuest2_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_FEEBAS, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_3,
+		sText_SubQuest_FishingQuest3_Name,
+		sText_SubQuest_FishingQuest3_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_LUMINEON, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_4,
+		sText_SubQuest_FishingQuest4_Name,
+		sText_SubQuest_FishingQuest4_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_SEADRA, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_5,
+		sText_SubQuest_FishingQuest5_Name,
+		sText_SubQuest_FishingQuest5_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_PALAFIN, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_6,
+		sText_SubQuest_FishingQuest6_Name,
+		sText_SubQuest_FishingQuest6_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_CLAMPERL, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_ARNIE_FISHING_QUEST_7,
+		sText_SubQuest_FishingQuest7_Name,
+		sText_SubQuest_FishingQuest7_Desc,
+		sText_SideQuestMap_Unknown,
+		SPECIES_RELICANTH, 
+		PKMN,
+		sText_Complete
+	),
+};
 
 static const struct SubQuest sSubQuests_MaryaGymChallenge[SUB_QUEST_COUNT_GYM_CHALLENGE] = 
 {
@@ -804,6 +909,38 @@ static const struct SubQuest sSubQuests_ApplevineCouchPotato[SUB_QUEST_COUNT_COU
 		sText_Complete
 	),
 };
+
+static const struct SubQuest sSubQuests_ValleyOfPeaceCubone[SUB_QUEST_COUNT_CUBONE] = 
+{
+	sub_quest(
+		SUB_QUEST_CUBONE_1,
+		sText_SubQuest_Cubone1_Name,
+		sText_SubQuest_Cubone1_Desc,
+		sText_SideQuestMap_ValleyofPeace,
+		SPECIES_GENGAR, 
+		PKMN,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_CUBONE_2,
+		sText_SubQuest_Cubone2_Name,
+		sText_SubQuest_Cubone2_Desc,
+		sText_SideQuestMap_Lumine,
+		OBJ_EVENT_GFX_MAN_5,
+		OBJECT,
+		sText_Complete
+	),
+	sub_quest(
+		SUB_QUEST_CUBONE_3,
+		sText_SubQuest_Cubone3_Name,
+		sText_SubQuest_Cubone3_Desc,
+		sText_SideQuestMap_Minerva,
+		OBJ_EVENT_GFX_MAN_5,
+		OBJECT,
+		sText_Complete
+	),
+};
+
 
 static const struct SubQuest sSubQuests_MissingNo[SUB_QUEST_COUNT_MISSINGNO] = 
 {
@@ -905,16 +1042,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuests_PersiBerryManiac,
 		  SUB_QUEST_COUNT_PERSI_BERRY
 	),
-	// [QUEST_VERDANT_FOREST_SKITTY] = side_quest(
-	// 	sText_SideQuestName_VerdantForestSkitty,
-	// 	sText_SideQuestDesc_VerdantForestSkitty,
-	// 	sText_SideQuestDoneDesc_VerdantForestSkitty,
-	// 	sText_SideQuestMap_VerdantWoods,
-	// 	OBJ_EVENT_GFX_GIRL_2,
-	// 	OBJECT,
-	// 	NULL,
-	// 		0
-	// ),
+	[QUEST_ARNIE_FISHING_QUESTS] = side_quest(
+	      sText_SideQuestName_ArnieFishingQuests,
+	      sText_SideQuestDesc_ArnieFishingQuests,
+	      sText_SideQuestDoneDesc_ArnieFishingQuests,
+	      sText_SideQuestMap_VerdantPath,
+	      OBJ_EVENT_GFX_MAN_1, 
+	      OBJECT,
+	      sSubQuests_ArnieFishingQuests,
+		  SUB_QUEST_COUNT_ARNIE
+	),
 	[QUEST_MAPLEGROVE_LOVERS] = side_quest(
 	      sText_SideQuestName_MaplegroveLovers,
 	      sText_SideQuestDesc_MaplegroveLovers,
@@ -984,6 +1121,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM,
 		  NULL,
 		  	   0
+	),
+	[QUEST_VALLEY_OF_PEACE_CUBONE] = side_quest(
+	      sText_SideQuestName_VALLEY_OF_PEACE_CUBONE,
+	      sText_SideQuestDesc_VALLEY_OF_PEACE_CUBONE,
+	      sText_SideQuestDoneDesc_VALLEY_OF_PEACE_CUBONE,
+	      sText_SideQuestMap_RockyPath,
+	      SPECIES_CUBONE, 
+	      PKMN,
+	      sSubQuests_ValleyOfPeaceCubone,
+          SUB_QUEST_COUNT_CUBONE 
 	),
 	[QUEST_MISSINGNO] = side_quest(
 	      sText_SideQuestName_MissingNo,

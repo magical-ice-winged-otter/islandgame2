@@ -1,25 +1,33 @@
 const FLAG_DAYTIME = FLAG_TEMP_2
 const FLAG_NIGHTTIME = FLAG_TEMP_3
 
+// const QUEST_VALLEY_OF_PEACE_CUBONE_NPC = 11 // is this right?
+
 mapscripts ISLANDGAME_BELLEHAVEN_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        // quest_emote_on_warp(QUEST_VALLEY_OF_PEACE_CUBONE_NPC, QUEST_VALLEY_OF_PEACE_CUBONE)        
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
             setflag(FLAG_NIGHTTIME) // controls daytime npcs
+            returnqueststate(QUEST_VALLEY_OF_PEACE_CUBONE)
+            switch (var(VAR_RESULT)) {
+                case QUEST_INACTIVE: break
+                default: setflag(FLAG_TEMP_4) // frankie
+            }
         }
         else {
             setflag(FLAG_DAYTIME) // controls nighttime npcs
             setflag(FLAG_TEMP_4) // frankie
         }
-        destroyfollower()
+        destroyfollower() // kill easter egg spooky girl from pkmn center
     }
 }
 
 script ISLANDGAME_BELLEHAVEN_Interact_Sign {
     msgbox(format(
         "BELLEHAVEN\n"
-        "Peace and Tranquility"
+        "Peace and Harmony"
     ), MSGBOX_SIGN)
 }
 
@@ -42,7 +50,7 @@ script ISLANDGAME_BELLEHAVEN_MapScripts_Frankie {
     faceplayer
     msgbox(format(
         "Excuse me, have you seen a Cubone anywhere by chance?\pWe took one in earlier this morning, but I couldn't find it anywhere when it came dinner time!\p"
-        "Ooh, I hope he's alright. I found him weeping alone in the Valley of Peace. Maybe he's returned there to look for his parents?"
+        "Ooh, I hope he's alright... I found him wandering around the Valley of Peace all by himself at night.\pMaybe he's returned there to look for his parents?"
     ))
     closemessage
     release
@@ -148,5 +156,11 @@ script ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2 {
     release
 }
 
-
-
+script ISLANDGAME_BELLEHAVEN_MapScripts_WallofGrookey {
+    lock
+    msgbox(format(
+        "{COLOR RED}(For some strange reason, a troop of Grookeys are blocking the way.)"
+    ))
+    closemessage
+    release
+}

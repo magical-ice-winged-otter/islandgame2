@@ -98,63 +98,65 @@ Applevine_Scout:
 	.2byte ITEM_SNOWBALL
 # 58 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	.2byte ITEM_RED_CARD
+# 59 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+	.2byte ITEM_HEART_SCALE
 	.2byte ITEM_NONE
 
 ISLANDGAME_APPLEVINE_PKMNMART_NPC1::
-# 62 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	lock
 # 63 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	faceplayer
+	lock
 # 64 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+	faceplayer
+# 65 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_PKMNMART_NPC1_Text_0, MSGBOX_YESNO
-# 67 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 68 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_PKMNMART_NPC1_2
-# 77 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 78 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_PKMNMART_NPC1_Text_3
 ISLANDGAME_APPLEVINE_PKMNMART_NPC1_1:
-# 81 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	closemessage
 # 82 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+	closemessage
+# 83 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	release
 	return
 
 ISLANDGAME_APPLEVINE_PKMNMART_NPC1_2:
-# 68 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 69 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_PKMNMART_NPC1_Text_1
-# 71 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	pokemart Applevine_Scout
 # 72 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+	pokemart Applevine_Scout
+# 73 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_PKMNMART_NPC1_Text_2
 	goto ISLANDGAME_APPLEVINE_PKMNMART_NPC1_1
 
 
 ISLANDGAME_APPLEVINE_PKMNMART_BINGCHILING::
-# 86 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	lock
 # 87 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	faceplayer
+	lock
 # 88 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	playmoncry SPECIES_VANILLITE, CRY_MODE_NORMAL
+	faceplayer
 # 89 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+	playmoncry SPECIES_VANILLITE, CRY_MODE_NORMAL
+# 90 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_PKMNMART_BINGCHILING_Text_0
-# 92 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	closemessage
 # 93 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+	closemessage
+# 94 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_APPLEVINE_PKMNMART_NPC2::
-# 98 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	lock
 # 99 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	faceplayer
+	lock
 # 100 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+	faceplayer
+# 101 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_PKMNMART_NPC2_Text_0
-# 103 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
-	closemessage
 # 104 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+	closemessage
+# 105 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	release
 	return
 
@@ -168,28 +170,28 @@ ISLANDGAME_APPLEVINE_PKMNMART_Interact_Employee_Text_1:
 	.string "Have a nice rest of your day!$"
 
 ISLANDGAME_APPLEVINE_PKMNMART_NPC1_Text_0:
-# 65 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 66 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	.string "Yooo, tryna buy some product from a\n"
 	.string "strugglin' Braviary Scout?$"
 
 ISLANDGAME_APPLEVINE_PKMNMART_NPC1_Text_1:
-# 69 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 70 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	.string "Word. Wutchu want?$"
 
 ISLANDGAME_APPLEVINE_PKMNMART_NPC1_Text_2:
-# 73 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 74 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	.string "I'm always here for you, broski.$"
 
 ISLANDGAME_APPLEVINE_PKMNMART_NPC1_Text_3:
-# 78 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 79 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	.string "That's cold, brah.$"
 
 ISLANDGAME_APPLEVINE_PKMNMART_BINGCHILING_Text_0:
-# 90 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 91 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	.string "{COLOR RED}(Looks like Vanillite is chilling. Bing\n"
 	.string "Chilling, one could say.)$"
 
 ISLANDGAME_APPLEVINE_PKMNMART_NPC2_Text_0:
-# 101 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
+# 102 "data/maps/ISLANDGAME_APPLEVINE_PKMNMART/scripts.pory"
 	.string "Seems kind of counterproductive for\n"
 	.string "this place to be selling apples...$"

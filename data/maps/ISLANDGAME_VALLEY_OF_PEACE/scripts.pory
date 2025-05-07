@@ -1,1 +1,671 @@
-mapscripts ISLANDGAME_VALLEY_OF_PEACE_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+const FLAG_PRIMROSE = FLAG_TEMP_1A
+const OW_CUBONE = 10
+const OW_GENGAR = 31
+// const GENGAR_FLAG = FLAG_TEMP_8
+const CUBONE_FLAG = FLAG_TEMP_9
+
+const LOCAL_ID_ENCOUNTER_1 = 33
+const LOCAL_ID_ENCOUNTER_2 = 34
+const LOCAL_ID_ENCOUNTER_3 = 35
+const LOCAL_ID_ENCOUNTER_4 = 36
+
+mapscripts ISLANDGAME_VALLEY_OF_PEACE_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        // don't show special NPCs if condition met
+        if (var(VAR_VALLEY_OF_PEACE_STATE) == 3) {
+            setflag(CUBONE_FLAG)
+        }
+        if(flag(FLAG_VALLEY_OF_PEACE_PRIMROSE)) {
+            setflag(FLAG_PRIMROSE)
+            setvar(VAR_TEMP_0, 1)
+        }
+
+
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_4, ENCOUNTER_LAND)
+
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hides daytime npcs
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+
+            switch (var(VAR_VALLEY_OF_PEACE_STATE)) {
+                case 1:
+                    clearflag(CUBONE_FLAG)
+                    setobjectxyperm(OW_CUBONE, 17, 25)
+                    showobjectat(OW_CUBONE, MAP_ISLANDGAME_VALLEY_OF_PEACE) 
+                    setobjectxyperm(OW_GENGAR, 19, 25)
+                    showobjectat(OW_GENGAR, MAP_ISLANDGAME_VALLEY_OF_PEACE) 
+                    setobjectmovementtype(OW_CUBONE, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT)
+                    setobjectmovementtype(OW_GENGAR, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+                default: // setflag(GENGAR_FLAG) // hide gengar until needed
+            }
+
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hides nighttime npcs
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(CUBONE_FLAG) // cubone can only be found at night
+        }
+
+
+    }
+}
+
+
+script ISLANDGAME_VALLEY_OF_PEACE_Sign {
+    msgbox(format(
+        "VALLEY OF PEACE\n"
+        "May the departed find tranquility"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_NPC1 {
+    lock
+    msgbox(format(
+        "{COLOR RED}(He's mourning the loss of his wife it seems. I should leave him be.)"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_NPC2 {
+    lock
+    msgbox(format(
+        "My darling Clefable...{PAUSE 30} Sometimes I still see your shadows around the valley."
+    ))
+    closemessage
+    release
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// trainers
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer1 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_1,
+        format(
+            "This valley exudes a powerful aura... Do not interrupt my aura farming!"
+        ),
+        format(
+            "No... my precious aura...!"
+        ))
+    msgbox(format(
+        "You IMBECILE! How am I to impress the ladies without the power of the aura!?"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer2 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_2,
+        format(
+            "Knowledge is power, and I know a lot."
+        ),
+        format(
+            "Even in defeat, my knowledge increases!"
+        ))
+    msgbox(format(
+        "Every loss is an opportunity to learn."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer3 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_3,
+        format(
+            "Have you also come here to pay respects to your fallen comrades?"
+        ),
+        format(
+            "This battle was for you, Aquilla."
+        ))
+    msgbox(format(
+        "Aquilla was the name of my Staraptor. I bet she's flying in the heavens now."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer4 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_4,
+        format(
+            "Yoooo chat, y'all won't believe what I found in the woods!\p"
+            "AN UN-ALIVED TRAINER!!!\p"
+            "Huh? Outta my way! Can't you see I'm tryna record a video!?"
+        ),
+        format(
+            "Bro! Relax! It's not that serious! It's just a Pokémon battle!"
+        ))
+    msgbox(format(
+        "S-Shut up, chat! Stop spamming that I got destroyed!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer5 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_5,
+        format(
+            "We're here to honor our ol' Miltank for providin' milk to our family fer decades."
+        ),
+        format(
+            "Heh... yer as tough of a fighter as she was."
+        ))
+    msgbox(format(
+        "Remember to cherish the time you spend with yer Pokémon. You never know when that time will end."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer5_2 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_5,
+        format(
+            "I miss our Miltank already... Maybe a battle will get my mind off her..."
+        ),
+        format(
+            "-sniff-\nWell now I just feel even worse..."
+        ))
+    msgbox(format(
+        "I've known our Miltank since I was just a wee li'l sprout... I used to ride on top o' her every day. Good times..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer6 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_6,
+        format(
+            "This is MY territory, punk! I'll teach you to come here uninvited!"
+        ),
+        format(
+            "Tch... you got lucky, punk!"
+        ))
+    msgbox(format(
+        "Those jerks from the Goon Gang didn't let me join their gang 'cause my bike wasn't “hip” enough...\p"
+        "W-Well, I'll show those Gooners! I'll just start my own gang, one where ALL bikes are allowed!"
+    ), MSGBOX_AUTOCLOSE)  
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer7 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_7,
+        format(
+            "Heehee... do you see something unique about my adorable little ceramics?"
+        ),
+        format(
+            "Mhm! They're both a hundred percent authentic!"
+        ))
+    msgbox(format(
+        "Despite the similarities between Sinistea and Poltchageist, they are actually completely different species!\p"
+        "Both of these species also have a “fake” and “authentic” form, depending on if they have a special seal or not!\p"
+        "And that's not the only thing special about authentic ones..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer8 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_8,
+        format(
+            "Young trainer-san! I have brought great dishonor to my Pokémon!\p"
+            "Please! Face me in a duel so that I may claim redemption!"
+        ),
+        format(
+            "A shameful performance..."
+        ))
+    msgbox(format(
+        "I am no longer worthy to wield Pokémon...\p"
+        "I am sorry, my Gallade. Your master has failed you, just like he has failed his Bisharp.\p"
+        "It is time for you to seek a new master. One with the strength to protect you.\p"
+        "Those scoundrels... I will never forgive them!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_Trainer9 {
+    trainerbattle_single(TRAINER_VALLEY_OF_PEACE_9,
+        format(
+            "Aiiiiiiiiiiiiiiiie!{PAUSE 30}\nA g-g-g-g-g-g-g-g-g-GHOOOOOOST!"
+        ),
+        format(
+            "Zoinks!"
+        ))
+    msgbox(format(
+        "Like, you just totally scared the pants off of me, man!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// wild encounters
+script ISLANDGAME_LUMINE_CAVE_1F_2_Sinistea1 {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SINISTEA_PHONY, 27, ITEM_NONE, NUM_NATURES, 0)
+    playmoncry(SPECIES_SINISTEA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Sinistea2 {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_SINISTEA_PHONY, 27, ITEM_NONE, NUM_NATURES, 1)
+    playmoncry(SPECIES_SINISTEA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Poltchageist1 {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_POLTCHAGEIST_COUNTERFEIT, 27, ITEM_NONE, NUM_NATURES, 0)
+    playmoncry(SPECIES_POLTCHAGEIST, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_LUMINE_CAVE_1F_2_Poltchageist2 {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setcwildbattle(0, SPECIES_POLTCHAGEIST_COUNTERFEIT, 27, ITEM_NONE, NUM_NATURES, 1)
+    playmoncry(SPECIES_POLTCHAGEIST, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+movement ISLANDGAME_VALLEY_OF_PEACE_CuboneMovement1 {
+	face_up
+	delay_16
+	delay_4
+	face_right
+	delay_16
+	delay_8
+	face_left
+	delay_16
+	delay_8
+	face_down
+	delay_16
+	face_right
+	delay_16
+	delay_8
+	face_up
+	delay_16
+	step_end
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_GengarMovement1 {
+    walk_fast_up * 2
+    jump_up
+    walk_fast_up * 3
+    face_left
+    jump_in_place_left * 2
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_CuboneMovement2 {
+    jump_left
+    walk_fast_down * 3
+    jump_left * 2
+    walk_fast_left * 4
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_GengarMovement2 {
+    walk_fast_left * 2
+    jump_left
+    walk_fast_down * 3
+    jump_left * 2
+    walk_fast_left * 2
+}
+
+// Cubone Quest
+script ISLANDGAME_VALLEY_OF_PEACE_CuboneTrigger {
+    lock
+    applymovement(OW_CUBONE, ISLANDGAME_VALLEY_OF_PEACE_CuboneMovement1)
+    waitmovement(0)
+    playmoncry(SPECIES_CUBONE, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(OW_CUBONE, Common_Movement_WalkLeft)
+    waitmovement(0)
+    applymovement(OW_CUBONE, ISLANDGAME_VALLEY_OF_PEACE_CuboneMovement1)
+    waitmovement(0)
+    applymovement(OW_CUBONE, Common_Movement_WalkDown)
+    waitmovement(0)
+    playmoncry(SPECIES_CUBONE, CRY_MODE_WEAK)
+    waitmoncry
+    msgbox(format(
+        "Cuu... {COLOR BLUE}(Mama... Where is Mama...?)\p"
+        "{COLOR DARK_GRAY}Cuu.... {COLOR BLUE}(Cubone want Mama... Scary without Mama...)"
+    ))
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown)
+    waitmovement(0)
+    // playmoncry(SPECIES_GENGAR, CRY_MODE_NORMAL)
+    // waitmoncry
+    applymovement(OW_CUBONE, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    playse(SE_PIN)
+    waitse
+    delay(20)
+    // clearflag(GENGAR_FLAG)
+    // showobjectat(OW_GENGAR, MAP_ISLANDGAME_VALLEY_OF_PEACE) 
+    // addobject(OW_GENGAR) 
+    // applymovement(OW_GENGAR, ISLANDGAME_VALLEY_OF_PEACE_GengarMovement1) 
+    // waitmovement(0)
+    // applymovement(OW_CUBONE, Common_Movement_ExclamationMark)
+    applymovement(OW_CUBONE, Common_Movement_FaceRight) 
+    waitmovement(0)
+    delay(30)
+    playmoncry(SPECIES_CUBONE, CRY_MODE_WEAK)
+    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+    applymovement(OW_CUBONE, ISLANDGAME_VALLEY_OF_PEACE_CuboneMovement2) 
+    waitmovement(0)
+    delay(10)
+    // applymovement(OW_GENGAR, ISLANDGAME_VALLEY_OF_PEACE_GengarMovement2) 
+    setvar(VAR_VALLEY_OF_PEACE_STATE, 1)
+    removeobject(OW_CUBONE) 
+    // removeobject(OW_GENGAR)
+
+    
+    clearflag(CUBONE_FLAG)
+    setobjectxyperm(OW_CUBONE, 17, 25)
+    showobjectat(OW_CUBONE, MAP_ISLANDGAME_VALLEY_OF_PEACE) 
+    setobjectxyperm(OW_GENGAR, 19, 25)
+    showobjectat(OW_GENGAR, MAP_ISLANDGAME_VALLEY_OF_PEACE) 
+    setobjectmovementtype(OW_CUBONE, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT)
+    setobjectmovementtype(OW_GENGAR, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+
+    
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_CuboneInteract {
+    lock
+    playmoncry(SPECIES_CUBONE, CRY_MODE_WEAK)
+    waitmoncry
+    release
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_GengarMovement3 {
+    lock_facing_direction
+    walk_right
+    unlock_facing_direction
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_GengarMovement4 {
+    walk_fast_down
+    jump_2_down
+    walk_fast_down
+    walk_fast_left * 2
+    walk_fast_down * 3
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_CaretakerMovement1 {
+    walk_fast_down * 2
+    walk_fast_left* 3
+    walk_fast_down * 3
+    walk_fast_left * 4
+    face_down
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_CaretakerMovement2 {
+    walk_right
+    face_down
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_GengarInteract {
+    lock
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    setcwildbattle(0, SPECIES_GENGAR, 45, ITEM_SITRUS_BERRY, NUM_NATURES, 0, 252, 252, 252, 252, 252, 252, 31, 31, 31, 31, 31, 31, MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_SLUDGE_WAVE, MOVE_DREAM_EATER)
+    setwilddoubleflag
+    playmoncry(SPECIES_GENGAR, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            setvar(VAR_0x8000, 18)
+            setvar(VAR_0x8001, 25)
+            callnative(TeleportCamera)
+            setobjectxy(OBJ_EVENT_ID_PLAYER, 18, 25)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            applymovement(OW_GENGAR, Common_Movement_FaceLeft)
+            waitmovement(0)
+            fadescreen(FADE_FROM_BLACK)
+
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            playse(SE_M_STRENGTH)
+            waitse
+            applymovement(OW_GENGAR, ISLANDGAME_VALLEY_OF_PEACE_GengarMovement3)
+            playmoncry(SPECIES_GENGAR, CRY_MODE_WEAK)
+            waitmoncry
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
+            applymovement(OW_CUBONE, Common_Movement_FaceDown)
+            applymovement(OW_GENGAR, ISLANDGAME_VALLEY_OF_PEACE_GengarMovement4)
+            waitmovement(0)
+            removeobject(OW_GENGAR)
+            // setflag(GENGAR_FLAG)
+            delay(60)
+            applymovement(OW_CUBONE, Common_Movement_WalkInPlaceRight)
+            waitmovement(0)
+            playmoncry(SPECIES_CUBONE, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            msgbox(format(
+                "Cuu... {COLOR BLUE}(Hooman... save Cubone?)"
+            ))
+            closemessage
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceLeft)
+            waitmovement(0)
+            delay(20)
+            msgbox(format(
+                "Cuu...{COLOR BLUE} (Cubone thank hooman. Thought was like scary ones who took Mama...)\p"
+                "{COLOR DARK_GRAY}Ah! You found him!"
+            ))
+            closemessage
+
+    
+            addobject(32)
+            setobjectxy(32, 24, 19)
+            // showobjectat(32, MAP_ISLANDGAME_VALLEY_OF_PEACE) 
+            // setobjectmovementtype(32, MOVEMENT_TYPE_NONE)
+
+
+            applymovement(32, ISLANDGAME_VALLEY_OF_PEACE_CaretakerMovement1)
+            delay(30)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight)
+            delay(60)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+            applymovement(OW_CUBONE, Common_Movement_FaceUp)
+            waitmovement(32)
+            msgbox(format(
+                "It's dangerous to run off in the night by yourself like that!\p"
+                "You could've gotten hurt, or even worse...!"
+            ))
+            closemessage
+            playmoncry(SPECIES_CUBONE, CRY_MODE_WEAK)
+            waitmoncry
+            applymovement(32, ISLANDGAME_VALLEY_OF_PEACE_CaretakerMovement2) 
+            waitmovement(0)
+            msgbox(format(
+                "Thank you for helping us find Cubone, trainer! Why don't you spend the night at our foster home? Don't worry, we've got human food and beds too!"
+            ))
+            warp(MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME, 5, 5)
+            setvar(VAR_VALLEY_OF_PEACE_STATE, 2)
+            release
+
+        default:
+            break
+    }
+    release
+}
+
+
+
+
+script ISLANDGAME_VALLEY_OF_PEACE_Primrose {
+    lock
+    delay(60)
+    applymovement(4, ISLANDGAME_VALLEY_OF_PEACE_Primrose1)
+    waitmovement(0)
+    applymovement(4, Common_Movement_FaceRight)
+    applymovement(27, Common_Movement_FaceRight)
+    waitmovement(0)
+    delay(60)
+    applymovement(4, ISLANDGAME_VALLEY_OF_PEACE_Primrose2)
+    applymovement(27, ISLANDGAME_VALLEY_OF_PEACE_Primrose2)
+    waitmovement(0)
+    release
+    setvar(VAR_TEMP_0, 1)
+    setflag(FLAG_TEMP_1A)
+    removeobject(4)
+    removeobject(27)
+    setflag(FLAG_VALLEY_OF_PEACE_PRIMROSE)
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_Primrose1 {
+    emote_thinking
+    delay_16 * 4
+    lock_facing_direction
+    walk_up
+    delay_16 * 3
+    walk_in_place_up
+    delay_16 * 3
+    walk_down
+    unlock_facing_direction
+    delay_16 * 3
+}
+
+movement ISLANDGAME_VALLEY_OF_PEACE_Primrose2 {
+    walk_down * 3
+    walk_left * 6
+}

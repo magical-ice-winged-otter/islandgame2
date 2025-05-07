@@ -1,1 +1,11 @@
 mapscripts ISLANDGAME_PLEASANT_AVENUE_MapScripts {}
+
+
+
+script ISLANDGAME_PLEASANT_AVENUE_MapScripts_Sign {
+    msgbox(format(
+        "PL3454NT 4V3NU3\nHomE oF ThE GooN GanG!\p"
+        "...\p"
+        "{COLOR RED}(Huh? Looks like the sign's been vandalized.)"
+    ), MSGBOX_SIGN)
+}

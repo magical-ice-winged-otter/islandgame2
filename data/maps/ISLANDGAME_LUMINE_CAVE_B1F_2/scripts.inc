@@ -565,7 +565,7 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_LaironAssemble::
 # 395 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_LAIRON, 40, ITEM_STEEL_GEM, NATURE_RELAXED, 0, MON_GENDERLESS, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_ROCK_SLIDE, MOVE_ENDEAVOR, MOVE_REVERSAL
 # 396 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
-	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_LAIRON, 40, ITEM_ROCK_GEM, NATURE_RELAXED, 0, MON_GENDERLESS, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_ROCK_SLIDE, MOVE_ENDEAVOR, MOVE_REVERSAL
+	createmon B_SIDE_OPPONENT, B_FLANK_RIGHT, SPECIES_LAIRON, 40, ITEM_ROCK_GEM, NATURE_RELAXED, 0, MON_GENDERLESS, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_ROCK_SLIDE, MOVE_ENDEAVOR, MOVE_REVERSAL
 # 397 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	setwilddoubleflag
 # 398 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
@@ -602,7 +602,7 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron::
 # 417 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	setvar VAR_0x8000, 26
 # 418 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
-	setvar VAR_0x8001, 6
+	setvar VAR_0x8001, 7
 # 419 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	callnative TeleportCamera
 # 420 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
@@ -836,11 +836,11 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight::
 # 518 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	setobjectxyperm 26, 47, 0
 # 519 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
-	setobjectxy 1, 26, 12
+	setobjectxy 1, 26, 13
 # 520 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
-	setobjectxy 2, 26, 13
+	setobjectxy 2, 26, 14
 # 521 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
-	setobjectxy 11, 28, 12
+	setobjectxy 11, 28, 13
 # 522 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
 	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
 # 523 "data/maps/ISLANDGAME_LUMINE_CAVE_B1F_2/scripts.pory"
@@ -1315,8 +1315,8 @@ ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight_Text_8:
 	.string "about time I take my leave as well.\p"
 	.string "Our battle was quite fruitful,\n"
 	.string "{PLAYER}. I've little opportunities to\l"
-	.string "interact with trainers of your...{PAUSE 30}\l"
-	.string "caliber.\p"
+	.string "interact with trainers with your...{PAUSE 30}\l"
+	.string "expertise.\p"
 	.string "Perhaps we shall meet again in the\n"
 	.string "future. Hopefully by then, I will have\l"
 	.string "found the answer to my hypothesis... as\l"

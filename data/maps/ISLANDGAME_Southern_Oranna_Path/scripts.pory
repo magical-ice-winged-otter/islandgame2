@@ -6,7 +6,6 @@ const LOCAL_ID_ENCOUNTER_1 = 10
 const LOCAL_ID_ENCOUNTER_2 = 11
 const LOCAL_ID_ENCOUNTER_3 = 12
 const LOCAL_ID_ENCOUNTER_4 = 13
-const LOCAL_ID_ENCOUNTER_5 = 14
 
 mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -14,7 +13,6 @@ mapscripts ISLANDGAME_Southern_Oranna_Path_MapScripts {
         setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
         setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
         setobjectaswildencounter(LOCAL_ID_ENCOUNTER_4, ENCOUNTER_LAND)
-        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_5, ENCOUNTER_LAND)
         setvar(VAR_TEMP_1, 0)
         goto(ISLANDGAME_Southern_Oranna_Path_OnLoad)
 
@@ -145,7 +143,7 @@ script ISLANDGAME_Southern_Oranna_Path_EventScript_NPC1 {
 
 text ISLANDGAME_Southern_Oranna_Path_NPC1Talk {
     format(
-        "{COLOR DARK_GRAY}Have you seen any Charmander yet? I like that Pokémon."
+        "{COLOR DARK_GRAY}Have you seen a Chikorita yet? I like that Pokémon."
     )
 }
 

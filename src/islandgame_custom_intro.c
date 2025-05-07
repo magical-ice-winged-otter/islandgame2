@@ -24,9 +24,8 @@ void IslandGameCustomStartup()
     FlagSet(FLAG_SYS_QUEST_MENU_GET);
     // This flag makes sure the exp share is toggled on by default
     FlagSet(FLAG_EXP_SHARE);
-
-    // I'm honestly not sure why you need the weird syntax around string literals,
-    // but it breaks pretty badly w/out it so...
+    // These flags makes sure the dexnav is enabled by default
+    FlagSet(DN_FLAG_DEXNAV_GET);
 
     #if ISLANDGAME_DEBUG == TRUE
         SetPlayerName(sName);

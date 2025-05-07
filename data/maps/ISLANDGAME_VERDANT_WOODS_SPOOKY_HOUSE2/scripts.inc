@@ -81,7 +81,7 @@ ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2_Item::
 # 54 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.pory"
 	lock
 # 55 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.pory"
-	finditem ITEM_SPELL_TAG
+	finditem ITEM_MIMIKIUM_Z
 # 56 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
 # 57 "data/maps/ISLANDGAME_VERDANT_WOODS_SPOOKY_HOUSE2/scripts.pory"
