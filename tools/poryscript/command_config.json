@@ -3,6 +3,9 @@
         "specialvar": {
             "var_name_arg_position": 0
         },
+	"checkfollower": {
+	    "var_name": "VAR_RESULT"
+	},
         "getpartysize": {
             "var_name": "VAR_RESULT"
         },

@@ -1,66 +1,146 @@
-mapscripts ISLANDGAME_AETHERIA_MapScripts {}
+const STATE_INITIAL = 0
+const STATE_FOUND_RIVAL = 1
+const STATE_DEFEATED_RIVAL = 2
+const STATE_ENTERED_MUSEUM = 3
+const STATE_EXHIBIT_UNLOCKED = 4
+const STATE_EXHIBIT_ROBBED = 5
+const STATE_FOUND_THIEF = 6
+const STATE_FINAL = 7
 
-script ISLANDGAME_AETHERIA_BattleRival {
+const POS_HIDDEN_X = 0
+const POS_HIDDEN_Y = 0
+
+// TODO(poe): Scripting still needed for museum and sewers
+const LOCALID_RIVAL = 0
+
+mapscripts ISLANDGAME_AETHERIA_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        switch (var(VAR_AETHERIA_STATE)) {
+            case STATE_INITIAL:
+            case STATE_FOUND_RIVAL:
+            case STATE_DEFEATED_RIVAL:
+                // sets up the rival waiting at the bench in the town square
+                setobjectxyperm(LOCALID_RIVAL, BENCH_X, BENCH_Y)
+            case STATE_EXHIBIT_ROBBED:
+            case STATE_FOUND_THIEF:
+                if (checkfollower == FALSE) {
+                    // rival is waiting near the entrance to aetheria, by pleasant ave
+                    setobjectxyperm(LOCALID_RIVAL, ENTRANCE_X, ENTRANCE_Y)
+                }
+            default:
+                setobjectxyperm(LOCALID_RIVAL, POS_HIDDEN_X, POS_HIDDEN_Y)
+        }
+    }
+}
+
+// TODO(poe): Create triggers for this script
+script ISLANDGAME_AETHERIA_LeaveCity {
+    if (checkfollower == TRUE) {
+        msgbox("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Are you leaving?", MSGBOX_YESNO)
+        switch (var(VAR_RESULT)) {
+            case YES:
+                msgbox("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Come back soon...")
+                applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight)
+                waitmovement(OBJ_EVENT_ID_PLAYER)
+                destroyfollower
+            case NO:
+                msgbox("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Lets go!")
+        }
+    }
+    else {
+        msgbox("{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Welcome back!")
+        // TODO(poe): Create rival partner team, check to make sure flags are correct
+        setfollower(LOCALID_RIVAL, 0x100, ISLANDGAME_AETHERIA_Rival, PARTNER_AETHERIA_RIVAL)
+        applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft)
+        waitmovement(OBJ_EVENT_ID_PLAYER)
+    }
+}
+
+// TODO(poe): res will do better writing melissa here, so everything
+// is placeholder dialogue... 
+script ISLANDGAME_AETHERIA_Rival {
+    switch (var(VAR_AETHERIA_STATE)) {
+        case STATE_INITIAL:
+            // first time player has encountered rival: long chat, then battle
+            setvar(VAR_AETHERIA_STATE, STATE_FOUND_RIVAL)
+            msgbox(format(
+                "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Hi {PLAYER}! It's been a while...\p"
+                "Blah blah blah... (long chat ensues)"
+                "Let's battle!"
+            ))
+            call(ISLANDGAME_AETHERIA_RivalBattle)
+        case STATE_FOUND_RIVAL:
+            // player lost before, so we get a shorter intro, then battle
+            msgbox(format(
+                "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Rematch!\p"
+                "Let's battle!"
+            ))
+            call(ISLANDGAME_AETHERIA_RivalBattle)
+        case STATE_DEFEATED_RIVAL:
+            // rival has dissapeared: they are waiting inside. no dialogue possible
+        case STATE_ENTERED_MUSEUM:
+            // player used the ticket to get inside, rival is waiting in line
+            msgbox(format(
+                "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}This line is so long...\p"
+                "I'm bored."
+            ))
+        case STATE_EXHIBIT_UNLOCKED:
+            // player and rival have gone upstairs to view the exhibit
+            msgbox(format(
+                "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Wow! Look at all this art...\p"
+                "I'm bored."
+            ))
+        case STATE_EXHIBIT_ROBBED:
+            // the exhibit has been stolen, and you are running around the city with rival
+            msgbox(format(
+                "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}I'm so mad!\p"
+                "Let's catch that thief."
+            ))
+        case STATE_FOUND_THIEF:
+            // you found the thief, and need to defeat them
+            msgbox(format(
+                "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Nice job catching them!\p"
+                "Let's hurry up and beat that thief!"
+            ))
+        case STATE_FINAL:
+            // nothing left to do (rival has moved on)  
+    }
+}
+
+script ISLANDGAME_AETHERIA_RivalBattle {
     trainerbattle_single(TRAINER_AETHERIA_RIVAL,
-        format(
-            "Intro Text Here"
-        ),
-        format(
-            "Win Text Here"
+        format("Intro Text Here"),
+        format("Win Text Here"))
+
+    if (specialvar(VAR_RESULT, GetBattleOutcome) == B_OUTCOME_WON) {
+        msgbox(format(
+            "{COLOR GREEN}Melissa: {COLOR DARK_GRAY}Wow too strong\p"
+            "Lets go to museum"
         ))
-    msgbox(format(
-        "Post Text Here"
-    ), MSGBOX_AUTOCLOSE)
+        setvar(VAR_AETHERIA_STATE, STATE_DEFEATED_RIVAL)
+    }
 }
 
 script ISLANDGAME_AETHERIA_BattleEdea {
     trainerbattle_single(TRAINER_AETHERIA_EDEA,
-        format(
-            "Intro Text Here"
-        ),
-        format(
-            "Win Text Here"
-        ))
-    msgbox(format(
-        "Post Text Here"
-    ), MSGBOX_AUTOCLOSE)
+        format("Intro Text Here"),
+        format("Win Text Here"))
 }
 
 script ISLANDGAME_AETHERIA_BattleSewer1 {
     trainerbattle_single(TRAINER_AETHERIA_SEWER_1,
-        format(
-            "Intro Text Here"
-        ),
-        format(
-            "Win Text Here"
-        ))
-    msgbox(format(
-        "Post Text Here"
-    ), MSGBOX_AUTOCLOSE)
+        format("Intro Text Here"),
+        format("Win Text Here"))
 }
 
 script ISLANDGAME_AETHERIA_BattleSewer2 {
     trainerbattle_single(TRAINER_AETHERIA_SEWER_2,
-        format(
-            "Intro Text Here"
-        ),
-        format(
-            "Win Text Here"
-        ))
-    msgbox(format(
-        "Post Text Here"
-    ), MSGBOX_AUTOCLOSE)
+        format("Intro Text Here"),
+        format("Win Text Here"))
 }
 
 script ISLANDGAME_AETHERIA_BattleSewer3 {
     trainerbattle_single(TRAINER_AETHERIA_SEWER_3,
-        format(
-            "Intro Text Here"
-        ),
-        format(
-            "Win Text Here"
-        ))
-    msgbox(format(
-        "Post Text Here"
-    ), MSGBOX_AUTOCLOSE)
+        format("Intro Text Here"),
+        format("Win Text Here"))
 }
