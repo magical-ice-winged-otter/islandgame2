@@ -73,7 +73,7 @@
       "flag": "FLAG_TEMP_1A"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_BIRD_KEEPER",
       "x": 25,
       "y": 33,
       "elevation": 0,

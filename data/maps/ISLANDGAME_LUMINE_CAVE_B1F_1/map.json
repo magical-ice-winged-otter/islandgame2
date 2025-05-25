@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_WORKER",
       "x": 28,
       "y": 11,
       "elevation": 0,
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_UNION_ROOM_NURSE",
+      "graphics_id": "OBJ_EVENT_GFX_SILVERWING_F",
       "x": 12,
       "y": 40,
       "elevation": 0,
