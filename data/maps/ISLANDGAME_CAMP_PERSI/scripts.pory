@@ -59,6 +59,8 @@ script ISLANDGAME_CAMP_PERSI_TrainerBattle1 {
     msgbox(format(
         "I may not be worthy of my blade now, but I will be back for it later! Believe it!"
         ))
+    closemessage
+    release
 }
 
 text ISLANDGAME_CAMP_PERSI_TrainerBattle1_Text {

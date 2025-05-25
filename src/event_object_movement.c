@@ -647,6 +647,21 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_AceTrainerF_2,        OBJ_EVENT_PAL_TAG_ACE_TRAINER_F_2},
     {gObjectEventPal_AceTrainerSnow,       OBJ_EVENT_PAL_TAG_ACE_TRAINER_SNOW},
 
+    {gObjectEventPal_NinjaBoy2,            OBJ_EVENT_PAL_TAG_NINJA_BOY_2},
+    {gObjectEventPal_LittleGirl2,          OBJ_EVENT_PAL_TAG_LITTLE_GIRL_2},
+    {gObjectEventPal_Beauty2,              OBJ_EVENT_PAL_TAG_BEAUTY_2},
+    {gObjectEventPal_BreederM,             OBJ_EVENT_PAL_TAG_BREEDER_M},
+    {gObjectEventPal_BreederF,             OBJ_EVENT_PAL_TAG_BREEDER_F},
+    {gObjectEventPal_DragonTamer,          OBJ_EVENT_PAL_TAG_DRAGON_TAMER},
+    {gObjectEventPal_Gamer,                OBJ_EVENT_PAL_TAG_GAMER},
+    {gObjectEventPal_BirdKeeper,           OBJ_EVENT_PAL_TAG_BIRD_KEEPER},
+    {gObjectEventPal_PokeManiac,           OBJ_EVENT_PAL_TAG_POKE_MANIAC},
+    {gObjectEventPal_MartialArtist,        OBJ_EVENT_PAL_TAG_MARTIAL_ARTIST},
+    {gObjectEventPal_Woman9,               OBJ_EVENT_PAL_TAG_WOMAN_9},
+    {gObjectEventPal_Pokekid,              OBJ_EVENT_PAL_TAG_POKEKID},
+    {gObjectEventPal_Biker2,               OBJ_EVENT_PAL_TAG_BIKER_2},
+    {gObjectEventPal_Veteran,              OBJ_EVENT_PAL_TAG_VETERAN},
+
 
 
 #ifdef BUGFIX

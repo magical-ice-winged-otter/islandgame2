@@ -316,7 +316,21 @@
 #define OBJ_EVENT_GFX_ACE_TRAINER_M_2            ISLAND_START + 64
 #define OBJ_EVENT_GFX_ACE_TRAINER_F_2            ISLAND_START + 65
 #define OBJ_EVENT_GFX_ACE_TRAINER_SNOW           ISLAND_START + 66
-#define ISLAND_END                               OBJ_EVENT_GFX_ACE_TRAINER_SNOW
+#define OBJ_EVENT_GFX_NINJA_BOY_2                ISLAND_START + 67
+#define OBJ_EVENT_GFX_LITTLE_GIRL_2              ISLAND_START + 68
+#define OBJ_EVENT_GFX_BEAUTY_2                   ISLAND_START + 69
+#define OBJ_EVENT_GFX_BREEDER_M                  ISLAND_START + 70
+#define OBJ_EVENT_GFX_BREEDER_F                  ISLAND_START + 71
+#define OBJ_EVENT_GFX_DRAGON_TAMER               ISLAND_START + 72
+#define OBJ_EVENT_GFX_GAMER                      ISLAND_START + 73
+#define OBJ_EVENT_GFX_BIRD_KEEPER                ISLAND_START + 74
+#define OBJ_EVENT_GFX_POKE_MANIAC                ISLAND_START + 75
+#define OBJ_EVENT_GFX_MARTIAL_ARTIST             ISLAND_START + 76
+#define OBJ_EVENT_GFX_WOMAN_9                    ISLAND_START + 77
+#define OBJ_EVENT_GFX_POKEKID                    ISLAND_START + 78
+#define OBJ_EVENT_GFX_BIKER_2                    ISLAND_START + 79
+#define OBJ_EVENT_GFX_VETERAN                    ISLAND_START + 80
+#define ISLAND_END                               OBJ_EVENT_GFX_VETERAN
 
 #define NUM_OBJ_EVENT_GFX                        (ISLAND_END + 1)
 
@@ -542,27 +556,27 @@
 #define OBJ_EVENT_PAL_TAG_NPC_47                  0x1224
 #define OBJ_EVENT_PAL_TAG_NPC_48                  0x1225
 #define OBJ_EVENT_PAL_TAG_NPC_49                  0x1226
-#define OBJ_EVENT_PAL_TAG_NPC_50                  0x1227
-#define OBJ_EVENT_PAL_TAG_NPC_51                  0x1228
-#define OBJ_EVENT_PAL_TAG_NPC_52                  0x1229
-#define OBJ_EVENT_PAL_TAG_NPC_53                  0x122A
-#define OBJ_EVENT_PAL_TAG_NPC_54                  0x122B
-#define OBJ_EVENT_PAL_TAG_NPC_55                  0x122C
-#define OBJ_EVENT_PAL_TAG_NPC_56                  0x122D
-#define OBJ_EVENT_PAL_TAG_NPC_57                  0x122E
-#define OBJ_EVENT_PAL_TAG_NPC_58                  0x122F
-#define OBJ_EVENT_PAL_TAG_NPC_59                  0x1230
-#define OBJ_EVENT_PAL_TAG_NPC_60                  0x1231
-#define OBJ_EVENT_PAL_TAG_NPC_61                  0x1232
-#define OBJ_EVENT_PAL_TAG_NPC_62                  0x1233
-#define OBJ_EVENT_PAL_TAG_NPC_63                  0x1234
-#define OBJ_EVENT_PAL_TAG_NPC_64                  0x1235
-#define OBJ_EVENT_PAL_TAG_NPC_65                  0x1236
-#define OBJ_EVENT_PAL_TAG_NPC_66                  0x1237
-#define OBJ_EVENT_PAL_TAG_NPC_67                  0x1238
-#define OBJ_EVENT_PAL_TAG_NPC_68                  0x1239
-#define OBJ_EVENT_PAL_TAG_NPC_69                  0x123A
-#define OBJ_EVENT_PAL_TAG_NPC_70                  0x123B
+#define OBJ_EVENT_PAL_TAG_NINJA_BOY_2             0x1227 
+#define OBJ_EVENT_PAL_TAG_LITTLE_GIRL_2           0x1228
+#define OBJ_EVENT_PAL_TAG_BEAUTY_2                0x1229
+#define OBJ_EVENT_PAL_TAG_BREEDER_M               0x122A
+#define OBJ_EVENT_PAL_TAG_BREEDER_F               0x122B
+#define OBJ_EVENT_PAL_TAG_DRAGON_TAMER            0x122C
+#define OBJ_EVENT_PAL_TAG_GAMER                   0x122D
+#define OBJ_EVENT_PAL_TAG_BIRD_KEEPER             0x122E
+#define OBJ_EVENT_PAL_TAG_POKE_MANIAC             0x122F
+#define OBJ_EVENT_PAL_TAG_MARTIAL_ARTIST          0x1230
+#define OBJ_EVENT_PAL_TAG_WOMAN_9                 0x1231
+#define OBJ_EVENT_PAL_TAG_POKEKID                 0x1232
+#define OBJ_EVENT_PAL_TAG_BIKER_2                 0x1233
+#define OBJ_EVENT_PAL_TAG_CUEBALL                 0x1234 // unused
+#define OBJ_EVENT_PAL_TAG_VETERAN                 0x1235
+#define OBJ_EVENT_PAL_TAG_NPC_65                  0x1236 // unused 
+#define OBJ_EVENT_PAL_TAG_NPC_66                  0x1237 // unused
+#define OBJ_EVENT_PAL_TAG_NPC_67                  0x1238 // unused
+#define OBJ_EVENT_PAL_TAG_NPC_68                  0x1239 // unused
+#define OBJ_EVENT_PAL_TAG_NPC_69                  0x123A // unused
+#define OBJ_EVENT_PAL_TAG_NPC_70                  0x123B // unused
 #define OBJ_EVENT_PAL_TAG_OLIVIA_FISHING          0x123C
 #define OBJ_EVENT_PAL_TAG_OLIVIA_BIKE             0x123D
 #define OBJ_EVENT_PAL_TAG_OLIVIA_FIELD_MOVE       0x123E
