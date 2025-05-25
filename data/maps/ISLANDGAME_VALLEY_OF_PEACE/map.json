@@ -164,7 +164,7 @@
       "flag": "FLAG_TEMP_6"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_VETERAN",
       "x": 51,
       "y": 32,
       "elevation": 0,
@@ -307,7 +307,7 @@
       "flag": "FLAG_TEMP_7"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_BREEDER_F",
       "x": 35,
       "y": 23,
       "elevation": 0,
