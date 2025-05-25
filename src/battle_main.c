@@ -361,6 +361,8 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("Pike Queen") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("Pyramid King") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} Trainer") },
+
+
     // island-game
     [TRAINER_CLASS_SCOUT] = { _("Scout") },
     [TRAINER_CLASS_COWGIRL] = { _("Cowgirl") },
@@ -374,9 +376,9 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_SCIENTIST] = { _("Scientist") },
     [TRAINER_CLASS_FARMERDUO] = { _("Ranchers") },
     [TRAINER_CLASS_BIKER] = { _("Biker") },
+    [TRAINER_CLASS_CUEBALL] = { _("Cueball") },
     [TRAINER_CLASS_TAMER] = { _("Tamer") },
     [TRAINER_CLASS_PAINTER] = { _("Painter") },
-    [TRAINER_CLASS_CUEBALL] = { _("Cueball") },
     [TRAINER_CLASS_ARTIST] = { _("Artist") },
 };
 

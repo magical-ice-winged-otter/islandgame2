@@ -203,7 +203,7 @@ $(OBJEVENTGFXDIR)/people/xtra_ace_trainer_snow.4bpp: graphics/object_events/pics
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/ninja_boy2.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 2
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/little_girl2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2

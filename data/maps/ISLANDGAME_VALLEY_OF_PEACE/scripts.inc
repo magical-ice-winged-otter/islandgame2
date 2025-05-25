@@ -871,6 +871,8 @@ ISLANDGAME_VALLEY_OF_PEACE_Primrose::
 	removeobject 4
 # 651 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
 	removeobject 27
+# 652 "data/maps/ISLANDGAME_VALLEY_OF_PEACE/scripts.pory"
+	setflag FLAG_VALLEY_OF_PEACE_PRIMROSE
 	return
 
 
