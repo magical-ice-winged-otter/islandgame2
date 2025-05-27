@@ -3182,7 +3182,7 @@ F_TRAINER_FEMALE |
     },
     [DIFFICULTY_NORMAL][TRAINER_VALLEY_OF_PEACE_6] =
     {
-        .trainerName = _("Lukas"),
+        .trainerName = _("Cosplayer"),
         .trainerClass = TRAINER_CLASS_BIKER,
         .trainerPic = TRAINER_PIC_BIKER,
         .encounterMusic_gender = 
@@ -3305,46 +3305,60 @@ F_TRAINER_FEMALE |
             },
         },
     },
-    [DIFFICULTY_NORMAL][TRAINER_BROOKE_4] =
+
+
+
+
+
+
+
+
+
+
+
+
+    // Pleasant AVenue
+    [DIFFICULTY_NORMAL][TRAINER_PLEASANT_AVENUE_GOONER] =
     {
-        .trainerName = _("BROOKE"),
-        .trainerClass = TRAINER_CLASS_COOLTRAINER,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = _("Grunt"),
+        .trainerClass = TRAINER_CLASS_BIKER,
+        .trainerPic = TRAINER_PIC_BIKER,
         .encounterMusic_gender = 
-F_TRAINER_FEMALE | 
-            TRAINER_ENCOUNTER_MUSIC_COOL,
-        .items = { ITEM_FULL_RESTORE },
+            TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_PELIPPER,
+            .species = SPECIES_GROWLITHE,
             .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
-            .lvl = 32,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .lvl = 35,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .ability = ABILITY_INTIMIDATE
+            },
+            {
+            .species = SPECIES_PANCHAM,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .lvl = 35,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
-            .species = SPECIES_NUMEL,
+            .species = SPECIES_ZIGZAGOON,
             .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
-            .lvl = 32,
-            .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            },
-            {
-            .species = SPECIES_ROSELIA,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
-            .lvl = 32,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .lvl = 35,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
+
     [DIFFICULTY_NORMAL][TRAINER_BROOKE_5] =
     {
         .trainerName = _("BROOKE"),

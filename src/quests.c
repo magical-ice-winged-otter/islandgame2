@@ -326,7 +326,7 @@ const u8 sText_SideQuestDoneDesc_MintyMeadowsMelissa[] = _("You helped rescue Ol
 // Persi Favorite Card Quest
 const u8 sText_SideQuestName_PersiFavoriteCard[] = _("The Ultra Rare Charizard");
 const u8 sText_SideQuestDesc_PersiFavoriteCard[] = _("A little camper has lost his\nfavorite trading card!");
-const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("I'm just saying, that card\nis going for hundreds online.");
+const u8 sText_SideQuestDoneDesc_PersiFavoriteCard[] = _("I'm just saying, that card\nis a fortune.");
 
 
 // Berry Maniac Quest
@@ -464,10 +464,10 @@ const u8 sText_SideQuestDoneDesc_ROCKY_PATH_NURSE[] = _("You've aided Nurse Joy\
 // Cubone Quest
 const u8 sText_SideQuestName_VALLEY_OF_PEACE_CUBONE[] = _("The Hunters Become The Hunted");
 const u8 sText_SideQuestDesc_VALLEY_OF_PEACE_CUBONE[] = _("Track down the hunters\nwho took Cubone's mother!");
-const u8 sText_SideQuestDoneDesc_VALLEY_OF_PEACE_CUBONE[] = _("Righteous retribution\nhas been inflicted.");
+const u8 sText_SideQuestDoneDesc_VALLEY_OF_PEACE_CUBONE[] = _("Righteous retribution!");
 
 const u8 sText_SubQuest_Cubone1_Name[] = _("Part I");
-const u8 sText_SubQuest_Cubone1_Desc[] = _("Hmm... Maybe I can find\nthe hunters around Lumine...");
+const u8 sText_SubQuest_Cubone1_Desc[] = _("Hmm... Maybe I can find\nthem around Lumine...");
 
 const u8 sText_SubQuest_Cubone2_Name[] = _("Part II");
 const u8 sText_SubQuest_Cubone2_Desc[] = _("TBD");
@@ -497,6 +497,11 @@ const u8 sText_SubQuest_MissingNo5_Desc[] = _("01010101");
 
 const u8 sText_SubQuest_MissingNo6_Name[] = _("けつばん-06");
 const u8 sText_SubQuest_MissingNo6_Desc[] = _("01010000");
+
+// Goon Gang Quest
+const u8 sText_SideQuestName_GoonGangEncounter[] = _("Impending Doom");
+const u8 sText_SideQuestDesc_GoonGangEncounter[] = _("You've been marked for death.\nBest watch your back...");
+const u8 sText_SideQuestDoneDesc_GoonGangEncounter[] = _("You showed those Goons\nwhat's up!");
 
 static const struct SubQuest sSubQuests_PokedexMilestones[SUB_QUEST_COUNT_POKEDEX_MILESTONE] = 
 {
@@ -1131,6 +1136,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      PKMN,
 	      sSubQuests_ValleyOfPeaceCubone,
           SUB_QUEST_COUNT_CUBONE 
+	),
+	[QUEST_GOON_GANG_ENCOUNTER] = side_quest(
+	      sText_SideQuestName_GoonGangEncounter,
+	      sText_SideQuestDesc_GoonGangEncounter,
+	      sText_SideQuestDoneDesc_GoonGangEncounter,
+	      sText_SideQuestMap_Lumine,
+	      OBJ_EVENT_GFX_BIKER, 
+	      OBJECT,
+	      NULL,
+	      0
 	),
 	[QUEST_MISSINGNO] = side_quest(
 	      sText_SideQuestName_MissingNo,

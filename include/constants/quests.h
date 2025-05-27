@@ -38,8 +38,9 @@
 #define QUEST_APPLEVINE_COUCH_POTATO       10
 #define QUEST_ROCKY_PATH_NURSE             11
 #define QUEST_VALLEY_OF_PEACE_CUBONE       12
-#define QUEST_MISSINGNO                    13 // this should always be the last quest 
-#define QUEST_COUNT                        14 // This number is literally how many to show in the UI (keep it accurate!)
+#define QUEST_GOON_GANG_ENCOUNTER          13
+#define QUEST_MISSINGNO                    14 // this should always be the last quest 
+#define QUEST_COUNT                        15 // This number is literally how many to show in the UI (keep it accurate!)
 
 
 

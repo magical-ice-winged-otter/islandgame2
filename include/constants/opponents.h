@@ -247,7 +247,12 @@
 #define TRAINER_VALLEY_OF_PEACE_9           102
 #define TRAINER_BROOKE_3                    TRAINER_VALLEY_OF_PEACE_9
 
-#define TRAINER_BROOKE_4                    103
+// Pleasant Avenue
+
+#define TRAINER_PLEASANT_AVENUE_GOONER      103
+#define TRAINER_BROOKE_4                    TRAINER_PLEASANT_AVENUE_GOONER
+
+
 #define TRAINER_BROOKE_5                    104
 #define TRAINER_PATRICIA                    105
 #define TRAINER_KINDRA                      106
