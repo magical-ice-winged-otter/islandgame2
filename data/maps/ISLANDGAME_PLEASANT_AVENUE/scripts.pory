@@ -4,8 +4,15 @@ const OW_GOON_FLAG = FLAG_TEMP_A
 const FLAG_DAYTIME = FLAG_TEMP_2
 const FLAG_NIGHTTIME = FLAG_TEMP_3
 
+const LOCAL_ID_ENCOUNTER_1 = 13
+const LOCAL_ID_ENCOUNTER_2 = 14
+
 mapscripts ISLANDGAME_PLEASANT_AVENUE_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
@@ -24,11 +31,77 @@ mapscripts ISLANDGAME_PLEASANT_AVENUE_MapScripts {
             setvar(VAR_TEMP_0, 1) // Don't trigger the Goon Gang Toll triggerspots
         }
         
+
+
+        // hidden grotto stuff
+        if (!flag(FLAG_DAILY_PLEASANT_AVENUE_ROLL)) {
+            random(10)
+            copyvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, VAR_RESULT)
+            setflag(FLAG_DAILY_PLEASANT_AVENUE_ROLL) 
+        }
+        
+        // put item or Pokemon on map.
+        if (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE) <= 4) { // hide all pokemon GFX, did not roll an encounter but got an item
+            setflag(FLAG_TEMP_4) // Ribombee, Daytime
+            setflag(FLAG_TEMP_5) // Staravia, Daytime
+            setflag(FLAG_TEMP_6) // Growlithe, Daytime
+            setflag(FLAG_TEMP_7) // Linoone, Nighttime
+            setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+            setflag(FLAG_TEMP_9) // Frogadier, Nighttime
+        }
+        elif (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE) == 5) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_4) // Ribombee, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_7) // Linoone, Nighttime
+            }
+            setflag(FLAG_TEMP_5) // Staravia, Daytime
+            setflag(FLAG_TEMP_6) // Growlithe, Daytime
+            setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+            setflag(FLAG_TEMP_9) // Frogadier, Nighttime
+        }
+        elif (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE) == 6) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_5) // Staravia, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+            }
+            setflag(FLAG_TEMP_4) // Ribombee, Daytime
+            setflag(FLAG_TEMP_6) // Growlithe, Daytime
+            setflag(FLAG_TEMP_7) // Linoone, Nighttime
+            setflag(FLAG_TEMP_9) // Frogadier, Nighttime
+        }
+        elif (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE) == 7) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_6) // Growlithe, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_9) // Frogadier, Nighttime
+            }
+            setflag(FLAG_TEMP_4) // Ribombee, Daytime
+            setflag(FLAG_TEMP_5) // Staravia, Daytime
+            setflag(FLAG_TEMP_7) // Linoone, Nighttime
+            setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+        }
+        else { // hide everything, you whiffed
+            setflag(FLAG_TEMP_A) // item
+            setflag(FLAG_TEMP_4) // Ribombee, Daytime
+            setflag(FLAG_TEMP_5) // Staravia, Daytime
+            setflag(FLAG_TEMP_6) // Growlithe, Daytime
+            setflag(FLAG_TEMP_7) // Linoone, Nighttime
+            setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+            setflag(FLAG_TEMP_9) // Frogadier, Nighttime
+        }
     }
 }
 
 
-
+// NPCs
 script ISLANDGAME_PLEASANT_AVENUE_MapScripts_Sign {
     msgbox(format(
         "PL3454NT 4V3NU3\nDa GoonerZ WuZ HerE!\p"
@@ -65,21 +138,124 @@ script ISLANDGAME_PLEASANT_AVENUE_BauBau {
 
 
 
+// Trainers
+script ISLANDGAME_PLEASANT_AVENUE_Trainer1 {
+    trainerbattle_single(TRAINER_PLEASANT_AVENUE_1,
+        format(
+            "Outta my way! I'm on a world record pace for the festival triathlon!"
+        ),
+        format(
+            "-huff huff-\pI guess there's always next year..."
+        ))
+    msgbox(format(
+        "What, you want an autograph or something? Quit staring at me!"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_Trainer2 {
+    trainerbattle_single(TRAINER_PLEASANT_AVENUE_2,
+        format(
+            "My investment portfolio is ruined all because of those Silverwing slimeballs!\p"
+            "You! Provide me with a battle to take my anger out on!"
+        ),
+        format(
+            "Tch..."
+        ))
+    msgbox(format(
+        "The nerve of them to raise our sky-high taxes even further, and for what?\p"
+        "A lame new museum exhibit? I should've moved to Unova when I had the chance.. "
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_Trainer3 {
+    trainerbattle_single(TRAINER_PLEASANT_AVENUE_3,
+        format(
+            "Nothing like an early morning bike ride to get those battle juices flowing, eh?\p"
+            "I'll battle you while I get in my daily reps for maximum efficiency!"
+        ),
+        format(
+            "-crash-"
+        ))
+    msgbox(format(
+        "Owwwch... How the heck do those Goon Gang hooligans do it?"
+    ), MSGBOX_AUTOCLOSE) 
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_Trainer4 {
+    trainerbattle_single(TRAINER_PLEASANT_AVENUE_4,
+        format(
+            "Beautiful hair? Check! Beautiful Pokémon? Why don't you see for yourself?"
+        ),
+        format(
+            "Ugggh! My hair! My perfect hair!"
+        ))
+    msgbox(format(
+        "Do you know how long it's going to take for me to fix my hair? My entire day is ruined thanks to you!\p"
+        "Huh? My Pokémon need healing? MY HAIR NEEDS HEALING!"
+    ), MSGBOX_AUTOCLOSE) 
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_Trainer5 {
+    trainerbattle_single(TRAINER_PLEASANT_AVENUE_5,
+        format(
+            "It sure is nice taking a stroll here with my faithful companion."
+        ),
+        format(
+            "Ah, bully!"
+        ))
+    msgbox(format(
+        "Ah, please excuse my Galarian vernacular. I was not calling you a bully, rather I was complimenting you on your exceptional skill."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_Trainer6 {
+    trainerbattle_single(TRAINER_PLEASANT_AVENUE_6,
+        format(
+            "Eeek!"
+        ),
+        format(
+            "Jeez, you scared me..."
+        ))
+    msgbox(format(
+        "I get super immersed whenever I paint, so much so that I completely lose track of time.\p"
+        "...Do you have any snacks I could have? I'm huuuuungry..."
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_Trainer7 {
+    trainerbattle_single(TRAINER_PLEASANT_AVENUE_7,
+        format(
+            "-sniffa sniffa-\p"
+            "Ooh! I smellsa something nice on you!"
+        ),
+        format(
+            "Oops, false alarmsies!"
+        ))
+    msgbox(format(
+        "-sniffa sniffa-\p"
+        "I'm searching for tasty berries to add to my salad!\p"
+        "I wonder how this tah-mah-toh berry tastes... probably like a toe-may-toe, right?"
+    ), MSGBOX_AUTOCLOSE)
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_Trainer8 {
+    trainerbattle_single(TRAINER_PLEASANT_AVENUE_8,
+        format(
+            "Watch your step! People from the city take their Pokémon here to “do their business”!"
+        ),
+        format(
+            "Awgh, gross..."
+        ))
+    msgbox(format(
+        "Ewwwww, ew, ew, ew. I just got these boots, man!\p"
+        "Is it so hard for trainers to just clean up after their Pokémon?"
+    ), MSGBOX_AUTOCLOSE)
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// Quests
 script ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight {
     lock
     playse(SE_PIN)
@@ -222,4 +398,202 @@ movement ISLANDGAME_PLEASANT_AVENUE_GoonGruntRunAway {
     jump_2_left
     walk_fast_down * 3
     walk_fast_left * 5
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// hidden grotto stuff
+script ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall {
+    switch (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE)) {
+        case 0: finditem(ITEM_HEAL_BALL)
+        case 1: finditem(ITEM_HYPER_POTION)
+        case 2: finditem(ITEM_BALM_MUSHROOM)
+        case 3: finditem(ITEM_LUM_BERRY)
+        case 4: finditem(ITEM_RARE_CANDY)
+        default:
+    }
+    setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_RIBOMBEE, 28, ITEM_SITRUS_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_MOONBLAST, MOVE_POWDER, MOVE_STICKY_WEB, MOVE_BUG_BUZZ)
+    playmoncry(SPECIES_RIBOMBEE, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_STARAVIA, 28, ITEM_YACHE_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_DOUBLE_EDGE, MOVE_ROOST, MOVE_FEATHER_DANCE, MOVE_AERIAL_ACE)
+    playmoncry(SPECIES_STARAVIA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_GROWLITHE, 28, ITEM_RAWST_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CLOSE_COMBAT, MOVE_BURN_UP, MOVE_MORNING_SUN, MOVE_CRUNCH)
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_LINOONE, 28, ITEM_FIGY_BERRY, NATURE_ADAMANT, 1, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_EXTREME_SPEED, MOVE_TRICK, MOVE_PLAY_ROUGH, MOVE_SWITCHEROO)
+    playmoncry(SPECIES_LINOONE, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_FLORAGATO, 28, ITEM_PECHA_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SUCKER_PUNCH, MOVE_LEECH_SEED, MOVE_PETAL_BLIZZARD, MOVE_ALLY_SWITCH)
+    playmoncry(SPECIES_FLORAGATO, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_FROGADIER, 28, ITEM_POISON_BARB, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_POWER_UP_PUNCH, MOVE_TOXIC_SPIKES, MOVE_FLING, MOVE_WATER_PULSE)
+    playmoncry(SPECIES_FLORAGATO, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
 }

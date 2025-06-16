@@ -40,16 +40,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
-      "x": 24,
+      "x": 25,
       "y": 12,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_RIGHT_DOWN_UP",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_Trainer3",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
@@ -59,23 +59,23 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_Trainer7",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
-      "x": 26,
+      "x": 25,
       "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_LEFT_UP_DOWN",
       "movement_range_x": 3,
       "movement_range_y": 3,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_Trainer1",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RANGER_M",
@@ -85,10 +85,10 @@
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_UP_LEFT_DOWN",
       "movement_range_x": 3,
       "movement_range_y": 3,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_Trainer8",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_8",
@@ -100,8 +100,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ISLANDGAME_PLEASANT_AVENUE_NPC1",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(LILLIPUP)",
@@ -114,7 +114,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_PLEASANT_AVENUE_BauBau",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(LILLIPUP)",
@@ -127,7 +127,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_PLEASANT_AVENUE_BauBau",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -137,36 +137,166 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_Trainer5",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY_2",
       "x": 9,
-      "y": 16,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_Trainer4",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
-      "x": 27,
+      "x": 15,
       "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_Trainer2",
+      "flag": "FLAG_TEMP_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_6",
+      "x": 6,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_Trainer6",
+      "flag": "FLAG_TEMP_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
+      "x": 22,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_IN_GRASS",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Common_EventScript_OverworldPokemon",
+      "flag": "FLAG_TEMP_B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_2",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_IN_GRASS",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Common_EventScript_OverworldPokemon",
+      "flag": "FLAG_TEMP_C"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall",
+      "flag": "FLAG_TEMP_A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RIBOMBEE)",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1",
+      "flag": "FLAG_TEMP_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(STARAVIA)",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2",
+      "flag": "FLAG_TEMP_5"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROWLITHE)",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3",
+      "flag": "FLAG_TEMP_6"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LINOONE)",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4",
+      "flag": "FLAG_TEMP_7"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLORAGATO)",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5",
+      "flag": "FLAG_TEMP_8"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FROGADIER)",
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6",
+      "flag": "FLAG_TEMP_9"
     }
   ],
   "warp_events": [
@@ -272,6 +402,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_PLEASANT_AVENUE_MapScripts_Sign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 27,
+      "y": 31,
+      "elevation": 0,
+      "item": "ITEM_NUGGET",
+      "flag": "FLAG_HIDDEN_ITEM_PLEASANT_AVENUE_NUGGET"
     }
   ]
 }
