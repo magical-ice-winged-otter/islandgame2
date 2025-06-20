@@ -1,3 +1,1115 @@
 ISLANDGAME_PLEASANT_AVENUE_MapScripts::
+# 11 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
 
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 13 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setobjectaswildencounter 13, ENCOUNTER_LAND
+# 14 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setobjectaswildencounter 14, ENCOUNTER_LAND
+# 16 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	gettime
+# 18 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	compare VAR_0x8000, 6
+	goto_if_lt ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+# 18 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	compare VAR_0x8000, 18
+	goto_if_ge ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+# 29 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_2
+# 30 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_A
+# 31 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_TEMP_0, 1
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 37 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto_if_unset FLAG_DAILY_PLEASANT_AVENUE_ROLL, ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+# 44 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	compare VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 4
+	goto_if_le ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_13
+# 52 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	compare VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 5
+	goto_if_eq ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_14
+# 65 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	compare VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 6
+	goto_if_eq ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_15
+# 78 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	compare VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 7
+	goto_if_eq ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_16
+# 92 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_A
+# 93 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_4
+# 94 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_5
+# 95 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_6
+# 96 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_7
+# 97 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_8
+# 98 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_9
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+# 19 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_3
+# 20 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	returnqueststate QUEST_GOON_GANG_ENCOUNTER
+# 21 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 22 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case QUEST_INACTIVE, ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
+# 24 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_A
+# 25 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_TEMP_0, 1
+	goto ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
+# 38 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	random 10
+# 39 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	copyvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, VAR_RESULT
+# 40 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_DAILY_PLEASANT_AVENUE_ROLL
+	goto ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
+	goto ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_13:
+# 45 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_4
+# 46 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_5
+# 47 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_6
+# 48 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_7
+# 49 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_8
+# 50 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_9
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_14:
+# 53 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_A
+# 54 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto_if_set FLAG_TEMP_3, ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_23
+# 58 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_7
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_22:
+# 60 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_5
+# 61 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_6
+# 62 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_8
+# 63 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_9
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_15:
+# 66 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_A
+# 67 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto_if_set FLAG_TEMP_3, ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_27
+# 71 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_8
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_26:
+# 73 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_4
+# 74 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_6
+# 75 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_7
+# 76 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_9
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_16:
+# 79 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_A
+# 80 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto_if_set FLAG_TEMP_3, ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_31
+# 84 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_9
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_30:
+# 86 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_4
+# 87 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_5
+# 88 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_7
+# 89 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_8
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_23:
+# 55 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_4
+	goto ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_22
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_27:
+# 68 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_5
+	goto ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_26
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_31:
+# 81 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_6
+	goto ISLANDGAME_PLEASANT_AVENUE_MapScripts_MAP_SCRIPT_ON_TRANSITION_30
+
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_Sign::
+# 106 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_MapScripts_Sign_Text_0, MSGBOX_SIGN
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_NPC1::
+# 114 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 115 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	faceplayer
+# 116 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_NPC1_Text_0
+# 121 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement 11, Common_Movement_FaceOriginalDirection
+# 122 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 123 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	closemessage
+# 124 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_BauBau::
+# 128 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 129 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	faceplayer
+# 130 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playmoncry SPECIES_LILLIPUP, CRY_MODE_NORMAL
+# 131 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_BauBau_Text_0
+# 134 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	closemessage
+# 135 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer1::
+# 143 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_single TRAINER_PLEASANT_AVENUE_1, ISLANDGAME_PLEASANT_AVENUE_Trainer1_Text_0, ISLANDGAME_PLEASANT_AVENUE_Trainer1_Text_1
+# 150 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_Trainer1_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer2::
+# 156 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_single TRAINER_PLEASANT_AVENUE_2, ISLANDGAME_PLEASANT_AVENUE_Trainer2_Text_0, ISLANDGAME_PLEASANT_AVENUE_Trainer2_Text_1
+# 164 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_Trainer2_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer3::
+# 171 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_single TRAINER_PLEASANT_AVENUE_3, ISLANDGAME_PLEASANT_AVENUE_Trainer3_Text_0, ISLANDGAME_PLEASANT_AVENUE_Trainer3_Text_1
+# 179 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_Trainer3_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer4::
+# 185 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_single TRAINER_PLEASANT_AVENUE_4, ISLANDGAME_PLEASANT_AVENUE_Trainer4_Text_0, ISLANDGAME_PLEASANT_AVENUE_Trainer4_Text_1
+# 192 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_Trainer4_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer5::
+# 199 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_single TRAINER_PLEASANT_AVENUE_5, ISLANDGAME_PLEASANT_AVENUE_Trainer5_Text_0, ISLANDGAME_PLEASANT_AVENUE_Trainer5_Text_1
+# 206 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_Trainer5_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer6::
+# 212 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_single TRAINER_PLEASANT_AVENUE_6, ISLANDGAME_PLEASANT_AVENUE_Trainer6_Text_0, ISLANDGAME_PLEASANT_AVENUE_Trainer6_Text_1
+# 219 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_Trainer6_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer7::
+# 226 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_single TRAINER_PLEASANT_AVENUE_7, ISLANDGAME_PLEASANT_AVENUE_Trainer7_Text_0, ISLANDGAME_PLEASANT_AVENUE_Trainer7_Text_1
+# 234 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_Trainer7_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer8::
+# 242 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_single TRAINER_PLEASANT_AVENUE_8, ISLANDGAME_PLEASANT_AVENUE_Trainer8_Text_0, ISLANDGAME_PLEASANT_AVENUE_Trainer8_Text_1
+# 249 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_Trainer8_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight::
+# 260 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 261 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playse SE_PIN
+# 262 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement 1, Common_Movement_ExclamationMark
+# 263 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement 1, Common_Movement_FacePlayer
+# 264 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 265 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	delay 30
+# 266 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_0
+# 269 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	showmoneybox 17, 1
+# 270 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_1
+# 274 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dynmultipush ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_2, 0
+# 275 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dynmultipush ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_3, 1
+# 276 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dynmultipush ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_4, 2
+# 277 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+# 278 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 279 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 1, ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_3
+# 297 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 2, ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_4
+# 316 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	hidemoneybox
+# 317 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+# 318 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 319 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto TollTriggerRight_End
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_1:
+# 322 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+TollTriggerRight_End:
+# 323 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	closemessage
+# 324 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_3:
+# 280 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	checkmoney 1000
+# 281 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_7
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_6:
+# 289 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	removemoney 1000
+# 290 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	updatemoneybox
+# 291 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playse SE_SHOP
+# 292 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitse
+# 293 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_6
+# 296 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_TEMP_0, 1
+	goto ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_1
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_4:
+# 298 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	hidemoneybox
+# 299 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_7
+# 302 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_no_intro TRAINER_PLEASANT_AVENUE_GOONER, ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_8
+# 303 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_9
+# 308 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	closemessage
+# 309 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement 1, ISLANDGAME_PLEASANT_AVENUE_GoonGruntRunAway
+# 310 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 311 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	removeobject 1
+# 312 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_A
+# 313 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	startquest QUEST_GOON_GANG_ENCOUNTER
+# 314 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_TEMP_0, 1
+	goto ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_1
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_7:
+# 282 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_5
+# 285 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+# 286 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 287 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto TollTriggerRight_End
+	goto ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_6
+
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft::
+# 328 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 329 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playse SE_PIN
+# 330 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement 1, Common_Movement_ExclamationMark
+# 331 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement 1, Common_Movement_FacePlayer
+# 332 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 333 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	delay 30
+# 334 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_0
+# 337 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	showmoneybox 17, 1
+# 338 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_1
+# 342 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dynmultipush ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_2, 0
+# 343 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dynmultipush ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_3, 1
+# 344 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dynmultipush ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_4, 2
+# 345 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dynmultistack 0, 0, TRUE, 4, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+# 346 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 347 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 1, ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_3
+# 366 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 2, ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_4
+# 385 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	hidemoneybox
+# 386 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+# 387 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 388 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto TollTriggerLeft_End
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_1:
+# 391 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+TollTriggerLeft_End:
+# 392 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	closemessage
+# 393 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_3:
+# 348 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	checkmoney 1000
+# 349 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_7
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_6:
+# 357 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	removemoney 1000
+# 358 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	updatemoneybox
+# 359 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playse SE_SHOP
+# 360 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitse
+# 361 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_6
+# 364 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	hidemoneybox
+# 365 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_TEMP_0, 1
+	goto ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_1
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_4:
+# 367 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	hidemoneybox
+# 368 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_7
+# 371 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	trainerbattle_no_intro TRAINER_PLEASANT_AVENUE_GOONER, ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_8
+# 372 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_9
+# 377 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	closemessage
+# 378 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement 1, ISLANDGAME_PLEASANT_AVENUE_GoonGruntRunAway
+# 379 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 380 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	removeobject 1
+# 381 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_TEMP_A
+# 382 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	startquest QUEST_GOON_GANG_ENCOUNTER
+# 383 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_TEMP_0, 1
+	goto ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_1
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_7:
+# 350 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	msgbox ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_5
+# 353 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+# 354 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmovement 0
+# 355 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto TollTriggerLeft_End
+	goto ISLANDGAME_PLEASANT_AVENUE_TollTriggerLeft_6
+
+
+# 396 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+ISLANDGAME_PLEASANT_AVENUE_GoonGruntRunAway:
+# 397 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_left
+# 397 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_left
+# 397 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_left
+# 398 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	jump_2_left
+# 399 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_down
+# 399 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_down
+# 399 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_down
+# 400 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_left
+# 400 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_left
+# 400 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_left
+# 400 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_left
+# 400 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	walk_fast_left
+	step_end
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall::
+# 416 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE
+# 417 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 0, ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_3
+# 418 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 1, ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_4
+# 419 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 2, ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_5
+# 420 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 3, ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_6
+# 421 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case 4, ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_7
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_1:
+# 424 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_3:
+# 417 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	finditem ITEM_HEAL_BALL
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_4:
+# 418 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	finditem ITEM_HYPER_POTION
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_5:
+# 419 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	finditem ITEM_BALM_MUSHROOM
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_6:
+# 420 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	finditem ITEM_LUM_BERRY
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_7:
+# 421 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	finditem ITEM_RARE_CANDY
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_ItemBall_1
+
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1::
+# 428 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 429 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	faceplayer
+# 430 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SMART_WILD_AI
+# 431 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_RIBOMBEE, 28, ITEM_SITRUS_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_MOONBLAST, MOVE_POWDER, MOVE_STICKY_WEB, MOVE_BUG_BUZZ
+# 432 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playmoncry SPECIES_RIBOMBEE, CRY_MODE_ENCOUNTER
+# 433 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmoncry
+# 434 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 435 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dowildbattle
+# 436 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 437 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 439 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 440 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_LOST, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_3
+# 442 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_RAN, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_4
+# 444 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_WON, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_5
+# 447 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_CAUGHT, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_6
+# 451 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_1:
+# 453 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_3:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_4:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_5:
+# 445 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 446 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_6:
+# 448 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 449 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon1_1
+
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2::
+# 457 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 458 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	faceplayer
+# 459 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SMART_WILD_AI
+# 460 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_STARAVIA, 28, ITEM_YACHE_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_DOUBLE_EDGE, MOVE_ROOST, MOVE_FEATHER_DANCE, MOVE_AERIAL_ACE
+# 461 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playmoncry SPECIES_STARAVIA, CRY_MODE_ENCOUNTER
+# 462 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmoncry
+# 463 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 464 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dowildbattle
+# 465 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 466 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 468 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 469 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_LOST, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_3
+# 471 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_RAN, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_4
+# 473 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_WON, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_5
+# 476 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_CAUGHT, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_6
+# 480 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_1:
+# 482 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_3:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_4:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_5:
+# 474 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 475 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_6:
+# 477 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 478 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon2_1
+
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3::
+# 486 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 487 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	faceplayer
+# 488 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SMART_WILD_AI
+# 489 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_GROWLITHE, 28, ITEM_RAWST_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CLOSE_COMBAT, MOVE_BURN_UP, MOVE_MORNING_SUN, MOVE_CRUNCH
+# 490 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playmoncry SPECIES_GROWLITHE, CRY_MODE_ENCOUNTER
+# 491 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmoncry
+# 492 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 493 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dowildbattle
+# 494 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 495 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 497 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 498 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_LOST, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_3
+# 500 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_RAN, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_4
+# 502 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_WON, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_5
+# 505 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_CAUGHT, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_6
+# 509 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_1:
+# 511 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_3:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_4:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_5:
+# 503 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 504 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_6:
+# 506 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 507 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3_1
+
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4::
+# 515 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 516 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	faceplayer
+# 517 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SMART_WILD_AI
+# 518 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_LINOONE, 28, ITEM_FIGY_BERRY, NATURE_ADAMANT, 1, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_EXTREME_SPEED, MOVE_TRICK, MOVE_PLAY_ROUGH, MOVE_SWITCHEROO
+# 519 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playmoncry SPECIES_LINOONE, CRY_MODE_ENCOUNTER
+# 520 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmoncry
+# 521 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 522 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dowildbattle
+# 523 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 524 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 526 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 527 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_LOST, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_3
+# 529 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_RAN, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_4
+# 531 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_WON, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_5
+# 534 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_CAUGHT, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_6
+# 538 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_1:
+# 540 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_3:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_4:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_5:
+# 532 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 533 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_6:
+# 535 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 536 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon4_1
+
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5::
+# 544 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 545 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	faceplayer
+# 546 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SMART_WILD_AI
+# 547 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_FLORAGATO, 28, ITEM_PECHA_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SUCKER_PUNCH, MOVE_LEECH_SEED, MOVE_PETAL_BLIZZARD, MOVE_ALLY_SWITCH
+# 548 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playmoncry SPECIES_FLORAGATO, CRY_MODE_ENCOUNTER
+# 549 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmoncry
+# 550 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 551 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dowildbattle
+# 552 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 553 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 555 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 556 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_LOST, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_3
+# 558 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_RAN, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_4
+# 560 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_WON, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_5
+# 563 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_CAUGHT, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_6
+# 567 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_1:
+# 569 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_3:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_4:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_5:
+# 561 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 562 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_6:
+# 564 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 565 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5_1
+
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6::
+# 573 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	lock
+# 574 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	faceplayer
+# 575 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SMART_WILD_AI
+# 576 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	createmon B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_FROGADIER, 28, ITEM_POISON_BARB, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_POWER_UP_PUNCH, MOVE_TOXIC_SPIKES, MOVE_FLING, MOVE_WATER_PULSE
+# 577 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	playmoncry SPECIES_FLORAGATO, CRY_MODE_ENCOUNTER
+# 578 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	waitmoncry
+# 579 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 580 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	dowildbattle
+# 581 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 582 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 584 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	switch VAR_RESULT
+# 585 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_LOST, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_3
+# 587 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_RAN, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_4
+# 589 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_WON, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_5
+# 592 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	case B_OUTCOME_CAUGHT, ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_6
+# 596 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_1:
+# 598 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	release
+	return
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_3:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_4:
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_5:
+# 590 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 591 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_1
+
+ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_6:
+# 593 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	setvar VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE, 9
+# 594 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	goto Common_EventScript_RemoveStaticPokemon
+	goto ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon6_1
+
+
+ISLANDGAME_PLEASANT_AVENUE_MapScripts_Sign_Text_0:
+# 107 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "PL3454NT 4V3NU3\n"
+	.string "Da GoonerZ WuZ HerE!\p"
+	.string "...\p"
+	.string "{COLOR RED}(Looks like the sign's been vandalized.)$"
+
+ISLANDGAME_PLEASANT_AVENUE_NPC1_Text_0:
+# 117 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "I love my floofy li'l pups, but they're a\n"
+	.string "real piece of work sometimes.\p"
+	.string "They never seem to stop barking, no\n"
+	.string "matter what I do.\p"
+	.string "I just hope they'll grow out of it when\n"
+	.string "they evolve.$"
+
+ISLANDGAME_PLEASANT_AVENUE_BauBau_Text_0:
+# 132 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "BAU BAU!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer1_Text_0:
+# 145 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Outta my way! I'm on a world record pace\n"
+	.string "for the festival triathlon!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer1_Text_1:
+# 148 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "-huff huff-\p"
+	.string "I guess there's always next year...$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer1_Text_2:
+# 151 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "What, you want an autograph or\n"
+	.string "something? Quit staring at me!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer2_Text_0:
+# 158 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "My investment portfolio is ruined all\n"
+	.string "because of those Silverwing slimeballs!\p"
+	.string "You! Provide me with a battle to take my\n"
+	.string "anger out on!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer2_Text_1:
+# 162 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Tch...$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer2_Text_2:
+# 165 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "The nerve of them to raise our sky-high\n"
+	.string "taxes even further, and for what?\p"
+	.string "A lame new museum exhibit? I should've\n"
+	.string "moved to Unova when I had the chance..$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer3_Text_0:
+# 173 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Nothing like an early morning bike ride\n"
+	.string "to get those battle juices flowing, eh?\p"
+	.string "I'll battle you while I get in my daily\n"
+	.string "reps for maximum efficiency!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer3_Text_1:
+# 177 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "-crash-$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer3_Text_2:
+# 180 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Owwwch... How the heck do those Goon\n"
+	.string "Gang hooligans do it?$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer4_Text_0:
+# 187 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Beautiful hair? Check! Beautiful\n"
+	.string "Pokémon? Why don't you see for\l"
+	.string "yourself?$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer4_Text_1:
+# 190 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Ugggh! My hair! My perfect hair!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer4_Text_2:
+# 193 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Do you know how long it's going to take\n"
+	.string "for me to fix my hair? My entire day is\l"
+	.string "ruined thanks to you!\p"
+	.string "Huh? My Pokémon need healing? MY HAIR\n"
+	.string "NEEDS HEALING!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer5_Text_0:
+# 201 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "It sure is nice taking a stroll here with\n"
+	.string "my faithful companion.$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer5_Text_1:
+# 204 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Ah, bully!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer5_Text_2:
+# 207 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Ah, please excuse my Galarian\n"
+	.string "vernacular. I was not calling you a\l"
+	.string "bully, rather I was complimenting you on\l"
+	.string "your exceptional skill.$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer6_Text_0:
+# 214 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Eeek!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer6_Text_1:
+# 217 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Jeez, you scared me...$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer6_Text_2:
+# 220 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "I get super immersed whenever I paint,\n"
+	.string "so much so that I completely lose track\l"
+	.string "of time.\p"
+	.string "...Do you have any snacks I could have?\n"
+	.string "I'm huuuuungry...$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer7_Text_0:
+# 228 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "-sniffa sniffa-\p"
+	.string "Ooh! I smellsa something nice on you!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer7_Text_1:
+# 232 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Oops, false alarmsies!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer7_Text_2:
+# 235 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "-sniffa sniffa-\p"
+	.string "I'm searching for tasty berries to add\n"
+	.string "to my salad!\p"
+	.string "I wonder how this tah-mah-toh berry\n"
+	.string "tastes... probably like a toe-may-toe,\l"
+	.string "right?$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer8_Text_0:
+# 244 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Watch your step! People from the city\n"
+	.string "take their Pokémon here to “do their\l"
+	.string "business”!$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer8_Text_1:
+# 247 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Awgh, gross...$"
+
+ISLANDGAME_PLEASANT_AVENUE_Trainer8_Text_2:
+# 250 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Ewwwww, ew, ew, ew. I just got these\n"
+	.string "boots, man!\p"
+	.string "Is it so hard for trainers to just clean\n"
+	.string "up after their Pokémon?$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_0:
+# 267 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Ayo, this is Goon Gang Turf! If ya wanna\n"
+	.string "pass, yer gonna hafta pay da toll!$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_1:
+# 271 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "It's gonna cost a thousand clams to\n"
+	.string "pass! Are ya coughing up the dough!?$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_2:
+# 274 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Turn back$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_3:
+# 275 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "{COLOR GREEN}Pay the toll$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_4:
+# 276 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "{COLOR RED}“Nah, I'd win”$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_5:
+# 283 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Beat it, cheapskate!$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_6:
+# 294 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Hehe... Pleasure doin' business!$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_7:
+# 300 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "You little punk! Time to teach you some\n"
+	.string "manners!$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_8:
+# 302 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Nooooo! My precious little Goon!$"
+
+ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight_Text_9:
+# 304 "data/maps/ISLANDGAME_PLEASANT_AVENUE/scripts.pory"
+	.string "Rrgghh... You won't get away with this!\p"
+	.string "I-I'm gonna call my boss, and he's gonna\n"
+	.string "BEAT you up!\p"
+	.string "WAAAAH! BOOOOOOOOOOOSSSSSSSS!$"

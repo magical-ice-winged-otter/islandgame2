@@ -236,7 +236,7 @@ ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 # 164 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	startquest QUEST_VALLEY_OF_PEACE_CUBONE
 # 165 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
-	completesubquest QUEST_VALLEY_OF_PEACE_CUBONE, SUB_QUEST_CUBONE_1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_VALLEY_OF_PEACE_CUBONE, 0
 # 166 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	removeobject 10
 # 167 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
@@ -264,7 +264,7 @@ ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 # 180 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
 	setvar VAR_VALLEY_OF_PEACE_STATE, 3
 # 181 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"
-	warp MAP_ISLANDGAME_BELLEHAVEN, 26, 21
+	warp MAP_ISLANDGAME_BELLEHAVEN, 24, 21
 	return
 
 
@@ -776,8 +776,7 @@ ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_1:
 	.string "-sigh- But this is all I can do. Taking\n"
 	.string "care of orphaned Pokémon and helping\l"
 	.string "them reunite with their owners, or\l"
-	.string "finding them a new home.\p"
-	.string "$"
+	.string "finding them a new home.$"
 
 ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_2:
 # 75 "data/maps/ISLANDGAME_BELLEHAVEN_FOSTER_HOME/scripts.pory"

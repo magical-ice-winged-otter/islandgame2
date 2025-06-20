@@ -247,15 +247,27 @@
 #define TRAINER_VALLEY_OF_PEACE_9           102
 #define TRAINER_BROOKE_3                    TRAINER_VALLEY_OF_PEACE_9
 
-#define TRAINER_BROOKE_4                    103
-#define TRAINER_BROOKE_5                    104
-#define TRAINER_PATRICIA                    105
-#define TRAINER_KINDRA                      106
-#define TRAINER_TAMMY                       107
-#define TRAINER_VALERIE_1                   108
-#define TRAINER_TASHA                       109
-#define TRAINER_VALERIE_2                   110
-#define TRAINER_VALERIE_3                   111
+// Pleasant Avenue
+
+#define TRAINER_PLEASANT_AVENUE_GOONER      103
+#define TRAINER_BROOKE_4                    TRAINER_PLEASANT_AVENUE_GOONER
+#define TRAINER_PLEASANT_AVENUE_1           104
+#define TRAINER_BROOKE_5                    TRAINER_PLEASANT_AVENUE_1
+#define TRAINER_PLEASANT_AVENUE_2           105
+#define TRAINER_PATRICIA                    TRAINER_PLEASANT_AVENUE_2
+#define TRAINER_PLEASANT_AVENUE_3           106
+#define TRAINER_KINDRA                      TRAINER_PLEASANT_AVENUE_3
+#define TRAINER_PLEASANT_AVENUE_4           107
+#define TRAINER_TAMMY                       TRAINER_PLEASANT_AVENUE_4
+#define TRAINER_PLEASANT_AVENUE_5           108
+#define TRAINER_VALERIE_1                   TRAINER_PLEASANT_AVENUE_5
+#define TRAINER_PLEASANT_AVENUE_6           109
+#define TRAINER_TASHA                       TRAINER_PLEASANT_AVENUE_6
+#define TRAINER_PLEASANT_AVENUE_7           110
+#define TRAINER_VALERIE_2                   TRAINER_PLEASANT_AVENUE_7
+#define TRAINER_PLEASANT_AVENUE_8           111
+#define TRAINER_VALERIE_3                   TRAINER_PLEASANT_AVENUE_8
+
 #define TRAINER_VALERIE_4                   112
 #define TRAINER_VALERIE_5                   113
 #define TRAINER_CINDY_1                     114

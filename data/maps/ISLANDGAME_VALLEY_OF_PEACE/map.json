@@ -36,7 +36,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 50,
-      "y": 36,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -570,7 +570,7 @@
     {
       "type": "hidden_item",
       "x": 18,
-      "y": 29,
+      "y": 34,
       "elevation": 0,
       "item": "ITEM_BIG_MUSHROOM",
       "flag": "FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_SHROOM"

@@ -34,6 +34,8 @@ mapscripts ISLANDGAME_VALLEY_OF_PEACE_MapScripts {
             setflag(FLAG_NIGHTTIME) // hides daytime npcs
             setflag(FLAG_TEMP_4)
             setflag(FLAG_TEMP_5)
+            setflag(FLAG_PRIMROSE) // She will only be here in the day
+            setvar(VAR_TEMP_0, 1) // turn off trigger since she's not here
 
             switch (var(VAR_VALLEY_OF_PEACE_STATE)) {
                 case 1:
@@ -191,7 +193,7 @@ script ISLANDGAME_VALLEY_OF_PEACE_Trainer6 {
         ))
     msgbox(format(
         "Those jerks from the Goon Gang didn't let me join their gang 'cause my bike wasn't “hip” enough...\p"
-        "W-Well, I'll show those Gooners! I'll just start my own gang, one where ALL bikes are allowed!"
+        "W-Well, I'll show them! I'll just start my own gang, with card games and fishermen!"
     ), MSGBOX_AUTOCLOSE)  
 }
 

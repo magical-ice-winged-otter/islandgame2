@@ -4,6 +4,8 @@ ISLANDGAME_BELLEHAVEN_MapScripts::
 	.byte 0
 
 ISLANDGAME_BELLEHAVEN_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 8 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
+	quest_emote_on_warp 11, QUEST_VALLEY_OF_PEACE_CUBONE
 # 9 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	gettime
 # 11 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
@@ -203,6 +205,18 @@ ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2_2:
 	goto ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2_1
 
 
+ISLANDGAME_BELLEHAVEN_MapScripts_WallofGrookey::
+# 160 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
+	lock
+# 161 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_MapScripts_WallofGrookey_Text_0
+# 164 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
+	closemessage
+# 165 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
+	release
+	return
+
+
 ISLANDGAME_BELLEHAVEN_Interact_Sign_Text_0:
 # 29 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
 	.string "BELLEHAVEN\n"
@@ -289,3 +303,8 @@ ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2_Text_2:
 	.string "white hand on your shoulder then...\p"
 	.string "...\p"
 	.string "Ha! Made you look!$"
+
+ISLANDGAME_BELLEHAVEN_MapScripts_WallofGrookey_Text_0:
+# 162 "data/maps/ISLANDGAME_BELLEHAVEN/scripts.pory"
+	.string "{COLOR RED}(For some strange reason, a troop of\n"
+	.string "Grookeys are blocking the way.)$"

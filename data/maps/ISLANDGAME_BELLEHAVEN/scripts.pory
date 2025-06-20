@@ -1,11 +1,11 @@
 const FLAG_DAYTIME = FLAG_TEMP_2
 const FLAG_NIGHTTIME = FLAG_TEMP_3
 
-// const QUEST_VALLEY_OF_PEACE_CUBONE_NPC = 11 // is this right?
+const QUEST_VALLEY_OF_PEACE_CUBONE_NPC = 11 // is this right?
 
 mapscripts ISLANDGAME_BELLEHAVEN_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        // quest_emote_on_warp(QUEST_VALLEY_OF_PEACE_CUBONE_NPC, QUEST_VALLEY_OF_PEACE_CUBONE)        
+        quest_emote_on_warp(QUEST_VALLEY_OF_PEACE_CUBONE_NPC, QUEST_VALLEY_OF_PEACE_CUBONE)        
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
@@ -156,5 +156,11 @@ script ISLANDGAME_BELLEHAVEN_MapScripts_NPC_2 {
     release
 }
 
-
-
+script ISLANDGAME_BELLEHAVEN_MapScripts_WallofGrookey {
+    lock
+    msgbox(format(
+        "{COLOR RED}(For some strange reason, a troop of Grookeys are blocking the way.)"
+    ))
+    closemessage
+    release
+}

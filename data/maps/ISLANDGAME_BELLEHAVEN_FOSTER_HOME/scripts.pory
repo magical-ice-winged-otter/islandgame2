@@ -64,7 +64,7 @@ mapscripts ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts {
                 "So I started working here, hoping that one day, I might see her again.\p"
                 "The same thing happened to that poor Cubone's mother. I found him crying out for her after hearing that a group of poachers invaded the valley.\p"
                 "Those rotten poachers...{PAUSE 30} It boils my blood just thinking about them...\p"
-                "-sigh- But this is all I can do. Taking care of orphaned Pokémon and helping them reunite with their owners, or finding them a new home.\p"
+                "-sigh- But this is all I can do. Taking care of orphaned Pokémon and helping them reunite with their owners, or finding them a new home."
             ))
             closemessage
             delay(30)
@@ -162,7 +162,7 @@ mapscripts ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts {
 
             giveitem(ITEM_ISLANDGAME_CUBONES_POKEBALL)
             startquest(QUEST_VALLEY_OF_PEACE_CUBONE)
-            completesubquest(QUEST_VALLEY_OF_PEACE_CUBONE, SUB_QUEST_CUBONE_1)
+            subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_VALLEY_OF_PEACE_CUBONE, 0)
             removeobject(10)
             setobjectxy(10, 18, 14) // clear pokeball
             applymovement(8, Common_Movement_WalkInPlaceDown)
@@ -178,7 +178,7 @@ mapscripts ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts {
             applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown)
             waitmovement(0)
             setvar(VAR_VALLEY_OF_PEACE_STATE, 3)
-            warp(MAP_ISLANDGAME_BELLEHAVEN, 26, 21)
+            warp(MAP_ISLANDGAME_BELLEHAVEN, 24, 21)
         }
     ]
 }
