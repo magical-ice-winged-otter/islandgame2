@@ -608,18 +608,18 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
     DUMMY_WIN_TEMPLATE
 };
 
-const struct WindowTemplate * const gBattleWindowTemplates[] =
+const struct WindowTemplate *const gBattleWindowTemplates[] =
 {
     [B_WIN_TYPE_NORMAL] = sStandardBattleWindowTemplates,
     [B_WIN_TYPE_ARENA]  = sBattleArenaWindowTemplates,
 };
 
 #define TERRAIN_METADATA(name)                               \
-        .tileset = gBattleTerrainTiles_## name,              \
-        .tilemap = gBattleTerrainTilemap_## name,            \
-        .entryTileset = gBattleTerrainAnimTiles_## name,     \
-        .entryTilemap = gBattleTerrainAnimTilemap_## name,   \
-        .palette = gBattleTerrainPalette_## name,            
+        .tileset = gBattleEnvironmentTiles_## name,              \
+        .tilemap = gBattleEnvironmentTilemap_## name,            \
+        .entryTileset = gBattleEnvironmentAnimTiles_## name,     \
+        .entryTilemap = gBattleEnvironmentAnimTilemap_## name,   \
+        .palette = gBattleEnvironmentPalette_## name,            
 
 //LINK include/constants/battle.h:440
 //LINK src/data/graphics/battle_terrain.h:90
@@ -637,11 +637,11 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
     [BATTLE_TERRAIN_PLAIN] = { TERRAIN_METADATA(HDPlains) },
     [BATTLE_TERRAIN_FRONTIER] =
     {
-        .tileset = gBattleTerrainTiles_Building,
-        .tilemap = gBattleTerrainTilemap_Building,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_Frontier,
+        .tileset = gBattleEnvironmentTiles_Building,
+        .tilemap = gBattleEnvironmentTilemap_Building,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_Frontier,
     },
 
     [BATTLE_TERRAIN_GYM] = { TERRAIN_METADATA(HDStandard) },
@@ -650,92 +650,92 @@ const struct BattleBackground sBattleTerrainTable[BATTLE_TERRAIN_COUNT] =
 
     [BATTLE_TERRAIN_MAGMA] =
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumMagma,
+        .tileset = gBattleEnvironmentTiles_Stadium,
+        .tilemap = gBattleEnvironmentTilemap_Stadium,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_StadiumMagma,
     },
 
     [BATTLE_TERRAIN_AQUA] =
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumAqua,
+        .tileset = gBattleEnvironmentTiles_Stadium,
+        .tilemap = gBattleEnvironmentTilemap_Stadium,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_StadiumAqua,
     },
 
     [BATTLE_TERRAIN_SIDNEY] =
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumSidney,
+        .tileset = gBattleEnvironmentTiles_Stadium,
+        .tilemap = gBattleEnvironmentTilemap_Stadium,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_StadiumSidney,
     },
 
     [BATTLE_TERRAIN_PHOEBE] =
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumPhoebe,
+        .tileset = gBattleEnvironmentTiles_Stadium,
+        .tilemap = gBattleEnvironmentTilemap_Stadium,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_StadiumPhoebe,
     },
 
     [BATTLE_TERRAIN_GLACIA] =
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumGlacia,
+        .tileset = gBattleEnvironmentTiles_Stadium,
+        .tilemap = gBattleEnvironmentTilemap_Stadium,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_StadiumGlacia,
     },
 
     [BATTLE_TERRAIN_DRAKE] =
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumDrake,
+        .tileset = gBattleEnvironmentTiles_Stadium,
+        .tilemap = gBattleEnvironmentTilemap_Stadium,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_StadiumDrake,
     },
 
     [BATTLE_TERRAIN_CHAMPION] =
     {
-        .tileset = gBattleTerrainTiles_Stadium,
-        .tilemap = gBattleTerrainTilemap_Stadium,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_StadiumWallace,
+        .tileset = gBattleEnvironmentTiles_Stadium,
+        .tilemap = gBattleEnvironmentTilemap_Stadium,
+        .entryTileset = gBattleEnvironmentAnimTiles_Building,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
+        .palette = gBattleEnvironmentPalette_StadiumWallace,
     },
 
     [BATTLE_TERRAIN_GROUDON] =
     {
-        .tileset = gBattleTerrainTiles_Cave,
-        .tilemap = gBattleTerrainTilemap_Cave,
-        .entryTileset = gBattleTerrainAnimTiles_Cave,
-        .entryTilemap = gBattleTerrainAnimTilemap_Cave,
-        .palette = gBattleTerrainPalette_Groudon,
+        .tileset = gBattleEnvironmentTiles_Cave,
+        .tilemap = gBattleEnvironmentTilemap_Cave,
+        .entryTileset = gBattleEnvironmentAnimTiles_Cave,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Cave,
+        .palette = gBattleEnvironmentPalette_Groudon,
     },
 
     [BATTLE_TERRAIN_KYOGRE] =
     {
-        .tileset = gBattleTerrainTiles_Water,
-        .tilemap = gBattleTerrainTilemap_Water,
-        .entryTileset = gBattleTerrainAnimTiles_Underwater,
-        .entryTilemap = gBattleTerrainAnimTilemap_Underwater,
-        .palette = gBattleTerrainPalette_Kyogre,
+        .tileset = gBattleEnvironmentTiles_Water,
+        .tilemap = gBattleEnvironmentTilemap_Water,
+        .entryTileset = gBattleEnvironmentAnimTiles_Underwater,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Underwater,
+        .palette = gBattleEnvironmentPalette_Kyogre,
     },
 
     [BATTLE_TERRAIN_RAYQUAZA] =
     {
-        .tileset = gBattleTerrainTiles_Rayquaza,
-        .tilemap = gBattleTerrainTilemap_Rayquaza,
-        .entryTileset = gBattleTerrainAnimTiles_Rayquaza,
-        .entryTilemap = gBattleTerrainAnimTilemap_Rayquaza,
-        .palette = gBattleTerrainPalette_Rayquaza,
+        .tileset = gBattleEnvironmentTiles_Rayquaza,
+        .tilemap = gBattleEnvironmentTilemap_Rayquaza,
+        .entryTileset = gBattleEnvironmentAnimTiles_Rayquaza,
+        .entryTilemap = gBattleEnvironmentAnimTilemap_Rayquaza,
+        .palette = gBattleEnvironmentPalette_Rayquaza,
     },
     [BATTLE_TERRAIN_HD_GRASS] = { TERRAIN_METADATA(HDGrass) },
     [BATTLE_TERRAIN_HD_PLAINS] = { TERRAIN_METADATA(HDPlains) },
@@ -895,7 +895,7 @@ void LoadBattleMenuWindowGfx(void)
 {
     LoadUserWindowBorderGfx(2, 0x12, BG_PLTT_ID(1));
     LoadUserWindowBorderGfx(2, 0x22, BG_PLTT_ID(1));
-    LoadCompressedPalette(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
+    LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
 
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
     {
@@ -917,7 +917,7 @@ void LoadBattleTextboxAndBackground(void)
     LZDecompressVram(gBattleTextboxTiles, (void *)(BG_CHAR_ADDR(0)));
     CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
     CopyBgTilemapBufferToVram(0);
-    LoadCompressedPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+    LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
     LoadBattleMenuWindowGfx();
     if (B_TERRAIN_BG_CHANGE == TRUE)
         DrawTerrainTypeBattleBackground();
@@ -1186,7 +1186,7 @@ void DrawBattleEntryBackground(void)
     {
         LZDecompressVram(gBattleVSFrame_Gfx, (void *)(BG_CHAR_ADDR(1)));
         LZDecompressVram(gVsLettersGfx, (void *)OBJ_VRAM0);
-        LoadCompressedPalette(gBattleVSFrame_Pal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
+        LoadPalette(gBattleVSFrame_Pal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
         SetBgAttribute(1, BG_ATTR_SCREENSIZE, 1);
         SetGpuReg(REG_OFFSET_BG1CNT, 0x5C04);
         CopyToBgTilemapBuffer(1, gBattleVSFrame_Tilemap, 0, 0);

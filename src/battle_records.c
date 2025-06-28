@@ -215,7 +215,7 @@ static void UNUSED UpdateLinkBattleRecords(struct LinkBattleRecords *records, co
         ClearLinkBattleRecord(&records->entries[index]);
         StringCopyN(records->entries[index].name, name, PLAYER_NAME_LENGTH);
         records->entries[index].trainerId = trainerId;
-        records->languages[index] = gLinkPlayers[battlerId].language;
+        records->languages[index] = gLinkPlayers[battler].language;
     }
     UpdateLinkBattleRecord(&records->entries[index], battleOutcome);
     SortLinkBattleRecords(records);
@@ -230,17 +230,17 @@ void ClearPlayerLinkBattleRecords(void)
 }
 
 #if FREE_LINK_BATTLE_RECORDS == FALSE
-static void IncTrainerCardWins(s32 battlerId)
+static void IncTrainerCardWins(s32 battler)
 {
-    u16 *wins = &gTrainerCards[battlerId].linkBattleWins;
+    u16 *wins = &gTrainerCards[battler].linkBattleWins;
     (*wins)++;
     if (*wins > 9999)
         *wins = 9999;
 }
 
-static void IncTrainerCardLosses(s32 battlerId)
+static void IncTrainerCardLosses(s32 battler)
 {
-    u16 *losses = &gTrainerCards[battlerId].linkBattleLosses;
+    u16 *losses = &gTrainerCards[battler].linkBattleLosses;
     (*losses)++;
     if (*losses > 9999)
         *losses = 9999;
@@ -251,29 +251,29 @@ static void UNUSED UpdateTrainerCardWinsLosses(s32 battlerId)
     switch (gBattleOutcome)
     {
     case B_OUTCOME_WON:
-        IncTrainerCardWins(BATTLE_OPPOSITE(battlerId));
-        IncTrainerCardLosses(battlerId);
+        IncTrainerCardWins(BATTLE_OPPOSITE(battler));
+        IncTrainerCardLosses(battler);
         break;
     case B_OUTCOME_LOST:
-        IncTrainerCardLosses(BATTLE_OPPOSITE(battlerId));
-        IncTrainerCardWins(battlerId);
+        IncTrainerCardLosses(BATTLE_OPPOSITE(battler));
+        IncTrainerCardWins(battler);
         break;
     }
 }
 #endif //FREE_LINK_BATTLE_RECORDS
 
-void UpdatePlayerLinkBattleRecords(s32 battlerId)
+void UpdatePlayerLinkBattleRecords(s32 battler)
 {
 #if FREE_LINK_BATTLE_RECORDS == FALSE
     if (InUnionRoom() != TRUE)
     {
-        UpdateTrainerCardWinsLosses(battlerId);
+        UpdateTrainerCardWinsLosses(battler);
         UpdateLinkBattleRecords(
             &gSaveBlock1Ptr->linkBattleRecords,
-            gTrainerCards[battlerId].playerName,
-            gTrainerCards[battlerId].trainerId,
+            gTrainerCards[battler].playerName,
+            gTrainerCards[battler].trainerId,
             gBattleOutcome,
-            battlerId);
+            battler);
     }
 #endif //FREE_LINK_BATTLE_RECORDS
 }

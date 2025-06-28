@@ -12,7 +12,7 @@
 #include "field_screen_effect.h"
 #include "field_special_scene.h"
 #include "field_weather.h"
-#include "follow_me.h"
+#include "follower_npc.h"
 #include "gpu_regs.h"
 #include "heal_location.h"
 #include "io_reg.h"
@@ -41,6 +41,7 @@
 #include "constants/rgb.h"
 #include "trainer_hill.h"
 #include "fldeff.h"
+#include "battle.h"
 
 static void Task_ExitNonAnimDoor(u8);
 static void Task_ExitNonDoor(u8);
@@ -292,7 +293,7 @@ void FieldCB_DefaultWarpExit(void)
     Overworld_PlaySpecialMapMusic();
     WarpFadeInScreen();
     SetUpWarpExitTask();
-    FollowMe_WarpSetEnd();  
+    FollowerNPC_WarpSetEnd();
     LockPlayerFieldControls();
 }
 
@@ -341,7 +342,7 @@ static void Task_ExitDoor(u8 taskId)
     switch (task->tState)
     {
     case 0:
-        HideFollower();
+        HideNPCFollower();
         SetPlayerVisibility(FALSE);
         FreezeObjectEvents();
         PlayerGetDestCoords(x, y);
@@ -353,7 +354,7 @@ static void Task_ExitDoor(u8 taskId)
         {
             u8 objEventId;
             SetPlayerVisibility(TRUE);
-            objEventId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
+            objEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
             ObjectEventSetHeldMovement(&gObjectEvents[objEventId], MOVEMENT_ACTION_WALK_NORMAL_DOWN);
             task->tState = 2;
         }
@@ -363,7 +364,7 @@ static void Task_ExitDoor(u8 taskId)
         {
             u8 objEventId;
             task->data[1] = FieldAnimateDoorClose(*x, *y);
-            objEventId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
+            objEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
             ObjectEventClearHeldMovementIfFinished(&gObjectEvents[objEventId]);
             task->tState = 3;
         }
@@ -371,8 +372,8 @@ static void Task_ExitDoor(u8 taskId)
     case 3:
         if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
         {
-            FollowMe_SetIndicatorToComeOutDoor();
-            FollowMe_WarpSetEnd();
+            FollowerNPC_SetIndicatorToComeOutDoor();
+            FollowerNPC_WarpSetEnd();
             UnfreezeObjectEvents();
             task->tState = 4;
         }
@@ -393,7 +394,7 @@ static void Task_ExitNonAnimDoor(u8 taskId)
     switch (task->tState)
     {
     case 0:
-        HideFollower();
+        HideNPCFollower();
         SetPlayerVisibility(FALSE);
         FreezeObjectEvents();
         PlayerGetDestCoords(x, y);
@@ -404,7 +405,7 @@ static void Task_ExitNonAnimDoor(u8 taskId)
         {
             u8 objEventId;
             SetPlayerVisibility(TRUE);
-            objEventId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
+            objEventId = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
             ObjectEventSetHeldMovement(&gObjectEvents[objEventId], GetWalkNormalMovementAction(GetPlayerFacingDirection()));
             task->tState = 2;
         }
@@ -412,8 +413,14 @@ static void Task_ExitNonAnimDoor(u8 taskId)
     case 2:
         if (IsPlayerStandingStill())
         {
-            FollowMe_SetIndicatorToComeOutDoor();
-            FollowMe_WarpSetEnd();
+            s16 x, y;
+
+            PlayerGetDestCoords(&x, &y);
+            if (!MetatileBehavior_IsDeepSouthWarp(MapGridGetMetatileBehaviorAt(x, y + 1)))
+                FollowerNPC_SetIndicatorToComeOutDoor();
+            // TODO: Add specific follower door warp behavior for MB_DEEP_SOUTH_WARP.
+
+            FollowerNPC_WarpSetEnd();
             UnfreezeObjectEvents();
             task->tState = 3;
         }
@@ -587,6 +594,7 @@ void DoMossdeepGymWarp(void)
     SaveObjectEvents();
     TryFadeOutOldMapMusic();
     WarpFadeOutScreen();
+    SetFollowerNPCData(FNPC_DATA_WARP_END, FNPC_WARP_REAPPEAR);
     PlaySE(SE_WARP_IN);
     CreateTask(Task_WarpAndLoadMap, 10);
     gFieldCallback = FieldCB_MossdeepGymWarpExit;
@@ -698,16 +706,39 @@ void Task_WarpAndLoadMap(u8 taskId)
     }
 }
 
+#define tDoorTask   data[1]
+
+enum
+{
+    DOORWARP_OPEN_DOOR,
+    DOORWARP_START_WALK_UP,
+    DOORWARP_HIDE_PLAYER,
+    DOORWARP_WAIT_DOOR_ANIM_TASK,
+    DOORWARP_DO_WARP
+};
+
 void Task_DoDoorWarp(u8 taskId)
 {
-    if (gSaveBlock2Ptr->follower.inProgress) {
-        struct Task *task = &gTasks[taskId];
-        s16 *x = &task->data[2];
-        s16 *y = &task->data[3];
-        u8 playerObjId = gPlayerAvatar.objectEventId;
-        u8 followerObjId = GetFollowerObjectId();
+    struct Task *task = &gTasks[taskId];
+    s16 *x = &task->data[2];
+    s16 *y = &task->data[3];
+    u8 playerObjId = gPlayerAvatar.objectEventId;
+    u8 followerObjId = GetFollowerNPCObjectId();
+    struct ObjectEvent *followerObject = GetFollowerObject();
 
-        switch (task->data[0])
+    switch (task->tState)
+    {
+    case DOORWARP_OPEN_DOOR:
+        // Stop running.
+        if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH))
+            SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
+
+        // Just in case came out and went right back in, reset follower NPC door state.
+        SetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR, FNPC_DOOR_NONE);
+        FreezeObjectEvents();
+        PlayerGetDestCoords(x, y);
+        PlaySE(GetDoorSoundEffect(*x, *y - 1));
+        if (followerObject)
         {
         case 0:
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH))
@@ -773,64 +804,55 @@ void Task_DoDoorWarp(u8 taskId)
             task->func = Task_WarpAndLoadMap;
             break;
         }
-    }
-    else {
-        struct Task *task = &gTasks[taskId];
-        s16 *x = &task->data[2];
-        s16 *y = &task->data[3];
-        struct ObjectEvent *followerObject = GetFollowerObject();
-
-        switch (task->tState)
+        task->tDoorTask = FieldAnimateDoorOpen(*x, *y - 1);
+        task->tState = DOORWARP_START_WALK_UP;
+        break;
+    case DOORWARP_START_WALK_UP:
+        if (task->tDoorTask < 0 || gTasks[task->tDoorTask].isActive != TRUE)
         {
-        case 0:
-            FreezeObjectEvents();
-            PlayerGetDestCoords(x, y);
-            PlaySE(GetDoorSoundEffect(*x, *y - 1));
-            if (followerObject)
+            ObjectEventClearHeldMovementIfActive(&gObjectEvents[playerObjId]);
+            ObjectEventSetHeldMovement(&gObjectEvents[playerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
+
+            if (PlayerHasFollowerNPC() && !gObjectEvents[followerObjId].invisible)
             {
-                // Put follower into pokeball
-                ClearObjectEventMovement(followerObject, &gSprites[followerObject->spriteId]);
-                ObjectEventSetHeldMovement(followerObject, MOVEMENT_ACTION_ENTER_POKEBALL);
+                u8 newState = DetermineFollowerNPCState(&gObjectEvents[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP,
+                                                        DetermineFollowerNPCDirection(&gObjectEvents[playerObjId], &gObjectEvents[followerObjId]));
+                ObjectEventClearHeldMovementIfActive(&gObjectEvents[followerObjId]);
+                ObjectEventSetHeldMovement(&gObjectEvents[followerObjId], newState);
             }
-            task->data[1] = FieldAnimateDoorOpen(*x, *y - 1);
-            task->tState = 1;
-            break;
-        case 1:
-            if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
-            {
-                u8 objEventId;
-                objEventId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
-                ObjectEventClearHeldMovementIfActive(&gObjectEvents[objEventId]);
-                objEventId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
-                ObjectEventSetHeldMovement(&gObjectEvents[objEventId], MOVEMENT_ACTION_WALK_NORMAL_UP);
-                task->tState = 2;
-            }
-            break;
-        case 2:
-            if (IsPlayerStandingStill())
-            {
-                u8 objEventId;
-                task->data[1] = FieldAnimateDoorClose(*x, *y - 1);
-                objEventId = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
-                ObjectEventClearHeldMovementIfFinished(&gObjectEvents[objEventId]);
-                SetPlayerVisibility(FALSE);
-                task->tState = 3;
-            }
-            break;
-        case 3:
-            if (task->data[1] < 0 || gTasks[task->data[1]].isActive != TRUE)
-            {
-                task->tState = 4;
-            }
-            break;
-        case 4:
-            TryFadeOutOldMapMusic();
-            WarpFadeOutScreen();
-            PlayRainStoppingSoundEffect();
-            task->tState = 0;
-            task->func = Task_WarpAndLoadMap;
-            break;
+
+            task->tState = DOORWARP_HIDE_PLAYER;
         }
+        break;
+    case DOORWARP_HIDE_PLAYER:
+        if (IsPlayerStandingStill())
+        {
+            // Don't close door on NPC follower.
+            if (!PlayerHasFollowerNPC() || gObjectEvents[followerObjId].invisible)
+                task->tDoorTask = FieldAnimateDoorClose(*x, *y - 1);
+
+            ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjId]);
+            SetPlayerVisibility(FALSE);
+            task->tState = DOORWARP_WAIT_DOOR_ANIM_TASK;
+        }
+        break;
+    case DOORWARP_WAIT_DOOR_ANIM_TASK:
+        if (task->tDoorTask < 0 || gTasks[task->tDoorTask].isActive != TRUE)
+            task->tState = DOORWARP_DO_WARP;
+        break;
+    case DOORWARP_DO_WARP:
+        if (PlayerHasFollowerNPC())
+        {
+            ObjectEventClearHeldMovementIfActive(&gObjectEvents[followerObjId]);
+            ObjectEventSetHeldMovement(&gObjectEvents[followerObjId], MOVEMENT_ACTION_WALK_NORMAL_UP);
+        }
+
+        TryFadeOutOldMapMusic();
+        WarpFadeOutScreen();
+        PlayRainStoppingSoundEffect();
+        task->tState = 0;
+        task->func = Task_WarpAndLoadMap;
+        break;
     }
 }
 
@@ -1118,8 +1140,7 @@ static void Task_SpinEnterWarp(u8 taskId)
     case 1:
         if (WaitForWeatherFadeIn() && IsPlayerSpinEntranceActive() != TRUE)
         {
-            FollowMe_WarpSetEnd();
-            
+            FollowerNPC_WarpSetEnd();
             UnfreezeObjectEvents();
             UnlockPlayerFieldControls();
             DestroyTask(taskId);
@@ -1242,6 +1263,7 @@ static void Task_OrbEffect(u8 taskId)
         ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN1_ON);
         SetGpuRegBits(REG_OFFSET_BLDCNT, gOrbEffectBackgroundLayerFlags[0]);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(12, 7));
+        UpdateShadowColor(RGB(9, 8, 8));
         SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
         SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG1 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG3 | WINOUT_WIN01_OBJ);
         SetBgTilemapPalette(0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT, 0xF);
@@ -1309,6 +1331,7 @@ static void Task_OrbEffect(u8 taskId)
         SetGpuReg(REG_OFFSET_DISPCNT, tDispCnt);
         SetGpuReg(REG_OFFSET_BLDCNT, tBldCnt);
         SetGpuReg(REG_OFFSET_BLDALPHA, tBldAlpha);
+        UpdateShadowColor(RGB_BLACK);
         SetGpuReg(REG_OFFSET_WININ, tWinIn);
         SetGpuReg(REG_OFFSET_WINOUT, tWinOut);
         ScriptContext_Enable();
@@ -1428,6 +1451,21 @@ enum {
     FRLG_WHITEOUT_HEAL_SCRIPT,
 };
 
+static const u8 *GenerateRecoveryMessage(u8 taskId)
+{
+    bool32 forfeitTrainer = DidPlayerForfeitNormalTrainerBattle();
+    bool32 destinationIsPlayersHouse = (gTasks[taskId].tIsPlayerHouse == TRUE);
+
+    if (forfeitTrainer && destinationIsPlayersHouse)
+        return gText_PlayerRegroupHome;
+    else if (forfeitTrainer && !destinationIsPlayersHouse)
+        return gText_PlayerRegroupCenter;
+    else if (!forfeitTrainer && destinationIsPlayersHouse)
+        return gText_PlayerScurriedBackHome;
+    else
+        return gText_PlayerScurriedToCenter;
+}
+
 static void Task_RushInjuredPokemonToCenter(u8 taskId)
 {
     u32 windowId;
@@ -1447,7 +1485,8 @@ static void Task_RushInjuredPokemonToCenter(u8 taskId)
         break;
     case FRLG_WHITEOUT_PRINT_MSG:
     {
-        const u8 *recoveryMessage = gTasks[taskId].tIsPlayerHouse == TRUE ? gText_PlayerScurriedBackHome : gText_PlayerScurriedToCenter;
+        const u8 *recoveryMessage = GenerateRecoveryMessage(taskId);
+
         if (PrintWhiteOutRecoveryMessage(taskId, recoveryMessage, 2, 8))
         {
             ObjectEventTurn(&gObjectEvents[gPlayerAvatar.objectEventId], DIR_NORTH);
