@@ -27,6 +27,7 @@ mart Bellehaven_MartItems {
 }
 
 movement ISLANDGAME_BELLEHAVEN_PKMNMART_SkittyHeart {
+    face_player
     emote_heart
 }
 
@@ -34,8 +35,9 @@ script ISLANDGAME_BELLEHAVEN_PKMNMART_Skitty {
     lock
     faceplayer
     applymovement(2, ISLANDGAME_BELLEHAVEN_PKMNMART_SkittyHeart)
-    playmoncry(SPECIES_SKITTY, CRY_MODE_NORMAL)
+    playmoncry(SPECIES_SPRIGATITO, CRY_MODE_NORMAL)
     waitmoncry
+    release
 }
 
 script ISLANDGAME_BELLEHAVEN_PKMNMART_NPC1 {

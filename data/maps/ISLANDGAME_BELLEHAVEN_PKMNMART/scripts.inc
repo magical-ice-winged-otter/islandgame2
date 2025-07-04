@@ -54,47 +54,51 @@ Bellehaven_MartItems:
 # 29 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 ISLANDGAME_BELLEHAVEN_PKMNMART_SkittyHeart:
 # 30 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+	faceplayer
+# 31 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	emote_heart
 	step_end
 
 ISLANDGAME_BELLEHAVEN_PKMNMART_Skitty::
-# 34 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
-	lock
 # 35 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
-	faceplayer
+	lock
 # 36 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
-	applymovement 2, ISLANDGAME_BELLEHAVEN_PKMNMART_SkittyHeart
+	faceplayer
 # 37 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	applymovement 2, ISLANDGAME_BELLEHAVEN_PKMNMART_SkittyHeart
 # 38 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+	playmoncry SPECIES_SPRIGATITO, CRY_MODE_NORMAL
+# 39 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	waitmoncry
+# 40 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_PKMNMART_NPC1::
-# 42 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
-	lock
-# 43 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
-	faceplayer
 # 44 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+	lock
+# 45 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+	faceplayer
+# 46 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_PKMNMART_NPC1_Text_0
-# 48 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+# 50 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	closemessage
-# 49 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+# 51 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_BELLEHAVEN_PKMNMART_NPC2::
-# 53 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
-	lock
-# 54 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
-	faceplayer
 # 55 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+	lock
+# 56 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+	faceplayer
+# 57 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_PKMNMART_NPC2_Text_0
-# 58 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+# 60 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	closemessage
-# 59 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+# 61 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	release
 	return
 
@@ -108,13 +112,13 @@ ISLANDGAME_BELLEHAVEN_PKMNMART_Interact_Employee_Text_1:
 	.string "Have a nice rest of your day!$"
 
 ISLANDGAME_BELLEHAVEN_PKMNMART_NPC1_Text_0:
-# 45 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+# 47 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	.string "Unbelievable. I can't even get a pack of\n"
 	.string "Poké Puffs for a reasonable price\l"
 	.string "'cause of this economy.\p"
 	.string "Thanks a lot, Silverwing Ding-a-lings.$"
 
 ISLANDGAME_BELLEHAVEN_PKMNMART_NPC2_Text_0:
-# 56 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
+# 58 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNMART/scripts.pory"
 	.string "Ooooh the rizzory... How I wish I had a\n"
 	.string "Fezanskibidi...$"

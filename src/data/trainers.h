@@ -3503,7 +3503,7 @@ F_TRAINER_FEMALE |
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_GROWLITHE,
+            .species = SPECIES_STOUTLAND,
             .gender = TRAINER_MON_RANDOM_GENDER,
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
             .lvl = 35,

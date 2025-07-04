@@ -31,6 +31,7 @@ mapscripts ISLANDGAME_BELLEHAVEN_FOSTER_HOME_MapScripts {
         }
         else {
             setflag(FLAG_DAYTIME) // controls nighttime npcs
+            setflag(FLAG_TEMP_4)
         }
     }    
     MAP_SCRIPT_ON_FRAME_TABLE [

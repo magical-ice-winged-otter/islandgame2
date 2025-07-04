@@ -284,6 +284,12 @@ $(POKEMONGFXDIR)/maryan_shellos/overworld.4bpp: %.4bpp: %.png
 
 $(POKEMONGFXDIR)/maryan_gastrodon/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/maryan_skitty/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/maryan_delcatty/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 # end
 
 

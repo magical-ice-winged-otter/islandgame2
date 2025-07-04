@@ -1654,8 +1654,10 @@
 #define SPECIES_ANOMALY_01                              1538
 #define SPECIES_SHELLOS_MARYAN                          1539
 #define SPECIES_GASTRODON_MARYAN                        1540
+#define SPECIES_SKITTY_MARYAN                           1541
+#define SPECIES_DELCATTY_MARYAN                         1542
 
-#define SPECIES_EGG                                     (SPECIES_GASTRODON_MARYAN + 1)
+#define SPECIES_EGG                                     (SPECIES_DELCATTY_MARYAN + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

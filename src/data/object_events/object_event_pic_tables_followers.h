@@ -6793,4 +6793,13 @@ static const struct SpriteFrameImage sPicTable_GastrodonMaryan[] = {
 };
 #endif //P_FAMILY_SHELLOS_MARYAN
 
+#if P_FAMILY_SKITTY_MARYAN
+static const struct SpriteFrameImage sPicTable_SkittyMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_SkittyMaryan, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_DelcattyMaryan[] = {
+    overworld_ascending_frames(gObjectEventPic_DelcattyMaryan, 4, 4),
+};
+#endif //P_FAMILY_SKITTY_MARYAN
+
 #endif //OW_POKEMON_OBJECT_EVENTS

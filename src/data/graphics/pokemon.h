@@ -27001,6 +27001,39 @@ const u32 gMonShinyPalette_Anomaly[] = INCBIN_U32("graphics/pokemon/maryan_anoma
 
 #endif //P_FAMILY_SHELLOS_MARYAN
 
+#if P_FAMILY_SKITTY_MARYAN
+    const u32 gMonFrontPic_SkittyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_skitty/anim_front.4bpp.lz");
+    const u32 gMonPalette_SkittyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_skitty/normal.gbapal.lz");
+    const u32 gMonBackPic_SkittyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_skitty/back.4bpp.lz");
+    const u32 gMonShinyPalette_SkittyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_skitty/shiny.gbapal.lz");
+    const u8 gMonIcon_SkittyMaryan[] = INCBIN_U8("graphics/pokemon/maryan_skitty/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_SkittyMaryan[] = INCBIN_U8("graphics/pokemon/maryan_skitty/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_SkittyMaryan[] = INCBIN_COMP("graphics/pokemon/maryan_skitty/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_SkittyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_skitty/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_SkittyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_skitty/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_DelcattyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_delcatty/anim_front.4bpp.lz");
+    const u32 gMonPalette_DelcattyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_delcatty/normal.gbapal.lz");
+    const u32 gMonBackPic_DelcattyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_delcatty/back.4bpp.lz");
+    const u32 gMonShinyPalette_DelcattyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_delcatty/shiny.gbapal.lz");
+    const u8 gMonIcon_DelcattyMaryan[] = INCBIN_U8("graphics/pokemon/maryan_delcatty/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_DelcattyMaryan[] = INCBIN_U8("graphics/pokemon/maryan_delcatty/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_DelcattyMaryan[] = INCBIN_COMP("graphics/pokemon/maryan_delcatty/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_DelcattyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_delcatty/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_DelcattyMaryan[] = INCBIN_U32("graphics/pokemon/maryan_delcatty/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_FAMILY_SKITTY_MARYAN
 
 const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
 const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");

@@ -44,9 +44,9 @@ mapscripts ISLANDGAME_PLEASANT_AVENUE_MapScripts {
         if (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE) <= 4) { // hide all pokemon GFX, did not roll an encounter but got an item
             setflag(FLAG_TEMP_4) // Ribombee, Daytime
             setflag(FLAG_TEMP_5) // Staravia, Daytime
-            setflag(FLAG_TEMP_6) // Growlithe, Daytime
+            setflag(FLAG_TEMP_6) // Herdier, Daytime
             setflag(FLAG_TEMP_7) // Linoone, Nighttime
-            setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+            setflag(FLAG_TEMP_8) // Skitty, Nighttime 
             setflag(FLAG_TEMP_9) // Frogadier, Nighttime
         }
         elif (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE) == 5) { // hide item ball and all other mons
@@ -58,8 +58,8 @@ mapscripts ISLANDGAME_PLEASANT_AVENUE_MapScripts {
                 setflag(FLAG_TEMP_7) // Linoone, Nighttime
             }
             setflag(FLAG_TEMP_5) // Staravia, Daytime
-            setflag(FLAG_TEMP_6) // Growlithe, Daytime
-            setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+            setflag(FLAG_TEMP_6) // Herdier, Daytime
+            setflag(FLAG_TEMP_8) // Skitty, Nighttime 
             setflag(FLAG_TEMP_9) // Frogadier, Nighttime
         }
         elif (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE) == 6) { // hide item ball and all other mons
@@ -68,17 +68,17 @@ mapscripts ISLANDGAME_PLEASANT_AVENUE_MapScripts {
                 setflag(FLAG_TEMP_5) // Staravia, Daytime
             }
             else {
-                setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+                setflag(FLAG_TEMP_8) // Skitty, Nighttime 
             }
             setflag(FLAG_TEMP_4) // Ribombee, Daytime
-            setflag(FLAG_TEMP_6) // Growlithe, Daytime
+            setflag(FLAG_TEMP_6) // Herdier, Daytime
             setflag(FLAG_TEMP_7) // Linoone, Nighttime
             setflag(FLAG_TEMP_9) // Frogadier, Nighttime
         }
         elif (var(VAR_PLEASANT_AVENUE_HIDDEN_GROTTO_STATE) == 7) { // hide item ball and all other mons
             setflag(FLAG_TEMP_A) // item
             if(flag(FLAG_NIGHTTIME)) {
-                setflag(FLAG_TEMP_6) // Growlithe, Daytime
+                setflag(FLAG_TEMP_6) // Herdier, Daytime
             }
             else {
                 setflag(FLAG_TEMP_9) // Frogadier, Nighttime
@@ -86,15 +86,15 @@ mapscripts ISLANDGAME_PLEASANT_AVENUE_MapScripts {
             setflag(FLAG_TEMP_4) // Ribombee, Daytime
             setflag(FLAG_TEMP_5) // Staravia, Daytime
             setflag(FLAG_TEMP_7) // Linoone, Nighttime
-            setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+            setflag(FLAG_TEMP_8) // Skitty, Nighttime 
         }
         else { // hide everything, you whiffed
             setflag(FLAG_TEMP_A) // item
             setflag(FLAG_TEMP_4) // Ribombee, Daytime
             setflag(FLAG_TEMP_5) // Staravia, Daytime
-            setflag(FLAG_TEMP_6) // Growlithe, Daytime
+            setflag(FLAG_TEMP_6) // Herdier, Daytime
             setflag(FLAG_TEMP_7) // Linoone, Nighttime
-            setflag(FLAG_TEMP_8) // Floragato, Nighttime 
+            setflag(FLAG_TEMP_8) // Skitty, Nighttime 
             setflag(FLAG_TEMP_9) // Frogadier, Nighttime
         }
     }
@@ -294,6 +294,7 @@ script ISLANDGAME_PLEASANT_AVENUE_TollTriggerRight {
                 "Hehe... Pleasure doin' business!"
             ))
             setvar(VAR_TEMP_0, 1)
+            hidemoneybox
         case 2:
             hidemoneybox
             msgbox(format(
@@ -400,8 +401,15 @@ movement ISLANDGAME_PLEASANT_AVENUE_GoonGruntRunAway {
     walk_fast_left * 5
 }
 
-
-
+script ISLANDGAME_PLEASANT_AVENUE_GoonGruntInteract {
+    lock
+    faceplayer
+    msgbox(format(
+        "Hehe... Pleasure doin' business!"
+    ))
+    closemessage
+    release
+}
 
 
 
@@ -486,8 +494,8 @@ script ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon3 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_GROWLITHE, 28, ITEM_RAWST_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CLOSE_COMBAT, MOVE_BURN_UP, MOVE_MORNING_SUN, MOVE_CRUNCH)
-    playmoncry(SPECIES_GROWLITHE, CRY_MODE_ENCOUNTER)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_HERDIER, 28, ITEM_CHOPLE_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_PSYCHIC_FANGS, MOVE_ICE_FANG, MOVE_FIRE_FANG, MOVE_THUNDER_FANG)
+    playmoncry(SPECIES_HERDIER, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     dowildbattle
@@ -544,8 +552,8 @@ script ISLANDGAME_PLEASANT_AVENUE_GROTTO_Mon5 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_FLORAGATO, 28, ITEM_PECHA_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SUCKER_PUNCH, MOVE_LEECH_SEED, MOVE_PETAL_BLIZZARD, MOVE_ALLY_SWITCH)
-    playmoncry(SPECIES_FLORAGATO, CRY_MODE_ENCOUNTER)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_SKITTY_MARYAN, 28, ITEM_PECHA_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SUCKER_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_FAKE_OUT, MOVE_FAKE_TEARS)
+    playmoncry(SPECIES_SKITTY_MARYAN, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     dowildbattle

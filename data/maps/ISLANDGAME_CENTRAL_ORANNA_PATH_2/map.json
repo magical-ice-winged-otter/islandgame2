@@ -112,7 +112,7 @@
       "flag": "FLAG_NORANNA_PRIM_CUTSCENE_FINISHED"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DELCATTY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DELCATTY_MARYAN)",
       "x": 43,
       "y": 14,
       "elevation": 0,

@@ -657,7 +657,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SPEED_BOOST, ABILITY_STAKEOUT, ABILITY_TOUGH_CLAWS },
+        .abilities = { ABILITY_SPEED_BOOST, ABILITY_STAKEOUT, ABILITY_INFILTRATOR },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Ninjask"),
         .cryId = CRY_NINJASK,
@@ -1213,6 +1213,162 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         // .formSpeciesIdTable = sGastrodonFormSpeciesIdTable,
     },
 #endif //P_FAMILY_SHELLOS
+
+
+
+
+
+
+
+#if P_FAMILY_SKITTY_MARYAN
+    [SPECIES_SKITTY_MARYAN] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 45,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 35,
+        .baseSpDefense = 35,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FAIRY),
+        .catchRate = 255,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 52 : 65,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PIXILATE, ABILITY_WONDER_SKIN },
+    #else
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PIXILATE , ABILITY_WONDER_SKIN },
+    #endif
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Skitty"),
+        .cryId = CRY_SKITTY,
+        .natDexNum = NATIONAL_DEX_SKITTY_MARYAN,
+        .categoryName = _("Kitten"),
+        .height = 6,
+        .weight = 110,
+        .description = COMPOUND_STRING(
+            "A Skitty's adorably cute behavior makes it\n"
+            "highly popular. They are known for being\n"
+            "particularly talkative.\n"),
+        .pokemonScale = 492,
+        .pokemonOffset = 19,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_SkittyMaryan,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 40),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 11 : 12,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 35),
+            ANIMCMD_FRAME(0, 9),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_SkittyMaryan,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 6,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_SkittyMaryan,
+        .shinyPalette = gMonShinyPalette_SkittyMaryan,
+        .iconSprite = gMonIcon_SkittyMaryan,
+        .iconPalIndex = 0,
+        SHADOW(-3, 1, SHADOW_SIZE_S)
+        FOOTPRINT(SkittyMaryan)
+        OVERWORLD(
+            sPicTable_SkittyMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_SkittyMaryan,
+            gShinyOverworldPalette_SkittyMaryan
+        )
+        .levelUpLearnset = sSkittyMaryanLevelUpLearnset,
+        .teachableLearnset = sSkittyMaryanTeachableLearnset,
+        .eggMoveLearnset = sSkittyEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SHINY_STONE, SPECIES_DELCATTY_MARYAN}),
+    },
+
+    [SPECIES_DELCATTY_MARYAN] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 95,
+        .baseDefense   = 65,
+        .baseSpeed     = P_UPDATED_STATS >= GEN_7 ? 110 : 110,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 65,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FAIRY),
+        .catchRate = 60,
+    #if P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 140,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 133,
+    #else
+        .expYield = 138,
+    #endif
+        .evYield_HP = 1,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PIXILATE, ABILITY_WONDER_SKIN },
+    #else
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PIXILATE, ABILITY_WONDER_SKIN },
+    #endif
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Delcatty"),
+        .cryId = CRY_DELCATTY,
+        .natDexNum = NATIONAL_DEX_DELCATTY_MARYAN,
+        .categoryName = _("Prim"),
+        .height = 11,
+        .weight = 326,
+        .description = COMPOUND_STRING(
+            "It is highly popular among trainers for\n"
+            "its sublime fur and elegance. They are\n"
+            "known to be rather smug in their\n"
+            "behavior."),
+        .pokemonScale = 322,
+        .pokemonOffset = 10,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_DelcattyMaryan,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 4,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 46),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_V_STRETCH,
+        .backPic = gMonBackPic_DelcattyMaryan,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 0,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+        .palette = gMonPalette_DelcattyMaryan,
+        .shinyPalette = gMonShinyPalette_DelcattyMaryan,
+        .iconSprite = gMonIcon_DelcattyMaryan,
+        .iconPalIndex = 0,
+        SHADOW(-1, 9, SHADOW_SIZE_S)
+        FOOTPRINT(DelcattyMaryan)
+        OVERWORLD(
+            sPicTable_DelcattyMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_DelcattyMaryan,
+            gShinyOverworldPalette_DelcattyMaryan
+        )
+        .levelUpLearnset = sDelcattyMaryanLevelUpLearnset,
+        .teachableLearnset = sDelcattyMaryanTeachableLearnset,
+    },
+#endif //P_FAMILY_SKITTY_MARYAN
 
 
 #ifdef __INTELLISENSE__
