@@ -7,11 +7,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
     [SPECIES_SHADOW_LUGIA] =
     {
         .baseHP        = 106,
-        .baseAttack    = 130,
-        .baseDefense   = 90,
+        .baseAttack    = 90,
+        .baseDefense   = 130,
         .baseSpeed     = 110,
-        .baseSpAttack  = 154,
-        .baseSpDefense = 90,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 154,
         .types = { TYPE_SHADOW, TYPE_FLYING },
         .catchRate = 3,
         .expYield = 306,
@@ -23,7 +23,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_MULTISCALE },
         .bodyColor = BODY_COLOR_BLACK,
-        .speciesName = _("Lugia"),
+        .speciesName = _("S. Lugia"),
         .cryId = CRY_SHADOW_LUGIA,
         .natDexNum = NATIONAL_DEX_NONE,
         .categoryName = _("Corrupted"),
@@ -37,7 +37,10 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .trainerOffset = 19,
         //FRONT_PIC_FEMALE(CircledQuestionMark, 64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_ShadowLugia,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 10),
+        ),
         .frontAnimId = ANIM_GROW_VIBRATE,
         .enemyMonElevation = 5,
         //BACK_PIC_FEMALE(CircledQuestionMark, 64, 64),
@@ -103,7 +106,13 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .trainerOffset = 0,
         //FRONT_PIC_FEMALE(CircledQuestionMark, 64, 64),
         .frontPicYOffset = 3,
-        .frontAnimFrames = sAnims_ShadowMightyena,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 27),
+            ANIMCMD_FRAME(1, 6),
+            ANIMCMD_FRAME(0, 6),
+            ANIMCMD_FRAME(1, 6),
+            ANIMCMD_FRAME(0, 6),
+        ),
         .frontAnimId = ANIM_GROW_VIBRATE,
         .enemyMonElevation = 5,
         //BACK_PIC_FEMALE(CircledQuestionMark, 64, 64),
@@ -172,7 +181,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_GolettMaryan,
         .frontPicSize = MON_COORDS_SIZE(56, 56),
         .frontPicYOffset = 7,
-        .frontAnimFrames = sAnims_GolettMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 44),
+            ANIMCMD_FRAME(0, 20),
+        ),
         .frontAnimId = ANIM_V_SHAKE,
         .backPic = gMonBackPic_GolettMaryan,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -189,6 +202,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_GolettMaryan,
             gShinyOverworldPalette_GolettMaryan
         )
@@ -236,7 +250,10 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_GolurkMaryan,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_GolurkMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 45),
+            ANIMCMD_FRAME(0, 10),
+        ),
         .frontAnimId = ANIM_V_SHAKE_TWICE,
         .backPic = gMonBackPic_GolurkMaryan,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -253,6 +270,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_GolurkMaryan,
             gShinyOverworldPalette_GolurkMaryan
         )
@@ -301,7 +319,15 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_FeebasMaryan,
         .frontPicSize = MON_COORDS_SIZE(40, 48),
         .frontPicYOffset = 10,
-        .frontAnimFrames = sAnims_FeebasMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
         .backPic = gMonBackPic_FeebasMaryan,
         .backPicSize = MON_COORDS_SIZE(48, 56),
@@ -318,6 +344,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_SPOT,
+            sAnimTable_Following,
             gOverworldPalette_FeebasMaryan,
             gShinyOverworldPalette_FeebasMaryan
         )
@@ -365,7 +392,15 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 2,
-        .frontAnimFrames = sAnims_MiloticMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
         .frontAnimDelay = 45,
         .backPic = gMonBackPic_MiloticMaryan,
@@ -385,6 +420,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_SLITHER,
+            sAnimTable_Following,
             gOverworldPalette_MiloticMaryan,
             gShinyOverworldPalette_MiloticMaryan
         )
@@ -433,7 +469,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_PurrloinMaryan,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 11,
-        .frontAnimFrames = sAnims_PurrloinMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 9),
+            ANIMCMD_FRAME(1, 54),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_GROW_VIBRATE,
         .backPic = gMonBackPic_PurrloinMaryan,
         .backPicSize = MON_COORDS_SIZE(56, 48),
@@ -450,6 +490,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_PurrloinMaryan,
             gShinyOverworldPalette_PurrloinMaryan
         )
@@ -495,7 +536,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_LiepardMaryan,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 4,
-        .frontAnimFrames = sAnims_LiepardMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 45),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_GROW_VIBRATE,
         .backPic = gMonBackPic_LiepardMaryan,
         .backPicSize = MON_COORDS_SIZE(56, 48),
@@ -512,6 +557,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_LiepardMaryan,
             gShinyOverworldPalette_LiepardMaryan
         )
@@ -561,7 +607,13 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_NincadaMaryan,
         .frontPicSize = MON_COORDS_SIZE(56, 32),
         .frontPicYOffset = 16,
-        .frontAnimFrames = sAnims_NincadaMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 22),
+            ANIMCMD_FRAME(0, 11),
+            ANIMCMD_FRAME(1, 33),
+            ANIMCMD_FRAME(0, 11),
+        ),
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_NincadaMaryan,
         .backPicSize = MON_COORDS_SIZE(64, 32),
@@ -578,6 +630,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_BUG,
+            sAnimTable_Following,
             gOverworldPalette_NincadaMaryan,
             gShinyOverworldPalette_NincadaMaryan
         )
@@ -604,7 +657,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SPEED_BOOST, ABILITY_STAKEOUT, ABILITY_TOUGH_CLAWS },
+        .abilities = { ABILITY_SPEED_BOOST, ABILITY_STAKEOUT, ABILITY_INFILTRATOR },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Ninjask"),
         .cryId = CRY_NINJASK,
@@ -624,7 +677,26 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_NinjaskMaryan,
         .frontPicSize = MON_COORDS_SIZE(64, 48),
         .frontPicYOffset = 11,
-        .frontAnimFrames = sAnims_NinjaskMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 33),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 1),
+            ANIMCMD_FRAME(0, 11),
+        ),
         .frontAnimId = ANIM_H_SLIDE_SLOW,
         .enemyMonElevation = 10,
         .backPic = gMonBackPic_NinjaskMaryan,
@@ -642,6 +714,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
+            sAnimTable_Following,
             gOverworldPalette_NinjaskMaryan,
             gShinyOverworldPalette_NinjaskMaryan
         )
@@ -666,7 +739,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_CURSED_BODY, ABILITY_SHELL_ARMOR, ABILITY_FILTER },
+        .abilities = { ABILITY_CURSED_BODY, ABILITY_SHELL_ARMOR, ABILITY_PERISH_BODY },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Shedinja"),
         .cryId = CRY_SHEDINJA,
@@ -686,7 +759,13 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_ShedinjaMaryan,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 10,
-        .frontAnimFrames = sAnims_ShedinjaMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 33),
+            ANIMCMD_FRAME(1, 33),
+            ANIMCMD_FRAME(0, 33),
+            ANIMCMD_FRAME(1, 33),
+            ANIMCMD_FRAME(0, 11),
+        ),
         .frontAnimId = ANIM_V_SLIDE_WOBBLE,
         .enemyMonElevation = 8,
         .backPic = gMonBackPic_ShedinjaMaryan,
@@ -704,6 +783,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
+            sAnimTable_Following,
             gOverworldPalette_ShedinjaMaryan,
             gShinyOverworldPalette_ShedinjaMaryan
         )
@@ -753,7 +833,15 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_Combee,
         .frontPicSize = MON_COORDS_SIZE(64, 40),
         .frontPicYOffset = 16,
-        .frontAnimFrames = sAnims_Combee,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 20),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 1),
+        ),
         .frontAnimId = ANIM_V_SLIDE_WOBBLE,
         .enemyMonElevation = 15,
         .backPic = gMonBackPic_Combee,
@@ -775,6 +863,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_CombeeMaryan,
             gShinyOverworldPalette_CombeeMaryan
         )
@@ -782,7 +871,8 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             sPicTable_CombeeFMaryan,
             SIZE_32x32,
             SHADOW_SIZE_M,
-            TRACKS_FOOT
+            TRACKS_FOOT,
+            sAnimTable_Following,
         )
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCombeeMaryanLevelUpLearnset,
@@ -829,7 +919,17 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_VespiquenMaryan,
         .frontPicSize = MON_COORDS_SIZE(48, 56),
         .frontPicYOffset = 4,
-        .frontAnimFrames = sAnims_VespiquenMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 12),
+            ANIMCMD_FRAME(1, 12),
+            ANIMCMD_FRAME(0, 8),
+        ),
         .frontAnimId = ANIM_LUNGE_GROW,
         .enemyMonElevation = 4,
         .backPic = gMonBackPic_VespiquenMaryan,
@@ -847,6 +947,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_VespiquenMaryan,
             gShinyOverworldPalette_VespiquenMaryan
         )
@@ -899,7 +1000,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_ShadowAggron,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_ShadowAggron,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 44),
+            ANIMCMD_FRAME(0, 11),
+        ),
         .frontAnimId = ANIM_V_SHAKE_TWICE,
         .backPic = gMonBackPic_ShadowAggron,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -951,7 +1056,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 10,
         .enemyMonElevation = 8,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Anomaly,
         .backPicSize = MON_COORDS_SIZE(64, 56),
@@ -996,10 +1101,9 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .height = 3,
         .weight = 63,
         .description = COMPOUND_STRING(
-            "This species is closely related to Shellder.\n"
-            "and used to have a shell long ago. Unlike\n"
-            "other Shellos, South Sea Shellos dwell\n"
-            "in caves."),
+            "This species is closely related to Shellder\n"
+            "It used to have a shell long ago. South\n"
+            "Sea Shellos typically dwell in caves."),
         .pokemonScale = 530,
         .pokemonOffset = 13,
         .trainerScale = 256,
@@ -1007,7 +1111,11 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_ShellosMaryan,
         .frontPicSize = MON_COORDS_SIZE(40, 40),
         .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_ShellosMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 36),
+            ANIMCMD_FRAME(0, 10),
+        ),
         .frontAnimId = ANIM_V_STRETCH,
         .backPic = gMonBackPic_ShellosMaryan,
         .backPicSize = MON_COORDS_SIZE(40, 56),
@@ -1024,6 +1132,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_ShellosMaryan,
             gShinyOverworldPalette_ShellosMaryan
         )
@@ -1071,7 +1180,14 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .frontPic = gMonFrontPic_GastrodonMaryan,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 8,
-        .frontAnimFrames = sAnims_GastrodonMaryan,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 15),
+            ANIMCMD_FRAME(0, 15),
+        ),
         .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
         .backPic = gMonBackPic_GastrodonMaryan,
         .backPicSize = MON_COORDS_SIZE(56, 64),
@@ -1088,6 +1204,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
+            sAnimTable_Following,
             gOverworldPalette_GastrodonMaryan,
             gShinyOverworldPalette_GastrodonMaryan
         )
@@ -1096,6 +1213,162 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         // .formSpeciesIdTable = sGastrodonFormSpeciesIdTable,
     },
 #endif //P_FAMILY_SHELLOS
+
+
+
+
+
+
+
+#if P_FAMILY_SKITTY_MARYAN
+    [SPECIES_SKITTY_MARYAN] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 45,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 35,
+        .baseSpDefense = 35,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FAIRY),
+        .catchRate = 255,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 52 : 65,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PIXILATE, ABILITY_WONDER_SKIN },
+    #else
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PIXILATE , ABILITY_WONDER_SKIN },
+    #endif
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Skitty"),
+        .cryId = CRY_SKITTY,
+        .natDexNum = NATIONAL_DEX_SKITTY_MARYAN,
+        .categoryName = _("Kitten"),
+        .height = 6,
+        .weight = 110,
+        .description = COMPOUND_STRING(
+            "A Skitty's adorably cute behavior makes it\n"
+            "highly popular. They are known for being\n"
+            "particularly talkative.\n"),
+        .pokemonScale = 492,
+        .pokemonOffset = 19,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_SkittyMaryan,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 40),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 11 : 12,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 35),
+            ANIMCMD_FRAME(0, 9),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_SkittyMaryan,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 56),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 10 : 6,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        .palette = gMonPalette_SkittyMaryan,
+        .shinyPalette = gMonShinyPalette_SkittyMaryan,
+        .iconSprite = gMonIcon_SkittyMaryan,
+        .iconPalIndex = 0,
+        SHADOW(-3, 1, SHADOW_SIZE_S)
+        FOOTPRINT(SkittyMaryan)
+        OVERWORLD(
+            sPicTable_SkittyMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_SkittyMaryan,
+            gShinyOverworldPalette_SkittyMaryan
+        )
+        .levelUpLearnset = sSkittyMaryanLevelUpLearnset,
+        .teachableLearnset = sSkittyMaryanTeachableLearnset,
+        .eggMoveLearnset = sSkittyEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SHINY_STONE, SPECIES_DELCATTY_MARYAN}),
+    },
+
+    [SPECIES_DELCATTY_MARYAN] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 95,
+        .baseDefense   = 65,
+        .baseSpeed     = P_UPDATED_STATS >= GEN_7 ? 110 : 110,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 65,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FAIRY),
+        .catchRate = 60,
+    #if P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 140,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 133,
+    #else
+        .expYield = 138,
+    #endif
+        .evYield_HP = 1,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES >= GEN_4
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PIXILATE, ABILITY_WONDER_SKIN },
+    #else
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PIXILATE, ABILITY_WONDER_SKIN },
+    #endif
+        .bodyColor = BODY_COLOR_RED,
+        .speciesName = _("Delcatty"),
+        .cryId = CRY_DELCATTY,
+        .natDexNum = NATIONAL_DEX_DELCATTY_MARYAN,
+        .categoryName = _("Prim"),
+        .height = 11,
+        .weight = 326,
+        .description = COMPOUND_STRING(
+            "It is highly popular among trainers for\n"
+            "its sublime fur and elegance. They are\n"
+            "known to be rather smug in their\n"
+            "behavior."),
+        .pokemonScale = 322,
+        .pokemonOffset = 10,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_DelcattyMaryan,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 48) : MON_COORDS_SIZE(56, 56),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 4,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 10),
+            ANIMCMD_FRAME(1, 46),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_V_STRETCH,
+        .backPic = gMonBackPic_DelcattyMaryan,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(64, 48) : MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 8 : 0,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+        .palette = gMonPalette_DelcattyMaryan,
+        .shinyPalette = gMonShinyPalette_DelcattyMaryan,
+        .iconSprite = gMonIcon_DelcattyMaryan,
+        .iconPalIndex = 0,
+        SHADOW(-1, 9, SHADOW_SIZE_S)
+        FOOTPRINT(DelcattyMaryan)
+        OVERWORLD(
+            sPicTable_DelcattyMaryan,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_DelcattyMaryan,
+            gShinyOverworldPalette_DelcattyMaryan
+        )
+        .levelUpLearnset = sDelcattyMaryanLevelUpLearnset,
+        .teachableLearnset = sDelcattyMaryanTeachableLearnset,
+    },
+#endif //P_FAMILY_SKITTY_MARYAN
 
 
 #ifdef __INTELLISENSE__

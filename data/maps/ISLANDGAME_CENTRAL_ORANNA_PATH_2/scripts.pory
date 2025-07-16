@@ -7,8 +7,17 @@ const LOCALID_FAN_2 = 4
 const LOCALID_FAN_3 = 3
 const LOCALID_FAN_4 = 5
 
+const LOCAL_ID_ENCOUNTER_1 = 24
+const LOCAL_ID_ENCOUNTER_2 = 25
+const LOCAL_ID_ENCOUNTER_3 = 26
+
+
 mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_2_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
+
         if (flag(FLAG_NORANNA_PRIM_CUTSCENE_FINISHED)) {
             setvar(VAR_CUTSCENE_FINISHED, 1)
         }
@@ -168,6 +177,12 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene1 {
     waitmovement(LOCALID_DELCATTY)
     playmoncry(SPECIES_DELCATTY, CRY_MODE_NORMAL)
     waitmoncry
+    playse(SE_M_DOUBLE_SLAP)
+    waitse
+    playse(SE_M_DOUBLE_SLAP)
+    waitse
+    playse(SE_M_DOUBLE_SLAP)
+    waitse
     playmoncry(SPECIES_LOMBRE, CRY_MODE_WEAK)
     waitmoncry
 
@@ -264,6 +279,12 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_2_Trigger_PrimFightCutscene2 {
     waitmovement(LOCALID_DELCATTY)
     playmoncry(SPECIES_DELCATTY, CRY_MODE_NORMAL)
     waitmoncry
+    playse(SE_M_DOUBLE_SLAP)
+    waitse
+    playse(SE_M_DOUBLE_SLAP)
+    waitse
+    playse(SE_M_DOUBLE_SLAP)
+    waitse
     playmoncry(SPECIES_LOMBRE, CRY_MODE_WEAK)
     waitmoncry
 

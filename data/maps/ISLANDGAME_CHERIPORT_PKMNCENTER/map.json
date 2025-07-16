@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_CHERIPORT_PKMNCENTER",
   "name": "ISLANDGAME_CHERIPORT_PKMNCENTER",
   "layout": "LAYOUT_ISLANDGAME_CHERIPORT_PKMNCENTER",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_DP_POKE_CENTER_DAY",
   "region_map_section": "MAPSEC_CHERIPORT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -95,5 +95,6 @@
   ],
   "bg_events": [
 
-  ]
+  ],
+  "night_music": "MUS_DP_POKE_CENTER_NIGHT"
 }

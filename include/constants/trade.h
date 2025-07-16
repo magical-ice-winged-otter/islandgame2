@@ -13,6 +13,8 @@
 // ISLANDGAME TRADES
 #define INGAME_TRADE_STARYU 4
 #define INGAME_TRADE_RIOLU  5
+#define INGAME_TRADE_QWILFISH 6
+
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0

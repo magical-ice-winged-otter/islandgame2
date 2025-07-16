@@ -309,7 +309,7 @@ static const struct TrainerMon sParty_LumineCave11[] = {
     {
     .iv = TRAINER_PARTY_IVS(31,31,31,31,31,31),
     .lvl = 31,
-    .species = SPECIES_GASTRODON,
+    .species = SPECIES_SHELLOS_MARYAN,
     },
 };
 

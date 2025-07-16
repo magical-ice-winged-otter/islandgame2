@@ -393,7 +393,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_LaironAssemble {
     setflag(FLAG_NO_CATCHING)
     setflag(FLAG_NO_RUNNING)
     createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_LAIRON, 40, ITEM_STEEL_GEM, NATURE_RELAXED, 0, MON_GENDERLESS, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_ROCK_SLIDE, MOVE_ENDEAVOR, MOVE_REVERSAL)
-    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_LAIRON, 40, ITEM_ROCK_GEM, NATURE_RELAXED, 0, MON_GENDERLESS, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_ROCK_SLIDE, MOVE_ENDEAVOR, MOVE_REVERSAL)
+    createmon(B_SIDE_OPPONENT, B_FLANK_RIGHT, SPECIES_LAIRON, 40, ITEM_ROCK_GEM, NATURE_RELAXED, 0, MON_GENDERLESS, 252, 252, 252, 252, 252, 0, 31, 31, 31, 31, 31, 0, MOVE_METAL_BURST, MOVE_ROCK_SLIDE, MOVE_ENDEAVOR, MOVE_REVERSAL)
     setwilddoubleflag
     playmoncry(SPECIES_LAIRON, CRY_MODE_ENCOUNTER)
     waitmoncry
@@ -415,7 +415,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_ShadowAggron {
     lock 
     fadescreen(FADE_TO_BLACK)
     setvar(VAR_0x8000, 26)
-    setvar(VAR_0x8001, 6)
+    setvar(VAR_0x8001, 7)
     callnative(TeleportCamera)
     setobjectxy(OBJ_EVENT_ID_PLAYER, 26, 7)
     fadescreen(FADE_FROM_BLACK)
@@ -516,9 +516,9 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
     setobjectxyperm(24, 47, 0)  
     setobjectxyperm(25, 47, 0)  
     setobjectxyperm(26, 47, 0)  
-    setobjectxy(1, 26, 12)
-    setobjectxy(2, 26, 13)
-    setobjectxy(11, 28, 12)
+    setobjectxy(1, 26, 13)
+    setobjectxy(2, 26, 14)
+    setobjectxy(11, 28, 13)
     setobjectmovementtype(11, MOVEMENT_TYPE_FACE_UP)
     fadescreen(FADE_FROM_BLACK)
 
@@ -639,7 +639,7 @@ script ISLANDGAME_LUMINE_CAVE_B1F_2_AggronPostFight {
 
     msgbox(format(
         "{COLOR GREEN}Alba: {COLOR DARK_GRAY}...and with that, I believe it is about time I take my leave as well.\p"
-        "Our battle was quite fruitful, {PLAYER}. I've little opportunities to interact with trainers of your...{PAUSE 30} caliber.\p"
+        "Our battle was quite fruitful, {PLAYER}. I've little opportunities to interact with trainers with your...{PAUSE 30} expertise.\p"
         "Perhaps we shall meet again in the future. Hopefully by then, I will have found the answer to my hypothesis... as well as the answer to yours."
     ))
     closemessage

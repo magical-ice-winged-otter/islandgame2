@@ -2,9 +2,14 @@ const LOOP_BOUND = VAR_TEMP_A
 const LOOP_ITER  = VAR_TEMP_B
 const QUEST      = VAR_TEMP_C
 const ITEM_VAR   = VAR_TEMP_D
+ 
+const QUEST_COUCH_POTATO_NPC = 1
 
-mapscripts ISLANDGAME_APPLEVINE_COUCH_POTATO_MapScripts {}
-
+mapscripts ISLANDGAME_APPLEVINE_COUCH_POTATO_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        quest_emote_on_warp(QUEST_COUCH_POTATO_NPC, QUEST_APPLEVINE_COUCH_POTATO)
+    }
+}
 
 script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
     lock
@@ -105,7 +110,7 @@ script ISLANDGAME_APPLEVINE_COUCH_POTATO_CouchPotatoSpeak {
                         ))
                     case 3:
                         msgbox(format(
-                            "Man, I haven't had a good donut in years. When I lived in Cantalo with my mom, she would always bring me home a jelly-filled donut.\pYo, mind snagging me one of those Jelly Donuts from Cantalo? Be sure to get strawberry, it's my favorite!"
+                            "Man, I haven't had a good donut in years. When I lived in Cantalo with my mom, she would always bring me home a jelly-filled donut.\pYo, mind snagging me one of those Jelly Donuts from Cantalo? Be sure to get strawberry, it's my favorite!\p...\pHuh? I said a Jelly Donut, not a Rice Ball, dum-dum! How did you get THAT from what I said!?"
                         ))
                     case 4:
                         msgbox(format(

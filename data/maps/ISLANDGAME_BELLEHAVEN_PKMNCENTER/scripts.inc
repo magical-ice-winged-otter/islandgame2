@@ -196,34 +196,20 @@ NIM_YouWin:
 # 205 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_18
 # 209 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	showmoneybox 0, 0
-# 210 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_19
 # 213 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	addmoney 20000
-# 214 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	updatemoneybox
-# 215 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	playse SE_SHOP
-# 216 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	waitse
-# 217 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	hidemoneybox
-# 218 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_20
-# 222 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	setflag FLAG_BELLEHAVEN_SQUID_GAME
-# 223 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	giveitem ITEM_MYSTIC_TICKET
-# 225 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 214 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	giveitem ITEM_CARD_KEY
+# 216 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 NIM_YouLose:
-# 226 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_21
-# 230 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 217 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	msgbox ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_20
+# 221 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 SquidGame_End:
-# 231 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 222 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	closemessage
-# 232 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 223 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	release
 	return
 
@@ -487,20 +473,15 @@ ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_18:
 	.string "play marbles with my friends all day...$"
 
 ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_19:
-# 211 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	.string "Here is your reward, as promised...$"
+# 210 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+	.string "Ooh... Unfortunately, I do not have any\n"
+	.string "money to give you. I just wanted to\l"
+	.string "make the game more interesting...\p"
+	.string "I am sorry for deceiving you... Please\n"
+	.string "take this instead... I will soon no\l"
+	.string "longer have a use for it...$"
 
 ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_20:
-# 219 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
-	.string "If you would like to continue\n"
-	.string "participating in high-stake games like\l"
-	.string "this, you should consider playing in the\l"
-	.string "High Limit Area at Applevine's Game\l"
-	.string "Corner...\p"
-	.string "Here...{PAUSE 30} you may take my VIP Pass. I will\n"
-	.string "soon no longer have a need for it...$"
-
-ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM_Text_21:
-# 227 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
+# 218 "data/maps/ISLANDGAME_BELLEHAVEN_PKMNCENTER/scripts.pory"
 	.string "Ah...{PAUSE 30} It seems that I have won...{PAUSE 30} Better\n"
 	.string "luck next time, young trainer...$"

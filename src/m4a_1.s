@@ -73,18 +73,19 @@ SoundMain_4:
 SoundMain_5:
 	str r5, [sp, 0x8]
 	ldr r6, lt_PCM_DMA_BUF_SIZE
-	ldr r3, lt_SoundMainRAM_Buffer
+	ldr r3, lt_SoundMainRAM
 	bx r3
 
 	.align 2, 0
 lt_SOUND_INFO_PTR:        .word SOUND_INFO_PTR
 lt_ID_NUMBER:             .word ID_NUMBER
-lt_SoundMainRAM_Buffer:   .word SoundMainRAM_Buffer + 1
+lt_SoundMainRAM:          .word SoundMainRAM + 1
 lt_REG_VCOUNT:            .word REG_VCOUNT
 lt_o_SoundInfo_pcmBuffer: .word o_SoundInfo_pcmBuffer
 lt_PCM_DMA_BUF_SIZE:      .word PCM_DMA_BUF_SIZE
 	thumb_func_end SoundMain
 
+	.section .iwram.code
 /* HQ-Mixer rev 4.0 created by ipatix (c) 2021
  * licensed under GPLv3, see LICENSE.txt for details */
 
@@ -1341,6 +1342,7 @@ SoundMainRAM_End:
 	.syntax unified
 	thumb_func_end SoundMainRAM
 
+	.text
 	thumb_func_start SoundMainBTM
 SoundMainBTM:
 	mov r12, r4

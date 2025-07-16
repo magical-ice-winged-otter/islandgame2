@@ -1,97 +1,104 @@
 ISLANDGAME_APPLEVINE_QUEST_HOUSE_MapScripts::
+# 4 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_APPLEVINE_QUEST_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_APPLEVINE_QUEST_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 5 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+	quest_emote_on_warp 1, QUEST_MAPLEGROVE_LOVERS
+	return
 
 
 ISLANDGAME_APPLEVINE_EventScript_Doll::
-# 5 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 11 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Doll_Text_0, MSGBOX_SIGN
 	return
 
 
 ISLANDGAME_APPLEVINE_EventScript_Julie::
-# 11 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 17 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	lock
-# 12 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 18 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	returnqueststate QUEST_MAPLEGROVE_LOVERS
-# 14 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 20 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	switch VAR_RESULT
-# 15 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 21 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	case QUEST_INACTIVE, ISLANDGAME_APPLEVINE_EventScript_Julie_3
-# 19 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 25 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	case QUEST_ACTIVE, ISLANDGAME_APPLEVINE_EventScript_Julie_4
-# 49 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 55 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	case QUEST_COMPLETED, ISLANDGAME_APPLEVINE_EventScript_Julie_5
 ISLANDGAME_APPLEVINE_EventScript_Julie_1:
-# 58 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 64 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	closemessage
-# 59 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 65 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	release
 	return
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_3:
-# 16 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 22 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Julie_Text_0
 	goto ISLANDGAME_APPLEVINE_EventScript_Julie_1
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_4:
-# 20 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 26 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	checkitem ITEM_ISLANDGAME_JULIES_LETTER
-# 21 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 27 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_Julie_6
-# 28 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_Julie_Text_0
-# 31 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
-	closemessage
-# 32 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
-	faceplayer
-# 33 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
-	applymovement 1, Common_Movement_QuestionMark
 # 34 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
-	waitmovement 0
-# 35 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
-	applymovement 1, Common_Movement_Delay48
-# 36 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
-	waitmovement 0
+	msgbox ISLANDGAME_APPLEVINE_EventScript_Julie_Text_0
 # 37 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+	closemessage
+# 38 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+	faceplayer
+# 39 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+	applymovement 1, Common_Movement_QuestionMark
+# 40 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+	waitmovement 0
+# 41 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+	applymovement 1, Common_Movement_Delay48
+# 42 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+	waitmovement 0
+# 43 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Julie_Text_2
-# 46 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 52 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	giveitem ITEM_ISLANDGAME_JULIES_LETTER
-# 47 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 53 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	removeitem ITEM_ISLANDGAME_ROMANS_LETTER
 	goto ISLANDGAME_APPLEVINE_EventScript_Julie_1
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_5:
-# 50 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 56 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	faceplayer
-# 51 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 57 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Julie_Text_3
 	goto ISLANDGAME_APPLEVINE_EventScript_Julie_1
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_6:
-# 22 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 28 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	faceplayer
-# 23 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 29 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_Julie_Text_1
 	goto ISLANDGAME_APPLEVINE_EventScript_Julie_1
 
 
 ISLANDGAME_APPLEVINE_EventScript_Doll_Text_0:
-# 6 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 12 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	.string "{COLOR RED}(It's a Clefairy Doll. Apparently these\n"
 	.string "bring the holder good luck.)$"
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_Text_0:
-# 17 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 23 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	.string "I wonder how Roman is doing in\n"
 	.string "Maplegrove...$"
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_Text_1:
-# 24 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 30 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	.string "Thank you, you are a very kind trainer.$"
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_Text_2:
-# 38 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 44 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	.string "Hm? May I help you?\p"
 	.string "...\p"
 	.string "I see. He sent you all the way from\n"
@@ -106,6 +113,6 @@ ISLANDGAME_APPLEVINE_EventScript_Julie_Text_2:
 	.string "you mind giving this to Roman?$"
 
 ISLANDGAME_APPLEVINE_EventScript_Julie_Text_3:
-# 52 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
+# 58 "data/maps/ISLANDGAME_APPLEVINE_QUEST_HOUSE/scripts.pory"
 	.string "The first thing I'm getting for Roman\n"
 	.string "when I see him is a cell phone...$"

@@ -3,20 +3,6 @@ const LOOP_BOUND = VAR_TEMP_A
 const LOOP_ITER  = VAR_TEMP_B
 const QUEST      = VAR_TEMP_C
 
-//Common script to load quest npcs with emotes into the game.
-script Common_QuestEmoteOnWarp {
-    //setvar VAR_0x800B, LOCALID_NURSE
-    //var(VAR_RESULT) == QUEST_UNLOCKED && 
-    if (var(VAR_RESULT) == QUEST_INACTIVE) {
-        applymovement(VAR_0x800B, Common_Movement_ExclamationMark)
-        waitmovement(VAR_0x800B)
-    } elif (var(VAR_RESULT) == QUEST_ACTIVE) {
-        applymovement(VAR_0x800B, Common_Movement_ExclamationMark)
-        waitmovement(VAR_0x800B)
-    }
-    return
-}
-
 //Common script to loop through subquests of a quest
 //Usage:
 //  setvar(LOOP_ITER, start)                where start represents the starting index of the first subquest

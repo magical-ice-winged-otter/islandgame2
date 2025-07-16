@@ -164,7 +164,7 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_17:
 # 113 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_5
 # 117 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_PP_MAX
+	giveitem ITEM_RARE_CANDY
 # 118 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	addvar VAR_APPLEVINE_STATE, 1
 	goto ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_7
@@ -459,73 +459,93 @@ PrizeClerk_Exchange:
 # 327 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_12, 762
 # 328 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_13, 587
+	checkitem ITEM_TM06
 # 329 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_14, 593
-# 330 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_15, 613
-# 331 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_16, 627
-# 332 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_17, 629
-# 333 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_18, 370
-# 334 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_19, 376
-# 335 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_20, 357
-# 336 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_21, 746
-# 337 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
-# 338 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	switch VAR_RESULT
-# 339 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 474, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_10
-# 361 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 482, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_11
-# 383 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 471, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_12
-# 405 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 465, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_13
-# 427 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 492, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_14
-# 449 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 493, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_15
-# 471 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 475, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_16
-# 493 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 476, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_17
-# 515 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 762, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_18
-# 537 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 587, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_19
-# 559 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 593, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_20
-# 581 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 627, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_21
-# 603 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 629, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_22
-# 625 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 630, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
-# 647 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 370, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_24
-# 679 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 376, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_25
-# 711 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 357, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_26
-# 743 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 746, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_27
-# 811 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	hidecoinsbox 17, 1
-# 812 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto PrizeClerk_End
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_9
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8:
-# 815 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 332 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkitem ITEM_TM12
+# 333 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_12
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_11:
+# 336 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkitem ITEM_TM32
+# 337 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_15
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_14:
+# 340 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkitem ITEM_TM46
+# 341 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_18
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_17:
+# 344 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkitem ITEM_TM48
+# 345 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_21
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_20:
+# 348 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_18, 370
+# 349 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_19, 376
+# 350 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_20, 357
+# 351 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_21, 746
+# 352 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
+# 353 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	switch VAR_RESULT
+# 354 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 474, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_25
+# 376 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 482, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_26
+# 398 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 471, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_27
+# 420 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 465, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_28
+# 442 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 492, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_29
+# 464 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 493, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_30
+# 486 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 475, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_31
+# 508 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 476, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_32
+# 530 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 762, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_33
+# 552 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 587, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_34
+# 574 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 593, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_35
+# 596 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 627, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_36
+# 618 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 629, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_37
+# 640 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 630, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_38
+# 662 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 370, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_39
+# 694 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 376, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_40
+# 726 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 357, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_41
+# 758 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 746, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_42
+# 826 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	hidecoinsbox 17, 1
+# 827 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto PrizeClerk_End
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23:
+# 830 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 PrizeClerk_End:
-# 816 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 831 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	closemessage
-# 817 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 832 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	release
 	return
 
@@ -541,1308 +561,1363 @@ ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_5:
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_4
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_10:
-# 340 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkcoins VAR_TEMP_D
-# 341 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 800
-	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_30
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_29:
-# 347 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_23, MSGBOX_YESNO
-# 350 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_84
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_83:
-# 360 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_11:
-# 362 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkcoins VAR_TEMP_D
-# 363 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 800
-	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_33
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_32:
-# 369 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_25, MSGBOX_YESNO
-# 372 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_87
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_86:
-# 382 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto PrizeClerk_Exchange
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_9:
+# 330 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_13, 587
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_12:
-# 384 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkcoins VAR_TEMP_D
-# 385 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 800
-	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_36
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_35:
-# 391 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_26, MSGBOX_YESNO
-# 394 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_90
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_89:
-# 404 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_13:
-# 406 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkcoins VAR_TEMP_D
-# 407 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 1600
-	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_39
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_38:
-# 413 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_27, MSGBOX_YESNO
-# 416 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_93
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_92:
-# 426 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_14:
-# 428 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkcoins VAR_TEMP_D
-# 429 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 1600
-	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_42
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_41:
-# 435 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_28, MSGBOX_YESNO
-# 438 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_96
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_95:
-# 448 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+# 334 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_14, 593
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_11
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_15:
-# 450 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 338 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_15, 613
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_14
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_18:
+# 342 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_16, 627
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_17
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_21:
+# 346 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_17, 629
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_20
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_25:
+# 355 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 451 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 1600
+# 356 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 800
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_45
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_44:
-# 457 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_29, MSGBOX_YESNO
-# 460 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 362 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_23, MSGBOX_YESNO
+# 365 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_99
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_98:
-# 470 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 375 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_16:
-# 472 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_26:
+# 377 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 473 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 2400
+# 378 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 800
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_48
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_47:
-# 479 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_30, MSGBOX_YESNO
-# 482 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 384 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_25, MSGBOX_YESNO
+# 387 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_102
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_101:
-# 492 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 397 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_17:
-# 494 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_27:
+# 399 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 495 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 2400
+# 400 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 800
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_51
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_50:
-# 501 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_31, MSGBOX_YESNO
-# 504 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 406 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_26, MSGBOX_YESNO
+# 409 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_105
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_104:
-# 514 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 419 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_18:
-# 516 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_28:
+# 421 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 517 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 2400
+# 422 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 1600
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_54
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_53:
-# 523 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_32, MSGBOX_YESNO
-# 526 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 428 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_27, MSGBOX_YESNO
+# 431 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_108
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_107:
-# 536 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 441 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_19:
-# 538 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_29:
+# 443 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 539 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 3200
+# 444 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 1600
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_57
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_56:
-# 545 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_33, MSGBOX_YESNO
-# 548 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 450 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_28, MSGBOX_YESNO
+# 453 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_111
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_110:
-# 558 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 463 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_20:
-# 560 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_30:
+# 465 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 561 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 3200
+# 466 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 1600
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_60
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_59:
-# 567 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_34, MSGBOX_YESNO
-# 570 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 472 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_29, MSGBOX_YESNO
+# 475 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_114
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_113:
-# 580 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 485 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_21:
-# 582 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_31:
+# 487 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 583 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 3200
+# 488 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 2400
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_63
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_62:
-# 589 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_35, MSGBOX_YESNO
-# 592 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 494 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_30, MSGBOX_YESNO
+# 497 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_117
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_116:
-# 602 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 507 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_22:
-# 604 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_32:
+# 509 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 605 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 3200
+# 510 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 2400
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_66
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_65:
-# 611 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_36, MSGBOX_YESNO
-# 614 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 516 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_31, MSGBOX_YESNO
+# 519 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_120
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_119:
-# 624 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 529 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23:
-# 626 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_33:
+# 531 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 627 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 3200
+# 532 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 2400
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_69
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_68:
-# 633 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_37, MSGBOX_YESNO
-# 636 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 538 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_32, MSGBOX_YESNO
+# 541 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_123
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_122:
-# 646 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 551 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_24:
-# 648 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_34:
+# 553 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 649 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 4800
+# 554 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 3200
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_72
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_71:
-# 655 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_38, MSGBOX_YESNO
-# 658 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 560 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_33, MSGBOX_YESNO
+# 563 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_126
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_125:
-# 678 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 573 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_25:
-# 680 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_35:
+# 575 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 681 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 6400
+# 576 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 3200
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_75
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_74:
-# 687 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_40, MSGBOX_YESNO
-# 690 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 582 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_34, MSGBOX_YESNO
+# 585 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_129
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_128:
-# 710 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 595 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_26:
-# 712 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_36:
+# 597 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 713 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 8000
+# 598 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 3200
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_78
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_77:
-# 719 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_42, MSGBOX_YESNO
-# 722 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 604 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_35, MSGBOX_YESNO
+# 607 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_132
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_131:
-# 742 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 617 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_27:
-# 744 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_37:
+# 619 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkcoins VAR_TEMP_D
-# 745 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_TEMP_D, 9999
+# 620 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 3200
 	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_81
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_80:
-# 751 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_44, MSGBOX_YESNO
-# 754 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 626 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_36, MSGBOX_YESNO
+# 629 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_135
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_134:
-# 809 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 639 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_8
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_30:
-# 342 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 345 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_38:
+# 641 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkcoins VAR_TEMP_D
+# 642 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 3200
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_84
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_83:
+# 648 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_37, MSGBOX_YESNO
+# 651 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_138
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_137:
+# 661 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_29
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_33:
-# 364 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 367 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_32
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_36:
-# 386 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 389 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_35
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_39:
-# 408 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 411 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 663 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkcoins VAR_TEMP_D
+# 664 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 4800
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_87
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_86:
+# 670 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_38, MSGBOX_YESNO
+# 673 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_141
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_140:
+# 693 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_38
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_40:
+# 695 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkcoins VAR_TEMP_D
+# 696 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 6400
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_90
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_89:
+# 702 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_40, MSGBOX_YESNO
+# 705 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_144
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_143:
+# 725 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_41:
+# 727 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkcoins VAR_TEMP_D
+# 728 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 8000
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_93
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_92:
+# 734 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_42, MSGBOX_YESNO
+# 737 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_147
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146:
+# 757 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto PrizeClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_42:
-# 430 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 433 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 759 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkcoins VAR_TEMP_D
+# 760 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_TEMP_D, 9999
+	goto_if_lt ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_96
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_95:
+# 766 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_44, MSGBOX_YESNO
+# 769 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_150
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_149:
+# 824 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_41
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_23
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_45:
-# 452 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 357 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 455 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 360 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_44
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_48:
-# 474 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 379 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 477 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 382 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_47
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_51:
-# 496 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 401 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 499 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 404 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_50
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_54:
-# 518 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 423 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 521 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 426 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_53
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_57:
-# 540 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 445 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 543 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 448 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_56
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_60:
-# 562 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 467 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 565 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 470 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_59
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_63:
-# 584 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 489 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 587 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 492 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_62
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_66:
-# 606 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 511 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 609 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 514 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_65
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_69:
-# 628 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 533 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 631 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 536 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_68
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_72:
-# 650 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 555 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 653 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 558 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_71
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_75:
-# 682 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 577 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 685 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 580 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_74
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_78:
-# 714 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 599 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 717 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 602 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_77
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_81:
-# 746 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 621 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
-# 749 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 624 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_80
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_84:
-# 351 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 800
-# 352 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 17, 1
-# 353 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 354 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 355 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_WIDE_LENS
-# 356 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+# 643 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+# 646 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_83
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_87:
-# 373 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 800
-# 374 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 17, 1
-# 375 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 376 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 377 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_ZOOM_LENS
-# 378 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+# 665 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+# 668 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_86
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_90:
-# 395 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 800
-# 396 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 17, 1
-# 397 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 398 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 399 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_SCOPE_LENS
-# 400 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+# 697 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+# 700 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_89
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_93:
-# 417 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 1600
-# 418 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 17, 1
-# 419 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 420 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 421 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_KINGS_ROCK
-# 422 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+# 729 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+# 732 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_92
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_96:
-# 439 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 1600
-# 440 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 17, 1
-# 441 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 442 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 443 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_RAZOR_FANG
-# 444 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+# 761 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22
+# 764 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto PrizeClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_95
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_99:
-# 461 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 1600
-# 462 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 366 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 800
+# 367 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 463 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 368 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 464 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 369 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 465 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_RAZOR_CLAW
-# 466 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 370 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_WIDE_LENS
+# 371 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_98
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_102:
-# 483 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 2400
-# 484 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 388 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 800
+# 389 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 485 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 390 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 486 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 391 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 487 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_MUSCLE_BAND
-# 488 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 392 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_ZOOM_LENS
+# 393 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_101
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_105:
-# 505 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 2400
-# 506 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 410 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 800
+# 411 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 507 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 412 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 508 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 413 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 509 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_WISE_GLASSES
-# 510 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 414 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_SCOPE_LENS
+# 415 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_104
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_108:
-# 527 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 2400
-# 528 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 432 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 1600
+# 433 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 529 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 434 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 530 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 435 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 531 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_LOADED_DICE
-# 532 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 436 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_KINGS_ROCK
+# 437 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_107
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_111:
-# 549 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 3200
-# 550 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 454 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 1600
+# 455 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 551 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 456 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 552 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 457 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 553 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_TM06
-# 554 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 458 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_RAZOR_FANG
+# 459 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_110
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_114:
-# 571 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 3200
-# 572 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 476 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 1600
+# 477 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 573 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 478 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 574 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 479 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 575 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_TM12
-# 576 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 480 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_RAZOR_CLAW
+# 481 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_113
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_117:
-# 593 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 3200
-# 594 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 498 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 2400
+# 499 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 595 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 500 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 596 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 501 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 597 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_TM46
-# 598 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 502 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_MUSCLE_BAND
+# 503 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_116
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_120:
-# 615 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 3200
-# 616 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 520 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 2400
+# 521 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 617 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 522 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 618 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 523 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 619 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_TM48
-# 620 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 524 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_WISE_GLASSES
+# 525 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_119
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_123:
-# 637 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 3200
-# 638 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 542 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 2400
+# 543 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 639 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 544 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 640 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 545 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 641 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_TM49
-# 642 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 546 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_LOADED_DICE
+# 547 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_122
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_126:
-# 659 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 4800
-# 660 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 564 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 3200
+# 565 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 661 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 566 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 662 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 567 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 663 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	givemon SPECIES_GIMMIGHOUL, 20, ITEM_NUGGET, ITEM_POKE_BALL, NUM_NATURES
-# 664 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 665 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_GIMMIGHOUL
-# 666 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_39
-# 667 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitfanfare
-# 669 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 670 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_138
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_137:
-# 674 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 568 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_TM06
+# 569 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_125
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_129:
-# 691 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 6400
-# 692 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 586 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 3200
+# 587 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 693 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 588 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 694 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 589 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 695 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	givemon SPECIES_EEVEE, 20, ITEM_LUCKY_EGG, ITEM_POKE_BALL, NUM_NATURES
-# 696 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 697 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
-# 698 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_41
-# 699 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitfanfare
-# 701 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 702 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_141
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_140:
-# 706 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 590 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_TM12
+# 591 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_128
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_132:
-# 723 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 8000
-# 724 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 608 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 3200
+# 609 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 725 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 610 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 726 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 611 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 727 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	givemon SPECIES_PORYGON, 20, ITEM_EVIOLITE, ITEM_POKE_BALL, NUM_NATURES
-# 728 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 729 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_PORYGON
-# 730 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_43
-# 731 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitfanfare
-# 733 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 734 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_144
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_143:
-# 738 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 612 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_TM46
+# 613 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_131
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_135:
-# 755 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removecoins 9999
-# 756 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 630 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 3200
+# 631 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 17, 1
-# 757 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 632 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 758 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 633 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 759 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	random 10
-# 760 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	switch VAR_RESULT
-# 761 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 0, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_148
-# 762 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 1, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_149
-# 763 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 2, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_150
-# 764 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 3, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_151
-# 765 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 4, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_152
-# 766 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 5, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_153
-# 767 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 6, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_154
-# 768 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 7, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_155
-# 780 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	case 8, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_156
-# 793 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	givemon SPECIES_BELDUM, 20, ITEM_COMET_SHARD, ITEM_CHERISH_BALL, NUM_NATURES, 0
-# 794 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 795 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_BELDUM
-# 796 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_46
-# 797 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitfanfare
-# 799 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 800 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_162
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146:
-# 805 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 634 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_TM48
+# 635 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_134
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_138:
-# 671 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 672 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
+# 652 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 3200
+# 653 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 17, 1
+# 654 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 655 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 656 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_TM49
+# 657 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_137
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_141:
-# 703 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 704 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
+# 674 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 4800
+# 675 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 17, 1
+# 676 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 677 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 678 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	givemon SPECIES_GIMMIGHOUL, 20, ITEM_NUGGET, ITEM_POKE_BALL, NUM_NATURES
+# 679 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 680 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_GIMMIGHOUL
+# 681 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_39
+# 682 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitfanfare
+# 684 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 685 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_153
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_152:
+# 689 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_140
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_144:
-# 735 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
-# 736 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
+# 706 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 6400
+# 707 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 17, 1
+# 708 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 709 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 710 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	givemon SPECIES_EEVEE, 20, ITEM_LUCKY_EGG, ITEM_POKE_BALL, NUM_NATURES
+# 711 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 712 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
+# 713 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_41
+# 714 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitfanfare
+# 716 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 717 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_156
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_155:
+# 721 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_143
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_148:
-# 761 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_ABILITY_PATCH
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_149:
-# 762 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_ABILITY_CAPSULE
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_147:
+# 738 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 8000
+# 739 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 17, 1
+# 740 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 741 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 742 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	givemon SPECIES_PORYGON, 20, ITEM_EVIOLITE, ITEM_POKE_BALL, NUM_NATURES
+# 743 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 744 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_PORYGON
+# 745 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_43
+# 746 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitfanfare
+# 748 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 749 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_159
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_158:
+# 753 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
 	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_150:
-# 763 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_BIG_NUGGET
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_151:
-# 764 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_LEFTOVERS
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_152:
-# 765 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_LIFE_ORB
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+# 770 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removecoins 9999
+# 771 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 17, 1
+# 772 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 773 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 774 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	random 10
+# 775 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	switch VAR_RESULT
+# 776 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 0, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_163
+# 777 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 1, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_164
+# 778 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 2, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_165
+# 779 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 3, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_166
+# 780 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 4, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_167
+# 781 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 5, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_168
+# 782 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 6, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_169
+# 783 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 7, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_170
+# 795 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	case 8, ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_171
+# 808 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	givemon SPECIES_BELDUM, 20, ITEM_COMET_SHARD, ITEM_CHERISH_BALL, NUM_NATURES, 0
+# 809 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 810 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_BELDUM
+# 811 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_46
+# 812 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitfanfare
+# 814 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 815 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_177
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161:
+# 820 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_149
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_153:
-# 766 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_MAX_REVIVE
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_154:
-# 767 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	giveitem ITEM_EXP_CANDY_XL
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
-
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_155:
-# 769 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	givemon SPECIES_DITTO, 20, ITEM_QUICK_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2
-# 770 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 771 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_DITTO
-# 772 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_45
-# 773 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitfanfare
-# 775 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 776 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_158
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+# 686 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 687 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_152
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_156:
-# 781 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	givemon SPECIES_DITTO, 20, ITEM_METAL_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2
-# 782 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 783 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_DITTO
-# 784 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_45
-# 785 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitfanfare
-# 787 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-# 788 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_160
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+# 718 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 719 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_155
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_158:
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_159:
+# 750 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 751 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_158
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_163:
+# 776 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_ABILITY_PATCH
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_164:
 # 777 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
+	giveitem ITEM_ABILITY_CAPSULE
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_165:
 # 778 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+	giveitem ITEM_CHOICE_BAND
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_160:
-# 789 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_166:
+# 779 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_CHOICE_SPECS
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_167:
+# 780 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_CHOICE_SCARF
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_168:
+# 781 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_MAX_REVIVE
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_169:
+# 782 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	giveitem ITEM_PP_MAX
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_170:
+# 784 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	givemon SPECIES_DITTO, 20, ITEM_QUICK_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2
+# 785 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 786 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_DITTO
+# 787 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_45
+# 788 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitfanfare
 # 790 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_NameReceivedPartyMon
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 791 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_173
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
 
-ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_162:
-# 801 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	call Common_EventScript_GetGiftMonPartySlot
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_171:
+# 796 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	givemon SPECIES_DITTO, 20, ITEM_METAL_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2
+# 797 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 798 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	bufferspeciesname STR_VAR_1, SPECIES_DITTO
+# 799 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_45
+# 800 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitfanfare
 # 802 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+# 803 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_175
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_173:
+# 792 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 793 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
-	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_146
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_175:
+# 804 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 805 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
+
+ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_177:
+# 816 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_GetGiftMonPartySlot
+# 817 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	call Common_EventScript_NameReceivedPartyMon
+	goto ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_161
 
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk::
-# 824 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 839 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	lock
-# 825 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 840 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	faceplayer
-# 826 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 841 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto_if_unset FLAG_APPLEVINE_COIN_CASE, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_2
-# 848 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_3, MSGBOX_YESNO
-# 851 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 863 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkitem ITEM_CARD_KEY
+# 864 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_14
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_12:
+# 877 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_4, MSGBOX_YESNO
+# 880 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_12
-# 855 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_29
+# 884 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_End
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_1:
-# 859 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 888 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 CoinsClerk_Exchange:
-# 860 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_4
-# 863 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 889 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_5
+# 892 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	showcoinsbox 18, 1
-# 864 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 893 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	showmoneybox 17, 4
-# 865 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 894 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	dynmultipush ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_3, 0
-# 866 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_5, 1
-# 867 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_6, 2
-# 868 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_7, 3
-# 869 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_8, 4
-# 870 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 895 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_6, 1
+# 896 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_7, 2
+# 897 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_8, 3
+# 898 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	dynmultipush ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_9, 4
+# 899 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	dynmultistack 0, 0, TRUE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE
-# 871 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 900 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	switch VAR_RESULT
-# 872 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 901 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	case 1, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_7
-# 902 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 931 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	case 2, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_8
-# 932 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 961 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	case 3, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_9
-# 962 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 991 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	case 4, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_10
-# 993 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1022 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidemoneybox
-# 994 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1023 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidecoinsbox 18, 1
-# 995 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1024 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_End
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5:
-# 998 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1027 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 CoinsClerk_End:
-# 999 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1028 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	closemessage
-# 1000 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1029 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	release
 	return
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_2:
-# 827 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 842 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_0
-# 831 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 846 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	giveitem ITEM_COIN_CASE
-# 832 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 847 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setflag FLAG_APPLEVINE_COIN_CASE
-# 833 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 848 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	showcoinsbox 18, 1
-# 834 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 849 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_1
-# 837 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 852 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	addcoins 20
-# 838 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 853 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	updatecoinsbox 18, 1
-# 839 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 854 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playse SE_SHOP
-# 840 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 855 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	waitse
-# 841 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 856 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_2
-# 844 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 859 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidecoinsbox 18, 1
-# 845 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 860 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_End
 	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_1
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_7:
-# 873 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_9, MSGBOX_YESNO
-# 876 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 902 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10, MSGBOX_YESNO
+# 905 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_15
-# 898 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_17
+# 927 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidemoneybox
-# 899 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 928 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidecoinsbox 18, 1
-# 900 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 929 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_8:
-# 903 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12, MSGBOX_YESNO
-# 906 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 932 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_13, MSGBOX_YESNO
+# 935 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_18
-# 928 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_20
+# 957 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidemoneybox
-# 929 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 958 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidecoinsbox 18, 1
-# 930 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 959 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_9:
-# 933 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_13, MSGBOX_YESNO
-# 936 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 962 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_14, MSGBOX_YESNO
+# 965 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_21
-# 958 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_23
+# 987 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidemoneybox
-# 959 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 988 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidecoinsbox 18, 1
-# 960 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 989 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_10:
-# 963 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_14, MSGBOX_YESNO
-# 966 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 992 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_15, MSGBOX_YESNO
+# 995 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, YES
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_24
-# 988 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_26
+# 1017 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidemoneybox
-# 989 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1018 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidecoinsbox 18, 1
-# 990 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1019 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_12:
-# 852 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_13:
+# 865 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	showcoinsbox 18, 1
+# 866 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_3
+# 870 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	addcoins 9999
+# 871 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 18, 1
+# 872 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 873 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 874 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	hidecoinsbox 18, 1
+# 875 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	setflag FLAG_DAILY_APPLEVINE_COIN_CARD
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_12
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_14:
+# 864 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto_if_unset FLAG_DAILY_APPLEVINE_COIN_CARD, ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_13
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_12
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_17:
+# 906 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkmoney 1000
+# 907 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_33
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_32:
+# 915 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removemoney 1000
+# 916 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	addcoins 50
+# 917 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatemoneybox
+# 918 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 18, 1
+# 919 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 920 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 921 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12
+# 924 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_20:
+# 936 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkmoney 4500
+# 937 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_36
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_35:
+# 945 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removemoney 4500
+# 946 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	addcoins 250
+# 947 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatemoneybox
+# 948 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 18, 1
+# 949 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 950 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 951 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12
+# 954 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_23:
+# 966 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkmoney 16000
+# 967 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_39
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_38:
+# 975 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removemoney 16000
+# 976 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	addcoins 1000
+# 977 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatemoneybox
+# 978 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 18, 1
+# 979 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 980 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 981 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12
+# 984 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_26:
+# 996 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	checkmoney 40000
+# 997 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_42
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_41:
+# 1005 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	removemoney 40000
+# 1006 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	addcoins 4000
+# 1007 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatemoneybox
+# 1008 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	updatecoinsbox 18, 1
+# 1009 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	playse SE_SHOP
+# 1010 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	waitse
+# 1011 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12
+# 1014 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto CoinsClerk_End
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_29:
+# 881 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_Exchange
 	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_1
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_15:
-# 877 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkmoney 1000
-# 878 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_28
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_27:
-# 886 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removemoney 1000
-# 887 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	addcoins 50
-# 888 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatemoneybox
-# 889 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 18, 1
-# 890 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 891 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 892 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
-# 895 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto CoinsClerk_End
-	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
-
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_18:
-# 907 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkmoney 4500
-# 908 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_31
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_30:
-# 916 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removemoney 4500
-# 917 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	addcoins 250
-# 918 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatemoneybox
-# 919 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 18, 1
-# 920 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 921 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 922 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
-# 925 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto CoinsClerk_End
-	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
-
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_21:
-# 937 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkmoney 16000
-# 938 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_34
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_33:
-# 946 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removemoney 16000
-# 947 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	addcoins 1000
-# 948 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatemoneybox
-# 949 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 18, 1
-# 950 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 951 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 952 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 908 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
-# 955 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto CoinsClerk_End
-	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
-
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_24:
-# 967 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	checkmoney 40000
-# 968 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_eq ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_37
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_36:
-# 976 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	removemoney 40000
-# 977 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	addcoins 4000
-# 978 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatemoneybox
-# 979 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	updatecoinsbox 18, 1
-# 980 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	playse SE_SHOP
-# 981 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	waitse
-# 982 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
-# 985 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto CoinsClerk_End
-	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_5
-
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_28:
-# 879 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10
-# 882 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 911 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidemoneybox
-# 883 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	hidecoinsbox 18, 1
-# 884 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	goto CoinsClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_27
-
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_31:
-# 909 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10
 # 912 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	hidemoneybox
+	hidecoinsbox 18, 1
 # 913 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	hidecoinsbox 18, 1
-# 914 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_30
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_32
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_34:
-# 939 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_36:
+# 938 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
+# 941 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	hidemoneybox
 # 942 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	hidemoneybox
+	hidecoinsbox 18, 1
 # 943 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	hidecoinsbox 18, 1
-# 944 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_33
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_35
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_37:
-# 969 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10
-# 972 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_39:
+# 968 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
+# 971 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidemoneybox
-# 973 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 972 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	hidecoinsbox 18, 1
-# 974 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 973 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	goto CoinsClerk_Exchange
-	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_36
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_38
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_42:
+# 998 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	msgbox ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11
+# 1001 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	hidemoneybox
+# 1002 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	hidecoinsbox 18, 1
+# 1003 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	goto CoinsClerk_Exchange
+	goto ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_41
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General::
-# 1020 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1049 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	lockall
-# 1021 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1050 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	checkitem ITEM_COIN_CASE
-# 1022 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1051 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_2
-# 1026 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1055 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	specialvar VAR_RESULT, GetSlotMachineId
-# 1027 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1056 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	playslotmachine VAR_RESULT
 ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_1:
-# 1029 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1058 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	releaseall
 	return
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_2:
-# 1023 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1052 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	msgbox ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_Text_0
 	goto ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_1
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine0::
-# 1033 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1062 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 0
-# 1034 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1063 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine1::
-# 1037 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1066 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 1
-# 1038 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1067 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine2::
-# 1041 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1070 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 2
-# 1042 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1071 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine3::
-# 1045 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1074 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 3
-# 1046 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1075 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine4::
-# 1049 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1078 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 4
-# 1050 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1079 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine5::
-# 1053 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1082 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 5
-# 1054 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1083 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine6::
-# 1057 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1086 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 6
-# 1058 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1087 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine7::
-# 1061 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1090 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 7
-# 1062 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1091 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine8::
-# 1065 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1094 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 8
-# 1066 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1095 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine9::
-# 1069 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1098 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 9
-# 1070 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1099 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine10::
-# 1073 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1102 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 10
-# 1074 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1103 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_SlotMachine11::
-# 1077 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1106 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	setvar VAR_0x8004, 11
-# 1078 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1107 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	call ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General
 	return
 
@@ -1908,7 +1983,7 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC4_Text_0:
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_0:
 # 80 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "i gotz nufin els 2 gif u maen GITOFMES$"
+	.string "i gotz nufin els 2 gif u maen JO AWEI$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_1:
 # 86 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
@@ -1928,10 +2003,9 @@ ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_4:
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_5:
 # 114 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "omigawd blud aktuali gaef me 69 koinz\n"
+	.string "waos blud aktuali gaef me 69 koinz\n"
 	.string ":weri:\p"
-	.string "taek wan of deez et maeks ur pp go maks\n"
-	.string ":hotfaec:$"
+	.string "ju taek dis no ned 2 janx mes$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5_Text_6:
 # 123 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
@@ -2060,232 +2134,241 @@ ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_12:
 	.string "Loaded Dice (2400)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_13:
-# 328 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 330 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "TM06 (3200)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_14:
-# 329 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 334 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "TM12 (3200)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_15:
-# 330 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 338 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "TM32 (3200)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_16:
-# 331 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 342 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "TM46 (3200)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_17:
-# 332 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 346 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "TM48 (3200)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_18:
-# 333 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 348 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Gimmighoul (4800)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_19:
-# 334 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 349 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Eevee (6400)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_20:
-# 335 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 350 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Porygon (8000)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_21:
-# 336 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 351 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Mystery Box (9999)$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_22:
-# 343 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 358 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Sorry, you don't have enough coins for\n"
 	.string "this prize.$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_23:
-# 348 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 363 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 800 coins\n"
 	.string "for a Wide Lens?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_24:
-# 357 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 372 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "We hope you enjoy your prize!$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_25:
-# 370 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 385 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 800 coins\n"
 	.string "for a Zoom Lens?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_26:
-# 392 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 407 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 800 coins\n"
 	.string "for a Scope Lens?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_27:
-# 414 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 429 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 1600 coins\n"
 	.string "for a King's Rock?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_28:
-# 436 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 451 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 1600 coins\n"
 	.string "for a Razor Fang?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_29:
-# 458 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 473 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 1600 coins\n"
 	.string "for a Razor Claw?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_30:
-# 480 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 495 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 2400 coins\n"
 	.string "for a Muscle Band?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_31:
-# 502 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 517 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 2400 coins\n"
 	.string "for a pair of Wise Glasses?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_32:
-# 524 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 539 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 2400 coins\n"
 	.string "for a Loaded Die?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_33:
-# 546 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 561 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 3200 coins\n"
 	.string "for TM06 - Toxic?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_34:
-# 568 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 583 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 3200 coins\n"
 	.string "for TM12 - Taunt?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_35:
-# 590 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 605 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 3200 coins\n"
 	.string "for TM46 - Thief?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_36:
-# 612 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 627 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 3200 coins\n"
 	.string "for TM48 - Skill Swap?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_37:
-# 634 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 649 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 3200 coins\n"
 	.string "for TM32 - Double Team?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_38:
-# 656 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 671 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 4800 coins\n"
 	.string "for a Gimmighoul?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_39:
-# 666 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 681 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "You received a Gimmighoul!$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_40:
-# 688 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 703 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 6400 coins\n"
 	.string "for an Eevee?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_41:
-# 698 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 713 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "You received an Eevee!$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_42:
-# 720 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 735 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to exchange 8000 coins\n"
 	.string "for a Porygon?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_43:
-# 730 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 745 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "You received a Porygon!$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_44:
-# 752 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 767 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Ah, so you've decided to try your luck\n"
 	.string "with one of our Mystery Boxes?$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_45:
-# 772 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 787 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "You received a Ditto!$"
 
 ISLANDGAME_APPLEVINE_EventScript_PrizeClerk_Text_46:
-# 796 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 811 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "You received a Beldum!$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_0:
-# 828 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "Welcome to the Eelektrik Game Corner!\n"
-	.string "Our games are entirely skill-based!\p"
+# 843 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	.string "Welcome to EelektronikArts Game\n"
+	.string "Corner! Our games are entirely\l"
+	.string "skill-based!\p"
 	.string "Oh! Are you a new customer? Here, you'll\n"
 	.string "need one of these!$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_1:
-# 835 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 850 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Now that you've got a coin case, here is\n"
 	.string "our complementary welcome bonus!$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_2:
-# 842 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 857 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Good luck and have fun! Oop, I mean, may\n"
 	.string "your skills bring you victory!$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_3:
-# 849 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "Welcome to the Eelektrik Game Corner!\n"
-	.string "Would you like to purchase some coins?$"
+# 867 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	.string "Oh! It has been a while, Player 001! You\n"
+	.string "look a bit different, though...\p"
+	.string "Here is your daily bonus, as our most\n"
+	.string "valued patron.$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_4:
-# 861 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "What bundle would you like to purchase?$"
+# 878 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	.string "Welcome to EelektronikArts Game\n"
+	.string "Corner! Would you like to purchase some\l"
+	.string "coins?$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_5:
-# 866 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "50 Coins - ¥1,000$"
+# 890 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	.string "What bundle would you like to purchase?$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_6:
-# 867 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "250 Coins - ¥4,500$"
+# 895 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	.string "50 Coins - ¥1,000$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_7:
-# 868 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "1,000 Coins - ¥16,000$"
+# 896 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	.string "250 Coins - ¥4,500$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_8:
-# 869 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
-	.string "4,000 Coins - ¥40,000$"
+# 897 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	.string "1,000 Coins - ¥16,000$"
 
 ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_9:
-# 874 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 898 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+	.string "4,000 Coins - ¥40,000$"
+
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10:
+# 903 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to purchase 50 Coins for\n"
 	.string "¥1000?$"
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_10:
-# 880 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11:
+# 909 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Sorry, you do not have the sufficient\n"
 	.string "funds for this bundle.$"
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_11:
-# 893 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12:
+# 922 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Thank you for your patronage!$"
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_12:
-# 904 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_13:
+# 933 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to purchase 250 Coins\n"
 	.string "for ¥4,500?$"
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_13:
-# 934 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_14:
+# 963 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to purchase 1,000 Coins\n"
 	.string "for ¥16,000?$"
 
-ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_14:
-# 964 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+ISLANDGAME_APPLEVINE_EventScript_CoinsClerk_Text_15:
+# 993 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "Would you like to purchase 4,000 Coins\n"
 	.string "for ¥40,000?$"
 
 ISLANDGAME_APPLEVINE_GAME_CORNER_SlotMachine_General_Text_0:
-# 1023 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
+# 1052 "data/maps/ISLANDGAME_APPLEVINE_GAME_CORNER/scripts.pory"
 	.string "You can't play if you don't have a COIN\n"
 	.string "CASE.$"

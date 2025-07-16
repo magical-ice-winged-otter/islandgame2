@@ -2,7 +2,7 @@
   "id": "MAP_ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
   "name": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
   "layout": "LAYOUT_ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F",
-  "music": "MUS_FALLARBOR",
+  "music": "MUS_DP_TWINLEAF_DAY",
   "region_map_section": "MAPSEC_BELLEHAVEN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_CocoInteract",
-      "flag": "0"
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUNCHLAX)",
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_WiltInteract",
-      "flag": "0"
+      "flag": "FLAG_TEMP_2"
     }
   ],
   "warp_events": [
@@ -88,5 +88,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ISLANDGAME_BELLEHAVEN_FOSTER_HOME_2F_TV"
     }
-  ]
+  ],
+  "night_music": "MUS_DP_TWINLEAF_NIGHT"
 }

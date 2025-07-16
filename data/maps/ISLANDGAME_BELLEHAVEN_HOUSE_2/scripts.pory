@@ -7,7 +7,7 @@ script ISLANDGAME_BELLEHAVEN_HOUSE_2_NPC {
     msgbox(format(
         "Ooh... have you seen my son? He hasn't come home for days...\p"
         "The last thing he told me before he left the house was that he was going to find a way to pay for my surgery...\p"
-        "Oh Lugia... please bring my little boy back to me safe and sound...\p"
+        "Oh Lugia... please bring my little boy back to me safe and sound..."
     ))
     closemessage
     release

@@ -77,7 +77,7 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5 {
     faceplayer
     if (var(VAR_APPLEVINE_STATE) == 70) {
         msgbox(format(
-            "i gotz nufin els 2 gif u maen GITOFMES"
+            "i gotz nufin els 2 gif u maen JO AWEI"
         ))
         goto(GameCornerNPC_End)
     }
@@ -111,10 +111,10 @@ script ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_NPC5 {
         } 
         if (var(VAR_APPLEVINE_STATE) == 69) {
             msgbox(format(
-                "omigawd blud aktuali gaef me 69 koinz :weri:\p"
-                "taek wan of deez et maeks ur pp go maks :hotfaec:"
+                "waos blud aktuali gaef me 69 koinz :weri:\p"
+                "ju taek dis no ned 2 janx mes"
             ))
-            giveitem(ITEM_PP_MAX)
+            giveitem(ITEM_RARE_CANDY)
             addvar(VAR_APPLEVINE_STATE, 1)
         }
     }
@@ -325,11 +325,26 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
         dynmultipush("Muscle Band (2400)", 475)
         dynmultipush("Wise Glasses (2400)", 476)
         dynmultipush("Loaded Dice (2400)", 762)
-        dynmultipush("TM06 (3200)", 587)
-        dynmultipush("TM12 (3200)", 593)
-        dynmultipush("TM32 (3200)", 613)
-        dynmultipush("TM46 (3200)", 627)
-        dynmultipush("TM48 (3200)", 629)
+        checkitem(ITEM_TM06)
+        if(!var(VAR_RESULT)) {
+            dynmultipush("TM06 (3200)", 587)
+        }
+        checkitem(ITEM_TM12)
+        if(!var(VAR_RESULT)) {
+            dynmultipush("TM12 (3200)", 593)
+        }
+        checkitem(ITEM_TM32)
+        if(!var(VAR_RESULT)) {
+            dynmultipush("TM32 (3200)", 613)
+        }
+        checkitem(ITEM_TM46)
+        if(!var(VAR_RESULT)) {
+            dynmultipush("TM46 (3200)", 627)
+        }
+        checkitem(ITEM_TM48)
+        if(!var(VAR_RESULT)) {
+            dynmultipush("TM48 (3200)", 629)
+        }
         dynmultipush("Gimmighoul (4800)", 370)
         dynmultipush("Eevee (6400)", 376)
         dynmultipush("Porygon (8000)", 357)
@@ -760,11 +775,11 @@ script ISLANDGAME_APPLEVINE_EventScript_PrizeClerk {
                     switch(var(VAR_RESULT)) {
                         case 0: giveitem(ITEM_ABILITY_PATCH)
                         case 1: giveitem(ITEM_ABILITY_CAPSULE)
-                        case 2: giveitem(ITEM_BIG_NUGGET)
-                        case 3: giveitem(ITEM_LEFTOVERS)
-                        case 4: giveitem(ITEM_LIFE_ORB)
+                        case 2: giveitem(ITEM_CHOICE_BAND)
+                        case 3: giveitem(ITEM_CHOICE_SPECS)
+                        case 4: giveitem(ITEM_CHOICE_SCARF)
                         case 5: giveitem(ITEM_MAX_REVIVE)
-                        case 6: giveitem(ITEM_EXP_CANDY_XL)
+                        case 6: giveitem(ITEM_PP_MAX)
                         case 7: 
                             givemon(SPECIES_DITTO, 20, ITEM_QUICK_POWDER, ITEM_CHERISH_BALL, NUM_NATURES, 2)
                             playfanfare(MUS_OBTAIN_ITEM)
@@ -825,7 +840,7 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
     faceplayer
     if(!flag(FLAG_APPLEVINE_COIN_CASE)) {
         msgbox(format(
-            "Welcome to the Eelektrik Game Corner! Our games are entirely skill-based!\p"
+            "Welcome to EelektronikArts Game Corner! Our games are entirely skill-based!\p"
             "Oh! Are you a new customer? Here, you'll need one of these!"
         ))
         giveitem(ITEM_COIN_CASE)
@@ -845,8 +860,22 @@ script ISLANDGAME_APPLEVINE_EventScript_CoinsClerk {
         goto(CoinsClerk_End)
     }
     else {
+        checkitem(ITEM_CARD_KEY) 
+        if(var(VAR_RESULT) && !flag(FLAG_DAILY_APPLEVINE_COIN_CARD)) {
+            showcoinsbox(18,1)
+            msgbox(format(
+                "Oh! It has been a while, Player 001! You look a bit different, though...\p"
+                "Here is your daily bonus, as our most valued patron."
+            ))
+            addcoins(9999)
+            updatecoinsbox(18,1)
+            playse(SE_SHOP)
+            waitse
+            hidecoinsbox(18,1)
+            setflag(FLAG_DAILY_APPLEVINE_COIN_CARD)
+        }
         msgbox(format(
-            "Welcome to the Eelektrik Game Corner! Would you like to purchase some coins?"
+            "Welcome to EelektronikArts Game Corner! Would you like to purchase some coins?"
         ), MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
             goto(CoinsClerk_Exchange)

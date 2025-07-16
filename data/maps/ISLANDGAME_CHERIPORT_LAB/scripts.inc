@@ -154,7 +154,7 @@ ISLANDGAME_CHERIPORT_LAB_EventScript_ProfTalk_2:
 # 47 "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 49 "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.pory"
-	givemon SPECIES_EEVEE, 5, ITEM_NONE, ITEM_CHERISH_BALL, NUM_NATURES, 1, , , , , , , , , , , , , , MOVE_TACKLE, MOVE_MUD_SLAP, MOVE_WORK_UP, MOVE_REFRESH, FALSE
+	givemon SPECIES_EEVEE, 5, ITEM_EVERSTONE, ITEM_CHERISH_BALL, NUM_NATURES, 1, , , , , , , , , , , , , , , , , , FALSE
 # 50 "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 51 "data/maps/ISLANDGAME_CHERIPORT_LAB/scripts.pory"

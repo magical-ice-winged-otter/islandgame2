@@ -13,8 +13,16 @@ const POS_HIDDEN_Y = 55
 
 const VAR_MIGHTYENA_HIDDEN = VAR_TEMP_0
 
+const LOCAL_ID_ENCOUNTER_1 = 19
+const LOCAL_ID_ENCOUNTER_2 = 20
+const LOCAL_ID_ENCOUNTER_3 = 21
+
 mapscripts ISLANDGAME_CENTRAL_ORANNA_PATH_1_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
+
         switch (var(VAR_MINTY_MEADOWS_STATE)) {
             case 4:
                 setvar(VAR_MIGHTYENA_HIDDEN, 1)

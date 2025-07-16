@@ -984,7 +984,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HEALER] =
     {
         .name = _("Healer"),
-        .description = COMPOUND_STRING("Heals partner Pokémon."),
+        .description = COMPOUND_STRING("Sometimes heals partner."),
         .aiRating = 0,
     },
 

@@ -45,8 +45,8 @@
 // Named for whatever berry is initially planted there on a new game
 // Those with no initial berry are named "soil"
 #define BERRY_TREE_ROUTE_102_PECHA    1 // Camp Persi
-#define BERRY_TREE_ROUTE_102_ORAN     2 
-#define BERRY_TREE_ROUTE_104_SOIL_1   3 
+#define BERRY_TREE_ROUTE_102_ORAN     2 // Valley of Peace
+#define BERRY_TREE_ROUTE_104_SOIL_1   3 // Valley of Peace
 #define BERRY_TREE_ROUTE_104_ORAN_1   4 // Camp Persi
 #define BERRY_TREE_ROUTE_103_CHERI_1  5 // Cheriport
 #define BERRY_TREE_ROUTE_103_LEPPA    6 
@@ -167,5 +167,7 @@
 #define BERRY_TREE_ROCKY_PATH_1         BERRY_TREE_ROUTE_119_LEPPA
 #define BERRY_TREE_ROCKY_PATH_2         BERRY_TREE_ROUTE_104_CHERI_2
 
+#define BERRY_TREE_VOP_1                BERRY_TREE_ROUTE_102_ORAN
+#define BERRY_TREE_VOP_2                BERRY_TREE_ROUTE_104_SOIL_1
 
 #endif // GUARD_CONSTANTS_BERRY_H

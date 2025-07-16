@@ -1063,10 +1063,10 @@ static const struct InGameTrade sIngameTrades[] =
         .otId = 00322,
         .conditions = {5, 30, 5, 5, 5},
         .personality = NATURE_TIMID,
-        .heldItem = ITEM_STAR_PIECE,
+        .heldItem = ITEM_COMET_SHARD,
         .otName = _("Yomi"),
         .sheen = 10,
-        .requestedSpecies = SPECIES_HORSEA
+        .requestedSpecies = SPECIES_GYARADOS,
     },
 
     [INGAME_TRADE_RIOLU] =
@@ -1077,12 +1077,28 @@ static const struct InGameTrade sIngameTrades[] =
         .abilityNum = 2,
         .otId = 32218,
         .conditions = {5, 5, 5, 5, 30},
-        .personality = NATURE_IMPISH,
+        .personality = NATURE_HASTY,
         .heldItem = ITEM_RARE_BONE,
         .otName = _("Dorothy"),
         .sheen = 10,
         .otGender = FEMALE,
         .requestedSpecies = SPECIES_FIDOUGH
+    },
+
+    [INGAME_TRADE_QWILFISH] =
+    {
+        .nickname = _("Poppy"),
+        .species = SPECIES_QWILFISH_HISUI,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 2,
+        .otId = 32218,
+        .conditions = {30, 5, 5, 5, 5},
+        .personality = NATURE_JOLLY,
+        .heldItem = ITEM_JABOCA_BERRY,
+        .otName = _("Eugene"),
+        .sheen = 10,
+        .otGender = FEMALE,
+        .requestedSpecies = SPECIES_QWILFISH
     },
 };
 

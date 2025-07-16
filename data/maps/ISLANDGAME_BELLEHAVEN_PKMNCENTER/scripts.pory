@@ -206,21 +206,12 @@ script ISLANDGAME_BELLEHAVEN_PKMNCENTER_NIM {
             "Ah...{PAUSE 30} It seems like I have lost...{PAUSE 30} That was an enjoyable game, young trainer...\p"
             "It reminded me of the days when I would play marbles with my friends all day..."
         ))
-        showmoneybox(0,0)
         msgbox(format(
-            "Here is your reward, as promised..."
-        ))
-        addmoney(20000)
-        updatemoneybox
-        playse(SE_SHOP)
-        waitse
-        hidemoneybox
-        msgbox(format(
-            "If you would like to continue participating in high-stake games like this, you should consider playing in the High Limit Area at Applevine's Game Corner...\p"
-            "Here...{PAUSE 30} you may take my VIP Pass. I will soon no longer have a need for it..."
+            "Ooh... Unfortunately, I do not have any money to give you. I just wanted to make the game more interesting...\p"
+            "I am sorry for deceiving you... Please take this instead... I will soon no longer have a use for it..."
         ))
         setflag(FLAG_BELLEHAVEN_SQUID_GAME)
-        giveitem(ITEM_MYSTIC_TICKET)
+        giveitem(ITEM_CARD_KEY)
 
     NIM_YouLose:
         msgbox(format(

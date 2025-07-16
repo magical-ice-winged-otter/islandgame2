@@ -2830,7 +2830,7 @@ const struct Item gItemsInfo[] =
     [ITEM_HEART_SCALE] =
     {
         .name = _("Heart Scale"),
-        .price = 100,
+        .price = 2000,
         .description = COMPOUND_STRING(
             "A lovely scale.\n"
             "It is coveted by\n"
@@ -12897,14 +12897,14 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_GoldTeeth,
     },
 
-    [ITEM_CARD_KEY] =
+    [ITEM_CARD_KEY] = // island-game temp: credit card
     {
-        .name = _("Card Key"),
+        .name = _("Coin Card"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A card-type door\n"
-            "key used in Silph\n"
-            "Co's office."),
+            "EELEKTRONIKARTZ\n"
+            "KOIN KARD\n"
+            "PLAYER 001"),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -14321,6 +14321,20 @@ const struct Item gItemsInfo[] =
         .importance = 1,
         .iconPic = gItemIcon_IslandgameStrangeDisc,
         .iconPalette = gItemIconPalette_IslandgameStrangeDisc,
+    },
+
+    [ITEM_ISLANDGAME_CUBONES_POKEBALL] =
+    {
+        .name = _("Cubone's Ball"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Cuu!"
+        ),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .importance = 1,
+        .iconPic = gItemIcon_PokeBall,
+        .iconPalette = gItemIconPalette_PokeBall,
     },
 
 };

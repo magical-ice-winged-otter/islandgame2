@@ -2,8 +2,21 @@ const FLAG_DAYTIME = FLAG_TEMP_2
 const FLAG_NIGHTTIME = FLAG_TEMP_3
 const ROCKRUFF_OW_ID = 8
 
+
+const LOCAL_ID_ENCOUNTER_1 = 24
+const LOCAL_ID_ENCOUNTER_2 = 25
+const LOCAL_ID_ENCOUNTER_3 = 26
+const LOCAL_ID_ENCOUNTER_4 = 27
+
+
+
 mapscripts ISLANDGAME_ROCKY_PATH_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_4, ENCOUNTER_LAND)
+
         gettime
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {

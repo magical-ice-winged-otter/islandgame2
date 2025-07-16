@@ -1,1 +1,269 @@
-mapscripts ISLANDGAME_ROCKY_PATH_PKMNCENTER_MapScripts {}
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
+
+mapscripts ISLANDGAME_ROCKY_PATH_PKMNCENTER_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hides daytime encounters
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hides nighttime encounters
+        }
+
+
+
+        if (!flag(FLAG_DAILY_VALLEY_OF_PEACE_GROTTO_ROLL)) {
+            random(10)
+            copyvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, VAR_RESULT)
+            setflag(FLAG_DAILY_VALLEY_OF_PEACE_GROTTO_ROLL) 
+        }
+
+        // put item or Pokemon on map.
+        if (var(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE) <= 4) { // hide all pokemon GFX, did not roll an encounter
+            setflag(FLAG_TEMP_4) // Sinistea-Antique, Daytime
+            setflag(FLAG_TEMP_5) // Vulpix, Daytime
+            setflag(FLAG_TEMP_6) // Murkrow, Daytime
+            setflag(FLAG_TEMP_7) // Poltchageist-Artisan, Nighttime
+            setflag(FLAG_TEMP_8) // Greavard, Nighttime 
+            setflag(FLAG_TEMP_9) // Hatenna, Nighttime
+        }
+        elif (var(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE) == 5) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_4) // Sinistea-Antique, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_7) // Poltchageist-Artisan, Nighttime
+            }
+            setflag(FLAG_TEMP_5) // Vulpix, Daytime
+            setflag(FLAG_TEMP_6) // Murkrow, Daytime
+            setflag(FLAG_TEMP_8) // Greavard, Nighttime 
+            setflag(FLAG_TEMP_9) // Hatenna, Nighttime
+        }
+        elif (var(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE) == 6) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_5) // Vulpix, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_8) // Greavard, Nighttime 
+            }
+            setflag(FLAG_TEMP_4) // Sinistea-Antique, Daytime
+            setflag(FLAG_TEMP_6) // Murkrow, Daytime
+            setflag(FLAG_TEMP_7) // Poltchageist-Artisan, Nighttime
+            setflag(FLAG_TEMP_9) // Hatenna, Nighttime
+        }
+        elif (var(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE) == 7) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_6) // Murkrow, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_9) // Hatenna, Nighttime
+            }
+            setflag(FLAG_TEMP_4) // Sinistea-Antique, Daytime
+            setflag(FLAG_TEMP_5) // Vulpix, Daytime
+            setflag(FLAG_TEMP_7) // Poltchageist-Artisan, Nighttime
+            setflag(FLAG_TEMP_8) // Greavard, Nighttime 
+        }
+        else { // hide everything
+            setflag(FLAG_TEMP_A) // item
+            setflag(FLAG_TEMP_4) // Sinistea-Antique, Daytime
+            setflag(FLAG_TEMP_5) // Vulpix, Daytime
+            setflag(FLAG_TEMP_6) // Murkrow, Daytime
+            setflag(FLAG_TEMP_7) // Poltchageist-Artisan, Nighttime
+            setflag(FLAG_TEMP_8) // Greavard, Nighttime 
+            setflag(FLAG_TEMP_9) // Hatenna, Nighttime
+        }
+    } 
+}
+
+
+script ISLANDGAME_VALLEY_OF_PEACE_GROTTO_ItemBall {
+    switch (var(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE)) {
+        case 0: finditem(ITEM_DUSK_BALL)
+        case 1: finditem(ITEM_GHOST_GEM)
+        case 2: finditem(ITEM_BALM_MUSHROOM)
+        case 3: finditem(ITEM_KASIB_BERRY)
+        case 4: finditem(ITEM_REVIVAL_HERB)
+        default:
+    }
+    setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_GROTTO_Mon1 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_SINISTEA_ANTIQUE, 27, ITEM_NONE, NUM_NATURES, 1, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    playmoncry(SPECIES_SINISTEA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_GROTTO_Mon2 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_VULPIX, 27, ITEM_RAWST_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_HEX, MOVE_HEAT_WAVE, MOVE_EXTRASENSORY, MOVE_HYPNOSIS)
+    playmoncry(SPECIES_VULPIX, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_GROTTO_Mon3 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_MURKROW, 27, ITEM_NONE, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ROOST, MOVE_BRAVE_BIRD, MOVE_CONFUSE_RAY, MOVE_FEATHER_DANCE)
+    playmoncry(SPECIES_MURKROW, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_GROTTO_Mon4 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_POLTCHAGEIST_ARTISAN, 27, ITEM_NONE, NUM_NATURES, 1, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    playmoncry(SPECIES_POLTCHAGEIST, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_GROTTO_Mon5 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_GREAVARD, 27, ITEM_NONE, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_SHADOW_SNEAK, MOVE_YAWN, MOVE_DESTINY_BOND, MOVE_REST)
+    playmoncry(SPECIES_GREAVARD, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_VALLEY_OF_PEACE_GROTTO_Mon6 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_HATENNA, 27, ITEM_NONE, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_NUZZLE, MOVE_MYSTICAL_FIRE, MOVE_QUASH, MOVE_AFTER_YOU)
+    playmoncry(SPECIES_HATENNA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_VALLEY_OF_PEACE_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}

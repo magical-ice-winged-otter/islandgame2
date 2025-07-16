@@ -1,36 +1,79 @@
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
 mapscripts ISLANDGAME_AURORA_PATH_GROTTO_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hides daytime encounters
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hides nighttime encounters
+        }
+
         if (!flag(FLAG_DAILY_AURORA_PATH_HIDDEN_GROTTO_ROLL)) {
             random(10)
             copyvar(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE, VAR_RESULT)
             setflag(FLAG_DAILY_AURORA_PATH_HIDDEN_GROTTO_ROLL) 
         }
+
         // put item or Pokemon on map.
-        if (var(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE) <= 4) { 
-            setflag(FLAG_TEMP_1) // hide all pokemon GFX
-            setflag(FLAG_TEMP_2)
-            setflag(FLAG_TEMP_3)
+        if (var(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE) <= 4) { // hide all pokemon GFX, did not roll an encounter
+            setflag(FLAG_TEMP_4) // Fletchinder, Daytime
+            setflag(FLAG_TEMP_5) // Bayleef, Daytime
+            setflag(FLAG_TEMP_6) // Timburr, Daytime
+            setflag(FLAG_TEMP_7) // Cubchoo, Nighttime
+            setflag(FLAG_TEMP_8) // Linoone, Nighttime 
+            setflag(FLAG_TEMP_9) // Mightyena, Nighttime
         }
-        elif (var(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE) == 5) {
-            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
-            setflag(FLAG_TEMP_2)
-            setflag(FLAG_TEMP_3)
+        elif (var(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE) == 5) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_4) // Fletchinder, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_7) // Cubchoo, Nighttime
+            }
+            setflag(FLAG_TEMP_5) // Bayleef, Daytime
+            setflag(FLAG_TEMP_6) // Timburr, Daytime
+            setflag(FLAG_TEMP_8) // Linoone, Nighttime 
+            setflag(FLAG_TEMP_9) // Mightyena, Nighttime
         }
-        elif (var(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE) == 6) {
-            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
-            setflag(FLAG_TEMP_1)
-            setflag(FLAG_TEMP_3)
+        elif (var(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE) == 6) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_5) // Bayleef, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_8) // Linoone, Nighttime 
+            }
+            setflag(FLAG_TEMP_4) // Fletchinder, Daytime
+            setflag(FLAG_TEMP_6) // Timburr, Daytime
+            setflag(FLAG_TEMP_7) // Cubchoo, Nighttime
+            setflag(FLAG_TEMP_9) // Mightyena, Nighttime
         }
-        elif (var(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE) == 7) {
-            setflag(FLAG_TEMP_4) // hide item ball GFX and all other pokemon GFX
-            setflag(FLAG_TEMP_1)
-            setflag(FLAG_TEMP_2)
+        elif (var(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE) == 7) { // hide item ball and all other mons
+            setflag(FLAG_TEMP_A) // item
+            if(flag(FLAG_NIGHTTIME)) {
+                setflag(FLAG_TEMP_6) // Timburr, Daytime
+            }
+            else {
+                setflag(FLAG_TEMP_9) // Mightyena, Nighttime
+            }
+            setflag(FLAG_TEMP_4) // Fletchinder, Daytime
+            setflag(FLAG_TEMP_5) // Bayleef, Daytime
+            setflag(FLAG_TEMP_7) // Cubchoo, Nighttime
+            setflag(FLAG_TEMP_8) // Linoone, Nighttime 
         }
-        else {
-            setflag(FLAG_TEMP_1) // hide everything
-            setflag(FLAG_TEMP_2)
-            setflag(FLAG_TEMP_3)
-            setflag(FLAG_TEMP_4)
+        else { // hide everything
+            setflag(FLAG_TEMP_A) // item
+            setflag(FLAG_TEMP_4) // Fletchinder, Daytime
+            setflag(FLAG_TEMP_5) // Bayleef, Daytime
+            setflag(FLAG_TEMP_6) // Timburr, Daytime
+            setflag(FLAG_TEMP_7) // Cubchoo, Nighttime
+            setflag(FLAG_TEMP_8) // Linoone, Nighttime 
+            setflag(FLAG_TEMP_9) // Mightyena, Nighttime
         }
     }
 }
@@ -41,8 +84,8 @@ script ISLANDGAME_AURORA_PATH_GROTTO_ItemBall {
         case 0: finditem(ITEM_SNOWBALL)
         case 1: finditem(ITEM_ICE_GEM)
         case 2: finditem(ITEM_STARDUST)
-        case 3: finditem(ITEM_YACHE_BERRY)
-        case 4: finditem(ITEM_BIG_MUSHROOM)
+        case 3: finditem(ITEM_GANLON_BERRY)
+        case 4: finditem(ITEM_MOOMOO_MILK)
         default:
     }
     setvar(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE, 9) 
@@ -52,8 +95,8 @@ script ISLANDGAME_AURORA_PATH_GROTTO_Mon1 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_CUBCHOO, 20, ITEM_YACHE_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,  MOVE_YAWN, MOVE_PLAY_ROUGH, MOVE_ICE_PUNCH, MOVE_NIGHT_SLASH)
-    playmoncry(SPECIES_CUBCHOO, CRY_MODE_ENCOUNTER)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_FLETCHINDER, 20, ITEM_ASPEAR_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_FLAME_CHARGE, MOVE_TAILWIND, MOVE_QUICK_GUARD, MOVE_AERIAL_ACE)
+    playmoncry(SPECIES_FLETCHINDER, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     dowildbattle
@@ -78,6 +121,35 @@ script ISLANDGAME_AURORA_PATH_GROTTO_Mon1 {
 }
 
 script ISLANDGAME_AURORA_PATH_GROTTO_Mon2 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_BAYLEEF, 20, ITEM_NONE, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_LEECH_SEED, MOVE_GRASSY_TERRAIN, MOVE_STRENGTH_SAP, MOVE_LEAF_STORM)
+    playmoncry(SPECIES_BAYLEEF, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_AURORA_PATH_GROTTO_Mon3 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
@@ -106,12 +178,12 @@ script ISLANDGAME_AURORA_PATH_GROTTO_Mon2 {
     release
 }
 
-script ISLANDGAME_AURORA_PATH_GROTTO_Mon3 {
+script ISLANDGAME_AURORA_PATH_GROTTO_Mon4 {
     lock 
     faceplayer
     setflag(FLAG_SMART_WILD_AI)
-    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_FLETCHINDER, 20, ITEM_ASPEAR_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_FLAME_CHARGE, MOVE_TAILWIND, MOVE_QUICK_GUARD, MOVE_AERIAL_ACE)
-    playmoncry(SPECIES_FLETCHINDER, CRY_MODE_ENCOUNTER)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_CUBCHOO, 20, ITEM_YACHE_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,  MOVE_YAWN, MOVE_PLAY_ROUGH, MOVE_ICE_PUNCH, MOVE_NIGHT_SLASH)
+    playmoncry(SPECIES_CUBCHOO, CRY_MODE_ENCOUNTER)
     waitmoncry
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     dowildbattle
@@ -134,3 +206,62 @@ script ISLANDGAME_AURORA_PATH_GROTTO_Mon3 {
     }
     release
 }
+
+script ISLANDGAME_AURORA_PATH_GROTTO_Mon5 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_LINOONE, 20, ITEM_FIGY_BERRY, NUM_NATURES, 1, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,  MOVE_EXTREME_SPEED, MOVE_PLAY_ROUGH, MOVE_ROTOTILLER, MOVE_SWITCHEROO)
+    playmoncry(SPECIES_LINOONE, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+
+script ISLANDGAME_AURORA_PATH_GROTTO_Mon6 {
+    lock 
+    faceplayer
+    setflag(FLAG_SMART_WILD_AI)
+    createmon(B_SIDE_OPPONENT, B_FLANK_LEFT, SPECIES_MIGHTYENA, 20, ITEM_PECHA_BERRY, NUM_NATURES, 2, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31,  MOVE_THUNDER_FANG, MOVE_SUCKER_PUNCH, MOVE_FIRE_FANG, MOVE_PLAY_ROUGH)
+    playmoncry(SPECIES_MIGHTYENA, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    dowildbattle
+    clearflag(FLAG_SMART_WILD_AI)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        
+    switch(var(VAR_RESULT)) {
+        case B_OUTCOME_LOST:
+            break
+        case B_OUTCOME_RAN:
+            break
+        case B_OUTCOME_WON:
+            setvar(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        case B_OUTCOME_CAUGHT:
+            setvar(VAR_AURORA_PATH_HIDDEN_GROTTO_STATE, 9) 
+            goto(Common_EventScript_RemoveStaticPokemon)
+        default:
+            goto(Common_EventScript_RemoveStaticPokemon)
+    }
+    release
+}
+

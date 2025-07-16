@@ -1,898 +1,905 @@
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_MapScripts::
+# 4 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+# 5 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	quest_emote_on_warp 1, QUEST_PERSI_BERRY_MANIAC
+	return
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_WailmerPailItem::
-# 5 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 10 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	finditem ITEM_WAILMER_PAIL
-# 6 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 11 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	setflag FLAG_RECEIVED_WAILMER_PAIL
-# 7 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 12 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac::
-# 11 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	lock
-# 12 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	faceplayer
-# 13 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	returnqueststate QUEST_PERSI_BERRY_MANIAC
-# 15 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	switch VAR_RESULT
 # 16 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	lock
+# 17 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	faceplayer
+# 18 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	returnqueststate QUEST_PERSI_BERRY_MANIAC
+# 20 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	switch VAR_RESULT
+# 21 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	case 1, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_3
-# 23 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 28 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	case 2, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_4
-# 339 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 344 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	case 4, ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_5
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1:
-# 343 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 348 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
-# 346 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 351 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 BerryManiac_Decline:
-# 347 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_18
-# 350 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	goto BerryManiac_End
 # 352 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_18
+# 355 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	goto BerryManiac_End
+# 357 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 BerryManiac_End:
-# 353 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 358 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	release
 	return
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_3:
-# 17 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0
-# 21 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	startquest QUEST_PERSI_BERRY_MANIAC
 # 22 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0
+# 26 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	startquest QUEST_PERSI_BERRY_MANIAC
+# 27 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_4:
-# 24 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 29 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_1
-# 26 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 31 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1
-# 27 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 32 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_7
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6:
-# 44 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 49 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2
-# 45 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 50 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_10
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9:
-# 62 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 67 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3
-# 63 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 68 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_15
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_14:
-# 80 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 85 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4
-# 81 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 86 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_23
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22:
-# 98 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 103 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5
-# 99 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 104 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_31
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30:
-# 116 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 121 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6
-# 117 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 122 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_39
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_38:
-# 134 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 139 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7
-# 135 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 140 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_47
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_46:
-# 152 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 157 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8
-# 153 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 158 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_55
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_54:
-# 170 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 175 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9
-# 171 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 176 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_63
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_62:
-# 189 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 194 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10
-# 190 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 195 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_71
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_70:
-# 207 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 212 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11
-# 208 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 213 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_79
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_78:
-# 226 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 231 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12
-# 227 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 232 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_87
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_86:
-# 244 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 249 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13
-# 245 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 250 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_95
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_94:
-# 262 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 267 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14
-# 263 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 268 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_103
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_102:
-# 282 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 287 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1
-# 283 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 288 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_111
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_110:
-# 286 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 291 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2
-# 287 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 292 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_119
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_118:
-# 290 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 295 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3
-# 291 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 296 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_125
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_124:
-# 294 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 299 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4
-# 295 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 300 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_128
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_127:
-# 298 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 303 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5
-# 299 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 304 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_131
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_130:
-# 302 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 307 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6
-# 303 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 308 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_134
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_133:
-# 306 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 311 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7
-# 307 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 312 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_137
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_136:
-# 310 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 315 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8
-# 311 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 316 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_140
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_139:
-# 314 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 319 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9
-# 315 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 320 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_143
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_142:
-# 318 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 323 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10
-# 319 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 324 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_146
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_145:
-# 322 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 327 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11
-# 323 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 328 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_149
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_148:
-# 326 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 331 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12
-# 327 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 332 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_152
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_151:
-# 330 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 335 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13
-# 331 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 336 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_155
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_154:
-# 334 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 339 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14
-# 335 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 340 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_158
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_157:
-# 338 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 343 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	completequest QUEST_PERSI_BERRY_MANIAC
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_5:
-# 340 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 345 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17
-# 341 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 346 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_1
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_7:
-# 28 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 33 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_LIECHI_BERRY
-# 29 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 34 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_12
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_10:
-# 46 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 51 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_GANLON_BERRY
-# 47 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 52 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_17
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_12:
-# 30 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 35 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2, MSGBOX_YESNO
-# 31 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 36 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_19
-# 39 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 44 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_15:
-# 64 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 69 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_SALAC_BERRY
-# 65 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 70 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_25
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_14
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_17:
-# 48 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 53 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_4, MSGBOX_YESNO
-# 49 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 54 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_27
-# 57 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 62 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_19:
-# 32 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 37 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 33 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 38 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_LIECHI_BERRY
-# 34 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 39 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_MUSCLE_BAND
-# 35 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 40 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_1
-# 36 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 41 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_6
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_23:
-# 82 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 87 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_PETAYA_BERRY
-# 83 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 88 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_33
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_25:
-# 66 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 71 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_5, MSGBOX_YESNO
-# 67 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 72 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_35
-# 75 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 80 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_14
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_27:
-# 50 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 55 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 51 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 56 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_GANLON_BERRY
-# 52 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 57 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_GRASSY_SEED
-# 53 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 58 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_2
-# 54 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 59 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_9
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_31:
-# 100 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 105 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_APICOT_BERRY
-# 101 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 106 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_41
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_33:
-# 84 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 89 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_6, MSGBOX_YESNO
-# 85 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 90 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_43
-# 93 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 98 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_35:
-# 68 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 73 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 69 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 74 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_SALAC_BERRY
-# 70 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 75 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_CHOICE_SCARF
-# 71 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 76 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_3
-# 72 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 77 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_14
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_39:
-# 118 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 123 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_KEE_BERRY
-# 119 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 124 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_49
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_38
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_41:
-# 102 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 107 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7, MSGBOX_YESNO
-# 103 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 108 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_51
-# 111 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 116 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_43:
-# 86 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 91 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 87 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 92 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_PETAYA_BERRY
-# 88 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 93 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_WISE_GLASSES
-# 89 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 94 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_4
-# 90 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 95 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_22
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_47:
-# 136 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 141 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_MARANGA_BERRY
-# 137 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 142 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_57
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_46
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_49:
-# 120 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 125 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_8, MSGBOX_YESNO
-# 121 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 126 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_59
-# 129 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 134 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_38
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_51:
-# 104 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 109 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 105 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 110 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_APICOT_BERRY
-# 106 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 111 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_MISTY_SEED
-# 107 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 112 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_5
-# 108 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 113 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_30
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_55:
-# 154 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 159 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_LANSAT_BERRY
-# 155 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 160 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_65
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_54
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_57:
-# 138 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 143 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_9, MSGBOX_YESNO
-# 139 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 144 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_67
-# 147 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 152 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_46
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_59:
-# 122 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 127 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 123 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 128 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_KEE_BERRY
-# 124 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 129 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_ELECTRIC_SEED
-# 125 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 130 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_6
-# 126 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 131 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_38
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_63:
-# 172 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 177 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_ENIGMA_BERRY
-# 173 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 178 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_73
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_62
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_65:
-# 156 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 161 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10, MSGBOX_YESNO
-# 157 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 162 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_75
-# 165 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 170 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_54
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_67:
-# 140 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 145 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 141 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 146 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_MARANGA_BERRY
-# 142 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 147 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_PSYCHIC_SEED
-# 143 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 148 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_7
-# 144 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 149 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_46
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_71:
-# 191 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 196 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_MICLE_BERRY
-# 192 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 197 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_81
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_70
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_73:
-# 174 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 179 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11, MSGBOX_YESNO
-# 175 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 180 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_83
-# 183 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 188 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_62
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_75:
-# 158 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 163 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 159 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 164 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_LANSAT_BERRY
-# 160 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 165 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_EXPERT_BELT
-# 161 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 166 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_8
-# 162 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 167 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_54
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_79:
-# 209 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 214 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_CUSTAP_BERRY
-# 210 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 215 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_89
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_78
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_81:
-# 193 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 198 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12, MSGBOX_YESNO
-# 194 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 199 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_91
-# 202 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 207 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_70
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_83:
-# 176 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 181 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 177 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 182 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_ENIGMA_BERRY
-# 178 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 183 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_LEFTOVERS
-# 179 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 184 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_9
-# 180 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 185 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_62
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_87:
-# 228 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 233 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_JABOCA_BERRY
-# 229 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 234 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_97
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_86
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_89:
-# 211 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 216 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13, MSGBOX_YESNO
-# 212 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 217 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_99
-# 220 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 225 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_78
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_91:
-# 195 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 200 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 196 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 201 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_MICLE_BERRY
-# 197 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 202 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_CHOICE_SPECS
-# 198 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 203 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_10
-# 199 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 204 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_70
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_95:
-# 246 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 251 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_ROWAP_BERRY
-# 247 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 252 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_105
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_94
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_97:
-# 230 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 235 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14, MSGBOX_YESNO
-# 231 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 236 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_107
-# 239 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 244 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_86
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_99:
-# 213 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 218 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 214 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 219 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_CUSTAP_BERRY
-# 215 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 220 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_CHOICE_BAND
-# 216 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 221 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_11
-# 217 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 222 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_78
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_103:
-# 264 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 269 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 BerryManiac_StarfStep:
-# 265 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 270 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	checkitem ITEM_STARF_BERRY
-# 266 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 271 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_113
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_102
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_105:
-# 248 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 253 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15, MSGBOX_YESNO
-# 249 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 254 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_115
-# 257 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 262 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_94
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_107:
-# 232 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 237 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 233 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 238 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_JABOCA_BERRY
-# 234 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 239 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_ROCKY_HELMET
-# 235 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 240 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_12
-# 236 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 241 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_86
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_111:
-# 284 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 289 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_110
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_113:
-# 267 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 272 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16, MSGBOX_YESNO
-# 268 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 273 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_121
-# 276 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 281 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_Decline
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_102
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_115:
-# 250 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 255 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 251 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 256 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_ROWAP_BERRY
-# 252 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 257 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_ASSAULT_VEST
-# 253 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 258 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_13
-# 254 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 259 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_94
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_119:
-# 288 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 293 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_118
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_121:
-# 269 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 274 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3
-# 270 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 275 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	removeitem ITEM_STARF_BERRY
-# 271 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 276 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	giveitem ITEM_LIFE_ORB
-# 272 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 277 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_PERSI_BERRY_MANIAC, SUB_QUEST_PERSI_BERRY_14
-# 273 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 278 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_102
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_125:
-# 292 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 297 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_124
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_128:
-# 296 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 301 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_127
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_131:
-# 300 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 305 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_130
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_134:
-# 304 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 309 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_133
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_137:
-# 308 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 313 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_136
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_140:
-# 312 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 317 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_139
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_143:
-# 316 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 321 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_142
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_146:
-# 320 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 325 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_145
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_149:
-# 324 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 329 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_148
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_152:
-# 328 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 333 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_151
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_155:
-# 332 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 337 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_154
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_158:
-# 336 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 341 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	goto BerryManiac_End
 	goto ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_157
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor::
-# 357 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 362 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	lock
-# 358 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 363 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	faceplayer
-# 359 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 364 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0
-# 360 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 365 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	release
 	return
 
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep::
-# 364 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	lock
-# 365 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	faceplayer
-# 366 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_0
-# 367 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	pokemart BerryHouseItems
-# 368 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_1
 # 369 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	lock
+# 370 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	faceplayer
+# 371 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_0
+# 372 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	pokemart BerryHouseItems
+# 373 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	msgbox ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_1
+# 374 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	release
 	return
 
 
 	.align 2
-# 372 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-BerryHouseItems:
-# 373 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	.2byte ITEM_BERRY_JUICE
-# 374 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	.2byte ITEM_ORAN_BERRY
-# 375 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	.2byte ITEM_PECHA_BERRY
-# 376 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	.2byte ITEM_CHERI_BERRY
 # 377 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
-	.2byte ITEM_CHESTO_BERRY
+BerryHouseItems:
 # 378 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	.2byte ITEM_BERRY_JUICE
+# 379 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	.2byte ITEM_ORAN_BERRY
+# 380 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	.2byte ITEM_PECHA_BERRY
+# 381 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	.2byte ITEM_CHERI_BERRY
+# 382 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+	.2byte ITEM_CHESTO_BERRY
+# 383 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.2byte ITEM_PERSIM_BERRY
 	.2byte ITEM_NONE
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_0:
-# 18 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 23 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "I AM THE BERRY MANIAC!!!{PAUSE 30} I AM LOOKING\n"
 	.string "FOR THE RAREST BERRIES IN MARYA!!!\p"
 	.string "BRING THEM TO ME, AND I WILL REWARD YOU\n"
 	.string "HANDSOMELY DEAR FRIEND!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_1:
-# 24 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 29 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "DO YOU POSSESS A BERRY I YEARN FOR!?$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_2:
-# 30 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 35 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE LIECHI BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_3:
-# 32 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 37 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "EXCELLENT, EXCELLENT! HERE IS YOUR\n"
 	.string "REWARD, MY SWEET BERRY GATHERER!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_4:
-# 48 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 53 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE GANLON BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_5:
-# 66 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 71 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE SALAC BERRY! HAND IT OVER\n"
 	.string "TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_6:
-# 84 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 89 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE PETAYA BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_7:
-# 102 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 107 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE APICOT BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_8:
-# 120 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 125 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE KEE BERRY! HAND IT OVER\n"
 	.string "TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_9:
-# 138 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 143 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE MARANGA BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_10:
-# 156 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 161 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE LANSAT BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_11:
-# 174 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 179 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE ENIGMA BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_12:
-# 193 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 198 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE MICLE BERRY! HAND IT OVER\n"
 	.string "TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_13:
-# 211 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 216 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE CUSTAP BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_14:
-# 230 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 235 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE JABOCA BERRY! HAND IT\n"
 	.string "OVER TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_15:
-# 248 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 253 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE ROWAP BERRY! HAND IT OVER\n"
 	.string "TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_16:
-# 267 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 272 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "YES! YES! THE STARF BERRY! HAND IT OVER\n"
 	.string "TO ME RIGHT NOW!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_17:
-# 340 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 345 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "FINALLY. IT'S COMPLETE. I HAVE ALL THE\n"
 	.string "BERRIES NEEDED FOR MY COLLECTION!!!\p"
 	.string "AHAHAHAHAHAHA$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryManiac_Text_18:
-# 348 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 353 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "WHAT!? YOU DARE DENY ME MY DESTINY, YOU\n"
 	.string "INSOLENT BRAT? GIVE IT TO ME!!!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryDonor_Text_0:
-# 359 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 364 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "Planting berries is really fun.\p"
 	.string "It's like I'm giving gifts to my future\n"
 	.string "self!$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_0:
-# 366 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 371 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "Welcome to Berry Good. All of our\n"
 	.string "berries are homegrown and fresh.$"
 
 ISLANDGAME_CAMP_PERSI_BERRY_HOUSE_EventScript_BerryShopkeep_Text_1:
-# 368 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
+# 373 "data/maps/ISLANDGAME_CAMP_PERSI_BERRY_HOUSE/scripts.pory"
 	.string "May peace be with you.$"

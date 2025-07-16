@@ -18,9 +18,23 @@
 
 // SKITTY SIDE QUEST : END
 
+const LOCAL_ID_ENCOUNTER_A = 29 
+const LOCAL_ID_ENCOUNTER_B = 30
+const LOCAL_ID_ENCOUNTER_C = 31
+const LOCAL_ID_ENCOUNTER_D = 32
+const LOCAL_ID_ENCOUNTER_E = 33
+const LOCAL_ID_ENCOUNTER_F = 34
 
 mapscripts ISLANDGAME_VERDANT_WOODS_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_A, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_B, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_C, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_D, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_E, ENCOUNTER_LAND)
+        setobjectaswildencounter(LOCAL_ID_ENCOUNTER_F, ENCOUNTER_LAND)
+
         gettime
 
         // hide daytime mons

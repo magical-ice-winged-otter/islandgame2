@@ -26,25 +26,15 @@ script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_PKMN2 {
     lock
     faceplayer
     playmoncry(SPECIES_MINCCINO,CRY_MODE_NORMAL)
-    msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN2Talk)
+    waitmoncry
     release
 }
 
-text ISLANDGAME_MAPLEGROVE_PKMNCENTER_PKMN2Talk {
-    format(
-        "{COLOR DARK_GRAY}Squeak!"
-    )
-}
 
 script ISLANDGAME_MAPLEGROVE_PKMNCENTER_EventScript_NPC1 {
     lock
     faceplayer
-    if (!flag(FLAG_MINTY_MEADOWS_RIVAL_DEFEATED)) {
-        msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk)
-    }
-    else {
-        msgbox(format(""))
-    }
+    msgbox(ISLANDGAME_MAPLEGROVE_PKMNCENTER_NPC1Talk)
     applymovement(KID_OW_ID,Common_Movement_FaceOriginalDirection)
     waitmovement(0)
     release

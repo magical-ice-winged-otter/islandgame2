@@ -1,5 +1,17 @@
+
+const LOCAL_ID_ENCOUNTER_1 = 13
+const LOCAL_ID_ENCOUNTER_2 = 14
+const LOCAL_ID_ENCOUNTER_3 = 15
+const LOCAL_ID_ENCOUNTER_4 = 16
+
+
 mapscripts ISLANDGAME_AURORA_PATH_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+    setobjectaswildencounter(LOCAL_ID_ENCOUNTER_1, ENCOUNTER_LAND)
+    setobjectaswildencounter(LOCAL_ID_ENCOUNTER_2, ENCOUNTER_LAND)
+    setobjectaswildencounter(LOCAL_ID_ENCOUNTER_3, ENCOUNTER_LAND)
+    setobjectaswildencounter(LOCAL_ID_ENCOUNTER_4, ENCOUNTER_LAND)
+        
     gettime
 
     // hide daytime mons

@@ -1053,7 +1053,7 @@ ISLANDGAME_APPLEVINE_CitySign_Text_0:
 
 ISLANDGAME_APPLEVINE_GameCornerSign_Text_0:
 # 53 "data/maps/ISLANDGAME_APPLEVINE/scripts.pory"
-	.string "Eelektrik Game Corner\n"
+	.string "EelektronikArtz Game Corner\n"
 	.string "Fun for all ages! :)$"
 
 ISLANDGAME_APPLEVINE_SierraPathSign_Text_0:

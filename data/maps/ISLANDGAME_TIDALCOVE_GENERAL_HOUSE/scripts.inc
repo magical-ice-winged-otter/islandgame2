@@ -18,7 +18,7 @@ ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_Pumpkaboo::
 # 17 "data/maps/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/scripts.pory"
 	faceplayer
 # 18 "data/maps/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/scripts.pory"
-	playmoncry SPECIES_PUMPKABOO, CRY_MODE_NORMAL
+	playmoncry SPECIES_PUMPKABOO_SUPER, CRY_MODE_NORMAL
 # 19 "data/maps/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/scripts.pory"
 	msgbox ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_Pumpkaboo_Text_0
 # 20 "data/maps/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/scripts.pory"
@@ -45,4 +45,4 @@ ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_NPC_Text_0:
 
 ISLANDGAME_TIDALCOVE_GENERAL_HOUSE_Interact_Pumpkaboo_Text_0:
 # 19 "data/maps/ISLANDGAME_TIDALCOVE_GENERAL_HOUSE/scripts.pory"
-	.string "{COLOR RED}(This Pumpkaboo is pretty chubby.)$"
+	.string "{COLOR RED}(This Pumpkaboo is pretty chonky.)$"

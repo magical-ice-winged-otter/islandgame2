@@ -466,3 +466,8 @@ u8 (*const gMovementTypeFuncs_WanderInGrass[])(struct ObjectEvent *, struct Spri
     MovementType_WanderAround_Step5,
     MovementType_WanderAround_Step6,
 };
+
+u8 (*const gMovementTypeFuncs_EmoteThinking[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementType_EmoteThinking_Step0,
+    MovementType_EmoteThinking_Step1,
+};

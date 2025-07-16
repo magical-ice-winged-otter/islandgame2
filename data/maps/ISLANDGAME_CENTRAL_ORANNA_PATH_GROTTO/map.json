@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_ItemBall",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_A"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINCCINO)",
@@ -38,7 +38,46 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon1",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SCORBUNNY)",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon2",
+      "flag": "FLAG_TEMP_5"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOPER)",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon3",
+      "flag": "FLAG_TEMP_6"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SCRAGGY)",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon4",
+      "flag": "FLAG_TEMP_7"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(VENIPEDE)",
@@ -50,8 +89,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon2",
-      "flag": "FLAG_TEMP_2"
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon5",
+      "flag": "FLAG_TEMP_8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ESPURR)",
@@ -63,8 +102,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon3",
-      "flag": "FLAG_TEMP_3"
+      "script": "ISLANDGAME_CENTRAL_ORANNA_PATH_GROTTO_Mon6",
+      "flag": "FLAG_TEMP_9"
     }
   ],
   "warp_events": [
