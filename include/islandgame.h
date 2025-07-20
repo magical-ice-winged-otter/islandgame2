@@ -59,24 +59,24 @@ static const u8 nameAetheria[] = _("Aetheria");
 
 static const Location LOCATION_DATA[] = {
     // oranna
-    /*  0 */ LOCATION(nameSsRain, ISLANDGAME_SS_RAIN_ROOM2, 6, 7),
-    /*  1 */ LOCATION(nameCheriport, ISLANDGAME_CHERIPORT, 10, 26),
-    /*  2 */ LOCATION(nameMintyMeadows, ISLANDGAME_MINTY_MEADOWS, 1, 26),
-    /*  3 */ LOCATION(nameTravelersTunnel, ISLANDGAME_TRAVELERS_TUNNEL, 10, 16),
-    /*  4 */ LOCATION(nameCampPersi, ISLANDGAME_CAMP_PERSI, 1, 24),
-    /*  5 */ LOCATION(nameVerdantPath, ISLANDGAME_VERDANT_PATH, 10, 10),
-    /*  6 */ LOCATION(nameVerdantWood, ISLANDGAME_VERDANT_WOODS, 35, 17),
-    /*  7 */ LOCATION(nameFresaFarms, ISLANDGAME_FRESA_FARMS, 10, 10),
-    /*  8 */ LOCATION(nameNorthernOranna, ISLANDGAME_TIDALCOVE, 18, 21),
-    /*  9 */ LOCATION(nameCentralOranna, ISLANDGAME_NORTHERN_ORANNA_PATH, 33, 19),
-    /* 10 */ LOCATION(nameTidalcove, ISLANDGAME_CENTRAL_ORANNA_PATH_1, 18, 1),
-    /* 11 */ LOCATION(nameRosevale, ISLANDGAME_ROSEVALE, 19, 13),
+    /*  0 */ LOCATION(nameSsRain,          MAP_ISLANDGAME_SS_RAIN_ROOM2, 6, 7),
+    /*  1 */ LOCATION(nameCheriport,       MAP_ISLANDGAME_CHERIPORT, 10, 26),
+    /*  2 */ LOCATION(nameMintyMeadows,    MAP_ISLANDGAME_MINTY_MEADOWS, 1, 26),
+    /*  3 */ LOCATION(nameTravelersTunnel, MAP_ISLANDGAME_TRAVELERS_TUNNEL, 10, 16),
+    /*  4 */ LOCATION(nameCampPersi,       MAP_ISLANDGAME_CAMP_PERSI, 1, 24),
+    /*  5 */ LOCATION(nameVerdantPath,     MAP_ISLANDGAME_VERDANT_PATH, 10, 10),
+    /*  6 */ LOCATION(nameVerdantWood,     MAP_ISLANDGAME_VERDANT_WOODS, 35, 17),
+    /*  7 */ LOCATION(nameFresaFarms,      MAP_ISLANDGAME_FRESA_FARMS, 10, 10),
+    /*  8 */ LOCATION(nameNorthernOranna,  MAP_ISLANDGAME_TIDALCOVE, 18, 21),
+    /*  9 */ LOCATION(nameCentralOranna,   MAP_ISLANDGAME_NORTHERN_ORANNA_PATH, 33, 19),
+    /* 10 */ LOCATION(nameTidalcove,       MAP_ISLANDGAME_CENTRAL_ORANNA_PATH_1, 18, 1),
+    /* 11 */ LOCATION(nameRosevale,        MAP_ISLANDGAME_ROSEVALE, 19, 13),
 
     // lumine
-    /* 12 */ LOCATION(nameApplevine, ISLANDGAME_APPLEVINE, 39, 17),
-    /* 13 */ LOCATION(nameRockyPath, ISLANDGAME_ROCKY_PATH, 63, 40),
-    /* 14 */ LOCATION(nameBellehaven, ISLANDGAME_BELLEHAVEN, 21, 28),
-    /* 15 */ LOCATION(nameAetheria, ISLANDGAME_AETHERIA, 60, 26),
+    /* 12 */ LOCATION(nameApplevine,       MAP_ISLANDGAME_APPLEVINE, 39, 17),
+    /* 13 */ LOCATION(nameRockyPath,       MAP_ISLANDGAME_ROCKY_PATH, 63, 40),
+    /* 14 */ LOCATION(nameBellehaven,      MAP_ISLANDGAME_BELLEHAVEN, 21, 28),
+    /* 15 */ LOCATION(nameAetheria,        MAP_ISLANDGAME_AETHERIA, 60, 26),
 };
 
 #define LOCATION_COUNT (sizeof(LOCATION_DATA)/sizeof(Location))

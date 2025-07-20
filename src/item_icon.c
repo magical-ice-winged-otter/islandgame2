@@ -145,7 +145,7 @@ u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y, void * paletteDes
         CpuFastCopy(buffer, paletteDest, PLTT_SIZE_4BPP);
         Free(buffer);
     } else {
-        LoadCompressedPalette(GetItemIconPalette(itemId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
+        LoadPalette(GetItemIconPalette(itemId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
     }
     FreeItemIconTemporaryBuffers();
     return 0;

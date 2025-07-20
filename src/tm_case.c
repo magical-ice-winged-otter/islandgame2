@@ -459,9 +459,9 @@ static bool8 HandleLoadTMCaseGraphicsAndPalettes(void)
         break;
     case 3:
         if (gSaveBlock2Ptr->playerGender == MALE)
-            LoadCompressedPalette(gUnknown_8E84CB0, 0, 0x80);
+            LoadPalette(gUnknown_8E84CB0, 0, 0x80);
         else
-            LoadCompressedPalette(gUnknown_8E84D20, 0, 0x80);
+            LoadPalette(gUnknown_8E84D20, 0, 0x80);
         sTMCaseDynamicResources->seqId++;
         break;
     case 4:
