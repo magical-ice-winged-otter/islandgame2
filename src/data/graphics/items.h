@@ -2082,7 +2082,7 @@ const u32 gItemIcon_Pokevial8[] = INCBIN_U32("graphics/items/icons/pokevial8.4bp
 const u32 gItemIcon_Pokevial9[] = INCBIN_U32("graphics/items/icons/pokevial9.4bpp.lz");
 const u32 gItemIcon_Pokevial[] = INCBIN_U32("graphics/items/icons/pokevial.4bpp.lz");
 
-const u32 gItemIconPalette_Pokevial[] = INCBIN_U32("graphics/items/icon_palettes/pokevial.gbapal.lz");
+const u16 gItemIconPalette_Pokevial[] = INCBIN_U16("graphics/items/icon_palettes/pokevial.gbapal.lz");
 
 //End Pokevial Branch
 
@@ -2121,24 +2121,24 @@ const u32 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U16("graphics/items/icon
 // Islandgame Custom Items
 
 const u32 gItemIcon_IslandgameMachete[] = INCBIN_U32("graphics/items/icons/machete.4bpp.lz");
-const u32 gItemIconPalette_IslandgameMachete[] = INCBIN_U16("graphics/items/icon_palettes/machete.gbapal.lz");
+const u16 gItemIconPalette_IslandgameMachete[] = INCBIN_U16("graphics/items/icon_palettes/machete.gbapal.lz");
 
 const u32 gItemIcon_IslandgameLantern[] = INCBIN_U32("graphics/items/icons/lantern.4bpp.lz");
-const u32 gItemIconPalette_IslandgameLantern[] = INCBIN_U16("graphics/items/icon_palettes/lantern.gbapal.lz");
+const u16 gItemIconPalette_IslandgameLantern[] = INCBIN_U16("graphics/items/icon_palettes/lantern.gbapal.lz");
 
 const u32 gItemIcon_IslandgamePickaxe[] = INCBIN_U32("graphics/items/icons/pickaxe.4bpp.lz");
-const u32 gItemIconPalette_IslandgamePickaxe[] = INCBIN_U16("graphics/items/icon_palettes/pickaxe.gbapal.lz");
+const u16 gItemIconPalette_IslandgamePickaxe[] = INCBIN_U16("graphics/items/icon_palettes/pickaxe.gbapal.lz");
 
 const u32 gItemIcon_IslandgameTradingCard[] = INCBIN_U32("graphics/items/icons/trading_card.4bpp.lz");
-const u32 gItemIconPalette_IslandgameTradingCard[] = INCBIN_U16("graphics/items/icon_palettes/trading_card.gbapal.lz");
+const u16 gItemIconPalette_IslandgameTradingCard[] = INCBIN_U16("graphics/items/icon_palettes/trading_card.gbapal.lz");
 
 const u32 gItemIcon_IslandgameSquirtBottle[] = INCBIN_U32("graphics/items/icons/squirt_bottle.4bpp.lz");
-const u32 gItemIconPalette_IslandgameSquirtBottle[] = INCBIN_U16("graphics/items/icon_palettes/squirt_bottle.gbapal.lz");
+const u16 gItemIconPalette_IslandgameSquirtBottle[] = INCBIN_U16("graphics/items/icon_palettes/squirt_bottle.gbapal.lz");
 
 const u32 gItemIcon_IslandgameLobsterRoll[] = INCBIN_U32("graphics/items/icons/lobster_roll.4bpp.lz");
-const u32 gItemIconPalette_IslandgameLobsterRoll[] = INCBIN_U16("graphics/items/icon_palettes/lobster_roll.gbapal.lz");
+const u16 gItemIconPalette_IslandgameLobsterRoll[] = INCBIN_U16("graphics/items/icon_palettes/lobster_roll.gbapal.lz");
 
 const u32 gItemIcon_IslandgameStrangeDisc[] = INCBIN_U32("graphics/items/icons/strange_disc.4bpp.lz");
-const u32 gItemIconPalette_IslandgameStrangeDisc[] = INCBIN_U16("graphics/items/icon_palettes/strange_disc.gbapal.lz");
+const u16 gItemIconPalette_IslandgameStrangeDisc[] = INCBIN_U16("graphics/items/icon_palettes/strange_disc.gbapal.lz");
 
 // Islandgame End

@@ -280,6 +280,72 @@ extern const u16 gBattleEnvironmentPalette_StadiumPhoebe[];
 extern const u16 gBattleEnvironmentPalette_StadiumGlacia[];
 extern const u16 gBattleEnvironmentPalette_StadiumDrake[];
 extern const u16 gBattleEnvironmentPalette_StadiumWallace[];
+//BATTLE_ENVIRONMENT_HD_GRASS
+extern const u32 gBattleEnvironmentTiles_HDGrass[];
+extern const u32 gBattleEnvironmentPalette_HDGrass[];
+extern const u32 gBattleEnvironmentTilemap_HDGrass[];
+extern const u32 gBattleEnvironmentAnimTiles_HDGrass[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDGrass[];
+//BATTLE_ENVIRONMENT_HD_PLAINS
+extern const u32 gBattleEnvironmentTiles_HDPlains[];
+extern const u32 gBattleEnvironmentPalette_HDPlains[];
+extern const u32 gBattleEnvironmentTilemap_HDPlains[];
+extern const u32 gBattleEnvironmentAnimTiles_HDPlains[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDPlains[];
+//BATTLE_ENVIRONMENT_HD_FOREST
+extern const u32 gBattleEnvironmentTiles_HDForest[];
+extern const u32 gBattleEnvironmentPalette_HDForest[];
+extern const u32 gBattleEnvironmentTilemap_HDForest[];
+extern const u32 gBattleEnvironmentAnimTiles_HDForest[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDForest[];
+//BATTLE_ENVIRONMENT_HD_WATER
+extern const u32 gBattleEnvironmentTiles_HDWater[];
+extern const u32 gBattleEnvironmentPalette_HDWater[];
+extern const u32 gBattleEnvironmentTilemap_HDWater[];
+extern const u32 gBattleEnvironmentAnimTiles_HDWater[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDWater[];
+//BATTLE_ENVIRONMENT_HD_CAVE2
+extern const u32 gBattleEnvironmentTiles_HDCave2[];
+extern const u32 gBattleEnvironmentPalette_HDCave2[];
+extern const u32 gBattleEnvironmentTilemap_HDCave2[];
+extern const u32 gBattleEnvironmentAnimTiles_HDCave2[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDCave2[];
+//BATTLE_ENVIRONMENT_HD_DEPTHS
+extern const u32 gBattleEnvironmentTiles_HDDepths[];
+extern const u32 gBattleEnvironmentPalette_HDDepths[];
+extern const u32 gBattleEnvironmentTilemap_HDDepths[];
+extern const u32 gBattleEnvironmentAnimTiles_HDDepths[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDDepths[];
+//BATTLE_ENVIRONMENT_HD_SNOW
+extern const u32 gBattleEnvironmentTiles_HDSnow[];
+extern const u32 gBattleEnvironmentPalette_HDSnow[];
+extern const u32 gBattleEnvironmentTilemap_HDSnow[];
+extern const u32 gBattleEnvironmentAnimTiles_HDSnow[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDSnow[];
+//BATTLE_ENVIRONMENT_HD_MOUNTAIN
+extern const u32 gBattleEnvironmentTiles_HDMountain[];
+extern const u32 gBattleEnvironmentPalette_HDMountain[];
+extern const u32 gBattleEnvironmentTilemap_HDMountain[];
+extern const u32 gBattleEnvironmentAnimTiles_HDMountain[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDMountain[];
+//BATTLE_ENVIRONMENT_HD_STANDARD
+extern const u32 gBattleEnvironmentTiles_HDStandard[];
+extern const u32 gBattleEnvironmentPalette_HDStandard[];
+extern const u32 gBattleEnvironmentTilemap_HDStandard[];
+extern const u32 gBattleEnvironmentAnimTiles_HDStandard[];
+extern const u32 gBattleEnvironmentAnimTilemap_HDStandard[];
+//Sea Day
+extern const u32 gBattleEnvironmentTiles_SeaDay[];
+extern const u32 gBattleEnvironmentPalette_SeaDay[];
+extern const u32 gBattleEnvironmentTilemap_SeaDay[];
+//Sea Evening
+extern const u32 gBattleEnvironmentTiles_SeaEvening[];
+extern const u32 gBattleEnvironmentPalette_SeaEvening[];
+extern const u32 gBattleEnvironmentTilemap_SeaEvening[];
+//Sea Night
+extern const u32 gBattleEnvironmentTiles_SeaNight[];
+extern const u32 gBattleEnvironmentPalette_SeaNight[];
+extern const u32 gBattleEnvironmentTilemap_SeaNight[];
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
@@ -1730,7 +1796,7 @@ extern const u32 gItemIcon_Pokevial8[];
 extern const u32 gItemIcon_Pokevial9[];
 extern const u32 gItemIcon_Pokevial[];
 
-extern const u32 gItemIconPalette_Pokevial[];
+extern const u16 gItemIconPalette_Pokevial[];
 // End Pokevial Branch
 extern const u32 gItemIcon_Remedy[];
 extern const u16 gItemIconPalette_Remedy[];
@@ -3405,21 +3471,21 @@ extern const u16 gMonMarkingsMenu_Pal[];
 
 // Islandgame Custom Graphics
 extern const u32 gItemIcon_IslandgameMachete[];
-extern const u32 gItemIconPalette_IslandgameMachete[];
+extern const u16 gItemIconPalette_IslandgameMachete[];
 
 extern const u32 gItemIcon_IslandgameLantern[];
-extern const u32 gItemIconPalette_IslandgameLantern[];
+extern const u16 gItemIconPalette_IslandgameLantern[];
 
 extern const u32 gItemIcon_IslandgamePickaxe[];
-extern const u32 gItemIconPalette_IslandgamePickaxe[];
+extern const u16 gItemIconPalette_IslandgamePickaxe[];
 extern const u32 gItemIcon_IslandgameTradingCard[];
-extern const u32 gItemIconPalette_IslandgameTradingCard[];
+extern const u16 gItemIconPalette_IslandgameTradingCard[];
 extern const u32 gItemIcon_IslandgameSquirtBottle[];
-extern const u32 gItemIconPalette_IslandgameSquirtBottle[];
+extern const u16 gItemIconPalette_IslandgameSquirtBottle[];
 extern const u32 gItemIcon_IslandgameLobsterRoll[];
-extern const u32 gItemIconPalette_IslandgameLobsterRoll[];
+extern const u16 gItemIconPalette_IslandgameLobsterRoll[];
 extern const u32 gItemIcon_IslandgameStrangeDisc[];
-extern const u32 gItemIconPalette_IslandgameStrangeDisc[];
+extern const u16 gItemIconPalette_IslandgameStrangeDisc[];
 
 
 // frlg_tm_case_port

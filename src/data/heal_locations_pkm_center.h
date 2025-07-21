@@ -149,50 +149,50 @@ static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS 
     },
     [HEAL_LOCATION_CHERIPORT - 1] =
     {
-        .mapGroup = MAP_GROUP(ISLANDGAME_CHERIPORT),
-        .mapNum = MAP_NUM(ISLANDGAME_CHERIPORT),
+        .mapGroup = MAP_GROUP(MAP_ISLANDGAME_CHERIPORT),
+        .mapNum = MAP_NUM(MAP_ISLANDGAME_CHERIPORT),
         .x = 32,
         .y = 30,
     },
     [HEAL_LOCATION_ISLANDGAME_CAMP_PERSI - 1] =
     {
-        .mapGroup = MAP_GROUP(ISLANDGAME_CAMP_PERSI),
-        .mapNum = MAP_NUM(ISLANDGAME_CAMP_PERSI),
+        .mapGroup = MAP_GROUP(MAP_ISLANDGAME_CAMP_PERSI),
+        .mapNum = MAP_NUM(MAP_ISLANDGAME_CAMP_PERSI),
         .x = 47,
         .y = 30,
     },
     [HEAL_LOCATION_ISLANDGAME_FRESA_FARMS - 1] =
     {
-        .mapGroup = MAP_GROUP(ISLANDGAME_FRESA_FARMS),
-        .mapNum = MAP_NUM(ISLANDGAME_FRESA_FARMS),
+        .mapGroup = MAP_GROUP(MAP_ISLANDGAME_FRESA_FARMS),
+        .mapNum = MAP_NUM(MAP_ISLANDGAME_FRESA_FARMS),
         .x = 22,
         .y = 10,
     },
     [HEAL_LOCATION_ISLANDGAME_TIDALCOVE - 1] =
     {
-        .mapGroup = MAP_GROUP(ISLANDGAME_TIDALCOVE),
-        .mapNum = MAP_NUM(ISLANDGAME_TIDALCOVE),
+        .mapGroup = MAP_GROUP(MAP_ISLANDGAME_TIDALCOVE),
+        .mapNum = MAP_NUM(MAP_ISLANDGAME_TIDALCOVE),
         .x = 21,
         .y = 39,
     },
     [HEAL_LOCATION_ISLANDGAME_ROSEVALE - 1] =
     {
-        .mapGroup = MAP_GROUP(ISLANDGAME_ROSEVALE),
-        .mapNum = MAP_NUM(ISLANDGAME_ROSEVALE),
+        .mapGroup = MAP_GROUP(MAP_ISLANDGAME_ROSEVALE),
+        .mapNum = MAP_NUM(MAP_ISLANDGAME_ROSEVALE),
         .x = 23,
         .y = 27,
     },
     [HEAL_LOCATION_ISLANDGAME_MAPLEGROVE - 1] =
     {
-        .mapGroup = MAP_GROUP(ISLANDGAME_MAPLEGROVE),
-        .mapNum = MAP_NUM(ISLANDGAME_MAPLEGROVE),
+        .mapGroup = MAP_GROUP(MAP_ISLANDGAME_MAPLEGROVE),
+        .mapNum = MAP_NUM(MAP_ISLANDGAME_MAPLEGROVE),
         .x = 6,
         .y = 16,
     },
     [HEAL_LOCATION_ISLANDGAME_APPLEVINE - 1] =
     {
-        .mapGroup = MAP_GROUP(ISLANDGAME_APPLEVINE),
-        .mapNum = MAP_NUM(ISLANDGAME_APPLEVINE),
+        .mapGroup = MAP_GROUP(MAP_ISLANDGAME_APPLEVINE),
+        .mapNum = MAP_NUM(MAP_ISLANDGAME_APPLEVINE),
         .x = 50,
         .y = 13,
     },

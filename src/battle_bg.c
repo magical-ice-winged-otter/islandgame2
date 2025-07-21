@@ -621,8 +621,8 @@ const struct WindowTemplate *const gBattleWindowTemplates[] =
         .entryTilemap = gBattleEnvironmentAnimTilemap_## name,   \
         .palette = gBattleEnvironmentPalette_## name,            
 
-//LINK include/constants/battle.h:440
-//LINK src/data/graphics/battle_terrain.h:90
+//LINK include/constants/battle.h:487
+//LINK src/data/graphics/battle_environment.h:90
 const struct BattleBackground sBattleTerrainTable[BATTLE_ENVIRONMENT_COUNT] =
 {
     [BATTLE_ENVIRONMENT_GRASS] = { TERRAIN_METADATA(HDGrass) },
@@ -820,7 +820,7 @@ static u8 GetBattleTerrainOverride(void)
         case SPECIES_RAYQUAZA:
             return BATTLE_ENVIRONMENT_RAYQUAZA;
         default:
-            return gBattleTerrain;
+            return sBattleTerrainTable;
         }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
@@ -838,7 +838,7 @@ static u8 GetBattleTerrainOverride(void)
     battleScene = GetCurrentMapBattleScene();
     if (battleScene == MAP_BATTLE_SCENE_NORMAL)
     {
-        return gBattleTerrain;
+        return sBattleTerrainTable;
     }
     return GetBattleTerrainByMapScene(battleScene);
 }
@@ -1231,7 +1231,7 @@ void DrawBattleEntryBackground(void)
             LoadBattleTerrainEntryGfx(BATTLE_ENVIRONMENT_RAYQUAZA);
             break;
         default:
-            LoadBattleTerrainEntryGfx(gBattleTerrain);
+            LoadBattleTerrainEntryGfx(sBattleTerrainTable);
             break;
         }
     }
@@ -1254,7 +1254,7 @@ void DrawBattleEntryBackground(void)
 
         if (GetCurrentMapBattleScene() == MAP_BATTLE_SCENE_NORMAL)
         {
-            LoadBattleTerrainEntryGfx(gBattleTerrain);
+            LoadBattleTerrainEntryGfx(sBattleTerrainTable);
         }
         else
         {
