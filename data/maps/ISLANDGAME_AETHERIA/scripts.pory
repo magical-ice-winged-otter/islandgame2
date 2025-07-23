@@ -146,9 +146,50 @@ mapscripts ISLANDGAME_AETHERIA_MapScripts {
 // }
 
 
+
+// Signs
 script ISLANDGAME_AETHERIA_WelcomeSign {
     msgbox(format(
         "AETHERIA\n"
         "Where stars are born!"
     ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_AETHERIA_FanClubSign {
+    msgbox(format(
+        "STARLIGHT FAN CLUB\nWe stan the Queens of Marya!"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_AETHERIA_EmptyTrash {
+    msgbox(format(
+        "{COLOR RED}(There's nothing but garbage in here.)"
+    ), MSGBOX_SIGN)
+}
+
+
+
+// Special NPCs
+script ISLANDGAME_AETHERIA_IceCreamLady {
+    lock
+    faceplayer
+    msgbox(format(
+        ""
+    ))
+}
+
+
+
+
+// Generic NPCs
+script ISLANDGAME_AETHERIA_NPC1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Ugggg... I'm tired of waking up at the crack of dawn just to sail this darn detective out into the great blue sea for the entire day...\p"
+        "All in search of some secret island where the “global elite” supposedly gather to discuss world domination...?\p"
+        "I ain't even sure why we even entertainin' him. We found 'em washed ashore the beaches, and he's been nonstop yappin' bout this ever since.\p"
+    ))
+    closemessage
+    release
 }

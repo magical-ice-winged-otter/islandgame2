@@ -91,7 +91,7 @@ script PoryTileTest2_EventScript_NPC4Talk {
         "I'M FLYING!!!!!\p"
         "Huh? What do you mean, why am I yelling that? Do you really not know why?\p"
         "I feel bad for you kids. You missed out on the golden age of entertainment.\p"
-        "Now you're all engrossed in that cringe PokéIdol nonsense or whatever."
+        "Now you're all engrossed in that cringe PikPok nonsense or whatever."
     ))
     applymovement(OBJ_SHIP_GIRL, Common_Movement_FaceLeft)
     waitmovement(0)

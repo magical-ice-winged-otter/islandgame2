@@ -63,7 +63,8 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_DollInteract {
             msgbox(format(
                 "{COLOR GREEN}Subaru: {COLOR DARK_GRAY}STARLIGHT is an idol group based in the Maryan Isles consisting of five members: Lucia as its front and center, Camille, Azalea, Serafina, and its newest member, Primrose."
                 "STARLIGHT is managed by Eden Productions, a talent agency stationed in the big city of Aetheria.\p"
-                "Currently, their official PokéTube channel holds the number two spot for most subscribers on the website, only topped by Paldea's very own Iono!"
+                "Currently, their official PokéTube channel holds the number two spot for most subscribers on the website, only topped by Paldea's very own Iono!\p"
+                "PIXILATE, their most recent hit single, is currently out on PokéTunes and Slopify!"
             ))
         }
 

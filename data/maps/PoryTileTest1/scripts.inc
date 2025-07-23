@@ -131,7 +131,7 @@ PoryTileTest2_EventScript_NPC4Talk_Text_0:
 	.string "I feel bad for you kids. You missed out\n"
 	.string "on the golden age of entertainment.\p"
 	.string "Now you're all engrossed in that cringe\n"
-	.string "PokéIdol nonsense or whatever.$"
+	.string "PikPok nonsense or whatever.$"
 
 PoryTileTest2_EventScript_Stern_Text_0:
 # 106 "data/maps/PoryTileTest1/scripts.pory"
