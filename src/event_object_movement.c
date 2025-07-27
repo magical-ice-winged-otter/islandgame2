@@ -39,7 +39,6 @@
 #include "trainer_see.h"
 #include "trainer_hill.h"
 #include "util.h"
-#include "follow_me.h"
 #include "wild_encounter.h"
 #include "constants/event_object_movement.h"
 #include "constants/abilities.h"

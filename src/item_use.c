@@ -41,7 +41,6 @@
 #include "task.h"
 #include "text.h"
 #include "tm_case.h"
-#include "follow_me.h"
 #include "vs_seeker.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"

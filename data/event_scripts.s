@@ -63,7 +63,7 @@
 #include "constants/vars.h"
 #include "constants/weather.h"
 #include "constants/quests.h"
-#include "constants/follow_me.h"
+#include "constants/follower_npc.h"
 #include "constants/duo_parties.h"
 #include "constants/pokevial.h" //Pokevial Branch
 	.include "asm/macros.inc"

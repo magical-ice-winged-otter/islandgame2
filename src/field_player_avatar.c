@@ -23,7 +23,6 @@
 #include "strings.h"
 #include "task.h"
 #include "tv.h"
-#include "follow_me.h"
 #include "wild_encounter.h"
 #include "constants/abilities.h"
 #include "constants/event_objects.h"

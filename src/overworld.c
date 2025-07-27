@@ -69,7 +69,6 @@
 #include "vs_seeker.h"
 #include "frontier_util.h"
 #include "islandgame.h"
-#include "follow_me.h"
 #include "constants/abilities.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"

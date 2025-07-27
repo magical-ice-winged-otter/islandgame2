@@ -6,7 +6,6 @@
 #include "party_menu.h"
 #include "overworld.h"
 #include "task.h"
-#include "follow_me.h"
 #include "constants/field_effects.h"
 
 static void FieldCallback_Teleport(void);

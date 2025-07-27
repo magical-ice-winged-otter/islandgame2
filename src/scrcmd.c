@@ -3361,7 +3361,8 @@ bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
 }
 
 // follow me script commands
-#include "follow_me.h"
+// TODO: FIX lordraindance2
+#include "follower_npc.h"
 bool8 ScrCmd_setfollower(struct ScriptContext *ctx)
 {
     u8 localId = ScriptReadByte(ctx);

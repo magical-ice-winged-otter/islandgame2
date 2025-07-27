@@ -31,7 +31,6 @@
 #include "trainer_pokemon_sprites.h"
 #include "trig.h"
 #include "util.h"
-#include "follow_me.h"
 #include "constants/field_effects.h"
 #include "constants/event_objects.h"
 #include "constants/event_object_movement.h"

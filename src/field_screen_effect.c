@@ -33,7 +33,6 @@
 #include "string_util.h"
 #include "task.h"
 #include "text.h"
-#include "follow_me.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/heal_locations.h"

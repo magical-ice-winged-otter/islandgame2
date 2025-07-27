@@ -52,7 +52,6 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
-#include "follow_me.h"
 #include "wild_encounter.h"
 
 enum {
