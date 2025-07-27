@@ -79,12 +79,6 @@
       "y": 9
     },
     {
-      "id": "HEAL_LOCATION_OLDALE_TOWN",
-      "map": "MAP_OLDALE_TOWN",
-      "x": 6,
-      "y": 17
-    },
-    {
       "id": "HEAL_LOCATION_DEWFORD_TOWN",
       "map": "MAP_DEWFORD_TOWN",
       "x": 2,
@@ -134,43 +128,43 @@
     },
     {
       "id": "HEAL_LOCATION_CHERIPORT",
-      "map": "ISLANDGAME_CHERIPORT",
+      "map": "MAP_ISLANDGAME_CHERIPORT",
       "x": 32,
       "y": 30
     },
     {
       "id": "HEAL_LOCATION_ISLANDGAME_CAMP_PERSI",
-      "map": "ISLANDGAME_CAMP_PERSI",
+      "map": "MAP_ISLANDGAME_CAMP_PERSI",
       "x": 47,
       "y": 30
     },
     {
       "id": "HEAL_LOCATION_ISLANDGAME_FRESA_FARMS",
-      "map": "ISLANDGAME_FRESA_FARMS",
+      "map": "MAP_ISLANDGAME_FRESA_FARMS",
       "x": 22,
       "y": 10
     },
     {
       "id": "HEAL_LOCATION_ISLANDGAME_TIDALCOVE",
-      "map": "ISLANDGAME_TIDALCOVE",
+      "map": "MAP_ISLANDGAME_TIDALCOVE",
       "x": 21,
       "y": 39
     },
     {
       "id": "HEAL_LOCATION_ISLANDGAME_ROSEVALE",
-      "map": "ISLANDGAME_ROSEVALE",
+      "map": "MAP_ISLANDGAME_ROSEVALE",
       "x": 23,
       "y": 27
     },
     {
       "id": "HEAL_LOCATION_ISLANDGAME_MAPLEGROVE",
-      "map": "ISLANDGAME_MAPLEGROVE",
+      "map": "MAP_ISLANDGAME_MAPLEGROVE",
       "x": 6,
       "y": 16
     },
     {
       "id": "HEAL_LOCATION_ISLANDGAME_APPLEVINE",
-      "map": "ISLANDGAME_APPLEVINE",
+      "map": "MAP_ISLANDGAME_APPLEVINE",
       "x": 50,
       "y": 13
     }

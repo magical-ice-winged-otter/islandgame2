@@ -84,12 +84,6 @@ static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS 
         .x = 8,
         .y = 7,
     },
-    [HEAL_LOCATION_OLDALE_TOWN - 1] =
-    {
-        .mapGroup = MAP_GROUP(MAP_OLDALE_TOWN_POKEMON_CENTER_1F),
-        .mapNum = MAP_NUM(MAP_OLDALE_TOWN_POKEMON_CENTER_1F),
-        DEFAULT_POKEMON_CENTER_COORDS,
-    },
     [HEAL_LOCATION_DEWFORD_TOWN - 1] =
     {
         .mapGroup = MAP_GROUP(MAP_DEWFORD_TOWN_POKEMON_CENTER_1F),
@@ -139,13 +133,6 @@ static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS 
         .mapGroup = MAP_GROUP(MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F),
         .mapNum = MAP_NUM(MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F),
         DEFAULT_POKEMON_CENTER_COORDS,
-    },
-    [HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR - 1] =
-    {
-        .mapGroup = MAP_GROUP(MAP_SOUTHERN_ISLAND_EXTERIOR),
-        .mapNum = MAP_NUM(MAP_SOUTHERN_ISLAND_EXTERIOR),
-        .x = 15,
-        .y = 20,
     },
     [HEAL_LOCATION_CHERIPORT - 1] =
     {
@@ -219,7 +206,6 @@ static const u8 sHealNpcLocalId[NUM_HEAL_LOCATIONS - 1] =
     [HEAL_LOCATION_EVER_GRANDE_CITY - 1] = 1,
     [HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE - 1] = 1,
     [HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE - 1] = 1,
-    [HEAL_LOCATION_OLDALE_TOWN - 1] = 1,
     [HEAL_LOCATION_DEWFORD_TOWN - 1] = 1,
     [HEAL_LOCATION_LAVARIDGE_TOWN - 1] = 1,
     [HEAL_LOCATION_FALLARBOR_TOWN - 1] = 1,
