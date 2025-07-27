@@ -182,10 +182,7 @@ static u16 GetObjectEventFlagIdByObjectEventId(u8);
 static void UpdateObjectEventVisibility(struct ObjectEvent *, struct Sprite *);
 static void MakeSpriteTemplateFromObjectEventTemplate(const struct ObjectEventTemplate *, struct SpriteTemplate *, const struct SubspriteTable **);
 static void GetObjectEventMovingCameraOffset(s16 *, s16 *);
-<<<<<<< HEAD
-=======
 const struct ObjectEventTemplate *GetObjectEventTemplateByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
->>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 static void RemoveObjectEventIfOutsideView(struct ObjectEvent *);
 static void SpawnObjectEventOnReturnToField(u8, s16, s16);
 static void SetPlayerAvatarObjectEventIdAndObjectId(u8, u8);
@@ -216,10 +213,7 @@ static u8 DoJumpSpecialSpriteMovement(struct Sprite *);
 static void CreateLevitateMovementTask(struct ObjectEvent *);
 static void DestroyLevitateMovementTask(u8);
 static u32 LoadDynamicFollowerPalette(u32 species, bool32 shiny, bool32 female);
-<<<<<<< HEAD
-=======
 const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u32 species, bool32 shiny, bool32 female);
->>>>>>> efa2fb3be7ba31d2487990259b466d5095a04a9a
 static bool8 NpcTakeStep(struct Sprite *);
 static bool8 AreElevationsCompatible(u8, u8);
 static void CopyObjectGraphicsInfoToSpriteTemplate_WithMovementType(u16 graphicsId, u16 movementType, struct SpriteTemplate *spriteTemplate, const struct SubspriteTable **subspriteTables);
