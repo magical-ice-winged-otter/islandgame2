@@ -492,6 +492,9 @@ u8 MovementType_RunInPlace_Step0(struct ObjectEvent *objectEvent, struct Sprite 
 u8 MovementType_Invisible_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Invisible_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_Invisible_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+u8 MovementType_WanderInGrass_Step4(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_EmoteThinking_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_EmoteThinking_Step1(struct ObjectEvent *, struct Sprite *);
 
 u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevation, u8 direction);
 void TurnVirtualObject(u8 virtualObjId, u8 direction);
