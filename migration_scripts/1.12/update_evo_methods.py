@@ -225,6 +225,7 @@ species_files = [
     "gen_7_families.h",
     "gen_8_families.h",
     "gen_9_families.h",
+    "gen_shadow.h",
 ]
 
 PATH = "src/data/pokemon/species_info/"

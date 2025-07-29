@@ -89,78 +89,78 @@ const u32 gBattleEnvironmentAnimTilemap_Rayquaza[] = INCBIN_U32("graphics/battle
 
 //BATTLE_ENVIRONMENT_HD_GRASS
 const u32 gBattleEnvironmentTiles_HDGrass[] = INCBIN_U32("graphics/battle_environment/new_grass/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDGrass[] = INCBIN_U32("graphics/battle_environment/new_grass/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDGrass[] = INCBIN_U16("graphics/battle_environment/new_grass/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDGrass[] = INCBIN_U32("graphics/battle_environment/new_grass/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDGrass[] = INCBIN_U32("graphics/battle_environment/new_grass/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDGrass[] = INCBIN_U32("graphics/battle_environment/new_grass/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_HD_PLAINS
 const u32 gBattleEnvironmentTiles_HDPlains[] = INCBIN_U32("graphics/battle_environment/new_plains/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDPlains[] = INCBIN_U32("graphics/battle_environment/new_plains/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDPlains[] = INCBIN_U16("graphics/battle_environment/new_plains/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDPlains[] = INCBIN_U32("graphics/battle_environment/new_plains/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDPlains[] = INCBIN_U32("graphics/battle_environment/new_plains/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDPlains[] = INCBIN_U32("graphics/battle_environment/new_plains/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_HD_FOREST
 const u32 gBattleEnvironmentTiles_HDForest[] = INCBIN_U32("graphics/battle_environment/new_darkgrass/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDForest[] = INCBIN_U32("graphics/battle_environment/new_darkgrass/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDForest[] = INCBIN_U16("graphics/battle_environment/new_darkgrass/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDForest[] = INCBIN_U32("graphics/battle_environment/new_darkgrass/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDForest[] = INCBIN_U32("graphics/battle_environment/new_darkgrass/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDForest[] = INCBIN_U32("graphics/battle_environment/new_darkgrass/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_HD_WATER
 const u32 gBattleEnvironmentTiles_HDWater[] = INCBIN_U32("graphics/battle_environment/new_water/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDWater[] = INCBIN_U32("graphics/battle_environment/new_water/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDWater[] = INCBIN_U16("graphics/battle_environment/new_water/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDWater[] = INCBIN_U32("graphics/battle_environment/new_water/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDWater[] = INCBIN_U32("graphics/battle_environment/new_water/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDWater[] = INCBIN_U32("graphics/battle_environment/new_water/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_HD_CAVE2
 const u32 gBattleEnvironmentTiles_HDCave2[] = INCBIN_U32("graphics/battle_environment/new_cave2/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDCave2[] = INCBIN_U32("graphics/battle_environment/new_cave2/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDCave2[] = INCBIN_U16("graphics/battle_environment/new_cave2/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDCave2[] = INCBIN_U32("graphics/battle_environment/new_cave2/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDCave2[] = INCBIN_U32("graphics/battle_environment/tall_grass/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDCave2[] = INCBIN_U32("graphics/battle_environment/tall_grass/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_HD_DEPTHS
 const u32 gBattleEnvironmentTiles_HDDepths[] = INCBIN_U32("graphics/battle_environment/new_depths/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDDepths[] = INCBIN_U32("graphics/battle_environment/new_depths/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDDepths[] = INCBIN_U16("graphics/battle_environment/new_depths/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDDepths[] = INCBIN_U32("graphics/battle_environment/new_depths/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDDepths[] = INCBIN_U32("graphics/battle_environment/new_depths/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDDepths[] = INCBIN_U32("graphics/battle_environment/new_depths/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_HD_SNOW
 const u32 gBattleEnvironmentTiles_HDSnow[] = INCBIN_U32("graphics/battle_environment/new_snow/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDSnow[] = INCBIN_U32("graphics/battle_environment/new_snow/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDSnow[] = INCBIN_U16("graphics/battle_environment/new_snow/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDSnow[] = INCBIN_U32("graphics/battle_environment/new_snow/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDSnow[] = INCBIN_U32("graphics/battle_environment/tall_grass/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDSnow[] = INCBIN_U32("graphics/battle_environment/tall_grass/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_HD_MOUNTAIN
 const u32 gBattleEnvironmentTiles_HDMountain[] = INCBIN_U32("graphics/battle_environment/new_mountain/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDMountain[] = INCBIN_U32("graphics/battle_environment/new_mountain/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDMountain[] = INCBIN_U16("graphics/battle_environment/new_mountain/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDMountain[] = INCBIN_U32("graphics/battle_environment/new_mountain/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDMountain[] = INCBIN_U32("graphics/battle_environment/new_mountain/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDMountain[] = INCBIN_U32("graphics/battle_environment/new_mountain/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_HD_STANDARD
 const u32 gBattleEnvironmentTiles_HDStandard[] = INCBIN_U32("graphics/battle_environment/new_standard/tiles.4bpp.lz");
-const u32 gBattleEnvironmentPalette_HDStandard[] = INCBIN_U32("graphics/battle_environment/new_standard/palette.gbapal.lz");
+const u16 gBattleEnvironmentPalette_HDStandard[] = INCBIN_U16("graphics/battle_environment/new_standard/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_HDStandard[] = INCBIN_U32("graphics/battle_environment/new_standard/map.bin.lz");
 const u32 gBattleEnvironmentAnimTiles_HDStandard[] = INCBIN_U32("graphics/battle_environment/building/anim_tiles.4bpp.lz");
 const u32 gBattleEnvironmentAnimTilemap_HDStandard[] = INCBIN_U32("graphics/battle_environment/building/anim_map.bin.lz");
 
 //BATTLE_ENVIRONMENT_SEA_DAY
 const u32 gBattleEnvironmentTiles_SeaDay[] = INCBIN_U32("graphics/battle_environment/sea_day/sea-day.4bpp.lz");
-const u32 gBattleEnvironmentPalette_SeaDay[] = INCBIN_U32("graphics/battle_environment/sea_day/sea-day.gbapal.lz");
+const u16 gBattleEnvironmentPalette_SeaDay[] = INCBIN_U16("graphics/battle_environment/sea_day/sea-day.gbapal");
 const u32 gBattleEnvironmentTilemap_SeaDay[] = INCBIN_U32("graphics/battle_environment/sea_day/sea-day.bin.lz");
 
 //BATTLE_ENVIRONMENT_SEA_EVENING
 const u32 gBattleEnvironmentTiles_SeaEvening[] = INCBIN_U32("graphics/battle_environment/sea_evening/sea-evening.4bpp.lz");
-const u32 gBattleEnvironmentPalette_SeaEvening[] = INCBIN_U32("graphics/battle_environment/sea_evening/sea-evening.gbapal.lz");
+const u16 gBattleEnvironmentPalette_SeaEvening[] = INCBIN_U16("graphics/battle_environment/sea_evening/sea-evening.gbapal");
 const u32 gBattleEnvironmentTilemap_SeaEvening[] = INCBIN_U32("graphics/battle_environment/sea_evening/sea-evening.bin.lz");
 
 //BATTLE_ENVIRONMENT_SEA_NIGHT
 const u32 gBattleEnvironmentTiles_SeaNight[] = INCBIN_U32("graphics/battle_environment/sea_night/sea-night.4bpp.lz");
-const u32 gBattleEnvironmentPalette_SeaNight[] = INCBIN_U32("graphics/battle_environment/sea_night/sea-night.gbapal.lz");
+const u16 gBattleEnvironmentPalette_SeaNight[] = INCBIN_U16("graphics/battle_environment/sea_night/sea-night.gbapal");
 const u32 gBattleEnvironmentTilemap_SeaNight[] = INCBIN_U32("graphics/battle_environment/sea_night/sea-night.bin.lz");

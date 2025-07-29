@@ -2116,7 +2116,7 @@ const u32 gItemIcon_SwapSnack[] = INCBIN_U32("graphics/items/icons/swap_snack.4b
 const u16 gItemIconPalette_SwapSnack[] = INCBIN_U16("graphics/items/icon_palettes/swap_snack.gbapal");
 
 const u32 gItemIcon_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icons/twice_spiced_radish.4bpp.lz");
-const u32 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U16("graphics/items/icon_palettes/twice_spiced_radish.gbapal.lz");
+const u16 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U16("graphics/items/icon_palettes/twice_spiced_radish.gbapal.lz");
 
 // Islandgame Custom Items
 

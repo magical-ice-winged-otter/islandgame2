@@ -636,7 +636,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         )
         .levelUpLearnset = sNincadaMaryanLevelUpLearnset,
         .teachableLearnset = sNincadaMaryanTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_NINJASK, 20, SPECIES_NINJASK_MARYAN},
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_NINJASK_MARYAN,
                                 {EVO_LEVEL_SHEDINJA, 20, SPECIES_SHEDINJA_MARYAN}),
     },
 
@@ -877,7 +877,7 @@ const struct SpeciesInfo gSpeciesInfoGenShadow[] =
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCombeeMaryanLevelUpLearnset,
         .teachableLearnset = sCombeeMaryanTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 21, SPECIES_VESPIQUEN_MARYAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 21, SPECIES_VESPIQUEN_MARYAN, CONDITIONS({IF_GENDER, MON_FEMALE})}),
     },
 
     [SPECIES_VESPIQUEN_MARYAN] =
