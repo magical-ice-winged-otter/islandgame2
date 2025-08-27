@@ -278,8 +278,12 @@
 #define TRAINER_PLEASANT_AVENUE_8           111
 #define TRAINER_VALERIE_3                   TRAINER_PLEASANT_AVENUE_8
 
-#define TRAINER_VALERIE_4                   112
-#define TRAINER_VALERIE_5                   113
+// Aetheria
+#define TRAINER_AETHERIA_BRENDAN            112
+#define TRAINER_VALERIE_4                   TRAINER_AETHERIA_BRENDAN
+#define TRAINER_AETHERIA_MAY                113
+#define TRAINER_VALERIE_5                   TRAINER_AETHERIA_MAY
+
 #define TRAINER_CINDY_1                     114
 #define TRAINER_DAPHNE                      115
 #define TRAINER_GRUNT_SPACE_CENTER_2        116

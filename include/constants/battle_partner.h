@@ -5,6 +5,7 @@
 #define PARTNER_NONE                0
 #define PARTNER_STEVEN              1
 #define PARTNER_MEADOWS_RIVAL       2
+#define PARTNER_AETHERIA_WALLY      3
 
-#define PARTNER_COUNT               3
+#define PARTNER_COUNT               4
 #endif  // GUARD_CONSTANTS_BATTLE_PARTNERS_H

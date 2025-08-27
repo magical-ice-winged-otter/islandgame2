@@ -152,3 +152,4 @@ script ISLANDGAME_APPLEVINE_COCOS_HOUSE_CocoInteract {
     closemessage
     release
 }
+

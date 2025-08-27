@@ -728,6 +728,18 @@ static const struct SpriteFrameImage sPicTable_Veteran[] = {
     overworld_ascending_frames(gObjectEventPic_Veteran, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Brendan2[] = {
+    overworld_ascending_frames(gObjectEventPic_Brendan2, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_May2[] = {
+    overworld_ascending_frames(gObjectEventPic_May2, 2, 4),
+};
+
+
+
+
+
 
 
 static const struct SpriteFrameImage sPicTable_BrendanNormal[] = {

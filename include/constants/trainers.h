@@ -443,7 +443,7 @@
 #define TRAINER_CLASS_TAMER          0x4f
 #define TRAINER_CLASS_PAINTER        0x50
 #define TRAINER_CLASS_ARTIST         0x51
-#define TRAINER_CLASS_JANITOR        0x52
+#define TRAINER_CLASS_RIVAL_HOENN    0x52
 #define TRAINER_CLASS_COUNT          0x53
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music

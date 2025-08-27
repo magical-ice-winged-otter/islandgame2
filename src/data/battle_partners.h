@@ -132,3 +132,63 @@
             },
         },
     },
+    [DIFFICULTY_NORMAL][PARTNER_AETHERIA_WALLY] =
+    {
+        .trainerName = _("Wally"),
+        .trainerClass = TRAINER_CLASS_RIVAL_HOENN,
+        .trainerPic = TRAINER_BACK_PIC_WALLY,
+        .encounterMusic_gender = 
+            TRAINER_ENCOUNTER_MUSIC_MALE,
+        .partySize = 3,
+        .party = (const struct TrainerMon[])
+        {
+            {
+            .species = SPECIES_ALTARIA,
+            .gender = TRAINER_MON_MALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_CLOUD_NINE,
+            .lvl = 36,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .heldItem = ITEM_SITRUS_BERRY,
+            .moves = {
+                MOVE_DRAGON_BREATH,
+                MOVE_FLY,
+                MOVE_TAILWIND,
+                MOVE_PROTECT,
+            },
+            },
+            {
+            .species = SPECIES_MAGNEZONE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_ANALYTIC,
+            .lvl = 36,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .heldItem = ITEM_MAGNET,
+            .moves = {
+                MOVE_SHOCK_WAVE,
+                MOVE_FLASH_CANNON,
+                MOVE_THUNDER_WAVE,
+                MOVE_REFLECT,
+            },
+            },
+            {
+            .species = SPECIES_GALLADE,
+            .gender = TRAINER_MON_MALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_STEADFAST,
+            .lvl = 36,
+            .nature = NATURE_HARDY,
+            .heldItem = ITEM_GALLADITE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+                MOVE_PSYCHO_CUT,
+                MOVE_LEAF_BLADE,
+                MOVE_CLOSE_COMBAT,
+                MOVE_NIGHT_SLASH,
+            },
+            },
+        },
+    },

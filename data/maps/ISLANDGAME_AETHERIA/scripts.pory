@@ -13,8 +13,22 @@
 // // TODO(poe): Scripting still needed for museum and sewers
 // const LOCALID_RIVAL = 0
 
+const FLAG_DAYTIME = FLAG_TEMP_2
+const FLAG_NIGHTTIME = FLAG_TEMP_3
+
 mapscripts ISLANDGAME_AETHERIA_MapScripts {
-    // MAP_SCRIPT_ON_TRANSITION {
+    MAP_SCRIPT_ON_TRANSITION {
+        gettime
+
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
+            setflag(FLAG_NIGHTTIME) // hides daytime npcs
+        }
+        else {
+            setflag(FLAG_DAYTIME) // hides nighttime npcs
+        }
+
+
+
     //     switch (var(VAR_AETHERIA_STATE)) {
     //         case STATE_INITIAL:
     //         case STATE_FOUND_RIVAL:
@@ -30,7 +44,7 @@ mapscripts ISLANDGAME_AETHERIA_MapScripts {
     //         default:
     //             setobjectxyperm(LOCALID_RIVAL, POS_HIDDEN_X, POS_HIDDEN_Y)
     //     }
-    // }
+    }
 }
 
 // // TODO(poe): Create triggers for this script
@@ -161,27 +175,109 @@ script ISLANDGAME_AETHERIA_FanClubSign {
     ), MSGBOX_SIGN)
 }
 
+script ISLANDGAME_AETHERIA_CondoSign {
+    msgbox(format(
+        "AETHERIA CONDOMINIUMS"
+    ), MSGBOX_SIGN)
+}
+
+script ISLANDGAME_AETHERIA_CardShop {
+    msgbox(format(
+        "The Top Deck - Gaming Café\nCome play in our PTCG tournaments!"
+    ), MSGBOX_SIGN)
+}
+
+
+
 script ISLANDGAME_AETHERIA_EmptyTrash {
     msgbox(format(
         "{COLOR RED}(There's nothing but garbage in here.)"
     ), MSGBOX_SIGN)
 }
 
+script ISLANDGAME_AETHERIA_VendingMachine {
+
+}
+
 
 
 // Special NPCs
+script ISLANDGAME_AETHERIA_TheRecruiter {
+    // lock
+    // faceplayer
+    // msgbox(format(
+    //     "Greetings! Today is your lucky day, for I offer you a choice.\p"
+    //     "Would you like a Big Nugget, or a Master Ball?"
+    // ))
+    // dynmultipush("Big Nugget", 136)
+    // dynmultipush("Master Ball", 4)
+    // dynmultistack(0,0,TRUE,2,FALSE,0,DYN_MULTICHOICE_CB_SHOW_ITEM)
+    // switch(var(VAR_RESULT)) {
+    //     case 136:
+    //         msgbox(format(
+    //             "Ah... what a shame. You are no different than the rest of the trash here.\p"
+    //             ""
+    //         ))
+    //         giveitem()
+    //     default:
+    // }
+}
+
 script ISLANDGAME_AETHERIA_IceCreamLady {
     lock
     faceplayer
+    showmoneybox(18, 1)
     msgbox(format(
-        ""
-    ))
+        "Helloooooo! Would you like some frosty Nice Cream? It's only ¥500 for a cone!"
+    ), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        checkmoney(500)
+        if(var(VAR_RESULT)) {
+            removemoney(500)
+            updatemoneybox
+            playse(SE_SHOP)
+            waitse
+            playse(SE_VEND)
+            waitse
+            hidemoneybox
+            msgbox(format(
+                "Enjoy!"
+            ))
+            giveitem(ITEM_CASTELIACONE)
+        }
+        else {
+            msgbox(format(
+                "Oh... you don't have enough money."
+            ))
+        }
+    }
+    hidemoneybox
+    closemessage
+    release
+}
+
+
+// Trainers 
+
+// park officer
+script ISLANDGAME_AETHERIA_Trainer1 {
+    // trainerbattle_single(<trainer>,
+    //     format(
+    //         ""
+    //     ),
+    //     format(
+    //         ""
+    //     ))
+    // msgbox(format(
+    //     ""
+    // ), MSGBOX_AUTOCLOSE)
 }
 
 
 
 
-// Generic NPCs
+/// Generic NPCs
+// sailor by the wharf
 script ISLANDGAME_AETHERIA_NPC1 {
     lock
     faceplayer
@@ -192,4 +288,287 @@ script ISLANDGAME_AETHERIA_NPC1 {
     ))
     closemessage
     release
+}
+
+// woman by the entrance
+script ISLANDGAME_AETHERIA_NPC2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Aetheria is always bustling with activity. Whether it's in the morning, at noon, or at night, there's always something to do!"
+    ))
+    closemessage
+    release
+}
+
+
+// chubby guy scavenging around the park
+script ISLANDGAME_AETHERIA_NPC3 {
+    lock
+    msgbox(format(
+        "Come on... {PAUSE 30}come on...{PAUSE 30}\p"
+        "Drats... I was hoping for chicken, but I guess this will have to do..."
+    ))
+    closemessage
+    release
+}
+
+// pokemaniac cosplayer dude
+script ISLANDGAME_AETHERIA_NPC4 {
+    lock
+    if (flag(FLAG_TEMP_2)) {
+        msgbox(format(
+            "I ain't got all day, kid! Do you want a crummy photo or not!?"
+        ))
+    }
+    else {
+        faceplayer
+        msgbox(format(
+            "Buzz off, kid. I'm off the clock. If you want a photo, come back tomorrow."
+        ))
+    }
+    closemessage
+    release
+}
+
+// crybaby in park
+script ISLANDGAME_AETHERIA_NPC5 {
+    lock
+    msgbox(format(
+        "Waaaaaah! He's too scawwy!"
+    ))
+    closemessage
+    release
+}
+
+// mother in park
+script ISLANDGAME_AETHERIA_NPC6 {
+    lock
+    msgbox(format(
+        "It's fine, dearie! He won't bite! He's not a real Larvitar!"
+    ))
+    closemessage
+    release
+}
+
+// homeless man
+script ISLANDGAME_AETHERIA_NPC7 {
+    lock
+    faceplayer
+    msgbox(format(
+        "A strange man gave me the choice of receiving a Big Nugget or Master Ball earlier this morning...\p"
+        "I chose the Big Nugget, and he actually gave me it...\p"
+        "...But when I tried selling it at the department store, they kicked me out for trying to sell them a fake nugget...\p"
+        "Oooh... I was a fool for believing that it was real... All I could think about was getting a second chance at life...\p"
+        "What a cruel, cruel world we are forced to be a part of...\p"
+        "There is no god in this world... Not Lugia... Not Arceus... No one..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_StrayPurrloin {
+    lock
+    faceplayer
+    playmoncry(SPECIES_PURRLOIN, CRY_MODE_NORMAL)
+    waitmoncry
+    release
+}
+
+
+
+
+
+
+
+
+
+/// Cameo Battles; to be periodically updated whenever I feel like it
+script ISLANDGAME_AETHERIA_WallyDad {
+    lock
+    faceplayer
+    if(flag(FLAG_DAILY_AETHERIA_CAMEO_BATTLE)) {
+        msgbox(format(
+            "Thanks for battling alongside Wally.\pI wish the best of luck on the rest of your journey!"
+        ))
+    }
+    else {
+        msgbox(format(
+            "Ever since Wally's recovered from his illness, he's been really itching to go out and explore the world of Pokémon beyond the Hoenn region.\p"
+            "So when the opportunity arose for us to travel all the way here, you bet we took it!"
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Scott {
+    lock
+    if(flag(FLAG_DAILY_AETHERIA_CAMEO_BATTLE)) {
+        faceplayer
+        msgbox(format(
+            "Those battles were hot, hot, hot!\pHowsabout a trainer like you come with me back to the Hoenn region and compete in the Battle Frontier?\p"
+        ))
+    }
+    else {
+        msgbox(format(
+            "Ohoho, it's been a hot minute since I've seen these champs battle!"
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_May {
+    lock
+    faceplayer
+    if(flag(FLAG_DAILY_AETHERIA_CAMEO_BATTLE)) {
+        msgbox(format(
+            "You're one tough lava cookie, randy! Don't get too complacent though... I'll be back for a rematch soon!"
+        ))
+    }
+    else {
+        msgbox(format(
+            "After spending the entire day walking around the city, I'm glad to finally take a break and battle!"
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Brendan {
+    lock
+    faceplayer
+    if(flag(FLAG_DAILY_AETHERIA_CAMEO_BATTLE)) {
+        msgbox(format(
+            "Heh... I guess I'm a little out of practice... "
+        ))
+    }
+    else {
+        msgbox(format(
+            "I was looking most forward to visiting the contest hall here, but I was disappointed to find out that it's been repurposed into a performance hall for Pokémon Idols instead."
+        ))
+    }
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Observer1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Those kids look pretty tough..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Observer2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Mommy lets me watch trainers battle here while she does shopping with my sister!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Wally {
+    lock
+    faceplayer
+    if(flag(FLAG_DAILY_AETHERIA_CAMEO_BATTLE)) {
+        msgbox(format(
+            "We're also going to be at the Silverwing Festival, so hope to catch you there!"
+        ))
+        goto(Aetheria_CameoBattle_End)
+    }
+    msgbox(format(
+        "Hey there! We're looking for a trainer to join us in a multi battle! Would you like to be my teammate?"
+    ), MSGBOX_YESNO)
+    
+    if (var(VAR_RESULT) == YES) {
+        special(SavePlayerParty)
+        fadescreen(FADE_TO_BLACK)
+        special(ChooseHalfPartyForBattle)
+        waitstate
+        if(var(VAR_RESULT) == 0) {
+            special(LoadPlayerParty)
+            msgbox(format(
+                "Darn... I was hoping to get a quick pick-up battle in."
+            ))
+            goto(Aetheria_CameoBattle_End)
+        }
+        else {
+            fadescreen(FADE_TO_BLACK)
+            setvar(VAR_0x8000, 63)
+            setvar(VAR_0x8001, 57)
+            callnative(TeleportCamera)
+            setobjectxy(OBJ_EVENT_ID_PLAYER, 66, 58)
+            applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft)
+            applymovement(8, Common_Movement_FaceLeft)
+            fadescreen(FADE_FROM_BLACK)
+            delay(30)
+            applymovement(8, Common_Movement_WalkInPlaceLeft)
+            waitmovement(0)
+            delay(30)
+            msgbox(format(
+                "Alright! Ready when you two are!"
+            ))
+            msgbox(format(
+                "{COLOR GREEN}May: {COLOR DARK_GRAY}Just a fair warning, randy, we'll be coming at you with full force!\p"
+                "{COLOR GREEN}Brendan: {COLOR DARK_GRAY}Boisterous as ever..."
+            ))
+            // multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, TRAINER_TABITHA_MOSSDEEP, MossdeepCity_SpaceCenter_Text_TabithaDefeat, PARTNER_STEVEN
+            
+            // setfollower(8, 0x100, ISLANDGAME_AETHERIA_Wally, PARTNER_AETHERIA_WALLY)
+            // trainerbattle_two_trainers(TRAINER_AETHERIA_BRENDAN, "Well, this shirt is ruined...", TRAINER_AETHERIA_MAY, "Auuuugh! No way! We lost!?")
+            // destroyfollower
+            
+            multi_2_vs_2(TRAINER_AETHERIA_BRENDAN, "Well, this shirt is ruined...", TRAINER_AETHERIA_MAY, "Auuuugh! No way! We lost!?", PARTNER_AETHERIA_WALLY)
+            switch(var(VAR_RESULT)) {
+                case 1: // win
+                    fadescreen(FADE_TO_BLACK)
+                    setvar(VAR_0x8000, 66)
+                    setvar(VAR_0x8001, 58)
+                    callnative(TeleportCamera)
+                    fadescreen(FADE_FROM_BLACK)
+                    applymovement(8, Common_Movement_WalkInPlaceLeft)
+                    waitmovement(0)
+                    delay(30)
+                    msgbox(format(
+                        "Hehe... looks like I win this time!"
+                    ))
+                    closemessage
+                    delay(30)
+                    applymovement(8, Common_Movement_FaceDown)
+                    waitmovement(0)
+                    applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp)
+                    waitmovement(0)
+                    msgbox(format(
+                        "I couldn't have done it without you, {PLAYER}! You and your Pokémon were amazing!\p"
+                        "Here, take one of these, as thanks for your part in our victory."
+                    ))
+                    giveitem(ITEM_ABILITY_CAPSULE)
+                    setflag(FLAG_DAILY_AETHERIA_CAMEO_BATTLE)
+                    goto(Aetheria_CameoBattle_End)
+                default: // scrub out
+                    fadescreen(FADE_TO_BLACK)
+                    special(SetCB2WhiteOut)
+                    waitstate
+            }
+
+
+    
+        }
+    }
+    else {
+        msgbox(format(
+            "Darn... I was hoping to get a quick pick-up battle in."
+        ))
+        goto(Aetheria_CameoBattle_End)
+    }
+    
+    Aetheria_CameoBattle_End:
+        closemessage
+        release    
 }

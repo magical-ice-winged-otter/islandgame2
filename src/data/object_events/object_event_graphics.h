@@ -116,7 +116,10 @@ const u32 gObjectEventPic_Biker2[] = INCBIN_U32("graphics/object_events/pics/peo
 const u16 gObjectEventPal_Biker2[] = INCBIN_U16("graphics/object_events/pics/people/biker_2.gbapal");
 const u32 gObjectEventPic_Veteran[] = INCBIN_U32("graphics/object_events/pics/people/veteran.4bpp");
 const u16 gObjectEventPal_Veteran[] = INCBIN_U16("graphics/object_events/pics/people/veteran.gbapal");
-
+const u32 gObjectEventPic_Brendan2[] = INCBIN_U32("graphics/object_events/pics/people/brendan.4bpp");
+const u16 gObjectEventPal_Brendan2[] = INCBIN_U16("graphics/object_events/pics/people/brendan.gbapal");
+const u32 gObjectEventPic_May2[] = INCBIN_U32("graphics/object_events/pics/people/may.4bpp");
+const u16 gObjectEventPal_May2[] = INCBIN_U16("graphics/object_events/pics/people/may.gbapal");
 
 
 

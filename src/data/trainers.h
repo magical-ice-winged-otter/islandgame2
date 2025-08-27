@@ -3654,76 +3654,154 @@ F_TRAINER_FEMALE |
             },
         },
     },
-    [DIFFICULTY_NORMAL][TRAINER_VALERIE_4] =
+
+
+
+
+
+
+
+
+
+
+    // AEtheria
+    [DIFFICULTY_NORMAL][TRAINER_AETHERIA_BRENDAN] =
     {
-        .trainerName = _("VALERIE"),
-        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
-        .trainerPic = TRAINER_PIC_HEX_MANIAC,
+        .trainerName = _("Brendan"),
+        .trainerClass = TRAINER_CLASS_RIVAL_HOENN,
+        .trainerPic = TRAINER_PIC_BRENDAN,
         .encounterMusic_gender = 
-F_TRAINER_FEMALE | 
-            TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+            TRAINER_ENCOUNTER_MUSIC_MALE,
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = 2,
-        .party = (const struct TrainerMon[])
-        {
-            {
-            .species = SPECIES_SPOINK,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-            .lvl = 40,
-            .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            },
-            {
-            .species = SPECIES_SABLEYE,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
-            .lvl = 40,
-            .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            },
-        },
-    },
-    [DIFFICULTY_NORMAL][TRAINER_VALERIE_5] =
-    {
-        .trainerName = _("VALERIE"),
-        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
-        .trainerPic = TRAINER_PIC_HEX_MANIAC,
-        .encounterMusic_gender = 
-F_TRAINER_FEMALE | 
-            TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
             {
-            .species = SPECIES_DUSKULL,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
-            .lvl = 42,
+            .species = SPECIES_MIGHTYENA,
+            .gender = TRAINER_MON_FEMALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_INTIMIDATE,
+            .lvl = 36,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .heldItem = ITEM_BLACK_GLASSES,
+            .moves = {
+                MOVE_TAUNT,
+                MOVE_SNARL,
+                MOVE_SWAGGER,
+                MOVE_CRUNCH,
+            },
             },
             {
-            .species = SPECIES_SABLEYE,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
-            .lvl = 42,
+            .species = SPECIES_GARDEVOIR,
+            .gender = TRAINER_MON_FEMALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_TRACE,
+            .lvl = 36,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .heldItem = ITEM_QUICK_CLAW,
+            .moves = {
+                MOVE_PSYCHIC,
+                MOVE_DAZZLING_GLEAM,
+                MOVE_LIFE_DEW,
+                MOVE_MYSTICAL_FIRE,
+            },
             },
             {
-            .species = SPECIES_GRUMPIG,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-            .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
-            .lvl = 42,
+            .species = SPECIES_SWAMPERT,
+            .gender = TRAINER_MON_MALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_TORRENT,
+            .lvl = 36,
             .nature = NATURE_HARDY,
+            .heldItem = ITEM_SWAMPERTITE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+                MOVE_WATERFALL,
+                MOVE_RAIN_DANCE,
+                MOVE_EARTHQUAKE,
+                MOVE_PROTECT,
+            },
             },
         },
     },
+    [DIFFICULTY_NORMAL][TRAINER_AETHERIA_MAY] =
+    {
+        .trainerName = _("May"),
+        .trainerClass = TRAINER_CLASS_RIVAL_HOENN,
+        .trainerPic = TRAINER_PIC_MAY,
+        .encounterMusic_gender = 
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON,
+        .partySize = 3,
+        .party = (const struct TrainerMon[])
+        {
+            {
+            .species = SPECIES_AGGRON,
+            .gender = TRAINER_MON_MALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_ROCK_HEAD,
+            .lvl = 36,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .heldItem = ITEM_ASSAULT_VEST,
+            .moves = {
+                MOVE_HEAD_SMASH,
+                MOVE_IRON_HEAD,
+                MOVE_SUPERPOWER,
+                MOVE_DRAGON_RUSH,
+            },
+            },
+            {
+            .species = SPECIES_TROPIUS,
+            .gender = TRAINER_MON_MALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_HARVEST,
+            .lvl = 36,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .heldItem = ITEM_SITRUS_BERRY,
+            .moves = {
+                MOVE_SOLAR_BEAM,
+                MOVE_AIR_SLASH,
+                MOVE_SUNNY_DAY,
+                MOVE_PROTECT,
+            },
+            },
+            {
+            .species = SPECIES_BLAZIKEN,
+            .gender = TRAINER_MON_MALE,
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .ability = ABILITY_SPEED_BOOST,
+            .lvl = 36,
+            .nature = NATURE_HARDY,
+            .heldItem = ITEM_BLAZIKENITE,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+                MOVE_BRICK_BREAK,
+                MOVE_BLAZE_KICK,
+                MOVE_ROCK_SLIDE,
+                MOVE_PROTECT,
+            },
+            },
+        },
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
     [DIFFICULTY_NORMAL][TRAINER_CINDY_1] =
     {
         .trainerName = _("CINDY"),

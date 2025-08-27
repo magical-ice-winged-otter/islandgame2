@@ -1242,7 +1242,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_CASTELIACONE] =
     {
-        .name = _("Ice Cream"),
+        .name = _("Nice Cream"),
         .price = (I_PRICE >= GEN_7) ? 1000 : 1000,
         .description = COMPOUND_STRING(
             "A yummy treat\n"

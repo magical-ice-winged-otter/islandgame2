@@ -441,7 +441,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ISLANDGAME_APPLEVINE_GAME_CORNER_EventScript_OutOfOrder"
+      "script": "Common_EventScript_VendingMachine"
     },
     {
       "type": "sign",
@@ -449,7 +449,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ISLANDGAME_APPLEVINE_GAME_CORNER_VendingMachine"
+      "script": "Common_EventScript_VendingMachine"
     }
   ]
 }

@@ -84,6 +84,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman9;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pokekid;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Veteran;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brendan2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_May2;
 
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
@@ -404,6 +406,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKEKID] =                  &gObjectEventGraphicsInfo_Pokekid,
     [OBJ_EVENT_GFX_BIKER_2] =                  &gObjectEventGraphicsInfo_Biker2,
     [OBJ_EVENT_GFX_VETERAN] =                  &gObjectEventGraphicsInfo_Veteran,
+    [OBJ_EVENT_GFX_BRENDAN_2] =                &gObjectEventGraphicsInfo_Brendan2,
+    [OBJ_EVENT_GFX_MAY_2] =                    &gObjectEventGraphicsInfo_May2,
 
 
 
