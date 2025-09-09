@@ -330,7 +330,18 @@
 #define OBJ_EVENT_GFX_POKEKID                    ISLAND_START + 78
 #define OBJ_EVENT_GFX_BIKER_2                    ISLAND_START + 79
 #define OBJ_EVENT_GFX_VETERAN                    ISLAND_START + 80
-#define ISLAND_END                               OBJ_EVENT_GFX_VETERAN
+#define OBJ_EVENT_GFX_WAITER                     ISLAND_START + 81
+#define OBJ_EVENT_GFX_WAITRESS                   ISLAND_START + 82
+#define OBJ_EVENT_GFX_YOUNG_COUPLE_M             ISLAND_START + 83
+#define OBJ_EVENT_GFX_YOUNG_COUPLE_F             ISLAND_START + 84
+#define OBJ_EVENT_GFX_BEAUTY_DPPT                ISLAND_START + 86
+#define OBJ_EVENT_GFX_PARASOL_LADY               ISLAND_START + 87
+#define OBJ_EVENT_GFX_PAINTER                    ISLAND_START + 88
+#define OBJ_EVENT_GFX_SOCIALITE                  ISLAND_START + 89
+#define OBJ_EVENT_GFX_ROCKER                     ISLAND_START + 90
+#define OBJ_EVENT_GFX_IDOL                       ISLAND_START + 91
+#define OBJ_EVENT_GFX_NURSE_M                    ISLAND_START + 92
+#define ISLAND_END                               OBJ_EVENT_GFX_NURSE_M
 
 #define NUM_OBJ_EVENT_GFX                        (ISLAND_END + 1)
 
@@ -569,14 +580,14 @@
 #define OBJ_EVENT_PAL_TAG_WOMAN_9                 0x1231
 #define OBJ_EVENT_PAL_TAG_POKEKID                 0x1232
 #define OBJ_EVENT_PAL_TAG_BIKER_2                 0x1233
-#define OBJ_EVENT_PAL_TAG_CUEBALL                 0x1234 // unused
+#define OBJ_EVENT_PAL_TAG_NURSE_M                 0x1234 
 #define OBJ_EVENT_PAL_TAG_VETERAN                 0x1235
-#define OBJ_EVENT_PAL_TAG_NPC_65                  0x1236 // unused 
-#define OBJ_EVENT_PAL_TAG_NPC_66                  0x1237 // unused
-#define OBJ_EVENT_PAL_TAG_NPC_67                  0x1238 // unused
-#define OBJ_EVENT_PAL_TAG_NPC_68                  0x1239 // unused
-#define OBJ_EVENT_PAL_TAG_NPC_69                  0x123A // unused
-#define OBJ_EVENT_PAL_TAG_NPC_70                  0x123B // unused
+#define OBJ_EVENT_PAL_TAG_WAITER                  0x1236  
+#define OBJ_EVENT_PAL_TAG_WAITRESS                0x1237
+#define OBJ_EVENT_PAL_TAG_YOUNG_COUPLE_M          0x1238 
+#define OBJ_EVENT_PAL_TAG_YOUNG_COUPLE_F          0x1239 
+#define OBJ_EVENT_PAL_TAG_PARASOL_LADY            0x123A 
+#define OBJ_EVENT_PAL_TAG_IDOL                    0x123B 
 #define OBJ_EVENT_PAL_TAG_OLIVIA_FISHING          0x123C
 #define OBJ_EVENT_PAL_TAG_OLIVIA_BIKE             0x123D
 #define OBJ_EVENT_PAL_TAG_OLIVIA_FIELD_MOVE       0x123E
@@ -627,7 +638,12 @@
 #define OBJ_EVENT_PAL_TAG_OFFICER_F               0x126B
 #define OBJ_EVENT_PAL_TAG_ACE_TRAINER_M_2         0x126C
 #define OBJ_EVENT_PAL_TAG_ACE_TRAINER_F_2         0x126D
-#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_SNOW        0x127E
+#define OBJ_EVENT_PAL_TAG_ACE_TRAINER_SNOW        0x126E
+#define OBJ_EVENT_PAL_TAG_BEAUTY_DPPT             0x126F
+#define OBJ_EVENT_PAL_TAG_SOCIALITE               0x1270
+#define OBJ_EVENT_PAL_TAG_ROCKER                  0x1271
+#define OBJ_EVENT_PAL_TAG_PAINTER                 0x1272
+#define OBJ_EVENT_PAL_TAG_CYNTHIA                 0x1273
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

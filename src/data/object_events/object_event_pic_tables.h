@@ -866,15 +866,7 @@ static const struct SpriteFrameImage sPicTable_Woman4[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_Cook[] = {
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Cook, 2, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_Cook, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_LinkReceptionist[] = {
@@ -882,15 +874,7 @@ static const struct SpriteFrameImage sPicTable_LinkReceptionist[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_OldMan[] = {
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 0),
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 1),
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 2),
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 0),
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 0),
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 1),
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 1),
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 2),
-    overworld_frame(gObjectEventPic_OldMan, 2, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_OldMan, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_OldWoman[] = {
@@ -1005,13 +989,13 @@ static const struct SpriteFrameImage sPicTable_Nurse[] = {
     overworld_frame(gObjectEventPic_Nurse, 2, 4, 0),
     overworld_frame(gObjectEventPic_Nurse, 2, 4, 1),
     overworld_frame(gObjectEventPic_Nurse, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Nurse, 2, 4, 2),
     overworld_frame(gObjectEventPic_Nurse, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 8),
+    overworld_frame(gObjectEventPic_Nurse, 2, 4, 9),
 };
 
 static const struct SpriteFrameImage sPicTable_ProfBirch[] = {
@@ -1753,15 +1737,7 @@ static const struct SpriteFrameImage sPicTable_Juan[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_MysteryEventDeliveryman[] = {
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 0),
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 1),
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 2),
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 0),
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 0),
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 1),
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 1),
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 2),
-    overworld_frame(gObjectEventPic_MysteryEventDeliveryman, 2, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_MysteryEventDeliveryman, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Statue[] = {
@@ -1769,15 +1745,7 @@ static const struct SpriteFrameImage sPicTable_Statue[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_UnionRoomAttendant[] = {
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 0),
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 1),
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 2),
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 0),
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 0),
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 1),
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 1),
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 2),
-    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_UnionRoomAttendant, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Red[] = {

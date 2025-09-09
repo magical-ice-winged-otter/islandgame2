@@ -646,7 +646,6 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_AceTrainerM_2,        OBJ_EVENT_PAL_TAG_ACE_TRAINER_M_2},
     {gObjectEventPal_AceTrainerF_2,        OBJ_EVENT_PAL_TAG_ACE_TRAINER_F_2},
     {gObjectEventPal_AceTrainerSnow,       OBJ_EVENT_PAL_TAG_ACE_TRAINER_SNOW},
-
     {gObjectEventPal_NinjaBoy2,            OBJ_EVENT_PAL_TAG_NINJA_BOY_2},
     {gObjectEventPal_LittleGirl2,          OBJ_EVENT_PAL_TAG_LITTLE_GIRL_2},
     {gObjectEventPal_Beauty2,              OBJ_EVENT_PAL_TAG_BEAUTY_2},
@@ -661,6 +660,19 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Pokekid,              OBJ_EVENT_PAL_TAG_POKEKID},
     {gObjectEventPal_Biker2,               OBJ_EVENT_PAL_TAG_BIKER_2},
     {gObjectEventPal_Veteran,              OBJ_EVENT_PAL_TAG_VETERAN},
+
+    // {gObjectEventPal_Waiter,               OBJ_EVENT_PAL_TAG_WAITER},
+    // {gObjectEventPal_Waitress,             OBJ_EVENT_PAL_TAG_WAITRESS},
+    // {gObjectEventPal_YoungCoupleM,         OBJ_EVENT_PAL_TAG_YOUNG_COUPLE_M},
+    // {gObjectEventPal_YoungCoupleF,         OBJ_EVENT_PAL_TAG_YOUNG_COUPLE_F},
+    // {gObjectEventPal_BeautyDPPT,           OBJ_EVENT_PAL_TAG_BEAUTY_DPPT},
+    // {gObjectEventPal_ParasolLady,          OBJ_EVENT_PAL_TAG_PARASOL_LADY},
+    // {gObjectEventPal_Painter,              OBJ_EVENT_PAL_TAG_PAINTER},
+    // {gObjectEventPal_Socialite,            OBJ_EVENT_PAL_TAG_SOCIALITE},
+    // {gObjectEventPal_Rocker,               OBJ_EVENT_PAL_TAG_ROCKER},
+    // {gObjectEventPal_Idol,                 OBJ_EVENT_PAL_TAG_IDOL},
+    // {gObjectEventPal_NurseM,               OBJ_EVENT_PAL_TAG_NURSE_M},
+    // {gObjectEventPal_Cynthia,              OBJ_EVENT_PAL_TAG_CYNTHIA},
 
 
 

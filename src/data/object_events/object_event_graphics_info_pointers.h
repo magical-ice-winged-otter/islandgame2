@@ -86,6 +86,20 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Veteran;
 
 
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waiter;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waitress;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungCoupleM;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungCoupleF;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BeautyDPPT;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParasolLady;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Socialite;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rocker;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Painter;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Idol;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NurseM;
+// extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
+
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanNormal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanMachBike;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanSurfing;
@@ -404,6 +418,19 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKEKID] =                  &gObjectEventGraphicsInfo_Pokekid,
     [OBJ_EVENT_GFX_BIKER_2] =                  &gObjectEventGraphicsInfo_Biker2,
     [OBJ_EVENT_GFX_VETERAN] =                  &gObjectEventGraphicsInfo_Veteran,
+
+    // [OBJ_EVENT_GFX_WAITER] =                   &gObjectEventGraphicsInfo_Waiter,
+    // [OBJ_EVENT_GFX_WAITRESS] =                 &gObjectEventGraphicsInfo_Waitress,
+    // [OBJ_EVENT_GFX_YOUNG_COUPLE_M] =           &gObjectEventGraphicsInfo_YoungCoupleM,
+    // [OBJ_EVENT_GFX_YOUNG_COUPLE_F] =           &gObjectEventGraphicsInfo_YoungCoupleF,
+    // [OBJ_EVENT_GFX_BEAUTY_DPPT] =              &gObjectEventGraphicsInfo_BeautyDPPT,
+    // [OBJ_EVENT_GFX_PARASOL_LADY] =             &gObjectEventGraphicsInfo_ParasolLady,
+    // [OBJ_EVENT_GFX_PAINTER] =                  &gObjectEventGraphicsInfo_Painter,
+    // [OBJ_EVENT_GFX_SOCIALITE] =                &gObjectEventGraphicsInfo_Socialite,
+    // [OBJ_EVENT_GFX_ROCKER] =                   &gObjectEventGraphicsInfo_Rocker,
+    // [OBJ_EVENT_GFX_IDOL] =                     &gObjectEventGraphicsInfo_Idol,
+    // [OBJ_EVENT_GFX_NURSE_M] =                  &gObjectEventGraphicsInfo_NurseM,
+    // [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
 
 
 
