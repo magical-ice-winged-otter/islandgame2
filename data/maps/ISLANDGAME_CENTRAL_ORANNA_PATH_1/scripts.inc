@@ -379,7 +379,7 @@ ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_GrottoSign_Text_0:
 	.string "items or even special Pokémon!\p"
 	.string "Don't worry if you don't find anything.\n"
 	.string "You can always check back tomorrow!\p"
-	.string "- Billy The Board (Not a Pokémon)$"
+	.string "- Phil Board (Not a Pokémon)$"
 
 ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1_Text_0:
 # 136 "data/maps/ISLANDGAME_CENTRAL_ORANNA_PATH_1/scripts.pory"

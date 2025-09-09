@@ -561,8 +561,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 2,
-      "y": 27,
+      "x": 34,
+      "y": 8,
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_M",
       "flag": "FLAG_HIDDEN_ITEM_VALLEY_OF_PEACE_EXP_CANDY"

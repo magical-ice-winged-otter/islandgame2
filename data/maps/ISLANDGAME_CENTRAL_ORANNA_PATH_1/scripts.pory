@@ -128,7 +128,7 @@ script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_EntranceSign {
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_GrottoSign {
-    msgbox(format("Hi! I'm a sentient sign. Below me is a hidden grotto!\pHidden grottoes can sometimes have items or even special Pokémon!\pDon't worry if you don't find anything. You can always check back tomorrow!\p- Billy The Board (Not a Pokémon)"), MSGBOX_SIGN)
+    msgbox(format("Hi! I'm a sentient sign. Below me is a hidden grotto!\pHidden grottoes can sometimes have items or even special Pokémon!\pDon't worry if you don't find anything. You can always check back tomorrow!\p- Phil Board (Not a Pokémon)"), MSGBOX_SIGN)
 }
 
 script ISLANDGAME_CENTRAL_ORANNA_PATH_1_Interact_ExtraRanger1 {

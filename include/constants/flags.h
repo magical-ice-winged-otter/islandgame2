@@ -1286,7 +1286,7 @@
 #define FLAG_ITEM_VALLEY_OF_PEACE_SPELL_TAG                         0x4CD
 #define FLAG_ITEM_VALLEY_OF_PEACE_REVIVE                            0x4CE
 #define FLAG_ITEM_VALLEY_OF_PEACE_DUSK_STONE                        0x4CF 
-#define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
+#define FLAG_ITEM_AETHERIA_PP_UP                                    0x4D0 
 #define FLAG_UNUSED_0x4D1                                           0x4D1 // Unused Flag
 #define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
 #define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag

@@ -22,12 +22,18 @@ mapscripts ISLANDGAME_AETHERIA_MapScripts {
 
         if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 18) {
             setflag(FLAG_NIGHTTIME) // hides daytime npcs
+            setflag(FLAG_TEMP_5) // (TEMP) cameo battle(s) only occur during daytime
         }
         else {
             setflag(FLAG_DAYTIME) // hides nighttime npcs
         }
 
-
+        if(!flag(FLAG_DAILY_AETHERIA_CAMEO_BATTLE)) { // hide npcs if there is a cameo active
+            setflag(FLAG_TEMP_4)
+        }
+        else {
+            setflag(FLAG_TEMP_5)
+        }
 
     //     switch (var(VAR_AETHERIA_STATE)) {
     //         case STATE_INITIAL:
@@ -276,16 +282,27 @@ script ISLANDGAME_AETHERIA_Trainer1 {
 
 
 
+
+
+
+
 /// Generic NPCs
 // sailor by the wharf
 script ISLANDGAME_AETHERIA_NPC1 {
     lock
     faceplayer
-    msgbox(format(
-        "Ugggg... I'm tired of waking up at the crack of dawn just to sail this darn detective out into the great blue sea for the entire day...\p"
-        "All in search of some secret island where the “global elite” supposedly gather to discuss world domination...?\p"
-        "I ain't even sure why we even entertainin' him. We found 'em washed ashore the beaches, and he's been nonstop yappin' bout this ever since.\p"
-    ))
+    if(flag(FLAG_NIGHTTIME)) {
+        msgbox(format(
+            "Uurrrp...?"
+        ))
+    }
+    else {
+        msgbox(format(
+            "Ugggg... I'm tired of waking up at the crack of dawn just to sail this darn detective out into the great blue sea for the entire day...\p"
+            "All in search of some secret island where the “global elite” supposedly gather to discuss world domination...?\p"
+            "I ain't even sure why we even entertainin' him. We found 'em washed ashore the beaches, and he's been nonstop yappin' bout this ever since.\p"
+        ))
+    }
     closemessage
     release
 }
@@ -295,12 +312,11 @@ script ISLANDGAME_AETHERIA_NPC2 {
     lock
     faceplayer
     msgbox(format(
-        "Aetheria is always bustling with activity. Whether it's in the morning, at noon, or at night, there's always something to do!"
+        "Aetheria is always bustling with activity.\pWhether it's in the morning, at noon, or at night, there's always something to do!"
     ))
     closemessage
     release
 }
-
 
 // chubby guy scavenging around the park
 script ISLANDGAME_AETHERIA_NPC3 {
@@ -367,10 +383,371 @@ script ISLANDGAME_AETHERIA_NPC7 {
     release
 }
 
+// officer nearby card shop
+script ISLANDGAME_AETHERIA_NPC8 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Since you foreigners clearly don't know how to read, I'll spell it out for you:\p"
+        "LITTERING IS A F-E-L-O-N-Y IN MARYA! DO YOU UNDERSTAND THAT!?\p"
+        "Ever since we opened the city to tourists, it's been absolutely riddled with garbage everywhere!\p"
+        "And I've got the sneaking suspicion it's those dang Unovans dirtying our beautiful beaches..."
+
+    ))
+    closemessage
+    release
+}
+
+// old lady in northern park
+script ISLANDGAME_AETHERIA_NPC9 {
+    lock
+    msgbox(format(
+        "Ah...! Such a rambunctious squabble of Wingulls..."
+    ))
+    closemessage
+    release
+}
+
+// gameboy kid 1
+script ISLANDGAME_AETHERIA_NPC10 {
+    lock
+    msgbox(format(
+        "Noooo! You can't just keep spamming the same move over and over again!\p"
+        "You're supposed to be making calculated decisions based on what Pokémon I could potentially switch into and how I might punish you if I correctly predict your prediction!"
+    ))
+    closemessage
+    release
+}
+
+// gameboy kid 2
+script ISLANDGAME_AETHERIA_NPC11 {
+    lock
+    msgbox(format(
+        "haha xtreme speed go weeeeee"
+    ))
+    closemessage
+    release
+}
+
+// card shop cosplayer
+script ISLANDGAME_AETHERIA_NPC12 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Ever imagined what it would be like to send out one of the Isle Guardians out into battle? Or how about even the great Guardian of the Sea?\p"
+        "Well now you can, with our newest Pokémon TCG special expansion, Maryan Masters!\p"
+        "This special mega set contains ALL of the Pokémon that can be found here in the isles, including regional variants, the legendary Isle Guardians, and you guessed it... our lord and savior, Lugia!\p"
+        "What are you waiting for? Go inside and buy some product before we run out!\p"
+        "Due to high demand, we are limiting 1 booster pack per customer per day. All sales are final."
+    ))
+    closemessage
+    release
+}
+
+// paparazzi guy 1 
+script ISLANDGAME_AETHERIA_NPC13 {
+    lock
+    msgbox(format(
+        "Cammie! Cammie! Are the rumors true? Are you dating a movie star from Unova?\p"
+        "C'mon, spill the tea for us! What's his name? You can't hide it from us any longer! We have the photos!"
+    ))
+    closemessage
+    release
+}
+
+// paparazzi guy 2
+script ISLANDGAME_AETHERIA_NPC14 {
+    lock
+    msgbox(format(
+        "hi camie"
+    ))
+    closemessage
+    release
+}
+
+// parasocial fan
+script ISLANDGAME_AETHERIA_NPC15 {
+    lock
+    faceplayer
+    msgbox(format(
+        "She can't be in a relationship... right?\p I mean, Camellia would never betray her fans like that... right?\p I've been supporting her ever since her first performance..."
+    ))
+    closemessage
+    release
+}
+
+// girl glazer
+script ISLANDGAME_AETHERIA_NPC16 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Camellia is so pretty..."
+    ))
+    closemessage
+    release
+}
+
+// girl shipper
+script ISLANDGAME_AETHERIA_NPC17 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I hope those rumors aren't true. It would ruin my one true pairing."
+    ))
+    closemessage
+    release
+}
+
+// normal fan
+script ISLANDGAME_AETHERIA_NPC18 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Camellia is my favorite of the STARLIGHT members. Her singing voice is phenomenal!"
+    ))
+    closemessage
+    release
+}
+
+// sleeping hobo
+script ISLANDGAME_AETHERIA_NPC19 {
+    lock
+    msgbox(format(
+        "{COLOR RED}(Looks like he's sound asleep.)"
+    ))
+    closemessage
+    release
+}
+
+// shopping girl 1
+script ISLANDGAME_AETHERIA_NPC20 {
+    lock
+    msgbox(format(
+        "How do I look?"
+    ))
+    closemessage
+    release
+}
+
+// shopping girl 2
+script ISLANDGAME_AETHERIA_NPC21 {
+    lock
+    msgbox(format(
+        "ooooo kawaii desu yo"
+    ))
+    closemessage
+    release
+}
+
+// window shopper boy 
+script ISLANDGAME_AETHERIA_NPC22 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I missed out on the limited edition STARLIGHT idol collection, so I'm pretending the figurines in the window are mine."
+    ))
+    closemessage
+    release
+}
+
+// annoying ahh biker
+script ISLANDGAME_AETHERIA_NPC23 {
+    lock
+    faceplayer
+    msgbox(format(
+        "THIS IS MY BICYCLE! THERE ARE MANY LIKE IT, BUT THIS ONE IS MINE! WITHOUT ME, MY BICYCLE IS USELESS! WITHOUT MY BICYCLE, I AM USELESS!"
+    ))
+    closemessage
+    release
+}
+
+// officer by the docks
+script ISLANDGAME_AETHERIA_NPC24 {
+    lock
+    faceplayer
+    msgbox(format(
+        "If you see anything suspicious, like a big bald guy riding a motorcycle, please report it to us immediately! Do NOT engage him, word has it that he used to be a five-time Festival Champion..."
+    ))
+    closemessage
+    release
+}
+
+// little girl by the fountain
+script ISLANDGAME_AETHERIA_NPC25 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Lumine is too hot... I wanna go back to Oranna."
+    ))
+    closemessage
+    release
+}
+
+// loiterer by the card shop 1
+script ISLANDGAME_AETHERIA_NPC26 {
+    lock
+    msgbox(format(
+        "I can't wait for the next rotation, man. Legit got sacked by this one loser abusing Budew to lock me out of all my item cards, then using Whimsicott to OHKO my Charizard! Like okay man, that seems really balanced."
+    ))
+    closemessage
+    release
+}
+
+// loiterer by the card shop 2
+script ISLANDGAME_AETHERIA_NPC27 {
+    lock
+    msgbox(format(
+        "Uh-huh... Yeah... Mhm... Oh yeah... I hear you..."
+    ))
+    closemessage
+    release
+}
+
+// old lady by the docks
+script ISLANDGAME_AETHERIA_NPC28 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Not many trainers have the opportunity of seeing Zapdos, the mighty guardian of Lumine...\p"
+        "I was fortunate enough to catch a glimpse of it in the days of my youth however..."
+        )
+    )
+    showmonpic(SPECIES_ZAPDOS, 10, 3)
+    msgbox(format("Here is a sketch I drew of it from memory."))
+    hidemonpic
+    closemessage
+    msgbox(format("It is quite impressive, no?"))
+    closemessage
+    releaseall
+}
+
+// fisherman by the docks
+script ISLANDGAME_AETHERIA_NPC29 {
+    lock
+    msgbox(format(
+        ""
+    ))
+    closemessage
+    release
+}
+
+
+
+script ISLANDGAME_AETHERIA_Camellia {
+    lock
+    msgbox(format(
+        "-sigh- For the last time, that was my brother..."
+    ))
+    closemessage
+    release
+}
+
 script ISLANDGAME_AETHERIA_StrayPurrloin {
     lock
     faceplayer
     playmoncry(SPECIES_PURRLOIN, CRY_MODE_NORMAL)
+    waitmoncry
+    release
+}
+
+script ISLANDGAME_AETHERIA_Diancie {
+    lock
+    faceplayer
+    playmoncry(SPECIES_DIANCIE, CRY_MODE_NORMAL)
+    msgbox(format(
+        "Diiian...{COLOR BLUE}(These papa-rotsy guys are relentless. Being an idol is tough work.)"
+    ))
+    waitmoncry
+    release
+}
+
+script ISLANDGAME_AETHERIA_Birb {
+    lock
+    faceplayer
+    playmoncry(SPECIES_WINGULL, CRY_MODE_NORMAL)
+    msgbox(format(
+        "MIEN"
+    ))
+    release
+}
+
+
+
+
+
+
+
+
+/// Cameo Battles; to be periodically updated whenever I feel like it
+
+script ISLANDGAME_AETHERIA_Observer1 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Those kids look pretty tough..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Observer2 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Mommy lets me watch trainers battle here while she does shopping with my sister!"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Observer3 {
+    lock
+    faceplayer
+    msgbox(format(
+        "I once believed that Pokémon battles were barbaric, but I have come to understand that they are merely a form of bonding between Pokémon and their trainers."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Observer4 {
+    lock
+    faceplayer
+    msgbox(format(
+        "Joey, this is why I told you to study up before you get back into battling..."
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Battler1 {
+    lock
+    msgbox(format(
+        "Nyeh!? My attack... it had no effect!?"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_Battler2 {
+    lock
+    msgbox(format(
+        "You dummy! Kirlia is part fairy-type! How out of the loop are you!?"
+    ))
+    closemessage
+    release
+}
+
+script ISLANDGAME_AETHERIA_FraxureBattle {
+    lock
+    playmoncry(SPECIES_FRAXURE, CRY_MODE_NORMAL)
+    waitmoncry
+    release
+}
+
+script ISLANDGAME_AETHERIA_KirliaBattle {
+    lock
+    playmoncry(SPECIES_KIRLIA, CRY_MODE_NORMAL)
     waitmoncry
     release
 }
@@ -383,7 +760,7 @@ script ISLANDGAME_AETHERIA_StrayPurrloin {
 
 
 
-/// Cameo Battles; to be periodically updated whenever I feel like it
+
 script ISLANDGAME_AETHERIA_WallyDad {
     lock
     faceplayer
@@ -453,25 +830,7 @@ script ISLANDGAME_AETHERIA_Brendan {
     release
 }
 
-script ISLANDGAME_AETHERIA_Observer1 {
-    lock
-    faceplayer
-    msgbox(format(
-        "Those kids look pretty tough..."
-    ))
-    closemessage
-    release
-}
 
-script ISLANDGAME_AETHERIA_Observer2 {
-    lock
-    faceplayer
-    msgbox(format(
-        "Mommy lets me watch trainers battle here while she does shopping with my sister!"
-    ))
-    closemessage
-    release
-}
 
 script ISLANDGAME_AETHERIA_Wally {
     lock

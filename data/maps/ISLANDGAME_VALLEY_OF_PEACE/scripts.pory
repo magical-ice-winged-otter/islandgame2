@@ -64,8 +64,11 @@ mapscripts ISLANDGAME_VALLEY_OF_PEACE_MapScripts {
 
 script ISLANDGAME_VALLEY_OF_PEACE_Sign {
     msgbox(format(
-        "VALLEY OF PEACE\n"
-        "May the departed find tranquility"
+        "Having trouble finding someone, or a Pokémon?\p"
+        "Some people are only around at specific times, so if at first you can't find the person you're looking for, try changing the time and seeing if they show up!\p"
+        "Likewise, hidden grottoes have different Pokémon, depending on whether it's daytime or nighttime!\p"
+        "Hope I helped! Please consider leaving a thumbs up, my well-being kinda depends on it!\p"
+        "- Jill Board (A sentient sign, NOT a Pokémon)"
     ), MSGBOX_SIGN)
 }
 
