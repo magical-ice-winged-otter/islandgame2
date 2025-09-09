@@ -5634,8 +5634,8 @@
     {
       "id": "LAYOUT_ISLANDGAME_AETHERIA_PKMNCENTER",
       "name": "ISLANDGAME_AETHERIA_PKMNCENTER_Layout",
-      "width": 14,
-      "height": 9,
+      "width": 16,
+      "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/ISLANDGAME_AETHERIA_PKMNCENTER/border.bin",

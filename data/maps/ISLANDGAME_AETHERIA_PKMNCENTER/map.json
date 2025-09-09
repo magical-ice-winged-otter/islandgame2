@@ -2,11 +2,11 @@
   "id": "MAP_ISLANDGAME_AETHERIA_PKMNCENTER",
   "name": "ISLANDGAME_AETHERIA_PKMNCENTER",
   "layout": "LAYOUT_ISLANDGAME_AETHERIA_PKMNCENTER",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "music": "MUS_DP_POKE_CENTER_DAY",
+  "region_map_section": "MAPSEC_AETHERIA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": true,
@@ -14,19 +14,44 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NURSE",
+      "x": 8,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IslandGame_Common_PokemonCenter_1F_EventScript_Nurse",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
   ],
   "warp_events": [
     {
-      "x": 7,
-      "y": 8,
+      "x": 8,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_AETHERIA",
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
-      "y": 8,
+      "x": 7,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ISLANDGAME_AETHERIA",
       "dest_warp_id": "0"
@@ -37,5 +62,6 @@
   ],
   "bg_events": [
 
-  ]
+  ],
+  "night_music": "MUS_DP_POKE_CENTER_NIGHT"
 }
